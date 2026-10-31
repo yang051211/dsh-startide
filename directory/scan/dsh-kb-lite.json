@@ -1,7 +1,7 @@
 {
   "name": "dsh-kb-lite",
-  "version": "0.4.3",
-  "scannedAt": "2026-10-26T10:05:00.593Z",
+  "version": "0.4.5",
+  "scannedAt": "2026-10-31T22:51:45.720Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -14,6 +14,26 @@
         "file": "lib/plugin.js",
         "line": 8,
         "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/plugin.js",
+        "line": 390,
+        "text": "fs.readFileSync(path.join(kbRoot, 'sync-roots.json'), 'utf8').replace(/^\\uFEFF/, ''),"
+      },
+      {
+        "file": "lib/plugin.js",
+        "line": 405,
+        "text": "const parsed = JSON.parse(fs.readFileSync(path.join(kbRoot, 'sync-state.json'), 'utf8'))"
+      },
+      {
+        "file": "lib/plugin.js",
+        "line": 414,
+        "text": "fs.mkdirSync(kbRoot, { recursive: true })"
+      },
+      {
+        "file": "lib/plugin.js",
+        "line": 415,
+        "text": "fs.writeFileSync(path.join(kbRoot, 'sync-state.json'), JSON.stringify(next, null, 2))"
       }
     ]
   },
@@ -42,7 +62,7 @@
       },
       {
         "file": "lib/plugin.js",
-        "line": 528,
+        "line": 792,
         "text": "ctx.tools.register(defineTool(definition))"
       }
     ]
@@ -80,27 +100,27 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 175,
+      "line": 178,
       "text": "- Optional, for PDF: `pymupdf` (`pip install pymupdf`)."
     },
     {
       "file": "README.md",
-      "line": 176,
+      "line": 179,
       "text": "dense retrieval: `numpy` and `sentence-transformers` (`pip install numpy sentence-transformers`), in the interpreter the plugin launches (see `KB_LITE_PYTHON`)."
     },
     {
       "file": "README.md",
-      "line": 244,
+      "line": 247,
       "text": "python -m pip install numpy sentence-transformers"
     },
     {
       "file": "README.zh.md",
-      "line": 173,
+      "line": 176,
       "text": "- 可选项，PDF 需要：`pymupdf`（`pip install pymupdf`）。"
     },
     {
       "file": "README.zh.md",
-      "line": 174,
+      "line": 177,
       "text": "- 可选项，稠密检索需要：`numpy` 和 `sentence-transformers`（`pip install numpy sentence-transformers`），装进插件实际启动的那个解释器（见 `KB_LITE_PYTHON`）。"
     }
   ],

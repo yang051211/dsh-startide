@@ -1,35 +1,35 @@
 {
   "name": "@goodandready/dsh-moa",
-  "version": "0.2.60",
-  "scannedAt": "2026-10-26T10:12:29.213Z",
+  "version": "0.2.71",
+  "scannedAt": "2026-10-31T22:51:46.212Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 863,
-        "text": "fetch('/dsh-moa/history?limit=30', { cache: 'no-store' })"
+        "line": 806,
+        "text": "fetch(\"/dsh-moa/history?limit=30\", { cache: \"no-store\" }).then((r) => r.json()).then((data) => {"
       },
       {
         "file": "lib/client.js",
-        "line": 895,
-        "text": "fetch('/dsh-moa/diff?' + params.toString(), { cache: 'no-store' })"
+        "line": 830,
+        "text": "fetch(\"/dsh-moa/diff?\" + params.toString(), { cache: \"no-store\" }).then((r) => {"
       },
       {
         "file": "lib/client.js",
-        "line": 1091,
-        "text": "fetch('/dsh-moa/history?limit=30', { cache: 'no-store' })"
+        "line": 1013,
+        "text": "fetch(\"/dsh-moa/history?limit=30\", { cache: \"no-store\" }).then((r) => r.json()).then((data) => {"
       },
       {
         "file": "lib/client.js",
-        "line": 1113,
-        "text": "fetch('/dsh-moa/runs/' + encodeURIComponent(selectedRunId) + '/workbench', { cache: 'no-store' })"
+        "line": 1031,
+        "text": "fetch(\"/dsh-moa/runs/\" + encodeURIComponent(selectedRunId) + \"/workbench\", { cache: \"no-store\" }).then(async (r) => {"
       },
       {
         "file": "lib/client.js",
-        "line": 1158,
-        "text": "fetch('/dsh-moa/runs/' + encodeURIComponent(selectedRunId) + '/workbench/assemble', {"
+        "line": 1069,
+        "text": "fetch(\"/dsh-moa/runs/\" + encodeURIComponent(selectedRunId) + \"/workbench/assemble\", {"
       }
     ]
   },
@@ -37,41 +37,35 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/file-workspace.js",
-        "line": 4,
-        "text": "import fs from 'node:fs/promises'"
+        "file": "lib/history.js",
+        "line": 9,
+        "text": "import fs from 'node:fs'"
       },
       {
-        "file": "lib/file-workspace.js",
-        "line": 5,
-        "text": "import fsSync from 'node:fs'"
+        "file": "lib/history.js",
+        "line": 74,
+        "text": "try { fs.unlinkSync(backupPath) } catch { /* backup unlink best-effort */ }"
       },
       {
-        "file": "lib/file-workspace.js",
-        "line": 190,
-        "text": "const content = await fs.readFile(full, 'utf8')"
+        "file": "lib/history.js",
+        "line": 144,
+        "text": "await fs.promises.mkdir(dir, { recursive: true }).catch(() => {})"
       },
       {
-        "file": "lib/file-workspace.js",
-        "line": 227,
-        "text": "await fs.mkdir(runRoot, { recursive: true })"
+        "file": "lib/history.js",
+        "line": 150,
+        "text": "await fs.promises.appendFile(filePath, line, 'utf8')"
       },
       {
-        "file": "lib/file-workspace.js",
-        "line": 231,
-        "text": "await fs.mkdir(tempCandidateDir, { recursive: true })"
+        "file": "lib/history.js",
+        "line": 281,
+        "text": "const raw = fs.readFileSync(filePath, 'utf8')"
       }
     ]
   },
   "agentTools": {
-    "hit": true,
-    "evidence": [
-      {
-        "file": "lib/index.js",
-        "line": 27,
-        "text": "export const inject = ['webServer', 'llm', 'sessions', 'tools']"
-      }
-    ]
+    "hit": false,
+    "evidence": []
   },
   "childProcess": {
     "hit": true,
@@ -92,14 +86,14 @@
         "text": "\"const cp = require('node:child_process');\","
       },
       {
-        "file": "lib/moa-test-gate.js",
-        "line": 13,
-        "text": "import { spawn } from 'node:child_process'"
+        "file": "lib/moa-self-healing.js",
+        "line": 8,
+        "text": "import { execFile } from 'node:child_process'"
       },
       {
-        "file": "lib/moa-test-gate.js",
-        "line": 299,
-        "text": "child = spawn(resolvedCmd, {"
+        "file": "lib/moa-swarm.js",
+        "line": 11,
+        "text": "import { execFile } from 'node:child_process'"
       }
     ]
   },
@@ -111,10 +105,7 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
-    "llm",
-    "sessions",
-    "tools",
-    "webServer"
+    "llm"
   ],
   "setupHints": [],
   "skippedEntries": []

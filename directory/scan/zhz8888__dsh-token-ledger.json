@@ -1,35 +1,35 @@
 {
   "name": "@zhz8888/dsh-token-ledger",
-  "version": "1.1.5",
-  "scannedAt": "2026-10-31T13:58:03.891Z",
+  "version": "1.2.0",
+  "scannedAt": "2026-10-31T22:51:54.610Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 2599,
+        "line": 2987,
         "text": "fetch(ENDPOINT, { cache: 'no-store' })"
       },
       {
         "file": "lib/client.js",
-        "line": 2628,
+        "line": 3016,
         "text": "fetch(RATES_ENDPOINT, { cache: 'no-store' })"
       },
       {
         "file": "lib/client.js",
-        "line": 2673,
+        "line": 3061,
         "text": "fetch(url, { cache: 'no-store' })"
       },
       {
         "file": "lib/client.js",
-        "line": 2738,
-        "text": "fetch(`${RATES_ENDPOINT}?vendor=${encodeURIComponent(vendorId)}`, { cache: 'no-store' })"
+        "line": 3102,
+        "text": "fetch(DATABASES_ENDPOINT, { cache: 'no-store' })"
       },
       {
         "file": "lib/client.js",
-        "line": 2832,
-        "text": "fetch(RATES_ENDPOINT, {"
+        "line": 3146,
+        "text": "return fetch(DATABASES_ENDPOINT, { cache: 'no-store' })"
       }
     ]
   },
@@ -47,19 +47,19 @@
         "text": "return JSON.parse(readFileSync(path, 'utf8')).version ?? 'unknown'"
       },
       {
-        "file": "lib/locale.js",
-        "line": 26,
-        "text": "import { readFileSync } from 'node:fs'"
+        "file": "lib/databases.js",
+        "line": 22,
+        "text": "import { chmodSync, mkdirSync, readFileSync, renameSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
       },
       {
-        "file": "lib/locale.js",
-        "line": 45,
-        "text": "const parsed = JSON.parse(readFile(join(dir, `${locale}.json`)))"
+        "file": "lib/databases.js",
+        "line": 187,
+        "text": "text = readFileSync(path, 'utf8')"
       },
       {
-        "file": "lib/locale.js",
-        "line": 67,
-        "text": "export function readDictionaries({ dir = LOCALE_DIR, readFile = (path) => readFileSync(path, 'utf8') } = {}) {"
+        "file": "lib/databases.js",
+        "line": 228,
+        "text": "mkdirSync(dirname(path), { recursive: true, mode: 0o700 })"
       }
     ]
   },
@@ -68,8 +68,19 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/dbdump.js",
+        "line": 28,
+        "text": "import { spawn as nodeSpawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/dbdump.js",
+        "line": 335,
+        "text": "child = spawn(command, args, {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

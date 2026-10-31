@@ -1,0 +1,61 @@
+{
+  "name": "dsh-macos-notifications",
+  "version": "0.2.4",
+  "scannedAt": "2026-10-31T22:51:54.666Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/store.js",
+        "line": 1,
+        "text": "import { constants } from 'node:fs'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 2,
+        "text": "import { mkdir, open, lstat, realpath, rename, unlink } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 11,
+        "text": "await mkdir(directory, { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 20,
+        "text": "values = validateSettings(JSON.parse(await handle.readFile('utf8')))"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 40,
+        "text": "await handle.writeFile(`${JSON.stringify(replacement, null, 2)}\\n`)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,79 @@
+{
+  "name": "dsh-system-prompt-insertion",
+  "version": "0.2.0",
+  "scannedAt": "2026-10-31T22:51:51.118Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1063,
+        "text": "fetch(`${API}/preview`, { headers: { accept: \"application/json\" } }).then((response) => readJson(response)).then((body) => {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1079,
+        "text": "fetch(`${API}/state`, { headers: { accept: \"application/json\" } }).then((response) => readJson(response)).then((body) => {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1104,
+        "text": "fetch(`${API}/state`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1146,
+        "text": "fetch(`${API}/state`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { chmodSync, mkdirSync, readFileSync, renameSync, statSync, unlinkSync, unwatchFile, watchFile, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 242,
+        "text": "mkdirSync(dirname(this.path), {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 248,
+        "text": "writeFileSync(temporary, `${JSON.stringify(next, null, 2)}\\n`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 255,
+        "text": "unlinkSync(temporary);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 279,
+        "text": "const text = readFileSync(this.path, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "project-node-memory",
-  "version": "1.5.8",
-  "scannedAt": "2026-10-26T10:04:45.319Z",
+  "version": "1.5.18",
+  "scannedAt": "2026-10-31T22:51:47.443Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -27,29 +27,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/engine/advice.js",
-        "line": 10,
+        "file": "lib/cli.js",
+        "line": 18,
         "text": "import fs from 'node:fs'"
       },
       {
-        "file": "lib/engine/advice.js",
-        "line": 162,
-        "text": "head = fs.readFileSync(file, 'utf8').slice(0, 400)"
+        "file": "lib/cli.js",
+        "line": 157,
+        "text": "fs.appendFileSync(CTX.outFile, s, 'utf8')"
       },
       {
-        "file": "lib/engine/diag.js",
-        "line": 10,
-        "text": "import fs from 'node:fs'"
+        "file": "lib/cli.js",
+        "line": 322,
+        "text": "return fs.readFileSync(0, 'utf8')"
       },
       {
-        "file": "lib/engine/diag.js",
-        "line": 61,
-        "text": "data = JSON.parse(fs.readFileSync(p, 'utf8'))"
+        "file": "lib/cli.js",
+        "line": 340,
+        "text": "if (flags.file && flags.file !== true) content = fs.readFileSync(String(flags.file), 'utf8')"
       },
       {
-        "file": "lib/engine/mdlib.js",
-        "line": 15,
-        "text": "import fs from 'node:fs'"
+        "file": "lib/cli.js",
+        "line": 371,
+        "text": "raw = JSON.parse(fs.readFileSync(path.resolve(String(file)), 'utf8'))"
       }
     ]
   },
@@ -58,12 +58,12 @@
     "evidence": [
       {
         "file": "lib/host/tools.js",
-        "line": 735,
+        "line": 807,
         "text": "const d = ctx.tools.register(t)"
       },
       {
         "file": "lib/index.js",
-        "line": 18,
+        "line": 19,
         "text": "export const inject = ['tools', 'webServer']"
       }
     ]
@@ -78,7 +78,7 @@
       },
       {
         "file": "lib/host/tools.js",
-        "line": 91,
+        "line": 19,
         "text": "import { execFileSync } from 'node:child_process'"
       }
     ]

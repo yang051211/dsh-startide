@@ -1,0 +1,111 @@
+{
+  "name": "dsh-error-atlas",
+  "version": "0.11.26",
+  "scannedAt": "2026-10-31T22:51:45.556Z",
+  "icon": "dsh-error-atlas.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/atlas-retro.mjs",
+        "line": 119,
+        "text": "const response = await fetch(`http://127.0.0.1:${port}/error-atlas/retro`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 2849,
+        "text": "const response = await fetch(DATA_PATH, { cache: 'no-store', headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 3099,
+        "text": "await fetch(CLEAR_PATH, { method: 'POST', cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 3113,
+        "text": "const response = await fetch(EXPORT_PATH, { method: 'POST', cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 3141,
+        "text": "const response = await fetch(PREFS_PATH, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/atlas-digest.mjs",
+        "line": 7,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/atlas-digest.mjs",
+        "line": 123,
+        "text": "const store = JSON.parse(readFileSync(storePath, 'utf8').replace(/^\\uFEFF/, ''))"
+      },
+      {
+        "file": "bin/atlas-retro.mjs",
+        "line": 20,
+        "text": "import { readFileSync, writeFileSync, renameSync, existsSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/atlas-retro.mjs",
+        "line": 41,
+        "text": "return JSON.parse(readFileSync(path, 'utf8').replace(/^\\uFEFF/, ''))"
+      },
+      {
+        "file": "bin/atlas-retro.mjs",
+        "line": 109,
+        "text": "writeFileSync(tmp, JSON.stringify(data, null, 2), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1723,
+        "text": "scope.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 1800,
+        "text": "scope.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 1881,
+        "text": "scope.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "test/smoke.mjs",
+        "line": 12,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "test/smoke.mjs",
+        "line": 127,
+        "text": "const digest = spawnSync(process.execPath, [join(ROOT, 'bin', 'atlas-digest.mjs')], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

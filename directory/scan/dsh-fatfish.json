@@ -1,0 +1,94 @@
+{
+  "name": "dsh-fatfish",
+  "version": "0.5.0",
+  "scannedAt": "2026-10-31T22:51:53.542Z",
+  "icon": "dsh-fatfish.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/persona.js",
+        "line": 195,
+        "text": "const res = await fetch(`${provider.baseUrl}/chat/completions`, {"
+      },
+      {
+        "file": "lib/security.js",
+        "line": 219,
+        "text": "res = await fetch(target, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/memory.js",
+        "line": 7,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/memory.js",
+        "line": 36,
+        "text": "fs.mkdirSync(dataDir(), { recursive: true })"
+      },
+      {
+        "file": "lib/memory.js",
+        "line": 49,
+        "text": "const raw = fs.readFileSync(memoryFile(), 'utf8')"
+      },
+      {
+        "file": "lib/memory.js",
+        "line": 64,
+        "text": "fs.writeFileSync(tmp, JSON.stringify(store, null, 2), 'utf8')"
+      },
+      {
+        "file": "lib/persona.js",
+        "line": 4,
+        "text": "import fs from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 404,
+        "text": "export const inject = ['systemPrompt', 'tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 471,
+        "text": "if (ctx.tools?.register) {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 473,
+        "text": "disposers.push(ctx.tools.register(tool))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/security.js",
+        "line": 12,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

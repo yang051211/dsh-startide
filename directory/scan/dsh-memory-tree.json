@@ -1,0 +1,105 @@
+{
+  "name": "dsh-memory-tree",
+  "version": "0.4.1",
+  "scannedAt": "2026-10-31T22:51:53.518Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/bench.mjs",
+        "line": 15,
+        "text": "import { mkdtempSync, rmSync } from 'node:fs';"
+      },
+      {
+        "file": "scripts/bench.mjs",
+        "line": 158,
+        "text": "rmSync(dir, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });"
+      },
+      {
+        "file": "scripts/check-market.mjs",
+        "line": 12,
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "scripts/check-market.mjs",
+        "line": 64,
+        "text": "index = JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "scripts/check-secrets.mjs",
+        "line": 13,
+        "text": "import { readdirSync, readFileSync, statSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/dryrun-plugin.mjs",
+        "line": 123,
+        "text": "check('registers tools', ctx.tools.length >= 3, `tools=${ctx.tools.map((tool) => tool.name).join(',')}`);"
+      },
+      {
+        "file": "scripts/dryrun-plugin.mjs",
+        "line": 127,
+        "text": "ctx.tools.some((tool) => tool.name === toolName),"
+      },
+      {
+        "file": "scripts/dryrun-plugin.mjs",
+        "line": 129,
+        "text": "ctx.tools.map((tool) => tool.name).join(','),"
+      },
+      {
+        "file": "scripts/dryrun-plugin.mjs",
+        "line": 136,
+        "text": "const store = ctx.tools.find((tool) => tool.name === 'mem_store');"
+      },
+      {
+        "file": "scripts/dryrun-plugin.mjs",
+        "line": 137,
+        "text": "const recallTool = ctx.tools.find((tool) => tool.name === 'mem_recall');"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/dsh/host-client.mjs",
+        "line": 13,
+        "text": "import { spawn as spawnProcess } from 'node:child_process';"
+      },
+      {
+        "file": "src/dsh/host-client.mjs",
+        "line": 46,
+        "text": "// (plain `node` CLI, or Electron with ELECTRON_RUN_AS_NODE set by spawn())."
+      },
+      {
+        "file": "src/dsh/host-client.mjs",
+        "line": 110,
+        "text": "if (!stopped) spawn();"
+      },
+      {
+        "file": "src/dsh/host-client.mjs",
+        "line": 196,
+        "text": "if (!child) spawn();"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

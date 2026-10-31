@@ -1,0 +1,76 @@
+{
+  "name": "dsh-agent-toolbox",
+  "version": "1.0.0",
+  "scannedAt": "2026-10-31T22:51:53.089Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 520,
+        "text": "return fetch('/api/workbuddy-toolbox', {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 511,
+        "text": "async fetch(request) {"
+      },
+      {
+        "file": "test/smoke.mjs",
+        "line": 118,
+        "text": "const res = await route.captured.fetch("
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { promises as fsp } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 242,
+        "text": "return await fsp.readFile(p, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 292,
+        "text": "raw = JSON.parse(await fsp.readFile(file, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 315,
+        "text": "await fsp.mkdir(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 316,
+        "text": "await fsp.writeFile(file, JSON.stringify({ version: CONFIG_VERSION, agents: clean }, null, 2), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

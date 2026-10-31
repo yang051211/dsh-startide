@@ -1,0 +1,112 @@
+{
+  "name": "dsh-qq-console",
+  "version": "1.0.2",
+  "scannedAt": "2026-10-31T22:51:49.859Z",
+  "icon": "dsh-qq-console.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 646,
+        "text": "fetch('/api/qq-console', {"
+      },
+      {
+        "file": "client.js",
+        "line": 1509,
+        "text": "const res = await fetch('/api/qq-console?' + qs.toString(), { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 1554,
+        "text": "const res = await fetch('/api/qq-console', {"
+      },
+      {
+        "file": "index.js",
+        "line": 90,
+        "text": "const res = await fetch(url, { ...options, signal: AbortSignal.timeout(timeoutMs) })"
+      },
+      {
+        "file": "index.js",
+        "line": 540,
+        "text": "const res = await fetch(`http://127.0.0.1:${CDP_PORT}/json/version`, { signal: AbortSignal.timeout(timeoutMs) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 65,
+        "text": "let text = fs.readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 176,
+        "text": "const text = fs.readFileSync(path.join(root, 'qq-bridge-main', 'state', 'bridge.lock'), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 187,
+        "text": "let text = fs.readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 193,
+        "text": "fs.writeFileSync(file, JSON.stringify(cfg, null, 2), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 147,
+        "text": "const child = spawn(command, args, {"
+      },
+      {
+        "file": "index.js",
+        "line": 202,
+        "text": "child = spawn('netstat', ['-ano'], { windowsHide: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 304,
+        "text": "child = spawn('tasklist', ['/FI', `PID eq ${Number(pid)}`, '/FO', 'CSV', '/NH'], { windowsHide: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 326,
+        "text": "child = spawn("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

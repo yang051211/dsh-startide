@@ -1,7 +1,7 @@
 {
   "name": "dsh-roost",
-  "version": "0.10.20",
-  "scannedAt": "2026-10-30T23:38:15.078Z",
+  "version": "0.10.22",
+  "scannedAt": "2026-10-31T22:51:40.333Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,7 +18,7 @@
       },
       {
         "file": "src/host.js",
-        "line": 661,
+        "line": 629,
         "text": "const r = await fetch(url, { signal: AbortSignal.timeout(5000) });"
       },
       {
@@ -37,6 +37,21 @@
     "hit": true,
     "evidence": [
       {
+        "file": "src/audit.js",
+        "line": 14,
+        "text": "import { appendFileSync, mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "src/audit.js",
+        "line": 29,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "src/audit.js",
+        "line": 44,
+        "text": "appendFileSync(join(dir, 'audit.log'), `${JSON.stringify(row)}\\n`, 'utf8');"
+      },
+      {
         "file": "src/awake.js",
         "line": 22,
         "text": "import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';"
@@ -45,21 +60,6 @@
         "file": "src/awake.js",
         "line": 417,
         "text": "state = { ...state, ...JSON.parse(readFileSync(file(), 'utf8')) };"
-      },
-      {
-        "file": "src/awake.js",
-        "line": 422,
-        "text": "mkdirSync(dirname(file()), { recursive: true });"
-      },
-      {
-        "file": "src/awake.js",
-        "line": 423,
-        "text": "writeFileSync(file(), JSON.stringify(state), 'utf8');"
-      },
-      {
-        "file": "src/closing.js",
-        "line": 24,
-        "text": "import { readFileSync, writeFileSync, renameSync, mkdirSync } from 'node:fs';"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "src/host.js",
-        "line": 1439,
+        "line": 1254,
         "text": "* 挂在这里而不是插件的 ctx：`agent.ctx.tools` 是每轮都在用的那个"
       },
       {
@@ -119,7 +119,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 226,
+      "line": 228,
       "text": "setup.js       一键流程：下载解压、写配置、起停、装插件、配适配器"
     }
   ],

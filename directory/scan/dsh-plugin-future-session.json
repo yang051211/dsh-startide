@@ -1,0 +1,98 @@
+{
+  "name": "dsh-plugin-future-session",
+  "version": "0.5.1",
+  "scannedAt": "2026-10-31T22:51:55.996Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 105,
+        "text": "return fetch(url, options).then(function (res) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/store.js",
+        "line": 18,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 19,
+        "text": "import { mkdir, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 45,
+        "text": "const raw = readFileSync(this.filePath, 'utf8')"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 125,
+        "text": "await mkdir(dirname(this.filePath), { recursive: true })"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 127,
+        "text": "await writeFile(tmp, this.serialize(), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/future.js",
+        "line": 472,
+        "text": "childCtx.tools.register(relay)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 28,
+        "text": "export const inject = ['agentLoop', 'tools', 'systemPrompt', 'agents', 'sessionQuery', 'commands', 'webServer']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 119,
+        "text": "ctx.tools.register(definitions.futureReturn),"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 120,
+        "text": "ctx.tools.register(definitions.futurePromote),"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 121,
+        "text": "ctx.tools.register(definitions.futurePeek),"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentLoop",
+    "agents",
+    "commands",
+    "sessionQuery",
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

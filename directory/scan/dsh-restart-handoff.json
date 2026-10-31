@@ -1,0 +1,97 @@
+{
+  "name": "dsh-restart-handoff",
+  "version": "0.2.6",
+  "scannedAt": "2026-10-31T22:51:44.947Z",
+  "icon": "dsh-restart-handoff.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 3,
+        "text": "t { readFile as fsReadFile, writeFile as fsWriteFile, mkdir as fsMkdir, rename as fsRename, rm as fsRm, stat as fsStat, open as fsOpen } from 'node:fs/promises'"
+      },
+      {
+        "file": "test/handoff-replay.test.mjs",
+        "line": 9,
+        "text": "import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "test/handoff-replay.test.mjs",
+        "line": 122,
+        "text": "await rm(dir, { recursive: true, force: true })"
+      },
+      {
+        "file": "test/handoff-replay.test.mjs",
+        "line": 127,
+        "text": "await writeFile(join(dir, HANDOFF_FILE), JSON.stringify({"
+      },
+      {
+        "file": "test/handoff-replay.test.mjs",
+        "line": 137,
+        "text": "await rm(dir, { recursive: true, force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 64,
+        "text": "export const inject = ['tools', 'agents', 'sessionPersistence', 'sessionQuery', 'systemPrompt', 'agentDefaultModel']"
+      },
+      {
+        "file": "index.js",
+        "line": 2386,
+        "text": "ctx.effect(() => ctx.tools.register(createRestartTool(ctx, settings)))"
+      },
+      {
+        "file": "index.js",
+        "line": 2393,
+        "text": "ctx.effect(() => ctx.tools.guard(createRestartGuard()))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 199,
+        "text": "* equivalents: `execSync('pkill -f node')`, `subprocess.run(['kill','-1'])`,"
+      },
+      {
+        "file": "test/guard-vectors.test.mjs",
+        "line": 413,
+        "text": "test('vector: execSync(\"pkill -f node\") is denied', () => {"
+      },
+      {
+        "file": "test/guard-vectors.test.mjs",
+        "line": 414,
+        "text": "assertDenied(\"const { execSync } = require('child_process'); execSync('pkill -f node')\", 'run_code')"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentDefaultModel",
+    "agents",
+    "sessionPersistence",
+    "sessionQuery",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

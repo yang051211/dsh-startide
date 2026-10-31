@@ -1,0 +1,87 @@
+{
+  "name": "dsh-bili-meme",
+  "version": "0.3.1",
+  "scannedAt": "2026-10-31T22:51:50.615Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/gen-emotes.mjs",
+        "line": 81,
+        "text": "const res = await fetch(API, {"
+      },
+      {
+        "file": "updater.js",
+        "line": 80,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/gen-emotes.mjs",
+        "line": 13,
+        "text": "import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "scripts/gen-emotes.mjs",
+        "line": 38,
+        "text": "const c = JSON.parse(readFileSync(p, 'utf8'))"
+      },
+      {
+        "file": "scripts/gen-emotes.mjs",
+        "line": 135,
+        "text": "mkdirSync(ROOT, { recursive: true })"
+      },
+      {
+        "file": "scripts/gen-emotes.mjs",
+        "line": 136,
+        "text": "writeFileSync(join(ROOT, 'emotes.js'), out)"
+      },
+      {
+        "file": "settings.js",
+        "line": 7,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 278,
+        "text": "ctx.effect(() => ctx.tools.register(tool), 'dsh-bili-meme: bili_meme')"
+      },
+      {
+        "file": "index.js",
+        "line": 327,
+        "text": "ctx.effect(() => ctx.tools.register(packsTool), 'dsh-bili-meme: bili_meme_packs')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

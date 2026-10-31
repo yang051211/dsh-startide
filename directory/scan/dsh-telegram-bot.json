@@ -1,0 +1,74 @@
+{
+  "name": "dsh-telegram-bot",
+  "version": "0.1.7",
+  "scannedAt": "2026-10-31T22:51:45.898Z",
+  "icon": "dsh-telegram-bot.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "import https from 'node:https'"
+      },
+      {
+        "file": "index.js",
+        "line": 1164,
+        "text": "const request = https.request(options, (response) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 1284,
+        "text": "const request = https.request({"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 500,
+        "text": "const parsed = JSON.parse(await readFile(STATE_PATH, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 523,
+        "text": "const parsed = JSON.parse(await readFile(TOPICS_PATH, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 562,
+        "text": "await mkdir(STATUS_DIR, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 563,
+        "text": "await writeFile(join(STATUS_DIR, 'status.json'), JSON.stringify(runtimeStatus, null, 2) + '\\n', { mode: 0o600 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

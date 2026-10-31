@@ -1,7 +1,7 @@
 {
   "name": "dsh-mimo-voice",
-  "version": "0.2.0",
-  "scannedAt": "2026-10-26T10:06:31.312Z",
+  "version": "0.4.1",
+  "scannedAt": "2026-10-31T22:51:52.754Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,17 +13,17 @@
       },
       {
         "file": "lib/client.js",
-        "line": 236,
+        "line": 238,
         "text": "const res = await fetch(`${API}.preview`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 258,
+        "line": 260,
         "text": "const res = await fetch(`${API}.pin`, { method: 'POST' })"
       },
       {
         "file": "lib/client.js",
-        "line": 294,
+        "line": 296,
         "text": "try { await fetch(`${API}.stop`, { method: 'POST' }) } catch { /* 断了就断了 */ }"
       },
       {
@@ -43,22 +43,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 81,
+        "line": 84,
         "text": "fs.mkdirSync(AUDIO_DIR, { recursive: true })"
       },
       {
         "file": "lib/index.js",
-        "line": 87,
+        "line": 90,
         "text": "const text = fs.readFileSync(ENV_PATH, 'utf8')"
       },
       {
         "file": "lib/index.js",
-        "line": 102,
+        "line": 105,
         "text": "lines = fs.readFileSync(ENV_PATH, 'utf8').split(/\\r?\\n/)"
       },
       {
         "file": "lib/index.js",
-        "line": 110,
+        "line": 113,
         "text": "fs.writeFileSync(ENV_PATH, kept.length === 0 ? '' : kept.join('\\n') + '\\n', 'utf8')"
       }
     ]
@@ -69,11 +69,11 @@
       {
         "file": "lib/index.js",
         "line": 26,
-        "text": "export const inject = ['tools', 'webServer']"
+        "text": "export const inject = ['tools', 'webServer', 'systemPrompt']"
       },
       {
         "file": "lib/index.js",
-        "line": 504,
+        "line": 518,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
@@ -88,12 +88,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 188,
+        "line": 191,
         "text": "const proc = spawn(bin, ['-nodisp', '-autoexit', '-loglevel', 'quiet', file], {"
       },
       {
         "file": "lib/index.js",
-        "line": 393,
+        "line": 413,
         "text": "const cropped = spawnSync("
       }
     ]
@@ -106,6 +106,7 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
+    "systemPrompt",
     "tools",
     "webServer"
   ],

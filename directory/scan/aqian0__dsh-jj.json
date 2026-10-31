@@ -1,41 +1,46 @@
 {
   "name": "@aqian0/dsh-jj",
-  "version": "0.4.0",
-  "scannedAt": "2026-10-30T23:38:24.662Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-10-31T22:51:46.124Z",
   "icon": "aqian0__dsh-jj.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/service.js",
-        "line": 551,
+        "line": 631,
         "text": "async fetch(cwd, signal) {"
       },
       {
         "file": "lib/service.js",
-        "line": 654,
+        "line": 734,
         "text": "* fails): fetch (skipped/ignored when there is no remote), resolve the target"
       },
       {
         "file": "lib/service.js",
-        "line": 710,
+        "line": 810,
         "text": ": await this.fetch(cwd, signal);"
       },
       {
         "file": "lib/tool-definitions.js",
         "line": 664,
         "text": "this Jujutsu (jj) workspace end to end: fetch (a repository without remotes is fine), resolve the integration target, rebase this workspace's whole change stack"
-      },
-      {
-        "file": "src/service.ts",
-        "line": 767,
-        "text": "async fetch(cwd: string, signal?: AbortSignal): Promise<JjFetchResult> {"
       }
     ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/changes.js",
+        "line": 44,
+        "text": "import { realpathSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/changes.js",
+        "line": 56,
+        "text": "export const inject = ['subprocess', 'fs', 'jj'];"
+      },
       {
         "file": "lib/detect.js",
         "line": 23,
@@ -50,16 +55,6 @@
         "file": "lib/guard.js",
         "line": 20,
         "text": "import { realpathSync } from 'node:fs';"
-      },
-      {
-        "file": "lib/multi-session.js",
-        "line": 34,
-        "text": "import { realpathSync } from 'node:fs';"
-      },
-      {
-        "file": "lib/service.js",
-        "line": 15,
-        "text": "import { realpathSync } from 'node:fs';"
       }
     ]
   },
@@ -73,12 +68,12 @@
       },
       {
         "file": "lib/guard.js",
-        "line": 915,
+        "line": 988,
         "text": "export const inject = ['tools', 'jj'];"
       },
       {
         "file": "lib/guard.js",
-        "line": 941,
+        "line": 1014,
         "text": "tools: ctx.tools,"
       },
       {
@@ -98,12 +93,7 @@
     "evidence": [
       {
         "file": "lib/jj-command.js",
-        "line": 187,
-        "text": "const handle = ctx.subprocess.spawn({"
-      },
-      {
-        "file": "src/jj-command.ts",
-        "line": 231,
+        "line": 190,
         "text": "const handle = ctx.subprocess.spawn({"
       }
     ]
@@ -116,6 +106,7 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
+    "fs",
     "jj",
     "subprocess",
     "tools",

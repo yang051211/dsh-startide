@@ -1,7 +1,7 @@
 {
   "name": "dsh-power-menu-mac",
-  "version": "0.1.2",
-  "scannedAt": "2026-10-29T14:01:41.380Z",
+  "version": "0.1.3",
+  "scannedAt": "2026-10-31T22:51:49.659Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,8 +18,18 @@
       },
       {
         "file": "lib/client.js",
-        "line": 212,
-        "text": "const response = await fetch(`/api/dsh-power-menu-mac/${mode}`, {"
+        "line": 312,
+        "text": "fetch('/api/dsh-power-menu-mac/config', { credentials: 'same-origin' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 330,
+        "text": "fetch('/api/dsh-power-menu-mac/bundles', { credentials: 'same-origin' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 430,
+        "text": "const response = await fetch(`/api/dsh-power-menu-mac/${endpoint}`, {"
       }
     ]
   },
@@ -77,12 +87,12 @@
       },
       {
         "file": "lib/helper.cjs",
-        "line": 588,
+        "line": 733,
         "text": "child = spawn(exe, relaunchArgs, {"
       },
       {
         "file": "lib/index.js",
-        "line": 21,
+        "line": 28,
         "text": "import { spawn } from 'node:child_process'"
       }
     ]
@@ -95,6 +105,7 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
+    "systemPrompt",
     "webServer"
   ],
   "setupHints": [],

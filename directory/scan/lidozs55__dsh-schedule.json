@@ -1,0 +1,83 @@
+{
+  "name": "@lidozs55/dsh-schedule",
+  "version": "0.3.0",
+  "scannedAt": "2026-10-31T22:51:55.596Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/schedule.js",
+        "line": 14,
+        "text": "import { request as httpRequest } from 'node:http'"
+      },
+      {
+        "file": "client.core.js",
+        "line": 286,
+        "text": "const doFetch = fetchImpl ?? ((...args) => globalThis.fetch(...args))"
+      },
+      {
+        "file": "host/api.js",
+        "line": 77,
+        "text": "async fetch(request) {"
+      },
+      {
+        "file": "host/cli-server.js",
+        "line": 20,
+        "text": "import { createServer } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/schedule.js",
+        "line": 13,
+        "text": "import { chmodSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/schedule.js",
+        "line": 49,
+        "text": "descriptor = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "bin/schedule.js",
+        "line": 126,
+        "text": "mkdirSync(directory, { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "bin/schedule.js",
+        "line": 128,
+        "text": "writeFileSync(file, JSON.stringify(catalog), { encoding: 'utf8', mode: 0o600 })"
+      },
+      {
+        "file": "bin/schedule.js",
+        "line": 135,
+        "text": "const value = JSON.parse(readFileSync(join(cliHome(), 'catalog.json'), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "storageDomain",
+    "systemPrompt"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

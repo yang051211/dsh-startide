@@ -1,0 +1,101 @@
+{
+  "name": "dsh-mnemo",
+  "version": "0.2.2",
+  "scannedAt": "2026-10-31T22:51:54.033Z",
+  "icon": "dsh-mnemo.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 35,
+        "text": "const res = await fetch('/dsh-mnemo/api/' + path, init)"
+      },
+      {
+        "file": "index.js",
+        "line": 110,
+        "text": "add('Steam++ 开着时 curl 报 TLS 错是正常的（自签证书本地反代），加 -k 或改用 Invoke-RestMethod；关掉后注意 hosts 里 127.0.0.1 残留。', 'pitfall')"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "} from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 47,
+        "text": "mkdirSync(DIR, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 49,
+        "text": "appendFileSync(LOG, line, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 51,
+        "text": "writeFileSync(LOG, line, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 76,
+        "text": "try { mkdirSync(DIR, { recursive: true }) } catch { /* ignore */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 446,
+        "text": "// DSH 的 tools.register() 只收已经编译好的 JSON Schema，不会像 defineTool() 那样"
+      },
+      {
+        "file": "index.js",
+        "line": 921,
+        "text": "export const inject = ['systemPrompt', 'tools', 'agents', 'timer', 'webServer']"
+      },
+      {
+        "file": "index.js",
+        "line": 946,
+        "text": "add(() => agent.ctx.tools.register(toolDefs[0]))"
+      },
+      {
+        "file": "index.js",
+        "line": 947,
+        "text": "add(() => agent.ctx.tools.register(toolDefs[1]))"
+      },
+      {
+        "file": "index.js",
+        "line": 948,
+        "text": "add(() => agent.ctx.tools.register(toolDefs[2]))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "systemPrompt",
+    "timer",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

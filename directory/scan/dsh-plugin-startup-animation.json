@@ -1,0 +1,105 @@
+{
+  "name": "dsh-plugin-startup-animation",
+  "version": "1.16.0",
+  "scannedAt": "2026-10-31T22:51:48.121Z",
+  "icon": "dsh-plugin-startup-animation.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 378,
+        "text": "fetch(MANAGE, { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 402,
+        "text": "return fetch(MANAGE, init)"
+      },
+      {
+        "file": "client.js",
+        "line": 487,
+        "text": "return fetch(`${UPDATE}${query}`, { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 711,
+        "text": "fetch(manualPoster, { method: 'HEAD', cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 1339,
+        "text": "fetch(MANAGE, { cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 56,
+        "text": "const raw = fs.readFileSync(new URL('./package.json', import.meta.url), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 94,
+        "text": "const raw = fs.readFileSync(path.join(packageRoot, 'package.json'), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 331,
+        "text": "/** @type {import('node:fs').Dirent[]} */"
+      },
+      {
+        "file": "index.js",
+        "line": 360,
+        "text": "meta = JSON.parse(fs.readFileSync(path.join(absDir, PET_PACK_FILE), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 1527,
+        "text": "child = spawn(command, shell ? [] : argv, {"
+      },
+      {
+        "file": "index.js",
+        "line": 1569,
+        "text": "const killer = spawn('taskkill', ['/pid', String(child.pid), '/T', '/F'], {"
+      },
+      {
+        "file": "lib/self-manage.mjs",
+        "line": 206,
+        "text": "* **Windows 上不能直接 spawn `.cmd`**：`spawn('pnpm.cmd', …)` 会抛 EINVAL"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

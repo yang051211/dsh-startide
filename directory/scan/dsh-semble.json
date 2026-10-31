@@ -1,0 +1,87 @@
+{
+  "name": "dsh-semble",
+  "version": "3.0.3",
+  "scannedAt": "2026-10-31T22:51:44.204Z",
+  "icon": "dsh-semble.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cli.js",
+        "line": 22,
+        "text": "import { closeSync, mkdtempSync, openSync, readFileSync, readSync, rmSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 261,
+        "text": "rmSync(dir, { recursive: true, force: true, maxRetries: 3, retryDelay: 100 })"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 278,
+        "text": "if (size <= CAPTURE_LIMIT_BYTES) return readFileSync(path, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 36,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 94,
+        "text": "return stripFrontmatter(readFileSync(SKILL_URL, 'utf8')).trim()"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 170,
+        "text": "ctx.tools.register(definition)"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 5,
+        "text": "* are registered directly into the host's tool registry (ctx.tools) and every"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cli.js",
+        "line": 11,
+        "text": "* sandboxed host refuse the spawn (EPERM on the named pipe), while file"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 21,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 137,
+        "text": "child = spawn(command, [...prefix, ...argv], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

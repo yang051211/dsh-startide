@@ -1,0 +1,83 @@
+{
+  "name": "dsh-brain-viewer",
+  "version": "0.3.0",
+  "scannedAt": "2026-10-31T22:51:48.413Z",
+  "icon": "dsh-brain-viewer.png",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "build.mjs",
+        "line": 7,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "build.mjs",
+        "line": 17,
+        "text": "const brainHtml = fs.readFileSync(brainHtmlPath, \"utf8\");"
+      },
+      {
+        "file": "build.mjs",
+        "line": 18,
+        "text": "const template = fs.readFileSync(templatePath, \"utf8\");"
+      },
+      {
+        "file": "build.mjs",
+        "line": 28,
+        "text": "fs.writeFileSync(outPath, out);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "import fs from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tools/rebuild.mjs",
+        "line": 16,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "tools/rebuild.mjs",
+        "line": 39,
+        "text": "const result = spawnSync(command, argv, { cwd, stdio: \"inherit\", shell: false });"
+      },
+      {
+        "file": "tools/watch.mjs",
+        "line": 16,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "tools/watch.mjs",
+        "line": 36,
+        "text": "const result = spawnSync(command, argv, { cwd, stdio: \"inherit\", shell: false });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
