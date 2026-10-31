@@ -1,0 +1,66 @@
+{
+  "name": "dsh-session-flags",
+  "version": "0.1.0",
+  "scannedAt": "2026-10-31T13:58:04.015Z",
+  "icon": "dsh-session-flags.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 2,
+        "text": "dy=JSON.stringify(t));let r;try{r=await fetch(e,n)}catch{throw new b(`network`,`The DSH host could not be reached (${e})`)}let i=null;try{i=await r.json()}catch"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 153,
+        "text": "* same-origin `fetch('/api/dsh-session-flags/...')` from the Client bundle is"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "import { mkdir, readFile, rename, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 278,
+        "text": "await mkdir(directory, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 280,
+        "text": "await writeFile(temporary, `${JSON.stringify(next, null, 2)}\\n`, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 285,
+        "text": "const raw = await readFile(this.file, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

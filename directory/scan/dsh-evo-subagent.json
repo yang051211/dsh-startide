@@ -1,0 +1,111 @@
+{
+  "name": "dsh-evo-subagent",
+  "version": "1.2.0",
+  "scannedAt": "2026-10-31T13:58:00.761Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/client.js",
+        "line": 248,
+        "text": "            var response = await fetch('/api/evo-subagent/persona' + (query ? '?' + query : ''), { method: body ? 'POST' : 'GET', credentials: 'same-origin', ca"
+      },
+      {
+        "file": "dsh/client.js",
+        "line": 340,
+        "text": "var response = await fetch('/api/evo-subagent/habits' + (selected ? '?target=' + encodeURIComponent(selected) : ''), {"
+      },
+      {
+        "file": "dsh/client.js",
+        "line": 471,
+        "text": "fetch('/evo-subagent/projects')"
+      },
+      {
+        "file": "dsh/client.js",
+        "line": 498,
+        "text": "fetch('/evo-subagent/config', {"
+      },
+      {
+        "file": "dsh/client.js",
+        "line": 515,
+        "text": "fetch('/evo-subagent/config', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bili-bridge.js",
+        "line": 3,
+        "text": "import { lstatSync, readFileSync, readdirSync } from 'node:fs'"
+      },
+      {
+        "file": "bili-bridge.js",
+        "line": 4,
+        "text": "import { mkdir, open, rename, unlink } from 'node:fs/promises'"
+      },
+      {
+        "file": "bili-bridge.js",
+        "line": 13,
+        "text": "return readFileSync(path, 'utf8')"
+      },
+      {
+        "file": "bili-bridge.js",
+        "line": 24,
+        "text": "await mkdir(dirname(path), { recursive: true })"
+      },
+      {
+        "file": "bili-bridge.js",
+        "line": 28,
+        "text": "await file.writeFile(JSON.stringify(value, null, 2) + '\\n'); await file.sync(); await file.close()"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "habits.js",
+        "line": 7,
+        "text": "export const inject = ['tools', 'systemPrompt']"
+      },
+      {
+        "file": "habits.js",
+        "line": 55,
+        "text": "ctx.tools.register(toolFactory({"
+      },
+      {
+        "file": "index.js",
+        "line": 5,
+        "text": "export const inject = ['tools', 'subagents', 'llm', 'workingDirectory']"
+      },
+      {
+        "file": "plugin.js",
+        "line": 588,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "subagents",
+    "systemPrompt",
+    "tools",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

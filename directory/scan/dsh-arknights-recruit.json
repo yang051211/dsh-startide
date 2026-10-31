@@ -1,0 +1,130 @@
+{
+  "name": "dsh-arknights-recruit",
+  "version": "0.1.0",
+  "scannedAt": "2026-10-31T13:58:02.413Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 204,
+        "text": "const post = (path, payload) => fetch(API + path, {"
+      },
+      {
+        "file": "client.js",
+        "line": 255,
+        "text": "const r = await fetch(API + '/api/status', { cache: 'no-store' });"
+      },
+      {
+        "file": "client.js",
+        "line": 261,
+        "text": "const r = await fetch(API + '/api/logs?since=' + logSeq, { cache: 'no-store' });"
+      },
+      {
+        "file": "index.js",
+        "line": 303,
+        "text": "const upstream = await fetch(sidecar.baseUrl + pathName);"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 39,
+        "text": "const res = await fetch(this.base + path, { ...init, signal: ac.signal });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/sidecar.js",
+        "line": 11,
+        "text": "import { existsSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 37,
+        "text": "export const inject = ['tools', 'webServer'];"
+      },
+      {
+        "file": "index.js",
+        "line": 120,
+        "text": "const tools = ctx && ctx.tools;"
+      },
+      {
+        "file": "index.js",
+        "line": 122,
+        "text": "log('ctx.tools 不可用，插件未注册任何工具（其余部分仍会加载）');"
+      },
+      {
+        "file": "index.js",
+        "line": 127,
+        "text": "tools.register(mkTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 147,
+        "text": "tools.register(mkTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/sidecar.js",
+        "line": 10,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/sidecar.js",
+        "line": 29,
+        "text": "const r = spawnSync(cmd, [...baseArgs, '-c', 'import sys;print(sys.version.split()[0])'],"
+      },
+      {
+        "file": "lib/sidecar.js",
+        "line": 54,
+        "text": "const r = spawnSync(python.cmd, [...python.args, '-c', code],"
+      },
+      {
+        "file": "lib/sidecar.js",
+        "line": 150,
+        "text": "this.child = spawn("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 44,
+      "text": "npm install -g dsh-arknights-recruit"
+    },
+    {
+      "file": "README.md",
+      "line": 54,
+      "text": "pip install -r \"$(npm root -g)/dsh-arknights-recruit/sidecar/requirements.txt\""
+    },
+    {
+      "file": "README.md",
+      "line": 147,
+      "text": "按提示执行 `pip install -r .../sidecar/requirements.txt`。"
+    }
+  ],
+  "skippedEntries": []
+}

@@ -1,0 +1,66 @@
+{
+  "name": "dsh-personal-system-rules",
+  "version": "0.5.0",
+  "scannedAt": "2026-10-31T13:58:05.089Z",
+  "icon": "dsh-personal-system-rules.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 130,
+        "text": "const response = await fetch(\"/api/\" + endpoint, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "file.js",
+        "line": 2,
+        "text": "import { mkdirSync, readFileSync, renameSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "file.js",
+        "line": 23,
+        "text": "const text = readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "file.js",
+        "line": 34,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "file.js",
+        "line": 37,
+        "text": "writeFileSync(tmp, text, 'utf8')"
+      },
+      {
+        "file": "file.js",
+        "line": 40,
+        "text": "try { unlinkSync(tmp) } catch { /* the temp file may already be gone */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

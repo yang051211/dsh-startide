@@ -1,7 +1,7 @@
 {
   "name": "dsh-gitnexus-plus",
-  "version": "0.1.10",
-  "scannedAt": "2026-10-28T14:05:36.058Z",
+  "version": "0.1.11",
+  "scannedAt": "2026-10-31T13:57:56.371Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -47,19 +47,19 @@
         "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
       },
       {
+        "file": "lib/bin/risk-helper.js",
+        "line": 18,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/bin/risk-helper.js",
+        "line": 34,
+        "text": "const text = await fs.readFile(requestArg, 'utf8');"
+      },
+      {
         "file": "lib/gitnexus/analyze.js",
         "line": 37,
         "text": "import { existsSync, mkdirSync, rmSync } from 'node:fs';"
-      },
-      {
-        "file": "lib/gitnexus/analyze.js",
-        "line": 179,
-        "text": "rmSync(path.join(repoPath, '.gitnexus', 'lbug.init.lock'), { force: true });"
-      },
-      {
-        "file": "lib/gitnexus/analyze.js",
-        "line": 232,
-        "text": "* which is `fs.rm(dir, { recursive: true, force: true })`. `force` only forgives a"
       }
     ]
   },
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 68,
+        "line": 75,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "lib/index.js",
-        "line": 345,
+        "line": 603,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 407,
+        "line": 665,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 512,
+        "line": 775,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 584,
+        "line": 847,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
@@ -103,7 +103,7 @@
       },
       {
         "file": "lib/gitnexus/git-capture.js",
-        "line": 206,
+        "line": 215,
         "text": "child = spawn('git', args, {"
       },
       {
@@ -137,7 +137,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 201,
+      "line": 242,
       "text": "npm install -g gitnexus"
     }
   ],

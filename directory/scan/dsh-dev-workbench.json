@@ -1,35 +1,35 @@
 {
   "name": "dsh-dev-workbench",
-  "version": "0.2.1",
-  "scannedAt": "2026-10-30T07:08:59.211Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-10-31T13:58:04.528Z",
   "icon": "dsh-dev-workbench.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 8704,
+        "line": 8860,
         "text": "{ group: \"诊断\", cmd: 'curl -o /dev/null -s -w \"%{http_code} %{time_total}s\\\\n\" <URL>', desc: \"只看状态码与耗时\" },"
       },
       {
         "file": "index.js",
-        "line": 3141,
+        "line": 12901,
+        "text": "  const response = await fetch(e.config.url + path, { method: body ? \"POST\" : \"GET\", headers, body: body ? JSON.stringify(body) : void 0, redirect: \"error\", sig"
+      },
+      {
+        "file": "index.js",
+        "line": 16203,
+        "text": "const response = await fetch(run.service.url, { method: \"HEAD\", redirect: \"manual\", signal: AbortSignal.timeout(1500) });"
+      },
+      {
+        "file": "index.js",
+        "line": 16392,
         "text": "const start = Date.now(), response = await fetch(url, { method, headers, body: body || void 0, signal, redirect: \"manual\" });"
       },
       {
         "file": "index.js",
-        "line": 3161,
+        "line": 16412,
         "text": "    const response = await fetch(session.url, { method: \"POST\", headers, body: JSON.stringify({ jsonrpc: \"2.0\", ...!notification ? { id } : {}, method, params }"
-      },
-      {
-        "file": "index.js",
-        "line": 3263,
-        "text": "const response = await fetch(session.url, { method: \"DELETE\", headers, signal: AbortSignal.timeout(5e3), redirect: \"manual\" });"
-      },
-      {
-        "file": "index.js",
-        "line": 3465,
-        "text": "      const response = await fetch(endpoint, { method: \"POST\", redirect: \"error\", headers: { \"Content-Type\": \"application/json\", ...process.env.AWB_EMBEDDING_TO"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 3,
-        "text": "import { readFileSync as readFileSync2, existsSync as existsSync2, statSync as statSync2, realpathSync } from \"node:fs\";"
+        "file": "bin/harness-linky.mjs",
+        "line": 6,
+        "text": "import { existsSync as existsSync2, readFileSync as readFileSync2, realpathSync } from \"node:fs\";"
       },
       {
-        "file": "index.js",
-        "line": 41,
-        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, statSync, writeFileSync } from \"node:fs\";"
+        "file": "bin/harness-linky.mjs",
+        "line": 11,
+        "text": "import { mkdirSync, readFileSync, writeFileSync, renameSync, existsSync, readdirSync as readdirSync2 } from \"node:fs\";"
       },
       {
-        "file": "index.js",
-        "line": 88,
-        "text": "const text = readFileSync(path, \"utf8\");"
+        "file": "bin/harness-linky.mjs",
+        "line": 23,
+        "text": "import { accessSync, constants, readdirSync, statSync } from \"node:fs\";"
       },
       {
-        "file": "index.js",
-        "line": 98,
-        "text": "mkdirSync(dir, { recursive: true });"
+        "file": "bin/harness-linky.mjs",
+        "line": 70,
+        "text": "mkdirSync(resolve(path, \"..\"), { recursive: true, mode: 448 });"
       },
       {
-        "file": "index.js",
-        "line": 100,
-        "text": "writeFileSync(temp, JSON.stringify(value, null, 2), \"utf8\");"
+        "file": "bin/harness-linky.mjs",
+        "line": 72,
+        "text": "writeFileSync(tmp, JSON.stringify(value, null, 2), { mode: 384 });"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 9712,
+        "line": 24171,
         "text": "return host.tools.register(definition);"
       }
     ]
@@ -77,24 +77,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "bin/harness-linky.mjs",
+        "line": 4,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "bin/harness-linky.mjs",
+        "line": 164,
+        "text": "acp = spawn(argv[0], argv.slice(1), { stdio: [\"pipe\", \"pipe\", \"pipe\"], env, detached: process.platform !== \"win32\" });"
+      },
+      {
         "file": "index.js",
-        "line": 2083,
+        "line": 15285,
         "text": "handle = subprocess.spawn({"
       },
       {
         "file": "index.js",
-        "line": 2985,
+        "line": 16235,
         "text": "  run.handle = subprocess.spawn({ argv: run.argv, cwd, stdio: { stdin: \"ignore\", stdout: { maxBytes: 64 * 1024 }, stderr: { maxBytes: 64 * 1024 } }, graceMs: 15"
       },
       {
         "file": "index.js",
-        "line": 3024,
-        "text": "    const handle = subprocess.spawn({ argv, cwd, stdio: { stdin: \"ignore\", stdout: { maxBytes: 4096 }, stderr: { maxBytes: 4096 } }, signal: controller.signal, "
-      },
-      {
-        "file": "index.js",
-        "line": 3887,
-        "text": "handle = subprocess.spawn({"
+        "line": 16275,
+        "text": "    const handle = subprocess.spawn({ argv, cwd, stdio: { stdin: \"ignore\", stdout: { maxBytes: 4096 }, stderr: { maxBytes: 4096 } }, signal: controller2.signal,"
       }
     ]
   },
@@ -102,9 +107,10 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
+  "dependencies": 5,
   "minifiedFiles": [
-    "client.js"
+    "client.js",
+    "index.js"
   ],
   "binaryFiles": [],
   "requiredServices": [],

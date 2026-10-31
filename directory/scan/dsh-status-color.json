@@ -1,0 +1,64 @@
+{
+  "name": "dsh-status-color",
+  "version": "0.4.0",
+  "scannedAt": "2026-10-31T13:58:02.626Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 264,
+        "text": "return fetch(RPC_BASE + '/' + method, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import { appendFileSync, mkdirSync, readFileSync, statSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 120,
+        "text": "const raw = readFileSync(configPath(), \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 135,
+        "text": "mkdirSync(join(dshHome(), PKG), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 136,
+        "text": "writeFileSync(configPath(), JSON.stringify(incoming, null, 2) + \"\\n\", \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 171,
+        "text": "writeFileSync(LOG_PATH, `${new Date().toISOString()} log rotated\\n`, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

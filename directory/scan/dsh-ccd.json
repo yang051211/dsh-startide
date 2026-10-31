@@ -1,0 +1,112 @@
+{
+  "name": "dsh-ccd",
+  "version": "0.1.2",
+  "scannedAt": "2026-10-31T13:58:04.936Z",
+  "icon": "dsh-ccd.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 326,
+        "text": "configTask ??= fetch(CONFIG_ROUTE, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 368,
+        "text": "void fetch(LOCALE_ROUTE, {"
+      },
+      {
+        "file": "client.js",
+        "line": 393,
+        "text": "return fetch(`${WARM_ROUTE}?sessionId=${encodeURIComponent(sessionId)}`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 409,
+        "text": "return fetch(WARM_ROUTE, {"
+      },
+      {
+        "file": "client.js",
+        "line": 971,
+        "text": "return fetch(LOCAL_ROUTE, { headers: { accept: 'application/json' } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 28,
+        "text": "import { mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 1424,
+        "text": "mkdirSync(dirname(notesPath()), { recursive: true })"
+      },
+      {
+        "file": "local.js",
+        "line": 18,
+        "text": "import { createReadStream, createWriteStream } from 'node:fs'"
+      },
+      {
+        "file": "local.js",
+        "line": 19,
+        "text": "import { mkdir, readdir, readFile, readlink, rename, rm, rmdir, stat, symlink, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "local.js",
+        "line": 268,
+        "text": "await mkdir(dirname(destination), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "local.js",
+        "line": 16,
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "local.js",
+        "line": 704,
+        "text": "execFile('tasklist', ['/FI', `PID eq ${pid}`, '/FO', 'CSV', '/NH'], { windowsHide: true }, (error, stdout) => {"
+      },
+      {
+        "file": "local.js",
+        "line": 857,
+        "text": "const child = spawn(exe, args, {"
+      },
+      {
+        "file": "test/local.mjs",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "test/local.mjs",
+        "line": 464,
+        "text": "const target = spawn(process.execPath, ['-e', 'setTimeout(() => {}, 30000)'], { stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,41 +1,67 @@
 {
   "name": "dsh-openrouter-plus",
-  "version": "0.2.4",
-  "scannedAt": "2026-10-29T14:01:29.582Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-10-31T13:57:56.176Z",
   "icon": "dsh-openrouter-plus.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 1743,
+        "line": 2774,
         "text": "return await fetch(url, Object.assign({}, init, { signal: controller.signal }));"
       },
       {
         "file": "client.js",
-        "line": 1829,
+        "line": 2869,
         "text": "const response = await fetch(origin + CONTROL_PREFIX + '/targets', {"
       },
       {
         "file": "client.js",
-        "line": 1874,
+        "line": 2914,
         "text": "const response = await fetch(origin + CONTROL_PREFIX + '/routes/' + kind, {"
       },
       {
         "file": "client.js",
-        "line": 1936,
+        "line": 2976,
         "text": "const response = await fetch(origin + CONTROL_PREFIX + '/targets', {"
       },
       {
         "file": "client.js",
-        "line": 1975,
+        "line": 3015,
         "text": "const response = await fetch(origin + CONTROL_PREFIX + '/tier/default', {"
       }
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/usage-store.js",
+        "line": 12,
+        "text": "import { mkdirSync, readFileSync, renameSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/usage-store.js",
+        "line": 13,
+        "text": "import { mkdir, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/usage-store.js",
+        "line": 72,
+        "text": "return decodeUsageStore(JSON.parse(readFileSync(path, 'utf8')))"
+      },
+      {
+        "file": "lib/usage-store.js",
+        "line": 105,
+        "text": "mkdirSync(dirname(path), { recursive: true })"
+      },
+      {
+        "file": "lib/usage-store.js",
+        "line": 106,
+        "text": "writeFileSync(temp, payload, { encoding: 'utf8', mode: 0o600 })"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,

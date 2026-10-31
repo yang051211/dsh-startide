@@ -1,19 +1,19 @@
 {
   "name": "dsh-app-updater",
-  "version": "1.2.0",
-  "scannedAt": "2026-10-31T07:05:30.979Z",
+  "version": "1.3.0",
+  "scannedAt": "2026-10-31T13:58:04.890Z",
   "icon": "dsh-app-updater.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 236,
+        "line": 241,
         "text": "const r = await fetch(url, { cache: \"no-store\", credentials: \"same-origin\" });"
       },
       {
         "file": "lib/client.js",
-        "line": 242,
+        "line": 247,
         "text": "const r = await fetch(url, {"
       },
       {
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/engine.js",
-        "line": 12,
-        "text": "import { mkdir, readdir, stat, readFile, rm } from \"node:fs/promises\";"
+        "file": "lib/elevate.js",
+        "line": 18,
+        "text": "import { existsSync } from \"node:fs\";"
       },
       {
-        "file": "lib/engine.js",
-        "line": 13,
-        "text": "import { lstatSync } from \"node:fs\";"
+        "file": "lib/elevate.js",
+        "line": 19,
+        "text": "import { mkdtemp, readFile, rm, writeFile } from \"node:fs/promises\";"
       },
       {
-        "file": "lib/engine.js",
-        "line": 463,
-        "text": "await mkdir(dir, { recursive: true });"
+        "file": "lib/elevate.js",
+        "line": 150,
+        "text": "await writeFile(helperFile, `\\ufeff${helper}`, \"utf8\");"
       },
       {
-        "file": "lib/engine.js",
-        "line": 525,
-        "text": "info = parseInstallerManifest(await readFile(manifest, \"utf8\"));"
+        "file": "lib/elevate.js",
+        "line": 151,
+        "text": "await writeFile(launchFile, `\\ufeff${launch}`, \"utf8\");"
       },
       {
-        "file": "lib/engine.js",
-        "line": 704,
-        "text": "rm(entry.installer, { force: true }).catch(() => {});"
+        "file": "lib/elevate.js",
+        "line": 153,
+        "text": "await rm(dir, { recursive: true, force: true }).catch(() => {});"
       }
     ]
   },
@@ -77,7 +77,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 278,
+        "line": 331,
         "text": "const child = spawn(explorer, [path], { detached: true, stdio: \"ignore\", windowsHide: false });"
       },
       {

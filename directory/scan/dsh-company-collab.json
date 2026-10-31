@@ -1,0 +1,125 @@
+{
+  "name": "dsh-company-collab",
+  "version": "1.4.0",
+  "scannedAt": "2026-10-31T13:57:56.050Z",
+  "icon": "dsh-company-collab.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1321,
+        "text": "response = await fetch(`${API}${path}`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 1504,
+        "text": "const response = await fetch(`${API}/groups/${encodeURIComponent(groupId)}/events`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 1583,
+        "text": "const response = await fetch(`${API}/company-events`, {"
+      },
+      {
+        "file": "index.js",
+        "line": 191,
+        "text": "response = await fetch(`${base}${apiPath}`, {"
+      },
+      {
+        "file": "index.js",
+        "line": 230,
+        "text": "response = await fetch(`${base}/api/groups/${encodeURIComponent(groupId)}/events`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 94,
+        "text": "const raw = fs.readFileSync(statePath(), 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 112,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 114,
+        "text": "fs.writeFileSync(temp, JSON.stringify(next, null, 2), 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 608,
+        "text": "fs.mkdirSync(path.dirname(target), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "export const inject = ['webServer', 'tools', 'systemPrompt'];"
+      },
+      {
+        "file": "index.js",
+        "line": 1408,
+        "text": "return ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "server/company-hub-server.mjs",
+        "line": 37,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "server/company-hub-server.mjs",
+        "line": 429,
+        "text": "const result = spawnSync('git', ['clone', repo, target], { encoding: 'utf8' });"
+      },
+      {
+        "file": "server/company-hub-server.mjs",
+        "line": 544,
+        "text": "const child = spawn(process.execPath, [cli, '--profile', 'headless', prompt], {"
+      },
+      {
+        "file": "server/company-hub-server.mjs",
+        "line": 743,
+        "text": "const result = spawnSync('unzip', ['-p', filePath, 'word/document.xml'], { encoding: 'utf8', maxBuffer: 20 * 1024 * 1024 });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

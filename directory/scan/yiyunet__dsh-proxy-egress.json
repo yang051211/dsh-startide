@@ -1,0 +1,112 @@
+{
+  "name": "@yiyunet/dsh-proxy-egress",
+  "version": "0.1.1",
+  "scannedAt": "2026-10-31T13:58:01.709Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin-src/host/proxy.mjs",
+        "line": 24,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "plugin-src/host/proxy.mjs",
+        "line": 25,
+        "text": "import https from 'node:https'"
+      },
+      {
+        "file": "plugin-src/host/rpc.mjs",
+        "line": 51,
+        "text": "async fetch(request) {"
+      },
+      {
+        "file": "plugin-src/host/verify.mjs",
+        "line": 13,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "plugin-src/host/verify.mjs",
+        "line": 68,
+        "text": "const req = http.request({"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin-src/host/credentials.mjs",
+        "line": 14,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "plugin-src/host/credentials.mjs",
+        "line": 47,
+        "text": "text = await readFile(filePath, 'utf8')"
+      },
+      {
+        "file": "plugin-src/host/index.mjs",
+        "line": 31,
+        "text": "import { mkdir, rm, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "plugin-src/host/index.mjs",
+        "line": 189,
+        "text": "await rm(parsed.value.credentialFile, { force: true })"
+      },
+      {
+        "file": "plugin-src/host/index.mjs",
+        "line": 354,
+        "text": "await mkdir(dirname(filePath), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin-src/host/index.mjs",
+        "line": 25,
+        "text": "*   `ctx.tools.register` 给的是模型工具，不是 shell 命令。若需要 `egress status` 这类"
+      },
+      {
+        "file": "plugin-src/host/index.mjs",
+        "line": 47,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "plugin-src/host/index.mjs",
+        "line": 417,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "plugin-src/host/index.mjs",
+        "line": 430,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "plugin-src/host/index.mjs",
+        "line": 444,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

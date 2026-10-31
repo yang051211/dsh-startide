@@ -1,0 +1,66 @@
+{
+  "name": "dsh-spirit",
+  "version": "0.1.1",
+  "scannedAt": "2026-10-31T13:58:03.128Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.js",
+        "line": 375,
+        "text": "response = await fetch(`${SPIRIT_RPC_ROUTE}/${shortMethod(endpoint)}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/db/open.js",
+        "line": 13,
+        "text": "import { mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/db/open.js",
+        "line": 51,
+        "text": "mkdirSync(dataDir, { recursive: true });"
+      },
+      {
+        "file": "dist/store/journal-retention.js",
+        "line": 13,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/store/journal-retention.js",
+        "line": 93,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "dist/store/journal-retention.js",
+        "line": 100,
+        "text": "writeFileSync(alt, deps.format === 'md' ? mdOf(deps.rows) : jsonlOf(deps.rows), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

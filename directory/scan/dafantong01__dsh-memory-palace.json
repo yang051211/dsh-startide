@@ -1,0 +1,106 @@
+{
+  "name": "@dafantong01/dsh-memory-palace",
+  "version": "0.1.1",
+  "scannedAt": "2026-10-31T13:58:00.635Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 164,
+        "text": "const res = await fetch(`${API}?sessionId=${encodeURIComponent(sessionId)}`)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 173,
+        "text": "const res2 = await fetch(`${API}?sessionId=${encodeURIComponent(sessionId)}&stats=1`)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 192,
+        "text": "const res = await fetch(API, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/archive.js",
+        "line": 1,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/archive.js",
+        "line": 30,
+        "text": "const buf = fs.readFileSync(logPath)"
+      },
+      {
+        "file": "lib/archive.js",
+        "line": 91,
+        "text": "fs.mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/archive.js",
+        "line": 97,
+        "text": "fs.appendFileSync(file, block, 'utf8')"
+      },
+      {
+        "file": "lib/archive.js",
+        "line": 223,
+        "text": "if (buf[0] !== 10) fs.appendFileSync(indexPath, '\\n', 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "/** Cordis 服务注入：不声明 inject，ctx.tools 会报 \"cannot get property tools without inject\"。 */"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "export const inject = ['tools', 'commands', 'webServer', 'agents', 'tokenMeter']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 327,
+        "text": "const globalTool = typeof ctx.tools.get === 'function' ? ctx.tools.get('palace_archive') : undefined"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 329,
+        "text": "visible = Boolean(ctx.tools.get('palace_archive', agent.ctx))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 330,
+        "text": "} else if (typeof ctx.tools.schemas === 'function') {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "commands",
+    "tokenMeter",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

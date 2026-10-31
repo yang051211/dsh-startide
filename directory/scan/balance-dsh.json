@@ -1,34 +1,34 @@
 {
   "name": "balance-dsh",
-  "version": "2.1.0",
-  "scannedAt": "2026-10-31T07:05:26.572Z",
+  "version": "2.1.4",
+  "scannedAt": "2026-10-31T13:57:55.885Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1405,
+        "line": 1646,
         "text": "const res = await fetch(balanceApiUrl(), { signal: controller.signal });"
       },
       {
         "file": "lib/client.js",
-        "line": 1416,
+        "line": 1657,
         "text": "const res = await fetch(balanceApiUrl());"
       },
       {
         "file": "lib/client.js",
-        "line": 1443,
+        "line": 1696,
         "text": "const res = await fetch(\"/balance-api?session=\" + encodeURIComponent(sessionId));"
       },
       {
         "file": "lib/client.js",
-        "line": 1457,
+        "line": 1710,
         "text": "const res = await fetch(\"/balance-api?session=\" + encodeURIComponent(sessionId));"
       },
       {
         "file": "lib/client.js",
-        "line": 1740,
+        "line": 2023,
         "text": "const res = await fetch(base + \"/\" + year + \".json\", { signal: AbortSignal.timeout(6000) });"
       }
     ]
@@ -43,22 +43,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 345,
+        "line": 371,
         "text": "const { readFile } = await import(\"node:fs/promises\");"
       },
       {
         "file": "lib/index.js",
-        "line": 346,
+        "line": 372,
         "text": "const parsed = JSON.parse(await readFile(cnCalendarState.file, \"utf8\"));"
       },
       {
         "file": "lib/index.js",
-        "line": 382,
+        "line": 408,
         "text": "const { mkdir, writeFile, rename } = await import(\"node:fs/promises\");"
       },
       {
         "file": "lib/index.js",
-        "line": 384,
+        "line": 410,
         "text": "await mkdir(dirname(file), { recursive: true });"
       }
     ]
@@ -68,8 +68,19 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1006,
+        "text": "const { spawn } = await import(\"node:child_process\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1020,
+        "text": "const child = spawn(nodeExe, args, { cwd: profileDir, env, windowsHide: true, stdio: [\"ignore\", \"pipe\", \"pipe\"] });"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

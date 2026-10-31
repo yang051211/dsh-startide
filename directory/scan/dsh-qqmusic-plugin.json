@@ -1,0 +1,133 @@
+{
+  "name": "dsh-qqmusic-plugin",
+  "version": "0.1.2",
+  "scannedAt": "2026-10-31T13:58:01.692Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/qqmusic.mjs",
+        "line": 45,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "src/qqmusic.mjs",
+        "line": 449,
+        "text": "const response = await fetch(playable.url, {"
+      },
+      {
+        "file": "src/wechat.mjs",
+        "line": 117,
+        "text": "const response = await fetch(`${String(io.reader_base_url).replace(/\\/$/, '')}/api/v1/sessions?limit=80`, {"
+      },
+      {
+        "file": "src/wechat.mjs",
+        "line": 156,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "tools/qq-login.mjs",
+        "line": 63,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 17,
+        "text": "import { existsSync, mkdirSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "index.mjs",
+        "line": 831,
+        "text": "mkdirSync(join(workDir), { recursive: true });"
+      },
+      {
+        "file": "src/log.mjs",
+        "line": 8,
+        "text": "import { appendFileSync, mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "src/log.mjs",
+        "line": 20,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "src/log.mjs",
+        "line": 28,
+        "text": "if (file !== undefined) appendFileSync(file, `${text}\\n`);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 32,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.mjs",
+        "line": 352,
+        "text": "const tools = ctx.get?.('tools') ?? ctx.tools;"
+      },
+      {
+        "file": "index.mjs",
+        "line": 375,
+        "text": "const disposers = definitions.map((definition) => tools.register(definition));"
+      },
+      {
+        "file": "index.mjs",
+        "line": 668,
+        "text": "const disposers = definitions.map((definition) => tools.register(definition));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/media.mjs",
+        "line": 8,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/media.mjs",
+        "line": 41,
+        "text": "const child = spawn(command, args, {"
+      },
+      {
+        "file": "tools/install.mjs",
+        "line": 23,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "tools/install.mjs",
+        "line": 157,
+        "text": "const result = spawnSync('npm', ['install', '--omit=dev', '--no-audit', '--no-fund'], {"
+      },
+      {
+        "file": "tools/lift-cookie.mjs",
+        "line": 14,
+        "text": "import { spawnSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

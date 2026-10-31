@@ -1,0 +1,100 @@
+{
+  "name": "@fishdivinity/dsh-local-search",
+  "version": "0.3.0",
+  "scannedAt": "2026-10-31T13:58:01.217Z",
+  "icon": "fishdivinity__dsh-local-search.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 743,
+        "text": "fetch(describeUrl(), { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 853,
+        "text": "const response = await fetch(`${api(STATUS_ROUTE)}?${params}`, { cache: 'no-store' });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 938,
+        "text": "response = await fetch(`${api(STATUS_ROUTE)}?${query}`, { cache: 'no-store' });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 967,
+        "text": "const response = await fetch(statusUrl(''), { cache: 'no-store' });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1084,
+        "text": "const response = await fetch(statusUrl(target, esPathDraft()), { cache: 'no-store' });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/everything.js",
+        "line": 2,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/roots.js",
+        "line": 1,
+        "text": "import { existsSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/route.js",
+        "line": 21,
+        "text": "import { existsSync, realpathSync, statSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "export const inject = ['tools', 'systemPrompt', 'workingDirectory']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 72,
+        "text": "const disposers = createTools(ctx, config).map((tool) => ctx.tools.register(tool))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/everything.js",
+        "line": 1,
+        "text": "import { spawn, execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/everything.js",
+        "line": 124,
+        "text": "child = spawn(executable, args, { windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

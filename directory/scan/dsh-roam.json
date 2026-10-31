@@ -1,0 +1,115 @@
+{
+  "name": "dsh-roam",
+  "version": "1.2.0",
+  "scannedAt": "2026-10-31T13:57:55.998Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge/cloudflared-tunnel.js",
+        "line": 5,
+        "text": "import { get as httpsGet } from 'node:https';"
+      },
+      {
+        "file": "lib/bridge/lan-mobile-bridge.js",
+        "line": 3,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "lib/bridge/lan-mobile-bridge.js",
+        "line": 1251,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "lib/bridge/lan-mobile-bridge.js",
+        "line": 1269,
+        "text": "const send = async (cookie) => fetch(url, {"
+      },
+      {
+        "file": "lib/bridge/lan-mobile-bridge.js",
+        "line": 1525,
+        "text": "const socket = new WebSocket(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge/acme-certificate.js",
+        "line": 3,
+        "text": "import { mkdir, readFile, rename, unlink, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/bridge/acme-certificate.js",
+        "line": 21,
+        "text": "const certificate = new X509Certificate(await readFile(path, 'utf8'));"
+      },
+      {
+        "file": "lib/bridge/acme-certificate.js",
+        "line": 134,
+        "text": "await mkdir(request.challengeDir, { recursive: true });"
+      },
+      {
+        "file": "lib/bridge/acme-certificate.js",
+        "line": 135,
+        "text": "await writeFile(join(request.challengeDir, challenge.token), keyAuthorization);"
+      },
+      {
+        "file": "lib/bridge/acme-certificate.js",
+        "line": 138,
+        "text": "await unlink(join(request.challengeDir, challenge.token)).catch(() => undefined);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge/acme-certificate.js",
+        "line": 2,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/bridge/cloudflared-tunnel.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/bridge/cloudflared-tunnel.js",
+        "line": 9,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/bridge/cloudflared-tunnel.js",
+        "line": 208,
+        "text": "const child = spawn(binaryPath, ['tunnel', '--url', `http://127.0.0.1:${port}`], {"
+      },
+      {
+        "file": "lib/bridge/pairing-pin-store.js",
+        "line": 2,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "sessions",
+    "typertGateway",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

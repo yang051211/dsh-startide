@@ -1,0 +1,106 @@
+{
+  "name": "dsh-memory-calendar",
+  "version": "1.0.0-beta.2",
+  "scannedAt": "2026-10-31T13:58:02.089Z",
+  "icon": "dsh-memory-calendar.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh-bundle/client.js",
+        "line": 389,
+        "text": "fetch('/api/memory-calendar/brains', { cache: 'no-store' })"
+      },
+      {
+        "file": "dsh-bundle/client.js",
+        "line": 406,
+        "text": "fetch('/api/memory-calendar/usage', { cache: 'no-store' })"
+      },
+      {
+        "file": "dsh-bundle/client.js",
+        "line": 420,
+        "text": "fetch(`/api/memory-calendar/summary${query}`, { cache: 'no-store' })"
+      },
+      {
+        "file": "dsh-bundle/client.js",
+        "line": 428,
+        "text": "const res = await fetch('/api/memory-calendar/brains', {"
+      },
+      {
+        "file": "dsh-bundle/client.js",
+        "line": 2261,
+        "text": "const res = await fetch('/api/memory-calendar/auto-status', { cache: 'no-store' });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh-bundle/index.js",
+        "line": 10,
+        "text": "import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "dsh-bundle/index.js",
+        "line": 79,
+        "text": "const data = JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "dsh-bundle/index.js",
+        "line": 359,
+        "text": "const buf = readFileSync(file);"
+      },
+      {
+        "file": "dsh-bundle/index.js",
+        "line": 390,
+        "text": "try { return JSON.parse(readFileSync(file, 'utf8')); } catch { return fallback; }"
+      },
+      {
+        "file": "dsh-bundle/index.js",
+        "line": 402,
+        "text": "data = JSON.parse(readFileSync(file, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh-bundle/index.js",
+        "line": 19,
+        "text": "export const inject = ['tools', 'workingDirectory', 'webServer', 'clientModules', 'sessions', 'timer', 'workspaceRegistry', 'sessionController'];"
+      },
+      {
+        "file": "dsh-bundle/index.js",
+        "line": 1742,
+        "text": "for (const tool of tools) disposers.push(ctx.tools.register(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh-bundle/index.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "dsh-bundle/index.js",
+        "line": 748,
+        "text": "const child = spawn(process.execPath, [file, ...args, '--root', root, '--session', sessionId, ...workspaceArgs], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

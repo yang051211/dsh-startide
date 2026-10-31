@@ -1,14 +1,14 @@
 {
   "name": "dsh-agent-vault",
-  "version": "2.0.2",
-  "scannedAt": "2026-10-30T23:38:33.002Z",
+  "version": "2.0.5",
+  "scannedAt": "2026-10-31T13:58:00.317Z",
   "icon": "dsh-agent-vault.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 755,
+        "line": 791,
         "text": "const response = await fetch(`${API}${path}`, { ...rest, redirect: 'error', signal: controller.signal })"
       },
       {
@@ -53,14 +53,20 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 233,
+        "line": 237,
         "text": "const register = (definition, label) => scoped.effect(() => scoped.tools.register(definition), label)"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "reveal.js",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

@@ -1,0 +1,128 @@
+{
+  "name": "dsh-plugin-office-fill-tool",
+  "version": "0.2.2",
+  "scannedAt": "2026-10-31T13:58:02.362Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 3,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 4,
+        "text": "import { mkdir, readFile, unlink } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 30,
+        "text": "await mkdir(outputDir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 84,
+        "text": "text = await readFile(resultFile, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 107,
+        "text": "await unlink(resultFile)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 130,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 181,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 38,
+        "text": "child = spawn(EXE_PATH, ["
+      },
+      {
+        "file": "index.js",
+        "line": 116,
+        "text": "const child = spawn(EXE_PATH, [], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "bin/_internal/_asyncio.pyd",
+    "bin/_internal/_bz2.pyd",
+    "bin/_internal/_ctypes.pyd",
+    "bin/_internal/_decimal.pyd",
+    "bin/_internal/_elementtree.pyd",
+    "bin/_internal/_hashlib.pyd",
+    "bin/_internal/_lzma.pyd",
+    "bin/_internal/_multiprocessing.pyd",
+    "bin/_internal/_overlapped.pyd",
+    "bin/_internal/_queue.pyd",
+    "bin/_internal/_socket.pyd",
+    "bin/_internal/_ssl.pyd",
+    "bin/_internal/_tkinter.pyd",
+    "bin/_internal/_wmi.pyd",
+    "bin/_internal/_zstd.pyd",
+    "bin/_internal/libcrypto-3.dll",
+    "bin/_internal/libffi-8.dll",
+    "bin/_internal/libssl-3.dll",
+    "bin/_internal/lxml/_elementpath.cp314-win_amd64.pyd",
+    "bin/_internal/lxml/builder.cp314-win_amd64.pyd",
+    "bin/_internal/lxml/etree.cp314-win_amd64.pyd",
+    "bin/_internal/lxml/html/_difflib.cp314-win_amd64.pyd",
+    "bin/_internal/lxml/html/diff.cp314-win_amd64.pyd",
+    "bin/_internal/lxml/objectify.cp314-win_amd64.pyd",
+    "bin/_internal/lxml/sax.cp314-win_amd64.pyd",
+    "bin/_internal/pyexpat.pyd",
+    "bin/_internal/python314.dll",
+    "bin/_internal/select.pyd",
+    "bin/_internal/tcl86t.dll",
+    "bin/_internal/tk86t.dll",
+    "bin/_internal/unicodedata.pyd",
+    "bin/_internal/VCRUNTIME140_1.dll",
+    "bin/_internal/VCRUNTIME140.dll",
+    "bin/_internal/zlib1.dll",
+    "bin/office fill tool.exe"
+  ],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

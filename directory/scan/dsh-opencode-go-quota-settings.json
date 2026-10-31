@@ -1,19 +1,34 @@
 {
   "name": "dsh-opencode-go-quota-settings",
-  "version": "0.1.1",
-  "scannedAt": "2026-10-30T07:08:59.429Z",
+  "version": "0.3.1",
+  "scannedAt": "2026-10-31T13:58:02.762Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 179,
-        "text": "const res = await fetch(ROUTE, { cache: \"no-store\" });"
+        "line": 969,
+        "text": "const res = await fetch(ROUTE + (force ? \"?refresh=1\" : \"\"), { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1036,
+        "text": "fetch(url, { cache: \"no-store\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1209,
+        "text": "const res = await fetch(MODELS_ROUTE + \"?refresh=1\", { cache: \"no-store\" });"
       },
       {
         "file": "lib/index.js",
-        "line": 147,
+        "line": 344,
+        "text": "const res = await fetch(`${baseUrl.replace(/\\/+$/, \"\")}/v1/models`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 550,
         "text": "const res = await fetch(`${baseUrl.replace(/\\/+$/, \"\")}/v1/usage`, {"
       }
     ]

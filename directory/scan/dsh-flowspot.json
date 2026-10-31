@@ -1,0 +1,121 @@
+{
+  "name": "dsh-flowspot",
+  "version": "0.6.14",
+  "scannedAt": "2026-10-31T13:58:01.435Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 26,
+        "text": "const res = await fetch(path, {"
+      },
+      {
+        "file": "extension/background.js",
+        "line": 97,
+        "text": "const response = await fetch(hostBase + path, {"
+      },
+      {
+        "file": "extension/background.js",
+        "line": 293,
+        "text": "const response = await fetch(`${hostBase}/dsh-flowspot/bridge/poll?wait=20000`, {"
+      },
+      {
+        "file": "extension/background.js",
+        "line": 343,
+        "text": "const response = await fetch(`${origin}/dsh-flowspot/status`, {"
+      },
+      {
+        "file": "extension/content.js",
+        "line": 19,
+        "text": "const response = await fetch('/dsh-flowspot/status')"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cdp/launch.js",
+        "line": 15,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/cdp/launch.js",
+        "line": 34,
+        "text": "const raw = JSON.parse(fs.readFileSync(cdpPointerFile(), 'utf8'))"
+      },
+      {
+        "file": "lib/cdp/launch.js",
+        "line": 56,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/cdp/launch.js",
+        "line": 57,
+        "text": "fs.writeFileSync(file, `${JSON.stringify(pointer, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "lib/cdp/launch.js",
+        "line": 62,
+        "text": "fs.unlinkSync(cdpPointerFile())"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tools.js",
+        "line": 826,
+        "text": "const tools = ctx.tools"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 829,
+        "text": "const dispose = tools.register(definition)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cdp/launch.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/cdp/launch.js",
+        "line": 191,
+        "text": "const child = spawn(systemBin('taskkill.exe'), ['/PID', String(pid), '/T', '/F'], { stdio: 'ignore', windowsHide: true })"
+      },
+      {
+        "file": "lib/cdp/launch.js",
+        "line": 224,
+        "text": "const child = spawn(exe.path, buildLaunchArgs({ profileDir, proxyPort }), {"
+      },
+      {
+        "file": "lib/certstore.js",
+        "line": 9,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/certstore.js",
+        "line": 14,
+        "text": "execFile(cmd, args, { windowsHide: true, timeout: 30000 }, (err, stdout, stderr) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

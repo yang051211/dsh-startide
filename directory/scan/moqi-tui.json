@@ -1,14 +1,14 @@
 {
   "name": "moqi-tui",
-  "version": "0.5.0",
-  "scannedAt": "2026-10-26T10:06:34.034Z",
+  "version": "0.5.1",
+  "scannedAt": "2026-10-31T13:58:03.740Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 4090,
+        "line": 4105,
         "text": "const response = await fetch(`${stripTrailingSlashes(registry)}/${packageName}`);"
       }
     ]
@@ -23,12 +23,12 @@
       },
       {
         "file": "bin/moqi.mjs",
-        "line": 29,
+        "line": 30,
         "text": "const { name } = JSON.parse(readFileSync(resolve(root, 'package.json'), 'utf8'))"
       },
       {
         "file": "bin/moqi.mjs",
-        "line": 51,
+        "line": 52,
         "text": "const { version } = JSON.parse(readFileSync(resolve(root, 'package.json'), 'utf8'))"
       },
       {
@@ -48,12 +48,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 1323,
+        "line": 1337,
         "text": "registered = memoryTools(() => tab.memory).map((tool) => tools.register(tool));"
       },
       {
         "file": "lib/permissions.js",
-        "line": 70,
+        "line": 71,
         "text": "* Harness packages (`ctx.tools.register(defineTool({ name }))` in each"
       }
     ]
@@ -78,13 +78,13 @@
       },
       {
         "file": "lib/git-workspace.js",
-        "line": 21,
+        "line": 22,
         "text": "import { execFile } from 'node:child_process';"
       },
       {
         "file": "lib/git-workspace.js",
-        "line": 51,
-        "text": "execFile('git', ['-C', cwd, ...args], { encoding: 'utf8', maxBuffer: 4 * 1024 * 1024 }, (error, stdout, stderr) => {"
+        "line": 86,
+        "text": "execFile(gitBinary(), ['-C', cwd, ...args], { encoding: 'utf8', maxBuffer: 4 * 1024 * 1024 }, (error, stdout, stderr) => {"
       }
     ]
   },
@@ -101,12 +101,6 @@
     "cmdlineArgs",
     "sessions"
   ],
-  "setupHints": [
-    {
-      "file": "README.md",
-      "line": 80,
-      "text": "npm install -g moqi-tui"
-    }
-  ],
+  "setupHints": [],
   "skippedEntries": []
 }

@@ -1,7 +1,7 @@
 {
   "name": "dsh-locale-russian",
-  "version": "0.6.2",
-  "scannedAt": "2026-10-30T23:38:20.236Z",
+  "version": "0.7.2",
+  "scannedAt": "2026-10-31T13:57:53.125Z",
   "icon": "dsh-locale-russian.svg",
   "network": {
     "hit": true,
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
+        "file": "bin/desktop-install.mjs",
         "line": 14,
-        "text": "import { chmodSync, copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'"
+        "text": "import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, writeFileSync } from 'node:fs'"
       },
       {
-        "file": "lib/index.js",
-        "line": 147,
-        "text": "writeFileSync(join(tempDir, archiveName), archive)"
+        "file": "bin/desktop-install.mjs",
+        "line": 34,
+        "text": "manifest = JSON.parse(readFileSync(path, 'utf8'))"
       },
       {
-        "file": "lib/index.js",
-        "line": 153,
-        "text": "mkdirSync(dirname(binaryPath), { recursive: true })"
+        "file": "bin/desktop-install.mjs",
+        "line": 77,
+        "text": "writeFileSync(temporary, content)"
       },
       {
-        "file": "lib/index.js",
-        "line": 161,
-        "text": "rmSync(tempDir, { recursive: true, force: true })"
+        "file": "bin/desktop-install.mjs",
+        "line": 85,
+        "text": "mkdirSync(backupDir, { recursive: true })"
       },
       {
-        "file": "lib/index.js",
-        "line": 227,
-        "text": "mkdirSync(dirname(hotwordsFile), { recursive: true })"
+        "file": "bin/desktop-install.mjs",
+        "line": 187,
+        "text": "version = JSON.parse(readFileSync(installed, 'utf8')).version"
       }
     ]
   },
@@ -82,29 +82,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "bin/desktop-install.mjs",
+        "line": 13,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "bin/desktop-install.mjs",
+        "line": 116,
+        "text": "const onPath = spawnSync('pnpm', ['--version'], { encoding: 'utf8' })"
+      },
+      {
+        "file": "bin/desktop-install.mjs",
+        "line": 124,
+        "text": "const result = spawnSync(pnpm.command, [...pnpm.args, 'install', '--no-frozen-lockfile'], {"
+      },
+      {
         "file": "bin/dsh-locale-russian-install.mjs",
-        "line": 12,
+        "line": 21,
         "text": "import { spawnSync } from 'node:child_process'"
       },
       {
         "file": "bin/dsh-locale-russian-install.mjs",
-        "line": 27,
+        "line": 75,
         "text": "const result = spawnSync('sh', [script], { stdio: 'inherit' })"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 13,
-        "text": "import { spawn, spawnSync } from 'node:child_process'"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 148,
-        "text": "const untar = spawnSync('tar', ['-xzf', archiveName], { cwd: tempDir, encoding: 'utf8' })"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 156,
-        "text": "const probe = spawnSync(binaryPath, ['--version'], { encoding: 'utf8' })"
       }
     ]
   },

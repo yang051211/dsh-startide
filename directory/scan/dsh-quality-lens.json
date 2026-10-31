@@ -1,0 +1,71 @@
+{
+  "name": "dsh-quality-lens",
+  "version": "0.1.2",
+  "scannedAt": "2026-10-31T13:57:58.525Z",
+  "icon": "dsh-quality-lens.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 204,
+        "text": "fetch(`/api/dsh-quality-lens/report?messageId=${encodeURIComponent(messageId)}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 236,
+        "text": "fetch(`/api/dsh-quality-lens/report?messageId=${encodeURIComponent(messageId)}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 10,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 114,
+        "text": "fs.mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 115,
+        "text": "fs.appendFileSync(file, `${redactSecrets(JSON.stringify(value))}\\n`, 'utf8')"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 131,
+        "text": "text = fs.readFileSync(reportsFile, 'utf8')"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 156,
+        "text": "fs.writeFileSync(reportsFile, `${safeLines.join('\\n')}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

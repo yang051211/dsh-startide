@@ -1,0 +1,115 @@
+{
+  "name": "dsh-tentacle",
+  "version": "0.1.0",
+  "scannedAt": "2026-10-31T13:58:04.135Z",
+  "icon": "dsh-tentacle.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 247,
+        "text": "const response = await fetch(path, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 303,
+        "text": "const response = await fetch(`/tentacle/frame?w=${frameWidth()}&q=55&_=${Date.now()}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 354,
+        "text": "const response = await fetch('/tentacle/state', { cache: 'no-store' });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 332,
+        "text": "fs.mkdirSync(FRAME_DIR, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 343,
+        "text": "fs.unlinkSync(path.join(FRAME_DIR, oldest.name));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 630,
+        "text": "fs.writeFileSync(file, Buffer.from(entry.b64, 'base64'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 322,
+        "text": "export const inject = ['tools', 'webServer', 'connection'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 541,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 664,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 756,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 823,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 74,
+        "text": "/** @type {import('node:child_process').ChildProcess | null} */"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 121,
+        "text": "proc = spawn(exe, [HELPER_PATH], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

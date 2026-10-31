@@ -1,0 +1,82 @@
+{
+  "name": "dsh-web-login",
+  "version": "0.1.1",
+  "scannedAt": "2026-10-31T13:58:02.417Z",
+  "icon": "dsh-web-login.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 70,
+        "text": "response = await fetch(path, {"
+      },
+      {
+        "file": "lib/gateway.js",
+        "line": 2,
+        "text": "import http from \"node:http\";"
+      },
+      {
+        "file": "lib/gateway.js",
+        "line": 3,
+        "text": "import https from \"node:https\";"
+      },
+      {
+        "file": "lib/page.js",
+        "line": 229,
+        "text": "fetch('/api/web-login/login', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/gateway.js",
+        "line": 1,
+        "text": "import { readFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/gateway.js",
+        "line": 54,
+        "text": "readFile(config.tls.certFile, \"utf8\"),"
+      },
+      {
+        "file": "lib/gateway.js",
+        "line": 55,
+        "text": "readFile(config.tls.keyFile, \"utf8\")"
+      },
+      {
+        "file": "lib/preferences.js",
+        "line": 1,
+        "text": "import { readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/preferences.js",
+        "line": 38,
+        "text": "text = readFileSync(file, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js",
+    "lib/page.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

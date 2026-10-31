@@ -1,20 +1,20 @@
 {
   "name": "@chushiz/dsh-archive-manager",
-  "version": "0.6.3",
-  "scannedAt": "2026-10-26T10:11:26.434Z",
+  "version": "0.11.0",
+  "scannedAt": "2026-10-31T13:57:59.022Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 140,
-        "text": "return fetch(path, body ? {"
+        "line": 278,
+        "text": "return fetch(path, init).then(async (r) => {"
       },
       {
         "file": "src/client/index.js",
-        "line": 126,
-        "text": "return fetch(path, body ? { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) } : undefined)"
+        "line": 192,
+        "text": "return fetch(path, init)"
       }
     ]
   },
@@ -22,24 +22,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 32,
-        "text": "\"fs\","
-      },
-      {
-        "file": "lib/index.js",
-        "line": 463,
-        "text": "const commandLine = \"node -e \\\"require('fs').rmSync(process.argv[1],{recursive:true,force:true})\\\" \" + JSON.stringify(dir);"
+        "file": "src/index.js",
+        "line": 16,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';"
       },
       {
         "file": "src/index.js",
-        "line": 21,
+        "line": 49,
         "text": "export const inject = ['sessionPersistence', 'workspaceRegistry', 'fs', 'shell', 'sessionQuery'];"
       },
       {
         "file": "src/index.js",
-        "line": 477,
-        "text": "const script = \"require('fs').rmSync(process.argv[1],{recursive:true,force:true})\";"
+        "line": 292,
+        "text": "const data = JSON.parse(await readFile(graceFile(), 'utf8'));"
+      },
+      {
+        "file": "src/index.js",
+        "line": 307,
+        "text": "await mkdir(graceDir(), { recursive: true });"
+      },
+      {
+        "file": "src/index.js",
+        "line": 309,
+        "text": "await writeFile(temporary, payload, 'utf8');"
       }
     ]
   },

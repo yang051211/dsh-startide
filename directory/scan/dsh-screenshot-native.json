@@ -1,0 +1,111 @@
+{
+  "name": "dsh-screenshot-native",
+  "version": "1.0.0",
+  "scannedAt": "2026-10-31T13:58:00.472Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 153,
+        "text": "const res = await fetch(PREFIX + path, Object.assign("
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 178,
+        "text": "mkdirSync(WORK_DIR, { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 278,
+        "text": "appendFileSync("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 291,
+        "text": "const message = readFileSync(errFile, 'utf8').trim()"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 292,
+        "text": "rmSync(errFile, { force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 27,
+        "text": "// later, so ctx.tools was still undefined when the tools tried to register (observed 2026-10-19)."
+      },
+      {
+        "file": "lib/index.js",
+        "line": 28,
+        "text": "export const inject = ['webServer', 'tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 389,
+        "text": "const tools = ctx.tools ?? (typeof ctx.get === 'function' ? ctx.get('tools') : undefined)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 391,
+        "text": "tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 463,
+        "text": "tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 17,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 126,
+        "text": "const child = spawn("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 257,
+        "text": "child = spawn(NATIVE_EXE, ['--trigger', '--hide-pid', String(process.ppid), '--hide-exe', process.execPath, '--out', out], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "bin/WeChatShot.exe"
+  ],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

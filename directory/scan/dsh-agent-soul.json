@@ -1,0 +1,136 @@
+{
+  "name": "dsh-agent-soul",
+  "version": "0.4.2",
+  "scannedAt": "2026-10-31T13:58:00.936Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 309,
+        "text": "// fetch('http://127.0.0.1:PORT/api/soul/persona', {method:'POST',...}) 就能改写她的魂。"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 203,
+        "text": "return fetch(API + path, { cache: 'no-store' }).then(readJson)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 206,
+        "text": "return fetch(API + path, {"
+      },
+      {
+        "file": "lib/client/api.js",
+        "line": 20,
+        "text": "return fetch(API + path, { cache: 'no-store' }).then(readJson)"
+      },
+      {
+        "file": "lib/client/api.js",
+        "line": 23,
+        "text": "return fetch(API + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 27,
+        "text": "import { readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 857,
+        "text": "const bytes = readFileSync(join(ASSETS_DIR, name))"
+      },
+      {
+        "file": "lib/diary.js",
+        "line": 33,
+        "text": "import { appendFileSync, readdirSync, statSync, unlinkSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/diary.js",
+        "line": 256,
+        "text": "appendFileSync(diaryJsonlPath(dateKey), JSON.stringify(entry) + '\\n', 'utf8')"
+      },
+      {
+        "file": "lib/diary.js",
+        "line": 914,
+        "text": "unlinkSync(join(dir, file))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/diary.js",
+        "line": 949,
+        "text": "* 实测：工具不在 agent 或会话里，而在宿主平面的 ctx.tools 注册表，每步由"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 52,
+        "text": "/** 声明式依赖：没有 inject，读 ctx.systemPrompt / ctx.tools 会直接抛。 */"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 53,
+        "text": "export const inject = ['systemPrompt', 'tools', 'webServer']"
+      },
+      {
+        "file": "lib/tool.js",
+        "line": 69,
+        "text": "const dispose = tools.register({"
+      },
+      {
+        "file": "lib/tool.js",
+        "line": 250,
+        "text": "const dispose = tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 26,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 225,
+        "text": "child = spawn(cmd, args, { windowsHide: true })"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 404,
+        "text": "spawn(cmd, args, { detached: true, stdio: 'ignore' }).unref()"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 268,
+      "text": "git clone https://github.com/danshuyue/dsh-agent-soul.git \"<DSH_HOME>/plugins/dsh-agent-soul\""
+    }
+  ],
+  "skippedEntries": []
+}

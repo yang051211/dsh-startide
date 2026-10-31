@@ -1,0 +1,77 @@
+{
+  "name": "@windypro-rourou/dsh-auto-continue",
+  "version": "0.2.3",
+  "scannedAt": "2026-10-31T13:58:03.577Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 248,
+        "text": "const res = await fetch(API, { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 255,
+        "text": "const r2 = await fetch(API_EVENTS + \"?limit=300\", { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 301,
+        "text": "const res = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 12,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 221,
+        "text": "const text = await readFile(eventLogPath(), 'utf8');"
+      },
+      {
+        "file": "lib/eventlog.js",
+        "line": 8,
+        "text": "import { appendFile, mkdir, readFile, stat, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/eventlog.js",
+        "line": 41,
+        "text": "await mkdir(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/eventlog.js",
+        "line": 48,
+        "text": "const text = await readFile(file, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

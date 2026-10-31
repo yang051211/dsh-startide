@@ -1,0 +1,67 @@
+{
+  "name": "qq-memory",
+  "version": "0.1.0",
+  "scannedAt": "2026-10-31T13:58:01.504Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/memory-store.js",
+        "line": 12,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/memory-store.js",
+        "line": 41,
+        "text": "const raw = fs.readFileSync(this.file, 'utf8');"
+      },
+      {
+        "file": "lib/memory-store.js",
+        "line": 56,
+        "text": "fs.mkdirSync(this.dir, { recursive: true });"
+      },
+      {
+        "file": "lib/memory-store.js",
+        "line": 58,
+        "text": "fs.writeFileSync(tmp, JSON.stringify({ version: VERSION, updatedAt: Date.now(), memories: this.memories }, null, 2), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 22,
+        "text": "export const inject = ['systemPrompt', 'tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 165,
+        "text": "ctx.tools.register(def);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

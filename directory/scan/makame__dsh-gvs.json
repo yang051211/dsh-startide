@@ -1,14 +1,14 @@
 {
   "name": "@makame/dsh-gvs",
-  "version": "2.6.2",
-  "scannedAt": "2026-10-30T23:38:29.668Z",
+  "version": "2.8.0",
+  "scannedAt": "2026-10-31T13:57:58.100Z",
   "icon": "makame__dsh-gvs.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "v3/runtime.js",
-        "line": 801,
+        "line": 945,
         "text": " let occupied=false;try{const res=await fetch(url,{signal:AbortSignal.timeout(700)});await res.body?.cancel();occupied=true;}catch{}if(occupied)throw new Error("
       }
     ]
@@ -27,19 +27,19 @@
         "text": "=null;try{const pkg=JSON.parse(await fs.readFile(path.join(path.dirname(resolved.modulePath),'package.json'),'utf8'));packageName=pkg.name??null;packageVersion="
       },
       {
-        "file": "v3/coordinator.js",
-        "line": 12,
-        "text": "export const inject=['agents','agentTeams','tools','workingDirectory','fs','sessionProjections','systemPrompt'];"
+        "file": "v3/checkpoint.js",
+        "line": 2,
+        "text": "import fs from 'node:fs/promises';"
       },
       {
-        "file": "v3/recovery-host.js",
-        "line": 3,
-        "text": "export const inject=['sessionPersistence','sessionController','fs'];"
+        "file": "v3/checkpoint.js",
+        "line": 20,
+        "text": "try{await fs.access(path.join(dir,'HEAD'));}catch{await fs.mkdir(dir,{recursive:true});await run(['init','--quiet'],signal);}"
       },
       {
-        "file": "v3/runtime.js",
-        "line": 22,
-        "text": " inject=['tools','agentTeams','agents','sessionController','subagents','fs','workingDirectory','sandboxPolicy','attachments','llm','jobs','sessionProjections'];"
+        "file": "v3/checkpoint.js",
+        "line": 21,
+        "text": "await fs.mkdir(path.join(dir,'info'),{recursive:true});await fs.writeFile(path.join(dir,'info','exclude'),EXCLUDE.join('\\n')+'\\n');"
       }
     ]
   },
@@ -53,12 +53,12 @@
       },
       {
         "file": "v3/coordinator.js",
-        "line": 61,
-        "text": ":101,text:({scope})=>{const description=ctx.tools.get('read',scope)?.parameters?.properties?.limit?.description??'Use the configured Native read default.';retur"
+        "line": 62,
+        "text": "nGvs(scope))return '';const description=ctx.tools.get('read',scope)?.parameters?.properties?.limit?.description??'Use the configured Native read default.';retur"
       },
       {
         "file": "v3/models-host.js",
-        "line": 46,
+        "line": 47,
         "text": "   const restored=await root.ctx.tools.execute({callId:randomUUID(),agent:root,signal:AbortSignal.timeout(120000),name:'gvs_recover',arguments:{reason:'model-ch"
       },
       {
@@ -68,14 +68,25 @@
       },
       {
         "file": "v3/runtime.js",
-        "line": 22,
+        "line": 26,
         "text": "export const inject=['tools','agentTeams','agents','sessionController','subagents','fs','workingDirectory','sandboxPolicy','attachments','llm','jobs','sessionPr"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "v3/checkpoint.js",
+        "line": 3,
+        "text": "import {execFile} from 'node:child_process';"
+      },
+      {
+        "file": "v3/checkpoint.js",
+        "line": 15,
+        "text": "execFile(git,[...GIT_CONFIG,...args],{cwd,env,signal,timeout:timeoutMs,maxBuffer:64*1024*1024,windowsHide:true},(error,stdout,stderr)=>{"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
@@ -100,7 +111,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 263,
+      "line": 295,
       "text": "Это плагин Harness, поэтому обычное `npm install -g @makame/dsh-gvs` само по себе не подключает его к профилю. Установка через Plugin Manager сохраняется после "
     }
   ],

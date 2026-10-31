@@ -1,0 +1,95 @@
+{
+  "name": "@notoonex/dsh-project-board",
+  "version": "0.1.1",
+  "scannedAt": "2026-10-31T13:58:00.866Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 21,
+        "text": "const res = await fetch(`${base}/api/health`, { signal: controller.signal });"
+      },
+      {
+        "file": "client/client.js",
+        "line": 277,
+        "text": "const res = await fetch(`${base}/api/board${q}`, { headers: authHeaders() });"
+      },
+      {
+        "file": "client/client.js",
+        "line": 294,
+        "text": "const res = await fetch(`${base}/api/decisions${q}`, { headers: authHeaders() });"
+      },
+      {
+        "file": "client/client.js",
+        "line": 381,
+        "text": "const res = await fetch(`${base}/api/toggle`, {"
+      },
+      {
+        "file": "server/server.mjs",
+        "line": 1,
+        "text": "import http from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "fs.mkdirSync(STATE_DIR, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 28,
+        "text": "fs.writeFileSync(TOKEN_FILE, crypto.randomBytes(32).toString('hex'), { mode: 0o600, flag: 'wx' });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 33,
+        "text": "try { return fs.readFileSync(TOKEN_FILE, 'utf8').trim(); } catch { return ''; }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 38,
+        "text": "const src = fs.readFileSync(CLIENT, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 125,
+        "text": "child = spawn(process.execPath, [SERVER], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

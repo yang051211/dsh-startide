@@ -1,0 +1,55 @@
+{
+  "name": "@deepwhale-cn/dsh-csv-lab",
+  "version": "0.1.0",
+  "scannedAt": "2026-10-31T13:58:02.756Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 4,
+        "text": "import { existsSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 3,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 25,
+        "text": "const r = spawnSync(PY, [脚本, ...参数], { stdio: 'inherit', env: process.env });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 42,
+      "text": "python3 -m pip install openpyxl"
+    }
+  ],
+  "skippedEntries": []
+}

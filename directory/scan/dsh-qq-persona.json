@@ -1,0 +1,70 @@
+{
+  "name": "dsh-qq-persona",
+  "version": "0.1.0",
+  "scannedAt": "2026-10-31T13:58:01.364Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/web.js",
+        "line": 246,
+        "text": "return fetch(API + path, Object.assign({ headers: { 'Content-Type': 'application/json' } }, opts || {}))"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 53,
+        "text": "fs.mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 54,
+        "text": "fs.writeFileSync(path.join(dir, file), JSON.stringify({ ...info, at: new Date().toISOString() }, null, 2), 'utf8');"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 7,
+        "text": "import { mkdir, readFile, rename, writeFile, appendFile, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 25,
+        "text": "await mkdir(dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tools.js",
+        "line": 44,
+        "text": "disposers.push(ctx.tools.register(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

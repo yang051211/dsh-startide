@@ -1,30 +1,35 @@
 {
   "name": "@cup319/dsh-mmpl",
-  "version": "3.6.2",
-  "scannedAt": "2026-10-30T23:38:25.044Z",
+  "version": "3.13.0",
+  "scannedAt": "2026-10-31T13:57:56.611Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 78,
+        "line": 354,
         "text": "const response = await fetch(url, { ...fetchOptions, redirect: 'error', signal: ctrl.signal })"
       },
       {
         "file": "index.js",
-        "line": 394,
+        "line": 350,
+        "text": "const res = await fetch(`${base}/admin/api/overview`, {"
+      },
+      {
+        "file": "index.js",
+        "line": 400,
+        "text": "const upstream = await fetch(`${base}/admin/api${rel}${rawQuery}`, {"
+      },
+      {
+        "file": "index.js",
+        "line": 518,
         "text": "const res = await fetch("
       },
       {
         "file": "index.js",
-        "line": 409,
+        "line": 533,
         "text": "const res = await fetch("
-      },
-      {
-        "file": "index.js",
-        "line": 510,
-        "text": "const res = await fetch(`${base}/admin/api/capture`, {"
       }
     ]
   },
@@ -33,18 +38,28 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 32,
-        "text": "import { existsSync, readFileSync, writeFileSync } from 'node:fs'"
+        "line": 35,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 179,
+        "line": 198,
         "text": "const raw = JSON.parse(readFileSync(bridgePath, 'utf8'))"
       },
       {
         "file": "index.js",
-        "line": 194,
-        "text": "try { writeFileSync(bridgePath, JSON.stringify(v, null, 2)) } catch (e) { debug('bridge config write failed', e) }"
+        "line": 222,
+        "text": "try { writeFileSync(bridgePath, JSON.stringify(clean, null, 2)) } catch (e) { debug('bridge config write failed', e) }"
+      },
+      {
+        "file": "index.js",
+        "line": 262,
+        "text": "try { mkdirSync(dir, { recursive: true }) } catch { /* best effort */ }"
+      },
+      {
+        "file": "index.js",
+        "line": 421,
+        "text": "try { version = JSON.parse(readFileSync(join(pkgDir, 'package.json'), 'utf8')).version ?? null } catch { /* unreadable pkg */ }"
       }
     ]
   },
@@ -63,7 +78,7 @@
       },
       {
         "file": "index.js",
-        "line": 279,
+        "line": 308,
         "text": "e?.options?.name === '@deepseek-ai/dsh-mcp-client' &&"
       }
     ]
@@ -73,18 +88,23 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 29,
+        "line": 32,
         "text": "import { execFile, spawn } from 'node:child_process'"
       },
       {
         "file": "index.js",
-        "line": 118,
+        "line": 125,
         "text": "execFile('npm', ['root', '--global'], { timeout: 8000, windowsHide: true, shell: process.platform === 'win32' }, (err, out) =>"
       },
       {
         "file": "index.js",
-        "line": 239,
+        "line": 268,
         "text": "const child = spawn(exe, [], { cwd: pkgDir, env, detached: true, stdio: 'ignore', windowsHide: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 430,
+        "text": "execFile('npm', ['install', '-g', '@cup319/mmpl@latest'], { timeout: 300_000, windowsHide: true, shell: process.platform === 'win32' }, (err, stdout, stderr) =>"
       }
     ]
   },
@@ -99,7 +119,12 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 75,
+      "line": 44,
+      "text": "状态（已装版本 + 路径）；未装且 URL 为本机地址时提供**一键安装**（`npm i -g @cup319/mmpl@latest`，经插件宿主执行，远端 URL 永远不出安装钮）。autoStart 拉起服务端时 DATA_DIR 取 `dataDir` 配置 → 环境变量 → 默认 `~/.mmpl/data"
+    },
+    {
+      "file": "README.md",
+      "line": 88,
       "text": "npm install -g @cup319/mmpl"
     }
   ],

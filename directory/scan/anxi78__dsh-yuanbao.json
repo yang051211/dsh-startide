@@ -1,7 +1,7 @@
 {
   "name": "@anxi78/dsh-yuanbao",
-  "version": "0.2.1",
-  "scannedAt": "2026-10-26T10:10:58.404Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-10-31T13:58:01.452Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "dist/env-loader.js",
-        "line": 1,
-        "text": "import { existsSync, readFileSync } from 'node:fs';"
+        "file": "dist/chat-history.js",
+        "line": 216,
+        "text": "const { writeFile, mkdir } = await import('node:fs/promises');"
       },
       {
-        "file": "dist/env-loader.js",
-        "line": 16,
-        "text": "const content = readFileSync(file, 'utf8');"
+        "file": "dist/chat-history.js",
+        "line": 218,
+        "text": "await mkdir(dirname(file), { recursive: true });"
       },
       {
-        "file": "dist/gateway/env.js",
-        "line": 1,
-        "text": "import { readFileSync } from 'node:fs';"
+        "file": "dist/chat-history.js",
+        "line": 219,
+        "text": "await writeFile(file, `${JSON.stringify(payload)}\\n`, 'utf8');"
       },
       {
-        "file": "dist/gateway/env.js",
-        "line": 11,
-        "text": "const pkg = JSON.parse(readFileSync(resolve(PLUGIN_ROOT, 'package.json'), 'utf8'));"
-      },
-      {
-        "file": "dist/index.js",
-        "line": 36,
+        "file": "dist/chat-history.js",
+        "line": 254,
         "text": "const { readFile } = await import('node:fs/promises');"
+      },
+      {
+        "file": "dist/chat-history.js",
+        "line": 255,
+        "text": "const raw = await readFile(file, 'utf8');"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "dist/index.js",
-        "line": 10,
+        "line": 11,
         "text": "export const inject = ['agents', 'sessionPersistence', 'agentDefaultModel', 'tools', 'webServer'];"
       },
       {
@@ -104,7 +104,13 @@
   "dependencies": 2,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [],
+  "requiredServices": [
+    "agentDefaultModel",
+    "agents",
+    "sessionPersistence",
+    "tools",
+    "webServer"
+  ],
   "setupHints": [],
   "skippedEntries": []
 }

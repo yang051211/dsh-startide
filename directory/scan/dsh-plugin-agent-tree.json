@@ -1,0 +1,64 @@
+{
+  "name": "dsh-plugin-agent-tree",
+  "version": "0.1.5",
+  "scannedAt": "2026-10-31T13:57:59.842Z",
+  "icon": "dsh-plugin-agent-tree.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1696,
+        "text": "fetch(NPM_LATEST_URL, options)"
+      },
+      {
+        "file": "client.js",
+        "line": 2820,
+        "text": "const response = await fetch(PROCESS_ROUTE, { headers: { accept: 'application/json' } });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "import { open, readdir, stat } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 62,
+        "text": "execFile(file, args, { timeout, maxBuffer: 1 << 20, windowsHide: true }, (error, stdout) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

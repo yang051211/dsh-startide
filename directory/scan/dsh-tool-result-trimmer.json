@@ -1,23 +1,60 @@
 {
   "name": "dsh-tool-result-trimmer",
-  "version": "1.5.0",
-  "scannedAt": "2026-10-26T10:07:17.979Z",
+  "version": "2.1.0",
+  "scannedAt": "2026-10-31T13:58:00.344Z",
   "icon": null,
   "network": {
     "hit": false,
     "evidence": []
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/spillover.js",
+        "line": 2,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/spillover.js",
+        "line": 70,
+        "text": "try { fs.unlinkSync(lockPath); } catch { /* Preserve a failed lock conservatively. */ }"
+      },
+      {
+        "file": "lib/spillover.js",
+        "line": 114,
+        "text": "fs.unlinkSync(file.path);"
+      },
+      {
+        "file": "lib/spillover.js",
+        "line": 174,
+        "text": "fs.mkdirSync(dir, { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "lib/spillover.js",
+        "line": 185,
+        "text": "try { fs.writeFileSync(fd, rawText, 'utf8'); }"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/typecheck.js",
+        "line": 5,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/typecheck.js",
+        "line": 36,
+        "text": "const result = spawnSync(process.execPath, [executable, '--project', configuration, '--noEmit'], { cwd: root, stdio: 'inherit' });"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
