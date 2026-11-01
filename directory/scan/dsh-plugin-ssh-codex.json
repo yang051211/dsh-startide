@@ -1,0 +1,126 @@
+{
+  "name": "dsh-plugin-ssh-codex",
+  "version": "0.3.0-alpha.16",
+  "scannedAt": "2026-11-01T07:36:18.019Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/alpha-broker.js",
+        "line": 132,
+        "text": "const response = await fetch(`${base}/`, { headers: { cookie }, redirect: 'manual', signal: pending });"
+      },
+      {
+        "file": "lib/alpha-broker.js",
+        "line": 137,
+        "text": "const response = await fetch(new URL(entry.url, `${base}/`), { headers: { cookie }, redirect: 'manual', signal: pending });"
+      },
+      {
+        "file": "lib/alpha-stream.js",
+        "line": 60,
+        "text": "= {}, socketFactory = (url, options) => new WebSocket(url, options), maxBytes = 8 * 1024 * 1024, maxStreams = 64, maxTotalBytes = 16 * 1024 * 1024, openTimeoutM"
+      },
+      {
+        "file": "lib/broker.js",
+        "line": 335,
+        "text": "const response = await fetch(`${this.baseFor(source)}/api/${method}`, {"
+      },
+      {
+        "file": "lib/broker.js",
+        "line": 445,
+        "text": "const socket = new WebSocket(`${base}/api/events.${kind}`);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/alpha-artifacts.js",
+        "line": 4,
+        "text": "import { accessSync, constants, lstatSync, readFileSync, realpathSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/alpha-artifacts.js",
+        "line": 20,
+        "text": "return readFileSync(path);"
+      },
+      {
+        "file": "lib/alpha-artifacts.js",
+        "line": 205,
+        "text": "'import {lstatSync,readFileSync,realpathSync} from \"node:fs\";',"
+      },
+      {
+        "file": "lib/alpha-broker.js",
+        "line": 46,
+        "text": "  const logProbe = `const fs=require('node:fs');const file=process.argv[1];const before=fs.lstatSync(file);if(!before.isFile()||(before.mode&0o077)!==0||before."
+      },
+      {
+        "file": "lib/alpha-protocol.js",
+        "line": 2,
+        "text": "import { readFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/auth.js",
+        "line": 8,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 147,
+        "text": "const opened = spawnSync(\"/usr/bin/osascript\", [script], { stdio: \"ignore\", timeout: 10_000 });"
+      },
+      {
+        "file": "lib/broker.js",
+        "line": 3,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/browser.js",
+        "line": 3,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/desktop-native-open.js",
+        "line": 3,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/chat-desktop.js",
+    "lib/workspace-browser-alpha.js",
+    "lib/workspace-browser-desktop.js",
+    "lib/workspace-browser.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 146,
+      "text": "npm install -g dsh-plugin-ssh-codex@0.3.0-alpha.12"
+    },
+    {
+      "file": "README.md",
+      "line": 249,
+      "text": "npm install -g dsh-plugin-ssh-codex@alpha"
+    }
+  ],
+  "skippedEntries": []
+}

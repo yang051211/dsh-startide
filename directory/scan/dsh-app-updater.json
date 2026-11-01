@@ -1,35 +1,35 @@
 {
   "name": "dsh-app-updater",
-  "version": "1.3.0",
-  "scannedAt": "2026-10-31T13:58:04.890Z",
+  "version": "1.3.4",
+  "scannedAt": "2026-11-01T07:36:23.825Z",
   "icon": "dsh-app-updater.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 241,
+        "line": 275,
         "text": "const r = await fetch(url, { cache: \"no-store\", credentials: \"same-origin\" });"
       },
       {
         "file": "lib/client.js",
-        "line": 247,
+        "line": 281,
         "text": "const r = await fetch(url, {"
       },
       {
-        "file": "test/harness.mjs",
-        "line": 8,
+        "file": "test/deny.mjs",
+        "line": 9,
         "text": "import http from \"node:http\";"
       },
       {
-        "file": "test/harness.mjs",
-        "line": 56,
-        "text": "const get = async (p) => (await fetch(base + p)).json();"
+        "file": "test/deny.mjs",
+        "line": 95,
+        "text": "const res = await fetch(deniedBase + p, isWrite"
       },
       {
-        "file": "test/harness.mjs",
-        "line": 57,
-        "text": "const post = async (p, body) => (await fetch(base + p, { method: \"POST\", headers: { \"Content-Type\": \"application/json\" }, body: JSON.stringify(body) })).json();"
+        "file": "test/deny.mjs",
+        "line": 119,
+        "text": "const stateRes = await fetch(legacyBase + \"/dsh-app-updater/state.json\");"
       }
     ]
   },
@@ -72,12 +72,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 14,
+        "line": 15,
         "text": "import { spawn } from \"node:child_process\";"
       },
       {
         "file": "lib/index.js",
-        "line": 331,
+        "line": 396,
         "text": "const child = spawn(explorer, [path], { detached: true, stdio: \"ignore\", windowsHide: false });"
       },
       {

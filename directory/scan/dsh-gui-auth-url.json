@@ -1,34 +1,92 @@
 {
   "name": "dsh-gui-auth-url",
-  "version": "0.2.2",
-  "scannedAt": "2026-10-26T10:06:16.207Z",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-01T07:36:23.178Z",
   "icon": "dsh-gui-auth-url.svg",
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/isolated-web.js",
+        "line": 138,
+        "text": "const response = await fetch(`http://127.0.0.1:${String(value)}/`, {"
+      }
+    ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/isolated-web.js",
+        "line": 32,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "src/isolated-web.js",
+        "line": 33,
+        "text": "import { mkdtemp, readdir, readFile, rm, stat, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "src/isolated-web.js",
+        "line": 122,
+        "text": "void writeFile(join(home, MARKER_FILENAME), marker, 'utf8').catch(() => {});"
+      },
+      {
+        "file": "src/isolated-web.js",
+        "line": 178,
+        "text": "const removeHome = options.removeHome ?? ((home) => rm(home, { recursive: true, force: true, maxRetries: 3 }));"
+      },
+      {
+        "file": "src/isolated-web.js",
+        "line": 196,
+        "text": "marker = JSON.parse(await readFile(join(home, MARKER_FILENAME), 'utf8'));"
+      }
+    ]
   },
   "agentTools": {
     "hit": true,
     "evidence": [
       {
         "file": "src/index.js",
-        "line": 24,
+        "line": 30,
         "text": "export const inject = ['connection', 'tools'];"
       },
       {
         "file": "src/index.js",
-        "line": 73,
+        "line": 115,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "src/isolated-tool.js",
+        "line": 155,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "src/isolated-tool.js",
+        "line": 181,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/command.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/isolated-web.js",
+        "line": 31,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/isolated-web.js",
+        "line": 99,
+        "text": "const killer = spawn('taskkill', ['/PID', String(pid), '/T', '/F'], { stdio: 'ignore', windowsHide: true });"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

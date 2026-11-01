@@ -1,7 +1,7 @@
 {
   "name": "dsh-video-storyboard",
-  "version": "0.5.12",
-  "scannedAt": "2026-10-31T22:51:42.294Z",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-01T07:36:15.651Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -102,19 +102,19 @@
         "text": "execFile(bin, args, { timeout: timeoutMs }, (error, stdout, stderr) => {"
       },
       {
-        "file": "scripts/check-syntax.mjs",
-        "line": 6,
-        "text": "import { execFile } from 'node:child_process';"
+        "file": "scripts/blind.mjs",
+        "line": 7,
+        "text": "import { spawnSync } from 'node:child_process';"
       },
       {
-        "file": "src/storyboard/asr-lifecycle.js",
-        "line": 19,
-        "text": "import { spawn } from 'node:child_process';"
+        "file": "scripts/blind.mjs",
+        "line": 29,
+        "text": "const r = spawnSync(FF, ['-hide_banner', '-v', 'error', '-nostdin', '-i', file, '-an', '-sn',"
       },
       {
-        "file": "src/storyboard/asr-lifecycle.js",
-        "line": 119,
-        "text": "const run = execImpl ?? (await import('node:child_process')).execFile;"
+        "file": "scripts/blind.mjs",
+        "line": 38,
+        "text": "const r = spawnSync(FF, ['-hide_banner', '-v', 'error', '-y',"
       }
     ]
   },
@@ -131,12 +131,12 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 60,
+      "line": 134,
       "text": "pip install --user -U yt-dlp        # 只有贴 B 站/YouTube 链接才需要"
     },
     {
       "file": "README.md",
-      "line": 357,
+      "line": 467,
       "text": "D:/ocr-local/.venv/Scripts/python.exe -m pip install rapidocr onnxruntime"
     }
   ],

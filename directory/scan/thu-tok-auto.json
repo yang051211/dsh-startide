@@ -1,30 +1,35 @@
 {
   "name": "thu-tok-auto",
-  "version": "0.3.6",
-  "scannedAt": "2026-10-26T10:09:54.355Z",
+  "version": "0.3.24",
+  "scannedAt": "2026-11-01T07:36:23.696Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 127,
+        "line": 164,
+        "text": "const r = await fetch('http://127.0.0.1:' + port + '/json/version', { signal: AbortSignal.timeout(timeoutMs || 1500) })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1177,
         "text": "const r = await fetch(url, init)"
       },
       {
         "file": "lib/index.js",
-        "line": 141,
-        "text": "const r = await fetch('http://127.0.0.1:' + port + '/json/list', { signal: AbortSignal.timeout(1500) })"
+        "line": 1199,
+        "text": "const r = await fetch('http://127.0.0.1:' + port + '/json/version', { signal: AbortSignal.timeout(1500) })"
       },
       {
         "file": "lib/index.js",
-        "line": 176,
+        "line": 1211,
         "text": "const ws = new WebSocket(debuggerUrl.href)"
       },
       {
-        "file": "lib/ui.js",
-        "line": 115,
-        "text": "return fetch(API + '/' + endpoint, init).then(function (r) {"
+        "file": "lib/index.js",
+        "line": 1421,
+        "text": "const r = await fetch('http://127.0.0.1:' + port + '/json/list', { signal: AbortSignal.timeout(1500) })"
       }
     ]
   },
@@ -33,28 +38,28 @@
     "evidence": [
       {
         "file": "lib/core.js",
-        "line": 834,
+        "line": 1236,
+        "text": "else res = await deps.stateIO.rm(dir);"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 1252,
+        "text": "else res = deps.stateIO.rmSync(dir);"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 1298,
+        "text": "try { res = await deps.stateIO.rm(dir); } catch (e) { res = { ok: false, error: String((e && e.message) || e) }; }"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 2393,
         "text": "const made = await deps.stateIO.mkdir(baseDir + '\\\\profile');"
       },
       {
-        "file": "lib/index.js",
-        "line": 12,
-        "text": "import fs from 'node:fs'"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 266,
-        "text": "        async mkdir(path) { try { fs.mkdirSync(path, { recursive: true }); return { ok: true } } catch (e) { return { ok: false, error: String((e && e.message) "
-      },
-      {
-        "file": "lib/index.js",
-        "line": 269,
-        "text": "if (fs.existsSync(path)) return { ok: true, data: jsonParse(fs.readFileSync(path, 'utf8')) }"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 276,
-        "text": "fs.mkdirSync(dirname(path), { recursive: true })"
+        "file": "lib/core.js",
+        "line": 2538,
+        "text": "const madePrivate = await deps.stateIO.mkdir(profileDir);"
       }
     ]
   },
@@ -68,11 +73,21 @@
       {
         "file": "lib/index.js",
         "line": 14,
-        "text": "import { spawn } from 'node:child_process'"
+        "text": "import { spawn, execFile, execFileSync } from 'node:child_process'"
       },
       {
         "file": "lib/index.js",
-        "line": 292,
+        "line": 532,
+        "text": "execFile('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', PS_LIST_PROCESSES],"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 590,
+        "text": "execFile('taskkill.exe', ['/PID', String(pid), '/T', '/F'], { windowsHide: true, timeout: Number(timeoutMs) || 10000 },"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1637,
         "text": "const child = spawn(exe, argv, {"
       }
     ]

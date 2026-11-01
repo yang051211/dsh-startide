@@ -1,0 +1,118 @@
+{
+  "name": "dsh-gopeed-downloader",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-01T07:36:24.241Z",
+  "icon": "dsh-gopeed-downloader.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 621,
+        "text": "const response = await fetch(RESTART_ROUTE, {"
+      },
+      {
+        "file": "client.js",
+        "line": 1112,
+        "text": "const response = await fetch(`${NOTIFY_ROUTE}?since=${cursor.current}`, {"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 170,
+        "text": "response = await fetch(base + route, {"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 515,
+        "text": "const response = await fetch(`${baseUrl}/api/v1/info`, { headers, signal: controller.signal })"
+      },
+      {
+        "file": "lib/webhook.js",
+        "line": 18,
+        "text": "import { createServer } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 68,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 103,
+        "text": "const raw = readFileSync(new URL('./package.json', import.meta.url), 'utf8')"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 19,
+        "text": "import { existsSync, statSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 8,
+        "text": "* - apply: registers six tools on ctx.tools (add / list / status / control / process / launch) plus"
+      },
+      {
+        "file": "index.js",
+        "line": 90,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 1925,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 2062,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 2113,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 18,
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 467,
+        "text": "execFile("
+      },
+      {
+        "file": "lib/api.js",
+        "line": 1067,
+        "text": "const child = spawn(plan.argv[0], plan.argv.slice(1), {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

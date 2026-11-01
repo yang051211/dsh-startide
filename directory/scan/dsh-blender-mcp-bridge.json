@@ -1,0 +1,124 @@
+{
+  "name": "dsh-blender-mcp-bridge",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-01T07:36:20.172Z",
+  "icon": "dsh-blender-mcp-bridge.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1046,
+        "text": "const response = await fetch(SETTINGS_ENDPOINT, { credentials: 'same-origin', cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 1073,
+        "text": "const response = await fetch(SETTINGS_ENDPOINT, {"
+      },
+      {
+        "file": "client.js",
+        "line": 1113,
+        "text": "const response = await fetch(`${ENV_ENDPOINT}${refresh ? '?refresh=1' : ''}`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 1150,
+        "text": "const response = await fetch(ENV_ENDPOINT, {"
+      },
+      {
+        "file": "test/plugin.test.js",
+        "line": 197,
+        "text": "const getResponse = await route.fetch(new Request('http://localhost/api/blender-bridge/settings'))"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "diagnostics/findPython.js",
+        "line": 8,
+        "text": "import { existsSync, readdirSync } from 'node:fs'"
+      },
+      {
+        "file": "diagnostics/probeGuardOffline.js",
+        "line": 10,
+        "text": "import { existsSync, mkdirSync, mkdtempSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "diagnostics/probeGuardOffline.js",
+        "line": 78,
+        "text": "writeFileSync(outsideCopySource, 'copy-source', 'utf8')"
+      },
+      {
+        "file": "diagnostics/probeGuardOffline.js",
+        "line": 79,
+        "text": "mkdirSync(taskDir, { recursive: true })"
+      },
+      {
+        "file": "diagnostics/probeGuardOffline.js",
+        "line": 81,
+        "text": "writeFileSync(driverPath, DRIVER, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 33,
+        "text": "export const inject = ['tools', 'systemPrompt']"
+      },
+      {
+        "file": "index.js",
+        "line": 380,
+        "text": "ctx.tools.register(tool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "diagnostics/findPython.js",
+        "line": 7,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "diagnostics/findPython.js",
+        "line": 29,
+        "text": "const probe = spawnSync(name, ['--version'], { stdio: 'ignore' })"
+      },
+      {
+        "file": "diagnostics/probeGuardOffline.js",
+        "line": 9,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "diagnostics/probeGuardOffline.js",
+        "line": 283,
+        "text": "const run = spawnSync(python, [driverPath, taskDir, payloadPath, outPath], { stdio: 'inherit' })"
+      },
+      {
+        "file": "diagnostics/probePythonSyntax.js",
+        "line": 13,
+        "text": "import { spawnSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

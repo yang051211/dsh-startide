@@ -1,0 +1,74 @@
+{
+  "name": "@ljwei-stak/dsh-fixed-port-bridge",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-01T07:36:20.341Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 188,
+        "text": "const response = await fetch(STATE_URL, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 200,
+        "text": "const response = await fetch(PORT_URL, {"
+      },
+      {
+        "file": "preflight.mjs",
+        "line": 11,
+        "text": "import { createServer as httpServer } from 'node:http';"
+      },
+      {
+        "file": "preflight.mjs",
+        "line": 54,
+        "text": "const res = await fetch('http://127.0.0.1:' + port + '/healthz');"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 12,
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.mjs",
+        "line": 13,
+        "text": "import { rename, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.mjs",
+        "line": 103,
+        "text": "return validPort(JSON.parse(readFileSync(file, 'utf8')).port);"
+      },
+      {
+        "file": "index.mjs",
+        "line": 214,
+        "text": "await writeFile(tmp, body, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

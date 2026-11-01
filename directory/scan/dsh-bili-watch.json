@@ -1,34 +1,34 @@
 {
   "name": "dsh-bili-watch",
-  "version": "0.4.0",
-  "scannedAt": "2026-10-31T22:51:41.786Z",
+  "version": "0.4.2",
+  "scannedAt": "2026-11-01T07:36:15.455Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 93,
+        "line": 117,
         "text": "// D40（2026-10-29）：原来两行就是 `(await fetch(...)).json()`，两个坑一起踩："
       },
       {
         "file": "client.js",
-        "line": 108,
+        "line": 132,
         "text": "r = await fetch(API + p, { credentials: 'same-origin', signal: guard.signal, ...init })"
       },
       {
         "file": "index.js",
-        "line": 591,
+        "line": 590,
         "text": "const r = await fetch(QR_GEN, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(8000) })"
       },
       {
         "file": "index.js",
-        "line": 611,
+        "line": 610,
         "text": "const res = await fetch(QR_POLL(key), { headers: { 'User-Agent': UA }, redirect: 'manual', signal: AbortSignal.timeout(8000) })"
       },
       {
         "file": "index.js",
-        "line": 1486,
+        "line": 1485,
         "text": "//   局域网内 `curl -H 'Host: 127.0.0.1' -H 'Origin: http://127.0.0.1' -H 'Content-Type: application/json'"
       }
     ]
@@ -43,23 +43,23 @@
       },
       {
         "file": "index.js",
-        "line": 89,
+        "line": 95,
         "text": "writeFileSync(f, s, 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 152,
+        "line": 158,
         "text": "mkdirSync(dst, { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 173,
-        "text": "if (!srcHas) { try { mkdirSync(DEPS_PREF, { recursive: true }) } catch {} ; return DEPS_PREF }"
+        "line": 181,
+        "text": "mkdirSync(dirname(DEPS_PREF), { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 187,
-        "text": "mkdirSync(dirname(DEPS_PREF), { recursive: true })"
+        "line": 182,
+        "text": "try { rmSync(tmp, { recursive: true, force: true }) } catch {} // 上次迁到一半的残留"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 1806,
+        "line": 1805,
         "text": "//    必须用 defineTool 包一层：ctx.tools.register 收的是编译好的 tool 对象，"
       }
     ]
@@ -83,22 +83,22 @@
       },
       {
         "file": "index.js",
-        "line": 542,
+        "line": 541,
         "text": "child = spawn(process.execPath, [LOOK, ...args], {"
       },
       {
         "file": "index.js",
-        "line": 790,
+        "line": 789,
         "text": "const ps = spawn('powershell.exe', ['-NoProfile', '-STA', '-Command', script], { windowsHide: false })"
       },
       {
         "file": "index.js",
-        "line": 990,
+        "line": 989,
         "text": "execFile(file, args, opts, (err, stdout) => resolveP({ ok: !err, stdout: String(stdout ?? ''), err }))"
       },
       {
         "file": "index.js",
-        "line": 1346,
+        "line": 1345,
         "text": "child = spawn(cmd, args, {"
       }
     ]

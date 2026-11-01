@@ -1,7 +1,7 @@
 {
   "name": "@askdkc/dsh-cli",
-  "version": "0.14.17",
-  "scannedAt": "2026-10-31T13:57:54.424Z",
+  "version": "0.14.18",
+  "scannedAt": "2026-11-01T07:36:16.829Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -39,7 +39,7 @@
       {
         "file": "bin/dsh-cli.js",
         "line": 31,
-        "text": "import { existsSync, readFileSync, readdirSync, realpathSync, rmSync } from 'node:fs'"
+        "text": "import { existsSync, readFileSync, readdirSync, realpathSync, rmSync, mkdtempSync, writeFileSync, mkdirSync, symlinkSync } from 'node:fs'"
       },
       {
         "file": "bin/dsh-cli.js",
@@ -53,12 +53,12 @@
       },
       {
         "file": "bin/dsh-cli.js",
-        "line": 519,
+        "line": 521,
         "text": "// `healProfileModuleFallback` → mkdirSync(ownedModulesDir)），而「装坏了 →"
       },
       {
         "file": "bin/dsh-cli.js",
-        "line": 575,
+        "line": 581,
         "text": "const text = readFileSync(join(home, '.credentials.yaml'), 'utf8')"
       }
     ]
@@ -103,23 +103,23 @@
       },
       {
         "file": "bin/dsh-cli.js",
-        "line": 598,
+        "line": 604,
         "text": "const probe = spawnSync(...command(['--version']), { stdio: 'pipe', encoding: 'utf8', ...shellOpt })"
       },
       {
         "file": "bin/dsh-cli.js",
-        "line": 742,
-        "text": "const child = spawn(...dshCmd(['--profile', profile, ...dshArgs]), {"
+        "line": 797,
+        "text": "const dump = spawnSync(...dshCmd(['--profile', profile, ...inherited, ...hostArgs, '--dump-config']), {"
       },
       {
         "file": "bin/dsh-cli.js",
-        "line": 1049,
+        "line": 874,
+        "text": "const child = spawn(...dshCmd(['--profile', profile, ...(overlay?.args ?? dshArgs)]), {"
+      },
+      {
+        "file": "bin/dsh-cli.js",
+        "line": 1185,
         "text": "const probe = spawnSync(...dshCmd(['--version']), { stdio: 'pipe', ...shellOpt })"
-      },
-      {
-        "file": "bin/dsh-cli.js",
-        "line": 1052,
-        "text": "const runAdd = extraArgs => spawnSync("
       }
     ]
   },

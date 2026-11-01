@@ -1,7 +1,7 @@
 {
   "name": "dsh-mcp-host",
-  "version": "0.4.0",
-  "scannedAt": "2026-10-31T22:51:47.268Z",
+  "version": "0.6.4",
+  "scannedAt": "2026-11-01T07:36:22.572Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -17,13 +17,23 @@
       },
       {
         "file": "lib/bridge.js",
-        "line": 160,
+        "line": 197,
         "text": "mkdirSync(dir, { recursive: true })"
       },
       {
         "file": "lib/bridge.js",
-        "line": 162,
+        "line": 199,
         "text": "writeFileSync(file, Buffer.from(c.data, 'base64'))"
+      },
+      {
+        "file": "lib/cleanup.js",
+        "line": 12,
+        "text": "import { readdirSync, statSync, unlinkSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/cleanup.js",
+        "line": 56,
+        "text": "unlinkSync(join(dir, f.name))"
       }
     ]
   },
@@ -32,12 +42,12 @@
     "evidence": [
       {
         "file": "lib/bridge.js",
-        "line": 204,
+        "line": 244,
         "text": "* Spawn the MCP server, list its tools, and register them on ctx.tools."
       },
       {
         "file": "lib/bridge.js",
-        "line": 227,
+        "line": 277,
         "text": "const dispose = ctx.tools.register(def)"
       },
       {
@@ -47,12 +57,12 @@
       },
       {
         "file": "lib/lazy.js",
-        "line": 192,
+        "line": 205,
         "text": "disposers.push(agent.ctx.tools.register(definition))"
       },
       {
         "file": "lib/lazy.js",
-        "line": 207,
+        "line": 220,
         "text": "try { state.lift = agent.ctx.tools.restrict({ deny: [bootstrapName] }) } catch { /* ignore */ }"
       }
     ]
@@ -67,12 +77,12 @@
       },
       {
         "file": "lib/bridge.js",
-        "line": 49,
+        "line": 84,
         "text": "spawn('taskkill', ['/PID', String(child.pid), '/T', '/F'], { stdio: 'ignore', windowsHide: true })"
       },
       {
         "file": "lib/bridge.js",
-        "line": 61,
+        "line": 96,
         "text": "const child = spawn(exe, args, {"
       }
     ]

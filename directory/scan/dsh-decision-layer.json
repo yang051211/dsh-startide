@@ -1,14 +1,14 @@
 {
   "name": "dsh-decision-layer",
-  "version": "0.7.1",
-  "scannedAt": "2026-10-31T22:51:51.082Z",
+  "version": "0.7.2",
+  "scannedAt": "2026-11-01T07:36:21.838Z",
   "icon": "dsh-decision-layer.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 433,
+        "line": 435,
         "text": "const response = await fetch(`${API_BASE}/${path}`, init);"
       }
     ]
@@ -17,28 +17,28 @@
     "hit": true,
     "evidence": [
       {
-        "file": "service/config-store.mjs",
+        "file": "lib/host/config-store.js",
         "line": 1,
-        "text": "import { chmod, mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises';"
+        "text": "import { chmod, mkdir, readFile, rename, rm, writeFile } from \"node:fs/promises\";"
       },
       {
-        "file": "service/config-store.mjs",
-        "line": 19,
-        "text": "const value = JSON.parse(await readFile(path, 'utf8'));"
+        "file": "lib/host/config-store.js",
+        "line": 13,
+        "text": "const value = JSON.parse(await readFile(path, \"utf8\"));"
       },
       {
-        "file": "service/config-store.mjs",
-        "line": 301,
-        "text": "await mkdir(dirname(path), { recursive: true, mode: 0o700 });"
+        "file": "lib/host/config-store.js",
+        "line": 233,
+        "text": "await mkdir(dirname(path), { recursive: true, mode: 448 });"
       },
       {
-        "file": "service/config-store.mjs",
-        "line": 304,
-        "text": "await writeFile(temporary, `${JSON.stringify(next)}\\n`, { mode: 0o600, flag: 'wx' });"
+        "file": "lib/host/config-store.js",
+        "line": 236,
+        "text": "await writeFile(temporary, `${JSON.stringify(next)}"
       },
       {
-        "file": "service/config-store.mjs",
-        "line": 308,
+        "file": "lib/host/config-store.js",
+        "line": 241,
         "text": "await rm(temporary, { force: true });"
       }
     ]
@@ -47,29 +47,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "service/dsh.mjs",
+        "file": "lib/host/index.js",
         "line": 17,
-        "text": "export const inject = ['tools', 'skills'];"
+        "text": "const inject = [\"tools\", \"skills\"];"
       },
       {
-        "file": "service/dsh.mjs",
-        "line": 90,
-        "text": "const schemas = typeof ctx.tools?.schemas === 'function' ? ctx.tools.schemas(agent) : undefined;"
+        "file": "lib/host/index.js",
+        "line": 84,
+        "text": "const schemas = typeof ctx.tools?.schemas === \"function\" ? ctx.tools.schemas(agent) : void 0;"
       },
       {
-        "file": "service/dsh.mjs",
-        "line": 143,
-        "text": "if (typeof ctx.tools.guard === 'function') {"
+        "file": "lib/host/index.js",
+        "line": 131,
+        "text": "if (typeof ctx.tools.guard === \"function\") {"
       },
       {
-        "file": "service/dsh.mjs",
-        "line": 146,
-        "text": "ctx.tools.guard(exec => loopGuard.check(exec));"
+        "file": "lib/host/index.js",
+        "line": 132,
+        "text": "ctx.tools.guard((exec) => loopGuard.check(exec));"
       },
       {
-        "file": "service/dsh.mjs",
-        "line": 147,
-        "text": "ctx.tools.guard(exec => gate.guardReason(exec));"
+        "file": "lib/host/index.js",
+        "line": 133,
+        "text": "ctx.tools.guard((exec) => gate.guardReason(exec));"
       }
     ]
   },
@@ -84,10 +84,7 @@
   "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [
-    "skills",
-    "tools"
-  ],
+  "requiredServices": [],
   "setupHints": [],
   "skippedEntries": []
 }

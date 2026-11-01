@@ -1,0 +1,119 @@
+{
+  "name": "dsh-stm32-toolchain",
+  "version": "0.2.6",
+  "scannedAt": "2026-11-01T07:36:19.130Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge.mjs",
+        "line": 11,
+        "text": "import { createServer } from 'node:http'"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 99,
+        "text": "return fetch(API + \"/action\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 442,
+        "text": "fetch(API + \"/state\").then(function (r) { return r.json(); }).then(function (snapshot) {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 465,
+        "text": "fetch(API + \"/action\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 726,
+        "text": "fetch(API + \"/state\").then(function (r) { return r.json(); }).catch(function () { return null; }),"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge.mjs",
+        "line": 18,
+        "text": "import { existsSync, readdirSync, readFileSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/bridge.mjs",
+        "line": 89,
+        "text": "try { return JSON.parse(readFileSync(STATE_FILE, 'utf8')) } catch { return {} }"
+      },
+      {
+        "file": "lib/bridge.mjs",
+        "line": 105,
+        "text": "try { writeFileSync(STATE_FILE, JSON.stringify({ ...loadSaved(), ...patch }, null, 2)) } catch { /* read-only install */ }"
+      },
+      {
+        "file": "lib/bridge.mjs",
+        "line": 287,
+        "text": "const info = JSON.parse(readFileSync(LOCK_FILE, 'utf8'))"
+      },
+      {
+        "file": "lib/bridge.mjs",
+        "line": 357,
+        "text": "writeFileSync(LOCK_FILE, JSON.stringify({ pid: process.pid, kind, token: lease ? lease.token.slice(0, 8) : '', startedAt: now, expiresAt: now + LOCK_TTL }))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "import * as mcpClient from '@deepseek-ai/dsh-mcp-client'"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge.mjs",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/bridge.mjs",
+        "line": 1577,
+        "text": "const info = spawn(exe, [ioc], { detached: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "lib/bridge.mjs",
+        "line": 1587,
+        "text": "const info = spawn(exe, [project.file], { detached: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "lib/bridge.mjs",
+        "line": 1596,
+        "text": "const info = spawn(exe, [], { detached: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "lib/core.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

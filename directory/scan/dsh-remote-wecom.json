@@ -1,0 +1,87 @@
+{
+  "name": "dsh-remote-wecom",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-01T07:36:17.817Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-remote.mjs",
+        "line": 3,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "bin/dsh-remote.mjs",
+        "line": 77,
+        "text": "const b = JSON.parse(fs.readFileSync(path.join(dir, BIND_FILE), 'utf8'));"
+      },
+      {
+        "file": "bin/dsh-remote.mjs",
+        "line": 86,
+        "text": "try { lines = fs.readFileSync(path.join(dir, 'bridge.log'), 'utf8').trimEnd().split('\\n').slice(-LOG_TAIL); } catch {}"
+      },
+      {
+        "file": "bin/dsh-remote.mjs",
+        "line": 115,
+        "text": "fs.appendFileSync(file, `${new Date().toISOString()} ${line}\\n`, {mode: 0o600});"
+      },
+      {
+        "file": "bin/dsh-remote.mjs",
+        "line": 158,
+        "text": "try { lines = fs.readFileSync(path.join(dir, WATCHDOG_LOG), 'utf8').trimEnd().split('\\n').slice(-LOG_TAIL); } catch {}"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-remote.mjs",
+        "line": 9,
+        "text": "import {execFileSync} from 'node:child_process';"
+      },
+      {
+        "file": "lib/core/artifacts.mjs",
+        "line": 9,
+        "text": "import {execFileSync} from 'node:child_process';"
+      },
+      {
+        "file": "lib/core/launchd.mjs",
+        "line": 7,
+        "text": "import {execFileSync} from 'node:child_process';"
+      },
+      {
+        "file": "lib/core/remote.mjs",
+        "line": 9,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/core/remote.mjs",
+        "line": 320,
+        "text": "return new Promise((res) => execFile(\"ioreg\", [\"-n\", \"Root\", \"-d1\", \"-r\"], { timeout: 5000 }, (e, so) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "typertGateway"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

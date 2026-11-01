@@ -1,0 +1,104 @@
+{
+  "name": "@gyp8735abc/dsh-mcp-manager",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-01T07:36:23.945Z",
+  "icon": "gyp8735abc__dsh-mcp-manager.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 204,
+        "text": "fetch(ACTIVATE_URL, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 228,
+        "text": "fetch(INVENTORY_URL + \"?active=\" + encodeURIComponent(path), { headers: { Accept: \"application/json\" } })"
+      },
+      {
+        "file": "client/client.js",
+        "line": 260,
+        "text": "fetch(SET_URL, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 35,
+        "text": "import { readFileSync, writeFileSync, mkdirSync, existsSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 36,
+        "text": "import { readdir } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 85,
+        "text": "const text = readFileSync(candidate, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 203,
+        "text": "raw = readFileSync(path, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 293,
+        "text": "return JSON.parse(readFileSync(path, \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "//     and manual servers (other live @deepseek-ai/dsh-mcp-client loader"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 47,
+        "text": "const MCP_CLIENT = \"@deepseek-ai/dsh-mcp-client\";"
+      },
+      {
+        "file": "lib/skill-filter.js",
+        "line": 68,
+        "text": "const tools = ctx.get?.(\"tools\", false) ?? ctx.tools ?? null;"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 39,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 268,
+        "text": "const child = spawn(\"powershell\", [\"-NoProfile\", \"-Command\", script], { stdio: \"ignore\", windowsHide: true });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "loader",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

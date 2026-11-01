@@ -1,0 +1,54 @@
+{
+  "name": "@deepwhale-cn/dsh-image-batch",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-01T07:36:23.418Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 18,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 134,
+        "text": "const r = spawnSync(cand, ['-c', 'import PIL'], { encoding: 'utf8', timeout: 15000 });"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 288,
+        "text": "const r = spawnSync(python, [PY_SCRIPT, action, JSON.stringify(payload)], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 81,
+      "text": "python3 -m pip install Pillow"
+    }
+  ],
+  "skippedEntries": []
+}

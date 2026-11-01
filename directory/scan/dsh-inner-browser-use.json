@@ -1,7 +1,7 @@
 {
   "name": "dsh-inner-browser-use",
-  "version": "0.41.0",
-  "scannedAt": "2026-10-31T22:51:44.574Z",
+  "version": "0.44.0",
+  "scannedAt": "2026-11-01T07:36:17.539Z",
   "icon": "dsh-inner-browser-use.svg",
   "network": {
     "hit": true,
@@ -37,6 +37,16 @@
     "hit": true,
     "evidence": [
       {
+        "file": "chromecookies.js",
+        "line": 14,
+        "text": "import { existsSync, mkdtempSync, copyFileSync, readdirSync, statSync, rmSync } from 'node:fs'"
+      },
+      {
+        "file": "chromecookies.js",
+        "line": 154,
+        "text": "rmSync(dir, { recursive: true, force: true })"
+      },
+      {
         "file": "index.js",
         "line": 23,
         "text": "import { appendFileSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'"
@@ -49,16 +59,6 @@
       {
         "file": "index.js",
         "line": 46,
-        "text": "mkdirSync(STATE_DIR, { recursive: true })"
-      },
-      {
-        "file": "index.js",
-        "line": 47,
-        "text": "writeFileSync(MIRROR_FILE, JSON.stringify(value))"
-      },
-      {
-        "file": "index.js",
-        "line": 64,
         "text": "mkdirSync(STATE_DIR, { recursive: true })"
       }
     ]
@@ -77,6 +77,21 @@
     "hit": true,
     "evidence": [
       {
+        "file": "chromecookies.js",
+        "line": 17,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "chromecookies.js",
+        "line": 97,
+        "text": "const out = spawnSync('security', args, { encoding: 'utf8', timeout: 5000 })"
+      },
+      {
+        "file": "chromecookies.js",
+        "line": 178,
+        "text": "const out = spawnSync('/usr/bin/sqlite3', ['-readonly', '-json', copy, sql], { encoding: 'utf8', timeout: 8000, maxBuffer: 4_000_000 })"
+      },
+      {
         "file": "runtime/flash-setup.mjs",
         "line": 6,
         "text": "import { execFileSync } from 'node:child_process'"
@@ -85,21 +100,6 @@
         "file": "scripts/doctor.mjs",
         "line": 11,
         "text": "import { execFile } from 'node:child_process'"
-      },
-      {
-        "file": "sidecar.js",
-        "line": 8,
-        "text": "import { execFileSync, spawn, spawnSync } from 'node:child_process'"
-      },
-      {
-        "file": "sidecar.js",
-        "line": 2759,
-        "text": "const child = spawn(binary, args, { detached: false, stdio: 'ignore', env: flashEnv })"
-      },
-      {
-        "file": "sidecar.js",
-        "line": 3127,
-        "text": "const guard = spawn('/bin/sh', ['-c', `while kill -0 ${app} 2>/dev/null; do sleep 5; done; kill ${chrome} 2>/dev/null`], {"
       }
     ]
   },
