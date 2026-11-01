@@ -1,0 +1,74 @@
+{
+  "name": "dsh-story-mode",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-01T23:19:31.551Z",
+  "icon": "dsh-story-mode.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "memory.js",
+        "line": 13,
+        "text": "import { readdirSync, readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "memory.js",
+        "line": 168,
+        "text": "text = readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "prompt-wrap.js",
+        "line": 15,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "prompt-wrap.js",
+        "line": 36,
+        "text": "const text = readFileSync(join(root, SETTINGS_DIR, file), 'utf8')"
+      },
+      {
+        "file": "purify.js",
+        "line": 13,
+        "text": "import { readFileSync, writeFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "story-guard.js",
+        "line": 11,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "story-guard.js",
+        "line": 20,
+        "text": "names = ctx.tools"
+      },
+      {
+        "file": "story-guard.js",
+        "line": 30,
+        "text": "return ctx.tools.restrict({ deny: names })"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

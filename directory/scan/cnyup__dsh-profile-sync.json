@@ -1,0 +1,75 @@
+{
+  "name": "@cnyup/dsh-profile-sync",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-01T23:19:32.290Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 38,
+        "text": "const response = await fetch(`${API}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "install-plugin.ps1",
+        "line": 113,
+        "text": "const fs = require('fs')"
+      },
+      {
+        "file": "install-plugin.ps1",
+        "line": 117,
+        "text": "const pkg = JSON.parse(fs.readFileSync(path.join(dir, 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "src/engine.js",
+        "line": 28,
+        "text": "} from 'node:fs'"
+      },
+      {
+        "file": "src/engine.js",
+        "line": 86,
+        "text": "mkdirSync(p.cacheDir, { recursive: true })"
+      },
+      {
+        "file": "src/engine.js",
+        "line": 101,
+        "text": "rmSync(p.repo, { recursive: true, force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/git.js",
+        "line": 22,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/git.js",
+        "line": 84,
+        "text": "child = spawn('git', args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

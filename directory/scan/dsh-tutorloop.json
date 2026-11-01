@@ -1,0 +1,99 @@
+{
+  "name": "dsh-tutorloop",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-01T23:19:30.257Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 49,
+        "text": "response = await fetch(\"/api/dsh-tutorloop/action\", {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/cli.mjs",
+        "line": 3,
+        "text": "import { existsSync, mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "scripts/cli.mjs",
+        "line": 33,
+        "text": "mkdirSync(home, { recursive: true })"
+      },
+      {
+        "file": "scripts/runtime.mjs",
+        "line": 1,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "src/bridge-client.js",
+        "line": 3,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "src/server.js",
+        "line": 2,
+        "text": "import { realpath } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 5,
+        "text": "export const inject = ['tools', 'systemPrompt']"
+      },
+      {
+        "file": "src/index.js",
+        "line": 89,
+        "text": "for (const tool of createTools(request, config, trust)) ctx.effect(() => ctx.tools.register(tool), `tutorloop: ${tool.name}`)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/cli.mjs",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/cli.mjs",
+        "line": 9,
+        "text": "    const child = spawn(executable, args, { shell: false, windowsHide: true, stdio: capture ? ['ignore', 'pipe', 'pipe'] : 'inherit', env: { ...process.env, PYT"
+      },
+      {
+        "file": "src/bridge-client.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/bridge-client.js",
+        "line": 26,
+        "text": "const child = spawn(pythonPath, ['-X', 'utf8', join(backendPath, 'bridge.py')], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

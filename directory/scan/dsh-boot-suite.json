@@ -1,35 +1,35 @@
 {
   "name": "dsh-boot-suite",
-  "version": "2.13.21",
-  "scannedAt": "2026-10-31T13:57:57.528Z",
+  "version": "2.15.17",
+  "scannedAt": "2026-11-01T23:19:30.852Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 299,
+        "line": 311,
+        "text": "fetch('/dsh-startup/music/file?name=' + encodeURIComponent(file), { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 423,
         "text": "return fetch(API, { headers: { Accept: 'application/json' } })"
       },
       {
         "file": "lib/client.js",
-        "line": 316,
+        "line": 440,
         "text": "return fetch('/dsh-startup/templates', { headers: { Accept: 'application/json' }, cache: 'no-store' })"
       },
       {
         "file": "lib/client.js",
-        "line": 328,
+        "line": 452,
         "text": "return fetch('/dsh-startup/voices', { headers: { Accept: 'application/json' }, cache: 'no-store' })"
       },
       {
         "file": "lib/client.js",
-        "line": 353,
-        "text": "fetch(API, {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 370,
-        "text": "fetch(API, {"
+        "line": 461,
+        "text": "return fetch(STARTUP_ROUTE + '/music/list', { cache: 'no-store', headers: { Accept: 'application/json' } })"
       }
     ]
   },
@@ -77,22 +77,22 @@
       },
       {
         "file": "lib/host-startup.js",
-        "line": 1394,
+        "line": 1587,
         "text": "if (process.platform === 'win32') spawn('explorer.exe', [dir], { detached: true, stdio: 'ignore' }).unref()"
       },
       {
         "file": "lib/host-startup.js",
-        "line": 1395,
+        "line": 1588,
         "text": "else if (process.platform === 'darwin') spawn('open', [dir], { detached: true, stdio: 'ignore' }).unref()"
       },
       {
         "file": "lib/host-startup.js",
-        "line": 1396,
+        "line": 1589,
         "text": "else spawn('xdg-open', [dir], { detached: true, stdio: 'ignore' }).unref()"
       },
       {
         "file": "lib/host-startup.js",
-        "line": 1419,
+        "line": 1612,
         "text": "spawn(chrome, [url], { detached: true, stdio: 'ignore', windowsHide: false }).unref()"
       }
     ]
@@ -102,7 +102,9 @@
     "evidence": []
   },
   "dependencies": 0,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "templates/division-bigfish-codex/voice-env.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [],
   "setupHints": [],

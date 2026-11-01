@@ -1,0 +1,139 @@
+{
+  "name": "ui-locate-mcp",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-01T23:19:31.771Z",
+  "icon": "ui-locate-mcp.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 195,
+        "text": "const response = await fetch(`${API}${path}`, { ...rest, redirect: 'error', signal: controller.signal })"
+      },
+      {
+        "file": "plugin/runtime.mjs",
+        "line": 237,
+        "text": "response = await fetch(url, { signal, redirect: \"follow\" })"
+      },
+      {
+        "file": "scripts/bootstrap.ps1",
+        "line": 193,
+        "text": "Invoke-WebRequest -Uri $modelUrl -OutFile $tmpModel -UseBasicParsing"
+      },
+      {
+        "file": "scripts/serve.ps1",
+        "line": 87,
+        "text": "$h = Invoke-RestMethod -Uri \"http://127.0.0.1:$Port/health\" -TimeoutSec 4"
+      },
+      {
+        "file": "scripts/serve.ps1",
+        "line": 125,
+        "text": "$h = Invoke-RestMethod -Uri \"http://127.0.0.1:$Port/health\" -TimeoutSec 4"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/core.mjs",
+        "line": 23,
+        "text": "import { existsSync, readFileSync } from \"node:fs\""
+      },
+      {
+        "file": "plugin/core.mjs",
+        "line": 60,
+        "text": "const pkg = JSON.parse(readFileSync(`${root.replace(/[\\\\/]+$/, \"\")}/package.json`, \"utf8\"))"
+      },
+      {
+        "file": "plugin/core.mjs",
+        "line": 77,
+        "text": "const text = readFileSync(`${root.replace(/[\\\\/]+$/, \"\")}/pyproject.toml`, \"utf8\")"
+      },
+      {
+        "file": "plugin/index.mjs",
+        "line": 38,
+        "text": "import { existsSync, statSync } from \"node:fs\""
+      },
+      {
+        "file": "plugin/runtime.mjs",
+        "line": 31,
+        "text": "import { existsSync, readFileSync } from \"node:fs\""
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 31,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "plugin/index.mjs",
+        "line": 65,
+        "text": "export const inject = [\"tools\"]"
+      },
+      {
+        "file": "plugin/index.mjs",
+        "line": 280,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "plugin/tool.mjs",
+        "line": 12,
+        "text": "* 这台机器上真正在跑的 `dsh-ops` 就是反证：它只声明 `ctx.tools.register()`，"
+      },
+      {
+        "file": "plugin/tool.mjs",
+        "line": 17,
+        "text": "* `ctx.tools.register()` 只检查三件事：`output` 的形状、`output.schema` 是否"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/core.mjs",
+        "line": 22,
+        "text": "import { execFile } from \"node:child_process\""
+      },
+      {
+        "file": "plugin/index.mjs",
+        "line": 41,
+        "text": "import { execFile } from \"node:child_process\""
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "cordis.patch.yml",
+      "line": 12,
+      "text": "# （由 scripts/bootstrap.ps1 建立）。"
+    },
+    {
+      "file": "README.md",
+      "line": 142,
+      "text": "two versions and reinstalls with `pip install --no-deps` when they differ (turn it"
+    },
+    {
+      "file": "README.zh-CN.md",
+      "line": 140,
+      "text": "所以每次启动会比对版本并 `pip install --no-deps` 重装一次（可用 `pythonSync` 关掉）。"
+    }
+  ],
+  "skippedEntries": []
+}

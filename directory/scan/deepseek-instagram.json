@@ -1,0 +1,135 @@
+{
+  "name": "deepseek-instagram",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-01T23:19:30.605Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 25,
+        "text": "const jget = async (p) => asJson(await fetch(API + p, { credentials: 'same-origin' }));"
+      },
+      {
+        "file": "client.js",
+        "line": 26,
+        "text": "const jpost = async (p, body) => asJson(await fetch(API + p, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync, appendFileSync, renameSync, statSync, createReadStream } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 104,
+        "text": "const ensureDir = (dir) => { if (!existsSync(dir)) mkdirSync(dir, { recursive: true }); };"
+      },
+      {
+        "file": "index.js",
+        "line": 108,
+        "text": "try { return JSON.parse(readFileSync(file, 'utf8')); } catch { return fallback; }"
+      },
+      {
+        "file": "index.js",
+        "line": 114,
+        "text": "writeFileSync(tmp, JSON.stringify(value, null, 2), 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 169,
+        "text": "try { appendFileSync(LOG_FILE, line, 'utf8'); } catch { /* logging must never break the flow */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 47,
+        "text": "export const inject = ['webServer', 'tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 1906,
+        "text": "* `ctx.tools.register()` 只接受**已归一化**的工具定义：`parameters` 必须是完整的"
+      },
+      {
+        "file": "index.js",
+        "line": 2090,
+        "text": "ctx.effect(() => ctx.tools.register(textTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 2097,
+        "text": "ctx.effect(() => ctx.tools.register(textTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 2121,
+        "text": "ctx.effect(() => ctx.tools.register(textTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 236,
+        "text": "child = spawn(python, [script, ...args], { windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'] });"
+      },
+      {
+        "file": "index.js",
+        "line": 302,
+        "text": "child = spawn(command, args, { windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] });"
+      },
+      {
+        "file": "index.js",
+        "line": 1198,
+        "text": "child = spawn(file, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 431,
+      "text": ".venv\\Scripts\\python.exe -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple instagrapi pillow"
+    },
+    {
+      "file": "README.md",
+      "line": 447,
+      "text": ".venv\\Scripts\\python.exe -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple instagrapi pillow"
+    },
+    {
+      "file": "README.zh-TW.md",
+      "line": 431,
+      "text": ".venv\\Scripts\\python.exe -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple instagrapi pillow"
+    }
+  ],
+  "skippedEntries": []
+}
