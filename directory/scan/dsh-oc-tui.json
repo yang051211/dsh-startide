@@ -1,25 +1,35 @@
 {
   "name": "dsh-oc-tui",
-  "version": "0.1.5",
-  "scannedAt": "2026-10-26T10:06:04.374Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-01T19:09:00.617Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
+        "file": "bin/mcp-sse-bridge.mjs",
+        "line": 328,
+        "text": "const res = await fetch(endpointValue, {"
+      },
+      {
+        "file": "bin/mcp-sse-bridge.mjs",
+        "line": 387,
+        "text": "res = await fetch(target, {"
+      },
+      {
         "file": "lib/index.js",
-        "line": 1628,
+        "line": 286,
+        "text": "const res = await fetch(src.url, { signal: AbortSignal.timeout(10000) })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2211,
         "text": "const res = await fetch(url)"
       },
       {
-        "file": "lib/updates.js",
-        "line": 498,
-        "text": "response = await fetch(url, { signal: AbortSignal.timeout(METADATA_TIMEOUT_MS) })"
-      },
-      {
-        "file": "lib/updates.js",
-        "line": 524,
-        "text": "const response = await fetch(url, { signal })"
+        "file": "lib/mcp.js",
+        "line": 21,
+        "text": "import { validateHeaderName, validateHeaderValue } from 'node:http'"
       }
     ]
   },
@@ -54,8 +64,19 @@
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 371,
+        "text": "// `@deepseek-ai/dsh-mcp-client` plugin instance on the live agent's scope,"
+      },
+      {
+        "file": "lib/mcp.js",
+        "line": 545,
+        "text": "mcpClientModule = await import('@deepseek-ai/dsh-mcp-client')"
+      }
+    ]
   },
   "childProcess": {
     "hit": true,
@@ -91,7 +112,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
+  "dependencies": 5,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
@@ -104,12 +125,22 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 100,
+      "line": 110,
       "text": "npm install -g dsh-oc-tui"
     },
     {
       "file": "README.md",
-      "line": 192,
+      "line": 115,
+      "text": "— `dsh plugin … add -w dsh-oc-tui` and `npm install -g dsh-oc-tui` above — therefore give you the newest stable version, never a release candidate. Since `0.2.0"
+    },
+    {
+      "file": "README.md",
+      "line": 121,
+      "text": "npm install -g dsh-oc-tui@next"
+    },
+    {
+      "file": "README.md",
+      "line": 209,
       "text": "It prefers the `dsh` on `PATH` and falls back to `npx --yes @deepseek-ai/dsh`. Install it with `npm install -g dsh-oc-tui`."
     }
   ],

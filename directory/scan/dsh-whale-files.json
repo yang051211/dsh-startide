@@ -1,0 +1,67 @@
+{
+  "name": "dsh-whale-files",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-01T19:09:00.908Z",
+  "icon": "dsh-whale-files.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 17,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 57,
+        "text": "const req = http.get("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 111,
+        "text": "const upstream = http.request("
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "import { existsSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 81,
+        "text": "child = spawn('python3', [ENGINE_SCRIPT], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

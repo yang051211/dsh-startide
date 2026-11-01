@@ -1,0 +1,75 @@
+{
+  "name": "@ab-png123/dsh-plugin-update-check",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-01T19:09:01.174Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/check.mjs",
+        "line": 247,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/check.mjs",
+        "line": 18,
+        "text": "import { promises as fs } from 'node:fs'"
+      },
+      {
+        "file": "lib/check.mjs",
+        "line": 56,
+        "text": "return JSON.parse(await fs.readFile(file, 'utf8'))"
+      },
+      {
+        "file": "lib/check.mjs",
+        "line": 64,
+        "text": "return await fs.readFile(file, 'utf8')"
+      },
+      {
+        "file": "lib/check.mjs",
+        "line": 71,
+        "text": "await fs.mkdir(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/check.mjs",
+        "line": 72,
+        "text": "await fs.writeFile(file, `${JSON.stringify(value, null, 2)}\\n`)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/check.mjs",
+        "line": 17,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/check.mjs",
+        "line": 445,
+        "text": "const child = spawn('osascript', ['-e', script], { detached: true, stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

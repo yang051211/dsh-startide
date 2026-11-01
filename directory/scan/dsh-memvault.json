@@ -1,0 +1,112 @@
+{
+  "name": "dsh-memvault",
+  "version": "0.9.12",
+  "scannedAt": "2026-11-01T19:08:57.535Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 252,
+        "text": "fetch(`${MEMORY_URL}?id=${encodeURIComponent(id)}`)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 317,
+        "text": "fetch(REVIEW_URL)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 356,
+        "text": "const res = await fetch(FLAG_URL, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 379,
+        "text": "const res = await fetch(REPLAY_URL, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 541,
+        "text": "fetch(STRUCTURE_URL)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/config.js",
+        "line": 17,
+        "text": "import { statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/extract.js",
+        "line": 18,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/extract.js",
+        "line": 185,
+        "text": "const parsed = JSON.parse(readFileSync(statePath, 'utf8'))"
+      },
+      {
+        "file": "lib/extract.js",
+        "line": 210,
+        "text": "const parsed = JSON.parse(readFileSync(statePath, 'utf8'))"
+      },
+      {
+        "file": "lib/extract.js",
+        "line": 253,
+        "text": "mkdirSync(dirname(statePath), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cli.js",
+        "line": 25,
+        "text": "import { spawn as nodeSpawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 39,
+        "text": "* @param options.spawn - injectable spawn (tests)."
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 47,
+        "text": "child = spawn(command, argv, {"
+      },
+      {
+        "file": "lib/reindex.js",
+        "line": 9,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/reindex.js",
+        "line": 15,
+        "text": "const result = spawnSync(pythonPath, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

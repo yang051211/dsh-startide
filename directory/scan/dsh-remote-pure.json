@@ -1,19 +1,19 @@
 {
   "name": "dsh-remote-pure",
-  "version": "0.13.0",
-  "scannedAt": "2026-10-31T13:58:03.909Z",
+  "version": "0.14.0",
+  "scannedAt": "2026-11-01T19:09:01.835Z",
   "icon": "dsh-remote-pure.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 72,
+        "line": 89,
         "text": "return fetch('/remote-pure/api' + path, {"
       },
       {
         "file": "client.js",
-        "line": 182,
+        "line": 281,
         "text": "ws = new WebSocket(proto + window.location.host + '/remote-pure/terminal?hostId=' + encodeURIComponent(hostId) + '&cols=' + term.cols + '&rows=' + term.rows);"
       },
       {
@@ -28,7 +28,7 @@
     "evidence": [
       {
         "file": "lib/http-api.js",
-        "line": 64,
+        "line": 83,
         "text": "'/mkdir': async (body) => ({ path: await fs.mkdir(str(body, 'hostId'), str(body, 'path')) }),"
       },
       {
@@ -77,13 +77,13 @@
       },
       {
         "file": "lib/tunnel.js",
-        "line": 7,
+        "line": 8,
         "text": "import { spawn } from 'node:child_process';"
       },
       {
         "file": "lib/tunnel.js",
-        "line": 58,
-        "text": "child = spawn('ssh', ['-N', ...sshArgs(target, ['-L', `127.0.0.1:${localPort}:127.0.0.1:${remotePort}`])], {"
+        "line": 82,
+        "text": "return spawn('ssh', args, { stdio: ['ignore', 'ignore', 'ignore'] });"
       }
     ]
   },

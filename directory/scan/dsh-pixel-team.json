@@ -1,41 +1,56 @@
 {
   "name": "dsh-pixel-team",
-  "version": "0.1.16",
-  "scannedAt": "2026-10-28T14:05:44.801Z",
+  "version": "0.1.133",
+  "scannedAt": "2026-11-01T19:08:48.206Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 4829,
+        "line": 4855,
         "text": "const fetchState = runtime.fetchState ?? ((url, init) => fetch(url, init));"
       },
       {
         "file": "lib/client.js",
-        "line": 5451,
+        "line": 5858,
         "text": "const response = await fetch(PLAN_URL, {"
       },
       {
         "file": "lib/client.js",
-        "line": 7034,
-        "text": "const response = await fetch(ACTIVITY_RESUME_URL, {"
+        "line": 6388,
+        "text": "\t\t\t\tfetch(\"/plugins/dsh-pixel-team/skills?sessionId=\" + encodeURIComponent(team.captainSessionId), { cache: \"no-store\" }).then(async (response) => response.ok ?"
       },
       {
         "file": "lib/client.js",
-        "line": 7062,
-        "text": "const response = await fetch(ACTIVITY_HALT_URL, {"
+        "line": 6740,
+        "text": "const sourceResponse = await fetch(\"/plugins/dsh-pixel-team/plan/source?sessionId=\" + encodeURIComponent(editorSessionId));"
       },
       {
         "file": "lib/client.js",
-        "line": 7092,
-        "text": "const response = await fetch(ACTIVITY_CLEANUP_URL, {"
+        "line": 6744,
+        "text": "const discardResponse = await fetch(\"/plugins/dsh-pixel-team/plan\", {"
       }
     ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/architecture-file.js",
+        "line": 2,
+        "text": "import { mkdirSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/architecture-file.js",
+        "line": 12,
+        "text": "mkdirSync(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/architecture-file.js",
+        "line": 13,
+        "text": "writeFileSync(file, buildArchitecture(team), 'utf8');"
+      },
       {
         "file": "lib/artifacts.js",
         "line": 28,
@@ -45,21 +60,6 @@
         "file": "lib/capabilities.js",
         "line": 3,
         "text": "import { readdirSync } from 'node:fs';"
-      },
-      {
-        "file": "lib/delivery-report.js",
-        "line": 7,
-        "text": "import { mkdir, writeFile } from 'node:fs/promises';"
-      },
-      {
-        "file": "lib/delivery-report.js",
-        "line": 100,
-        "text": "await mkdir(dir, { recursive: true });"
-      },
-      {
-        "file": "lib/delivery-report.js",
-        "line": 102,
-        "text": "await writeFile(path, markdown, 'utf8');"
       }
     ]
   },
@@ -73,22 +73,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 44,
+        "line": 69,
         "text": "export const inject = ['tools', 'llm', 'subagents', 'systemPrompt', 'agents'];"
       },
       {
         "file": "lib/tools.js",
-        "line": 787,
+        "line": 905,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/tools.js",
-        "line": 1002,
+        "line": 1184,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/tools.js",
-        "line": 1131,
+        "line": 1316,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
@@ -108,18 +108,18 @@
       },
       {
         "file": "lib/host-verify.js",
-        "line": 19,
+        "line": 21,
         "text": "spawn('taskkill', ['/pid', String(child.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' });"
       },
       {
         "file": "lib/host-verify.js",
-        "line": 34,
+        "line": 36,
         "text": "const child = spawn(command, {"
       },
       {
         "file": "lib/index.js",
-        "line": 139,
-        "text": "// member spawn (`spawnMember`), the earliest point the provider list is"
+        "line": 26,
+        "text": "import { spawn } from 'node:child_process';"
       }
     ]
   },
@@ -130,7 +130,9 @@
   "dependencies": 0,
   "minifiedFiles": [
     "lib/client.js",
-    "lib/client/art-data.js"
+    "lib/client/ActivityPanel.js",
+    "lib/client/art-data.js",
+    "lib/client/ClarifySheet.js"
   ],
   "binaryFiles": [],
   "requiredServices": [

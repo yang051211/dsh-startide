@@ -1,0 +1,92 @@
+{
+  "name": "dsh-plugin-live-shot",
+  "version": "0.7.0-beta.6",
+  "scannedAt": "2026-11-01T19:08:58.212Z",
+  "icon": "dsh-plugin-live-shot.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 35,
+        "text": "const response = await fetch('/api/dsh-shot/control', { method: 'POST', cache: 'no-store',"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "electron_controller.js",
+        "line": 4,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "electron_controller.js",
+        "line": 76,
+        "text": "const saved = JSON.parse(await fs.readFile(preferencePath, 'utf8'));"
+      },
+      {
+        "file": "electron_controller.js",
+        "line": 232,
+        "text": "await fs.mkdir(paths.captures, { recursive: true });"
+      },
+      {
+        "file": "electron_controller.js",
+        "line": 234,
+        "text": "if (!picked.canceled && picked.filePath) await fs.writeFile(picked.filePath, bytes);"
+      },
+      {
+        "file": "electron_controller.js",
+        "line": 272,
+        "text": "await fs.mkdir(path.dirname(preferencePath), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-shot.cjs",
+        "line": 2,
+        "text": "const { spawn } = require('node:child_process');"
+      },
+      {
+        "file": "bin/dsh-shot.cjs",
+        "line": 12,
+        "text": "const child = spawn('powershell.exe', ['-NoProfile', '-STA', '-ExecutionPolicy', 'Bypass', '-File',"
+      },
+      {
+        "file": "ensure_runtime.js",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "ensure_runtime.js",
+        "line": 12,
+        "text": "const child = spawn('powershell.exe', ['-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-File',"
+      },
+      {
+        "file": "helper.js",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

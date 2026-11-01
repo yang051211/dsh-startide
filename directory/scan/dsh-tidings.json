@@ -1,0 +1,106 @@
+{
+  "name": "dsh-tidings",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-01T19:08:59.512Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 135,
+        "text": "const response = await fetch(target, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { request } from \"node:http\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "import { request as request$1 } from \"node:https\";"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { chmodSync, closeSync, existsSync, fsyncSync, mkdirSync, openSync, readFileSync, renameSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1101,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1106,
+        "text": "writeFileSync(fd, `${JSON.stringify(value, null, 2)}\\n`, { encoding: \"utf8\" });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1130,
+        "text": "this.overrides = sanitizeRelayConfigPatch(JSON.parse(readFileSync(this.file, \"utf8\")));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2315,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2523,
+        "text": "const inject = [\"tools\", \"connection\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2627,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2648,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2670,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2701,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

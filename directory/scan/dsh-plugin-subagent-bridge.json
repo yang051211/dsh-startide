@@ -1,14 +1,14 @@
 {
   "name": "dsh-plugin-subagent-bridge",
-  "version": "0.10.0",
-  "scannedAt": "2026-10-31T07:05:26.759Z",
+  "version": "0.18.0",
+  "scannedAt": "2026-11-01T19:08:55.955Z",
   "icon": "dsh-plugin-subagent-bridge.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 17,
+        "file": "src/http.js",
+        "line": 2,
         "text": "import { createServer } from 'node:http'"
       }
     ]
@@ -17,29 +17,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 16,
-        "text": "import { existsSync, readFileSync } from 'node:fs'"
+        "file": "src/constants.js",
+        "line": 1,
+        "text": "import { readFileSync } from 'node:fs'"
       },
       {
-        "file": "index.js",
-        "line": 19,
-        "text": "import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'"
+        "file": "src/constants.js",
+        "line": 5,
+        "text": "return JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version ?? '0.0.0'"
       },
       {
-        "file": "index.js",
-        "line": 28,
-        "text": "return JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')).version ?? '0.0.0'"
+        "file": "src/http.js",
+        "line": 1,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
       },
       {
-        "file": "index.js",
-        "line": 1278,
-        "text": "await mkdir(cwd, { recursive: true }).catch(() => {})"
+        "file": "src/http.js",
+        "line": 334,
+        "text": "const parsed = JSON.parse(await readFile(endpointFile, 'utf8'))"
       },
       {
-        "file": "index.js",
-        "line": 1304,
-        "text": "parsed = JSON.parse(await readFile(settings.workersFile, 'utf8'))"
+        "file": "src/http.js",
+        "line": 349,
+        "text": "await mkdir(dirname(endpointFile), { recursive: true, mode: 0o700 })"
       }
     ]
   },
@@ -48,12 +48,12 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 315,
+        "line": 74,
         "text": "toolCtx.tools.register({"
       },
       {
         "file": "index.js",
-        "line": 375,
+        "line": 134,
         "text": "toolCtx.tools.register({"
       }
     ]
@@ -62,19 +62,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 15,
+        "file": "src/api.js",
+        "line": 1,
         "text": "import { spawn } from 'node:child_process'"
       },
       {
-        "file": "index.js",
-        "line": 586,
+        "file": "src/api.js",
+        "line": 47,
+        "text": "async spawn({ taskName, message, forkTurns, from, cwd, model, reasoningEffort, workspace, mode }) {"
+      },
+      {
+        "file": "src/http.js",
+        "line": 166,
         "text": "await api.spawn({"
       },
       {
-        "file": "index.js",
-        "line": 721,
-        "text": "async spawn({ taskName, message, forkTurns, from, cwd, model, reasoningEffort, workspace }) {"
+        "file": "src/runners/claude.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/runners/codex.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
       }
     ]
   },

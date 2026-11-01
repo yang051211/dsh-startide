@@ -1,0 +1,66 @@
+{
+  "name": "dsh-change-impact",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-01T19:08:58.005Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/change-impact.mjs",
+        "line": 20,
+        "text": "import { readFile, stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "scripts/change-impact.mjs",
+        "line": 191,
+        "text": "if (info.isFile()) fileContent = await readFile(text, \"utf8\");"
+      },
+      {
+        "file": "src/engine.mjs",
+        "line": 1,
+        "text": "import { stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "src/git-source.mjs",
+        "line": 2,
+        "text": "import { readFile, stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "src/git-source.mjs",
+        "line": 163,
+        "text": "content = await readFile(input.diff_path, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/git-source.mjs",
+        "line": 1,
+        "text": "import { execFile } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

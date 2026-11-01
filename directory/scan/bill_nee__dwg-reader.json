@@ -1,7 +1,7 @@
 {
   "name": "@bill_nee/dwg-reader",
-  "version": "1.5.1",
-  "scannedAt": "2026-10-29T23:42:06.984Z",
+  "version": "1.5.2",
+  "scannedAt": "2026-11-01T19:08:52.120Z",
   "icon": "bill_nee__dwg-reader.svg",
   "network": {
     "hit": true,
@@ -23,7 +23,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 572,
+        "line": 620,
         "text": "export const inject = [\"tools\", \"fs\", \"workingDirectory\"];"
       },
       {
@@ -48,27 +48,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 572,
+        "line": 620,
         "text": "export const inject = [\"tools\", \"fs\", \"workingDirectory\"];"
       },
       {
         "file": "lib/index.js",
-        "line": 575,
+        "line": 623,
         "text": "const disposeDwg = ctx.tools.register(buildReadDwgTool(ctx));"
       },
       {
         "file": "lib/index.js",
-        "line": 576,
+        "line": 624,
         "text": "const disposeDxf = ctx.tools.register(buildReadDxfTool(ctx));"
       },
       {
         "file": "lib/index.js",
-        "line": 577,
+        "line": 625,
         "text": "const disposePdf = ctx.tools.register(buildReadPdfTool(ctx));"
       },
       {
         "file": "lib/index.js",
-        "line": 578,
+        "line": 626,
         "text": "const disposeImage = ctx.tools.register(buildReadImageTool(ctx));"
       }
     ]
@@ -83,8 +83,8 @@
       },
       {
         "file": "lib/index.js",
-        "line": 528,
-        "text": "const proc = spawn(PYTHON_EXE, pythonArgs, { stdio: [\"pipe\", \"pipe\", \"pipe\"] });"
+        "line": 549,
+        "text": "const proc = spawn(resolvePythonExe(), pythonArgs, { stdio: [\"pipe\", \"pipe\", \"pipe\"] });"
       }
     ]
   },
@@ -104,6 +104,12 @@
     "tools",
     "workingDirectory"
   ],
-  "setupHints": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 58,
+      "text": "先读环境变量 `DXF_PYTHON_EXE`，其次 `DSH_HOME\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\python.exe`，再次回退系统 `python`。缺少 `ezdxf` 时会给明确报错，请先 `pip install ezdxf`。"
+    }
+  ],
   "skippedEntries": []
 }

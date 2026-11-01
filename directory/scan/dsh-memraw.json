@@ -1,0 +1,74 @@
+{
+  "name": "dsh-memraw",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-01T19:08:57.621Z",
+  "icon": "dsh-memraw.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/store.mjs",
+        "line": 13,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/store.mjs",
+        "line": 184,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/store.mjs",
+        "line": 1073,
+        "text": "rmSync(tmpDir, { recursive: true, force: true })"
+      },
+      {
+        "file": "lib/store.mjs",
+        "line": 1074,
+        "text": "mkdirSync(tmpDir, { recursive: true })"
+      },
+      {
+        "file": "lib/store.mjs",
+        "line": 1096,
+        "text": "const sha256 = createHash('sha256').update(readFileSync(tmpDb)).digest('hex')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 23,
+        "text": "export const inject = ['sessionPersistence', 'tools', 'systemPrompt', 'timer']"
+      },
+      {
+        "file": "index.js",
+        "line": 654,
+        "text": "ctx.effect(() => ctx.tools.register(definition))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionPersistence",
+    "systemPrompt",
+    "timer",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

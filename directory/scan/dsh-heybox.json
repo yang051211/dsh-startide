@@ -1,0 +1,110 @@
+{
+  "name": "dsh-heybox",
+  "version": "0.1.7",
+  "scannedAt": "2026-11-01T19:08:55.036Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 183,
+        "text": "const r = await fetch(`${API}/settings`, { headers: { accept: \"application/json\" } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 206,
+        "text": "const r = await fetch(`${API}/settings`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 225,
+        "text": "const r = await fetch(`${API}/deps`, { headers: { accept: \"application/json\" } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 243,
+        "text": "const r = await fetch(`${API}/login/qr/start`, { method: \"POST\", headers: { accept: \"application/json\" } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 262,
+        "text": "const r = await fetch(`${API}/login/qr/poll?token=${encodeURIComponent(token)}`, { headers: { accept: \"application/json\" } });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 75,
+        "text": "try { user = JSON.parse(fs.readFileSync(CFG_FILE, 'utf8')) } catch { /* 默认 */ }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 80,
+        "text": "fs.mkdirSync(path.dirname(CFG_FILE), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 81,
+        "text": "fs.writeFileSync(CFG_FILE, JSON.stringify(next, null, 2) + '\\n')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 100,
+        "text": "const cred = JSON.parse(fs.readFileSync(CRED_FILE, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 301,
+        "text": "execFile(NODE_EXE, [tools, 'selftest'], { timeout: 60_000, windowsHide: true }, (err, stdout, stderr) => {"
+      },
+      {
+        "file": "lib/scheduler.js",
+        "line": 14,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/scheduler.js",
+        "line": 108,
+        "text": "execFile(NODE_EXE, [toolsMjs, 'night', '--json', ...args], {"
+      },
+      {
+        "file": "tools/heybox.mjs",
+        "line": 4,
+        "text": "import { spawnSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

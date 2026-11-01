@@ -1,0 +1,88 @@
+{
+  "name": "dsh-malleable-memory",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-01T19:08:57.093Z",
+  "icon": "dsh-malleable-memory.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 17,
+        "text": "* 全部通过 `fetch(\"/malleable-memory/...\")` 调 Host 侧路由。"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 153,
+        "text": "const res = await fetch(API + path, {"
+      },
+      {
+        "file": "lib/panel-routes.js",
+        "line": 10,
+        "text": "//   Client 用 `fetch()` 调它"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/memory-core.js",
+        "line": 8,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/memory-core.js",
+        "line": 1600,
+        "text": "fs.mkdirSync(path.dirname(target), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "//   - 工具注册：ctx.tools.register(ToolDefinition)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 53,
+        "text": "export const inject = [\"tools\", \"systemPrompt\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1202,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1272,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1339,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

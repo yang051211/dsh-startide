@@ -1,0 +1,76 @@
+{
+  "name": "@kadima-code/dsh-session-mirror",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-01T19:08:59.762Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "import { readdir, stat, mkdir, copyFile, readFile, writeFile, rename, unlink } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 102,
+        "text": "try { return JSON.parse(await readFile(file, 'utf8')) } catch { return fallback }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 239,
+        "text": "await mkdir(destRoot, { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 243,
+        "text": "state = JSON.parse(await readFile(stateFile, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 21,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1009,
+        "text": "// 注意：ctx.tools.register 是 async（Promise<void>），必须串行 await——"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1015,
+        "text": "const ret = await ctx.tools.register(spec)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

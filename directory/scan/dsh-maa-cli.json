@@ -1,7 +1,7 @@
 {
   "name": "dsh-maa-cli",
-  "version": "1.0.6",
-  "scannedAt": "2026-10-31T07:05:30.242Z",
+  "version": "1.0.8",
+  "scannedAt": "2026-11-01T19:08:58.786Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -33,17 +33,17 @@
       },
       {
         "file": "src/agent/goal-manager.js",
-        "line": 237,
+        "line": 310,
         "text": "await mkdir(path.dirname(file), { recursive: true })"
       },
       {
         "file": "src/agent/goal-manager.js",
-        "line": 240,
+        "line": 313,
         "text": "try { await writeFile(temporary, payload, 'utf8'); await rename(temporary, file) }"
       },
       {
         "file": "src/agent/goal-manager.js",
-        "line": 241,
+        "line": 314,
         "text": "catch { await writeFile(file, payload, 'utf8'); await rm(temporary, { force: true }).catch(() => {}) }"
       }
     ]
@@ -53,27 +53,27 @@
     "evidence": [
       {
         "file": "src/index.js",
-        "line": 48,
+        "line": 54,
         "text": "export const inject = ['tools', 'commands']"
       },
       {
         "file": "src/index.js",
-        "line": 1106,
+        "line": 1518,
         "text": "ctx.tools.register({"
       },
       {
         "file": "src/index.js",
-        "line": 1115,
+        "line": 1527,
         "text": "ctx.tools.register({"
       },
       {
         "file": "src/index.js",
-        "line": 1135,
+        "line": 1547,
         "text": "ctx.tools.register({"
       },
       {
         "file": "src/index.js",
-        "line": 1156,
+        "line": 1568,
         "text": "ctx.tools.register({"
       }
     ]
@@ -88,7 +88,12 @@
       },
       {
         "file": "src/commands/run-state.js",
-        "line": 317,
+        "line": 399,
+        "text": "const child = spawn('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', script], {"
+      },
+      {
+        "file": "src/commands/run-state.js",
+        "line": 451,
         "text": "const child = spawn('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', script], {"
       },
       {
@@ -98,13 +103,8 @@
       },
       {
         "file": "src/runtime/runner.js",
-        "line": 105,
-        "text": "const child = spawn(command, {"
-      },
-      {
-        "file": "src/runtime/runner.js",
-        "line": 186,
-        "text": "const child = spawn(command, {"
+        "line": 248,
+        "text": "return spawn(command, {"
       }
     ]
   },

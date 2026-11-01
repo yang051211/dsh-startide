@@ -1,30 +1,35 @@
 {
   "name": "better-dsh-session-deletetool",
-  "version": "0.5.3",
-  "scannedAt": "2026-10-26T10:05:04.731Z",
+  "version": "0.6.3",
+  "scannedAt": "2026-11-01T19:08:53.348Z",
   "icon": "better-dsh-session-deletetool.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 225,
-        "text": "const response = await fetch(`${INSPECT_PATH}?sessionId=${encodeURIComponent(sessionId)}`, { cache: 'no-store' })"
+        "line": 399,
+        "text": "const response = await fetch(`${INSPECT_PATH}?sessionId=${encodeURIComponent(sessionId)}${suffix}`, { cache: 'no-store' })"
       },
       {
         "file": "client.js",
-        "line": 239,
+        "line": 415,
+        "text": "const response = await fetch(OPEN_DIRECTORY_PATH, {"
+      },
+      {
+        "file": "client.js",
+        "line": 433,
         "text": "const response = await fetch(DELETE_PATH, {"
       },
       {
         "file": "client.js",
-        "line": 251,
-        "text": "const response = await fetch(CATALOG_PATH, { cache: 'no-store' })"
+        "line": 445,
+        "text": "const response = await fetch(OPEN_CACHE_PATH, {"
       },
       {
         "file": "client.js",
-        "line": 263,
-        "text": "const response = await fetch(BATCH_PATH, {"
+        "line": 459,
+        "text": "const response = await fetch(`${CATALOG_PATH}${suffix}`, { cache: 'no-store' })"
       }
     ]
   },
@@ -38,8 +43,13 @@
       },
       {
         "file": "host.js",
-        "line": 700,
+        "line": 1017,
         "text": "await rm(directory, { recursive: true, force: true })"
+      },
+      {
+        "file": "session-model.js",
+        "line": 39,
+        "text": "import { stat } from 'node:fs/promises'"
       }
     ]
   },
@@ -48,8 +58,19 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "session-model.js",
+        "line": 38,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "session-model.js",
+        "line": 400,
+        "text": "const child = execFile(command, [directory], { windowsHide: false }, (error) => {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

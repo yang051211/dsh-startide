@@ -1,0 +1,67 @@
+{
+  "name": "dsh-progress-widget",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-01T19:08:59.782Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 480,
+        "text": "fetch('/dsh-progress/status', { cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 24,
+        "text": "const parsed = JSON.parse(fs.readFileSync(PROGRESS_FILE, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 38,
+        "text": "const p = JSON.parse(fs.readFileSync(BASELINE_FILE, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 166,
+        "text": "const p = JSON.parse(fs.readFileSync(STATS_FILE, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 203,
+        "text": "fs.writeFileSync(tmp, JSON.stringify({ version: 1, updatedAt: now, samples: statsCache }))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,39 +1,45 @@
 {
   "name": "dsh-tiered-compaction",
-  "version": "0.3.1",
-  "scannedAt": "2026-10-28T23:44:03.961Z",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-01T19:09:00.681Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 848,
+        "text": "return fetch(url).then((response) => {"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
       {
-        "file": "docs/修复/fix-compaction-turn.mjs",
-        "line": 8,
-        "text": "import { readFileSync, writeFileSync } from 'node:fs';"
+        "file": "src/spill-to-disk.js",
+        "line": 9,
+        "text": "import { mkdir, open, link, rename, unlink, readFile, realpath, lstat } from \"node:fs/promises\";"
       },
       {
-        "file": "docs/修复/fix-compaction-turn.mjs",
-        "line": 15,
-        "text": "const buf = readFileSync(file);"
+        "file": "src/spill-to-disk.js",
+        "line": 157,
+        "text": "// 缺陷：文本含**孤立代理项**（如 \"\\uD800\"）时，`writeFile(...,\"utf8\")`"
       },
       {
-        "file": "docs/修复/fix-compaction-turn.mjs",
-        "line": 68,
-        "text": "writeFileSync(outFile, zstdCompressSync(Buffer.from(newText, 'utf8')));"
+        "file": "src/spill-to-disk.js",
+        "line": 172,
+        "text": "await mkdir(archiveDir, { recursive: true });"
       },
       {
-        "file": "scripts/verify-e2e.mjs",
-        "line": 31,
-        "text": "import { readFileSync } from \"node:fs\";"
+        "file": "src/spill-to-disk.js",
+        "line": 228,
+        "text": "await handle.writeFile(data);"
       },
       {
-        "file": "scripts/verify-e2e.mjs",
-        "line": 33,
-        "text": "import { mkdtemp, rm } from \"node:fs/promises\";"
+        "file": "src/spill-to-disk.js",
+        "line": 245,
+        "text": "await unlink(tmpPath).catch(() => {});"
       }
     ]
   },
@@ -42,12 +48,12 @@
     "evidence": [
       {
         "file": "src/contract.js",
-        "line": 632,
+        "line": 779,
         "text": "// 只用 `ctx.get('tools')`：**不能**碰 `ctx.tools`。"
       },
       {
         "file": "src/contract.js",
-        "line": 649,
+        "line": 796,
         "text": "tools.register({"
       }
     ]
@@ -57,8 +63,14 @@
     "evidence": []
   },
   "installScripts": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.postinstall: node -e \"const fs=require('fs');console.log(fs.existsSync('src/single-writer-guard.js')?'dsh-tiered-compaction: single-writer guard present"
+      }
+    ]
   },
   "dependencies": 0,
   "minifiedFiles": [],

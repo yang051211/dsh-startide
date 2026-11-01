@@ -1,0 +1,90 @@
+{
+  "name": "dsh-ai-search",
+  "version": "1.4.5-fix1",
+  "scannedAt": "2026-11-01T19:09:00.831Z",
+  "icon": "dsh-ai-search.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 880,
+        "text": "return fetch(ROUTE + path, init).then(function (response) {"
+      },
+      {
+        "file": "client.js",
+        "line": 1982,
+        "text": "var biliResponse = await fetch('https://api.bilibili.com/x/web-interface/view?bvid=' + bvidMatch[1], { credentials: 'omit' })"
+      },
+      {
+        "file": "lib/browse.js",
+        "line": 569,
+        "text": "const result = await web.fetch({ url: `https://api.bilibili.com/x/web-interface/view?bvid=${bvid}` }, signal)"
+      },
+      {
+        "file": "lib/browse.js",
+        "line": 668,
+        "text": "const result = await web.fetch({ url }, AbortSignal.timeout(6000))"
+      },
+      {
+        "file": "lib/browse.js",
+        "line": 961,
+        "text": "const result = await web.fetch({ url: item.url }, phaseSignal(THUMBNAIL_TIMEOUT_MS))"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/history.js",
+        "line": 11,
+        "text": "import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/history.js",
+        "line": 91,
+        "text": "const parsed = JSON.parse(readFileSync(filePath(), 'utf8'))"
+      },
+      {
+        "file": "lib/history.js",
+        "line": 107,
+        "text": "mkdirSync(dirname(filePath()), { recursive: true })"
+      },
+      {
+        "file": "lib/history.js",
+        "line": 108,
+        "text": "writeFileSync("
+      },
+      {
+        "file": "lib/settings.js",
+        "line": 19,
+        "text": "import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tool.js",
+        "line": 137,
+        "text": "return tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

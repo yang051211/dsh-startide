@@ -1,0 +1,83 @@
+{
+  "name": "dsh-command-rea",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-01T19:08:54.366Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh-patch/patched/ui-commands-client.js",
+        "line": 1125,
+        "text": "/** Re-run a failed options fetch (search survives; no-op unless status is 'failed'). */"
+      },
+      {
+        "file": "dsh-patch/pre/ui-commands-client.js",
+        "line": 1125,
+        "text": "/** Re-run a failed options fetch (search survives; no-op unless status is 'failed'). */"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 2,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 90,
+        "text": "return readFileSync(client, 'utf8').includes('function declaredRowFace') ? 'patched' : 'unpatched'"
+      },
+      {
+        "file": "lib/patch.js",
+        "line": 14,
+        "text": "import { copyFile, mkdir, readFile, rename, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/patch.js",
+        "line": 15,
+        "text": "import { constants as fsConstants } from 'node:fs'"
+      },
+      {
+        "file": "lib/patch.js",
+        "line": 16,
+        "text": "import { access } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/patch.js",
+        "line": 17,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.postinstall: node bin/dsh-command-rea-patch.js --postinstall"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

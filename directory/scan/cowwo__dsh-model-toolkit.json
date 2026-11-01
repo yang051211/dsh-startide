@@ -1,0 +1,84 @@
+{
+  "name": "@cowwo/dsh-model-toolkit",
+  "version": "0.5.2",
+  "scannedAt": "2026-11-01T19:08:56.937Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 285,
+        "text": "const res = await fetch(url, { headers, signal: ctrl.signal, redirect: 'follow' })"
+      },
+      {
+        "file": "web/app.js",
+        "line": 2304,
+        "text": "fetch(apiPath('./api/catalog'), { credentials: 'same-origin', headers: { 'Accept': 'application/json' } })"
+      },
+      {
+        "file": "web/app.js",
+        "line": 2607,
+        "text": "return fetch(apiPath('./api/save'), {"
+      },
+      {
+        "file": "web/app.js",
+        "line": 2892,
+        "text": "fetch(apiPath('./api/state'), { credentials: 'same-origin', headers: { 'Accept': 'application/json' } })"
+      },
+      {
+        "file": "web/app.js",
+        "line": 2958,
+        "text": "fetch(apiPath('./api/quota') + (force ? '?force=1' : ''), { credentials: 'same-origin', headers: { 'Accept': 'application/json' } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 209,
+        "text": "const raw = fs.readFileSync(settingPath(), 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 228,
+        "text": "fs.mkdirSync(path.dirname(f), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 229,
+        "text": "fs.writeFileSync(f, JSON.stringify(clean, null, 2))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1513,
+        "text": "body = await fs.promises.readFile(new URL(filename, WEB_DIR), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

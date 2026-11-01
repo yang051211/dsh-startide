@@ -1,0 +1,152 @@
+{
+  "name": "dsh-calibguard",
+  "version": "0.5.6",
+  "scannedAt": "2026-11-01T19:08:51.005Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 191,
+        "text": "return fetch(API + path, options).then(function (response) {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 680,
+        "text": "fetch(API + '/report?name=' + encodeURIComponent(name))"
+      },
+      {
+        "file": "setup.mjs",
+        "line": 483,
+        "text": "response = await fetch(url, {"
+      },
+      {
+        "file": "setup.mjs",
+        "line": 565,
+        "text": "response = await fetch(url, {"
+      },
+      {
+        "file": "setup.mjs",
+        "line": 611,
+        "text": "const probe = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "engine/models/codebert_finetuned/tokenizer.json",
+        "line": 17986,
+        "text": "\"fs\": 17884,"
+      },
+      {
+        "file": "engine/models/codebert_finetuned/tokenizer.json",
+        "line": 194291,
+        "text": "\"fs\""
+      },
+      {
+        "file": "engine/models/codebert_finetuned/vocab.json",
+        "line": 1,
+        "text": "bil\":17881,\"ĠSamar\":17882,\"ĠInfo\":17883,\"fs\":17884,\"Ġratios\":17885,\"Ġinherent\":17886,\"ĠContinental\":17887,\"Ġtreasure\":17888,\"Ġcaucus\":17889,\"Ġenact\":17890,\"orpo"
+      },
+      {
+        "file": "lib/bootstrap.js",
+        "line": 13,
+        "text": "import { existsSync, readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/bootstrap.js",
+        "line": 40,
+        "text": "const marker = JSON.parse(readFileSync(markerPath, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 40,
+        "text": "const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 78,
+        "text": "* @param {object} ctx cordis 上下文（已保证 ctx.tools 可用）"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 128,
+        "text": "const dispose = ctx.tools.register(definition)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bootstrap.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/bootstrap.js",
+        "line": 132,
+        "text": "const child = spawn(process.execPath, [SETUP_SCRIPT, '--dest', this.engineRoot, '--skip-verify'], {"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 24,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 428,
+        "text": "const child = spawn(process.execPath, args, {"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 514,
+        "text": "const child = spawn(python, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 75,
+      "text": "`node setup.mjs --prepare-python` to check/prepare Python alone;"
+    },
+    {
+      "file": "README.en.md",
+      "line": 80,
+      "text": "> `node setup.mjs --from <zip>` or `--url <url>` uses it (offline installs / pinning an engine version)."
+    },
+    {
+      "file": "README.en.md",
+      "line": 91,
+      "text": "Manual override (optional): `node setup.mjs --force-cuda` (force the CUDA build, skipping the CUDA/compute"
+    },
+    {
+      "file": "README.en.md",
+      "line": 92,
+      "text": "checks — use at your own risk) or `node setup.mjs --cpu` (force CPU), or the env vars"
+    },
+    {
+      "file": "README.en.md",
+      "line": 94,
+      "text": "`node setup.mjs --reinstall-torch --force-cuda` (or `--cpu`)."
+    }
+  ],
+  "skippedEntries": []
+}

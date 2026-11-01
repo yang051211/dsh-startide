@@ -1,14 +1,14 @@
 {
   "name": "dsh-tg-bridge",
-  "version": "1.35.0",
-  "scannedAt": "2026-10-31T07:05:22.308Z",
+  "version": "1.38.3",
+  "scannedAt": "2026-11-01T19:08:45.297Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "bot-menu.mjs",
-        "line": 48,
+        "line": 73,
         "text": "const res = await fetch(`https://api.telegram.org/bot${token}/${method}`, {"
       },
       {
@@ -18,12 +18,12 @@
       },
       {
         "file": "chat/media.mjs",
-        "line": 344,
+        "line": 349,
         "text": "const bin = await fetch(`https://api.telegram.org/file/bot${token}/${file.file_path}`);"
       },
       {
         "file": "chat/media.mjs",
-        "line": 370,
+        "line": 375,
         "text": "const bin = await fetch(`https://api.telegram.org/file/bot${token}/${file.file_path}`);"
       },
       {
@@ -36,16 +36,6 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
-      {
-        "file": "bot-menu.mjs",
-        "line": 15,
-        "text": "import { readFileSync } from 'node:fs';"
-      },
-      {
-        "file": "bot-menu.mjs",
-        "line": 28,
-        "text": "const yaml = readFileSync(join(home, '.credentials.yaml'), 'utf8');"
-      },
       {
         "file": "bridge-kick.mjs",
         "line": 19,
@@ -60,6 +50,16 @@
         "file": "bridge-kick.mjs",
         "line": 57,
         "text": "if (Number(JSON.parse(readFileSync(LOCK, 'utf8')).pid) === process.pid) unlinkSync(LOCK);"
+      },
+      {
+        "file": "bridge-kick.mjs",
+        "line": 67,
+        "text": "const info = JSON.parse(readFileSync(LOCK, 'utf8'));"
+      },
+      {
+        "file": "bridge-kick.mjs",
+        "line": 79,
+        "text": "try { unlinkSync(LOCK); } catch {}"
       }
     ]
   },

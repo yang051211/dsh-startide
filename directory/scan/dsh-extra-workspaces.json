@@ -1,0 +1,63 @@
+{
+  "name": "dsh-extra-workspaces",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-01T19:08:58.803Z",
+  "icon": "dsh-extra-workspaces.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "detect.js",
+        "line": 11,
+        "text": "import { stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "engine.js",
+        "line": 16,
+        "text": "import { realpathSync } from 'node:fs'"
+      },
+      {
+        "file": "rows.js",
+        "line": 8,
+        "text": "import { statSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "detect.js",
+        "line": 10,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "detect.js",
+        "line": 21,
+        "text": "execFile(cmd[0], cmd.slice(1), { timeout: timeoutMs, encoding: 'utf8', env: process.env }, (error, stdout) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "extraWorkspaces",
+    "sandboxPolicy"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

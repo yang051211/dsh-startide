@@ -1,0 +1,87 @@
+{
+  "name": "dsh-joplin",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-01T19:08:56.223Z",
+  "icon": "dsh-joplin.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "joplin-client.js",
+        "line": 14,
+        "text": "import { request as httpRequest } from 'node:http'"
+      },
+      {
+        "file": "joplin-client.js",
+        "line": 15,
+        "text": "import { request as httpsRequest } from 'node:https'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { readdirSync } from 'node:fs'"
+      },
+      {
+        "file": "joplin-tools.js",
+        "line": 15,
+        "text": "import { readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "joplin-tools.js",
+        "line": 72,
+        "text": "const parsed = JSON.parse(readFileSync(settingsFilePath(), 'utf8'))"
+      },
+      {
+        "file": "joplin-tools.js",
+        "line": 1203,
+        "text": "content = readFileSync(filePath, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 4,
+        "text": "* 只有 Host 半部：在 `apply` 里往 `ctx.tools` 注册 joplin_* 工具。没有 Client"
+      },
+      {
+        "file": "index.js",
+        "line": 78,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 144,
+        "text": "ctx.tools.register(definition)"
+      },
+      {
+        "file": "joplin-tools.js",
+        "line": 3,
+        "text": "* 注册到 `ctx.tools` 的模型可见工具定义。"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

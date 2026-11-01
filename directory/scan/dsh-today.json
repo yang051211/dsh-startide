@@ -1,0 +1,82 @@
+{
+  "name": "dsh-today",
+  "version": "1.2.2",
+  "scannedAt": "2026-11-01T19:09:03.757Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/src/bin.js",
+        "line": 194,
+        "text": "const resp = await fetch(`${shim.baseUrl()}/v1/chat/completions`, {"
+      },
+      {
+        "file": "dist/src/index.js",
+        "line": 177,
+        "text": "const resp = await fetch(`${shim.baseUrl()}/v1/chat/completions`, {"
+      },
+      {
+        "file": "dist/src/shim.js",
+        "line": 1,
+        "text": "import http from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/src/config.js",
+        "line": 3,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "dist/src/credentials.js",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "dist/src/credentials.js",
+        "line": 85,
+        "text": "const localState = JSON.parse(fs.readFileSync(localStatePath, 'utf8'));"
+      },
+      {
+        "file": "dist/src/credentials.js",
+        "line": 131,
+        "text": "return JSON.parse(this.decryptBuffer(fs.readFileSync(headPath)));"
+      },
+      {
+        "file": "dist/src/credentials.js",
+        "line": 140,
+        "text": "const slot = JSON.parse(this.decryptBuffer(fs.readFileSync(slotPath)));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/src/credentials.js",
+        "line": 4,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

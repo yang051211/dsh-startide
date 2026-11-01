@@ -1,0 +1,83 @@
+{
+  "name": "dsh-emotion-feedback",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-01T19:08:55.023Z",
+  "icon": "dsh-emotion-feedback.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 406,
+        "text": "const response = await fetch(`${PANEL_PATH}${query}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 987,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1133,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1158,
+        "text": "mkdirSync(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1166,
+        "text": "writeFileSync(tmp, JSON.stringify(payload), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1567,
+        "text": "const disposeTool = tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "test/all.mjs",
+        "line": 5,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "test/all.mjs",
+        "line": 21,
+        "text": "const result = spawnSync(process.execPath, [suite], { stdio: 'inherit', cwd })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

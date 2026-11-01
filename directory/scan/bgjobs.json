@@ -1,7 +1,7 @@
 {
   "name": "bgjobs",
-  "version": "0.2.6",
-  "scannedAt": "2026-10-26T10:06:44.499Z",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-01T19:09:00.334Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/core/jobs.js",
-        "line": 4,
-        "text": "import { promises as fsp } from 'node:fs'"
+        "file": "lib/core/config-file.js",
+        "line": 9,
+        "text": "import fsp from 'node:fs/promises'"
       },
       {
-        "file": "lib/core/jobs.js",
-        "line": 136,
-        "text": "[jobDir, sandboxTemp].filter(Boolean).map((p) => fsp.rm(p, { recursive: true, force: true }).catch(() => {})),"
+        "file": "lib/core/config-file.js",
+        "line": 28,
+        "text": "raw = await fsp.readFile(p, 'utf8')"
       },
       {
-        "file": "lib/core/jobs.js",
-        "line": 140,
-        "text": "await fsp.mkdir(jobDir, { recursive: true })"
+        "file": "lib/core/config-file.js",
+        "line": 90,
+        "text": "await fsp.mkdir(path.dirname(p), { recursive: true })"
       },
       {
-        "file": "lib/core/jobs.js",
-        "line": 272,
-        "text": "try { await fsp.mkdir(sandboxTemp, { recursive: true }) } catch (e) {"
+        "file": "lib/core/config-file.js",
+        "line": 91,
+        "text": "await fsp.writeFile(p, JSON.stringify(next, null, 2) + '\\n', 'utf8')"
       },
       {
-        "file": "lib/core/jobs.js",
-        "line": 291,
-        "text": "await fsp.writeFile(meta.scriptPath, Buffer.concat([bom, Buffer.from(buildPs1(job), 'utf8')]))"
+        "file": "lib/core/config-file.js",
+        "line": 99,
+        "text": "import { readFileSync, statSync } from 'node:fs'"
       }
     ]
   },

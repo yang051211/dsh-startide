@@ -1,0 +1,60 @@
+{
+  "name": "dsh-quick-restart",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-01T19:08:53.203Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 48,
+        "text": "fetch(\"/dsh-quick-restart/reload\", { method: \"POST\", headers: { \"content-type\": \"application/json\" }, body: JSON.stringify({ confirm: true }) })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 61,
+        "text": "fetch(\"/dsh-hot-restart/restart\", {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 10,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 150,
+        "text": "const js = readFileSync(join(HERE, 'client.js'), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

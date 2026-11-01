@@ -1,11 +1,37 @@
 {
   "name": "dsh-desktop-sidecar",
-  "version": "0.6.2",
-  "scannedAt": "2026-10-31T22:51:44.056Z",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-01T19:08:50.483Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/web.mjs",
+        "line": 53,
+        "text": "const res = await fetch('http://127.0.0.1:' + port + '/json/version', { signal: AbortSignal.timeout(1200) });"
+      },
+      {
+        "file": "lib/web.mjs",
+        "line": 118,
+        "text": "this.ws = new WebSocket(wsUrl);"
+      },
+      {
+        "file": "lib/web.mjs",
+        "line": 236,
+        "text": "const res = await fetch('http://127.0.0.1:' + port + '/json/list', { signal: AbortSignal.timeout(1500) });"
+      },
+      {
+        "file": "lib/web.mjs",
+        "line": 317,
+        "text": "const res = await fetch('http://127.0.0.1:' + port + '/json/version', { signal: AbortSignal.timeout(1500) });"
+      },
+      {
+        "file": "lib/web.mjs",
+        "line": 328,
+        "text": "const res = await fetch('http://127.0.0.1:' + port + '/json/new?' + encodeURIComponent(url), { method: 'PUT' });"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
@@ -42,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 30,
+        "line": 31,
         "text": "export const inject = ['tools', 'attachments'];"
       },
       {
         "file": "lib/index.js",
-        "line": 311,
+        "line": 320,
         "text": "return ctx.tools.register({"
       }
     ]
@@ -62,7 +88,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 1029,
+        "line": 1038,
         "text": "            const found = String(execSync('where.exe ' + bare, { timeout: 2500, windowsHide: true, stdio: ['ignore', 'pipe', 'ignore'] }) || '').split(String.fr"
       },
       {

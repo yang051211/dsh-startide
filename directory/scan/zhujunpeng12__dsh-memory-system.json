@@ -1,39 +1,65 @@
 {
   "name": "@zhujunpeng12/dsh-memory-system",
-  "version": "0.1.0",
-  "scannedAt": "2026-10-26T10:15:28.108Z",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-01T19:09:01.220Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugins/agent-teams/src/client/ActivityPanel.tsx",
+        "line": 953,
+        "text": "fetch(STATE_URL, { cache: 'no-store' }),"
+      },
+      {
+        "file": "plugins/agent-teams/src/client/ActivityPanel.tsx",
+        "line": 954,
+        "text": "fetch(`${STATE_URL}?archived=1`, { cache: 'no-store' }),"
+      },
+      {
+        "file": "plugins/agent-teams/src/client/ActivityPanel.tsx",
+        "line": 1054,
+        "text": "const response = await fetch('/plugins/dsh-agent-teams/brief', {"
+      },
+      {
+        "file": "plugins/agent-teams/src/client/ActivityPanel.tsx",
+        "line": 1085,
+        "text": "const response = await fetch('/plugins/dsh-agent-teams/team/archive', {"
+      },
+      {
+        "file": "plugins/agent-teams/src/client/AgentTeamsCard.tsx",
+        "line": 60,
+        "text": "const response = await fetch(url, { cache: 'no-store' })"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
       {
         "file": "index.js",
-        "line": 17,
+        "line": 24,
         "text": "import { writeFileSync, rmSync, mkdtempSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 95,
+        "line": 167,
         "text": "writeFileSync(file, content, 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 96,
+        "line": 168,
         "text": "return { file, dispose: () => { try { rmSync(dir, { recursive: true, force: true }) } catch { /* best effort */ } } }"
       },
       {
-        "file": "plugins/evidence-ledger/index.js",
-        "line": 12,
-        "text": "import { readFileSync, writeFileSync, renameSync, existsSync, mkdirSync } from 'node:fs'"
+        "file": "plugins/agent-teams/src/index.ts",
+        "line": 31,
+        "text": "import { readFile } from 'node:fs/promises'"
       },
       {
-        "file": "plugins/evidence-ledger/index.js",
-        "line": 26,
-        "text": "const raw = readFileSync(join(HERE, 'toolmap.json'), 'utf8')"
+        "file": "plugins/agent-teams/src/index.ts",
+        "line": 344,
+        "text": "const data = await readFile(join(artDir, name))"
       }
     ]
   },
@@ -42,13 +68,28 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 25,
-        "text": "export const inject = ['tools']"
+        "line": 31,
+        "text": "export const inject = ['tools', 'agents']"
       },
       {
         "file": "index.js",
-        "line": 143,
+        "line": 52,
+        "text": "// ctx.tools.register(), while preserving defineTool's execution-time argument"
+      },
+      {
+        "file": "index.js",
+        "line": 215,
         "text": "const register = (definition) => disposers.push(agent.ctx.tools.register(definition))"
+      },
+      {
+        "file": "plugins/agent-teams/src/index.ts",
+        "line": 59,
+        "text": "export const inject = ['tools', 'llm', 'subagents', 'systemPrompt', 'agents']"
+      },
+      {
+        "file": "plugins/agent-teams/src/tools.ts",
+        "line": 227,
+        "text": "ctx.tools.register(defineTool({"
       }
     ]
   },
@@ -57,13 +98,18 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 16,
+        "line": 22,
         "text": "import { spawn } from 'node:child_process'"
       },
       {
         "file": "index.js",
-        "line": 58,
+        "line": 126,
         "text": "const child = spawn(PYTHON, [join(GUARD, script), ...args], {"
+      },
+      {
+        "file": "plugins/agent-teams/src/index.ts",
+        "line": 115,
+        "text": "// member spawn (`spawnMember`), the earliest point the provider list is"
       },
       {
         "file": "plugins/evidence-ledger/index.js",
@@ -72,7 +118,7 @@
       },
       {
         "file": "plugins/evidence-ledger/index.js",
-        "line": 203,
+        "line": 226,
         "text": "const child = spawn("
       }
     ]
@@ -84,7 +130,10 @@
   "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [],
+  "requiredServices": [
+    "agents",
+    "tools"
+  ],
   "setupHints": [],
   "skippedEntries": []
 }

@@ -1,0 +1,52 @@
+{
+  "name": "dsh-self-review",
+  "version": "0.4.2",
+  "scannedAt": "2026-11-01T19:08:53.183Z",
+  "icon": "dsh-self-review.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 62,
+        "text": "const response = await fetch(`/dsh-self-review/state?sessionId=${encodeURIComponent(sessionId)}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 29,
+        "text": "import { appendFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 321,
+        "text": "appendFileSync(path, `${JSON.stringify({ time: new Date().toISOString(), ...record })}\\n`)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

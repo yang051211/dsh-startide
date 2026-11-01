@@ -1,0 +1,90 @@
+{
+  "name": "dsh-offpeak-check",
+  "version": "0.2.3",
+  "scannedAt": "2026-11-01T19:08:54.438Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 127,
+        "text": "fetch(\"/dsh-offpeak-check/check\", { method: \"POST\" })"
+      },
+      {
+        "file": "client.js",
+        "line": 129,
+        "text": ".then(function () { return fetch(\"/dsh-offpeak-check/data\").then(function (r) { return r.json() }) })"
+      },
+      {
+        "file": "client.js",
+        "line": 147,
+        "text": "fetch(\"/dsh-offpeak-check/data\").then(function (r) { return r.json() })"
+      },
+      {
+        "file": "index.js",
+        "line": 150,
+        "text": "const res = await fetch(cfg.sourceUrl, { signal: ctrl.signal, headers: { 'user-agent': 'dsh-offpeak-check' } });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "import { readFileSync, writeFileSync, existsSync, appendFileSync, mkdirSync, unlinkSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 53,
+        "text": "try { appendFileSync(files().log, stamp + '  [offpeak] ' + line + '\\n', 'utf8'); } catch {}"
+      },
+      {
+        "file": "index.js",
+        "line": 59,
+        "text": "try { mkdirSync(path.dirname(f.cfg), { recursive: true }); } catch {}"
+      },
+      {
+        "file": "index.js",
+        "line": 61,
+        "text": "writeFileSync(f.cfg, JSON.stringify(DEFAULTS, null, 2) + '\\n', 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 66,
+        "text": "const c = JSON.parse(readFileSync(f.cfg, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 128,
+        "text": "import('node:child_process').then(({ spawn }) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 129,
+        "text": "const p = spawn('powershell.exe', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-Command', ps], { windowsHide: true, stdio: 'ignore' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

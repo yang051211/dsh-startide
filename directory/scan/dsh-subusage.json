@@ -1,15 +1,46 @@
 {
   "name": "dsh-subusage",
-  "version": "0.20.0",
-  "scannedAt": "2026-11-01T07:36:16.997Z",
+  "version": "0.21.0",
+  "scannedAt": "2026-11-01T19:08:49.714Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/mimo-qr.js",
+        "line": 195,
+        "text": "const first = await this.fetch(`${this.accountBase()}/pass/serviceLogin?sid=${MIMO_QR_SID}&_json=true`, { headers, signal: job.controller.signal });"
+      },
+      {
+        "file": "lib/mimo-qr.js",
+        "line": 203,
+        "text": "\t\t\tconst second = await this.fetch(`${this.accountBase()}/longPolling/loginUrl?${query}`, { headers: { ...headers, Cookie: baseCookies, Referer: `${this.account"
+      },
+      {
+        "file": "lib/mimo-qr.js",
+        "line": 215,
+        "text": "const image = await this.fetch(qrUrl, { headers: { ...headers, Cookie: baseCookies }, signal: job.controller.signal });"
+      },
+      {
+        "file": "lib/mimo-qr.js",
+        "line": 228,
+        "text": "const poll = await this.fetch(lpUrl, { headers: { ...headers, Cookie: baseCookies }, signal: job.controller.signal });"
+      },
+      {
+        "file": "lib/mimo-qr.js",
+        "line": 273,
+        "text": "const response = await this.fetch(url, {"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/host-env.js",
+        "line": 20,
+        "text": "const parsed = JSON.parse(io.readFileSync(DSH_GO_RUNTIME_FILE, \"utf8\"));"
+      },
       {
         "file": "lib/index.js",
         "line": 6,
@@ -17,23 +48,18 @@
       },
       {
         "file": "lib/index.js",
-        "line": 292,
+        "line": 294,
         "text": "const parsed = JSON.parse(io.readFileSync(COMMAND_CODE_AUTH_FILE, \"utf8\"));"
       },
       {
         "file": "lib/index.js",
-        "line": 357,
+        "line": 359,
         "text": "const parsed = JSON.parse(io.readFileSync(path, \"utf8\"));"
       },
       {
         "file": "lib/index.js",
-        "line": 408,
+        "line": 410,
         "text": "const parsed = JSON.parse(io.readFileSync(join(home, \"auth.json\"), \"utf8\"));"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 1851,
-        "text": "try { return parseStored(JSON.parse(this.io.readFileSync(this.path, \"utf8\"))); }"
       }
     ]
   },
@@ -42,7 +68,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 2858,
+        "line": 2906,
         "text": "toolCtx.tools.register(defineTool({"
       }
     ]

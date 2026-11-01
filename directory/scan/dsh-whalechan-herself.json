@@ -1,0 +1,83 @@
+{
+  "name": "dsh-whalechan-herself",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-01T19:08:54.267Z",
+  "icon": "dsh-whalechan-herself.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 58,
+        "text": "const res = await fetch(API, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/chance.js",
+        "line": 11,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/chance.js",
+        "line": 12,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/chance.js",
+        "line": 40,
+        "text": "const raw = JSON.parse(await readFile(configFile(home), 'utf8'))"
+      },
+      {
+        "file": "lib/chance.js",
+        "line": 55,
+        "text": "await mkdir(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/chance.js",
+        "line": 56,
+        "text": "await writeFile(file, `${JSON.stringify(next, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "* not resolve; `ctx.tools.register` accepts a raw definition with plain JSON"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 23,
+        "text": "export const inject = ['tools', 'systemPrompt']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 180,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

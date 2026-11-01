@@ -1,7 +1,7 @@
 {
   "name": "dsh-video-storyboard",
-  "version": "0.6.0",
-  "scannedAt": "2026-11-01T07:36:15.651Z",
+  "version": "0.6.2",
+  "scannedAt": "2026-11-01T19:08:48.111Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -12,24 +12,24 @@
         "text": "const reachable = await fetch(probeUrl, { signal: AbortSignal.timeout(3000) })"
       },
       {
+        "file": "lib/client.js",
+        "line": 77,
+        "text": "const res = await fetch(api.base + action, {"
+      },
+      {
         "file": "src/storyboard/asr.js",
         "line": 64,
         "text": "* 于是 `fetch('\"http://...\"' + '/audio/transcriptions')` 直接"
       },
       {
         "file": "src/storyboard/asr.js",
-        "line": 272,
+        "line": 275,
         "text": "const res = await fetch(`${baseUrl.replace(/\\/$/, '')}/audio/transcriptions`, {"
       },
       {
         "file": "src/storyboard/browser-time.js",
         "line": 102,
         "text": "const res = await fetch(`http://127.0.0.1:${port}/json/list`, { signal: ac.signal });"
-      },
-      {
-        "file": "src/storyboard/browser-time.js",
-        "line": 140,
-        "text": "ws = new WebSocket(wsUrl);"
       }
     ]
   },
@@ -73,13 +73,18 @@
       },
       {
         "file": "src/index.js",
-        "line": 42,
+        "line": 43,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "src/index.js",
-        "line": 98,
+        "line": 99,
         "text": "disposers.push(...tools.map((tool) => ctx.tools.register(tool)));"
+      },
+      {
+        "file": "src/index.js",
+        "line": 107,
+        "text": "disposers.push(settingsCtx.tools.register(defineTool(settings.tool)));"
       },
       {
         "file": "src/storyboard/tool-spec.js",
@@ -131,12 +136,12 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 134,
+      "line": 154,
       "text": "pip install --user -U yt-dlp        # 只有贴 B 站/YouTube 链接才需要"
     },
     {
       "file": "README.md",
-      "line": 467,
+      "line": 488,
       "text": "D:/ocr-local/.venv/Scripts/python.exe -m pip install rapidocr onnxruntime"
     }
   ],

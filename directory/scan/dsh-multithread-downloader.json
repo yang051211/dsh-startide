@@ -1,0 +1,111 @@
+{
+  "name": "dsh-multithread-downloader",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-01T19:08:59.878Z",
+  "icon": "dsh-multithread-downloader.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 443,
+        "text": "response = await fetch(path, {"
+      },
+      {
+        "file": "index.js",
+        "line": 443,
+        "text": "response = await fetch(current, { ...init, headers, redirect: 'manual', signal: controller.signal })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 7,
+        "text": "import { existsSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "import { mkdir, open, readdir, rename, statfs, unlink } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 87,
+        "text": "const text = readFileSync(join(home, '.config', 'user-dirs.dirs'), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 234,
+        "text": "const data = JSON.parse(readFileSync(path, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 695,
+        "text": "await mkdir(this.dir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1689,
+        "text": "export const inject = ['tools', 'webServer']"
+      },
+      {
+        "file": "index.js",
+        "line": 1811,
+        "text": "ctx.effect(() => ctx.tools.register(makeTool(manager)), 'multithread-downloader: tool')"
+      },
+      {
+        "file": "index.js",
+        "line": 1822,
+        "text": "return ctx.tools.get('downloader', context.scope) === undefined ? '' : TOOL_GUIDANCE"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 8,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 64,
+        "text": "const result = spawnSync("
+      },
+      {
+        "file": "index.js",
+        "line": 114,
+        "text": "const child = spawn(NATIVE_PICKER, args, { windowsHide: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 137,
+        "text": "const child = spawn(command, args, { windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "bin/picker.exe"
+  ],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

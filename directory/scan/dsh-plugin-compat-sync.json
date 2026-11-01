@@ -1,0 +1,69 @@
+{
+  "name": "dsh-plugin-compat-sync",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-01T19:08:59.610Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core.js",
+        "line": 14,
+        "text": "import { existsSync, readFileSync, mkdirSync, appendFileSync, writeFileSync, rmSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 44,
+        "text": "const data = JSON.parse(readFileSync(path, \"utf8\"));"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 60,
+        "text": "const manifest = JSON.parse(readFileSync(path, \"utf8\"));"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 70,
+        "text": "const manifest = JSON.parse(readFileSync(join(profileDir, \"package.json\"), \"utf8\"));"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 120,
+        "text": "writeFileSync(lockPath, String(process.pid), { flag: \"wx\" });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core.js",
+        "line": 15,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 176,
+        "text": "const child = spawn(executable, nodeArgs, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

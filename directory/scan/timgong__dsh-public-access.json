@@ -1,29 +1,101 @@
 {
   "name": "@timgong/dsh-public-access",
-  "version": "2.1.2",
-  "scannedAt": "2026-10-30T23:38:39.216Z",
+  "version": "2.3.0",
+  "scannedAt": "2026-11-01T19:09:01.810Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "start.sh",
-        "line": 28,
-        "text": "DETECTED=$(curl -4 -s --connect-timeout 3 ifconfig.me 2>/dev/null | tr -d '[:space:]' || true)"
+        "file": "src/client/index.js",
+        "line": 152,
+        "text": "fetch(PASSWORD_PATH, { credentials: 'same-origin', headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "src/client/index.js",
+        "line": 172,
+        "text": "fetch(PASSWORD_PATH, {"
+      },
+      {
+        "file": "src/client/index.js",
+        "line": 206,
+        "text": "fetch('/_auth/logout', { method: 'POST', credentials: 'same-origin' })"
+      },
+      {
+        "file": "src/client/index.ts",
+        "line": 198,
+        "text": "fetch(PASSWORD_PATH, { credentials: 'same-origin', headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "src/client/index.ts",
+        "line": 219,
+        "text": "fetch(PASSWORD_PATH, {"
       }
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/credentials.js",
+        "line": 29,
+        "text": "import { chmodSync, existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "src/credentials.js",
+        "line": 82,
+        "text": "mkdirSync(dir, { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "src/credentials.js",
+        "line": 181,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "src/credentials.js",
+        "line": 204,
+        "text": "writeFileSync(file, `${JSON.stringify(data, null, 2)}\\n`, { encoding: 'utf8', mode: 0o600 });"
+      },
+      {
+        "file": "src/credentials.js",
+        "line": 229,
+        "text": "writeFileSync(file, ["
+      }
+    ]
   },
   "agentTools": {
     "hit": false,
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/web-startup.js",
+        "line": 2,
+        "text": "import { execSync } from 'node:child_process';"
+      },
+      {
+        "file": "src/web-startup.js",
+        "line": 35,
+        "text": "execSync('stty -echo', { stdio: 'ignore' });"
+      },
+      {
+        "file": "src/web-startup.js",
+        "line": 46,
+        "text": "execSync('stty echo', { stdio: 'ignore' });"
+      },
+      {
+        "file": "src/web-startup.ts",
+        "line": 2,
+        "text": "import { execSync } from 'node:child_process'"
+      },
+      {
+        "file": "src/web-startup.ts",
+        "line": 68,
+        "text": "execSync('stty -echo', { stdio: 'ignore' })"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

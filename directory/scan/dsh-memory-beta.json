@@ -1,0 +1,87 @@
+{
+  "name": "dsh-memory-beta",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-01T19:08:55.127Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/memory.js",
+        "line": 31,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/memory.js",
+        "line": 314,
+        "text": "const content = fs.readFileSync(file, 'utf8');"
+      },
+      {
+        "file": "lib/memory.js",
+        "line": 334,
+        "text": "fs.mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/memory.js",
+        "line": 337,
+        "text": "fs.writeFileSync(tmp, content, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "* 由 `apply` 从宿主上下文里取得 `ctx.tools.register`。这也让全部逻辑能在纯 Node 下测试，"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 36,
+        "text": "* 工具注册走 `ctx.tools`，提示词注入走 `ctx.systemPrompt`。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 45,
+        "text": "export const inject = ['tools', 'systemPrompt'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 193,
+        "text": "* `tools.register()` **原样**把 `parameters` 交给模型。本插件不 import `defineTool`"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 220,
+        "text": "* 把一份工具定义整理成 `tools.register()` 能直接收下的形状。"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

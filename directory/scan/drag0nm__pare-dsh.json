@@ -1,0 +1,98 @@
+{
+  "name": "@drag0nm/pare-dsh",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-01T19:08:57.552Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/corefile.js",
+        "line": 36,
+        "text": "-NonInteractive', '-Command', `$ProgressPreference='SilentlyContinue'; Invoke-WebRequest -UseBasicParsing -Uri ${quote(url)} -OutFile ${quote(dest)}`], options)"
+      },
+      {
+        "file": "src/corefile.js",
+        "line": 57,
+        "text": "fetch(pinned.url, partial)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/corefile.js",
+        "line": 3,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "src/corefile.js",
+        "line": 7,
+        "text": "const pkg = JSON.parse(fs.readFileSync(new URL('../package.json', import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "src/corefile.js",
+        "line": 20,
+        "text": "return createHash('sha256').update(fs.readFileSync(file)).digest('hex')"
+      },
+      {
+        "file": "src/corefile.js",
+        "line": 54,
+        "text": "fs.mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "src/corefile.js",
+        "line": 56,
+        "text": "fs.rmSync(partial, { force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/plugin.js",
+        "line": 9,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "src/plugin.js",
+        "line": 79,
+        "text": "const register = (definition) => ctx.tools.register(defineTool({ output: text, ...definition }))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core.js",
+        "line": 1,
+        "text": "import { execFileSync, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/core.js",
+        "line": 48,
+        "text": "const child = this.spawn(this.corePath, ['serve'], { windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'] })"
+      },
+      {
+        "file": "src/corefile.js",
+        "line": 2,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

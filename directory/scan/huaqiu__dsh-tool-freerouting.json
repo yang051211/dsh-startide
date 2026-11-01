@@ -1,35 +1,35 @@
 {
   "name": "@huaqiu/dsh-tool-freerouting",
-  "version": "0.6.12",
-  "scannedAt": "2026-10-28T14:05:35.134Z",
+  "version": "0.6.13",
+  "scannedAt": "2026-11-01T19:08:55.547Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 5579,
+        "line": 5616,
+        "text": "if (!(await fetch(endpoint(capability, \"preview-cleanup\"), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 5632,
         "text": "const response = await fetch(endpoint(capability, \"status\"), {"
       },
       {
         "file": "lib/client.js",
-        "line": 5593,
+        "line": 5648,
         "text": "const response = await fetch(endpoint(capability, \"output\"), {"
       },
       {
         "file": "lib/index.js",
-        "line": 810,
-        "text": "const response = await fetch(`${this.options.baseUrl}/v1${path}`, {"
+        "line": 1388,
+        "text": "response = await fetch(`${this.options.baseUrl}/v1${path}`, {"
       },
       {
         "file": "lib/index.js",
-        "line": 871,
+        "line": 1458,
         "text": "const status = parseJobStatus(await this.http.request(\"GET\", `/jobs/${jobId}`, void 0, signal));"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 900,
-        "text": "const output = parseJobOutput(await this.http.request(\"GET\", `/jobs/${jobId}/output`, void 0, signal, handlers.onOutputFile));"
       }
     ]
   },
@@ -43,22 +43,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 9,
+        "line": 10,
         "text": "import { closeSync, createWriteStream, existsSync, mkdtempSync, openSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 336,
+        "line": 848,
         "text": "await mkdir(directory, { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 339,
+        "line": 851,
         "text": "await writeFile(path, artifact.content, {"
       },
       {
         "file": "lib/index.js",
-        "line": 349,
+        "line": 861,
         "text": "await rm(path, { force: true });"
       }
     ]
@@ -73,23 +73,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 3032,
+        "line": 4529,
         "text": "ctx.tools.register(createConfirmBoardTool(runService)),"
       },
       {
         "file": "lib/index.js",
-        "line": 3033,
+        "line": 4530,
         "text": "ctx.tools.register(createRepairRouteTool(runs, runService, routePrefix)),"
       },
       {
         "file": "lib/index.js",
-        "line": 3034,
+        "line": 4531,
         "text": "ctx.tools.register(createCancelRouteTool(runs, runService)),"
       },
       {
         "file": "lib/index.js",
-        "line": 3035,
-        "text": "ctx.tools.register(createRouteTool(runs, runService, routePrefix, settings))"
+        "line": 4532,
+        "text": "ctx.tools.register(createRouteTool(runService, routePrefix, settings))"
       }
     ]
   },
@@ -98,12 +98,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 20,
+        "line": 21,
         "text": "import { spawn } from \"node:child_process\";"
       },
       {
         "file": "lib/index.js",
-        "line": 1414,
+        "line": 2224,
         "text": "const child = spawn(options.pythonPath, ["
       }
     ]
@@ -113,7 +113,9 @@
     "evidence": []
   },
   "dependencies": 7,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
   "binaryFiles": [
     "python/vendor/_cffi_backend.cp311-win_amd64.pyd",
     "python/vendor/bin/cffi-gen-src.exe",
@@ -189,17 +191,12 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 105,
-      "text": "python -m pip install -r packages/dsh-tool-freerouting/requirements-dev.txt"
+      "line": 120,
+      "text": "& ./.build-cache/python-types/Scripts/python.exe -m pip install -r requirements-dev.txt"
     },
     {
       "file": "README.zh-CN.md",
-      "line": 109,
-      "text": "python -m pip install -r packages/dsh-tool-freerouting/requirements-dev.txt"
-    },
-    {
-      "file": "README.zh-CN.md",
-      "line": 140,
+      "line": 124,
       "text": "& ./.build-cache/python-types/Scripts/python.exe -m pip install -r requirements-dev.txt"
     }
   ],

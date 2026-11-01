@@ -1,0 +1,118 @@
+{
+  "name": "dsh-fish-suite",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-01T19:08:59.105Z",
+  "icon": "dsh-fish-suite.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 73,
+        "text": "const response = await fetch(`${API}/state?session=${encodeURIComponent(activeSessionId)}`, { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 101,
+        "text": "void fetch(`${API}/focus`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 113,
+        "text": "const response = await fetch(`${API}/focus`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 129,
+        "text": "const response = await fetch(`${API}/whitelist`, {"
+      },
+      {
+        "file": "index.js",
+        "line": 239,
+        "text": "const response = await fetch(origin + route, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "const local = JSON.parse(fs.readFileSync(path.join(DSH_HOME, 'fish-suite-local.json'), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 66,
+        "text": "const value = JSON.parse(fs.readFileSync(STATE_FILE, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 81,
+        "text": "const value = JSON.parse(fs.readFileSync(WORKSPACE_REGISTRY, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 101,
+        "text": "fs.mkdirSync(DATA, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 7,
+        "text": "export const inject = ['webServer', 'agents', 'timer', 'workingDirectory', 'tools', 'sessions', 'sessionTitle']"
+      },
+      {
+        "file": "index.js",
+        "line": 195,
+        "text": "originalSchemas = ctx.tools.schemas.bind(ctx.tools)"
+      },
+      {
+        "file": "index.js",
+        "line": 196,
+        "text": "ctx.tools.schemas = (scope) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 209,
+        "text": "ctx.tools.schemas = originalSchemas"
+      },
+      {
+        "file": "index.js",
+        "line": 217,
+        "text": "const definition = ctx.tools.get('remember', agent)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "sessionTitle",
+    "sessions",
+    "timer",
+    "tools",
+    "webServer",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,108 @@
+{
+  "name": "dsh-gokifu-compact",
+  "version": "1.16.0",
+  "scannedAt": "2026-11-01T19:08:51.821Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 237,
+        "text": "const res = await fetch(API, {"
+      },
+      {
+        "file": "scripts/release.mjs",
+        "line": 544,
+        "text": "console.log(`  ② curl -s $(npm view ${name}@${version} dist.tarball) | tar -xzOf - package/CHANGELOG.md | head -5`)"
+      },
+      {
+        "file": "scripts/release.mjs",
+        "line": 547,
+        "text": "console.log(`  ④ curl -s -H \"Authorization: Bearer $GITHUB_TOKEN\" \\\\`)"
+      },
+      {
+        "file": "src/ui.mjs",
+        "line": 28,
+        "text": "*     `fetch(\"/gokifu/api\", {method:\"POST\", headers:{\"content-type\":\"application/json\"}})`。"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/bench-repro.mjs",
+        "line": 51,
+        "text": "const { readFileSync } = await import(\"node:fs\");"
+      },
+      {
+        "file": "scripts/bench-repro.mjs",
+        "line": 52,
+        "text": "tier = JSON.parse(readFileSync(raw, \"utf8\")).ledgerLevel ?? null;"
+      },
+      {
+        "file": "scripts/check-maintenance.mjs",
+        "line": 18,
+        "text": "import { readFileSync, existsSync } from \"node:fs\""
+      },
+      {
+        "file": "scripts/check-maintenance.mjs",
+        "line": 72,
+        "text": "pkg = JSON.parse(readFileSync(join(ROOT, \"package.json\"), \"utf8\"))"
+      },
+      {
+        "file": "scripts/check-maintenance.mjs",
+        "line": 133,
+        "text": "const changelog = existsSync(join(ROOT, \"CHANGELOG.md\")) ? readFileSync(join(ROOT, \"CHANGELOG.md\"), \"utf8\") : \"\""
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/bench-repro.mjs",
+        "line": 13,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "scripts/bench-repro.mjs",
+        "line": 34,
+        "text": "const bench = spawnSync(process.execPath, [nodePath.join(ROOT, \"test\", \"bench.mjs\"), \"2000\"], {"
+      },
+      {
+        "file": "scripts/check-maintenance.mjs",
+        "line": 20,
+        "text": "import { spawnSync } from \"node:child_process\""
+      },
+      {
+        "file": "scripts/check-maintenance.mjs",
+        "line": 29,
+        "text": "const r = spawnSync(\"git\", args, { cwd: ROOT, encoding: \"utf8\", timeout: 30000 })"
+      },
+      {
+        "file": "scripts/check-maintenance.mjs",
+        "line": 42,
+        "text": "const r = spawnSync(\"git\", args, { cwd: ROOT, encoding: \"utf8\", timeout: 30000 })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

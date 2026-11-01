@@ -1,0 +1,104 @@
+{
+  "name": "@sleep9ull/dsh-asc-cli",
+  "version": "0.1.6",
+  "scannedAt": "2026-11-01T19:08:53.451Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/audit.js",
+        "line": 13,
+        "text": "import { appendFileSync, chmodSync, existsSync, mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/audit.js",
+        "line": 78,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "lib/audit.js",
+        "line": 79,
+        "text": "appendFileSync(path, `${line}\\n`, { mode: 0o600 });"
+      },
+      {
+        "file": "lib/control/engine.js",
+        "line": 15,
+        "text": "import { chmodSync, existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync, } from 'node:fs';"
+      },
+      {
+        "file": "lib/control/engine.js",
+        "line": 219,
+        "text": "const cached = JSON.parse(readFileSync(cachePath, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 35,
+        "text": "export const inject = ['tools', 'subprocess'];"
+      },
+      {
+        "file": "lib/tools/apply.js",
+        "line": 67,
+        "text": "ctx.effect(() => ctx.tools.register(tool));"
+      },
+      {
+        "file": "lib/tools/asc.js",
+        "line": 122,
+        "text": "ctx.effect(() => ctx.tools.register(tool));"
+      },
+      {
+        "file": "lib/tools/job.js",
+        "line": 117,
+        "text": "ctx.effect(() => ctx.tools.register(tool));"
+      },
+      {
+        "file": "lib/tools/plan.js",
+        "line": 49,
+        "text": "ctx.effect(() => ctx.tools.register(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/exec.js",
+        "line": 140,
+        "text": "handle = spawn(buildSpawnSpec(config, request, combined));"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 10,
+        "text": "return (spec) => ctx.subprocess.spawn(spec);"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "subprocess",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

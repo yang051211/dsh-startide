@@ -1,0 +1,108 @@
+{
+  "name": "dsh-dqd-scroll",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-01T19:08:52.324Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 9,
+        "text": "const response = await fetch(`${API}${path}`, {"
+      },
+      {
+        "file": "lib/uvfetch.mjs",
+        "line": 59,
+        "text": "const response = await fetch(url, { signal: AbortSignal.timeout(120_000) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { existsSync, readFileSync, readdirSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 69,
+        "text": "const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));"
+      },
+      {
+        "file": "lib/dynamics-scheduled-runner.js",
+        "line": 1,
+        "text": "import { appendFileSync, existsSync, readFileSync, renameSync, statSync, unlinkSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/dynamics-scheduled-runner.js",
+        "line": 21,
+        "text": "if (existsSync(previousLogPath)) unlinkSync(previousLogPath);"
+      },
+      {
+        "file": "lib/dynamics-scheduled-runner.js",
+        "line": 24,
+        "text": "appendFileSync(logPath, `${line}\\n`, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/dynamics-scheduled-runner.js",
+        "line": 3,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/dynamics-scheduled-runner.js",
+        "line": 44,
+        "text": "child = spawn(command, args, { windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'], ...options });"
+      },
+      {
+        "file": "lib/scheduler.js",
+        "line": 3,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/scheduler.js",
+        "line": 23,
+        "text": "child = spawn(command, args, { ...options, windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] });"
+      },
+      {
+        "file": "lib/uvfetch.mjs",
+        "line": 3,
+        "text": "import { spawnSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 107,
+      "text": "nvironment.yml` 会创建 Python 3.11 环境，并通过 `pip install -e .` 将当前项目及其依赖安装到环境中。Python 运行依赖 `tzdata` 提供 IANA 时区数据；SQLite 由标准库 `sqlite3` 提供。DSH 设置页的“准备运行环境”也会安装 `pypro"
+    },
+    {
+      "file": "README.md",
+      "line": 113,
+      "text": "python -m pip install -e ."
+    }
+  ],
+  "skippedEntries": []
+}

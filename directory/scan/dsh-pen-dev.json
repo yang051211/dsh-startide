@@ -1,0 +1,67 @@
+{
+  "name": "dsh-pen-dev",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-01T19:09:00.673Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 39,
+        "text": "var fs = get('node:fs');"
+      },
+      {
+        "file": "lib/skill.js",
+        "line": 1,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/skill.js",
+        "line": 49,
+        "text": "content: await readFile(BODY_URL, 'utf8'),"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 3,
+        "text": "# pen-dev-mcp    mounts @deepseek-ai/dsh-mcp-client against the pen.dev desktop app."
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 18,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "lib/quota-guard.js",
+        "line": 17,
+        "text": "export const inject = ['tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

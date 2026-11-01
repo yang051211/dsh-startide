@@ -1,0 +1,77 @@
+{
+  "name": "dsh-gigaam-stt",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-01T19:08:54.159Z",
+  "icon": "dsh-gigaam-stt.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 311,
+        "text": "const response = await fetch(url, { signal: this.#abort.signal })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 2,
+        "text": "import { existsSync, realpathSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 3,
+        "text": "import { mkdir, open, rename, rm, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 283,
+        "text": "await mkdir(this.#config.dataRoot, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 327,
+        "text": "await rm(part, { force: true })"
+      },
+      {
+        "file": "scripts/selftest.mjs",
+        "line": 2,
+        "text": "import { readFile } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 364,
+        "text": "if (!this.#worker) this.#worker = this.#spawn()"
+      },
+      {
+        "file": "index.js",
+        "line": 368,
+        "text": "#spawn() {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "speechToText"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

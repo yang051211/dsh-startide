@@ -1,0 +1,58 @@
+{
+  "name": "@beatapi/dsh-social",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-01T19:09:00.569Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin.mjs",
+        "line": 6,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "plugin.mjs",
+        "line": 25,
+        "text": "const content = readFileSync(skillUrl, 'utf8').replace(/^---\\r?\\n[\\s\\S]*?\\r?\\n---\\r?\\n/, '');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 7,
+        "text": "export const inject = ['tools', 'settings', 'credentials'];"
+      },
+      {
+        "file": "plugin.mjs",
+        "line": 24,
+        "text": "for (const definition of definitions) ctx.tools.register(definition);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "credentials",
+    "settings",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
