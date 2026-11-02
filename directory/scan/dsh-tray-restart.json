@@ -1,0 +1,85 @@
+{
+  "name": "dsh-tray-restart",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-02T07:38:07.884Z",
+  "icon": "dsh-tray-restart.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 54,
+        "text": "const res = await fetch('/dsh-tray-restart/restart', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "import { appendFileSync, closeSync, existsSync, openSync, readFileSync, rmSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 42,
+        "text": "const [tray, shell] = readFileSync(PID_FILE, 'utf8').trim().split(/\\s+/u)"
+      },
+      {
+        "file": "index.js",
+        "line": 176,
+        "text": "appendFileSync(LOG_FILE, `${new Date().toISOString().slice(11, 19)} [host ${process.pid}] ${message}\\n`)"
+      },
+      {
+        "file": "index.js",
+        "line": 209,
+        "text": "rmSync(PID_FILE, { force: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 266,
+        "text": "rmSync(PID_FILE, { force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 52,
+        "text": "spawn('taskkill', ['/PID', String(pid), '/T', '/F'], { stdio: 'ignore', windowsHide: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 92,
+        "text": "child = spawn("
+      },
+      {
+        "file": "index.js",
+        "line": 241,
+        "text": "child = spawn('powershell.exe', args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

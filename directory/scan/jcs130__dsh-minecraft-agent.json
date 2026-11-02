@@ -1,7 +1,7 @@
 {
   "name": "@jcs130/dsh-minecraft-agent",
-  "version": "0.3.0-rc.22",
-  "scannedAt": "2026-10-26T10:12:50.427Z",
+  "version": "0.3.0-rc.26",
+  "scannedAt": "2026-11-02T07:38:03.801Z",
   "icon": "jcs130__dsh-minecraft-agent.svg",
   "network": {
     "hit": false,
@@ -41,24 +41,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/plugins/harness-goal.mjs",
+        "line": 12,
+        "text": "const originalTools=ctx.tools,originalPrompt=ctx.systemPrompt;"
+      },
+      {
+        "file": "lib/plugins/harness-practice.mjs",
+        "line": 9,
+        "text": "const r=await agent.ctx.tools.execute({callId:'practice-port:'+randomUUID(),name,arguments:args,agent,signal});"
+      },
+      {
         "file": "lib/plugins/mc-harness.mjs",
-        "line": 34,
+        "line": 44,
         "text": "export const inject = ['llm', 'agents', 'agentLoop', 'tools', 'systemPrompt', 'goals', 'sessionPersistence', 'sessionQuery', 'sessions', 'tokenMeter'];"
       },
       {
         "file": "lib/plugins/mc-harness.mjs",
-        "line": 277,
+        "line": 359,
         "text": "      agentCtx.tools.register({ name: spec.name, description: !lean || coreBudget ? spec.description : slimDescription(spec, helpName, view.descriptionChars), p"
       },
       {
         "file": "lib/plugins/mc-harness.mjs",
-        "line": 299,
+        "line": 407,
         "text": "agentCtx.tools.register({ name: 'dsh_history', description: '查询本人的原始 DSH 会话，包括已被新现场替换或整理过的记录。offset 是日志序号。',"
-      },
-      {
-        "file": "lib/plugins/mc-harness.mjs",
-        "line": 314,
-        "text": "if(practiceTool)agentCtx.tools.register(practiceTool);"
       }
     ]
   },

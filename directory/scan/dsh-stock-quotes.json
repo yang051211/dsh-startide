@@ -1,0 +1,87 @@
+{
+  "name": "dsh-stock-quotes",
+  "version": "2.0.2",
+  "scannedAt": "2026-11-02T07:38:12.543Z",
+  "icon": "dsh-stock-quotes.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 289,
+        "text": "const response = await fetch(url, { signal: AbortSignal.timeout(15000) });"
+      },
+      {
+        "file": "client.js",
+        "line": 373,
+        "text": "const response = await fetch(url, { signal: AbortSignal.timeout(15000) });"
+      },
+      {
+        "file": "client.js",
+        "line": 430,
+        "text": "const response = await fetch(url, { signal, cache: 'no-store', headers: { accept: 'application/json' } });"
+      },
+      {
+        "file": "client.js",
+        "line": 892,
+        "text": "const response = await fetch(url, { signal, cache: 'no-store', headers: { accept: 'application/json' } });"
+      },
+      {
+        "file": "scripts/build-index.mjs",
+        "line": 36,
+        "text": "const response = await fetch(url, { signal: AbortSignal.timeout(20000) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/build-index.mjs",
+        "line": 11,
+        "text": "import { writeFileSync, mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "scripts/build-index.mjs",
+        "line": 99,
+        "text": "mkdirSync(dirname(OUT), { recursive: true });"
+      },
+      {
+        "file": "scripts/build-index.mjs",
+        "line": 100,
+        "text": "writeFileSync(OUT, `${JSON.stringify(payload)}\\n`, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 247,
+        "text": "ctx.tools.register(buildToolDefinition(configured.length > 0 ? configured : FALLBACK_SYMBOLS));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

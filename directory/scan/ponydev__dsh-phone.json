@@ -1,0 +1,106 @@
+{
+  "name": "@ponydev/dsh-phone",
+  "version": "0.4.4",
+  "scannedAt": "2026-11-02T07:38:02.627Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 421,
+        "text": "const res = await fetch('phone/' + endpoint, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 808,
+        "text": "const response = await fetch('phone/stream', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/adb.js",
+        "line": 5,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/hos.js",
+        "line": 12,
+        "text": "import { existsSync, mkdtempSync, readdirSync, readFileSync, rmSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/hos.js",
+        "line": 198,
+        "text": "return readFileSync(file)"
+      },
+      {
+        "file": "lib/hos.js",
+        "line": 711,
+        "text": "rmSync(localDir, { recursive: true, force: true })"
+      },
+      {
+        "file": "lib/hos.js",
+        "line": 1055,
+        "text": "rmSync(dir, { recursive: true, force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/adb.js",
+        "line": 4,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/adb.js",
+        "line": 57,
+        "text": "execFile(file, args, { timeout, maxBuffer, windowsHide: true, encoding: 'buffer' }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "lib/hos.js",
+        "line": 11,
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/hos.js",
+        "line": 146,
+        "text": "execFile(file, args, { timeout, maxBuffer, windowsHide: true, encoding: 'buffer' }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "lib/hos.js",
+        "line": 979,
+        "text": "const child = spawn(this.bin, ['-start', instance, '-noWindow'], { detached: true, stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 122,
+      "text": "- iOS 依赖 macOS + Xcode；实时画面/输入需要 `idb`（`brew install facebook/fb/idb-companion` + `pip install fb-idb`），未装时只读预览。"
+    },
+    {
+      "file": "README.md",
+      "line": 125,
+      "text": "再把 `idb_companion` / `idb-repl` 软链到 `~/.local/bin`；客户端 `python3 -m venv ~/.local/venvs/fb-idb && ~/.local/venvs/fb-idb/bin/pip install fb-idb`。"
+    }
+  ],
+  "skippedEntries": []
+}

@@ -1,0 +1,110 @@
+{
+  "name": "dsh-agent-bench",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-02T07:38:06.238Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/assertions.js",
+        "line": 5,
+        "text": "import { readFile, access } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/assertions.js",
+        "line": 6,
+        "text": "import { constants } from 'node:fs'"
+      },
+      {
+        "file": "lib/assertions.js",
+        "line": 28,
+        "text": "const buf = await readFile(absPath)"
+      },
+      {
+        "file": "lib/assertions.js",
+        "line": 86,
+        "text": "const expected = await readFile(resolveInside(ctx.expectDir, assertion.expect), 'utf8')"
+      },
+      {
+        "file": "lib/assertions.js",
+        "line": 87,
+        "text": "const actual = await readFile(abs, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 439,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 525,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 580,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 699,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 760,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "benchmarks/workflow/extract-shared-helper/case.json",
+        "line": 11,
+        "text": "\"node -e \\\"const {execFileSync}=require('child_process');const out=execFileSync(process.execPath,['main.js'],{encoding:'utf8'}).trim().split(/\\\\r?\\\\n/);if(out[0"
+      },
+      {
+        "file": "lib/assertions.js",
+        "line": 7,
+        "text": "import { exec } from 'node:child_process'"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 12,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 48,
+        "text": "const r = spawnSync(finder, [name], { encoding: 'utf8', windowsHide: true })"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 179,
+        "text": "? spawnSync(cli.command, args, { ...opts, shell: process.platform === 'win32' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

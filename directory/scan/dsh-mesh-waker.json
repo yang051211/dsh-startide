@@ -1,29 +1,29 @@
 {
   "name": "dsh-mesh-waker",
-  "version": "0.7.5",
-  "scannedAt": "2026-10-31T07:05:23.531Z",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-02T07:38:00.781Z",
   "icon": "dsh-mesh-waker.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "bin/dispatch.mjs",
-        "line": 124,
+        "line": 163,
         "text": "const res = await fetch(url, {"
       },
       {
         "file": "client.js",
-        "line": 94,
+        "line": 188,
         "text": "const res = await fetch(url, { cache: 'no-store', ...init })"
       },
       {
         "file": "client.js",
-        "line": 386,
+        "line": 480,
         "text": "const res = await fetch(BASE + '/mesh/config', {"
       },
       {
         "file": "client.js",
-        "line": 397,
+        "line": 491,
         "text": "const res = await fetch(BASE + '/mesh/status', { cache: 'no-store' })"
       },
       {
@@ -38,28 +38,28 @@
     "evidence": [
       {
         "file": "bin/dispatch.mjs",
-        "line": 13,
+        "line": 14,
         "text": "import { readFile } from 'node:fs/promises'"
       },
       {
         "file": "bin/dispatch.mjs",
-        "line": 143,
+        "line": 182,
         "text": "const text = options.file !== undefined ? await readFile(String(options.file), 'utf8') : String(options.text ?? '')"
       },
       {
         "file": "index.js",
         "line": 20,
-        "text": "import { appendFileSync, existsSync, mkdirSync, readdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+        "text": "import { appendFileSync, existsSync, mkdirSync, readdirSync, readFileSync, realpathSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 32,
+        "line": 48,
         "text": "SELF_PACKAGE = JSON.parse(readFileSync(join(SELF_DIR, 'package.json'), 'utf8'))"
       },
       {
         "file": "index.js",
-        "line": 60,
-        "text": "return String(JSON.parse(readFileSync(join(SELF_DIR, 'package.json'), 'utf8')).version ?? '0.0.0')"
+        "line": 66,
+        "text": "return String(JSON.parse(readFileSync(join(dir, 'package.json'), 'utf8')).version ?? '0.0.0')"
       }
     ]
   },
@@ -68,23 +68,23 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 3620,
-        "text": "const tools = typeof ctx.get === 'function' ? ctx.get('tools') : ctx.tools"
+        "line": 5405,
+        "text": "// 共享闭包：ctx.tools, toolState, bootedCodeHash, diskCodeCache"
       },
       {
         "file": "index.js",
-        "line": 3622,
+        "line": 5411,
+        "text": "return viaGet ?? ctx.tools"
+      },
+      {
+        "file": "index.js",
+        "line": 5423,
         "text": "ctx.effect(() => tools.register(definition))"
       },
       {
         "file": "index.js",
-        "line": 3662,
-        "text": "const tools = typeof ctx.get === 'function' ? ctx.get('tools') : ctx.tools"
-      },
-      {
-        "file": "index.js",
-        "line": 3664,
-        "text": "ctx.effect(() => tools.register(definition))"
+        "line": 5432,
+        "text": "toolState[label].error = `${label}: host exposes no tools service (ctx.get('tools') and ctx.tools are empty)`"
       }
     ]
   },

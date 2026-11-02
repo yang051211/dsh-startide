@@ -1,0 +1,90 @@
+{
+  "name": "dsh-agent-privacy",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-02T07:38:07.727Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 109,
+        "text": "fetch(\"/agent-privacy/set-state\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 252,
+        "text": "fetch(`/agent-privacy/get-state?sessionId=${encodeURIComponent(sessionId)}`).then((r) => r.json()).then((data) => {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "import { promises } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 41,
+        "text": "let content = await promises.readFile(validatorFile, \"utf-8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 49,
+        "text": "Sync as __dshPrivacyExistsSync, readFileSync as __dshPrivacyReadFile, writeFileSync as __dshPrivacyWriteFile, unlinkSync as __dshPrivacyUnlink } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 71,
+        "text": "if (patched !== content) await promises.writeFile(validatorFile, patched, \"utf-8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 158,
+        "text": "return parseNotes(await promises.readFile(path.join(cwd, NOTES_FILE), \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 595,
+        "text": "tctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 630,
+        "text": "tctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 663,
+        "text": "tctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 726,
+        "text": "tctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

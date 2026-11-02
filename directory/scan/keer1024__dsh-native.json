@@ -1,0 +1,130 @@
+{
+  "name": "@keer1024/dsh-native",
+  "version": "1.6.1",
+  "scannedAt": "2026-11-02T07:38:10.549Z",
+  "icon": "keer1024__dsh-native.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 190,
+        "text": "const res = await fetch(API + path, {"
+      },
+      {
+        "file": "client.js",
+        "line": 225,
+        "text": "const res = await fetch(API + '/metrics', {"
+      },
+      {
+        "file": "client.js",
+        "line": 329,
+        "text": "const res = await fetch(API + '/config', {"
+      },
+      {
+        "file": "client.js",
+        "line": 454,
+        "text": "const res = await fetch(url, { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 479,
+        "text": "const res = await fetch(API + '/sessions', { cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 43,
+        "text": "} from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 44,
+        "text": "import { readdir, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 297,
+        "text": "return JSON.parse(readFileSync(join(PLUGIN_DIR, 'package.json'), 'utf8')).version ?? 'unknown'"
+      },
+      {
+        "file": "index.js",
+        "line": 342,
+        "text": "mkdirSync(dirname(path), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 347,
+        "text": "rmSync(previous, { force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 120,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 3268,
+        "text": "log.error('tools.unavailable', { reason: 'ctx.tools.register is missing; no tools registered' })"
+      },
+      {
+        "file": "index.js",
+        "line": 3280,
+        "text": "disposers.set(name, ctx.tools.register(definition))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 29,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 388,
+        "text": "const probe = spawnSync('tasklist', ['/FI', `PID eq ${pid}`, '/FO', 'CSV', '/NH'], {"
+      },
+      {
+        "file": "index.js",
+        "line": 425,
+        "text": "const probe = spawnSync('icacls', [path], { windowsHide: true, encoding: 'utf8', timeout: 8_000 })"
+      },
+      {
+        "file": "index.js",
+        "line": 502,
+        "text": "spawnSync('taskkill', ['/PID', String(pid), '/T', '/F'], {"
+      },
+      {
+        "file": "index.js",
+        "line": 623,
+        "text": "this.#starting ??= this.#spawn().finally(() => { this.#starting = null })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "bin/dsh-rust-worker.exe"
+  ],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

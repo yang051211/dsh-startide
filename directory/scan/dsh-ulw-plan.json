@@ -1,0 +1,101 @@
+{
+  "name": "dsh-ulw-plan",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-02T07:38:10.798Z",
+  "icon": "dsh-ulw-plan.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/commands.js",
+        "line": 20,
+        "text": "import { readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/commands.js",
+        "line": 265,
+        "text": "const digest = createHash('sha256').update(readFileSync(absolute)).digest('hex')"
+      },
+      {
+        "file": "lib/load.js",
+        "line": 11,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/load.js",
+        "line": 24,
+        "text": "return readFileSync(join(PACKAGE_ROOT, relativePath), 'utf8')"
+      },
+      {
+        "file": "lib/load.js",
+        "line": 71,
+        "text": "const { data, content } = parseFrontmatter(readFileSync(skillPath, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/guard.js",
+        "line": 77,
+        "text": "return ctx.tools.guard(createGuard(ctx))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 40,
+        "text": "export const inject = ['tools', 'sessionProjections', 'workingDirectory', 'skills', 'commands']"
+      },
+      {
+        "file": "lib/review-input.js",
+        "line": 505,
+        "text": "const removeTool = tools.register(service.definition)"
+      },
+      {
+        "file": "lib/review-tools.js",
+        "line": 1344,
+        "text": "tools: ctx.tools,"
+      },
+      {
+        "file": "lib/review-tools.js",
+        "line": 1351,
+        "text": "tools: ctx.tools,"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/review-handoff.js",
+        "line": 35,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/review-handoff.js",
+        "line": 337,
+        "text": "execFile('git', ['-C', cwd, ...args], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "sessionProjections",
+    "skills",
+    "tools",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

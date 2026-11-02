@@ -1,0 +1,80 @@
+{
+  "name": "dsh-plugin-everything",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-02T07:38:04.499Z",
+  "icon": "dsh-plugin-everything.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "vendor/koffi/src/koffi/index.cjs",
+        "line": 159,
+        "text": "import_node_fs = __toESM(require(\"node:fs\"), 1);"
+      },
+      {
+        "file": "vendor/koffi/src/koffi/index.cjs",
+        "line": 269,
+        "text": "import_node_fs2 = __toESM(require(\"node:fs\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 50,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 512,
+        "text": "ctx.effect(() => ctx.tools.register(searchTool), 'everything search tool');"
+      },
+      {
+        "file": "index.js",
+        "line": 513,
+        "text": "ctx.effect(() => ctx.tools.register(statusTool), 'everything status tool');"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 204,
+        "text": "const child = spawn(executable, [], { detached: true, stdio: 'ignore', windowsHide: false });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "native/Everything64.dll",
+    "vendor/@koromix/koffi-win32-x64/win32_x64/koffi.node"
+  ],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

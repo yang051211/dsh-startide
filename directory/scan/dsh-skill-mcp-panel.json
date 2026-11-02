@@ -1,7 +1,7 @@
 {
   "name": "dsh-skill-mcp-panel",
-  "version": "2.3.5",
-  "scannedAt": "2026-10-26T10:04:49.329Z",
+  "version": "2.3.6",
+  "scannedAt": "2026-11-02T07:38:02.607Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -28,7 +28,12 @@
       },
       {
         "file": "lib/cli-mcp.js",
-        "line": 410,
+        "line": 420,
+        "text": "const text = await readFile(resolve(flags.set), \"utf8\");"
+      },
+      {
+        "file": "lib/cli-mcp.js",
+        "line": 487,
         "text": "const data = JSON.parse(await readFile(resolve(path), \"utf8\"));"
       },
       {
@@ -40,11 +45,6 @@
         "file": "lib/cli-skill.js",
         "line": 84,
         "text": "return Buffer.from((await readFile(fullPath, \"utf8\")).replace(/^\\uFEFF/, \"\").replace(/\\r\\n/g, \"\\n\").replace(/\\r/g, \"\\n\"), \"utf8\");"
-      },
-      {
-        "file": "lib/cli-skill.js",
-        "line": 127,
-        "text": "const data = await readFile(source);"
       }
     ]
   },
@@ -53,27 +53,27 @@
     "evidence": [
       {
         "file": "lib/cli-mcp.js",
-        "line": 319,
+        "line": 103,
+        "text": "\"说明: 文件里每一条 @deepseek-ai/dsh-mcp-client 都能启停、删除、用原文改；\","
+      },
+      {
+        "file": "lib/cli-mcp.js",
+        "line": 379,
         "text": "const row = { id: rowIdForServerName(input.serverName), name: \"@deepseek-ai/dsh-mcp-client\", config: toOfficialConfig(input) };"
       },
       {
         "file": "lib/client.js",
-        "line": 3187,
+        "line": 3209,
         "text": "docLead: \"DSH 的 MCP 能力来自官方插件 @deepseek-ai/dsh-mcp-client：它读的不是单独的 MCP 配置文件，而是所在 profile 的 cordis.patch.yml 里的一条 loader entry ——\","
       },
       {
         "file": "lib/client.js",
-        "line": 3194,
-        "text": "panel-mcp-github\\n  name: '@deepseek-ai/dsh-mcp-client'\\n  config:\\n    serverName: github\\n    transport: stdio\\n    command: npx\\n    args: ['-y', '@modelcont"
+        "line": 3210,
+        "text": "     docWhere: \"本面板接管文件里所有 @deepseek-ai/dsh-mcp-client 行，不再区分受管块内外。表单改常规配置，没做成表单的字段（例如 maxInstructionBytes）会保留；「原文」按字节改这一条的 YAML。不属于 MCP 的行仍然原样保留。保存即写文件，DSH 的 l"
       },
       {
         "file": "lib/client.js",
-        "line": 3314,
-        "text": "rt comes from the official @deepseek-ai/dsh-mcp-client plugin: it reads no separate MCP config file, only a loader entry inside the profile's cordis.patch.yml —"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 3321,
+        "line": 3216,
         "text": "panel-mcp-github\\n  name: '@deepseek-ai/dsh-mcp-client'\\n  config:\\n    serverName: github\\n    transport: stdio\\n    command: npx\\n    args: ['-y', '@modelcont"
       }
     ]
@@ -88,7 +88,7 @@
       },
       {
         "file": "lib/cli-mcp.js",
-        "line": 289,
+        "line": 349,
         "text": "const child = spawn(opener[0], opener[1], { detached: true, stdio: \"ignore\" });"
       },
       {

@@ -1,0 +1,93 @@
+{
+  "name": "dsh-plugin-tailor",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-02T07:38:09.227Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host/register.js",
+        "line": 9,
+        "text": "import { statSync } from 'node:fs'"
+      },
+      {
+        "file": "logic/brand.mjs",
+        "line": 14,
+        "text": "import { existsSync, mkdirSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "logic/brand.mjs",
+        "line": 726,
+        "text": "mkdirSync(dirname(target), { recursive: true })"
+      },
+      {
+        "file": "logic/brand.mjs",
+        "line": 727,
+        "text": "writeFileSync(target, content, 'utf8')"
+      },
+      {
+        "file": "logic/facts.mjs",
+        "line": 9,
+        "text": "import { readFileSync, statSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host/register.js",
+        "line": 51,
+        "text": "const dispose = ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "export const inject = ['tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "logic/facts.mjs",
+        "line": 8,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "logic/facts.mjs",
+        "line": 226,
+        "text": "const result = spawnSync('git', ['-C', root, ...args], { encoding: 'utf8', timeout: 15_000, windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 114,
+      "text": "npm install -g dsh-plugin-tailor"
+    },
+    {
+      "file": "README.md",
+      "line": 114,
+      "text": "npm install -g dsh-plugin-tailor"
+    }
+  ],
+  "skippedEntries": []
+}

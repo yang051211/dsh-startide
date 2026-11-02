@@ -1,35 +1,35 @@
 {
   "name": "dsh-mini-remote",
-  "version": "0.2.5",
-  "scannedAt": "2026-10-26T10:05:08.033Z",
+  "version": "0.2.6",
+  "scannedAt": "2026-11-02T07:38:08.148Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client/client.js",
-        "line": 452,
+        "line": 476,
         "text": "return fetch(REMOTE_WINDOW_PATH, {"
       },
       {
         "file": "client/client.js",
-        "line": 719,
+        "line": 839,
         "text": "fetch(PAIRING_PATH)"
       },
       {
         "file": "client/client.js",
-        "line": 753,
+        "line": 874,
         "text": "fetch(AGENT_LIST_PATH)"
       },
       {
         "file": "client/client.js",
-        "line": 774,
+        "line": 895,
         "text": "fetch(B_AGENT_STATUS_PATH)"
       },
       {
         "file": "client/client.js",
-        "line": 832,
-        "text": "return fetch(DEVICES_PATH)"
+        "line": 923,
+        "text": "fetch(MULTI_RELAY_PATH, {"
       }
     ]
   },
@@ -112,14 +112,14 @@
         "text": "const child = spawn(shell, [], { cwd: dir, windowsHide: true, env: process.env, stdio: ['pipe', 'pipe', 'pipe'] })"
       },
       {
-        "file": "lib/cloudflared.js",
-        "line": 13,
+        "file": "lib/b-relay-provider.js",
+        "line": 7,
         "text": "import { spawn } from 'node:child_process'"
       },
       {
         "file": "lib/cloudflared.js",
-        "line": 65,
-        "text": "child = spawn(command, ['--version'], { stdio: ['ignore', 'pipe', 'pipe'] })"
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process'"
       }
     ]
   },
@@ -129,7 +129,9 @@
   },
   "dependencies": 2,
   "minifiedFiles": [],
-  "binaryFiles": [],
+  "binaryFiles": [
+    "lib/bin/frpc.exe"
+  ],
   "requiredServices": [
     "agents",
     "sessionController"

@@ -1,0 +1,150 @@
+{
+  "name": "dsh-pr-panel",
+  "version": "0.6.50",
+  "scannedAt": "2026-11-02T07:38:08.270Z",
+  "icon": "dsh-pr-panel.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 165,
+        "text": "currentRes = await fetch(url, { ...options, signal });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1731,
+        "text": "fetch(qs, { headers: { accept: \"application/json\" } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2295,
+        "text": "var task = fetch(url, { headers: { accept: \"application/json\" } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2953,
+        "text": "fetch(\"/api/github/client-status\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3172,
+        "text": "fetch(\"/api/github/pr-thread?repo=\" + encodeURIComponent(repo) + \"&number=\" + String(number)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "docs/preview/build-previews.mjs",
+        "line": 3,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "docs/preview/build-previews.mjs",
+        "line": 8,
+        "text": "const bundle = fs.readFileSync(path.join(root, 'lib/client.js'), 'utf8');"
+      },
+      {
+        "file": "docs/preview/build-previews.mjs",
+        "line": 80,
+        "text": "fs.writeFileSync(path.join(root, 'docs/preview', name + '.html'), html);"
+      },
+      {
+        "file": "lib/api/routes-actions.js",
+        "line": 6,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/api/routes-actions.js",
+        "line": 1707,
+        "text": "fs.mkdirSync(dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/main.js",
+        "line": 39,
+        "text": "export const inject = ['tools', 'commands', 'webServer', 'workspaceRegistry'];"
+      },
+      {
+        "file": "lib/main.js",
+        "line": 120,
+        "text": "if (ctx.tools) {"
+      },
+      {
+        "file": "lib/main.js",
+        "line": 121,
+        "text": "ctx.tools.register(createPrTool(executor));"
+      },
+      {
+        "file": "lib/main.js",
+        "line": 122,
+        "text": "ctx.tools.register(createIssueTool(executor));"
+      },
+      {
+        "file": "lib/main.js",
+        "line": 123,
+        "text": "ctx.tools.register(createRunTool(executor));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api/routes-actions.js",
+        "line": 5,
+        "text": "import { spawn, execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/api/routes-actions.js",
+        "line": 274,
+        "text": "const { execFileSync } = require('node:child_process');"
+      },
+      {
+        "file": "lib/api/routes-actions.js",
+        "line": 310,
+        "text": "const child = spawn(built.bin, built.args, {"
+      },
+      {
+        "file": "lib/api/routes-actions.js",
+        "line": 524,
+        "text": "const { execFile } = await import('node:child_process');"
+      },
+      {
+        "file": "lib/api/routes-actions.js",
+        "line": 531,
+        "text": "execFile(bin, args, (err) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: pnpm run build"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js",
+    "lib/ui/tw.generated.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "tools",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

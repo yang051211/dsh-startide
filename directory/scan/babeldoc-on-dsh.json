@@ -1,0 +1,103 @@
+{
+  "name": "babeldoc-on-dsh",
+  "version": "0.2.4",
+  "scannedAt": "2026-11-02T07:38:07.490Z",
+  "icon": "babeldoc-on-dsh.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import { createWriteStream, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 156,
+        "text": "const parsed = JSON.parse(readFileSync(SETTINGS_PATH, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 174,
+        "text": "mkdirSync(dirname(SETTINGS_PATH), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 175,
+        "text": "writeFileSync(SETTINGS_PATH, `${JSON.stringify(next, null, 2)}\\n`, { encoding: 'utf8', mode: 0o600 })"
+      },
+      {
+        "file": "index.js",
+        "line": 570,
+        "text": "mkdirSync(outputDir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 444,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 281,
+        "text": "spawn('taskkill', ['/pid', String(pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "index.js",
+        "line": 343,
+        "text": "const child = spawn(options.runtime, options.argv, {"
+      },
+      {
+        "file": "scripts/setup-runtime.mjs",
+        "line": 17,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/setup-runtime.mjs",
+        "line": 73,
+        "text": "const result = spawnSync(command, args, { encoding: 'utf8', windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 197,
+      "text": "`%USERPROFILE%\\.dsh\\babeldoc\\venv\\Scripts\\python.exe -m pip install \"pymupdf<2\"`"
+    }
+  ],
+  "skippedEntries": []
+}

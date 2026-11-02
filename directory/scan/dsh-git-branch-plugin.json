@@ -1,0 +1,64 @@
+{
+  "name": "dsh-git-branch-plugin",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-02T07:38:06.465Z",
+  "icon": "dsh-git-branch-plugin.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 515,
+        "text": "response = await fetch(resolveUrl(`${API_PREFIX}/${method}`), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "git.js",
+        "line": 14,
+        "text": "import { accessSync, constants as fsConstants, statSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "git.js",
+        "line": 13,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "git.js",
+        "line": 83,
+        "text": "execFile("
+      },
+      {
+        "file": "git.js",
+        "line": 179,
+        "text": "execFile(candidate, ['--version'], { timeout: 5_000, windowsHide: true, env: GIT_ENV }, (error, stdout) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "sessions",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

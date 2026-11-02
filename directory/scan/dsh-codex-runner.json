@@ -1,0 +1,125 @@
+{
+  "name": "dsh-codex-runner",
+  "version": "0.5.0-rc.2",
+  "scannedAt": "2026-11-02T07:38:09.439Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/codex-fields.js",
+        "line": 111,
+        "text": "const response=await fetch(FIELD_SCHEMA_URL,{signal:AbortSignal.timeout(5000)});"
+      },
+      {
+        "file": "lib/runner-service.js",
+        "line": 6,
+        "text": "// Connection authenticates them and permits owner peers only, before fetch()."
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "drivers/drive-app-server.mjs",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "drivers/drive-app-server.mjs",
+        "line": 34,
+        "text": "options.prompt = fs.readFileSync(options.promptFile, 'utf8');"
+      },
+      {
+        "file": "drivers/drive-codex.mjs",
+        "line": 50,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "drivers/drive-codex.mjs",
+        "line": 117,
+        "text": "try { if (fs.existsSync(registryFile)) reg = JSON.parse(fs.readFileSync(registryFile, 'utf8')); } catch (_) { /* ignore */ }"
+      },
+      {
+        "file": "drivers/drive-codex.mjs",
+        "line": 126,
+        "text": "const reg = JSON.parse(fs.readFileSync(registryFile, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 77,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 124,
+        "text": "for(const tool of catalogTools({defineTool,catalog:options=>service.getCatalog(options)}))ctx.tools.register(tool);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 125,
+        "text": "for(const tool of selectionTools({defineTool,resolveCwd,logsRelative:'.codex-runner/logs'}))ctx.tools.register(tool);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 143,
+        "text": "ctx.tools.register(runner);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 144,
+        "text": "for(const tool of quotaTools({defineTool,resolveCwd,config,quotaCoordinator,view:quotaView}))ctx.tools.register(tool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "drivers/drive-codex.mjs",
+        "line": 49,
+        "text": "import { spawn, execSync, execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "drivers/drive-codex.mjs",
+        "line": 103,
+        "text": "const out = execSync('tasklist /FI \"PID eq ' + ppid + '\" /FO CSV /NH', { encoding: 'utf8', windowsHide: true, timeout: 5000 });"
+      },
+      {
+        "file": "drivers/drive-codex.mjs",
+        "line": 307,
+        "text": "const child = spawn(CODEX_EXE, args, { cwd: workDir, stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true, detached: process.platform !== 'win32' });"
+      },
+      {
+        "file": "lib/app-server-client.js",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/app-server-client.js",
+        "line": 17,
+        "text": "this.child=spawn(executable,args,{cwd,env,windowsHide:true,stdio:['pipe','pipe','pipe']});"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

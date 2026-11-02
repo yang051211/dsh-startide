@@ -1,0 +1,126 @@
+{
+  "name": "dsh-peripherals",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-02T07:38:09.041Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 326,
+        "text": "response = await fetch(path, init);"
+      },
+      {
+        "file": "client/client.js",
+        "line": 373,
+        "text": "const response = await fetch(\"/open-in-app/open\", {"
+      },
+      {
+        "file": "lib/health.js",
+        "line": 15,
+        "text": "import { request as httpRequest } from 'node:http'"
+      },
+      {
+        "file": "lib/health.js",
+        "line": 16,
+        "text": "import { request as httpsRequest } from 'node:https'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/agents.js",
+        "line": 10,
+        "text": "import { cpSync, existsSync, mkdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/agents.js",
+        "line": 252,
+        "text": "return { path: target, exists: true, content: readFileSync(target, 'utf8') }"
+      },
+      {
+        "file": "lib/agents.js",
+        "line": 268,
+        "text": "mkdirSync(dirname(target), { recursive: true })"
+      },
+      {
+        "file": "lib/agents.js",
+        "line": 269,
+        "text": "writeFileSync(target, content, 'utf8')"
+      },
+      {
+        "file": "lib/agents.js",
+        "line": 286,
+        "text": "mkdirSync(trashDir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/mcp.js",
+        "line": 2,
+        "text": "* MCP 服务器管理：读写 profile patch 里的 `@deepseek-ai/dsh-mcp-client` 条目。"
+      },
+      {
+        "file": "lib/mcp.js",
+        "line": 29,
+        "text": "export const MCP_PACKAGE = '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "lib/mcp.js",
+        "line": 31,
+        "text": "/** serverName 的合法形式（与 dsh-mcp-client 的校验保持一致）。 */"
+      },
+      {
+        "file": "lib/mcp.js",
+        "line": 70,
+        "text": "return typeof name === 'string' && /(^|\\/)dsh-mcp-client$/.test(name)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/agents.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/agents.js",
+        "line": 310,
+        "text": "? spawn('explorer.exe', [`/select,${target}`], { detached: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "lib/agents.js",
+        "line": 312,
+        "text": "? spawn('open', ['-R', target], { detached: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "lib/agents.js",
+        "line": 313,
+        "text": ": spawn('xdg-open', [dirname(target)], { detached: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "lib/skills.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

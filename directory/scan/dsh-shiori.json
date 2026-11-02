@@ -1,0 +1,119 @@
+{
+  "name": "dsh-shiori",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-02T07:38:10.052Z",
+  "icon": "dsh-shiori.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/acceptance/loopback-capture.mjs",
+        "line": 18,
+        "text": "import { createServer } from \"node:http\";"
+      },
+      {
+        "file": "src/acceptance/loopback-capture.mjs",
+        "line": 292,
+        "text": "const response = await fetch(`${capture.url}/v1/chat`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/acceptance/cli.mjs",
+        "line": 15,
+        "text": "import { readFile, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "src/acceptance/cli.mjs",
+        "line": 71,
+        "text": "await writeFile(bundlePath, JSON.stringify(bundle, null, 2), \"utf8\");"
+      },
+      {
+        "file": "src/acceptance/cli.mjs",
+        "line": 86,
+        "text": "const bundle = JSON.parse(await readFile(args.bundle, \"utf8\"));"
+      },
+      {
+        "file": "src/acceptance/global-fallback-child.mjs",
+        "line": 15,
+        "text": "import { readFile, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "src/acceptance/global-fallback-child.mjs",
+        "line": 30,
+        "text": "const payload = JSON.parse(await readFile(payloadPath, \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 23,
+        "text": "export const inject = [\"tools\", \"systemPrompt\"];"
+      },
+      {
+        "file": "src/host/dsh-adapter.mjs",
+        "line": 5,
+        "text": "* ctx.tools.register(defineTool) / ctx.on(\"session/event\")）适配为桥所需的 host 抽象。"
+      },
+      {
+        "file": "src/host/dsh-adapter.mjs",
+        "line": 9,
+        "text": "* - dsh-soul-md 0.10.2 index.js:579  tools.register(defineTool({name, description, parameters,"
+      },
+      {
+        "file": "src/host/dsh-adapter.mjs",
+        "line": 242,
+        "text": "const registered = pluginCtx.tools.register(defineTool({"
+      },
+      {
+        "file": "src/plugin/bindings.mjs",
+        "line": 211,
+        "text": "* 经真实 defineTool + ctx.tools.register 注册一个工具。"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/acceptance/index.mjs",
+        "line": 957,
+        "text": "const { spawnSync } = await import(\"node:child_process\");"
+      },
+      {
+        "file": "src/acceptance/index.mjs",
+        "line": 967,
+        "text": "const run = spawnSync(process.execPath, [childScript, phase, stateRoot, scopeId, outPath], { encoding: \"utf8\", timeout: 30_000 });"
+      },
+      {
+        "file": "src/acceptance/index.mjs",
+        "line": 1142,
+        "text": "const { spawnSync } = await import(\"node:child_process\");"
+      },
+      {
+        "file": "src/acceptance/index.mjs",
+        "line": 1190,
+        "text": "const run = spawnSync(process.execPath, [childScript, dataRoot, ACTIVE_SCOPE, payloadPath, childOut], { encoding: \"utf8\", timeout: 30_000 });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

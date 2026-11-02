@@ -1,0 +1,96 @@
+{
+  "name": "@zltianhen/dsh-zh-skill",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-02T07:38:07.721Z",
+  "icon": "zltianhen__dsh-zh-skill.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 30,
+        "text": "fetch(`${origin()}/zh-skill/hello?msg=${encodeURIComponent(String(msg).slice(0, 300))}`).catch(() => {})"
+      },
+      {
+        "file": "client.js",
+        "line": 58,
+        "text": "const response = await fetch(`${origin()}${ENDPOINT}?cwd=${encodeURIComponent(cwd)}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core.js",
+        "line": 5,
+        "text": "import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 107,
+        "text": "parsed = parseFrontmatter(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "import { readFileSync, appendFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 100,
+        "text": "return parseFrontmatter(readFileSync(hit.file, 'utf8'))?.body ?? ''"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 173,
+        "text": "appendFileSync(join(dir, 'zh-skill-client.log'), `${new Date().toISOString()} ${msg}\\n`)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 30,
+        "text": "export const inject = ['tools', 'systemPrompt', 'workingDirectory', 'webServer']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 106,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 133,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/set-name.mjs",
+        "line": 17,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools",
+    "webServer",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

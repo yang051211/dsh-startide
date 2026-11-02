@@ -1,0 +1,89 @@
+{
+  "name": "dsh-arcvista",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-02T07:38:06.000Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 123,
+        "text": "const response = await fetch(`${ARCVISTA_URL}/api/health`, { cache: 'no-store' });"
+      },
+      {
+        "file": "lib/http.js",
+        "line": 3,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "lib/llm.js",
+        "line": 58,
+        "text": "response = await fetch(endpoint, {"
+      },
+      {
+        "file": "public/js/api.js",
+        "line": 6,
+        "text": "const response = await fetch(`${API_BASE}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/analyze/coverage.js",
+        "line": 13,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/analyze/coverage.js",
+        "line": 73,
+        "text": "return fs.readFileSync(abs, 'utf8');"
+      },
+      {
+        "file": "lib/analyze/index.js",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/analyze/security.js",
+        "line": 10,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/analyze/security.js",
+        "line": 138,
+        "text": "const buffer = fs.readFileSync(abs);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/local-git.js",
+        "line": 2,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentDefaultModel",
+    "llm",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

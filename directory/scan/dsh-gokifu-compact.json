@@ -1,7 +1,7 @@
 {
   "name": "dsh-gokifu-compact",
-  "version": "1.16.0",
-  "scannedAt": "2026-11-01T19:08:51.821Z",
+  "version": "1.17.3",
+  "scannedAt": "2026-11-02T07:38:02.473Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -32,29 +32,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "scripts/bench-repro.mjs",
-        "line": 51,
-        "text": "const { readFileSync } = await import(\"node:fs\");"
+        "file": "scripts/after-restart.mjs",
+        "line": 25,
+        "text": "import nodeFs from \"node:fs\";"
       },
       {
-        "file": "scripts/bench-repro.mjs",
-        "line": 52,
-        "text": "tier = JSON.parse(readFileSync(raw, \"utf8\")).ledgerLevel ?? null;"
+        "file": "scripts/after-restart.mjs",
+        "line": 40,
+        "text": "const total = JSON.parse(nodeFs.readFileSync(file, \"utf8\"))?.summary?.total;"
       },
       {
-        "file": "scripts/check-maintenance.mjs",
-        "line": 18,
-        "text": "import { readFileSync, existsSync } from \"node:fs\""
+        "file": "scripts/after-restart.mjs",
+        "line": 59,
+        "text": "return { file, stamp: JSON.parse(nodeFs.readFileSync(file, \"utf8\")) };"
       },
       {
-        "file": "scripts/check-maintenance.mjs",
-        "line": 72,
-        "text": "pkg = JSON.parse(readFileSync(join(ROOT, \"package.json\"), \"utf8\"))"
+        "file": "scripts/after-restart.mjs",
+        "line": 178,
+        "text": "keys = Object.keys(JSON.parse(nodeFs.readFileSync(budgetFile, \"utf8\")));"
       },
       {
-        "file": "scripts/check-maintenance.mjs",
-        "line": 133,
-        "text": "const changelog = existsSync(join(ROOT, \"CHANGELOG.md\")) ? readFileSync(join(ROOT, \"CHANGELOG.md\"), \"utf8\") : \"\""
+        "file": "scripts/boundary-audit.mjs",
+        "line": 24,
+        "text": "import nodeFs from \"node:fs\";"
       }
     ]
   },
@@ -72,8 +72,8 @@
       },
       {
         "file": "scripts/bench-repro.mjs",
-        "line": 34,
-        "text": "const bench = spawnSync(process.execPath, [nodePath.join(ROOT, \"test\", \"bench.mjs\"), \"2000\"], {"
+        "line": 44,
+        "text": "const bench = spawnSync(process.execPath, benchArgs, {"
       },
       {
         "file": "scripts/check-maintenance.mjs",

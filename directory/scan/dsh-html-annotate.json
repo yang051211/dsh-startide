@@ -1,0 +1,66 @@
+{
+  "name": "dsh-html-annotate",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-02T07:38:07.892Z",
+  "icon": "dsh-html-annotate.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1098,
+        "text": "const probe = await fetch(url, { method: 'HEAD', credentials: 'same-origin', cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 488,
+        "text": "const text = await readFile(path)"
+      },
+      {
+        "file": "serve.js",
+        "line": 3,
+        "text": "import { readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "serve.js",
+        "line": 53,
+        "text": "const text = readFileSync(file, 'utf8').replace(/^export function bridgeMain/m, 'function bridgeMain')"
+      },
+      {
+        "file": "test/client.test.cjs",
+        "line": 4,
+        "text": "const fs = require('node:fs')"
+      },
+      {
+        "file": "test/client.test.cjs",
+        "line": 10,
+        "text": "const source = fs.readFileSync(FILE, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

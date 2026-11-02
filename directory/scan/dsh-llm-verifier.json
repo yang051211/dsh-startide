@@ -1,15 +1,15 @@
 {
   "name": "dsh-llm-verifier",
-  "version": "0.11.0",
-  "scannedAt": "2026-10-26T10:04:59.668Z",
+  "version": "0.11.1",
+  "scannedAt": "2026-11-02T07:38:04.112Z",
   "icon": "dsh-llm-verifier.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/caller-CPbFWOz7.js",
-        "line": 148,
-        "text": "const response = await fetch(endpoint(route.baseURL), {"
+        "file": "lib/caller-WKl-RXYy.js",
+        "line": 153,
+        "text": "const send = (temp) => fetch(endpoint(route.baseURL), {"
       },
       {
         "file": "lib/client.js",
@@ -37,27 +37,27 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/auto-WeP7BNJ9.js",
+        "file": "lib/auto-DNZnQiuV.js",
         "line": 2,
         "text": "import { mkdir, readFile, rename, unlink, writeFile } from \"node:fs/promises\";"
       },
       {
-        "file": "lib/auto-WeP7BNJ9.js",
+        "file": "lib/auto-DNZnQiuV.js",
         "line": 65,
         "text": "const document = JSON.parse(await readFile(this.file, \"utf8\"));"
       },
       {
-        "file": "lib/auto-WeP7BNJ9.js",
+        "file": "lib/auto-DNZnQiuV.js",
         "line": 124,
         "text": "await mkdir(dirname(this.file), { recursive: true });"
       },
       {
-        "file": "lib/auto-WeP7BNJ9.js",
+        "file": "lib/auto-DNZnQiuV.js",
         "line": 126,
         "text": "await writeFile(temporary, JSON.stringify(snapshot), \"utf8\");"
       },
       {
-        "file": "lib/auto-WeP7BNJ9.js",
+        "file": "lib/auto-DNZnQiuV.js",
         "line": 130,
         "text": "await unlink(temporary).catch(() => {});"
       }
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 6861,
+        "line": 6844,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 6974,
+        "line": 6957,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 7088,
+        "line": 7071,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 7164,
+        "line": 7147,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 7334,
+        "line": 7317,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
@@ -97,13 +97,23 @@
     "hit": true,
     "evidence": [
       {
-        "file": "scripts/sync-installed-profiles.mjs",
-        "line": 27,
-        "text": "import { execFileSync } from 'node:child_process'"
+        "file": "scripts/release.mjs",
+        "line": 8,
+        "text": "import { execSync } from 'node:child_process';"
       },
       {
-        "file": "src/parity.test.ts",
-        "line": 1,
+        "file": "scripts/release.mjs",
+        "line": 18,
+        "text": "return execSync(command, { cwd: projectRoot, stdio: 'inherit', ...options });"
+      },
+      {
+        "file": "scripts/release.mjs",
+        "line": 22,
+        "text": "return execSync(command, { cwd: projectRoot, encoding: 'utf8' }).trim();"
+      },
+      {
+        "file": "scripts/sync-installed-profiles.mjs",
+        "line": 27,
         "text": "import { execFileSync } from 'node:child_process'"
       }
     ]
@@ -114,7 +124,7 @@
   },
   "dependencies": 1,
   "minifiedFiles": [
-    "lib/types/client.js"
+    "lib/types/client/view/client.js"
   ],
   "binaryFiles": [],
   "requiredServices": [],

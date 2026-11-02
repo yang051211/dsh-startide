@@ -1,0 +1,84 @@
+{
+  "name": "dsh-ccf",
+  "version": "0.80.1",
+  "scannedAt": "2026-11-02T07:38:12.358Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 964,
+        "text": "const response = await fetch(path, init)"
+      },
+      {
+        "file": "lib/miner.js",
+        "line": 341,
+        "text": "const result = await web.fetch({ url }, signal)"
+      },
+      {
+        "file": "lib/sync.js",
+        "line": 87,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "lib/sync.js",
+        "line": 210,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "lib/ui.js",
+        "line": 8,
+        "text": "* 客户端拿不到 Node 的文件系统，数据走宿主 HTTP 路由：浏览器里 `fetch('/dsh-ccf/api/v1/records')`。"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/catalog.js",
+        "line": 11,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/catalog.js",
+        "line": 31,
+        "text": "raw = readFileSync(path, 'utf8')"
+      },
+      {
+        "file": "lib/create.js",
+        "line": 11,
+        "text": "import { readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/create.js",
+        "line": 12,
+        "text": "import { mkdir, open, readFile as readFileAsync, unlink, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/create.js",
+        "line": 63,
+        "text": "const manifest = JSON.parse(readFileSync(fileURLToPath(new URL('../package.json', import.meta.url)), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

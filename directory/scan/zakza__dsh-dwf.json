@@ -1,0 +1,109 @@
+{
+  "name": "@zakza/dsh-dwf",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-02T07:38:07.351Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/compile/compiler.js",
+        "line": 16,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/compile/compiler.js",
+        "line": 89,
+        "text": "content = fs.readFileSync(resolved, 'utf8');"
+      },
+      {
+        "file": "lib/compile/compiler.js",
+        "line": 114,
+        "text": "return fs.readFileSync(fileName, 'utf8');"
+      },
+      {
+        "file": "lib/engine/artifacts.js",
+        "line": 13,
+        "text": "import { promises as fs } from 'node:fs';"
+      },
+      {
+        "file": "lib/engine/effects.js",
+        "line": 15,
+        "text": "import { promises as fs } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 25,
+        "text": "// ctx.tools / ctx.systemPrompt / ctx.workflowEngine). The ambient stub that"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 47,
+        "text": "export const inject = ['tools', 'workflowEngine', 'systemPrompt'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 70,
+        "text": "ctx.tools.register(createWorkflowTool(ctx, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 75,
+        "text": "ctx.tools.register(getWorkflowRunTool(db));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 76,
+        "text": "ctx.tools.register(listWorkflowRunsTool(db));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine/effects.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/engine/effects.js",
+        "line": 452,
+        "text": "const child = spawn(cmd, argv, { cwd, shell: false, signal: this.deps.signal });"
+      },
+      {
+        "file": "src/engine/effects.ts",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/engine/effects.ts",
+        "line": 498,
+        "text": "const child = spawn(cmd, argv, { cwd, shell: false, signal: this.deps.signal })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools",
+    "workflowEngine"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,35 +1,35 @@
 {
   "name": "balance-dsh",
-  "version": "2.1.4",
-  "scannedAt": "2026-10-31T13:57:55.885Z",
+  "version": "2.1.7",
+  "scannedAt": "2026-11-02T07:38:02.714Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1646,
+        "line": 1558,
+        "text": "const res = await fetch(\"/balance-api?lite=1&model=\" + encodeURIComponent(model));"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1836,
         "text": "const res = await fetch(balanceApiUrl(), { signal: controller.signal });"
       },
       {
         "file": "lib/client.js",
-        "line": 1657,
+        "line": 1847,
         "text": "const res = await fetch(balanceApiUrl());"
       },
       {
         "file": "lib/client.js",
-        "line": 1696,
-        "text": "const res = await fetch(\"/balance-api?session=\" + encodeURIComponent(sessionId));"
+        "line": 1890,
+        "text": "const res = await fetch(\"/balance-api?lite=1&session=\" + encodeURIComponent(sessionId));"
       },
       {
         "file": "lib/client.js",
-        "line": 1710,
-        "text": "const res = await fetch(\"/balance-api?session=\" + encodeURIComponent(sessionId));"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 2023,
-        "text": "const res = await fetch(base + \"/\" + year + \".json\", { signal: AbortSignal.timeout(6000) });"
+        "line": 1963,
+        "text": "const res = await fetch(\"/balance-api?lite=1&today=1&session=\" + encodeURIComponent(sessionId), {"
       }
     ]
   },
@@ -43,23 +43,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 371,
+        "line": 346,
         "text": "const { readFile } = await import(\"node:fs/promises\");"
       },
       {
         "file": "lib/index.js",
-        "line": 372,
+        "line": 347,
+        "text": "const parsed = JSON.parse(await readFile(aggCacheFile, \"utf8\"));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 674,
+        "text": "const { readFile } = await import(\"node:fs/promises\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 675,
         "text": "const parsed = JSON.parse(await readFile(cnCalendarState.file, \"utf8\"));"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 408,
-        "text": "const { mkdir, writeFile, rename } = await import(\"node:fs/promises\");"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 410,
-        "text": "await mkdir(dirname(file), { recursive: true });"
       }
     ]
   },
@@ -72,12 +72,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 1006,
+        "line": 1309,
         "text": "const { spawn } = await import(\"node:child_process\");"
       },
       {
         "file": "lib/index.js",
-        "line": 1020,
+        "line": 1323,
         "text": "const child = spawn(nodeExe, args, { cwd: profileDir, env, windowsHide: true, stdio: [\"ignore\", \"pipe\", \"pipe\"] });"
       }
     ]

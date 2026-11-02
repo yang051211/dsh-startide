@@ -1,0 +1,84 @@
+{
+  "name": "dsh-plan-completion",
+  "version": "0.1.6",
+  "scannedAt": "2026-11-02T07:38:12.499Z",
+  "icon": "dsh-plan-completion.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 193,
+        "text": "fetch('/plan-completion/diag', {"
+      },
+      {
+        "file": "client.js",
+        "line": 725,
+        "text": "request = fetch(url, {"
+      },
+      {
+        "file": "client.js",
+        "line": 760,
+        "text": "request = fetch('/plan-completion/warm', {"
+      },
+      {
+        "file": "client.js",
+        "line": 794,
+        "text": "request = fetch('/plan-completion/verify', {"
+      },
+      {
+        "file": "client.js",
+        "line": 825,
+        "text": "return Promise.resolve(fetch('/plan-completion/settings', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host/store.js",
+        "line": 21,
+        "text": "import { mkdir, readdir, readFile, rename, rm, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "host/store.js",
+        "line": 275,
+        "text": "const raw = await readFile(fileFor(sessionId), 'utf8');"
+      },
+      {
+        "file": "host/store.js",
+        "line": 286,
+        "text": "await mkdir(plansDir, { recursive: true });"
+      },
+      {
+        "file": "host/store.js",
+        "line": 290,
+        "text": "await writeFile(tmp, `${JSON.stringify(data)}\\n`, 'utf8');"
+      },
+      {
+        "file": "host/store.js",
+        "line": 294,
+        "text": "await rm(tmp, { force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

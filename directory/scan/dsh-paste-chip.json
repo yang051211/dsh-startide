@@ -1,0 +1,66 @@
+{
+  "name": "dsh-paste-chip",
+  "version": "0.1.28",
+  "scannedAt": "2026-11-02T07:38:06.217Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 78,
+        "text": "const response = await fetch(SETTINGS_PATH, { headers: { accept: \"application/json\" } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 161,
+        "text": "fetch(LOG_PATH, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import { appendFileSync, mkdirSync, renameSync, statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 97,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 99,
+        "text": "appendFileSync(file, \"\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 128,
+        "text": "appendFileSync(LOG_FILE, `${line}\\n`);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

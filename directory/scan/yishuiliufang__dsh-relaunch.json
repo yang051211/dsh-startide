@@ -1,0 +1,80 @@
+{
+  "name": "@yishuiliufang/dsh-relaunch",
+  "version": "1.0.3",
+  "scannedAt": "2026-11-02T07:38:04.554Z",
+  "icon": "yishuiliufang__dsh-relaunch.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 123,
+        "text": "const response = await fetch(ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "restart-harness.mjs",
+        "line": 21,
+        "text": "import { appendFileSync } from 'node:fs'"
+      },
+      {
+        "file": "restart-harness.mjs",
+        "line": 42,
+        "text": "try { appendFileSync(LOG, line + '\\r\\n', 'utf8') } catch { /* logging must never break the restart */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 90,
+        "text": "const { execFile } = await import('node:child_process')"
+      },
+      {
+        "file": "index.js",
+        "line": 99,
+        "text": "execFile(POWERSHELL, ['-NoProfile', '-NonInteractive', '-Command', wmi],"
+      },
+      {
+        "file": "index.js",
+        "line": 109,
+        "text": "const child = spawn(WSCRIPT, [launcher, ...launchArgs], { detached: true, stdio: 'ignore', windowsHide: true })"
+      },
+      {
+        "file": "restart-harness.mjs",
+        "line": 20,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

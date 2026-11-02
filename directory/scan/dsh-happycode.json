@@ -1,0 +1,64 @@
+{
+  "name": "dsh-happycode",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-02T07:38:08.636Z",
+  "icon": "dsh-happycode.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 341,
+        "text": "const response = await fetch(API + path, init)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/paths.js",
+        "line": 12,
+        "text": "import { existsSync, readdirSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 18,
+        "text": "import fsp from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 412,
+        "text": "await fsp.mkdir(this.dataDir, { recursive: true })"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 413,
+        "text": "await fsp.writeFile(temporary, JSON.stringify(payload), 'utf8')"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 532,
+        "text": "const raw = await fsp.readFile(path.join(projcacheRoot, `${id}.json`), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

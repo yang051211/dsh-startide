@@ -1,0 +1,97 @@
+{
+  "name": "dsh-annotate-browser",
+  "version": "0.2.8",
+  "scannedAt": "2026-11-02T07:38:05.712Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cdp.js",
+        "line": 18,
+        "text": "const ws = new WebSocket(this.wsUrl);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 181,
+        "text": "return await fetch(url, opts);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 661,
+        "text": "fetch(ROUTES.viewport, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1074,
+        "text": "fetch(ROUTES.annotationsCount, { cache: \"no-store\" })"
+      },
+      {
+        "file": "lib/launcher.js",
+        "line": 102,
+        "text": "const res = await fetch(url, { signal: AbortSignal.timeout(1500) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/launcher.js",
+        "line": 7,
+        "text": "import { existsSync, mkdirSync, readFileSync, rmSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/launcher.js",
+        "line": 42,
+        "text": "mkdirSync(profileDir, { recursive: true });"
+      },
+      {
+        "file": "lib/launcher.js",
+        "line": 47,
+        "text": "const lines = readFileSync(portFile, \"utf8\").split(\"\\n\").map((s) => s.trim()).filter(Boolean);"
+      },
+      {
+        "file": "lib/launcher.js",
+        "line": 68,
+        "text": "rmSync(portFile, { force: true });"
+      },
+      {
+        "file": "lib/service.js",
+        "line": 6,
+        "text": "import { readFileSync, existsSync, mkdirSync, writeFileSync, readdirSync, statSync, unlinkSync } from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/launcher.js",
+        "line": 6,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/launcher.js",
+        "line": 82,
+        "text": "const child = spawn(bin, args, { detached: true, stdio: \"ignore\" });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
