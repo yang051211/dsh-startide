@@ -1,0 +1,103 @@
+{
+  "name": "dsh-plugin-maoxuan-pet",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-02T23:01:36.288Z",
+  "icon": "dsh-plugin-maoxuan-pet.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 143,
+        "text": "const response = await fetch(`${API.state}?t=${Date.now()}`, { cache: 'no-store' });"
+      },
+      {
+        "file": "client.js",
+        "line": 148,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "client.js",
+        "line": 236,
+        "text": "fetch(`${API.shell}?t=${Date.now()}`).then((r) => (r.ok ? r.json() : null)).catch(() => null),"
+      },
+      {
+        "file": "client.js",
+        "line": 357,
+        "text": "const response = await fetch(API.shell, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { readFile, writeFile, rename, mkdir, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 184,
+        "text": "const entries = extractLlmPatchEntries(await readFile(source, 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 198,
+        "text": "try { existing = await readFile(target, 'utf8'); } catch { /* absent */ }"
+      },
+      {
+        "file": "index.js",
+        "line": 200,
+        "text": "await mkdir(dirname(target), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "import { spawn, execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 853,
+        "text": "proc = spawn(cfg.dshBin, args, {"
+      },
+      {
+        "file": "index.js",
+        "line": 1200,
+        "text": "const child = spawn('bash', [shellScript], { cwd: here, stdio: 'ignore' });"
+      },
+      {
+        "file": "index.js",
+        "line": 1230,
+        "text": "const child = spawn(shellBin, args, { detached: true, stdio: 'ignore' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "timer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

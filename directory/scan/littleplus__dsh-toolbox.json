@@ -1,0 +1,60 @@
+{
+  "name": "@littleplus/dsh-toolbox",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-02T23:01:27.897Z",
+  "icon": "littleplus__dsh-toolbox.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "* 为什么\"按 agent\"：宿主的 `ctx.tools.restrict()` 只接受 scoped ctx，并且要求名字在"
+      },
+      {
+        "file": "index.js",
+        "line": 31,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/tool-groups.js",
+        "line": 5,
+        "text": "* 1. `ctx.tools.restrict({ deny })` 只能从 **scoped ctx**（agent 作用域）调用，全局 ctx 会被"
+      },
+      {
+        "file": "lib/tool-groups.js",
+        "line": 14,
+        "text": "* 因此\"按 agent 施加\"是唯一可行路径：每个 agent 挂一个微型插件（声明 inject: ['tools']），"
+      },
+      {
+        "file": "lib/tool-groups.js",
+        "line": 126,
+        "text": "inject: ['tools'],"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

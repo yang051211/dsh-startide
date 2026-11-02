@@ -1,0 +1,113 @@
+{
+  "name": "dsh-claude-design-system",
+  "version": "2.7.2",
+  "scannedAt": "2026-11-02T23:01:16.849Z",
+  "icon": "dsh-claude-design-system.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 516,
+        "text": "const response = await fetch(route(listPath(skill)), { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 540,
+        "text": "const response = await fetch(`${route(openPath(view.skill))}?${new URLSearchParams({ root: view.root })}`, { method: \"POST\" });"
+      },
+      {
+        "file": "skills/claude-design-system/scripts/artifact.mjs",
+        "line": 939,
+        "text": "if (isRemote(match[1])) add(`fetch(\"${match[1]}\") goes to the network; upload the data with design_import_asset and fetch its /_blob/<id>`);"
+      },
+      {
+        "file": "skills/claude-design-system/scripts/artifact.mjs",
+        "line": 941,
+        "text": "ebSocket|EventSource)\\s*\\(|\\bXMLHttpRequest\\b/.test(code)) add(\"opens a network connection (WebSocket / EventSource / XMLHttpRequest); artboards stay offline\");"
+      },
+      {
+        "file": "skills/claude-design-system/scripts/artifact.mjs",
+        "line": 2020,
+        "text": "add(\"makes network requests (fetch / XMLHttpRequest / WebSocket / EventSource / sendBeacon); the bundle fetches nothing\");"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "import { readFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 43,
+        "text": "const value = JSON.parse(readFileSync(join(root, at[0]), \"utf8\"))[at[1]];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 56,
+        "text": "const value = JSON.parse(readFileSync(file, \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { spawn as spawn2 } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 119,
+        "text": "const child = spawn(node.path, [script, \"open\", root], { env: scriptEnv(node), stdio: [\"ignore\", \"pipe\", \"pipe\"], windowsHide: true });"
+      },
+      {
+        "file": "skills/claude-design-system/scripts/artifact.mjs",
+        "line": 4,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "skills/claude-design-system/scripts/artifact.mjs",
+        "line": 3387,
+        "text": "const child = spawn(process.execPath, [SERVER_SCRIPT, a.root, ...serverArgs(flags)], { detached: true, stdio: [\"ignore\", \"ignore\", fd] });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "skills/claude-design-system/scripts/editor/assets/index-CfRb9gGr.js",
+    "skills/claude-design-system/scripts/editor/share-ui.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

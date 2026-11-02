@@ -1,0 +1,143 @@
+{
+  "name": "dsh-fish-soul",
+  "version": "0.13.1",
+  "scannedAt": "2026-11-02T23:01:36.112Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/channels/bilibili.js",
+        "line": 156,
+        "text": "this.fetch = fetchImpl ?? ((...a) => fetch(...a));"
+      },
+      {
+        "file": "lib/channels/bilibili.js",
+        "line": 224,
+        "text": "return await this.fetch(url, { method, headers: h, body, signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS) });"
+      },
+      {
+        "file": "lib/channels/bilibili.js",
+        "line": 689,
+        "text": "const res = await this.fetch(url, { redirect: 'manual', headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(5000) });"
+      },
+      {
+        "file": "lib/channels/vendor/douyin-bridge/browser.mjs",
+        "line": 297,
+        "text": "const r = await fetch(`${this.base}/json/version`, { signal: AbortSignal.timeout(2000) })"
+      },
+      {
+        "file": "lib/channels/vendor/douyin-bridge/browser.mjs",
+        "line": 311,
+        "text": "const r = await fetch(`${this.base}/json/version`, { signal: AbortSignal.timeout(2000) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/backup.js",
+        "line": 11,
+        "text": "import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, renameSync, rmSync, statSync, unlinkSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/backup.js",
+        "line": 28,
+        "text": "try { return JSON.parse(readFileSync(pendingPath(), 'utf8')); } catch { return null; }"
+      },
+      {
+        "file": "lib/backup.js",
+        "line": 44,
+        "text": "if (existsSync(`${path}-wal`) && statSync(`${path}-wal`).size === 0) rmSync(`${path}-wal`, { force: true });"
+      },
+      {
+        "file": "lib/backup.js",
+        "line": 45,
+        "text": "rmSync(`${path}-shm`, { force: true });"
+      },
+      {
+        "file": "lib/backup.js",
+        "line": 79,
+        "text": "const drop = () => rmSync(pendingPath(), { force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/gateway.js",
+        "line": 366,
+        "text": "const tools = this.ctx.tools;"
+      },
+      {
+        "file": "lib/hostdeps.mjs",
+        "line": 152,
+        "text": "// \"unsupported JSON schema: parameters.type must be a value schema object\"。ctx.tools.register 本身收"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 67,
+        "text": "export const inject = ['webServer', 'tools', 'systemPrompt', 'llm', 'agents', 'workspaceRegistry'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 331,
+        "text": "// #26：DSH 的联网工具（dsh-tool-web）是按会话 / agent 挂的，插件自己的 ctx.tools 里经常查不到，"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 342,
+        "text": "try { if (typeof ctx.tools?.get === 'function' && ctx.tools.get('web_search') !== undefined) return 'found'; } catch { /* 当查不到 */ }"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/browsers.js",
+        "line": 10,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/browsers.js",
+        "line": 99,
+        "text": "execFile('reg', ['query', `${hive}\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\App Paths\\\\${exe}`, '/ve'],"
+      },
+      {
+        "file": "lib/browsers.js",
+        "line": 156,
+        "text": "execFile(exe, ['--version'], { timeout: 5000, encoding: 'utf8' }, (err, stdout) => {"
+      },
+      {
+        "file": "lib/channels/vendor/douyin-bridge/browser.mjs",
+        "line": 23,
+        "text": "import { spawn, execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/channels/vendor/douyin-bridge/browser.mjs",
+        "line": 98,
+        "text": "execFile('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', script], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "llm",
+    "systemPrompt",
+    "tools",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

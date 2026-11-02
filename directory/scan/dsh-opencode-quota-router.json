@@ -1,0 +1,71 @@
+{
+  "name": "dsh-opencode-quota-router",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-02T23:01:30.438Z",
+  "icon": "dsh-opencode-quota-router.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 461,
+        "text": "const response = await fetch(cfg.usageUrl, {"
+      },
+      {
+        "file": "test.mjs",
+        "line": 7,
+        "text": "import http from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 33,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 171,
+        "text": "const parsed = JSON.parse(fs.readFileSync(statePath, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 240,
+        "text": "fs.mkdirSync(path.dirname(cfg.statePath), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 242,
+        "text": "fs.writeFileSync(temp, `${JSON.stringify(state, null, 2)}\\n`, { mode: 0o600 })"
+      },
+      {
+        "file": "test.mjs",
+        "line": 8,
+        "text": "import fs from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

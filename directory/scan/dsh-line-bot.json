@@ -1,0 +1,110 @@
+{
+  "name": "dsh-line-bot",
+  "version": "0.9.7",
+  "scannedAt": "2026-11-02T23:00:58.120Z",
+  "icon": "dsh-line-bot.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 301,
+        "text": "const res = await fetch(url, { signal: AbortSignal.timeout(timeout) })"
+      },
+      {
+        "file": "client.js",
+        "line": 104,
+        "text": "const res = await fetch(API + path, { credentials: 'same-origin', ...(init || {}) })"
+      },
+      {
+        "file": "lib/cloudflare.mjs",
+        "line": 18,
+        "text": "const res = await fetch(`${CF}${pathname}`, {"
+      },
+      {
+        "file": "lib/host.mjs",
+        "line": 1457,
+        "text": "const res = await fetch(`${base}/health`, { signal: AbortSignal.timeout(2500) })"
+      },
+      {
+        "file": "lib/host.mjs",
+        "line": 2172,
+        "text": "const res = await fetch(`${base}/health`, { signal: AbortSignal.timeout(6000) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 16,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 27,
+        "text": "const PKG = JSON.parse(fs.readFileSync(new URL('../package.json', import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 127,
+        "text": "return { dir, file, manifest: JSON.parse(fs.readFileSync(file, 'utf8')) }"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 137,
+        "text": "fs.writeFileSync(tmp, `${JSON.stringify(manifest, null, 2)}\\n`)"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 311,
+        "text": "try { config = JSON.parse(fs.readFileSync(configPath, 'utf8')) } catch { /* ignore */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 19,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 194,
+        "text": "const pnpm = spawnSync('pnpm', ['--version'], { stdio: 'ignore', shell: IS_WIN })"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 200,
+        "text": "const probe = spawnSync('dsh', ['--version'], { stdio: 'ignore', shell: IS_WIN })"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 209,
+        "text": "if (!tool.shell) return spawnSync(tool.command, [...(tool.prefix || []), ...args], options)"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 211,
+        "text": "return spawnSync(line, { ...options, shell: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

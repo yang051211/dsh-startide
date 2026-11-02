@@ -1,0 +1,77 @@
+{
+  "name": "dsh-feiyu-wardrobe",
+  "version": "0.10.0",
+  "scannedAt": "2026-11-02T23:01:08.629Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "docs/dress-up/app.js",
+        "line": 1125,
+        "text": "const res = await fetch('manifest.json', { cache: 'no-cache' });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/feiyu-report.mjs",
+        "line": 13,
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "bin/feiyu-report.mjs",
+        "line": 24,
+        "text": "const PACKAGE = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 10,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/util.js",
+        "line": 7,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/util.js",
+        "line": 38,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/feiyu-report.mjs",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "bin/feiyu-report.mjs",
+        "line": 112,
+        "text": "const child = spawn(command, args, { detached: true, stdio: 'ignore' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

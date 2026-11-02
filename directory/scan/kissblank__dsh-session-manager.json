@@ -1,0 +1,61 @@
+{
+  "name": "@kissblank/dsh-session-manager",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-02T23:01:08.127Z",
+  "icon": "kissblank__dsh-session-manager.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1899,
+        "text": "const response = await fetch(endpoint(PURGE_PATH), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1972,
+        "text": "const response = await fetch(endpoint(INVENTORY_PATH), { method: 'GET', headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2000,
+        "text": "const response = await fetch(endpoint(path), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 22,
+        "text": "import { readdir, rm, rmdir, stat as statPath } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 351,
+        "text": "for (const directory of directories) await rm(directory, { recursive: true, force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

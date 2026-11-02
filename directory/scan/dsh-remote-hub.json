@@ -1,0 +1,110 @@
+{
+  "name": "dsh-remote-hub",
+  "version": "0.4.5",
+  "scannedAt": "2026-11-02T23:01:30.553Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-remote.mjs",
+        "line": 17,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "bin/dsh-remote.mjs",
+        "line": 94,
+        "text": "const req = http.request("
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 19,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 86,
+        "text": "const up = http.request({ host: '127.0.0.1', port, path: req.url, method: req.method, headers }, (r) => {"
+      },
+      {
+        "file": "lib/discover.js",
+        "line": 16,
+        "text": "import http from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-remote.mjs",
+        "line": 16,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "bin/dsh-remote.mjs",
+        "line": 246,
+        "text": "if (fs.existsSync(CONNECT_FILE)) console.log(fs.readFileSync(CONNECT_FILE, 'utf8'))"
+      },
+      {
+        "file": "lib/cookie.js",
+        "line": 12,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/cookie.js",
+        "line": 31,
+        "text": "text = fs.readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "lib/supervisor.js",
+        "line": 15,
+        "text": "import fs from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-remote.mjs",
+        "line": 18,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "bin/dsh-remote.mjs",
+        "line": 76,
+        "text": "execFile('powershell', ['-NoProfile', '-NonInteractive', '-Command', script], { timeout: 8000, windowsHide: true }, (err, stdout) => {"
+      },
+      {
+        "file": "bin/dsh-remote.mjs",
+        "line": 87,
+        "text": "execFile(cmd, args, { windowsHide: true }, () => resolve())"
+      },
+      {
+        "file": "lib/discover.js",
+        "line": 17,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/discover.js",
+        "line": 31,
+        "text": "execFile(cmd, args, { timeout, windowsHide: true }, (err, stdout) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

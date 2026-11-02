@@ -1,0 +1,86 @@
+{
+  "name": "dsh-opencode-usage-settings",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-02T23:01:30.104Z",
+  "icon": "dsh-opencode-usage-settings.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 79,
+        "text": "fetch(`${USAGE_API}${force ? '?refresh=1' : ''}`, { headers: { accept: 'application/json' } }),"
+      },
+      {
+        "file": "client.js",
+        "line": 80,
+        "text": "fetch(ROUTER_API, { headers: { accept: 'application/json' } }).catch(() => null),"
+      },
+      {
+        "file": "client.js",
+        "line": 99,
+        "text": "const response = await fetch(ROUTER_API, {"
+      },
+      {
+        "file": "index.js",
+        "line": 345,
+        "text": "const response = await fetch(cfg.modelsUrl, { headers: { authorization: `Bearer ${key}`, accept: 'application/json' }, signal: AbortSignal.timeout(15000) })"
+      },
+      {
+        "file": "index.js",
+        "line": 379,
+        "text": "const response = await fetch(cfg.usageUrl, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 209,
+        "text": "const parsed = JSON.parse(fs.readFileSync(cfg.accountsStatePath, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 317,
+        "text": "const text = decodeFrames(fs.readFileSync(file))"
+      },
+      {
+        "file": "test.mjs",
+        "line": 7,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "test.mjs",
+        "line": 38,
+        "text": "fs.mkdirSync(sessionsRoot, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

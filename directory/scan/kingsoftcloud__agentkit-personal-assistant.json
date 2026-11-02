@@ -1,0 +1,138 @@
+{
+  "name": "@kingsoftcloud/agentkit-personal-assistant",
+  "version": "0.1.13",
+  "scannedAt": "2026-11-02T23:01:12.148Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.js",
+        "line": 6,
+        "text": "mounted||ae!==p.generation)return;let X=new WebSocket(ne.wsUrl,[\"agentkit.personal-assistant.desktop.v1\",`agentkit.desktop.ticket.${ne.ticket}`]);X.binaryType=\""
+      },
+      {
+        "file": "runtime/assistant-runtime.mjs",
+        "line": 1,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "runtime/assistant-runtime.mjs",
+        "line": 74,
+        "text": "  const result = await fetch(`${brokerEndpoint}${path}`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ ...body, user"
+      },
+      {
+        "file": "runtime/assistant-runtime.mjs",
+        "line": 80,
+        "text": "  const result = await fetch(`${brokerEndpoint}/broker/desktop/frame-binary`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stri"
+      },
+      {
+        "file": "runtime/computer-agentd.mjs",
+        "line": 1,
+        "text": "import { createServer } from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "runtime/assistant-runtime.mjs",
+        "line": 2,
+        "text": "import { readFile, mkdir } from 'node:fs/promises';"
+      },
+      {
+        "file": "runtime/assistant-runtime.mjs",
+        "line": 40,
+        "text": "await mkdir(workspace, { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "runtime/assistant-runtime.mjs",
+        "line": 41,
+        "text": "await mkdir(artifacts, { recursive: true, mode: 0o750 });"
+      },
+      {
+        "file": "runtime/assistant-runtime.mjs",
+        "line": 42,
+        "text": "await mkdir(state, { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "runtime/assistant-runtime.mjs",
+        "line": 47,
+        "text": "const parsed = JSON.parse(await readFile(registryPath, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "runtime/cloud-browser.mjs",
+        "line": 1073,
+        "text": ": typeof tools?.register === 'function' ? definition => tools.register(definition) : undefined;"
+      },
+      {
+        "file": "runtime/cloud-execution.mjs",
+        "line": 318,
+        "text": "const disposers = [tools.register(bash), tools.register(code)].filter(Boolean);"
+      },
+      {
+        "file": "src/bot-private-tools.mjs",
+        "line": 10,
+        "text": "tools.register({ name: 'bot_memory_search', description: '查询当前逻辑 Bot 的私有记忆。不能读取其他 Bot、文件或凭据。',"
+      },
+      {
+        "file": "src/bot-private-tools.mjs",
+        "line": 15,
+        "text": "tools.register({ name: 'bot_memory_save', description: '保存当前逻辑 Bot 的私有记忆。不能指定其他 Bot 或文件路径。',"
+      },
+      {
+        "file": "src/bot-private-tools.mjs",
+        "line": 17,
+        "text": "tools.register({ name: 'bot_plan_update', description: '保存当前 Bot 的任务计划；步骤仅作为资料，不会执行命令或授予权限。',"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "runtime/cloud-browser-cdp.mjs",
+        "line": 2,
+        "text": "import { spawn as spawnChild } from 'node:child_process';"
+      },
+      {
+        "file": "runtime/cloud-browser-cdp.mjs",
+        "line": 181,
+        "text": "child = spawn(chromium, args, {"
+      },
+      {
+        "file": "runtime/cloud-browser.mjs",
+        "line": 2,
+        "text": "import { spawn as spawnChild } from 'node:child_process';"
+      },
+      {
+        "file": "runtime/cloud-execution.mjs",
+        "line": 2,
+        "text": "import { spawn as spawnChild, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "runtime/cloud-execution.mjs",
+        "line": 227,
+        "text": "child = spawn(planned.file, planned.args, { cwd: planned.cwd, env: planned.env, detached: true, stdio: ['ignore', 'pipe', 'pipe'] });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "dist/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,75 @@
+{
+  "name": "dshmarket-update-helper",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-02T23:01:15.997Z",
+  "icon": "dshmarket-update-helper.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 44,
+        "text": "            const response = await fetch(path, {method, credentials: 'same-origin', cache: 'no-store', signal, headers: method === 'POST' ? {'x-market-update-he"
+      },
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "async fetch(request) {"
+      },
+      {
+        "file": "updater.js",
+        "line": 16,
+        "text": "const response = await fetch(`${REGISTRY}${NAME}/latest`, {signal: AbortSignal.timeout(20000)});"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "updater.js",
+        "line": 1,
+        "text": "import {readFileSync} from 'node:fs';"
+      },
+      {
+        "file": "updater.js",
+        "line": 3,
+        "text": "export const HELPER_VERSION = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')).version;"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 2,
+        "text": "export const inject = ['pluginManager', 'connection', 'tools', 'approval'];"
+      },
+      {
+        "file": "index.js",
+        "line": 46,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "approval",
+    "connection",
+    "pluginManager",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

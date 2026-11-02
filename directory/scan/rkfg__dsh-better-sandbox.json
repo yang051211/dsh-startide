@@ -1,0 +1,109 @@
+{
+  "name": "@rkfg/dsh-better-sandbox",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-02T23:01:20.386Z",
+  "icon": "rkfg__dsh-better-sandbox.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/fs.js",
+        "line": 24,
+        "text": "import { realpathSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/masks.js",
+        "line": 18,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/policy.js",
+        "line": 11,
+        "text": "import { existsSync, realpathSync, readdirSync, statSync, lstatSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/rules.js",
+        "line": 19,
+        "text": "import { existsSync, lstatSync, mkdirSync, writeFileSync, chmodSync, rmSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/rules.js",
+        "line": 60,
+        "text": "if (info.isSymbolicLink()) rmSync(path, { force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/escalation.js",
+        "line": 23,
+        "text": "* `ctx.tools.get(name)` resolves to nothing at all. Extending the ladder covers every"
+      },
+      {
+        "file": "lib/escalation.js",
+        "line": 60,
+        "text": "static inject = ['betterSandbox', 'tools']"
+      },
+      {
+        "file": "lib/escalation.js",
+        "line": 172,
+        "text": "this.patchField(this.ctx.tools.get(name)?.parameters?.properties?.sandbox_permissions, subject, name)"
+      },
+      {
+        "file": "lib/escalation.js",
+        "line": 176,
+        "text": "this.patchField(this.ctx.tools.get(name, agent)?.parameters?.properties?.sandbox_permissions, subject, name)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/subprocess.js",
+        "line": 17,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/subprocess.js",
+        "line": 56,
+        "text": "this.bwrapUsable = spawnSync('bwrap', ['--version'], { stdio: 'ignore' }).status === 0"
+      },
+      {
+        "file": "lib/subprocess.js",
+        "line": 65,
+        "text": "spawn(spec) {"
+      },
+      {
+        "file": "lib/subprocess.js",
+        "line": 68,
+        "text": "if (!isRipgrep(spec.argv[0])) return super.spawn(spec)"
+      },
+      {
+        "file": "lib/subprocess.js",
+        "line": 74,
+        "text": "if (!guarded) return super.spawn(spec)"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 9,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "betterSandbox",
+    "sandboxPolicy",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

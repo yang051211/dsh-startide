@@ -1,0 +1,114 @@
+{
+  "name": "dsh-claude-dashboard",
+  "version": "2.7.2",
+  "scannedAt": "2026-11-02T23:01:16.969Z",
+  "icon": "dsh-claude-dashboard.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 516,
+        "text": "const response = await fetch(route(listPath(skill)), { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 540,
+        "text": "const response = await fetch(`${route(openPath(view.skill))}?${new URLSearchParams({ root: view.root })}`, { method: \"POST\" });"
+      },
+      {
+        "file": "skills/claude-dashboard/scripts/artifact.mjs",
+        "line": 7,
+        "text": "import http from \"node:http\";"
+      },
+      {
+        "file": "skills/claude-dashboard/scripts/artifact.mjs",
+        "line": 39,
+        "text": "const response = await fetch(new URL(probe, state.url), { signal: AbortSignal.timeout(2e3) });"
+      },
+      {
+        "file": "skills/claude-dashboard/scripts/artifact.mjs",
+        "line": 1050,
+        "text": "r GUEST_WATCH = \"setInterval(function(){fetch('/__share/me',{cache:'no-store'}).then(function(r){if(r.status===403)return location.reload();return r.json().then"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "import { readFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 43,
+        "text": "const value = JSON.parse(readFileSync(join(root, at[0]), \"utf8\"))[at[1]];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 56,
+        "text": "const value = JSON.parse(readFileSync(file, \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { spawn as spawn2 } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 119,
+        "text": "const child = spawn(node.path, [script, \"open\", root], { env: scriptEnv(node), stdio: [\"ignore\", \"pipe\", \"pipe\"], windowsHide: true });"
+      },
+      {
+        "file": "skills/claude-dashboard/scripts/artifact.mjs",
+        "line": 4,
+        "text": "import { spawn as spawn2 } from \"node:child_process\";"
+      },
+      {
+        "file": "skills/claude-dashboard/scripts/artifact.mjs",
+        "line": 2509,
+        "text": "import { spawn } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "skills/claude-dashboard/scripts/editor/assets/index-DLvAt8Vr.js",
+    "skills/claude-dashboard/scripts/editor/comments.js",
+    "skills/claude-dashboard/scripts/editor/share-ui.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

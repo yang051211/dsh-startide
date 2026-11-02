@@ -1,7 +1,7 @@
 {
   "name": "@steven-stack-s/dsh-memos-local",
-  "version": "2.0.20-dsh.4",
-  "scannedAt": "2026-10-26T10:14:23.387Z",
+  "version": "2.0.21-dsh.2",
+  "scannedAt": "2026-11-02T23:01:17.697Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -69,26 +69,26 @@
       {
         "file": "dist/adapters/deepseek-harness/index.js",
         "line": 18,
-        "text": "export const inject = [\"systemPrompt\", \"tools\", \"llm\", \"webServer\"];"
+        "text": "export const inject = [\"systemPrompt\", \"tools\", \"llm\"];"
       },
       {
         "file": "dist/adapters/deepseek-harness/tools.js",
-        "line": 26,
+        "line": 27,
         "text": "disposers.push(ctx.tools.register(defineTool({"
       },
       {
         "file": "dist/adapters/deepseek-harness/tools.js",
-        "line": 106,
+        "line": 107,
         "text": "disposers.push(ctx.tools.register(defineTool({"
       },
       {
         "file": "dist/adapters/deepseek-harness/tools.js",
-        "line": 188,
+        "line": 189,
         "text": "disposers.push(ctx.tools.register(defineTool({"
       },
       {
         "file": "dist/adapters/deepseek-harness/tools.js",
-        "line": 226,
+        "line": 227,
         "text": "disposers.push(ctx.tools.register(defineTool({"
       }
     ]
@@ -96,6 +96,16 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "core/embedding/providers/local-process.ts",
+        "line": 2,
+        "text": "import { fork, type ChildProcess, type ForkOptions } from \"node:child_process\";"
+      },
+      {
+        "file": "dist/core/embedding/providers/local-process.js",
+        "line": 2,
+        "text": "import { fork } from \"node:child_process\";"
+      },
       {
         "file": "dist/server/routes/admin.js",
         "line": 24,
@@ -110,16 +120,6 @@
         "file": "dist/server/routes/admin.js",
         "line": 328,
         "text": "const child = spawn(command, [...args], { stdio: \"ignore\" });"
-      },
-      {
-        "file": "server/routes/admin.ts",
-        "line": 24,
-        "text": "import { spawn } from \"node:child_process\";"
-      },
-      {
-        "file": "server/routes/admin.ts",
-        "line": 315,
-        "text": "const child = spawn(\"bash\", [\"-c\", cmd], {"
       }
     ]
   },
@@ -142,22 +142,22 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 254,
+      "line": 280,
       "text": "> **Do not run `npm install -g @memtensor/memos-local-plugin`.**"
     },
     {
       "file": "README.md",
-      "line": 350,
+      "line": 376,
       "text": "**`npm install -g @memtensor/memos-local-plugin` says \"not found\" or \"404\".**"
     },
     {
       "file": "README.zh-CN.md",
-      "line": 238,
+      "line": 261,
       "text": "> **不要执行 `npm install -g @memtensor/memos-local-plugin`。**"
     },
     {
       "file": "README.zh-CN.md",
-      "line": 318,
+      "line": 341,
       "text": "- **`npm install -g @memtensor/memos-local-plugin` 提示 404**：可能是不小心把"
     }
   ],

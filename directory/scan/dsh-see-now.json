@@ -1,0 +1,99 @@
+{
+  "name": "dsh-see-now",
+  "version": "0.0.7",
+  "scannedAt": "2026-11-02T23:01:36.374Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "examples/voice-say-mac.mjs",
+        "line": 37,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "examples/voice-say-mac.mjs",
+        "line": 48,
+        "text": "const raw = JSON.parse(readFileSync(join(home, 'tts.json'), 'utf8'));"
+      },
+      {
+        "file": "scripts/install-dev.mjs",
+        "line": 17,
+        "text": "import { cp, readFile, writeFile, rm } from 'node:fs/promises';"
+      },
+      {
+        "file": "scripts/install-dev.mjs",
+        "line": 18,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "scripts/install-dev.mjs",
+        "line": 42,
+        "text": "const readJson = async (p) => JSON.parse(await readFile(p, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 31,
+        "text": "export const inject = ['tools', 'attachments', 'sessionController'];"
+      },
+      {
+        "file": "src/index.js",
+        "line": 564,
+        "text": "disposers.push(ctx.tools.register(defineTool(toolObj)));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "examples/voice-say-mac.mjs",
+        "line": 36,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "examples/voice-say-mac.mjs",
+        "line": 60,
+        "text": "const probe = spawnSync('say', ['-v', '?'], { stdio: 'ignore' });"
+      },
+      {
+        "file": "examples/voice-say-mac.mjs",
+        "line": 75,
+        "text": "child = spawn('say', args, { stdio: 'ignore' });"
+      },
+      {
+        "file": "scripts/bench-capture.mjs",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/bench-capture.mjs",
+        "line": 41,
+        "text": "const child = spawn('ffmpeg', a, { stdio: ['ignore', 'pipe', 'pipe'] });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "attachments",
+    "sessionController",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

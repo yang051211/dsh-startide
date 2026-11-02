@@ -1,7 +1,7 @@
 {
   "name": "dsh-fast-mode",
-  "version": "1.7.3",
-  "scannedAt": "2026-11-02T07:38:00.401Z",
+  "version": "1.7.11",
+  "scannedAt": "2026-11-02T23:00:55.571Z",
   "icon": "dsh-fast-mode.png",
   "network": {
     "hit": true,
@@ -17,29 +17,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "bench/replay.mjs",
-        "line": 31,
-        "text": "import { readFileSync } from 'node:fs'"
+        "file": "audit/run.mjs",
+        "line": 42,
+        "text": "import { closeSync, existsSync, mkdirSync, openSync, readFileSync, readSync, statSync, writeFileSync } from 'node:fs'"
       },
       {
-        "file": "bench/replay.mjs",
-        "line": 70,
-        "text": ": readFileSync(path)"
+        "file": "audit/run.mjs",
+        "line": 838,
+        "text": "taskText = readFileSync(resolve(options.tasks), 'utf8')"
       },
       {
-        "file": "bench/soak.mjs",
-        "line": 28,
-        "text": "import { rmSync } from 'node:fs'"
+        "file": "audit/run.mjs",
+        "line": 926,
+        "text": "mkdirSync(outDir, { recursive: true })"
       },
       {
-        "file": "bench/soak.mjs",
-        "line": 173,
-        "text": "rmSync(metricsFile, { force: true })"
+        "file": "audit/run.mjs",
+        "line": 928,
+        "text": "writeFileSync(patches.off, armPatch(patchStyle, false))"
       },
       {
-        "file": "bench/soak.mjs",
-        "line": 174,
-        "text": "rmSync(`${metricsFile}.1`, { force: true })"
+        "file": "audit/run.mjs",
+        "line": 929,
+        "text": "writeFileSync(patches.on, armPatch(patchStyle, true, onConfig))"
       }
     ]
   },
@@ -48,7 +48,7 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 568,
+        "line": 663,
         "text": "() => toolCtx.tools.register(buildShellParallelTool({ spawn, logger: ctx.logger })),"
       }
     ]
@@ -56,6 +56,21 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "audit/run.mjs",
+        "line": 41,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "audit/run.mjs",
+        "line": 491,
+        "text": "const child = spawn(node ?? DETECTED.node, bin ? [bin, ...argv] : argv, {"
+      },
+      {
+        "file": "audit/run.mjs",
+        "line": 546,
+        "text": "const child = spawn(CHECK_SHELL, checkArgv(command), { cwd, env: process.env, stdio: ['ignore', 'pipe', 'pipe'] })"
+      },
       {
         "file": "bench/replay.mjs",
         "line": 30,
@@ -65,11 +80,6 @@
         "file": "index.js",
         "line": 58,
         "text": "import { spawn } from 'node:child_process'"
-      },
-      {
-        "file": "src/parallel.js",
-        "line": 194,
-        "text": "child = spawn('bash', shellArgs, {"
       }
     ]
   },

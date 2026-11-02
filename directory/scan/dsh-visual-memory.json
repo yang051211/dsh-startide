@@ -1,0 +1,118 @@
+{
+  "name": "dsh-visual-memory",
+  "version": "0.1.6",
+  "scannedAt": "2026-11-02T23:01:34.301Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 30,
+        "text": "import fs from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 39,
+        "text": "export const inject = ['tools', 'attachments', 'webServer', 'fs', 'systemPrompt', 'connection']"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 120,
+        "text": "roots = JSON.parse(await fs.readFile(file, 'utf8'))"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 126,
+        "text": "await fs.writeFile(file, JSON.stringify(next, null, 2), 'utf8')"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 134,
+        "text": "const parsed = JSON.parse(await fs.readFile(registryPath(), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 39,
+        "text": "export const inject = ['tools', 'attachments', 'webServer', 'fs', 'systemPrompt', 'connection']"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 71,
+        "text": "// `ctx.tools.register` stores `parameters` verbatim (unlike `defineTool`, which"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 346,
+        "text": "// (`ctx.tools.schemas(agent)` — the same call the Cordis Inspect Tool"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 357,
+        "text": "const schemas = scopeKey === undefined ? ctx.tools.schemas() : ctx.tools.schemas(scopeKey)"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 583,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 28,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 181,
+        "text": "const child = execFile('python3', [IMAGING], { maxBuffer: 32 * 1024 * 1024 }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "verify.mjs",
+        "line": 18,
+        "text": "import { execFile, execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "attachments",
+    "connection",
+    "fs",
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 78,
+      "text": "- Python 3 with **Pillow** (`python3 -m pip install pillow`) — the pixel engine"
+    },
+    {
+      "file": "README.zh-CN.md",
+      "line": 91,
+      "text": "- **Python 3 + Pillow**（`python3 -m pip install pillow`）：像素引擎 `lib/imaging.py` 是子进程，插件不自带图像编解码。"
+    }
+  ],
+  "skippedEntries": []
+}

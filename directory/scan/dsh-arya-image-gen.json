@@ -1,0 +1,141 @@
+{
+  "name": "dsh-arya-image-gen",
+  "version": "0.18.13",
+  "scannedAt": "2026-11-02T23:01:35.642Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1955,
+        "text": "const response = await fetch(IMAGE_ROUTE, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 6498,
+        "text": "return window.fetch(input, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 47678,
+        "text": "fetch(url.toString());"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 116334,
+        "text": "const response = await fetch(CANVAS_ASSET_ROUTE, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 116354,
+        "text": "const response = await fetch(url, { signal });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 56842,
+        "text": "dom = rm(dom);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 56857,
+        "text": "dom = rm(dom);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 56931,
+        "text": "function rm(dom) {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import fs, { existsSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { link, lstat, mkdir, mkdtemp, readFile, readdir, realpath, rename, rm, stat, unlink, writeFile } from \"node:fs/promises\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/agent-toolset.js",
+        "line": 20,
+        "text": "ctx.effect(() => ctx.tools.restrict({ allow }));"
+      },
+      {
+        "file": "lib/agent-toolset.js",
+        "line": 35,
+        "text": "const inject = [\"tools\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4726,
+        "text": "* `inject`: an inject entry would hold `ctx.tools` — and every tool plugin"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4760,
+        "text": "return this.layers.effect(this.ctx, (layer) => layer.tools.insert(name, definition), { label: \"tools.register()\" });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 6733,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 8,
+        "text": "import { execFile, spawn, spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 6983,
+        "text": "const child = spawn(pythonExe, args, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7020,
+        "text": "for (const pid of pids) spawnSync(\"taskkill\", ["
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7098,
+        "text": "for (const pid of stale) spawnSync(\"taskkill\", ["
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7190,
+        "text": "const run = spawnSync(\"powershell\", ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js",
+    "lib/index.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

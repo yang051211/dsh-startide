@@ -1,0 +1,90 @@
+{
+  "name": "dsh-file-context-menu",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-02T23:01:04.309Z",
+  "icon": "dsh-file-context-menu.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 33,
+        "text": "fetch(diagUrl(), {"
+      },
+      {
+        "file": "client.js",
+        "line": 696,
+        "text": "const response = await fetch(url, { credentials: 'same-origin' });"
+      },
+      {
+        "file": "client.js",
+        "line": 836,
+        "text": "const response = await fetch(apiPath('file-actions/browsers'), {"
+      },
+      {
+        "file": "client.js",
+        "line": 846,
+        "text": "const response = await fetch(apiPath('file-actions/open-url'), {"
+      },
+      {
+        "file": "client.js",
+        "line": 880,
+        "text": "const response = await fetch(apiPath('file-actions/open-with'), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import { existsSync, statSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 159,
+        "text": "if (process.platform === 'darwin') spawn('open', ['-a', target.app, url], options).unref();"
+      },
+      {
+        "file": "index.js",
+        "line": 160,
+        "text": "else spawn(target.path, [url], options).unref();"
+      },
+      {
+        "file": "index.js",
+        "line": 164,
+        "text": "spawn('rundll32.exe', ['url.dll,FileProtocolHandler', url], options).unref();"
+      },
+      {
+        "file": "index.js",
+        "line": 166,
+        "text": "spawn('open', [url], options).unref();"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

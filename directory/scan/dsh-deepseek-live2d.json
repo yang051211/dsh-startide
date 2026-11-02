@@ -1,0 +1,113 @@
+{
+  "name": "dsh-deepseek-live2d",
+  "version": "0.7.3",
+  "scannedAt": "2026-11-02T23:01:09.404Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 64,
+        "text": "const r = await fetch('/deepseek-live2d/bootstrap', { signal: abort.signal, cache: 'no-store' });"
+      },
+      {
+        "file": "renderer/viewer.js",
+        "line": 23,
+        "text": "    return fetch('preferences.json',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(preferences),keepalive:true}).then(r=>{if(!r."
+      },
+      {
+        "file": "renderer/viewer.js",
+        "line": 41,
+        "text": "const report=await fetch('status.json').then(r=>r.json());if(!report.ok)throw new Error(report.error);"
+      },
+      {
+        "file": "renderer/viewer.js",
+        "line": 42,
+        "text": "preferences=await fetch('preferences.json').then(r=>{if(!r.ok)throw new Error('位置存档读取失败');return r.json();});"
+      },
+      {
+        "file": "renderer/viewer.js",
+        "line": 397,
+        "text": "    fetch('model/'+encodeURI('Animation/脱捕.motion3.json')).then(response=>response.ok?response.json():null).then(json=>{if(json)fidget=createFidget(json,0.14);}"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "desktop/main.mjs",
+        "line": 2,
+        "text": "import { copyFile, readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "desktop/main.mjs",
+        "line": 225,
+        "text": "return JSON.parse(await readFile(configPath, 'utf8'));"
+      },
+      {
+        "file": "desktop/main.mjs",
+        "line": 251,
+        "text": "if (target !== legacy && !(await readFile(target).then(() => true, () => false)) && (await readFile(legacy).then(() => true, () => false))) {"
+      },
+      {
+        "file": "desktop/main.mjs",
+        "line": 352,
+        "text": "await writeFile(shot, image.toPNG());"
+      },
+      {
+        "file": "scripts/check_release.mjs",
+        "line": 11,
+        "text": "import { readFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/check_release.mjs",
+        "line": 10,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/desktop.mjs",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/desktop.mjs",
+        "line": 30,
+        "text": "const child = spawn(electron, [main], { stdio: 'inherit', cwd: pluginRoot, env });"
+      },
+      {
+        "file": "src/launch-desktop.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/provision.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "credentials",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

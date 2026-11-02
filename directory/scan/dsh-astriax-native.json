@@ -1,0 +1,113 @@
+{
+  "name": "dsh-astriax-native",
+  "version": "0.3.9",
+  "scannedAt": "2026-11-02T23:01:12.753Z",
+  "icon": "dsh-astriax-native.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bridge/server.mjs",
+        "line": 1,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "client.js",
+        "line": 116,
+        "text": "const response = await fetch('/.dsh-astriax-native' + path, {"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 55,
+        "text": "const response = await fetch('http://127.0.0.1:' + manager.bridgePort + route, { headers: { authorization: 'Bearer ' + token } });"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 66,
+        "text": "  const response = await fetch('http://127.0.0.1:' + manager.bridgePort + route, { method: 'POST', headers: { authorization: 'Bearer ' + token, 'content-type': "
+      },
+      {
+        "file": "lib/manager.js",
+        "line": 119,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bridge/server.mjs",
+        "line": 2,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "bridge/server.mjs",
+        "line": 24,
+        "text": "fs.mkdirSync(BRIDGE_DIR, { recursive: true });"
+      },
+      {
+        "file": "bridge/server.mjs",
+        "line": 25,
+        "text": "fs.mkdirSync(WORKDIR, { recursive: true });"
+      },
+      {
+        "file": "bridge/server.mjs",
+        "line": 34,
+        "text": "const existing = fs.readFileSync(TOKEN_FILE, 'utf8').trim();"
+      },
+      {
+        "file": "bridge/server.mjs",
+        "line": 38,
+        "text": "fs.writeFileSync(TOKEN_FILE, token, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bridge/server.mjs",
+        "line": 6,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "bridge/server.mjs",
+        "line": 104,
+        "text": "const child = spawn(ELECTRON, ["
+      },
+      {
+        "file": "lib/manager.js",
+        "line": 6,
+        "text": "import { spawn, execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/manager.js",
+        "line": 479,
+        "text": "child = spawn(command, args, {"
+      },
+      {
+        "file": "lib/native.js",
+        "line": 6,
+        "text": "import { spawn, execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

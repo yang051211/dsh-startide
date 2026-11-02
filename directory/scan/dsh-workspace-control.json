@@ -1,0 +1,85 @@
+{
+  "name": "dsh-workspace-control",
+  "version": "0.5.2",
+  "scannedAt": "2026-11-02T23:01:08.143Z",
+  "icon": "dsh-workspace-control.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 34,
+        "text": "} from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 96,
+        "text": "appendFile(LOG_PATH, line, 'utf8').catch(() => {});"
+      },
+      {
+        "file": "index.js",
+        "line": 103,
+        "text": "return rename(LOG_PATH, `${LOG_PATH}.1`).catch(() => rm(LOG_PATH, { force: true }));"
+      },
+      {
+        "file": "index.js",
+        "line": 116,
+        "text": "const raw = await readFile(PENDING_PATH, 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 131,
+        "text": "await rm(PENDING_PATH, { force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 2370,
+        "text": "const dispose = tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 36,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 772,
+        "text": "child = spawn(command, args, { stdio: ['ignore', 'ignore', 'pipe'], windowsHide: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 819,
+        "text": "const child = spawn('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', command], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "sessionPersistence",
+    "typert",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

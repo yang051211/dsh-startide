@@ -1,0 +1,67 @@
+{
+  "name": "dsh-session-fork-tree",
+  "version": "0.9.0",
+  "scannedAt": "2026-11-02T23:01:37.756Z",
+  "icon": "dsh-session-fork-tree.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 90,
+        "text": "const res = await fetch(apiUrl('/fork-tree/style.css'), { credentials: 'same-origin' });"
+      },
+      {
+        "file": "client.js",
+        "line": 103,
+        "text": "const res = await fetch(apiUrl('/fork-tree/lineage.json'), { credentials: 'same-origin' });"
+      },
+      {
+        "file": "client.js",
+        "line": 682,
+        "text": "fetch(apiUrl('/fork-tree/report'), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 323,
+        "text": "await writeFile(REPORT_PATH, JSON.stringify({ receivedAt: new Date().toISOString(), report: parsed }, null, 2), 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 340,
+        "text": "const css = await readFile(new URL('./style.css', import.meta.url), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionController",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

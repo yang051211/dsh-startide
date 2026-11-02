@@ -1,7 +1,7 @@
 {
   "name": "dsh-tg-bridge",
-  "version": "1.38.7",
-  "scannedAt": "2026-11-02T07:38:00.343Z",
+  "version": "1.45.0",
+  "scannedAt": "2026-11-02T23:00:51.205Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -39,26 +39,26 @@
       {
         "file": "bridge-kick.mjs",
         "line": 19,
-        "text": "import { appendFileSync, existsSync, readFileSync, openSync, closeSync, unlinkSync, writeFileSync } from 'node:fs';"
+        "text": "import { appendFileSync, existsSync, readFileSync, openSync, closeSync, statSync, unlinkSync, writeFileSync } from 'node:fs';"
       },
       {
         "file": "bridge-kick.mjs",
-        "line": 51,
+        "line": 53,
         "text": "writeFileSync(fd, JSON.stringify({ pid: process.pid, owner, ts: Date.now() }));"
       },
       {
         "file": "bridge-kick.mjs",
-        "line": 57,
+        "line": 59,
         "text": "if (Number(JSON.parse(readFileSync(LOCK, 'utf8')).pid) === process.pid) unlinkSync(LOCK);"
       },
       {
         "file": "bridge-kick.mjs",
-        "line": 67,
+        "line": 69,
         "text": "const info = JSON.parse(readFileSync(LOCK, 'utf8'));"
       },
       {
         "file": "bridge-kick.mjs",
-        "line": 79,
+        "line": 81,
         "text": "try { unlinkSync(LOCK); } catch {}"
       }
     ]
@@ -87,12 +87,12 @@
       },
       {
         "file": "bridge-kick.mjs",
-        "line": 111,
+        "line": 139,
         "text": "const r = spawnSync('powershell', ['-NoProfile', '-NonInteractive', '-Command',"
       },
       {
         "file": "bridge-kick.mjs",
-        "line": 230,
+        "line": 259,
         "text": "// spawn(), NOT spawnSync(): spawnSync waits for the child to exit, and this"
       }
     ]
@@ -108,12 +108,17 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 105,
+      "line": 65,
+      "text": "`setup.mjs` leaves a working bridge with these defaults, and none of them need"
+    },
+    {
+      "file": "README.md",
+      "line": 128,
       "text": "`node setup.mjs --check` reports state on every platform."
     },
     {
       "file": "README.md",
-      "line": 274,
+      "line": 297,
       "text": "npm install -g dsh-tg-bridge"
     }
   ],

@@ -1,0 +1,112 @@
+{
+  "name": "dsh-plugin-bili-timeslot",
+  "version": "1.0.5",
+  "scannedAt": "2026-11-02T23:01:37.478Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/version-check.mjs",
+        "line": 53,
+        "text": "const r = await fetch(`${REGISTRY}/${local.name}/latest`, {"
+      },
+      {
+        "file": "scripts/bili-cdp.mjs",
+        "line": 28,
+        "text": "const r = await fetch(`http://127.0.0.1:${PORT}${p}`, { method: 'GET' });"
+      },
+      {
+        "file": "scripts/bili-cdp.mjs",
+        "line": 100,
+        "text": "const ws = new WebSocket(target.webSocketDebuggerUrl);"
+      },
+      {
+        "file": "scripts/bili-cdp.mjs",
+        "line": 250,
+        "text": "const r = await fetch(`http://127.0.0.1:${PORT}/json/new?${encodeURIComponent(arg)}`, { method: 'PUT' });"
+      },
+      {
+        "file": "scripts/clear-slot-1.0-fast.mjs",
+        "line": 81,
+        "text": "\" const getOne = async (id) => { const g = await fetch(base + 'get_unit?unit_id=' + id, { credentials: 'include', headers: hdr }); return await g.json(); };\" +"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/auth.mjs",
+        "line": 15,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/auth.mjs",
+        "line": 51,
+        "text": "const pem = fs.readFileSync(PUB_PATH, \"utf8\");"
+      },
+      {
+        "file": "lib/auth.mjs",
+        "line": 86,
+        "text": "const j = JSON.parse(fs.readFileSync(LICENSE_PATH, \"utf8\"));"
+      },
+      {
+        "file": "lib/auth.mjs",
+        "line": 94,
+        "text": "fs.mkdirSync(STATE_DIR, { recursive: true });"
+      },
+      {
+        "file": "lib/auth.mjs",
+        "line": 95,
+        "text": "fs.writeFileSync(LICENSE_PATH, JSON.stringify({ license: token, installedAt: Date.now() }, null, 2), \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/auth.mjs",
+        "line": 18,
+        "text": "import { execSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/auth.mjs",
+        "line": 33,
+        "text": "const out = execSync('reg query \"HKLM\\\\SOFTWARE\\\\Microsoft\\\\Cryptography\" /v MachineGuid', {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 44,
+        "text": "child = spawn(process.execPath, [path.join(scriptsDir, scriptFile), ...args], {"
+      },
+      {
+        "file": "scripts/apply-timeslot.mjs",
+        "line": 14,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

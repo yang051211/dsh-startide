@@ -1,0 +1,66 @@
+{
+  "name": "dsh-echelon",
+  "version": "1.3.0",
+  "scannedAt": "2026-11-02T23:01:26.695Z",
+  "icon": "dsh-echelon.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 497,
+        "text": "const response = await fetch(`${API}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/store.js",
+        "line": 16,
+        "text": "import { mkdirSync, readFileSync, renameSync, statSync, writeFileSync, unlinkSync } from 'node:fs'"
+      },
+      {
+        "file": "src/store.js",
+        "line": 114,
+        "text": "raw = JSON.parse(readFileSync(this.#file, 'utf8'))"
+      },
+      {
+        "file": "src/store.js",
+        "line": 137,
+        "text": "mkdirSync(directory, { recursive: true })"
+      },
+      {
+        "file": "src/store.js",
+        "line": 141,
+        "text": "writeFileSync(temporary, body, 'utf8')"
+      },
+      {
+        "file": "src/store.js",
+        "line": 147,
+        "text": "unlinkSync(temporary)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

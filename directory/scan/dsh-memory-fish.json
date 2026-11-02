@@ -1,0 +1,83 @@
+{
+  "name": "dsh-memory-fish",
+  "version": "0.10.1",
+  "scannedAt": "2026-11-02T23:01:12.330Z",
+  "icon": "dsh-memory-fish.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 14,
+        "text": "const res = await fetch(`${API}${path}`, {"
+      },
+      {
+        "file": "lib/panel.mjs",
+        "line": 81,
+        "text": "c function api(path,body){const r=await fetch(path,{method:body?'POST':'GET',headers:body?{'content-type':'application/json'}:{},body:body?JSON.stringify(body):"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core.mjs",
+        "line": 1,
+        "text": "import { promises as fs } from 'node:fs';"
+      },
+      {
+        "file": "lib/core.mjs",
+        "line": 63,
+        "text": "const oldText = await fs.readFile(target.file, 'utf8');"
+      },
+      {
+        "file": "lib/core.mjs",
+        "line": 416,
+        "text": "const oldText = await fs.readFile(target.file, 'utf8');"
+      },
+      {
+        "file": "lib/dream.mjs",
+        "line": 1,
+        "text": "import { promises as fs } from 'node:fs';"
+      },
+      {
+        "file": "lib/dream.mjs",
+        "line": 71,
+        "text": "const text = await fs.readFile(drop.file, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 21,
+        "text": "export const inject = ['tools', 'systemPrompt'];"
+      },
+      {
+        "file": "lib/tools.mjs",
+        "line": 25,
+        "text": "ctx.tools.register(defineTool(def));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

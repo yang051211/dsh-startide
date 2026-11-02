@@ -1,7 +1,7 @@
 {
   "name": "dsh-source-control",
-  "version": "0.8.0",
-  "scannedAt": "2026-10-30T07:08:53.858Z",
+  "version": "0.9.0",
+  "scannedAt": "2026-11-02T23:01:22.301Z",
   "icon": "dsh-source-control.svg",
   "network": {
     "hit": true,
@@ -9,7 +9,12 @@
       {
         "file": "lib/client.js",
         "line": 22,
-        "text": "(cwd,message,signal){let response=await fetch(API_PATH,{method:\"POST\",headers:{\"content-type\":\"application/json\"},body:JSON.stringify({repo:cwd,...message}),sig"
+        "text": "tApiFailure,response;try{response=await fetch(API_PATH,{method:\"POST\",headers:{\"content-type\":\"application/json\"},body:JSON.stringify({repo:cwd,...message}),sig"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 23,
+        "text": "es2=queue;queue=[],sending=!0;try{await fetch(API_PATH,{method:\"POST\",headers:{\"content-type\":\"application/json\"},body:JSON.stringify({repo:\"\",command:\"logEvent"
       },
       {
         "file": "lib/client.js",
@@ -17,20 +22,35 @@
         "text": " AbortController;try{let response=await fetch(EVENTS_PATH,{method:\"GET\",headers:{accept:\"text/event-stream\"},signal:controller.signal});if(!response.ok||respons"
       },
       {
-        "file": "lib/src/source-control/git-actions.js",
-        "line": 235,
-        "text": "export function fetch(repo, remote, prune, pruneTags) {"
+        "file": "lib/src/source-control/api/history.js",
+        "line": 191,
+        "text": "const error = await fetch(repo, remoteName, pruneRemotes, pruneAllTags, true);"
       },
       {
-        "file": "lib/src/source-control/routes.js",
-        "line": 717,
-        "text": "await respondError('fetch', () => fetch(repo, strOrNull('name'), bool('prune'), bool('pruneTags')));"
+        "file": "lib/src/source-control/git-actions.js",
+        "line": 235,
+        "text": "export function fetch(repo, remote, prune, pruneTags, quiet = false) {"
       }
     ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/src/source-control/api/misc.js",
+        "line": 5,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/src/source-control/api/misc.js",
+        "line": 232,
+        "text": "newText = await fs.readFile(nodePath.resolve(repo, filePath), 'utf8');"
+      },
+      {
+        "file": "lib/src/source-control/api/misc.js",
+        "line": 273,
+        "text": "newText = await fs.readFile(fullPath, 'utf8');"
+      },
       {
         "file": "lib/src/source-control/commit-diff.js",
         "line": 9,
@@ -40,21 +60,6 @@
         "file": "lib/src/source-control/commit-diff.js",
         "line": 108,
         "text": "const content = await fs.readFile(abs, 'utf8');"
-      },
-      {
-        "file": "lib/src/source-control/git-actions.js",
-        "line": 7,
-        "text": "import fs from 'node:fs/promises';"
-      },
-      {
-        "file": "lib/src/source-control/git-actions.js",
-        "line": 715,
-        "text": "const text = await fs.readFile(absolute, 'utf8');"
-      },
-      {
-        "file": "lib/src/source-control/git-query.js",
-        "line": 7,
-        "text": "import { stat } from 'node:fs/promises';"
       }
     ]
   },
@@ -76,13 +81,13 @@
         "text": "const child = spawn(command, [...args], { cwd, windowsHide: true, env });"
       },
       {
-        "file": "lib/src/source-control/working-tree.js",
+        "file": "lib/src/source-control/git-exec.js",
         "line": 7,
         "text": "import { spawn } from 'node:child_process';"
       },
       {
-        "file": "lib/src/source-control/working-tree.js",
-        "line": 135,
+        "file": "lib/src/source-control/git-exec.js",
+        "line": 124,
         "text": "spawn('taskkill', ['/pid', String(child.pid), '/t', '/f'], { windowsHide: true, stdio: 'ignore' });"
       }
     ]

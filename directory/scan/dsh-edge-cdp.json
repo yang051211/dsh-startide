@@ -1,0 +1,87 @@
+{
+  "name": "dsh-edge-cdp",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-02T23:01:31.326Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 38,
+        "text": "const res = await fetch(`http://127.0.0.1:${port}${path}`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 59,
+        "text": "this.ws = new WebSocket(wsUrl);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import { mkdirSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 209,
+        "text": "mkdirSync(c.profileDir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 577,
+        "text": "writeFileSync(args.path, Buffer.from(b64, \"base64\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "const inject = [\"tools\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 309,
+        "text": "const reg = (tool) => toolsCtx.tools.register(defineTool(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 210,
+        "text": "const child = spawn("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 112,
+      "text": "pip install websocket-client"
+    }
+  ],
+  "skippedEntries": []
+}

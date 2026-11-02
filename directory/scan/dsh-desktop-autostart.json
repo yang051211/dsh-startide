@@ -1,0 +1,87 @@
+{
+  "name": "dsh-desktop-autostart",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-02T23:01:20.971Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 54,
+        "text": "fetch(API + '/state', { headers: { Accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 63,
+        "text": "fetch(API + '/scan', { headers: { Accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 76,
+        "text": "fetch(API + '/apply', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/autostart-win.js",
+        "line": 2,
+        "text": "import { existsSync, rmSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/autostart-win.js",
+        "line": 180,
+        "text": "try { rmSync(path, { force: true }) } catch {}"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 33,
+        "text": "const parsed = JSON.parse(fs.readFileSync(stateFile(), 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 42,
+        "text": "fs.mkdirSync(path.dirname(target), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/autostart-win.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/autostart-win.js",
+        "line": 55,
+        "text": "execFile("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

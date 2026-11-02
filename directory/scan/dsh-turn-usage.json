@@ -1,0 +1,81 @@
+{
+  "name": "dsh-turn-usage",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-02T23:01:28.870Z",
+  "icon": "dsh-turn-usage.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 881,
+        "text": "fetch(qs, { credentials: 'same-origin' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 936,
+        "text": "fetch('/api/turn-usage/config', { credentials: 'same-origin' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1039,
+        "text": "fetch('/api/turn-usage/totals' + (sid ? '?session=' + encodeURIComponent(sid) : ''), { credentials: 'same-origin' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1085,
+        "text": "fetch('/api/turn-usage/config', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import { appendFileSync, readFileSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 69,
+        "text": "return resolveConfig(JSON.parse(readFileSync(configPath(), 'utf8')))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 78,
+        "text": "writeFileSync(configPath(), JSON.stringify(resolveConfig(cfg), null, 2) + '\\n', 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 109,
+        "text": "const raw = JSON.parse(readFileSync(externalStatsPath(), 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 126,
+        "text": "const raw = JSON.parse(readFileSync(holidaysPath(), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

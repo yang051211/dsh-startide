@@ -1,7 +1,7 @@
 {
   "name": "dsh-ledger-watch",
-  "version": "0.1.6",
-  "scannedAt": "2026-10-29T14:01:46.963Z",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-02T23:01:09.352Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -13,27 +13,27 @@
       {
         "file": "lib/index.js",
         "line": 22,
-        "text": "import { writeFileSync, readFileSync, mkdirSync, existsSync, renameSync, unlinkSync } from 'node:fs';"
+        "text": "import { writeFileSync, readFileSync, mkdirSync, existsSync, renameSync, unlinkSync, readdirSync, copyFileSync } from 'node:fs';"
       },
       {
         "file": "lib/index.js",
-        "line": 745,
+        "line": 495,
+        "text": "if (!existsSync(dir)) { mkdirSync(dir, { recursive: true }); created.push(sub + '/'); }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 537,
+        "text": "return readFileSync(file, 'utf8').indexOf('dsh-ledger-watch managed block') >= 0;"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 882,
         "text": "const parsed = JSON.parse(readFileSync(this.evidencePath, 'utf8'));"
       },
       {
         "file": "lib/index.js",
-        "line": 845,
+        "line": 993,
         "text": "mkdirSync(this.ledgerDir, { recursive: true });"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 847,
-        "text": "writeFileSync(tmp, text, 'utf8');"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 866,
-        "text": "try { if (existsSync(tmp)) unlinkSync(tmp); } catch (error) { /* tmp 清理失败不影响结果 */ }"
       }
     ]
   },

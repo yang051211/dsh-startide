@@ -1,24 +1,24 @@
 {
   "name": "dsh-git-branch-manage",
-  "version": "1.0.10",
-  "scannedAt": "2026-10-30T23:38:23.508Z",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-02T23:01:04.546Z",
   "icon": "dsh-git-branch-manage.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 171,
+        "line": 174,
         "text": "const response = await fetch(url, {"
       },
       {
         "file": "lib/client.js",
-        "line": 206,
+        "line": 209,
         "text": "const response = await fetch(`${ROUTE_STATUS}?path=${encodeURIComponent(path)}`, { cache: \"no-store\" });"
       },
       {
         "file": "lib/client.js",
-        "line": 3016,
+        "line": 3029,
         "text": "/** Remote-sync flow: POST /fetch (fetch every remote + prune), then"
       }
     ]
@@ -48,8 +48,8 @@
       },
       {
         "file": "lib/credentials.js",
-        "line": 18,
-        "text": "import { mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises';"
+        "line": 27,
+        "text": "import { mkdir, readFile, rename, rm, stat, writeFile } from 'node:fs/promises';"
       }
     ]
   },
@@ -58,17 +58,17 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 176,
-        "text": "toolsCtx.effect(() => tools.register(gitCredentialsTool({ home: () => homedir(), envHome: () => process.env.DSH_HOME })), 'git-worktree: git_credentials tool');"
+        "line": 188,
+        "text": "        toolsCtx.effect(() => tools.register(gitCredentialsTool({ home: () => homedir(), envHome: () => process.env.DSH_HOME, credentialsService: credentials })"
       },
       {
         "file": "lib/index.js",
-        "line": 184,
-        "text": "toolsCtx.effect(() => tools.register(gitNetworkTool({ home: () => homedir(), envHome: () => process.env.DSH_HOME })), 'git-worktree: git_network tool');"
+        "line": 193,
+        "text": "        toolsCtx.effect(() => tools.register(gitNetworkTool({ home: () => homedir(), envHome: () => process.env.DSH_HOME, credentialsService: credentials })), '"
       },
       {
         "file": "lib/network-tool.js",
-        "line": 162,
+        "line": 159,
         "text": "* @returns a definition ready for `ctx.tools.register`."
       },
       {
@@ -95,6 +95,16 @@
         "file": "lib/git.js",
         "line": 35,
         "text": "        execFile(file, args, { cwd: options.cwd, encoding: 'utf8', timeout: options.timeoutMs ?? GIT_TIMEOUT_MS, windowsHide: true, maxBuffer: 4 * 1024 * 1024 }"
+      },
+      {
+        "file": "lib/local-import.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/local-import.js",
+        "line": 22,
+        "text": "const child = spawn('git', [...args], { env, windowsHide: true });"
       }
     ]
   },

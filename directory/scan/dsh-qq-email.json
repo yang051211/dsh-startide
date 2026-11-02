@@ -1,0 +1,74 @@
+{
+  "name": "dsh-qq-email",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-02T23:01:26.645Z",
+  "icon": "dsh-qq-email.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/agently.js",
+        "line": 10,
+        "text": "import { existsSync, readdirSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tool.js",
+        "line": 10,
+        "text": "export const inject = ['tools', 'qqEmail']"
+      },
+      {
+        "file": "tool.js",
+        "line": 55,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/agently.js",
+        "line": 9,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/agently.js",
+        "line": 342,
+        "text": "spawnSync('taskkill', ['/pid', String(child.pid), '/T', '/F'], { stdio: 'ignore', windowsHide: true })"
+      },
+      {
+        "file": "lib/agently.js",
+        "line": 386,
+        "text": "child = spawn(process.execPath, [entry, ...argv], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "qqEmail",
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 28,
+      "text": "npm install -g @tencent-qqmail/agently-cli"
+    }
+  ],
+  "skippedEntries": []
+}

@@ -1,39 +1,45 @@
 {
   "name": "@lovedolove/dsh-codebase-memory-mcp",
-  "version": "0.1.4",
-  "scannedAt": "2026-10-26T10:13:28.767Z",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-02T23:01:31.681Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/client.mjs",
+        "line": 245,
+        "text": "mory-mcp binary not found. Install via 'curl -fsSL https://raw.githubusercontent.com/DeusData/codebase-memory-mcp/main/install.sh | bash' or set CBM_EXE. Veyra "
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
       {
-        "file": "src/bridge.mjs",
-        "line": 4,
-        "text": "import { existsSync } from 'node:fs';"
-      },
-      {
-        "file": "src/skills.mjs",
-        "line": 13,
+        "file": "src/client.mjs",
+        "line": 15,
         "text": "import { existsSync } from 'node:fs'"
       },
       {
-        "file": "src/skills.mjs",
+        "file": "src/discovery.mjs",
         "line": 14,
-        "text": "import { readFile } from 'node:fs/promises'"
+        "text": "import { existsSync, lstatSync, realpathSync, readFileSync, readdirSync } from 'node:fs'"
       },
       {
-        "file": "src/skills.mjs",
-        "line": 137,
-        "text": "const raw = await readFile(fileURLToPath(candidate.locator), 'utf8')"
+        "file": "src/discovery.mjs",
+        "line": 201,
+        "text": "const fd = readFileSync(absPath, { flag: 'r' })"
       },
       {
-        "file": "src/skills.mjs",
-        "line": 173,
-        "text": "const raw = await readFile(file, 'utf8')"
+        "file": "src/discovery.mjs",
+        "line": 288,
+        "text": "gitignoreRules.push(...parseGitignoreContent(readFileSync(gitignorePath, 'utf8')))"
+      },
+      {
+        "file": "src/engine.mjs",
+        "line": 12,
+        "text": "import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs'"
       }
     ]
   },
@@ -42,28 +48,28 @@
     "evidence": [
       {
         "file": "src/bridge.mjs",
-        "line": 286,
-        "text": "* Register cbm_* tools onto ctx.tools using defineTool (if available) or pass-through."
-      },
-      {
-        "file": "src/bridge.mjs",
-        "line": 307,
-        "text": "ctx.effect(() => ctx.tools.register(toolObj), `codebase-memory.cbm.${spec.name}`);"
-      },
-      {
-        "file": "src/bridge.mjs",
-        "line": 466,
-        "text": "if (ctx?.tools && typeof ctx.tools.register === 'function') {"
+        "line": 34,
+        "text": "* Register cbm_* tools onto ctx.tools for bridge consumers."
       },
       {
         "file": "src/index.mjs",
-        "line": 13,
-        "text": "export const inject = ['tools'];"
+        "line": 30,
+        "text": "export const inject = ['tools']"
       },
       {
         "file": "src/index.mjs",
-        "line": 111,
+        "line": 139,
         "text": "// 1. Tool registration & auto-start (ctx.tools is guaranteed by inject=['tools'])"
+      },
+      {
+        "file": "src/tools.mjs",
+        "line": 353,
+        "text": "ctx.tools.register(defineTool(toolToRegister))"
+      },
+      {
+        "file": "src/tools.mjs",
+        "line": 356,
+        "text": "ctx.tools.register(defineTool(toolToRegister))"
       }
     ]
   },
@@ -71,14 +77,14 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/bridge.mjs",
-        "line": 1,
-        "text": "import { spawn } from 'node:child_process';"
+        "file": "src/client.mjs",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
       },
       {
-        "file": "src/bridge.mjs",
-        "line": 47,
-        "text": "child = spawn(exePath, ['--ui=true'], {"
+        "file": "src/client.mjs",
+        "line": 109,
+        "text": "this.child = spawn(this.exePath, args, {"
       }
     ]
   },
@@ -95,7 +101,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 73,
+      "line": 74,
       "text": "npm install -g codebase-memory-mcp"
     }
   ],

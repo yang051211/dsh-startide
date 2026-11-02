@@ -1,19 +1,19 @@
 {
   "name": "dsh-media-gen",
-  "version": "0.1.5",
-  "scannedAt": "2026-11-02T07:38:03.288Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-02T23:01:07.599Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client-video.js",
-        "line": 1028,
+        "line": 1293,
         "text": "fetch(VIDEO_ROUTE, {"
       },
       {
         "file": "lib/client.js",
-        "line": 2245,
+        "line": 2568,
         "text": "fetch(VIDEO_ROUTE, {"
       },
       {
@@ -28,7 +28,7 @@
       },
       {
         "file": "lib/image-core.js",
-        "line": 801,
+        "line": 813,
         "text": "const response = await fetch(target, {"
       }
     ]
@@ -68,28 +68,28 @@
     "evidence": [
       {
         "file": "lib/image-core.js",
-        "line": 905,
+        "line": 917,
         "text": "ctx.tools.register(createImageGenerateTool(ctx, () => currentCatalog(), () => currentRuntime()))"
       },
       {
         "file": "lib/index.js",
-        "line": 18,
+        "line": 19,
         "text": "export const inject = ['tools', 'credentials', 'webServer', 'attachments']"
       },
       {
         "file": "lib/video-core.js",
-        "line": 703,
+        "line": 711,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/video-core.js",
-        "line": 801,
-        "text": "ctx.tools.register(defineTool({"
+        "line": 739,
+        "text": " ctx.tools.register(defineTool({name:'query_video_task',timeoutMs:300000,description:'List saved video operations or query an existing task and recover its comp"
       },
       {
-        "file": "vendor/dsh-image-generation/index.js",
-        "line": 19,
-        "text": "export const inject = ['tools']"
+        "file": "lib/video-core.js",
+        "line": 752,
+        "text": " ctx.tools.register(defineTool({name:'manage_video_models',description:'List video models and revision, preview requests without sending them, or edit model con"
       }
     ]
   },
@@ -100,6 +100,16 @@
         "file": "test/build-client.test.mjs",
         "line": 3,
         "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "test/video-task-store.test.mjs",
+        "line": 7,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "test/video-task-store.test.mjs",
+        "line": 87,
+        "text": "const child = spawnSync(process.execPath, ['-e', script], { stdio: 'inherit' })"
       }
     ]
   },

@@ -1,34 +1,34 @@
 {
   "name": "dsh-opencode-go-quota-settings",
-  "version": "0.3.1",
-  "scannedAt": "2026-10-31T13:58:02.762Z",
-  "icon": null,
+  "version": "0.7.2",
+  "scannedAt": "2026-11-02T23:01:09.014Z",
+  "icon": "dsh-opencode-go-quota-settings.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 969,
-        "text": "const res = await fetch(ROUTE + (force ? \"?refresh=1\" : \"\"), { cache: \"no-store\" });"
+        "line": 49,
+        "text": "const res = await fetch(url, { cache: \"no-store\" });"
       },
       {
         "file": "lib/client.js",
-        "line": 1036,
-        "text": "fetch(url, { cache: \"no-store\" })"
+        "line": 1297,
+        "text": "const res = await fetch(MODELS_ROUTE, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1209,
+        "line": 1471,
         "text": "const res = await fetch(MODELS_ROUTE + \"?refresh=1\", { cache: \"no-store\" });"
       },
       {
         "file": "lib/index.js",
-        "line": 344,
+        "line": 387,
         "text": "const res = await fetch(`${baseUrl.replace(/\\/+$/, \"\")}/v1/models`, {"
       },
       {
         "file": "lib/index.js",
-        "line": 550,
+        "line": 600,
         "text": "const res = await fetch(`${baseUrl.replace(/\\/+$/, \"\")}/v1/usage`, {"
       }
     ]
@@ -55,6 +55,8 @@
   "requiredServices": [
     "commands",
     "credentials",
+    "llm",
+    "settings",
     "webServer"
   ],
   "setupHints": [],

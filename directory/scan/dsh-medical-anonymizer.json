@@ -1,0 +1,97 @@
+{
+  "name": "dsh-medical-anonymizer",
+  "version": "0.7.2",
+  "scannedAt": "2026-11-02T23:01:37.414Z",
+  "icon": "dsh-medical-anonymizer.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/llm.js",
+        "line": 88,
+        "text": "const response = await fetch(`${baseURL}${path}`, {"
+      },
+      {
+        "file": "lib/llm.js",
+        "line": 169,
+        "text": "const response = await fetch(`${baseURL}/models`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/dicom/codec.js",
+        "line": 14,
+        "text": "import { open } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/dicom/index.js",
+        "line": 9,
+        "text": "import { createReadStream, createWriteStream } from 'node:fs'"
+      },
+      {
+        "file": "lib/dicom/index.js",
+        "line": 10,
+        "text": "import { mkdir, rename, rm, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/dicom/index.js",
+        "line": 136,
+        "text": "await mkdir(dirname(target), { recursive: true })"
+      },
+      {
+        "file": "lib/dicom/index.js",
+        "line": 161,
+        "text": "await rm(temp, { force: true }).catch(() => {})"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "ctx.tools.register(tool({"
+      },
+      {
+        "file": "index.js",
+        "line": 43,
+        "text": "ctx.tools.register(tool({"
+      },
+      {
+        "file": "index.js",
+        "line": 58,
+        "text": "ctx.tools.register(tool({"
+      },
+      {
+        "file": "index.js",
+        "line": 71,
+        "text": "ctx.tools.register(tool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

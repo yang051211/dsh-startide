@@ -1,0 +1,75 @@
+{
+  "name": "dsh-analyze",
+  "version": "0.1.6",
+  "scannedAt": "2026-11-02T23:01:14.799Z",
+  "icon": "dsh-analyze.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/paths.js",
+        "line": 6,
+        "text": "import { existsSync, mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/paths.js",
+        "line": 40,
+        "text": "mkdirSync(root, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 47,
+        "text": "const offs = ANALYSIS_TOOL_NAMES.map((name) => tools.register(defs[name]));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/cli.js",
+        "line": 1,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "dist/cli.js",
+        "line": 17,
+        "text": "const killer = spawn('taskkill', ['/pid', String(child.pid), '/T', '/F'], {"
+      },
+      {
+        "file": "dist/cli.js",
+        "line": 53,
+        "text": "const child = spawn(cliPath, argv, {"
+      },
+      {
+        "file": "dist/cli.js",
+        "line": 184,
+        "text": "const r = spawnSync(options.cliPath, argv, {"
+      },
+      {
+        "file": "dist/tools.js",
+        "line": 88,
+        "text": "// Reject anything outside the grammar before spawn (defense in depth; CLI re-checks)."
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

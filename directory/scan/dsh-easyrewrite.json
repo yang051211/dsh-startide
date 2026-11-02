@@ -1,35 +1,35 @@
 {
   "name": "dsh-easyrewrite",
-  "version": "2.6.0",
-  "scannedAt": "2026-10-26T10:06:01.575Z",
-  "icon": null,
+  "version": "3.0.0",
+  "scannedAt": "2026-11-02T23:01:17.190Z",
+  "icon": "dsh-easyrewrite.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 55,
+        "line": 77,
         "text": "fetch(\"/bubble/log\", {"
       },
       {
         "file": "lib/client.js",
-        "line": 275,
+        "line": 261,
+        "text": "var dResp = await fetch(directUrl);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 315,
         "text": "var resp = await fetch(url);"
       },
       {
         "file": "lib/client.js",
-        "line": 381,
-        "text": "var resp2 = await fetch(url);"
+        "line": 328,
+        "text": "var rawResp = await fetch(\"/bubble/attachment/raw\", {"
       },
       {
         "file": "lib/client.js",
-        "line": 511,
-        "text": "fetch(\"/bubble/backup/delete\", {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 626,
-        "text": "var resp = await fetch(\"/bubble/clean-ghost\", {"
+        "line": 1142,
+        "text": "const r = await fetch(\"/bubble/vault/families\", {"
       }
     ]
   },
@@ -39,26 +39,26 @@
       {
         "file": "lib/index.js",
         "line": 12,
-        "text": "import { appendFile, mkdir, writeFile, rm, readFile, readdir } from 'node:fs/promises';"
+        "text": "import { appendFile, mkdir, writeFile, rm, readFile, readdir, copyFile, rename } from 'node:fs/promises';"
       },
       {
         "file": "lib/index.js",
-        "line": 44,
+        "line": 46,
         "text": "await mkdir(dirname(file), { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 51,
+        "line": 53,
         "text": "await appendFile(file, content, 'utf8');"
       },
       {
         "file": "lib/index.js",
-        "line": 160,
+        "line": 162,
         "text": "const raw = await readFile(pkgPath, 'utf8');"
       },
       {
         "file": "lib/index.js",
-        "line": 177,
+        "line": 184,
         "text": "const p = JSON.parse(await readFile(c, \"utf8\"));"
       }
     ]
@@ -72,12 +72,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 15,
+        "line": 17,
         "text": "import { execFile } from 'node:child_process';"
       },
       {
         "file": "lib/index.js",
-        "line": 532,
+        "line": 1670,
         "text": "execFile('pnpm', ['up', 'dsh-easyrewrite'], { cwd: profileDir, timeout: 90000, windowsHide: true }, (err, stdout, stderr) => {"
       }
     ]

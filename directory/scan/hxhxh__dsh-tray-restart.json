@@ -1,0 +1,85 @@
+{
+  "name": "@hxhxh/dsh-tray-restart",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-02T23:01:27.466Z",
+  "icon": "hxhxh__dsh-tray-restart.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 126,
+        "text": "return fetch(ROUTE + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/asar-entry.js",
+        "line": 15,
+        "text": "import { closeSync, fsyncSync, openSync, readSync, writeSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 27,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 76,
+        "text": "mkdirSync(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 77,
+        "text": "appendFileSync(file, `${new Date().toISOString()} [${level}] ${message}\\n`, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 100,
+        "text": "mkdirSync(dir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 223,
+        "text": "const result = spawnSync(candidate.command, candidate.args, {"
+      },
+      {
+        "file": "scripts/test-copy.mjs",
+        "line": 7,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/test-copy.mjs",
+        "line": 44,
+        "text": "const check = spawnSync(process.execPath, ['--check', patchedFile], { encoding: 'utf8' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

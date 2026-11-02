@@ -1,0 +1,105 @@
+{
+  "name": "dsh-agent-blackbox",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-02T23:01:26.160Z",
+  "icon": "dsh-agent-blackbox.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "core/server.js",
+        "line": 22,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "web/app.js",
+        "line": 153,
+        "text": "const res = await fetch(`api/meta?file=${encodeURIComponent(saved)}`, { cache: 'no-store' })"
+      },
+      {
+        "file": "web/app.js",
+        "line": 175,
+        "text": "const res = await fetch(withFile(path), { cache: 'no-store' })"
+      },
+      {
+        "file": "web/app.js",
+        "line": 344,
+        "text": "const res = await fetch(withFile('api/sessions'), { cache: 'no-store' })"
+      },
+      {
+        "file": "web/compare.js",
+        "line": 74,
+        "text": "const res = await fetch('api/overview')"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "core/cli.js",
+        "line": 18,
+        "text": "import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "core/cli.js",
+        "line": 39,
+        "text": "const pkg = JSON.parse(readFileSync(PKG_URL, 'utf8'));"
+      },
+      {
+        "file": "core/cli.js",
+        "line": 60,
+        "text": "return readFileSync(0, 'utf8');"
+      },
+      {
+        "file": "core/cli.js",
+        "line": 63,
+        "text": "return readFileSync(file, 'utf8');"
+      },
+      {
+        "file": "core/dsh-titles.js",
+        "line": 14,
+        "text": "import { readdirSync, readFileSync, statSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "core/cli.js",
+        "line": 17,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "core/cli.js",
+        "line": 228,
+        "text": "const child = spawn(childArgv[0] ?? '', childArgv.slice(1), {"
+      },
+      {
+        "file": "core/server.js",
+        "line": 20,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "core/server.js",
+        "line": 665,
+        "text": "const child = spawn(cmd, args, { detached: true, stdio: 'ignore' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

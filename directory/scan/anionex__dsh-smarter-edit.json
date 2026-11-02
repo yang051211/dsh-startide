@@ -1,0 +1,111 @@
+{
+  "name": "@anionex/dsh-smarter-edit",
+  "version": "0.1.10",
+  "scannedAt": "2026-11-02T23:01:29.407Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/verify-profile.mjs",
+        "line": 6,
+        "text": "import { createServer } from 'node:http'"
+      },
+      {
+        "file": "scripts/verify-profile.mjs",
+        "line": 160,
+        "text": "const login = await fetch(browserURL, { redirect: 'manual', signal: AbortSignal.timeout(1000) })"
+      },
+      {
+        "file": "scripts/verify-profile.mjs",
+        "line": 162,
+        "text": "const response = await fetch(base, { headers: { cookie }, signal: AbortSignal.timeout(1000) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine.js",
+        "line": 1,
+        "text": "import { constants } from 'node:fs';"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 2,
+        "text": "import { link, mkdir, open, readFile, realpath, rename, rm, rmdir, stat, unlink } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 57,
+        "text": "content = await readFile(absolutePath, 'utf8');"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 177,
+        "text": "await mkdir(path, { mode: 0o700 });"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 193,
+        "text": "await handle.writeFile(target.newContent, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "export const inject = ['tools', 'fs', 'llm', 'systemPrompt'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 148,
+        "text": "ctx.tools.register(definition);"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 15,
+        "text": "export const inject = ['tools', 'fs', 'llm', 'systemPrompt']"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 171,
+        "text": "ctx.tools.register(definition)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/verify-profile.mjs",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/verify-profile.mjs",
+        "line": 72,
+        "text": "const child = spawn(command, args, { cwd, env, detached: process.platform !== 'win32', stdio: ['ignore', 'pipe', 'pipe'] })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "fs",
+    "llm",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,97 @@
+{
+  "name": "dsh-billing-chip",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-02T23:01:29.327Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/enable-in-profile.mjs",
+        "line": 248,
+        "text": "console.log(`    curl -s \"$DSH_URL/api/${pluginName}/state\" -H \"Origin: $DSH_URL\"`);"
+      },
+      {
+        "file": "scripts/find-dsh.mjs",
+        "line": 25,
+        "text": "import http from \"node:http\";"
+      },
+      {
+        "file": "scripts/find-dsh.mjs",
+        "line": 26,
+        "text": "import https from \"node:https\";"
+      },
+      {
+        "file": "scripts/find-dsh.mjs",
+        "line": 278,
+        "text": "console.log(\"  curl -s -o /dev/null -w '%{http_code}\\\\n' <你填的地址>/     # 401 就是 DSH\");"
+      },
+      {
+        "file": "src/client.js",
+        "line": 283,
+        "text": "const res = await fetch(`${API}${path}`, init);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/enable-in-profile.mjs",
+        "line": 17,
+        "text": "import { readFileSync, writeFileSync, existsSync, copyFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "scripts/enable-in-profile.mjs",
+        "line": 32,
+        "text": "const pluginJson = JSON.parse(readFileSync(join(pluginDir, \"package.json\"), \"utf8\"));"
+      },
+      {
+        "file": "scripts/enable-in-profile.mjs",
+        "line": 94,
+        "text": "const before = readFileSync(profileJsonPath, \"utf8\");"
+      },
+      {
+        "file": "scripts/enable-in-profile.mjs",
+        "line": 174,
+        "text": "writeFileSync(profileJsonPath, after);"
+      },
+      {
+        "file": "scripts/find-dsh.mjs",
+        "line": 28,
+        "text": "import { readFileSync } from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/enable-in-profile.mjs",
+        "line": 18,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      },
+      {
+        "file": "scripts/find-dsh.mjs",
+        "line": 29,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

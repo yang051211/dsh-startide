@@ -1,0 +1,110 @@
+{
+  "name": "@xiaosuanli/dsh-plugin",
+  "version": "1.0.6",
+  "scannedAt": "2026-11-02T23:01:07.979Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host.mjs",
+        "line": 192,
+        "text": "async fetch(request) {"
+      },
+      {
+        "file": "src/connect/management.mjs",
+        "line": 17,
+        "text": "export function pluginManagement({ manager, metadata, siteOrigin, profile, fetchImpl = (...args) => fetch(...args) }) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host.mjs",
+        "line": 1,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "host.mjs",
+        "line": 21,
+        "text": "metadata: JSON.parse(await readFile(new URL('./package.json', import.meta.url), 'utf8')),"
+      },
+      {
+        "file": "host.mjs",
+        "line": 75,
+        "text": "const text = await readFile(new URL('./skills/xiaosuanli-director/SKILL.md', import.meta.url), 'utf8');"
+      },
+      {
+        "file": "host.mjs",
+        "line": 76,
+        "text": "const importGuide = await readFile(new URL('./skills/xiaosuanli-director/references/import-and-remake.md', import.meta.url), 'utf8');"
+      },
+      {
+        "file": "host.mjs",
+        "line": 77,
+        "text": "const workflow = await readFile(new URL('./skills/xiaosuanli-director/references/director-workflow.md', import.meta.url), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host.mjs",
+        "line": 10,
+        "text": "export const inject = ['connection', 'credentials', 'tools', 'skills', 'pluginManager', 'profileContext'];"
+      },
+      {
+        "file": "host.mjs",
+        "line": 81,
+        "text": "ctx.tools.register({ name: 'xiaosuanli_connection', description: '读取小算狸连接状态与已授权工程；未连接时请用户打开设置中的小算狸面板。', parameters: empty, output,"
+      },
+      {
+        "file": "host.mjs",
+        "line": 89,
+        "text": "ctx.tools.register({ name: 'xiaosuanli_account', description: '查看已授权的小算狸账号、会员、额度与积分。', parameters: empty, output,"
+      },
+      {
+        "file": "host.mjs",
+        "line": 94,
+        "text": "ctx.tools.register({ name: 'xiaosuanli_create_' + operation,"
+      },
+      {
+        "file": "host.mjs",
+        "line": 100,
+        "text": "ctx.tools.register({ name: 'xiaosuanli_projects', description: '初始化：列出已授权工程供用户选择，不改变当前对话绑定。', parameters: empty, output, execute: () => connect.projects() });"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/connect/browser.mjs",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "credentials",
+    "pluginManager",
+    "profileContext",
+    "skills",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

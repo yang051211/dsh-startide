@@ -1,0 +1,85 @@
+{
+  "name": "dsh-plugin-toolkit",
+  "version": "0.14.0",
+  "scannedAt": "2026-11-02T23:00:54.303Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 386,
+        "text": "fetch(`/toolkit/check?dir=${encodeURIComponent(target.trim())}`)"
+      },
+      {
+        "file": "client.js",
+        "line": 607,
+        "text": "fetch('/toolkit/report', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 92,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 93,
+        "text": "fs.appendFileSync(file, `${JSON.stringify(entry)}\\n`);"
+      },
+      {
+        "file": "lib/audit.mjs",
+        "line": 10,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/audit.mjs",
+        "line": 29,
+        "text": "const manifest = JSON.parse(fs.readFileSync(file, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/dev.mjs",
+        "line": 13,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/dev.mjs",
+        "line": 56,
+        "text": "const result = spawnSync(command, { cwd, shell: true, stdio: 'inherit' });"
+      },
+      {
+        "file": "lib/exec.mjs",
+        "line": 12,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,97 @@
+{
+  "name": "dsh-superagent-panel",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-02T23:01:36.383Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 208,
+        "text": "const sendDiag = (event, payload) => fetch(API + '/diag', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 297,
+        "text": "return fetch(API + '/status' + suffix, { headers: HEADERS, cache: 'no-store' }).then(async (response) => {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 439,
+        "text": "const response = await fetch(API + '/action', {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "import { request as httpRequest } from 'node:http'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 139,
+        "text": "const response = await fetch(instance.url.replace(/\\/+$/, '') + '/orchestrator/api/state', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "import { existsSync, readFileSync, readdirSync, statSync, appendFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 128,
+        "text": "const text = readFileSync(log, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 274,
+        "text": "appendFileSync(file, `${new Date().toISOString()} ${req.method} ${sub} -> ${code}\\n`)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 346,
+        "text": "try { appendFileSync(join(settings.repo, '.artifacts', 'panel-diag.log'), `${new Date().toISOString()} id=${id ?? '-'} ${text}\\n`) } catch { /* 日志失败不影响 */ }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 375,
+        "text": "appendFileSync(join(settings.repo, '.artifacts', 'panel-proxy.log'),"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 17,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 110,
+        "text": "execFile(process.execPath, [script, ...args], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

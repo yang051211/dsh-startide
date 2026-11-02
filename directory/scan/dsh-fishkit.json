@@ -1,0 +1,136 @@
+{
+  "name": "dsh-fishkit",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-02T23:01:36.177Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 84,
+        "text": "const 拉状态 = () => fetch('/dsh-fishsoul/state', { cache: 'no-store' }).then((r) => r.json())"
+      },
+      {
+        "file": "client.js",
+        "line": 85,
+        "text": "const 存档案 = (补丁) => fetch('/dsh-fishsoul/save', {"
+      },
+      {
+        "file": "client.js",
+        "line": 280,
+        "text": "void fetch('/dsh-fishsoul/mode', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ mode: 'independent' }) })"
+      },
+      {
+        "file": "client.js",
+        "line": 283,
+        "text": "void fetch('/dsh-fishsoul/mode', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ mode: 'shared' }) })"
+      },
+      {
+        "file": "client.js",
+        "line": 291,
+        "text": "void fetch('/dsh-fishsoul/digest', { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{}' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/echo.js",
+        "line": 14,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/echo.js",
+        "line": 46,
+        "text": "const 原 = readFileSync(路径, 'utf8')"
+      },
+      {
+        "file": "lib/echo.js",
+        "line": 55,
+        "text": "mkdirSync(join(路径, '..'), { recursive: true })"
+      },
+      {
+        "file": "lib/echo.js",
+        "line": 56,
+        "text": "writeFileSync(路径, JSON.stringify(值, null, 2) + '\\n', 'utf8')"
+      },
+      {
+        "file": "lib/echo.js",
+        "line": 62,
+        "text": "return readFileSync(路径, 'utf8').split('\\n').filter((l) => l.trim()).map((l) => {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/soul.js",
+        "line": 298,
+        "text": "盒.offs.push(agent.ctx.tools.register({"
+      },
+      {
+        "file": "lib/soul.js",
+        "line": 327,
+        "text": "盒.offs.push(agent.ctx.tools.register({"
+      },
+      {
+        "file": "lib/soul.js",
+        "line": 358,
+        "text": "盒.offs.push(agent.ctx.tools.register({"
+      },
+      {
+        "file": "lib/soul.js",
+        "line": 411,
+        "text": "盒.offs.push(agent.ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/soul.js",
+        "line": 8,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/soul.js",
+        "line": 286,
+        "text": "spawnSync('schtasks', ['/run', '/tn', 'DSH-Restart'], { windowsHide: true, encoding: 'utf8' })"
+      },
+      {
+        "file": "lib/updater.js",
+        "line": 8,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/updater.js",
+        "line": 59,
+        "text": "const 解 = spawnSync('tar', ['-xzf', tgz, '-C', 临时根], { windowsHide: true, encoding: 'utf8' })"
+      },
+      {
+        "file": "lib/updater.js",
+        "line": 69,
+        "text": "const 查 = spawnSync(process.execPath, ['--check', 文件], { windowsHide: true, encoding: 'utf8', env: { ...process.env, ELECTRON_RUN_AS_NODE: '1' } })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "systemPrompt",
+    "timer",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

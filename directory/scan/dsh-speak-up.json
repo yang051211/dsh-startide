@@ -1,0 +1,81 @@
+{
+  "name": "dsh-speak-up",
+  "version": "0.2.9",
+  "scannedAt": "2026-11-02T23:00:56.160Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 22,
+        "text": "const get = (p) => fetch(B + p, { cache: 'no-store' }).then((r) => r.json()).catch(() => null)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 24,
+        "text": "fetch(B + p, {"
+      },
+      {
+        "file": "lib/selfupdate.mjs",
+        "line": 97,
+        "text": "const res = await fetch(s.url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 42,
+        "text": "import { readFileSync, writeFileSync, mkdirSync, statSync, readdirSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 85,
+        "text": "const p = JSON.parse(readFileSync(join(dirname(fileURLToPath(import.meta.url)), '..', 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 249,
+        "text": "const 原始 = JSON.parse(readFileSync(路径, 'utf8').replace(/^\\uFEFF/, ''))"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 269,
+        "text": "mkdirSync(目录, { recursive: true })"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 270,
+        "text": "writeFileSync(配置文件, JSON.stringify(配置, null, 2), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "sessionTitle",
+    "sessions",
+    "timer",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

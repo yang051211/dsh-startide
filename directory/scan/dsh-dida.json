@@ -1,0 +1,80 @@
+{
+  "name": "dsh-dida",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-02T23:01:37.260Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "probes/lib.mjs",
+        "line": 24,
+        "text": "const response = await fetch(URL, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "import { existsSync, readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1323,
+        "text": "const token = readFileSync(file, \"utf8\").trim();"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 22,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 87,
+        "text": "const token = readFileSync(file, 'utf8').trim()"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1292,
+        "text": "const inject = [\"tools\", \"systemPrompt\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1352,
+        "text": "for (const tool of buildTicktickTools(mounted)) toolDisposers.push(ctx.tools.register(tool));"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 38,
+        "text": "export const inject = ['tools', 'systemPrompt']"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 135,
+        "text": "toolDisposers.push(ctx.tools.register(tool))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,92 @@
+{
+  "name": "dsh-capability-scope",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-02T23:01:32.093Z",
+  "icon": "dsh-capability-scope.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 152,
+        "text": "const res = await fetch(url, Object.assign({ cache: 'no-store' }, init))"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.mjs",
+        "line": 37,
+        "text": "import { readFileSync, realpathSync } from 'node:fs'"
+      },
+      {
+        "file": "src/index.mjs",
+        "line": 1099,
+        "text": "const version = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version"
+      },
+      {
+        "file": "src/memory.mjs",
+        "line": 26,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/memory.mjs",
+        "line": 118,
+        "text": "const parsed = JSON.parse(readFileSync(path, 'utf8'))"
+      },
+      {
+        "file": "src/memory.mjs",
+        "line": 129,
+        "text": "mkdirSync(dirname(path), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.mjs",
+        "line": 7,
+        "text": "//   MCP servers   — the roster is the profile's `@deepseek-ai/dsh-mcp-client`"
+      },
+      {
+        "file": "src/index.mjs",
+        "line": 10,
+        "text": "//                   `agent.ctx.tools.restrict({ deny })`, which masks tools the"
+      },
+      {
+        "file": "src/index.mjs",
+        "line": 12,
+        "text": "//                   scope, and its calls are refused by `agent.ctx.tools.guard()`"
+      },
+      {
+        "file": "src/index.mjs",
+        "line": 49,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "src/index.mjs",
+        "line": 52,
+        "text": "const MCP_CLIENT_MODULE = '@deepseek-ai/dsh-mcp-client'"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

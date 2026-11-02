@@ -1,0 +1,92 @@
+{
+  "name": "dsh-talk-map",
+  "version": "0.1.54",
+  "scannedAt": "2026-11-02T23:01:36.475Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 12,
+        "text": "\t\tconst ping = (phase) => { try { fetch('/talk-map/client-boot', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ phase"
+      },
+      {
+        "file": "client/client.js",
+        "line": 214,
+        "text": "const response = await fetch(path, init2);"
+      },
+      {
+        "file": "client/client.js",
+        "line": 10947,
+        "text": "const response = await fetch(path, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 11079,
+        "text": "void fetch(\"/talk-map/client-boot\", {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "import { mkdir, appendFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 676,
+        "text": "await mkdir(join(homedir(), \".dsh\"), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 677,
+        "text": "await appendFile(join(homedir(), \".dsh\", \"talk-map-client-boot.log\"), line + \"\\n\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 864,
+        "text": "await mkdir(target, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 259,
+        "text": "spawn(request) {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 329,
+        "text": "async spawn(request) {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 853,
+        "text": "sendJson(response, 200, await runtime.spawner.spawn(body));"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "client/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

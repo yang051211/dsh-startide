@@ -1,0 +1,76 @@
+{
+  "name": "@dsh-ft/dsh-fft-settings",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-02T23:01:29.787Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 233,
+        "text": "const send = doFetch ?? ((input, init) => globalThis.fetch(input, init));"
+      },
+      {
+        "file": "lib/core/client-transport.js",
+        "line": 14,
+        "text": "const send = doFetch ?? ((input, init) => globalThis.fetch(input, init));"
+      },
+      {
+        "file": "src/core/client-transport.ts",
+        "line": 20,
+        "text": "const send: SettingsFetch = doFetch ?? ((input, init) => globalThis.fetch(input, init))"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/default-preset.js",
+        "line": 20,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/default-preset.js",
+        "line": 21,
+        "text": "import { copyFile, mkdir, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/default-preset.js",
+        "line": 98,
+        "text": "await mkdir(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/default-preset.js",
+        "line": 100,
+        "text": "await writeFile(file, `${JSON.stringify(claim, null, 2)}\\n`);"
+      },
+      {
+        "file": "lib/default-preset.js",
+        "line": 118,
+        "text": "await mkdir(dirname(snapshot), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "credentials"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

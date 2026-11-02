@@ -1,0 +1,119 @@
+{
+  "name": "dsh-fish-memory",
+  "version": "1.5.1",
+  "scannedAt": "2026-11-02T23:00:55.806Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 12,
+        "text": "const get = (p) => fetch(B + p, { cache: 'no-store' }).then((r) => r.json())"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 14,
+        "text": "fetch(B + p, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body || {}) }).then((r) => r.json())"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4070,
+        "text": "const r = await fetch('/dsh-fish-memory/list', {cache:'no-store'})"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4128,
+        "text": "await fetch('/dsh-fish-memory/toggle', {method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify({session:sid, on:on})})"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4136,
+        "text": "await fetch('/dsh-fish-memory/policy', {method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify(policy)})"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/atomic-file.mjs",
+        "line": 1,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/atomic-file.mjs",
+        "line": 18,
+        "text": "fs.writeFileSync(descriptor, text, 'utf8')"
+      },
+      {
+        "file": "lib/atomic-file.mjs",
+        "line": 29,
+        "text": "try { fs.rmSync(staged, { force: true }) } catch { /* caller still receives the write failure */ }"
+      },
+      {
+        "file": "lib/hostdeps.mjs",
+        "line": 19,
+        "text": "import { existsSync, readFileSync, readdirSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/hostdeps.mjs",
+        "line": 70,
+        "text": "const pkg = JSON.parse(readFileSync(pkgFile, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 36,
+        "text": "export const inject = ['systemPrompt', 'agents', 'timer', 'tools', 'webServer', 'sessions', 'sessionTitle', 'llm']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4381,
+        "text": "// 从前它挂在这里（`agent.ctx.tools.register`），会话开关一关就跟着卸掉。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4392,
+        "text": "//   【第一层】DSH 的 `systemPrompt.section()` / `.context()` / `tools.register()`"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4458,
+        "text": "// 以前是**按会话挂**（`agent.ctx.tools.register`），会话开关一关就跟着卸掉。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4474,
+        "text": "if (!ctx.tools || typeof ctx.tools.register !== 'function') return"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "llm",
+    "sessionTitle",
+    "sessions",
+    "systemPrompt",
+    "timer",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

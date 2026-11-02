@@ -1,0 +1,62 @@
+{
+  "name": "dshjieqi-card",
+  "version": "0.12.1",
+  "scannedAt": "2026-11-02T23:01:09.193Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1739,
+        "text": "fetch(API, Object.assign({ headers: { accept: 'application/json' } }, stop ? { signal: stop.signal } : null))"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 66,
+        "text": "content: renderBody(await readFile(SKILL_FILE, 'utf8')),"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 79,
+        "text": "for (const line of readFileSync(TIP_FILE, 'utf8').split('\\n')) {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

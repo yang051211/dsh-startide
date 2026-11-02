@@ -1,0 +1,102 @@
+{
+  "name": "dsh-status-anim",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-02T23:01:08.173Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 358,
+        "text": "var res = await fetch(SELF_URL, { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 587,
+        "text": "var blob = await (await fetch(url, { cache: 'no-store' })).blob()"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 651,
+        "text": "fetch(LIST_URL, { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1874,
+        "text": "var res = await fetch(LIST_URL, { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2123,
+        "text": "fetch(REVEAL_URL, { method: 'POST' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "import { closeSync, existsSync, mkdirSync, openSync, readSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 21,
+        "text": "import { readdir, readFile, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 208,
+        "text": "* - 目录不存在时 explorer / open / xdg-open 会直接失败，故先 `mkdirSync(recursive)` 兜底；"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 217,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 407,
+        "text": "const body = await readFile(target)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 209,
+        "text": "* - 一律 `execFile(cmd, [dir])` 数组参数，**绝不拼 shell 字符串** → 无命令注入面；"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 224,
+        "text": "execFile(command, [dir], function (error) {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

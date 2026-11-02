@@ -1,35 +1,35 @@
 {
   "name": "dsh-auto-approval-frame",
-  "version": "0.6.0",
-  "scannedAt": "2026-10-28T06:59:41.972Z",
+  "version": "0.6.4",
+  "scannedAt": "2026-11-02T23:01:27.243Z",
   "icon": "dsh-auto-approval-frame.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1326,
+        "line": 31,
+        "text": "const response = await fetch(RULES_CODEC_ROUTE, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2177,
         "text": "const response = await fetch(`${EXPLAIN_ROUTE}?q=${encodeURIComponent(q)}`,"
       },
       {
         "file": "lib/client.js",
-        "line": 1508,
+        "line": 2422,
         "text": "fetch(`${AUDIT_ROUTE}?${query}`, { credentials: \"same-origin\", cache: \"no-store\" })"
       },
       {
         "file": "lib/client.js",
-        "line": 1541,
+        "line": 2455,
         "text": "fetch(SECRETS_ROUTE, { credentials: \"same-origin\", cache: \"no-store\" })"
       },
       {
         "file": "lib/client.js",
-        "line": 1561,
+        "line": 2475,
         "text": "const response = await fetch(SECRETS_ROUTE, {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 1577,
-        "text": "const response = await fetch(`${SECRETS_ROUTE}?token=${encodeURIComponent(token)}`,"
       }
     ]
   },
@@ -39,26 +39,26 @@
       {
         "file": "lib/frame/audit.js",
         "line": 11,
-        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs';"
+        "text": "tsSync, linkSync, mkdirSync, openSync, readFileSync, readSync, readdirSync, renameSync, rmSync, statSync, unlinkSync, writeFileSync, writeSync } from 'node:fs';"
       },
       {
         "file": "lib/frame/audit.js",
-        "line": 43,
+        "line": 59,
         "text": "const fileSha256 = path => sha256(readFileSync(path));"
       },
       {
         "file": "lib/frame/audit.js",
-        "line": 110,
+        "line": 130,
         "text": "writeFileSync(temporary, JSON.stringify(state, null, 2));"
       },
       {
         "file": "lib/frame/audit.js",
-        "line": 121,
+        "line": 141,
         "text": "mkdirSync(dir, { recursive: true });"
       },
       {
         "file": "lib/frame/audit.js",
-        "line": 122,
+        "line": 142,
         "text": "appendFileSync(manifestPath, `${JSON.stringify({ ...record, timestamp: record.timestamp ?? now() })}\\n`);"
       }
     ]
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 39,
+        "line": 50,
         "text": "export const inject = ['approval', 'permissionPresets', 'sessions', 'tools', 'llm', 'agents', 'settings', 'userQuestions'];"
       }
     ]
@@ -78,28 +78,28 @@
     "evidence": [
       {
         "file": "lib/frame/facts.js",
-        "line": 6,
+        "line": 8,
         "text": "import { spawnSync } from 'node:child_process';"
       },
       {
         "file": "lib/frame/facts.js",
-        "line": 50,
+        "line": 531,
         "text": "spawn: (command, args) => spawnSync(command, args, { encoding: 'utf8', windowsHide: true, timeout: 5000 }),"
       },
       {
         "file": "lib/frame/facts.js",
-        "line": 139,
+        "line": 1468,
         "text": "const probeRepo = probe.spawn('git', ['-C', workspace, 'rev-parse', '--is-inside-work-tree']);"
       },
       {
         "file": "lib/frame/facts.js",
-        "line": 142,
-        "text": "const listed = probe.spawn('git', ['-C', workspace, 'ls-files', '-z', '--', ...relatives]);"
+        "line": 1478,
+        "text": "const status = probe.spawn('git', ['-C', workspace, 'status', '--porcelain=v1', '-z',"
       },
       {
         "file": "lib/frame/facts.js",
-        "line": 147,
-        "text": "const status = probe.spawn('git', ['-C', workspace, 'status', '--porcelain=v1', '-z',"
+        "line": 1518,
+        "text": "const listed = probe.spawn('git', ['-C', workspace, 'ls-files', '-z', '--', ...relatives]);"
       }
     ]
   },

@@ -1,0 +1,97 @@
+{
+  "name": "@feng0531/dsh-vcs",
+  "version": "0.6.1",
+  "scannedAt": "2026-11-02T23:01:23.451Z",
+  "icon": "feng0531__dsh-vcs.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 470,
+        "text": "async fetch(request) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "branch-switch.mjs",
+        "line": 1,
+        "text": "import * as fs from 'node:fs/promises';"
+      },
+      {
+        "file": "branch-switch.mjs",
+        "line": 33,
+        "text": "await fs.mkdir(hooks);await fs.writeFile(attributes,'');"
+      },
+      {
+        "file": "branch-switch.mjs",
+        "line": 38,
+        "text": "} finally {await fs.rm(temporary,{recursive:true,force:true,maxRetries:5});}"
+      },
+      {
+        "file": "dist/updates.mjs",
+        "line": 1,
+        "text": "import{readFileSync as u}from\"node:fs\";var a=\"@feng0531/dsh-vcs\";function i(r){return typeof r==\"string\"&&/^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$/.test(r)&&"
+      },
+      {
+        "file": "frontend-assets.mjs",
+        "line": 1,
+        "text": "import {readFile} from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "local-command.mjs",
+        "line": 1,
+        "text": "import {spawn} from 'node:child_process';"
+      },
+      {
+        "file": "local-command.mjs",
+        "line": 22,
+        "text": "const child = spawn(command, args, {cwd, shell: false, windowsHide: true, detached: process.platform !== 'win32', stdio: ['ignore', 'pipe', 'pipe'], env});"
+      },
+      {
+        "file": "local-command.mjs",
+        "line": 48,
+        "text": "const killer = spawn(executable, ['/PID', String(child.pid), '/T', '/F'], {windowsHide: true, shell: false, stdio: 'ignore'});"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "dist/client.js",
+    "dist/editor.js",
+    "dist/editor.worker.js",
+    "dist/interface.js",
+    "dist/svn-host.mjs"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "sessionPersistence",
+    "sessions",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

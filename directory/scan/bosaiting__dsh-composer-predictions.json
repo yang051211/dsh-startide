@@ -1,0 +1,73 @@
+{
+  "name": "@bosaiting/dsh-composer-predictions",
+  "version": "0.4.3",
+  "scannedAt": "2026-11-02T23:01:29.880Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 789,
+        "text": "fetch(ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/check-package.mjs",
+        "line": 4,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "scripts/check-package.mjs",
+        "line": 10,
+        "text": "const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "scripts/check-package.mjs",
+        "line": 29,
+        "text": "const patch = fs.readFileSync(path.join(root, 'cordis.patch.yml'), 'utf8')"
+      },
+      {
+        "file": "scripts/check-package.mjs",
+        "line": 32,
+        "text": "assert.match(fs.readFileSync(path.join(root, 'LICENSE'), 'utf8'), /MIT License/)"
+      },
+      {
+        "file": "scripts/check-package.mjs",
+        "line": 33,
+        "text": "assert.ok(fs.readFileSync(path.join(root, 'client.js'), 'utf8').includes(\"id: '\" + pkg.name + \"'\"), 'client module id must match package name')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/check-package.mjs",
+        "line": 7,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "sessions"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

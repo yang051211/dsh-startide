@@ -1,0 +1,77 @@
+{
+  "name": "dsh-restart-plugin",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-02T23:01:37.619Z",
+  "icon": "dsh-restart-plugin.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/client/index.js",
+        "line": 65,
+        "text": "const response = await fetch(ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/index.js",
+        "line": 17,
+        "text": "import { appendFileSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/host/index.js",
+        "line": 36,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "src/host/index.js",
+        "line": 38,
+        "text": "writeFileSync(probe, 'ok')"
+      },
+      {
+        "file": "src/host/index.js",
+        "line": 39,
+        "text": "rmSync(probe, { force: true })"
+      },
+      {
+        "file": "src/host/index.js",
+        "line": 62,
+        "text": "mkdirSync(RUNTIME_DIR, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/index.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/host/index.js",
+        "line": 119,
+        "text": "const child = spawn("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

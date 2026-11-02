@@ -1,0 +1,86 @@
+{
+  "name": "dsh-geek2api",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-02T23:01:34.963Z",
+  "icon": "dsh-geek2api.webp",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 9,
+        "text": "import { createServer } from \"node:http\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 36,
+        "text": "return globalThis.fetch(input, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "eSync, constants, existsSync, fstatSync, lstatSync, mkdtempSync, openSync, readFileSync, readSync, readdirSync, realpathSync, rmSync, statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 8,
+        "text": "import { mkdtemp, readFile, readdir, realpath, rename, rm, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2062,
+        "text": "function resolveSpawnCommand(binary, { platform = process.platform, exists = existsSync, readFile = (file) => readFileSync(file, \"utf8\") } = {}) {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2071,
+        "text": "relative = [...readFile(binary).matchAll(SHIM_TARGET)].map((match) => match[1]).find((target) => !/^node\\.exe$/iu.test(target));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2200,
+        "text": "fs.rmSync(canonical, {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 7262,
+        "text": "ctx.effect(() => toolsCtx.tools.register(createClaudeCodeTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 5428,
+        "text": "child = spawn(command, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

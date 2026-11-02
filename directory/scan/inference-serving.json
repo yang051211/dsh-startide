@@ -1,0 +1,119 @@
+{
+  "name": "inference-serving",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-02T23:01:34.404Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "mcp/server.mjs",
+        "line": 17,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "src/util/http.mjs",
+        "line": 1,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "src/util/http.mjs",
+        "line": 2,
+        "text": "import https from 'node:https'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/audit.mjs",
+        "line": 13,
+        "text": "import { promises as fs } from 'node:fs'"
+      },
+      {
+        "file": "src/backends/nvidia-vllm.mjs",
+        "line": 15,
+        "text": "import { promises as fs } from 'node:fs'"
+      },
+      {
+        "file": "src/cleanup.mjs",
+        "line": 12,
+        "text": "import { promises as fs } from 'node:fs'"
+      },
+      {
+        "file": "src/cleanup.mjs",
+        "line": 188,
+        "text": "await fs.rm(runtime.paths.tmpDir, { recursive: true, force: true })"
+      },
+      {
+        "file": "src/cleanup.mjs",
+        "line": 189,
+        "text": "await fs.mkdir(runtime.paths.tmpDir, { recursive: true, mode: 0o700 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "mcp/server.mjs",
+        "line": 7,
+        "text": "*   `ctx.tools.register()`。两条通道共用 src/tools.mjs 的同一份规格与 src/api.mjs 的实现，"
+      },
+      {
+        "file": "src/index.mjs",
+        "line": 27,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "src/index.mjs",
+        "line": 82,
+        "text": "ctx.tools.register(toDshTool(spec))"
+      },
+      {
+        "file": "src/tools.mjs",
+        "line": 5,
+        "text": "*   - DSH 侧：index.mjs 把每个 spec 的 parameters/output 直接交给 ctx.tools.register()"
+      },
+      {
+        "file": "src/tools.mjs",
+        "line": 169,
+        "text": "/** DSH `ctx.tools.register()` 需要的形状（无 handler 字段，execute 单独给）。 */"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/util/proc.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/util/proc.mjs",
+        "line": 31,
+        "text": "child = spawn(cmd, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 47,
+      "text": "npm install -g inference-serving          # CLI，已发布到 npm"
+    }
+  ],
+  "skippedEntries": []
+}

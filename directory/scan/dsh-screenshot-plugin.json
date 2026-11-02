@@ -1,0 +1,69 @@
+{
+  "name": "dsh-screenshot-plugin",
+  "version": "0.7.2",
+  "scannedAt": "2026-11-02T23:01:37.664Z",
+  "icon": "dsh-screenshot-plugin.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/clipboard.js",
+        "line": 3,
+        "text": "import { mkdirSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/clipboard.js",
+        "line": 220,
+        "text": "mkdirSync(directory, { recursive: true })"
+      },
+      {
+        "file": "lib/clipboard.js",
+        "line": 227,
+        "text": "writeFileSync(target, bytes, { flag: 'wx' })"
+      },
+      {
+        "file": "lib/diag.js",
+        "line": 13,
+        "text": "import { appendFileSync, statSync, truncateSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/diag.js",
+        "line": 37,
+        "text": "appendFileSync(LOG_PATH, `${new Date().toISOString()} ${line}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/ocr.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/ocr.js",
+        "line": 57,
+        "text": "const child = spawn('powershell.exe', args, { windowsHide: true, stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

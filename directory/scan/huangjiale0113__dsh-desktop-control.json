@@ -1,0 +1,118 @@
+{
+  "name": "@huangjiale0113/dsh-desktop-control",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-02T23:01:25.258Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "apps.mjs",
+        "line": 27,
+        "text": "import { existsSync, readdirSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "index.mjs",
+        "line": 24,
+        "text": "} from 'node:fs'"
+      },
+      {
+        "file": "index.mjs",
+        "line": 445,
+        "text": "const raw = readFileSync(p, 'utf8')"
+      },
+      {
+        "file": "index.mjs",
+        "line": 463,
+        "text": "rmSync(p, { force: true })"
+      },
+      {
+        "file": "index.mjs",
+        "line": 709,
+        "text": "mkdirSync(this.dir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 9,
+        "text": "inject: [\"tools\", \"approval\"]"
+      },
+      {
+        "file": "index.mjs",
+        "line": 63,
+        "text": "export const inject = ['tools', 'approval']"
+      },
+      {
+        "file": "index.mjs",
+        "line": 109,
+        "text": "* 宿主的 tools.register() 对重名是**硬错误**："
+      },
+      {
+        "file": "index.mjs",
+        "line": 155,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "index.mjs",
+        "line": 1642,
+        "text": "return ctx.tools.register(defineTool(wrapped))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "apps.mjs",
+        "line": 29,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "index.mjs",
+        "line": 20,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.mjs",
+        "line": 366,
+        "text": "const child = spawn(helperPath, ['gate_probe'], {"
+      },
+      {
+        "file": "index.mjs",
+        "line": 473,
+        "text": "const c = spawn(exe, args, { windowsHide: true })"
+      },
+      {
+        "file": "index.mjs",
+        "line": 1447,
+        "text": "child = spawn(helperPath, args, { windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "bin/dsc-esc.exe",
+    "bin/dsc-fx.exe",
+    "bin/dsc-guard.exe",
+    "bin/dsc.exe"
+  ],
+  "requiredServices": [
+    "approval",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

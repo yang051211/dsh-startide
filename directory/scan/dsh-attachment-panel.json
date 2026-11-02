@@ -1,0 +1,102 @@
+{
+  "name": "dsh-attachment-panel",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-02T23:01:26.495Z",
+  "icon": "dsh-attachment-panel.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "test/smoke.mjs",
+        "line": 10,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "test/smoke.mjs",
+        "line": 56,
+        "text": "const res = await fetch(base + path, { signal: AbortSignal.timeout(60000) });"
+      },
+      {
+        "file": "test/smoke.mjs",
+        "line": 96,
+        "text": "const bad = await fetch(base + '/api/reveal-path', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 35,
+        "text": "} from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 111,
+        "text": "panelCache = { mtime: st.mtimeMs, html: readFileSync(PANEL_HTML_FILE, 'utf8') };"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 291,
+        "text": "text = decodeZstdFrames(readFileSync(meta.file));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 450,
+        "text": "const logText = readFileSync(SEND_LOG, 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 564,
+        "text": "const raw = readFileSync(CACHE_FILE, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 36,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 654,
+        "text": "execFile("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 848,
+        "text": "execFile('/usr/bin/xattr', ['-l', path], { timeout: 5000, maxBuffer: 256 * 1024 }, (error, stdout) => {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 989,
+        "text": "execFile(TAILSCALE_BIN, args, { timeout, maxBuffer: 8 * 1024 * 1024 }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1165,
+        "text": "execFile(OPENER.bin, args, { timeout: 10000 }, (error) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

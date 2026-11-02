@@ -1,0 +1,103 @@
+{
+  "name": "dsh-server-log-analyzer",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-02T23:01:27.056Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine/collect.js",
+        "line": 49,
+        "text": "      { cmd: 'curl -k -u root:PASSWORD \"https://BMC_IP/redfish/v1/Managers/iDRAC.Embedded.1/LogServices/Lclog/Entries?$expand=*($levels=1)\"', note: 'Redfish 方式取"
+      },
+      {
+        "file": "lib/engine/collect.js",
+        "line": 50,
+        "text": "{ cmd: 'curl -k -u root:PASSWORD \"https://BMC_IP/redfish/v1/Systems/System.Embedded.1/LogServices/Sel/Entries\"', note: 'Redfish 方式取 SEL' },"
+      },
+      {
+        "file": "lib/engine/collect.js",
+        "line": 60,
+        "text": "{ cmd: 'curl -k -u admin:PASSWORD \"https://BMC_IP/redfish/v1/Systems/1/LogServices/IML/Entries?$expand=*($levels=1)\"', note: 'Redfish 方式取 IML（结构化，字段最全）' },"
+      },
+      {
+        "file": "lib/engine/collect.js",
+        "line": 61,
+        "text": "      { cmd: 'curl -k -u admin:PASSWORD -X POST \"https://BMC_IP/redfish/v1/Managers/1/ActiveHealthSystemLog\" -d \\'{\"Action\":\"Download\"}\\'', note: 'AHS 主动健康日志（HP"
+      },
+      {
+        "file": "lib/engine/collect.js",
+        "line": 71,
+        "text": "{ cmd: 'curl -k -u USER:PASS \"https://BMC_IP/redfish/v1/Systems/1/LogServices/EventLog/Entries?$expand=*($levels=1)\"', note: 'XCC 事件日志（FQXSP 事件码族）' },"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-hwlog.js",
+        "line": 28,
+        "text": "import { promises as fsp } from 'node:fs';"
+      },
+      {
+        "file": "bin/dsh-hwlog.js",
+        "line": 231,
+        "text": "const text = await fsp.readFile(String(file), 'utf8');"
+      },
+      {
+        "file": "lib/engine/codes.js",
+        "line": 18,
+        "text": "import { existsSync, readFileSync, readdirSync, statSync, mkdirSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/engine/codes.js",
+        "line": 160,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/engine/codes.js",
+        "line": 170,
+        "text": "writeFileSync(file, JSON.stringify(payload, null, 2), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 30,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 72,
+        "text": "const register = (spec) => ctx.tools.register(withStructuredErrors(defineTool(spec)));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/make-market-index.mjs",
+        "line": 19,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

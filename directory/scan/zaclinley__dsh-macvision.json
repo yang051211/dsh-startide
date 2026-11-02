@@ -1,0 +1,90 @@
+{
+  "name": "@zaclinley/dsh-macvision",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-02T23:01:28.529Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine.js",
+        "line": 5,
+        "text": "import { constants as fsConstants } from 'node:fs'"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 6,
+        "text": "import { access, mkdir, rename, rm } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 99,
+        "text": "await mkdir(CACHE_ROOT, { recursive: true })"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 108,
+        "text": "await rm(tmp, { force: true })"
+      },
+      {
+        "file": "lib/tool.js",
+        "line": 4,
+        "text": "import { stat } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 33,
+        "text": "ctx.tools.register(buildTool({ engine, config, toolName }))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine.js",
+        "line": 4,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 37,
+        "text": "const child = spawn(command, args, { stdio: ['ignore', 'pipe', 'pipe'] })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "bin/macocr"
+  ],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 58,
+      "text": "npm install -g .            # 或 pnpm add -g . ；也可以直接 npm link 到 profile"
+    }
+  ],
+  "skippedEntries": []
+}

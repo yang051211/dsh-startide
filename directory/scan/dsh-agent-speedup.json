@@ -1,0 +1,64 @@
+{
+  "name": "dsh-agent-speedup",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-02T23:01:36.687Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 24,
+        "text": "import { appendFileSync, mkdirSync, statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 135,
+        "text": "if (!logReady) { mkdirSync(dirname(cfg.debugLogFile), { recursive: true }); logReady = true; }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 136,
+        "text": "appendFileSync(cfg.debugLogFile, JSON.stringify({ ts: Date.now(), ...entry }) + \"\\n\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 32,
+        "text": "const inject = [\"tools\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 212,
+        "text": "ctx.tools"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 285,
+        "text": "const tool = ctx.tools?.get?.(toolName);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

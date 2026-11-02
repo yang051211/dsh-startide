@@ -1,0 +1,129 @@
+{
+  "name": "@yangfan1998/dsh-qqbot-plus",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-02T23:01:22.326Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tools/bilibili.js",
+        "line": 47,
+        "text": "const res = await fetch('https://www.bilibili.com/', { headers: headers(), redirect: 'follow', signal: AbortSignal.timeout(timeoutMs) })"
+      },
+      {
+        "file": "tools/bilibili.js",
+        "line": 56,
+        "text": "const res = await fetch(url, { headers: headers(), redirect: 'follow', signal: AbortSignal.timeout(timeoutMs) })"
+      },
+      {
+        "file": "tools/bilibili.js",
+        "line": 66,
+        "text": "const res = await fetch(url, { headers: headers({ accept: 'application/xml,text/xml,*/*' }), redirect: 'follow', signal: AbortSignal.timeout(timeoutMs) })"
+      },
+      {
+        "file": "tools/bilibili.js",
+        "line": 99,
+        "text": "const res = await fetch(short, { headers: headers(), redirect: 'follow', signal: AbortSignal.timeout(timeoutMs) })"
+      },
+      {
+        "file": "tools/bilibili.js",
+        "line": 225,
+        "text": "const res = await fetch(url, { headers: headers({ accept: 'application/json,*/*' }), redirect: 'follow', signal: AbortSignal.timeout(timeoutMs) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "extensions/inbound/bili-card-url.mjs",
+        "line": 9,
+        "text": "import { appendFileSync } from 'node:fs'"
+      },
+      {
+        "file": "extensions/inbound/bili-card-url.mjs",
+        "line": 38,
+        "text": "appendFileSync(join(root, 'bili-card-diag.log'), new Date().toISOString() + ' ' + JSON.stringify(payload) + '\\n')"
+      },
+      {
+        "file": "tools/tts.js",
+        "line": 6,
+        "text": "import { mkdir, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "tools/tts.js",
+        "line": 81,
+        "text": "await mkdir(cfg.outDir, { recursive: true })"
+      },
+      {
+        "file": "tools/vision.js",
+        "line": 7,
+        "text": "import { readFile, stat } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "tools/bilibili.js",
+        "line": 11,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "tools/bilibili.js",
+        "line": 464,
+        "text": "tools.register(readTool)"
+      },
+      {
+        "file": "tools/bilibili.js",
+        "line": 465,
+        "text": "if (canVision) tools.register(framesTool)"
+      },
+      {
+        "file": "tools/bilibili.js",
+        "line": 466,
+        "text": "tools.register(searchTool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tools/tts.js",
+        "line": 5,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "tools/tts.js",
+        "line": 17,
+        "text": "execFile(cmd, args, { timeout: timeoutMs, maxBuffer: 1024 * 1024 }, (error, stdout, stderr) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 151,
+      "text": "python3 -m pip install edge-tts"
+    }
+  ],
+  "skippedEntries": []
+}

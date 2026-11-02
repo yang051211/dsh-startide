@@ -1,0 +1,104 @@
+{
+  "name": "dsh-finish-notify",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-02T23:01:37.278Z",
+  "icon": "dsh-finish-notify.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 340,
+        "text": "fetch('/dsh-notify/config')"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 354,
+        "text": "fetch('/dsh-notify/image?name=' + encodeURIComponent(f.name), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 369,
+        "text": "fetch('/dsh-notify/image/clear', { method: 'POST' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 376,
+        "text": "fetch('/dsh-notify/config', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 387,
+        "text": "fetch('/dsh-notify/test', { method: 'POST' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 43,
+        "text": "mkdirSync(DATA_DIR, { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 45,
+        "text": "writeFileSync(INI, body, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 53,
+        "text": "for (const raw of readFileSync(INI, 'utf8').split(/\\r?\\n/)) {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 67,
+        "text": "try { mkdirSync(DATA_DIR, { recursive: true }); writeFileSync(INI, body, 'utf8') } catch {}"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 76,
+        "text": "state.child = spawn(EXE, [], { stdio: 'ignore', windowsHide: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 159,
+        "text": "spawn(EXE, ['--test'], { stdio: 'ignore', windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "assets/dsh-notify.exe"
+  ],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

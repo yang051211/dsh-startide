@@ -1,0 +1,134 @@
+{
+  "name": "minecraft-dev-starter",
+  "version": "0.1.9",
+  "scannedAt": "2026-11-02T23:01:06.474Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 138,
+        "text": "fetch(\"/mcdev/api/client.report\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 231,
+        "text": "const response = await fetch(`/mcdev/api/${method}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1842,
+        "text": "      (function(event, error){ try { fetch('/mcdev/api/client.report', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ even"
+      },
+      {
+        "file": "src/client/api.js",
+        "line": 17,
+        "text": "const response = await fetch(`/mcdev/api/${method}`, {"
+      },
+      {
+        "file": "src/client/debug.js",
+        "line": 18,
+        "text": "fetch('/mcdev/api/client.report', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 9,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/index.js",
+        "line": 39,
+        "text": "return String(JSON.parse(readFileSync(url, 'utf8')).version)"
+      },
+      {
+        "file": "src/lib/detect.js",
+        "line": 12,
+        "text": "import { stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/lib/java.js",
+        "line": 9,
+        "text": "import { readdir } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/lib/jdks.js",
+        "line": 11,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 25,
+        "text": "export const inject = ['sessions', 'tools']"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 139,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "src/tools.js",
+        "line": 192,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "src/tools.js",
+        "line": 258,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "src/tools.js",
+        "line": 341,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/lib/launches.js",
+        "line": 8,
+        "text": "*   - `child_process.spawn({ windowsHide: true })`，输出走管道收进环形缓冲并落盘；"
+      },
+      {
+        "file": "src/lib/launches.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/lib/launches.js",
+        "line": 149,
+        "text": "* @property {import('node:child_process').ChildProcess | undefined} child"
+      },
+      {
+        "file": "src/lib/launches.js",
+        "line": 513,
+        "text": "const child = spawn('taskkill.exe', ['/PID', String(pid), '/T', '/F'], { windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessions",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

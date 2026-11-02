@@ -1,0 +1,79 @@
+{
+  "name": "@dsh-ft/dsh-fft-ftshare",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-02T23:01:29.769Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/route.js",
+        "line": 36,
+        "text": "async fetch(request) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/catalog-host.js",
+        "line": 9,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/catalog-host.js",
+        "line": 22,
+        "text": "cached = asCatalog(JSON.parse(readFileSync(FTSHARE_CATALOG_PATH, 'utf8')));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/mask.js",
+        "line": 7,
+        "text": "* （`@deepseek-ai/dsh-mcp-client`），所以「只挂一部分 MCP 工具」做不到，只能在"
+      },
+      {
+        "file": "lib/mask.js",
+        "line": 13,
+        "text": "* `ctx.tools.restrict()` 只过滤**继承来的**工具，永不过滤调用者自己层的注册"
+      },
+      {
+        "file": "lib/mask.js",
+        "line": 85,
+        "text": "const deny = maskPlan(agent.ctx.tools.schemas(agent).map(tool => tool.name));"
+      },
+      {
+        "file": "lib/mask.js",
+        "line": 88,
+        "text": "agent.ctx.tools.restrict({ deny });"
+      },
+      {
+        "file": "lib/project.js",
+        "line": 8,
+        "text": "* `content` 投影给模型（`@deepseek-ai/dsh-mcp-client` 的 `createOutput`），所以模型"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "ftshareData",
+    "ftshareSettings",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

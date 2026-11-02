@@ -1,0 +1,73 @@
+{
+  "name": "dsh-session-artifacts",
+  "version": "0.7.2",
+  "scannedAt": "2026-11-02T23:01:34.453Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 63,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 78,
+        "text": "const response = await fetch(CAPABILITY_ROUTE, { method: \"GET\", signal: controller.signal });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/artifacts.mjs",
+        "line": 1,
+        "text": "import { lstat, realpath } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/host/fence.mjs",
+        "line": 1,
+        "text": "import { lstat, readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/host/fence.mjs",
+        "line": 129,
+        "text": "const parsed = JSON.parse(await readFile(join(dir, 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "src/host/remove.mjs",
+        "line": 1,
+        "text": "import { lstat, readdir, realpath, rm, rmdir } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/host/remove.mjs",
+        "line": 140,
+        "text": "await rm(target, { force: false })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "sessionPersistence",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

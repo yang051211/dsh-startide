@@ -1,0 +1,129 @@
+{
+  "name": "dsh-video2text",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-02T23:01:25.237Z",
+  "icon": "dsh-video2text.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 567,
+        "text": "const wsRes = await fetch('/plugins/dsh-video2text/workspace', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1256,
+        "text": "const res = await fetch('/plugins/dsh-video2text/accounts', { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1268,
+        "text": "const res = await fetch('/plugins/dsh-video2text/accounts', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1524,
+        "text": "fetch('/plugins/dsh-video2text/cancel', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1541,
+        "text": "const res = await fetch(`/plugins/dsh-video2text/context?id=${encodeURIComponent(job.id)}`)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1075,
+        "text": "h('button', { key: 'fs', ...tip('fs', t('player.fullscreen')), onClick: () => wrapRef.current?.requestFullscreen?.() },"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 13,
+        "text": "rt { createReadStream, existsSync, mkdirSync, readFileSync, readdirSync, readlinkSync, renameSync, rmSync, statSync, symlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 211,
+        "text": "if (current) rmSync(target, { force: true })"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 212,
+        "text": "mkdirSync(path.dirname(target), { recursive: true })"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 254,
+        "text": "const raw = JSON.parse(readFileSync(file, 'utf-8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/inspect.mjs",
+        "line": 400,
+        "text": "toolCtx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/inspect.mjs",
+        "line": 457,
+        "text": "toolCtx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 12,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 123,
+        "text": "const result = spawnSync(python || 'python3', [script, '--probe', url], {"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 139,
+        "text": "const child = spawn(python || 'python3', [script, '--probe', url], {"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 224,
+        "text": "spawn('open', args, { stdio: 'ignore', detached: true }).unref()"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 229,
+        "text": "spawn('explorer', args, { stdio: 'ignore', detached: true }).unref()"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 56,
+      "text": "- 视频号需要 `playwright` 与本机 Chrome：`pip install playwright`"
+    }
+  ],
+  "skippedEntries": []
+}

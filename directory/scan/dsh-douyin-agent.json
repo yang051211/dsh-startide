@@ -1,0 +1,136 @@
+{
+  "name": "dsh-douyin-agent",
+  "version": "1.4.7",
+  "scannedAt": "2026-11-02T23:01:02.617Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "core.mjs",
+        "line": 108,
+        "text": "const response = await fetch(`http://127.0.0.1:${PORT}/json/version`, { signal: AbortSignal.timeout(1200) });"
+      },
+      {
+        "file": "core.mjs",
+        "line": 571,
+        "text": "const body = await this.page.evaluate(async (target) => { const answer = await fetch(target, { credentials: 'include' }); return await answer.json(); }, url);"
+      },
+      {
+        "file": "media/index.mjs",
+        "line": 9,
+        "text": "import { request as httpsRequest, Agent as HttpsAgent } from 'node:https';"
+      },
+      {
+        "file": "media/index.mjs",
+        "line": 10,
+        "text": "import { request as httpRequest } from 'node:http';"
+      },
+      {
+        "file": "media/index.mjs",
+        "line": 272,
+        "text": "        const response = await this.fetch('https://api.xiaomimimo.com/v1/chat/completions',{method:'POST',redirect:'error',signal:AbortSignal.any([combined,Abor"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "api-agent.mjs",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "api-agent.mjs",
+        "line": 30,
+        "text": "const parsed = parseEnv(fs.readFileSync(envFile, 'utf8'));"
+      },
+      {
+        "file": "api-agent.mjs",
+        "line": 208,
+        "text": "const lines = fs.readFileSync(file, 'utf8').split('\\n').map(line => line.trim()).filter(Boolean);"
+      },
+      {
+        "file": "api-agent.mjs",
+        "line": 252,
+        "text": "const raw = fs.readFileSync(file, 'utf8').split('\\n').map((line) => line.trim()).filter(Boolean);"
+      },
+      {
+        "file": "api-agent.mjs",
+        "line": 283,
+        "text": "const data = JSON.parse(fs.readFileSync(file, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh-plugin.mjs",
+        "line": 15,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "dsh-plugin.mjs",
+        "line": 226,
+        "text": "for (const tool of definitions) disposers.push(ctx.tools.register(tool));"
+      },
+      {
+        "file": "media/vendor/minimax/lib/index.js",
+        "line": 23,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "media/vendor/minimax/lib/index.js",
+        "line": 1055,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "media/vendor/minimax/lib/index.js",
+        "line": 1179,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "autonomous-watch.mjs",
+        "line": 4,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "autonomous-watch.mjs",
+        "line": 753,
+        "text": "      const worker = spawn(pythonExe, [workerScript, directory, '--idle', '300'], { windowsHide: true, stdio: ['ignore', workerOut, workerOut], env: { ...proces"
+      },
+      {
+        "file": "autonomous-watch.mjs",
+        "line": 754,
+        "text": "const capture = spawn(nodeExe, [captureScript, directory, '3600', '10', '9227'], { windowsHide: true, stdio: 'ignore' });"
+      },
+      {
+        "file": "autonomous-watch.mjs",
+        "line": 775,
+        "text": "const child = spawn(python, [script, directory, '--since', since], {"
+      },
+      {
+        "file": "autonomous-watch.mjs",
+        "line": 804,
+        "text": "const child = spawn(python, [script, directory, '--since', String(Math.round(since))], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

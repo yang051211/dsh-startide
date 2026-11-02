@@ -1,0 +1,80 @@
+{
+  "name": "deep-view",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-02T23:00:57.750Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 2343,
+        "text": "const response = await fetch(ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/files.js",
+        "line": 1,
+        "text": "import { rename } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/host/pending.js",
+        "line": 3,
+        "text": "import { mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "src/host/pending.js",
+        "line": 4,
+        "text": "import { readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/host/pending.js",
+        "line": 16,
+        "text": "try { data = JSON.parse(await readFile(path, 'utf8')) } catch { data = {} }"
+      },
+      {
+        "file": "src/host/pending.js",
+        "line": 24,
+        "text": "mkdirSync(home, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 7,
+        "text": "export const inject = ['tools', 'connection', 'sessionController', 'sessions']"
+      },
+      {
+        "file": "src/host/install.js",
+        "line": 79,
+        "text": "ctx.tools.register(showViewTool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "sessionController",
+    "sessions",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

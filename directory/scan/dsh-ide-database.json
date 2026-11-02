@@ -1,0 +1,111 @@
+{
+  "name": "dsh-ide-database",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-02T23:01:18.028Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 197,
+        "text": "response = await fetch(`${ROUTE_PREFIX}${path}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 6552,
+        "text": "const chunk = await walk.fetch({ page, offset: page * batch });"
+      },
+      {
+        "file": "lib/host/drivers.js",
+        "line": 161,
+        "text": "const response = await fetch(url, { signal: AbortSignal.timeout(120_000), redirect: 'follow' });"
+      },
+      {
+        "file": "lib/host/drivers.js",
+        "line": 176,
+        "text": "const shaResponse = await fetch(`${url}.sha1`, { signal: AbortSignal.timeout(20_000), redirect: 'follow' });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/archive.js",
+        "line": 1,
+        "text": "import { chmodSync, mkdirSync, symlinkSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/host/archive.js",
+        "line": 32,
+        "text": "mkdirSync(dirname(target), { recursive: true });"
+      },
+      {
+        "file": "lib/host/archive.js",
+        "line": 33,
+        "text": "writeFileSync(target, data);"
+      },
+      {
+        "file": "lib/host/archive.js",
+        "line": 39,
+        "text": "mkdirSync(dirname(target), { recursive: true });"
+      },
+      {
+        "file": "lib/host/archive.js",
+        "line": 79,
+        "text": "mkdirSync(join(destination, name), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/index.js",
+        "line": 20,
+        "text": "export const inject = ['webServer', 'tools'];"
+      },
+      {
+        "file": "lib/host/index.js",
+        "line": 50,
+        "text": "const disposers = createDatabaseTools({ config, drivers, sql, redis, paths, structure }).map((tool) => ctx.tools.register(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/bridge.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/host/bridge.js",
+        "line": 50,
+        "text": "const child = spawn(this.options.javaPath, ['-cp', this.options.bridgeJar, 'dshdb.Bridge'], {"
+      },
+      {
+        "file": "lib/host/java.js",
+        "line": 1,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/host/java.js",
+        "line": 42,
+        "text": "const result = spawnSync(executable, ['-version'], { encoding: 'utf8', timeout: 15_000, windowsHide: true });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

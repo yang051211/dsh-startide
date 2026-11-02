@@ -1,0 +1,103 @@
+{
+  "name": "dsh-copyright-kit",
+  "version": "0.7.5",
+  "scannedAt": "2026-11-02T23:01:02.926Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/pack.js",
+        "line": 6,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/pack.js",
+        "line": 45,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/pack.js",
+        "line": 61,
+        "text": "const spec = JSON.parse(readFileSync(entry.screens, 'utf8'))"
+      },
+      {
+        "file": "lib/pack.js",
+        "line": 71,
+        "text": "const spec = JSON.parse(readFileSync(entry.spec, 'utf8'))"
+      },
+      {
+        "file": "lib/pack.js",
+        "line": 90,
+        "text": "writeFileSync(resolved, JSON.stringify(spec, null, 2), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "() => ctx.tools.register(factory()),"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/pyrun.js",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/pyrun.js",
+        "line": 12,
+        "text": "const child = spawn(PYTHON, [script, ...args], {"
+      },
+      {
+        "file": "lib/screens.js",
+        "line": 7,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/screens.js",
+        "line": 268,
+        "text": "const child = spawn(chrome, args, { signal })"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 48,
+      "text": "python3 -m pip install python-docx"
+    }
+  ],
+  "skippedEntries": []
+}

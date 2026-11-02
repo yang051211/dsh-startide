@@ -1,0 +1,93 @@
+{
+  "name": "dsh-glm-image",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-02T23:01:19.577Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 41,
+        "text": "fetch('/api/glm-image/settings')"
+      },
+      {
+        "file": "client.js",
+        "line": 61,
+        "text": "const r = await fetch('/api/glm-image/settings', {"
+      },
+      {
+        "file": "index.js",
+        "line": 98,
+        "text": "const response = await fetch(endpoint, {"
+      },
+      {
+        "file": "index.js",
+        "line": 252,
+        "text": "const download = await fetch(url, { signal: exec.signal });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import { readFileSync, renameSync, writeFileSync, existsSync, mkdirSync } from \"node:fs\";"
+      },
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "import { writeFile, mkdir } from \"node:fs/promises\";"
+      },
+      {
+        "file": "index.js",
+        "line": 57,
+        "text": "const value = JSON.parse(readFileSync(SETTINGS_FILE, \"utf8\"));"
+      },
+      {
+        "file": "index.js",
+        "line": 65,
+        "text": "mkdirSync(dirname(SETTINGS_FILE), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 67,
+        "text": "writeFileSync(temp, JSON.stringify(settings, null, 2), { mode: 0o600 });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "export const inject = [\"tools\", \"webServer\"];"
+      },
+      {
+        "file": "index.js",
+        "line": 148,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

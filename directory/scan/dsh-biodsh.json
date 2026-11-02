@@ -1,0 +1,121 @@
+{
+  "name": "dsh-biodsh",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-02T23:01:30.994Z",
+  "icon": "dsh-biodsh.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "skills/library/bio-atac-seq-enhancer-gene-linking/examples/run_abc.sh",
+        "line": 79,
+        "text": "# wget https://www.engreitzlab.org/crispri-flowfish/K562_validated_pairs.txt"
+      },
+      {
+        "file": "skills/library/bio-chipseq-chromatin-state-segmentation/examples/chromhmm_pipeline.sh",
+        "line": 83,
+        "text": "# wget https://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/imputed12marks/jointModel/final/model_25_imputed12marks.txt"
+      },
+      {
+        "file": "skills/library/bio-chipseq-peak-calling/examples/macs3_peak_calling.sh",
+        "line": 152,
+        "text": "wget -nc \"$BLACKLIST_URL\" || { echo \"ERROR: blacklist download failed; check network or URL\" >&2; exit 1; }"
+      },
+      {
+        "file": "skills/library/bio-crispr-screens-bagel-essentiality/examples/run_bagel2.sh",
+        "line": 22,
+        "text": "[ ! -f \"$CEG\" ] && curl -L -o \"$CEG\" \\"
+      },
+      {
+        "file": "skills/library/bio-crispr-screens-bagel-essentiality/examples/run_bagel2.sh",
+        "line": 24,
+        "text": "[ ! -f \"$NEG\" ] && curl -L -o \"$NEG\" \\"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/coverage_review.js",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/coverage_review.js",
+        "line": 73,
+        "text": "ner('abort',onAbort);receipt.ended_at=new Date().toISOString();fs.appendFileSync(path.join(root,'.biodsh-coverage-review.jsonl'),JSON.stringify(receipt)+'\\n');}"
+      },
+      {
+        "file": "lib/delivery.js",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/delivery.js",
+        "line": 20,
+        "text": "if (fs.existsSync(p)) docs[n]=JSON.parse(fs.readFileSync(p,'utf8').replace(/^\\uFEFF/,''));"
+      },
+      {
+        "file": "lib/delivery.js",
+        "line": 95,
+        "text": "fs.appendFileSync(path.join(st.root,'.biodsh-delivery-events.jsonl'),JSON.stringify(receipt)+'\\n');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/skills.js",
+        "line": 17,
+        "text": "export const inject = ['skills', 'tools'];"
+      },
+      {
+        "file": "lib/skills.js",
+        "line": 122,
+        "text": "ctx.tools.register(tool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/coverage_review.js",
+        "line": 3,
+        "text": "import {spawn} from 'node:child_process';"
+      },
+      {
+        "file": "lib/coverage_review.js",
+        "line": 45,
+        "text": "  const child=spawn(config.python,[...config.args,fileURLToPath(new URL('./coverage_packet.py',import.meta.url)),'--public',root],{cwd:root,windowsHide:true,sig"
+      },
+      {
+        "file": "lib/delivery.js",
+        "line": 4,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/delivery.js",
+        "line": 30,
+        "text": "const child=spawn(config.python,args,{cwd:root,windowsHide:true,signal,stdio:['pipe','pipe','pipe']});"
+      },
+      {
+        "file": "lib/magi.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

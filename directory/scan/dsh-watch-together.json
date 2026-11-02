@@ -1,0 +1,133 @@
+{
+  "name": "dsh-watch-together",
+  "version": "0.2.6",
+  "scannedAt": "2026-11-02T23:01:23.634Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/watch.mjs",
+        "line": 32,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "bin/watch.mjs",
+        "line": 265,
+        "text": "const res = await fetch(`http://127.0.0.1:${PORT}/json/new?${encodeURIComponent(url)}`, init);"
+      },
+      {
+        "file": "bin/watch.mjs",
+        "line": 802,
+        "text": "const alive = await fetch(`http://127.0.0.1:${CHAT_PORT}/`, { method: 'HEAD' })"
+      },
+      {
+        "file": "extension/background.js",
+        "line": 30,
+        "text": "await fetch(HELLO, {"
+      },
+      {
+        "file": "extension/background.js",
+        "line": 55,
+        "text": "const r = await fetch(ENDPOINT, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/tts.mjs",
+        "line": 22,
+        "text": "import { existsSync, readFileSync, statSync, unlinkSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "bin/tts.mjs",
+        "line": 128,
+        "text": "const j = JSON.parse(readFileSync(join(home, 'tts.json'), 'utf8'));"
+      },
+      {
+        "file": "bin/tts.mjs",
+        "line": 211,
+        "text": "try { unlinkSync(out); } catch { /* 删不掉就留着 */ }"
+      },
+      {
+        "file": "bin/watch.mjs",
+        "line": 31,
+        "text": "} from 'node:fs';"
+      },
+      {
+        "file": "bin/watch.mjs",
+        "line": 82,
+        "text": "return JSON.parse(readFileSync(join(root, 'package.json'), 'utf8')).version ?? null;"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 11,
+        "text": "*  - `apply` 返回 disposer（把所有 `ctx.tools.register()` 的返回值串起来）"
+      },
+      {
+        "file": "src/index.js",
+        "line": 28,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "src/index.js",
+        "line": 117,
+        "text": "disposers.push(...tools.map((tool) => ctx.tools.register(tool)));"
+      },
+      {
+        "file": "src/index.js",
+        "line": 125,
+        "text": "disposers.push(settingsCtx.tools.register(defineTool(settings.tool)));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/tts.mjs",
+        "line": 21,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "bin/tts.mjs",
+        "line": 106,
+        "text": "execFile('powershell', ['-NoProfile', '-NonInteractive', '-Command', command],"
+      },
+      {
+        "file": "bin/tts.mjs",
+        "line": 200,
+        "text": "execFile(exe, args, { timeout: timeoutMs, windowsHide: true }, (err) => resolve(!err));"
+      },
+      {
+        "file": "bin/tts.mjs",
+        "line": 208,
+        "text": "execFile('ffplay', ['-nodisp', '-autoexit', '-loglevel', 'quiet', out],"
+      },
+      {
+        "file": "bin/tts.mjs",
+        "line": 226,
+        "text": "execFile('powershell', ['-NoProfile', '-NonInteractive', '-Command', ps],"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

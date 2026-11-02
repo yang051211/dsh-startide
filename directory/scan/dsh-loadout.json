@@ -1,19 +1,19 @@
 {
   "name": "dsh-loadout",
-  "version": "0.11.1",
-  "scannedAt": "2026-11-01T19:09:03.108Z",
+  "version": "0.12.6",
+  "scannedAt": "2026-11-02T23:01:36.167Z",
   "icon": "dsh-loadout.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 84,
+        "line": 103,
         "text": "const response = await fetch(ENDPOINT, {"
       },
       {
         "file": "client.js",
-        "line": 103,
+        "line": 122,
         "text": "const response = await fetch(url, { method: 'GET' })"
       }
     ]
@@ -23,27 +23,27 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 38,
-        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, writeFileSync } from 'node:fs'"
+        "line": 52,
+        "text": "import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 156,
+        "line": 221,
         "text": "const store = normalizeStore(JSON.parse(readFileSync(path, 'utf8')))"
       },
       {
         "file": "index.js",
-        "line": 166,
+        "line": 231,
         "text": "mkdirSync(dirname(STORE_PATH), { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 171,
+        "line": 236,
         "text": "writeFileSync(temporary, `${JSON.stringify(next, null, 2)}\\n`, 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 1018,
+        "line": 1311,
         "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
       }
     ]
@@ -53,27 +53,27 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 28,
+        "line": 42,
         "text": "* allow list. `ctx.tools.restrict({ allow })` reads as \"only these\", but the"
       },
       {
         "file": "index.js",
-        "line": 46,
+        "line": 60,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "index.js",
-        "line": 651,
+        "line": 914,
         "text": "if (tools === undefined) return { ok: false, reason: '这个会话没有可用的工具作用域（agent.ctx.tools）' }"
       },
       {
         "file": "index.js",
-        "line": 760,
+        "line": 1023,
         "text": "if (agent?.ctx?.tools === undefined) return { ok: false, reason: '这个会话没有可用的工具作用域（agent.ctx.tools）' }"
       },
       {
         "file": "index.js",
-        "line": 962,
+        "line": 1255,
         "text": "for (const schema of ctx.tools?.schemas?.() ?? []) if (schema?.name !== undefined) knownTools.add(schema.name)"
       }
     ]

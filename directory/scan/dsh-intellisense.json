@@ -1,0 +1,153 @@
+{
+  "name": "dsh-intellisense",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-02T23:01:22.105Z",
+  "icon": "dsh-intellisense.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.js",
+        "line": 60,
+        "text": "const response = await fetch(url2);"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 90,
+        "text": "const response = await fetch(url2, { method: \"POST\", headers: { \"Content-Type\": \"application/json\" }, body: JSON.stringify({ profile }) });"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 21806,
+        "text": "const response = await fetch(api, {"
+      },
+      {
+        "file": "dist/management/panel/management_panel.js",
+        "line": 20,
+        "text": "const response = await fetch(api, {"
+      },
+      {
+        "file": "dist/management/session_profile/session_profile.js",
+        "line": 29,
+        "text": "const response = await fetch(url);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/integration/preset.js",
+        "line": 2,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "dist/integration/preset.js",
+        "line": 10,
+        "text": "string(), description: z.string(), order: z.number() }).parse(parse(await readFile(new URL(`../../presets/${directory}/preset.yml`, import.meta.url), 'utf8')));"
+      },
+      {
+        "file": "dist/integration/preset.js",
+        "line": 11,
+        "text": "const plugins = parse(await readFile(new URL(`../../presets/${directory}/agent.cordis.yml`, import.meta.url), 'utf8'), {"
+      },
+      {
+        "file": "dist/management/server/routes.js",
+        "line": 1,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "dist/management/server/routes.js",
+        "line": 25,
+        "text": ", fetch: async () => new Response(await readFile(new URL('../standalone.js', import.meta.url), 'utf8'), { headers: { ...headers, 'Content-Type': 'text/javascrip"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 6,
+        "text": "export const inject = ['tools', 'agents', 'systemPrompt', 'storage', storageBackendServiceKey('json'), 'connection'];"
+      },
+      {
+        "file": "dist/integration/presentation.js",
+        "line": 6,
+        "text": "export const inject = ['tools', 'commandNamespaces'];"
+      },
+      {
+        "file": "dist/integration/presentation.js",
+        "line": 28,
+        "text": "ctx.tools.presentAs('native');"
+      },
+      {
+        "file": "dist/namespace/component.js",
+        "line": 72,
+        "text": "const tools = agent?.ctx.tools ?? this.ctx.tools;"
+      },
+      {
+        "file": "dist/namespace/component.js",
+        "line": 300,
+        "text": "const physical = agent.ctx.tools.get(entry.tool, agent);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/runtime/host.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "dist/runtime/host.js",
+        "line": 43,
+        "text": "const child = spawn(process.execPath, ['--permission', `--max-old-space-size=${this.config.heapMb}`, '--input-type=module', '-'], {"
+      },
+      {
+        "file": "dist/runtime/sandbox.js",
+        "line": 1,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "dist/runtime/sandbox.js",
+        "line": 6,
+        "text": "const childProcess = require('node:child_process');"
+      },
+      {
+        "file": "dist/runtime/sandbox.js",
+        "line": 16,
+        "text": "const result = spawnSync(process.execPath, ['--permission', '--eval', probe], { env: {}, encoding: 'utf8', timeout: timeoutMs });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 4,
+  "minifiedFiles": [
+    "dist/management/standalone.js",
+    "dist/runtime/worker_bundle.mjs"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentPresets",
+    "agents",
+    "connection",
+    "json",
+    "storage",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

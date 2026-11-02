@@ -1,0 +1,84 @@
+{
+  "name": "dsh-time-watchdog",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-02T23:01:27.000Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 246,
+        "text": "fetch(API, { credentials: \"same-origin\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 468,
+        "text": "fetch(API, { credentials: \"same-origin\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 500,
+        "text": "fetch(API, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/store.js",
+        "line": 8,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 25,
+        "text": "return readConfig(JSON.parse(readFileSync(CONFIG_FILE, \"utf8\")));"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 45,
+        "text": "mkdirSync(STORAGE_DIR, { recursive: true });"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 48,
+        "text": "writeFileSync("
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 53,
+        "text": "export const inject = [\"tools\", \"sessionProjections\", \"commands\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 160,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "sessionProjections",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

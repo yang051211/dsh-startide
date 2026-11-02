@@ -1,0 +1,63 @@
+{
+  "name": "@coder02lq/dsh-plugin-session-delete",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-02T23:01:21.680Z",
+  "icon": "coder02lq__dsh-plugin-session-delete.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 25,
+        "text": "import { rm } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 135,
+        "text": "* means: Windows fails the unlink (`EBUSY`/`EPERM`) and leaves the tree intact,"
+      },
+      {
+        "file": "index.js",
+        "line": 150,
+        "text": "await rm(directory, { recursive: true, force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 466,
+        "text": "export const inject = ['workspaceRegistry', 'sessionPersistence', 'tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 475,
+        "text": "ctx.tools.register(sessionDeleteTool(ctx))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionPersistence",
+    "tools",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

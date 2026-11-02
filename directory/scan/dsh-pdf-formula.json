@@ -1,0 +1,86 @@
+{
+  "name": "dsh-pdf-formula",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-02T23:01:33.765Z",
+  "icon": "dsh-pdf-formula.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 121,
+        "text": "const fs = optionalService(ctx, 'fs');"
+      },
+      {
+        "file": "lib/decode.mjs",
+        "line": 11,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/decode.mjs",
+        "line": 375,
+        "text": "return fs.readFileSync(path);"
+      },
+      {
+        "file": "lib/extract.mjs",
+        "line": 8,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/extract.mjs",
+        "line": 41,
+        "text": "return new PDFDocument(fs.readFileSync(filePath));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 792,
+        "text": "const tools = ctx && ctx.tools;"
+      },
+      {
+        "file": "index.js",
+        "line": 793,
+        "text": "if (tools && typeof tools.register === 'function') list.push({ label: 'ctx.tools.register', call: (tool) => tools.register(tool) });"
+      },
+      {
+        "file": "index.js",
+        "line": 794,
+        "text": "if (tools && typeof tools.add === 'function') list.push({ label: 'ctx.tools.add', call: (tool) => tools.add(tool) });"
+      },
+      {
+        "file": "index.js",
+        "line": 795,
+        "text": "if (tools && typeof tools.set === 'function') list.push({ label: 'ctx.tools.set', call: (tool) => tools.set(tool.name, tool) });"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
