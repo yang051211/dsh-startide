@@ -1,0 +1,85 @@
+{
+  "name": "@crosery/dsh-viewer",
+  "version": "0.3.3",
+  "scannedAt": "2026-11-03T20:52:31.578Z",
+  "icon": "crosery__dsh-viewer.png",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 108,
+        "text": "import { createReadStream } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 109,
+        "text": "import { stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 115,
+        "text": "import { mkdir, readFile, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 125,
+        "text": "await mkdir(dirname(keyPath), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 128,
+        "text": "await writeFile(keyPath, created, { mode: 384, flag: \"wx\" });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 650,
+        "text": "return ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 794,
+        "text": "text: ({ scope }) => displaySectionText((tool) => ctx.tools.get(tool, scope) !== void 0, enabled())"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 807,
+        "text": "agent.ctx.tools.restrict({ deny: [READ_IMAGE_TOOL] });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 861,
+        "text": "var inject = [\"tools\", \"fs\", \"systemPrompt\"];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 394,
+        "text": "import { execFile } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

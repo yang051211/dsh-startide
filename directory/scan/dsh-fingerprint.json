@@ -1,14 +1,14 @@
 {
   "name": "dsh-fingerprint",
-  "version": "0.3.1",
-  "scannedAt": "2026-11-03T08:10:04.581Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-03T20:52:22.045Z",
   "icon": "dsh-fingerprint.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 240,
+        "line": 250,
         "text": "const response = await fetch(`${API}${path}`, {"
       }
     ]
@@ -28,17 +28,17 @@
       },
       {
         "file": "index.js",
-        "line": 23,
+        "line": 24,
         "text": "} from 'node:fs';"
       },
       {
         "file": "index.js",
-        "line": 78,
+        "line": 79,
         "text": "return JSON.parse(readFileSync(file, 'utf8'));"
       },
       {
         "file": "index.js",
-        "line": 84,
+        "line": 85,
         "text": "for (const line of readFileSync(file, 'utf8').split('\\n')) {"
       }
     ]
@@ -48,13 +48,8 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 41,
-        "text": "export const inject = ['llm', 'tools', 'webServer'];"
-      },
-      {
-        "file": "index.js",
-        "line": 1029,
-        "text": "ctx.effect(() => ctx.tools.register(definition), `llm-fingerprint: ${definition.name}`);"
+        "line": 967,
+        "text": "toolCtx.effect(() => toolCtx.tools.register(definition), `llm-fingerprint: ${definition.name}`);"
       }
     ]
   },
@@ -71,7 +66,6 @@
   "binaryFiles": [],
   "requiredServices": [
     "llm",
-    "tools",
     "webServer"
   ],
   "setupHints": [],

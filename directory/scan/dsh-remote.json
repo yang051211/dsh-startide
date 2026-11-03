@@ -1,24 +1,24 @@
 {
   "name": "dsh-remote",
-  "version": "0.8.71",
-  "scannedAt": "2026-11-03T08:09:49.588Z",
+  "version": "0.8.72",
+  "scannedAt": "2026-11-03T20:51:57.155Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 768,
+        "line": 770,
         "text": "const res = await fetch(apiPath(path), opts)"
       },
       {
         "file": "lib/client.js",
-        "line": 778,
+        "line": 780,
         "text": "const res = await fetch(apiPath(path), opts)"
       },
       {
         "file": "lib/client.js",
-        "line": 1992,
+        "line": 2010,
         "text": "//    a superseded fetch (fresh navigation, picker reopen) is dropped"
       },
       {
@@ -36,6 +36,11 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/audit.js",
+        "line": 39,
+        "text": "const text = readFile(file, 'utf8')"
+      },
       {
         "file": "lib/binding.js",
         "line": 14,
@@ -55,11 +60,6 @@
         "file": "lib/credential.js",
         "line": 16,
         "text": "import { mkdirSync, writeFileSync, readFileSync, unlinkSync } from 'node:fs'"
-      },
-      {
-        "file": "lib/credential.js",
-        "line": 140,
-        "text": "mkdirSync(secretsDir || '.', { recursive: true })"
       }
     ]
   },
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 134,
+        "line": 135,
         "text": "export const inject = ['tools', 'systemPrompt']"
       },
       {
         "file": "lib/index.js",
-        "line": 2900,
+        "line": 2892,
         "text": "ctx.tools.register(t)"
       }
     ]
@@ -103,7 +103,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 3185,
+        "line": 3177,
         "text": "execFile(bin, args, { timeout: 15000, maxBuffer: 1 << 20 }, (err) => {"
       }
     ]

@@ -1,0 +1,64 @@
+{
+  "name": "dsh-om-messiah",
+  "version": "1.4.3",
+  "scannedAt": "2026-11-03T20:52:32.554Z",
+  "icon": "dsh-om-messiah.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 43,
+        "text": "const jget = async (path) => asJson(await fetch(API + path, { credentials: 'same-origin' }))"
+      },
+      {
+        "file": "client.js",
+        "line": 46,
+        "text": "await fetch(API + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { appendFile, mkdir } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 36,
+        "text": "const { readdir } = await import('node:fs/promises')"
+      },
+      {
+        "file": "index.js",
+        "line": 115,
+        "text": "await mkdir(dirname(config.echoFile), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 116,
+        "text": "await appendFile(config.echoFile, `${line}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

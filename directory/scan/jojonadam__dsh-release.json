@@ -1,0 +1,90 @@
+{
+  "name": "@jojonadam/dsh-release",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-03T20:52:27.819Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "skills/dsh-release/scripts/release.mjs",
+        "line": 115,
+        "text": "const response = await fetch(`https://api.github.com${path}`, {"
+      },
+      {
+        "file": "skills/dsh-release/scripts/release.mjs",
+        "line": 421,
+        "text": "const response = await fetch(`${REGISTRY}-/package/${encodeURIComponent(name)}/dist-tags`)"
+      },
+      {
+        "file": "skills/dsh-release/scripts/release.mjs",
+        "line": 441,
+        "text": "const response = await fetch(url)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 10,
+        "text": "import { readFileSync, readdirSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 63,
+        "text": "const { data, body } = parseFrontmatter(readFileSync(locator, 'utf8'))"
+      },
+      {
+        "file": "skills/dsh-release/scripts/release.mjs",
+        "line": 18,
+        "text": "import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "skills/dsh-release/scripts/release.mjs",
+        "line": 91,
+        "text": "return JSON.parse(readFileSync(path, 'utf8'))"
+      },
+      {
+        "file": "skills/dsh-release/scripts/release.mjs",
+        "line": 197,
+        "text": "buffer = readFileSync(join(dir, file.path))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "skills/dsh-release/scripts/release.mjs",
+        "line": 17,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "skills/dsh-release/scripts/release.mjs",
+        "line": 75,
+        "text": "const result = spawnSync(cmd, cmdArgs, {"
+      },
+      {
+        "file": "skills/dsh-release/scripts/release.mjs",
+        "line": 98,
+        "text": "const result = spawnSync('security', cmdArgs, { encoding: 'utf8', timeout: 10000 })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

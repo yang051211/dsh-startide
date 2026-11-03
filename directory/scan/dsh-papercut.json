@@ -1,0 +1,123 @@
+{
+  "name": "dsh-papercut",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-03T20:52:28.886Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/node/edge-tts.js",
+        "line": 88,
+        "text": "const ws = new WebSocket(endpoint(opts.skewSec || 0), {"
+      },
+      {
+        "file": "src/node/tts.js",
+        "line": 15,
+        "text": "r = await fetch(`${TTS_URL}${path}`, {headers: {'content-type': 'application/json'}, ...init});"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/copy-core.mjs",
+        "line": 7,
+        "text": "import {copyFileSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync} from 'node:fs';"
+      },
+      {
+        "file": "scripts/copy-core.mjs",
+        "line": 20,
+        "text": "rmSync(PYDIR, {recursive: true, force: true});"
+      },
+      {
+        "file": "scripts/copy-core.mjs",
+        "line": 21,
+        "text": "mkdirSync(PYDIR, {recursive: true});"
+      },
+      {
+        "file": "scripts/copy-core.mjs",
+        "line": 33,
+        "text": "let code = readFileSync(from, 'utf8');"
+      },
+      {
+        "file": "scripts/copy-core.mjs",
+        "line": 42,
+        "text": "writeFileSync(join(OUT, name), code, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 3,
+        "text": "// ⚠ 不要 import 任何 @deepseek-ai/*（会静默加载失败）。工具一律走 ctx.tools.register(纯对象)，"
+      },
+      {
+        "file": "src/index.js",
+        "line": 14,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "src/index.js",
+        "line": 42,
+        "text": "if (!ctx.tools || typeof ctx.tools.register !== 'function') {"
+      },
+      {
+        "file": "src/index.js",
+        "line": 43,
+        "text": "raw('papercut: ctx.tools unavailable — tools not registered')"
+      },
+      {
+        "file": "src/index.js",
+        "line": 49,
+        "text": "const disposer = ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/node/proc.js",
+        "line": 3,
+        "text": "import {spawn, spawnSync} from 'node:child_process';"
+      },
+      {
+        "file": "src/node/proc.js",
+        "line": 7,
+        "text": "const r = spawnSync(cmd, args, {encoding: 'utf8', maxBuffer: 64 * 1024 * 1024, ...opts});"
+      },
+      {
+        "file": "src/node/proc.js",
+        "line": 24,
+        "text": "const {spawn} = require('node:child_process');"
+      },
+      {
+        "file": "src/node/proc.js",
+        "line": 25,
+        "text": "const p = spawn(cmd, args, {cwd, env: env || process.env, stdio: ['ignore', 'pipe', 'pipe']});"
+      },
+      {
+        "file": "src/node/voice.js",
+        "line": 10,
+        "text": "import {execFileSync} from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

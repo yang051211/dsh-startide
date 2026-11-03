@@ -1,0 +1,95 @@
+{
+  "name": "dsh-wallpaper-fish",
+  "version": "1.5.0",
+  "scannedAt": "2026-11-03T20:52:23.468Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 15,
+        "text": "try { fetch(DEBUG_ROUTE + '?e=' + encodeURIComponent(text)).catch(() => {}) } catch (err) {}"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 224,
+        "text": "const setPath = (p) => fetch('/wps-state', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 229,
+        "text": "const resetPath = () => fetch('/wps-state', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 248,
+        "text": "fetch('/wps-state')"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 307,
+        "text": "fetch('/wps-state').then((r) => r.json()).then((i) => {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 8,
+        "text": "import { readFileSync, writeFileSync, unlinkSync, existsSync, readdirSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 44,
+        "text": "const parsed = JSON.parse(readFileSync(CFG_FILE, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 72,
+        "text": "const data = readFileSync(path)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 114,
+        "text": "if (existsSync(CFG_FILE)) unlinkSync(CFG_FILE)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 125,
+        "text": "writeFileSync(CFG_FILE, JSON.stringify({ path: next }, null, 2), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 217,
+        "text": "const child = spawn('powershell.exe', ['-NoProfile', '-STA', '-Command', script], { windowsHide: false })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

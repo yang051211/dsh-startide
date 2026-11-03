@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-notify-sounds",
-  "version": "1.9.3",
-  "scannedAt": "2026-11-02T23:01:07.389Z",
+  "version": "1.9.4",
+  "scannedAt": "2026-11-03T20:52:07.472Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,22 +13,22 @@
       },
       {
         "file": "lib/client.js",
-        "line": 1326,
-        "text": "fetch(FOCUS_PATH, { method: \"POST\" }).catch(() => {});"
+        "line": 1331,
+        "text": "fetch(`${FOCUS_PATH}?vis=${vis}`, { method: \"POST\" }).catch(() => {});"
       },
       {
         "file": "lib/client.js",
-        "line": 2036,
+        "line": 2041,
         "text": "fetch(`${SOUND_ROUTE}?file=${encodeURIComponent(file)}`, { method: \"HEAD\" }).then((response) => {"
       },
       {
         "file": "lib/client.js",
-        "line": 2291,
+        "line": 2296,
         "text": "const response = await fetch(UPDATE_CHECK_PATH + (force ? \"?force=1\" : \"\"), { method: \"GET\" });"
       },
       {
         "file": "lib/client.js",
-        "line": 2714,
+        "line": 2719,
         "text": "const response = await fetch(SOUND_ROUTE, { method: \"POST\", body: bytes });"
       }
     ]
@@ -43,22 +43,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 655,
+        "line": 721,
         "text": "const parsed = JSON.parse(readFileSync(manifest, \"utf8\"));"
       },
       {
         "file": "lib/index.js",
-        "line": 783,
+        "line": 849,
         "text": "mkdirSync(directory, { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 785,
+        "line": 851,
         "text": "writeFileSync(temporary, buffer);"
       },
       {
         "file": "lib/index.js",
-        "line": 794,
+        "line": 860,
         "text": "rmSync(temporary, { force: true });"
       }
     ]
@@ -77,7 +77,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 415,
+        "line": 458,
+        "text": "const child = spawn(\"explorer.exe\", [FOCUS_DEEP_LINK], { windowsHide: true, stdio: \"ignore\" });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 481,
         "text": "const child = spawn(command, args, { windowsHide: true, stdio: \"ignore\" });"
       }
     ]

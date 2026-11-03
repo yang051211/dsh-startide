@@ -1,0 +1,110 @@
+{
+  "name": "@iuuuuuuuu/agent-notes",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-03T20:52:31.700Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/board-responsive.js",
+        "line": 399,
+        "text": "fetch(DATA_URL, { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/board-route.js",
+        "line": 190,
+        "text": "fetch(location.href, { method: 'GET', cache: 'no-store' }).then(function (res) {"
+      },
+      {
+        "file": "lib/self-update.js",
+        "line": 57,
+        "text": "const response = await fetch(url, { signal });"
+      },
+      {
+        "file": "tools/sync-upstream.mjs",
+        "line": 159,
+        "text": "const response = await fetch(url);"
+      },
+      {
+        "file": "tools/sync-upstream.mjs",
+        "line": 174,
+        "text": "const response = await fetch(url);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/board-route.js",
+        "line": 16,
+        "text": "import { existsSync, readFileSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/board-route.js",
+        "line": 355,
+        "text": "const html = readFileSync(BOARD_HTML, 'utf8');"
+      },
+      {
+        "file": "lib/board-route.js",
+        "line": 425,
+        "text": "sendJson(res, 200, { path: rel, body: readFileSync(target, 'utf8'), root });"
+      },
+      {
+        "file": "lib/board.js",
+        "line": 11,
+        "text": "import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/board.js",
+        "line": 87,
+        "text": "text = readFileSync(full, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/notes.js",
+        "line": 13,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/notes.js",
+        "line": 135,
+        "text": "* **为什么需要**（实测）：`spawnSync('git', …)` 在 Windows 上是真的 fork 进程，"
+      },
+      {
+        "file": "lib/notes.js",
+        "line": 209,
+        "text": "const result = spawnSync('git', ['remote', 'get-url', 'origin'], {"
+      },
+      {
+        "file": "lib/notes.js",
+        "line": 298,
+        "text": "const result = spawnSync('git', ['worktree', 'list', '--porcelain'], {"
+      },
+      {
+        "file": "lib/notes.js",
+        "line": 640,
+        "text": "child = spawn(command, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

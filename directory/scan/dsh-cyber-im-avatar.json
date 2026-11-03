@@ -1,19 +1,19 @@
 {
   "name": "dsh-cyber-im-avatar",
-  "version": "0.8.0",
-  "scannedAt": "2026-11-02T23:01:27.158Z",
+  "version": "0.11.0",
+  "scannedAt": "2026-11-03T20:52:18.691Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 296,
+        "line": 329,
         "text": "return fetch(API + path, init).then(function (r) {"
       },
       {
         "file": "web/panel.js",
-        "line": 287,
+        "line": 320,
         "text": "return fetch(API + path, init).then(function (r) {"
       }
     ]
@@ -22,29 +22,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/app.js",
+        "line": 12,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/app.js",
+        "line": 766,
+        "text": "text = fs.readFileSync(file, \"utf8\");"
+      },
+      {
         "file": "lib/im.js",
         "line": 10,
         "text": "import fs from \"node:fs\";"
       },
       {
         "file": "lib/im.js",
-        "line": 91,
+        "line": 149,
         "text": "try { return JSON.parse(fs.readFileSync(ENV_PATH, \"utf8\")); } catch { return {}; }"
       },
       {
         "file": "lib/im.js",
-        "line": 213,
+        "line": 399,
         "text": "try { return JSON.parse(fs.readFileSync(path.join(dir, \"env.json\"), \"utf8\")); } catch { return {}; }"
-      },
-      {
-        "file": "lib/im.js",
-        "line": 413,
-        "text": "try { return JSON.parse(fs.readFileSync(path.join(dir, \"env.json\"), \"utf8\")); } catch { return {}; }"
-      },
-      {
-        "file": "lib/poller.js",
-        "line": 10,
-        "text": "import fs from \"node:fs\";"
       }
     ]
   },
@@ -70,6 +70,12 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [],
-  "setupHints": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 52,
+      "text": "前置：`lark-cli` / `wecom-cli` 已安装并登录；要用钉钉再装 `dws`（`npm i -g dingtalk-workspace-cli`）。"
+    }
+  ],
   "skippedEntries": []
 }

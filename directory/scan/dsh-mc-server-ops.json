@@ -1,0 +1,118 @@
+{
+  "name": "dsh-mc-server-ops",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-03T20:52:33.444Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 58,
+        "text": "const res = await fetch(ENDPOINT, { cache: \"no-store\", headers: { \"x-mc-ops-client\": \"1\" } })"
+      },
+      {
+        "file": "client.js",
+        "line": 117,
+        "text": "const res = await fetch(ENDPOINT, {"
+      },
+      {
+        "file": "client.js",
+        "line": 135,
+        "text": "const res = await fetch(ENDPOINT, {"
+      },
+      {
+        "file": "index.js",
+        "line": 63,
+        "text": "|Stop-Process|Invoke-Expression|\\biex\\b|Invoke-WebRequest|Invoke-RestMethod|\\bcurl\\b|\\bwget\\b|Start-Job|schtasks|\\breg\\b|\\bsc\\b|format|diskpart|shutdown|taskkil"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 2,
+        "text": "import { appendFileSync, copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 70,
+        "text": "const raw = readFileSync(paths.ownersFile, 'utf8').replace(/^\\uFEFF/, '')"
+      },
+      {
+        "file": "index.js",
+        "line": 289,
+        "text": "mkdirSync(dirname(out), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 290,
+        "text": "writeFileSync(out, JSON.stringify(payload, null, 2), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 472,
+        "text": "try { appendFileSync(paths.flipLog, new Date().toISOString() + ' flip ' + id + ' from=' + (current || 'unknown') + '\\n') } catch { }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 182,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 340,
+        "text": "ctx.effect(() => tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 103,
+        "text": "child = spawn('powershell.exe', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', paths.script, '-ServerDir', paths.serverDir, ...args], {"
+      },
+      {
+        "file": "index.js",
+        "line": 585,
+        "text": "child = spawn(process.execPath, argv, { windowsHide: true, cwd: paths.serverDir })"
+      },
+      {
+        "file": "ops/rcon.mjs",
+        "line": 15,
+        "text": "import { execFileSync, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "ops/rcon.mjs",
+        "line": 334,
+        "text": "const child = spawn(launch.javaExe, [], { cwd: dir, detached: true, stdio: 'ignore', shell: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

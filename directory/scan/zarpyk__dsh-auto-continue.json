@@ -1,0 +1,72 @@
+{
+  "name": "@zarpyk/dsh-auto-continue",
+  "version": "1.3.0",
+  "scannedAt": "2026-11-03T20:52:33.248Z",
+  "icon": "zarpyk__dsh-auto-continue.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 246,
+        "text": "const response = await fetch(resolveApiUrl(path), { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 251,
+        "text": "const response = await fetch(resolveApiUrl(`${API}/action`), {"
+      },
+      {
+        "file": "index.js",
+        "line": 370,
+        "text": "send(await route.fetch(new Request(url.toString(), { method: request.method, headers, body })))"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 28,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 290,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 302,
+        "text": "mkdirSync(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 303,
+        "text": "writeFileSync(temporary, text, { encoding: 'utf8' })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "sessions"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

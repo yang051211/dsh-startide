@@ -1,7 +1,7 @@
 {
   "name": "dsh-bilibili-video-summary",
-  "version": "0.2.0",
-  "scannedAt": "2026-10-26T10:05:58.372Z",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-03T20:52:10.042Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -47,7 +47,17 @@
       },
       {
         "file": "lib/index.js",
-        "line": 74,
+        "line": 33,
+        "text": "* `ctx.tools` / `ctx.skills` 都是服务，必须在这里先声明。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 35,
+        "text": "export const inject = [\"tools\", \"skills\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 84,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
@@ -79,12 +89,15 @@
   "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [],
+  "requiredServices": [
+    "skills",
+    "tools"
+  ],
   "setupHints": [
     {
       "file": "README.md",
-      "line": 58,
-      "text": "# faster-whisper（需要 pip install faster-whisper）"
+      "line": 54,
+      "text": "2. **本机 faster-whisper** —— 装了 `pip install faster-whisper` 就自动探测（连同模型缓存目录一起找），"
     }
   ],
   "skippedEntries": []

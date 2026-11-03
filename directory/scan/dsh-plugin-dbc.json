@@ -1,0 +1,73 @@
+{
+  "name": "dsh-plugin-dbc",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-03T20:52:29.096Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "npm/runtime.js",
+        "line": 2,
+        "text": "import { existsSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "npm/index.js",
+        "line": 5,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "npm/index.js",
+        "line": 15,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "npm/runtime.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "npm/runtime.js",
+        "line": 13,
+        "text": "const child = spawn(command, args, { shell: false, ...options });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 16,
+      "text": ".venv/bin/python -m pip install -r requirements.txt"
+    },
+    {
+      "file": "README.zh-CN.md",
+      "line": 16,
+      "text": ".venv/bin/python -m pip install -r requirements.txt"
+    }
+  ],
+  "skippedEntries": []
+}

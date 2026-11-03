@@ -1,7 +1,7 @@
 {
   "name": "dsh-omc-tui",
-  "version": "0.2.17",
-  "scannedAt": "2026-10-26T10:08:22.805Z",
+  "version": "0.2.18",
+  "scannedAt": "2026-11-03T20:52:28.720Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,7 +13,7 @@
       },
       {
         "file": "src/index.js",
-        "line": 4551,
+        "line": 4698,
         "text": "const res = await fetch(endpoint, {"
       }
     ]
@@ -53,7 +53,7 @@
     "evidence": [
       {
         "file": "cordis.patch.yml",
-        "line": 88,
+        "line": 86,
         "text": "name: '@deepseek-ai/dsh-mcp-client'"
       },
       {
@@ -83,13 +83,13 @@
     "evidence": [
       {
         "file": "cordis.patch.yml",
-        "line": 100,
+        "line": 97,
         "text": "const { spawn } = require('node:child_process');"
       },
       {
         "file": "cordis.patch.yml",
-        "line": 103,
-        "text": "            const child = spawn(npx, ['-y', 'chrome-devtools-mcp@1.7.0', '--browser-url=http://127.0.0.1:9222', '--no-performance-crux', '--no-usage-statistics'"
+        "line": 99,
+        "text": "            const child = spawn(process.execPath, [process.argv[1], '--browser-url=http://127.0.0.1:9222', '--no-performance-crux', '--no-usage-statistics'], { "
       },
       {
         "file": "src/browser-lease.js",
@@ -112,7 +112,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
+  "dependencies": 2,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

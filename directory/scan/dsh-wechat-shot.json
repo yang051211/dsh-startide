@@ -1,0 +1,72 @@
+{
+  "name": "dsh-wechat-shot",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-03T20:52:29.160Z",
+  "icon": "dsh-wechat-shot.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 251,
+        "text": "const shot = await captureShot((path, options) => fetch(path, options), hideWindow);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { mkdir, readdir, readFile, unlink } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 132,
+        "text": "await unlink(join(CAPTURE_DIR, name)).catch(() => {});"
+      },
+      {
+        "file": "index.js",
+        "line": 145,
+        "text": "await mkdir(CAPTURE_DIR, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 153,
+        "text": "const bytes = await readFile(file).catch((error) => {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 92,
+        "text": "execFile("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

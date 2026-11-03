@@ -1,23 +1,34 @@
 {
   "name": "dsh-rofm",
-  "version": "1.3.0",
-  "scannedAt": "2026-10-31T22:51:44.840Z",
+  "version": "1.4.2",
+  "scannedAt": "2026-11-03T20:52:06.951Z",
   "icon": "dsh-rofm.svg",
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tools/release.mjs",
+        "line": 41,
+        "text": "import https from 'node:https'"
+      },
+      {
+        "file": "tools/release.mjs",
+        "line": 671,
+        "text": "const request = https.request(url, { method, headers, rejectUnauthorized, timeout: timeoutMs }, (response) => {"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
       {
         "file": "engine/cli.mjs",
-        "line": 17,
+        "line": 26,
         "text": "import fs from 'node:fs'"
       },
       {
         "file": "engine/cli.mjs",
-        "line": 123,
+        "line": 157,
         "text": "text = fs.readFileSync(filePath, 'utf8')"
       },
       {
@@ -27,12 +38,12 @@
       },
       {
         "file": "engine/config.js",
-        "line": 385,
+        "line": 797,
         "text": "const text = fs.readFileSync(configPath, 'utf8')"
       },
       {
         "file": "engine/config.js",
-        "line": 414,
+        "line": 826,
         "text": "const parsed = JSON.parse(fs.readFileSync(fileConfigOrPath, 'utf8'))"
       }
     ]
@@ -41,13 +52,18 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/cross-chat-tool.js",
+        "line": 673,
+        "text": "/** ToolDefinition handed to `ctx.tools.register()`. */"
+      },
+      {
         "file": "lib/image-tool.js",
         "line": 17,
         "text": "* `ctx.tools.register()`."
       },
       {
         "file": "lib/image-tool.js",
-        "line": 244,
+        "line": 249,
         "text": "/** ToolDefinition handed to `ctx.tools.register()`. */"
       },
       {
@@ -57,13 +73,8 @@
       },
       {
         "file": "lib/memory-tool.js",
-        "line": 133,
+        "line": 448,
         "text": "/** ToolDefinition handed to `ctx.tools.register()`. */"
-      },
-      {
-        "file": "lib/plugin.js",
-        "line": 277,
-        "text": "this.ctx.effect(() => tools.register(this.memoryTool.definition()))"
       }
     ]
   },
@@ -71,14 +82,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "tools/selfcheck.mjs",
-        "line": 54,
-        "text": "import { spawnSync } from 'node:child_process'"
+        "file": "tools/privacy-check.mjs",
+        "line": 25,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "tools/release.mjs",
+        "line": 39,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "tools/release.mjs",
+        "line": 551,
+        "text": "child = spawn(command, args, { cwd, env, stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true })"
+      },
+      {
+        "file": "tools/release.mjs",
+        "line": 836,
+        "text": "const child = spawn(opener.command, opener.args, { stdio: 'ignore', windowsHide: false })"
       },
       {
         "file": "tools/selfcheck.mjs",
-        "line": 1381,
-        "text": "const result = spawnSync(process.execPath, ['--test'], {"
+        "line": 87,
+        "text": "import { spawnSync } from 'node:child_process'"
       }
     ]
   },

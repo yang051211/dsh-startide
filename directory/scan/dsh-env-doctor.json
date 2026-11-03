@@ -1,0 +1,114 @@
+{
+  "name": "dsh-env-doctor",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-03T20:52:30.723Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "docs/prototypes/report/sample-result.json",
+        "line": 82,
+        "text": "\"title\": \"curl / Invoke-WebRequest 的 TLS 栈\","
+      },
+      {
+        "file": "docs/prototypes/report/sample-result.json",
+        "line": 85,
+        "text": "\"detail\": \"curl 与 Invoke-WebRequest 都能完成 TLS 握手并取到内容；没有出现 schannel 凭据错误。\","
+      },
+      {
+        "file": "lib/checks.js",
+        "line": 281,
+        "text": "title: 'curl / Invoke-WebRequest 的 TLS 栈',"
+      },
+      {
+        "file": "lib/checks.js",
+        "line": 289,
+        "text": "command: '确认 C:\\\\Windows\\\\System32\\\\curl.exe 在不在；不在就用 powershell.exe -NoProfile -Command \"Invoke-WebRequest https://registry.npmjs.org/ -Method Head\" 代替',"
+      },
+      {
+        "file": "lib/probe.js",
+        "line": 249,
+        "text": "const response = await fetch(url, { method: 'HEAD', redirect: 'follow', signal: AbortSignal.timeout(timeoutMs) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "docs/prototypes/report/make-samples.mjs",
+        "line": 8,
+        "text": "import { readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "docs/prototypes/report/make-samples.mjs",
+        "line": 15,
+        "text": "const value = JSON.parse(readFileSync(join(HERE, 'sample-result.json'), 'utf8'))"
+      },
+      {
+        "file": "docs/prototypes/report/make-samples.mjs",
+        "line": 21,
+        "text": "writeFileSync(join(HERE, 'sample-report.md'), report.endsWith('\\n') ? report : `${report}\\n`)"
+      },
+      {
+        "file": "docs/prototypes/report/make-samples.mjs",
+        "line": 22,
+        "text": "writeFileSync(join(HERE, 'sample-summary.md'), `${render({}, value)[0].text}\\n`)"
+      },
+      {
+        "file": "docs/prototypes/report/verify.mjs",
+        "line": 13,
+        "text": "import { readFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 5,
+        "text": "#   dsh-env-doctor-tools 工具行：注册 dsh_env_doctor 工具（ctx.tools.register）"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 5,
+        "text": "//   2. 护栏：ctx.tools.guard 是单调护栏，只能 deny、不能被别的插件放宽 —— 这是机械保证；"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 24,
+        "text": "export const inject = ['tools', 'sandboxPolicy']"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 135,
+        "text": "const tools = ctx.tools"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 154,
+        "text": "tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sandboxPolicy",
+    "skills",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

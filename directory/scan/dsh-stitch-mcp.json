@@ -1,0 +1,80 @@
+{
+  "name": "dsh-stitch-mcp",
+  "version": "0.6.2",
+  "scannedAt": "2026-11-03T20:52:32.781Z",
+  "icon": "dsh-stitch-mcp.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 231,
+        "text": "undici = await import('undici');"
+      },
+      {
+        "file": "index.js",
+        "line": 352,
+        "text": "const initialized = await fetch(ENDPOINT, {"
+      },
+      {
+        "file": "index.js",
+        "line": 370,
+        "text": "const listed = await fetch(ENDPOINT, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 42,
+        "text": "y { const fs = process.getBuiltinModule('fs'), path = process.getBuiltinModule('path'), os = process.getBuiltinModule('os'), home = process.env.DSH_HOME || path"
+      },
+      {
+        "file": "index.js",
+        "line": 38,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 135,
+        "text": "const text = fs.readFileSync(CREDENTIALS_FILE, 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 162,
+        "text": "fs.mkdirSync(RUNTIME_DIR, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 169,
+        "text": "current = fs.readFileSync(CONFIG_FILE, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 34,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

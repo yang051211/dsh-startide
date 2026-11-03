@@ -1,41 +1,52 @@
 {
   "name": "dsh-cot-peek",
-  "version": "0.5.6",
-  "scannedAt": "2026-10-28T06:59:33.095Z",
+  "version": "0.5.9",
+  "scannedAt": "2026-11-03T20:52:06.431Z",
   "icon": "dsh-cot-peek.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 775,
+        "line": 863,
         "text": "const response = await fetch(PROXY_URL, {"
       },
       {
         "file": "client.js",
-        "line": 849,
+        "line": 939,
         "text": "const response = await fetch(chatCompletionsUrl(config.baseUrl), {"
       },
       {
         "file": "client.js",
-        "line": 1952,
+        "line": 1645,
+        "text": "fetch('/api/dsh-cot-peek/update', { method: 'GET' })"
+      },
+      {
+        "file": "client.js",
+        "line": 2093,
         "text": "const response = await fetch('/api/dsh-cot-peek' + path, {"
       },
       {
         "file": "client.js",
-        "line": 2502,
+        "line": 2666,
         "text": "const response = await fetch('/api/dsh-cot-peek' + path, {"
-      },
-      {
-        "file": "index.js",
-        "line": 177,
-        "text": "listResponse = await fetch(modelsUrl(baseUrl), { headers: listHeaders, signal: listController.signal })"
       }
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 65,
+        "text": "const parsed = JSON.parse(readFileSync(manifest, 'utf8'))"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,

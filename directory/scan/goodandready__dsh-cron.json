@@ -1,19 +1,19 @@
 {
   "name": "@goodandready/dsh-cron",
-  "version": "0.3.31",
-  "scannedAt": "2026-11-01T23:19:30.357Z",
+  "version": "0.3.37",
+  "scannedAt": "2026-11-03T20:52:03.141Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client-src/10-locales.js",
-        "line": 110,
+        "line": 116,
         "text": "'form.promptPlaceholderScript': 'curl -fsSL https://... || exit 1',"
       },
       {
         "file": "lib/client-src/10-locales.js",
-        "line": 352,
+        "line": 384,
         "text": "'form.promptPlaceholderScript': 'curl -fsSL https://... || exit 1', 'form.promptPlaceholderLlm': '精确描述智能体要做什么...',"
       },
       {
@@ -23,12 +23,12 @@
       },
       {
         "file": "lib/client-src/50-cron-screen-state.js",
-        "line": 321,
+        "line": 331,
         "text": "const res = await fetch('/dsh-cron/tasks?status=' + encodeURIComponent(tab) + '&query=' + encodeURIComponent(query), {"
       },
       {
         "file": "lib/client-src/50-cron-screen-state.js",
-        "line": 350,
+        "line": 360,
         "text": "const res = await fetch(url, { signal: controller ? controller.signal : undefined });"
       }
     ]
@@ -36,6 +36,16 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/cron-as-code.js",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/cron-as-code.js",
+        "line": 182,
+        "text": "const content = fs.readFileSync(filePath, 'utf8');"
+      },
       {
         "file": "lib/git-diff.js",
         "line": 10,
@@ -50,16 +60,6 @@
         "file": "lib/git-diff.js",
         "line": 221,
         "text": "await fs.unlink(tmpPath);"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 17,
-        "text": "import fs from 'node:fs';"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 155,
-        "text": "const pkgVersion = JSON.parse(fs.readFileSync(pkgUrl, 'utf8')).version || '0.2.29';"
       }
     ]
   },

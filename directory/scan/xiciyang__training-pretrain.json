@@ -1,0 +1,107 @@
+{
+  "name": "@xiciyang/training-pretrain",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-03T20:52:29.861Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/confirm.mjs",
+        "line": 10,
+        "text": "import { promises as fs } from 'node:fs'"
+      },
+      {
+        "file": "src/core.mjs",
+        "line": 10,
+        "text": "import { readFileSync, writeFileSync, existsSync, promises as fs } from 'node:fs'"
+      },
+      {
+        "file": "src/core.mjs",
+        "line": 47,
+        "text": "return readFileSync(file, 'utf8').split('\\n').filter((l) => l.trim()).map((l) => JSON.parse(l))"
+      },
+      {
+        "file": "src/core.mjs",
+        "line": 89,
+        "text": "const lineage = JSON.parse(readFileSync(lineageFile, 'utf8'))"
+      },
+      {
+        "file": "src/core.mjs",
+        "line": 91,
+        "text": "const shardsMeta = JSON.parse(readFileSync(shardsFile, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.mjs",
+        "line": 26,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "src/index.mjs",
+        "line": 137,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      },
+      {
+        "file": "src/output.mjs",
+        "line": 6,
+        "text": "* **坑 1（registration）**：`ctx.tools.register(tool)` 要求 output **同时**给出 `schema` 与 `render`；"
+      },
+      {
+        "file": "src/tools.mjs",
+        "line": 8,
+        "text": "* DSH 工具契约（**踩过的坑**）：`ctx.tools.register` 要求 `output { schema, render }`"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core.mjs",
+        "line": 13,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "src/serving-client.mjs",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/serving-client.mjs",
+        "line": 48,
+        "text": "this.child = spawn(process.execPath, [this.serverPath], { stdio: ['pipe', 'pipe', 'pipe'] })"
+      },
+      {
+        "file": "src/worker.mjs",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/worker.mjs",
+        "line": 70,
+        "text": "this.child = spawn('docker', this.args(), { stdio: ['pipe', 'pipe', 'pipe'] })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 6,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

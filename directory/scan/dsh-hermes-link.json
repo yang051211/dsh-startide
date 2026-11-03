@@ -1,0 +1,127 @@
+{
+  "name": "dsh-hermes-link",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-03T20:52:33.331Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/hermes-link-doctor.mjs",
+        "line": 132,
+        "text": "const res = await fetch(base + '/mcp/collab/doctor', authHeaders ? { headers: authHeaders } : undefined)"
+      },
+      {
+        "file": "bin/hermes-link-doctor.mjs",
+        "line": 143,
+        "text": "const res = await fetch(base + '/mcp/collab/metrics', authHeaders ? { headers: authHeaders } : undefined)"
+      },
+      {
+        "file": "bin/hermes-link-setup.mjs",
+        "line": 57,
+        "text": "const res = await fetch(dshUrl + '/mcp/collab/health')"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/hermes-link-consult-admin.mjs",
+        "line": 18,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/hermes-link-doctor.mjs",
+        "line": 24,
+        "text": "import { existsSync, readdirSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/hermes-link-install-hermes-plugin.mjs",
+        "line": 22,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/hermes-link-setup.mjs",
+        "line": 16,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/hermes-link-setup.mjs",
+        "line": 36,
+        "text": "try { packageVersion = JSON.parse(readFileSync(join(pkgRoot, 'package.json'), 'utf8')).version } catch { packageVersion = null }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 234,
+        "text": "export const inject = ['skills', 'webServer', 'sessions', 'agents', 'subagents', 'tokenMeter', 'workspaceRegistry', 'sessionTitle', 'sessionPersistence', 'tools"
+      },
+      {
+        "file": "index.mjs",
+        "line": 350,
+        "text": "if (ctx.tools && ctx.tools.register) {"
+      },
+      {
+        "file": "index.mjs",
+        "line": 433,
+        "text": "if (ctx.tools && ctx.tools.register) {"
+      },
+      {
+        "file": "index.mjs",
+        "line": 434,
+        "text": "ctx.tools.register(createListHermesSessionsTool({ importer, sessionMirror }))"
+      },
+      {
+        "file": "index.mjs",
+        "line": 435,
+        "text": "ctx.tools.register(createImportHermesSessionTool({ importer }))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/hermes-link-setup.mjs",
+        "line": 17,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "bin/hermes-link-setup.mjs",
+        "line": 48,
+        "text": "const r = spawnSync(c.cmd, [...c.args, 'plugins', 'list'], { cwd: c.cwd, encoding: 'utf8', timeout: 60000, shell: process.platform === 'win32' })"
+      },
+      {
+        "file": "bin/hermes-link-setup.mjs",
+        "line": 92,
+        "text": "    const r = spawnSync(hermesCli.cmd, [...hermesCli.args, 'plugins', 'enable', 'dsh-link', '--no-allow-tool-override'], { cwd: hermesCli.cwd, encoding: 'utf8',"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "sessionPersistence",
+    "sessionTitle",
+    "sessions",
+    "skills",
+    "subagents",
+    "tokenMeter",
+    "tools",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

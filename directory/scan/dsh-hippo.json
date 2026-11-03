@@ -1,0 +1,77 @@
+{
+  "name": "dsh-hippo",
+  "version": "1.0.7",
+  "scannedAt": "2026-11-03T20:52:32.222Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 37,
+        "text": "return fetch(url, { cache: 'no-store' }).then(function (res) {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1020,
+        "text": "fetch(API + '/add-source?dir=' + encodeURIComponent(dir), { method: 'POST', cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1075,
+        "text": "fetch(API + '/add-sessions', { method: 'POST', cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 43,
+        "text": "try { return JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8')) || {} } catch { return {} }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 361,
+        "text": "try { text = unzstdFrames(fs.readFileSync(file)) } catch { return null }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 407,
+        "text": "try { SESSION_MEMO = JSON.parse(fs.readFileSync(SESSION_CACHE, 'utf8')) || {} } catch { SESSION_MEMO = {} }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 413,
+        "text": "fs.mkdirSync(CACHE_DIR, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-remote-plugin",
-  "version": "0.8.3",
-  "scannedAt": "2026-10-30T23:38:20.570Z",
+  "version": "0.8.4",
+  "scannedAt": "2026-11-03T20:52:06.302Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -23,12 +23,12 @@
       },
       {
         "file": "gateway.cjs",
-        "line": 211,
+        "line": 212,
         "text": "const https = require('node:https')"
       },
       {
         "file": "gateway.cjs",
-        "line": 228,
+        "line": 229,
         "text": "    const request = https.request(url, { method: 'POST', ca, headers: { 'content-type': 'application/json', 'content-length': data.length }, timeout: 12000 }, r"
       }
     ]
@@ -93,13 +93,13 @@
       },
       {
         "file": "gateway.cjs",
-        "line": 775,
-        "text": "le,args)=>new Promise((resolve,reject)=>execFile(file,args,{windowsHide:true,timeout:5000,maxBuffer:64*1024,encoding:'utf8',env:{...process.env,LC_ALL:'C'}},(er"
+        "line": 544,
+        "text": "const { spawnSync } = require('node:child_process')"
       },
       {
         "file": "gateway.cjs",
-        "line": 910,
-        "text": "    try{worker=spawn(process.execPath,args,{cwd:process.cwd(),env,windowsHide:true,stdio:['ignore','inherit','inherit']})}catch(error){recordCrash('gateway','re"
+        "line": 597,
+        "text": "const result = spawnSync('powershell.exe', ['-NoProfile', '-NonInteractive', '-EncodedCommand', Buffer.from(script, 'utf16le').toString('base64')], {"
       }
     ]
   },

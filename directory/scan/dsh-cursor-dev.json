@@ -1,7 +1,7 @@
 {
   "name": "dsh-cursor-dev",
-  "version": "0.12.10",
-  "scannedAt": "2026-11-02T23:01:17.464Z",
+  "version": "0.12.11",
+  "scannedAt": "2026-11-03T20:52:14.903Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/attribution.js",
-        "line": 24,
-        "text": "import { existsSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
+        "file": "docs/test/2026-11-03/verify-runtime-copy.mjs",
+        "line": 3,
+        "text": "import { mkdtemp, readFile, writeFile, rm } from 'node:fs/promises';"
       },
       {
-        "file": "lib/attribution.js",
-        "line": 76,
-        "text": "raw = JSON.parse(readFileSync(path, 'utf8'));"
+        "file": "docs/test/2026-11-03/verify-runtime-copy.mjs",
+        "line": 11,
+        "text": "const manifest = JSON.parse(await readFile(join(target, 'package.json'), 'utf8'));"
       },
       {
-        "file": "lib/attribution.js",
-        "line": 117,
-        "text": "raw = existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : { version: 1 };"
+        "file": "docs/test/2026-11-03/verify-runtime-copy.mjs",
+        "line": 21,
+        "text": "const text = await readFile(join(source, 'test', name), 'utf8');"
       },
       {
-        "file": "lib/attribution.js",
-        "line": 139,
-        "text": "writeFileSync(temporary, `${JSON.stringify(raw, null, 2)}\\n`, 'utf8');"
+        "file": "docs/test/2026-11-03/verify-runtime-copy.mjs",
+        "line": 25,
+        "text": "await writeFile(path, rewritten);"
       },
       {
-        "file": "lib/changes.js",
-        "line": 10,
-        "text": "import { readdir, stat } from 'node:fs/promises';"
+        "file": "docs/test/2026-11-03/verify-runtime-copy.mjs",
+        "line": 36,
+        "text": "await rm(scratch, { recursive: true, force: true });"
       }
     ]
   },
@@ -87,6 +87,16 @@
     "hit": true,
     "evidence": [
       {
+        "file": "docs/test/2026-11-03/verify-runtime-copy.mjs",
+        "line": 7,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "docs/test/2026-11-03/verify-runtime-copy.mjs",
+        "line": 29,
+        "text": "const result = spawnSync(process.execPath, ['--test', '--test-force-exit', ...paths], {"
+      },
+      {
         "file": "lib/cli-runner.js",
         "line": 212,
         "text": "const handle = config.spawn({"
@@ -100,16 +110,6 @@
         "file": "lib/cursor-session.js",
         "line": 284,
         "text": "await this.#spawn(signal);"
-      },
-      {
-        "file": "lib/cursor-session.js",
-        "line": 306,
-        "text": "await this.#spawn(options.signal);"
-      },
-      {
-        "file": "lib/cursor-session.js",
-        "line": 325,
-        "text": "async #spawn(signal) {"
       }
     ]
   },

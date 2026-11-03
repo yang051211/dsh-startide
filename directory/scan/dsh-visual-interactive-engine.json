@@ -1,0 +1,76 @@
+{
+  "name": "dsh-visual-interactive-engine",
+  "version": "0.31.1",
+  "scannedAt": "2026-11-03T20:52:21.679Z",
+  "icon": "dsh-visual-interactive-engine.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.three.js",
+        "line": 1,
+        "text": "\"}),a=this.mimeType,o=this.responseType;fetch(s).then((e=>{if(200===e.status||0===e.status){if(0===e.status&&console.warn(\\\"THREE.FileLoader: HTTP Status 0 rece"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 8246,
+        "text": "const [fs,path,os,crypto]=await Promise.all([import('node:fs'),import('node:path'),import('node:os'),import('node:crypto')]);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 8248,
+        "text": "  try{snapshot=JSON.parse(fs.readFileSync(file,'utf8'));}catch(error){if(error.code!=='ENOENT')ctx.logger?.warn('VIE mode preferences could not be read; using c"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 8250,
+        "text": "0000)return [];const data=JSON.parse(fs.readFileSync(p,'utf8'));return data.v===1&&Array.isArray(data.entries)?data.entries.slice(-4):[];},save(id,entries){fs.m"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 8251,
+        "text": "emporary=file+'.'+process.pid+'.tmp';fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(temporary,JSON.stringify(value)+'\\n');fs.renameSync(temp"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 8357,
+        "text": "export const inject=['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 8526,
+        "text": "  const register=implementation=>ctx.tools.register({...implementation,execute:async(...args)=>{const result=await implementation.execute(...args);if(result.met"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js",
+    "lib/client.three.js",
+    "lib/index.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

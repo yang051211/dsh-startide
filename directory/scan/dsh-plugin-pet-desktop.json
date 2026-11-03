@@ -1,0 +1,111 @@
+{
+  "name": "dsh-plugin-pet-desktop",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-03T20:52:33.763Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "app/main.js",
+        "line": 6,
+        "text": "const http = require(\"node:http\");"
+      },
+      {
+        "file": "app/main.js",
+        "line": 147,
+        "text": "const req = http.request("
+      },
+      {
+        "file": "lib/launcher.mjs",
+        "line": 17,
+        "text": "import { get as httpsGet } from 'node:https'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "app/main.js",
+        "line": 5,
+        "text": "const fs = require(\"node:fs\");"
+      },
+      {
+        "file": "app/main.js",
+        "line": 60,
+        "text": "return { ...DEFAULT_CONFIG, ...JSON.parse(fs.readFileSync(CONFIG_FILE, \"utf8\")) };"
+      },
+      {
+        "file": "app/main.js",
+        "line": 69,
+        "text": "fs.mkdirSync(CONFIG_DIR, { recursive: true });"
+      },
+      {
+        "file": "app/main.js",
+        "line": 70,
+        "text": "fs.writeFileSync(CONFIG_FILE, JSON.stringify(config, null, 2), \"utf8\");"
+      },
+      {
+        "file": "app/main.js",
+        "line": 100,
+        "text": "const lines = fs.readFileSync(file, \"utf8\").split(/\\r?\\n/u);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 21,
+        "text": "const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 124,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "app/main.js",
+        "line": 7,
+        "text": "const { spawn } = require(\"node:child_process\");"
+      },
+      {
+        "file": "app/main.js",
+        "line": 171,
+        "text": "const child = spawn(process.env.ComSpec || \"cmd.exe\", [\"/c\", cmd, \"web\", \"--no-open\"], {"
+      },
+      {
+        "file": "lib/launcher.mjs",
+        "line": 16,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/launcher.mjs",
+        "line": 111,
+        "text": "const r = spawnSync(bin, args, { stdio: 'pipe' })"
+      },
+      {
+        "file": "lib/launcher.mjs",
+        "line": 198,
+        "text": "child = spawn(exe, [APP_DIR], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

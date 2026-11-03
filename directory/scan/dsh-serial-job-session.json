@@ -1,0 +1,101 @@
+{
+  "name": "dsh-serial-job-session",
+  "version": "5.1.4",
+  "scannedAt": "2026-11-03T20:52:13.971Z",
+  "icon": "dsh-serial-job-session.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/client.js",
+        "line": 201,
+        "text": "const response = await fetch(url, init)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/index.js",
+        "line": 25,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 177,
+        "text": "const raw = readFileSync(SKILL_PATH, 'utf8')"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 181,
+        "text": "version = readFileSync(VERSION_PATH, 'utf8').trim()"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 260,
+        "text": "const raw = JSON.parse(readFileSync(settingsPath(), 'utf8'))"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 276,
+        "text": "mkdirSync(path.dirname(target), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/index.js",
+        "line": 750,
+        "text": "* @returns {Record<string, unknown>} tool definition passed to `ctx.tools.register`."
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 926,
+        "text": "scope.effect(() => scope.tools.register(buildTool(scope)))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/check-pack.mjs",
+        "line": 15,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 26,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 355,
+        "text": "child = spawn(executable, argv, {"
+      },
+      {
+        "file": "dsh/smoke-stdin.mjs",
+        "line": 17,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "dsh/smoke-stdin.mjs",
+        "line": 45,
+        "text": "const child = spawn(interpreter, [CLI, 'init', '--instance', instance, '--input', '-', '--dry-run'], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,107 @@
+{
+  "name": "dsh-inline-plugin",
+  "version": "0.3.6",
+  "scannedAt": "2026-11-03T20:52:28.902Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 114,
+        "text": "const fs = await import('node:fs/promises')"
+      },
+      {
+        "file": "index.js",
+        "line": 131,
+        "text": "await fs.mkdir(path.dirname(target), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 132,
+        "text": "await fs.writeFile(target, text, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 144,
+        "text": "const fs = await import('node:fs/promises')"
+      },
+      {
+        "file": "index.js",
+        "line": 151,
+        "text": "const txt = await fs.readFile(file, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 243,
+        "text": "hasCtxTools: !!(ctx && ctx.tools),"
+      },
+      {
+        "file": "index.js",
+        "line": 244,
+        "text": "hasRegister: !!(ctx && ctx.tools && typeof ctx.tools.register === 'function'),"
+      },
+      {
+        "file": "index.js",
+        "line": 253,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 161,
+        "text": "const { spawn } = await import('node:child_process')"
+      },
+      {
+        "file": "index.js",
+        "line": 174,
+        "text": "const ps = spawn('powershell', ["
+      },
+      {
+        "file": "index.js",
+        "line": 196,
+        "text": "try { child = spawn(cmd, args, { stdio: ['pipe', 'ignore', 'ignore'] }) }"
+      },
+      {
+        "file": "index.js",
+        "line": 211,
+        "text": "const { spawn } = await import('node:child_process')"
+      },
+      {
+        "file": "index.js",
+        "line": 219,
+        "text": "const child = spawn(cmd, args, { stdio: 'ignore', detached: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

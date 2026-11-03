@@ -1,0 +1,51 @@
+{
+  "name": "dsh-commandcode",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-03T20:52:23.370Z",
+  "icon": "dsh-commandcode.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/adapter.js",
+        "line": 69,
+        "text": "http1Dispatcher ??= import('undici')"
+      },
+      {
+        "file": "lib/adapter.js",
+        "line": 313,
+        "text": "response = await fetch(`${connection.baseURL}/alpha/generate`, init)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 241,
+        "text": "hostPath => ctx.get('fs')?.processPathFromHostPath(hostPath),"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

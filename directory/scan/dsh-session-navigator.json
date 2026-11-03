@@ -1,29 +1,29 @@
 {
   "name": "dsh-session-navigator",
-  "version": "1.1.1",
-  "scannedAt": "2026-10-31T22:51:45.142Z",
+  "version": "1.1.2",
+  "scannedAt": "2026-11-03T20:52:12.319Z",
   "icon": "dsh-session-navigator.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 2166,
+        "line": 2178,
         "text": "const response = await fetch(API + path, {"
       },
       {
         "file": "lib/client.js",
-        "line": 2205,
+        "line": 2217,
         "text": "const response = await fetch(API + path, {"
       },
       {
         "file": "lib/client.js",
-        "line": 11564,
+        "line": 11588,
         "text": "await fetch(API + \"/theme\", {"
       },
       {
         "file": "lib/index.js",
-        "line": 1489,
+        "line": 1528,
         "text": "* module's existing `fetch(\"/session-navigator/api/…\")` calls work unchanged."
       }
     ]
@@ -31,6 +31,21 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/component/borrow.js",
+        "line": 30,
+        "text": "import { readdir, readFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/component/borrow.js",
+        "line": 111,
+        "text": "* @returns {Promise<import(\"node:fs\").Dirent[] | null>}"
+      },
+      {
+        "file": "lib/component/borrow.js",
+        "line": 135,
+        "text": "text = await readFile(join(root, name), \"utf8\");"
+      },
       {
         "file": "lib/component/downloader.js",
         "line": 27,
@@ -40,21 +55,6 @@
         "file": "lib/component/downloader.js",
         "line": 28,
         "text": "import { mkdir, readFile, rename, rm, stat, writeFile } from \"node:fs/promises\";"
-      },
-      {
-        "file": "lib/component/downloader.js",
-        "line": 82,
-        "text": "const parsed = JSON.parse(await readFile(file, \"utf8\"));"
-      },
-      {
-        "file": "lib/component/downloader.js",
-        "line": 94,
-        "text": "await mkdir(dirname(file), { recursive: true });"
-      },
-      {
-        "file": "lib/component/downloader.js",
-        "line": 96,
-        "text": "await writeFile(temp, `${JSON.stringify(meta, null, 2)}\\n`, \"utf8\");"
       }
     ]
   },
@@ -87,7 +87,7 @@
       },
       {
         "file": "lib/component/install.js",
-        "line": 243,
+        "line": 260,
         "text": "const child = spawn(command, args, { stdio: \"ignore\", windowsHide: true });"
       }
     ]

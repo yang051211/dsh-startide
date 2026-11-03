@@ -1,0 +1,77 @@
+{
+  "name": "@zhujiuyi/dsh-balance",
+  "version": "0.2.5",
+  "scannedAt": "2026-11-03T20:52:26.868Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 392,
+        "text": "const response = await fetch(`${SNAPSHOT_PATH}${suffix}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/opendesign.mjs",
+        "line": 45,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "plugin/opendesign.mjs",
+        "line": 170,
+        "text": "const read = typeof io.readFile === 'function' ? io.readFile : (target) => readFileSync(target, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/index.mjs",
+        "line": 6,
+        "text": "* `ctx.tools.register`."
+      },
+      {
+        "file": "plugin/index.mjs",
+        "line": 36,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "plugin/index.mjs",
+        "line": 137,
+        "text": "const tools = ctx.tools"
+      },
+      {
+        "file": "plugin/index.mjs",
+        "line": 624,
+        "text": "ctx.effect(() => tools.register(balanceCheckTool), 'balance-meter: balance_check')"
+      },
+      {
+        "file": "plugin/index.mjs",
+        "line": 625,
+        "text": "ctx.effect(() => tools.register(setEndpointTool), 'balance-meter: balance_set_endpoint')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

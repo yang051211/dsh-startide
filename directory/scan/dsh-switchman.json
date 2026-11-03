@@ -1,7 +1,7 @@
 {
   "name": "dsh-switchman",
-  "version": "1.8.1",
-  "scannedAt": "2026-10-26T10:05:41.307Z",
+  "version": "1.9.0",
+  "scannedAt": "2026-11-03T20:52:12.525Z",
   "icon": "dsh-switchman.svg",
   "network": {
     "hit": true,
@@ -22,29 +22,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "host/context-watch.js",
-        "line": 52,
-        "text": "import { appendFileSync, mkdirSync, writeFileSync } from \"node:fs\";"
+        "file": "host/context-trim/fork.js",
+        "line": 34,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from \"node:fs\";"
       },
       {
-        "file": "host/context-watch.js",
-        "line": 506,
-        "text": "mkdirSync(dirname(path), { recursive: true });"
+        "file": "host/context-trim/fork.js",
+        "line": 83,
+        "text": "const parsed = JSON.parse(readFileSync(file, \"utf8\"));"
       },
       {
-        "file": "host/context-watch.js",
-        "line": 507,
-        "text": "writeFileSync("
+        "file": "host/context-trim/fork.js",
+        "line": 119,
+        "text": "mkdirSync(dir, { recursive: true });"
       },
       {
-        "file": "host/context-watch.js",
-        "line": 557,
-        "text": "appendFileSync("
+        "file": "host/context-trim/fork.js",
+        "line": 122,
+        "text": "writeFileSync(tmp, JSON.stringify({ version: FORK_LINKS_VERSION, links }));"
       },
       {
-        "file": "host/context-watch.js",
-        "line": 801,
-        "text": "appendFileSync("
+        "file": "host/context-trim/index.js",
+        "line": 27,
+        "text": "import { appendFileSync, mkdirSync, renameSync, statSync } from \"node:fs\";"
       }
     ]
   },
@@ -52,29 +52,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "host/context-trim/index.js",
+        "line": 641,
+        "text": "ctx.tools?.register?.({"
+      },
+      {
+        "file": "host/context-trim/index.js",
+        "line": 677,
+        "text": "ctx.tools?.register?.({"
+      },
+      {
         "file": "host/context-watch.js",
-        "line": 968,
+        "line": 988,
         "text": "// bare ctx.tools.register does not run defineTool's DSL compilation,"
       },
       {
         "file": "host/context-watch.js",
-        "line": 976,
+        "line": 996,
         "text": "ctx.tools?.register?.({"
       },
       {
         "file": "host/teams.js",
         "line": 447,
         "text": "*  Registration uses the register-level shape (bare ctx.tools.register runs"
-      },
-      {
-        "file": "host/teams.js",
-        "line": 452,
-        "text": "if (typeof ctx.tools?.register !== \"function\") throw new Error(\"the tools registry is unavailable\");"
-      },
-      {
-        "file": "host/teams.js",
-        "line": 453,
-        "text": "const dispose = ctx.tools.register({"
       }
     ]
   },

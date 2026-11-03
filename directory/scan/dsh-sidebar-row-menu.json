@@ -1,0 +1,106 @@
+{
+  "name": "dsh-sidebar-row-menu",
+  "version": "1.4.2",
+  "scannedAt": "2026-11-03T20:52:14.171Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 523,
+        "text": "const response = await fetch(OPEN_ENDPOINT, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 897,
+        "text": "fetch(APPS_ROUTE, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 914,
+        "text": "return fetch(OPEN_ROUTE, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1042,
+        "text": "return fetch(DELETE_ENDPOINT, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1056,
+        "text": "return fetch(WORKSPACE_DELETE_ENDPOINT, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/launch.js",
+        "line": 10,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/host/paths.js",
+        "line": 5,
+        "text": "import { statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/host/session-delete.js",
+        "line": 12,
+        "text": "import { readdir, rm, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/host/session-delete.js",
+        "line": 125,
+        "text": "await rm(directory, { recursive: true, force: true });"
+      },
+      {
+        "file": "scripts/marketplace-preflight.mjs",
+        "line": 1,
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/launch.js",
+        "line": 9,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/host/launch.js",
+        "line": 23,
+        "text": "const child = spawn(command, args, {"
+      },
+      {
+        "file": "lib/host/launch.js",
+        "line": 60,
+        "text": "const result = spawnSync(regExe, ['query', 'HKCR\\\\vscode\\\\shell\\\\open\\\\command', '/ve'], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionPersistence",
+    "sessionQuery",
+    "sessions",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

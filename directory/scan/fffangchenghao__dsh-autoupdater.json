@@ -1,0 +1,114 @@
+{
+  "name": "@fffangchenghao/dsh-autoupdater",
+  "version": "0.6.6",
+  "scannedAt": "2026-11-03T20:52:09.829Z",
+  "icon": "fffangchenghao__dsh-autoupdater.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "apply-update.mjs",
+        "line": 213,
+        "text": "const res = await fetch(`http://127.0.0.1:${port}/`, { signal: AbortSignal.timeout(5000) });"
+      },
+      {
+        "file": "client.js",
+        "line": 407,
+        "text": "const r = await fetch('/api/autoupdater/config');"
+      },
+      {
+        "file": "client.js",
+        "line": 425,
+        "text": "const r = await fetch('/api/autoupdater/config', {"
+      },
+      {
+        "file": "client.js",
+        "line": 446,
+        "text": "const r = await fetch('/api/autoupdater/run-now', { method: 'POST' });"
+      },
+      {
+        "file": "main.js",
+        "line": 445,
+        "text": "import('undici').then((u) => { globalThis.__undiciAgentCtor = u.Agent; }).catch(() => {});"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "apply-update.mjs",
+        "line": 11,
+        "text": "import { readFileSync, existsSync, rmSync, appendFileSync, mkdirSync, cpSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "apply-update.mjs",
+        "line": 22,
+        "text": "mkdirSync(stateDir, { recursive: true });"
+      },
+      {
+        "file": "apply-update.mjs",
+        "line": 23,
+        "text": "appendFileSync(logPath, `${new Date().toISOString()} ${msg}\\n`);"
+      },
+      {
+        "file": "apply-update.mjs",
+        "line": 27,
+        "text": "try { appendFileSync(historyPath, JSON.stringify({ at: new Date().toISOString(), ...obj }) + '\\n'); } catch {}"
+      },
+      {
+        "file": "apply-update.mjs",
+        "line": 36,
+        "text": "const instruction = JSON.parse(readFileSync(pendingPath, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "apply-update.mjs",
+        "line": 12,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "apply-update.mjs",
+        "line": 75,
+        "text": "const r = spawnSync(npmBin, ['install', '-g', targetSpec], { encoding: 'utf8', timeout: 900000 });"
+      },
+      {
+        "file": "apply-update.mjs",
+        "line": 117,
+        "text": "const r = spawnSync('grep', ['-rl', '--include=*.js', name, nm], { encoding: 'utf8' });"
+      },
+      {
+        "file": "apply-update.mjs",
+        "line": 179,
+        "text": "const r = spawn('sudo', ['-n', 'systemctl', 'restart', unit], { stdio: 'ignore' });"
+      },
+      {
+        "file": "apply-update.mjs",
+        "line": 192,
+        "text": "const child = spawn(argv[1], argv.slice(2), { detached: true, stdio: 'ignore' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "pluginManager",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,74 @@
+{
+  "name": "dsh-gpt-link",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-03T20:52:21.837Z",
+  "icon": "dsh-gpt-link.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/index.js",
+        "line": 259,
+        "text": "const response = await fetch('/api/codex-auth', {"
+      },
+      {
+        "file": "client/index.js",
+        "line": 269,
+        "text": "const response = await fetch('/api/codex-auth', {"
+      },
+      {
+        "file": "client/index.js",
+        "line": 506,
+        "text": "const response = await fetch('/api/codex-quota', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cli.js",
+        "line": 1,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 32,
+        "text": "text = await readFile(path, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/auth/flow.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/auth/flow.js",
+        "line": 30,
+        "text": "const child = spawn(command, args, { stdio: 'ignore' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "authorization",
+    "connection",
+    "credentials"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

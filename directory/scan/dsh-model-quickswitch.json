@@ -1,0 +1,69 @@
+{
+  "name": "dsh-model-quickswitch",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-03T20:52:24.466Z",
+  "icon": "dsh-model-quickswitch.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 211,
+        "text": "const response = await deps.fetch(presetsUrl(deps.baseURI()), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1212,
+        "text": "fetch: (...args) => window.fetch(...args),"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "* - Registered through ctx.connection.fetch (the same channel as the official"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/store.js",
+        "line": 19,
+        "text": "import { readFile, writeFile, rename, mkdir } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 95,
+        "text": "text = await readFile(file, 'utf8')"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 136,
+        "text": "await mkdir(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 143,
+        "text": "await writeFile(temp, `${JSON.stringify(doc, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

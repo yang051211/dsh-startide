@@ -1,0 +1,59 @@
+{
+  "name": "dsh-task-planning-preset",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-03T20:52:23.701Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 54,
+        "text": "#     `readFileSync(new URL('PROMPT.md', baseUrl))` → ENOENT: open"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 70,
+        "text": " prefix: !!js \"process.getBuiltinModule('node:fs').readFileSync(process.getBuiltinModule('node:module').createRequire(new URL('noop.js', baseUrl)).resolve('dsh-"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugins/token-estimator/index.js",
+        "line": 60,
+        "text": "export const inject = [\"tools\"];"
+      },
+      {
+        "file": "plugins/token-estimator/index.js",
+        "line": 520,
+        "text": "ctx.tools.register(ESTIMATE_TOKENS_TOOL);"
+      },
+      {
+        "file": "plugins/token-estimator/index.js",
+        "line": 521,
+        "text": "ctx.tools.register(createUsageReportTool(ctx));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

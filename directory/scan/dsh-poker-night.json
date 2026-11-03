@@ -1,0 +1,74 @@
+{
+  "name": "dsh-poker-night",
+  "version": "0.6.1",
+  "scannedAt": "2026-11-03T20:52:27.135Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 760,
+        "text": "return fetch(API + \"/\" + method, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 402,
+        "text": "import http from \"node:http\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 877,
+        "text": "const res = await fetch(url, Object.assign({ signal: AbortSignal.timeout(timeoutMs) }, options || {}));"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 261,
+        "text": "import { existsSync, mkdirSync, readFileSync, statSync, unlinkSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 278,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 318,
+        "text": "const bytes = readFileSync(file);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 339,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 340,
+        "text": "writeFileSync(join(dir, id), rec.bytes);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

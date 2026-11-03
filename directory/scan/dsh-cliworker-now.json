@@ -1,11 +1,26 @@
 {
   "name": "dsh-cliworker-now",
-  "version": "0.8.3",
-  "scannedAt": "2026-10-26T10:06:29.431Z",
+  "version": "0.8.6",
+  "scannedAt": "2026-11-03T20:52:12.844Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/cli-native-capabilities.mjs",
+        "line": 28,
+        "text": "/** Grok's own web search and fetch (fetch is off unless enabled; grok 1.0.62 docs). */"
+      },
+      {
+        "file": "lib/host-fetch.mjs",
+        "line": 1,
+        "text": "import { Agent, request } from 'node:https'"
+      },
+      {
+        "file": "lib/host-fetch.mjs",
+        "line": 53,
+        "text": "return proxy ? proxiedFetch(target, init, proxy) : globalThis.fetch(input, init)"
+      },
       {
         "file": "lib/http-context-relay.mjs",
         "line": 4,
@@ -15,21 +30,6 @@
         "file": "lib/http-context-relay.mjs",
         "line": 5,
         "text": "import { request as httpRequest, Agent as HttpAgent } from 'node:http'"
-      },
-      {
-        "file": "lib/http-context-relay.mjs",
-        "line": 6,
-        "text": "import { request as httpsRequest, Agent as HttpsAgent } from 'node:https'"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 21,
-        "text": "import { createServer } from \"node:http\";"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 6242,
-        "text": "const response = await fetch(connection.url, {"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/grok-durable-context.mjs",
-        "line": 1,
-        "text": "import { constants, closeSync, fstatSync, lstatSync, openSync, readSync, realpathSync } from 'node:fs'"
+        "file": "lib/cli-native-capabilities.mjs",
+        "line": 5,
+        "text": "import { existsSync, readFileSync, statSync } from 'node:fs'"
       },
       {
-        "file": "lib/hermes-observer.mjs",
-        "line": 2,
-        "text": "import { constants } from 'node:fs'"
+        "file": "lib/cli-native-capabilities.mjs",
+        "line": 6,
+        "text": "import { lstat, mkdir, readdir, readFile, readlink, realpath, rename, rm, symlink } from 'node:fs/promises'"
       },
       {
-        "file": "lib/hermes-observer.mjs",
-        "line": 3,
-        "text": "import { chmod, lstat, mkdtemp, open, realpath, rm, writeFile } from 'node:fs/promises'"
+        "file": "lib/cli-native-capabilities.mjs",
+        "line": 55,
+        "text": "await mkdir(nativePath, { recursive: true, mode: 0o700 })"
       },
       {
-        "file": "lib/hermes-observer.mjs",
-        "line": 83,
-        "text": "await writeFile(path, '', { flag: 'wx', mode: 0o600 })"
+        "file": "lib/cli-native-capabilities.mjs",
+        "line": 65,
+        "text": "await rm(privatePath, { force: true })"
       },
       {
-        "file": "lib/hermes-observer.mjs",
-        "line": 85,
-        "text": "} catch (error) { await rm(directory, { recursive: true, force: true }); throw error }"
+        "file": "lib/cli-native-capabilities.mjs",
+        "line": 68,
+        "text": "else await rm(privatePath, { recursive: true, force: true })"
       }
     ]
   },
@@ -68,28 +68,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 14703,
+        "line": 16314,
         "text": "const dispose = this.agent.ctx.tools.register({"
       },
       {
         "file": "lib/index.js",
-        "line": 25175,
+        "line": 31376,
         "text": " \"enter\" || signal.aborted || agent.session.header.origin === \"subagent\" || !ctx.tools.get(\"cliworker_start\", assembleContextFor(agent).scope)) return decision;"
       },
       {
         "file": "lib/index.js",
-        "line": 26109,
+        "line": 32395,
         "text": "const resetPresentation = child.ctx.tools.presentAs(\"native\");"
       },
       {
         "file": "lib/index.js",
-        "line": 26113,
+        "line": 32399,
         "text": "const schemas = child.ctx.tools.schemas(child);"
       },
       {
         "file": "lib/index.js",
-        "line": 26146,
-        "text": "execute: async (call) => withinCliTool(worker.runId, async () => child.ctx.tools.execute({"
+        "line": 32449,
+        "text": "return await withinCliTool(worker.runId, async () => child.ctx.tools.execute({"
       }
     ]
   },
@@ -98,27 +98,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 26,
-        "text": "import { execFile } from \"node:child_process\";"
+        "line": 18,
+        "text": "import { execFile, execFileSync } from \"node:child_process\";"
       },
       {
         "file": "lib/index.js",
-        "line": 4001,
+        "line": 4302,
         "text": "const child = backend.spawn({"
       },
       {
         "file": "lib/index.js",
-        "line": 4169,
+        "line": 4470,
         "text": "const child = backend.spawn({"
       },
       {
         "file": "lib/index.js",
-        "line": 4697,
+        "line": 5008,
         "text": "const child = backend.spawn({"
       },
       {
         "file": "lib/index.js",
-        "line": 8271,
+        "line": 9263,
         "text": "const child = input.backend.spawn({"
       }
     ]
@@ -131,6 +131,7 @@
   "minifiedFiles": [
     "lib/client.js",
     "lib/types/client/account-terminal-css.js",
+    "lib/types/client/general-settings.js",
     "runtime-host/dsh-client-ui-chat/lib/client.js",
     "runtime-host/dsh-client-ui-conversation/lib/client.js",
     "runtime-host/dsh-client-ui-subagent/lib/client.js"

@@ -1,0 +1,62 @@
+{
+  "name": "dsh-chat-loli",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-03T20:52:33.256Z",
+  "icon": "dsh-chat-loli.webp",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 24,
+        "text": "# 全局工具集合整体 deny 掉（agent.ctx.tools.restrict，只对那一个 agent 生效）。"
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 19,
+        "text": "* 名字清单在运行时用 ctx.tools.schemas()（省略 scope = 全局视图）现算，"
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 27,
+        "text": "export const inject = ['tools', 'agentPresets', 'agents']"
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 77,
+        "text": "deny = ctx.tools"
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 89,
+        "text": "agent.ctx.tools.restrict({ deny })"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentPresets",
+    "agents",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

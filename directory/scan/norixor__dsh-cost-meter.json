@@ -1,0 +1,71 @@
+{
+  "name": "@norixor/dsh-cost-meter",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-03T20:52:22.172Z",
+  "icon": "norixor__dsh-cost-meter.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 40,
+        "text": "const getSnapshot = () => fetch(API, { cache: 'no-store' }).then((res) => res.json())"
+      },
+      {
+        "file": "client.js",
+        "line": 41,
+        "text": "const postAction = (body) => fetch(API, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "balance.js",
+        "line": 16,
+        "text": "import { chmodSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "balance.js",
+        "line": 163,
+        "text": "const raw = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "balance.js",
+        "line": 172,
+        "text": "mkdirSync(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "balance.js",
+        "line": 174,
+        "text": "writeFileSync(temp, JSON.stringify({ version: FILE_VERSION, accounts }), { mode: 0o600 })"
+      },
+      {
+        "file": "catalog.js",
+        "line": 9,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

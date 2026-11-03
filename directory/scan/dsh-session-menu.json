@@ -1,7 +1,7 @@
 {
   "name": "dsh-session-menu",
-  "version": "0.1.2",
-  "scannedAt": "2026-10-26T10:05:06.023Z",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-03T20:52:17.978Z",
   "icon": "dsh-session-menu.svg",
   "network": {
     "hit": false,
@@ -12,17 +12,17 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 7,
+        "line": 8,
         "text": "import { access, readdir, rm, stat } from \"node:fs/promises\";"
       },
       {
         "file": "index.js",
-        "line": 428,
+        "line": 681,
         "text": "const fs = this.ctx.get?.(\"fs\");"
       },
       {
         "file": "index.js",
-        "line": 546,
+        "line": 799,
         "text": "await rm(directory, { recursive: true, force: true });"
       }
     ]
@@ -36,18 +36,28 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 6,
-        "text": "import { execFile } from \"node:child_process\";"
+        "line": 7,
+        "text": "import { execFile, spawn } from \"node:child_process\";"
       },
       {
         "file": "index.js",
-        "line": 155,
+        "line": 251,
         "text": "execFile("
       },
       {
         "file": "index.js",
-        "line": 181,
+        "line": 306,
+        "text": "execFile("
+      },
+      {
+        "file": "index.js",
+        "line": 342,
         "text": "execFile(\"/usr/bin/open\", [\"-a\", application, target], { timeout: 8000 }, (error, _stdout, stderr) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 417,
+        "text": "child = spawn(invocation.command, invocation.args, {"
       }
     ]
   },

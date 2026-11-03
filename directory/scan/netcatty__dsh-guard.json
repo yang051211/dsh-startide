@@ -1,0 +1,105 @@
+{
+  "name": "@netcatty/dsh-guard",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-03T20:52:26.671Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 314,
+        "text": "const response = await fetch('/api/dsh-guard/state', { headers: { accept: 'application/json' } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 326,
+        "text": "const response = await fetch(path, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 571,
+        "text": "const response = await fetch('/api/dsh-guard/pending?id=' + encodeURIComponent(CLIENT_ID), { headers: { accept: 'application/json' } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 583,
+        "text": "const beat = () => { fetch('/api/dsh-guard/hello?id=' + encodeURIComponent(CLIENT_ID), { method: 'POST' }).catch(() => {}); };"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 592,
+        "text": "const response = await fetch('/api/dsh-guard/decide', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/audit-log.js",
+        "line": 8,
+        "text": "import { closeSync, openSync, readSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "import { appendFileSync, copyFileSync, existsSync, mkdirSync, readFileSync, renameSync, statSync, watchFile, unwatchFile, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "import { realpath } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 35,
+        "text": "return JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version;"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 320,
+        "text": "doc = JSON.parse(readFileSync(file, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 42,
+        "text": "export const inject = ['tools', 'workingDirectory', 'sessionProjections'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1876,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/mask.js",
+        "line": 4,
+        "text": "// ctx.tools.restrict, which is the only way to hide tools from one agent;"
+      },
+      {
+        "file": "lib/mask.js",
+        "line": 18,
+        "text": "ctx.tools.restrict({ deny });"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,74 @@
+{
+  "name": "@xuezuoys/dsh-prompt-inject",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-03T20:52:33.240Z",
+  "icon": "xuezuoys__dsh-prompt-inject.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 295,
+        "text": "const response = await fetch(`${this.api}/state`)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 342,
+        "text": "const response = await fetch(`${this.api}/catalog`)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 635,
+        "text": "const response = await fetch(`${this.api}/rules`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/configStore.js",
+        "line": 17,
+        "text": "import { constants as fsConstants } from 'node:fs'"
+      },
+      {
+        "file": "lib/configStore.js",
+        "line": 18,
+        "text": "import { copyFile, mkdir, readFile, rename, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/configStore.js",
+        "line": 213,
+        "text": "raw = await readFile(CONFIG_FILE, 'utf8')"
+      },
+      {
+        "file": "lib/configStore.js",
+        "line": 284,
+        "text": "await mkdir(dshHomePath('dsh-prompt-inject'), { recursive: true, mode: DIR_MODE })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "llm",
+    "sessions",
+    "systemPrompt"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

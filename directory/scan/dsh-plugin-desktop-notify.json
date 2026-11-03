@@ -1,0 +1,85 @@
+{
+  "name": "dsh-plugin-desktop-notify",
+  "version": "0.6.1",
+  "scannedAt": "2026-11-03T20:52:08.382Z",
+  "icon": "dsh-plugin-desktop-notify.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 397,
+        "text": "const response = await fetch(EXTERNAL_PENDING_PATH, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { appendFile, mkdir, rm, writeFile } from \"node:fs/promises\""
+      },
+      {
+        "file": "index.js",
+        "line": 203,
+        "text": "void mkdir(dirname(endpointPath), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 204,
+        "text": ".then(() => writeFile(endpointPath, `${origin}${API_REQUEST_PATH}\\n`, \"utf8\"))"
+      },
+      {
+        "file": "index.js",
+        "line": 219,
+        "text": "if (endpointPath !== \"\") void rm(endpointPath, { force: true }).catch(() => {})"
+      },
+      {
+        "file": "index.js",
+        "line": 228,
+        "text": "await mkdir(dirname(path), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { execFile, spawn } from \"node:child_process\""
+      },
+      {
+        "file": "index.js",
+        "line": 297,
+        "text": "execFile(\"/usr/bin/lsappinfo\", [\"front\"], { timeout: 2000 }, (frontError, frontOut) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 301,
+        "text": "execFile(\"/usr/bin/lsappinfo\", [\"info\", \"-only\", \"name\", asn], { timeout: 2000 }, (infoError, infoOut) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 311,
+        "text": "const child = spawn(command, args, { detached: true, stdio: \"ignore\" })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

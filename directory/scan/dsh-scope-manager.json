@@ -1,7 +1,7 @@
 {
   "name": "dsh-scope-manager",
-  "version": "0.1.13",
-  "scannedAt": "2026-11-02T23:01:19.440Z",
+  "version": "0.1.47",
+  "scannedAt": "2026-11-03T20:52:10.159Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -52,9 +52,9 @@
         "text": "await rm(tmp, { force: true }).catch(() => { });"
       },
       {
-        "file": "lib/index.js",
-        "line": 28,
-        "text": "import { realpath } from 'node:fs/promises';"
+        "file": "lib/custom-preset.js",
+        "line": 23,
+        "text": "import { readFile } from 'node:fs/promises';"
       }
     ]
   },
@@ -63,27 +63,27 @@
     "evidence": [
       {
         "file": "lib/http-api.js",
-        "line": 89,
+        "line": 102,
         "text": "* 这一步不能省：`ctx.skills.list()` / `ctx.tools.schemas()` 不传 scope 时"
       },
       {
         "file": "lib/index.js",
-        "line": 202,
+        "line": 219,
         "text": "inject: ['webServer', 'tools', 'skills', 'sessions', 'agents', 'workspaceRegistry'],"
       },
       {
         "file": "lib/index.js",
-        "line": 212,
+        "line": 229,
         "text": "// 只查 `ctx.tools.schemas()`（全局层）会漏掉按 preset 注册的那一整批"
       },
       {
         "file": "lib/index.js",
-        "line": 910,
+        "line": 993,
         "text": "ctx.tools.guard((exec) => {"
       },
       {
         "file": "lib/index.js",
-        "line": 1115,
+        "line": 1198,
         "text": "schemas = ctx.tools.schemas(agent ?? undefined) ?? [];"
       }
     ]

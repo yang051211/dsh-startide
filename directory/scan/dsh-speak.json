@@ -1,19 +1,19 @@
 {
   "name": "dsh-speak",
-  "version": "1.8.2",
-  "scannedAt": "2026-10-26T10:06:04.735Z",
+  "version": "1.8.4",
+  "scannedAt": "2026-11-03T20:52:06.652Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client/client.js",
-        "line": 198,
+        "line": 236,
         "text": "const response = await fetch(CONTROL_PATH, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })"
       },
       {
         "file": "client/client.js",
-        "line": 211,
+        "line": 249,
         "text": "socket = new WebSocket(`${scheme}//${location.host}${SOCKET_PATH}`)"
       }
     ]
@@ -33,12 +33,12 @@
       },
       {
         "file": "adapters/dsh/speech-hook.js",
-        "line": 369,
+        "line": 418,
         "text": "function removeTemp(tmp) { try { fs.unlinkSync(tmp) } catch (e) { /* already removed */ } }"
       },
       {
         "file": "adapters/dsh/speech-hook.js",
-        "line": 376,
+        "line": 425,
         "text": "try { fs.writeFileSync(tmp, item.text, 'utf8') } catch (e) { log('write temp failed:', e.message); return false }"
       }
     ]
@@ -57,13 +57,13 @@
       },
       {
         "file": "adapters/dsh/speech-hook.js",
-        "line": 385,
+        "line": 434,
         "text": "child = spawn('/bin/bash', [cfg.engine].concat(args), { detached: true, stdio: 'ignore' })"
       },
       {
         "file": "adapters/dsh/speech-hook.js",
-        "line": 389,
-        "text": "        child = spawn('powershell.exe', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', cfg.engine, '-File', tmp, '-Volume', String(cfg.volume), '-Rate', "
+        "line": 440,
+        "text": "child = spawn('powershell.exe', winArgs, { windowsHide: true, stdio: 'ignore' })"
       }
     ]
   },

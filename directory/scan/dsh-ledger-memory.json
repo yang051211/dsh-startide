@@ -1,7 +1,7 @@
 {
   "name": "dsh-ledger-memory",
-  "version": "1.6.1",
-  "scannedAt": "2026-10-26T10:04:48.363Z",
+  "version": "1.6.2",
+  "scannedAt": "2026-11-03T20:52:13.883Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,7 +13,7 @@
       },
       {
         "file": "lib/part5.js",
-        "line": 305,
+        "line": 331,
         "text": "\"With mode:'events', the exact seqs to fetch (take them from a mode:'index' result). \" +"
       }
     ]
@@ -28,23 +28,23 @@
       },
       {
         "file": "lib/base.js",
-        "line": 172,
+        "line": 190,
         "text": "*    `fs.writeFileSync(abs, next)`**。注入\"先写 8 字节再抛异常\" ⇒ **旧内容已丢，文件只剩"
       },
       {
         "file": "lib/base.js",
-        "line": 223,
-        "text": "buf = fs.readFileSync(fromAbs);"
+        "line": 258,
+        "text": "const b = fs.readFileSync(sChild);"
       },
       {
         "file": "lib/base.js",
-        "line": 229,
-        "text": "fs.writeFileSync(toAbs, buf);"
+        "line": 259,
+        "text": "fs.writeFileSync(dChild, b);"
       },
       {
         "file": "lib/base.js",
-        "line": 236,
-        "text": "back = fs.readFileSync(toAbs);"
+        "line": 260,
+        "text": "const chk = fs.readFileSync(dChild);"
       }
     ]
   },
@@ -63,7 +63,7 @@
       },
       {
         "file": "lib/part3.js",
-        "line": 3399,
+        "line": 3229,
         "text": "*   ③ 官方 `dsh-tool-ask-user` 本身就是这么做的（`inject = [\"tools\",\"userQuestions\"]`），"
       }
     ]
@@ -83,7 +83,7 @@
       },
       {
         "file": "lib/part2.js",
-        "line": 4399,
+        "line": 3343,
         "text": "const r = spawnSync(\"git\", args, {"
       }
     ]

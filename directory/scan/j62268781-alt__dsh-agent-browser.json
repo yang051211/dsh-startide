@@ -1,0 +1,120 @@
+{
+  "name": "@j62268781-alt/dsh-agent-browser",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-03T20:52:24.100Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cli.js",
+        "line": 12,
+        "text": "import { existsSync, realpathSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/env.js",
+        "line": 9,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 49,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/skill.js",
+        "line": 14,
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/skill.js",
+        "line": 43,
+        "text": "const { fields, body } = parseSkillFile(readFileSync(file, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 1,
+        "text": "# One Host row owns the browser tools (`ctx.tools`) and its settings page."
+      },
+      {
+        "file": "lib/index.js",
+        "line": 87,
+        "text": "static inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 403,
+        "text": "this.registrations.push(ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 443,
+        "text": "this.registrations.push(ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 497,
+        "text": "this.registrations.push(ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cli.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 270,
+        "text": "const child = spawn(this.command, [...this.options.globalArgs, ...args], {"
+      },
+      {
+        "file": "lib/env.js",
+        "line": 8,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/env.js",
+        "line": 17,
+        "text": "const child = spawn(command, [...args], { stdio: ['ignore', 'pipe', 'pipe'], env: process.env });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 32,
+      "text": "**[安装]** button that runs `brew install agent-browser` / `npm i -g agent-browser` on click) and"
+    },
+    {
+      "file": "README.md",
+      "line": 55,
+      "text": "brew install agent-browser        # 或 npm i -g agent-browser"
+    }
+  ],
+  "skippedEntries": []
+}

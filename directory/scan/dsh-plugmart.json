@@ -1,0 +1,83 @@
+{
+  "name": "dsh-plugmart",
+  "version": "1.1.2",
+  "scannedAt": "2026-11-03T20:52:33.585Z",
+  "icon": "dsh-plugmart.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 255,
+        "text": "const response = await fetch(API_PATH, {"
+      },
+      {
+        "file": "data/market.json",
+        "line": 1,
+        "text": "\"homepage\":\"https://treg.to\",\"install\":\"curl -fsSL https://treg.to/install.sh | sh\",\"type\":\"cordis-plugin\",\"score\":86},{\"name\":\"DeepSeek-Balance-Whale-Widget\",\""
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "import { mkdir, readFile, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 403,
+        "text": "const [raw, info] = await Promise.all([readFile(path, 'utf8'), stat(path)])"
+      },
+      {
+        "file": "index.js",
+        "line": 434,
+        "text": "const [raw, info] = await Promise.all([readFile(path, 'utf8'), stat(path)])"
+      },
+      {
+        "file": "index.js",
+        "line": 615,
+        "text": "await mkdir(dirname(state.cachePath), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 625,
+        "text": "await writeFile(state.cachePath, JSON.stringify(payload), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "data/market.json",
+        "line": 1,
+        "text": "ut a tool. The cap is enforced through `ctx.tools.guard()` rather than asked for in a prompt, and the protocol is registered as a runtime skill; t\",\"author\":\"ti"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 44,
+      "text": "成功后重建索引并缓存到 `$DSH_HOME/plugins/plugin-market/data.json`（下次启动优先使用更新的缓存）。"
+    }
+  ],
+  "skippedEntries": []
+}

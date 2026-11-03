@@ -1,0 +1,64 @@
+{
+  "name": "neko-persona-dsh",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-03T20:52:33.810Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/render.js",
+        "line": 6,
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/render.js",
+        "line": 72,
+        "text": "return readFileSync(p, 'utf8').replace(/\\r\\n/g, '\\n').trimEnd() + '\\n';"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 6,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 18,
+        "text": "mkdirSync(this.dir, { recursive: true });"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 38,
+        "text": "const raw = JSON.parse(readFileSync(f, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: tsc -p ."
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

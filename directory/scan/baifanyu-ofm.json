@@ -1,0 +1,89 @@
+{
+  "name": "baifanyu-ofm",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-03T20:52:24.246Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/dsh-client.js",
+        "line": 60,
+        "text": "const response = await fetch(url, { redirect: 'manual', signal: AbortSignal.timeout(this.timeoutMs) });"
+      },
+      {
+        "file": "src/dsh-client.js",
+        "line": 76,
+        "text": "response = await fetch(`${this.baseUrl}/api/${endpoint}`, {"
+      },
+      {
+        "file": "src/dsh-client.js",
+        "line": 113,
+        "text": "const socket = new WebSocket(url, { headers: { cookie: this.cookie }, followRedirects: false, maxPayload: 16 * 1024 * 1024 });"
+      },
+      {
+        "file": "src/plugin.js",
+        "line": 26,
+        "text": "const response = await fetch(`${client.baseUrl}/api/our-free-model/${endpoint}`, { method: patch ? 'POST' : 'GET',"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/bfy-ofm.mjs",
+        "line": 2,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "bin/bfy-ofm.mjs",
+        "line": 42,
+        "text": "const run = JSON.parse(fs.readFileSync(path.join(stateDir, name), 'utf8'));"
+      },
+      {
+        "file": "bin/bfy-ofm.mjs",
+        "line": 69,
+        "text": "const config = JSON.parse(fs.readFileSync(configFile, 'utf8'));"
+      },
+      {
+        "file": "bin/bfy-ofm.mjs",
+        "line": 70,
+        "text": "const prompt = action === 'smoke' ? '这是一条独立供模验证。不要调用任何工具。只回复 BFY_OK' : fs.readFileSync(v['prompt-file'], 'utf8');"
+      },
+      {
+        "file": "examples/offline-demo.mjs",
+        "line": 2,
+        "text": "import fs from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/plugin.js",
+        "line": 101,
+        "text": "ctx.inject(['tools'], scoped => scoped.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "llm",
+    "sessionController"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

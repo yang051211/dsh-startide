@@ -1,0 +1,131 @@
+{
+  "name": "dsh-her",
+  "version": "0.4.3",
+  "scannedAt": "2026-11-03T20:52:09.546Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 48,
+        "text": "const res = await fetch(new URL(`/api/dsh-her${path}`, document.baseURI), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 117,
+        "text": "const res = await fetch(new URL(\"/api/session/modelCatalog\", document.baseURI), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 188,
+        "text": "const res = await fetch(marketUrl(path), init);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 661,
+        "text": "const xhr = new XMLHttpRequest();"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3050,
+        "text": "      const res = await fetch(\"/api/dsh-her/web/status\", { method: \"POST\", credentials: \"same-origin\", headers: { \"content-type\": \"application/json\" }, body: JS"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/character.js",
+        "line": 7,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/core/character.js",
+        "line": 11,
+        "text": "const saved = JSON.parse(readFileSync(join(dir, 'character.json'), 'utf8'));"
+      },
+      {
+        "file": "lib/core/character.js",
+        "line": 28,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/core/character.js",
+        "line": 30,
+        "text": "writeFileSync(`${file}.tmp`, `${JSON.stringify(character, null, 2)}\\n`);"
+      },
+      {
+        "file": "lib/dsh/body-install.js",
+        "line": 17,
+        "text": "import { createReadStream, createWriteStream, existsSync, mkdirSync, readdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/dsh/her-session.js",
+        "line": 158,
+        "text": "agentCtx.tools.register({"
+      },
+      {
+        "file": "lib/dsh/her-session.js",
+        "line": 185,
+        "text": "agentCtx.tools.register({"
+      },
+      {
+        "file": "lib/dsh/her-session.js",
+        "line": 204,
+        "text": "agentCtx.tools.register({"
+      },
+      {
+        "file": "lib/dsh/her-session.js",
+        "line": 221,
+        "text": "agentCtx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/dsh/body-install.js",
+        "line": 15,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/dsh/body-launcher.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/dsh/body-launcher.js",
+        "line": 45,
+        "text": "const child = spawn(plan.binary, args, { cwd: plan.cwd, env: childEnv, detached: true, stdio: 'ignore', windowsHide: true });"
+      },
+      {
+        "file": "lib/dsh/ffmpeg-fetch.js",
+        "line": 9,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/dsh/plugin.js",
+        "line": 32,
+        "text": "import { spawn } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

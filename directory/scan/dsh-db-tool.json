@@ -1,14 +1,14 @@
 {
   "name": "dsh-db-tool",
-  "version": "1.8.5",
-  "scannedAt": "2026-10-26T10:05:05.289Z",
+  "version": "1.9.5",
+  "scannedAt": "2026-11-03T20:52:05.724Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client/client.js",
-        "line": 485,
+        "line": 549,
         "text": "const response = await fetch(API + \"/\" + path, init);"
       },
       {
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "dist/adapters/sqlserver/index.js",
+        "line": 27,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/adapters/sqlserver/index.js",
+        "line": 323,
+        "text": "text = readFileSync(path, 'utf8');"
+      },
+      {
+        "file": "dist/http/version.js",
+        "line": 11,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/http/version.js",
+        "line": 25,
+        "text": "const raw = JSON.parse(readFileSync(pkg, 'utf8'));"
+      },
+      {
         "file": "dist/store/audit.js",
         "line": 6,
         "text": "import * as fs from 'node:fs';"
-      },
-      {
-        "file": "dist/store/audit.js",
-        "line": 16,
-        "text": "fs.appendFileSync(this.file, JSON.stringify(full) + '\\n', 'utf8');"
-      },
-      {
-        "file": "dist/store/audit.js",
-        "line": 26,
-        "text": "const lines = fs.readFileSync(this.file, 'utf8').split('\\n');"
-      },
-      {
-        "file": "dist/store/index.js",
-        "line": 12,
-        "text": "import * as fs from 'node:fs';"
-      },
-      {
-        "file": "dist/store/index.js",
-        "line": 37,
-        "text": "fs.mkdirSync(this.dir, { recursive: true });"
       }
     ]
   },

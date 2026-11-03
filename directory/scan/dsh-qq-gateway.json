@@ -1,0 +1,123 @@
+{
+  "name": "dsh-qq-gateway",
+  "version": "1.0.7",
+  "scannedAt": "2026-11-03T20:52:07.766Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/gateway/container-proxy.js",
+        "line": 25,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "lib/gateway/container-proxy.js",
+        "line": 80,
+        "text": "const upstream = http.request({"
+      },
+      {
+        "file": "lib/gateway/status-server.js",
+        "line": 9,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "lib/gateway/url-guard.js",
+        "line": 13,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "lib/gateway/url-guard.js",
+        "line": 14,
+        "text": "import https from 'node:https';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/gateway/actions.js",
+        "line": 27,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/gateway/actions.js",
+        "line": 118,
+        "text": "return { bytes: readFileSync(absolutePath), path: absolutePath };"
+      },
+      {
+        "file": "lib/gateway/authz.js",
+        "line": 5,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/gateway/authz.js",
+        "line": 65,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/gateway/authz.js",
+        "line": 92,
+        "text": "mkdirSync(dirname(file), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/gateway/tools.js",
+        "line": 5,
+        "text": "* 1) 工具用 ctx.tools.register 全局注册：QQ 网关会话和普通 GUI 会话都能看到。"
+      },
+      {
+        "file": "lib/gateway/tools.js",
+        "line": 87,
+        "text": "* 生成全部 qq_* 工具定义。index.js 负责注册（ctx.tools.register），"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 181,
+        "text": "ctx.effect(() => tools.register(definition), `qq-gateway/tool:${definition.name}`)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/gateway/docker.js",
+        "line": 9,
+        "text": "import { execFile, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/gateway/markdown-image.js",
+        "line": 22,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/gateway/markdown-image.js",
+        "line": 558,
+        "text": "child = spawn(file, args, {"
+      },
+      {
+        "file": "lib/gateway/shutdown.js",
+        "line": 12,
+        "text": "import { execFile, spawn } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionController"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

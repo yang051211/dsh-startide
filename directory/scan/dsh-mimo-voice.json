@@ -1,35 +1,35 @@
 {
   "name": "dsh-mimo-voice",
-  "version": "0.4.1",
-  "scannedAt": "2026-10-31T22:51:52.754Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-03T20:52:20.617Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 127,
+        "line": 164,
         "text": "const res = await fetch(`${API}.config`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 238,
+        "line": 370,
         "text": "const res = await fetch(`${API}.preview`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 260,
+        "line": 406,
         "text": "const res = await fetch(`${API}.pin`, { method: 'POST' })"
       },
       {
         "file": "lib/client.js",
-        "line": 296,
-        "text": "try { await fetch(`${API}.stop`, { method: 'POST' }) } catch { /* 断了就断了 */ }"
+        "line": 441,
+        "text": "try { await fetch(`${API}.stop`, { method: 'POST' }) } catch { /* 已结束 */ }"
       },
       {
-        "file": "lib/index.js",
-        "line": 20,
-        "text": "import http from 'node:http'"
+        "file": "lib/client.js",
+        "line": 727,
+        "text": "const r = await fetch(url, { cache: 'no-store' })"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/engine.js",
+        "line": 10,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 74,
+        "text": "return `data:${mime};base64,${fs.readFileSync(file).toString('base64')}`"
+      },
+      {
         "file": "lib/index.js",
-        "line": 19,
+        "line": 22,
         "text": "import fs from 'node:fs'"
       },
       {
         "file": "lib/index.js",
-        "line": 84,
+        "line": 107,
         "text": "fs.mkdirSync(AUDIO_DIR, { recursive: true })"
       },
       {
         "file": "lib/index.js",
-        "line": 90,
+        "line": 114,
         "text": "const text = fs.readFileSync(ENV_PATH, 'utf8')"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 105,
-        "text": "lines = fs.readFileSync(ENV_PATH, 'utf8').split(/\\r?\\n/)"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 113,
-        "text": "fs.writeFileSync(ENV_PATH, kept.length === 0 ? '' : kept.join('\\n') + '\\n', 'utf8')"
       }
     ]
   },
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 26,
+        "line": 30,
         "text": "export const inject = ['tools', 'webServer', 'systemPrompt']"
       },
       {
         "file": "lib/index.js",
-        "line": 518,
+        "line": 942,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
@@ -83,18 +83,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 18,
-        "text": "import { spawn, spawnSync } from 'node:child_process'"
+        "line": 21,
+        "text": "import { spawn } from 'node:child_process'"
       },
       {
         "file": "lib/index.js",
-        "line": 191,
+        "line": 350,
         "text": "const proc = spawn(bin, ['-nodisp', '-autoexit', '-loglevel', 'quiet', file], {"
       },
       {
         "file": "lib/index.js",
-        "line": 413,
-        "text": "const cropped = spawnSync("
+        "line": 386,
+        "text": "const ff = spawn(findFfmpeg(), args, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 424,
+        "text": "const ff = spawn(findFfmpeg(), args, { stdio: ['pipe', 'pipe', 'ignore'], windowsHide: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 832,
+        "text": "const p = spawn("
       }
     ]
   },

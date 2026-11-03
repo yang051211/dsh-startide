@@ -1,0 +1,64 @@
+{
+  "name": "no-need-workspace",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-03T20:52:30.195Z",
+  "icon": "no-need-workspace.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 162,
+        "text": "response = await fetch(ENSURE_ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { mkdir, realpath } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 162,
+        "text": "await mkdir(bucketPath, { recursive: true })"
+      },
+      {
+        "file": "timestamp.js",
+        "line": 1,
+        "text": "import { mkdir } from 'node:fs/promises'"
+      },
+      {
+        "file": "timestamp.js",
+        "line": 25,
+        "text": "await mkdir(baseDir, { recursive: true })"
+      },
+      {
+        "file": "timestamp.js",
+        "line": 31,
+        "text": "await mkdir(directory)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

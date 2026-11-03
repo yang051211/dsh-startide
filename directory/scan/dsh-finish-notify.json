@@ -1,7 +1,7 @@
 {
   "name": "dsh-finish-notify",
-  "version": "0.4.1",
-  "scannedAt": "2026-11-02T23:01:37.278Z",
+  "version": "0.5.4",
+  "scannedAt": "2026-11-03T20:52:31.935Z",
   "icon": "dsh-finish-notify.png",
   "network": {
     "hit": true,
@@ -39,26 +39,26 @@
       {
         "file": "lib/index.js",
         "line": 2,
-        "text": "import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs'"
+        "text": "import { existsSync, readFileSync, writeFileSync, mkdirSync, watch, statSync, openSync, readSync, closeSync, readdirSync } from 'node:fs'"
       },
       {
         "file": "lib/index.js",
-        "line": 43,
+        "line": 44,
         "text": "mkdirSync(DATA_DIR, { recursive: true })"
       },
       {
         "file": "lib/index.js",
-        "line": 45,
+        "line": 46,
         "text": "writeFileSync(INI, body, 'utf8')"
       },
       {
         "file": "lib/index.js",
-        "line": 53,
+        "line": 54,
         "text": "for (const raw of readFileSync(INI, 'utf8').split(/\\r?\\n/)) {"
       },
       {
         "file": "lib/index.js",
-        "line": 67,
+        "line": 68,
         "text": "try { mkdirSync(DATA_DIR, { recursive: true }); writeFileSync(INI, body, 'utf8') } catch {}"
       }
     ]
@@ -77,12 +77,17 @@
       },
       {
         "file": "lib/index.js",
-        "line": 76,
-        "text": "state.child = spawn(EXE, [], { stdio: 'ignore', windowsHide: true })"
+        "line": 77,
+        "text": "state.child = spawn(EXE, ['--no-watch'], { stdio: 'ignore', windowsHide: true })"
       },
       {
         "file": "lib/index.js",
-        "line": 159,
+        "line": 233,
+        "text": "spawn(EXE, args, { stdio: 'ignore', windowsHide: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 279,
         "text": "spawn(EXE, ['--test'], { stdio: 'ignore', windowsHide: true })"
       }
     ]

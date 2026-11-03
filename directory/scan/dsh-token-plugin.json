@@ -1,0 +1,112 @@
+{
+  "name": "dsh-token-plugin",
+  "version": "2.1.0",
+  "scannedAt": "2026-11-03T20:52:20.867Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 673,
+        "text": "      return fetch(\"/usage/api\", { method: \"POST\", headers: { \"Content-Type\": \"application/json\" }, body: JSON.stringify(payload) }).then(function (r) { return "
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1311,
+        "text": "const mod = await import('undici')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1326,
+        "text": "const mod = await import('undici')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1369,
+        "text": "'const https=require(\"https\");',"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1372,
+        "text": "'const req=https.get(url,{headers:headers},function(res){',"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 21,
+        "text": "import { promises as fsp, existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 189,
+        "text": "inject: ['fs', 'webServer', 'subprocess', 'credentials', 'settings', 'sandboxPolicy', 'agents'],"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 195,
+        "text": "const fs = ctx.get('fs')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 427,
+        "text": "const nfsReadText = async (filePath) => fsp.readFile(filePath, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 474,
+        "text": "const fs = ctx.get('fs')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1256,
+        "text": "handle = subprocess.spawn({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1593,
+        "text": "          subprocess.spawn({ argv: [exe, target], cwd: await safeCwd(), stdio: { stdin: 'ignore', stdout: { maxBytes: 1024 }, stderr: { maxBytes: 1024 } }, grac"
+      },
+      {
+        "file": "scripts/release-local.mjs",
+        "line": 18,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/release-local.mjs",
+        "line": 51,
+        "text": "const result = spawnSync(command, {"
+      },
+      {
+        "file": "scripts/release.mjs",
+        "line": 1,
+        "text": "import { spawnSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,21 +1,37 @@
 {
   "name": "@moyumole/dsh-plugin-updates",
-  "version": "0.2.6",
-  "scannedAt": "2026-10-30T23:38:48.783Z",
+  "version": "0.3.3",
+  "scannedAt": "2026-11-03T20:52:11.078Z",
   "icon": "moyumole__dsh-plugin-updates.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 861,
+        "line": 879,
         "text": ": (typeof fetch === 'function' ? (input, init) => fetch(input, init) : null)"
       }
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "import { readdir, readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 41,
+        "text": "manifest = JSON.parse(await readFile(path.join(profileDir, 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 70,
+        "text": "const installed = JSON.parse(await readFile(packageFile, 'utf8'))"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,

@@ -1,0 +1,114 @@
+{
+  "name": "dsh-mcd-mcp",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-03T20:52:24.539Z",
+  "icon": "dsh-mcd-mcp.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 94,
+        "text": "const res = await fetch(API + (action ? '?action=' + encodeURIComponent(action) : ''), {"
+      },
+      {
+        "file": "client.js",
+        "line": 102,
+        "text": "const res = await fetch(API, {"
+      },
+      {
+        "file": "index.js",
+        "line": 124,
+        "text": "res = await fetch(this.endpoint, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 46,
+        "text": "const raw = JSON.parse(readFileSync(settingsFile(), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 55,
+        "text": "mkdirSync(dshRoot(), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 56,
+        "text": "writeFileSync(settingsFile(), JSON.stringify(next, null, 2) + '\\n', { mode: 0o600 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "export const inject = ['tools', 'webServer']"
+      },
+      {
+        "file": "index.js",
+        "line": 517,
+        "text": "* 注意:ctx.tools.register() 走的是**原始** schema 校验,不经过 defineTool 的"
+      },
+      {
+        "file": "index.js",
+        "line": 718,
+        "text": "const dispose = ctx.tools.register(withHints({"
+      },
+      {
+        "file": "index.js",
+        "line": 787,
+        "text": "ctx.tools.register(withHints({"
+      },
+      {
+        "file": "index.js",
+        "line": 808,
+        "text": "ctx.tools.register(withHints({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 16,
+      "text": "npm install -g dsh-mcd-mcp"
+    },
+    {
+      "file": "README.md",
+      "line": 15,
+      "text": "npm install -g dsh-mcd-mcp"
+    },
+    {
+      "file": "README.zh-TW.md",
+      "line": 15,
+      "text": "npm install -g dsh-mcd-mcp"
+    }
+  ],
+  "skippedEntries": []
+}

@@ -1,14 +1,14 @@
 {
   "name": "dsh-compact-saviour",
-  "version": "0.2.8",
-  "scannedAt": "2026-10-26T10:07:08.327Z",
+  "version": "0.2.9",
+  "scannedAt": "2026-11-03T20:52:26.946Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 5512,
+        "line": 5506,
         "text": "const response = await fetch(ENDPOINT + params, {"
       },
       {
@@ -34,7 +34,7 @@
       {
         "file": "scripts/link-harness-dependencies.mjs",
         "line": 1,
-        "text": "import { existsSync, mkdirSync, symlinkSync, realpathSync, readFileSync, readdirSync } from 'node:fs';"
+        "text": "import { existsSync, lstatSync, mkdirSync, readFileSync, readdirSync, realpathSync, rmSync, symlinkSync } from 'node:fs';"
       },
       {
         "file": "scripts/link-harness-dependencies.mjs",
@@ -49,12 +49,12 @@
       {
         "file": "scripts/link-harness-dependencies.mjs",
         "line": 27,
-        "text": "const pkg = JSON.parse(readFileSync('package.json', 'utf8'));"
+        "text": "rmSync(destination, { recursive: true, force: true });"
       },
       {
         "file": "scripts/link-harness-dependencies.mjs",
-        "line": 36,
-        "text": "mkdirSync(join(local, '.bin'), { recursive: true });"
+        "line": 29,
+        "text": "rmSync(destination);"
       }
     ]
   },

@@ -1,11 +1,17 @@
 {
   "name": "dsh-see-now",
-  "version": "0.0.7",
-  "scannedAt": "2026-11-02T23:01:36.374Z",
+  "version": "0.0.10",
+  "scannedAt": "2026-11-03T20:52:19.473Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/listen.js",
+        "line": 182,
+        "text": "const res = await fetch(`${cfg.baseUrl}/audio/transcriptions`, {"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
@@ -42,12 +48,12 @@
     "evidence": [
       {
         "file": "src/index.js",
-        "line": 31,
+        "line": 80,
         "text": "export const inject = ['tools', 'attachments', 'sessionController'];"
       },
       {
         "file": "src/index.js",
-        "line": 564,
+        "line": 900,
         "text": "disposers.push(ctx.tools.register(defineTool(toolObj)));"
       }
     ]
@@ -94,6 +100,17 @@
     "sessionController",
     "tools"
   ],
-  "setupHints": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 223,
+      "text": "- 抓声音：`pip install pyaudiowpatch numpy`。**不需要装虚拟声卡**，也不需要开\"立体声混音\"。"
+    },
+    {
+      "file": "README.md",
+      "line": 254,
+      "text": "听声音：没在听 —— 没有能用的 Python（要 pip install pyaudiowpatch numpy）"
+    }
+  ],
   "skippedEntries": []
 }

@@ -1,0 +1,86 @@
+{
+  "name": "dsh-antigravity-auth",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-03T20:52:20.005Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/capability-lifecycle-BPe4NdnS.js",
+        "line": 9,
+        "text": "import { createServer } from \"node:http\";"
+      },
+      {
+        "file": "lib/capability-lifecycle-BPe4NdnS.js",
+        "line": 2060,
+        "text": "const response = await fetch(USERINFO_ENDPOINT, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/capability-lifecycle-BPe4NdnS.js",
+        "line": 6,
+        "text": "import { chmod, lstat, mkdir, open, readFile, rename, rm, unlink, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/capability-lifecycle-BPe4NdnS.js",
+        "line": 60,
+        "text": "await unlink(path);"
+      },
+      {
+        "file": "lib/capability-lifecycle-BPe4NdnS.js",
+        "line": 69,
+        "text": "await unlink(path);"
+      },
+      {
+        "file": "lib/capability-lifecycle-BPe4NdnS.js",
+        "line": 93,
+        "text": "await handle.writeFile(`${process.pid}\\n`, \"utf8\");"
+      },
+      {
+        "file": "lib/capability-lifecycle-BPe4NdnS.js",
+        "line": 98,
+        "text": "await unlink(lockPath).catch(() => {});"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/image.js",
+        "line": 423,
+        "text": "register: () => registerCapabilitySet(createAntigravityImageTools(options), (tool) => candidate.tools.register(tool)),"
+      },
+      {
+        "file": "lib/video.js",
+        "line": 169,
+        "text": "}).map((tool) => candidate.tools.register(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "import { spawn } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,113 @@
+{
+  "name": "dsh-whale-pulse",
+  "version": "1.8.6",
+  "scannedAt": "2026-11-03T20:52:26.332Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 108,
+        "text": "fetch('/dsh-whale-pulse/processes', { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 125,
+        "text": "fetch('/dsh-whale-pulse/level', { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 233,
+        "text": "fetch('/dsh-whale-pulse/config', {"
+      },
+      {
+        "file": "runtime/pulse.js",
+        "line": 132,
+        "text": ".fetch(REPORT_URL, {"
+      },
+      {
+        "file": "runtime/pulse.js",
+        "line": 173,
+        "text": ".fetch(LEVEL_URL, { cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 44,
+        "text": "const raw = fs.readFileSync(CONFIG_FILE, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 55,
+        "text": "fs.writeFileSync(CONFIG_FILE, JSON.stringify({ pid: currentPid, name: currentPidName }, null, 2))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 67,
+        "text": "if (fs.statSync(file).size > 1024 * 1024) fs.writeFileSync(file, '')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 71,
+        "text": "fs.appendFileSync(file, `[${new Date().toISOString()}] ${line}\\n`)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 108,
+        "text": "const list = spawn('ffmpeg', ['-f', 'avfoundation', '-list_devices', 'true', '-i', ''], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 148,
+        "text": "macProbe = spawn("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 246,
+        "text": "const child = spawn('swiftc', ['-O', '-parse-as-library', src, '-o', bin], { stdio: ['ignore', 'pipe', 'pipe'] })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 273,
+        "text": "macProbe = spawn(bin, [], { stdio: ['ignore', 'pipe', 'pipe'] })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "runtime/ApplicationLoopback.dll",
+    "runtime/NAudio.dll"
+  ],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

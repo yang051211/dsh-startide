@@ -1,7 +1,7 @@
 {
   "name": "dsh-subagent-codex-pro",
-  "version": "0.7.0",
-  "scannedAt": "2026-11-01T19:08:56.141Z",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-03T20:52:20.764Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -12,18 +12,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 39,
+        "line": 38,
         "text": "import { appendFileSync, readFileSync, statSync } from 'node:fs';"
       },
       {
         "file": "lib/index.js",
-        "line": 225,
+        "line": 233,
         "text": "appendFileSync(join(process.env.DSH_HOME ?? join(homedir(), '.dsh'), 'codex-pro.log'), `${new Date().toISOString()} ${message}\\n`);"
       },
       {
         "file": "lib/index.js",
-        "line": 493,
+        "line": 517,
         "text": "payloads.push({ data: readFileSync(image.path), mediaType });"
+      },
+      {
+        "file": "lib/machine-cli.js",
+        "line": 3,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/machine-cli.js",
+        "line": 57,
+        "text": "const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));"
       }
     ]
   },
@@ -32,12 +42,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 709,
+        "line": 733,
         "text": "agent.ctx.tools.register(createCodexTool({"
       },
       {
         "file": "lib/tool.js",
-        "line": 24,
+        "line": 40,
         "text": "* @returns a definition ready for `agent.ctx.tools.register`."
       }
     ]
@@ -51,14 +61,24 @@
         "text": "const child = spawn(command, argv, {"
       },
       {
+        "file": "lib/process-guardian.js",
+        "line": 21,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/process-guardian.js",
+        "line": 129,
+        "text": "child = spawn(command, ['app-server', '--stdio'], {"
+      },
+      {
         "file": "lib/run.js",
         "line": 17,
         "text": "import { spawn } from 'node:child_process';"
       },
       {
         "file": "lib/run.js",
-        "line": 104,
-        "text": "const proc = spawn(spec.command, ['app-server', '--stdio'], {"
+        "line": 135,
+        "text": "const proc = spawn(posix ? process.execPath : spec.command, posix ? [guardian, spec.command, String(graceMs)] : ['app-server', '--stdio'], {"
       }
     ]
   },

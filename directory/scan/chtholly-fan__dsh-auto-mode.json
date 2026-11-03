@@ -1,0 +1,59 @@
+{
+  "name": "@chtholly-fan/dsh-auto-mode",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-03T20:52:31.479Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/client.js",
+        "line": 138,
+        "text": "const response = await fetch(`${API}/${action}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/config.js",
+        "line": 5,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 122,
+        "text": "const text = await readFile(configPath(), 'utf8')"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 139,
+        "text": "await mkdir(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 140,
+        "text": "await writeFile(file, `${JSON.stringify(config, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

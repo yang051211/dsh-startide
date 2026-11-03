@@ -1,19 +1,60 @@
 {
   "name": "@plannotator/dsh",
-  "version": "0.28.47",
-  "scannedAt": "2026-11-03T08:09:57.359Z",
+  "version": "0.28.48",
+  "scannedAt": "2026-11-03T20:52:09.240Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 778,
+        "text": "const response = await fetch(`http://127.0.0.1:${port}/mcp`, {"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 875,
+        "text": "const health = await fetch(`http://127.0.0.1:${registry.port}/api/inbox/health`, { signal });"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 889,
+        "text": "const response = await fetch(`http://127.0.0.1:${registry.port}/api/inbox/health`, { signal: AbortSignal.timeout(5000) });"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 928,
+        "text": "const response = await fetch(`http://127.0.0.1:${registry.port}${path}`, {"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
       {
         "file": "dist/index.js",
-        "line": 6,
-        "text": "import { accessSync, constants as fsConstants, statSync } from \"node:fs\";"
+        "line": 2,
+        "text": "import { existsSync as existsSync4, readFileSync as readFileSync3 } from \"node:fs\";"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 10,
+        "text": "import { existsSync } from \"fs\";"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 66,
+        "text": "} from \"fs\";"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 664,
+        "text": "const raw = readFileSync(configPath, \"utf-8\").replace(/^\\uFEFF/, \"\");"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 723,
+        "text": "ync as readFileSync2, realpathSync as realpathSync2, renameSync as renameSync2, rmSync, statSync as statSync2, writeFileSync as writeFileSync2 } from \"node:fs\";"
       }
     ]
   },
@@ -26,13 +67,18 @@
     "evidence": [
       {
         "file": "dist/index.js",
-        "line": 5,
+        "line": 721,
         "text": "import { spawn } from \"node:child_process\";"
       },
       {
         "file": "dist/index.js",
-        "line": 67,
-        "text": "const child = spawn(options.binary, [\"dsh-plan\"], {"
+        "line": 955,
+        "text": "child = spawn(command, args, { env, stdio: [\"ignore\", \"pipe\", \"pipe\"], windowsHide: true });"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 1273,
+        "text": "import { spawn as spawn2 } from \"node:child_process\";"
       }
     ]
   },

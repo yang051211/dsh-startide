@@ -1,0 +1,92 @@
+{
+  "name": "dsh-chrome-attach",
+  "version": "0.2.8",
+  "scannedAt": "2026-11-03T20:52:21.777Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 114,
+        "text": "const blob = await (await fetch(dataUrl)).blob()"
+      },
+      {
+        "file": "client/client.js",
+        "line": 181,
+        "text": "const response = await fetch(API, {"
+      },
+      {
+        "file": "lib/providers/cdp.js",
+        "line": 71,
+        "text": "const response = await fetch(url, { signal: controller.signal })"
+      },
+      {
+        "file": "lib/providers/cdp.js",
+        "line": 110,
+        "text": "const socket = new WebSocket(url)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/providers/bridge.js",
+        "line": 10,
+        "text": "import { constants as fsConstants } from 'node:fs'"
+      },
+      {
+        "file": "lib/providers/bridge.js",
+        "line": 11,
+        "text": "import { promises as fs } from 'node:fs'"
+      },
+      {
+        "file": "lib/providers/bridge.js",
+        "line": 106,
+        "text": "const png = await fs.readFile(file)"
+      },
+      {
+        "file": "lib/providers/bridge.js",
+        "line": 118,
+        "text": "await fs.rm(dir, { recursive: true, force: true })"
+      },
+      {
+        "file": "lib/providers/cdp.js",
+        "line": 20,
+        "text": "import { promises as fs } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/providers/bridge.js",
+        "line": 9,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/providers/window.js",
+        "line": 14,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

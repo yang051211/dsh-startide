@@ -1,0 +1,98 @@
+{
+  "name": "dsh-skill-auditor",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-03T20:52:30.530Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine.mjs",
+        "line": 15,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/engine.mjs",
+        "line": 94,
+        "text": "const raw = fs.readFileSync(path.join(PACKAGE_ROOT, 'package.json'), 'utf8')"
+      },
+      {
+        "file": "lib/engine.mjs",
+        "line": 107,
+        "text": "return JSON.parse(fs.readFileSync(markerPath(), 'utf8'))"
+      },
+      {
+        "file": "lib/engine.mjs",
+        "line": 114,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/engine.mjs",
+        "line": 115,
+        "text": "fs.writeFileSync(file, JSON.stringify(value, null, 2) + '\\n', 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "* 只用两个宿主 API：ctx.inject(['tools'], cb) 和 tools.register({...})。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 243,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 249,
+        "text": "toolCtx.tools.register(wrap(t))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine.mjs",
+        "line": 18,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/engine.mjs",
+        "line": 209,
+        "text": "execFile("
+      },
+      {
+        "file": "lib/engine.mjs",
+        "line": 276,
+        "text": "const child = execFile(py.cmd, [...py.pre, script, ...argv], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 81,
+      "text": "> 需要 Python 3.14+、`pip install zstandard`、或系统有 `zstd` 命令，三者之一。"
+    }
+  ],
+  "skippedEntries": []
+}

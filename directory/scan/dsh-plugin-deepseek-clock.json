@@ -1,0 +1,64 @@
+{
+  "name": "dsh-plugin-deepseek-clock",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-03T20:52:21.954Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 95,
+        "text": "const response = await fetch(`/api/deepseek/meter${query}`, { headers: { accept: \"application/json\" } });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 86,
+        "text": "let fetchImpl = (...args) => fetch(...args);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 444,
+        "text": "fetchImpl = impl ?? ((...args) => fetch(...args));"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "import { readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 124,
+        "text": "text = readFileSync(credentialsFile(), \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 157,
+        "text": "text = readFileSync(credentialsFile(), \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

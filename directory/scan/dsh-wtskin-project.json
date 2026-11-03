@@ -1,0 +1,89 @@
+{
+  "name": "dsh-wtskin-project",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-03T20:52:27.367Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/measure-server.js",
+        "line": 10,
+        "text": "import { createServer } from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 71,
+        "text": "return JSON.parse(await fs.readFile(projectPath(dir), 'utf8'));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 79,
+        "text": "await fs.mkdir(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 80,
+        "text": "await fs.writeFile(projectPath(dir), JSON.stringify(project, null, 2), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 24,
+        "text": "export const inject = ['tools', 'systemPrompt'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 170,
+        "text": "ctx.tools.register(definition);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 115,
+        "text": "const child = spawn(python, [engine, 'export', projectFile], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

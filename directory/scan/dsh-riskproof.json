@@ -1,0 +1,88 @@
+{
+  "name": "dsh-riskproof",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-03T20:52:18.023Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/dsh/dashboard.js",
+        "line": 74,
+        "text": "async fetch(request) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/proof/proof-store.js",
+        "line": 12,
+        "text": "import { appendFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "dist/proof/proof-store.js",
+        "line": 45,
+        "text": "appendFileSync(this.file, JSON.stringify(sanitized) + \"\\n\", {"
+      },
+      {
+        "file": "dist/proof/proof-store.js",
+        "line": 67,
+        "text": "appendFileSync(this.file, JSON.stringify({"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/dsh/capability-resolver.js",
+        "line": 31,
+        "text": "let definition = this.ctx.tools.get(name);"
+      },
+      {
+        "file": "dist/dsh/capability-resolver.js",
+        "line": 33,
+        "text": "definition = this.ctx.tools.get(name, agent) ?? definition;"
+      },
+      {
+        "file": "dist/dsh/experience.js",
+        "line": 21,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "dist/dsh/runtime.js",
+        "line": 25,
+        "text": "const tools = ctx.tools;"
+      },
+      {
+        "file": "dist/dsh/runtime.js",
+        "line": 28,
+        "text": "throw new TypeError(\"dsh-riskproof: incompatible DSH Tool Runtime (expected ctx.tools.get()); \" +"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

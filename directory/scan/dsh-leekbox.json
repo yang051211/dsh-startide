@@ -1,0 +1,100 @@
+{
+  "name": "dsh-leekbox",
+  "version": "0.19.3",
+  "scannedAt": "2026-11-03T20:52:17.923Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 573,
+        "text": "response = await fetch(path, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2168,
+        "text": "fetch(`${API.watchlist}/export?format=${format}`).then((r) => r.ok ? r.blob() : Promise.reject(new Error(`HTTP ${r.status}`))).then((blob) => {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3330,
+        "text": "const response = await fetch(API.analysisStream, {"
+      },
+      {
+        "file": "lib/fetch-utils.js",
+        "line": 10,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 70,
+        "text": "* `fetch(..., {mode:\"no-cors\", body:\"{...}\"})` 打本机端口时，Host 头是"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 10,
+        "text": "import { existsSync, readFileSync, renameSync, unlinkSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 27,
+        "text": "return JSON.parse(readFileSync(new URL(\"../package.json\", import.meta.url), \"utf8\")).version ?? \"\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 468,
+        "text": "const raw = readFileSync(watchlistPath(dshHome), \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 527,
+        "text": "writeFileSync(tmp, JSON.stringify(list, null, 2), \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 532,
+        "text": "if (existsSync(tmp)) unlinkSync(tmp);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 668,
+        "text": "const child = spawn(\"curl.exe\", args, { windowsHide: true, stdio: [\"pipe\", \"pipe\", \"pipe\"] });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 926,
+        "text": "const child = spawn(\"curl.exe\", args, { windowsHide: true, stdio: [\"pipe\", \"pipe\", \"pipe\"] });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

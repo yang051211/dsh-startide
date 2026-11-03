@@ -1,0 +1,99 @@
+{
+  "name": "dsh-longtasks",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-03T20:52:30.864Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 506,
+        "text": "const response = await fetch('/api/longtasks/roster', { cache: 'no-store' })"
+      },
+      {
+        "file": "client/client.js",
+        "line": 515,
+        "text": "const response = await fetch('/api/longtasks/action', {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 889,
+        "text": "try { void fetch('/api/longtasks/ping', { method: 'POST' }) } catch {}"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 16,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.mjs",
+        "line": 309,
+        "text": "mkdirSync(this.tasks, { recursive: true })"
+      },
+      {
+        "file": "index.mjs",
+        "line": 342,
+        "text": "rmSync(from, { recursive: true, force: true })"
+      },
+      {
+        "file": "index.mjs",
+        "line": 349,
+        "text": "if (readdirSync(this.legacyTasks).length === 0) rmSync(this.legacyTasks, { recursive: true, force: true })"
+      },
+      {
+        "file": "index.mjs",
+        "line": 363,
+        "text": "mkdirSync(this.taskDir(id), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 23,
+        "text": "export const inject = ['tools', 'systemPrompt']"
+      },
+      {
+        "file": "index.mjs",
+        "line": 1227,
+        "text": "ctx.tools.register(makeTool(roster))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 17,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.mjs",
+        "line": 1086,
+        "text": "const child = spawn(command, [path], { detached: true, stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,67 @@
+{
+  "name": "dsh-reason-tree",
+  "version": "1.0.6",
+  "scannedAt": "2026-11-03T20:52:32.599Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 40,
+        "text": "return fetch(url, { cache: 'no-store' }).then(function (res) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 8,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 84,
+        "text": "try { text = fs.readFileSync(full, 'utf8') } catch (e) { return { ok: false, error: String(e && e.message || e) } }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 103,
+        "text": "const raw = fs.readFileSync(f, 'utf8').replace(/^\\uFEFF/, '')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 172,
+        "text": "const text = fs.readFileSync(path.join(dir, name), 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 184,
+        "text": "const raw = fs.readFileSync(full, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

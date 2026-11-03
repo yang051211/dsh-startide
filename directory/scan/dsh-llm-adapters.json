@@ -1,0 +1,110 @@
+{
+  "name": "dsh-llm-adapters",
+  "version": "1.2.4",
+  "scannedAt": "2026-11-03T20:52:15.856Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 545,
+        "text": "const response = await fetch(`${API}${path}`, { ...rest, signal: ctrl.signal })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 8,
+        "text": "import { createServer } from \"node:http\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4758,
+        "text": "return fetch(path, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4767,
+        "text": "fetch('${paths.status}')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7157,
+        "text": "return (await fetch(`http://127.0.0.1:${port}/json/version`, { signal: AbortSignal.timeout(800) })).ok;"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "import { existsSync, mkdirSync, mkdtempSync, promises, readFileSync, renameSync, rmSync, statSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 811,
+        "text": "parsed = JSON.parse(await promises.readFile(this.path(), \"utf8\"));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 933,
+        "text": "await this.writeFile(mutator(current));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 937,
+        "text": "async writeFile(next) {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 940,
+        "text": "await promises.mkdir(path.dirname(file), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 9,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7377,
+        "text": "const child = spawn(executable, ["
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7538,
+        "text": "spawn(\"taskkill\", ["
+      },
+      {
+        "file": "src/trae-login.ts",
+        "line": 23,
+        "text": "import { spawn, type ChildProcess } from 'node:child_process'"
+      },
+      {
+        "file": "src/trae-login.ts",
+        "line": 570,
+        "text": "const child = spawn(executable, ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

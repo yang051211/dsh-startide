@@ -1,20 +1,20 @@
 {
   "name": "@hyzyn/dsh-docker",
-  "version": "0.13.7",
-  "scannedAt": "2026-10-30T23:38:26.168Z",
+  "version": "0.14.0",
+  "scannedAt": "2026-11-03T20:52:11.135Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client-src/index.js",
-        "line": 1102,
+        "line": 1271,
         "text": "const response = await fetch(API + path, {"
       },
       {
         "file": "client.js",
-        "line": 2528,
-        "text": "d(a)}async function _e(a,l){let e=await fetch(To+a,{...l,headers:{\"content-type\":\"application/json\",...l?.headers??{}}}),o=null;try{o=await e.json()}catch{}if(!"
+        "line": 3005,
+        "text": "d(r)}async function pe(r,u){let e=await fetch(Si+r,{...u,headers:{\"content-type\":\"application/json\",...u?.headers??{}}}),s=null;try{s=await e.json()}catch{}if(!"
       },
       {
         "file": "scripts/log-perf.mjs",
@@ -27,29 +27,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 1,
-        "text": "import { accessSync, constants } from 'node:fs';"
+        "file": "lib/history-store.js",
+        "line": 28,
+        "text": "import { appendFileSync, chmodSync, existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
       },
       {
-        "file": "lib/ssh-exec.js",
-        "line": 17,
-        "text": "import { readFileSync } from 'node:fs';"
+        "file": "lib/history-store.js",
+        "line": 83,
+        "text": "writeFileSync(tmp, data, { mode: FILE_MODE });"
       },
       {
-        "file": "lib/ssh-exec.js",
-        "line": 1476,
-        "text": "base.privateKey = readFileSync(expandHome(spec.keyPath.trim()));"
+        "file": "lib/history-store.js",
+        "line": 94,
+        "text": "const text = readFileSync(file, 'utf8');"
       },
       {
-        "file": "scripts/client-smoke.mjs",
-        "line": 19,
-        "text": "import { readFileSync } from 'node:fs'"
+        "file": "lib/history-store.js",
+        "line": 153,
+        "text": "mkdirSync(this.dir, { recursive: true, mode: DIR_MODE });"
       },
       {
-        "file": "scripts/client-smoke.mjs",
-        "line": 24,
-        "text": "const code = readFileSync(join(root, 'client.js'), 'utf8')"
+        "file": "lib/history-store.js",
+        "line": 163,
+        "text": "appendFileSync(this.file, JSON.stringify(record) + '\\n', { mode: FILE_MODE });"
       }
     ]
   },
@@ -58,17 +58,17 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 2025,
+        "line": 2259,
         "text": "toolDisposers.push(tools.register(definition));"
       },
       {
         "file": "lib/index.js",
-        "line": 3289,
+        "line": 4003,
         "text": "* 声明式 `inject: ['tools']`），在插件 ctx 上读 `tools` 会撞 cordis 的 inject 守卫——而"
       },
       {
         "file": "lib/index.js",
-        "line": 3295,
+        "line": 4009,
         "text": "*   - 无声明式 inject 的插件 ctx：`ctx.tools` 抛 `cannot get property \"tools\" without"
       }
     ]
@@ -78,7 +78,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 840,
+        "line": 903,
         "text": "* 的机器上，tty 自己拒绝执行，docker 引用同一连接簿条目却照样 `spawn(cmd, {shell:true})`"
       },
       {

@@ -1,7 +1,7 @@
 {
   "name": "dsh-agent-speedup",
-  "version": "0.2.1",
-  "scannedAt": "2026-11-02T23:01:36.687Z",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-03T20:52:31.853Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -13,16 +13,16 @@
       {
         "file": "lib/index.js",
         "line": 24,
-        "text": "import { appendFileSync, mkdirSync, statSync } from \"node:fs\";"
+        "text": "import { appendFileSync, mkdirSync, realpathSync, statSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 135,
+        "line": 168,
         "text": "if (!logReady) { mkdirSync(dirname(cfg.debugLogFile), { recursive: true }); logReady = true; }"
       },
       {
         "file": "lib/index.js",
-        "line": 136,
+        "line": 169,
         "text": "appendFileSync(cfg.debugLogFile, JSON.stringify({ ts: Date.now(), ...entry }) + \"\\n\");"
       }
     ]
@@ -37,12 +37,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 212,
-        "text": "ctx.tools"
+        "line": 319,
+        "text": "p = ctx.tools"
       },
       {
         "file": "lib/index.js",
-        "line": 285,
+        "line": 414,
         "text": "const tool = ctx.tools?.get?.(toolName);"
       }
     ]

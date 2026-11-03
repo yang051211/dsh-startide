@@ -1,0 +1,90 @@
+{
+  "name": "dsh-feed-the-seek",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-03T20:52:11.766Z",
+  "icon": "dsh-feed-the-seek.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/src/dashboard/client/api.js",
+        "line": 8,
+        "text": "const response = await fetch('/fish-brain/api/' + endpoint, options);"
+      },
+      {
+        "file": "dist/src/dashboard/server.js",
+        "line": 3,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "dist/src/embedding/embedder.js",
+        "line": 49,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "public/app.js",
+        "line": 47,
+        "text": "const response = await fetch("
+      },
+      {
+        "file": "public/client.js",
+        "line": 56,
+        "text": "const response = await fetch(\"/fish-brain/api/\" + endpoint, options);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/src/dashboard/server.js",
+        "line": 2,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "dist/src/dashboard/server.js",
+        "line": 441,
+        "text": "response.end(await readFile(resolve(publicRoot, asset[0])));"
+      },
+      {
+        "file": "dist/src/storage/store.js",
+        "line": 2,
+        "text": "import { mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/src/storage/store.js",
+        "line": 22,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/src/dsh/plugin.js",
+        "line": 13,
+        "text": "export const inject = ['agents', 'systemPrompt', 'sessions', 'tools', 'llm'];"
+      },
+      {
+        "file": "dist/src/dsh/plugin.js",
+        "line": 485,
+        "text": "disposers.push(context.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

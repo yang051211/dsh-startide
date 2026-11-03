@@ -1,0 +1,82 @@
+{
+  "name": "plantomics-hub",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-03T20:52:24.227Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/core/http.js",
+        "line": 160,
+        "text": "fetchImpl = (...args) => globalThis.fetch(...args)) {"
+      },
+      {
+        "file": "dist/service/http.js",
+        "line": 14,
+        "text": "import { createServer } from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/core/pinned.js",
+        "line": 12,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/core/pinned.js",
+        "line": 50,
+        "text": "text = readFileSync(url, 'utf8');"
+      },
+      {
+        "file": "dist/service/http.js",
+        "line": 21,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/service/http.js",
+        "line": 232,
+        "text": "const servedVersion = serviceVersion(SERVER_INFO.version, readBuildRev((file) => readFileSync(file, 'utf8'),"
+      },
+      {
+        "file": "dist/service/version.js",
+        "line": 37,
+        "text": "const parsed = JSON.parse(readFile(buildInfoPath));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 27,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "dist/dsh/index.js",
+        "line": 5,
+        "text": "* 通过本包 `cordis.patch.yml` 里那条 `@deepseek-ai/dsh-mcp-client` 条目接入。"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "dist/client/panel.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

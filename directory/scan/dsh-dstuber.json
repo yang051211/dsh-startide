@@ -1,0 +1,116 @@
+{
+  "name": "dsh-dstuber",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-03T20:52:16.834Z",
+  "icon": "dsh-dstuber.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 141,
+        "text": "const response = await fetch(API + path, {"
+      },
+      {
+        "file": "scripts/probe-stage.mjs",
+        "line": 55,
+        "text": "const r = await fetch(`http://127.0.0.1:${port}/json/list`)"
+      },
+      {
+        "file": "scripts/probe-stage.mjs",
+        "line": 126,
+        "text": "const ws = new WebSocket(wsUrl, { maxPayload: 32 * 1024 * 1024 })"
+      },
+      {
+        "file": "scripts/serve-stage.mjs",
+        "line": 3,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "stage/chat.js",
+        "line": 50,
+        "text": "const response = await fetch(new URL('../api/pet-chat', location.href), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/build-model.mjs",
+        "line": 9,
+        "text": "import { readdir, readFile, writeFile, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "scripts/build-model.mjs",
+        "line": 171,
+        "text": "await writeFile(join(modelDir, 'model3.augmented.json'), `${JSON.stringify(model, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "scripts/build-model.mjs",
+        "line": 172,
+        "text": "await writeFile(join(modelDir, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "scripts/probe-stage.mjs",
+        "line": 10,
+        "text": "import { mkdir, writeFile, rm } from 'node:fs/promises'"
+      },
+      {
+        "file": "scripts/probe-stage.mjs",
+        "line": 11,
+        "text": "import { existsSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/probe-stage.mjs",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/probe-stage.mjs",
+        "line": 49,
+        "text": "return spawn(edge, args, { stdio: 'ignore', windowsHide: true })"
+      },
+      {
+        "file": "src/gsv.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/gsv.js",
+        "line": 137,
+        "text": "child = spawn(python, [apiPath, '-a', '127.0.0.1', '-p', String(config.port)], {"
+      },
+      {
+        "file": "src/gsv.js",
+        "line": 184,
+        "text": "spawn('taskkill', ['/PID', String(current.pid), '/T', '/F'], { stdio: 'ignore', windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [
+    "stage/vendor/cubism4.min.js",
+    "stage/vendor/live2dcubismcore.min.js",
+    "stage/vendor/pixi.min.js"
+  ],
+  "binaryFiles": [
+    "shell/src-tauri/target/release/dsh-dstuber-shell.exe"
+  ],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

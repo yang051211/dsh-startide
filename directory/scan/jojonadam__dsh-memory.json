@@ -1,0 +1,84 @@
+{
+  "name": "@jojonadam/dsh-memory",
+  "version": "0.5.5",
+  "scannedAt": "2026-11-03T20:52:21.617Z",
+  "icon": "jojonadam__dsh-memory.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 10,
+        "text": "import { readFileSync, readdirSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 65,
+        "text": "const { data, body } = parseFrontmatter(readFileSync(locator, 'utf8'))"
+      },
+      {
+        "file": "lib/memory/core.js",
+        "line": 22,
+        "text": "} from 'node:fs'"
+      },
+      {
+        "file": "lib/memory/core.js",
+        "line": 130,
+        "text": "mkdirSync(parent, { recursive: true })"
+      },
+      {
+        "file": "lib/memory/core.js",
+        "line": 147,
+        "text": "return readFileSync(path, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 108,
+        "text": "const inject = ['skills', 'tools', 'systemPrompt', 'workingDirectory']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 113,
+        "text": "if (ctx.tools?.register) registerMemoryTools(ctx)"
+      },
+      {
+        "file": "lib/memory/tools.js",
+        "line": 228,
+        "text": "/** Register the four tools on ctx.tools; returns the definitions for tests. */"
+      },
+      {
+        "file": "lib/memory/tools.js",
+        "line": 231,
+        "text": "if (!ctx?.tools || typeof ctx.tools.register !== 'function') {"
+      },
+      {
+        "file": "lib/memory/tools.js",
+        "line": 232,
+        "text": "throw new MemoryError('ctx.tools.register 不可用：dsh-memory 需要 tools 服务')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

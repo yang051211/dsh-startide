@@ -1,0 +1,99 @@
+{
+  "name": "dsh-suinian",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-03T20:52:13.408Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 224,
+        "text": "const r = await fetch('https://bots.qq.com/app/getAppAccessToken', {"
+      },
+      {
+        "file": "index.js",
+        "line": 242,
+        "text": "const r = await fetch(`https://api.sgroup.qq.com/v2/users/${config.openId}/messages`, {"
+      },
+      {
+        "file": "selfcheck.mjs",
+        "line": 85,
+        "text": "const r = await fetch('https://bots.qq.com/app/getAppAccessToken', {"
+      },
+      {
+        "file": "selfcheck.mjs",
+        "line": 96,
+        "text": "const r = await fetch(`https://api.sgroup.qq.com/v2/users/${openId}/messages`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { appendFileSync, mkdirSync, readFileSync, writeFileSync, existsSync, renameSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 80,
+        "text": "mkdirSync(dirname(config.logFile), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 81,
+        "text": "appendFileSync(config.logFile, JSON.stringify({"
+      },
+      {
+        "file": "index.js",
+        "line": 101,
+        "text": "mkdirSync(dirname(config.logFile), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 107,
+        "text": "appendFileSync(config.logFile, JSON.stringify({ ts: new Date().toISOString(), ...entry }) + '\\n', 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 260,
+        "text": "tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionController",
+    "sessions"
+  ],
+  "setupHints": [
+    {
+      "file": "cordis.patch.yml",
+      "line": 7,
+      "text": "# 💡 不想手改？跑 `node setup.mjs` 用交互式向导生成本文件。"
+    },
+    {
+      "file": "README.md",
+      "line": 25,
+      "text": "- **交互式向导**：`node setup.mjs`（逐项问 AppID/AppSecret/openid 和发送节奏，自动生成配置）"
+    }
+  ],
+  "skippedEntries": []
+}

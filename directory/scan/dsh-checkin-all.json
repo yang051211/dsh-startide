@@ -1,7 +1,7 @@
 {
   "name": "dsh-checkin-all",
-  "version": "0.5.0",
-  "scannedAt": "2026-11-03T08:10:09.406Z",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-03T20:52:33.288Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -17,6 +17,11 @@
         "text": "const response = await fetch(new URL(path, BASE), {"
       },
       {
+        "file": "lib/providers/doubao.js",
+        "line": 60,
+        "text": "const res = await fetch(url, {"
+      },
+      {
         "file": "lib/providers/dumate.js",
         "line": 125,
         "text": "const response = await fetch(`${HOST}${path}`, {"
@@ -25,11 +30,6 @@
         "file": "lib/providers/lingxi.js",
         "line": 111,
         "text": "const response = await fetch(`${HOST}${path}`, {"
-      },
-      {
-        "file": "lib/signin.js",
-        "line": 51,
-        "text": "const response = await fetch(url, {"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/credentials.js",
-        "line": 16,
-        "text": "import { mkdir, open, readdir, readFile, rename, rm, stat, unlink, writeFile } from 'node:fs/promises'"
+        "file": "lib/checkin-secrets.js",
+        "line": 11,
+        "text": "import { chmod, mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises'"
       },
       {
-        "file": "lib/credentials.js",
-        "line": 37,
-        "text": "await mkdir(dir, { recursive: true, mode: 0o700 })"
+        "file": "lib/checkin-secrets.js",
+        "line": 20,
+        "text": "await mkdir(dirname(file), { recursive: true, mode: 0o700 })"
       },
       {
-        "file": "lib/credentials.js",
-        "line": 38,
-        "text": "try { await (await import('node:fs/promises')).chmod(dir, 0o700) } catch { /* 不是自己的就算了 */ }"
+        "file": "lib/checkin-secrets.js",
+        "line": 22,
+        "text": "await writeFile(tmp, text, { mode: 0o600 })"
       },
       {
-        "file": "lib/credentials.js",
-        "line": 46,
-        "text": "await handle.writeFile(text, 'utf8')"
+        "file": "lib/checkin-secrets.js",
+        "line": 27,
+        "text": "await rm(tmp, { force: true }).catch(() => {})"
       },
       {
-        "file": "lib/credentials.js",
-        "line": 52,
-        "text": "try { await (await import('node:fs/promises')).chmod(file, 0o600) } catch { /* 同上 */ }"
+        "file": "lib/checkin-secrets.js",
+        "line": 35,
+        "text": "return JSON.parse(await readFile(file, 'utf8'))"
       }
     ]
   },
@@ -74,8 +74,14 @@
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/providers/browser-cookies.js",
+        "line": 17,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

@@ -1,0 +1,109 @@
+{
+  "name": "dsh-todo-checklist",
+  "version": "1.5.12",
+  "scannedAt": "2026-11-03T20:52:24.871Z",
+  "icon": "dsh-todo-checklist.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client-src/index.js",
+        "line": 3235,
+        "text": "fetch('/dsh-tasks/api/workspaces')"
+      },
+      {
+        "file": "client-src/index.js",
+        "line": 3277,
+        "text": "fetch(`/dsh-tasks/api/next?cron=${encodeURIComponent(cron)}`)"
+      },
+      {
+        "file": "client-src/index.js",
+        "line": 3338,
+        "text": "const resp = await fetch('/dsh-tasks/api', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 154,
+        "text": "l);(0,d.useEffect)(()=>{let T=!1;return fetch(\"/dsh-tasks/api/workspaces\").then(async E=>{if(!E.ok)throw new Error(`HTTP ${E.status}`);return await E.json()}).t"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host/index.js",
+        "line": 14,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "host/index.js",
+        "line": 15,
+        "text": "import { realpathSync } from 'node:fs'"
+      },
+      {
+        "file": "host/index.js",
+        "line": 75,
+        "text": "fs.mkdirSync(STATE_DIR, { recursive: true })"
+      },
+      {
+        "file": "host/index.js",
+        "line": 77,
+        "text": "try { if (fs.statSync(file).size > DIAG_MAX_BYTES) fs.rmSync(file, { force: true }) } catch { }"
+      },
+      {
+        "file": "host/index.js",
+        "line": 78,
+        "text": "fs.appendFileSync(file, `${JSON.stringify({ at: new Date().toISOString(), ...part })}\\n`)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host/index.js",
+        "line": 34,
+        "text": "export const inject = ['tools', 'systemPrompt', 'storageDomain']"
+      },
+      {
+        "file": "host/index.js",
+        "line": 1496,
+        "text": "ctx.effect(() => ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "host/index.js",
+        "line": 1532,
+        "text": "ctx.effect(() => ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "host/index.js",
+        "line": 1549,
+        "text": "ctx.effect(() => ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 155,
+        "text": "(e);e.provide(\"todos\",n),e.effect(()=>e.tools.register(pf({name:\"todo_add\",description:\"Add one item to the user's todo list. \\u628A\\u4E00\\u9879\\u5F85\\u529E\\u51"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js",
+    "lib/host.js",
+    "lib/typert.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

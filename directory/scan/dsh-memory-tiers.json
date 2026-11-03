@@ -1,20 +1,20 @@
 {
   "name": "dsh-memory-tiers",
-  "version": "0.8.3",
-  "scannedAt": "2026-11-03T08:10:02.274Z",
+  "version": "1.2.2",
+  "scannedAt": "2026-11-03T20:52:18.291Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.mjs",
-        "line": 405,
+        "line": 100,
         "text": "const res = await fetch(API + path, {"
       },
       {
-        "file": "silicon.mjs",
-        "line": 137,
-        "text": "r = await fetch(url, {"
+        "file": "llm.mjs",
+        "line": 100,
+        "text": "const r = await fetch(url, {"
       }
     ]
   },
@@ -23,28 +23,28 @@
     "evidence": [
       {
         "file": "index.mjs",
-        "line": 20,
-        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync, appendFileSync } from 'node:fs'"
+        "line": 25,
+        "text": "} from 'node:fs'"
       },
       {
         "file": "index.mjs",
-        "line": 147,
-        "text": "const raw = JSON.parse(readFileSync(pointerFile(), 'utf8'))"
+        "line": 56,
+        "text": "mkdirSync(dirname(p), { recursive: true })"
       },
       {
         "file": "index.mjs",
-        "line": 174,
-        "text": "const raw = JSON.parse(readFileSync(p, 'utf8').replace(/^\\uFEFF/, ''))"
+        "line": 60,
+        "text": "appendFileSync(p, line, 'utf8')"
       },
       {
         "file": "index.mjs",
-        "line": 253,
-        "text": "mkdirSync(dir, { recursive: true })"
+        "line": 68,
+        "text": "try { cur = JSON.parse(readFileSync(p, 'utf8')) || {} } catch { /* 首次 */ }"
       },
       {
         "file": "index.mjs",
-        "line": 254,
-        "text": "appendFileSync(join(dir, 'capture.log'), `${new Date().toISOString()} ${line}\\n`, 'utf8')"
+        "line": 73,
+        "text": "mkdirSync(dirname(p), { recursive: true })"
       }
     ]
   },
@@ -53,13 +53,13 @@
     "evidence": [
       {
         "file": "index.mjs",
-        "line": 33,
+        "line": 41,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "index.mjs",
-        "line": 467,
-        "text": "ctx.tools.register(def)"
+        "line": 592,
+        "text": "try { ctx.tools.register(t); n++ } catch (e) {"
       }
     ]
   },

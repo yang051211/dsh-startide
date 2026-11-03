@@ -1,7 +1,7 @@
 {
   "name": "dsh-workspace-control",
-  "version": "0.5.8",
-  "scannedAt": "2026-11-03T08:09:56.174Z",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-03T20:52:08.137Z",
   "icon": "dsh-workspace-control.svg",
   "network": {
     "hit": false,
@@ -12,28 +12,28 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 34,
+        "line": 36,
         "text": "} from 'node:fs/promises';"
       },
       {
         "file": "index.js",
-        "line": 99,
+        "line": 104,
         "text": "appendFile(LOG_PATH, line, 'utf8').catch(() => {});"
       },
       {
         "file": "index.js",
-        "line": 106,
-        "text": "return rename(LOG_PATH, `${LOG_PATH}.1`).catch(() => rm(LOG_PATH, { force: true }));"
+        "line": 113,
+        "text": "await rm(`${LOG_PATH}.1`, { force: true }).catch(() => {});"
       },
       {
         "file": "index.js",
-        "line": 119,
+        "line": 114,
+        "text": "await rename(LOG_PATH, `${LOG_PATH}.1`).catch(() => rm(LOG_PATH, { force: true }));"
+      },
+      {
+        "file": "index.js",
+        "line": 127,
         "text": "const raw = await readFile(PENDING_PATH, 'utf8');"
-      },
-      {
-        "file": "index.js",
-        "line": 137,
-        "text": "await rm(PENDING_PATH, { force: true });"
       }
     ]
   },
@@ -42,7 +42,7 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 2464,
+        "line": 2572,
         "text": "const dispose = tools.register({"
       }
     ]
@@ -52,17 +52,17 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 36,
+        "line": 38,
         "text": "import { spawn } from 'node:child_process';"
       },
       {
         "file": "index.js",
-        "line": 779,
+        "line": 769,
         "text": "child = spawn(command, args, { stdio: ['ignore', 'ignore', 'pipe'], windowsHide: true });"
       },
       {
         "file": "index.js",
-        "line": 826,
+        "line": 816,
         "text": "const child = spawn('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', command], {"
       }
     ]

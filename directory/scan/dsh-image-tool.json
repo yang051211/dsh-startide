@@ -1,0 +1,88 @@
+{
+  "name": "dsh-image-tool",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-03T20:52:33.375Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 248,
+        "text": "return await fetch(url, init);"
+      },
+      {
+        "file": "lib/client.cjs",
+        "line": 79,
+        "text": "const response = await fetch(`${PREFIX}/config`);"
+      },
+      {
+        "file": "lib/client.cjs",
+        "line": 85,
+        "text": "const response = await fetch(`${PREFIX}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import { statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "import { mkdir, readFile, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 155,
+        "text": "bytes = new Uint8Array(await readFile(absolute, { signal }));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 309,
+        "text": "await mkdir(dirname(destination), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 310,
+        "text": "await writeFile(destination, image.bytes);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 22,
+        "text": "export const inject = [\"tools\", \"attachments\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 224,
+        "text": "tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "attachments",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,139 @@
+{
+  "name": "dsh-elab-cockpit",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-03T20:52:22.420Z",
+  "icon": "dsh-elab-cockpit.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/adapters/dsh-tools/tools.js",
+        "line": 17,
+        "text": "const res = await fetch(`${baseUrl}${path}`, {"
+      },
+      {
+        "file": "lib/adapters/dsh-tools/tools.js",
+        "line": 55,
+        "text": "const res = await fetch(`${baseUrl}/api/capabilities`, { headers: { Accept: 'application/json' } });"
+      },
+      {
+        "file": "lib/adapters/env/envpack.js",
+        "line": 14,
+        "text": "import { get as httpsGet } from 'node:https';"
+      },
+      {
+        "file": "lib/adapters/kernel-http/routes.js",
+        "line": 208,
+        "text": "const upstream = await fetch(target, init);"
+      },
+      {
+        "file": "lib/adapters/kernel-http/routes.js",
+        "line": 294,
+        "text": "const upstream = await fetch(target, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/adapters/env/bootstrap.js",
+        "line": 15,
+        "text": "import { existsSync, readdirSync, rmSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/adapters/env/bootstrap.js",
+        "line": 119,
+        "text": "rmSync(dir, { recursive: true, force: true });"
+      },
+      {
+        "file": "lib/adapters/env/envpack.js",
+        "line": 13,
+        "text": "import { createWriteStream, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/adapters/env/envpack.js",
+        "line": 26,
+        "text": "const raw = readFileSync(MANIFEST_URL, 'utf8');"
+      },
+      {
+        "file": "lib/adapters/env/envpack.js",
+        "line": 42,
+        "text": "const parsed = JSON.parse(readFileSync(statePath(key), 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/main.js",
+        "line": 30,
+        "text": "export const inject = ['webServer', 'connection', 'sessions', 'tools'];"
+      },
+      {
+        "file": "lib/main.js",
+        "line": 167,
+        "text": "if (resolved.tools.autoExposeTools && ctx.tools !== undefined) {"
+      },
+      {
+        "file": "lib/main.js",
+        "line": 168,
+        "text": "const toolRegister = ctx.tools.register.bind(ctx.tools);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/adapters/env/bootstrap.js",
+        "line": 14,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/adapters/env/bootstrap.js",
+        "line": 137,
+        "text": "execFile('git', ['clone', '--depth', '1', url, dir], { timeout: timeoutMs, windowsHide: true, maxBuffer: 4 << 20 }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "lib/adapters/env/envpack.js",
+        "line": 11,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/adapters/env/envpack.js",
+        "line": 129,
+        "text": "execFile(join(dir, rel), args, { timeout: 15_000, windowsHide: true }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "lib/adapters/env/probe.js",
+        "line": 10,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "sessions",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 133,
+      "text": "不做自动 `pip install`、不自动 `git pull`（升级内核仍手动 `git -C <elabRoot> pull --ff-only`）。"
+    }
+  ],
+  "skippedEntries": []
+}

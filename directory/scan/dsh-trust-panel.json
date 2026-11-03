@@ -1,0 +1,78 @@
+{
+  "name": "dsh-trust-panel",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-03T20:52:27.547Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/index.js",
+        "line": 472,
+        "text": "fetch('/trust-panel/api/summary')"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/aggregate.js",
+        "line": 7,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/aggregate.js",
+        "line": 24,
+        "text": "return await readFile(path, 'utf8');"
+      },
+      {
+        "file": "lib/bus.js",
+        "line": 6,
+        "text": "import { appendFile, mkdir, readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/bus.js",
+        "line": 21,
+        "text": "const text = await readFile(this.path, 'utf8');"
+      },
+      {
+        "file": "lib/bus.js",
+        "line": 46,
+        "text": "await mkdir(dirname(this.path), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "export const inject = ['webServer', 'tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 83,
+        "text": "const tools = ctx.tools;"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 4,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,126 @@
+{
+  "name": "dsh-self",
+  "version": "0.10.20",
+  "scannedAt": "2026-11-03T20:52:24.048Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 38,
+        "text": "const response = await fetch(new URL(path, apiBase()).href, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 986,
+        "text": "const resp = await fetch(new URL('self/api/chat-send', apiBase()).href, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1681,
+        "text": "const req = http.request({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1710,
+        "text": "const req = http.request({"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 140,
+        "text": "id: String(r.id ?? '').trim() || accId('fs'),"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 632,
+        "text": "fs.rmSync(path.join(diaryDir(), diaryFile(id)), { force: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 693,
+        "text": "return { bytes: fs.readFileSync(s.path), name: path.basename(s.path) };"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1019,
+        "text": "fs.mkdirSync(dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 34,
+        "text": "export const inject = ['systemPrompt', 'storageDomain', 'tools', 'llm'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2490,
+        "text": "yield ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2498,
+        "text": "yield ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2537,
+        "text": "yield ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2551,
+        "text": "yield ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1765,
+        "text": "const proc = spawn('python', ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 4,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "storageDomain",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

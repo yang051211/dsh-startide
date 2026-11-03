@@ -1,0 +1,59 @@
+{
+  "name": "dsh-windows-notify",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-03T20:52:28.626Z",
+  "icon": "dsh-windows-notify.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 179,
+        "text": "if (stats && stats.size > 256 * 1024) fs.writeFileSync(DEBUG_PATH, '')"
+      },
+      {
+        "file": "index.js",
+        "line": 180,
+        "text": "fs.appendFileSync(DEBUG_PATH, `${new Date().toISOString()} ${line}\\n`)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 25,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 259,
+        "text": "const child = spawn(cfg.powershellPath, ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

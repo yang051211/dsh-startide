@@ -1,0 +1,107 @@
+{
+  "name": "@xiciyang/training-sft",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-03T20:52:29.464Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/confirm.mjs",
+        "line": 10,
+        "text": "import { promises as fs } from 'node:fs'"
+      },
+      {
+        "file": "src/core.mjs",
+        "line": 10,
+        "text": "import { readFileSync, writeFileSync, existsSync, readdirSync, promises as fs } from 'node:fs'"
+      },
+      {
+        "file": "src/core.mjs",
+        "line": 92,
+        "text": "const lineage = JSON.parse(readFileSync(join(datasetDir, 'lineage.json'), 'utf8'))"
+      },
+      {
+        "file": "src/core.mjs",
+        "line": 112,
+        "text": "const payload = JSON.parse(readFileSync(join(srcDir, 'payload.json'), 'utf8'))"
+      },
+      {
+        "file": "src/core.mjs",
+        "line": 134,
+        "text": ".calib?.count ?? null, heldoutRows: lineage.test?.count ?? null, lineageHash: `sha256:${contentHash(readFileSync(join(datasetDir, 'lineage.json'), 'utf8'))}` },"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.mjs",
+        "line": 24,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "src/index.mjs",
+        "line": 126,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      },
+      {
+        "file": "src/output.mjs",
+        "line": 4,
+        "text": "* **这是踩过的坑的落点**：`ctx.tools.register(tool)` 要求 output **同时**给出"
+      },
+      {
+        "file": "src/tools.mjs",
+        "line": 8,
+        "text": "* DSH 工具契约（**踩过的坑**）：`ctx.tools.register` 要求 `output { schema, render }`"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core.mjs",
+        "line": 14,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "src/serving-client.mjs",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/serving-client.mjs",
+        "line": 48,
+        "text": "this.child = spawn(process.execPath, [this.serverPath], { stdio: ['pipe', 'pipe', 'pipe'] })"
+      },
+      {
+        "file": "src/worker.mjs",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/worker.mjs",
+        "line": 66,
+        "text": "this.child = spawn('docker', this.args(), { stdio: ['pipe', 'pipe', 'pipe'] })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 6,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

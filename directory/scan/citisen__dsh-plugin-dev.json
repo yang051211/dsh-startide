@@ -1,0 +1,108 @@
+{
+  "name": "@citisen/dsh-plugin-dev",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-03T20:52:30.244Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/commands/shadow.mjs",
+        "line": 157,
+        "text": "const response = await fetch(url, { redirect: 'manual', signal: AbortSignal.timeout(5000) })"
+      },
+      {
+        "file": "src/commands/shot.mjs",
+        "line": 113,
+        "text": "const version = await (await fetch(`http://127.0.0.1:${port}/json/version`)).json()"
+      },
+      {
+        "file": "src/commands/shot.mjs",
+        "line": 114,
+        "text": "socket = new WebSocket(version.webSocketDebuggerUrl)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-plugin-dev.mjs",
+        "line": 10,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/dsh-plugin-dev.mjs",
+        "line": 51,
+        "text": "const manifest = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "src/commands/doctor.mjs",
+        "line": 9,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "src/commands/shadow.mjs",
+        "line": 14,
+        "text": "import { createWriteStream } from 'node:fs'"
+      },
+      {
+        "file": "src/commands/shot.mjs",
+        "line": 12,
+        "text": "import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/commands/shadow.mjs",
+        "line": 13,
+        "text": "import { execFileSync, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/commands/shadow.mjs",
+        "line": 51,
+        "text": "const child = spawn("
+      },
+      {
+        "file": "src/commands/shot.mjs",
+        "line": 11,
+        "text": "import { execFileSync, spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "src/commands/shot.mjs",
+        "line": 62,
+        "text": "const probe = spawnSync(candidate, ['--version'], { stdio: 'ignore' })"
+      },
+      {
+        "file": "src/commands/shot.mjs",
+        "line": 87,
+        "text": "const child = spawn(browser, ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 54,
+      "text": "npm i -g @citisen/dsh-plugin-dev"
+    }
+  ],
+  "skippedEntries": []
+}

@@ -1,0 +1,138 @@
+{
+  "name": "dsh-site-bridge",
+  "version": "0.10.0",
+  "scannedAt": "2026-11-03T20:52:32.771Z",
+  "icon": "dsh-site-bridge.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "extension/sw.js",
+        "line": 69,
+        "text": "const response = await fetch(baseUrl(cfg) + path, {"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 11,
+        "text": "import { createServer } from 'node:http'"
+      },
+      {
+        "file": "tools/make-icons.mjs",
+        "line": 36,
+        "text": "this.ws = new WebSocket(this.url)"
+      },
+      {
+        "file": "tools/make-icons.mjs",
+        "line": 89,
+        "text": "const response = await fetch(`http://127.0.0.1:${port}/json/version`)"
+      },
+      {
+        "file": "tools/make-screenshots.mjs",
+        "line": 130,
+        "text": "this.ws = new WebSocket(this.url)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/artifacts.js",
+        "line": 8,
+        "text": "import { mkdir, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/artifacts.js",
+        "line": 254,
+        "text": "await mkdir(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/artifacts.js",
+        "line": 269,
+        "text": "if (spilled.length > 0) await mkdir(join(dir, 'bodies'), { recursive: true })"
+      },
+      {
+        "file": "lib/artifacts.js",
+        "line": 270,
+        "text": "for (const item of spilled) await writeFile(join(dir, item.name), item.body, 'utf8')"
+      },
+      {
+        "file": "lib/artifacts.js",
+        "line": 304,
+        "text": "await writeFile(join(dir, name), content, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 203,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 257,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 355,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 447,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tools/make-icons.mjs",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "tools/make-icons.mjs",
+        "line": 69,
+        "text": "const chrome = spawn("
+      },
+      {
+        "file": "tools/make-screenshots.mjs",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "tools/make-screenshots.mjs",
+        "line": 153,
+        "text": "const chrome = spawn(chromePath, ["
+      },
+      {
+        "file": "tools/preview-icon.mjs",
+        "line": 7,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

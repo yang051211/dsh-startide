@@ -1,0 +1,78 @@
+{
+  "name": "dsh-doc-reader",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-03T20:52:16.905Z",
+  "icon": "dsh-doc-reader.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/fetch.js",
+        "line": 32,
+        "text": "const response = await fetch(parsed, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/ocr.js",
+        "line": 1,
+        "text": "import { mkdir } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/ocr.js",
+        "line": 79,
+        "text": "await mkdir(ocrCacheDir(), { recursive: true }).catch(() => {});"
+      },
+      {
+        "file": "lib/read.js",
+        "line": 1,
+        "text": "import { readFile, stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/read.js",
+        "line": 40,
+        "text": "return { buffer: await readFile(absolute), source: absolute, kind: \"path\" };"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 189,
+        "text": "export const inject = [\"tools\"];"
+      },
+      {
+        "file": "index.js",
+        "line": 193,
+        "text": "const disposers = tools.map((tool) => ctx.tools.register(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 7,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 5,
+      "text": "ide deck currently ends up as `curl` + `pip install pypdf` inside the session. This plugin closes that gap with five typed tools that return page-, sheet- and s"
+    }
+  ],
+  "skippedEntries": []
+}

@@ -1,0 +1,56 @@
+{
+  "name": "dsh-judgment",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-03T20:52:27.932Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/provider/dispatch.js",
+        "line": 61,
+        "text": "response = await fetch(input.url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/provider/ledger.js",
+        "line": 13,
+        "text": "import { appendFile, mkdir, open } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/provider/ledger.js",
+        "line": 48,
+        "text": "await mkdir(dirname(this.path), { recursive: true });"
+      },
+      {
+        "file": "lib/provider/ledger.js",
+        "line": 49,
+        "text": "await appendFile(this.path, `${JSON.stringify(line)}\\n`, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "credentials"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

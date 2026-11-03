@@ -1,0 +1,94 @@
+{
+  "name": "dsh-qoder-llm",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-03T20:52:30.957Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 73,
+        "text": "const res = await fetch(`${API}/config`);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 85,
+        "text": "const res = await fetch(`${API}/status`);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 122,
+        "text": "const res = await fetch(`${API}/config`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 138,
+        "text": "const res = await fetch(`${API}/login`, { method: \"POST\" });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 9,
+        "text": "import { readFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 86,
+        "text": "const bytes = await readFile(hostPath);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/login.mjs",
+        "line": 6,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "bin/login.mjs",
+        "line": 14,
+        "text": "const child = spawn(process.execPath, [worker, \"login\"], { stdio: \"inherit\" });"
+      },
+      {
+        "file": "bin/status.mjs",
+        "line": 6,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "bin/status.mjs",
+        "line": 14,
+        "text": "const result = spawnSync(process.execPath, [worker, \"--list-models\"], { encoding: \"utf8\" });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 8,
+        "text": "import { execFile, spawn } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "llm",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

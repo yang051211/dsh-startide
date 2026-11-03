@@ -1,0 +1,66 @@
+{
+  "name": "dsh-plugin-soulbridge",
+  "version": "0.0.107",
+  "scannedAt": "2026-11-03T20:52:33.561Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, renameSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 46,
+        "text": "const VERSION = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')).version;"
+      },
+      {
+        "file": "index.js",
+        "line": 57,
+        "text": "mkdirSync(HOME, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 58,
+        "text": "appendFileSync(LLM_RAW_FILE, `${new Date().toISOString()} ${JSON.stringify(String(raw))}\\n`);"
+      },
+      {
+        "file": "index.js",
+        "line": 77,
+        "text": "mkdirSync(HOME, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 2276,
+        "text": "const disposers = [tools.register(recallTool()), tools.register(rememberTool()), tools.register(detailTool())];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

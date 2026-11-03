@@ -1,7 +1,7 @@
 {
   "name": "dsh-dot-life",
-  "version": "0.11.3",
-  "scannedAt": "2026-11-02T23:01:03.076Z",
+  "version": "0.15.0",
+  "scannedAt": "2026-11-03T20:52:04.853Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/computer/audit.js",
-        "line": 4,
-        "text": "import { appendFileSync, renameSync, statSync } from 'node:fs';"
-      },
-      {
-        "file": "src/computer/audit.js",
-        "line": 26,
-        "text": "appendFileSync(file, `${JSON.stringify({ ts: new Date().toISOString(), ...entry })}\\n`);"
-      },
-      {
-        "file": "src/computer/backends/microsandbox.js",
+        "file": "scripts/prompts.mjs",
         "line": 6,
-        "text": "import { existsSync, readdirSync, readFileSync } from 'node:fs';"
+        "text": "import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';"
       },
       {
-        "file": "src/computer/backends/microsandbox.js",
-        "line": 116,
-        "text": "const member = JSON.parse(readFileSync(join(snapDir, id, 'group-member.json'), 'utf8')).name;"
+        "file": "scripts/prompts.mjs",
+        "line": 137,
+        "text": "const builtin = readFileSync(P.builtinPath(id), 'utf8').replace(/\\n$/, '');"
       },
       {
-        "file": "src/computer/backends/microsandbox.js",
-        "line": 117,
-        "text": "const created = JSON.parse(readFileSync(join(snapDir, id, 'snapshot.json'), 'utf8')).capture?.created_at || '';"
+        "file": "scripts/prompts.mjs",
+        "line": 145,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "scripts/prompts.mjs",
+        "line": 146,
+        "text": "writeFileSync(path, body);"
+      },
+      {
+        "file": "scripts/prompts.mjs",
+        "line": 147,
+        "text": "const lost = placeholders(readFileSync(P.builtinPath(id), 'utf8')).filter((k) => !body.includes(`{${k}}`));"
       }
     ]
   },
@@ -67,28 +67,28 @@
     "hit": true,
     "evidence": [
       {
+        "file": "scripts/prompts.mjs",
+        "line": 20,
+        "text": "'@deepseek-ai/dsh-mcp-client': '',"
+      },
+      {
         "file": "src/computer/gate.js",
-        "line": 15,
+        "line": 16,
         "text": "export const inject = ['tools', 'dshComputer'];"
       },
       {
         "file": "src/computer/vm.js",
-        "line": 38,
+        "line": 39,
         "text": "// Mount the VM's browser/desktop tools (mcp__dot-vm__*) through dsh-mcp-client with the key attached."
       },
       {
         "file": "src/computer/vm.js",
-        "line": 316,
+        "line": 319,
         "text": "ent = config.mcpClient ?? await import('@deepseek-ai/dsh-mcp-client'); } catch (err) { logger.error(`${VM_TOOL_PREFIX}* unavailable: ${err.message}`); return; }"
       },
       {
         "file": "src/memory/memory.js",
-        "line": 499,
-        "text": "scope.effect(() => scope.tools.register({"
-      },
-      {
-        "file": "src/memory/memory.js",
-        "line": 523,
+        "line": 563,
         "text": "scope.effect(() => scope.tools.register({"
       }
     ]

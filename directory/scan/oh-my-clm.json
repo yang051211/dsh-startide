@@ -1,0 +1,88 @@
+{
+  "name": "oh-my-clm",
+  "version": "0.1.12",
+  "scannedAt": "2026-11-03T20:52:30.439Z",
+  "icon": "oh-my-clm.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/dsh/index.js",
+        "line": 1,
+        "text": "import * as fs from \"node:fs\";"
+      },
+      {
+        "file": "dist/dsh/index.js",
+        "line": 19,
+        "text": "return fs.readFileSync(filePath, \"utf8\");"
+      },
+      {
+        "file": "dist/src/lib/clm-files.js",
+        "line": 1,
+        "text": "import * as fs from \"node:fs\";"
+      },
+      {
+        "file": "dist/src/lib/clm-files.js",
+        "line": 12,
+        "text": "fs.mkdirSync(directory, { recursive: true, mode: PRIVATE_DIRECTORY_MODE });"
+      },
+      {
+        "file": "dist/src/lib/clm-files.js",
+        "line": 16,
+        "text": "fs.writeFileSync(temporaryPath, content, { encoding: \"utf8\", mode: PRIVATE_FILE_MODE });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/dsh/index.js",
+        "line": 134,
+        "text": "// `ctx.tools[TOOL_RUNTIME_SCHEDULER]` is undefined and every model tool call"
+      },
+      {
+        "file": "dist/dsh/index.js",
+        "line": 366,
+        "text": "if (ctx.tools) {"
+      },
+      {
+        "file": "dist/dsh/index.js",
+        "line": 369,
+        "text": "ctx.tools.register(createDshCleanupTool((sessionId) => states.get(sessionId)));"
+      },
+      {
+        "file": "dist/dsh/index.js",
+        "line": 436,
+        "text": "export const inject = [\"systemPrompt\", \"tools\", \"commands\"];"
+      },
+      {
+        "file": "dsh/index.ts",
+        "line": 230,
+        "text": "// `ctx.tools[TOOL_RUNTIME_SCHEDULER]` is undefined and every model tool call"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

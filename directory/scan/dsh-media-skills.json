@@ -1,0 +1,87 @@
+{
+  "name": "dsh-media-skills",
+  "version": "0.6.4",
+  "scannedAt": "2026-11-03T20:52:08.129Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 234,
+        "text": "const response = await fetch(`/media${path}`, { headers: { 'content-type': 'application/json' }, ...init })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import { createReadStream, mkdirSync, readFileSync, rmSync, statSync, writeFileSync, chmodSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 55,
+        "text": "const metadata = frontmatter(readFileSync(body, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 79,
+        "text": "const raw = await readFile(locator.body, { encoding: 'utf8', signal: options.signal })"
+      },
+      {
+        "file": "index.js",
+        "line": 161,
+        "text": "for (const line of readFileSync(file, 'utf8').split(/\\r?\\n/)) {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 25,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 400,
+        "text": "const child = spawn('python3', [script, prompt, out, size], { cwd: dirname(script), env: { ...process.env, ...env } })"
+      },
+      {
+        "file": "scripts/check-python.mjs",
+        "line": 1,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/check-python.mjs",
+        "line": 8,
+        "text": "const result = spawnSync(process.env.PYTHON ?? 'python3', ['-m', 'py_compile', ...files], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

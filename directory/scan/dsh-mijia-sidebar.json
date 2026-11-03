@@ -1,0 +1,83 @@
+{
+  "name": "dsh-mijia-sidebar",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-03T20:52:25.987Z",
+  "icon": "dsh-mijia-sidebar.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 25,
+        "text": "import { appendFile, readFile, rename, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 82,
+        "text": "const raw = JSON.parse(await readFile(snapshotPath(), 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 92,
+        "text": "await writeFile(snapshotPath(), JSON.stringify(value), 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 115,
+        "text": "const raw = JSON.parse(await readFile(configPath(), 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 137,
+        "text": "await appendFile(path, line + '\\n', 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 23,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 168,
+        "text": "child = spawn(candidate.command, [...candidate.args, ...args], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 48,
+      "text": "- **mijiaAPI**, installed with the same interpreter you let the plugin use: `pip install mijiaAPI` (or `python -m pip install mijiaAPI`)."
+    },
+    {
+      "file": "README.md",
+      "line": 48,
+      "text": "- **mijiaAPI**：用同一个解释器执行 `pip install mijiaAPI`（或 `python -m pip install mijiaAPI`）。"
+    }
+  ],
+  "skippedEntries": []
+}

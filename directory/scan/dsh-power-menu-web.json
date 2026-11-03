@@ -1,0 +1,108 @@
+{
+  "name": "dsh-power-menu-web",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-03T20:52:20.647Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 316,
+        "text": "fetch('/api/dsh-power-menu-web/config', { credentials: 'same-origin' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 335,
+        "text": "fetch('/api/dsh-power-menu-web/health', { credentials: 'same-origin' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 349,
+        "text": "fetch('/api/dsh-power-menu-web/bundles', { credentials: 'same-origin' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 449,
+        "text": "const response = await fetch(`/api/dsh-power-menu-web/${endpoint}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 481,
+        "text": "const probe = await fetch('/api/dsh-power-menu-web/health', { credentials: 'same-origin', cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "enable.sh",
+        "line": 41,
+        "text": "const fs = require('node:fs')"
+      },
+      {
+        "file": "enable.sh",
+        "line": 43,
+        "text": "const data = JSON.parse(fs.readFileSync(pkg, 'utf8'))"
+      },
+      {
+        "file": "enable.sh",
+        "line": 50,
+        "text": "fs.writeFileSync(pkg, `${JSON.stringify(data, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "lib/helper.cjs",
+        "line": 27,
+        "text": "const fs = require('node:fs')"
+      },
+      {
+        "file": "lib/helper.cjs",
+        "line": 52,
+        "text": "fs.appendFileSync(LOG_PATH, text, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/helper.cjs",
+        "line": 26,
+        "text": "const { execFileSync, spawn } = require('node:child_process')"
+      },
+      {
+        "file": "lib/helper.cjs",
+        "line": 334,
+        "text": "const child = spawn(handoff.exe, argv, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 28,
+        "text": "import { execFileSync, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 468,
+        "text": "const helper = spawn(process.execPath, [HELPER, handoffPath], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

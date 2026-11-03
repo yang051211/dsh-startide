@@ -1,35 +1,35 @@
 {
   "name": "dsh-builtin-browser",
-  "version": "0.5.2",
-  "scannedAt": "2026-10-31T22:51:40.573Z",
+  "version": "0.5.6",
+  "scannedAt": "2026-11-03T20:51:58.496Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 154,
+        "line": 253,
         "text": "const response = await fetch(ROUTE, patch === undefined"
       },
       {
         "file": "client.js",
-        "line": 1191,
+        "line": 615,
+        "text": "const response = await fetch(\"/dsh-builtin-browser/runtime-status\", { headers: { accept: \"application/json\" } })"
+      },
+      {
+        "file": "client.js",
+        "line": 658,
+        "text": "const response = await fetch(\"/dsh-builtin-browser/runtime-provision\", {"
+      },
+      {
+        "file": "client.js",
+        "line": 1563,
         "text": "const response = await fetch(SESSIONS, { headers: { accept: \"application/json\" } })"
       },
       {
         "file": "client.js",
-        "line": 1224,
+        "line": 1596,
         "text": "const response = await fetch(url, { headers: { accept: \"image/jpeg\" } })"
-      },
-      {
-        "file": "client.js",
-        "line": 1307,
-        "text": "const response = await fetch(\"/dsh-builtin-browser/bridge-status\", { headers: { accept: \"application/json\" } })"
-      },
-      {
-        "file": "lib/browser-electron/host-main.js",
-        "line": 967,
-        "text": "const r = await fetch(${JSON.stringify(url)}, { credentials: 'include' })"
       }
     ]
   },
@@ -39,7 +39,7 @@
       {
         "file": "desktop-bridge/install.mjs",
         "line": 69,
-        "text": "import { copyFileSync, existsSync, mkdirSync, openSync, readFileSync, readSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+        "text": "rt { closeSync, copyFileSync, existsSync, mkdirSync, openSync, readFileSync, readSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "desktop-bridge/install.mjs",
@@ -107,31 +107,25 @@
         "text": "const child = spawn(exe, [], { detached: true, stdio: 'ignore', cwd: root })"
       },
       {
+        "file": "lib/browser-electron/electron-provision.js",
+        "line": 30,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/browser-electron/electron-provision.js",
+        "line": 111,
+        "text": "const child = spawn(process.execPath, [script], {"
+      },
+      {
         "file": "lib/browser-electron/host-main.js",
-        "line": 1146,
+        "line": 1200,
         "text": "// written to stdin at spawn (moments after process start, long before"
-      },
-      {
-        "file": "lib/browser-electron/remote-host.js",
-        "line": 29,
-        "text": "import { execFileSync, spawn } from 'node:child_process';"
-      },
-      {
-        "file": "lib/browser-electron/remote-host.js",
-        "line": 440,
-        "text": "this.child = spawn(electron, [hostMainPath, '--rpc-port', String(port)], {"
       }
     ]
   },
   "installScripts": {
-    "hit": true,
-    "evidence": [
-      {
-        "file": "package.json",
-        "line": 0,
-        "text": "scripts.postinstall: node scripts/install-electron.mjs"
-      }
-    ]
+    "hit": false,
+    "evidence": []
   },
   "dependencies": 1,
   "minifiedFiles": [],

@@ -1,7 +1,7 @@
 {
   "name": "dsh-napcat-keeper",
-  "version": "2.9.1",
-  "scannedAt": "2026-11-03T08:09:52.856Z",
+  "version": "2.9.4",
+  "scannedAt": "2026-11-03T20:52:00.769Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,17 +18,17 @@
       },
       {
         "file": "lib/index.js",
-        "line": 168,
+        "line": 175,
         "text": "import http from 'node:http'"
       },
       {
         "file": "lib/index.js",
-        "line": 963,
+        "line": 992,
         "text": "req = http.request("
       },
       {
         "file": "lib/index.js",
-        "line": 3284,
+        "line": 3352,
         "text": "try { s = await (await fetch('qr-state?t=' + Date.now(), { cache:'no-store' })).json() }"
       }
     ]
@@ -38,27 +38,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 167,
+        "line": 174,
         "text": "} from 'node:fs'"
       },
       {
         "file": "lib/index.js",
-        "line": 324,
+        "line": 353,
         "text": "mkdirSync(dir, { recursive: true })"
       },
       {
         "file": "lib/index.js",
-        "line": 364,
+        "line": 393,
         "text": "unlinkSync(from)"
       },
       {
         "file": "lib/index.js",
-        "line": 368,
+        "line": 397,
         "text": "unlinkSync(to)"
       },
       {
         "file": "lib/index.js",
-        "line": 399,
+        "line": 428,
         "text": "parsed = JSON.parse(readFileSync(stray, 'utf8').replace(/^\\uFEFF/, ''))"
       }
     ]
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 177,
+        "line": 184,
         "text": "export const inject = ['tools', 'webServer']"
       },
       {
         "file": "lib/index.js",
-        "line": 2888,
+        "line": 188,
+        "text": "*  直接写 ctx.tools / ctx.webServer 在那里会抛 `cannot get property \"tools\" without inject`，"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2945,
         "text": "* 拿得到就用它的 defineTool，拿不到就把定义原样交给 ctx.tools.register —— 跟"
       },
       {
         "file": "lib/index.js",
-        "line": 2924,
-        "text": "if (!ctx || !ctx.tools || typeof ctx.tools.register !== 'function') {"
+        "line": 3006,
+        "text": "tools.register("
       },
       {
         "file": "lib/index.js",
-        "line": 2939,
-        "text": "return ctx.tools.register(def)"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 2948,
+        "line": 3124,
         "text": "tools.register("
       }
     ]
@@ -98,17 +98,17 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 150,
+        "line": 157,
         "text": "import { execFileSync, spawn } from 'node:child_process'"
       },
       {
         "file": "lib/index.js",
-        "line": 914,
+        "line": 943,
         "text": "child = spawn(file, args, { windowsHide: true, stdio: ['ignore', 'pipe', 'ignore'] })"
       },
       {
         "file": "lib/index.js",
-        "line": 2469,
+        "line": 2526,
         "text": "const child = spawn('cscript.exe', ['//nologo', vbsFile], {"
       },
       {

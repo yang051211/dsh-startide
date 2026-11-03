@@ -1,0 +1,97 @@
+{
+  "name": "@shypie_privacy/dsh-privacy-gate",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-03T20:52:33.069Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import { writeFileSync, mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 112,
+        "text": "mkdirSync(dirname(target), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 113,
+        "text": "writeFileSync(target, content, { encoding: 'utf8', mode: 0o600 })"
+      },
+      {
+        "file": "lib/audit.js",
+        "line": 12,
+        "text": "import { appendFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/audit.js",
+        "line": 33,
+        "text": "const append = deps.append ?? ((file, line) => appendFileSync(file, line, { encoding: 'utf8' }))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "*   Guards  ctx.tools.guard         deny read_image and binary document reads"
+      },
+      {
+        "file": "index.js",
+        "line": 37,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 156,
+        "text": "ctx.tools.register(definition)"
+      },
+      {
+        "file": "lib/gate.js",
+        "line": 10,
+        "text": "*   Guards  ctx.tools.guard()   (sync)       — deny `read_image` and binary"
+      },
+      {
+        "file": "lib/gate.js",
+        "line": 199,
+        "text": "disposers.push(ctx.tools.guard((exec) => guardDecision(exec, deps.config)))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/extract.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/extract.js",
+        "line": 99,
+        "text": "const child = spawn(command, args, { windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

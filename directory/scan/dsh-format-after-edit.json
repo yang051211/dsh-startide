@@ -1,0 +1,80 @@
+{
+  "name": "dsh-format-after-edit",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-03T20:52:31.174Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/formatters.js",
+        "line": 7,
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/formatters.js",
+        "line": 8,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/formatters.js",
+        "line": 30,
+        "text": "return JSON.parse(readFileSync(path, 'utf8'));"
+      },
+      {
+        "file": "lib/formatters.js",
+        "line": 38,
+        "text": "return readFileSync(path, 'utf8');"
+      },
+      {
+        "file": "lib/formatters.js",
+        "line": 162,
+        "text": "const before = await readFile(absFile, 'utf8').catch(() => undefined);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/formatters.js",
+        "line": 6,
+        "text": "import { execFile, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/formatters.js",
+        "line": 166,
+        "text": "const child = spawn(plan.shell, { cwd: plan.cwd, shell: true, windowsHide: true, timeout: timeoutMs });"
+      },
+      {
+        "file": "lib/formatters.js",
+        "line": 174,
+        "text": "execFile(plan.file, plan.args, { cwd: plan.cwd, timeout: timeoutMs, windowsHide: true, maxBuffer: 4 * 1024 * 1024 }, (error, stdout, stderr) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: tsc -p tsconfig.json"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

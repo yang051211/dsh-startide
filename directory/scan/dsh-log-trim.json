@@ -1,0 +1,75 @@
+{
+  "name": "dsh-log-trim",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-03T20:52:32.389Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 128,
+        "text": "const response = await fetch(`${ROUTE_PREFIX}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 30,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 76,
+        "text": "const parsed = JSON.parse(fs.readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 94,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 97,
+        "text": "fs.writeFileSync(file, `${JSON.stringify(kept, null, 2)}\\n`)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 503,
+        "text": "const parsed = JSON.parse(fs.readFileSync(file, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 28,
+        "text": "import { spawn as spawnChild } from 'node:child_process'"
+      },
+      {
+        "file": "lib/vendor/compact-session.mjs",
+        "line": 27,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

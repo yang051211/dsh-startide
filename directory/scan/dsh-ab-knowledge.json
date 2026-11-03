@@ -1,0 +1,118 @@
+{
+  "name": "dsh-ab-knowledge",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-03T20:52:31.186Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/embed.js",
+        "line": 43,
+        "text": "const res = await fetch(`${cfg.baseUrl}/api/embed`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 118,
+        "text": "const res = await fetch(`${cfg.baseUrl}/api/embed`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 710,
+        "text": "resp = await fetch(base + \"/layout-parsing\", {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1847,
+        "text": "const res = await fetch(`${cfg.baseUrl}/api/chat`, {"
+      },
+      {
+        "file": "lib/ocr.js",
+        "line": 97,
+        "text": "resp = await fetch(base + '/layout-parsing', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 278,
+        "text": "if (!existsSync(dir)) mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 807,
+        "text": "return parseDocumentBuffer(readFileSync(filePath), formatOf(filePath), filePath, ocrCfg);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1281,
+        "text": "if (!existsSync(dir)) mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1289,
+        "text": "writeFileSync(full, markdown, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2241,
+        "text": "const inject = [\"tools\", \"systemPrompt\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2270,
+        "text": "* @param ctx - the Cordis context, with `ctx.tools` / `ctx.systemPrompt` injected."
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2277,
+        "text": "ctx.tools.register(definition);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2284,
+        "text": "text: ({ scope }) => ctx.tools.get(searchTool, scope) === void 0 ? \"\" : sectionText(config.toolPrefix)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 6,
+  "minifiedFiles": [
+    "lib/turndown.cjs-CAp47pXJ.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 259,
+      "text": "python -m pip install paddlepaddle-gpu==3.3.0 -i https://www.paddlepaddle.org.cn/packages/stable/cu126/"
+    },
+    {
+      "file": "README.md",
+      "line": 261,
+      "text": "python -m pip install \"paddlex[ocr]\""
+    }
+  ],
+  "skippedEntries": []
+}

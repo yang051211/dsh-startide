@@ -1,7 +1,7 @@
 {
   "name": "dsh-onebot-qq",
-  "version": "0.9.10",
-  "scannedAt": "2026-11-02T07:37:59.683Z",
+  "version": "0.9.11",
+  "scannedAt": "2026-11-03T20:51:55.925Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -38,12 +38,12 @@
       },
       {
         "file": "lib/commands.js",
-        "line": 1189,
+        "line": 1280,
         "text": "const text = await readFile(join(root, entry.name, 'preset.yml'), 'utf8');"
       },
       {
         "file": "lib/commands.js",
-        "line": 1211,
+        "line": 1302,
         "text": "const pkg = JSON.parse(readFileSync(join(dirname(dirname(fileURLToPath(import.meta.url))), 'package.json'), 'utf8'));"
       }
     ]
@@ -52,14 +52,19 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/ask-tool.js",
+        "line": 176,
+        "text": "const disposer = ctx.tools.register(tool);"
+      },
+      {
         "file": "lib/index.js",
-        "line": 51,
+        "line": 53,
         "text": "export const inject = ['tools', 'systemPrompt', 'agents', 'sessions', 'agentDefaultModel', 'agentPresets', 'sessionPersistence', 'workspaceRegistry', 'commands'"
       },
       {
         "file": "lib/tools.js",
-        "line": 112,
-        "text": "disposers.push(ctx.tools.register(tool));"
+        "line": 134,
+        "text": "disposers.push(ctx.tools.register(gated));"
       }
     ]
   },

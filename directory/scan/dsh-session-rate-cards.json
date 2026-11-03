@@ -1,0 +1,66 @@
+{
+  "name": "dsh-session-rate-cards",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-03T20:52:18.061Z",
+  "icon": "dsh-session-rate-cards.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 414,
+        "text": "const response = await fetch(PRICING_ENDPOINT, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "import { mkdir, rename, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 435,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 448,
+        "text": "await mkdir(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 450,
+        "text": "await writeFile(temporary, `${JSON.stringify({ version: 1, models }, null, 2)}\\n`, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionProjections"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
