@@ -229,7 +229,8 @@ export const STYLE_TEXT = `
 .ps-spec-field { display: flex; gap: 8px; }
 .ps-spec-input { flex: 1; min-width: 0; font: inherit; font-family: ${C.mono}; font-size: 13px; color: ${C.text}; background: ${C.bg1}; border: 1px solid ${C.border}; border-radius: ${C.rMd}; padding: 7px 10px; }
 .ps-inst-group { margin-bottom: 26px; }
-.ps-inst-group-title { font-size: 15px; margin: 0 0 8px; }
+.ps-inst-group-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 8px; }
+.ps-inst-group-title { font-size: 15px; margin: 0; }
 .ps-inst-list { list-style: none; margin: 0; padding: 0; border: 1px solid ${C.borderSoft}; border-radius: ${C.rLg}; background: ${C.bg1}; }
 .ps-inst-row { display: flex; align-items: center; gap: 14px; padding: 12px 16px; }
 .ps-inst-row + .ps-inst-row { border-top: 1px solid ${C.borderSoft}; }

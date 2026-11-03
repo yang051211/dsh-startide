@@ -365,3 +365,50 @@ test('an update under hot reload, which uninstalls and reinstalls, is not announ
   await flush()
   assert.ok(!textIn(root.root).includes(zh.installedHint), textIn(root.root))
 })
+
+const updateAllButton = root => root.root.findAll(n => n.type === 'button' && textIn(n).startsWith(zh.updateAll.split('{')[0]))
+
+test('with two or more plugins to update, "update all" asks once listing every version, then queues them in the order shown', async () => {
+  const { root, calls } = await open({
+    bundles: [bundle('dsh-pet', '0.9.0'), bundle('dsh-cost-meter', '0.5.0', { enabled: false }), bundle('dsh-context', '1.0.0')],
+    services: { update: async (...args) => { calls.update.push(args.slice(0, 3)); return 'applied' } },
+  })
+  const [button] = updateAllButton(root)
+  assert.ok(textIn(button).includes('2'), textIn(button))
+  await click(button)
+  const dialog = root.root.find(n => n.props.role === 'dialog')
+  const text = textIn(dialog)
+  assert.ok(text.includes('0.9.0 → 1.0.0') && text.includes('0.5.0 → 1.0.0'), text)
+  assert.equal(calls.update.length, 0, 'nothing starts before the confirmation')
+  const shown = rows(root, 'updates')
+  await click(buttonIn(dialog, zh.updateAllConfirm))
+  assert.deepEqual(calls.update.map(c => c[0]), shown)
+  assert.deepEqual(calls.update.find(c => c[0] === 'dsh-cost-meter'), ['dsh-cost-meter', '1.0.0', { current: '0.5.0', enabled: false }])
+  assert.deepEqual(calls.update.find(c => c[0] === 'dsh-pet'), ['dsh-pet', '1.0.0', { current: '0.9.0', enabled: true }])
+})
+
+test('"update all" is offered only for two or more plugins, and leaves the store itself to its own button', async () => {
+  const one = await open({ bundles: [bundle('dsh-pet', '0.9.0')] })
+  assert.equal(updateAllButton(one.root).length, 0)
+  const withSelf = await open({ bundles: [bundle('dsh-startide', '0.2.0'), bundle('dsh-pet', '0.9.0'), bundle('dsh-cost-meter', '0.5.0')], storeVersion: '0.3.0' })
+  await click(updateAllButton(withSelf.root)[0])
+  const dialog = withSelf.root.root.find(n => n.props.role === 'dialog')
+  assert.ok(textIn(dialog).includes(zh.updateAllSelf), textIn(dialog))
+  assert.ok(!textIn(dialog).includes('0.2.0 → 0.3.0'), 'the store is not in the list')
+})
+
+test('while updates run, "update all" is disabled; a failure stays under its own row and the rest still update', async () => {
+  const finish = []
+  const { root, calls } = await open({
+    bundles: [bundle('dsh-pet', '0.9.0'), bundle('dsh-cost-meter', '0.5.0')],
+    services: { update: (...args) => { calls.update.push(args[0]); return new Promise(resolve => finish.push(resolve)) } },
+  })
+  await click(updateAllButton(root)[0])
+  await click(buttonIn(root.root.find(n => n.props.role === 'dialog'), zh.updateAllConfirm))
+  assert.equal(updateAllButton(root)[0].props.disabled, true)
+  assert.deepEqual(calls.update, ['dsh-cost-meter', 'dsh-pet'])
+  await act(async () => { finish[0]('applied'); finish[1]({ error: 'registry down', code: 'restored', version: '0.9.0' }) })
+  await flush()
+  assert.ok(textIn(row(root, 'dsh-pet')).includes('已装回 v0.9.0'), textIn(row(root, 'dsh-pet')))
+  assert.ok(!textIn(row(root, 'dsh-cost-meter')).includes('registry down'))
+})

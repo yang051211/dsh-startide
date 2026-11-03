@@ -10,7 +10,7 @@ import type { SelfUpdate } from '../model/install-state.ts'
 import type { ChangeProgress } from './StoreApp.tsx'
 import { without, type Action, type ChangeBook, type RowChange } from './change-book.ts'
 import { PageHeader, PluginIcon, type Translate } from './common.tsx'
-import { ConfirmSpec, ConfirmUpdate } from './ConfirmInstall.tsx'
+import { ConfirmSpec, ConfirmUpdate, ConfirmUpdateAll } from './ConfirmInstall.tsx'
 import { ConfirmRemove } from './ConfirmRemove.tsx'
 
 export type Inspection = { ok: true; name: string; version: string } | { ok: false; reason: string }
@@ -109,6 +109,7 @@ export function InstalledView(props: InstalledViewProps): ReactNode {
   const { changes, notes } = useSyncExternalStore(book.subscribe, book.get)
   const [removing, setRemoving] = useState<InstalledRow | null>(null)
   const [updating, setUpdating] = useState<InstalledRow | null>(null)
+  const [updatingAll, setUpdatingAll] = useState<InstalledRow[] | null>(null)
   const pinned = Object.fromEntries(Object.entries(changes).flatMap(([name, c]) => (c.pinned ? [[name, c.pinned]] : [])))
 
   /**
@@ -132,13 +133,26 @@ export function InstalledView(props: InstalledViewProps): ReactNode {
   }, [book, t])
 
   const cancelUpdate = useCallback(() => setUpdating(null), [])
+  /** Queue one update; the store's queue runs them one after another, so several can be started at once. */
+  const startUpdate = useCallback((row: InstalledRow) => {
+    if (!row.latest || !row.version) return
+    const group = (['updates', 'others', 'official'] as const).find(id => rows?.[id].some(r => r.name === row.name)) ?? 'updates'
+    void change(row, 'update', progress => update(row.name, row.latest!, { current: row.version!, enabled: row.enabled }, progress), row.latest, { row, group })
+  }, [change, update, rows])
   const acceptUpdate = useCallback(() => {
     const row = updating
     setUpdating(null)
-    if (!row?.latest || !row.version) return
-    const group = (['updates', 'others', 'official'] as const).find(id => rows?.[id].some(r => r.name === row.name)) ?? 'updates'
-    void change(row, 'update', progress => update(row.name, row.latest!, { current: row.version!, enabled: row.enabled }, progress), row.latest, { row, group })
-  }, [updating, change, update, rows])
+    if (row) startUpdate(row)
+  }, [updating, startUpdate])
+
+  // "Update all" covers the other plugins; the store's own update goes through DSH's dialog and keeps its own button.
+  const queueable = rows ? rows.updates.filter(r => !r.self && r.latest !== null && r.version !== null) : []
+  const cancelUpdateAll = useCallback(() => setUpdatingAll(null), [])
+  const acceptUpdateAll = useCallback(() => {
+    const list = updatingAll
+    setUpdatingAll(null)
+    for (const row of list ?? []) startUpdate(row)
+  }, [updatingAll, startUpdate])
 
   const cancelRemove = useCallback(() => setRemoving(null), [])
   const acceptRemove = useCallback(() => {
@@ -191,7 +205,15 @@ export function InstalledView(props: InstalledViewProps): ReactNode {
     const shown = [...rows[id], ...Object.values(pinned).filter(p => p.group === id && !present.has(p.row.name)).map(p => p.row)]
     return shown.length > 0 && (
       <section className="ps-inst-group" data-group={id} key={id}>
-        <h2 className="ps-inst-group-title">{t(titleKey)} <span className="ps-muted">{shown.length}</span></h2>
+        <div className="ps-inst-group-head">
+          <h2 className="ps-inst-group-title">{t(titleKey)} <span className="ps-muted">{shown.length}</span></h2>
+          {id === 'updates' && queueable.length >= 2 && (
+            <button type="button" className="ps-btn ps-btn-primary" disabled={queueable.some(r => changes[r.name] !== undefined)}
+              onClick={() => setUpdatingAll(queueable)}>
+              {t('updateAll', { count: String(queueable.length) })}
+            </button>
+          )}
+        </div>
         <ul className="ps-inst-list">{shown.map(renderRow)}</ul>
       </section>
     )
@@ -237,6 +259,10 @@ export function InstalledView(props: InstalledViewProps): ReactNode {
       {body}
       {updating && updating.version && updating.latest && (
         <ConfirmUpdate title={updating.title} current={updating.version} latest={updating.latest} t={t} onCancel={cancelUpdate} onConfirm={acceptUpdate} />
+      )}
+      {updatingAll && (
+        <ConfirmUpdateAll plugins={updatingAll.map(r => ({ name: r.name, title: r.title, current: r.version!, latest: r.latest! }))}
+          selfPending={rows?.updates.some(r => r.self) ?? false} t={t} onCancel={cancelUpdateAll} onConfirm={acceptUpdateAll} />
       )}
       {removing && <ConfirmRemove title={removing.title} t={t} onCancel={cancelRemove} onConfirm={acceptRemove} />}
     </div>

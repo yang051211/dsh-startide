@@ -1,5 +1,5 @@
 /** The store's own confirmations before handing an install to DSH's install dialog, which then installs at once. */
-import { useEffect, useRef, type ReactNode } from 'react'
+import { Fragment, useEffect, useRef, type ReactNode } from 'react'
 import type { StorePlugin } from '../model/catalog.ts'
 import { localize } from '../model/localize.ts'
 import { PluginIcon, type Translate } from './common.tsx'
@@ -78,6 +78,38 @@ export function ConfirmUpdate({ title, current, latest, t, onCancel, onConfirm }
         <div className="ps-modal-actions">
           <button type="button" className="ps-btn" onClick={onCancel}>{t('cancel')}</button>
           <button type="button" className="ps-btn ps-btn-primary" ref={confirmButton} onClick={onConfirm}>{t('updateConfirm')}</button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export interface ConfirmUpdateAllProps {
+  plugins: { name: string; title: string; current: string; latest: string }[]
+  /** The store has an update too; it is left to its own button. */
+  selfPending: boolean
+  t: Translate
+  onCancel: () => void
+  onConfirm: () => void
+}
+
+/** Before updating several plugins at once: one confirmation listing each version. */
+export function ConfirmUpdateAll({ plugins, selfPending, t, onCancel, onConfirm }: ConfirmUpdateAllProps): ReactNode {
+  const confirmButton = useDialog(onCancel)
+  const heading = t('updateAllTitle', { count: String(plugins.length) })
+  return (
+    <div className="ps-modal-backdrop" onClick={onCancel}>
+      <div className="ps-modal" role="dialog" aria-modal="true" aria-label={heading} onClick={e => e.stopPropagation()}>
+        <h3>{heading}</h3>
+        <dl className="ps-facts">
+          {plugins.map(p => <Fragment key={p.name}><dt>{p.title}</dt><dd>{t('updateArrow', { current: p.current, latest: p.latest })}</dd></Fragment>)}
+        </dl>
+        <p className="ps-fine">{t('updateAllHint')}</p>
+        {selfPending && <p className="ps-fine">{t('updateAllSelf')}</p>}
+        <p className="ps-trust">{t('confirmTrust')}</p>
+        <div className="ps-modal-actions">
+          <button type="button" className="ps-btn" onClick={onCancel}>{t('cancel')}</button>
+          <button type="button" className="ps-btn ps-btn-primary" ref={confirmButton} onClick={onConfirm}>{t('updateAllConfirm')}</button>
         </div>
       </div>
     </div>
