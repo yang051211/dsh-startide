@@ -1,34 +1,34 @@
 {
   "name": "@michengai/dsh-codex-ui",
-  "version": "1.1.49",
-  "scannedAt": "2026-10-26T10:13:43.200Z",
-  "icon": null,
+  "version": "2.0.13",
+  "scannedAt": "2026-11-03T08:09:49.646Z",
+  "icon": "michengai__dsh-codex-ui.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1008,
-        "text": "const response = await fetch(CHANNELS_ENDPOINT, {"
+        "line": 1780,
+        "text": "const res = await fetch(url);"
       },
       {
         "file": "lib/client.js",
-        "line": 8693,
+        "line": 2706,
         "text": "const response = await fetch(endpoint, {"
       },
       {
         "file": "lib/client.js",
-        "line": 8748,
+        "line": 2761,
         "text": "const response = await fetch(`${endpoint}?action=progress`, { cache: \"no-store\" });"
       },
       {
         "file": "lib/client.js",
-        "line": 8771,
+        "line": 2782,
         "text": "const response = await fetch(`${endpoint}?dependency=${encodeURIComponent(id)}`, { method: \"POST\" });"
       },
       {
         "file": "lib/client.js",
-        "line": 8804,
+        "line": 2815,
         "text": "const response = await fetch(`${endpoint}?action=update-all`, { method: \"POST\" });"
       }
     ]
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.mjs",
-        "line": 2,
-        "text": "import { existsSync, readFileSync } from \"node:fs\";"
-      },
-      {
-        "file": "lib/index.mjs",
+        "file": "lib/desktop-menu-plugin.mjs",
         "line": 3,
-        "text": "import { lstat, mkdir, open, readFile, readdir, realpath, rename, rm, unlink, writeFile } from \"node:fs/promises\";"
+        "text": "import { mkdirSync, readFileSync, writeFileSync } from \"node:fs\";"
       },
       {
-        "file": "lib/index.mjs",
-        "line": 270,
-        "text": "const bin = JSON.parse(readFileSync(anchor, \"utf8\")).bin;"
+        "file": "lib/desktop-menu-plugin.mjs",
+        "line": 109,
+        "text": "const fs = require('node:fs')"
       },
       {
-        "file": "lib/index.mjs",
-        "line": 296,
-        "text": "return JSON.parse(await readFile(resolve(profileDirectory(runtime), \"package.json\"), \"utf8\"));"
+        "file": "lib/desktop-menu-plugin.mjs",
+        "line": 119,
+        "text": "try { fs.appendFileSync(plan.logPath, '[' + stamp() + '] codex-ui restart: ' + message + '\\\\n') } catch {}"
       },
       {
-        "file": "lib/index.mjs",
-        "line": 318,
-        "text": "await rm(packagePath, {"
+        "file": "lib/desktop-menu-plugin.mjs",
+        "line": 125,
+        "text": "fs.writeFileSync(plan.statePath, JSON.stringify({"
+      },
+      {
+        "file": "lib/desktop-menu-plugin.mjs",
+        "line": 314,
+        "text": "try { fs.unlinkSync(process.argv[1]) } catch {}"
       }
     ]
   },
@@ -71,24 +71,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.mjs",
-        "line": 1,
+        "file": "lib/desktop-menu-plugin.mjs",
+        "line": 2,
         "text": "import { spawn } from \"node:child_process\";"
       },
       {
-        "file": "lib/index.mjs",
-        "line": 802,
-        "text": "const killer = spawn(\"taskkill\", ["
+        "file": "lib/desktop-menu-plugin.mjs",
+        "line": 108,
+        "text": "const { spawn, spawnSync } = require('node:child_process')"
       },
       {
-        "file": "lib/index.mjs",
-        "line": 899,
-        "text": "if (packageManager !== void 0) return monitorPluginChild(spawn(packageManager.command, [...packageManager.args, ...args], {"
+        "file": "lib/desktop-menu-plugin.mjs",
+        "line": 147,
+        "text": "return spawnSync(command, args, { encoding: 'utf8', timeout: 20000, windowsHide: true, env: childEnv })"
       },
       {
-        "file": "lib/index.mjs",
-        "line": 915,
-        "text": "return monitorPluginChild(spawn(process.execPath, ["
+        "file": "lib/desktop-menu-plugin.mjs",
+        "line": 250,
+        "text": "const child = spawn(plan.appPath, [], {"
+      },
+      {
+        "file": "lib/desktop-menu-plugin.mjs",
+        "line": 323,
+        "text": "const child = spawn(process.execPath, [scriptPath], {"
       }
     ]
   },

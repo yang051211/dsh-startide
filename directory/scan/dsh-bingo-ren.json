@@ -1,0 +1,93 @@
+{
+  "name": "dsh-bingo-ren",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-03T08:10:07.192Z",
+  "icon": "dsh-bingo-ren.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/bingo-client.js",
+        "line": 2,
+        "text": "init.timeout)||REQUEST_TIMEOUT);}return fetch(path,options).then(function(res){if(timer)window.clearTimeout(timer);return res.json().catch(function(){return nul"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/activity.js",
+        "line": 2,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/activity.js",
+        "line": 48,
+        "text": "try { raw = JSON.parse(fs.readFileSync(file, 'utf8')); } catch { raw = {}; }"
+      },
+      {
+        "file": "lib/activity.js",
+        "line": 59,
+        "text": "fs.mkdirSync(stateDir, { recursive: true });"
+      },
+      {
+        "file": "lib/activity.js",
+        "line": 62,
+        "text": "fs.writeFileSync(tmp, JSON.stringify(next, null, 2) + '\\n', 'utf8');"
+      },
+      {
+        "file": "lib/activity.js",
+        "line": 65,
+        "text": "try { fs.rmSync(tmp, { force: true }); } catch { /* best effort */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host-support.js",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 25,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/rescue-cli.mjs",
+        "line": 5,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/restart-helper.cjs",
+        "line": 31,
+        "text": "const { spawn, spawnSync } = require('node:child_process');"
+      },
+      {
+        "file": "lib/restart-helper.cjs",
+        "line": 299,
+        "text": "const result = spawnSync(taskkillPath(), ['/F', '/PID', String(pid)], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "client/bingo-client.js",
+    "client/bingo-tools.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

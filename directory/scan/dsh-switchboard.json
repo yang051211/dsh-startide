@@ -1,0 +1,113 @@
+{
+  "name": "dsh-switchboard",
+  "version": "0.5.15",
+  "scannedAt": "2026-11-03T08:10:03.976Z",
+  "icon": "dsh-switchboard.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 2223,
+        "text": "const response = await fetch(\"api/switchboard/feishu/register\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2973,
+        "text": "const response = await fetch(`${API}/${path}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3477,
+        "text": "const response = await fetch(`api/switchboard/${path}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3671,
+        "text": "const response = await fetch(\"api/switchboard/update-check\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 4175,
+        "text": "void fetch(\"api/switchboard/send\", {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 8,
+        "text": "import { mkdir, readFile, rename, stat, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 57,
+        "text": "text = await readFile(this.path, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 174,
+        "text": "await mkdir(dirname(this.path), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 176,
+        "text": "await writeFile(temp, snapshot, { mode: 384 });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 186,
+        "text": "import { readdir, readFile as readFile2, realpath, stat as stat2 } from \"node:fs/promises\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 184,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3907,
+        "text": "execFile(\"git\", [\"-C\", cwd, ...args], { maxBuffer: DIFF_LIMIT_BYTES * 2, timeout: 15e3 }, (error, stdout) => {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4988,
+        "text": "const child = spawn(ffmpeg, [\"-hide_banner\", \"-loglevel\", \"error\", \"-i\", \"pipe:0\", \"-ac\", \"1\", \"-ar\", \"16000\", \"-f\", \"wav\", \"pipe:1\"], { signal });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: node scripts/build.mjs"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

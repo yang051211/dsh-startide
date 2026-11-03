@@ -1,0 +1,102 @@
+{
+  "name": "dsh-restart-and-update",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-03T08:10:09.465Z",
+  "icon": "dsh-restart-and-update.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 404,
+        "text": "fetch(`${ROUTE}/state`, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 423,
+        "text": "fetch(`${ROUTE}/install-market`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 469,
+        "text": "fetch(`${ROUTE}/restart`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 489,
+        "text": "fetch(`${ROUTE}/updates`, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 527,
+        "text": "fetch(`${ROUTE}/update`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 278,
+        "text": "return readFile(path, 'utf8').then(() => true, () => false)"
+      },
+      {
+        "file": "index.js",
+        "line": 289,
+        "text": "const manifest = JSON.parse(await readFile(join(dir, 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 319,
+        "text": "const raw = JSON.parse(await readFile(PENDING_FILE, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 329,
+        "text": "await mkdir(WORK_DIR, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 231,
+        "text": "execFile("
+      },
+      {
+        "file": "index.js",
+        "line": 470,
+        "text": "execFile("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

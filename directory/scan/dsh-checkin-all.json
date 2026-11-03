@@ -1,0 +1,90 @@
+{
+  "name": "dsh-checkin-all",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-03T08:10:09.406Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/credentials.js",
+        "line": 217,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "lib/providers/astudio.js",
+        "line": 103,
+        "text": "const response = await fetch(new URL(path, BASE), {"
+      },
+      {
+        "file": "lib/providers/dumate.js",
+        "line": 125,
+        "text": "const response = await fetch(`${HOST}${path}`, {"
+      },
+      {
+        "file": "lib/providers/lingxi.js",
+        "line": 111,
+        "text": "const response = await fetch(`${HOST}${path}`, {"
+      },
+      {
+        "file": "lib/signin.js",
+        "line": 51,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/credentials.js",
+        "line": 16,
+        "text": "import { mkdir, open, readdir, readFile, rename, rm, stat, unlink, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/credentials.js",
+        "line": 37,
+        "text": "await mkdir(dir, { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/credentials.js",
+        "line": 38,
+        "text": "try { await (await import('node:fs/promises')).chmod(dir, 0o700) } catch { /* 不是自己的就算了 */ }"
+      },
+      {
+        "file": "lib/credentials.js",
+        "line": 46,
+        "text": "await handle.writeFile(text, 'utf8')"
+      },
+      {
+        "file": "lib/credentials.js",
+        "line": 52,
+        "text": "try { await (await import('node:fs/promises')).chmod(file, 0o600) } catch { /* 同上 */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/index.js",
+        "line": 154,
+        "text": "for (const definition of definitions) tools.register(definition)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

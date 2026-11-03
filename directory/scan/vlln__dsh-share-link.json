@@ -1,0 +1,138 @@
+{
+  "name": "@vlln/dsh-share-link",
+  "version": "0.7.6",
+  "scannedAt": "2026-11-03T08:10:05.964Z",
+  "icon": "vlln__dsh-share-link.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 184,
+        "text": "const response = await fetch(\"/api/share-link/status\");"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 194,
+        "text": "const response = await fetch(\"/api/share-link/check\", { method: \"POST\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 383,
+        "text": "fetch(\"/api/share-link/list\").then((response) => response.ok ? response.json() : Promise.reject(new Error(String(response.status)))).then((payload) => {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 402,
+        "text": "const response = await fetch(\"/api/share-link/revoke\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 507,
+        "text": "fetch(\"/api/share-link/preview\", {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/share-link-re9TLFk9.mjs",
+        "line": 4,
+        "text": "Sync, createReadStream, existsSync, lstatSync, mkdirSync, readFileSync, readdirSync, realpathSync, renameSync, rmSync, statSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/share-link-re9TLFk9.mjs",
+        "line": 105,
+        "text": "mkdirSync(binDir, { recursive: true });"
+      },
+      {
+        "file": "lib/share-link-re9TLFk9.mjs",
+        "line": 119,
+        "text": "writeFileSync(binary, readFileSync(archive));"
+      },
+      {
+        "file": "lib/share-link-re9TLFk9.mjs",
+        "line": 120,
+        "text": "rmSync(archive, { force: true });"
+      },
+      {
+        "file": "lib/share-link-re9TLFk9.mjs",
+        "line": 133,
+        "text": "rmSync(archive, { force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 90,
+        "text": "* 工具由同包的四个入口各自注册（见 `src/tools/*`），它们 `inject: ['tools','shareLink']`"
+      },
+      {
+        "file": "lib/tools/share-artifact.mjs",
+        "line": 12,
+        "text": "const inject = [\"tools\", \"shareLink\"];"
+      },
+      {
+        "file": "lib/tools/share-artifact.mjs",
+        "line": 14,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools/share-list.mjs",
+        "line": 10,
+        "text": "const inject = [\"tools\", \"shareLink\"];"
+      },
+      {
+        "file": "lib/tools/share-list.mjs",
+        "line": 12,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/share-link-re9TLFk9.mjs",
+        "line": 1,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/share-link-re9TLFk9.mjs",
+        "line": 124,
+        "text": "const tar = spawn(\"tar\", ["
+      },
+      {
+        "file": "lib/share-link-re9TLFk9.mjs",
+        "line": 195,
+        "text": "const child = spawn(binary, args, { stdio: ["
+      },
+      {
+        "file": "lib/share-link-re9TLFk9.mjs",
+        "line": 8050,
+        "text": "const child = spawn(binary, ["
+      },
+      {
+        "file": "lib/share-link-re9TLFk9.mjs",
+        "line": 8103,
+        "text": "const child = spawn(await this.#cloudflaredBinary(), ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/share-link-re9TLFk9.mjs"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

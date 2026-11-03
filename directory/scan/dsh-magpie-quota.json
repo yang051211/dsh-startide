@@ -1,36 +1,47 @@
 {
   "name": "dsh-magpie-quota",
-  "version": "0.4.0",
-  "scannedAt": "2026-10-31T07:05:30.575Z",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-03T08:10:03.079Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "dsh/client.js",
-        "line": 757,
+        "line": 758,
         "text": "fetch(\"/magpie/quotas\" + q, { headers: { accept: \"application/json\" } }).then((r) => r.json()),"
       },
       {
         "file": "dsh/client.js",
-        "line": 758,
+        "line": 759,
         "text": "fetch(qUsage, { headers: { accept: \"application/json\" } }).then((r) => r.json()),"
       },
       {
         "file": "dsh/client.js",
-        "line": 780,
+        "line": 781,
         "text": "const r = await fetch(\"/magpie/usage?force=1&period=\" + encodeURIComponent(p), { headers: { accept: \"application/json\" } }).then((x) => x.json());"
       },
       {
         "file": "dsh/index.js",
-        "line": 41,
+        "line": 110,
         "text": "const res = await fetch(url, {"
       }
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/index.js",
+        "line": 56,
+        "text": "const fs = createRequire(import.meta.url)(\"node:fs\");"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 57,
+        "text": "const txt = fs.readFileSync(file, \"utf8\");"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,
@@ -41,7 +52,7 @@
     "evidence": [
       {
         "file": "dsh/index.js",
-        "line": 63,
+        "line": 132,
         "text": "const handle = subprocess.spawn({"
       }
     ]

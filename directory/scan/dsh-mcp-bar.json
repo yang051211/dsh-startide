@@ -1,0 +1,89 @@
+{
+  "name": "dsh-mcp-bar",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-03T08:10:05.659Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1134,
+        "text": "response = await fetch(API_PATH, {"
+      },
+      {
+        "file": "lib/probe.js",
+        "line": 84,
+        "text": "response = await fetch(record.url, {"
+      },
+      {
+        "file": "lib/probe.js",
+        "line": 112,
+        "text": "await fetch(record.url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 34,
+        "text": "export const inject = ['tools', 'storageDomain', 'loader'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 172,
+        "text": "schemas = typeof ctx.tools?.schemas === 'function' ? ctx.tools.schemas() : [];"
+      },
+      {
+        "file": "lib/native.js",
+        "line": 4,
+        "text": "* dsh-mcp-client 对同一 serverName 只保留一份注册，重复条目（例如 profile"
+      },
+      {
+        "file": "lib/provision.js",
+        "line": 7,
+        "text": "export const MCP_CLIENT_PACKAGE = '@deepseek-ai/dsh-mcp-client';"
+      },
+      {
+        "file": "lib/provision.js",
+        "line": 16,
+        "text": "return name === MCP_CLIENT_PACKAGE || name.endsWith('/dsh-mcp-client');"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/probe.js",
+        "line": 256,
+        "text": "const { spawn } = await import('node:child_process');"
+      },
+      {
+        "file": "lib/probe.js",
+        "line": 257,
+        "text": "const child = spawn(record.command, record.args ?? [], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "loader",
+    "storageDomain",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

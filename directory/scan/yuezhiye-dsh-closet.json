@@ -1,0 +1,118 @@
+{
+  "name": "yuezhiye-dsh-closet",
+  "version": "0.1.8",
+  "scannedAt": "2026-11-03T08:10:04.192Z",
+  "icon": "yuezhiye-dsh-closet.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 85,
+        "text": "response = await fetch(path, opts);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/open.js",
+        "line": 14,
+        "text": "import fsp from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/routes.js",
+        "line": 15,
+        "text": "import fsp from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/run.js",
+        "line": 12,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/run.js",
+        "line": 13,
+        "text": "import fsp from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/run.js",
+        "line": 163,
+        "text": "await fsp.mkdir(dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 9,
+        "text": "* cordis 只在 inject 声明的服务齐全时才调用 apply()。不写 'tools'，ctx.tools 就是"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 37,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 43,
+        "text": "* 工具定义（声明与实现）单独放在这个数组里，`registerTools` 只负责把它们逐条交给 ctx.tools。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 45,
+        "text": "* 为什么不在 registerTools 里直接写 ctx.tools.register({...})：工具的参数 schema 受内核"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 50,
+        "text": "* 元素形状与 ctx.tools.register 的入参一致，只是多了 `execute(ctx, args, exec)` 第一参数，"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/git.js",
+        "line": 16,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/git.js",
+        "line": 64,
+        "text": "execFile("
+      },
+      {
+        "file": "lib/git.js",
+        "line": 75,
+        "text": "execFile("
+      },
+      {
+        "file": "lib/open.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/open.js",
+        "line": 156,
+        "text": "child = spawn(command, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

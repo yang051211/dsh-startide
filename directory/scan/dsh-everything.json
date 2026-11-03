@@ -1,0 +1,139 @@
+{
+  "name": "dsh-everything",
+  "version": "1.4.1",
+  "scannedAt": "2026-11-03T08:09:57.453Z",
+  "icon": "dsh-everything.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 412,
+        "text": "return await fetch(url, { headers, signal: ctrl.signal });"
+      },
+      {
+        "file": "setup.js",
+        "line": 284,
+        "text": "const response = await fetch(url, { signal: controller.signal, redirect: 'follow' });"
+      },
+      {
+        "file": "setup.js",
+        "line": 307,
+        "text": "file', '-NonInteractive', '-Command', `(Invoke-WebRequest -Uri '${url.replace(/'/g, \"''\")}' -UseBasicParsing -Headers @{ 'User-Agent' = 'Mozilla/5.0' }).Content"
+      },
+      {
+        "file": "setup.js",
+        "line": 328,
+        "text": "const response = await fetch(url, { signal: controller.signal, redirect: 'follow' });"
+      },
+      {
+        "file": "setup.js",
+        "line": 359,
+        "text": "const script = `Invoke-WebRequest -Uri '${escapedUrl}' -OutFile '${escapedDest}' -UseBasicParsing -Headers @{ 'User-Agent' = 'Mozilla/5.0' }`;"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 32,
+        "text": "import { existsSync, readFileSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 33,
+        "text": "import { unlink } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 272,
+        "text": "const text = readFileSync(filePath, 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 726,
+        "text": "await unlink(exportPath);"
+      },
+      {
+        "file": "setup.js",
+        "line": 26,
+        "text": "import { createWriteStream, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 559,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 565,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 921,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 31,
+        "text": "import { execFile, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 93,
+        "text": "child = execFile("
+      },
+      {
+        "file": "index.js",
+        "line": 152,
+        "text": "spawn(everythingPath, ['-startup'], { detached: true, stdio: 'ignore', windowsHide: true }).unref();"
+      },
+      {
+        "file": "setup.js",
+        "line": 24,
+        "text": "import { execFile, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "setup.js",
+        "line": 205,
+        "text": "execFile(command, argv, { timeout: timeoutMs, windowsHide: true, maxBuffer: 4 * 1024 * 1024 }, (error, stdout, stderr) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 22,
+      "text": "es the known-good release recorded in [`setup.js`](setup.js), the download is SHA256-verified; a newer upstream release is verified by its **voidtools Authentic"
+    },
+    {
+      "file": "README.zh-CN.md",
+      "line": 22,
+      "text": "ROXY` 环境变量或 Windows 系统代理）只作为兜底。完整性校验：解析到的版本与 [`setup.js`](setup.js) 记录的已知良好版本一致时做 SHA256 校验；更新的上游版本改验 **voidtools 数字签名**；下载页不可达时回退到已知良好版本（SHA256 校验）。校验失败一律中止安装。"
+    }
+  ],
+  "skippedEntries": []
+}

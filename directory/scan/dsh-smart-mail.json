@@ -1,0 +1,80 @@
+{
+  "name": "dsh-smart-mail",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-03T08:10:06.996Z",
+  "icon": "dsh-smart-mail.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 87,
+        "text": "const response = await fetch(API + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 82,
+        "text": "return JSON.parse(readFileSync(here, 'utf8')).version ?? 'unknown'"
+      },
+      {
+        "file": "store.mjs",
+        "line": 36,
+        "text": "} from 'node:fs'"
+      },
+      {
+        "file": "store.mjs",
+        "line": 102,
+        "text": "return JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "store.mjs",
+        "line": 109,
+        "text": "mkdirSync(path.dirname(file), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 618,
+        "text": "inject: ['tools', 'webServer', 'sessionController', 'llm', 'configEditor'],"
+      },
+      {
+        "file": "index.js",
+        "line": 677,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 751,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

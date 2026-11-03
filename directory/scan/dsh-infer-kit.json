@@ -1,0 +1,85 @@
+{
+  "name": "dsh-infer-kit",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-03T08:10:02.464Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 23,
+        "text": "fetch('/infer-kit/status')"
+      },
+      {
+        "file": "client.js",
+        "line": 34,
+        "text": "fetch('/infer-kit/status')"
+      },
+      {
+        "file": "index.js",
+        "line": 116,
+        "text": "const res = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "const fs = require('node:fs')"
+      },
+      {
+        "file": "index.js",
+        "line": 61,
+        "text": "const raw = fs.readFileSync(storePath, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 70,
+        "text": "fs.mkdirSync(path.dirname(storePath), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 71,
+        "text": "fs.writeFileSync(tmp, JSON.stringify(store), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 500,
+        "text": "c.tools.register(makeCacheTool(cfg, state))"
+      },
+      {
+        "file": "index.js",
+        "line": 501,
+        "text": "c.tools.register(makeCascadeTool(cfg, state, draft))"
+      },
+      {
+        "file": "index.js",
+        "line": 502,
+        "text": "c.tools.register(makeValidateTool())"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

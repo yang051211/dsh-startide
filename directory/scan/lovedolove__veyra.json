@@ -1,19 +1,14 @@
 {
   "name": "@lovedolove/veyra",
-  "version": "0.1.64",
-  "scannedAt": "2026-10-31T22:51:45.116Z",
+  "version": "0.1.66",
+  "scannedAt": "2026-11-03T08:09:54.672Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "src/code/client.mjs",
-        "line": 245,
-        "text": "mory-mcp binary not found. Install via 'curl -fsSL https://raw.githubusercontent.com/DeusData/codebase-memory-mcp/main/install.sh | bash' or set CBM_EXE. Veyra "
-      },
-      {
         "file": "src/commands.mjs",
-        "line": 338,
+        "line": 337,
         "text": "'    curl -fsSL https://raw.githubusercontent.com/DeusData/codebase-memory-mcp/main/install.sh | bash',"
       },
       {
@@ -27,29 +22,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/code/client.mjs",
-        "line": 15,
-        "text": "import { existsSync } from 'node:fs'"
+        "file": "src/code/linking.mjs",
+        "line": 16,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
       },
       {
-        "file": "src/code/discovery.mjs",
-        "line": 14,
-        "text": "import { existsSync, lstatSync, realpathSync, readFileSync, readdirSync } from 'node:fs'"
+        "file": "src/code/linking.mjs",
+        "line": 36,
+        "text": "const content = readFileSync(absPath, 'utf8')"
       },
       {
-        "file": "src/code/discovery.mjs",
-        "line": 198,
-        "text": "const fd = readFileSync(absPath, { flag: 'r' })"
+        "file": "src/code/linking.mjs",
+        "line": 121,
+        "text": "const currentContent = readFileSync(absPath, 'utf8')"
       },
       {
-        "file": "src/code/discovery.mjs",
-        "line": 285,
-        "text": "gitignoreRules.push(...parseGitignoreContent(readFileSync(gitignorePath, 'utf8')))"
+        "file": "src/code/linking.mjs",
+        "line": 137,
+        "text": "const content = readFileSync(absPath, 'utf8')"
       },
       {
-        "file": "src/code/engine.mjs",
-        "line": 12,
-        "text": "import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs'"
+        "file": "src/commands.mjs",
+        "line": 8,
+        "text": "import { readFileSync } from 'node:fs'"
       }
     ]
   },
@@ -63,46 +58,35 @@
       },
       {
         "file": "src/plugin.mjs",
-        "line": 38,
+        "line": 44,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "src/plugin.mjs",
-        "line": 272,
+        "line": 278,
         "text": "if (ctx.tools && typeof ctx.tools.register === 'function') {"
       },
       {
         "file": "src/tools.mjs",
-        "line": 72,
+        "line": 71,
         "text": "* `ctx.tools.register` validates. Per-property `required: true` becomes"
       },
       {
         "file": "src/tools.mjs",
-        "line": 1212,
+        "line": 1010,
         "text": "if (!ctx?.tools || typeof ctx.tools.register !== 'function') return []"
       }
     ]
   },
   "childProcess": {
-    "hit": true,
-    "evidence": [
-      {
-        "file": "src/code/client.mjs",
-        "line": 14,
-        "text": "import { spawn } from 'node:child_process'"
-      },
-      {
-        "file": "src/code/client.mjs",
-        "line": 109,
-        "text": "this.child = spawn(this.exePath, args, {"
-      }
-    ]
+    "hit": false,
+    "evidence": []
   },
   "installScripts": {
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

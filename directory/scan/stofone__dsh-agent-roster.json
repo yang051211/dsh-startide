@@ -1,7 +1,7 @@
 {
   "name": "@stofone/dsh-agent-roster",
-  "version": "0.8.2",
-  "scannedAt": "2026-11-02T23:01:11.145Z",
+  "version": "0.11.0",
+  "scannedAt": "2026-11-03T08:09:57.786Z",
   "icon": "stofone__dsh-agent-roster.svg",
   "network": {
     "hit": true,
@@ -23,28 +23,28 @@
     "evidence": [
       {
         "file": "bin/cli.mjs",
-        "line": 15,
-        "text": "import { readFileSync, writeFileSync } from \"node:fs\";"
+        "line": 18,
+        "text": "import { mkdirSync, readFileSync, writeFileSync } from \"node:fs\";"
       },
       {
         "file": "bin/cli.mjs",
-        "line": 24,
+        "line": 32,
         "text": "const pkg = JSON.parse(readFileSync(new URL(\"../package.json\", import.meta.url), \"utf8\"));"
       },
       {
         "file": "bin/cli.mjs",
-        "line": 271,
-        "text": "const document = JSON.parse(readFileSync(file, \"utf8\"));"
+        "line": 290,
+        "text": "runValue = JSON.parse(readFileSync(runPath, \"utf8\"));"
       },
       {
         "file": "bin/cli.mjs",
-        "line": 286,
-        "text": "writeFileSync(file, `${JSON.stringify(document, null, 2)}\\n`);"
+        "line": 368,
+        "text": "mkdirSync(outDir, { recursive: true });"
       },
       {
-        "file": "index.js",
-        "line": 15,
-        "text": "import { readFileSync } from \"node:fs\";"
+        "file": "bin/cli.mjs",
+        "line": 370,
+        "text": "writeFileSync(outFile, `${JSON.stringify(compiled, null, 2)}\\n`);"
       }
     ]
   },
@@ -53,27 +53,27 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 36,
+        "line": 38,
         "text": "export const inject = [\"tools\"];"
       },
       {
         "file": "lib/tools.js",
-        "line": 75,
+        "line": 77,
         "text": "ctx.tools.register("
       },
       {
         "file": "lib/tools.js",
-        "line": 136,
+        "line": 138,
         "text": "ctx.tools.register("
       },
       {
         "file": "lib/tools.js",
-        "line": 248,
+        "line": 250,
         "text": "ctx.tools.register("
       },
       {
         "file": "lib/tools.js",
-        "line": 372,
+        "line": 374,
         "text": "ctx.tools.register("
       }
     ]

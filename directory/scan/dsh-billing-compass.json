@@ -1,0 +1,67 @@
+{
+  "name": "dsh-billing-compass",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-03T08:10:04.468Z",
+  "icon": "dsh-billing-compass.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 189,
+        "text": "const res = await fetch('/api/dsh-billing?sessionId=' + encodeURIComponent(sessionId || ''), { cache: 'no-store' });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 22,
+        "text": "import https from 'node:https'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 130,
+        "text": "req = https.request(url, { method: 'GET', headers, timeout: timeoutMs, agent: keepAliveAgent }, (res) => {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "import { readFile, readdir, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 271,
+        "text": "return readYamlScalar(await readFile(join(home, '.credentials.yaml'), 'utf8'), key)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 613,
+        "text": "const buf = await readFile(path)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "timer",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

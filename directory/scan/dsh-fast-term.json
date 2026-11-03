@@ -1,0 +1,99 @@
+{
+  "name": "dsh-fast-term",
+  "version": "0.6.2",
+  "scannedAt": "2026-11-03T08:10:08.240Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 6958,
+        "text": "void fetch(CONFIG_PATH, { headers: { accept: \"application/json\" } }).then((response) => response.ok ? response.json() : void 0).then((body) => {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 6970,
+        "text": "const response = await fetch(CONFIG_PATH, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 7073,
+        "text": "const ws = new WebSocket(websocketUrl(WS_PATH));"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 7289,
+        "text": "void fetch(LIST_PATH, { headers: { accept: \"application/json\" } }).then((response) => response.ok ? response.json() : void 0).then((body) => {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 7323,
+        "text": "void fetch(RENAME_PATH, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3420,
+        "text": "import { existsSync as existsSync2, mkdirSync, readFileSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3428,
+        "text": "import { existsSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3625,
+        "text": "value = normalizeConfig(JSON.parse(readFileSync(configFilePath(), \"utf8\")));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3634,
+        "text": "mkdirSync(join(homedir(), \".dsh\"), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3635,
+        "text": "writeFileSync(configFilePath(), JSON.stringify(value, null, 2), { encoding: \"utf8\", mode: 384 });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4225,
+        "text": "toolsCtx.tools.register(readTool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3427,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js",
+    "lib/index.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

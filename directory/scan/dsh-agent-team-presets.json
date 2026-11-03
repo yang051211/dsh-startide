@@ -1,7 +1,7 @@
 {
   "name": "dsh-agent-team-presets",
-  "version": "0.1.7",
-  "scannedAt": "2026-10-26T10:05:59.156Z",
+  "version": "0.1.8",
+  "scannedAt": "2026-11-03T08:10:01.634Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -12,27 +12,27 @@
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 23238,
+        "line": 23240,
         "text": "const answer = unwrap(await this.api().readFile(assetId, path));"
       },
       {
         "file": "lib/client.js",
-        "line": 23261,
+        "line": 23263,
         "text": "const answer = unwrap(await this.api().writeFile(assetId, path, text));"
       },
       {
         "file": "lib/index.js",
         "line": 12,
-        "text": "import { access, lstat, mkdir, open, readFile, readdir, rename, rm, writeFile } from \"node:fs/promises\";"
+        "text": "import { access, lstat, mkdir, open, readFile, readdir, rename, rm, stat, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
         "line": 14,
-        "text": "import { constants, realpathSync } from \"node:fs\";"
+        "text": "import { constants, lstatSync, realpathSync, statSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 14879,
+        "line": 14937,
         "text": "await mkdir(dirname(path), { recursive: true });"
       }
     ]
@@ -43,27 +43,27 @@
       {
         "file": "lib/client.js",
         "line": 14256,
-        "text": "he reserved PTC mode transport is excluded: `ctx.tools.restrict()` refuses it, so offering it as a checkbox would produce a selection the summon path rejects.\","
+        "text": "PTC mode transport is excluded because `ctx.tools.restrict()` refuses it, so offering it as a checkbox would produce a selection the summon path rejects. The im"
       },
       {
         "file": "lib/index.js",
-        "line": 792,
+        "line": 812,
         "text": "agent.ctx.tools.restrict({ allow: [name] })();"
       },
       {
         "file": "lib/index.js",
-        "line": 795,
+        "line": 815,
         "text": "if (agent.ctx.tools.get(name, agent) === void 0) throw error;"
       },
       {
         "file": "lib/index.js",
-        "line": 806,
-        "text": "native = agent.ctx.tools.presentAs(\"native\");"
+        "line": 834,
+        "text": "if (agent.ctx.tools.get(name, agent) === void 0) return false;"
       },
       {
         "file": "lib/index.js",
-        "line": 808,
-        "text": "const disposeGuard = agent.ctx.tools.guard((exec) => {"
+        "line": 836,
+        "text": "agent.ctx.tools.restrict({ allow: [name] })();"
       }
     ]
   },

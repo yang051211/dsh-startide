@@ -1,0 +1,112 @@
+{
+  "name": "agy-next",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-03T08:10:04.776Z",
+  "icon": "agy-next.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/probe-models.mjs",
+        "line": 45,
+        "text": "response = await fetch(`${endpoint}/v1internal:streamGenerateContent?alt=sse`, {"
+      },
+      {
+        "file": "bin/smoke.mjs",
+        "line": 142,
+        "text": "response = await fetch(`${endpoint}/v1internal:streamGenerateContent?alt=sse`, {"
+      },
+      {
+        "file": "bin/sweep-models.mjs",
+        "line": 39,
+        "text": "response = await fetch(`${SANDBOX}/v1internal:streamGenerateContent?alt=sse`, {"
+      },
+      {
+        "file": "lib/account-plan.js",
+        "line": 46,
+        "text": "fetchImpl = (...args) => globalThis.fetch(...args),"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 140,
+        "text": "const response = await fetch(`${endpoint}/v1internal:loadCodeAssist`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/check-ui-versions.mjs",
+        "line": 13,
+        "text": "import { readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "bin/check-ui-versions.mjs",
+        "line": 15,
+        "text": "const source = readFileSync(new URL(\"../lib/ui.js\", import.meta.url), \"utf8\");"
+      },
+      {
+        "file": "bin/peer-resolve.mjs",
+        "line": 9,
+        "text": "import { existsSync, readFileSync, statSync } from \"node:fs\";"
+      },
+      {
+        "file": "bin/peer-resolve.mjs",
+        "line": 28,
+        "text": "try { parsed = JSON.parse(readFileSync(fileURLToPath(new URL(`${name}/package.json`, ROOT)), \"utf8\")); } catch { parsed = null; }"
+      },
+      {
+        "file": "bin/publish-guard.mjs",
+        "line": 24,
+        "text": "import { readFileSync } from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/publish-guard.mjs",
+        "line": 23,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/oauth.js",
+        "line": 11,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/oauth.js",
+        "line": 79,
+        "text": "spawn(\"rundll32\", [\"url.dll,FileProtocolHandler\", url], { detached: true, stdio: \"ignore\" }).unref();"
+      },
+      {
+        "file": "lib/oauth.js",
+        "line": 83,
+        "text": "spawn(\"open\", [url], { detached: true, stdio: \"ignore\" }).unref();"
+      },
+      {
+        "file": "lib/oauth.js",
+        "line": 86,
+        "text": "spawn(\"xdg-open\", [url], { detached: true, stdio: \"ignore\" }).unref();"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

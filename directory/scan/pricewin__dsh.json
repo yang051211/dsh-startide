@@ -1,8 +1,8 @@
 {
   "name": "@pricewin/dsh",
-  "version": "1.0.3",
-  "scannedAt": "2026-10-26T10:14:05.453Z",
-  "icon": null,
+  "version": "1.1.0",
+  "scannedAt": "2026-11-03T08:10:08.369Z",
+  "icon": "pricewin__dsh.png",
   "network": {
     "hit": false,
     "evidence": []
@@ -16,8 +16,23 @@
     "evidence": [
       {
         "file": "cordis.patch.yml",
-        "line": 4,
+        "line": 7,
         "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "// dsh-mcp-client renders an MCP result to its text blocks only, so the Web UI"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 30,
+        "text": "const output = ctx.tools.get(`mcp__${SERVER}__${rawName}`)?.output"
       }
     ]
   },
@@ -32,7 +47,9 @@
   "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [],
+  "requiredServices": [
+    "tools"
+  ],
   "setupHints": [],
   "skippedEntries": []
 }

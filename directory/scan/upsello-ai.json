@@ -1,7 +1,7 @@
 {
   "name": "upsello-ai",
-  "version": "0.1.13",
-  "scannedAt": "2026-10-30T23:38:21.989Z",
+  "version": "0.1.14",
+  "scannedAt": "2026-11-03T08:09:53.782Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -19,16 +19,16 @@
       {
         "file": "login.js",
         "line": 9,
-        "text": "llo\";async function gc(t,l){let e=await fetch(U2,{method:\"POST\",credentials:\"same-origin\",headers:{\"content-type\":\"application/json\"},body:JSON.stringify({endpo"
+        "text": "llo\";async function bc(t,l){let e=await fetch(D2,{method:\"POST\",credentials:\"same-origin\",headers:{\"content-type\":\"application/json\"},body:JSON.stringify({endpo"
       },
       {
         "file": "src/host/auth.js",
-        "line": 243,
+        "line": 284,
         "text": "res = await fetch(apiUrl('/auth/sign_in'), {"
       },
       {
         "file": "src/host/auth.js",
-        "line": 369,
+        "line": 420,
         "text": "const res = await fetch(apiUrl('/auth/google/auth_url'), {"
       }
     ]
@@ -68,12 +68,17 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 16,
-        "text": "export const inject = ['tools', 'systemPrompt', 'connection', 'webServer']"
+        "line": 17,
+        "text": "export const inject = ['tools', 'systemPrompt', 'connection', 'webServer', 'approval']"
+      },
+      {
+        "file": "src/host/shopify/tools.js",
+        "line": 221,
+        "text": "const register = (definition) => ctx.tools.register(definition)"
       },
       {
         "file": "src/host/tools.js",
-        "line": 19,
+        "line": 30,
         "text": "ctx.tools.register({"
       }
     ]
@@ -103,6 +108,7 @@
   ],
   "binaryFiles": [],
   "requiredServices": [
+    "approval",
     "connection",
     "systemPrompt",
     "tools",

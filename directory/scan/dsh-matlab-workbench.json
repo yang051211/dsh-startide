@@ -1,0 +1,79 @@
+{
+  "name": "dsh-matlab-workbench",
+  "version": "0.1.0-beta.2",
+  "scannedAt": "2026-11-03T08:10:02.888Z",
+  "icon": "dsh-matlab-workbench.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "core/figures.mjs",
+        "line": 1,
+        "text": "import { promises as fs } from 'node:fs';"
+      },
+      {
+        "file": "core/figures.mjs",
+        "line": 49,
+        "text": "if(create) { try { await fs.mkdir(dir); } catch(e) { if(e.code!=='EEXIST')throw e; } }"
+      },
+      {
+        "file": "core/figures.mjs",
+        "line": 65,
+        "text": "const bytes=await handle.readFile();"
+      },
+      {
+        "file": "core/figures.mjs",
+        "line": 79,
+        "text": "await fs.writeFile(path.join(runDir,'prepared.json'),JSON.stringify(prepared,null,2),{flag:'wx'});"
+      },
+      {
+        "file": "core/figures.mjs",
+        "line": 102,
+        "text": "mporary=path.join(dir,randomUUID()+'.tmp'); await fs.writeFile(temporary,JSON.stringify(artifact,null,2),{flag:'wx'}); await fs.rename(temporary,destination); }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/host/index.mjs",
+        "line": 6,
+        "text": "export const inject=['tools','systemPrompt','sessionProjections','workingDirectory'];"
+      },
+      {
+        "file": "dsh/host/index.mjs",
+        "line": 19,
+        "text": "disposers.push(ctx.tools.register({name,description,parameters:{type:'object',properties,required,additionalProperties:false},output,"
+      },
+      {
+        "file": "integration/matlab-mcp-gate/cordis.patch.yml",
+        "line": 6,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionProjections",
+    "systemPrompt",
+    "tools",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

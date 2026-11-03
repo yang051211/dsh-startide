@@ -1,7 +1,7 @@
 {
   "name": "dsh-feishu-cui",
-  "version": "0.4.2",
-  "scannedAt": "2026-10-26T10:06:44.630Z",
+  "version": "0.4.3",
+  "scannedAt": "2026-11-03T08:10:02.325Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -29,8 +29,24 @@
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/infra/feishu/resource.js",
+        "line": 3,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/infra/feishu/resource.js",
+        "line": 114,
+        "text": "await fs.mkdir(folder, { recursive: true });"
+      },
+      {
+        "file": "lib/infra/feishu/resource.js",
+        "line": 120,
+        "text": "await response.writeFile(target);"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,

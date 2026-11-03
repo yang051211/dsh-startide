@@ -1,0 +1,79 @@
+{
+  "name": "dsh-fingerprint",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-03T08:10:04.581Z",
+  "icon": "dsh-fingerprint.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 240,
+        "text": "const response = await fetch(`${API}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "core.js",
+        "line": 8,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "core.js",
+        "line": 10,
+        "text": "export const PROMPTS = JSON.parse(readFileSync(new URL('./prompts.json', import.meta.url), 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 23,
+        "text": "} from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 78,
+        "text": "return JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 84,
+        "text": "for (const line of readFileSync(file, 'utf8').split('\\n')) {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 41,
+        "text": "export const inject = ['llm', 'tools', 'webServer'];"
+      },
+      {
+        "file": "index.js",
+        "line": 1029,
+        "text": "ctx.effect(() => ctx.tools.register(definition), `llm-fingerprint: ${definition.name}`);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

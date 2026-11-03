@@ -1,0 +1,92 @@
+{
+  "name": "dsh-leno-ledger",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-03T08:10:06.174Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/config.js",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/gates.js",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/git.js",
+        "line": 13,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/git.js",
+        "line": 35,
+        "text": "return fs.readFileSync(outFile, 'utf8');"
+      },
+      {
+        "file": "lib/git.js",
+        "line": 38,
+        "text": "try { fs.unlinkSync(outFile); } catch { /* ignore */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "* 必须先声明 tools 依赖，cordis 才会在 apply 前注入 ctx.tools。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "* 这是 v0.2 六条功能全灭的根因：没有 inject，apply 里访问 ctx.tools 直接 TypeError。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 94,
+        "text": "if (!ctx?.tools || typeof ctx.tools.register !== 'function') {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 95,
+        "text": "throw new Error('ctx.tools 不可用：插件需要 inject: [\"tools\"]，或宿主没有提供 tools 服务');"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/git.js",
+        "line": 11,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

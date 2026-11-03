@@ -1,0 +1,93 @@
+{
+  "name": "@qzsy/dsh-bridge",
+  "version": "3.6.1",
+  "scannedAt": "2026-11-03T08:09:58.585Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 2731,
+        "text": "const res = await fetch(`http://127.0.0.1:${port}/__qzsy_bridge__/loopback-token`, { cache: \"no-store\" });"
+      },
+      {
+        "file": "client/index.js",
+        "line": 195,
+        "text": "const res = await fetch(`http://127.0.0.1:${port}/__qzsy_bridge__/loopback-token`, { cache: 'no-store' });"
+      },
+      {
+        "file": "lib/gate.js",
+        "line": 12,
+        "text": "import { createServer, request } from 'node:http';"
+      },
+      {
+        "file": "lib/saas/tunnel-client.mjs",
+        "line": 8,
+        "text": "import { request as httpRequest } from 'node:http';"
+      },
+      {
+        "file": "lib/saas/tunnel-client.mjs",
+        "line": 229,
+        "text": "ws = new WebSocket(buildSaasConnectUrl({"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/build.mjs",
+        "line": 2,
+        "text": "import { mkdir, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "client/build.mjs",
+        "line": 3,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "client/build.mjs",
+        "line": 11,
+        "text": "const loaderId = JSON.parse(readFileSync(resolve(packageRoot, 'package.json'), 'utf8')).name;"
+      },
+      {
+        "file": "client/build.mjs",
+        "line": 39,
+        "text": "await mkdir(dirname(outputPath), { recursive: true });"
+      },
+      {
+        "file": "client/build.mjs",
+        "line": 40,
+        "text": "await writeFile(outputPath, wrapped, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/git-state.js",
+        "line": 9,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

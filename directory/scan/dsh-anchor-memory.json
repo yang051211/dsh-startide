@@ -1,0 +1,92 @@
+{
+  "name": "dsh-anchor-memory",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-03T08:10:08.487Z",
+  "icon": "dsh-anchor-memory.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, renameSync, rmSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 69,
+        "text": "return readFileSync(p, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 76,
+        "text": "mkdirSync(dirname(p), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 78,
+        "text": "writeFileSync(tmp, text, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 95,
+        "text": "mkdirSync(dir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 731,
+        "text": "c.tools.register(t)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 763,
+        "text": "//    ⚠️ Cordis 硬规则：没在 inject 里声明的服务，直接访问 ctx.tools 会抛"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 765,
+        "text": "//    所以这里绝不碰 ctx.tools，只在注入回调里用 c.tools。"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 119,
+        "text": "const add = spawnSync('git', [...base, 'add', '-A'], opts)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 121,
+        "text": "const commit = spawnSync('git', [...base, 'commit', '--quiet', '--no-verify', '-m', String(message).slice(0, 200)], opts)"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

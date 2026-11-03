@@ -1,0 +1,82 @@
+{
+  "name": "dsh-memory-tiers",
+  "version": "0.8.3",
+  "scannedAt": "2026-11-03T08:10:02.274Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.mjs",
+        "line": 405,
+        "text": "const res = await fetch(API + path, {"
+      },
+      {
+        "file": "silicon.mjs",
+        "line": 137,
+        "text": "r = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 20,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync, appendFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.mjs",
+        "line": 147,
+        "text": "const raw = JSON.parse(readFileSync(pointerFile(), 'utf8'))"
+      },
+      {
+        "file": "index.mjs",
+        "line": 174,
+        "text": "const raw = JSON.parse(readFileSync(p, 'utf8').replace(/^\\uFEFF/, ''))"
+      },
+      {
+        "file": "index.mjs",
+        "line": 253,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "index.mjs",
+        "line": 254,
+        "text": "appendFileSync(join(dir, 'capture.log'), `${new Date().toISOString()} ${line}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 33,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.mjs",
+        "line": 467,
+        "text": "ctx.tools.register(def)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

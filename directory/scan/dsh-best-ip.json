@@ -1,0 +1,85 @@
+{
+  "name": "dsh-best-ip",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-03T08:10:00.914Z",
+  "icon": "dsh-best-ip.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bench.js",
+        "line": 6,
+        "text": "import https from 'node:https'"
+      },
+      {
+        "file": "client.js",
+        "line": 319,
+        "text": "const response = await fetch(`${BASE}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "providers.js",
+        "line": 3,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "providers.js",
+        "line": 39,
+        "text": "const manifest = JSON.parse(fs.readFileSync(filename, 'utf8'))"
+      },
+      {
+        "file": "store.js",
+        "line": 6,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "store.js",
+        "line": 73,
+        "text": "raw = fs.readFileSync(target, 'utf8')"
+      },
+      {
+        "file": "store.js",
+        "line": 152,
+        "text": "fs.mkdirSync(dir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1714,
+        "text": "const disposeState = toolsCtx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 1887,
+        "text": "const disposeProbe = toolsCtx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 2053,
+        "text": "const disposeStop = toolsCtx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

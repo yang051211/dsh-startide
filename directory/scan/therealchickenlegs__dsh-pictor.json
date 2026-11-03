@@ -1,0 +1,123 @@
+{
+  "name": "@therealchickenlegs/dsh-pictor",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-03T08:10:09.453Z",
+  "icon": "therealchickenlegs__dsh-pictor.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/mcp/client.js",
+        "line": 305,
+        "text": "const response = await fetch(this.endpoint, {"
+      },
+      {
+        "file": "lib/tools/catalog.js",
+        "line": 1932,
+        "text": "\"description\": \"http(s) URL to fetch (disabled by default).\","
+      },
+      {
+        "file": "scripts/doctor.mjs",
+        "line": 138,
+        "text": "const response = await fetch(url, { signal: AbortSignal.timeout(Math.max(1000, args.timeoutMs)) })"
+      },
+      {
+        "file": "src/mcp/client.ts",
+        "line": 414,
+        "text": "const response = await fetch(this.endpoint, {"
+      },
+      {
+        "file": "src/tools/catalog.ts",
+        "line": 1944,
+        "text": "\"description\": \"http(s) URL to fetch (disabled by default).\","
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/config.js",
+        "line": 21,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 88,
+        "text": "const raw = fs.readFileSync(file, 'utf8').replace(/^\\uFEFF/, '');"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 8,
+        "text": "import { copyFileSync, mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 11,
+        "text": "mkdirSync('lib', { recursive: true })"
+      },
+      {
+        "file": "scripts/doctor.mjs",
+        "line": 21,
+        "text": "import fs from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "* `inject = ['tools']` guarantees the tool registry can be obtained."
+      },
+      {
+        "file": "lib/index.js",
+        "line": 27,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 50,
+        "text": "candidates.push(ctx.tools);"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 5,
+        "text": "* `inject = ['tools']` guarantees the tool registry can be obtained."
+      },
+      {
+        "file": "src/index.ts",
+        "line": 29,
+        "text": "export const inject = ['tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/run-tests.mjs",
+        "line": 12,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/run-tests.mjs",
+        "line": 31,
+        "text": "const result = spawnSync(process.execPath, ['--test', ...files], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

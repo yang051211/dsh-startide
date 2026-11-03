@@ -1,0 +1,58 @@
+{
+  "name": "@gongfpp/dsh-novel-fish",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-03T08:10:04.499Z",
+  "icon": "gongfpp__dsh-novel-fish.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/build.mjs",
+        "line": 2,
+        "text": "import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "scripts/build.mjs",
+        "line": 9,
+        "text": "await mkdir(dirname(output), { recursive: true })"
+      },
+      {
+        "file": "scripts/build.mjs",
+        "line": 24,
+        "text": "await writeFile(output, (await readFile(output, 'utf8')).replace(/[\\t ]+$/gmu, ''))"
+      },
+      {
+        "file": "scripts/build.mjs",
+        "line": 33,
+        "text": "const manifest = JSON.parse(await readFile(join(directory, 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "scripts/build.mjs",
+        "line": 38,
+        "text": "? (await Promise.all(licenses.map(name => readFile(join(directory, name), 'utf8')))).join('\\n\\n')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

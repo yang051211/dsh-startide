@@ -1,0 +1,86 @@
+{
+  "name": "dsh-plugin-opencode-local",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-03T08:10:09.447Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/runtime-88Q1TGP7.js",
+        "line": 301,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/runtime-88Q1TGP7.js",
+        "line": 3,
+        "text": "import { existsSync, readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/runtime-88Q1TGP7.js",
+        "line": 458,
+        "text": "const targets = [...readFileSync(file, \"utf8\").matchAll(/\"%(?:~)?dp0%\\\\?([^\"]+?\\.exe)\"/gi)].map((m) => m[1]);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/runtime-88Q1TGP7.js",
+        "line": 2,
+        "text": "import { execFile, spawn, spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/runtime-88Q1TGP7.js",
+        "line": 374,
+        "text": "spawnSync(\"taskkill\", ["
+      },
+      {
+        "file": "lib/runtime-88Q1TGP7.js",
+        "line": 405,
+        "text": "spawnSync(\"taskkill\", ["
+      },
+      {
+        "file": "lib/runtime-88Q1TGP7.js",
+        "line": 489,
+        "text": "const { spawnSync } = require('node:child_process');"
+      },
+      {
+        "file": "lib/runtime-88Q1TGP7.js",
+        "line": 494,
+        "text": "const r = spawnSync('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command',"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 4,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 22,
+      "text": "npm i -g opencode-ai     # or see https://opencode.ai/docs/#install"
+    },
+    {
+      "file": "README.md",
+      "line": 93,
+      "text": "- **\"OpenCode vX is too old\".** Run `opencode upgrade` or `npm i -g opencode-ai@latest`."
+    }
+  ],
+  "skippedEntries": []
+}

@@ -1,0 +1,157 @@
+{
+  "name": "@lininn/ds-bot",
+  "version": "0.2.11",
+  "scannedAt": "2026-11-03T08:10:03.424Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1325,
+        "text": "response = await fetch(ROUTE, {"
+      },
+      {
+        "file": "src/host/update.js",
+        "line": 66,
+        "text": "const response = await fetch(url, { headers: { accept: 'application/json', ...headers }, signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) })"
+      },
+      {
+        "file": "web-search.js",
+        "line": 567,
+        "text": "response = await deps.fetch(candidate.url, {"
+      },
+      {
+        "file": "web-search.js",
+        "line": 772,
+        "text": "fetch: (url, init) => fetch(url, init),"
+      },
+      {
+        "file": "web-search.js",
+        "line": 773,
+        "text": "webFetch: (request, signal) => ctx.web.fetch(request, signal),"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/ds-bot.js",
+        "line": 11,
+        "text": "import { closeSync, mkdirSync, openSync, readFileSync, realpathSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/ds-bot.js",
+        "line": 18,
+        "text": "const PKG = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "bin/ds-bot.js",
+        "line": 133,
+        "text": "const pkg = JSON.parse(readFileSync(profilePackage(profile), 'utf8'))"
+      },
+      {
+        "file": "bin/ds-bot.js",
+        "line": 158,
+        "text": "const pid = Number(readFileSync(paths.pid, 'utf8').trim())"
+      },
+      {
+        "file": "bin/ds-bot.js",
+        "line": 208,
+        "text": "try { return readFileSync(paths.url, 'utf8').trim() || undefined } catch { return undefined }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 45,
+        "text": "export const inject = ['llm', 'tools', 'systemPrompt', 'sessionController', 'sessions', 'sessionTitle', 'workspaceRegistry', 'connection']"
+      },
+      {
+        "file": "src/host/agents.js",
+        "line": 52,
+        "text": "const known = new Set(ctx.tools.schemas(agent).map(schema => schema.name))"
+      },
+      {
+        "file": "src/host/agents.js",
+        "line": 61,
+        "text": "agent.ctx.tools.restrict({ deny })"
+      },
+      {
+        "file": "src/host/browser.js",
+        "line": 257,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "src/host/browser/mount.js",
+        "line": 125,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/ds-bot.js",
+        "line": 10,
+        "text": "import { execFileSync, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "bin/ds-bot.js",
+        "line": 313,
+        "text": "child = spawn(dsh.command, [...dsh.prefix, ...dshArgv(options)], {"
+      },
+      {
+        "file": "src/host/dsh-update.js",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/host/dsh-update.js",
+        "line": 150,
+        "text": "const runner = rt.dshSpawn ?? ((command, argv, options) => spawn(command, argv, options))"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "llm",
+    "sessionController",
+    "sessionTitle",
+    "sessions",
+    "systemPrompt",
+    "tools",
+    "web",
+    "workspaceRegistry"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 12,
+      "text": "npm install -g @lininn/ds-bot"
+    },
+    {
+      "file": "README.md",
+      "line": 90,
+      "text": "npm install -g @lininn/ds-bot        # then: ds-bot <command>"
+    },
+    {
+      "file": "README.md",
+      "line": 324,
+      "text": "npm install -g @lininn/ds-bot"
+    }
+  ],
+  "skippedEntries": []
+}

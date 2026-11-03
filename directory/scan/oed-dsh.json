@@ -1,0 +1,84 @@
+{
+  "name": "oed-dsh",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-03T08:10:06.262Z",
+  "icon": "oed-dsh.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core/http.js",
+        "line": 61,
+        "text": "response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core/auth.js",
+        "line": 3,
+        "text": "import { mkdirSync, readFileSync, unlinkSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "src/core/auth.js",
+        "line": 126,
+        "text": "return JSON.parse(readFileSync(path, \"utf8\"));"
+      },
+      {
+        "file": "src/core/auth.js",
+        "line": 134,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "src/core/auth.js",
+        "line": 135,
+        "text": "writeFileSync(path, JSON.stringify(data, null, 2), { mode: 0o600 });"
+      },
+      {
+        "file": "src/core/auth.js",
+        "line": 141,
+        "text": "unlinkSync(path);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 48,
+        "text": "export const inject = [\"tools\", \"skills\"];"
+      },
+      {
+        "file": "index.js",
+        "line": 89,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core/git.js",
+        "line": 1,
+        "text": "import { execFile } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

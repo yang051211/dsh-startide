@@ -1,0 +1,90 @@
+{
+  "name": "dsh-tool-invoice",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-03T08:10:07.170Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 27,
+        "text": "import { mkdir, readFile, writeFile, stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 608,
+        "text": "await mkdir(outputDir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 626,
+        "text": "if (TEXT_EXTENSIONS.has(extension)) return { source, text: await readFile(source, \"utf8\"), viaText: true };"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 636,
+        "text": "return { source, text: await readFile(destination, \"utf8\"), viaText: false };"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 840,
+        "text": "await writeFile(destination, JSON.stringify(payload, null, 2), \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 37,
+        "text": "const inject = [\"tools\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 641,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 688,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 763,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 29,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 530,
+        "text": "child = spawn(command, args, { cwd: options.cwd, windowsHide: true, shell: false });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

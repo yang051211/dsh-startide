@@ -1,0 +1,131 @@
+{
+  "name": "dsh-logalyze",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-03T08:09:57.385Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 78,
+        "text": "response = await fetch(route.slice(1), {"
+      },
+      {
+        "file": "src/analyze/server.ts",
+        "line": 16,
+        "text": "import type { IncomingMessage, ServerResponse } from 'node:http'"
+      },
+      {
+        "file": "src/client/api.ts",
+        "line": 27,
+        "text": "response = await fetch(route.slice(1), {"
+      },
+      {
+        "file": "src/host.ts",
+        "line": 12,
+        "text": "import type { IncomingMessage, ServerResponse } from 'node:http'"
+      },
+      {
+        "file": "src/settings/routes.ts",
+        "line": 9,
+        "text": "import type { IncomingMessage, ServerResponse } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import { lstat, mkdir, readFile, readdir, rename, rm, stat, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "import { createWriteStream, readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 887,
+        "text": "const record = reportRecordSchema.parse(JSON.parse(await readFile(path, \"utf8\")));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 911,
+        "text": "await mkdir(this.dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 915,
+        "text": "await writeFile(temporary, `${JSON.stringify(record)}\\n`, {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4901,
+        "text": "this.ctx.effect(() => this.ctx.tools.register(this.dispatcher.definition(), { when: (context) => this.offersTool(context) }), \"logalyze: dispatch tool\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4902,
+        "text": "\t\tthis.ctx.effect(() => this.ctx.tools.register(this.improver.definition(), { when: async (context) => this.current.skillUpdates.enabled && await this.offersToo"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4903,
+        "text": "this.ctx.effect(() => this.ctx.tools.register(this.viewer.definition(), { when: (context) => this.offersTool(context) }), \"logalyze: skill view tool\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4904,
+        "text": "\t\tthis.ctx.effect(() => this.ctx.tools.register(this.adder.definition(), { when: (context) => this.offersTopLevel(context, () => true) }), \"logalyze: add reposi"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4905,
+        "text": "\t\tthis.ctx.effect(() => this.ctx.tools.register(this.initializer.initDefinition(), { when: (context) => this.offersTopLevel(context, () => this.registry.setupPe"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 963,
+        "text": "execFile(file, args, {"
+      },
+      {
+        "file": "src/report/command.ts",
+        "line": 8,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "src/report/command.ts",
+        "line": 55,
+        "text": "    execFile(file, args, { cwd: options.cwd, timeout: options.timeoutMs, killSignal: 'SIGKILL', maxBuffer: 4 * 1024 * 1024, windowsHide: true }, (error, stdout,"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

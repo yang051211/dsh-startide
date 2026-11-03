@@ -1,35 +1,35 @@
 {
   "name": "@sligqoer/dsh-usage-stats",
-  "version": "0.2.5",
-  "scannedAt": "2026-10-26T10:14:18.615Z",
+  "version": "0.2.8",
+  "scannedAt": "2026-11-03T08:09:58.125Z",
   "icon": "sligqoer__dsh-usage-stats.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 929,
+        "line": 1221,
         "text": "return fetch('/api/dsh-usage-stats/stats' + (q ? '?' + q : ''), { headers: { accept: 'application/json' } }).then(readJson)"
       },
       {
         "file": "lib/client.js",
-        "line": 936,
-        "text": "return fetch('/api/dsh-usage-stats/provider-quotas' + (q ? '?' + q : ''), { headers: { accept: 'application/json' } }).then(readJson)"
+        "line": 1231,
+        "text": "return fetch('/api/dsh-usage-stats/logs?' + search.toString(), { headers: { accept: 'application/json' } }).then(readJson)"
       },
       {
         "file": "lib/client.js",
-        "line": 942,
-        "text": "return fetch('/api/dsh-usage-stats/account-quotas', { headers: { accept: 'application/json' }, credentials: 'same-origin' }).then(readJson)"
+        "line": 1240,
+        "text": "return fetch('/api/dsh-usage-stats/costs?' + search.toString(), { headers: { accept: 'application/json' } }).then(readJson)"
       },
       {
         "file": "lib/client.js",
-        "line": 954,
-        "text": "return fetch('/api/dsh-usage-stats/account-quotas/refresh', {"
+        "line": 1252,
+        "text": "return fetch('/api/dsh-usage-stats/dashboard?' + search.toString(), { headers: { accept: 'application/json' } }).then(readJson)"
       },
       {
         "file": "lib/client.js",
-        "line": 1000,
-        "text": "return fetch('/api/dsh-usage-stats/controls', patch === undefined ? { headers: { accept: 'application/json' } } : {"
+        "line": 1255,
+        "text": "return fetch('/api/dsh-usage-stats/prices', {"
       }
     ]
   },
@@ -43,23 +43,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 393,
+        "line": 396,
         "text": "await mkdir(dirname(storePath), { recursive: true })"
       },
       {
         "file": "lib/index.js",
-        "line": 397,
+        "line": 400,
         "text": "await writeFile(tmp, JSON.stringify(state), { encoding: 'utf8', mode: 0o600 })"
       },
       {
         "file": "lib/index.js",
-        "line": 457,
+        "line": 460,
         "text": "const raw = await readFile(storePath, 'utf8')"
       },
       {
-        "file": "lib/lm-fingerprint-engine.js",
-        "line": 3,
-        "text": "import { readFile, writeFile, mkdir, rename, rm, stat } from 'node:fs/promises'"
+        "file": "lib/index.js",
+        "line": 1799,
+        "text": "await mkdir(dirname(seatDiagFile), { recursive: true })"
       }
     ]
   },

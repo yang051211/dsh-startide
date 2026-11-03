@@ -1,0 +1,99 @@
+{
+  "name": "dsh-film-analysis",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-03T08:10:09.354Z",
+  "icon": "dsh-film-analysis.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 275,
+        "text": "response = await fetch(`${API_BASE}/api/invoke`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 290,
+        "text": "response = await fetch(`${API_BASE}/api/upload?name=${encodeURIComponent(name)}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/ai.js",
+        "line": 3,
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/ai.js",
+        "line": 187,
+        "text": "data: readFileSync(frame.path),"
+      },
+      {
+        "file": "lib/ai.js",
+        "line": 566,
+        "text": "data: readFileSync(pick.path),"
+      },
+      {
+        "file": "lib/ocr.js",
+        "line": 3,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/ocr.js",
+        "line": 52,
+        "text": "buffer = readFileSync(abs);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 8,
+        "text": "export const inject = ['tools', 'webServer'];"
+      },
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "disposers.push(ctx.tools.register(definition));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/toolchain.js",
+        "line": 4,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/toolchain.js",
+        "line": 94,
+        "text": "execFile("
+      },
+      {
+        "file": "lib/toolchain.js",
+        "line": 124,
+        "text": "execFile("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 4,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

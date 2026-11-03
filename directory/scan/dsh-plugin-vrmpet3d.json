@@ -1,25 +1,20 @@
 {
   "name": "dsh-plugin-vrmpet3d",
-  "version": "0.1.3",
-  "scannedAt": "2026-10-26T10:05:08.941Z",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-03T08:10:00.630Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "desktop/game-visibility.cjs",
-        "line": 2,
-        "text": "const http = require('node:http');"
-      },
-      {
-        "file": "desktop/game-visibility.cjs",
-        "line": 3,
-        "text": "const https = require('node:https');"
+        "line": 39,
+        "text": "const response = await session.fetch(url.href, {"
       },
       {
         "file": "lib/client.js",
         "line": 1675,
-        "text": "fetch('/vrmpet3d/desktop', { method: 'POST', credentials: 'omit',"
+        "text": "fetch('/vrmpet3d/desktop', { method: 'POST', credentials: 'same-origin',"
       },
       {
         "file": "lib/client.js",
@@ -30,6 +25,11 @@
         "file": "lib/client.js",
         "line": 1742,
         "text": "return fetch('/vrmpet3d/setup-state', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1749,
+        "text": "return fetch('/vrmpet3d/setup-state', { credentials: 'same-origin' })"
       }
     ]
   },

@@ -1,0 +1,110 @@
+{
+  "name": "@yangluo-2021/dsh-restart-button",
+  "version": "0.6.1",
+  "scannedAt": "2026-11-03T08:10:03.500Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 245,
+        "text": "return fetch(url, init).then(function (response) {"
+      },
+      {
+        "file": "scripts/e2e.mjs",
+        "line": 73,
+        "text": "const response = await fetch(`http://127.0.0.1:${port}/dsh-restart-button/capabilities`, {"
+      },
+      {
+        "file": "scripts/e2e.mjs",
+        "line": 84,
+        "text": "const response = await fetch(`http://127.0.0.1:${port}/dsh-restart-button/status`, {"
+      },
+      {
+        "file": "scripts/e2e.mjs",
+        "line": 154,
+        "text": "const response = await fetch(`http://127.0.0.1:${before.port}/dsh-restart-button/restart`, {"
+      },
+      {
+        "file": "scripts/panel-check.mjs",
+        "line": 39,
+        "text": "const response = await fetch(`http://127.0.0.1:${CDP_PORT}/json/list`)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/detach.cjs",
+        "line": 25,
+        "text": "const { appendFileSync, mkdirSync } = require('node:fs')"
+      },
+      {
+        "file": "lib/detach.cjs",
+        "line": 49,
+        "text": "mkdirSync(dirname(logFile), { recursive: true })"
+      },
+      {
+        "file": "lib/detach.cjs",
+        "line": 50,
+        "text": "appendFileSync(logFile, `${new Date().toISOString()} launcher ${line}\\n`)"
+      },
+      {
+        "file": "lib/detach.cjs",
+        "line": 58,
+        "text": "const { writeFileSync, renameSync } = require('node:fs')"
+      },
+      {
+        "file": "lib/detach.cjs",
+        "line": 60,
+        "text": "writeFileSync(tmp, `failed: ${reason}`)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/detach.cjs",
+        "line": 24,
+        "text": "const { spawn } = require('node:child_process')"
+      },
+      {
+        "file": "lib/detach.cjs",
+        "line": 75,
+        "text": "const child = spawn(parsed.command, ["
+      },
+      {
+        "file": "lib/index.js",
+        "line": 42,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 428,
+        "text": "const launcher = spawn(nodeBin(), [LAUNCHER], {"
+      },
+      {
+        "file": "scripts/e2e.mjs",
+        "line": 17,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

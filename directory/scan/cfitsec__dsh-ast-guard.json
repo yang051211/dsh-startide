@@ -1,0 +1,92 @@
+{
+  "name": "@cfitsec/dsh-ast-guard",
+  "version": "2.0.1",
+  "scannedAt": "2026-11-03T08:10:04.607Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import { statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/rules.js",
+        "line": 8,
+        "text": "import { readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/rules.js",
+        "line": 39,
+        "text": "const text = readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "lib/rules.js",
+        "line": 177,
+        "text": "return JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version"
+      },
+      {
+        "file": "test/hook.mjs",
+        "line": 11,
+        "text": "import { mkdtempSync, writeFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 186,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/daemon.js",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/daemon.js",
+        "line": 40,
+        "text": "const child = spawn(this.powershell, ["
+      },
+      {
+        "file": "lib/evidence.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/evidence.js",
+        "line": 23,
+        "text": "child = spawn(command, { cwd, shell: true, windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

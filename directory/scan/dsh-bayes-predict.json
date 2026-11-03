@@ -1,0 +1,98 @@
+{
+  "name": "dsh-bayes-predict",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-03T08:10:06.230Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/backtest-data.js",
+        "line": 104,
+        "text": "const r = await fetch(url, { headers: { \"User-Agent\": UA, Referer: \"https://finance.sina.com.cn/\" } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 138,
+        "text": "return fetch(\"/bayes-predict/watchlist?codesOnly=1\")"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 145,
+        "text": "return fetch(url, { method: \"POST\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 469,
+        "text": "fetch(\"/bayes-predict/analyze?symbol=\" + encodeURIComponent(sym) + \"&horizon=\" + encodeURIComponent(horizon))"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 634,
+        "text": "fetch(\"/bayes-predict/pools\")"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/backtest-data.js",
+        "line": 9,
+        "text": "import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, statSync, renameSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/backtest-data.js",
+        "line": 80,
+        "text": "const j = JSON.parse(readFileSync(p, \"utf8\"));"
+      },
+      {
+        "file": "lib/backtest-data.js",
+        "line": 95,
+        "text": "const arr = JSON.parse(readFileSync(builtin, \"utf8\"));"
+      },
+      {
+        "file": "lib/backtest-data.js",
+        "line": 138,
+        "text": "const u = JSON.parse(readFileSync(join(cacheRoot(), \"universe.json\"), \"utf8\"));"
+      },
+      {
+        "file": "lib/backtest-data.js",
+        "line": 164,
+        "text": "try { kc.set(code, JSON.parse(readFileSync(p, \"utf8\")).klines); } catch { kc.set(code, null); }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "export const inject = [\"tools\", \"webServer\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 344,
+        "text": "ctx.tools.register(definition);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

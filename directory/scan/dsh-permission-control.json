@@ -1,0 +1,73 @@
+{
+  "name": "dsh-permission-control",
+  "version": "0.3.3",
+  "scannedAt": "2026-11-03T08:10:03.549Z",
+  "icon": "dsh-permission-control.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, realpathSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "const manifest = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 135,
+        "text": "mkdirSync(dirname(auditPath), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 136,
+        "text": "appendFileSync(auditPath, `${JSON.stringify(entry)}\\n`, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 151,
+        "text": "const lines = readFileSync(auditPath, 'utf8').split('\\n').filter(Boolean)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 44,
+        "text": "export const inject = ['tools', 'commands', 'sessionProjections']"
+      },
+      {
+        "file": "index.js",
+        "line": 387,
+        "text": "hasTools: typeof ctx.tools?.register === 'function',"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "sessionProjections",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

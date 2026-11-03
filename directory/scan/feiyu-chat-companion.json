@@ -1,0 +1,108 @@
+{
+  "name": "feiyu-chat-companion",
+  "version": "0.1.8",
+  "scannedAt": "2026-11-03T08:10:01.310Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 98,
+        "text": "const response = await fetch('/dsh-tts-api/speak', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 278,
+        "text": "const response = await fetch(`${API}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 112,
+        "text": "fs.mkdirSync(STORAGE, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 113,
+        "text": "fs.writeFileSync(SETTINGS_PATH, JSON.stringify(next), 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 131,
+        "text": "return JSON.parse(fs.readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 146,
+        "text": "fs.writeFileSync(tmp, text, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 211,
+        "text": "export const inject = ['tools', 'webServer', 'connection', 'agents', 'workspaceController'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 699,
+        "text": "const service = ctx.tools ?? (typeof ctx.get === 'function' ? ctx.get('tools') : undefined);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 993,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 272,
+        "text": "pet = spawn(python, [PET_SCRIPT], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "connection",
+    "tools",
+    "webServer",
+    "workspaceController"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 24,
+      "text": "& \"C:\\Users\\<你>\\AppData\\Local\\Programs\\DeepSeek Harness\\resources\\runtime\\primary-runtime\\dependencies\\python\\python.exe\" -m pip install uiautomation"
+    }
+  ],
+  "skippedEntries": []
+}

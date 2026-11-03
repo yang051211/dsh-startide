@@ -1,0 +1,71 @@
+{
+  "name": "dsh-path-healer",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-03T08:10:06.269Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/detect.js",
+        "line": 9,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/detect.js",
+        "line": 264,
+        "text": "raw = JSON.parse(fs.readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/detect.js",
+        "line": 288,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/detect.js",
+        "line": 308,
+        "text": "fs.writeFileSync(tmp, JSON.stringify(body, null, 2) + '\\n', 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 175,
+        "text": "if (ctx.tools?.register) {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 176,
+        "text": "const dispose = ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,80 @@
+{
+  "name": "dsh-publisher-radar",
+  "version": "1.0.3",
+  "scannedAt": "2026-11-03T08:09:59.939Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 206,
+        "text": "fetch(url, { headers: { accept: 'application/json' }, cache: 'no-store' })"
+      },
+      {
+        "file": "client/client.js",
+        "line": 350,
+        "text": "fetch('/radar/config', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { readdirSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/catalog.mjs",
+        "line": 17,
+        "text": "import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/catalog.mjs",
+        "line": 207,
+        "text": "const text = readFileSync(options.catalogPath, 'utf8');"
+      },
+      {
+        "file": "lib/catalog.mjs",
+        "line": 222,
+        "text": "const text = readFileSync(cacheFile, 'utf8');"
+      },
+      {
+        "file": "lib/catalog.mjs",
+        "line": 241,
+        "text": "mkdirSync(cacheDir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 48,
+        "text": "ctx.effect(() => ctx.tools.register(tool), `publisher-radar: ${tool.name} tool`);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

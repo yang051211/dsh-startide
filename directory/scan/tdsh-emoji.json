@@ -1,15 +1,15 @@
 {
   "name": "tdsh-emoji",
-  "version": "0.2.0",
-  "scannedAt": "2026-10-26T10:07:28.374Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-03T08:10:03.636Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/client.js",
-        "line": 211,
-        "text": "const doFetch = typeof fetchImpl === \"function\" ? fetchImpl : (...args) => fetch(...args);"
+        "file": "scripts/sync-market.mjs",
+        "line": 27,
+        "text": "const response = await fetch(url, { ...options, headers: { ...headers, ...options.headers }, signal: AbortSignal.timeout(30000) });"
       }
     ]
   },
@@ -19,27 +19,27 @@
       {
         "file": "lib/index.js",
         "line": 13,
-        "text": "import { mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from \"node:fs\";"
+        "text": "import { readFileSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 178,
-        "text": "const raw = JSON.parse(readFileSync(file, \"utf8\"));"
+        "line": 194,
+        "text": "try { text = readFileSync(file, \"utf8\"); }"
       },
       {
-        "file": "lib/index.js",
-        "line": 191,
-        "text": "mkdirSync(dirname(file), { recursive: true });"
+        "file": "scripts/sync-market.mjs",
+        "line": 1,
+        "text": "import { readFileSync } from 'node:fs';"
       },
       {
-        "file": "lib/index.js",
-        "line": 202,
-        "text": "writeFileSync(tmp, payload, \"utf8\");"
+        "file": "scripts/sync-market.mjs",
+        "line": 18,
+        "text": "const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url)));"
       },
       {
-        "file": "lib/index.js",
-        "line": 207,
-        "text": "rmSync(tmp, { force: true });"
+        "file": "scripts/test-compat.mjs",
+        "line": 2,
+        "text": "import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
       }
     ]
   },
@@ -48,17 +48,30 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/test-compat.mjs",
+        "line": 3,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/test-compat.mjs",
+        "line": 13,
+        "text": "const child = spawn(process.execPath, args, { stdio: 'inherit', ...options });"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
+    "profileContext",
+    "settings",
     "systemPrompt"
   ],
   "setupHints": [],

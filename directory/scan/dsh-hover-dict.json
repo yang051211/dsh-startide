@@ -1,0 +1,97 @@
+{
+  "name": "dsh-hover-dict",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-03T08:10:04.149Z",
+  "icon": "dsh-hover-dict.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1104,
+        "text": "response = await fetch(`${API_PREFIX}/${name}`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 4192,
+        "text": "fetch(`${apiPrefix}/meta.json`)"
+      },
+      {
+        "file": "client.js",
+        "line": 5165,
+        "text": "const response = await fetch('/api/dsh-hover-dict/translate', {"
+      },
+      {
+        "file": "client.js",
+        "line": 5728,
+        "text": "fetch('/api/dsh-hover-dict/health')"
+      },
+      {
+        "file": "client/src/app.js",
+        "line": 251,
+        "text": "const response = await fetch('/api/dsh-hover-dict/translate', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/build.mjs",
+        "line": 26,
+        "text": "import { readFileSync, writeFileSync, existsSync } from 'node:fs'"
+      },
+      {
+        "file": "client/build.mjs",
+        "line": 218,
+        "text": "const source = readFileSync(path, 'utf8')"
+      },
+      {
+        "file": "client/build.mjs",
+        "line": 337,
+        "text": "const onDisk = readFileSync(OUT_FILE, 'utf8')"
+      },
+      {
+        "file": "client/build.mjs",
+        "line": 347,
+        "text": "writeFileSync(OUT_FILE, output)"
+      },
+      {
+        "file": "client/test/_dict.mjs",
+        "line": 1,
+        "text": "import { readFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/build-data.mjs",
+        "line": 26,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/build-data.mjs",
+        "line": 127,
+        "text": "const p = spawn('bunzip2', ['-c', file], { stdio: ['ignore', 'pipe', 'pipe'] });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

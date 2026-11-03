@@ -1,0 +1,76 @@
+{
+  "name": "dsh-privacy-gateway",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-03T08:10:01.472Z",
+  "icon": "dsh-privacy-gateway.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { Dispatcher, Dispatcher1Wrapper, getGlobalDispatcher, setGlobalDispatcher } from \"undici\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1802,
+        "text": "* The pairs of a cookie string in s[from:to] (a Cookie: header's, curl -b's):"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1867,
+        "text": "/** curl -b 'a=…; b=…' and --cookie '…'; an argument with no = is a cookie file's name. */"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import { createReadStream, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { chmod, mkdir, open, readdir, stat, unlink } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 512,
+        "text": "await unlink(file);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 680,
+        "text": "await mkdir(dir, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 712,
+        "text": "if (keep.length > 0) await h.appendFile(keep.join(\"\\n\") + \"\\n\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

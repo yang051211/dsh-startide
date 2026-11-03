@@ -1,0 +1,90 @@
+{
+  "name": "dsh-pet-astra-yao",
+  "version": "0.1.7",
+  "scannedAt": "2026-11-03T08:10:02.773Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 944,
+        "text": "request = fetch(apiUrl(`/plugins/${PLUGIN_ID}/balance${suffix}`), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1083,
+        "text": "const response = await fetch(apiUrl(`/plugins/${PLUGIN_ID}/state`), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1132,
+        "text": "fetch(apiUrl(`/plugins/${PLUGIN_ID}/config`), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1159,
+        "text": "fetch(apiUrl(`/plugins/${PLUGIN_ID}/ack`), {"
+      },
+      {
+        "file": "src/client.core.js",
+        "line": 931,
+        "text": "request = fetch(apiUrl(`/plugins/${PLUGIN_ID}/balance${suffix}`), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/balance.js",
+        "line": 15,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "src/balance.js",
+        "line": 62,
+        "text": "const parsed = JSON.parse(fs.readFileSync(ledgerPath, 'utf8'))"
+      },
+      {
+        "file": "src/balance.js",
+        "line": 72,
+        "text": "fs.mkdirSync(path.dirname(ledgerPath), { recursive: true })"
+      },
+      {
+        "file": "src/balance.js",
+        "line": 73,
+        "text": "fs.writeFileSync(ledgerPath, JSON.stringify(ledger), 'utf8')"
+      },
+      {
+        "file": "src/index.js",
+        "line": 19,
+        "text": "import { readFile, stat } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: node scripts/build-client.mjs"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

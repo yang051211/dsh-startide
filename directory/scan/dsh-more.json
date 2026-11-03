@@ -1,7 +1,7 @@
 {
   "name": "dsh-more",
-  "version": "0.1.2",
-  "scannedAt": "2026-10-26T10:06:08.121Z",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-03T08:10:07.668Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -19,6 +19,21 @@
         "file": "dist/index.js",
         "line": 879,
         "text": "await rm(sessionDir, { recursive: true, force: false });"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 1828,
+        "text": "import { statfs } from \"node:fs/promises\";"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 1833,
+        "text": "import { readdir, readFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 1872,
+        "text": "const [devices, stats] = await Promise.all([readdir(\"/sys/block\"), readFile(\"/proc/diskstats\", \"utf8\")]);"
       }
     ]
   },
@@ -27,8 +42,14 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 1832,
+        "text": "import { execFile } from \"node:child_process\";"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

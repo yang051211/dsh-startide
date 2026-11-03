@@ -1,0 +1,82 @@
+{
+  "name": "dsh-better_reminder",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-03T08:10:01.989Z",
+  "icon": "dsh-better_reminder.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 59,
+        "text": "const res = await fetch(`${API}/config`);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 65,
+        "text": "const res = await fetch(`${API}/config`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 76,
+        "text": "const res = await fetch(`${API}/preview`, { method: \"POST\", headers: { \"Content-Type\": \"application/json\" }, body: \"{}\" });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/config.js",
+        "line": 12,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 111,
+        "text": "let raw = readFileSync(file, \"utf8\");"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 126,
+        "text": "mkdirSync(stateDir, { recursive: true });"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 128,
+        "text": "writeFileSync(tmp, JSON.stringify(current, null, 2), \"utf8\");"
+      },
+      {
+        "file": "lib/notify-core.js",
+        "line": 18,
+        "text": "import { appendFileSync, existsSync, mkdirSync, statSync } from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/notify-core.js",
+        "line": 17,
+        "text": "import { spawn } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
