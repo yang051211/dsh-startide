@@ -1,0 +1,98 @@
+{
+  "name": "dsh-mcp-summon",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-04T07:56:04.949Z",
+  "icon": "dsh-mcp-summon.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/lifecycle.js",
+        "line": 33,
+        "text": "await fetch(url, { signal: AbortSignal.timeout(HEALTH_PROBE_TIMEOUT_MS) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/cards.js",
+        "line": 14,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "src/cards.js",
+        "line": 64,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "src/cards.js",
+        "line": 76,
+        "text": "mkdirSync(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "src/cards.js",
+        "line": 78,
+        "text": "writeFileSync(tmp, JSON.stringify(cache, null, 2));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 8,
+        "text": "# Server rows use the same shape as '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "src/adapter.js",
+        "line": 4,
+        "text": "// Vendored and trimmed (stdio only, tools only) from @deepseek-ai/dsh-mcp-client"
+      },
+      {
+        "file": "src/index.js",
+        "line": 3,
+        "text": "// The official bridge (@deepseek-ai/dsh-mcp-client) registers every tool of"
+      },
+      {
+        "file": "src/index.js",
+        "line": 30,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "src/index.js",
+        "line": 54,
+        "text": "/** One server row — the same shape as '@deepseek-ai/dsh-mcp-client', stdio only. */"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/lifecycle.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/lifecycle.js",
+        "line": 104,
+        "text": "const child = spawn(spec.command, spec.args ?? [], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,112 @@
+{
+  "name": "@netcatty/dsh-mcp",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-04T07:56:10.366Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 53,
+        "text": "const response = await fetch('/api/mcp/status', { headers: { accept: 'application/json' } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 102,
+        "text": "const response = await fetch('/api/mcp/tools', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 126,
+        "text": "const response = await fetch('/api/mcp/call', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 267,
+        "text": "const response = await fetch('/api/mcp/oauth/start', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 277,
+        "text": "const status = await fetch(`/api/mcp/oauth/status?flowId=${encodeURIComponent(data.flowId)}`).then((r) => r.json());"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/audit.js",
+        "line": 5,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, renameSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/audit.js",
+        "line": 32,
+        "text": "mkdirSync(dir, { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "lib/audit.js",
+        "line": 35,
+        "text": "appendFileSync(auditPath(), `${line}\\n`, { mode: 0o600 });"
+      },
+      {
+        "file": "lib/audit.js",
+        "line": 44,
+        "text": "for (const line of readFileSync(path, 'utf8').split('\\n')) {"
+      },
+      {
+        "file": "lib/diagnose.js",
+        "line": 5,
+        "text": "import { accessSync, constants } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 2,
+        "text": "# MCP itself runs through the official @deepseek-ai/dsh-mcp-client rows this"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "// MCP itself belongs to the official `@deepseek-ai/dsh-mcp-client` rows this"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 23,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 225,
+        "text": "return mcpToolDefinitions(ctx.tools);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 244,
+        "text": "if (typeof ctx.tools?.execute !== 'function') throw new Error('当前 Host 不支持通过官方管线执行工具');"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

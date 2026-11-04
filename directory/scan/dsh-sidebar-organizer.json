@@ -1,39 +1,60 @@
 {
   "name": "dsh-sidebar-organizer",
-  "version": "0.6.1",
-  "scannedAt": "2026-11-03T20:52:26.461Z",
+  "version": "0.7.3",
+  "scannedAt": "2026-11-04T07:56:00.124Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1228,
+        "text": "const response = await fetch(SYNC_ROUTE, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1266,
+        "text": "const response = await fetch(SYNC_ROUTE, {"
+      },
+      {
+        "file": "src/sync.js",
+        "line": 137,
+        "text": "const response = await fetch(SYNC_ROUTE, {"
+      },
+      {
+        "file": "src/sync.js",
+        "line": 175,
+        "text": "const response = await fetch(SYNC_ROUTE, {"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
       {
-        "file": "scripts/build.mjs",
-        "line": 11,
-        "text": "import fs from \"node:fs\";"
+        "file": "lib/index.js",
+        "line": 22,
+        "text": "import { mkdir, readFile, rename, rm, writeFile } from \"node:fs/promises\";"
       },
       {
-        "file": "scripts/build.mjs",
-        "line": 15,
-        "text": "const pkg = JSON.parse(fs.readFileSync(path.join(root, \"package.json\"), \"utf8\"));"
+        "file": "lib/index.js",
+        "line": 75,
+        "text": "const raw = await readFile(storageFile(), \"utf8\");"
       },
       {
-        "file": "scripts/build.mjs",
-        "line": 34,
-        "text": "const text = fs.readFileSync(full, \"utf8\").replace(/\\s+$/, \"\");"
+        "file": "lib/index.js",
+        "line": 89,
+        "text": "await mkdir(dir, { recursive: true });"
       },
       {
-        "file": "scripts/build.mjs",
-        "line": 68,
-        "text": "fs.writeFileSync(target, output, \"utf8\");"
+        "file": "lib/index.js",
+        "line": 93,
+        "text": "await writeFile(temp, JSON.stringify(doc), \"utf8\");"
       },
       {
-        "file": "scripts/release-notes.mjs",
-        "line": 5,
-        "text": "import fs from \"node:fs\";"
+        "file": "lib/index.js",
+        "line": 96,
+        "text": "await rm(temp, { force: true }).catch(() => {});"
       }
     ]
   },

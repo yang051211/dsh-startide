@@ -1,0 +1,81 @@
+{
+  "name": "dsh-session-mover",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-04T07:56:14.293Z",
+  "icon": "dsh-session-mover.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 271,
+        "text": "const response = await fetch(OWNERSHIP_ROUTE, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 663,
+        "text": "const response = await fetch(MOVE_ROUTE, {"
+      },
+      {
+        "file": "client.js",
+        "line": 772,
+        "text": "const response = await fetch(MANAGED_ROUTE, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "index.js",
+        "line": 25,
+        "text": "*    `fetch('/…')` 由壳层转发到宿主，因此客户端不需要任何端口或鉴权配置。"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/journal.js",
+        "line": 30,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/journal.js",
+        "line": 121,
+        "text": "const text = readFileSync(filePath, 'utf8')"
+      },
+      {
+        "file": "lib/journal.js",
+        "line": 204,
+        "text": "mkdirSync(dirname(filePath), { recursive: true })"
+      },
+      {
+        "file": "lib/journal.js",
+        "line": 206,
+        "text": "writeFileSync(temporary, `${JSON.stringify(state, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "lib/managed.js",
+        "line": 21,
+        "text": "import { statSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

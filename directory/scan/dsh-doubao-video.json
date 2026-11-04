@@ -1,0 +1,108 @@
+{
+  "name": "dsh-doubao-video",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-04T07:56:01.018Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/browser.mjs",
+        "line": 83,
+        "text": "const r = await fetch(`${url}/json/version`)"
+      },
+      {
+        "file": "lib/tts.mjs",
+        "line": 58,
+        "text": "const res = await fetch(`http://127.0.0.1:${port}${DEFAULTS.paths.speak}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/asr.mjs",
+        "line": 17,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/asr.mjs",
+        "line": 63,
+        "text": "rows = JSON.parse(readFileSync(jsonOut, 'utf8'))"
+      },
+      {
+        "file": "lib/bgm.mjs",
+        "line": 14,
+        "text": "import { existsSync, mkdirSync, copyFileSync, readdirSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/bgm.mjs",
+        "line": 21,
+        "text": "mkdirSync(d, { recursive: true })"
+      },
+      {
+        "file": "lib/bgm.mjs",
+        "line": 51,
+        "text": ";(await import('node:fs')).writeFileSync(srcPath, buf)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 111,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 306,
+        "text": "const tool = (spec) => ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/asr.mjs",
+        "line": 16,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/asr.mjs",
+        "line": 44,
+        "text": "const r = spawnSync(c, ['-c', 'import faster_whisper,sys;print(\"ok\")'], { encoding: 'utf8', windowsHide: true })"
+      },
+      {
+        "file": "lib/asr.mjs",
+        "line": 57,
+        "text": "const r = spawnSync(python, args, { encoding: 'utf8', windowsHide: true, maxBuffer: 32 * 1024 * 1024 })"
+      },
+      {
+        "file": "lib/browser.mjs",
+        "line": 20,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/browser.mjs",
+        "line": 73,
+        "text": "const child = spawn(exe, args, { detached: true, stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

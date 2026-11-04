@@ -1,0 +1,130 @@
+{
+  "name": "dsh-dafeiyu-pet",
+  "version": "1.0.3",
+  "scannedAt": "2026-11-04T07:56:14.027Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 265,
+        "text": "const res = await fetch(`${PET_CONTROL}/play`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 73,
+        "text": "fetch(ENDPOINT, { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 91,
+        "text": "const response = await fetch(ENDPOINT, {"
+      },
+      {
+        "file": "lib/settings-server.js",
+        "line": 8,
+        "text": "import { createServer } from 'node:http'"
+      },
+      {
+        "file": "lib/settings-server.js",
+        "line": 107,
+        "text": "fetch('/config', { cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/assets.js",
+        "line": 8,
+        "text": "import { existsSync, mkdirSync, readFileSync, statSync, unlinkSync, renameSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/assets.js",
+        "line": 26,
+        "text": "const pkg = JSON.parse(readFileSync(join(PLUGIN_ROOT, 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "lib/assets.js",
+        "line": 103,
+        "text": "try { unlinkSync(tmp) } catch {}"
+      },
+      {
+        "file": "lib/assets.js",
+        "line": 111,
+        "text": "unlinkSync(tmp)"
+      },
+      {
+        "file": "lib/assets.js",
+        "line": 134,
+        "text": "mkdirSync(PLUGIN_ROOT, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "export const inject = ['tools', 'systemPrompt', 'settings']"
+      },
+      {
+        "file": "index.js",
+        "line": 233,
+        "text": "tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 282,
+        "text": "tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/assets.js",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/assets.js",
+        "line": 43,
+        "text": "const child = spawn('tar', ['-xzf', archive, '-C', dest], { stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true })"
+      },
+      {
+        "file": "lib/assets.js",
+        "line": 73,
+        "text": "const child = spawn(process.platform === 'win32' ? 'curl.exe' : 'curl', args, {"
+      },
+      {
+        "file": "lib/helper.js",
+        "line": 8,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/helper.js",
+        "line": 75,
+        "text": "child = spawn(exe, [], { cwd: PLUGIN_ROOT, env, stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "settings",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

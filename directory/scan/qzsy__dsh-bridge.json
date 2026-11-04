@@ -1,19 +1,19 @@
 {
   "name": "@qzsy/dsh-bridge",
-  "version": "3.6.3",
-  "scannedAt": "2026-11-03T20:52:11.376Z",
+  "version": "3.7.0",
+  "scannedAt": "2026-11-04T07:55:52.932Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client/client.js",
-        "line": 2782,
+        "line": 8989,
         "text": "const res = await fetch(`http://127.0.0.1:${port}/__qzsy_bridge__/loopback-token`, { cache: \"no-store\" });"
       },
       {
         "file": "client/index.js",
-        "line": 195,
+        "line": 199,
         "text": "const res = await fetch(`http://127.0.0.1:${port}/__qzsy_bridge__/loopback-token`, { cache: 'no-store' });"
       },
       {
@@ -64,8 +64,34 @@
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/supervisor/agent.js",
+        "line": 4,
+        "text": "export const inject = ['tools', 'systemPrompt'];"
+      },
+      {
+        "file": "lib/supervisor/agent.js",
+        "line": 57,
+        "text": "ctx.tools?.restrict?.({ deny: [name] });"
+      },
+      {
+        "file": "lib/supervisor/agent.js",
+        "line": 65,
+        "text": "ctx.tools?.guard?.((exec) => {"
+      },
+      {
+        "file": "lib/supervisor/agent.js",
+        "line": 81,
+        "text": "ctx.tools.register(tool("
+      },
+      {
+        "file": "lib/supervisor/agent.js",
+        "line": 98,
+        "text": "ctx.tools.register(tool("
+      }
+    ]
   },
   "childProcess": {
     "hit": true,
@@ -81,8 +107,11 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 2,
-  "minifiedFiles": [],
+  "dependencies": 4,
+  "minifiedFiles": [
+    "client/client.js",
+    "client/super-agent/avatar.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [
     "connection",

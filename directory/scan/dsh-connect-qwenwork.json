@@ -1,0 +1,112 @@
+{
+  "name": "dsh-connect-qwenwork",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-04T07:56:02.424Z",
+  "icon": "dsh-connect-qwenwork.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 130,
+        "text": "const response = await fetch(STATUS_PATH, {"
+      },
+      {
+        "file": "src/acp.js",
+        "line": 506,
+        "text": "const response = await fetch(new URL(QWENWORK_SESSIONS_PATH, this.restOrigin), {"
+      },
+      {
+        "file": "src/acp.js",
+        "line": 772,
+        "text": "const response = await fetch(target, {"
+      },
+      {
+        "file": "src/bridge.js",
+        "line": 25,
+        "text": "import { createServer } from 'node:http'"
+      },
+      {
+        "file": "src/bridge.test.mjs",
+        "line": 44,
+        "text": "return fetch(`${bridge.baseUrl}/chat/completions`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/auth.js",
+        "line": 43,
+        "text": "import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "src/auth.js",
+        "line": 607,
+        "text": "return readFileSync(path)"
+      },
+      {
+        "file": "src/card.test.mjs",
+        "line": 17,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/card.test.mjs",
+        "line": 266,
+        "text": "const source = readFileSync(join(pluginRoot, 'lib', 'client.js'), 'utf8')"
+      },
+      {
+        "file": "src/card.test.mjs",
+        "line": 399,
+        "text": "const source = readFileSync(join(pluginRoot, 'lib', 'client.js'), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/auth.js",
+        "line": 41,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "src/card.test.mjs",
+        "line": 21,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "src/cli.test.mjs",
+        "line": 51,
+        "text": "* 早先用 `spawnSync(node, [bin.js, ...])` 做\"更接近真实\"的形态，但它在这台"
+      },
+      {
+        "file": "src/desktop-auth.js",
+        "line": 38,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "src/host.test.mjs",
+        "line": 18,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

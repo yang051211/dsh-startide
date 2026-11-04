@@ -1,0 +1,126 @@
+{
+  "name": "dsh-kaogong",
+  "version": "1.11.0",
+  "scannedAt": "2026-11-04T07:56:14.108Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client/client.js",
+        "line": 3533,
+        "text": "const r = await fetch(MOUNT_PATH + '/api/graph/path' + qs + (ws ? '&ws=' + encodeURIComponent(String(ws)) : ''));"
+      },
+      {
+        "file": "dist/client/client.js",
+        "line": 5196,
+        "text": "const r = await fetch(`${MOUNT_PATH}/api/status`, { signal: AbortSignal.timeout(1200) });"
+      },
+      {
+        "file": "dist/client/client.js",
+        "line": 5207,
+        "text": "const r = await fetch(`http://127.0.0.1:${port}/api/status`, { signal: AbortSignal.timeout(900) });"
+      },
+      {
+        "file": "dist/client/client.js",
+        "line": 5251,
+        "text": "const r = await fetch(`${channel.base}/api${p}${sep}ws=${encodeURIComponent(wsKey)}`, opts);"
+      },
+      {
+        "file": "dist/client/client.js",
+        "line": 5370,
+        "text": "const r = await fetch(`${channel.base}/api/stats?ws=${encodeURIComponent(wsKey)}`, { signal: AbortSignal.timeout(4000) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/adapters/naoku.js",
+        "line": 12,
+        "text": "import { existsSync, readFileSync, writeFileSync, mkdirSync, readdirSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/adapters/naoku.js",
+        "line": 46,
+        "text": "mkdirSync(dataDir, { recursive: true });"
+      },
+      {
+        "file": "dist/adapters/naoku.js",
+        "line": 47,
+        "text": "const bufs = parts.map(p => readFileSync(join(srcDir, p)));"
+      },
+      {
+        "file": "dist/adapters/naoku.js",
+        "line": 48,
+        "text": "writeFileSync(target, Buffer.concat(bufs));"
+      },
+      {
+        "file": "dist/adapters/naokuImage.js",
+        "line": 10,
+        "text": "import { existsSync, readdirSync, statSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/host/index.js",
+        "line": 33,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "dist/host/index.js",
+        "line": 77,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "dist/host/index.js",
+        "line": 103,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "dist/host/index.js",
+        "line": 137,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "dist/host/index.js",
+        "line": 164,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/server/repoManager.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "dist/server/repoManager.js",
+        "line": 33,
+        "text": "const p = spawn('git', ['--version'], { stdio: 'ignore' });"
+      },
+      {
+        "file": "dist/server/repoManager.js",
+        "line": 78,
+        "text": "proc = spawn('git', args, { stdio: ['ignore', 'pipe', 'pipe'], env: { ...process.env, GIT_TERMINAL_PROMPT: '0', 'GIT_CONFIG_NOSYSTEM': '1' } });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

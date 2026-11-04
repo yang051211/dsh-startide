@@ -1,0 +1,118 @@
+{
+  "name": "dsh-jingle-notch",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-04T07:56:09.441Z",
+  "icon": "dsh-jingle-notch.webp",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/dashboard.js",
+        "line": 382,
+        "text": "return fetch(path, { method:'POST', headers:{'content-type':'application/json'},"
+      },
+      {
+        "file": "lib/dashboard.js",
+        "line": 438,
+        "text": "fetch('/jingle/api/state', { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/dashboard.js",
+        "line": 461,
+        "text": "fetch('/jingle/api/overlay', { method: 'POST', headers:{'content-type':'application/json'}, body:'{}' })"
+      },
+      {
+        "file": "lib/overlay/main.js",
+        "line": 616,
+        "text": "const response = await fetch(`${stateOrigin}/jingle/api/state`, { signal: AbortSignal.timeout(4e3) });"
+      },
+      {
+        "file": "lib/overlay/main.js",
+        "line": 736,
+        "text": "const response = await fetch(`${stateOrigin}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { mkdir, readFile, rename, rm, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 9,
+        "text": "import { existsSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 85,
+        "text": "await rm(join(this.directory, \"writer.lock\"));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 97,
+        "text": "const raw = await readFile(this.file, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 121,
+        "text": "await mkdir(this.directory, {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 8,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 864,
+        "text": "finish$1(spawn(\"osascript\", [\"-e\", `display notification \"${escape(body)}\" with title \"${escape(title)}\"`], { stdio: \"ignore\" }), log);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 868,
+        "text": "finish$1(spawn(\"notify-send\", [title, body], { stdio: \"ignore\" }), log);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 879,
+        "text": "finish$1(spawn(\"powershell\", ["
+      },
+      {
+        "file": "lib/index.js",
+        "line": 948,
+        "text": "const child = spawn(resolved.command, ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: tsdown"
+      }
+    ]
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/overlay/main.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

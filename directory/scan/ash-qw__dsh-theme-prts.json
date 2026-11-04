@@ -1,34 +1,34 @@
 {
   "name": "@ash-qw/dsh-theme-prts",
-  "version": "2.6.0",
-  "scannedAt": "2026-10-30T07:08:49.857Z",
+  "version": "2.6.1",
+  "scannedAt": "2026-11-04T07:55:56.246Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1814,
+        "line": 2041,
         "text": "const response = await window.fetch('/prts-theme-api/' + path, { credentials: 'same-origin', signal,"
       },
       {
         "file": "lib/client.js",
-        "line": 1835,
+        "line": 2062,
         "text": "const response = await window.fetch('/prts-theme-api/backgrounds/image/' + entry.id, { credentials: 'same-origin', signal })"
       },
       {
         "file": "lib/client.js",
-        "line": 2416,
+        "line": 2644,
         "text": "const response = await window.fetch(`${api}${path}`, { credentials:'same-origin', signal,"
       },
       {
         "file": "lib/client.js",
-        "line": 3150,
+        "line": 3391,
         "text": "const response=await window.fetch(API+'/configuration',{credentials:'same-origin',signal:controller?.signal,"
       },
       {
         "file": "lib/client.js",
-        "line": 3177,
+        "line": 3418,
         "text": "const response=await window.fetch(API+'/edit/'+role,{credentials:'same-origin',signal:controller?.signal})"
       }
     ]
@@ -36,6 +36,16 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 10,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/index.js",
+        "line": 35,
+        "text": "const themeVersion=JSON.parse(await readFile(new URL('../package.json',import.meta.url),'utf8')).version"
+      },
       {
         "file": "src/server/avatars.js",
         "line": 1,
@@ -50,16 +60,6 @@
         "file": "src/server/avatars.js",
         "line": 13,
         "text": "try{state=JSON.parse(await readFile(path,'utf8'))}catch(error){if(error.code!=='ENOENT')throw error}"
-      },
-      {
-        "file": "src/server/avatars.js",
-        "line": 54,
-        "text": "try{await writeFile(temp,JSON.stringify(updated),{mode:0o600});await rename(temp,path)}"
-      },
-      {
-        "file": "src/server/avatars.js",
-        "line": 55,
-        "text": "finally{await rm(temp,{force:true}).catch(()=>{})}"
       }
     ]
   },
@@ -68,13 +68,18 @@
     "evidence": [
       {
         "file": "src/index.js",
-        "line": 13,
+        "line": 17,
         "text": "export const inject = ['tools', 'attachments', 'connection', 'webServer']"
       },
       {
         "file": "src/index.js",
-        "line": 36,
-        "text": "for(const tool of definitions)toolDisposers.push(ctx.tools.register(tool))"
+        "line": 38,
+        "text": "const disposeStatus=ctx.tools.register(themeToolStatus(toolsEnabled))"
+      },
+      {
+        "file": "src/index.js",
+        "line": 51,
+        "text": "for(const tool of definitions)toolDisposers.push(ctx.tools.register({...tool,"
       }
     ]
   },

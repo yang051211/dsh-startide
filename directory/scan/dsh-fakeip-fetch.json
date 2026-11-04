@@ -1,0 +1,86 @@
+{
+  "name": "dsh-fakeip-fetch",
+  "version": "0.5.2",
+  "scannedAt": "2026-11-04T07:56:06.469Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 226,
+        "text": "async fetch(request, signal) {"
+      },
+      {
+        "file": "index.js",
+        "line": 238,
+        "text": "return this.plain().fetch(request, signal)"
+      },
+      {
+        "file": "index.js",
+        "line": 242,
+        "text": "return original.fetch(request, signal)"
+      },
+      {
+        "file": "index.js",
+        "line": 248,
+        "text": "return await original.fetch(request, budget.signal)"
+      },
+      {
+        "file": "index.js",
+        "line": 253,
+        "text": "return await fakeIp.fetch(request, budget.signal)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 2,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 46,
+        "text": "const manifest = JSON.parse(readFileSync(join(directory, 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 64,
+        "text": "return String(JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')).version ?? 'unknown')"
+      },
+      {
+        "file": "index.js",
+        "line": 276,
+        "text": "const parsed = JSON.parse(await readFile(await stateFile(ctx), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "web"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

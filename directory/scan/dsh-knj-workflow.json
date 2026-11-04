@@ -1,0 +1,88 @@
+{
+  "name": "dsh-knj-workflow",
+  "version": "2026.11.12",
+  "scannedAt": "2026-11-04T07:56:01.354Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 14,
+        "text": "// 数据通过同源 fetch('/devtask/...') 与 Host HTTP API 通信"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 150,
+        "text": "const res = await fetch(`${PREFIX}${path}`, {"
+      },
+      {
+        "file": "lib/requirement-routes.test.js",
+        "line": 15,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "lib/requirement-routes.test.js",
+        "line": 300,
+        "text": "const res = await fetch(`http://127.0.0.1:${port}/tasks`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/archive.test.js",
+        "line": 15,
+        "text": "import { mkdtempSync, rmSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/archive.test.js",
+        "line": 160,
+        "text": "rmSync(root, { recursive: true, force: true });"
+      },
+      {
+        "file": "lib/assist-script.test.js",
+        "line": 7,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/assist-script.test.js",
+        "line": 10,
+        "text": "const code = readFileSync(new URL('./assist-script.js', import.meta.url), 'utf8');"
+      },
+      {
+        "file": "lib/attachments.js",
+        "line": 26,
+        "text": "import { copyFile, mkdir, rm, stat, writeFile } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/line-endings.test.js",
+        "line": 13,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

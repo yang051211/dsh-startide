@@ -1,0 +1,92 @@
+{
+  "name": "dsh-source-ledger",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-04T07:56:05.718Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core.js",
+        "line": 98,
+        "text": "const res = await fetch(source);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "examples/demo.mjs",
+        "line": 3,
+        "text": "import { mkdtemp, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "examples/demo.mjs",
+        "line": 10,
+        "text": "await writeFile(evidence, 'the gateway was restarted at 10:00');"
+      },
+      {
+        "file": "src/core.js",
+        "line": 11,
+        "text": "import { mkdir, readFile, rename, appendFile, writeFile, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "src/core.js",
+        "line": 110,
+        "text": "const buf = await readFile(file);"
+      },
+      {
+        "file": "src/core.js",
+        "line": 144,
+        "text": "await mkdir(dirname(file), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 16,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "src/index.js",
+        "line": 48,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "src/index.js",
+        "line": 75,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "src/index.js",
+        "line": 103,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "src/index.js",
+        "line": 132,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

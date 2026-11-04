@@ -1,0 +1,80 @@
+{
+  "name": "deepseek-chan-sleep-shutdown",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-04T07:56:12.125Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 130,
+        "text": "\"  function post(p) { return fetch(BASE + p, { method: 'POST' }).then(function (r) { return r.json() }).catch(function () { return null }) }\","
+      },
+      {
+        "file": "index.js",
+        "line": 131,
+        "text": " \"  function postBody(p, data) { return fetch(BASE + p, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) }).then(fu"
+      },
+      {
+        "file": "index.js",
+        "line": 476,
+        "text": "\"    fetch(BASE + '/state', { cache: 'no-store' }).then(function (r) { return r.json() }).then(applyState).catch(function () {})\","
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 52,
+        "text": "const fs = require('node:fs')"
+      },
+      {
+        "file": "index.js",
+        "line": 68,
+        "text": "try { fs.appendFileSync(LOG_PATH, line + '\\n', 'utf8') } catch { /* best-effort */ }"
+      },
+      {
+        "file": "index.js",
+        "line": 76,
+        "text": "const obj = JSON.parse(fs.readFileSync(SETTINGS_PATH, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 86,
+        "text": "fs.writeFileSync(SETTINGS_PATH, JSON.stringify({ onlyOnSuccess }, null, 2) + '\\n', 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 645,
+        "text": "const buf = fs.readFileSync(path.join(__dirname, 'assets', fileName))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 547,
+        "text": "const handle = subprocess.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

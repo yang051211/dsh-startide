@@ -1,7 +1,7 @@
 {
   "name": "dsh-a2a-server",
-  "version": "0.3.0",
-  "scannedAt": "2026-10-27T02:44:54.979Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-04T07:56:09.935Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -48,19 +48,45 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 24,
+        "line": 29,
         "text": "export const inject = ['agents', 'webServer', 'credentials', 'tools', 'systemPrompt'];"
       },
       {
         "file": "lib/index.js",
-        "line": 279,
-        "text": "agentCtx.tools.register(await workspaceReadTool(dataRoot, [store.directory]));"
+        "line": 314,
+        "text": "agentCtx.tools.register(visitorSandboxes ? microsandboxReadTool(reader, peer, visitorSandboxes) : config.isolation.execution === 'docker'"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/docker-executor.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/docker-executor.js",
+        "line": 23,
+        "text": "const child = spawn('docker', args, { windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'] });"
+      },
+      {
+        "file": "lib/microsandbox-runtime.js",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/microsandbox-runtime.js",
+        "line": 37,
+        "text": "const child = spawn(command, args, { env, windowsHide: true, detached: process.platform !== 'win32', stdio: ['ignore', 'pipe', 'pipe'] });"
+      },
+      {
+        "file": "lib/microsandbox-runtime.js",
+        "line": 46,
+        "text": "const killer = spawn('taskkill', ['/PID', String(child.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' });"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

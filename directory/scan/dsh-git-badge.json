@@ -1,7 +1,7 @@
 {
   "name": "dsh-git-badge",
-  "version": "0.20.1",
-  "scannedAt": "2026-10-26T10:06:18.395Z",
+  "version": "0.21.0",
+  "scannedAt": "2026-11-04T07:56:06.631Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,12 +13,12 @@
       },
       {
         "file": "lib/client.js",
-        "line": 1769,
+        "line": 1766,
         "text": "info = await fetch(\"/api/git-badge?\" + query).then((r) => r.json());"
       },
       {
         "file": "lib/index.js",
-        "line": 40,
+        "line": 44,
         "text": "*       moves on fetch. A TTL-bounded fetch (60s per toplevel) keeps that ref"
       }
     ]
@@ -28,28 +28,23 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 70,
+        "line": 71,
         "text": "import { watch, existsSync, readFileSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 775,
+        "line": 770,
         "text": "const raw = JSON.parse(readFileSync(join(home, \"git-badge-next.json\"), \"utf8\"));"
       },
       {
         "file": "lib/index.js",
-        "line": 1444,
+        "line": 1436,
         "text": "content = readFileSync(join(root, \".git\"), \"utf8\");"
       },
       {
-        "file": "seam/skill.js",
-        "line": 14,
-        "text": "import { copyFileSync, existsSync, mkdirSync, readFileSync } from \"node:fs\";"
-      },
-      {
-        "file": "seam/skill.js",
-        "line": 44,
-        "text": "mkdirSync(dirname(target), { recursive: true });"
+        "file": "lib/index.js",
+        "line": 1952,
+        "text": "const raw = readFileSync(new URL(\"../skill/gh/SKILL.md\", import.meta.url), \"utf8\");"
       }
     ]
   },
@@ -62,18 +57,13 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 69,
+        "line": 70,
         "text": "import { execFile } from \"node:child_process\";"
       },
       {
         "file": "lib/index.js",
-        "line": 178,
+        "line": 173,
         "text": "execFile(cmd, args, { cwd, timeout, env: fullEnv }, (error, stdout) => {"
-      },
-      {
-        "file": "seam/checkout.js",
-        "line": 26,
-        "text": "import { execFileSync } from \"node:child_process\";"
       }
     ]
   },

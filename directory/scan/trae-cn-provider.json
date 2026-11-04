@@ -1,7 +1,7 @@
 {
   "name": "trae-cn-provider",
-  "version": "0.2.6",
-  "scannedAt": "2026-11-03T20:52:12.461Z",
+  "version": "0.2.7",
+  "scannedAt": "2026-11-04T07:55:59.750Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -10,6 +10,11 @@
         "file": "src/admin.js",
         "line": 681,
         "text": "const res = await fetch(path, {"
+      },
+      {
+        "file": "src/cli.js",
+        "line": 170,
+        "text": "const res = await fetch(`${baseUrl}/v1/models/catalog`, {"
       },
       {
         "file": "src/openai-server.js",
@@ -25,11 +30,6 @@
         "file": "src/trae-auth.js",
         "line": 55,
         "text": "res = await fetch(url, {"
-      },
-      {
-        "file": "src/trae-client.js",
-        "line": 250,
-        "text": "res = await fetch(url, { method: 'POST', headers, body: JSON.stringify(body), signal: ac.signal });"
       }
     ]
   },
@@ -53,13 +53,13 @@
       },
       {
         "file": "src/cli.js",
-        "line": 126,
-        "text": "const raw = fs.readFileSync(file, 'utf8');"
+        "line": 204,
+        "text": "fs.mkdirSync(path.dirname(target), { recursive: true, mode: 0o700 });"
       },
       {
         "file": "src/cli.js",
-        "line": 174,
-        "text": "fs.mkdirSync(path.dirname(file), { recursive: true, mode: 0o700 });"
+        "line": 205,
+        "text": "fs.writeFileSync(target, `${JSON.stringify({ models }, null, 1)}\\n`, { mode: 0o644 });"
       }
     ]
   },
@@ -77,22 +77,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 192,
+        "line": 202,
         "text": "const child = spawn(command, args, {"
       },
       {
         "file": "lib/index.js",
-        "line": 202,
+        "line": 212,
         "text": "spawn('cmd', ['/c', 'start', '', `\"${url}\"`], {"
       },
       {
         "file": "src/cli.js",
         "line": 3,
-        "text": "import { spawn } from 'node:child_process';"
+        "text": "import { execFileSync, spawn } from 'node:child_process';"
       },
       {
         "file": "src/cli.js",
-        "line": 81,
+        "line": 82,
         "text": "spawn('open', [url], { detached: true, stdio: 'ignore' }).unref();"
       }
     ]

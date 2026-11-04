@@ -1,0 +1,135 @@
+{
+  "name": "suveng-dsh-plugin-mcp-manager",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-04T07:56:14.384Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 276,
+        "text": "return fetch(\"/dsh-plugin-mcp-manager/api\" + path, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 128,
+        "text": "undiciModule ??= import('undici');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 146,
+        "text": "* `fetch()` with an optional forward proxy. Node's global fetch only accepts a"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 152,
+        "text": "if (!proxy) return fetch(url, init);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 160,
+        "text": "st missing = new Error('a proxy is configured for this MCP server but the \"undici\" package is missing; reinstall dsh-plugin-mcp-manager with its dependencies');"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "readFileSync, writeFileSync, mkdirSync, realpathSync, watchFile, unwatchFile, openSync, closeSync, fsyncSync, renameSync, unlinkSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 244,
+        "text": "return JSON.parse(readFileSync(path, 'utf8'));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 255,
+        "text": "mkdirSync(dir, { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 260,
+        "text": "writeFileSync(fd, JSON.stringify(state, null, 2));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 271,
+        "text": "try { unlinkSync(tmp); } catch {}"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "*   - Connects and registers each server's tools into `ctx.tools` as"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "*     @deepseek-ai/dsh-mcp-client)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 448,
+        "text": "// allow-list as @deepseek-ai/dsh-mcp-client)."
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1030,
+        "text": "* dsh-mcp-client contract: execute stages a projection; finalizeContent"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1077,
+        "text": "export const inject = ['tools'];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 434,
+        "text": "* when `spawn(..., { shell: true })` runs on Windows. Node joins the command and"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2519,
+        "text": "// On Windows, `npx`/`uvx` are `.cmd` shims that spawn() cannot launch"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2529,
+        "text": "const child = spawn(command, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

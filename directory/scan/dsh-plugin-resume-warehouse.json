@@ -1,14 +1,29 @@
 {
   "name": "dsh-plugin-resume-warehouse",
-  "version": "0.1.1",
-  "scannedAt": "2026-10-30T23:38:35.730Z",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-04T07:56:13.104Z",
   "icon": "dsh-plugin-resume-warehouse.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
+        "file": "app/web/src/api.js",
+        "line": 41,
+        "text": "response = await fetch(path, init);"
+      },
+      {
+        "file": "app/web/src/boot.js",
+        "line": 251,
+        "text": "const resp = await fetch(\"/api/v1/llm/status\", signal ? { signal } : undefined);"
+      },
+      {
+        "file": "app/web/src/boot.js",
+        "line": 261,
+        "text": "const resp = await fetch(\"/api/v1/env\", signal ? { signal } : undefined);"
+      },
+      {
         "file": "index.js",
-        "line": 74,
+        "line": 136,
         "text": "const response = await fetch(url, { signal: controller.signal })"
       }
     ]
@@ -23,8 +38,23 @@
       },
       {
         "file": "index.js",
-        "line": 59,
+        "line": 121,
         "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "scripts/stage-app.mjs",
+        "line": 11,
+        "text": "import { cpSync, existsSync, mkdirSync, rmSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "scripts/stage-app.mjs",
+        "line": 61,
+        "text": "rmSync(appDir, { recursive: true, force: true })"
+      },
+      {
+        "file": "scripts/stage-app.mjs",
+        "line": 62,
+        "text": "mkdirSync(appDir, { recursive: true })"
       }
     ]
   },
@@ -33,12 +63,12 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 14,
+        "line": 19,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "index.js",
-        "line": 258,
+        "line": 330,
         "text": "ctx.effect(() => ctx.tools.register(tool))"
       }
     ]
@@ -49,16 +79,21 @@
       {
         "file": "index.js",
         "line": 9,
-        "text": "import { spawn } from 'node:child_process'"
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
       },
       {
         "file": "index.js",
-        "line": 172,
-        "text": "const child = spawn('bash', [script], { cwd, detached: true, stdio: 'ignore' })"
+        "line": 108,
+        "text": "const result = spawnSync('bash', ['-lc', 'command -v python3 || command -v python'], { encoding: 'utf8' })"
       },
       {
         "file": "index.js",
-        "line": 183,
+        "line": 234,
+        "text": "const child = spawn('bash', [script], {"
+      },
+      {
+        "file": "index.js",
+        "line": 250,
         "text": "const child = spawn('bash', [script], { cwd, stdio: 'ignore' })"
       }
     ]
@@ -73,6 +108,17 @@
   "requiredServices": [
     "tools"
   ],
-  "setupHints": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 26,
+      "text": "- First `start` creates `app/.venv` and runs `pip install -r requirements.txt` — about 1–2 minutes"
+    },
+    {
+      "file": "README.md",
+      "line": 64,
+      "text": "`scripts/bootstrap.sh` is missing — so a broken tarball cannot be published by accident."
+    }
+  ],
   "skippedEntries": []
 }

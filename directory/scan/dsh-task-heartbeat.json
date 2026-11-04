@@ -1,0 +1,92 @@
+{
+  "name": "dsh-task-heartbeat",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-04T07:56:05.653Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "examples/webhook-alert.mjs",
+        "line": 33,
+        "text": "const res = await fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "examples/demo.mjs",
+        "line": 3,
+        "text": "import { mkdtempSync } from 'node:fs';"
+      },
+      {
+        "file": "src/core.js",
+        "line": 10,
+        "text": "import { mkdir, open, readFile, rename, stat, unlink, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "src/core.js",
+        "line": 55,
+        "text": "await mkdir(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "src/core.js",
+        "line": 59,
+        "text": "await fh.writeFile(JSON.stringify(data, null, 1), 'utf8');"
+      },
+      {
+        "file": "src/core.js",
+        "line": 100,
+        "text": "await fh.writeFile(JSON.stringify({ pid: process.pid, ts: nowIso(this.now()) }), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 12,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "src/index.js",
+        "line": 36,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "src/index.js",
+        "line": 55,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "src/index.js",
+        "line": 71,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "src/index.js",
+        "line": 85,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

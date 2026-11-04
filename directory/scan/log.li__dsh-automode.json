@@ -1,7 +1,7 @@
 {
   "name": "@log.li/dsh-automode",
-  "version": "0.17.0",
-  "scannedAt": "2026-10-26T10:13:24.699Z",
+  "version": "0.18.0",
+  "scannedAt": "2026-11-04T07:56:05.863Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -32,6 +32,11 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/bands.js",
+        "line": 763,
+        "text": "// A call form (`unlink(f)`, `unlink(q(f))`) reduces to the callee name."
+      },
+      {
         "file": "lib/index.js",
         "line": 20,
         "text": "import { readFileSync } from 'node:fs';"
@@ -50,11 +55,6 @@
         "file": "lib/log.js",
         "line": 21,
         "text": "mkdirSync(logDir, { recursive: true });"
-      },
-      {
-        "file": "lib/log.js",
-        "line": 22,
-        "text": "appendFileSync(join(logDir, 'decisions.jsonl'), JSON.stringify({ at: new Date().toISOString(), ...entry }) + '\\n');"
       }
     ]
   },

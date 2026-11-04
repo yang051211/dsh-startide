@@ -1,0 +1,66 @@
+{
+  "name": "dsh-workspace-cleaner",
+  "version": "0.1.7",
+  "scannedAt": "2026-11-04T07:56:06.012Z",
+  "icon": "dsh-workspace-cleaner.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 236,
+        "text": "const response = await fetch(`${API}${pathname}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "import { statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "import { stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 16,
+        "text": "import { readdir, readFile, rename, rm, rmdir, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 223,
+        "text": "text = await readFile(file, 'utf8')"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 378,
+        "text": "await rm(entry.path, { recursive: true, force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

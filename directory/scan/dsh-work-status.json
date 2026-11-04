@@ -1,0 +1,67 @@
+{
+  "name": "dsh-work-status",
+  "version": "0.12.3",
+  "scannedAt": "2026-11-04T07:56:01.305Z",
+  "icon": "dsh-work-status.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1290,
+        "text": "if (/\\b(?:curl|wget|Invoke-WebRequest)\\b/i.test(flat)) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/downloads.js",
+        "line": 13,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/downloads.js",
+        "line": 67,
+        "text": "const status = JSON.parse(fs.readFileSync(path.join(root, name, \"status.json\"), \"utf8\"));"
+      },
+      {
+        "file": "lib/step-store.js",
+        "line": 17,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/step-store.js",
+        "line": 78,
+        "text": "function readFile() {"
+      },
+      {
+        "file": "lib/step-store.js",
+        "line": 83,
+        "text": "raw = fs.readFileSync(file, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionProjections",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

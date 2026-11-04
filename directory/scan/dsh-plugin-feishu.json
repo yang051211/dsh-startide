@@ -1,0 +1,87 @@
+{
+  "name": "dsh-plugin-feishu",
+  "version": "0.6.2",
+  "scannedAt": "2026-11-04T07:56:14.161Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 125,
+        "text": "const response = await fetch('/api/feishu.status', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 485,
+        "text": "const response = await fetch('/api/feishu.register', {"
+      },
+      {
+        "file": "lib/feishu-api.js",
+        "line": 242,
+        "text": "response = await this.fetch(this.domain + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/agents.js",
+        "line": 2,
+        "text": "import { realpath } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/session-store.js",
+        "line": 1,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/session-store.js",
+        "line": 27,
+        "text": "raw = await readFile(this.path, 'utf8')"
+      },
+      {
+        "file": "lib/session-store.js",
+        "line": 88,
+        "text": "await mkdir(dirname(this.path), { recursive: true })"
+      },
+      {
+        "file": "lib/session-store.js",
+        "line": 90,
+        "text": "await writeFile(temporary, JSON.stringify(payload, null, 2), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tools.js",
+        "line": 58,
+        "text": "if (!ctx || !ctx.tools || typeof ctx.tools.register !== 'function') {"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 69,
+        "text": "ctx.tools.register(definition, { when })"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

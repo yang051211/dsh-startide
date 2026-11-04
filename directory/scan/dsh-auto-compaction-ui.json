@@ -1,7 +1,7 @@
 {
   "name": "dsh-auto-compaction-ui",
-  "version": "0.1.1",
-  "scannedAt": "2026-11-03T20:52:33.166Z",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-04T07:56:13.962Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -17,22 +17,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 37,
+        "line": 39,
         "text": "  try { mkdirSync(DIR, { recursive: true }); appendFileSync(UI_LOG, new Date().toISOString() + \" \" + message + String.fromCharCode(10), \"utf8\"); } catch { /* ig"
       },
       {
         "file": "lib/index.js",
-        "line": 58,
+        "line": 60,
         "text": "mkdirSync(DIR, { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 59,
+        "line": 61,
         "text": "writeFileSync(SETTINGS_FILE, JSON.stringify(settings, null, 2) + \"\\n\", \"utf8\");"
       },
       {
         "file": "lib/index.js",
-        "line": 113,
+        "line": 174,
         "text": "const parsed = JSON.parse(readFileSync(SETTINGS_FILE, \"utf8\"));"
       }
     ]
@@ -46,13 +46,18 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 18,
-        "text": "import { spawn } from \"node:child_process\";"
+        "line": 19,
+        "text": "import { execFile, spawn } from \"node:child_process\";"
       },
       {
         "file": "lib/index.js",
-        "line": 68,
+        "line": 70,
         "text": "const child = spawn(command, args, { detached: true, stdio: \"ignore\", windowsHide: false });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 121,
+        "text": "execFile(command, [script, \"enable\"], { timeout: 6000, windowsHide: true, env }, (error, stdout, stderr) => {"
       }
     ]
   },
@@ -60,7 +65,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [],

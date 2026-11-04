@@ -1,0 +1,83 @@
+{
+  "name": "dsh-whale-song",
+  "version": "0.2.3",
+  "scannedAt": "2026-11-04T07:56:09.247Z",
+  "icon": "dsh-whale-song.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 88,
+        "text": "const j = JSON.parse(readFileSync(FORM_FILE, 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 97,
+        "text": "mkdirSync(dirname(FORM_FILE), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 98,
+        "text": "writeFileSync(FORM_FILE, JSON.stringify(rec, null, 2), 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 180,
+        "text": "mkdirSync(OUT_DIR, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "export const inject = ['tools', 'attachments'];"
+      },
+      {
+        "file": "index.js",
+        "line": 394,
+        "text": "const disposers = [ctx.tools.register(song), ctx.tools.register(translate), ctx.tools.register(form)];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 51,
+        "text": "const child = spawn(pythonExe(), [script, ...args], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "attachments",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

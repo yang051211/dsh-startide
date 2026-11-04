@@ -1,0 +1,115 @@
+{
+  "name": "dsh-hierarchical-fishmemory",
+  "version": "1.8.2",
+  "scannedAt": "2026-11-04T07:56:09.371Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.js",
+        "line": 441,
+        "text": "fetch(CLOUD_API, { credentials: \"same-origin\" })"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 483,
+        "text": "fetch(CLOUD_API + \"/test\", {"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 516,
+        "text": "fetch(CLOUD_API + \"/config-backup\", { method: \"POST\", credentials: \"same-origin\" })"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 535,
+        "text": "fetch(CLOUD_API + \"/config-backup\", { credentials: \"same-origin\" })"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 554,
+        "text": "fetch(CLOUD_API + \"/config-restore\", {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core/backup.mjs",
+        "line": 18,
+        "text": "import { readdirSync, readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "src/core/backup.mjs",
+        "line": 19,
+        "text": "import { mkdir, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "src/core/backup.mjs",
+        "line": 209,
+        "text": "await mkdir(dir, { recursive: true });"
+      },
+      {
+        "file": "src/core/backup.mjs",
+        "line": 212,
+        "text": "await writeFile(file, text, { mode: 0o600 });"
+      },
+      {
+        "file": "src/core/dates.mjs",
+        "line": 9,
+        "text": "import { readFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core/shallow.mjs",
+        "line": 222,
+        "text": "scope.tools.register({"
+      },
+      {
+        "file": "src/core/shallow.mjs",
+        "line": 291,
+        "text": "scope.tools.register({"
+      },
+      {
+        "file": "src/core/shallow.mjs",
+        "line": 379,
+        "text": "scope.tools.register({"
+      },
+      {
+        "file": "src/core/shallow.mjs",
+        "line": 426,
+        "text": "scope.tools.register({"
+      },
+      {
+        "file": "src/core/shallow.mjs",
+        "line": 451,
+        "text": "scope.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "llm",
+    "sessions",
+    "systemPrompt"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

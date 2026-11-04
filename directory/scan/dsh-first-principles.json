@@ -1,0 +1,83 @@
+{
+  "name": "dsh-first-principles",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-04T07:56:11.070Z",
+  "icon": "dsh-first-principles.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 60,
+        "text": "const response = await fetch(`${ENDPOINT}/state${query}`, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 83,
+        "text": "const response = await fetch(`${ENDPOINT}/gate`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 169,
+        "text": "text = readFileSync(ledgerPath, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 178,
+        "text": "text = readFileSync(ledgerPath, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 206,
+        "text": "text: readFileSync(ledger.path, 'utf8'),"
+      },
+      {
+        "file": "index.js",
+        "line": 346,
+        "text": "text: readFileSync(ledger.path, 'utf8'),"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "export const inject = ['systemPrompt', 'tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 474,
+        "text": "ctx.effect(() => ctx.tools.register(createTool(ctx, settings)))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

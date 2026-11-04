@@ -1,0 +1,102 @@
+{
+  "name": "dsh-git-ops",
+  "version": "2.1.1",
+  "scannedAt": "2026-11-04T07:55:59.854Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client/view.js",
+        "line": 46,
+        "text": "fetch(PANEL_PATH)"
+      },
+      {
+        "file": "lib/git.web.js",
+        "line": 126,
+        "text": "fetch(PANEL_PATH).then((r) => r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))).then((data) => {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/config.js",
+        "line": 11,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 22,
+        "text": "const raw = readFileSync(join(pluginDataDir(), 'config.json'), 'utf-8');"
+      },
+      {
+        "file": "lib/git.js",
+        "line": 13,
+        "text": "import { access, readdir } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tools.js",
+        "line": 111,
+        "text": "toolCtx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 177,
+        "text": "toolCtx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 237,
+        "text": "toolCtx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 307,
+        "text": "toolCtx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 401,
+        "text": "toolCtx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/git.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/git.js",
+        "line": 42,
+        "text": "const child = spawn('git', args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

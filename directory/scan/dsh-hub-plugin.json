@@ -1,0 +1,112 @@
+{
+  "name": "dsh-hub-plugin",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-04T07:56:08.393Z",
+  "icon": "dsh-hub-plugin.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 71,
+        "text": "fetch('/dsh-hub/config', { cache: 'no-store' }).then((r) => {"
+      },
+      {
+        "file": "client.js",
+        "line": 75,
+        "text": "fetch('/dsh-hub/status', { cache: 'no-store' }).then((r) => {"
+      },
+      {
+        "file": "client.js",
+        "line": 105,
+        "text": "const r = await fetch('/dsh-hub/config', {"
+      },
+      {
+        "file": "client.js",
+        "line": 118,
+        "text": "const st = await fetch('/dsh-hub/status', { cache: 'no-store' });"
+      },
+      {
+        "file": "index.js",
+        "line": 144,
+        "text": "const upstream = await fetch(`http://127.0.0.1:${port}${target}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 77,
+        "text": "return normalize(JSON.parse(fs.readFileSync(file, 'utf8')));"
+      },
+      {
+        "file": "index.js",
+        "line": 84,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 85,
+        "text": "fs.writeFileSync(file, JSON.stringify(cfg, null, 2), { mode: 0o600 });"
+      },
+      {
+        "file": "index.js",
+        "line": 104,
+        "text": "try { fs.mkdirSync(dir, { recursive: true }); } catch {}"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 201,
+        "text": "child = spawn(process.execPath, args, {"
+      },
+      {
+        "file": "lib/hub-cli.mjs",
+        "line": 42,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/hub-cli.mjs",
+        "line": 110,
+        "text": "const r = spawnSync(exe, args, { stdio: ['ignore', fd, fd], windowsHide: true, timeout: 15000 });"
+      },
+      {
+        "file": "lib/hub-cli.mjs",
+        "line": 669,
+        "text": "try { p = spawn(candidate, ['--version'], { stdio: 'ignore', windowsHide: true }); } catch { return resolve(false); }"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

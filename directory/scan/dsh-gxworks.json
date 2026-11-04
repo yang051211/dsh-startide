@@ -1,7 +1,7 @@
 {
   "name": "dsh-gxworks",
-  "version": "0.1.0",
-  "scannedAt": "2026-10-29T23:42:01.834Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-04T07:56:12.092Z",
   "icon": "dsh-gxworks.svg",
   "network": {
     "hit": false,
@@ -26,14 +26,14 @@
         "text": "import { existsSync } from 'node:fs'"
       },
       {
-        "file": "launch/mcp-launch.mjs",
-        "line": 18,
-        "text": "import { mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'"
+        "file": "launch/bundled-runtime.mjs",
+        "line": 3,
+        "text": "import { existsSync, mkdirSync, mkdtempSync, readFileSync, renameSync, rmSync } from 'node:fs'"
       },
       {
-        "file": "launch/mcp-launch.mjs",
-        "line": 87,
-        "text": "mkdirSync(dirname(path), { recursive: true })"
+        "file": "launch/bundled-runtime.mjs",
+        "line": 9,
+        "text": "export const backend = JSON.parse(readFileSync(join(packageRoot, 'runtime', 'backend.json'), 'utf8'))"
       }
     ]
   },
@@ -61,13 +61,18 @@
     "hit": true,
     "evidence": [
       {
+        "file": "launch/bundled-runtime.mjs",
+        "line": 2,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
         "file": "launch/mcp-launch.mjs",
         "line": 17,
         "text": "import { spawn } from 'node:child_process'"
       },
       {
         "file": "launch/mcp-launch.mjs",
-        "line": 354,
+        "line": 373,
         "text": "const child = spawn(plan.command, plan.args, {"
       }
     ]
@@ -80,12 +85,6 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [],
-  "setupHints": [
-    {
-      "file": "README.en.md",
-      "line": 136,
-      "text": "missing Python runtime (create `.venv` and `pip install -r requirements/mcp.txt`), a duplicate"
-    }
-  ],
+  "setupHints": [],
   "skippedEntries": []
 }

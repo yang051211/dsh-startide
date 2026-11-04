@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-weixin",
-  "version": "1.4.8",
-  "scannedAt": "2026-11-03T20:52:00.177Z",
+  "version": "1.5.3",
+  "scannedAt": "2026-11-04T07:55:51.745Z",
   "icon": "dsh-plugin-weixin.png",
   "network": {
     "hit": true,
@@ -28,7 +28,7 @@
       },
       {
         "file": "src/client.card.js",
-        "line": 1029,
+        "line": 1535,
         "text": "const response = await fetch(`https://registry.npmjs.org/${PKG}/latest`);"
       }
     ]
@@ -36,6 +36,11 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "bin/backup.mjs",
+        "line": 17,
+        "text": "import fs from 'node:fs'"
+      },
       {
         "file": "bin/check.mjs",
         "line": 5,
@@ -55,11 +60,6 @@
         "file": "bin/doctor.mjs",
         "line": 18,
         "text": "import fs from 'node:fs'"
-      },
-      {
-        "file": "bin/doctor.mjs",
-        "line": 40,
-        "text": "try { return JSON.parse(fs.readFileSync(file, 'utf8')) } catch (error) { return { __error: String(error) } }"
       }
     ]
   },
@@ -72,17 +72,17 @@
     "evidence": [
       {
         "file": "bin/backup.mjs",
-        "line": 18,
+        "line": 19,
         "text": "import { spawnSync } from 'node:child_process'"
       },
       {
         "file": "bin/backup.mjs",
-        "line": 95,
+        "line": 96,
         "text": "const running = spawnSync('pgrep', ['-f', 'dsh-plugin-weixin'], { encoding: 'utf8' })"
       },
       {
         "file": "bin/backup.mjs",
-        "line": 148,
+        "line": 156,
         "text": "const running = spawnSync('pgrep', ['-f', 'dsh-plugin-weixin'], { encoding: 'utf8' })"
       },
       {
@@ -110,22 +110,22 @@
   "setupHints": [
     {
       "file": "README.en.md",
-      "line": 1082,
+      "line": 1137,
       "text": "pip install mlx-whisper        # Apple Silicon, uses the GPU"
     },
     {
       "file": "README.en.md",
-      "line": 1083,
+      "line": 1138,
       "text": "pip install faster-whisper     # other platforms, uses the CPU"
     },
     {
       "file": "README.md",
-      "line": 1145,
+      "line": 1184,
       "text": "pip install mlx-whisper        # Apple Silicon，走 GPU"
     },
     {
       "file": "README.md",
-      "line": 1146,
+      "line": 1185,
       "text": "pip install faster-whisper     # 其它平台，走 CPU"
     }
   ],

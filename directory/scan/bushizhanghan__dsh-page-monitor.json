@@ -1,24 +1,24 @@
 {
   "name": "@bushizhanghan/dsh-page-monitor",
-  "version": "0.1.2",
-  "scannedAt": "2026-10-26T10:11:16.244Z",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-04T07:56:10.854Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 68,
+        "line": 114,
         "text": "const result = await ctx.web.fetch({ url }, signal)"
       },
       {
         "file": "lib/index.js",
-        "line": 88,
+        "line": 143,
         "text": "const res = await fetch('https://api.lexmount.cn/v1/extract', {"
       },
       {
         "file": "lib/index.js",
-        "line": 167,
+        "line": 222,
         "text": "await fetch(cfg.webhookUrl, {"
       }
     ]
@@ -29,27 +29,27 @@
       {
         "file": "lib/index.js",
         "line": 5,
-        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync, appendFileSync } from 'node:fs'"
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync, appendFileSync, renameSync, statSync, openSync, readSync, closeSync } from 'node:fs'"
       },
       {
         "file": "lib/index.js",
-        "line": 38,
+        "line": 45,
         "text": "mkdirSync(snapDir, { recursive: true })"
       },
       {
         "file": "lib/index.js",
-        "line": 43,
+        "line": 50,
         "text": "return JSON.parse(readFileSync(file, 'utf8'))"
       },
       {
         "file": "lib/index.js",
-        "line": 50,
-        "text": "mkdirSync(dataDir, { recursive: true })"
+        "line": 61,
+        "text": "const parsed = JSON.parse(readFileSync(watchlistFile, 'utf8'))"
       },
       {
         "file": "lib/index.js",
-        "line": 51,
-        "text": "writeFileSync(watchlistFile, JSON.stringify(list, null, 2), 'utf8')"
+        "line": 68,
+        "text": "mkdirSync(dataDir, { recursive: true })"
       }
     ]
   },
@@ -58,12 +58,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 11,
-        "text": "export const inject = ['tools', 'web']"
+        "line": 14,
+        "text": "export const inject = ['tools', 'web', 'timer']"
       },
       {
         "file": "lib/index.js",
-        "line": 328,
+        "line": 422,
         "text": "ctx.tools.register({"
       }
     ]
@@ -80,6 +80,7 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
+    "timer",
     "tools",
     "web"
   ],

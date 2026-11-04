@@ -1,0 +1,131 @@
+{
+  "name": "dsh-knj-obsidian",
+  "version": "2026.11.12",
+  "scannedAt": "2026-11-04T07:55:58.126Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 27,
+        "text": "const res = await fetch(url);"
+      },
+      {
+        "file": "client/client.js",
+        "line": 36,
+        "text": "const res = await fetch(withRoot(`${BASE}/page?id=${encodeURIComponent(id)}&category=${encodeURIComponent(category)}&raw=1`, root));"
+      },
+      {
+        "file": "client/client.js",
+        "line": 43,
+        "text": "const res = await fetch(withRoot(`${BASE}/page?id=${encodeURIComponent(id)}&category=${encodeURIComponent(category)}`, root), {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 64,
+        "text": "const res = await fetch(withRoot(`${BASE}/rebuild-index`, root), {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 75,
+        "text": "const res = await fetch(withRoot(`${BASE}/import`, root), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/checkpoint.js",
+        "line": 5,
+        "text": "import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/checkpoint.js",
+        "line": 24,
+        "text": "mkdirSync(dest, { recursive: true });"
+      },
+      {
+        "file": "lib/checkpoint.js",
+        "line": 80,
+        "text": "mkdirSync(live, { recursive: true });"
+      },
+      {
+        "file": "lib/checkpoint.js",
+        "line": 88,
+        "text": "rmSync(join(live, f), { force: true });"
+      },
+      {
+        "file": "lib/checkpoint.js",
+        "line": 102,
+        "text": "writeFileSync(join(store.wikiRoot, f), readFileSync(snapFile), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tools.js",
+        "line": 307,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 508,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 607,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 773,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 868,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/semantic.js",
+        "line": 9,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "src/semantic.ts",
+        "line": 9,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "wiki-distill/extract-dsh-sessions.test.cjs",
+        "line": 72,
+        "text": "const { spawnSync } = require('child_process');"
+      },
+      {
+        "file": "wiki-distill/extract-dsh-sessions.test.cjs",
+        "line": 90,
+        "text": "const r = spawnSync(process.execPath, [script, path.join(root, 'sessions'), outDir, '--proj--', '', ''], { encoding: 'utf8' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

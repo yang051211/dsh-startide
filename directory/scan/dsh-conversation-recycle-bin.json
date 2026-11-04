@@ -1,20 +1,35 @@
 {
   "name": "dsh-conversation-recycle-bin",
-  "version": "0.3.17",
-  "scannedAt": "2026-11-03T20:52:05.200Z",
+  "version": "0.3.18",
+  "scannedAt": "2026-11-04T07:55:57.211Z",
   "icon": "dsh-conversation-recycle-bin.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 608,
+        "line": 613,
         "text": "const response = await fetch(url, {"
       },
       {
         "file": "lib/host/feedback.js",
         "line": 338,
         "text": "throw new DeleteError('E_FEEDBACK_TRANSPORT', 'This Host runtime provides no fetch() to deliver feedback.', { transport: 'http' })"
+      },
+      {
+        "file": "scripts/verify-host-contract.mjs",
+        "line": 47,
+        "text": "const page = await fetch(pageUrl, { redirect: 'follow' })"
+      },
+      {
+        "file": "scripts/verify-host-contract.mjs",
+        "line": 65,
+        "text": "const control = await fetch(`${base}/dsh-memes-api`, {"
+      },
+      {
+        "file": "scripts/verify-host-contract.mjs",
+        "line": 71,
+        "text": "const state = await fetch(`${base}/conversation-recycle-bin/api/state`, {"
       }
     ]
   },
@@ -43,8 +58,8 @@
       },
       {
         "file": "lib/core/audit.js",
-        "line": 72,
-        "text": "await fsApi.mkdir(dirname(filePath), { recursive: true })"
+        "line": 81,
+        "text": "await fsApi.appendFile(filePath, '\\n', 'utf8')"
       }
     ]
   },
@@ -53,8 +68,29 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/check-syntax.mjs",
+        "line": 14,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/check-syntax.mjs",
+        "line": 32,
+        "text": "const result = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' })"
+      },
+      {
+        "file": "scripts/run-tests.mjs",
+        "line": 11,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/run-tests.mjs",
+        "line": 47,
+        "text": "const result = spawnSync(process.execPath, [file], { stdio: 'inherit', env: process.env })"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

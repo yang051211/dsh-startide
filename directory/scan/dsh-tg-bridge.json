@@ -1,7 +1,7 @@
 {
   "name": "dsh-tg-bridge",
-  "version": "1.45.0",
-  "scannedAt": "2026-11-02T23:00:51.205Z",
+  "version": "1.47.1",
+  "scannedAt": "2026-11-04T07:55:50.442Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -43,29 +43,35 @@
       },
       {
         "file": "bridge-kick.mjs",
-        "line": 53,
+        "line": 58,
         "text": "writeFileSync(fd, JSON.stringify({ pid: process.pid, owner, ts: Date.now() }));"
       },
       {
         "file": "bridge-kick.mjs",
-        "line": 59,
+        "line": 64,
         "text": "if (Number(JSON.parse(readFileSync(LOCK, 'utf8')).pid) === process.pid) unlinkSync(LOCK);"
       },
       {
         "file": "bridge-kick.mjs",
-        "line": 69,
+        "line": 74,
         "text": "const info = JSON.parse(readFileSync(LOCK, 'utf8'));"
       },
       {
         "file": "bridge-kick.mjs",
-        "line": 81,
+        "line": 86,
         "text": "try { unlinkSync(LOCK); } catch {}"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "control/mcp-config.mjs",
+        "line": 16,
+        "text": "export const MCP_PLUGIN = '@deepseek-ai/dsh-mcp-client';"
+      }
+    ]
   },
   "childProcess": {
     "hit": true,
@@ -77,22 +83,22 @@
       },
       {
         "file": "bridge-kick.mjs",
-        "line": 39,
+        "line": 40,
         "text": "// bridge with spawnSync(), which blocks until the child EXITS — for a long-lived"
       },
       {
         "file": "bridge-kick.mjs",
-        "line": 42,
+        "line": 43,
         "text": "// 18:57 while the bridge lived). Two fixes: spawn() + unref() below, and"
       },
       {
         "file": "bridge-kick.mjs",
-        "line": 139,
+        "line": 151,
         "text": "const r = spawnSync('powershell', ['-NoProfile', '-NonInteractive', '-Command',"
       },
       {
         "file": "bridge-kick.mjs",
-        "line": 259,
+        "line": 271,
         "text": "// spawn(), NOT spawnSync(): spawnSync waits for the child to exit, and this"
       }
     ]

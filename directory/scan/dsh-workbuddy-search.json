@@ -1,0 +1,129 @@
+{
+  "name": "dsh-workbuddy-search",
+  "version": "0.2.3",
+  "scannedAt": "2026-11-04T07:56:12.853Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 99,
+        "text": "const response = await fetch(CHECK_PATH, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 110,
+        "text": "const response = await fetch(APPLY_PATH, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 93,
+        "text": "\"X-Requested-With\": \"XMLHttpRequest\","
+      },
+      {
+        "file": "lib/index.js",
+        "line": 100,
+        "text": "response = await fetch(url, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 452,
+        "text": "const response = await fetch(`${NPM_BASE}/${SELF_PACKAGE_NAME}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/auth.js",
+        "line": 26,
+        "text": "import { accessSync, constants, existsSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 27,
+        "text": "import { readFile, rm } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 437,
+        "text": "`require(\"node:fs\").writeFileSync(${JSON.stringify(outPath)}, ` +"
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 448,
+        "text": "const text = await readFile(outPath, \"utf8\");"
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 454,
+        "text": "await rm(outPath, { force: true }).catch(() => {});"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 33,
+        "text": "export const inject = [\"tools\", \"systemPrompt\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 230,
+        "text": "ctx.tools.get(\"workbuddy_search\", scope) === undefined"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 235,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/auth.js",
+        "line": 24,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 441,
+        "text": "execFile("
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 460,
+        "text": "execFile("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 513,
+        "text": "const child = spawn("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

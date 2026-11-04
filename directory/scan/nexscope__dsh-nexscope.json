@@ -1,0 +1,111 @@
+{
+  "name": "@nexscope/dsh-nexscope",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-04T07:56:13.357Z",
+  "icon": "nexscope__dsh-nexscope.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/oauth.js",
+        "line": 13,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 594,
+        "text": "const response = await fetch(`${this.config.apiBase}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/export.js",
+        "line": 10,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/export.js",
+        "line": 133,
+        "text": "return readFile(path, 'utf8');"
+      },
+      {
+        "file": "lib/export.js",
+        "line": 143,
+        "text": "await mkdir(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "lib/export.js",
+        "line": 144,
+        "text": "await writeFile(path, text, 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 10,
+        "text": "import { readFile } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "export const inject = ['tools', 'credentials', 'skills'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 82,
+        "text": "tools.install(ctx.tools);"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 111,
+        "text": "install(tools = this.ctx.tools) {"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 113,
+        "text": "this.disposers.push(tools.register(definition));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/oauth.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/oauth.js",
+        "line": 99,
+        "text": "const child = spawn(command.file, command.args, { stdio: 'ignore', detached: true });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "credentials",
+    "skills",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

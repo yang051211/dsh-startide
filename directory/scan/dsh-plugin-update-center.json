@@ -1,0 +1,83 @@
+{
+  "name": "dsh-plugin-update-center",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-04T07:56:08.628Z",
+  "icon": "dsh-plugin-update-center.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 320,
+        "text": "const response = await fetch(ROUTE, {"
+      },
+      {
+        "file": "client.js",
+        "line": 448,
+        "text": "fetch(ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/backup.js",
+        "line": 9,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/backup.js",
+        "line": 10,
+        "text": "import { cp, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/backup.js",
+        "line": 45,
+        "text": "await mkdir(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/backup.js",
+        "line": 53,
+        "text": "const manifest = JSON.parse(await readFile(join(profileDir, 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "lib/backup.js",
+        "line": 54,
+        "text": "await writeFile(join(dir, 'meta.json'), JSON.stringify({"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "repair.mjs",
+        "line": 21,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "repair.mjs",
+        "line": 123,
+        "text": "const result = spawnSync('cmd.exe', ['/d', '/s', '/c', `\"${dsh}\" plugin --profile ${profile} install`], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "pluginManager"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

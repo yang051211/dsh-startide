@@ -1,0 +1,88 @@
+{
+  "name": "dsh-siyuan-archive",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-04T07:56:05.344Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 174,
+        "text": "response = await fetch(apiUrl(base, method), {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 293,
+        "text": "response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 159,
+        "text": "text = fs.readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 178,
+        "text": "fs.mkdirSync(path.dirname(target), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 183,
+        "text": "fs.writeFileSync(handle, JSON.stringify(config, null, 2) + '\\n', 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 191,
+        "text": "fs.unlinkSync(temporary)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "* 本文件只依赖 node 内建模块：宿主进程提供 ctx.tools / ctx.webServer / ctx.credentials。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1021,
+        "text": "toolDisposers.push(ctx.tools.register(entry.definition))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1185,
+        "text": "export const inject = ['tools', 'webServer']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

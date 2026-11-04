@@ -1,0 +1,108 @@
+{
+  "name": "dsh-plugin-resolver-dshgo",
+  "version": "0.1.3-go.1",
+  "scannedAt": "2026-11-04T07:56:08.339Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "logic/install.js",
+        "line": 470,
+        "text": "const response = await fetch('https://codeload.github.com/', { method: 'HEAD', signal: controller.signal, redirect: 'manual' })"
+      },
+      {
+        "file": "logic/install.js",
+        "line": 535,
+        "text": "const response = await fetch(url, { signal: controller.signal, redirect: 'follow' })"
+      },
+      {
+        "file": "logic/util.js",
+        "line": 101,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "logic/util.js",
+        "line": 124,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host/register.js",
+        "line": 13,
+        "text": "import { statSync } from 'node:fs'"
+      },
+      {
+        "file": "logic/install.js",
+        "line": 22,
+        "text": "import { mkdir, readdir, readFile, rename, rm, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "logic/install.js",
+        "line": 23,
+        "text": "import { existsSync, readdirSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "logic/install.js",
+        "line": 116,
+        "text": "return JSON.parse(await readFile(path.join(packageDir, 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "logic/install.js",
+        "line": 177,
+        "text": "files.push(`${path.relative(dir, abs).split(path.sep).join('/')}:${sha256(await readFile(abs))}`)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host/register.js",
+        "line": 54,
+        "text": "* Register the resolver tool set on `ctx.tools`."
+      },
+      {
+        "file": "host/register.js",
+        "line": 64,
+        "text": "const dispose = ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 28,
+        "text": "export const inject = ['tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "logic/util.js",
+        "line": 8,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "logic/util.js",
+        "line": 172,
+        "text": "const child = spawn(file, argv, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,115 @@
+{
+  "name": "dsh-dafeiyu-home",
+  "version": "1.3.4",
+  "scannedAt": "2026-11-04T07:56:01.048Z",
+  "icon": "dsh-dafeiyu-home.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 122,
+        "text": "const r = await fetch(API_BASE + '/stickers')"
+      },
+      {
+        "file": "client.js",
+        "line": 131,
+        "text": "const r = await fetch(API_BASE + path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body || {}) })"
+      },
+      {
+        "file": "client.js",
+        "line": 626,
+        "text": "const r = await fetch(API_BASE + '/learned', { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 636,
+        "text": "const r = await fetch(API_BASE + '/chats', { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 650,
+        "text": "const r = await fetch(API_BASE + path, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body || {}) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "import { existsSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 23,
+        "text": "const PKG = JSON.parse(readFileSync(join(PKG_DIR, 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 85,
+        "text": "const buf = readFileSync(file)"
+      },
+      {
+        "file": "index.js",
+        "line": 530,
+        "text": "try { sched = JSON.parse(readFileSync(join(stateHome(), 'scheduler.json'), 'utf8')) } catch {}"
+      },
+      {
+        "file": "index.js",
+        "line": 620,
+        "text": "const sched = JSON.parse(readFileSync(join(stateHome(), 'scheduler.json'), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/asr.mjs",
+        "line": 23,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/audio-analyze.mjs",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/audio-analyze.mjs",
+        "line": 54,
+        "text": "child = spawn(PYTHON, args, { cwd: ENGINE_DIR })"
+      },
+      {
+        "file": "lib/image-pack.mjs",
+        "line": 14,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/napcat.mjs",
+        "line": 23,
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "stickers",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-ide-git",
-  "version": "0.23.0",
-  "scannedAt": "2026-11-01T19:08:50.562Z",
+  "version": "0.25.0",
+  "scannedAt": "2026-11-04T07:55:55.433Z",
   "icon": "dsh-ide-git.svg",
   "network": {
     "hit": true,
@@ -13,22 +13,22 @@
       },
       {
         "file": "src/client.js",
-        "line": 8004,
+        "line": 8088,
         "text": "response = await fetch(remoteFallbackUrl(direct), init)"
       },
       {
         "file": "src/client.js",
-        "line": 8006,
+        "line": 8090,
         "text": "response = await fetch(direct, init)"
       },
       {
         "file": "src/client.js",
-        "line": 8015,
+        "line": 8099,
         "text": "const retried = await fetch(remoteFallbackUrl(direct), init)"
       },
       {
         "file": "src/client.js",
-        "line": 15013,
+        "line": 15159,
         "text": "fetch (`git fetch origin name:name` — git refuses a non-ff update,"
       }
     ]
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/index.js",
-        "line": 21,
-        "text": "import { existsSync, lstatSync, mkdirSync, readFileSync, readdirSync, realpathSync, unlinkSync, writeFileSync } from 'node:fs'"
+        "file": "src/host/git.js",
+        "line": 11,
+        "text": "import { realpathSync } from 'node:fs'"
       },
       {
-        "file": "src/index.js",
-        "line": 597,
+        "file": "src/host/repos.js",
+        "line": 3,
+        "text": "import { existsSync, realpathSync, readdirSync } from 'node:fs'"
+      },
+      {
+        "file": "src/host/undo.js",
+        "line": 5,
+        "text": "import { existsSync, lstatSync, mkdirSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/host/undo.js",
+        "line": 94,
         "text": "try { data = readFileSync(target) } catch { return false }"
       },
       {
-        "file": "src/index.js",
-        "line": 615,
+        "file": "src/host/undo.js",
+        "line": 112,
         "text": "return { rel: file.rel, hash: hashOf(readFileSync(path.join(root, file.rel))) }"
-      },
-      {
-        "file": "src/index.js",
-        "line": 1525,
-        "text": "try { unlinkSync(target) } catch { /* already gone */ }"
-      },
-      {
-        "file": "src/index.js",
-        "line": 1528,
-        "text": "mkdirSync(path.dirname(target), { recursive: true })"
       }
     ]
   },
@@ -71,13 +71,13 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/index.js",
-        "line": 19,
+        "file": "src/host/git.js",
+        "line": 9,
         "text": "import { spawn } from 'node:child_process'"
       },
       {
-        "file": "src/index.js",
-        "line": 152,
+        "file": "src/host/git.js",
+        "line": 59,
         "text": "child = spawn(gitBinary(), args, { cwd, windowsHide: true, env: { ...process.env, GIT_OPTIONAL_LOCKS: '0', GIT_TERMINAL_PROMPT: '0' } })"
       }
     ]

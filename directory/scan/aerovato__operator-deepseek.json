@@ -1,7 +1,7 @@
 {
   "name": "@aerovato/operator-deepseek",
-  "version": "0.2.1",
-  "scannedAt": "2026-10-26T10:10:49.498Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-04T07:56:10.995Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -12,23 +12,28 @@
     "evidence": [
       {
         "file": "dist/index.js",
-        "line": 6977,
+        "line": 7005,
         "text": "import { constants } from \"node:fs\";"
       },
       {
         "file": "dist/index.js",
-        "line": 6978,
+        "line": 7006,
         "text": "import { access, readdir, readFile, stat } from \"node:fs/promises\";"
       },
       {
         "file": "dist/index.js",
-        "line": 6981,
+        "line": 7009,
         "text": "return success(await readFile(path, \"utf8\"));"
       },
       {
         "file": "dist/index.js",
-        "line": 6988,
+        "line": 7016,
         "text": "return success(await readFile(path, \"utf8\"));"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 7288,
+        "text": "import { readFileSync } from \"node:fs\";"
       }
     ]
   },
@@ -37,8 +42,14 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 7286,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

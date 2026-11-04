@@ -1,29 +1,34 @@
 {
   "name": "@luoshuizhiwei/dsh-desktop-restart",
-  "version": "0.4.6",
-  "scannedAt": "2026-10-30T23:38:31.559Z",
+  "version": "0.4.7",
+  "scannedAt": "2026-11-04T07:56:00.881Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1326,
+        "line": 1373,
         "text": "const response = await fetch(url, Object.assign({}, options, controller ? {signal:controller.signal} : {}));"
       },
       {
         "file": "lib/client.js",
-        "line": 2094,
+        "line": 2152,
         "text": "const response = await fetch(PREFS_ROUTE + \"?readNotice=\" + encodeURIComponent(id), {method:\"POST\"});"
       },
       {
         "file": "lib/client.js",
-        "line": 3189,
+        "line": 2163,
+        "text": "const response = await fetch(PREFS_ROUTE + \"?clearOp=1\", {method:\"POST\"});"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3290,
         "text": "fetch((query === \"?cancelSweep=1\" ? PREFS_ROUTE : SWEEP_ROUTE) + query, { method: \"POST\" })"
       },
       {
         "file": "lib/index.js",
-        "line": 372,
+        "line": 385,
         "text": "* 桌面版的页面是以 `dsh-app://` 协议装载的，页面里的 `fetch('/…')` 由壳层"
       }
     ]
@@ -38,22 +43,22 @@
       },
       {
         "file": "lib/helper.cjs",
-        "line": 400,
+        "line": 412,
         "text": "try { fs.writeFileSync(paths.delivery, JSON.stringify({ status: 'failed', code: 'toast-process-failed' }), 'utf8') }"
       },
       {
         "file": "lib/helper.cjs",
-        "line": 410,
+        "line": 422,
         "text": "const parse = file => JSON.parse(io.readFileSync(file,'utf8'))"
       },
       {
         "file": "lib/helper.cjs",
-        "line": 478,
+        "line": 490,
         "text": "try { io.unlinkSync(paths[kind]) }"
       },
       {
         "file": "lib/helper.cjs",
-        "line": 495,
+        "line": 507,
         "text": "io.mkdirSync(dir,{recursive:true})"
       }
     ]
@@ -72,12 +77,12 @@
       },
       {
         "file": "lib/helper.cjs",
-        "line": 398,
+        "line": 410,
         "text": "  const child = spawn('powershell.exe', ['-NoProfile', '-NonInteractive', '-WindowStyle', 'Hidden', '-EncodedCommand', encoded], { detached: true, stdio: 'ignor"
       },
       {
         "file": "lib/helper.cjs",
-        "line": 986,
+        "line": 1044,
         "text": "const child = spawn(exe, relaunchArgs ?? [], {"
       },
       {
@@ -87,7 +92,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 904,
+        "line": 917,
         "text": "const helper = spawn(process.execPath, [HELPER_PATH, handoffPath], {"
       }
     ]

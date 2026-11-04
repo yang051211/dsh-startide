@@ -1,7 +1,7 @@
 {
   "name": "dsh-notify-channel",
-  "version": "0.1.1",
-  "scannedAt": "2026-10-30T23:38:49.874Z",
+  "version": "0.5.2",
+  "scannedAt": "2026-11-04T07:56:04.729Z",
   "icon": "dsh-notify-channel.svg",
   "network": {
     "hit": true,
@@ -19,27 +19,27 @@
       {
         "file": "index.js",
         "line": 2,
-        "text": "import { appendFileSync, mkdirSync } from 'node:fs';"
+        "text": "import { appendFileSync, mkdirSync, readFileSync } from 'node:fs';"
       },
       {
         "file": "index.js",
-        "line": 181,
+        "line": 25,
+        "text": "const pkg = JSON.parse(readFileSync(join(dir, 'package.json'), 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 38,
+        "text": "return JSON.parse(readFileSync(join(dirname(fileURLToPath(import.meta.url)), 'package.json'), 'utf8')).name;"
+      },
+      {
+        "file": "index.js",
+        "line": 221,
         "text": "mkdirSync(dirname(auditFile), { recursive: true });"
       },
       {
         "file": "index.js",
-        "line": 182,
+        "line": 222,
         "text": "appendFileSync(auditFile, `${JSON.stringify(row)}\\n`, 'utf8');"
-      },
-      {
-        "file": "src/channels/qq.mjs",
-        "line": 23,
-        "text": "import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';"
-      },
-      {
-        "file": "src/channels/qq.mjs",
-        "line": 382,
-        "text": "return JSON.parse(readFileSync(resolve(file), 'utf8'));"
       }
     ]
   },
@@ -62,12 +62,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 75,
-      "text": "npm i -g dsh-notify-channel"
-    },
-    {
-      "file": "README.md",
-      "line": 145,
+      "line": 86,
       "text": "npm i -g dsh-notify-channel"
     }
   ],

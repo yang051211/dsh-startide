@@ -1,15 +1,20 @@
 {
   "name": "dsh-plugin-update-checker",
-  "version": "0.1.6",
-  "scannedAt": "2026-10-27T02:45:02.158Z",
+  "version": "0.1.7",
+  "scannedAt": "2026-11-04T07:56:06.333Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 423,
-        "text": "const res = await fetch(\"/api/plugin-update-checker/scan\", { method: \"POST\" });"
+        "line": 282,
+        "text": "const res = await fetch(\"/api/plugin-update-checker/update\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 497,
+        "text": "const res = await fetch(scanUrl(), { method: \"POST\" });"
       },
       {
         "file": "lib/host/registry.js",
@@ -33,23 +38,23 @@
       },
       {
         "file": "lib/host/dsh.js",
-        "line": 53,
+        "line": 67,
+        "text": "const release = JSON.parse(readFileSync(join(resources, 'app.asar', 'dsh', 'desktop-runtime.json'), 'utf8'))?.release"
+      },
+      {
+        "file": "lib/host/dsh.js",
+        "line": 118,
         "text": "return JSON.parse(readFileSync(require.resolve('@deepseek-ai/dsh-app-boot/package.json'), 'utf8')).version"
       },
       {
         "file": "lib/host/dsh.js",
-        "line": 65,
+        "line": 130,
         "text": "try { return JSON.parse(readFileSync(candidate, 'utf8')).version } catch { /* keep walking */ }"
       },
       {
         "file": "lib/host/dsh.js",
-        "line": 134,
+        "line": 199,
         "text": "const raw = JSON.parse(readFileSync(join(profileDir, 'compatibility.json'), 'utf8'))"
-      },
-      {
-        "file": "lib/host/profile.js",
-        "line": 7,
-        "text": "import { readFile, readdir } from 'node:fs/promises'"
       }
     ]
   },

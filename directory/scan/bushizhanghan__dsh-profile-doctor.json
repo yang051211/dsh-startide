@@ -1,19 +1,19 @@
 {
   "name": "@bushizhanghan/dsh-profile-doctor",
-  "version": "0.1.1",
-  "scannedAt": "2026-10-26T10:11:16.365Z",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-04T07:56:11.261Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/engine.js",
-        "line": 300,
+        "line": 305,
         "text": "const res = await fetch(url, { signal, headers: { accept: 'application/vnd.npm.install-v1+json' } })"
       },
       {
         "file": "lib/index.js",
-        "line": 225,
+        "line": 278,
         "text": "const res = await fetch(`https://registry.npmjs.org/${name.replace('/', '%2f')}`, {"
       }
     ]
@@ -23,18 +23,28 @@
     "evidence": [
       {
         "file": "lib/engine.js",
-        "line": 23,
+        "line": 24,
         "text": "import { existsSync, readFileSync, readdirSync, realpathSync, statSync, lstatSync } from 'node:fs'"
       },
       {
         "file": "lib/engine.js",
-        "line": 224,
+        "line": 229,
         "text": "const src = readFileSync(p, 'utf8')"
       },
       {
         "file": "lib/engine.js",
-        "line": 491,
+        "line": 327,
+        "text": "return JSON.parse(readFileSync(join(profileDir, 'node_modules', dep, 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 508,
         "text": "return readFileSync(p, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "import { existsSync, readdirSync } from 'node:fs'"
       }
     ]
   },
@@ -43,12 +53,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 33,
+        "line": 35,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "lib/index.js",
-        "line": 280,
+        "line": 339,
         "text": "ctx.tools.register({"
       }
     ]
@@ -58,7 +68,7 @@
     "evidence": [
       {
         "file": "lib/engine.js",
-        "line": 26,
+        "line": 27,
         "text": "import { execFile } from 'node:child_process'"
       }
     ]

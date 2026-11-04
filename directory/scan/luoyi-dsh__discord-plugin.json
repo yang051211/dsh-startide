@@ -1,0 +1,114 @@
+{
+  "name": "@luoyi-dsh/discord-plugin",
+  "version": "1.0.4",
+  "scannedAt": "2026-11-04T07:56:02.439Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 31,
+        "text": "const jget = async (path) => asJson(await fetch(API + path, { credentials: 'same-origin' }))"
+      },
+      {
+        "file": "client.js",
+        "line": 34,
+        "text": "await fetch(API + path, {"
+      },
+      {
+        "file": "dist/duty/mentionReply.js",
+        "line": 42,
+        "text": "const refMsg = await rawMsg.channel.messages.fetch(rawMsg.reference.messageId).catch(() => null);"
+      },
+      {
+        "file": "dist/lib/discordClient.js",
+        "line": 296,
+        "text": "channel = await this.client.channels.fetch(id);"
+      },
+      {
+        "file": "dist/lib/discordClient.js",
+        "line": 303,
+        "text": "const user = await this.client.users.fetch(id);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 12,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 66,
+        "text": "mkdirSync(dataDir, { recursive: true });"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 72,
+        "text": "return JSON.parse(readFileSync(configFile, 'utf-8'));"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 86,
+        "text": "writeFileSync(configFile, JSON.stringify(activeConfig, null, 2), 'utf-8');"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 97,
+        "text": "writeFileSync(configFile, JSON.stringify(activeConfig, null, 2), 'utf-8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 7,
+        "text": "* 3. 註冊 13 項 Discord MCP 操作工具至 DSH ctx.tools。"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 33,
+        "text": "export const inject = ['webServer', 'tools'];"
+      },
+      {
+        "file": "dist/tools/discordTools.js",
+        "line": 250,
+        "text": "const tools = (typeof ctx.get === 'function' ? ctx.get('tools') : undefined) || ctx.tools;"
+      },
+      {
+        "file": "dist/tools/discordTools.js",
+        "line": 270,
+        "text": "tools.register(enriched);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 4,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

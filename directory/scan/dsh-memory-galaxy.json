@@ -1,0 +1,66 @@
+{
+  "name": "dsh-memory-galaxy",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-04T07:56:04.448Z",
+  "icon": "dsh-memory-galaxy.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 70,
+        "text": "try { await fetch(ROUTE + '?rebuild=1&t=' + Date.now(), { cache: 'no-store' }); } catch (e) { /* 忽略 */ }"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { existsSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 65,
+        "text": "return readFile(TEMPLATE, 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 86,
+        "text": "cfg = JSON.parse(await readFile(CONFIG, 'utf8'));"
+      },
+      {
+        "file": "lib/build.mjs",
+        "line": 12,
+        "text": "import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

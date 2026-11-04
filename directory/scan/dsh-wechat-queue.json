@@ -1,0 +1,84 @@
+{
+  "name": "dsh-wechat-queue",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-04T07:56:08.156Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 134,
+        "text": "fetch(ROUTES.status, { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 164,
+        "text": "fetch(ROUTES.state, { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 190,
+        "text": "return fetch(path, { method: 'POST', body: body })"
+      },
+      {
+        "file": "lib/login/routes.js",
+        "line": 405,
+        "text": "fetch('/api/wechat-queue/status', { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/login/routes.js",
+        "line": 439,
+        "text": "fetch('/api/wechat-queue/begin', { method: 'POST' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "import { mkdirSync, readFileSync, writeFileSync, existsSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 235,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 237,
+        "text": "writeFileSync("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 269,
+        "text": "writeFileSync(logPath, line, { flag: 'a' });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 382,
+        "text": "mkdirSync(dataDir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

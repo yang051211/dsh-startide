@@ -1,30 +1,30 @@
 {
   "name": "dsh-web-push-notification",
-  "version": "0.2.2",
-  "scannedAt": "2026-10-26T10:08:21.778Z",
+  "version": "0.2.3",
+  "scannedAt": "2026-11-04T07:56:10.155Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 116,
+        "line": 163,
         "text": "const response = await fetch(url, init);"
       },
       {
         "file": "lib/client.js",
-        "line": 688,
+        "line": 659,
         "text": "void fetch(PRESENCE_PATH, {"
       },
       {
-        "file": "lib/index.js",
-        "line": 1251,
+        "file": "lib/service-worker.js",
+        "line": 89,
         "text": "const response = await fetch(path, {"
       },
       {
-        "file": "lib/index.js",
-        "line": 1275,
-        "text": "const response = await fetch('/__dsh/web-push/config', { credentials: 'same-origin' });"
+        "file": "lib/service-worker.js",
+        "line": 105,
+        "text": "const response = await fetch(`${WEB_PUSH_ROUTE_PREFIX}/config`, { credentials: \"same-origin\" });"
       }
     ]
   },
@@ -33,27 +33,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 2,
-        "text": "import { readdirSync, statSync } from \"node:fs\";"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 1094,
+        "line": 1101,
         "text": "import { readFileSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 1619,
+        "line": 1384,
+        "text": "const source = readFileSync(new URL(\"../lib/service-worker.js\", import.meta.url), \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1493,
         "text": "const body = readFileSync(new URL(fileName, PUBLIC_DIR));"
       },
       {
         "file": "lib/index.js",
-        "line": 1671,
+        "line": 1549,
         "text": "} from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 1692,
+        "line": 1562,
         "text": "mkdirSync(parent, { recursive: true, mode: 448 });"
       }
     ]
