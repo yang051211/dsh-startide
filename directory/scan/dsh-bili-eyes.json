@@ -1,0 +1,129 @@
+{
+  "name": "dsh-bili-eyes",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-04T20:39:05.129Z",
+  "icon": "dsh-bili-eyes.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/client.js",
+        "line": 284,
+        "text": "get: (view) => fetch(`${ROUTE}?${new URLSearchParams({ view })}`, { credentials: 'same-origin' }).then(unwrap),"
+      },
+      {
+        "file": "src/client.js",
+        "line": 285,
+        "text": "      post: (action, body = {}) => fetch(ROUTE, { method: 'POST', credentials: 'same-origin', headers: { 'content-type': 'application/json' }, body: JSON.string"
+      },
+      {
+        "file": "src/client.js",
+        "line": 325,
+        "text": "fetch(`${ROUTE}?${qs}`, { credentials: 'same-origin' }).then(unwrap).then("
+      },
+      {
+        "file": "src/client.js",
+        "line": 1586,
+        "text": "          fetch(`${ROUTE}?upload=sticker`, { method: 'POST', credentials: 'same-origin', headers: { 'content-type': 'application/json' }, body: JSON.stringify({"
+      },
+      {
+        "file": "src/ffmpeg-fetch.js",
+        "line": 55,
+        "text": "const r = await fetch(url, { signal: AbortSignal.timeout(timeoutMs) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 9,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 26,
+        "text": "fs.mkdirSync(DATA_DIR, { recursive: true });"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 43,
+        "text": "fs.rmSync(png, { force: true });"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 75,
+        "text": "fs.mkdirSync(outDir, { recursive: true });"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 78,
+        "text": "fs.writeFileSync(f, buf);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 23,
+        "text": "export const inject = ['tools', 'attachments'];"
+      },
+      {
+        "file": "src/index.js",
+        "line": 282,
+        "text": "const reg = (spec, execute, safe = true) => disposers.push(ctx.tools.register(defineTool({ ...spec, execute, isConcurrencySafe: () => safe })));"
+      },
+      {
+        "file": "src/index.js",
+        "line": 302,
+        "text": "live[key] = ctx.tools.register(defineTool({ ...sp[key], execute: act(fn, verb), isConcurrencySafe: () => false }));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 29,
+        "text": "if (process.platform === 'win32' && !process.argv.includes('--no-open')) spawn('cmd', ['/c', 'start', '', png], { detached: true, stdio: 'ignore' }).unref();"
+      },
+      {
+        "file": "src/api.js",
+        "line": 7,
+        "text": "import { execFile, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/api.js",
+        "line": 112,
+        "text": "execFile(exe, [kind === 'ytdlp' ? '--version' : '-version'], { timeout: 10_000, windowsHide: true }, (err, stdout) => {"
+      },
+      {
+        "file": "src/api.js",
+        "line": 402,
+        "text": "if (process.platform === 'win32') spawn('explorer.exe', [path.normalize(dir)], { detached: true, stdio: 'ignore' }).unref();"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "attachments",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

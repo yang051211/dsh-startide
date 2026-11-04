@@ -1,0 +1,92 @@
+{
+  "name": "dsh-voice-asr",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-04T20:39:20.682Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bridge-patch/apply.mjs",
+        "line": 13,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "bridge-patch/apply.mjs",
+        "line": 44,
+        "text": "const bridgeText = fs.readFileSync(bridgeFile, 'utf8');"
+      },
+      {
+        "file": "bridge-patch/apply.mjs",
+        "line": 74,
+        "text": "if (fs.existsSync(asrTarget) && !fs.readFileSync(asrTarget, 'utf8').includes('SILK')) {"
+      },
+      {
+        "file": "bridge-patch/apply.mjs",
+        "line": 83,
+        "text": "const cfg = JSON.parse(fs.readFileSync(configFile, 'utf8'));"
+      },
+      {
+        "file": "bridge-patch/apply.mjs",
+        "line": 95,
+        "text": "fs.writeFileSync(configFile, `${JSON.stringify(cfg, null, 2)}\\n`);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 24,
+        "text": "return (definition) => definition; // 宿主没提供该包时按原样交给 ctx.tools.register"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 237,
+        "text": "for (const tool of tools) ctx.tools.register(tool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bridge-patch/apply.mjs",
+        "line": 15,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "bridge-patch/apply.mjs",
+        "line": 66,
+        "text": "const patchRun = spawnSync('patch', ['-p1', '--forward', '--batch', '-i', patchFile], { cwd: bridgeDir, encoding: 'utf8' });"
+      },
+      {
+        "file": "bridge-patch/apply.mjs",
+        "line": 110,
+        "text": "const npmRun = spawnSync('npm', ['install', '@huggingface/transformers', 'silk-wasm', 'opencc-js', '--no-audit', '--no-fund'], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,90 @@
+{
+  "name": "dsh-blackhole-radio-lab",
+  "version": "1.2.1",
+  "scannedAt": "2026-11-04T20:39:16.043Z",
+  "icon": "dsh-blackhole-radio-lab.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.hls.js",
+        "line": 52,
+        "text": "on hf(n){let{url:e}=n,t=vi(n,Dd);return fetch(e,t)}function uf(n){let{version:e=ys,eventTargets:t=[],sid:s=bo(),transmissionMode:i=Hn}=n,r=vi(n,Pd);return Y(Y({"
+      },
+      {
+        "file": "client.hls.js",
+        "line": 54,
+        "text": "et e=this.licenseXhr;e&&(e.readyState!==XMLHttpRequest.DONE&&e.abort(),this.licenseXhr=void 0),this.onmessage=this.onkeystatuseschange=void 0}},Ke=class extends"
+      },
+      {
+        "file": "client.hls.js",
+        "line": 55,
+        "text": "this.config.keyLoadPolicy.default,c=new XMLHttpRequest;c.responseType=\"arraybuffer\",c.onreadystatechange=()=>{if(!this.hls||!e.mediaKeysSession)return r(new Err"
+      },
+      {
+        "file": "client.hls.js",
+        "line": 69,
+        "text": "est)?this.request.then(self.fetch):self.fetch(this.request)).then(h=>{var u;this.response=h;let d=Math.max(self.performance.now(),s.loading.start);if(self.clear"
+      },
+      {
+        "file": "client.js",
+        "line": 121,
+        "text": "const res = await fetch('/blackhole-radio-lab/catalog', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "import { readFileSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 91,
+        "text": "let json = jsonStat ? readFileSync(jsonPath, 'utf8') : '';"
+      },
+      {
+        "file": "index.js",
+        "line": 92,
+        "text": "let gz = gzStat ? readFileSync(gzPath) : null;"
+      },
+      {
+        "file": "src/host/catalog-refresh.js",
+        "line": 16,
+        "text": "import { mkdirSync, readFileSync, readdirSync, renameSync, statSync, unlinkSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "src/host/catalog-refresh.js",
+        "line": 42,
+        "text": "const parsed = JSON.parse(gunzipSync(readFileSync(file)).toString('utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "client.hls.js",
+    "client.radio.js",
+    "client.stage.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

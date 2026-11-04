@@ -1,0 +1,86 @@
+{
+  "name": "dsh-agent-office",
+  "version": "4.6.2",
+  "scannedAt": "2026-11-04T20:39:28.251Z",
+  "icon": "dsh-agent-office.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 171,
+        "text": "const response = await fetch('/agent-office/api/geocode?name=' + encodeURIComponent(name), { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 278,
+        "text": "const response = await fetch(DEEPSEEK_BALANCE_URL, { headers, signal: AbortSignal.timeout(15_000) })"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 317,
+        "text": "const response = await fetch(url, { signal: AbortSignal.timeout(10_000) })"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 350,
+        "text": "const response = await fetch(url, { signal: AbortSignal.timeout(10_000) })"
+      },
+      {
+        "file": "panel-src/main.js",
+        "line": 623,
+        "text": "fetch(`/agent-office/api/weather?lat=${encodeURIComponent(location.lat)}&lon=${encodeURIComponent(location.lon)}`, { cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 10,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 52,
+        "text": "send(res, 'text/html; charset=utf-8', await readFile(PANEL, 'utf8'))"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 7,
+        "text": "import { readFileSync, readdirSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 106,
+        "text": "text = decodeSessionLog(readFileSync(file))"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 246,
+        "text": "const text = readFileSync(credentialsPath, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,138 @@
+{
+  "name": "dsh-memsys",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-04T20:39:29.270Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 17,
+        "text": "fetch(API)"
+      },
+      {
+        "file": "client.js",
+        "line": 258,
+        "text": "fetch(SEARCH + '?q=' + encodeURIComponent(query))"
+      },
+      {
+        "file": "client.js",
+        "line": 458,
+        "text": "fetch(PERSONA)"
+      },
+      {
+        "file": "client.js",
+        "line": 467,
+        "text": "fetch(PERSONA)"
+      },
+      {
+        "file": "client.js",
+        "line": 477,
+        "text": "fetch(PERSONA, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "index.mjs",
+        "line": 128,
+        "text": "? JSON.parse(fs.readFileSync(handlerFile, 'utf8'))"
+      },
+      {
+        "file": "index.mjs",
+        "line": 130,
+        "text": "fs.writeFileSync("
+      },
+      {
+        "file": "index.mjs",
+        "line": 146,
+        "text": "const existing = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {};"
+      },
+      {
+        "file": "index.mjs",
+        "line": 147,
+        "text": "fs.writeFileSync(file, JSON.stringify({ ...existing, data_dir: dataDir, runtime }, null, 2), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 40,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.mjs",
+        "line": 279,
+        "text": "tools_service: Boolean(ctx?.tools && typeof ctx.tools.register === 'function'),"
+      },
+      {
+        "file": "index.mjs",
+        "line": 337,
+        "text": "const originalExecute = ctx?.tools?.execute?.bind(ctx.tools);"
+      },
+      {
+        "file": "index.mjs",
+        "line": 339,
+        "text": "ctx.tools.execute = async (...args) => {"
+      },
+      {
+        "file": "src/runtime/tools.mjs",
+        "line": 3,
+        "text": "*   defineTool({name, description, parameters, output, execute}) + ctx.tools.register"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/build.mjs",
+        "line": 4,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/build.mjs",
+        "line": 35,
+        "text": "const result = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });"
+      },
+      {
+        "file": "scripts/live-check.mjs",
+        "line": 17,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/live-check.mjs",
+        "line": 83,
+        "text": "return spawnSync(HOST_EXE, ['--expose-internals', CLI_JS, ...args], {"
+      },
+      {
+        "file": "scripts/test.mjs",
+        "line": 4,
+        "text": "import { spawnSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

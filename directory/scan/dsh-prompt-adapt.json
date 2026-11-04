@@ -1,7 +1,7 @@
 {
   "name": "dsh-prompt-adapt",
-  "version": "0.1.4",
-  "scannedAt": "2026-10-26T10:08:17.428Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-04T20:39:23.536Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,8 +13,18 @@
       },
       {
         "file": "lib/client.js",
-        "line": 1178,
-        "text": "const response = await fetch(url, options);"
+        "line": 1274,
+        "text": "const response = await fetch("
+      },
+      {
+        "file": "lib/console-server.js",
+        "line": 16,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/console/lib.js",
+        "line": 19,
+        "text": "const response = await fetch(`/api${path}`, {"
       },
       {
         "file": "lib/http.js",
@@ -42,20 +52,36 @@
         "text": "fs.writeFileSync(file, `${JSON.stringify(manifest, undefined, 2)}\\n`)"
       },
       {
-        "file": "lib/sessions.js",
-        "line": 86,
+        "file": "lib/console-server.js",
+        "line": 15,
         "text": "import fs from 'node:fs'"
       },
       {
-        "file": "lib/sessions.js",
-        "line": 280,
-        "text": "text = fs.readFileSync(file, 'utf8')"
+        "file": "lib/console-server.js",
+        "line": 112,
+        "text": "const value = fs.readFileSync(this.keyFile, 'utf8').trim()"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1837,
+        "text": "const tools = typeof ctx.get === 'function' ? ctx.get('tools') : ctx.tools"
+      },
+      {
+        "file": "lib/privacy.js",
+        "line": 9,
+        "text": "*   3. 工具门控：`ctx.tools.guard()` 在 DSH 工具管线里强制执行，不靠提示词约束模型。"
+      },
+      {
+        "file": "lib/privacy.js",
+        "line": 417,
+        "text": "* `ctx.tools.guard()` 的判据。返回拒绝理由（模型能看到），放行返回 undefined。"
+      }
+    ]
   },
   "childProcess": {
     "hit": false,

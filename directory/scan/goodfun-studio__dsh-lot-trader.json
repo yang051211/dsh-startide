@@ -1,35 +1,30 @@
 {
   "name": "@goodfun-studio/dsh-lot-trader",
-  "version": "0.1.3",
-  "scannedAt": "2026-11-04T07:56:13.806Z",
+  "version": "0.1.8",
+  "scannedAt": "2026-11-04T20:39:27.491Z",
   "icon": "goodfun-studio__dsh-lot-trader.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 442,
+        "line": 466,
         "text": "const response = await fetch(SNAPSHOT_PATH, {"
       },
       {
         "file": "client.js",
-        "line": 472,
+        "line": 507,
         "text": "const response = await fetch(REFRESH_PATH, {"
       },
       {
         "file": "index.js",
-        "line": 117,
+        "line": 222,
         "text": "* `fetch('http://127.0.0.1:<port>/api/lot-trader/snapshot')` 读到你的持仓与账本——"
       },
       {
         "file": "tools.js",
-        "line": 215,
+        "line": 274,
         "text": "* ⚠️ `fetch()` 在**收到响应头**时就 resolve，此时 body 还没读完。如果不把超时计时器"
-      },
-      {
-        "file": "tools.js",
-        "line": 248,
-        "text": "const response = await fetch(releaseApiUrl, {"
       }
     ]
   },
@@ -39,27 +34,22 @@
       {
         "file": "tools.js",
         "line": 20,
-        "text": "import { chmodSync, existsSync, mkdirSync, unlinkSync, writeFileSync } from 'node:fs'"
+        "text": "import { accessSync, chmodSync, constants, existsSync, mkdirSync, renameSync, unlinkSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "tools.js",
-        "line": 378,
-        "text": "mkdirSync(CACHE_BIN_DIR, { recursive: true })"
+        "line": 487,
+        "text": "mkdirSync(cacheBinDir, { recursive: true })"
       },
       {
         "file": "tools.js",
-        "line": 379,
-        "text": "writeFileSync(CACHE_BIN, buffer)"
+        "line": 490,
+        "text": "writeFileSync(tmpPath, buffer)"
       },
       {
         "file": "tools.js",
-        "line": 509,
-        "text": "try { unlinkSync(dbPath + '-wal') } catch {}"
-      },
-      {
-        "file": "tools.js",
-        "line": 510,
-        "text": "try { unlinkSync(dbPath + '-shm') } catch {}"
+        "line": 495,
+        "text": "unlinkSync(tmpPath)"
       }
     ]
   },
@@ -73,17 +63,17 @@
       },
       {
         "file": "index.js",
-        "line": 340,
+        "line": 477,
         "text": "for (const definition of definitions) toolCtx.tools.register(definition)"
       },
       {
         "file": "index.js",
-        "line": 346,
+        "line": 483,
         "text": "// 用 waterfall 的 `ask` 而不是 `ctx.tools.guard()`：guard 是同步的、只能 deny，"
       },
       {
         "file": "tools.js",
-        "line": 680,
+        "line": 1070,
         "text": "* @returns {ReadonlyArray<object>} 可直接 `ctx.tools.register(...)` 的定义"
       }
     ]
@@ -98,7 +88,7 @@
       },
       {
         "file": "tools.js",
-        "line": 447,
+        "line": 717,
         "text": "execFile("
       }
     ]

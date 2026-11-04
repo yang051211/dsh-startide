@@ -1,0 +1,113 @@
+{
+  "name": "dsh-intel-pulse",
+  "version": "0.9.3",
+  "scannedAt": "2026-11-04T20:39:06.147Z",
+  "icon": "dsh-intel-pulse.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/collect.js",
+        "line": 426,
+        "text": "const resp = await fetch(url, { signal: sig, headers })"
+      },
+      {
+        "file": "lib/collect.js",
+        "line": 456,
+        "text": "let resp = await fetch(url, { signal: attempt, headers: buildHeaders(url) })"
+      },
+      {
+        "file": "lib/collect.js",
+        "line": 459,
+        "text": "resp = await fetch(url, {"
+      },
+      {
+        "file": "lib/gallery.js",
+        "line": 93,
+        "text": "const res = await fetch(url.toString(), {"
+      },
+      {
+        "file": "lib/gallery.js",
+        "line": 197,
+        "text": "const res = await fetch(url.toString(), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 50,
+        "text": "const fsMod = await import('node:fs')"
+      },
+      {
+        "file": "index.js",
+        "line": 107,
+        "text": "const fsMod = await import('node:fs')"
+      },
+      {
+        "file": "lib/billing.js",
+        "line": 2,
+        "text": "import { existsSync, appendFileSync, readFileSync, unlinkSync, statSync, renameSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/billing.js",
+        "line": 116,
+        "text": "appendFileSync("
+      },
+      {
+        "file": "lib/billing.js",
+        "line": 128,
+        "text": "appendFileSync(filePath, line + '\\n', 'utf-8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/ego.js",
+        "line": 150,
+        "text": "const handle = sub.spawn({"
+      },
+      {
+        "file": "lib/ego.js",
+        "line": 187,
+        "text": "const handle = sub.spawn({"
+      },
+      {
+        "file": "lib/ego.js",
+        "line": 206,
+        "text": "const handle = sub.spawn({"
+      },
+      {
+        "file": "lib/idle.js",
+        "line": 74,
+        "text": "const handle = subprocess.spawn({"
+      },
+      {
+        "file": "lib/notify.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "sessions"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

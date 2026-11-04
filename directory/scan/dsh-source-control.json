@@ -1,7 +1,7 @@
 {
   "name": "dsh-source-control",
-  "version": "0.9.0",
-  "scannedAt": "2026-11-02T23:01:22.301Z",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-04T20:39:10.952Z",
   "icon": "dsh-source-control.svg",
   "network": {
     "hit": true,
@@ -14,7 +14,7 @@
       {
         "file": "lib/client.js",
         "line": 23,
-        "text": "es2=queue;queue=[],sending=!0;try{await fetch(API_PATH,{method:\"POST\",headers:{\"content-type\":\"application/json\"},body:JSON.stringify({repo:\"\",command:\"logEvent"
+        "text": "es3=queue;queue=[],sending=!0;try{await fetch(API_PATH,{method:\"POST\",headers:{\"content-type\":\"application/json\"},body:JSON.stringify({repo:\"\",command:\"logEvent"
       },
       {
         "file": "lib/client.js",
@@ -23,7 +23,7 @@
       },
       {
         "file": "lib/src/source-control/api/history.js",
-        "line": 191,
+        "line": 197,
         "text": "const error = await fetch(repo, remoteName, pruneRemotes, pruneAllTags, true);"
       },
       {
@@ -43,23 +43,23 @@
       },
       {
         "file": "lib/src/source-control/api/misc.js",
-        "line": 232,
+        "line": 249,
         "text": "newText = await fs.readFile(nodePath.resolve(repo, filePath), 'utf8');"
       },
       {
         "file": "lib/src/source-control/api/misc.js",
-        "line": 273,
+        "line": 290,
         "text": "newText = await fs.readFile(fullPath, 'utf8');"
       },
       {
         "file": "lib/src/source-control/commit-diff.js",
-        "line": 9,
+        "line": 11,
         "text": "import fs from 'node:fs/promises';"
       },
       {
         "file": "lib/src/source-control/commit-diff.js",
-        "line": 108,
-        "text": "const content = await fs.readFile(abs, 'utf8');"
+        "line": 225,
+        "text": "const buffer = await fs.readFile(nodePath.resolve(repo, filePath));"
       }
     ]
   },
@@ -71,24 +71,9 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/src/source-control/child-process.js",
-        "line": 7,
-        "text": "import { spawn } from 'node:child_process';"
-      },
-      {
-        "file": "lib/src/source-control/child-process.js",
-        "line": 51,
-        "text": "const child = spawn(command, [...args], { cwd, windowsHide: true, env });"
-      },
-      {
-        "file": "lib/src/source-control/git-exec.js",
-        "line": 7,
-        "text": "import { spawn } from 'node:child_process';"
-      },
-      {
-        "file": "lib/src/source-control/git-exec.js",
-        "line": 124,
-        "text": "spawn('taskkill', ['/pid', String(child.pid), '/t', '/f'], { windowsHide: true, stdio: 'ignore' });"
+        "file": "lib/src/source-control/host-runtime.js",
+        "line": 107,
+        "text": "handle = subprocess.spawn({"
       }
     ]
   },
@@ -102,7 +87,7 @@
       }
     ]
   },
-  "dependencies": 0,
+  "dependencies": 3,
   "minifiedFiles": [
     "lib/client.js"
   ],

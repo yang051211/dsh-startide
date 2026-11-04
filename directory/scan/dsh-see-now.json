@@ -1,15 +1,20 @@
 {
   "name": "dsh-see-now",
-  "version": "0.0.10",
-  "scannedAt": "2026-11-03T20:52:19.473Z",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-04T20:38:55.984Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "src/listen.js",
-        "line": 182,
+        "line": 197,
         "text": "const res = await fetch(`${cfg.baseUrl}/audio/transcriptions`, {"
+      },
+      {
+        "file": "src/listen.js",
+        "line": 226,
+        "text": "const res = await fetch(`${origin}/health`, { signal: AbortSignal.timeout(timeoutMs) });"
       }
     ]
   },
@@ -48,12 +53,12 @@
     "evidence": [
       {
         "file": "src/index.js",
-        "line": 80,
+        "line": 85,
         "text": "export const inject = ['tools', 'attachments', 'sessionController'];"
       },
       {
         "file": "src/index.js",
-        "line": 900,
+        "line": 1007,
         "text": "disposers.push(ctx.tools.register(defineTool(toolObj)));"
       }
     ]
@@ -103,12 +108,12 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 223,
+      "line": 237,
       "text": "- 抓声音：`pip install pyaudiowpatch numpy`。**不需要装虚拟声卡**，也不需要开\"立体声混音\"。"
     },
     {
       "file": "README.md",
-      "line": 254,
+      "line": 284,
       "text": "听声音：没在听 —— 没有能用的 Python（要 pip install pyaudiowpatch numpy）"
     }
   ],

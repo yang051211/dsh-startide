@@ -1,0 +1,60 @@
+{
+  "name": "dsh-harness2-meta-recursion",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-04T20:39:26.836Z",
+  "icon": "dsh-harness2-meta-recursion.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 24,
+        "text": "import { copyFile, mkdir, readFile, rename, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 876,
+        "text": "text = await readFile(this.experiencePath, 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 928,
+        "text": "const text = await readFile(this.applyStatePath, 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 949,
+        "text": "const journal = await readFile(journalPath, 'utf8').catch(() => '');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 976,
+        "text": "text = await readFile(this.evaluationsPath, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

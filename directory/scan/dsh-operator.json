@@ -1,0 +1,140 @@
+{
+  "name": "dsh-operator",
+  "version": "0.121.6",
+  "scannedAt": "2026-11-04T20:39:29.395Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/browser-cdp.js",
+        "line": 82,
+        "text": "const response = await fetch(url, { signal: controller.signal });"
+      },
+      {
+        "file": "lib/browser-cdp.js",
+        "line": 122,
+        "text": "const ws = new WebSocket(target.webSocketDebuggerUrl);"
+      },
+      {
+        "file": "lib/browser-dom.js",
+        "line": 188,
+        "text": "const ws = new WebSocket(webSocketDebuggerUrl);"
+      },
+      {
+        "file": "lib/browser-dom.js",
+        "line": 235,
+        "text": "const response = await fetch(url, { signal: controller.signal });"
+      },
+      {
+        "file": "lib/browser-dom.js",
+        "line": 310,
+        "text": "const hit = /document\\.cookie|localStorage|sessionStorage|indexedDB|\\.password|fetch\\s*\\(|sendBeacon|XMLHttpRequest/i.test(text);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 8,
+        "text": "import { chmodSync, existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/audit-log.js",
+        "line": 8,
+        "text": "import { appendFileSync, mkdirSync, renameSync, statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/audit-log.js",
+        "line": 39,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "lib/audit-log.js",
+        "line": 40,
+        "text": "appendFileSync(path, `${JSON.stringify({ t: new Date().toISOString(), event, ...sanitize(fields) })}\\n`, \"utf8\");"
+      },
+      {
+        "file": "lib/ax-observer.js",
+        "line": 13,
+        "text": "import { existsSync } from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 3,
+        "text": "# 这个 bundle patch 把插件插入 profile（host）层。在 host 层用 ctx.tools.register()"
+      },
+      {
+        "file": "lib/browser-cua-tools.js",
+        "line": 277,
+        "text": "* @param {object} ctx 插件上下文（需 ctx.tools.register）"
+      },
+      {
+        "file": "lib/browser-cua-tools.js",
+        "line": 569,
+        "text": "return ctx.tools.register(defineTool(definition));"
+      },
+      {
+        "file": "lib/clipboard-tools.js",
+        "line": 55,
+        "text": "// 必须经 ctx.tools.register 注册；直接调 defineTool 只是拼装定义，宿主看不到（0.46.2 修复）。"
+      },
+      {
+        "file": "lib/clipboard-tools.js",
+        "line": 58,
+        "text": "if (ctx !== null && typeof ctx === \"object\" && ctx.tools !== undefined && typeof ctx.tools.register === \"function\") return ctx.tools.register(registered);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/ax-observer.js",
+        "line": 12,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/ax-observer.js",
+        "line": 84,
+        "text": "execFile(HELPER_PATH, args, { timeout, maxBuffer, encoding: \"utf8\" }, (error, stdout) => {"
+      },
+      {
+        "file": "lib/ax-rpc.js",
+        "line": 7,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/ax-rpc.js",
+        "line": 80,
+        "text": "const proc = spawn(helperPath, [\"--rpc\"], { stdio: [\"pipe\", \"pipe\", \"ignore\"] });"
+      },
+      {
+        "file": "lib/browser-dom.js",
+        "line": 17,
+        "text": "import { execFile } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "lib/bin/ax-snapshot",
+    "lib/computer-use/libmacos-sck-capture.dylib",
+    "lib/computer-use/macos-sck-capture"
+  ],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

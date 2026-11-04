@@ -1,0 +1,79 @@
+{
+  "name": "dsh-wiki-notes",
+  "version": "1.3.0",
+  "scannedAt": "2026-11-04T20:39:29.775Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 77,
+        "text": "return fetch(API + path, options).then("
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/config.js",
+        "line": 3,
+        "text": "import { readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 80,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 91,
+        "text": "writeFileSync(file, `${JSON.stringify(record, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "lib/corpus.js",
+        "line": 15,
+        "text": "import { promises as fs } from 'node:fs'"
+      },
+      {
+        "file": "lib/corpus.js",
+        "line": 253,
+        "text": "text = await fs.readFile(entry.abs, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 29,
+        "text": "export const inject = ['tools', 'webServer', 'systemPrompt']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 671,
+        "text": "const register = () => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

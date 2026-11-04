@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-mobile-gateway",
-  "version": "0.11.1",
-  "scannedAt": "2026-10-26T10:04:46.765Z",
+  "version": "0.11.3",
+  "scannedAt": "2026-11-04T20:39:02.406Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -17,19 +17,19 @@
         "text": "const request = http.get({"
       },
       {
+        "file": "bin/webrtc-client.mjs",
+        "line": 116,
+        "text": "const socket = new WebSocket(url, ['dsh-mobile-v1'], {"
+      },
+      {
         "file": "lib/client.js",
-        "line": 229,
+        "line": 832,
         "text": "const response = await fetch(path, { credentials: 'same-origin', ...options })"
       },
       {
-        "file": "lib/cloudflare-tunnel.mjs",
-        "line": 2,
-        "text": "import http from 'node:http'"
-      },
-      {
-        "file": "lib/dsh-host-adapter.mjs",
-        "line": 227,
-        "text": "const response = await uploadHandler.fetch(new Request(url, {"
+        "file": "lib/client.js",
+        "line": 1395,
+        "text": "const response = await fetch('https://api.github.com/repos/Clarklevis1995/dsh-mobile/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })"
       }
     ]
   },
@@ -101,8 +101,10 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 3,
-  "minifiedFiles": [],
+  "dependencies": 4,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [],
   "setupHints": [],

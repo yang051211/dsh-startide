@@ -1,0 +1,97 @@
+{
+  "name": "dsh-cerebrum",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-04T20:39:04.914Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 18,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 34,
+        "text": "return fetch('http://127.0.0.1:' + PORTS[index] + path, init)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 130,
+        "text": "fetch('/dsh-pet-7340/state')"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 138,
+        "text": "return fetch('/dsh-pet-7340/lock' + q, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 150,
+        "text": "return fetch('/dsh-pet-7340/broadcast' + lq, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/memory.js",
+        "line": 26,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/core/storage.js",
+        "line": 14,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/core/storage.js",
+        "line": 29,
+        "text": "fs.mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/core/storage.js",
+        "line": 35,
+        "text": "const raw = fs.readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "lib/core/storage.js",
+        "line": 46,
+        "text": "fs.writeFileSync(tmp, text, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 22,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 42,
+        "text": "ctx.effect(() => ctx.tools.register(tool), `cerebrum:tool:${tool.name}`)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

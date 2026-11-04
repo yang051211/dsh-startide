@@ -1,35 +1,35 @@
 {
   "name": "@qiuzhiyei/dsh-companion",
-  "version": "2.0.0",
-  "scannedAt": "2026-10-30T23:38:40.461Z",
+  "version": "2.1.0",
+  "scannedAt": "2026-11-04T20:39:20.229Z",
   "icon": "qiuzhiyei__dsh-companion.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "dist/client/index.js",
-        "line": 374,
+        "line": 386,
         "text": "const res = await fetch(`http://127.0.0.1:${port}/api/state`, {"
       },
       {
         "file": "dist/client/index.js",
-        "line": 408,
+        "line": 420,
         "text": "const res = await fetch(url, { signal: AbortSignal.timeout(3000) });"
       },
       {
         "file": "dist/client/index.js",
-        "line": 1144,
+        "line": 1156,
         "text": "const res = await fetch(`${url}/api/dsh-sessions/delete`, {"
       },
       {
-        "file": "dist/pricing/official.js",
-        "line": 155,
-        "text": "const doFetch = fetchImpl ?? ((u, init) => fetch(u, init));"
+        "file": "dist/client/index.js",
+        "line": 2315,
+        "text": "                    const res = await fetch(`${historySearchServerUrl}/api/history-search?q=${encodeURIComponent(query)}&cursor=${cursor}`, { signal: ac.signal "
       },
       {
-        "file": "dist/ui/electron-runtime.js",
-        "line": 140,
-        "text": "const response = await fetch(url, { redirect: 'follow', signal: controller.signal });"
+        "file": "dist/client/index.js",
+        "line": 2410,
+        "text": "const res = await fetch(`${historySearchServerUrl}/api/history-turn?sessionId=${encodeURIComponent(sessionId)}&seq=${seq}`);"
       }
     ]
   },
@@ -37,28 +37,28 @@
     "hit": true,
     "evidence": [
       {
-        "file": "dist/pricing/official.js",
-        "line": 23,
-        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises';"
+        "file": "dist/pricing/holidays.js",
+        "line": 12,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "dist/pricing/holidays.js",
+        "line": 200,
+        "text": "const raw = JSON.parse(await readFile(holidayFile(dataDir), 'utf8'));"
+      },
+      {
+        "file": "dist/pricing/holidays.js",
+        "line": 214,
+        "text": "await mkdir(dataDir, { recursive: true });"
+      },
+      {
+        "file": "dist/pricing/holidays.js",
+        "line": 217,
+        "text": "await writeFile(tmp, JSON.stringify(file, null, 2), 'utf8');"
       },
       {
         "file": "dist/pricing/official.js",
-        "line": 219,
-        "text": "const raw = await readFile(this.filePath, 'utf8');"
-      },
-      {
-        "file": "dist/pricing/official.js",
-        "line": 265,
-        "text": "await mkdir(this.options.dataDir, { recursive: true });"
-      },
-      {
-        "file": "dist/pricing/official.js",
-        "line": 266,
-        "text": "await writeFile(this.filePath, `${JSON.stringify(result, null, 1)}\\n`, 'utf8');"
-      },
-      {
-        "file": "dist/storage/alert-log.js",
-        "line": 13,
+        "line": 24,
         "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises';"
       }
     ]

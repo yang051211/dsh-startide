@@ -1,7 +1,7 @@
 {
   "name": "dsh-roost",
-  "version": "0.13.0",
-  "scannedAt": "2026-11-04T07:55:50.586Z",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-04T20:38:49.392Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,12 +18,12 @@
       },
       {
         "file": "src/gpt-sovits.js",
-        "line": 368,
-        "text": "const res = await fetch(url, { signal: AbortSignal.timeout(180_000) });"
+        "line": 329,
+        "text": "export function createGptSovits({ log = () => {}, onReady = () => {}, fetchImpl = (...args) => fetch(...args) } = {}) {"
       },
       {
         "file": "src/host.js",
-        "line": 902,
+        "line": 1274,
         "text": "const r = await fetch(url, { signal: AbortSignal.timeout(5000) });"
       },
       {
@@ -68,18 +68,28 @@
     "evidence": [
       {
         "file": "src/host.js",
-        "line": 1621,
+        "line": 502,
+        "text": "* 优先问活着的 agent（`agent.ctx.tools.schemas()`），问不到才退回 `seen` 快照。"
+      },
+      {
+        "file": "src/host.js",
+        "line": 547,
+        "text": "* DSH 正好给了这个口子：`ctx.tools.guard(fn)` 是**同步**守卫，"
+      },
+      {
+        "file": "src/host.js",
+        "line": 572,
+        "text": "* 两条路都试：`ctx.tools` 是服务直接挂在上下文上的形式，"
+      },
+      {
+        "file": "src/host.js",
+        "line": 578,
+        "text": "if (typeof ctx?.tools?.guard === 'function') t = ctx.tools;"
+      },
+      {
+        "file": "src/host.js",
+        "line": 2026,
         "text": "* 挂在这里而不是插件的 ctx：`agent.ctx.tools` 是每轮都在用的那个"
-      },
-      {
-        "file": "src/tools.js",
-        "line": 59,
-        "text": "* 而走 `ctx.tools.register` 的普通对象要的是标准 JSON Schema"
-      },
-      {
-        "file": "src/tools.js",
-        "line": 109,
-        "text": "* `ctx.tools.register`。**不要反过来**——把 JSON Schema 交给 defineTool"
       }
     ]
   },
@@ -93,12 +103,12 @@
       },
       {
         "file": "src/gpt-sovits.js",
-        "line": 323,
+        "line": 381,
         "text": "spawnSync('taskkill', ['/PID', String(pid), '/T', '/F'], { windowsHide: true, timeout: 10_000 });"
       },
       {
         "file": "src/gpt-sovits.js",
-        "line": 415,
+        "line": 481,
         "text": "const proc = spawn(p.python, args, {"
       },
       {
@@ -129,7 +139,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 357,
+      "line": 447,
       "text": "setup.js       一键流程：下载解压、写配置、起停、装插件、配适配器"
     }
   ],

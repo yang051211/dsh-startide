@@ -1,0 +1,85 @@
+{
+  "name": "harnessmm-dsh",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-04T20:39:32.396Z",
+  "icon": "harnessmm-dsh.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1077,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 143,
+        "text": "ctx.inject(['fs'], fsCtx => {"
+      },
+      {
+        "file": "panel.js",
+        "line": 14,
+        "text": "import { readFileSync, existsSync } from 'node:fs';"
+      },
+      {
+        "file": "panel.js",
+        "line": 31,
+        "text": "const text = readFileSync(auditPath, 'utf8');"
+      },
+      {
+        "file": "panel.js",
+        "line": 45,
+        "text": "return readFileSync(PANEL_FILE, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 35,
+        "text": "export const inject = ['tools', 'systemPrompt'];"
+      },
+      {
+        "file": "index.js",
+        "line": 160,
+        "text": "const instruction = planInstruction(policy, ctx.tools.schemas());"
+      },
+      {
+        "file": "index.js",
+        "line": 244,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 266,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

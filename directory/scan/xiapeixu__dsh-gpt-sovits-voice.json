@@ -1,0 +1,104 @@
+{
+  "name": "@xiapeixu/dsh-gpt-sovits-voice",
+  "version": "0.5.3",
+  "scannedAt": "2026-11-04T20:39:08.856Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 22,
+        "text": "const response = await fetch(API + path, { credentials: \"same-origin\", ...options });"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 304,
+        "text": "response = await fetch(address, { signal: AbortSignal.timeout(config.timeoutMs || 120000) });"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 478,
+        "text": "const response = await fetch(url, { signal: AbortSignal.timeout(120000) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 16,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 33,
+        "text": "return JSON.parse(readFileSync(join(packageRoot, \"package.json\"), \"utf8\")).version || \"?\";"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 69,
+        "text": "appendFileSync(logPath, `[${new Date().toISOString()}] module loaded (v${pluginVersion})\\n`);"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 76,
+        "text": "appendFileSync(logPath, `[${new Date().toISOString()}] ${message}\\n`);"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 100,
+        "text": "writeFileSync(configPath, JSON.stringify(defaultConfig, null, 2) + \"\\n\", \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 718,
+        "text": "const tools = agent.ctx && agent.ctx.tools;"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 721,
+        "text": "for (const tool of allTools) tools.register(tool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 15,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 268,
+        "text": "const child = spawn(\"cmd.exe\", [\"/c\", auto.command], {"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 328,
+        "text": "child = spawn(\"powershell.exe\", [\"-NoProfile\", \"-ExecutionPolicy\", \"Bypass\", \"-File\", playScript, \"-Path\", file], { windowsHide: true });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

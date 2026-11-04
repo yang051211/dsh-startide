@@ -1,7 +1,7 @@
 {
   "name": "dsh-fish-soul",
-  "version": "0.13.7",
-  "scannedAt": "2026-11-04T07:55:56.502Z",
+  "version": "0.14.0",
+  "scannedAt": "2026-11-04T20:38:59.441Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,7 +18,7 @@
       },
       {
         "file": "lib/channels/bilibili.js",
-        "line": 690,
+        "line": 740,
         "text": "const res = await this.fetch(url, { redirect: 'manual', headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(5000) });"
       },
       {
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/backup.js",
-        "line": 11,
-        "text": "import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, renameSync, rmSync, statSync, unlinkSync, writeFileSync } from 'node:fs';"
+        "file": "lib/attachments.js",
+        "line": 7,
+        "text": "import { copyFileSync, existsSync, mkdirSync, readFileSync, realpathSync, statSync, writeFileSync } from 'node:fs';"
       },
       {
-        "file": "lib/backup.js",
-        "line": 29,
-        "text": "try { return JSON.parse(readFileSync(pendingPath(), 'utf8')); } catch { return null; }"
+        "file": "lib/attachments.js",
+        "line": 35,
+        "text": "const buf = readFileSync(abs);"
       },
       {
-        "file": "lib/backup.js",
-        "line": 45,
-        "text": "if (existsSync(`${path}-wal`) && statSync(`${path}-wal`).size === 0) rmSync(`${path}-wal`, { force: true });"
+        "file": "lib/attachments.js",
+        "line": 84,
+        "text": "mkdirSync(dir, { recursive: true });"
       },
       {
-        "file": "lib/backup.js",
-        "line": 46,
-        "text": "rmSync(`${path}-shm`, { force: true });"
+        "file": "lib/attachments.js",
+        "line": 85,
+        "text": "writeFileSync(dest, bytes);"
       },
       {
-        "file": "lib/backup.js",
-        "line": 80,
-        "text": "const drop = () => rmSync(pendingPath(), { force: true });"
+        "file": "lib/attachments.js",
+        "line": 150,
+        "text": "mkdirSync(dir, { recursive: true });"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "lib/gateway.js",
-        "line": 376,
+        "line": 431,
         "text": "const tools = this.ctx.tools;"
       },
       {
@@ -78,17 +78,17 @@
       },
       {
         "file": "lib/index.js",
-        "line": 67,
+        "line": 68,
         "text": "export const inject = ['webServer', 'tools', 'systemPrompt', 'llm', 'agents', 'workspaceRegistry'];"
       },
       {
         "file": "lib/index.js",
-        "line": 331,
+        "line": 335,
         "text": "// #26：DSH 的联网工具（dsh-tool-web）是按会话 / agent 挂的，插件自己的 ctx.tools 里经常查不到，"
       },
       {
         "file": "lib/index.js",
-        "line": 342,
+        "line": 346,
         "text": "try { if (typeof ctx.tools?.get === 'function' && ctx.tools.get('web_search') !== undefined) return 'found'; } catch { /* 当查不到 */ }"
       }
     ]

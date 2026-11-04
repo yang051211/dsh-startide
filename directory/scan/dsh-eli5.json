@@ -1,0 +1,69 @@
+{
+  "name": "dsh-eli5",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-04T20:39:20.363Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1145,
+        "text": "const response = await fetch(ASK_ENDPOINT, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1263,
+        "text": "void fetch(HEALTH_ENDPOINT, { headers: { accept: 'application/json' } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/http.js",
+        "line": 22,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/http.js",
+        "line": 129,
+        "text": "const source = await readFile(RENDERER_FILE, 'utf8');"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 26,
+        "text": "import { realpathSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 27,
+        "text": "import { open, readdir, readFile as readText, realpath, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 302,
+        "text": "async readFile(args) {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,57 @@
+{
+  "name": "dsh-win-bash",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-04T20:39:10.461Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/resolve-bash.js",
+        "line": 17,
+        "text": "import { statSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 36,
+        "text": "import { execFileSync, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 123,
+        "text": "child = spawn(argv[0], argv.slice(1), {"
+      },
+      {
+        "file": "lib/sandbox-failure.js",
+        "line": 20,
+        "text": "*    powershell.exe survive the same spawn (console or not), only bash dies —"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "loader",
+    "sandbox"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,80 @@
+{
+  "name": "@tom2012/dsh-meeting",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-04T20:39:24.549Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 187,
+        "text": "const response = await fetch(\"/dsh-meeting/api\", { headers: { accept: \"application/json\" } });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "import { appendFile, mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 85,
+        "text": "raw = await readFile(this.file, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 104,
+        "text": "await mkdir(this.dir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 105,
+        "text": "await writeFile(tmp, JSON.stringify(this.state, null, 2) + '\\n', 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 181,
+        "text": "const raw = await readFile(this.file, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 835,
+        "text": "ctx.effect(() => tools.register(listDefinition), 'dsh-meeting: meeting_list')"
+      },
+      {
+        "file": "index.js",
+        "line": 836,
+        "text": "ctx.effect(() => tools.register(readDefinition), 'dsh-meeting: meeting_read')"
+      },
+      {
+        "file": "index.js",
+        "line": 837,
+        "text": "ctx.effect(() => tools.register(sendDefinition), 'dsh-meeting: meeting_send')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

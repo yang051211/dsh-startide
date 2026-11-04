@@ -1,0 +1,88 @@
+{
+  "name": "dsh-persona-panel",
+  "version": "0.7.3",
+  "scannedAt": "2026-11-04T20:39:15.968Z",
+  "icon": "dsh-persona-panel.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 53,
+        "text": "const res = await fetch(API, {"
+      },
+      {
+        "file": "client.js",
+        "line": 61,
+        "text": "const fresh = await fetch(API)"
+      },
+      {
+        "file": "client.js",
+        "line": 80,
+        "text": "const res = await fetch(url)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { appendFileSync, copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 117,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 136,
+        "text": "mkdirSync(root, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 140,
+        "text": "writeFileSync(tmp, JSON.stringify(db, null, 2), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 153,
+        "text": "mkdirSync(dir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 2591,
+        "text": "export const inject = ['tools', 'systemPrompt']"
+      },
+      {
+        "file": "index.js",
+        "line": 2750,
+        "text": "disposers.push(ctx.tools.register(tool))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

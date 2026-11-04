@@ -1,0 +1,100 @@
+{
+  "name": "dsh-my-phone",
+  "version": "1.8.42",
+  "scannedAt": "2026-11-04T20:39:22.257Z",
+  "icon": "dsh-my-phone.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/diag.js",
+        "line": 148,
+        "text": "return fetch('/__myphone/diag/time', { cache: 'no-store' })"
+      },
+      {
+        "file": "src/diag.js",
+        "line": 177,
+        "text": "return fetch(t.url, opt)"
+      },
+      {
+        "file": "src/diag.js",
+        "line": 239,
+        "text": "fetch('/__myphone/diag/report', {"
+      },
+      {
+        "file": "src/gate.js",
+        "line": 1,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "src/gate.js",
+        "line": 1184,
+        "text": "const upstream = http.request("
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/gate.js",
+        "line": 4,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "src/gate.js",
+        "line": 622,
+        "text": "fs.appendFileSync(file, chunks.join(''))"
+      },
+      {
+        "file": "src/gate.js",
+        "line": 669,
+        "text": "fs.mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "src/gate.js",
+        "line": 694,
+        "text": "fs.mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "src/gate.js",
+        "line": 1433,
+        "text": "const bytes = fs.readFileSync(file)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/tunnel.js",
+        "line": 4,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "src/tunnel.js",
+        "line": 59,
+        "text": "const child = spawn("
+      },
+      {
+        "file": "src/tunnel.js",
+        "line": 200,
+        "text": "const res = spawnSync('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', script], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

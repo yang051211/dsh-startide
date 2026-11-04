@@ -1,0 +1,74 @@
+{
+  "name": "@z-y-q/dsh-git-panel",
+  "version": "0.0.1",
+  "scannedAt": "2026-11-04T20:39:22.538Z",
+  "icon": "z-y-q__dsh-git-panel.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/git.js",
+        "line": 310,
+        "text": "async fetch(cwd) { return ok(cwd, ['fetch', '--all'], { timeoutMs: 120000 }) },"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 287,
+        "text": "async fetch(agent) {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 289,
+        "text": "await this.git.fetch(cwd)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/exec.js",
+        "line": 4,
+        "text": "// 本函数负责补上 git 可执行文件并 spawn(与 test/git-parse.test.mjs 的 realExec 同约定)。"
+      },
+      {
+        "file": "lib/exec.js",
+        "line": 39,
+        "text": "// 3) collect 模式 spawn(stdout/stderr 截断上限)"
+      },
+      {
+        "file": "lib/exec.js",
+        "line": 40,
+        "text": "const child = subprocess.spawn({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 105,
+        "text": "// 暂存+未暂存合并统计:单次 spawn(unborn HEAD 容错为空)"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentDefaultModel",
+    "llm",
+    "subprocess",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

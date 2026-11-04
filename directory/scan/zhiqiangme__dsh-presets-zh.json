@@ -1,0 +1,67 @@
+{
+  "name": "@zhiqiangme/dsh-presets-zh",
+  "version": "26.11.4",
+  "scannedAt": "2026-11-04T20:39:12.507Z",
+  "icon": "zhiqiangme__dsh-presets-zh.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 176,
+        "text": "const response = await fetch(path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/modes.js",
+        "line": 1,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/modes.js",
+        "line": 3,
+        "text": "const snapshot = (file) => JSON.parse(readFileSync(new URL(`./presets/${file}.json`, import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "lib/prompt.js",
+        "line": 1,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/prompt.js",
+        "line": 3,
+        "text": "const standard = JSON.parse(readFileSync(new URL('./translations/standard.json', import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "lib/prompt.js",
+        "line": 4,
+        "text": "const sdkVariants = JSON.parse(readFileSync(new URL('./translations/ptc-sdk.json', import.meta.url), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentPresets",
+    "loader"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

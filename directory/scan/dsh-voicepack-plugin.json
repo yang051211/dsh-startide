@@ -1,0 +1,118 @@
+{
+  "name": "dsh-voicepack-plugin",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-04T20:39:22.013Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/wechat.mjs",
+        "line": 118,
+        "text": "const response = await fetch(`${String(io.reader_base_url).replace(/\\/$/, '')}/api/v1/sessions?limit=80`, {"
+      },
+      {
+        "file": "src/wechat.mjs",
+        "line": 158,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 18,
+        "text": "import { appendFileSync, existsSync, mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "index.mjs",
+        "line": 589,
+        "text": "mkdirSync(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "index.mjs",
+        "line": 590,
+        "text": "appendFileSync(file, `${text}\\n`);"
+      },
+      {
+        "file": "src/speech.mjs",
+        "line": 12,
+        "text": "import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "src/speech.mjs",
+        "line": 69,
+        "text": "mkdirSync(dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 45,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.mjs",
+        "line": 369,
+        "text": "const disposers = definitions.map((definition) => tools.register(definition));"
+      },
+      {
+        "file": "index.mjs",
+        "line": 504,
+        "text": "const tools = ctx.get?.('tools') ?? ctx.tools;"
+      },
+      {
+        "file": "index.mjs",
+        "line": 531,
+        "text": "const disposers = definitions.map((definition) => tools.register(definition));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/speech.mjs",
+        "line": 11,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "src/speech.mjs",
+        "line": 71,
+        "text": "const toWav = spawnSync(rvc.ffmpeg, ['-y', '-i', inputMp3, '-ar', '16000', '-ac', '1', inputWav], {"
+      },
+      {
+        "file": "src/speech.mjs",
+        "line": 83,
+        "text": "const convert = spawnSync(rvc.python, args, {"
+      },
+      {
+        "file": "src/speech.mjs",
+        "line": 98,
+        "text": "const eq = spawnSync(rvc.ffmpeg, eqArgs, { timeout: 60_000, windowsHide: true });"
+      },
+      {
+        "file": "tools/install.mjs",
+        "line": 13,
+        "text": "import { spawnSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

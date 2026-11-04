@@ -1,0 +1,138 @@
+{
+  "name": "dsh-any-audio",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-04T20:39:05.956Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 229,
+        "text": "const response = await fetch(`${API}${path}`, {"
+      },
+      {
+        "file": "src/audio/fonts.js",
+        "line": 187,
+        "text": "response = await fetch(url, { redirect: 'follow', signal: signal ?? AbortSignal.timeout(180000) })"
+      },
+      {
+        "file": "src/audio/tts-providers.js",
+        "line": 4,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "src/audio/tts-providers.js",
+        "line": 5,
+        "text": "import https from 'node:https'"
+      },
+      {
+        "file": "test/settings.mjs",
+        "line": 3,
+        "text": "import http from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/anyaudio-cli.mjs",
+        "line": 2,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "scripts/anyaudio-cli.mjs",
+        "line": 54,
+        "text": "const score = JSON.parse(await readFile(resolve(scorePath), 'utf8'))"
+      },
+      {
+        "file": "scripts/anyaudio-cli.mjs",
+        "line": 61,
+        "text": "await mkdir(dirname(target), { recursive: true })"
+      },
+      {
+        "file": "scripts/anyaudio-cli.mjs",
+        "line": 62,
+        "text": "await writeFile(target, encodeWav({ sampleRate: rendered.sampleRate, channels: rendered.channels }))"
+      },
+      {
+        "file": "scripts/smoke.mjs",
+        "line": 7,
+        "text": "import { readFile } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 8,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "src/tools/mix.js",
+        "line": 345,
+        "text": "ctx.tools.register(mixToolDefinition)"
+      },
+      {
+        "file": "src/tools/music.js",
+        "line": 180,
+        "text": "ctx.tools.register(musicToolDefinition)"
+      },
+      {
+        "file": "src/tools/sfx.js",
+        "line": 314,
+        "text": "ctx.tools.register(sfxToolDefinition)"
+      },
+      {
+        "file": "src/tools/sources.js",
+        "line": 219,
+        "text": "ctx.tools.register(sourcesToolDefinition)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/audio/tts-providers.js",
+        "line": 1,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "src/audio/tts-providers.js",
+        "line": 88,
+        "text": "const result = spawnSync(command, ['-e', 'process.stdout.write(process.version)'], {"
+      },
+      {
+        "file": "src/audio/tts-providers.js",
+        "line": 122,
+        "text": "const child = spawn(runtime, [EDGE_WORKER], { stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true })"
+      },
+      {
+        "file": "src/tools/mix.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/tools/mix.js",
+        "line": 76,
+        "text": "child = spawn(command, ['-hide_banner', '-i', file], { windowsHide: true, stdio: ['ignore', 'ignore', 'pipe'], signal: AbortSignal.timeout(15000) })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

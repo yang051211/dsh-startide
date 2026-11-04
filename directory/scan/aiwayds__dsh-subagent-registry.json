@@ -1,7 +1,7 @@
 {
   "name": "@aiwayds/dsh-subagent-registry",
-  "version": "0.17.0",
-  "scannedAt": "2026-11-01T19:08:55.407Z",
+  "version": "0.18.0",
+  "scannedAt": "2026-11-04T20:39:01.889Z",
   "icon": "aiwayds__dsh-subagent-registry.svg",
   "network": {
     "hit": true,
@@ -38,13 +38,13 @@
       },
       {
         "file": "lib/index.js",
-        "line": 94,
+        "line": 99,
         "text": "content: stripFrontmatter(await readFile(SKILL_BODY_URLS[language], 'utf8')),"
       },
       {
-        "file": "lib/preset-store.js",
-        "line": 1,
-        "text": "import { constants } from 'node:fs';"
+        "file": "lib/opt-in-agents.js",
+        "line": 21,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
       }
     ]
   },
@@ -68,13 +68,13 @@
       },
       {
         "file": "lib/index.js",
-        "line": 132,
+        "line": 137,
         "text": "export const inject = ['tools', 'subagents', 'agents', 'skills', 'systemPrompt'];"
       },
       {
         "file": "lib/index.js",
-        "line": 210,
-        "text": "let dispatch = ctx.tools.register(definition);"
+        "line": 235,
+        "text": "ctx.effect(() => ctx.tools.register(createCodemodeTool(deps)), 'dsh-subagent-registry:codemode');"
       }
     ]
   },
@@ -118,7 +118,7 @@
       }
     ]
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [
     "lib/client.js"
   ],

@@ -1,0 +1,87 @@
+{
+  "name": "dsh-persona-reflect",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-04T20:39:20.594Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bridge-patch/apply.mjs",
+        "line": 13,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "bridge-patch/apply.mjs",
+        "line": 48,
+        "text": "if (fs.existsSync(PLIST)) fs.rmSync(PLIST, { force: true });"
+      },
+      {
+        "file": "bridge-patch/apply.mjs",
+        "line": 59,
+        "text": "fs.mkdirSync(stateDir, { recursive: true });"
+      },
+      {
+        "file": "bridge-patch/apply.mjs",
+        "line": 61,
+        "text": "fs.mkdirSync(scriptsDir, { recursive: true });"
+      },
+      {
+        "file": "bridge-patch/apply.mjs",
+        "line": 122,
+        "text": "fs.mkdirSync(path.dirname(PLIST), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 347,
+        "text": "for (const tool of tools) ctx.tools.register({ ...baseTool, ...tool });"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bridge-patch/apply.mjs",
+        "line": 16,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "bridge-patch/apply.mjs",
+        "line": 36,
+        "text": "const which = spawnSync('/bin/zsh', ['-lc', 'command -v node'], { encoding: 'utf8' });"
+      },
+      {
+        "file": "bridge-patch/apply.mjs",
+        "line": 42,
+        "text": "const r = spawnSync('launchctl', ctl, { encoding: 'utf8' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

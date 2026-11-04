@@ -1,0 +1,81 @@
+{
+  "name": "dsh-dual-proxy",
+  "version": "0.7.2",
+  "scannedAt": "2026-11-04T20:39:18.136Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/fetch-route.js",
+        "line": 7,
+        "text": "undiciPromise ??= import('undici');"
+      },
+      {
+        "file": "src/server.js",
+        "line": 1,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "src/server.js",
+        "line": 373,
+        "text": "const upstreamReq = http.request(reqOpts, (up) => {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/claude-dual-proxy.js",
+        "line": 4,
+        "text": "import { realpathSync } from 'node:fs';"
+      },
+      {
+        "file": "bin/dsh-dual-proxy.js",
+        "line": 3,
+        "text": "import { realpathSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/claude-dual-proxy.js",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "bin/claude-dual-proxy.js",
+        "line": 108,
+        "text": "const child = spawn(claudeBin, claudeArgs, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 18,
+      "text": "npm install -g dsh-dual-proxy"
+    },
+    {
+      "file": "README.md",
+      "line": 18,
+      "text": "npm install -g dsh-dual-proxy"
+    }
+  ],
+  "skippedEntries": []
+}

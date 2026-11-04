@@ -1,41 +1,51 @@
 {
   "name": "dsh-free-search",
-  "version": "0.9.30",
-  "scannedAt": "2026-11-03T20:51:57.118Z",
+  "version": "0.9.31",
+  "scannedAt": "2026-11-04T20:38:48.407Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 698,
+        "line": 714,
+        "text": "const response = await fetch(`${BRIDGE_PREFIX}/doctor`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 723,
         "text": "const response = await fetch(`${BRIDGE_PREFIX}/describe`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 707,
+        "line": 732,
         "text": "const response = await fetch(`${BRIDGE_PREFIX}/mutate`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 716,
+        "line": 741,
         "text": "const response = await fetch(`${BRIDGE_PREFIX}/raw-search`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 725,
+        "line": 750,
         "text": "const response = await fetch(`${BRIDGE_PREFIX}/credentials-status`, {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 734,
-        "text": "const response = await fetch(`${BRIDGE_PREFIX}/credentials-set`, {"
       }
     ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/agy.js",
+        "line": 10,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/agy.js",
+        "line": 155,
+        "text": "fs.mkdirSync(scratch, { recursive: true });"
+      },
       {
         "file": "lib/cache.js",
         "line": 5,
@@ -47,19 +57,9 @@
         "text": "mkdirSync(dir, { recursive: true });"
       },
       {
-        "file": "lib/fetch_provider.js",
-        "line": 11,
-        "text": "import { existsSync, mkdtempSync, rmSync } from \"node:fs\";"
-      },
-      {
-        "file": "lib/fetch_provider.js",
-        "line": 71,
-        "text": "if (tmpDir) try { rmSync(tmpDir, { recursive: true, force: true }); } catch { /* 忽略 */ }"
-      },
-      {
-        "file": "lib/fetch_provider.js",
-        "line": 102,
-        "text": "setTimeout(() => { try { rmSync(tmpDir, { recursive: true, force: true }); } catch { /* 忽略 */ } }, 500);"
+        "file": "lib/cooldown.js",
+        "line": 13,
+        "text": "import fs from \"node:fs\";"
       }
     ]
   },
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 5321,
+        "line": 5471,
         "text": "const dispose = sctx.tools.register("
       },
       {
         "file": "lib/index.js",
-        "line": 5448,
+        "line": 5598,
         "text": "const dispose = sctx.tools.register("
       },
       {
         "file": "lib/index.js",
-        "line": 5554,
+        "line": 5704,
         "text": "const dispose = sctx.tools.register("
       },
       {
         "file": "lib/index.js",
-        "line": 5646,
+        "line": 5796,
         "text": "const dispose = sctx.tools.register("
       },
       {
         "file": "lib/index.js",
-        "line": 5689,
+        "line": 5839,
         "text": "const dispose = sctx.tools.register("
       }
     ]
@@ -96,6 +96,16 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/agy.js",
+        "line": 9,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/agy.js",
+        "line": 159,
+        "text": "const child = execFile(bin, args, { timeout: timeoutMs, maxBuffer: 16 * 1024 * 1024, windowsHide: true, cwd }, (error, stdout, stderr) => {"
+      },
       {
         "file": "lib/fetch_provider.js",
         "line": 10,
@@ -110,16 +120,6 @@
         "file": "lib/fetch_provider.js",
         "line": 89,
         "text": "const killer = spawn(\"taskkill\", [\"/pid\", String(child.pid), \"/T\", \"/F\"], { windowsHide: true, stdio: \"ignore\" });"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 7,
-        "text": "import { execFile } from \"node:child_process\";"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 1549,
-        "text": "const child = execFile(bin, args, { timeout: 180000, maxBuffer: 16 * 1024 * 1024, windowsHide: true, cwd }, (error, stdout, stderr) => {"
       }
     ]
   },

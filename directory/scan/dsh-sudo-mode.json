@@ -1,0 +1,99 @@
+{
+  "name": "dsh-sudo-mode",
+  "version": "0.5.4",
+  "scannedAt": "2026-11-04T20:39:04.277Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/audit.js",
+        "line": 1,
+        "text": "import { chmodSync, closeSync, mkdirSync, openSync, writeSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/audit.js",
+        "line": 56,
+        "text": "mkdirSync(dir, { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/broker.js",
+        "line": 2,
+        "text": "import { chmodSync, existsSync, mkdirSync, readFileSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/broker.js",
+        "line": 54,
+        "text": "mkdirSync(dir, { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/broker.js",
+        "line": 76,
+        "text": "writeFileSync(file, script, { encoding: 'utf8', mode: 0o700 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "export const inject = ['tools', 'permissionPresets', 'systemPrompt']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 527,
+        "text": "ctx.effect(() => ctx.tools.register(createTool(ctx)), 'sudo-mode.sudo_exec')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/broker.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/broker.js",
+        "line": 346,
+        "text": "child = spawn('/usr/bin/sudo', ['-A', '-k', '--', '/bin/bash', '-lc', command], {"
+      },
+      {
+        "file": "lib/broker.js",
+        "line": 397,
+        "text": "spawn('/usr/bin/sudo', ['-k'], { stdio: 'ignore' }).unref()"
+      },
+      {
+        "file": "lib/broker.js",
+        "line": 496,
+        "text": "gate = spawn("
+      },
+      {
+        "file": "lib/danger.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "permissionPresets",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

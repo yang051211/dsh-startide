@@ -1,0 +1,66 @@
+{
+  "name": "dsh-pixiv-skill",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-04T20:39:17.590Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/index.js",
+        "line": 5,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 6,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 28,
+        "text": "const { description } = parse(readFileSync(skillPath, 'utf8'))"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 44,
+        "text": "const raw = await readFile(locator, { encoding: 'utf8', signal: options?.signal })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 28,
+      "text": "pip install -r requirements.txt"
+    },
+    {
+      "file": "README.md",
+      "line": 51,
+      "text": "把 `web` 换成你用的配置名（如 `tui`、`headless`）。Python 依赖仍要自己装：`pip install -r requirements.txt`。"
+    }
+  ],
+  "skippedEntries": []
+}

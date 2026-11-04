@@ -1,0 +1,97 @@
+{
+  "name": "dsh-skin-hdd-fairy",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-04T20:39:17.384Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 184,
+        "text": "void fetch('/hdd/report', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 941,
+        "text": "info.promise = fetch('/hdd/info')"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 969,
+        "text": "return fetch(url)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1039,
+        "text": "fetch(`/hdd/greeting?hour=${hour}`)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1212,
+        "text": "fetch('/hdd/info')"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/asset-store.js",
+        "line": 10,
+        "text": "import { readdir, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "import { createReadStream } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "import { appendFile, mkdir, readFile, readdir, stat, unlink, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 118,
+        "text": "await unlink(join(dir, name)).catch(() => {})"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 158,
+        "text": "await mkdir(dir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 229,
+        "text": "const child = spawn(command, args, { detached: true, stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

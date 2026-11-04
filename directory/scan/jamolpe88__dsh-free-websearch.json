@@ -1,0 +1,60 @@
+{
+  "name": "@jamolpe88/dsh-free-websearch",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-04T20:39:16.475Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/fetch.js",
+        "line": 34,
+        "text": "async fetch(request, signal) {"
+      },
+      {
+        "file": "lib/fetch.js",
+        "line": 41,
+        "text": "native = await getNative().fetch(request, signal);"
+      },
+      {
+        "file": "lib/lanes.js",
+        "line": 31,
+        "text": "* @param options.fetchImpl - injectable fetch (tests, proxies)."
+      },
+      {
+        "file": "scripts/probe.mjs",
+        "line": 35,
+        "text": "const response = await fetch(url, { ...init, signal: AbortSignal.timeout(15_000) });"
+      },
+      {
+        "file": "scripts/probe.mjs",
+        "line": 65,
+        "text": "const result = await provider.fetch({ url });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "web"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

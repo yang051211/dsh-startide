@@ -1,0 +1,109 @@
+{
+  "name": "dsh-bilibili-summary",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-04T20:39:26.098Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 84,
+        "text": "const response = await fetch(ref.value, { redirect: 'follow', signal: options.signal }).catch(() => undefined)"
+      },
+      {
+        "file": "lib/http.js",
+        "line": 70,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "lib/http.js",
+        "line": 97,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 75,
+        "text": "content: skillBody(readFileSync(new URL('SKILL.md', SKILL_DIR), 'utf8')),"
+      },
+      {
+        "file": "index.js",
+        "line": 82,
+        "text": "const fs = ctx.get ? ctx.get('fs') : ctx.fs"
+      },
+      {
+        "file": "lib/asr.js",
+        "line": 14,
+        "text": "import { existsSync, mkdirSync, readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/asr.js",
+        "line": 95,
+        "text": "mkdirSync(venvDir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "export const inject = ['skills', 'tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 101,
+        "text": "for (const tool of createBilibiliTools({ resolvePath: resolveOutput, defaults })) ctx.tools.register(tool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/asr.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/asr.js",
+        "line": 50,
+        "text": "const child = spawn(command, args, { stdio: ['ignore', 'pipe', 'pipe'] })"
+      },
+      {
+        "file": "lib/audio.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/audio.js",
+        "line": 46,
+        "text": "const child = spawn(command, args, { stdio: ['ignore', 'pipe', 'pipe'] })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

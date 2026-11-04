@@ -1,0 +1,83 @@
+{
+  "name": "dsh-annotate-sync",
+  "version": "2.0.0",
+  "scannedAt": "2026-11-04T20:39:13.258Z",
+  "icon": "dsh-annotate-sync.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 394,
+        "text": "const response = await fetch(API_PATH, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "import { readFile, realpath, stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 392,
+        "text": "const data = await readFile(targetReal);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 412,
+        "text": "overlaySource = await readFile(overlayFile, \"utf-8\");"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 20,
+        "text": "import { mkdir, readFile, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 327,
+        "text": "await mkdir(dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 32,
+        "text": "export const inject = [\"webServer\", \"tools\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 550,
+        "text": "if (toolEnabled && ctx.tools !== undefined && ctx.tools !== null) {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 553,
+        "text": "registerEffect(() => ctx.tools.register(tool), `annotate-sync: tool ${tool.name}`);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

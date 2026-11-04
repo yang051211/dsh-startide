@@ -1,0 +1,72 @@
+{
+  "name": "dsh-priority",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-04T20:39:12.672Z",
+  "icon": "dsh-priority.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 9,
+        "text": "import fs from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 62,
+        "text": "const buf = await fs.readFile(target)"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 2,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 41,
+        "text": "const raw = await fs.readFile(this.#file, 'utf8');"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 66,
+        "text": "await fs.mkdir(path.dirname(this.#file), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "export const inject = ['webServer', 'tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 114,
+        "text": "ctx.effect(() => ctx.tools.register(def), 'priority: tool ' + def.name)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

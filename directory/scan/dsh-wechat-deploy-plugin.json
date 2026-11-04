@@ -1,0 +1,102 @@
+{
+  "name": "dsh-wechat-deploy-plugin",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-04T20:39:21.189Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/log.mjs",
+        "line": 8,
+        "text": "import { appendFileSync, mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "src/log.mjs",
+        "line": 20,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "src/log.mjs",
+        "line": 28,
+        "text": "if (file !== undefined) appendFileSync(file, `${text}\\n`);"
+      },
+      {
+        "file": "src/powershell.mjs",
+        "line": 17,
+        "text": "import { statSync } from 'node:fs';"
+      },
+      {
+        "file": "src/settings.mjs",
+        "line": 13,
+        "text": "import { readFileSync, statSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 32,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.mjs",
+        "line": 129,
+        "text": "const tools = ctx.get?.('tools') ?? ctx.tools;"
+      },
+      {
+        "file": "index.mjs",
+        "line": 137,
+        "text": "const disposers = definitions.map((definition) => tools.register(definition));"
+      },
+      {
+        "file": "index.mjs",
+        "line": 404,
+        "text": "const disposers = definitions.map((definition) => tools.register(definition));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/powershell.mjs",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/powershell.mjs",
+        "line": 85,
+        "text": "const child = spawn(executable, args, { cwd, env, windowsHide: true });"
+      },
+      {
+        "file": "src/powershell.mjs",
+        "line": 265,
+        "text": "* @param {import('node:child_process').ChildProcess} child"
+      },
+      {
+        "file": "src/powershell.mjs",
+        "line": 276,
+        "text": "const killer = spawn('taskkill', ['/PID', String(pid), '/T', '/F'], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,134 @@
+{
+  "name": "@luoyi-dsh/instagram-mcp",
+  "version": "1.0.9",
+  "scannedAt": "2026-11-04T20:39:01.341Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 25,
+        "text": "const jget = async (path) => asJson(await fetch(API + path, { credentials: 'same-origin' }))"
+      },
+      {
+        "file": "client.js",
+        "line": 28,
+        "text": "await fetch(API + path, {"
+      },
+      {
+        "file": "client.js",
+        "line": 430,
+        "text": "fetch('/api/instagram/scroll/config', { credentials: 'same-origin' })"
+      },
+      {
+        "file": "client.js",
+        "line": 433,
+        "text": "fetch('/api/instagram/config', { credentials: 'same-origin' })"
+      },
+      {
+        "file": "client.js",
+        "line": 500,
+        "text": "fetch('/api/instagram/scroll/config', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 13,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 58,
+        "text": "mkdirSync(dataDir, { recursive: true });"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 64,
+        "text": "return JSON.parse(readFileSync(configFile, 'utf-8'));"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 78,
+        "text": "writeFileSync(configFile, JSON.stringify(activeConfig, null, 2), 'utf-8');"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 87,
+        "text": "mkdirSync(sessionDir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 50,
+        "text": "export const inject = ['tools', 'webServer'];"
+      },
+      {
+        "file": "dist/tools/mcpTools.js",
+        "line": 2,
+        "text": "* src/tools/mcpTools.ts —— 向 DSH ctx.tools 註冊 Instagram MCP 標準工具"
+      },
+      {
+        "file": "dist/tools/mcpTools.js",
+        "line": 20,
+        "text": "const tools = (typeof ctx.get === 'function' ? ctx.get('tools') : undefined) || ctx.tools;"
+      },
+      {
+        "file": "dist/tools/mcpTools.js",
+        "line": 39,
+        "text": "tools.register(enriched);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/lib/env.js",
+        "line": 6,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "dist/lib/env.js",
+        "line": 17,
+        "text": "const res = spawnSync(binPath, ['-c', 'import instagrapi, mcp, pydantic; print(\"OK\")'], {"
+      },
+      {
+        "file": "dist/lib/env.js",
+        "line": 45,
+        "text": "const res = spawnSync(cmd, ['-c', 'import sys; print(sys.version_info[0])'], {"
+      },
+      {
+        "file": "dist/lib/env.js",
+        "line": 69,
+        "text": "const venvRes = spawnSync(systemPython, ['-m', 'venv', venvDir], {"
+      },
+      {
+        "file": "dist/lib/env.js",
+        "line": 84,
+        "text": "const pipRes = spawnSync(venvPython, ['-m', 'pip', 'install', '--quiet', '-r', reqFile], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

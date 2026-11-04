@@ -1,0 +1,90 @@
+{
+  "name": "dsh-trust-center",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-04T20:39:09.262Z",
+  "icon": "dsh-trust-center.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/ui/client.js",
+        "line": 240,
+        "text": "fetch(`${STATUS_PATH}${nonce === 0 ? '' : '?refresh=1'}`, {"
+      },
+      {
+        "file": "src/ui/client.js",
+        "line": 650,
+        "text": "const response = await fetch(BASELINE_PATH, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/check.js",
+        "line": 5,
+        "text": "import { existsSync, readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "scripts/check.js",
+        "line": 13,
+        "text": "return JSON.parse(readFileSync(join(root, relative), 'utf8'))"
+      },
+      {
+        "file": "scripts/check.js",
+        "line": 53,
+        "text": "const patch = readFileSync(join(root, 'cordis.patch.yml'), 'utf8')"
+      },
+      {
+        "file": "src/baseline.js",
+        "line": 20,
+        "text": "} from 'node:fs'"
+      },
+      {
+        "file": "src/baseline.js",
+        "line": 61,
+        "text": "const parsed = JSON.parse(readFileSync(filePath, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/heuristics.js",
+        "line": 475,
+        "text": "* @param {Record<string, any>} schema - ToolSchema from ctx.tools.schemas()."
+      },
+      {
+        "file": "src/plugin.js",
+        "line": 46,
+        "text": "if (typeof ctx.tools?.register !== 'function') return"
+      },
+      {
+        "file": "src/plugin.js",
+        "line": 48,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "src/scanner.js",
+        "line": 5,
+        "text": "* `ctx.tools.schemas()` and Skills from the optional `ctx.skills` registry."
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

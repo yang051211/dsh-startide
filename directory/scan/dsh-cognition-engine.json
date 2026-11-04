@@ -1,0 +1,102 @@
+{
+  "name": "dsh-cognition-engine",
+  "version": "0.11.0",
+  "scannedAt": "2026-11-04T20:39:28.433Z",
+  "icon": "dsh-cognition-engine.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 446,
+        "text": "fetch(path, {"
+      },
+      {
+        "file": "client.js",
+        "line": 861,
+        "text": "const res = await fetch('/cognition-engine/snapshots', { cache: 'no-store' });"
+      },
+      {
+        "file": "client.js",
+        "line": 873,
+        "text": "const res = await fetch('/cognition-engine/audit?limit=5', { cache: 'no-store' });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 562,
+        "text": "// 宿主 → 页面 的数据桥：Client 半区 fetch('/cognition-engine/state')"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/audit.js",
+        "line": 9,
+        "text": "import { appendFile, mkdir, readFile, rename, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/audit.js",
+        "line": 28,
+        "text": "await mkdir(dirname(this.filePath), { recursive: true });"
+      },
+      {
+        "file": "lib/audit.js",
+        "line": 29,
+        "text": "await appendFile(this.filePath, line, 'utf8');"
+      },
+      {
+        "file": "lib/audit.js",
+        "line": 37,
+        "text": "const raw = await readFile(this.filePath, 'utf8');"
+      },
+      {
+        "file": "lib/gaps.js",
+        "line": 17,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "* 导出形式：`export function apply(ctx, config)` + `export const inject = ['tools']`。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 36,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 454,
+        "text": "const tools = (ctx.get?.('tools') ?? ctx.tools);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1156,
+        "text": "disposers.push(tools.register(definition));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

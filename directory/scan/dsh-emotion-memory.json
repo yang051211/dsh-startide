@@ -1,0 +1,85 @@
+{
+  "name": "dsh-emotion-memory",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-04T20:39:28.856Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 38,
+        "text": "const 取 = (p) => fetch(API + p).then((r) => r.json())"
+      },
+      {
+        "file": "client.js",
+        "line": 168,
+        "text": "const 存 = (补丁) => fetch(API + '/config', {"
+      },
+      {
+        "file": "client.js",
+        "line": 220,
+        "text": "const r = await fetch(API + '/import?session=' + encodeURIComponent(x.id), { method: 'POST', headers: { 'content-type': 'application/json' }, body: 文本 })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/hostdeps.mjs",
+        "line": 19,
+        "text": "import { existsSync, readFileSync, readdirSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/hostdeps.mjs",
+        "line": 70,
+        "text": "const pkg = JSON.parse(readFileSync(pkgFile, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import { readFileSync, writeFileSync, existsSync, mkdirSync, appendFileSync, statSync, renameSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 70,
+        "text": "try { return { ...默认配置, ...JSON.parse(readFileSync(join(目录, 'config.json'), 'utf8')) } } catch { return { ...默认配置 } }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 72,
+        "text": "function 写配置(c) { mkdirSync(目录, { recursive: true }); writeFileSync(join(目录, 'config.json'), JSON.stringify(c, null, 2), 'utf8') }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 176,
+        "text": "agent.ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "llm",
+    "systemPrompt",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

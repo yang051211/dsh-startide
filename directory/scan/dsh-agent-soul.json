@@ -1,14 +1,14 @@
 {
   "name": "dsh-agent-soul",
-  "version": "0.5.1",
-  "scannedAt": "2026-11-01T19:08:57.195Z",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-04T20:39:00.510Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/api.js",
-        "line": 312,
+        "line": 496,
         "text": "// fetch('http://127.0.0.1:PORT/api/soul/persona', {method:'POST',...}) 就能改写她的魂。"
       },
       {
@@ -38,28 +38,28 @@
     "evidence": [
       {
         "file": "lib/api.js",
-        "line": 27,
-        "text": "import { readFileSync, statSync } from 'node:fs'"
+        "line": 28,
+        "text": "import { readdirSync, readFileSync, statSync } from 'node:fs'"
       },
       {
         "file": "lib/api.js",
-        "line": 882,
+        "line": 1212,
         "text": "const bytes = readFileSync(join(ASSETS_DIR, name))"
+      },
+      {
+        "file": "lib/archive.js",
+        "line": 26,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/archive.js",
+        "line": 49,
+        "text": "const data = JSON.parse(readFileSync(workspaceFile(), 'utf8'))"
       },
       {
         "file": "lib/diary.js",
         "line": 33,
         "text": "import { appendFileSync, readFileSync, readdirSync, statSync, unlinkSync } from 'node:fs'"
-      },
-      {
-        "file": "lib/diary.js",
-        "line": 257,
-        "text": "appendFileSync(diaryJsonlPath(dateKey), JSON.stringify(entry) + '\\n', 'utf8')"
-      },
-      {
-        "file": "lib/diary.js",
-        "line": 924,
-        "text": "const raw = readFileSync(file, 'utf8')"
       }
     ]
   },
@@ -67,28 +67,28 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/diary-tool.js",
+        "line": 77,
+        "text": "const dispose = tools.register({"
+      },
+      {
         "file": "lib/diary.js",
-        "line": 1028,
+        "line": 1138,
         "text": "* 实测：工具不在 agent 或会话里，而在宿主平面的 ctx.tools 注册表，每步由"
       },
       {
         "file": "lib/index.js",
-        "line": 55,
+        "line": 64,
         "text": "/** 声明式依赖：没有 inject，读 ctx.systemPrompt / ctx.tools 会直接抛。 */"
       },
       {
         "file": "lib/index.js",
-        "line": 56,
-        "text": "export const inject = ['systemPrompt', 'tools', 'webServer']"
+        "line": 71,
+        "text": "export const inject = ['systemPrompt', 'tools', 'webServer', 'agentPresets', 'sessions']"
       },
       {
         "file": "lib/tool.js",
-        "line": 69,
-        "text": "const dispose = tools.register({"
-      },
-      {
-        "file": "lib/tool.js",
-        "line": 250,
+        "line": 70,
         "text": "const dispose = tools.register({"
       }
     ]
@@ -98,17 +98,17 @@
     "evidence": [
       {
         "file": "lib/api.js",
-        "line": 26,
+        "line": 27,
         "text": "import { spawn } from 'node:child_process'"
       },
       {
         "file": "lib/api.js",
-        "line": 228,
+        "line": 412,
         "text": "child = spawn(cmd, args, { windowsHide: true })"
       },
       {
         "file": "lib/api.js",
-        "line": 407,
+        "line": 629,
         "text": "spawn(cmd, args, { detached: true, stdio: 'ignore' }).unref()"
       },
       {
@@ -126,6 +126,8 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
+    "agentPresets",
+    "sessions",
     "systemPrompt",
     "tools",
     "webServer"
@@ -133,7 +135,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 325,
+      "line": 453,
       "text": "git clone https://github.com/danshuyue/dsh-agent-soul.git \"<DSH_HOME>/plugins/dsh-agent-soul\""
     }
   ],

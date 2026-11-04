@@ -1,0 +1,89 @@
+{
+  "name": "dsh-model-rotation",
+  "version": "0.8.2",
+  "scannedAt": "2026-11-04T20:39:13.677Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 136,
+        "text": "const res = await fetch(BASE + path, { headers: { Accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 142,
+        "text": "const res = await fetch(BASE + path, {"
+      },
+      {
+        "file": "client.js",
+        "line": 169,
+        "text": "void fetch(BASE + REPORT_URL, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 441,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 544,
+        "text": "mkdirSync(dirname(clientReportFile), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 545,
+        "text": "appendFileSync(clientReportFile, JSON.stringify(entry) + '\\n', 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 599,
+        "text": "mkdirSync(dirname(stateFile), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1794,
+        "text": "const dispose = tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "llm"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 332,
+      "text": "**已发布到 npm**：<https://www.npmjs.com/package/dsh-model-rotation>（`npm i -g dsh-model-rotation` 可取到包，但本机 DSH 仍需下面的 generation 通道才会真正加载）。"
+    }
+  ],
+  "skippedEntries": []
+}

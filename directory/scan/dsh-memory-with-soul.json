@@ -1,0 +1,110 @@
+{
+  "name": "dsh-memory-with-soul",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-04T20:39:16.375Z",
+  "icon": "dsh-memory-with-soul.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "adapters/dsh/web.test.mjs",
+        "line": 118,
+        "text": "const page = await routes.get(`${API_PREFIX}/ui`).fetch(new Request(`http://127.0.0.1:1${API_PREFIX}/ui`))"
+      },
+      {
+        "file": "adapters/dsh/web.test.mjs",
+        "line": 127,
+        "text": "const css = await routes.get(`${API_PREFIX}/style.css`).fetch(new Request(`http://127.0.0.1:1${API_PREFIX}/style.css`))"
+      },
+      {
+        "file": "adapters/dsh/web.test.mjs",
+        "line": 133,
+        "text": "const res = await routes.get(`${API_PREFIX}/${key}`).fetch(new Request(`http://127.0.0.1:1${API_PREFIX}/${key}${query}`))"
+      },
+      {
+        "file": "adapters/dsh/web.test.mjs",
+        "line": 173,
+        "text": "const soul = await routes.get(`${API_PREFIX}/soul`).fetch(new Request(`http://127.0.0.1:1${API_PREFIX}/soul`, {"
+      },
+      {
+        "file": "adapters/dsh/web.test.mjs",
+        "line": 180,
+        "text": "const res = await routes.get(`${API_PREFIX}/${key}`).fetch(new Request(`http://127.0.0.1:1${API_PREFIX}/${key}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "adapters/dsh/index.js",
+        "line": 27,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "adapters/dsh/smoke.mjs",
+        "line": 14,
+        "text": "import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "adapters/dsh/smoke.mjs",
+        "line": 47,
+        "text": "const manifest = JSON.parse(readFileSync(PACKAGE_JSON, 'utf8'))"
+      },
+      {
+        "file": "adapters/dsh/smoke.mjs",
+        "line": 64,
+        "text": "const yaml = readFileSync(patchPath, 'utf8')"
+      },
+      {
+        "file": "adapters/dsh/smoke.mjs",
+        "line": 100,
+        "text": "const head = readFileSync(iconPath, 'utf8').trimStart()"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "adapters/dsh/index.js",
+        "line": 216,
+        "text": "const handle = ctx.subprocess.spawn({"
+      },
+      {
+        "file": "adapters/dsh/smoke.mjs",
+        "line": 13,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "adapters/dsh/smoke.mjs",
+        "line": 148,
+        "text": "const probe = spawnSync(candidate, ['-V'], { encoding: 'utf8' })"
+      },
+      {
+        "file": "adapters/dsh/smoke.mjs",
+        "line": 157,
+        "text": "const result = spawnSync(python, [RENDERER, '--dry', '--cwd', cwd], {"
+      },
+      {
+        "file": "adapters/dsh/web.test.mjs",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

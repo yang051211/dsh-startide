@@ -1,0 +1,81 @@
+{
+  "name": "dsh-context-map",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-04T20:39:18.214Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.js",
+        "line": 10,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "bin/cli.js",
+        "line": 88,
+        "text": ": await readFile(file, 'utf8')"
+      },
+      {
+        "file": "lib/files.js",
+        "line": 11,
+        "text": "import { mkdir, readFile, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/files.js",
+        "line": 77,
+        "text": "await mkdir(directory, { recursive: true })"
+      },
+      {
+        "file": "lib/files.js",
+        "line": 83,
+        "text": "await writeFile(path, artifact.content, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 29,
+        "text": "ctx.tools.register(createContextMapTool())"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 30,
+        "text": "ctx.tools.register(createSessionFactsTool({ store }))"
+      },
+      {
+        "file": "lib/tool.js",
+        "line": 192,
+        "text": "* Build the tool definition registered with `ctx.tools`."
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-doubao-video",
-  "version": "0.1.4",
-  "scannedAt": "2026-11-04T07:56:01.018Z",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-04T20:39:09.688Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -28,7 +28,7 @@
       },
       {
         "file": "lib/asr.mjs",
-        "line": 63,
+        "line": 85,
         "text": "rows = JSON.parse(readFileSync(jsonOut, 'utf8'))"
       },
       {
@@ -53,12 +53,12 @@
     "evidence": [
       {
         "file": "lib/index.mjs",
-        "line": 111,
+        "line": 116,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "lib/index.mjs",
-        "line": 306,
+        "line": 325,
         "text": "const tool = (spec) => ctx.tools.register(defineTool({"
       }
     ]
@@ -73,23 +73,23 @@
       },
       {
         "file": "lib/asr.mjs",
-        "line": 44,
+        "line": 64,
         "text": "const r = spawnSync(c, ['-c', 'import faster_whisper,sys;print(\"ok\")'], { encoding: 'utf8', windowsHide: true })"
       },
       {
         "file": "lib/asr.mjs",
-        "line": 57,
+        "line": 79,
         "text": "const r = spawnSync(python, args, { encoding: 'utf8', windowsHide: true, maxBuffer: 32 * 1024 * 1024 })"
       },
       {
-        "file": "lib/browser.mjs",
-        "line": 20,
-        "text": "import { spawn } from 'node:child_process'"
+        "file": "lib/audio.mjs",
+        "line": 18,
+        "text": "import { spawnSync } from 'node:child_process'"
       },
       {
-        "file": "lib/browser.mjs",
-        "line": 73,
-        "text": "const child = spawn(exe, args, { detached: true, stdio: 'ignore' })"
+        "file": "lib/audio.mjs",
+        "line": 51,
+        "text": "const r = spawnSync(ffmpegPath, args, { encoding: 'utf8', windowsHide: true, timeout: 30 * 60 * 1000 })"
       }
     ]
   },

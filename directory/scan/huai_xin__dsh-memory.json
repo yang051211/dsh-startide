@@ -1,7 +1,7 @@
 {
   "name": "@huai_xin/dsh-memory",
-  "version": "0.3.7",
-  "scannedAt": "2026-11-02T23:01:08.824Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-04T20:38:57.041Z",
   "icon": "huai_xin__dsh-memory.svg",
   "network": {
     "hit": true,
@@ -42,14 +42,14 @@
         "text": "await rm(temp, { force: true }).catch(() => {})"
       },
       {
-        "file": "lib/cache.js",
-        "line": 17,
-        "text": "import { mkdir, readdir, readFile } from 'node:fs/promises'"
+        "file": "lib/bootstrap.js",
+        "line": 27,
+        "text": "import { readFileSync, watch } from 'node:fs'"
       },
       {
-        "file": "lib/cache.js",
-        "line": 140,
-        "text": "await mkdir(logDir, { recursive: true }).catch(() => {})"
+        "file": "lib/bootstrap.js",
+        "line": 28,
+        "text": "import { mkdir, readFile, rm } from 'node:fs/promises'"
       }
     ]
   },
@@ -58,27 +58,27 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 33,
+        "line": 36,
         "text": "export const inject = ['tools', 'systemPrompt']"
       },
       {
         "file": "index.js",
-        "line": 217,
+        "line": 249,
         "text": "agent.ctx.tools.restrict({ deny: [TOOL_NAMES.edit, TOOL_NAMES.manage] })"
       },
       {
         "file": "index.js",
-        "line": 322,
+        "line": 354,
         "text": "ctx.effect(() => ctx.tools.register(readTool(runtime)), 'memory.tool.read()')"
       },
       {
         "file": "index.js",
-        "line": 323,
+        "line": 355,
         "text": "ctx.effect(() => ctx.tools.register(editTool(runtime)), 'memory.tool.edit()')"
       },
       {
         "file": "index.js",
-        "line": 324,
+        "line": 356,
         "text": "ctx.effect(() => ctx.tools.register(manageTool(runtime)), 'memory.tool.manage()')"
       }
     ]

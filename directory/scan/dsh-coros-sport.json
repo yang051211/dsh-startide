@@ -1,0 +1,86 @@
+{
+  "name": "dsh-coros-sport",
+  "version": "1.0.4",
+  "scannedAt": "2026-11-04T20:39:28.632Z",
+  "icon": "dsh-coros-sport.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 380,
+        "text": "return fetch(BASE + path, { credentials: 'same-origin' }).then(function (res) {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 401,
+        "text": "return fetch(BASE + path, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1255,
+        "text": "fetch(BASE + '/login/cancel?loginId=' + encodeURIComponent(current.loginId), { method: 'POST' }).catch(function () {})"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2298,
+        "text": "fetch(BASE + '/logout', { method: 'POST' })"
+      },
+      {
+        "file": "lib/coros-api.js",
+        "line": 81,
+        "text": "const res = await fetch(`${issuer}/connect/register`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "import { mkdir, readFile, writeFile, rm } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 53,
+        "text": "const raw = await readFile(TOKEN_FILE, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 64,
+        "text": "await mkdir(join(homedir(), '.dsh-coros-sport'), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 65,
+        "text": "await writeFile(TOKEN_FILE, JSON.stringify(next.payload ?? null, null, 2), { encoding: 'utf8', mode: 0o600 })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 69,
+        "text": "await rm(TOKEN_FILE, { force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-mobile-plugin",
-  "version": "0.5.17",
-  "scannedAt": "2026-11-03T20:51:57.820Z",
+  "version": "0.5.20",
+  "scannedAt": "2026-11-04T20:38:48.883Z",
   "icon": "dsh-mobile-plugin.png",
   "network": {
     "hit": true,
@@ -22,14 +22,14 @@
         "text": "const response = await fetch(`https://api.github.com/repos/${target.owner}/${target.repo}`, {"
       },
       {
-        "file": "lib/mobile/relay-control.js",
-        "line": 293,
-        "text": "const response = await fetch(`${url}/healthz`, { signal: controller.signal, redirect: 'follow' });"
+        "file": "lib/mobile/cli/icons.js",
+        "line": 107,
+        "text": "const res = await fetch(entry.icon, {"
       },
       {
-        "file": "lib/relay/core.js",
-        "line": 107,
-        "text": "* 缺协议的输入（`example.com:8700`、`//relay.example`）会被拼成一个 `new WebSocket()`"
+        "file": "lib/mobile/cli/registry.js",
+        "line": 153,
+        "text": "const res = await fetch(REGISTRY_URL, {"
       }
     ]
   },
@@ -72,6 +72,21 @@
         "text": "ctx.tools.register(defineTool({"
       },
       {
+        "file": "lib/mobile/phone/tools.js",
+        "line": 92,
+        "text": "* **必须走 `ctx.inject(['tools'], …)`，不能直接 `ctx.tools.register`**：宿主里 `tools` 是"
+      },
+      {
+        "file": "lib/mobile/phone/tools.js",
+        "line": 93,
+        "text": "* 子代理作用域提供的服务，插件这一层直接读 `ctx.tools` 拿到的是 undefined（或者一个没有"
+      },
+      {
+        "file": "lib/mobile/phone/tools.js",
+        "line": 107,
+        "text": "const register = (tool) => scoped.tools.register(defineTool(tool));"
+      },
+      {
         "file": "lib/session-cleanup.cjs",
         "line": 430,
         "text": "ctx.tools.register(defineTool({"
@@ -92,19 +107,19 @@
         "text": "execFile('git', args, {"
       },
       {
-        "file": "lib/relay/firewall-probe.js",
-        "line": 34,
-        "text": "const { execFile } = require('node:child_process');"
+        "file": "lib/mobile/cli/acp.js",
+        "line": 18,
+        "text": "const { spawn } = require('node:child_process');"
       },
       {
-        "file": "lib/relay/firewall-probe.js",
-        "line": 198,
-        "text": "execFile(command, args, {"
+        "file": "lib/mobile/cli/acp.js",
+        "line": 62,
+        "text": "const child = spawn(spec.command, spec.args, {"
       },
       {
-        "file": "lib/sidecar-facade.cjs",
-        "line": 17,
-        "text": "const { fork } = require('node:child_process')"
+        "file": "lib/mobile/magpie-web.js",
+        "line": 22,
+        "text": "const { spawn } = require('node:child_process');"
       }
     ]
   },
@@ -112,7 +127,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 2,
+  "dependencies": 3,
   "minifiedFiles": [
     "lib/mobile/model-meta-table.cjs",
     "lib/mobile/model-prices-table.cjs"

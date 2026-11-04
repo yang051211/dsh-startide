@@ -1,0 +1,80 @@
+{
+  "name": "dsh-real-whale-pet",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-04T20:39:32.501Z",
+  "icon": "dsh-real-whale-pet.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/balance-bridge.js",
+        "line": 4,
+        "text": "import http from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "helper/main.js",
+        "line": 2,
+        "text": "const fs = require('node:fs');"
+      },
+      {
+        "file": "helper/main.js",
+        "line": 13,
+        "text": "for (const folder of ['', 'logs', 'cache', 'whale', 'sfx', 'fx']) fs.mkdirSync(path.join(userRoot, folder), { recursive: true });"
+      },
+      {
+        "file": "helper/main.js",
+        "line": 24,
+        "text": "try { cfg = normalize(parseConfig(fs.readFileSync(configFile, 'utf8')), warn); return true; }"
+      },
+      {
+        "file": "helper/main.js",
+        "line": 28,
+        "text": "try { Object.assign(state, JSON.parse(fs.readFileSync(stateFile, 'utf8'))); }"
+      },
+      {
+        "file": "helper/main.js",
+        "line": 32,
+        "text": "const fallbackLines = JSON.parse(fs.readFileSync(path.join(packageRoot, 'assets/lines.json'), 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/helper-process.js",
+        "line": 3,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/helper-process.js",
+        "line": 38,
+        "text": "child = spawn(executable, [path.join(packageRoot, 'helper')], { cwd: dshHome, env, stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true });"
+      },
+      {
+        "file": "lib/helper-process.js",
+        "line": 64,
+        "text": "if (process.platform === 'win32') spawn('taskkill', ['/pid', String(active.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

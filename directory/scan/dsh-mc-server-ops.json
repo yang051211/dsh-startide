@@ -1,29 +1,29 @@
 {
   "name": "dsh-mc-server-ops",
-  "version": "0.3.0",
-  "scannedAt": "2026-11-03T20:52:33.444Z",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-04T20:39:29.145Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 58,
+        "line": 59,
         "text": "const res = await fetch(ENDPOINT, { cache: \"no-store\", headers: { \"x-mc-ops-client\": \"1\" } })"
       },
       {
         "file": "client.js",
-        "line": 117,
+        "line": 143,
         "text": "const res = await fetch(ENDPOINT, {"
       },
       {
         "file": "client.js",
-        "line": 135,
+        "line": 161,
         "text": "const res = await fetch(ENDPOINT, {"
       },
       {
         "file": "index.js",
-        "line": 63,
+        "line": 64,
         "text": "|Stop-Process|Invoke-Expression|\\biex\\b|Invoke-WebRequest|Invoke-RestMethod|\\bcurl\\b|\\bwget\\b|Start-Job|schtasks|\\breg\\b|\\bsc\\b|format|diskpart|shutdown|taskkil"
       }
     ]
@@ -34,27 +34,27 @@
       {
         "file": "index.js",
         "line": 2,
-        "text": "import { appendFileSync, copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+        "text": "import { appendFileSync, copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync, readdirSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 70,
+        "line": 71,
         "text": "const raw = readFileSync(paths.ownersFile, 'utf8').replace(/^\\uFEFF/, '')"
       },
       {
         "file": "index.js",
-        "line": 289,
+        "line": 105,
+        "text": "const raw = readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 331,
         "text": "mkdirSync(dirname(out), { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 290,
+        "line": 332,
         "text": "writeFileSync(out, JSON.stringify(payload, null, 2), 'utf8')"
-      },
-      {
-        "file": "index.js",
-        "line": 472,
-        "text": "try { appendFileSync(paths.flipLog, new Date().toISOString() + ' flip ' + id + ' from=' + (current || 'unknown') + '\\n') } catch { }"
       }
     ]
   },
@@ -63,12 +63,12 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 182,
+        "line": 206,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "index.js",
-        "line": 340,
+        "line": 416,
         "text": "ctx.effect(() => tools.register({"
       }
     ]
@@ -83,12 +83,12 @@
       },
       {
         "file": "index.js",
-        "line": 103,
+        "line": 126,
         "text": "child = spawn('powershell.exe', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', paths.script, '-ServerDir', paths.serverDir, ...args], {"
       },
       {
         "file": "index.js",
-        "line": 585,
+        "line": 677,
         "text": "child = spawn(process.execPath, argv, { windowsHide: true, cwd: paths.serverDir })"
       },
       {

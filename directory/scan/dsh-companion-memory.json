@@ -1,0 +1,71 @@
+{
+  "name": "dsh-companion-memory",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-04T20:38:57.254Z",
+  "icon": "dsh-companion-memory.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/archive-index.js",
+        "line": 10,
+        "text": "import { stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 1,
+        "text": "import fs from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 29,
+        "text": "return JSON.parse(await fs.readFile(file, 'utf8'))"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 66,
+        "text": "await fs.writeFile(tmp, text, 'utf8')"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 79,
+        "text": "await fs.rm(tmp, { force: true }).catch(() => {})"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 635,
+        "text": "ctx.effect(() => ctx.tools.register(definition), `companion-memory: ${definition.name}`)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

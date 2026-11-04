@@ -1,0 +1,107 @@
+{
+  "name": "@bitqyh/dsh-codex-bridge",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-04T20:39:30.463Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 70,
+        "text": "const res = await fetch(`${s}/healthz`, { signal: AbortSignal.timeout(3000) });"
+      },
+      {
+        "file": "src/ui-client.js",
+        "line": 92,
+        "text": "const doFetch = fetchImpl || ((...a) => fetch(...a))"
+      },
+      {
+        "file": "src/ui-server.js",
+        "line": 212,
+        "text": "async fetch(request) {"
+      },
+      {
+        "file": "src/ui-server.js",
+        "line": 229,
+        "text": "async fetch(request) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 30,
+        "text": "} from \"node:fs\";"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 58,
+        "text": "let line = readFileSync(f, \"utf8\").trim();"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 86,
+        "text": "writeFileSync(file, content, { mode: 0o600 });"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 137,
+        "text": "mkdirSync(hd, { recursive: true });"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 191,
+        "text": "existing = JSON.parse(readFileSync(f, \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 27,
+        "text": "import { execFileSync, spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 249,
+        "text": "const r = spawnSync(\"python3\", [py, ...pass], { stdio: \"inherit\" });"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 261,
+        "text": "const r = spawnSync(\"python3\", [py, ...pass], { stdio: \"inherit\" });"
+      },
+      {
+        "file": "src/index.js",
+        "line": 33,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "src/ui-server.js",
+        "line": 18,
+        "text": "import { execFile as execFileCb } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

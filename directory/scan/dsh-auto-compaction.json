@@ -1,0 +1,74 @@
+{
+  "name": "dsh-auto-compaction",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-04T20:39:28.299Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 49,
+        "text": "const parsed = JSON.parse(readFileSync(join(STATUS_DIR, sessionId + \".json\"), \"utf8\"));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 58,
+        "text": "  try { mkdirSync(DIR, { recursive: true }); appendFileSync(UI_LOG, new Date().toISOString() + \" \" + message + String.fromCharCode(10), \"utf8\"); } catch { /* ig"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 87,
+        "text": "mkdirSync(DIR, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 88,
+        "text": "writeFileSync(SETTINGS_FILE, JSON.stringify(settings, null, 2) + \"\\n\", \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "import { execFile, spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 97,
+        "text": "const child = spawn(command, args, { detached: true, stdio: \"ignore\", windowsHide: false });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 148,
+        "text": "execFile(command, [script, \"enable\"], { timeout: 6000, windowsHide: true, env }, (error, stdout, stderr) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

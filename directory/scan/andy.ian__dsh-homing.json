@@ -1,35 +1,35 @@
 {
   "name": "@andy.ian/dsh-homing",
-  "version": "2.0.0",
-  "scannedAt": "2026-11-04T07:56:13.762Z",
+  "version": "2.0.3",
+  "scannedAt": "2026-11-04T20:39:30.211Z",
   "icon": "andy.ian__dsh-homing.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
+        "file": "bin/supervisor.mjs",
+        "line": 36,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "bin/supervisor.mjs",
+        "line": 450,
+        "text": "const request = http.request({ host: '127.0.0.1', port: controlPort, path: `/restart?mode=${mode}`, method: 'POST' }, (res) => {"
+      },
+      {
+        "file": "bin/watchdog.mjs",
+        "line": 16,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "bin/watchdog.mjs",
+        "line": 29,
+        "text": "const req = http.request({ host: '127.0.0.1', port: controlPort, path: pathname, method, timeout: 8000 }, (res) => {"
+      },
+      {
         "file": "index.js",
         "line": 12,
         "text": "import http from 'node:http';"
-      },
-      {
-        "file": "index.js",
-        "line": 13,
-        "text": "import https from 'node:https';"
-      },
-      {
-        "file": "index.js",
-        "line": 131,
-        "text": "fetch(url, {"
-      },
-      {
-        "file": "index.js",
-        "line": 265,
-        "text": "const req = http.request({"
-      },
-      {
-        "file": "index.js",
-        "line": 711,
-        "text": "else fetch('/__dsh_mobile/alive', { method: 'POST', headers: { 'content-type': 'application/json' }, body, keepalive: true }).catch(() => {})"
       }
     ]
   },
@@ -83,7 +83,7 @@
       {
         "file": "bin/backup.mjs",
         "line": 75,
-        "text": "const enc = spawnSync(openssl, ['enc', '-aes-256-cbc', '-pbkdf2', '-salt', '-pass', 'env:DSH_MOBILE_BACKUP_PASS'], {"
+        "text": "const enc = spawnSync(openssl, ['enc', '-aes-256-cbc', '-pbkdf2', '-salt', '-pass', 'env:DSH_HOMING_BACKUP_PASS'], {"
       },
       {
         "file": "bin/bootstrap-server.mjs",
@@ -93,7 +93,7 @@
       {
         "file": "bin/bootstrap-server.mjs",
         "line": 103,
-        "text": "const result = spawnSync(keygen, ['-t', 'ed25519', '-N', '', '-C', 'dsh-mobile', '-f', keyFile], { stdio: 'ignore', windowsHide: true });"
+        "text": "const result = spawnSync(keygen, ['-t', 'ed25519', '-N', '', '-C', 'dsh-homing', '-f', keyFile], { stdio: 'ignore', windowsHide: true });"
       }
     ]
   },

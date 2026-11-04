@@ -1,35 +1,30 @@
 {
   "name": "dsh-mobile-upgrade",
-  "version": "0.8.11",
-  "scannedAt": "2026-10-26T10:06:17.898Z",
+  "version": "0.8.12",
+  "scannedAt": "2026-11-04T20:39:18.267Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client/client.js",
-        "line": 391,
+        "line": 363,
         "text": "fetch(ROUTE_PREFIX + \"/restart\", { method: \"POST\" }).catch(function () {});"
       },
       {
         "file": "client/client.js",
-        "line": 394,
+        "line": 366,
         "text": "fetch(ROUTE_PREFIX + \"/ping\", { cache: \"no-store\" })"
       },
       {
         "file": "client/client.js",
-        "line": 493,
-        "text": "fetch(ROUTE_PREFIX + \"/llm-config\", { cache: \"no-store\" })"
-      },
-      {
-        "file": "client/client.js",
-        "line": 550,
-        "text": "fetch(ROUTE_PREFIX + \"/model-input\", {"
-      },
-      {
-        "file": "client/client.js",
-        "line": 1232,
+        "line": 1143,
         "text": "fetch(\"/\", { cache: \"no-store\", credentials: \"same-origin\" }).then(function (r) {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 1244,
+        "text": "fetch(ROUTE_PREFIX + \"/ping\", { cache: \"no-store\", signal: ctl.signal })"
       }
     ]
   },
@@ -38,27 +33,22 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 18,
+        "line": 17,
         "text": "import fs from 'node:fs'"
       },
       {
         "file": "lib/index.js",
-        "line": 19,
-        "text": "import fsp from 'node:fs/promises'"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 146,
+        "line": 140,
         "text": "document = loadYaml().parseDocument(fs.readFileSync(file, 'utf8')).toJS()"
       },
       {
         "file": "lib/index.js",
-        "line": 270,
+        "line": 188,
         "text": "fs.writeFileSync(MIGRATION_MARKER, '1\\n', { mode: 0o600 })"
       },
       {
         "file": "lib/index.js",
-        "line": 274,
+        "line": 192,
         "text": "fs.writeFileSync(MIGRATION_MARKER, '1\\n', { mode: 0o600 })"
       }
     ]

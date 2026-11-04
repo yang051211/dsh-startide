@@ -1,21 +1,32 @@
 {
   "name": "dsh-sidebar-entries",
-  "version": "0.7.16",
-  "scannedAt": "2026-11-01T19:08:48.834Z",
+  "version": "0.7.24",
+  "scannedAt": "2026-11-04T20:38:55.789Z",
   "icon": "dsh-sidebar-entries.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 467,
+        "line": 483,
         "text": "fetch('/sidebar-entries/log', {"
       }
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "const parsed = JSON.parse(readFileSync(manifest, 'utf8'));"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,

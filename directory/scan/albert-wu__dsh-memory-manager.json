@@ -1,0 +1,114 @@
+{
+  "name": "@albert-wu/dsh-memory-manager",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-04T20:39:23.513Z",
+  "icon": "albert-wu__dsh-memory-manager.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 174,
+        "text": "const res = await fetch(\"/api/memory/rpc\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 333,
+        "text": "const res = await fetch(\"/api/memory/state\", { credentials: \"same-origin\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 346,
+        "text": "const response = await fetch(\"/api/memory/pending\", { credentials: \"same-origin\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 915,
+        "text": "const response = await fetch(\"/api/memory/agents-md\", { credentials: \"same-origin\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 927,
+        "text": "const currentResponse = await fetch(\"/api/memory/agents-md\", { credentials: \"same-origin\" });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { mkdir, readFile, rename, unlink, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 154,
+        "text": "const raw = await readFile(STORE_FILE(), 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 208,
+        "text": "await mkdir(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 211,
+        "text": "await writeFile(tmp, content, { encoding: 'utf8', flag: 'wx' });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 215,
+        "text": "await unlink(tmp).catch((error) => { if (error.code !== 'ENOENT') throw error; });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 10,
+        "text": "export const inject = ['tools', 'connection', 'llm'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 420,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 465,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 472,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 480,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "llm",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

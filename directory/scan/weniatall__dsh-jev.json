@@ -1,0 +1,90 @@
+{
+  "name": "@weniatall/dsh-jev",
+  "version": "0.2.9",
+  "scannedAt": "2026-11-04T20:39:23.460Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1171,
+        "text": "return fetch(targetUrl, init);"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 19,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 20,
+        "text": "import https from 'node:https';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 21,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 336,
+        "text": "const key = readFileSync(path, 'utf8').trim();"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 351,
+        "text": "const content = readFileSync(fallbackEnv, 'utf8');"
+      },
+      {
+        "file": "lib/provider.js",
+        "line": 31,
+        "text": "import { existsSync, readFileSync, readdirSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/provider.js",
+        "line": 500,
+        "text": "collectProviderBlocks(loadDshYaml(readFileSync(file, 'utf8')), raw);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "* 采用原生轻量设计：零外部 npm 依赖，通过 ctx.tools.register 挂载标准"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 55,
+        "text": "export const inject = ['tools', 'webServer'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1812,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

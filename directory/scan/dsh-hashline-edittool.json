@@ -1,34 +1,34 @@
 {
   "name": "dsh-hashline-edittool",
-  "version": "0.10.7",
-  "scannedAt": "2026-11-02T23:01:14.511Z",
+  "version": "0.11.0",
+  "scannedAt": "2026-11-04T20:39:05.351Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client/lib/client.js",
-        "line": 4449,
+        "line": 4704,
         "text": "const response = await fetch(`${MANAGER_ROUTE}/updates`, { headers: { accept: \"application/json\" } });"
       },
       {
         "file": "client/lib/client.js",
-        "line": 4633,
+        "line": 4897,
         "text": "const response = await fetch(MANAGER_ROUTE, { headers: { accept: \"application/json\" } });"
       },
       {
         "file": "client/lib/client.js",
-        "line": 4664,
+        "line": 4928,
         "text": "const response = await fetch(LSP_ROUTE, { headers: { accept: \"application/json\" } });"
       },
       {
         "file": "client/lib/client.js",
-        "line": 4789,
+        "line": 5053,
         "text": "const response = await fetch(`${LSP_ROUTE}/install`, {"
       },
       {
         "file": "client/lib/client.js",
-        "line": 4832,
+        "line": 5096,
         "text": "const response = await fetch(`${MANAGER_ROUTE}/${action}`, {"
       }
     ]
@@ -68,8 +68,13 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 57,
+        "line": 70,
         "text": "export const inject = [\"tools\", \"systemPrompt\", \"fs\"];"
+      },
+      {
+        "file": "lib/tools/tool-apply-patch.js",
+        "line": 321,
+        "text": "return { definition, dispose: agentCtx.tools.register(definition) };"
       },
       {
         "file": "lib/tools/tool-ast-edit.js",
@@ -85,11 +90,6 @@
         "file": "lib/tools/tool-delete.js",
         "line": 339,
         "text": "return agentCtx.tools.register(buildDeleteTool(io, sandbox));"
-      },
-      {
-        "file": "lib/tools/tool-edit.js",
-        "line": 838,
-        "text": "return agentCtx.tools.register(buildEditTool(io, sandbox));"
       }
     ]
   },
@@ -103,7 +103,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 329,
+        "line": 562,
         "text": "const handle = subprocess.spawn({"
       },
       {
@@ -118,7 +118,7 @@
       },
       {
         "file": "lib/tools/grep-rg.js",
-        "line": 35,
+        "line": 32,
         "text": "import { execFile } from \"node:child_process\";"
       }
     ]
@@ -159,12 +159,12 @@
     },
     {
       "file": "README.md",
-      "line": 332,
+      "line": 377,
       "text": "idle_timeout_ms: 300000 # reclaim an idle language server after 5 min (0 = never)"
     },
     {
       "file": "README.md",
-      "line": 415,
+      "line": 467,
       "text": "$DSH_HOME/plugins/dsh-hashline-edittool/<projectKey>/hash-store.sqlite"
     }
   ],

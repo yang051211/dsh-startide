@@ -1,0 +1,97 @@
+{
+  "name": "dsh-carbon",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-04T20:39:15.594Z",
+  "icon": "dsh-carbon.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 69,
+        "text": "const response = await fetch(filtered(\"summary\", { infra, range, since, until, limit, fresh }), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 80,
+        "text": "const response = await fetch(route(\"methodology\"), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 91,
+        "text": "const response = await fetch(filtered(\"card.svg\", { infra, range, since, until }), {"
+      },
+      {
+        "file": "src/client/api.js",
+        "line": 40,
+        "text": "const response = await fetch(filtered('summary', { infra, range, since, until, limit, fresh }), {"
+      },
+      {
+        "file": "src/client/api.js",
+        "line": 52,
+        "text": "const response = await fetch(route('methodology'), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-carbon.mjs",
+        "line": 13,
+        "text": "import { readFileSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "bin/dsh-carbon.mjs",
+        "line": 42,
+        "text": "const manifest = JSON.parse(readFileSync(join(here, '..', 'package.json'), 'utf8'));"
+      },
+      {
+        "file": "bin/dsh-carbon.mjs",
+        "line": 406,
+        "text": "writeFileSync(file, svg, 'utf8');"
+      },
+      {
+        "file": "bin/dsh-carbon.mjs",
+        "line": 426,
+        "text": "writeFileSync(resolve(options.out), svg, 'utf8');"
+      },
+      {
+        "file": "lib/core/carbon.mjs",
+        "line": 11,
+        "text": "import { readFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/pr.mjs",
+        "line": 19,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "test/carbon.test.mjs",
+        "line": 3,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

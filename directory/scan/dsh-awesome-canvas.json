@@ -1,0 +1,77 @@
+{
+  "name": "dsh-awesome-canvas",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-04T20:39:31.110Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 173,
+        "text": "return await fetch(targetUrl, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/config.js",
+        "line": 1,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 16,
+        "text": "const content = fs.readFileSync(CONFIG_FILE, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 9,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 84,
+        "text": "fs.mkdirSync(CONFIG_DIR, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "export const inject = [\"tools\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 40,
+        "text": "let currentUnregister = registerCanvasTools(ctx.tools, client, mergedConfig);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 77,
+        "text": "currentUnregister = registerCanvasTools(ctx.tools, client, mergedConfig);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

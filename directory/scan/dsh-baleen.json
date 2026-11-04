@@ -1,0 +1,101 @@
+{
+  "name": "dsh-baleen",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-04T20:39:17.191Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/runner.js",
+        "line": 55,
+        "text": "const items = await adapter.fetch(job.source, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 254,
+        "text": "fs.mkdirSync(path.join(dir, 'backups'), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 511,
+        "text": "fs.mkdirSync(path.dirname(credFile), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 513,
+        "text": "fs.writeFileSync(credFile, body.content, { mode: 0o600 })"
+      },
+      {
+        "file": "index.js",
+        "line": 537,
+        "text": "try { raw = fs.readFileSync(path.join(dir, 'logs', 'diagnostics.jsonl'), 'utf8') } catch {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "export const inject = ['tools', 'systemPrompt', 'webServer']"
+      },
+      {
+        "file": "index.js",
+        "line": 622,
+        "text": "const tools = toolsCtx?.tools ?? ctx.tools ?? null"
+      },
+      {
+        "file": "index.js",
+        "line": 635,
+        "text": "tools.register(t)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 3,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/adapters/yt.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 33,
+      "text": "npm i -g dsh-baleen          # 或 npm i dsh-baleen 装进 profile"
+    }
+  ],
+  "skippedEntries": []
+}

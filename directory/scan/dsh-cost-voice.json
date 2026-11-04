@@ -1,0 +1,66 @@
+{
+  "name": "dsh-cost-voice",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-04T20:39:28.729Z",
+  "icon": "dsh-cost-voice.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 228,
+        "text": "const response = await fetch(`api/cost-voice/clip?name=${encodeURIComponent(name)}&v=${CLIP_VERSION}`, { cache: 'force-cache' })"
+      },
+      {
+        "file": "client.js",
+        "line": 305,
+        "text": "const response = await fetch('api/cost-voice/pricing', { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 355,
+        "text": "const response = await fetch(`api/cost-voice/turns?${query}`, { cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 3,
+        "text": "import { readdirSync, readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 66,
+        "text": "const raw = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 293,
+        "text": "cached = { mtimeMs, buffer: readFileSync(path) }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,88 @@
+{
+  "name": "memory-lattice",
+  "version": "0.2.11",
+  "scannedAt": "2026-11-04T20:39:07.743Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 660,
+        "text": "const once = () => fetch(API + \"/session\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 674,
+        "text": "const send = (t) => fetch(API + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 23,
+        "text": "const versionRef = (() => { try { return JSON.parse(readFileSync(path.join(PACKAGE_ROOT, 'package.json'), 'utf8')).version } catch { return '' } })()"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 407,
+        "text": "if (latest?.path) { try { content = (await import('node:fs')).readFileSync(latest.path, 'utf8').slice(0, 12000) } catch { content = '' } }"
+      },
+      {
+        "file": "lib/backup.js",
+        "line": 20,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/backup.js",
+        "line": 217,
+        "text": "try { fs.unlinkSync(path.join(dir, f)); removed.push(f) } catch { /* 删不掉下次再试 */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 491,
+        "text": "tools.register(defineTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 546,
+        "text": "tools.register(defineTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 589,
+        "text": "tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "settings",
+    "systemPrompt"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,117 @@
+{
+  "name": "dsh-a2a-groups",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-04T20:39:31.016Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/agent-groups.js",
+        "line": 36,
+        "text": "import { createServer as createHttpServer } from 'node:http';"
+      },
+      {
+        "file": "lib/core/bridge.js",
+        "line": 738,
+        "text": "response = await fetch(url, {"
+      },
+      {
+        "file": "lib/core/bridge.js",
+        "line": 794,
+        "text": "response = await fetch(url, {"
+      },
+      {
+        "file": "lib/core/bridge.js",
+        "line": 913,
+        "text": "response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/agent-groups.js",
+        "line": 37,
+        "text": "import { mkdirSync, readFileSync, existsSync } from 'node:fs';"
+      },
+      {
+        "file": "bin/agent-groups.js",
+        "line": 82,
+        "text": "return JSON.parse(readFileSync(packagePath, 'utf8')).version ?? '0.0.0';"
+      },
+      {
+        "file": "bin/agent-groups.js",
+        "line": 276,
+        "text": "mkdirSync(dataDir, { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "lib/core/groups.js",
+        "line": 133,
+        "text": "} from 'node:fs';"
+      },
+      {
+        "file": "lib/core/groups.js",
+        "line": 2264,
+        "text": "raw = readFileSync(file, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/dsh/tools.js",
+        "line": 12,
+        "text": "*   DSH  ctx.tools.register(spec + execute)   →  execute(args, exec) → runtime.call(name, args, { sessionId: exec.agent.id })"
+      },
+      {
+        "file": "lib/dsh/tools.js",
+        "line": 25,
+        "text": "* @param {object} ctx - Host context; `ctx.tools.register` is the only capability used."
+      },
+      {
+        "file": "lib/dsh/tools.js",
+        "line": 39,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 77,
+        "text": "export const inject = ['webServer', 'sessionController', 'systemPrompt', 'tools', 'connection'];"
+      },
+      {
+        "file": "lib/shared/tool-specs.js",
+        "line": 11,
+        "text": "*   - tools.js      adapts specs to `ctx.tools.register` (DSH)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "sessionController",
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 68,
+      "text": "npm install -g dsh-a2a-groups     # 可选：需要 agent-groups / agent-groups-mcp 两个命令时"
+    }
+  ],
+  "skippedEntries": []
+}

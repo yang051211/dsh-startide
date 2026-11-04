@@ -1,0 +1,120 @@
+{
+  "name": "genshin_trpg",
+  "version": "0.0.2",
+  "scannedAt": "2026-11-04T20:39:20.825Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 90,
+        "text": "const response = await fetch('api/trpg-checkpoints', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) })"
+      },
+      {
+        "file": "scripts/check-dsh.mjs",
+        "line": 23,
+        "text": "const slotsResponse = await checkpointRoute.fetch(new Request('http://localhost/api/trpg-checkpoints', {"
+      },
+      {
+        "file": "scripts/check-dsh.mjs",
+        "line": 32,
+        "text": "const listResponse = await checkpointRoute.fetch(new Request('http://localhost/api/trpg-checkpoints', {"
+      },
+      {
+        "file": "server/app.js",
+        "line": 1,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "web/app.js",
+        "line": 25,
+        "text": "  const response = await fetch('/api', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-TRPG-Token': config.token }, body: JSON.stringify(pac"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/trpg.mjs",
+        "line": 1,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "bin/trpg.mjs",
+        "line": 6,
+        "text": "const raw = i >= 0 ? fs.readFileSync(process.argv[i + 1], 'utf8') : fs.readFileSync(0, 'utf8')"
+      },
+      {
+        "file": "engine/character-profiles.js",
+        "line": 1,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "engine/character-profiles.js",
+        "line": 4,
+        "text": "const index = JSON.parse(fs.readFileSync(new URL('index.json', base), 'utf8'))"
+      },
+      {
+        "file": "engine/character-profiles.js",
+        "line": 22,
+        "text": "const doc = JSON.parse(fs.readFileSync(new URL(match.file, base), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 8,
+        "text": "export const inject = ['tools', 'userQuestions', 'connection']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "for (const tool of createTools({ root, askPlayer, onToolCall: agent => metrics.track(agent) })) ctx.tools.register(defineTool(tool))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/test.mjs",
+        "line": 3,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/test.mjs",
+        "line": 6,
+        "text": "const result = spawnSync(process.execPath, ['--test', ...files], { stdio: 'inherit' })"
+      },
+      {
+        "file": "server/index.js",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "server/index.js",
+        "line": 13,
+        "text": "const child = spawn('cmd.exe', ['/c', 'start', '', url], { windowsHide: true, stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "tools",
+    "userQuestions"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

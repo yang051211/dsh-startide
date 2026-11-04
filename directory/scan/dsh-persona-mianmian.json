@@ -1,0 +1,86 @@
+{
+  "name": "dsh-persona-mianmian",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-04T20:39:31.807Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/state.js",
+        "line": 1,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 77,
+        "text": "const raw = JSON.parse(readFileSync(path, 'utf8'));"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 137,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 139,
+        "text": "writeFileSync(tmp, JSON.stringify(state, null, 2), 'utf8');"
+      },
+      {
+        "file": "lib/watch.js",
+        "line": 1,
+        "text": "import { existsSync, readFileSync, unwatchFile, watch, watchFile } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/release.mjs",
+        "line": 11,
+        "text": "import { execFileSync, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/release.mjs",
+        "line": 22,
+        "text": "const r = spawnSync(cmd, cmdArgs, {"
+      },
+      {
+        "file": "scripts/release.mjs",
+        "line": 86,
+        "text": "const who = spawnSync('npm', ['whoami'], { cwd: ROOT, encoding: 'utf8', shell })"
+      },
+      {
+        "file": "tests/integration.mjs",
+        "line": 7,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "tests/verify-dsh.mjs",
+        "line": 8,
+        "text": "import { spawnSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
