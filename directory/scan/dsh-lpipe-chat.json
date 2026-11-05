@@ -1,0 +1,75 @@
+{
+  "name": "dsh-lpipe-chat",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-05T21:23:06.234Z",
+  "icon": "dsh-lpipe-chat.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/qq/channel.mjs",
+        "line": 20,
+        "text": "const reply = await fetch('https://bots.qq.com/app/getAppAccessToken', {"
+      },
+      {
+        "file": "src/rpc.mjs",
+        "line": 311,
+        "text": "async fetch(request) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/config.mjs",
+        "line": 1,
+        "text": "import { readFileSync, writeFileSync, chmodSync, mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "src/config.mjs",
+        "line": 18,
+        "text": "const raw = JSON.parse(readFileSync(commonConfigPath(), 'utf8'));"
+      },
+      {
+        "file": "src/config.mjs",
+        "line": 27,
+        "text": "mkdirSync(dirname(commonConfigPath()), { recursive: true });"
+      },
+      {
+        "file": "src/config.mjs",
+        "line": 28,
+        "text": "writeFileSync(commonConfigPath(), `${JSON.stringify({ mainSessionId }, null, 2)}"
+      },
+      {
+        "file": "src/config.mjs",
+        "line": 89,
+        "text": "merged = merge(defaultConfig(), JSON.parse(readFileSync(configPath(), 'utf8')));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 161,
+        "text": "toolsCtx.tools.register(tool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 4,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

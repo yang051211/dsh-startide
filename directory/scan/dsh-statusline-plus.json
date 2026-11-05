@@ -1,0 +1,95 @@
+{
+  "name": "dsh-statusline-plus",
+  "version": "0.1.13",
+  "scannedAt": "2026-11-05T21:22:51.294Z",
+  "icon": "dsh-statusline-plus.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 627,
+        "text": "return fetch('/statusline/api/' + endpoint, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 644,
+        "text": "return fetch('/statusline/api/usage', opts).then(function (r) { return r.json() })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 658,
+        "text": "return fetch('/statusline/api/git', opts)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1242,
+        "text": "return fetch('/statusline/api/session-model', { method: 'POST',"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1428,
+        "text": "fetch('/statusline/api/peak-schedule').then(function (response) { return response.json() }).then(function (result) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cpa-credentials.js",
+        "line": 3,
+        "text": "import { readFileSync, readdirSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/cpa-credentials.js",
+        "line": 41,
+        "text": "return { filePath, data: JSON.parse(readFileSync(filePath, 'utf8')) }"
+      },
+      {
+        "file": "lib/git-status.js",
+        "line": 3,
+        "text": "import { existsSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/model-pricing.js",
+        "line": 2,
+        "text": "import { readFileSync, existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/model-pricing.js",
+        "line": 100,
+        "text": "const manifest = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/git-status.js",
+        "line": 27,
+        "text": "const handle = subprocess.spawn({"
+      },
+      {
+        "file": "lib/update.js",
+        "line": 262,
+        "text": "handle = subprocess.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

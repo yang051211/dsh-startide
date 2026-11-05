@@ -1,0 +1,90 @@
+{
+  "name": "dsh-agent-team-roles",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-05T21:23:07.026Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 149,
+        "text": "if (typeof AbortController !== 'function') return fetch(url, init);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 153,
+        "text": "return await fetch(url, { ...init, signal: controller.signal });"
+      },
+      {
+        "file": "src/client/net.js",
+        "line": 7,
+        "text": "if (typeof AbortController !== 'function') return fetch(url, init);"
+      },
+      {
+        "file": "src/client/net.js",
+        "line": 11,
+        "text": "return await fetch(url, { ...init, signal: controller.signal });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/deployment.js",
+        "line": 7,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/deployment.js",
+        "line": 73,
+        "text": "return { file, servers: parseMcpServers(await readFile(file, 'utf8')), error: null }"
+      },
+      {
+        "file": "lib/deployment.js",
+        "line": 147,
+        "text": "deploymentPromise = readFile(DEPLOYMENT_URL, 'utf8').then("
+      },
+      {
+        "file": "lib/host/state.js",
+        "line": 11,
+        "text": "import { stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/notes.js",
+        "line": 9,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tools/accept-live.mjs",
+        "line": 5,
+        "text": "import { spawn, execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "tools/accept-live.mjs",
+        "line": 258,
+        "text": "const child = spawn(process.execPath, [DRIVER, 'nodejs'], { stdio: [inFd, outFd, outFd], windowsHide: true, env });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

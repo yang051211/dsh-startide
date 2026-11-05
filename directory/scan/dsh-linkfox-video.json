@@ -1,0 +1,87 @@
+{
+  "name": "dsh-linkfox-video",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-05T21:23:02.124Z",
+  "icon": "dsh-linkfox-video.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 39,
+        "text": "function createApi(fetchImpl = (input, init) => fetch(input, init), xhrFactory = () => new XMLHttpRequest()) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import { appendFile, copyFile, mkdir, open, readFile, readdir, rename, rm, stat, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 8,
+        "text": "import { createReadStream, createWriteStream } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 175,
+        "text": "models: normalizeModelList(JSON.parse(await readFile(join(this.options.snapshotDir, `${bizType}.json`), \"utf8\"))) ?? [],"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 564,
+        "text": "const buf = await readFile(path).catch(() => void 0);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 656,
+        "text": "const content = await readFile(path);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1931,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1972,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1986,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2008,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

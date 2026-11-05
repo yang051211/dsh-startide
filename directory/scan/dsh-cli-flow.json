@@ -1,0 +1,82 @@
+{
+  "name": "dsh-cli-flow",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-05T21:23:07.321Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 49,
+        "text": "const res = await fetch('/api/dsh-cli-flow', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 68,
+        "text": "const res = await fetch('/api/dsh-cli-flow.file', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cards.js",
+        "line": 16,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/cards.js",
+        "line": 77,
+        "text": "const text = await readFile(join(ctx.dir, file), 'utf8')"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 20,
+        "text": "import { appendFile, copyFile, mkdir, readdir, readFile, rename, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 49,
+        "text": "await mkdir(this.dir, { recursive: true })"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 51,
+        "text": "this.state = JSON.parse(await readFile(this.statePath, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 163,
+        "text": "return defs.map((def) => ctx.tools.register(def))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

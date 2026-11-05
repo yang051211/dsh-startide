@@ -1,35 +1,35 @@
 {
   "name": "whale-girl",
-  "version": "0.1.0",
-  "scannedAt": "2026-10-26T10:05:03.060Z",
-  "icon": null,
+  "version": "0.2.4",
+  "scannedAt": "2026-11-05T21:22:47.983Z",
+  "icon": "whale-girl.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 665,
-        "text": "const res = await fetch(MANIFEST_URL);"
+        "line": 570,
+        "text": "const response = await fetch(UPDATE_PATH, { headers: { accept: \"application/json\" } });"
       },
       {
         "file": "lib/client.js",
-        "line": 892,
+        "line": 584,
+        "text": "const response = await fetch(UPDATE_PATH, { method: \"POST\", headers: { accept: \"application/json\" } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1235,
+        "text": "const res = await fetch(MANIFEST_URL, { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1465,
         "text": "const res = await fetch(INTERACT_PATH, {"
       },
       {
         "file": "lib/client.js",
-        "line": 911,
+        "line": 1486,
         "text": "const res = await fetch(CONFIG_PATH);"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 947,
-        "text": "const res = await fetch(STATE_PATH);"
-      },
-      {
-        "file": "lib/client/index.mjs",
-        "line": 612,
-        "text": "const res = await fetch(MANIFEST_URL)"
       }
     ]
   },
@@ -39,27 +39,27 @@
       {
         "file": "lib/index.mjs",
         "line": 11,
-        "text": "import { readFileSync, writeFileSync, mkdirSync, renameSync } from 'node:fs'"
+        "text": "import { readFileSync, writeFileSync, mkdirSync, renameSync, statSync } from 'node:fs'"
       },
       {
         "file": "lib/index.mjs",
-        "line": 47,
+        "line": 57,
         "text": "return normalizeState(JSON.parse(readFileSync(STATE_FILE, 'utf8')))"
       },
       {
         "file": "lib/index.mjs",
-        "line": 56,
+        "line": 66,
         "text": "mkdirSync(dirname(STATE_FILE), { recursive: true })"
       },
       {
         "file": "lib/index.mjs",
-        "line": 58,
+        "line": 68,
         "text": "writeFileSync(tmp, serializeState(next))"
       },
       {
         "file": "lib/index.mjs",
-        "line": 550,
-        "text": "const data = readFileSync(join(import.meta.dirname, 'assets', rel))"
+        "line": 78,
+        "text": "return normalizeSessionMemory(JSON.parse(readFileSync(MEMORY_FILE, 'utf8')))"
       }
     ]
   },
@@ -82,9 +82,19 @@
     "agents",
     "jobs",
     "sessions",
-    "settings",
     "webServer"
   ],
-  "setupHints": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 58,
+      "text": "npm install -g whale-girl-desktop   # npm install (engine + Tauri shell source included)"
+    },
+    {
+      "file": "README.zh.md",
+      "line": 55,
+      "text": "npm install -g whale-girl-desktop   # npm 源安装（引擎 + Tauri 渲染壳源码随包分发）"
+    }
+  ],
   "skippedEntries": []
 }

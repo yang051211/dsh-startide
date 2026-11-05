@@ -1,0 +1,121 @@
+{
+  "name": "nekowhale-meme",
+  "version": "1.4.0",
+  "scannedAt": "2026-11-05T21:22:54.956Z",
+  "icon": "nekowhale-meme.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 167,
+        "text": "const r = await fetch(`${API}${path}${q}`, { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 172,
+        "text": "const r = await fetch(`${API}${path}`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 1430,
+        "text": "const r = await fetch(it.url)"
+      },
+      {
+        "file": "client.js",
+        "line": 1457,
+        "text": "const r = await fetch(`${API}/config`)"
+      },
+      {
+        "file": "client.js",
+        "line": 1473,
+        "text": "const r = await fetch(`${API}/state?tab=library`)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { createReadStream, existsSync, readFileSync, rmSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { copyFile, mkdir, readdir, rename, rm, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 196,
+        "text": "await writeFile(ps1, '\\ufeff' + script, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 231,
+        "text": "try { return readFileSync(p, 'utf8').replace(/^[\\uFEFF\\u200B]+/u, '').trim() } catch { return null }"
+      },
+      {
+        "file": "index.js",
+        "line": 234,
+        "text": "try { rmSync(p, { force: true }) } catch { /* 忽略 */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 893,
+        "text": "tctx.effect(() => tctx.tools.register(DT({"
+      },
+      {
+        "file": "index.js",
+        "line": 952,
+        "text": "tctx.effect(() => tctx.tools.register(DT({"
+      },
+      {
+        "file": "index.js",
+        "line": 984,
+        "text": "tctx.effect(() => tctx.tools.register(DT({"
+      },
+      {
+        "file": "index.js",
+        "line": 1042,
+        "text": "tctx.effect(() => tctx.tools.register(DT({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 199,
+        "text": "execFile('powershell.exe', ['-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-File', ps1],"
+      },
+      {
+        "file": "index.js",
+        "line": 219,
+        "text": "execFile(cmd, args, { timeout: 5 * 60_000 }, (err, stdout) => (err ? rej(err) : res2(String(stdout).trim())))"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

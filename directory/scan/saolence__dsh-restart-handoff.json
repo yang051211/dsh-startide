@@ -1,0 +1,128 @@
+{
+  "name": "@saolence/dsh-restart-handoff",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-05T21:23:07.048Z",
+  "icon": "saolence__dsh-restart-handoff.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 425,
+        "text": "const response = await fetch(BASE + \"/preview\", {"
+      },
+      {
+        "file": "client.js",
+        "line": 603,
+        "text": "const response = await fetch(BASE + \"/status\", { headers: { accept: \"application/json\" } });"
+      },
+      {
+        "file": "client.js",
+        "line": 682,
+        "text": "const response = await fetch(BASE + \"/\" + path, {"
+      },
+      {
+        "file": "client.js",
+        "line": 877,
+        "text": "const response = await fetch(BASE + \"/status\", { headers: { accept: \"application/json\" } });"
+      },
+      {
+        "file": "client.js",
+        "line": 926,
+        "text": "const response = await fetch(BASE + \"/\" + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/relaunch-cli.js",
+        "line": 18,
+        "text": "import { chmodSync, mkdirSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/relaunch-cli.js",
+        "line": 50,
+        "text": "import { appendFileSync, closeSync, mkdirSync, openSync, readFileSync, rmSync, statSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/relaunch-cli.js",
+        "line": 52,
+        "text": "const job = JSON.parse(readFileSync(process.argv[2], \"utf8\"));"
+      },
+      {
+        "file": "lib/relaunch-cli.js",
+        "line": 55,
+        "text": "try { appendFileSync(job.log, stamp() + \" [cli] \" + message + \"\\\\n\"); } catch {}"
+      },
+      {
+        "file": "lib/relaunch-cli.js",
+        "line": 62,
+        "text": "const read = (file) => { try { return readFileSync(file, \"utf8\"); } catch { return \"\"; } };"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 48,
+        "text": "export const inject = [\"webServer\", \"connection\", \"tools\", \"agents\", \"sessionController\", \"timer\"];"
+      },
+      {
+        "file": "index.js",
+        "line": 884,
+        "text": "() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/relaunch-cli.js",
+        "line": 17,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/relaunch-cli.js",
+        "line": 49,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/relaunch-cli.js",
+        "line": 127,
+        "text": "child = spawn(job.node, [job.entry, ...job.args], {"
+      },
+      {
+        "file": "lib/relaunch-cli.js",
+        "line": 157,
+        "text": "const opener = spawn(job.openCmd, [url], { detached: true, stdio: \"ignore\" });"
+      },
+      {
+        "file": "lib/relaunch-cli.js",
+        "line": 204,
+        "text": "const child = spawn(invocation.node, [helper, jobFile], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "connection",
+    "sessionController",
+    "timer",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

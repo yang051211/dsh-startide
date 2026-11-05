@@ -1,7 +1,7 @@
 {
   "name": "dsh-a2a-groups",
-  "version": "0.1.7",
-  "scannedAt": "2026-11-05T08:17:22.882Z",
+  "version": "0.1.11",
+  "scannedAt": "2026-11-05T21:23:05.304Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -25,6 +25,11 @@
         "file": "lib/core/bridge.js",
         "line": 913,
         "text": "response = await fetch(url, {"
+      },
+      {
+        "file": "scripts/aisix-dev/diagnose-member.mjs",
+        "line": 17,
+        "text": "const response = await fetch(HOST, {"
       }
     ]
   },
@@ -53,7 +58,7 @@
       },
       {
         "file": "lib/core/groups.js",
-        "line": 2291,
+        "line": 2434,
         "text": "raw = readFileSync(file, 'utf8');"
       }
     ]
@@ -68,29 +73,55 @@
       },
       {
         "file": "lib/dsh/tools.js",
-        "line": 25,
+        "line": 31,
         "text": "* @param {object} ctx - Host context; `ctx.tools.register` is the only capability used."
       },
       {
         "file": "lib/dsh/tools.js",
-        "line": 39,
+        "line": 130,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/dsh/tools.js",
+        "line": 160,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 77,
+        "line": 78,
         "text": "export const inject = ['webServer', 'sessionController', 'systemPrompt', 'tools', 'connection'];"
-      },
-      {
-        "file": "lib/shared/tool-specs.js",
-        "line": 11,
-        "text": "*   - tools.js      adapts specs to `ctx.tools.register` (DSH)"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/aisix-dev/ask-page.mjs",
+        "line": 10,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/aisix-dev/ask-page.mjs",
+        "line": 21,
+        "text": "const result = spawnSync('opencli', ['browser', session, 'eval', quoted], {"
+      },
+      {
+        "file": "scripts/aisix-dev/eval-page.mjs",
+        "line": 8,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/aisix-dev/login-page.mjs",
+        "line": 10,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/aisix-dev/probe-panel-save.mjs",
+        "line": 7,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

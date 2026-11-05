@@ -1,0 +1,134 @@
+{
+  "name": "dsh-jupyter-notebook",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-05T21:23:07.420Z",
+  "icon": "dsh-jupyter-notebook.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 215,
+        "text": "const response = await fetch(endpoint, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ method, args }), signal });"
+      },
+      {
+        "file": "client.js",
+        "line": 362,
+        "text": "const response = await fetch(endpoint, {"
+      },
+      {
+        "file": "scripts/smoke-panel-server.mjs",
+        "line": 74,
+        "text": "const response = await fetch(`${base}api/status`, { headers: { Authorization: `token ${token}` }, signal: AbortSignal.timeout(2000) });"
+      },
+      {
+        "file": "scripts/smoke-panel-server.mjs",
+        "line": 152,
+        "text": "  const onDisk = await fetch(`${base}api/contents/panel-server.ipynb?content=1`, { headers: { Authorization: `token ${token}` } }).then((response) => response.j"
+      },
+      {
+        "file": "scripts/smoke-panel-server.mjs",
+        "line": 160,
+        "text": "  const renamedContents = await fetch(`${base}api/contents/panel-server-renamed.ipynb?content=1`, { headers: { Authorization: `token ${token}` } }).then((respon"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/install.mjs",
+        "line": 10,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "scripts/install.mjs",
+        "line": 78,
+        "text": "current = await fs.readFile(file, 'utf8');"
+      },
+      {
+        "file": "scripts/install.mjs",
+        "line": 105,
+        "text": "await fs.writeFile(file, next, 'utf8');"
+      },
+      {
+        "file": "scripts/install.mjs",
+        "line": 115,
+        "text": "await fs.rm(path.dirname(destination), { recursive: true, force: true });"
+      },
+      {
+        "file": "scripts/install.mjs",
+        "line": 119,
+        "text": "const body = await fs.readFile(source, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/install.mjs",
+        "line": 53,
+        "text": "\"      name: '@deepseek-ai/dsh-mcp-client'\","
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/install.mjs",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/install.mjs",
+        "line": 131,
+        "text": "const probe = spawn(pythonBinary, ['-c', 'import IPython, matplotlib; print(IPython.__version__)'], {"
+      },
+      {
+        "file": "scripts/install.mjs",
+        "line": 142,
+        "text": "const server = spawn(nodeBinary, [path.join(PLUGIN_ROOT, 'src', 'server.mjs')], {"
+      },
+      {
+        "file": "scripts/kernel-probe.mjs",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/kernel-probe.mjs",
+        "line": 8,
+        "text": "const kernel = spawn(python, [path.join(here, '..', 'kernel', 'dsh_kernel.py')], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 72,
+      "text": ".venv/Scripts/python -m pip install ipython matplotlib pandas   # Windows"
+    },
+    {
+      "file": "README.md",
+      "line": 73,
+      "text": ".venv/bin/python -m pip install ipython matplotlib pandas       # macOS / Linux"
+    },
+    {
+      "file": "README.md",
+      "line": 169,
+      "text": "- PyPI 直连很慢，装 `ipython`/`matplotlib` 用了清华镜像；`pip install` 卡住时先换源。"
+    }
+  ],
+  "skippedEntries": []
+}

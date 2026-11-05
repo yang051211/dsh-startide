@@ -1,7 +1,7 @@
 {
   "name": "dsh-film-analysis",
-  "version": "0.1.0",
-  "scannedAt": "2026-11-03T08:10:09.354Z",
+  "version": "0.3.9",
+  "scannedAt": "2026-11-05T21:23:01.650Z",
   "icon": "dsh-film-analysis.svg",
   "network": {
     "hit": true,
@@ -28,23 +28,23 @@
       },
       {
         "file": "lib/ai.js",
-        "line": 187,
+        "line": 328,
         "text": "data: readFileSync(frame.path),"
       },
       {
         "file": "lib/ai.js",
-        "line": 566,
+        "line": 343,
+        "text": "{ data: readFileSync(collage.path), mediaType: 'image/png', name: `shot-${shotIndex}-sheet.png` },"
+      },
+      {
+        "file": "lib/ai.js",
+        "line": 810,
         "text": "data: readFileSync(pick.path),"
       },
       {
-        "file": "lib/ocr.js",
+        "file": "lib/cache.js",
         "line": 3,
-        "text": "import { readFileSync } from 'node:fs';"
-      },
-      {
-        "file": "lib/ocr.js",
-        "line": 52,
-        "text": "buffer = readFileSync(abs);"
+        "text": "import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';"
       }
     ]
   },
@@ -73,12 +73,17 @@
       },
       {
         "file": "lib/toolchain.js",
-        "line": 94,
+        "line": 124,
         "text": "execFile("
       },
       {
         "file": "lib/toolchain.js",
-        "line": 124,
+        "line": 154,
+        "text": "execFile("
+      },
+      {
+        "file": "lib/toolchain.js",
+        "line": 196,
         "text": "execFile("
       }
     ]
@@ -94,6 +99,17 @@
     "tools",
     "webServer"
   ],
-  "setupHints": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 85,
+      "text": "pip install faster-whisper rapidocr_onnxruntime huggingface_hub"
+    },
+    {
+      "file": "README.md",
+      "line": 130,
+      "text": "deo audio with faster-whisper. Install `pip install faster-whisper rapidocr_onnxruntime huggingface_hub`, then set `pythonPath` / `whisperModelPath` in the plug"
+    }
+  ],
   "skippedEntries": []
 }

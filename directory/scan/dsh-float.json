@@ -1,0 +1,116 @@
+{
+  "name": "dsh-float",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-05T21:22:59.710Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 102,
+        "text": "Invoke-WebRequest -Uri $u -OutFile $env:DSH_FLOAT_ELECTRON_ZIP -UseBasicParsing -TimeoutSec 900"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 185,
+        "text": "return fetch(`http://127.0.0.1:${ready.port}/bridge`, {"
+      },
+      {
+        "file": "runtime/electron-helper/bridge.js",
+        "line": 4,
+        "text": "const http = require('node:http')"
+      },
+      {
+        "file": "runtime/ui/vendor/katex/katex.min.js",
+        "line": 1,
+        "text": "ncName:r}=e;t.consumeSpaces();const o=t.fetch();if(kr[o.text])return\"\\\\global\"!==r&&\"\\\\\\\\globallong\"!==r||(o.text=kr[o.text]),or(t.parseFunction(),\"internal\");t"
+      },
+      {
+        "file": "tools/mock-host.mjs",
+        "line": 81,
+        "text": "const response = await fetch(`http://127.0.0.1:${ready.port}/bridge`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/chat.js",
+        "line": 2,
+        "text": "import { existsSync, readFileSync, statSync, unlinkSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/chat.js",
+        "line": 241,
+        "text": "const bytes = new Uint8Array(readFileSync(full))"
+      },
+      {
+        "file": "lib/chat.js",
+        "line": 263,
+        "text": "if (full.startsWith(SHOT_DIR + sep) && existsSync(full)) unlinkSync(full)"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 1,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 28,
+        "text": "if (!existsSync(DATA_DIR)) mkdirSync(DATA_DIR, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 70,
+        "text": "execFile("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 432,
+        "text": "const proc = spawn(electron, [HELPER_MAIN], {"
+      },
+      {
+        "file": "runtime/electron-helper/capture.js",
+        "line": 4,
+        "text": "const { execFile } = require('node:child_process')"
+      },
+      {
+        "file": "runtime/electron-helper/capture.js",
+        "line": 258,
+        "text": "execFile("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "runtime/ui/vendor/katex/katex.min.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentDefaultModel",
+    "attachments",
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

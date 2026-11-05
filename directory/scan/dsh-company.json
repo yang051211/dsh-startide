@@ -1,0 +1,97 @@
+{
+  "name": "dsh-company",
+  "version": "0.5.1",
+  "scannedAt": "2026-11-05T21:23:07.248Z",
+  "icon": "dsh-company.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 304,
+        "text": "const response = await fetch(`${API}/${op}`, {"
+      },
+      {
+        "file": "index.js",
+        "line": 1670,
+        "text": "async fetch(request) {"
+      },
+      {
+        "file": "index.js",
+        "line": 1709,
+        "text": "async fetch() {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 30,
+        "text": "import { appendFile, mkdir, readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 441,
+        "text": "await mkdir(resolve(dir, 'memory'), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 442,
+        "text": "await writeFile(resolve(dir, 'memory', `${entry.id}.json`), `${JSON.stringify(entry, null, 2)}\\n`, 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 443,
+        "text": "await appendFile(memoryFileFor(employeeId), memoryMarkdown(entry), 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 696,
+        "text": "return { type, bytes: await readFile(target) };"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 37,
+        "text": "export const inject = ['connection', 'agents', 'tools', 'systemPrompt', 'sessions', 'commands'];"
+      },
+      {
+        "file": "index.js",
+        "line": 681,
+        "text": "const schemas = ctx.tools.schemas ? ctx.tools.schemas() : [];"
+      },
+      {
+        "file": "index.js",
+        "line": 1724,
+        "text": "const off = ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "commands",
+    "connection",
+    "sessions",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

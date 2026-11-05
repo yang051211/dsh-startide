@@ -1,7 +1,7 @@
 {
   "name": "@aiwayds/dsh-subagent-registry",
-  "version": "0.18.0",
-  "scannedAt": "2026-11-04T20:39:01.889Z",
+  "version": "0.19.0",
+  "scannedAt": "2026-11-05T21:22:50.776Z",
   "icon": "aiwayds__dsh-subagent-registry.svg",
   "network": {
     "hit": true,
@@ -42,9 +42,9 @@
         "text": "content: stripFrontmatter(await readFile(SKILL_BODY_URLS[language], 'utf8')),"
       },
       {
-        "file": "lib/opt-in-agents.js",
-        "line": 21,
-        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+        "file": "lib/legacy-list-agents.js",
+        "line": 37,
+        "text": "import { readFileSync } from 'node:fs';"
       }
     ]
   },
@@ -53,12 +53,12 @@
     "evidence": [
       {
         "file": "lib/delegation-guidance.js",
-        "line": 14,
-        "text": "const schemas = assembly.tools.some(tool => tool.name === 'run_code') ? ctx.tools.schemas(context.scope) : assembly.tools;"
+        "line": 23,
+        "text": "const schemas = ctx.tools.schemas(context.scope);"
       },
       {
         "file": "lib/delegation-guidance.js",
-        "line": 16,
+        "line": 25,
         "text": "if (!visible.has(dispatch.name) || ctx.tools.get(dispatch.name, context.scope) !== dispatch)"
       },
       {
@@ -98,12 +98,12 @@
       },
       {
         "file": "scripts/smoke-boot.mjs",
-        "line": 78,
-        "text": "const install = spawnSync(npm, [...npmArgs, 'install', '--no-audit', '--no-fund', '--loglevel=error'], { cwd: profile, encoding: 'utf8' })"
+        "line": 80,
+        "text": "const install = spawnSync(npm, [...npmArgs, 'install', '--registry=https://registry.npmjs.org', '--no-audit', '--no-fund', '--loglevel=error'], { cwd: profile, "
       },
       {
         "file": "scripts/smoke-boot.mjs",
-        "line": 92,
+        "line": 94,
         "text": "const dump = spawnSync('dsh', ['--profile', 'smoke', '--dump-config'], { cwd: profile, encoding: 'utf8', env: dshEnv })"
       }
     ]

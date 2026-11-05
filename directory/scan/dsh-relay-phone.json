@@ -1,0 +1,92 @@
+{
+  "name": "dsh-relay-phone",
+  "version": "0.11.7",
+  "scannedAt": "2026-11-05T21:23:00.003Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/boot-source.js",
+        "line": 370,
+        "text": "var OrigXHR = window.XMLHttpRequest"
+      },
+      {
+        "file": "src/client/index.js",
+        "line": 178,
+        "text": "const res = await fetch('/relay-bridge/api')"
+      },
+      {
+        "file": "src/client/index.js",
+        "line": 239,
+        "text": "const res = await fetch('/relay-bridge/api', {"
+      },
+      {
+        "file": "src/mobile/assets/app.js",
+        "line": 136,
+        "text": "var res = await fetch(PREFIX + '/__relay/m/rpc?g=' + encodeURIComponent(GATE), {"
+      },
+      {
+        "file": "src/mobile/assets/app.js",
+        "line": 197,
+        "text": "socket = new WebSocket(wsUrl())"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/crypto.js",
+        "line": 15,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "src/crypto.js",
+        "line": 48,
+        "text": "const raw = JSON.parse(fs.readFileSync(this.sessionsPath, 'utf8'))"
+      },
+      {
+        "file": "src/crypto.js",
+        "line": 67,
+        "text": "fs.writeFileSync(tmp, `${JSON.stringify(raw)}\\n`, { mode: 0o600 })"
+      },
+      {
+        "file": "src/files.js",
+        "line": 8,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "src/identity.js",
+        "line": 15,
+        "text": "import fs from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/mobile/bridge.js",
+        "line": 973,
+        "text": "const spawned = await registry.spawn(agent, { type, ...(cwd ? { cwd } : {}) }, this.signal())"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

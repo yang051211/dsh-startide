@@ -1,0 +1,69 @@
+{
+  "name": "@zyfgood/dsh-email-notify",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-05T21:23:07.234Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/receive.js",
+        "line": 89,
+        "text": "for await (const m of client.fetch(`${scanFrom}:${total}`, { uid: true, flags: true }, { uid: false })) {"
+      },
+      {
+        "file": "lib/receive.js",
+        "line": 101,
+        "text": "for await (const msg of client.fetch(targets.join(','), { uid: true, source: true, envelope: true, flags: true }, { uid: false })) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tools.js",
+        "line": 4,
+        "text": "* 依赖 `ctx.tools`；未加载该服务时跳过注册并告警。"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 15,
+        "text": "ctx.logger.warn('email: 当前环境未加载 ctx.tools，跳过 email_send 工具注册');"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 18,
+        "text": "ctx.effect(() => tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 69,
+        "text": "ctx.logger.warn('email: 当前环境未加载 ctx.tools，跳过 email_check 工具注册');"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 72,
+        "text": "ctx.effect(() => tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

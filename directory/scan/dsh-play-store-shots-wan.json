@@ -1,0 +1,80 @@
+{
+  "name": "dsh-play-store-shots-wan",
+  "version": "1.0.6",
+  "scannedAt": "2026-11-05T21:23:06.323Z",
+  "icon": "dsh-play-store-shots-wan.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.cjs",
+        "line": 23,
+        "text": "const body = await (await fetch(`${BASE}/latest.json`, { cache: \"no-store\" })).json();"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 261,
+        "text": "const response = await fetch(endpoint, {"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 293,
+        "text": "const response = await fetch(url, { signal: deadline(signal, 12e4) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 1,
+        "text": "import { appendFile, mkdir, readFile, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 355,
+        "text": "await mkdir(finalDir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 394,
+        "text": "await writeFile(join(finalDir, board.name), buffer);"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 416,
+        "text": "await writeFile(join(directory, \"manifest.json\"), `${JSON.stringify({"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 444,
+        "text": "await mkdir(join(homedir(), \".dsh\", \"play-store-shots\"), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

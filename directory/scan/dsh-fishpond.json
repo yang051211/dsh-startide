@@ -1,0 +1,69 @@
+{
+  "name": "dsh-fishpond",
+  "version": "0.5.1",
+  "scannedAt": "2026-11-05T21:23:05.624Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 329,
+        "text": "const res = await fetch(SITE + \"/api/visit\", {"
+      },
+      {
+        "file": "scripts/fishpond.mjs",
+        "line": 70,
+        "text": "const res = await fetch(SITE + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 1,
+        "text": "import { readFileSync, writeFileSync, mkdirSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 46,
+        "text": "return readFileSync(SKILL_FILE, \"utf8\").replace("
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 57,
+        "text": "return JSON.parse(readFileSync(file, \"utf8\"));"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 65,
+        "text": "mkdirSync(CONFIG_DIR, { recursive: true });"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 66,
+        "text": "writeFileSync(file, JSON.stringify(data, null, 2));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

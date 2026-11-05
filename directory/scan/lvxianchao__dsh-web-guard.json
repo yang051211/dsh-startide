@@ -1,0 +1,82 @@
+{
+  "name": "@lvxianchao/dsh-web-guard",
+  "version": "2.1.1",
+  "scannedAt": "2026-11-05T21:23:06.934Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 228,
+        "text": "const res = await fetch(url, { redirect: 'manual' })"
+      },
+      {
+        "file": "lib/inject.js",
+        "line": 71,
+        "text": "fetch(\"/__guard/session\", { cache: \"no-store\", credentials: \"same-origin\" })"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 9,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 10,
+        "text": "import https from 'node:https'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/auth.js",
+        "line": 16,
+        "text": "import { readFileSync, writeFileSync, renameSync, mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 88,
+        "text": "data = JSON.parse(readFileSync(this.file, 'utf8'))"
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 115,
+        "text": "mkdirSync(dirname(this.file), { recursive: true })"
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 117,
+        "text": "writeFileSync(tmp, JSON.stringify({ version: 1, savedAt: Date.now(), sessions }), { mode: 0o600 })"
+      },
+      {
+        "file": "lib/i18n.js",
+        "line": 12,
+        "text": "import { readFileSync, watch, statSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

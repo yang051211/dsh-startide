@@ -1,0 +1,114 @@
+{
+  "name": "dsh-deepseek-import",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-05T21:23:05.506Z",
+  "icon": "dsh-deepseek-import.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "edge-extension/background.js",
+        "line": 31,
+        "text": "const res = await fetch(url, { credentials: 'include' });"
+      },
+      {
+        "file": "edge-extension/content.js",
+        "line": 243,
+        "text": "const res = await fetch(url, { credentials: 'include' });"
+      },
+      {
+        "file": "edge-extension/inject.js",
+        "line": 167,
+        "text": "const OriginalXHR = window.XMLHttpRequest;"
+      },
+      {
+        "file": "edge-extension/inject.js",
+        "line": 190,
+        "text": "window.XMLHttpRequest = PatchedXHR;"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "audit-imports.mjs",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "audit-imports.mjs",
+        "line": 10,
+        "text": "const store = JSON.parse(fs.readFileSync(STORE, 'utf8').replace(/^\\uFEFF/, ''));"
+      },
+      {
+        "file": "doctor.mjs",
+        "line": 19,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "doctor.mjs",
+        "line": 36,
+        "text": "const buf = fs.readFileSync(file);"
+      },
+      {
+        "file": "doctor.mjs",
+        "line": 57,
+        "text": "store = JSON.parse(fs.readFileSync(STORE, 'utf8').replace(/^\\uFEFF/, ''));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 80,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "doctor.mjs",
+        "line": 18,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "dsh-import.mjs",
+        "line": 27,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 21,
+      "text": "npm i -g dsh-deepseek-import"
+    },
+    {
+      "file": "README.zh.md",
+      "line": 21,
+      "text": "npm i -g dsh-deepseek-import"
+    }
+  ],
+  "skippedEntries": []
+}

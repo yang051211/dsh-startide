@@ -1,19 +1,19 @@
 {
   "name": "dsh-fact-check",
-  "version": "1.5.1",
-  "scannedAt": "2026-10-27T23:28:52.606Z",
+  "version": "1.5.2",
+  "scannedAt": "2026-11-05T21:22:54.139Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "tools/doctor.mjs",
-        "line": 207,
+        "line": 209,
         "text": "const res = await fetch(CHAIN_URL, { signal: AbortSignal.timeout(12000) })"
       },
       {
         "file": "tools/doctor.mjs",
-        "line": 241,
+        "line": 243,
         "text": "const res = await fetch(url, { signal: AbortSignal.timeout(8000) })"
       },
       {
@@ -23,7 +23,7 @@
       },
       {
         "file": "tools/jev-verdict.mjs",
-        "line": 308,
+        "line": 309,
         "text": "const res = await fetch(endpoint(), {"
       }
     ]
@@ -52,9 +52,9 @@
         "text": "const { fm, body } = parseFrontmatter(await readFile(SKILL_URL, 'utf8'))"
       },
       {
-        "file": "tools/doctor.mjs",
-        "line": 17,
-        "text": "import { existsSync, readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs'"
+        "file": "tools/config.mjs",
+        "line": 20,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
       }
     ]
   },
@@ -67,22 +67,22 @@
     "evidence": [
       {
         "file": "tools/doctor.mjs",
-        "line": 21,
+        "line": 22,
         "text": "import { spawnSync } from 'node:child_process'"
       },
       {
         "file": "tools/doctor.mjs",
-        "line": 152,
+        "line": 154,
         "text": "const r = spawnSync(probe, [cmd], { encoding: 'utf8' })"
       },
       {
         "file": "tools/doctor.mjs",
-        "line": 185,
+        "line": 187,
         "text": "const r = spawnSync('python3', ['-c', `import ${mod}`], { encoding: 'utf8' })"
       },
       {
         "file": "tools/doctor.mjs",
-        "line": 216,
+        "line": 218,
         "text": "const cprobe = spawnSync('curl', ['-sL', '-m', '20', '-A', 'Mozilla/5.0', CHAIN_URL], { encoding: 'utf8' })"
       }
     ]

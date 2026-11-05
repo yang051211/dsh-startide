@@ -1,0 +1,110 @@
+{
+  "name": "dsh-selfnote",
+  "version": "0.14.1",
+  "scannedAt": "2026-11-05T21:22:53.171Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 49,
+        "text": "return fetch(API + path, { headers: { accept: 'application/json', 'x-selfnote': authToken } }).then(readJson)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 53,
+        "text": "return fetch(API + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/atomic.js",
+        "line": 11,
+        "text": "import { closeSync, fsyncSync, openSync, readdirSync, renameSync, statSync, unlinkSync, writeSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/atomic.js",
+        "line": 28,
+        "text": "if (now - statSync(full).mtimeMs > maxAgeMs) unlinkSync(full)"
+      },
+      {
+        "file": "lib/atomic.js",
+        "line": 66,
+        "text": "unlinkSync(tmp)"
+      },
+      {
+        "file": "lib/capture.js",
+        "line": 16,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/capture.js",
+        "line": 311,
+        "text": "const raw = readFileSync(file, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 102,
+        "text": "export const inject = ['systemPrompt', 'tools', 'webServer']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2363,
+        "text": "const dispose = ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2456,
+        "text": "const dispose = ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2510,
+        "text": "const dispose = ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2539,
+        "text": "const dispose = ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 59,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1674,
+        "text": "child = spawn(attempt.cmd, attempt.args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

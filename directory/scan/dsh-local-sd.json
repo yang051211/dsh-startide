@@ -1,0 +1,135 @@
+{
+  "name": "dsh-local-sd",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-05T21:23:06.225Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 184,
+        "text": "return fetch(API_URL, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 817,
+        "text": "const res = await fetch(endpoint + \"/sdapi/v1/options\", { method: \"GET\", signal: combined });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1246,
+        "text": "const res = await fetch(endpoint + \"/sdapi/v1/txt2img\", {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1792,
+        "text": "const res = await fetch(endpoint + path, { method: \"GET\", signal });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 52,
+        "text": "import { mkdir, writeFile, readFile, readdir, stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 53,
+        "text": "import { openSync, closeSync, readFileSync, unlinkSync, createWriteStream, existsSync, statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 294,
+        "text": "try { unlinkSync(outPath); } catch { /* already gone */ }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 328,
+        "text": "out = readFileSync(outPath, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 598,
+        "text": "await readFile(path, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 71,
+        "text": "export const inject = [\"tools\", \"webServer\", \"connection\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1570,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1623,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1713,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1838,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 54,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 262,
+        "text": "* child cannot open a named pipe. `spawn(..., { stdio: \"pipe\" })` therefore"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 308,
+        "text": "child = spawn(command, args, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 858,
+        "text": "spawn(\"taskkill\", [\"/PID\", String(pid), \"/T\", \"/F\"], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1040,
+        "text": "const child = spawn(spawnCommand, spawnArgs, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

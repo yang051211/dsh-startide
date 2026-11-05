@@ -1,0 +1,79 @@
+{
+  "name": "@murchey/dsh-session-manager",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-05T21:22:56.824Z",
+  "icon": "murchey__dsh-session-manager.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 243,
+        "text": "const response = await fetch(url, { credentials: 'same-origin', ...init, headers });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core.js",
+        "line": 18,
+        "text": "import { promises as fs } from 'node:fs';"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 976,
+        "text": "await fs.rm(root, { recursive: true, force: true, maxRetries: 2 });"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 1046,
+        "text": "raw = await fs.readFile(options.projectionCacheSeed, 'utf8');"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 1079,
+        "text": "await fs.writeFile(temporary, `${JSON.stringify(document, null, 2)}\\n`, { mode: stat?.mode ?? 0o600 });"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 1086,
+        "text": "const document = JSON.parse(await fs.readFile(file, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "export const inject = ['tools', 'sessionPersistence', 'agents'];"
+      },
+      {
+        "file": "index.js",
+        "line": 108,
+        "text": "ctx.effect(() => ctx.tools.register(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "sessionPersistence",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,68 @@
+{
+  "name": "dsh-soul-forging",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-05T21:23:06.379Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/smoke.sh",
+        "line": 78,
+        "text": "curl -s -m 3 \"http://127.0.0.1:$PORT/health\" | grep -q '\"ok\": true' && ok \"soul-serve 起得来\" || bad \"soul-serve\""
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/plugin.js",
+        "line": 13,
+        "text": "import { readFileSync, existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/plugin.js",
+        "line": 65,
+        "text": "return existsSync(p) ? readFileSync(p, 'utf-8').trim() : ''"
+      },
+      {
+        "file": "scripts/smoke.sh",
+        "line": 44,
+        "text": "const fs=require('fs');const p='$PREFIX/lib/node_modules/dsh-soul-forging';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills",
+    "systemPrompt"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 112,
+      "text": "sudo npm i -g dsh-soul-forging"
+    },
+    {
+      "file": "README.md",
+      "line": 124,
+      "text": "sudo npm i -g dsh-soul-forging --registry https://registry.npmjs.org"
+    }
+  ],
+  "skippedEntries": []
+}

@@ -1,0 +1,94 @@
+{
+  "name": "dsh-affect",
+  "version": "0.3.4",
+  "scannedAt": "2026-11-05T21:22:55.142Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 56,
+        "text": "fetch(`http://127.0.0.1:${STATE_PORTS[i]}/state`, { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/panel-server.mjs",
+        "line": 1,
+        "text": "import http from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core.mjs",
+        "line": 4,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/core.mjs",
+        "line": 11,
+        "text": "return JSON.parse(fs.readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/core.mjs",
+        "line": 20,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/core.mjs",
+        "line": 22,
+        "text": "fs.writeFileSync(tmp, JSON.stringify(obj, null, 1))"
+      },
+      {
+        "file": "lib/core.mjs",
+        "line": 344,
+        "text": "raw = fs.readFileSync(cmdFile, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 9,
+        "text": "export const inject = ['systemPrompt', 'tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 132,
+        "text": "ctx.tools.register(def)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 53,
+        "text": "const child = spawn(process.execPath, [script], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

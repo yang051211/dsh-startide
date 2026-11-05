@@ -1,0 +1,107 @@
+{
+  "name": "dsh-media-converter",
+  "version": "1.2.1",
+  "scannedAt": "2026-11-05T21:23:06.243Z",
+  "icon": "dsh-media-converter.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 2,
+        "text": " function Me(){try{let e=await Vo(await fetch(`/api/media-convert/status`));return e.ok?(r.value=e,p.value===n(`error.network`)&&(p.value=``),e):null}catch{retu"
+      },
+      {
+        "file": "client.js",
+        "line": 30,
+        "text": "useState(`idle`),l=rl.useRef(!1),u=()=>{fetch(`/api/media-convert/status`).then(e=>e.json()).then(e=>{let t=e;n(t),l.current||(l.current=!0,i({outputDir:``,ffmp"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 20,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 21,
+        "text": "import fsp from 'node:fs/promises';"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 98,
+        "text": "const pkg = JSON.parse(fs.readFileSync(new URL('../package.json', import.meta.url), 'utf8'));"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 272,
+        "text": "await fsp.mkdir(outDir, { recursive: true });"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 349,
+        "text": "await fsp.rm(out, { force: true }).catch(() => { });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 189,
+        "text": "export const inject = ['webServer', 'tools', 'settings'];"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 501,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 19,
+        "text": "import { execFile, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 144,
+        "text": "execFile(ffmpeg, ['-hide_banner', '-i', file], { timeout: 20000 }, (_error, _stdout, stderr) => {"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 311,
+        "text": "const child = spawn(ffmpeg, args, { stdio: ['ignore', 'pipe', 'pipe'], signal: controller.signal });"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 845,
+        "text": "spawn(command, args, { detached: true, stdio: 'ignore' }).unref();"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "settings",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

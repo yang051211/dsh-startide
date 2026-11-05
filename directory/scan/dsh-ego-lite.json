@@ -1,20 +1,25 @@
 {
   "name": "dsh-ego-lite",
-  "version": "0.1.8",
-  "scannedAt": "2026-11-01T19:09:02.229Z",
+  "version": "0.1.16",
+  "scannedAt": "2026-11-05T21:22:49.546Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 852,
-        "text": " file_chooser (arm, optionally click a trigger, then set files) | fetch (pass options.saveAs for binary) | wait_event (popup | download; download can saveAs).\","
+        "line": 1816,
+        "text": "ally click a trigger, then set files) | fetch (options.saveAs asks ego to write the body to that path; the path is echoed back but this call does not verify the"
       },
       {
         "file": "lib/index.js",
-        "line": 881,
-        "text": "\t\t\t\tbody: `const response = await page.fetch(${j(args.url ?? \"\")}${args.options ? `, ${j(args.options)}` : \"\"});\\nconst described = { status: response.status, u"
+        "line": 1844,
+        "text": "return 'url is required for action=fetch (pass the absolute URL to request); nothing ran.';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1878,
+        "text": "\t\t\t\t\tbody: `const response = await page.fetch(${j(args.url ?? \"\")}${args.options ? `, ${j(args.options)}` : \"\"});\\nconst described = { status: response.status, "
       }
     ]
   },
@@ -23,17 +28,17 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 29,
+        "line": 30,
         "text": "import { existsSync, mkdtempSync, readdirSync, rmSync, writeFileSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 88,
-        "text": "writeFileSync(file, script, { encoding: \"utf8\" });"
+        "line": 149,
+        "text": "writeFileSync(file, scriptText, { encoding: \"utf8\" });"
       },
       {
         "file": "lib/index.js",
-        "line": 102,
+        "line": 165,
         "text": "try { rmSync(dir, { recursive: true, force: true }); } catch {}"
       }
     ]
@@ -43,27 +48,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 37,
+        "line": 38,
         "text": "export const inject = [\"tools\", \"systemPrompt\"];"
       },
       {
         "file": "lib/index.js",
-        "line": 285,
+        "line": 826,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 310,
+        "line": 854,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 325,
+        "line": 906,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 591,
+        "line": 1325,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
@@ -78,12 +83,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 78,
+        "line": 92,
         "text": "if (process.platform === \"win32\") spawn(\"taskkill\", [\"/pid\", String(pid), \"/T\", \"/F\"], { windowsHide: true, stdio: \"ignore\" });"
       },
       {
         "file": "lib/index.js",
-        "line": 106,
+        "line": 169,
         "text": "child = spawn(executable, [\"nodejs\", \"-e\", entry], {"
       }
     ]

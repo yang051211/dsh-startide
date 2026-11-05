@@ -1,0 +1,70 @@
+{
+  "name": "dsh-video-skills",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-05T21:22:51.151Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 329,
+        "text": "pending = typeof fetch === \"function\" ? fetch(apiUrl(path), options) : Promise.reject(new Error(\"fetch-unavailable\"));"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/catalog.js",
+        "line": 6,
+        "text": "import { promises as fs } from 'node:fs';"
+      },
+      {
+        "file": "src/host/catalog.js",
+        "line": 68,
+        "text": "const cached = JSON.parse(await fs.readFile(CACHE_FILE, 'utf8'));"
+      },
+      {
+        "file": "src/host/catalog.js",
+        "line": 81,
+        "text": "await fs.mkdir(path.dirname(CACHE_FILE), { recursive: true });"
+      },
+      {
+        "file": "src/host/catalog.js",
+        "line": 82,
+        "text": "await fs.writeFile(CACHE_FILE, JSON.stringify({ fetchedAt: now, payload }), 'utf8');"
+      },
+      {
+        "file": "src/host/catalog.js",
+        "line": 110,
+        "text": "const payload = JSON.parse(await fs.readFile(SNAPSHOT_FILE, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/index.js",
+        "line": 285,
+        "text": "for (const definition of definitions) tools.register(definition);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

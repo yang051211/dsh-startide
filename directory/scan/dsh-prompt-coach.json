@@ -1,0 +1,67 @@
+{
+  "name": "dsh-prompt-coach",
+  "version": "0.4.25",
+  "scannedAt": "2026-11-05T21:22:56.208Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 406,
+        "text": "return fetch(url, { ...options, signal: AbortSignal.any([...options.signal ? [options.signal] : [], AbortSignal.timeout(milliseconds)]) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/storage-doctor.mjs",
+        "line": 3,
+        "text": "rt { lstatSync, fstatSync, openSync, closeSync, readFileSync, writeFileSync, fsyncSync, linkSync, unlinkSync, renameSync, chmodSync, constants } from \"node:fs\";"
+      },
+      {
+        "file": "bin/storage-doctor.mjs",
+        "line": 32,
+        "text": "bytes = readFileSync(fd);"
+      },
+      {
+        "file": "bin/storage-doctor.mjs",
+        "line": 110,
+        "text": "        writeFileSync(fd, JSON.stringify({ protocol: PROTOCOL, gateNonce: nonce, resource: basename(this.legacy), pid: process.pid, createdAt: (/* @__PURE__ */ "
+      },
+      {
+        "file": "bin/storage-doctor.mjs",
+        "line": 122,
+        "text": "unlinkSync(tmp);"
+      },
+      {
+        "file": "bin/storage-doctor.mjs",
+        "line": 128,
+        "text": "unlinkSync(this.legacy);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "client.js",
+    "index.mjs"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

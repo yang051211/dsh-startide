@@ -1,35 +1,25 @@
 {
   "name": "dsh-plugin-health",
-  "version": "2.2.1",
-  "scannedAt": "2026-11-04T07:55:53.438Z",
+  "version": "3.0.1",
+  "scannedAt": "2026-11-05T21:22:43.822Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "src/ui/client.js",
-        "line": 481,
+        "line": 933,
+        "text": "const response = await fetch(path, { headers: { accept: 'application/json' },"
+      },
+      {
+        "file": "src/ui/client.js",
+        "line": 954,
         "text": "const send = () => fetch(path, {"
       },
       {
-        "file": "src/ui/client.js",
-        "line": 494,
-        "text": "const response = await fetch(STATUS_PATH, {"
-      },
-      {
-        "file": "src/ui/client.js",
-        "line": 522,
-        "text": "const response = await fetch(STATUS_PATH, {"
-      },
-      {
-        "file": "src/ui/client.js",
-        "line": 1571,
-        "text": "fetch(STATUS_PATH, { headers: { accept: 'application/json' }, credentials: 'same-origin' })"
-      },
-      {
-        "file": "src/ui/repair-route.js",
-        "line": 209,
-        "text": "* served from that origin sends it automatically; `fetch(..., { credentials: 'same-origin' })`"
+        "file": "src/util/http.js",
+        "line": 30,
+        "text": "const response = await fetch(url, {"
       }
     ]
   },
@@ -43,22 +33,22 @@
       },
       {
         "file": "src/cli.js",
-        "line": 26,
+        "line": 27,
         "text": "const VERSION = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version"
       },
       {
         "file": "src/cli.js",
-        "line": 93,
+        "line": 94,
         "text": "return readFileSync(filename, 'utf8').split(/\\r?\\n/u).map((line) => line.trim()).filter((line) => line !== '' && !line.startsWith('#'))"
       },
       {
         "file": "src/cli.js",
-        "line": 231,
+        "line": 236,
         "text": "const exemptions = exemptionsPath === undefined ? {} : JSON.parse(readFileSync(exemptionsPath, 'utf8'))"
       },
       {
         "file": "src/cli.js",
-        "line": 234,
+        "line": 239,
         "text": "mkdirSync(out, { recursive: true })"
       }
     ]
@@ -68,12 +58,12 @@
     "evidence": [
       {
         "file": "src/plugin.js",
-        "line": 21,
+        "line": 22,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "src/plugin.js",
-        "line": 107,
+        "line": 115,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
@@ -88,7 +78,7 @@
       },
       {
         "file": "src/rescue/environment.js",
-        "line": 203,
+        "line": 205,
         "text": "const child = spawn(invocation.command, invocation.args, {"
       },
       {
@@ -98,12 +88,12 @@
       },
       {
         "file": "src/runtime/smoke.js",
-        "line": 14,
-        "text": "const child = spawn(process.execPath, args, {"
+        "line": 22,
+        "text": "const child = spawn(node.command, args, {"
       },
       {
         "file": "src/runtime/smoke.js",
-        "line": 36,
+        "line": 47,
         "text": "const killer = spawn('taskkill', ['/pid', String(child.pid), '/T', '/F'], { stdio: 'ignore' })"
       }
     ]
@@ -121,12 +111,12 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 20,
+      "line": 24,
       "text": "npm install -g dsh-plugin-health"
     },
     {
       "file": "README.md",
-      "line": 529,
+      "line": 577,
       "text": "npm install -g dsh-plugin-health"
     }
   ],

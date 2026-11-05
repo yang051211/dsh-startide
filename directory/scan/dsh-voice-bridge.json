@@ -1,25 +1,30 @@
 {
   "name": "dsh-voice-bridge",
-  "version": "1.0.0",
-  "scannedAt": "2026-11-05T08:17:16.056Z",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-05T21:22:59.381Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 48,
+        "line": 84,
+        "text": "fetch('/api/voice-bridge/voice-turn', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 104,
+        "text": "fetch('/api/voice-bridge/followup-off', { method: 'POST' }).catch(() => undefined)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 139,
         "text": "const res = await fetch('/api/voice-bridge/latest', { cache: 'no-store' })"
       },
       {
         "file": "lib/client.js",
-        "line": 63,
+        "line": 160,
         "text": "fetch('/api/voice-bridge/ack', {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 75,
-        "text": "fetch('/api/voice-bridge/voice-turn', {"
       }
     ]
   },
@@ -28,27 +33,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 22,
+        "line": 25,
         "text": "import fs from 'node:fs'"
       },
       {
         "file": "lib/index.js",
-        "line": 43,
+        "line": 70,
         "text": "const cfg = JSON.parse(fs.readFileSync(path.join(JARVIS, 'device.json'), 'utf8'))"
       },
       {
         "file": "lib/index.js",
-        "line": 86,
+        "line": 179,
         "text": "return JSON.parse(fs.readFileSync(file, 'utf8'))"
       },
       {
         "file": "lib/index.js",
-        "line": 94,
+        "line": 187,
         "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
       },
       {
         "file": "lib/index.js",
-        "line": 95,
+        "line": 188,
         "text": "fs.writeFileSync(file, JSON.stringify(value), 'utf8')"
       }
     ]
@@ -62,13 +67,18 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 26,
-        "text": "import { spawn } from 'node:child_process'"
+        "line": 29,
+        "text": "import { spawn, execFile } from 'node:child_process'"
       },
       {
         "file": "lib/index.js",
-        "line": 130,
+        "line": 256,
         "text": "const kid = spawn(exe, scriptArgs, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 347,
+        "text": "execFile("
       }
     ]
   },

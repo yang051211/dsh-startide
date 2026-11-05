@@ -1,25 +1,35 @@
 {
   "name": "@goodandready/dsh-ollama-cloud-provider",
-  "version": "0.1.16",
-  "scannedAt": "2026-11-05T08:17:03.022Z",
+  "version": "0.1.30",
+  "scannedAt": "2026-11-05T21:22:50.347Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 427,
+        "line": 549,
         "text": "const response = await fetch(path, {"
       },
       {
         "file": "lib/index.js",
-        "line": 3225,
+        "line": 3762,
         "text": "const response = await fetch(`${registry.replace(/\\/$/, \"\")}/${encodeURIComponent(packageName)}/latest`, { signal: AbortSignal.timeout(8e3) });"
       },
       {
         "file": "lib/index.js",
-        "line": 3859,
-        "text": "const response = await fetch(`http://${host}/api/version`, {"
+        "line": 4574,
+        "text": "const response = await fetch(`${localOrigin}/api/version`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4585,
+        "text": "const anonymous = await fetch(`${localOrigin}/api/version`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 5804,
+        "text": "async fetch(request, signal) {"
       }
     ]
   },
@@ -29,27 +39,27 @@
       {
         "file": "lib/index.js",
         "line": 2,
-        "text": "import { existsSync, readFileSync, statSync } from \"node:fs\";"
+        "text": "import { existsSync, readFileSync, statSync, unlinkSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
         "line": 3,
-        "text": "import { appendFile, mkdir, readFile, readdir, stat, writeFile } from \"node:fs/promises\";"
+        "text": "import { appendFile, mkdir, readFile, readdir, rename, stat, unlink, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 1547,
-        "text": "await mkdir(directory, { recursive: true });"
+        "line": 425,
+        "text": "const parsed = parse(JSON.parse(await readFile(catalogCachePath(), \"utf8\")));"
       },
       {
         "file": "lib/index.js",
-        "line": 1550,
-        "text": "await appendFile(path, line, \"utf8\");"
+        "line": 447,
+        "text": "await mkdir(dirname(path), { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 1567,
-        "text": "const lines = (await readFile(path, \"utf8\")).split(\"\\n\").filter((line) => line !== \"\");"
+        "line": 448,
+        "text": "await writeFile(temp, `${JSON.stringify(payload)}\\n`, \"utf8\");"
       }
     ]
   },
@@ -67,7 +77,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 3261,
+        "line": 3798,
         "text": "const child = spawn(process.execPath, ["
       }
     ]

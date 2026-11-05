@@ -1,0 +1,89 @@
+{
+  "name": "dsh-disk-cleaner",
+  "version": "1.6.0",
+  "scannedAt": "2026-11-05T21:23:05.472Z",
+  "icon": "dsh-disk-cleaner.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 484,
+        "text": "const response = await fetch(ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/audit.js",
+        "line": 12,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/catalog.js",
+        "line": 12,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/catalog.js",
+        "line": 329,
+        "text": "stamp = JSON.parse(fs.readFileSync(path.join(abs, metaName), 'utf8'))[key];"
+      },
+      {
+        "file": "lib/catalog.js",
+        "line": 388,
+        "text": "const launcher = fs.readFileSync(path.join(appDir, 'bin', 'code.cmd'), 'utf8');"
+      },
+      {
+        "file": "lib/catalog.js",
+        "line": 480,
+        "text": "const state = fs.readFileSync("
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 17,
+        "text": "export const inject = ['tools', 'webServer'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 286,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 148,
+        "text": "spawn('explorer.exe', args, { detached: true, stdio: 'ignore' }).unref();"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

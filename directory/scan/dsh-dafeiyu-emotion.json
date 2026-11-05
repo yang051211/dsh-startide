@@ -1,0 +1,97 @@
+{
+  "name": "dsh-dafeiyu-emotion",
+  "version": "0.2.5",
+  "scannedAt": "2026-11-05T21:23:05.460Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 741,
+        "text": "fetch(CONFIG_ENDPOINT, { cache: 'no-store' }),"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 742,
+        "text": "fetch(HEALTH_ENDPOINT, { cache: 'no-store' }),"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 758,
+        "text": "const response = await fetch(HEALTH_ENDPOINT, { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 798,
+        "text": "const response = await fetch(CONFIG_ENDPOINT, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1474,
+        "text": "const response = await fetch(ANALYZE_ENDPOINT, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/test-client-registration.mjs",
+        "line": 2,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "scripts/test-client-registration.mjs",
+        "line": 6,
+        "text": "const source = readFileSync(fileURLToPath(new URL('../lib/client.js', import.meta.url)), 'utf8')"
+      },
+      {
+        "file": "src/index.js",
+        "line": 2,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "src/index.js",
+        "line": 3,
+        "text": "import { mkdtemp, rm, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/index.js",
+        "line": 863,
+        "text": "await writeFile(wavPath, buffer)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/index.js",
+        "line": 582,
+        "text": "const proc = spawn(this.python, [defaultWorker, this.options.backendRoot], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

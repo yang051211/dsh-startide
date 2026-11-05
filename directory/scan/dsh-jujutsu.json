@@ -1,7 +1,7 @@
 {
   "name": "dsh-jujutsu",
-  "version": "0.2.0",
-  "scannedAt": "2026-10-26T10:05:42.671Z",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-05T21:23:03.079Z",
   "icon": "dsh-jujutsu.svg",
   "network": {
     "hit": false,
@@ -11,24 +11,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/adopt.js",
+        "line": 383,
+        "text": "const fs = ctx.get(\"fs\");"
+      },
+      {
+        "file": "lib/adopt.js",
+        "line": 403,
+        "text": "const fs = ctx.get(\"fs\");"
+      },
+      {
+        "file": "lib/adopt.js",
+        "line": 420,
+        "text": "const fs = ctx.get(\"fs\");"
+      },
+      {
         "file": "lib/detect.js",
         "line": 188,
         "text": "const fs = ctx.get(\"fs\");"
       },
       {
         "file": "lib/marker.js",
-        "line": 124,
+        "line": 126,
         "text": "// `ctx.get('fs')`, matching `detect.ts`: the service is not part of the"
-      },
-      {
-        "file": "lib/marker.js",
-        "line": 127,
-        "text": "const fs = ctx.get(\"fs\");"
-      },
-      {
-        "file": "lib/tools.js",
-        "line": 419,
-        "text": "const fs = ctx.get(\"fs\");"
       }
     ]
   },
@@ -42,12 +47,12 @@
       },
       {
         "file": "lib/tools.js",
-        "line": 770,
+        "line": 2348,
         "text": "// Read the registry through **either** shape. `ctx.tools` is the Cordis service"
       },
       {
         "file": "lib/tools.js",
-        "line": 776,
+        "line": 2354,
         "text": "const registry = ctx.tools ?? ctx.get(\"tools\");"
       }
     ]
@@ -57,7 +62,7 @@
     "evidence": [
       {
         "file": "lib/invocation.js",
-        "line": 1058,
+        "line": 1303,
         "text": "cmd: \"node -e \\\"require('child_process').execSync('git status')\\\"\","
       }
     ]
@@ -68,7 +73,7 @@
       {
         "file": "package.json",
         "line": 0,
-        "text": "scripts.prepare: pnpm run build"
+        "text": "scripts.prepare: vp run build"
       }
     ]
   },

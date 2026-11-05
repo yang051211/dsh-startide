@@ -1,0 +1,94 @@
+{
+  "name": "shiguang-reader",
+  "version": "1.120.2",
+  "scannedAt": "2026-11-05T21:23:07.631Z",
+  "icon": "shiguang-reader.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "hostindex.js",
+        "line": 13,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "hostindex.js",
+        "line": 289,
+        "text": "try { fs.mkdirSync(path.dirname(file), { recursive: true }); } catch (error) { return null; }"
+      },
+      {
+        "file": "hostindex.js",
+        "line": 301,
+        "text": "fs.rmSync(file, { force: true });"
+      },
+      {
+        "file": "hostindex.js",
+        "line": 314,
+        "text": "try { fs.rmSync(file, { force: true }); } catch (removeError) { /* ignore */ }"
+      },
+      {
+        "file": "hostindex.js",
+        "line": 679,
+        "text": "fs.rmSync(file, { force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 48,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 412,
+        "text": "ctx.tools.register(spec);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 17141,
+        "text": "function spawn(workerIndex) {"
+      },
+      {
+        "file": "client.js",
+        "line": 17160,
+        "text": "workers[workerIndex] = spawn(workerIndex);"
+      },
+      {
+        "file": "client.js",
+        "line": 17173,
+        "text": "if (!broken) workers[workerIndex] = spawn(workerIndex);"
+      },
+      {
+        "file": "client.js",
+        "line": 17186,
+        "text": "for (let index = 0; index < size; index += 1) workers.push(spawn(index));"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

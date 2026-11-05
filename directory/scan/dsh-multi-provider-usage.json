@@ -1,0 +1,84 @@
+{
+  "name": "dsh-multi-provider-usage",
+  "version": "0.7.3",
+  "scannedAt": "2026-11-05T21:23:07.465Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 792,
+        "text": "const res = await fetch(url, { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1252,
+        "text": "const res = await fetch(path, init);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 848,
+        "text": "const res = await fetch(`https://registry.npmjs.org/${NPM_PACKAGE}/latest`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/auto-update.js",
+        "line": 26,
+        "text": "import { lstatSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/auto-update.js",
+        "line": 74,
+        "text": "const manifest = JSON.parse(readFileSync(join(profileDir, \"package.json\"), \"utf8\"));"
+      },
+      {
+        "file": "lib/auto-update.js",
+        "line": 169,
+        "text": "const pkg = JSON.parse(readFileSync(join(checkout, \"package.json\"), \"utf8\"));"
+      },
+      {
+        "file": "lib/auto-update.js",
+        "line": 358,
+        "text": "mkdirSync(dirname(temp), { recursive: true });"
+      },
+      {
+        "file": "lib/auto-update.js",
+        "line": 359,
+        "text": "writeFileSync(temp, contents, { mode: 0o644 });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/auto-update.js",
+        "line": 25,
+        "text": "import { execFile } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "credentials",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

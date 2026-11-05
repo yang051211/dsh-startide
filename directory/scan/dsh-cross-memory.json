@@ -1,0 +1,99 @@
+{
+  "name": "dsh-cross-memory",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-05T21:23:07.262Z",
+  "icon": "dsh-cross-memory.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/backfill.js",
+        "line": 17,
+        "text": "import { readFile, readdir, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/backfill.js",
+        "line": 271,
+        "text": "const buffer = await readFile(file);"
+      },
+      {
+        "file": "lib/citations.js",
+        "line": 19,
+        "text": "import { existsSync, readFileSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/citations.js",
+        "line": 162,
+        "text": "return parseGitignore(readFileSync(join(root, '.gitignore'), 'utf8'));"
+      },
+      {
+        "file": "lib/consolidate.js",
+        "line": 2,
+        "text": "import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 154,
+        "text": "export const inject = ['tools', 'commands'];"
+      },
+      {
+        "file": "lib/tool.js",
+        "line": 65,
+        "text": "return ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/notify.js",
+        "line": 12,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/notify.js",
+        "line": 27,
+        "text": "const result = spawnSync('osascript', ['-e', script], { timeout: 3_000 });"
+      },
+      {
+        "file": "lib/sync.js",
+        "line": 31,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/test/sync.test.js",
+        "line": 11,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

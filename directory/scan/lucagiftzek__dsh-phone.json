@@ -1,0 +1,122 @@
+{
+  "name": "@lucagiftzek/dsh-phone",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-05T21:22:59.055Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "daemon/hookd.mjs",
+        "line": 22,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "daemon/hookd.mjs",
+        "line": 795,
+        "text": "const r = await fetch(settings.publicBaseUrl + '/health', { signal: AbortSignal.timeout(8000), headers: { 'user-agent': 'dsh-phone-selfcheck' } })"
+      },
+      {
+        "file": "daemon/telegram.mjs",
+        "line": 12,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "daemon/telegram.mjs",
+        "line": 143,
+        "text": "      const req = http.request({ socketPath: sock, path, method, timeout: timeoutMs, headers: payload ? { 'content-type': 'application/json', 'content-length': "
+      },
+      {
+        "file": "daemon/telegram.mjs",
+        "line": 379,
+        "text": "const req = http.request({ socketPath: sock, path: '/events?since=' + st.lastSeq, method: 'GET' }, (res) => {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "daemon/config.mjs",
+        "line": 15,
+        "text": "import { readFileSync, writeFileSync, renameSync, mkdirSync, chmodSync } from 'node:fs'"
+      },
+      {
+        "file": "daemon/config.mjs",
+        "line": 248,
+        "text": "try { return JSON.parse(readFileSync(provisionedPath(), 'utf8')) } catch { return {} }"
+      },
+      {
+        "file": "daemon/config.mjs",
+        "line": 252,
+        "text": "mkdirSync(dirname(path), { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "daemon/config.mjs",
+        "line": 254,
+        "text": "writeFileSync(tmp, JSON.stringify(obj, null, 2) + '\\n', { mode: 0o600 })"
+      },
+      {
+        "file": "daemon/hookd.mjs",
+        "line": 23,
+        "text": "import fs from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "export const inject = ['tools', 'webServer', 'settings']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 452,
+        "text": "if (defineTool && ctx.tools && typeof ctx.tools.register === 'function') {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 454,
+        "text": "} else warn('defineTool or ctx.tools unavailable; agent tools not registered (sidebar still works)')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 491,
+        "text": "const reg = (def) => ctx.tools.register(defineLossless({ ...def, output }))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "daemon/tg-transcribe.mjs",
+        "line": 18,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "daemon/tg-transcribe.mjs",
+        "line": 46,
+        "text": "    try { p = spawn(ffmpeg, ['-hide_banner', '-nostdin', '-i', 'pipe:0', '-af', 'volumedetect', '-f', 'null', '-'], { stdio: ['pipe', 'ignore', 'pipe'] }) } cat"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "settings",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

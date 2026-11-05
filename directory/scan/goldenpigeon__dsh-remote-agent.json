@@ -1,7 +1,7 @@
 {
   "name": "@goldenpigeon/dsh-remote-agent",
-  "version": "0.2.9",
-  "scannedAt": "2026-10-27T02:44:44.757Z",
+  "version": "0.2.10",
+  "scannedAt": "2026-11-05T21:23:02.313Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -12,23 +12,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 851,
+        "line": 334,
+        "text": "import { createReadStream } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 335,
+        "text": "import { open, readdir, stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1252,
         "text": "import { chmod, mkdir, readFile, rename, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 894,
+        "line": 1295,
         "text": "raw = await readFile(file, \"utf8\");"
       },
       {
         "file": "lib/index.js",
-        "line": 922,
+        "line": 1323,
         "text": "await mkdir(stateDirectory(file), { recursive: true, mode: 448 });"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 927,
-        "text": "await writeFile(temp, body, { encoding: \"utf8\", mode: 384 });"
       }
     ]
   },
@@ -37,8 +42,19 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1477,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1554,
+        "text": "child = spawn(\"python3\", [\"-u\", \"-c\", PTY_HELPER, cwd, String(rows), String(cols), shell], {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

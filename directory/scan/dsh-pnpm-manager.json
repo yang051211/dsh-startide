@@ -1,0 +1,82 @@
+{
+  "name": "dsh-pnpm-manager",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-05T21:22:59.895Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 44,
+        "text": "return fetch(path, init).then(function (r) {"
+      },
+      {
+        "file": "lib/npmrc.js",
+        "line": 9,
+        "text": "import http from \"node:http\";"
+      },
+      {
+        "file": "lib/npmrc.js",
+        "line": 214,
+        "text": "const req = http.request({ host: ph, port: pp, method: \"CONNECT\", path: `${rh}:${rp}`, timeout });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-pnpm-manager.mjs",
+        "line": 23,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "bin/dsh-pnpm-manager.mjs",
+        "line": 50,
+        "text": "return JSON.parse(fs.readFileSync(CONF, \"utf8\"));"
+      },
+      {
+        "file": "bin/dsh-pnpm-manager.mjs",
+        "line": 55,
+        "text": "const writeConf = (c) => fs.writeFileSync(CONF, JSON.stringify(c, null, 2) + \"\\n\", \"utf8\");"
+      },
+      {
+        "file": "bin/dsh-pnpm-manager.mjs",
+        "line": 66,
+        "text": "const t = fs.readFileSync(path.join(PROFILE, \"pnpm-workspace.yaml\"), \"utf8\");"
+      },
+      {
+        "file": "lib/npmrc.js",
+        "line": 5,
+        "text": "import fs from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-pnpm-manager.mjs",
+        "line": 26,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

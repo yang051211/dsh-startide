@@ -1,35 +1,35 @@
 {
   "name": "dsh-agent-soul",
-  "version": "0.6.0",
-  "scannedAt": "2026-11-04T20:39:00.510Z",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-05T21:22:49.394Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/api.js",
-        "line": 496,
+        "line": 524,
         "text": "// fetch('http://127.0.0.1:PORT/api/soul/persona', {method:'POST',...}) 就能改写她的魂。"
       },
       {
         "file": "lib/client.js",
-        "line": 203,
-        "text": "return fetch(API + path, { cache: 'no-store' }).then(readJson)"
+        "line": 224,
+        "text": "tokenPending = fetch(API + '/session', init).then(readJson).then(function (data) {"
       },
       {
         "file": "lib/client.js",
-        "line": 206,
-        "text": "return fetch(API + path, {"
+        "line": 252,
+        "text": "return fetch(API + path, withToken(init))"
       },
       {
         "file": "lib/client/api.js",
-        "line": 20,
-        "text": "return fetch(API + path, { cache: 'no-store' }).then(readJson)"
+        "line": 41,
+        "text": "tokenPending = fetch(API + '/session', init).then(readJson).then(function (data) {"
       },
       {
         "file": "lib/client/api.js",
-        "line": 23,
-        "text": "return fetch(API + path, {"
+        "line": 69,
+        "text": "return fetch(API + path, withToken(init))"
       }
     ]
   },
@@ -43,7 +43,7 @@
       },
       {
         "file": "lib/api.js",
-        "line": 1212,
+        "line": 1314,
         "text": "const bytes = readFileSync(join(ASSETS_DIR, name))"
       },
       {
@@ -59,7 +59,7 @@
       {
         "file": "lib/diary.js",
         "line": 33,
-        "text": "import { appendFileSync, readFileSync, readdirSync, statSync, unlinkSync } from 'node:fs'"
+        "text": "import { appendFileSync, chmodSync, readFileSync, readdirSync, statSync, unlinkSync } from 'node:fs'"
       }
     ]
   },
@@ -73,22 +73,22 @@
       },
       {
         "file": "lib/diary.js",
-        "line": 1138,
+        "line": 1212,
         "text": "* 实测：工具不在 agent 或会话里，而在宿主平面的 ctx.tools 注册表，每步由"
       },
       {
         "file": "lib/index.js",
-        "line": 64,
+        "line": 67,
         "text": "/** 声明式依赖：没有 inject，读 ctx.systemPrompt / ctx.tools 会直接抛。 */"
       },
       {
         "file": "lib/index.js",
-        "line": 71,
+        "line": 74,
         "text": "export const inject = ['systemPrompt', 'tools', 'webServer', 'agentPresets', 'sessions']"
       },
       {
         "file": "lib/tool.js",
-        "line": 70,
+        "line": 86,
         "text": "const dispose = tools.register({"
       }
     ]
@@ -103,12 +103,12 @@
       },
       {
         "file": "lib/api.js",
-        "line": 412,
+        "line": 437,
         "text": "child = spawn(cmd, args, { windowsHide: true })"
       },
       {
         "file": "lib/api.js",
-        "line": 629,
+        "line": 683,
         "text": "spawn(cmd, args, { detached: true, stdio: 'ignore' }).unref()"
       },
       {

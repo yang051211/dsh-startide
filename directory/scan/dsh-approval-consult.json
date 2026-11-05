@@ -1,0 +1,88 @@
+{
+  "name": "dsh-approval-consult",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-05T21:22:54.740Z",
+  "icon": "dsh-approval-consult.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 615,
+        "text": "response = await fetch(url, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1412,
+        "text": "const response = await fetch(`${API}/attachment?${params.toString()}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1915,
+        "text": "await fetch(`${TIMEOUT_API}/cancel`, { method: 'POST', credentials: 'same-origin', cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/impl.js",
+        "line": 41,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/impl.js",
+        "line": 67,
+        "text": "return JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version"
+      },
+      {
+        "file": "lib/impl.js",
+        "line": 130,
+        "text": "const data = JSON.parse(readFileSync(filePath, 'utf8'))"
+      },
+      {
+        "file": "lib/impl.js",
+        "line": 160,
+        "text": "mkdirSync(dirname(target), { recursive: true })"
+      },
+      {
+        "file": "lib/impl.js",
+        "line": 162,
+        "text": "writeFileSync(tmp, JSON.stringify({ version: 1, executor: lists.executor, reviewer: lists.reviewer }, null, 2) + '\\n', 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 29,
+        "text": "export const inject = ['webServer', 'connection', 'llm', 'sessions', 'tools', 'approval', 'agents']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "approval",
+    "connection",
+    "llm",
+    "sessions",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

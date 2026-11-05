@@ -1,0 +1,62 @@
+{
+  "name": "dsh-usage-hub",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-05T21:23:07.580Z",
+  "icon": "dsh-usage-hub.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/providers.js",
+        "line": 122,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "import { appendFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 80,
+        "text": "appendFileSync(diagnostics.path, line, \"utf8\");"
+      },
+      {
+        "file": "tools/client-check.mjs",
+        "line": 10,
+        "text": "import { readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "tools/client-check.mjs",
+        "line": 13,
+        "text": "const source = readFileSync(new URL(\"../lib/client.js\", import.meta.url), \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

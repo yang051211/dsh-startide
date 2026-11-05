@@ -1,0 +1,100 @@
+{
+  "name": "dsh-reload-buttons",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-05T21:23:00.093Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 102,
+        "text": "const res = await fetch(new URL(url, document.baseURI), { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 112,
+        "text": "await fetch(api(ROUTE), { method: \"POST\", headers: { \"content-type\": \"application/json\" }, body: \"{}\" });"
+      },
+      {
+        "file": "src/entry.jsx",
+        "line": 69,
+        "text": "const res = await fetch(new URL(url, document.baseURI), { cache: 'no-store' })"
+      },
+      {
+        "file": "src/entry.jsx",
+        "line": 81,
+        "text": "await fetch(api(ROUTE), { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{}' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/restart-app.mjs",
+        "line": 16,
+        "text": "import { appendFileSync } from 'node:fs'"
+      },
+      {
+        "file": "assets/restart-app.mjs",
+        "line": 24,
+        "text": "appendFileSync(logPath, `${new Date().toISOString()} ${line}\\n`)"
+      },
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 39,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 14,
+        "text": "import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/restart-app.mjs",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "assets/restart-app.mjs",
+        "line": 96,
+        "text": "const child = spawn(exePath, [], { detached: true, stdio: 'ignore', windowsHide: false, env })"
+      },
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 70,
+        "text": "const child = spawn(process.execPath, ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

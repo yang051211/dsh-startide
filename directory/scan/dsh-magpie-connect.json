@@ -1,7 +1,7 @@
 {
   "name": "dsh-magpie-connect",
-  "version": "0.4.4",
-  "scannedAt": "2026-11-05T08:17:16.297Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-05T21:22:59.395Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -23,23 +23,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 6,
+        "line": 7,
         "text": "import { readFile, rename, rm, writeFile, mkdir } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 483,
+        "line": 484,
         "text": "await mkdir(dirname(path), { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 484,
-        "text": "await writeFile(tmp, JSON.stringify(cache), \"utf8\");"
+        "line": 486,
+        "text": "await writeFile(tmp, JSON.stringify(cache), { encoding: \"utf8\", mode: 384, flag: \"wx\" });"
       },
       {
         "file": "lib/index.js",
-        "line": 485,
-        "text": "await rm(path, { force: true });"
+        "line": 489,
+        "text": "await rm(tmp, { force: true }).catch(() => {"
       }
     ]
   },

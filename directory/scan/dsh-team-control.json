@@ -1,0 +1,108 @@
+{
+  "name": "dsh-team-control",
+  "version": "0.1.7",
+  "scannedAt": "2026-11-05T21:22:51.105Z",
+  "icon": "dsh-team-control.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 107,
+        "text": "const res = await fetch(baseUrl + '/api/health', { signal: AbortSignal.timeout(1500) });"
+      },
+      {
+        "file": "index.js",
+        "line": 155,
+        "text": "const run = async () => fetch(s.baseUrl + pathname, {"
+      },
+      {
+        "file": "index.js",
+        "line": 490,
+        "text": "const res = await fetch(s.baseUrl + '/api/workspaces', {"
+      },
+      {
+        "file": "index.js",
+        "line": 514,
+        "text": "void fetch(s.baseUrl + '/api/contexts', {"
+      },
+      {
+        "file": "index.js",
+        "line": 1218,
+        "text": "void fetch(s.baseUrl + '/api/agents/status', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "changes.js",
+        "line": 8,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "changes.js",
+        "line": 23,
+        "text": "return fs.readFileSync(file, 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 102,
+        "text": "try { return fs.readFileSync(path.join(home, 'token'), 'utf8').trim() || null; } catch { return null; }"
+      },
+      {
+        "file": "index.js",
+        "line": 802,
+        "text": "const doc = JSON.parse(fs.readFileSync(full, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 3136,
+        "text": "const disposers = buildTools(s, ctx).map((tool) => ctx.tools.register(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 115,
+        "text": "const child = spawn(process.execPath, [s.entry, 'up', '--port', String(s.port), '--data', s.home], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

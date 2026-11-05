@@ -1,25 +1,30 @@
 {
   "name": "dsh-archive-manager-plus",
-  "version": "0.1.3",
-  "scannedAt": "2026-10-26T10:07:35.476Z",
+  "version": "0.1.10",
+  "scannedAt": "2026-11-05T21:23:03.221Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client/client.js",
-        "line": 222,
+        "line": 232,
         "text": "fetch(\"/dsh-archive-manager-plus/list\", { cache: \"no-store\" })"
       },
       {
         "file": "client/client.js",
-        "line": 241,
+        "line": 251,
         "text": "fetch(\"/dsh-archive-manager-plus/restore\", {"
       },
       {
         "file": "client/client.js",
-        "line": 272,
+        "line": 282,
         "text": "fetch(\"/dsh-archive-manager-plus/delete\", {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 373,
+        "text": "const response = await fetch(\"/dsh-archive-manager-plus/delete\", {"
       }
     ]
   },
@@ -29,22 +34,27 @@
       {
         "file": "lib/routes.js",
         "line": 12,
-        "text": "import { existsSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';"
+        "text": "import { existsSync, readFileSync, readdirSync, lstatSync, mkdirSync, renameSync, rmSync, writeFileSync } from 'node:fs';"
       },
       {
         "file": "lib/routes.js",
-        "line": 25,
+        "line": 42,
         "text": "return JSON.parse(readFileSync(path, 'utf8'));"
       },
       {
         "file": "lib/routes.js",
-        "line": 29,
+        "line": 46,
         "text": "writeFileSync(path, JSON.stringify(data, null, 2) + '\\n', 'utf8');"
       },
       {
         "file": "lib/routes.js",
-        "line": 254,
-        "text": "if (dir !== null) rmSync(dir, { recursive: true, force: true });"
+        "line": 68,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "lib/routes.js",
+        "line": 301,
+        "text": "rmSync(recordPath, { force: true });"
       }
     ]
   },

@@ -1,0 +1,86 @@
+{
+  "name": "dsh-slash-command",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-05T21:22:56.074Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 156,
+        "text": "const res = await fetch(\"/api/dsh-slash-command/save\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 181,
+        "text": "fetch(\"/api/dsh-slash-command/read\", { headers: { accept: \"application/json\" }, cache: \"no-store\" }).then(async (res) => {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { watch } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import { mkdir, readFile, rename, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 246,
+        "text": "text = await readFile(file, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 288,
+        "text": "void mkdir(dirname(file), { recursive: true }).then(() => {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 307,
+        "text": "const raw = JSON.parse(await readFile(file, \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 191,
+        "text": "execFile(\"/bin/bash\", [\"-lc\", command, \"dsh-slash-command\", ...argv], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: node build.mjs"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

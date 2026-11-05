@@ -1,0 +1,107 @@
+{
+  "name": "dsh-guizang-design",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-05T21:22:48.247Z",
+  "icon": "dsh-guizang-design.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "gallery/app.js",
+        "line": 335,
+        "text": "    const r = await fetch('api/voice/collect', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ lang: i18n.lang }) }).t"
+      },
+      {
+        "file": "gallery/app.js",
+        "line": 345,
+        "text": "    const r = await fetch('api/works/remove', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ id: w.id }) }).then((x) "
+      },
+      {
+        "file": "gallery/app.js",
+        "line": 353,
+        "text": "data = await fetch(`api/catalog?lang=${i18n.lang}`, { cache: 'no-store' }).then((r) => r.json())"
+      },
+      {
+        "file": "skills/guizang-page-skill/scripts/gz-fonts.mjs",
+        "line": 118,
+        "text": "const res = await fetch(url)"
+      },
+      {
+        "file": "skills/guizang-social-card-skill/scripts/gz-fonts.mjs",
+        "line": 118,
+        "text": "const res = await fetch(url)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/history.js",
+        "line": 4,
+        "text": "import { existsSync, readdirSync, readFileSync, statSync, writeFileSync, mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/history.js",
+        "line": 45,
+        "text": "try { text = file.endsWith('.zstd') ? unzstd(readFileSync(file)) : readFileSync(file, 'utf8') } catch { continue }"
+      },
+      {
+        "file": "lib/history.js",
+        "line": 72,
+        "text": "mkdirSync(join(outFile, '..'), { recursive: true })"
+      },
+      {
+        "file": "lib/history.js",
+        "line": 73,
+        "text": "writeFileSync(outFile, md.join('\\n'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 8,
+        "text": "import { createReadStream, existsSync, readFileSync, realpathSync, statSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 32,
+        "text": "export const inject = ['webServer', 'skills', 'tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 124,
+        "text": "for (const tool of TOOLS) ctx.tools.register(tool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "skills/guizang-page-skill/scripts/render.mjs",
+        "line": 18,
+        "text": "import { execFileSync } from 'child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [
+    "skills/guizang-ppt-skill/assets/motion.min.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

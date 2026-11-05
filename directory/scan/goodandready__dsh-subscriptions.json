@@ -1,34 +1,34 @@
 {
   "name": "@goodandready/dsh-subscriptions",
-  "version": "0.7.68",
-  "scannedAt": "2026-11-05T08:16:55.472Z",
+  "version": "0.7.77",
+  "scannedAt": "2026-11-05T21:22:42.548Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 737,
+        "line": 872,
         "text": "const res = await fetch('/dsh-subscriptions/reset-credits/prepare', {"
       },
       {
         "file": "lib/client.js",
-        "line": 761,
+        "line": 896,
         "text": "const res = await fetch('/dsh-subscriptions/reset-credits/consume', {"
       },
       {
         "file": "lib/client.js",
-        "line": 777,
+        "line": 912,
         "text": "fetch('/dsh-subscriptions/history?limit=50', { cache: 'no-store' })"
       },
       {
         "file": "lib/client.js",
-        "line": 791,
+        "line": 926,
         "text": "return fetch('/dsh-subscriptions/analyze-session', {"
       },
       {
         "file": "lib/client.js",
-        "line": 810,
+        "line": 945,
         "text": "fetch('/dsh-subscriptions/diagnostics', { cache: 'no-store' })"
       }
     ]
@@ -58,7 +58,7 @@
       },
       {
         "file": "lib/accounts-config.js",
-        "line": 32,
+        "line": 34,
         "text": "mkdirSync(join(p, '..'), { recursive: true })"
       }
     ]
@@ -89,7 +89,12 @@
       {
         "file": "lib/claude-keychain.js",
         "line": 1,
-        "text": "import { execFile } from 'node:child_process'"
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/claude-keychain.js",
+        "line": 9,
+        "text": "const child = spawn(file, args, { stdio: ['pipe', 'pipe', 'pipe'] })"
       },
       {
         "file": "lib/client-version-service.js",
@@ -105,11 +110,6 @@
         "file": "lib/updater.js",
         "line": 2,
         "text": "import { spawn } from 'node:child_process'"
-      },
-      {
-        "file": "lib/updater.js",
-        "line": 227,
-        "text": "const child = spawn(process.execPath, ["
       }
     ]
   },
@@ -117,7 +117,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 3,
+  "dependencies": 2,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

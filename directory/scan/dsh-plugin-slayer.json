@@ -1,0 +1,90 @@
+{
+  "name": "dsh-plugin-slayer",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-05T21:22:59.633Z",
+  "icon": "dsh-plugin-slayer.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/slayer-init.mjs",
+        "line": 4,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "bin/slayer-init.mjs",
+        "line": 20,
+        "text": "fs.mkdirSync(path.dirname(to), { recursive: true })"
+      },
+      {
+        "file": "bin/slayer-init.mjs",
+        "line": 25,
+        "text": "fs.mkdirSync(path.join(project, '.slayer', 'history'), { recursive: true })"
+      },
+      {
+        "file": "bin/slayer-schedule.mjs",
+        "line": 4,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "bin/slayer-schedule.mjs",
+        "line": 78,
+        "text": "fs.rmSync(plistPath, { force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "mode.js",
+        "line": 87,
+        "text": "agent.ctx.tools.guard((exec) => {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/slayer-schedule.mjs",
+        "line": 8,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "bin/slayer-schedule.mjs",
+        "line": 77,
+        "text": "const unload = spawnSync('launchctl', ['unload', plistPath], { encoding: 'utf8' })"
+      },
+      {
+        "file": "bin/slayer-schedule.mjs",
+        "line": 118,
+        "text": "spawnSync('launchctl', ['unload', plistPath])"
+      },
+      {
+        "file": "bin/slayer-schedule.mjs",
+        "line": 119,
+        "text": "const r = spawnSync('launchctl', ['load', plistPath], { encoding: 'utf8' })"
+      },
+      {
+        "file": "bin/slayer-sync.mjs",
+        "line": 8,
+        "text": "import { spawnSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

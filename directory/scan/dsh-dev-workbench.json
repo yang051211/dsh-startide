@@ -1,34 +1,34 @@
 {
   "name": "dsh-dev-workbench",
-  "version": "0.4.3",
-  "scannedAt": "2026-11-04T20:39:10.223Z",
+  "version": "0.4.5",
+  "scannedAt": "2026-11-05T21:22:54.046Z",
   "icon": "dsh-dev-workbench.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 9935,
+        "line": 15478,
         "text": "{ group: \"诊断\", cmd: 'curl -o /dev/null -s -w \"%{http_code} %{time_total}s\\\\n\" <URL>', desc: \"只看状态码与耗时\" },"
       },
       {
         "file": "index.js",
-        "line": 14200,
+        "line": 14271,
         "text": "const response = await fetch(file.url, { signal: AbortSignal.any([signal, AbortSignal.timeout(18e4)]) });"
       },
       {
         "file": "index.js",
-        "line": 14400,
+        "line": 14607,
         "text": "  const response = await fetch(e.config.url + path6, { method: body ? \"POST\" : \"GET\", headers, body: body ? JSON.stringify(body) : void 0, redirect: \"error\", si"
       },
       {
         "file": "index.js",
-        "line": 17859,
+        "line": 18117,
         "text": "const response = await fetch(run.service.url, { method: \"HEAD\", redirect: \"manual\", signal: AbortSignal.timeout(1500) });"
       },
       {
         "file": "index.js",
-        "line": 18048,
+        "line": 18306,
         "text": "const start = Date.now(), response = await fetch(url, { method, headers, body: body || void 0, signal, redirect: \"manual\" });"
       }
     ]
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 29177,
+        "line": 29908,
         "text": "return host.tools.register(definition);"
       }
     ]
@@ -88,18 +88,18 @@
       },
       {
         "file": "index.js",
-        "line": 16933,
+        "line": 14313,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "index.js",
+        "line": 14320,
+        "text": "const child = execFile(\"/usr/bin/security\", args, { timeout: 1e4, maxBuffer: 8192 }, (error, stdout) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 17191,
         "text": "handle = subprocess.spawn({"
-      },
-      {
-        "file": "index.js",
-        "line": 17891,
-        "text": "  run.handle = subprocess.spawn({ argv: run.argv, cwd, stdio: { stdin: \"ignore\", stdout: { maxBytes: 64 * 1024 }, stderr: { maxBytes: 64 * 1024 } }, graceMs: 15"
-      },
-      {
-        "file": "index.js",
-        "line": 17931,
-        "text": "    const handle = subprocess.spawn({ argv, cwd, stdio: { stdin: \"ignore\", stdout: { maxBytes: 4096 }, stderr: { maxBytes: 4096 } }, signal: controller2.signal,"
       }
     ]
   },
@@ -107,7 +107,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 6,
+  "dependencies": 10,
   "minifiedFiles": [
     "client.js",
     "index.js"

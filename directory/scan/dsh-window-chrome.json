@@ -1,19 +1,51 @@
 {
   "name": "dsh-window-chrome",
-  "version": "0.1.2",
-  "scannedAt": "2026-10-26T10:10:29.289Z",
-  "icon": null,
+  "version": "0.2.0",
+  "scannedAt": "2026-11-05T21:23:04.916Z",
+  "icon": "dsh-window-chrome.svg",
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 374,
+        "text": "const response = await fetch(route, {"
+      }
+    ]
   },
   "fileSystem": {
     "hit": false,
     "evidence": []
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/browser/host.js",
+        "line": 17,
+        "text": "const tools = ctx.tools"
+      },
+      {
+        "file": "lib/browser/host.js",
+        "line": 354,
+        "text": "if (effective.includes('windows.open')) unregisters.push(tools.register(openTool()))"
+      },
+      {
+        "file": "lib/browser/host.js",
+        "line": 355,
+        "text": "if (effective.includes('windows.list')) unregisters.push(tools.register(listTool()))"
+      },
+      {
+        "file": "lib/browser/host.js",
+        "line": 356,
+        "text": "unregisters.push(tools.register(statusTool(effective, unavailable)))"
+      },
+      {
+        "file": "lib/browser/host.js",
+        "line": 357,
+        "text": "if (effective.includes('windows.focus')) unregisters.push(tools.register(focusTool()))"
+      }
+    ]
   },
   "childProcess": {
     "hit": false,
@@ -26,7 +58,10 @@
   "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [],
+  "requiredServices": [
+    "connection",
+    "tools"
+  ],
   "setupHints": [],
   "skippedEntries": []
 }

@@ -1,20 +1,25 @@
 {
   "name": "@dsmm/dsmm",
-  "version": "0.3.22",
-  "scannedAt": "2026-10-29T23:41:51.517Z",
+  "version": "0.3.23",
+  "scannedAt": "2026-11-05T21:22:53.489Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/web-fetch-fakeip.js",
-        "line": 70,
+        "line": 80,
         "text": "fetch(request, signal) {"
       },
       {
         "file": "lib/web-fetch-fakeip.js",
-        "line": 100,
-        "text": "return new HttpFetchProvider(limits, resolve).fetch(request, signal);"
+        "line": 111,
+        "text": "return new HttpFetchProvider(limits).fetch(request, signal);"
+      },
+      {
+        "file": "lib/web-fetch-fakeip.js",
+        "line": 127,
+        "text": "return new dualHttpFetchProvider(limits, resolve).fetch(request, signal);"
       },
       {
         "file": "skills/ast-grep/install.ps1",
@@ -25,11 +30,6 @@
         "file": "skills/ast-grep/install.sh",
         "line": 189,
         "text": "command -v curl >/dev/null 2>&1 || command -v wget >/dev/null 2>&1 || {"
-      },
-      {
-        "file": "skills/ast-grep/install.sh",
-        "line": 190,
-        "text": "err \"need curl or wget for GitHub fallback\""
       }
     ]
   },
@@ -48,7 +48,7 @@
       },
       {
         "file": "lib/native-pi-ai-wire.js",
-        "line": 173,
+        "line": 187,
         "text": "resolveImageAccess: (attachments, ref) => resolveImageAttachmentAccess(attachments, path => ctx.get(\"fs\")?.processPathFromHostPath(path), ref),"
       },
       {

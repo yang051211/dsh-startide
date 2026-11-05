@@ -1,35 +1,30 @@
 {
   "name": "@oh-story/dsh",
-  "version": "0.1.22",
-  "scannedAt": "2026-11-04T20:39:00.454Z",
+  "version": "0.1.23",
+  "scannedAt": "2026-11-05T21:22:50.273Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1324,
-        "text": "return fetch(endpoint(\"drama-preflight\", sessionId), { signal: controller.signal }).then(async (response) => {"
+        "line": 73,
+        "text": ")(()=>{let M=new AbortController;return fetch(be(\"drama-preflight\",e),{signal:M.signal}).then(async G=>{if(!G.ok)throw new Error(`HTTP ${String(G.status)}`);let"
       },
       {
         "file": "lib/client.js",
-        "line": 2035,
-        "text": "return fetch(endpoint(\"video-preflight\", sessionId), { signal: controller.signal }).then(async (response) => {"
+        "line": 77,
+        "text": ")(()=>{let r=new AbortController;return fetch(be(\"video-preflight\",e),{signal:r.signal}).then(async d=>{if(!d.ok)throw new Error(`HTTP ${String(d.status)}`);let"
       },
       {
         "file": "lib/client.js",
-        "line": 2061,
-        "text": "return setContent(void 0), setError(void 0), fetch(endpoint(\"file\", sessionId, selected), { signal: controller.signal }).then(async (response) => {"
+        "line": 82,
+        "text": "));if(y!==void 0){H(!0);try{let $=await fetch(be(\"file\",o,y.path)),W=await $.json();if(!$.ok||W.content===void 0)throw new Error(W.error??\"\\u5B57\\u5E55\\u6682\\u6"
       },
       {
         "file": "lib/client.js",
-        "line": 3671,
-        "text": "  return inFlight.current = controller, fetch(endpoint(\"workspace\", sessionId), { signal: controller.signal }).then((response) => json(response)).then((payload)"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 3698,
-        "text": "return fetch(href, { signal: controller.signal }).then((response) => {"
+        "line": 1746,
+        "text": "=new AbortController;return m.current=S,fetch(be(\"workspace\",e),{signal:S.signal}).then(c=>Pt(c)).then(c=>{i(void 0);let N=JSON.stringify(c);N!==h.current&&(h.c"
       }
     ]
   },
@@ -58,7 +53,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 420,
+        "line": 419,
         "text": "const parsed = parseBundledSkill(await readFile(path, \"utf8\"));"
       }
     ]
@@ -68,27 +63,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 1010,
+        "line": 1009,
         "text": "const allowed = roleToolFilter(args.role).allow.filter((name2) => exec.agent?.ctx.tools.get(name2, exec.agent) !== void 0);"
       },
       {
         "file": "lib/index.js",
-        "line": 1046,
+        "line": 1045,
         "text": "context.tools.register(referenceDefinition);"
       },
       {
         "file": "lib/index.js",
-        "line": 1066,
+        "line": 1065,
         "text": "dispose ??= context.tools.register(definition);"
       },
       {
         "file": "lib/index.js",
-        "line": 1179,
+        "line": 1178,
         "text": "context.tools.register(createOhStoryProductionTool());"
       },
       {
         "file": "lib/index.js",
-        "line": 2137,
+        "line": 2298,
         "text": "var inject = [\"skills\", \"subagents\", \"tools\", \"typert\", \"webServer\"];"
       }
     ]
@@ -98,7 +93,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 493,
+        "line": 492,
         "text": "import { execFile } from \"node:child_process\";"
       }
     ]
@@ -108,7 +103,9 @@
     "evidence": []
   },
   "dependencies": 0,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [],
   "setupHints": [],

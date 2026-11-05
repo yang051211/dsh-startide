@@ -1,7 +1,7 @@
 {
   "name": "dsh-jev-guard",
-  "version": "0.5.7",
-  "scannedAt": "2026-10-26T10:05:39.782Z",
+  "version": "0.5.8",
+  "scannedAt": "2026-11-05T21:23:00.624Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -38,12 +38,12 @@
       },
       {
         "file": "adapters/dsh/index.js",
-        "line": 66,
-        "text": "return JSON.parse(readFileSync(join(ROOT, 'config.json'), 'utf8'))"
+        "line": 70,
+        "text": "return JSON.parse(readFileSync(configFilePath(ROOT), 'utf8'))"
       },
       {
         "file": "adapters/dsh/index.js",
-        "line": 131,
+        "line": 132,
         "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
       },
       {
@@ -53,8 +53,8 @@
       },
       {
         "file": "bin/guard.mjs",
-        "line": 102,
-        "text": "file = JSON.parse(await readFile(join(ROOT, 'config.json'), 'utf8'))"
+        "line": 106,
+        "text": "file = JSON.parse(await readFile(configFilePath(ROOT), 'utf8'))"
       }
     ]
   },
@@ -63,7 +63,7 @@
     "evidence": [
       {
         "file": "adapters/dsh/index.js",
-        "line": 76,
+        "line": 80,
         "text": "export const inject = ['tools', 'credentials']"
       },
       {
@@ -93,7 +93,7 @@
     "evidence": [
       {
         "file": "tools/check-doc-pairs.mjs",
-        "line": 30,
+        "line": 29,
         "text": "import { execFileSync } from 'node:child_process'"
       },
       {

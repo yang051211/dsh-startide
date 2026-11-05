@@ -1,0 +1,93 @@
+{
+  "name": "@ray1270/dsh-task-stack",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-05T21:23:04.954Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 112,
+        "text": "const response = await fetch("
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/store.js",
+        "line": 18,
+        "text": "import { mkdir, open, readFile, readdir, rename, rm, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 209,
+        "text": "await rm(path, { force: true });"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 352,
+        "text": "text = await readFile(location.path, 'utf8');"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 444,
+        "text": "await mkdir(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 449,
+        "text": "await handle.writeFile(`${JSON.stringify(state, null, 2)}\\n`, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 39,
+        "text": "export const inject = ['tools', 'commands'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 79,
+        "text": "* The disposer returned by `ctx.tools.register()` is already Cordis-managed, so"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 31,
+        "text": "ctx.tools.register(focusTaskTool(store)),"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 32,
+        "text": "ctx.tools.register(focusCompleteTool(store)),"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 33,
+        "text": "ctx.tools.register(readFocusTool(store)),"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

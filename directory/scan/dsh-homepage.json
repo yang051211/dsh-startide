@@ -1,19 +1,19 @@
 {
   "name": "dsh-homepage",
-  "version": "0.1.2",
-  "scannedAt": "2026-11-03T08:10:04.280Z",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-05T21:22:55.508Z",
   "icon": "dsh-homepage.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/host/audit-runner.js",
-        "line": 149,
+        "line": 166,
         "text": "const response = await fetch(url, init)"
       },
       {
         "file": "lib/host/audit.js",
-        "line": 505,
+        "line": 519,
         "text": "const response = await fetch(url, { headers: { accept: 'application/json' }, signal: options.signal })"
       },
       {
@@ -38,7 +38,7 @@
     "evidence": [
       {
         "file": "lib/host/audit.js",
-        "line": 479,
+        "line": 493,
         "text": "const text = await readFile(join(directory, 'package.json'), 'utf8')"
       },
       {
@@ -67,18 +67,28 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/host/audit-runner.js",
+        "line": 583,
+        "text": "for (const definition of createAuditSourceTools(snapshot)) tools.register(definition)"
+      },
+      {
+        "file": "lib/host/audit-runner.js",
+        "line": 868,
+        "text": "/** The execution guard the host registers with `ctx.tools.guard`. */"
+      },
+      {
         "file": "lib/index.js",
-        "line": 40,
+        "line": 41,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "lib/index.js",
-        "line": 2073,
+        "line": 2086,
         "text": "const dispose = tools.register(toolDefinition())"
       },
       {
         "file": "lib/index.js",
-        "line": 2098,
+        "line": 2111,
         "text": "tools.register(audits.tool())"
       }
     ]

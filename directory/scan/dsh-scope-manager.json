@@ -1,7 +1,7 @@
 {
   "name": "dsh-scope-manager",
-  "version": "0.1.48",
-  "scannedAt": "2026-11-05T08:17:02.617Z",
+  "version": "0.1.69",
+  "scannedAt": "2026-11-05T21:22:50.157Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -17,14 +17,19 @@
         "text": "const response = await fetch(url, {"
       },
       {
-        "file": "lib/skillhub.js",
-        "line": 47,
-        "text": "const response = await fetch(url, {"
+        "file": "lib/persona-market-agt.js",
+        "line": 63,
+        "text": "const res = await fetch(url, { headers: { 'user-agent': UA, accept: 'text/html' } });"
       },
       {
-        "file": "lib/skillhub.js",
-        "line": 365,
-        "text": "const response = await fetch(`${MARKET_BASE}/api/v1/download?${params.toString()}`, {"
+        "file": "lib/persona-market-jpm.js",
+        "line": 70,
+        "text": "response = await fetch(url, {"
+      },
+      {
+        "file": "lib/persona-market-jpm.js",
+        "line": 91,
+        "text": "response = await fetch(`${MARKET_BASE}/api/prompt/detail/${id}`, {"
       }
     ]
   },
@@ -63,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/http-api.js",
-        "line": 102,
+        "line": 103,
         "text": "* 这一步不能省：`ctx.skills.list()` / `ctx.tools.schemas()` 不传 scope 时"
       },
       {
         "file": "lib/index.js",
-        "line": 235,
+        "line": 258,
         "text": "inject: ['webServer', 'tools', 'skills', 'sessions', 'agents', 'workspaceRegistry', 'sessionProjections'],"
       },
       {
         "file": "lib/index.js",
-        "line": 245,
+        "line": 268,
         "text": "// 只查 `ctx.tools.schemas()`（全局层）会漏掉按 preset 注册的那一整批"
       },
       {
         "file": "lib/index.js",
-        "line": 1368,
+        "line": 1353,
         "text": "ctx.tools.guard((exec) => {"
       },
       {
         "file": "lib/index.js",
-        "line": 1541,
+        "line": 1526,
         "text": "schemas = ctx.tools.schemas(agent ?? undefined) ?? [];"
       }
     ]

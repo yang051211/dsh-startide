@@ -1,14 +1,14 @@
 {
   "name": "harnessmm-dsh",
-  "version": "1.2.2",
-  "scannedAt": "2026-11-05T08:17:23.508Z",
+  "version": "1.2.5",
+  "scannedAt": "2026-11-05T21:23:06.500Z",
   "icon": "harnessmm-dsh.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 1141,
+        "line": 1185,
         "text": "const response = await fetch(url, {"
       }
     ]
@@ -19,27 +19,27 @@
       {
         "file": "index.js",
         "line": 27,
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 28,
         "text": "import { appendFile, rename, rm, stat } from 'node:fs/promises';"
       },
       {
         "file": "index.js",
-        "line": 184,
+        "line": 190,
         "text": "await rm(`${target}.1`, { force: true });"
       },
       {
         "file": "index.js",
-        "line": 195,
+        "line": 201,
         "text": "appendFile(auditTarget, line, 'utf8')"
       },
       {
-        "file": "panel.js",
-        "line": 14,
-        "text": "import { closeSync, existsSync, openSync, readSync, statSync } from 'node:fs';"
-      },
-      {
-        "file": "panel.js",
-        "line": 89,
-        "text": "return readFileSync(PANEL_FILE, 'utf8');"
+        "file": "index.js",
+        "line": 230,
+        "text": "const lines = readFileSync(target, 'utf8').split('\\n').filter(line => line.trim() !== '');"
       }
     ]
   },
@@ -48,22 +48,22 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 36,
+        "line": 37,
         "text": "export const inject = ['tools', 'systemPrompt'];"
       },
       {
         "file": "index.js",
-        "line": 211,
+        "line": 251,
         "text": "const instruction = planInstruction(policy, ctx.tools.schemas());"
       },
       {
         "file": "index.js",
-        "line": 295,
+        "line": 335,
         "text": "ctx.effect(() => ctx.tools.register({"
       },
       {
         "file": "index.js",
-        "line": 317,
+        "line": 357,
         "text": "ctx.effect(() => ctx.tools.register({"
       }
     ]

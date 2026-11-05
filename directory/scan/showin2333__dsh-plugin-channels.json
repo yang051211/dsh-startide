@@ -1,14 +1,14 @@
 {
   "name": "@showin2333/dsh-plugin-channels",
-  "version": "1.1.0-dsh.10",
-  "scannedAt": "2026-10-30T23:38:40.240Z",
+  "version": "1.1.0-dsh.13",
+  "scannedAt": "2026-11-05T21:23:04.809Z",
   "icon": "showin2333__dsh-plugin-channels.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/types/channels/discord.js",
-        "line": 212,
+        "line": 283,
         "text": "const target = this.scope.guildId ? await client.channels.fetch(this.scope.channelId) : await client.users.createDM(this.scope.ownerUserId);"
       }
     ]
@@ -19,17 +19,22 @@
       {
         "file": "lib/types/media.js",
         "line": 1,
-        "text": "import { realpath, readFile, stat } from 'node:fs/promises';"
+        "text": "import { constants } from 'node:fs';"
       },
       {
         "file": "lib/types/media.js",
-        "line": 83,
-        "text": "bytes = await readFile(canonicalTarget, { signal: input.signal });"
+        "line": 2,
+        "text": "import { lstat, open, realpath, stat } from 'node:fs/promises';"
       },
       {
         "file": "lib/types/plugin/index.js",
         "line": 1,
         "text": "import { realpath } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/types/plugin/native.js",
+        "line": 300,
+        "text": "const reader = this.ctx.agentPresets.serviceFor(agent, 'fs') ?? scoped.get('fs');"
       },
       {
         "file": "lib/types/plugin/project-groups.js",
@@ -43,26 +48,34 @@
     "evidence": [
       {
         "file": "lib/types/plugin/index.js",
-        "line": 14,
+        "line": 16,
         "text": "export const inject = ['agents', 'llm', 'sessions', 'sessionPersistence', 'agentPresets', 'agentDefaultModel', 'permissionPresets', 'credentials', 'storageDomai"
       },
       {
         "file": "lib/types/plugin/index.js",
-        "line": 178,
+        "line": 205,
         "text": "ctx.effect(() => ctx.tools.register(channelStatusTool({"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/types/plugin/audio-preparation.js",
+        "line": 94,
+        "text": "const handle = subprocess.spawn({"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
     "evidence": []
   },
-  "dependencies": 4,
-  "minifiedFiles": [],
+  "dependencies": 5,
+  "minifiedFiles": [
+    "lib/types/client/Panel.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [],
   "setupHints": [],

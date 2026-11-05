@@ -1,26 +1,11 @@
 {
   "name": "dsh-claude-motion",
-  "version": "2.9.2",
-  "scannedAt": "2026-11-05T08:17:07.484Z",
+  "version": "2.11.0",
+  "scannedAt": "2026-11-05T21:22:52.153Z",
   "icon": "dsh-claude-motion.svg",
   "network": {
     "hit": true,
     "evidence": [
-      {
-        "file": "lib/client.js",
-        "line": 1332,
-        "text": "const response = await fetch(`${route(path)}?${new URLSearchParams(params)}`, init);"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 1353,
-        "text": "const response = await fetch(route(listPath(skill)), { cache: \"no-store\" });"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 1375,
-        "text": "const response = await fetch(`${route(openPath(view.skill))}?${new URLSearchParams({ root: view.root })}`, { method: \"POST\" });"
-      },
       {
         "file": "skills/claude-motion/scripts/artifact.mjs",
         "line": 37,
@@ -28,8 +13,23 @@
       },
       {
         "file": "skills/claude-motion/scripts/artifact.mjs",
-        "line": 235,
+        "line": 237,
         "text": "import http from \"node:http\";"
+      },
+      {
+        "file": "skills/claude-motion/scripts/artifact.mjs",
+        "line": 911,
+        "text": "const response = await fetch(`${origin}${HUB_ROUTE}`, { signal: AbortSignal.timeout(1e3) });"
+      },
+      {
+        "file": "skills/claude-motion/scripts/artifact.mjs",
+        "line": 927,
+        "text": "const response = await fetch(`${origins[i]}${HUB_ROUTE}`, {"
+      },
+      {
+        "file": "skills/claude-motion/scripts/artifact.mjs",
+        "line": 943,
+        "text": "const response = await fetch(`${new URL(state.url).origin}${HUB_ROUTE}`, {"
       }
     ]
   },
@@ -38,28 +38,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 6,
-        "text": "import { statSync as statSync2 } from \"node:fs\";"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 7,
+        "line": 4,
         "text": "import { readFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 13,
-        "text": "import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from \"node:fs\";"
+        "line": 17,
+        "text": "import { statSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 69,
-        "text": "const value = JSON.parse(readFileSync(join(root, at[0]), \"utf8\"))[at[1]];"
+        "line": 155,
+        "text": "const raw = await readFile(candidate.path, { encoding: \"utf8\", signal: options?.signal });"
       },
       {
-        "file": "lib/index.js",
-        "line": 82,
-        "text": "const value = JSON.parse(readFileSync(file, \"utf8\"));"
+        "file": "skills/claude-motion/scripts/artifact.mjs",
+        "line": 5,
+        "text": "import fs19 from \"node:fs\";"
+      },
+      {
+        "file": "skills/claude-motion/scripts/artifact.mjs",
+        "line": 11,
+        "text": "import fs from \"node:fs\";"
       }
     ]
   },
@@ -71,29 +71,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 4,
+        "file": "skills/claude-motion/scripts/artifact.mjs",
+        "line": 234,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "skills/claude-motion/scripts/artifact.mjs",
+        "line": 997,
+        "text": "const child = spawn(process.execPath, [...call.command, \"--background\"], { detached: true, stdio: [\"ignore\", \"ignore\", fd] });"
+      },
+      {
+        "file": "skills/claude-motion/scripts/artifact.mjs",
+        "line": 3167,
         "text": "import { spawn as spawn2 } from \"node:child_process\";"
       },
       {
-        "file": "lib/index.js",
-        "line": 11,
-        "text": "import { spawn } from \"node:child_process\";"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 202,
-        "text": "const child = spawn(node.path, [script, ...args], { env: scriptEnv(node), stdio: [input === void 0 ? \"ignore\" : \"pipe\", \"pipe\", \"pipe\"], windowsHide: true });"
+        "file": "skills/claude-motion/scripts/artifact.mjs",
+        "line": 4253,
+        "text": "import { spawn as spawn4, spawnSync } from \"node:child_process\";"
       },
       {
         "file": "skills/claude-motion/scripts/artifact.mjs",
-        "line": 232,
-        "text": "import { spawn } from \"node:child_process\";"
-      },
-      {
-        "file": "skills/claude-motion/scripts/artifact.mjs",
-        "line": 994,
-        "text": "const child = spawn(process.execPath, [...call.command, \"--background\"], { detached: true, stdio: [\"ignore\", \"ignore\", fd] });"
+        "line": 4258,
+        "text": "import { spawn as spawn3 } from \"node:child_process\";"
       }
     ]
   },
@@ -101,7 +101,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [
     "skills/claude-motion/scripts/editor/artifact-type/app.js",
     "skills/claude-motion/scripts/editor/local-host.js",
