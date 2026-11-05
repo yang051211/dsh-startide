@@ -1,0 +1,129 @@
+{
+  "name": "dsh-liuying-voice",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-05T08:17:12.108Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 35,
+        "text": "const res = await fetch(API, { credentials: \"same-origin\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 41,
+        "text": "const res = await fetch(API, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 98,
+        "text": "const res = await fetch(\"/liuying-voice/test\", { method: \"POST\", credentials: \"same-origin\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 311,
+        "text": "const res = await fetch(\"/liuying-voice/speak\", {"
+      },
+      {
+        "file": "lib/sing.js",
+        "line": 46,
+        "text": "const res = await fetch(url, { headers: UA });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/config.js",
+        "line": 2,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 13,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 26,
+        "text": "saved = JSON.parse(readFileSync(file, \"utf8\"));"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 42,
+        "text": "writeFileSync(settingsFile(), JSON.stringify(next, null, 2), \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync } from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 27,
+        "text": "export const inject = [\"tools\", \"webServer\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 126,
+        "text": "disposers.push(tools.register(createTool(ctx)));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 127,
+        "text": "disposers.push(tools.register(createSingTool()));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/qq-guard.js",
+        "line": 9,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/qq-guard.js",
+        "line": 84,
+        "text": "const child = spawn(file, args, {"
+      },
+      {
+        "file": "lib/sing.js",
+        "line": 7,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/sing.js",
+        "line": 19,
+        "text": "const child = spawn(cmd, args, {"
+      },
+      {
+        "file": "lib/speak.js",
+        "line": 9,
+        "text": "import { spawn } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

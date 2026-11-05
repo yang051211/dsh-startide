@@ -1,0 +1,87 @@
+{
+  "name": "slumberpavilion",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-05T08:17:23.492Z",
+  "icon": "slumberpavilion.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 29,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 92,
+        "text": "if (fs.existsSync(file) && fs.statSync(file).size > 262144) fs.unlinkSync(file);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 93,
+        "text": "fs.appendFileSync(file, new Date().toISOString() + \" pid=\" + process.pid + \" \" + message + \"\\n\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 246,
+        "text": "const man = JSON.parse(fs.readFileSync(file, \"utf8\"));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 257,
+        "text": "fs.mkdirSync(root, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 48,
+        "text": "* Cordis 的服务声明。没有这一行时 `ctx.tools` 一读就抛"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 55,
+        "text": "export const inject = [\"tools\", \"workspaceRegistry\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 117,
+        "text": "* 两条路的产物都能直接喂给 ctx.tools.register。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 287,
+        "text": "diag(\"apply called; ctx.tools.register=\" + typeof ctx?.tools?.register);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 435,
+        "text": "const tools = ctx.tools;"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,35 +1,35 @@
 {
   "name": "bothouse-dsh",
-  "version": "0.1.48",
-  "scannedAt": "2026-11-03T20:52:14.095Z",
+  "version": "0.1.53",
+  "scannedAt": "2026-11-05T08:17:02.838Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "client/client.js",
-        "line": 149,
-        "text": "fetch: (input, init) => fetch(input, {"
-      },
-      {
-        "file": "client/client.js",
-        "line": 205,
-        "text": "const response = await transport.fetch(transport.url(path), init);"
-      },
-      {
-        "file": "client/client.js",
-        "line": 16642,
-        "text": "const response = await fetch(attachmentUrl(a.id));"
-      },
-      {
-        "file": "client/client.js",
-        "line": 17669,
-        "text": "const response = await fetch(`collab/api/members/${encodeURIComponent(id)}/avatar`, {"
+        "file": "collab/bot-port.mjs",
+        "line": 5,
+        "text": "import { createServer } from 'node:http';"
       },
       {
         "file": "collab/gate-context.mjs",
-        "line": 40,
+        "line": 114,
         "text": "const res = await this.fetch(`http://127.0.0.1:${this.port}/context`, {"
+      },
+      {
+        "file": "collab/later.mjs",
+        "line": 104,
+        "text": "    const curl = `curl -sS -X POST ${quote(url)} -H 'content-type: application/json' -H ${quote(`X-Later-Ticket: ${ticket}`)} -d '{\"title\":\"任务标题\",\"owner\":\"接活人id"
+      },
+      {
+        "file": "collab/later.mjs",
+        "line": 144,
+        "text": "const res = await fetch(new URL(`/collab/api/rooms/${room}/workspaces`, origin), { method: 'POST',"
+      },
+      {
+        "file": "collab/later.mjs",
+        "line": 153,
+        "text": "const res = await fetch(new URL(`/collab/api/rooms/${room}/team`, origin), { method: 'POST',"
       }
     ]
   },
@@ -87,13 +87,13 @@
       },
       {
         "file": "collab/clis.mjs",
-        "line": 9,
-        "text": "execFile('which', [name], (error, stdout) => {"
+        "line": 14,
+        "text": "execFile(win ? 'where.exe' : 'which', [name], (error, stdout) => {"
       },
       {
-        "file": "collab/verify-multichannel.mjs",
-        "line": 7,
-        "text": "import { spawnSync } from 'node:child_process';"
+        "file": "collab/pairing.mjs",
+        "line": 13,
+        "text": "import { execFile } from 'node:child_process';"
       }
     ]
   },
@@ -101,10 +101,8 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 3,
-  "minifiedFiles": [
-    "client/client.js"
-  ],
+  "dependencies": 7,
+  "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
     "agentDefaultModel",
@@ -120,5 +118,26 @@
     "workspaceRegistry"
   ],
   "setupHints": [],
-  "skippedEntries": []
+  "skippedEntries": [
+    "node_modules/bothouse-dsh-channels/client.js (outside the package)",
+    "node_modules/bothouse-dsh-desk/client.js (outside the package)",
+    "node_modules/bothouse-dsh-devices/client.js (outside the package)",
+    "node_modules/bothouse-dsh-panel/client.js (outside the package)",
+    "node_modules/bothouse-dsh-channels/index.js (outside the package)",
+    "node_modules/bothouse-dsh-desk/index.js (outside the package)",
+    "node_modules/bothouse-dsh-devices/index.js (outside the package)",
+    "node_modules/bothouse-dsh-panel/index.js (outside the package)",
+    "node_modules/bothouse-dsh-channels/locale/en.json (outside the package)",
+    "node_modules/bothouse-dsh-desk/locale/en.json (outside the package)",
+    "node_modules/bothouse-dsh-devices/locale/en.json (outside the package)",
+    "node_modules/bothouse-dsh-panel/locale/en.json (outside the package)",
+    "node_modules/bothouse-dsh-channels/package.json (outside the package)",
+    "node_modules/bothouse-dsh-desk/package.json (outside the package)",
+    "node_modules/bothouse-dsh-devices/package.json (outside the package)",
+    "node_modules/bothouse-dsh-panel/package.json (outside the package)",
+    "node_modules/bothouse-dsh-channels/locale/zh.json (outside the package)",
+    "node_modules/bothouse-dsh-desk/locale/zh.json (outside the package)",
+    "node_modules/bothouse-dsh-devices/locale/zh.json (outside the package)",
+    "node_modules/bothouse-dsh-panel/locale/zh.json (outside the package)"
+  ]
 }

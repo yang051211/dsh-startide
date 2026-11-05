@@ -1,15 +1,20 @@
 {
   "name": "dsh-html-annotate",
-  "version": "0.2.0",
-  "scannedAt": "2026-11-02T07:38:07.892Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-05T08:17:19.570Z",
   "icon": "dsh-html-annotate.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 1098,
+        "line": 1142,
         "text": "const probe = await fetch(url, { method: 'HEAD', credentials: 'same-origin', cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 1181,
+        "text": "const response = await fetch(page.url, {"
       }
     ]
   },
@@ -18,8 +23,13 @@
     "evidence": [
       {
         "file": "client.js",
-        "line": 488,
+        "line": 521,
         "text": "const text = await readFile(path)"
+      },
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "ctx.inject(['webServer', 'sessions', 'workspaceFiles', 'fs'], (inner) => {"
       },
       {
         "file": "serve.js",
@@ -35,11 +45,6 @@
         "file": "test/client.test.cjs",
         "line": 4,
         "text": "const fs = require('node:fs')"
-      },
-      {
-        "file": "test/client.test.cjs",
-        "line": 10,
-        "text": "const source = fs.readFileSync(FILE, 'utf8')"
       }
     ]
   },

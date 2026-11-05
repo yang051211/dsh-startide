@@ -1,0 +1,86 @@
+{
+  "name": "dsh-remote-access-proxy",
+  "version": "1.5.2",
+  "scannedAt": "2026-11-05T08:17:11.640Z",
+  "icon": "dsh-remote-access-proxy.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/index.js",
+        "line": 286,
+        "text": "const response = await fetch(STATUS_URL, { credentials: \"same-origin\", cache: \"no-store\" });"
+      },
+      {
+        "file": "plugin/dsh-remote-access-proxy.mjs",
+        "line": 48,
+        "text": "import http from \"node:http\""
+      },
+      {
+        "file": "plugin/dsh-remote-access-proxy.mjs",
+        "line": 49,
+        "text": "import https from \"node:https\""
+      },
+      {
+        "file": "plugin/dsh-remote-access-proxy.mjs",
+        "line": 570,
+        "text": "const upstreamReq = http.request("
+      },
+      {
+        "file": "plugin/dsh-remote-access-proxy.mjs",
+        "line": 659,
+        "text": "const upstreamReq = http.request({"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/dsh-remote-access-proxy.mjs",
+        "line": 52,
+        "text": "import { appendFileSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from \"node:fs\""
+      },
+      {
+        "file": "plugin/dsh-remote-access-proxy.mjs",
+        "line": 155,
+        "text": "const pkg = JSON.parse(readFileSync(new URL(\"../package.json\", import.meta.url), \"utf8\"))"
+      },
+      {
+        "file": "plugin/dsh-remote-access-proxy.mjs",
+        "line": 374,
+        "text": "writeFileSync(base, \"\")"
+      },
+      {
+        "file": "plugin/dsh-remote-access-proxy.mjs",
+        "line": 381,
+        "text": "rmSync(`${base}.${keep}`, { force: true })"
+      },
+      {
+        "file": "plugin/dsh-remote-access-proxy.mjs",
+        "line": 414,
+        "text": "appendFileSync(base, entry)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

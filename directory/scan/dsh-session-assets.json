@@ -1,0 +1,75 @@
+{
+  "name": "dsh-session-assets",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-05T08:17:15.137Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 122,
+        "text": "const response = await fetch(url, { method: \"HEAD\", signal, cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 449,
+        "text": "const response = await fetch(`${LIST_ROUTE}?${new URLSearchParams({ sessionId })}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 33,
+        "text": "import { createReadStream } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 34,
+        "text": "import { appendFile, copyFile, mkdir, readdir, readFile, rename, stat as statPath, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 43,
+        "text": "export const inject = [\"connection\", \"sessionQuery\", \"fs\", \"sessions\", \"sandboxPolicy\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 112,
+        "text": "await appendFile(join(PACKAGE_DIR, \".log\"), `${new Date().toISOString()} ${level} ${message}\\n`);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 313,
+        "text": "const raw = await readFile(join(dir, MANIFEST_NAME), \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "fs",
+    "sandboxPolicy",
+    "sessionQuery",
+    "sessions"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

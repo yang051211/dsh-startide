@@ -1,0 +1,67 @@
+{
+  "name": "dsh-zed-space",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-05T08:17:08.777Z",
+  "icon": "dsh-zed-space.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "native-dist/vendor/three.core.js",
+        "line": 44,
+        "text": "\"}),o=this.mimeType,a=this.responseType;fetch(r).then(h=>{if(h.status===200||h.status===0){if(h.status===0&&console.warn(\"THREE.FileLoader: HTTP Status 0 receiv"
+      },
+      {
+        "file": "plugin/client.js",
+        "line": 2158,
+        "text": "const response = await fetch(assetUrl('market/catalog'), options);"
+      },
+      {
+        "file": "plugin/client.js",
+        "line": 2180,
+        "text": "const mediaResponse = await fetch(assetUrl('market/media') + '?asset=' + encodeURIComponent(assetId) + '&file=' + sha256, options);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/index.js",
+        "line": 6,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 59,
+        "text": "const body = await readFile(target)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "native-dist/vendor/addons/controls/OrbitControls.js",
+    "native-dist/vendor/addons/tsl/display/BloomNode.js",
+    "native-dist/vendor/three.core.js",
+    "native-dist/vendor/three.tsl.js",
+    "native-dist/vendor/three.webgpu.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

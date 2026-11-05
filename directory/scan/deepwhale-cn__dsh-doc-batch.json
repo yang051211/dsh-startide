@@ -1,0 +1,99 @@
+{
+  "name": "@deepwhale-cn/dsh-doc-batch",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-05T08:17:12.341Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 40,
+        "text": "const r = await fetch(API + '/upload', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ files: payload }) });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 55,
+        "text": "const res = await fetch(`${api}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli-pdf.mjs",
+        "line": 17,
+        "text": "} from 'node:fs';"
+      },
+      {
+        "file": "bin/cli-pdf.mjs",
+        "line": 320,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 12,
+        "text": "import { existsSync, readFileSync, writeFileSync, mkdtempSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 20,
+        "text": "try { return JSON.parse(readFileSync(join(PKG_ROOT, 'package.json'), 'utf8')).version || ''; }"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 146,
+        "text": "const fp = join(dir, name); writeFileSync(fp, buf); paths.push(fp);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli-docx.mjs",
+        "line": 13,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "bin/cli-docx.mjs",
+        "line": 87,
+        "text": "const r = spawnSync(cmd, ['-c', 'import sys; print(sys.version_info[0])'], {"
+      },
+      {
+        "file": "bin/cli-docx.mjs",
+        "line": 177,
+        "text": "const r = spawnSync(py, [PY_SCRIPT, action, JSON.stringify(payload)], {"
+      },
+      {
+        "file": "bin/cli-pdf.mjs",
+        "line": 14,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "bin/cli-pdf.mjs",
+        "line": 178,
+        "text": "const r = spawnSync(cand, ['-c', 'import sys; print(sys.executable)'], { encoding: 'utf8' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,35 +1,35 @@
 {
   "name": "dsh-duet",
-  "version": "0.1.10",
-  "scannedAt": "2026-10-26T10:06:17.133Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-05T08:17:03.982Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "src/client/browser.mjs",
-        "line": 174,
-        "text": "ws = new WebSocket(voiceSocketUrl({ mode, plugin_version: PLUGIN_VERSION, client_trace_id: connectionTraceId, page_id: pageId }), identityVoiceProtocols())"
+        "file": "assets/avatar/desktop/companion.mjs",
+        "line": 18,
+        "text": ");var u=e=>document.getElementById(e),H=new WebSocket(ie.url,[`duet-avatar-${ie.token}`]),xe=!1,X=!1,$=!1,Y=Date.now(),G,be,W=null,Ee=!1,J=null,fe=null,K=j(ie.s"
       },
       {
-        "file": "src/client/browser.mjs",
-        "line": 363,
-        "text": "const response = await fetch(`/duplex-control/api/${path}`, { cache: 'no-store',"
+        "file": "assets/avatar/desktop/renderer.mjs",
+        "line": 5,
+        "text": "l}),o=this.mimeType,l=this.responseType;fetch(a).then(c=>{if(c.status===200||c.status===0){if(c.status===0&&be(\"FileLoader: HTTP Status 0 received.\"),typeof Rea"
       },
       {
-        "file": "src/client/identity.mjs",
-        "line": 12,
-        "text": "if (!desktop()) return globals.fetch(path, options)"
+        "file": "assets/avatar/renderer.mjs",
+        "line": 5,
+        "text": "l}),o=this.mimeType,l=this.responseType;fetch(a).then(c=>{if(c.status===200||c.status===0){if(c.status===0&&be(\"FileLoader: HTTP Status 0 received.\"),typeof Rea"
       },
       {
-        "file": "src/client/identity.mjs",
-        "line": 14,
-        "text": "return globals.fetch(path, options)"
+        "file": "src/avatar/companion.mjs",
+        "line": 11,
+        "text": "const $=id=>document.getElementById(id),socket=new WebSocket(config.url,[`duet-avatar-${config.token}`])"
       },
       {
-        "file": "src/client/identity.mjs",
-        "line": 22,
-        "text": "const response = await globals.fetch(path, {...options, headers, credentials:'same-origin', cache:'no-store'})"
+        "file": "src/client/avatar.mjs",
+        "line": 117,
+        "text": "const socket=ws=new WebSocket(voiceSocketUrl({},globalThis,'duet/avatar/ws'))"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/host/endpoint-discovery.mjs",
-        "line": 4,
-        "text": "import {readFileSync, statSync} from 'node:fs'"
+        "file": "src/host/avatar-activity.mjs",
+        "line": 1,
+        "text": "import {mkdir,readdir,readFile,writeFile,rename,unlink,lstat} from 'node:fs/promises'"
       },
       {
-        "file": "src/host/endpoint-discovery.mjs",
-        "line": 5,
-        "text": "import {mkdir, writeFile, rename, unlink} from 'node:fs/promises'"
+        "file": "src/host/avatar-activity.mjs",
+        "line": 11,
+        "text": "  async load(){await mkdir(this.root,{recursive:true,mode:0o700});if((await lstat(this.root)).isSymbolicLink())throw Error('invalid_activity_store');for(const n"
       },
       {
-        "file": "src/host/endpoint-discovery.mjs",
-        "line": 61,
-        "text": "const data=JSON.parse(readFileSync(cachePath,'utf8'))"
+        "file": "src/host/avatar-activity.mjs",
+        "line": 18,
+        "text": "const path=join(this.root,name),temp=path+'.tmp';await writeFile(temp,JSON.stringify(item),{mode:0o600});await rename(temp,path);this.records.set(name,item)"
       },
       {
-        "file": "src/host/endpoint-discovery.mjs",
-        "line": 78,
-        "text": "await mkdir(dirname(this.cachePath),{recursive:true,mode:0o700})"
+        "file": "src/host/avatar-activity.mjs",
+        "line": 21,
+        "text": "if(done){await unlink(join(this.root,name)).catch(()=>{});this.records.delete(name)}else break"
       },
       {
-        "file": "src/host/endpoint-discovery.mjs",
-        "line": 79,
-        "text": "await writeFile(temp,JSON.stringify(data)+'\\n',{mode:0o600,flag:'wx'})"
+        "file": "src/host/avatar-assets.mjs",
+        "line": 1,
+        "text": "import {readFileSync,realpathSync,statSync} from 'node:fs'"
       }
     ]
   },
@@ -68,16 +68,29 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/avatar.mjs",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
     "evidence": []
   },
   "dependencies": 1,
-  "minifiedFiles": [],
-  "binaryFiles": [],
+  "minifiedFiles": [
+    "assets/avatar/desktop/companion.mjs",
+    "assets/avatar/desktop/renderer.mjs",
+    "assets/avatar/renderer.mjs"
+  ],
+  "binaryFiles": [
+    "desktop/bin/darwin-arm64/duet-avatar.app/Contents/MacOS/duet-avatar",
+    "desktop/bin/win32-x64/duet-avatar.exe"
+  ],
   "requiredServices": [],
   "setupHints": [],
   "skippedEntries": []

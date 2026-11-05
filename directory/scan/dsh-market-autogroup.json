@@ -1,0 +1,58 @@
+{
+  "name": "dsh-market-autogroup",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-05T08:17:11.920Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 62,
+        "text": "const deps = Object.keys(JSON.parse(fs.readFileSync(PKG, \"utf8\")).dependencies || {})"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 64,
+        "text": "const state = fs.existsSync(STATE) ? JSON.parse(fs.readFileSync(STATE, \"utf8\")) : {};"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 87,
+        "text": "fs.writeFileSync(STATE, JSON.stringify(state));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 93,
+        "text": "fs.appendFileSync(LOG, new Date().toISOString() + \" \" + log.join(\" | \") + \"\\n\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

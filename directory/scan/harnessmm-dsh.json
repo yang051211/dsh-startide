@@ -1,14 +1,14 @@
 {
   "name": "harnessmm-dsh",
-  "version": "1.1.1",
-  "scannedAt": "2026-11-04T20:39:32.396Z",
+  "version": "1.2.2",
+  "scannedAt": "2026-11-05T08:17:23.508Z",
   "icon": "harnessmm-dsh.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 1077,
+        "line": 1141,
         "text": "const response = await fetch(url, {"
       }
     ]
@@ -18,22 +18,27 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 143,
-        "text": "ctx.inject(['fs'], fsCtx => {"
+        "line": 27,
+        "text": "import { appendFile, rename, rm, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 184,
+        "text": "await rm(`${target}.1`, { force: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 195,
+        "text": "appendFile(auditTarget, line, 'utf8')"
       },
       {
         "file": "panel.js",
         "line": 14,
-        "text": "import { readFileSync, existsSync } from 'node:fs';"
+        "text": "import { closeSync, existsSync, openSync, readSync, statSync } from 'node:fs';"
       },
       {
         "file": "panel.js",
-        "line": 31,
-        "text": "const text = readFileSync(auditPath, 'utf8');"
-      },
-      {
-        "file": "panel.js",
-        "line": 45,
+        "line": 89,
         "text": "return readFileSync(PANEL_FILE, 'utf8');"
       }
     ]
@@ -43,22 +48,22 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 35,
+        "line": 36,
         "text": "export const inject = ['tools', 'systemPrompt'];"
       },
       {
         "file": "index.js",
-        "line": 160,
+        "line": 211,
         "text": "const instruction = planInstruction(policy, ctx.tools.schemas());"
       },
       {
         "file": "index.js",
-        "line": 244,
+        "line": 295,
         "text": "ctx.effect(() => ctx.tools.register({"
       },
       {
         "file": "index.js",
-        "line": 266,
+        "line": 317,
         "text": "ctx.effect(() => ctx.tools.register({"
       }
     ]

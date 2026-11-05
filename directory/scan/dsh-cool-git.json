@@ -1,15 +1,20 @@
 {
   "name": "dsh-cool-git",
-  "version": "0.4.0",
-  "scannedAt": "2026-10-30T07:08:52.480Z",
+  "version": "0.5.1",
+  "scannedAt": "2026-11-05T08:17:13.680Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 500,
+        "line": 700,
         "text": "const response = await fetch(path, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 5113,
+        "text": "const response = await fetch(`${REGISTRY}${PACKAGE_NAME}/latest`, {"
       }
     ]
   },
@@ -23,23 +28,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 3,
-        "text": "import { mkdir, readFile, writeFile } from \"node:fs/promises\";"
+        "line": 2,
+        "text": "import { lstat, mkdir, readFile, unlink, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 3203,
-        "text": "text = await readFile(file, \"utf8\");"
+        "line": 1185,
+        "text": "text = await readFile(isAbsolute(path) ? path : resolve(root.workdir, path), \"utf8\");"
       },
       {
         "file": "lib/index.js",
-        "line": 3255,
-        "text": "await mkdir(dirname(file), { recursive: true });"
+        "line": 2800,
+        "text": "return new Uint8Array(await readFile(join(workdir, path)));"
       },
       {
         "file": "lib/index.js",
-        "line": 3256,
-        "text": "await writeFile(file, `${JSON.stringify(document, null, 2)}\\n`, \"utf8\");"
+        "line": 2936,
+        "text": "await unlink(absolute);"
       }
     ]
   },
@@ -48,8 +53,14 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 854,
+        "text": "handle = subprocess.spawn({"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

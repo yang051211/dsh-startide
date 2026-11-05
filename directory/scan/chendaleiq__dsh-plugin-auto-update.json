@@ -1,29 +1,65 @@
 {
   "name": "@chendaleiq/dsh-plugin-auto-update",
-  "version": "0.1.19",
-  "scannedAt": "2026-11-03T20:52:12.110Z",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-05T08:17:18.930Z",
   "icon": "chendaleiq__dsh-plugin-auto-update.svg",
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 285,
+        "text": "const response = await candidate.fetch(candidate.url, {"
+      },
+      {
+        "file": "test/smoke-web.mjs",
+        "line": 161,
+        "text": "const auth = await fetch(started, { redirect: \"manual\" });"
+      },
+      {
+        "file": "test/smoke-web.mjs",
+        "line": 165,
+        "text": "const pageResponse = await fetch(`${base}/?token=${new URL(started).searchParams.get(\"token\")}`, {"
+      },
+      {
+        "file": "test/smoke-web.mjs",
+        "line": 170,
+        "text": "? await fetch(`${base}/`, { redirect: \"manual\", headers: { cookie: cookieHeader } })"
+      },
+      {
+        "file": "test/smoke-web.mjs",
+        "line": 178,
+        "text": "const bundle = await fetch(`${base}/${clientMatch[0].replaceAll(\"&amp;\", \"&\")}`);"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/plan.js",
-        "line": 28,
-        "text": "import { appendFile, mkdir } from \"node:fs/promises\""
+        "file": "lib/history.js",
+        "line": 21,
+        "text": "import { mkdir, readFile, rename, unlink, writeFile } from \"node:fs/promises\""
       },
       {
-        "file": "lib/plan.js",
-        "line": 220,
+        "file": "lib/history.js",
+        "line": 105,
+        "text": "text = await readFile(target, \"utf8\")"
+      },
+      {
+        "file": "lib/history.js",
+        "line": 150,
         "text": "await mkdir(dirname(target), { recursive: true })"
       },
       {
-        "file": "lib/plan.js",
-        "line": 221,
-        "text": "await appendFile(target, `${JSON.stringify(entry)}\\n`, \"utf8\")"
+        "file": "lib/history.js",
+        "line": 153,
+        "text": "await writeFile(temporary, `${JSON.stringify(document, null, 2)}\\n`, \"utf8\")"
+      },
+      {
+        "file": "lib/history.js",
+        "line": 157,
+        "text": "await unlink(temporary).catch(() => {})"
       }
     ]
   },
@@ -32,8 +68,34 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "test/smoke-web.mjs",
+        "line": 18,
+        "text": "import { spawn, spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "test/smoke-web.mjs",
+        "line": 41,
+        "text": "const result = spawnSync(bin, [...prefix, ...args], {"
+      },
+      {
+        "file": "test/smoke-web.mjs",
+        "line": 59,
+        "text": "const packed = spawnSync(\"npm\", [\"pack\", \"--silent\", \"--pack-destination\", tmpdir()], {"
+      },
+      {
+        "file": "test/smoke-web.mjs",
+        "line": 100,
+        "text": "spawnSync(\"tar\", [\"-xzOf\", spec.replace(/^file:/, \"\"), \"package/package.json\"], {"
+      },
+      {
+        "file": "test/smoke-web.mjs",
+        "line": 139,
+        "text": "const boot = spawn(bin, [...prefix, \"--profile\", profile, \"--no-open\", \"--port\", \"0\"], {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

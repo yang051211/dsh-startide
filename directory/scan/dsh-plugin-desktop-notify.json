@@ -1,14 +1,19 @@
 {
   "name": "dsh-plugin-desktop-notify",
-  "version": "0.6.1",
-  "scannedAt": "2026-11-03T20:52:08.382Z",
+  "version": "0.6.2",
+  "scannedAt": "2026-11-05T08:17:18.178Z",
   "icon": "dsh-plugin-desktop-notify.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 397,
+        "line": 147,
+        "text": "const lookup = fetch(`${TURN_KIND_PATH}?sessionId=${encodeURIComponent(sessionId)}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 432,
         "text": "const response = await fetch(EXTERNAL_PENDING_PATH, {"
       }
     ]
@@ -18,27 +23,27 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 18,
+        "line": 19,
         "text": "import { appendFile, mkdir, rm, writeFile } from \"node:fs/promises\""
       },
       {
         "file": "index.js",
-        "line": 203,
+        "line": 277,
         "text": "void mkdir(dirname(endpointPath), { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 204,
-        "text": ".then(() => writeFile(endpointPath, `${origin}${API_REQUEST_PATH}\\n`, \"utf8\"))"
+        "line": 278,
+        "text": ".then(() => writeFile(endpointPath, `${origin}${API_REQUEST_PATH}?token=${token}\\n`, \"utf8\"))"
       },
       {
         "file": "index.js",
-        "line": 219,
+        "line": 293,
         "text": "if (endpointPath !== \"\") void rm(endpointPath, { force: true }).catch(() => {})"
       },
       {
         "file": "index.js",
-        "line": 228,
+        "line": 312,
         "text": "await mkdir(dirname(path), { recursive: true })"
       }
     ]
@@ -57,17 +62,17 @@
       },
       {
         "file": "index.js",
-        "line": 297,
+        "line": 381,
         "text": "execFile(\"/usr/bin/lsappinfo\", [\"front\"], { timeout: 2000 }, (frontError, frontOut) => {"
       },
       {
         "file": "index.js",
-        "line": 301,
+        "line": 385,
         "text": "execFile(\"/usr/bin/lsappinfo\", [\"info\", \"-only\", \"name\", asn], { timeout: 2000 }, (infoError, infoOut) => {"
       },
       {
         "file": "index.js",
-        "line": 311,
+        "line": 395,
         "text": "const child = spawn(command, args, { detached: true, stdio: \"ignore\" })"
       }
     ]

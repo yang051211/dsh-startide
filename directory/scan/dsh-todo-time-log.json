@@ -1,0 +1,78 @@
+{
+  "name": "dsh-todo-time-log",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-05T08:17:16.655Z",
+  "icon": "dsh-todo-time-log.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 2256,
+        "text": "response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1396,
+        "text": "const fsService = ctx.get('fs');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1401,
+        "text": "const fsService = ctx.get('fs');"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 39,
+        "text": "import { promises as fsp } from 'node:fs';"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 482,
+        "text": "await fsp.mkdir(path.dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 484,
+        "text": "await fsp.writeFile(tmp, text, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 238,
+        "text": "export const inject = ['webServer', 'tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1445,
+        "text": "scope.effect(() => scope.tools.register(createTodoTool(store, fileIndex, getWorkspaceRoot)));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

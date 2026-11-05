@@ -1,0 +1,84 @@
+{
+  "name": "@deepwhale-cn/dsh-doc-qc",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-05T08:17:15.410Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 42,
+        "text": ") => { void (async () => { try { const x = await fetch(`${API}/info`); const j = await x.json(); if (j.version) 设版本(String(j.version)); } catch {} })(); }, []);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 45,
+        "text": "        try { const res = await fetch(`${API}/run`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ root }) }); 设r(awa"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 4,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 8,
+        "text": "const VERSION = (() => { try { return JSON.parse(readFileSync(join(PKG_ROOT, 'package.json'), 'utf8')).version || ''; } catch { return ''; } })();"
+      },
+      {
+        "file": "lib/qc.mjs",
+        "line": 9,
+        "text": "import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/qc.mjs",
+        "line": 61,
+        "text": "const text = ext === '.docx' ? 读docx(f) : (() => { try { return readFileSync(f, 'utf8'); } catch { return ''; } })();"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 2,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/qc.mjs",
+        "line": 8,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/qc.mjs",
+        "line": 32,
+        "text": "const r = spawnSync('python3', ['-c', code, file], { encoding: 'utf8' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

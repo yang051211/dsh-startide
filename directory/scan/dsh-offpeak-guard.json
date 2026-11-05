@@ -1,0 +1,71 @@
+{
+  "name": "dsh-offpeak-guard",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-05T08:17:23.051Z",
+  "icon": "dsh-offpeak-guard.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/store.js",
+        "line": 9,
+        "text": "import { mkdir, readFile, rename, unlink, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 76,
+        "text": "const text = await readFile(this.file, 'utf8');"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 90,
+        "text": "await mkdir(path.dirname(this.file), { recursive: true });"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 93,
+        "text": "await writeFile(temp, JSON.stringify(snapshot, null, 2), 'utf8');"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 96,
+        "text": "await unlink(temp).catch(() => {});"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 151,
+        "text": "disposers.push(ctx.tools.register(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

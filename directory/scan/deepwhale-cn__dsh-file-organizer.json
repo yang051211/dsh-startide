@@ -1,0 +1,73 @@
+{
+  "name": "@deepwhale-cn/dsh-file-organizer",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-05T08:17:14.261Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 44,
+        "text": ") => { void (async () => { try { const x = await fetch(`${API}/info`); const j = await x.json(); if (j.version) 设版本(String(j.version)); } catch {} })(); }, []);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 48,
+        "text": "const res = await fetch(`${API}/run`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ root, by, mode, ...extra }) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 4,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 9,
+        "text": "const VERSION = (() => { try { return JSON.parse(readFileSync(join(PKG_ROOT, 'package.json'), 'utf8')).version || ''; } catch { return ''; } })();"
+      },
+      {
+        "file": "lib/organize.mjs",
+        "line": 12,
+        "text": "import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, renameSync, rmSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/organize.mjs",
+        "line": 52,
+        "text": "try { return createHash('sha256').update(readFileSync(f)).digest('hex'); } catch { return ''; }"
+      },
+      {
+        "file": "lib/organize.mjs",
+        "line": 96,
+        "text": "mkdirSync(join(dest, '..'), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

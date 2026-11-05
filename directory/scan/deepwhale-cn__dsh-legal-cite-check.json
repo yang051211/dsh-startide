@@ -1,0 +1,78 @@
+{
+  "name": "@deepwhale-cn/dsh-legal-cite-check",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-05T08:17:06.964Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 27,
+        "text": "const r = await fetch(API + '/upload', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ files: payload }) });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 48,
+        "text": "try { const r = await fetch(`${API}/info`); const j = await r.json(); if (j.version) 设版本(String(j.version)); } catch {}"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 53,
+        "text": "const res = await fetch(`${API}/run`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(values) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 4,
+        "text": "import { readFileSync, writeFileSync, mkdtempSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 11,
+        "text": "try { return JSON.parse(readFileSync(join(PKG_ROOT, 'package.json'), 'utf8')).version || ''; }"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 46,
+        "text": "const fp = join(dir, name); writeFileSync(fp, buf); paths.push(fp);"
+      },
+      {
+        "file": "lib/core.mjs",
+        "line": 12,
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/core.mjs",
+        "line": 110,
+        "text": "const curated = JSON.parse(readFileSync(CURATED_FILE, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

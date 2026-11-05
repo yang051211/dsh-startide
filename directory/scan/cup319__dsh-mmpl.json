@@ -1,35 +1,35 @@
 {
   "name": "@cup319/dsh-mmpl",
-  "version": "3.15.5",
-  "scannedAt": "2026-11-04T20:39:00.841Z",
+  "version": "3.15.7",
+  "scannedAt": "2026-11-05T08:17:02.700Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 384,
+        "line": 436,
         "text": "const response = await fetch(url, { ...fetchOptions, redirect: 'error', signal: ctrl.signal })"
       },
       {
         "file": "index.js",
-        "line": 359,
+        "line": 341,
+        "text": "const metaRes = await fetch('https://registry.npmjs.org/@cup319/mmpl/latest', { signal: AbortSignal.timeout(15000) })"
+      },
+      {
+        "file": "index.js",
+        "line": 348,
+        "text": "const tgzRes = await fetch(`https://registry.npmjs.org/@cup319/mmpl/-/mmpl-${version}.tgz`)"
+      },
+      {
+        "file": "index.js",
+        "line": 448,
         "text": "const res = await fetch(`${base}/admin/api/overview`, {"
       },
       {
         "file": "index.js",
-        "line": 409,
+        "line": 498,
         "text": "const upstream = await fetch(`${base}/admin/api${rel}${rawQuery}`, {"
-      },
-      {
-        "file": "index.js",
-        "line": 469,
-        "text": "const res = await fetch(`https://registry.npmjs.org/${pkg}/latest`, { signal: AbortSignal.timeout(5000) })"
-      },
-      {
-        "file": "index.js",
-        "line": 557,
-        "text": "const res = await fetch("
       }
     ]
   },
@@ -39,27 +39,27 @@
       {
         "file": "index.js",
         "line": 35,
-        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 204,
+        "line": 36,
+        "text": "import { open } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 226,
         "text": "const raw = JSON.parse(readFileSync(bridgePath, 'utf8'))"
       },
       {
         "file": "index.js",
-        "line": 228,
+        "line": 250,
         "text": "try { writeFileSync(bridgePath, JSON.stringify(clean, null, 2)) } catch (e) { debug('bridge config write failed', e) }"
       },
       {
         "file": "index.js",
-        "line": 268,
+        "line": 290,
         "text": "try { mkdirSync(dir, { recursive: true }) } catch { /* best effort */ }"
-      },
-      {
-        "file": "index.js",
-        "line": 430,
-        "text": "try { version = JSON.parse(readFileSync(join(pkgDir, 'package.json'), 'utf8')).version ?? null } catch { /* unreadable pkg */ }"
       }
     ]
   },
@@ -78,7 +78,7 @@
       },
       {
         "file": "index.js",
-        "line": 314,
+        "line": 403,
         "text": "e?.options?.name === '@deepseek-ai/dsh-mcp-client' &&"
       }
     ]
@@ -93,18 +93,23 @@
       },
       {
         "file": "index.js",
-        "line": 125,
+        "line": 146,
         "text": "execFile('npm', ['root', '--global'], { timeout: 8000, windowsHide: true, shell: process.platform === 'win32' }, (err, out) =>"
       },
       {
         "file": "index.js",
-        "line": 274,
+        "line": 296,
         "text": "const child = spawn(exe, [], { cwd: pkgDir, env, detached: true, stdio: 'ignore', windowsHide: true })"
       },
       {
         "file": "index.js",
-        "line": 439,
-        "text": "execFile('npm', ['install', '-g', '@cup319/mmpl@latest'], { timeout: 300_000, windowsHide: true, shell: process.platform === 'win32' }, (err, stdout, stderr) =>"
+        "line": 363,
+        "text": "        execFile('tar', ['xzf', tgz, '-C', pkg + '.tmp'], { timeout: 120_000, windowsHide: true, shell: process.platform === 'win32' }, (e) => (e ? reject(e) : "
+      },
+      {
+        "file": "index.js",
+        "line": 371,
+        "text": "execFile(process.execPath, ['install.js'], { cwd: pkg, timeout: 300_000, windowsHide: true }, (e, so, se) =>"
       }
     ]
   },
@@ -124,7 +129,7 @@
     },
     {
       "file": "README.md",
-      "line": 94,
+      "line": 97,
       "text": "npm install -g @cup319/mmpl"
     }
   ],

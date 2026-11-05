@@ -1,0 +1,120 @@
+{
+  "name": "dsh-douyin-audio",
+  "version": "1.2.3",
+  "scannedAt": "2026-11-05T08:17:11.026Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 56,
+        "text": "const r = await fetch(API + '/token', { credentials: 'same-origin' })"
+      },
+      {
+        "file": "client.js",
+        "line": 66,
+        "text": "return asJson(await fetch(API + p, { credentials: 'same-origin', headers: authHeaders() }))"
+      },
+      {
+        "file": "client.js",
+        "line": 70,
+        "text": "return asJson(await fetch(API + p, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import { closeSync, existsSync, mkdirSync, openSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 325,
+        "text": "try { rows = parseManifest(readFileSync(mpath, 'utf8')) } catch { rows = [] }"
+      },
+      {
+        "file": "index.js",
+        "line": 651,
+        "text": "const pkg = JSON.parse(readFileSync(pkgPath, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 668,
+        "text": "const st = JSON.parse(readFileSync(loginStatePath(), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 738,
+        "text": "return String(readFileSync(setupLogPath(), 'utf8')).split(/\\r?\\n/).map((l) => l.trimEnd()).filter((l) => l.trim()).slice(-n)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 25,
+        "text": "export const inject = ['webServer', 'tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 1182,
+        "text": "return ctx.tools.register(wrapped)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 219,
+        "text": "child = spawn('powershell', ['-NoProfile', '-NonInteractive', '-Command', ps], { windowsHide: true, stdio: ['ignore', 'pipe', 'ignore'] })"
+      },
+      {
+        "file": "index.js",
+        "line": 815,
+        "text": "child = spawn(pythonPath, ['-c', VENV_PROBE_CODE], { stdio: ['ignore', 'pipe', 'ignore'], windowsHide: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 885,
+        "text": "child = spawn(python, [script, ...argv], {"
+      },
+      {
+        "file": "index.js",
+        "line": 1661,
+        "text": "child = spawn(python, [SCRIPT_LOGIN, ...argv], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 178,
+      "text": "ndows 下解释器是 `venv\\Scripts\\python.exe`），`pip install playwright sherpa-onnx`；装完由脚本自己把 `<插件根>/venv\\Scripts\\python.exe` 写进 `pythonPath`，`action: \"installed\"`；失败是 `"
+    }
+  ],
+  "skippedEntries": []
+}

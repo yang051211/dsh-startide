@@ -1,0 +1,79 @@
+{
+  "name": "@deepwhale-cn/dsh-deliverable-pack",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-05T08:17:14.115Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 19,
+        "text": "const res = await fetch(`${API}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 9,
+        "text": "import { mkdirSync, mkdtempSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 82,
+        "text": "mkdirSync(join(d, '合同'), { recursive: true });"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 83,
+        "text": "writeFileSync(join(d, '合同', '甲合同.docx'), 'demo-docx');"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 84,
+        "text": "writeFileSync(join(d, '合同', '乙合同.pdf'), 'demo-pdf');"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 85,
+        "text": "writeFileSync(join(d, '证据清单.md'), '# 证据清单\\n');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/pack.mjs",
+        "line": 8,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/pack.mjs",
+        "line": 111,
+        "text": "const r = spawnSync('zip', ['-qr', `${name}.zip`, name], { cwd: outRoot, encoding: 'utf8' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

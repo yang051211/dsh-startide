@@ -1,0 +1,128 @@
+{
+  "name": "dsh-crate-web",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-05T08:17:13.224Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 198,
+        "text": "const value = await (await fetch(\"/dsh-crate/api\", {"
+      },
+      {
+        "file": "restart-helper.mjs",
+        "line": 37,
+        "text": "const response = await fetch(url, { signal: AbortSignal.timeout(2000) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "import { createReadStream } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "import { access, cp, mkdir, readFile, readdir, rename, stat, unlink, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 27,
+        "text": "const value = JSON.parse(await readFile(path, \"utf8\"));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 36,
+        "text": "await writeFile(temporary, `${JSON.stringify(entries, null, 2)}\\n`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 43,
+        "text": "await unlink(temporary).catch(() => void 0);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 192,
+        "text": "const child = spawn(command.command, [...command.prefix, ...args], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1122,
+        "text": "spawn(process.execPath, [helperPath, encoded], {"
+      },
+      {
+        "file": "restart-helper.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "restart-helper.mjs",
+        "line": 90,
+        "text": "const child = spawn(spec.nodePath, [spec.scriptPath, ...spec.args], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "runtime/python/_asyncio.pyd",
+    "runtime/python/_bz2.pyd",
+    "runtime/python/_ctypes.pyd",
+    "runtime/python/_decimal.pyd",
+    "runtime/python/_elementtree.pyd",
+    "runtime/python/_hashlib.pyd",
+    "runtime/python/_lzma.pyd",
+    "runtime/python/_multiprocessing.pyd",
+    "runtime/python/_overlapped.pyd",
+    "runtime/python/_queue.pyd",
+    "runtime/python/_remote_debugging.pyd",
+    "runtime/python/_socket.pyd",
+    "runtime/python/_sqlite3.pyd",
+    "runtime/python/_ssl.pyd",
+    "runtime/python/_uuid.pyd",
+    "runtime/python/_wmi.pyd",
+    "runtime/python/_zoneinfo.pyd",
+    "runtime/python/_zstd.pyd",
+    "runtime/python/libcrypto-3.dll",
+    "runtime/python/libffi-8.dll",
+    "runtime/python/libssl-3.dll",
+    "runtime/python/pyexpat.pyd",
+    "runtime/python/python.exe",
+    "runtime/python/python3.dll",
+    "runtime/python/python314.dll",
+    "runtime/python/pythonw.exe",
+    "runtime/python/select.pyd",
+    "runtime/python/sqlite3.dll",
+    "runtime/python/unicodedata.pyd",
+    "runtime/python/vcruntime140_1.dll",
+    "runtime/python/vcruntime140.dll",
+    "runtime/python/winsound.pyd"
+  ],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

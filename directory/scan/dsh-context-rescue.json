@@ -1,0 +1,81 @@
+{
+  "name": "dsh-context-rescue",
+  "version": "0.2.6",
+  "scannedAt": "2026-11-05T08:17:10.079Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/repair-log.mjs",
+        "line": 27,
+        "text": "import { copyFileSync, readFileSync, readdirSync, renameSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "scripts/repair-log.mjs",
+        "line": 88,
+        "text": "/** @type {import('node:fs').Dirent[]} */"
+      },
+      {
+        "file": "scripts/repair-log.mjs",
+        "line": 321,
+        "text": "writeFileSync(temporary, bytes);"
+      },
+      {
+        "file": "scripts/repair-log.mjs",
+        "line": 326,
+        "text": "writeFileSync(target, bytes);"
+      },
+      {
+        "file": "scripts/repair-log.mjs",
+        "line": 330,
+        "text": "writeFileSync(target, bytes);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 35,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 39,
+        "text": "disposers.push(tools.register({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 103,
+        "text": "disposers.push(tools.register({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 129,
+        "text": "disposers.push(tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

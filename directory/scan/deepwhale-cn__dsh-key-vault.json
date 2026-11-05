@@ -1,0 +1,68 @@
+{
+  "name": "@deepwhale-cn/dsh-key-vault",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-05T08:17:11.344Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 18,
+        "text": "const res = await fetch(`${API}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 11,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 72,
+        "text": "try { key = readFileSync(0, 'utf8').trim(); } catch { key = ''; }"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 4,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 9,
+        "text": "const VERSION = (() => { try { return JSON.parse(readFileSync(join(PKG_ROOT, 'package.json'), 'utf8')).version || ''; } catch { return ''; } })();"
+      },
+      {
+        "file": "lib/vault.mjs",
+        "line": 9,
+        "text": "import { chmodSync, existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

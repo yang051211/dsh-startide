@@ -1,0 +1,85 @@
+{
+  "name": "dsh-agents-visualization",
+  "version": "0.1.8",
+  "scannedAt": "2026-11-05T08:17:11.993Z",
+  "icon": "dsh-agents-visualization.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 789,
+        "text": "res = await fetch(API + path, init);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 23,
+        "text": "import { mkdir, open, readdir, realpath, rename, rm, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 796,
+        "text": "await mkdir(dir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 801,
+        "text": "await handle.writeFile(content, { encoding: 'utf8' })"
+      },
+      {
+        "file": "index.js",
+        "line": 808,
+        "text": "await rm(tempPath, { force: true }).catch(() => {})"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 1824,
+        "text": "const child = spawn(command, args, { stdio: 'ignore' })"
+      },
+      {
+        "file": "index.js",
+        "line": 1858,
+        "text": "const { execFile } = await import('node:child_process')"
+      },
+      {
+        "file": "index.js",
+        "line": 1862,
+        "text": "execFile("
+      },
+      {
+        "file": "index.js",
+        "line": 1883,
+        "text": "const { execFile } = await import('node:child_process')"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

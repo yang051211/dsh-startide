@@ -1,0 +1,110 @@
+{
+  "name": "deepinfra-fusion-proxy",
+  "version": "2.2.2",
+  "scannedAt": "2026-11-05T08:17:10.966Z",
+  "icon": "deepinfra-fusion-proxy.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/index.js",
+        "line": 81,
+        "text": "fetch(base + \"/__dfusion/state\", { credentials: \"same-origin\", cache: \"no-store\" })"
+      },
+      {
+        "file": "client/index.js",
+        "line": 118,
+        "text": "fetch(base + path, {"
+      },
+      {
+        "file": "client/index.js",
+        "line": 562,
+        "text": "const response = await fetch(STATUS_URL, { credentials: \"same-origin\", cache: \"no-store\" });"
+      },
+      {
+        "file": "plugin/deepinfra-proxy.mjs",
+        "line": 42,
+        "text": "import http from \"node:http\";"
+      },
+      {
+        "file": "plugin/deepinfra-proxy.mjs",
+        "line": 475,
+        "text": "const upReq = http.request({"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/deepinfra-proxy.mjs",
+        "line": 39,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "plugin/deepinfra-proxy.mjs",
+        "line": 112,
+        "text": "const pkg = JSON.parse(readFileSync(path.join(BUNDLE_DIR, \"package.json\"), \"utf8\"));"
+      },
+      {
+        "file": "plugin/deepinfra-proxy.mjs",
+        "line": 275,
+        "text": "mkdirSync(s.stateDir, { recursive: true });"
+      },
+      {
+        "file": "plugin/deepinfra-proxy.mjs",
+        "line": 502,
+        "text": "const healed = healPatchText(readFileSync(patchPath, \"utf8\"));"
+      },
+      {
+        "file": "plugin/deepinfra-proxy.mjs",
+        "line": 504,
+        "text": "writeFileSync(patchPath, healed);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/deepinfra-proxy.mjs",
+        "line": 37,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "plugin/deepinfra-proxy.mjs",
+        "line": 272,
+        "text": "// spawn() passes cwd = stateDir, and a nonexistent cwd fails with ENOENT"
+      },
+      {
+        "file": "plugin/deepinfra-proxy.mjs",
+        "line": 285,
+        "text": "proc = spawn(process.execPath, [serverFile], {"
+      },
+      {
+        "file": "test/deepinfra-proxy-bundle-test.mjs",
+        "line": 31,
+        "text": "import { spawn as spawnProcess } from \"node:child_process\";"
+      },
+      {
+        "file": "test/deepinfra-proxy-bundle-test.mjs",
+        "line": 305,
+        "text": "&& pluginSource.indexOf(\"mkdirSync(s.stateDir\") < pluginSource.indexOf(\"proc = spawn(\"),"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

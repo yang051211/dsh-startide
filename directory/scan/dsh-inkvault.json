@@ -1,0 +1,76 @@
+{
+  "name": "dsh-inkvault",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-05T08:17:19.921Z",
+  "icon": "dsh-inkvault.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/paths.js",
+        "line": 20,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "src/paths.js",
+        "line": 69,
+        "text": "await fs.mkdir(dir, { recursive: true });"
+      },
+      {
+        "file": "src/paths.js",
+        "line": 163,
+        "text": "return fs.readFile(abs, 'utf8');"
+      },
+      {
+        "file": "src/paths.js",
+        "line": 182,
+        "text": "await fh.writeFile(text, 'utf8');"
+      },
+      {
+        "file": "src/paths.js",
+        "line": 193,
+        "text": "await fs.rm(tmp, { force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 34,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 8,
+        "text": "* Definitions are passed to `ctx.tools.register` as plain objects with JSON"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 416,
+        "text": "disposers.push(ctx.effect(() => ctx.tools.register(definition)))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

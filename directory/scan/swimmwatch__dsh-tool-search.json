@@ -1,0 +1,88 @@
+{
+  "name": "@swimmwatch/dsh-tool-search",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-05T08:17:10.167Z",
+  "icon": "swimmwatch__dsh-tool-search.png",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/src/core/embeddings/definition-vector-cache.js",
+        "line": 2,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "dist/src/core/embeddings/definition-vector-cache.js",
+        "line": 24,
+        "text": "const value = JSON.parse(await readFile(this.path, 'utf8'));"
+      },
+      {
+        "file": "dist/src/core/embeddings/definition-vector-cache.js",
+        "line": 61,
+        "text": "await mkdir(dirname(this.path), { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "dist/src/core/embeddings/definition-vector-cache.js",
+        "line": 63,
+        "text": "await writeFile(temporaryPath, `${JSON.stringify({"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/src/index.js",
+        "line": 11,
+        "text": "export const inject = ['tools', 'systemPrompt'];"
+      },
+      {
+        "file": "dist/src/index.js",
+        "line": 65,
+        "text": "return this.#ctx.tools"
+      },
+      {
+        "file": "dist/src/index.js",
+        "line": 71,
+        "text": "definition = this.#ctx.tools.get(tool.name, agent);"
+      },
+      {
+        "file": "dist/src/index.js",
+        "line": 155,
+        "text": "alwaysAvailable: this.#ctx.tools"
+      },
+      {
+        "file": "dist/src/index.js",
+        "line": 182,
+        "text": "const ptc = this.#ctx.tools.get(RUN_CODE_NAME, context.scope) !== undefined;"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

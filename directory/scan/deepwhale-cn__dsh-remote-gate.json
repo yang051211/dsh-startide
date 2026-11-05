@@ -1,0 +1,73 @@
+{
+  "name": "@deepwhale-cn/dsh-remote-gate",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-05T08:17:09.114Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 45,
+        "text": ") => { void (async () => { try { const x = await fetch(`${API}/info`); const j = await x.json(); if (j.version) 设版本(String(j.version)); } catch {} })(); }, []);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 49,
+        "text": "const res = await fetch(`${API}/run`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ root }) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 7,
+        "text": "import { writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 17,
+        "text": "const { mkdirSync } = await import('node:fs');"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 18,
+        "text": "mkdirSync(tmp, { recursive: true });"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 19,
+        "text": "  writeFileSync(`${tmp}/server.js`, `const port = 8080;\\napp.listen(port, '0.0.0.0');\\nconst auth = { skipAuth: true };\\napp.use(cors({ origin: '*' }));\\nconst "
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 32,
+        "text": "  writeFileSync(get('--html'), `<!doctype html><meta charset=\"utf-8\"><title>深鲸远程访问加固报告</title><h1>远程访问加固报告</h1><p>扫描 ${r.scannedFiles} 个文件，命中 ${r.findings.lengt"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

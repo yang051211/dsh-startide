@@ -1,0 +1,90 @@
+{
+  "name": "dsh-cabinet-mode",
+  "version": "0.2.6",
+  "scannedAt": "2026-11-05T08:17:13.910Z",
+  "icon": "dsh-cabinet-mode.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/market-index.mjs",
+        "line": 161,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/install.mjs",
+        "line": 29,
+        "text": "import { copyFileSync, existsSync, readFileSync, readdirSync, appendFileSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "scripts/install.mjs",
+        "line": 106,
+        "text": "const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));"
+      },
+      {
+        "file": "scripts/install.mjs",
+        "line": 154,
+        "text": "const presetOperations = readFileSync(PATCH_FILE, 'utf8').split(/(?=^- )/m)"
+      },
+      {
+        "file": "scripts/install.mjs",
+        "line": 194,
+        "text": "const targetBuffer = readFileSync(target);"
+      },
+      {
+        "file": "scripts/install.mjs",
+        "line": 247,
+        "text": "const backupBuffer = readFileSync(backupPath);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/test-install.mjs",
+        "line": 6,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/test-install.mjs",
+        "line": 11,
+        "text": "const run = (script, target, args = []) => spawnSync(process.execPath,"
+      },
+      {
+        "file": "scripts/test-market-index.mjs",
+        "line": 5,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/test-market-index.mjs",
+        "line": 18,
+        "text": "return spawnSync(process.execPath, ['scripts/market-index.mjs'], {"
+      },
+      {
+        "file": "scripts/verify.mjs",
+        "line": 31,
+        "text": "import { spawnSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

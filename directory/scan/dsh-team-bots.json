@@ -1,0 +1,131 @@
+{
+  "name": "dsh-team-bots",
+  "version": "0.2.289",
+  "scannedAt": "2026-11-05T08:17:19.411Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/updater.js",
+        "line": 54,
+        "text": "const response = await fetch(`${registry}/${encodeURIComponent(pkg)}`, {"
+      },
+      {
+        "file": "ui/modules/api.js",
+        "line": 7,
+        "text": "const response = await fetch('/api/dsh-team/api', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/doctor.mjs",
+        "line": 4,
+        "text": "import { accessSync, constants, existsSync, lstatSync, readFileSync, realpathSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "scripts/doctor.mjs",
+        "line": 100,
+        "text": "const refs = extractHostRefs(readFileSync(patchFile, 'utf8'))"
+      },
+      {
+        "file": "src/db.js",
+        "line": 3,
+        "text": "import { mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "src/db.js",
+        "line": 469,
+        "text": "mkdirSync(dirname(path), { recursive: true })"
+      },
+      {
+        "file": "src/http.js",
+        "line": 1,
+        "text": "import { readFile } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "export const inject = ['llm', 'tools', 'systemPrompt', 'sessionController', 'sessionTitle', 'connection', 'webServer']"
+      },
+      {
+        "file": "src/services/runtime/lifecycle.js",
+        "line": 352,
+        "text": "tools = (this.ctx.tools?.schemas?.() ?? []).map(schema => schema.name).filter(Boolean)"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 7,
+        "text": "if (!ctx.tools?.register) return"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 9,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 40,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/doctor.mjs",
+        "line": 5,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/doctor.mjs",
+        "line": 80,
+        "text": "const dsh = spawnSync('dsh', ['--version'], { encoding: 'utf8' })"
+      },
+      {
+        "file": "src/service.js",
+        "line": 2,
+        "text": "import { execFileSync, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/services/runs.js",
+        "line": 8,
+        "text": "import { execFileSync, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "src/services/runs.js",
+        "line": 419,
+        "text": "const check = spawnSync('git', ['-c', 'core.quotePath=false', 'check-ignore', '--no-index', '--stdin'], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "vendor/dompurify/purify.min.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "llm",
+    "sessionController",
+    "sessionTitle",
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

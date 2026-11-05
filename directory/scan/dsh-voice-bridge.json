@@ -1,0 +1,87 @@
+{
+  "name": "dsh-voice-bridge",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-05T08:17:16.056Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 48,
+        "text": "const res = await fetch('/api/voice-bridge/latest', { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 63,
+        "text": "fetch('/api/voice-bridge/ack', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 75,
+        "text": "fetch('/api/voice-bridge/voice-turn', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 22,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 43,
+        "text": "const cfg = JSON.parse(fs.readFileSync(path.join(JARVIS, 'device.json'), 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 86,
+        "text": "return JSON.parse(fs.readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 94,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 95,
+        "text": "fs.writeFileSync(file, JSON.stringify(value), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 130,
+        "text": "const kid = spawn(exe, scriptArgs, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

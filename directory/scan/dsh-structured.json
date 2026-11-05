@@ -1,7 +1,7 @@
 {
   "name": "dsh-structured",
-  "version": "0.9.9",
-  "scannedAt": "2026-10-26T10:05:50.911Z",
+  "version": "1.0.4",
+  "scannedAt": "2026-11-05T08:17:14.663Z",
   "icon": "dsh-structured.svg",
   "network": {
     "hit": false,
@@ -17,22 +17,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 163,
+        "line": 318,
         "text": "const raw = readFileSync(styleFile(), 'utf8').trim()"
       },
       {
         "file": "lib/index.js",
-        "line": 242,
+        "line": 417,
         "text": "const raw = JSON.parse(readFileSync(stateFile(), 'utf8'))"
       },
       {
         "file": "lib/index.js",
-        "line": 286,
+        "line": 461,
         "text": "mkdirSync(dirname(file), { recursive: true })"
       },
       {
         "file": "lib/index.js",
-        "line": 287,
+        "line": 462,
         "text": "writeFileSync(tmp, JSON.stringify({ version: 1, sessions: pruned }, null, 2) + '\\n', 'utf8')"
       }
     ]
@@ -45,6 +45,21 @@
     "hit": true,
     "evidence": [
       {
+        "file": "scripts/style-gate.mjs",
+        "line": 1,
+        "text": "import { execFileSync, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/style-gate.mjs",
+        "line": 51,
+        "text": "child = spawn(command, argv, {"
+      },
+      {
+        "file": "scripts/style-gate.mjs",
+        "line": 333,
+        "text": "child = spawn(process.execPath, [self, '--worker', evidenceDir], {"
+      },
+      {
         "file": "scripts/uninstall.mjs",
         "line": 15,
         "text": "import { spawnSync } from 'node:child_process'"
@@ -53,21 +68,6 @@
         "file": "scripts/uninstall.mjs",
         "line": 30,
         "text": "const result = spawnSync(command, {"
-      },
-      {
-        "file": "test/style-browser.test.mjs",
-        "line": 2,
-        "text": "import { execSync } from 'node:child_process'"
-      },
-      {
-        "file": "test/style-browser.test.mjs",
-        "line": 10,
-        "text": "execSync(process.platform === 'win32' ? 'where ego-browser' : 'command -v ego-browser', { stdio: 'ignore' })"
-      },
-      {
-        "file": "test/style-browser.test.mjs",
-        "line": 28,
-        "text": "execSync(`ego-browser nodejs -e \"await import('${url}')\"`, {"
       }
     ]
   },
@@ -76,7 +76,10 @@
     "evidence": []
   },
   "dependencies": 0,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "lib/client.js",
+    "src/client.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [
     "systemPrompt"

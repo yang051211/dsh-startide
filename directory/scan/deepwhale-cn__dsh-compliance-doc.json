@@ -1,0 +1,78 @@
+{
+  "name": "@deepwhale-cn/dsh-compliance-doc",
+  "version": "0.2.4",
+  "scannedAt": "2026-11-05T08:17:08.128Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 30,
+        "text": "const r = await fetch(API + '/upload', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ files: payload }) });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 52,
+        "text": "try { const r = await fetch(`${API}/info`); const j = await r.json(); if (j.version) 设版本(String(j.version)); } catch {}"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 57,
+        "text": "const res = await fetch(`${API}/run`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ ...values, profile }) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 19,
+        "text": "import { mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 25,
+        "text": "const pkg = JSON.parse(readFileSync(join(PKG_ROOT, 'package.json'), 'utf-8'));"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 121,
+        "text": "raw = JSON.parse(readFileSync(inputPath, 'utf-8'));"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 136,
+        "text": "mkdirSync(outDir, { recursive: true });"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 146,
+        "text": "writeFileSync(full, content, 'utf-8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

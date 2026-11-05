@@ -1,34 +1,29 @@
 {
   "name": "dsh-music-panel",
-  "version": "0.1.0",
-  "scannedAt": "2026-11-04T20:39:31.532Z",
+  "version": "0.3.16",
+  "scannedAt": "2026-11-05T08:17:22.972Z",
   "icon": "dsh-music-panel.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 480,
+        "line": 600,
         "text": "var response = await fetch(url, { credentials: 'same-origin', headers: { accept: 'application/json' } })"
       },
       {
         "file": "client.js",
-        "line": 495,
+        "line": 615,
         "text": "return fetch(url, {"
       },
       {
         "file": "client.js",
-        "line": 1197,
-        "text": ".fetch(API + 'play', {"
-      },
-      {
-        "file": "client.js",
-        "line": 1218,
+        "line": 1597,
         "text": "fetch(streamUrl(item.path), controller === null ? {} : { signal: controller.signal })"
       },
       {
         "file": "client.js",
-        "line": 2808,
+        "line": 4355,
         "text": "return fetch(url, {"
       }
     ]
@@ -37,29 +32,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/library.js",
-        "line": 12,
-        "text": "import { readdir, stat } from 'node:fs/promises'"
-      },
-      {
-        "file": "lib/lyrics.js",
-        "line": 16,
-        "text": "import { readdir, readFile } from 'node:fs/promises'"
-      },
-      {
-        "file": "lib/lyrics.js",
-        "line": 195,
-        "text": "const raw = await readFile(file, 'utf8')"
-      },
-      {
-        "file": "lib/playlists.js",
+        "file": "lib/favorites.js",
         "line": 12,
         "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
       },
       {
-        "file": "lib/playlists.js",
-        "line": 49,
+        "file": "lib/favorites.js",
+        "line": 52,
         "text": "parsed = JSON.parse(await readFile(file, 'utf8'))"
+      },
+      {
+        "file": "lib/favorites.js",
+        "line": 61,
+        "text": "await mkdir(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/favorites.js",
+        "line": 62,
+        "text": "await writeFile(file, `${JSON.stringify({ version: 1, favorites: cache }, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "lib/library.js",
+        "line": 12,
+        "text": "import { readdir, stat } from 'node:fs/promises'"
       }
     ]
   },
@@ -68,14 +63,25 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/routes.js",
+        "line": 24,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/routes.js",
+        "line": 415,
+        "text": "const child = spawn(opener.name, opener.args, {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
+  "dependencies": 4,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

@@ -1,0 +1,73 @@
+{
+  "name": "@garinz/dsh-handoff",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-05T08:17:22.851Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "import { realpath, stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/relocate.js",
+        "line": 29,
+        "text": "import { mkdir, readFile, readdir, realpath, rm, stat, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/relocate.js",
+        "line": 78,
+        "text": "await mkdir(newDir, { recursive: true });"
+      },
+      {
+        "file": "lib/relocate.js",
+        "line": 82,
+        "text": "const source = await readFile(join(oldDir, name));"
+      },
+      {
+        "file": "lib/relocate.js",
+        "line": 84,
+        "text": "await writeFile(destination, rewriteHeaderFrame(source, target, compressed));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "export const inject = [\"tools\", \"agents\", \"sessions\"];"
+      },
+      {
+        "file": "index.js",
+        "line": 348,
+        "text": "ctx.tools.register(handoffTool),"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "sessions",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,66 @@
+{
+  "name": "dsh-loop-rescue",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-05T08:17:11.609Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tools/clean-session.mjs",
+        "line": 25,
+        "text": "import { readFileSync, writeFileSync, readdirSync, statSync, existsSync, mkdirSync, renameSync, copyFileSync } from 'node:fs'"
+      },
+      {
+        "file": "tools/clean-session.mjs",
+        "line": 49,
+        "text": "try { return decodeLog(readFileSync(path)) } catch (e) { die(e.message) }"
+      },
+      {
+        "file": "tools/clean-session.mjs",
+        "line": 54,
+        "text": "writeFileSync(tmp, out)"
+      },
+      {
+        "file": "tools/clean-session.mjs",
+        "line": 260,
+        "text": "mkdirSync(dirname(bak), { recursive: true })"
+      },
+      {
+        "file": "tools/scan-session.mjs",
+        "line": 16,
+        "text": "import { readFileSync, readdirSync, statSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tools/clean-session.mjs",
+        "line": 28,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
