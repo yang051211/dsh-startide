@@ -1,0 +1,61 @@
+{
+  "name": "dsh-minichat",
+  "version": "0.1.0-beta.1",
+  "scannedAt": "2026-11-06T20:48:59.023Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 85,
+        "text": "const response = await fetch(ENDPOINT, {"
+      },
+      {
+        "file": "index.js",
+        "line": 374,
+        "text": "const result = await web.fetch({ url: source.url }, guard)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 25,
+        "text": "import { mkdir, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 154,
+        "text": "await mkdir(join(path, '..'), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 157,
+        "text": "await writeFile(temp, `${JSON.stringify(book, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

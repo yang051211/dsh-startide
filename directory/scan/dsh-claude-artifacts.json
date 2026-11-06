@@ -1,0 +1,100 @@
+{
+  "name": "dsh-claude-artifacts",
+  "version": "2.12.0",
+  "scannedAt": "2026-11-06T20:48:57.689Z",
+  "icon": "dsh-claude-artifacts.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 230,
+        "text": "const response = await fetch(route(updatesPath), { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 301,
+        "text": "const response = await fetch(`${route(installPath)}?${new URLSearchParams({ plugin })}`, { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2002,
+        "text": "const response = await fetch(`${route2(path)}?${new URLSearchParams(params)}`, init);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2020,
+        "text": "const response = await fetch(route2(listPath), { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2045,
+        "text": "const response = await fetch(`${route2(openPath)}?${new URLSearchParams({ root: view.root })}`, { method: \"POST\" });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { readFileSync as readFileSync2 } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 85,
+        "text": "const value = JSON.parse(readFileSync(join(root, at[0]), \"utf8\"))[at[1]];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 98,
+        "text": "const value = JSON.parse(readFileSync(file, \"utf8\"));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 105,
+        "text": "mkdirSync(dirname(file), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { spawn as spawn2 } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 219,
+        "text": "const child = spawn(node.path, [script, ...args], { env: scriptEnv(node), stdio: [input === void 0 ? \"ignore\" : \"pipe\", \"pipe\", \"pipe\"], windowsHide: true });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

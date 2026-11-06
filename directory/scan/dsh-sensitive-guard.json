@@ -1,0 +1,113 @@
+{
+  "name": "dsh-sensitive-guard",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-06T20:48:58.161Z",
+  "icon": "dsh-sensitive-guard.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 362,
+        "text": "const res = await fetch('/guard/rules', { cache: 'no-store' });"
+      },
+      {
+        "file": "client.js",
+        "line": 376,
+        "text": "const res = await fetch('/guard/rules', {"
+      },
+      {
+        "file": "client.js",
+        "line": 493,
+        "text": "const res = await fetch('/guard/entries', {"
+      },
+      {
+        "file": "client.js",
+        "line": 646,
+        "text": "const res = await fetch('/guard/vault', { cache: 'no-store', signal });"
+      },
+      {
+        "file": "client.js",
+        "line": 681,
+        "text": "const res = await fetch('/guard/reveal', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 29,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 119,
+        "text": "const raw = JSON.parse(fs.readFileSync(pauseFile(), 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 129,
+        "text": "fs.mkdirSync(dataDir(), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 130,
+        "text": "fs.writeFileSync(pauseFile(), JSON.stringify({ until: pause.until, off: pause.off }), { mode: 0o600 });"
+      },
+      {
+        "file": "index.js",
+        "line": 168,
+        "text": "fs.mkdirSync(dataDir(), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1068,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 1092,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 1614,
+        "text": "export const inject = ['tools'];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "test.mjs",
+        "line": 7,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-socratic",
-  "version": "0.3.1",
-  "scannedAt": "2026-11-06T08:17:12.182Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-06T20:48:47.215Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -9,17 +9,17 @@
       {
         "file": "client.js",
         "line": 18,
-        "text": "fetch(base + '/v1/state/' + encodeURIComponent(sessionId)),"
+        "text": "const res = await fetch(url, { cache: 'no-store' });"
       },
       {
         "file": "client.js",
-        "line": 19,
-        "text": "fetch(base + '/v1/citations/' + encodeURIComponent(sessionId) + '?limit=8'),"
+        "line": 187,
+        "text": "fetch(url, { cache: 'no-store' })"
       },
       {
         "file": "client.js",
-        "line": 133,
-        "text": "fetch(base + '/v1/citations/' + encodeURIComponent(sessionId) + '?turn=' + encodeURIComponent(turn))"
+        "line": 285,
+        "text": "const res = await fetch(url, { cache: 'no-store' });"
       },
       {
         "file": "lib/transport.js",
@@ -43,7 +43,7 @@
       },
       {
         "file": "index.js",
-        "line": 13,
+        "line": 12,
         "text": "appendFileSync(LOG, JSON.stringify({ t: new Date().toISOString(), event, ...data }) + \"\\n\");"
       }
     ]
@@ -53,27 +53,27 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 18,
-        "text": "export const inject = [\"tools\", \"systemPrompt\"];"
+        "line": 17,
+        "text": "export const inject = [\"tools\"];"
       },
       {
         "file": "index.js",
-        "line": 251,
+        "line": 55,
         "text": "ctx.tools.register(tool("
       },
       {
         "file": "index.js",
-        "line": 294,
+        "line": 98,
         "text": "ctx.tools.register(tool("
       },
       {
         "file": "index.js",
-        "line": 317,
+        "line": 121,
         "text": "ctx.tools.register(tool("
       },
       {
         "file": "index.js",
-        "line": 336,
+        "line": 140,
         "text": "ctx.tools.register(tool("
       }
     ]
@@ -90,7 +90,6 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
-    "systemPrompt",
     "tools"
   ],
   "setupHints": [],

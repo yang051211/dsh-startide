@@ -1,0 +1,112 @@
+{
+  "name": "dsh-chubby-whale",
+  "version": "1.1.61",
+  "scannedAt": "2026-11-06T20:48:57.607Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.js",
+        "line": 1226,
+        "text": "return await fetch(url, sig ? { ...init, signal: sig } : init);"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 4187,
+        "text": "return fetch(apiUrl(path), Object.assign({}, init || {}));"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 4199,
+        "text": "return fetch(apiUrl(path), o);"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 4207,
+        "text": "return fetch(apiUrl(path), o).then((r) => r.json());"
+      },
+      {
+        "file": "dist/host/data/cloud.js",
+        "line": 60,
+        "text": "const doFetch = opts.fetchImpl || ((url, init) => fetch(url, init));"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.js",
+        "line": 6825,
+        "text": "const fs = proc.getBuiltinModule(\"node:fs\");"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 6832,
+        "text": "const raw = fs.readFileSync(candidate, \"utf8\");"
+      },
+      {
+        "file": "dist/host/atomic.js",
+        "line": 17,
+        "text": "import { mkdirSync, openSync, writeFileSync, fsyncSync, closeSync, renameSync, unlinkSync, existsSync, chmodSync, readFileSync, } from 'node:fs';"
+      },
+      {
+        "file": "dist/host/atomic.js",
+        "line": 103,
+        "text": "mkdirSync(dir, { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "dist/host/atomic.js",
+        "line": 109,
+        "text": "* 剥掉 UTF-8 BOM（U+FEFF）。Node 的 readFileSync(..., 'utf8') 不会自动去掉 BOM，"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/host/tts/common.js",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "dist/host/tts/common.js",
+        "line": 84,
+        "text": "const tk = spawn('taskkill', ['/PID', String(pid), '/T', '/F'], { stdio: 'ignore', windowsHide: true });"
+      },
+      {
+        "file": "dist/host/tts/python.js",
+        "line": 27,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "dist/host/tts/python.js",
+        "line": 73,
+        "text": "child = spawn(interp.cmd, [...interp.args, '-c', TTS_PROBE_CODE], {"
+      },
+      {
+        "file": "dist/host/tts/spawn.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

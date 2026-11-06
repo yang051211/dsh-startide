@@ -1,7 +1,7 @@
 {
   "name": "dsh-dock",
-  "version": "0.21.2",
-  "scannedAt": "2026-11-04T20:39:07.285Z",
+  "version": "0.23.0",
+  "scannedAt": "2026-11-06T20:48:45.685Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,17 +18,17 @@
       },
       {
         "file": "client.js",
-        "line": 2356,
+        "line": 2357,
         "text": "return fetch(\"dsh-dock/tokenlog/\" + method, {"
       },
       {
         "file": "client.js",
-        "line": 3901,
+        "line": 3998,
         "text": "    fetch(\"dsh-dock/models\", { cache: \"no-store\", signal: AbortSignal.timeout(2e4) }).then((res) => res.ok ? res.json() : Promise.reject(new Error(\"\\u6A21\\u578B"
       },
       {
         "file": "client.js",
-        "line": 4044,
+        "line": 4141,
         "text": "fetch(\"dsh-dock/models\", {"
       }
     ]
@@ -37,35 +37,46 @@
     "hit": true,
     "evidence": [
       {
-        "file": "features/mobile-relay/host.js",
+        "file": "features/mcpconfig/host.js",
         "line": 18,
-        "text": "import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+        "text": "import { readFile } from 'node:fs/promises'"
       },
       {
-        "file": "features/mobile-relay/host.js",
+        "file": "features/mcpconfig/host.js",
         "line": 19,
-        "text": "import { stat } from 'node:fs/promises'"
+        "text": "import { writeFile, rename, unlink } from 'node:fs/promises'"
       },
       {
-        "file": "features/mobile-relay/host.js",
-        "line": 45,
-        "text": "text = readFileSync(file, 'utf8')"
+        "file": "features/mcpconfig/host.js",
+        "line": 73,
+        "text": "return await readFile(path, 'utf8')"
       },
       {
-        "file": "features/mobile-relay/host.js",
-        "line": 63,
-        "text": "mkdirSync(dirname(file), { recursive: true })"
+        "file": "features/mcpconfig/host.js",
+        "line": 232,
+        "text": "await writeFile(tmp, text, { mode: 0o600 })"
       },
       {
-        "file": "features/mobile-relay/host.js",
-        "line": 64,
-        "text": "writeFileSync(file, yaml.dump(list, { schema: patchYamlSchema }), 'utf8')"
+        "file": "features/mcpconfig/host.js",
+        "line": 236,
+        "text": "try { await unlink(tmp) } catch { /* 清理失败忽略 */ }"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "features/mcpconfig/host.js",
+        "line": 7,
+        "text": "// `name: '@deepseek-ai/dsh-mcp-client'` + 一份 config），真相源是当前 profile 的"
+      },
+      {
+        "file": "features/mcpconfig/host.js",
+        "line": 25,
+        "text": "const MCP_ROW_NAME = '@deepseek-ai/dsh-mcp-client'"
+      }
+    ]
   },
   "childProcess": {
     "hit": false,

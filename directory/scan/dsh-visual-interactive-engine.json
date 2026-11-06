@@ -1,7 +1,7 @@
 {
   "name": "dsh-visual-interactive-engine",
-  "version": "0.31.1",
-  "scannedAt": "2026-11-03T20:52:21.679Z",
+  "version": "0.32.0",
+  "scannedAt": "2026-11-06T20:48:56.029Z",
   "icon": "dsh-visual-interactive-engine.svg",
   "network": {
     "hit": true,
@@ -10,6 +10,11 @@
         "file": "lib/client.three.js",
         "line": 1,
         "text": "\"}),a=this.mimeType,o=this.responseType;fetch(s).then((e=>{if(200===e.status||0===e.status){if(0===e.status&&console.warn(\\\"THREE.FileLoader: HTTP Status 0 rece"
+      },
+      {
+        "file": "lib/resvg/index.mjs",
+        "line": 538,
+        "text": "input = fetch(input);"
       }
     ]
   },
@@ -18,23 +23,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 8246,
+        "line": 8412,
         "text": "const [fs,path,os,crypto]=await Promise.all([import('node:fs'),import('node:path'),import('node:os'),import('node:crypto')]);"
       },
       {
         "file": "lib/index.js",
-        "line": 8248,
+        "line": 8414,
         "text": "  try{snapshot=JSON.parse(fs.readFileSync(file,'utf8'));}catch(error){if(error.code!=='ENOENT')ctx.logger?.warn('VIE mode preferences could not be read; using c"
       },
       {
         "file": "lib/index.js",
-        "line": 8250,
+        "line": 8416,
         "text": "0000)return [];const data=JSON.parse(fs.readFileSync(p,'utf8'));return data.v===1&&Array.isArray(data.entries)?data.entries.slice(-4):[];},save(id,entries){fs.m"
       },
       {
         "file": "lib/index.js",
-        "line": 8251,
+        "line": 8417,
         "text": "emporary=file+'.'+process.pid+'.tmp';fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(temporary,JSON.stringify(value)+'\\n');fs.renameSync(temp"
+      },
+      {
+        "file": "lib/mobile-raster.js",
+        "line": 2,
+        "text": "import {readFile} from 'node:fs/promises';"
       }
     ]
   },
@@ -43,13 +53,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 8357,
-        "text": "export const inject=['tools'];"
+        "line": 8299,
+        "text": "const registryOwnsTools=typeof ctx.tools?.resolve==='function';"
       },
       {
         "file": "lib/index.js",
-        "line": 8526,
-        "text": "  const register=implementation=>ctx.tools.register({...implementation,execute:async(...args)=>{const result=await implementation.execute(...args);if(result.met"
+        "line": 8310,
+        "text": "||!ctx.tools.definitions(agent).some(tool=>VIE_FAST_TOOLS.has(tool.name))))return;"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 8311,
+        "text": "const filter=workflow.registryFilter(agent,ctx.tools.definitions(),(subject,turn)=>feedback?.mayRepair(subject,turn));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 8349,
+        "text": "?ctx.tools.definitions(context.scope??context.agent,context.toolSet):undefined;"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 9121,
+        "text": "export const inject=['tools'];"
       }
     ]
   },
@@ -65,9 +90,12 @@
   "minifiedFiles": [
     "lib/client.js",
     "lib/client.three.js",
-    "lib/index.js"
+    "lib/index.js",
+    "lib/resvg/pako.cjs"
   ],
-  "binaryFiles": [],
+  "binaryFiles": [
+    "lib/resvg/index_bg.wasm"
+  ],
   "requiredServices": [
     "tools"
   ],

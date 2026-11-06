@@ -1,0 +1,82 @@
+{
+  "name": "dsh-team-control-ui",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-06T20:48:44.525Z",
+  "icon": "dsh-team-control-ui.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 462,
+        "text": "const teamsRes = await fetch(SIDECAR_BASE + '/api/teams', { headers: { accept: 'application/json' } });"
+      },
+      {
+        "file": "client.js",
+        "line": 466,
+        "text": "const res = await fetch(SIDECAR_BASE + '/api/teams/' + encodeURIComponent(team.id) + '/members',"
+      },
+      {
+        "file": "client.js",
+        "line": 566,
+        "text": "const res = await fetch(API_BASE + path, { headers: { accept: 'application/json' } });"
+      },
+      {
+        "file": "client.js",
+        "line": 1109,
+        "text": "const res = await fetch(SIDECAR_BASE + '/api/teams/by-lead/' + encodeURIComponent(sessionId),"
+      },
+      {
+        "file": "client.js",
+        "line": 1303,
+        "text": "fetch(API_BASE + '/teams/' + encodeURIComponent(teamId) + '/stop', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 39,
+        "text": "const readToken = (home) => { try { return fs.readFileSync(path.join(home, 'token'), 'utf8').trim() || null; } catch { return null; } };"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 51,
+        "text": "const child = spawn(process.execPath, [s.entry, 'up', '--port', String(s.port), '--data', s.home], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

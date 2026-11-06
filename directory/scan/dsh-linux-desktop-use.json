@@ -1,7 +1,7 @@
 {
   "name": "dsh-linux-desktop-use",
-  "version": "1.5.2",
-  "scannedAt": "2026-11-06T08:17:21.955Z",
+  "version": "1.6.1",
+  "scannedAt": "2026-11-06T20:48:59.014Z",
   "icon": "dsh-linux-desktop-use.svg",
   "network": {
     "hit": true,
@@ -17,6 +17,21 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/apps.js",
+        "line": 6,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/apps.js",
+        "line": 59,
+        "text": "text = fs.readFileSync(path.join(dir, name), 'utf8')"
+      },
+      {
+        "file": "lib/apps.js",
+        "line": 461,
+        "text": "text = fs.readFileSync(path.join(procRoot, String(pid), 'environ'), 'utf8')"
+      },
+      {
         "file": "lib/diagnostics.js",
         "line": 8,
         "text": "import { existsSync, statSync } from 'node:fs'"
@@ -25,21 +40,6 @@
         "file": "lib/settings.js",
         "line": 19,
         "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
-      },
-      {
-        "file": "lib/settings.js",
-        "line": 45,
-        "text": "const parsed = JSON.parse(readFileSync(path, 'utf8'))"
-      },
-      {
-        "file": "lib/settings.js",
-        "line": 77,
-        "text": "mkdirSync(dirname(path), { recursive: true })"
-      },
-      {
-        "file": "lib/settings.js",
-        "line": 78,
-        "text": "writeFileSync(path, `${JSON.stringify(current, null, 2)}\\n`, 'utf8')"
       }
     ]
   },
@@ -67,6 +67,16 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/apps.js",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/apps.js",
+        "line": 410,
+        "text": "const child = spawn(plan.command, plan.argv, {"
+      },
+      {
         "file": "lib/x11.js",
         "line": 11,
         "text": "import { execFile } from 'node:child_process'"
@@ -75,6 +85,11 @@
         "file": "lib/x11.js",
         "line": 69,
         "text": "const child = execFile("
+      },
+      {
+        "file": "test/integration.test.js",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process'"
       }
     ]
   },

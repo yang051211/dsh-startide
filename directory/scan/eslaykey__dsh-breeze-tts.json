@@ -1,0 +1,124 @@
+{
+  "name": "@eslaykey/dsh-breeze-tts",
+  "version": "1.0.5",
+  "scannedAt": "2026-11-06T20:48:45.521Z",
+  "icon": "eslaykey__dsh-breeze-tts.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 256,
+        "text": "const response = await fetch(ENDPOINT + route, options)"
+      },
+      {
+        "file": "client.js",
+        "line": 706,
+        "text": "fetch('/breeze-tts/log', {"
+      },
+      {
+        "file": "index.js",
+        "line": 306,
+        "text": "response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 2,
+        "text": "import { appendFile, mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 55,
+        "text": "const raw = await readFile(SETTINGS_PATH, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 66,
+        "text": "await mkdir(path.dirname(SETTINGS_PATH), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 67,
+        "text": "await writeFile(SETTINGS_PATH, JSON.stringify(next, null, 2), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 331,
+        "text": "appendFile(PLAY_LOG, `${new Date().toISOString()} ${line}"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 43,
+        "text": "export const inject = ['tools', 'webServer']"
+      },
+      {
+        "file": "index.js",
+        "line": 552,
+        "text": "disposers.push(ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 606,
+        "text": "disposers.push(ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 641,
+        "text": "disposers.push(ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 349,
+        "text": "const handle = spawner.spawn({"
+      },
+      {
+        "file": "index.js",
+        "line": 358,
+        "text": "const child = spawn(POWERSHELL, args, { stdio: 'ignore', windowsHide: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 372,
+        "text": "const handle = spawner.spawn({"
+      },
+      {
+        "file": "index.js",
+        "line": 391,
+        "text": "const child = spawn(POWERSHELL, args, { stdio: 'ignore', windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

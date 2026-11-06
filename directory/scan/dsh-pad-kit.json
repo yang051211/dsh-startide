@@ -1,0 +1,132 @@
+{
+  "name": "dsh-pad-kit",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-06T20:48:52.646Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "kit/dsh-home.js",
+        "line": 1,
+        "text": "const http = require('http');"
+      },
+      {
+        "file": "kit/start-dsh.sh",
+        "line": 36,
+        "text": "curl -s -o /dev/null -w \"home=%{http_code}\\n\" http://127.0.0.1:3081/"
+      },
+      {
+        "file": "kit/start-dsh.sh",
+        "line": 37,
+        "text": "curl -s -o /dev/null -w \"direct=%{http_code}\\n\" \"http://127.0.0.1:3080/?token=$(echo \"$URL\" | sed 's/.*token=//')\""
+      },
+      {
+        "file": "kit/start-dsh.sh",
+        "line": 38,
+        "text": "curl -sI http://127.0.0.1:3081/ | grep -i '^location' | head -1"
+      },
+      {
+        "file": "lib/plugin.js",
+        "line": 16,
+        "text": "import { createServer } from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "install-unix.sh",
+        "line": 51,
+        "text": "const fs = require(\"fs\");"
+      },
+      {
+        "file": "install-unix.sh",
+        "line": 53,
+        "text": "const json = JSON.parse(fs.readFileSync(file, \"utf8\"));"
+      },
+      {
+        "file": "install-unix.sh",
+        "line": 56,
+        "text": "fs.writeFileSync(file, JSON.stringify(json, null, 2) + \"\\n\");"
+      },
+      {
+        "file": "kit/dsh-home.js",
+        "line": 2,
+        "text": "const fs = require('fs');"
+      },
+      {
+        "file": "kit/dsh-home.js",
+        "line": 8,
+        "text": "const t = fs.readFileSync(DIR + '/url.txt', 'utf8').trim();"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/plugin.js",
+        "line": 22,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/plugin.js",
+        "line": 661,
+        "text": "for (const tool of tools) ctx.tools.register(tool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "kit/patch-flock.js",
+        "line": 14,
+        "text": "const { execSync } = require('node:child_process');"
+      },
+      {
+        "file": "kit/patch-flock.js",
+        "line": 22,
+        "text": "const root = execSync('npm root -g', { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim();"
+      },
+      {
+        "file": "kit/patch-link.js",
+        "line": 15,
+        "text": "const { execSync } = require('node:child_process');"
+      },
+      {
+        "file": "kit/patch-link.js",
+        "line": 24,
+        "text": "const root = execSync('npm root -g', { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim();"
+      },
+      {
+        "file": "lib/plugin.js",
+        "line": 14,
+        "text": "import { spawnSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 171,
+      "text": "curl -fL http://172.24.x.x:8090/bootstrap.sh | bash   ← 人工动作 2"
+    },
+    {
+      "file": "README.md",
+      "line": 332,
+      "text": "│   ├── setup.sh            平板侧一键脚本（6 步）"
+    }
+  ],
+  "skippedEntries": []
+}

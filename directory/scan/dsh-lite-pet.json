@@ -1,7 +1,7 @@
 {
   "name": "dsh-lite-pet",
-  "version": "0.1.4",
-  "scannedAt": "2026-11-06T08:17:22.406Z",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-06T20:48:58.361Z",
   "icon": "dsh-lite-pet.png",
   "network": {
     "hit": true,
@@ -10,6 +10,11 @@
         "file": "client/index.js",
         "line": 31,
         "text": "const response = await fetch(path, init)"
+      },
+      {
+        "file": "index.js",
+        "line": 146,
+        "text": "const response = await fetch(url, { redirect: 'follow' })"
       }
     ]
   },
@@ -19,22 +24,27 @@
       {
         "file": "index.js",
         "line": 21,
-        "text": "import { existsSync, readFileSync, writeFileSync } from 'node:fs'"
+        "text": "import { createWriteStream, existsSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 92,
-        "text": "const raw = JSON.parse(readFileSync(stateFile(config), 'utf8'))"
+        "line": 148,
+        "text": "rmSync(staging, { recursive: true, force: true })"
       },
       {
         "file": "index.js",
-        "line": 110,
-        "text": "current = JSON.parse(readFileSync(path, 'utf8'))"
+        "line": 149,
+        "text": "mkdirSync(staging, { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 114,
-        "text": "writeFileSync(path, JSON.stringify({ ...current, enabled }, null, 2) + '\\n', 'utf8')"
+        "line": 152,
+        "text": "rmSync(cache, { recursive: true, force: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 157,
+        "text": "rmSync(staging, { recursive: true, force: true })"
       }
     ]
   },
@@ -52,18 +62,18 @@
       },
       {
         "file": "index.js",
-        "line": 143,
-        "text": "const child = spawn(PET_EXE, ['--media', MEDIA_DIR], { stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true })"
+        "line": 268,
+        "text": "const child = spawn(PET_EXE, ['--media', mediaDir], { stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true })"
       },
       {
         "file": "index.js",
-        "line": 463,
+        "line": 588,
         "text": "const probe = spawn('reg.exe', ['query', 'HKCU\\\\Software\\\\Classes\\\\dsh', '/ve'], { windowsHide: true })"
       },
       {
         "file": "index.js",
-        "line": 494,
-        "text": "const child = spawn('cmd.exe', ['/c', 'start', '', target], { windowsHide: true, detached: true, stdio: 'ignore' })"
+        "line": 627,
+        "text": "const child = spawn('cmd.exe', ['/c', 'start', '', url], { windowsHide: true, detached: true, stdio: 'ignore' })"
       }
     ]
   },
@@ -74,7 +84,10 @@
   "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [
-    "runtime/pet/DshLitePet.exe"
+    "runtime/pet/DshLitePet.exe",
+    "runtime/pet/libsharpyuv.dll",
+    "runtime/pet/libwebp.dll",
+    "runtime/pet/libwebpdemux.dll"
   ],
   "requiredServices": [],
   "setupHints": [],

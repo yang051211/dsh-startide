@@ -1,0 +1,97 @@
+{
+  "name": "dsh-zipfix",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-06T20:48:59.146Z",
+  "icon": "dsh-zipfix.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 779,
+        "text": "tokenPromise = fetch('/zipfix-api/token', { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 803,
+        "text": "const response = await fetch(path, { ...(options || {}), headers });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/index.js",
+        "line": 16,
+        "text": "import fsp from 'node:fs/promises';"
+      },
+      {
+        "file": "plugin/lib/fix.js",
+        "line": 10,
+        "text": "import fsp from 'node:fs/promises';"
+      },
+      {
+        "file": "plugin/lib/fix.js",
+        "line": 784,
+        "text": "await fsp.mkdir(outDir, { recursive: true });"
+      },
+      {
+        "file": "plugin/lib/fix.js",
+        "line": 790,
+        "text": "await fsp.mkdir(target, { recursive: true });"
+      },
+      {
+        "file": "plugin/lib/report.js",
+        "line": 8,
+        "text": "import fsp from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 22,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 224,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 348,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 448,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

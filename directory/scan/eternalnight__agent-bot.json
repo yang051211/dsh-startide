@@ -1,0 +1,145 @@
+{
+  "name": "@eternalnight/agent-bot",
+  "version": "0.1.6",
+  "scannedAt": "2026-11-06T20:48:52.876Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1,
+        "text": "top:()=>{}};let r=t.fetchState??((e,t)=>fetch(e,t)),i=t.schedule??((e,t)=>setInterval(e,t)),a=t.cancel??(e=>{clearInterval(e)}),o=t.publishSnapshots??be,s=t.set"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2,
+        "text": "[b]!==void 0)return;let e=b,t=!1;return fetch(`/plugins/dsh-super-agent/role-prompt?roleId=`+encodeURIComponent(e)).then(e=>e.ok?e.json():null).then(n=>{if(t||t"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 163,
+        "text": "),k(``);try{let e=async e=>{let t=await fetch(`/plugins/dsh-super-agent/cleanup`,{method:`POST`,cache:`no-store`,headers:{\"content-type\":`application/json`},bod"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 164,
+        "text": "eturn}d(!1),h(!0),y(``);try{let n=await fetch(`/plugins/dsh-super-agent/task/preempt`,{method:`POST`,headers:{\"content-type\":`application/json`},body:JSON.strin"
+      },
+      {
+        "file": "lib/memory.js",
+        "line": 25,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/architecture-file.js",
+        "line": 2,
+        "text": "import { mkdirSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/architecture-file.js",
+        "line": 12,
+        "text": "mkdirSync(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/architecture-file.js",
+        "line": 13,
+        "text": "writeFileSync(file, buildArchitecture(team), 'utf8');"
+      },
+      {
+        "file": "lib/artifacts.js",
+        "line": 28,
+        "text": "import { closeSync, lstatSync, openSync, readSync, readdirSync, realpathSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/capabilities.js",
+        "line": 3,
+        "text": "import { readdirSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/capabilities.js",
+        "line": 85,
+        "text": "revoke = agent.ctx.tools.restrict({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 75,
+        "text": "export const inject = ['tools', 'llm', 'subagents', 'systemPrompt', 'agents'];"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 910,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 1213,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 1347,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/harness-compat.js",
+        "line": 409,
+        "text": "* forwarding a name the host dropped aborts every member spawn (#163, #164)."
+      },
+      {
+        "file": "lib/host-verify.js",
+        "line": 9,
+        "text": "import { execFile, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/host-verify.js",
+        "line": 21,
+        "text": "spawn('taskkill', ['/pid', String(child.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' });"
+      },
+      {
+        "file": "lib/host-verify.js",
+        "line": 36,
+        "text": "const child = spawn(command, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "import { spawn } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/agency-role-prompts.js",
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "llm",
+    "subagents",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,15 +1,15 @@
 {
   "name": "dsh-lookout",
-  "version": "0.5.2",
-  "scannedAt": "2026-11-05T21:23:01.200Z",
+  "version": "0.5.3",
+  "scannedAt": "2026-11-06T20:48:55.618Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client/client.js",
-        "line": 8147,
-        "text": "response = await window.fetch(\"api/file?path=\" + encodeURIComponent(path), { credentials: \"same-origin\" });"
+        "line": 8185,
+        "text": "response = await window.fetch(url, { method: \"HEAD\", credentials: \"same-origin\" });"
       }
     ]
   },
@@ -17,29 +17,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/download.js",
+        "line": 16,
+        "text": "import { createReadStream, fstat } from 'node:fs'"
+      },
+      {
+        "file": "lib/download.js",
+        "line": 17,
+        "text": "import { realpath } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/download.js",
+        "line": 228,
+        "text": "const fs = serviceOf(ctx, 'fs')"
+      },
+      {
+        "file": "lib/download.js",
+        "line": 342,
+        "text": "if (typeof ctx?.inject === 'function') ctx.inject(['connection', 'fs', 'sessions'], attach)"
+      },
+      {
         "file": "lib/icon/index.js",
         "line": 25,
         "text": "import { readFileSync } from 'node:fs'"
-      },
-      {
-        "file": "lib/icon/index.js",
-        "line": 26,
-        "text": "import { mkdir, rename, writeFile } from 'node:fs/promises'"
-      },
-      {
-        "file": "lib/icon/index.js",
-        "line": 214,
-        "text": "const raw = readFileSync(path, 'utf8')"
-      },
-      {
-        "file": "lib/icon/index.js",
-        "line": 428,
-        "text": "const raw = readFileSync(this.indexPath)"
-      },
-      {
-        "file": "lib/icon/index.js",
-        "line": 437,
-        "text": "const bytes = readFileSync(join(this.libraryDir, `${activeId}.${rec.ext}`))"
       }
     ]
   },

@@ -1,7 +1,7 @@
 {
   "name": "dsh-mobile-use",
-  "version": "1.4.34",
-  "scannedAt": "2026-11-04T20:38:50.099Z",
+  "version": "1.4.36",
+  "scannedAt": "2026-11-06T20:48:37.852Z",
   "icon": "dsh-mobile-use.svg",
   "network": {
     "hit": true,
@@ -37,6 +37,21 @@
     "hit": true,
     "evidence": [
       {
+        "file": "doctor.mjs",
+        "line": 18,
+        "text": "import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "doctor.mjs",
+        "line": 28,
+        "text": "try { return JSON.parse(readFileSync(file, 'utf8')) } catch { return null }"
+      },
+      {
+        "file": "doctor.mjs",
+        "line": 31,
+        "text": "try { return readFileSync(file, 'utf8') } catch { return '' }"
+      },
+      {
         "file": "index.js",
         "line": 19,
         "text": "import { existsSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs'"
@@ -45,21 +60,6 @@
         "file": "index.js",
         "line": 20,
         "text": "import { mkdir, open, readdir, rm, stat, writeFile } from 'node:fs/promises'"
-      },
-      {
-        "file": "index.js",
-        "line": 328,
-        "text": "await mkdir(dir, { recursive: true })"
-      },
-      {
-        "file": "index.js",
-        "line": 1323,
-        "text": "const parsed = JSON.parse(readFileSync(ACTIONS_FILE, 'utf8'))"
-      },
-      {
-        "file": "index.js",
-        "line": 1342,
-        "text": "await mkdir(dirname(ACTIONS_FILE), { recursive: true })"
       }
     ]
   },
@@ -73,22 +73,22 @@
       },
       {
         "file": "index.js",
-        "line": 4431,
+        "line": 4364,
+        "text": "/* 没有 tools 注册表时整个插件等于没装：过去是让 ctx.tools.register 抛出去，"
+      },
+      {
+        "file": "index.js",
+        "line": 4441,
         "text": "ctx.effect(() => ctx.tools.register({"
       },
       {
         "file": "index.js",
-        "line": 4591,
+        "line": 4601,
         "text": "ctx.effect(() => ctx.tools.register(withEvidence({"
       },
       {
         "file": "index.js",
-        "line": 4744,
-        "text": "ctx.effect(() => ctx.tools.register(withEvidence({"
-      },
-      {
-        "file": "index.js",
-        "line": 5002,
+        "line": 4754,
         "text": "ctx.effect(() => ctx.tools.register(withEvidence({"
       }
     ]
@@ -96,6 +96,11 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "doctor.mjs",
+        "line": 17,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
       {
         "file": "index.js",
         "line": 17,
@@ -115,11 +120,6 @@
         "file": "index.js",
         "line": 970,
         "text": "const child = spawn(ADB, ['-s', serial, 'shell'], { stdio: ['pipe', 'pipe', 'pipe'] })"
-      },
-      {
-        "file": "index.js",
-        "line": 3774,
-        "text": "    const child = spawn(ffmpeg, ['-v', 'error', '-i', 'pipe:0', '-vf', filter, '-frames:v', '1', '-f', 'image2', '-c:v', 'mjpeg', 'pipe:1'], { stdio: ['pipe', '"
       }
     ]
   },

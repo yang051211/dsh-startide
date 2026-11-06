@@ -1,0 +1,85 @@
+{
+  "name": "dsh-tools-manager",
+  "version": "1.0.4",
+  "scannedAt": "2026-11-06T20:48:46.668Z",
+  "icon": "dsh-tools-manager.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/client.js",
+        "line": 191,
+        "text": "const response = await fetch(ENDPOINT, { headers: { accept: 'application/json' }, credentials: 'same-origin' })"
+      },
+      {
+        "file": "src/client.js",
+        "line": 211,
+        "text": "const response = await fetch(ENDPOINT, {"
+      },
+      {
+        "file": "src/client.js",
+        "line": 250,
+        "text": "const response = await fetch(EXPLAIN_ENDPOINT, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 18,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/index.js",
+        "line": 387,
+        "text": "const parsed = JSON.parse(readFileSync(source, 'utf8'))"
+      },
+      {
+        "file": "src/index.js",
+        "line": 400,
+        "text": "mkdirSync(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "src/index.js",
+        "line": 401,
+        "text": "writeFileSync(file, `${JSON.stringify(state, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 450,
+        "text": "export const inject = ['tools', 'systemPrompt', 'agents']"
+      },
+      {
+        "file": "src/index.js",
+        "line": 486,
+        "text": "entries = ctx.tools"
+      },
+      {
+        "file": "src/index.js",
+        "line": 559,
+        "text": "return [agent.ctx.tools.restrict({ allow })]"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

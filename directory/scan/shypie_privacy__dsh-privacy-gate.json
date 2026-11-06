@@ -1,11 +1,37 @@
 {
   "name": "@shypie_privacy/dsh-privacy-gate",
-  "version": "0.2.0",
-  "scannedAt": "2026-11-05T21:23:02.709Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-06T20:48:55.677Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 126,
+        "text": "const response = await fetch(ENDPOINT, { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 132,
+        "text": "const response = await fetch(ENDPOINT, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 143,
+        "text": "const response = await fetch(`${SESSION_ENDPOINT}?session=${encodeURIComponent(sessionId)}`, { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 149,
+        "text": "const response = await fetch(SESSION_ENDPOINT, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 160,
+        "text": "const response = await fetch(ENGINES_ENDPOINT, { cache: 'no-store' })"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
@@ -13,16 +39,16 @@
       {
         "file": "index.js",
         "line": 21,
-        "text": "import { writeFileSync, mkdirSync } from 'node:fs'"
+        "text": "import { writeFileSync, mkdirSync, existsSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 116,
+        "line": 150,
         "text": "mkdirSync(dirname(target), { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 117,
+        "line": 151,
         "text": "writeFileSync(target, content, { encoding: 'utf8', mode: 0o600 })"
       },
       {
@@ -47,23 +73,23 @@
       },
       {
         "file": "index.js",
-        "line": 37,
+        "line": 42,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "index.js",
-        "line": 160,
+        "line": 352,
         "text": "ctx.tools.register(definition)"
       },
       {
         "file": "lib/gate.js",
-        "line": 10,
+        "line": 11,
         "text": "*   Guards  ctx.tools.guard()   (sync)       — deny `read_image` and binary"
       },
       {
         "file": "lib/gate.js",
-        "line": 208,
-        "text": "disposers.push(ctx.tools.guard((exec) => guardDecision(exec, deps.config)))"
+        "line": 288,
+        "text": "disposers.push(ctx.tools.guard((exec) => (gateActive(deps, exec?.agent?.id) ? guardDecision(exec, deps.config) : undefined)))"
       }
     ]
   },
@@ -77,7 +103,7 @@
       },
       {
         "file": "lib/extract.js",
-        "line": 99,
+        "line": 102,
         "text": "const child = spawn(command, args, { windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })"
       }
     ]
@@ -86,7 +112,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

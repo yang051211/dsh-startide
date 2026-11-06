@@ -1,19 +1,24 @@
 {
   "name": "dsh-dupguard",
-  "version": "1.13.3",
-  "scannedAt": "2026-11-04T20:39:07.915Z",
+  "version": "1.14.0",
+  "scannedAt": "2026-11-06T20:48:47.116Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 2160,
+        "line": 913,
+        "text": "fetch(NOTIFY_BASE + 'logs', { headers: { accept: 'application/json' }, cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2333,
         "text": "const response = await fetch(NOTIFY_BASE + 'notifications', {"
       },
       {
         "file": "lib/client.js",
-        "line": 2177,
+        "line": 2350,
         "text": "const response = await fetch(NOTIFY_BASE + 'notifications/action', {"
       }
     ]
@@ -27,24 +32,24 @@
         "text": "const nodeFs = require('fs')"
       },
       {
+        "file": "lib/log-reader.js",
+        "line": 11,
+        "text": "const nodeFs = require('fs')"
+      },
+      {
+        "file": "lib/log-reader.js",
+        "line": 26,
+        "text": "text = nodeFs.readFileSync(filePath, 'utf8')"
+      },
+      {
         "file": "lib/settings.js",
         "line": 11,
         "text": "const nodeFs = require('fs')"
       },
       {
         "file": "lib/settings.js",
-        "line": 415,
+        "line": 416,
         "text": "values = extractEntryConfig(nodeFs.readFileSync(file, 'utf8'), ['dupguard', 'dsh-dupguard', SETTINGS_NS])"
-      },
-      {
-        "file": "lib/stop-log.js",
-        "line": 26,
-        "text": "//   - 动态入口 plugin/host.js 是 `new Function` 求值的代码体、不能 require('fs')，"
-      },
-      {
-        "file": "lib/stop-log.js",
-        "line": 30,
-        "text": "const nodeFs = require('fs')"
       }
     ]
   },

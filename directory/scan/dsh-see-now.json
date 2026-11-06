@@ -1,14 +1,14 @@
 {
   "name": "dsh-see-now",
-  "version": "0.1.3",
-  "scannedAt": "2026-11-05T21:22:43.755Z",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-06T20:48:37.598Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 209,
+        "line": 227,
         "text": "const res = await fetch(API + path, { ...rest, signal: controller.signal });"
       },
       {
@@ -37,6 +37,11 @@
         "text": "const raw = JSON.parse(readFileSync(join(home, 'tts.json'), 'utf8'));"
       },
       {
+        "file": "scripts/check-syntax.mjs",
+        "line": 7,
+        "text": "import { readdir } from 'node:fs/promises';"
+      },
+      {
         "file": "scripts/install-dev.mjs",
         "line": 17,
         "text": "import { cp, readFile, writeFile, rm } from 'node:fs/promises';"
@@ -45,11 +50,6 @@
         "file": "scripts/install-dev.mjs",
         "line": 18,
         "text": "import { existsSync } from 'node:fs';"
-      },
-      {
-        "file": "scripts/install-dev.mjs",
-        "line": 42,
-        "text": "const readJson = async (p) => JSON.parse(await readFile(p, 'utf8'));"
       }
     ]
   },
@@ -58,12 +58,12 @@
     "evidence": [
       {
         "file": "src/index.js",
-        "line": 87,
+        "line": 89,
         "text": "export const inject = ['tools', 'attachments', 'sessionController'];"
       },
       {
         "file": "src/index.js",
-        "line": 1225,
+        "line": 1387,
         "text": "disposers.push(ctx.tools.register(defineTool(toolObj)));"
       }
     ]
@@ -113,12 +113,12 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 261,
+      "line": 271,
       "text": "- 抓声音：`pip install pyaudiowpatch numpy`。**不需要装虚拟声卡**，也不需要开\"立体声混音\"。"
     },
     {
       "file": "README.md",
-      "line": 308,
+      "line": 318,
       "text": "听声音：没在听 —— 没有能用的 Python（要 pip install pyaudiowpatch numpy）"
     }
   ],

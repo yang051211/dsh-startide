@@ -1,0 +1,89 @@
+{
+  "name": "dsh-grok-search",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-06T20:48:53.443Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core/control-intent-store.mjs",
+        "line": 4,
+        "text": "} from 'node:fs';"
+      },
+      {
+        "file": "src/core/control-intent-store.mjs",
+        "line": 233,
+        "text": "return readFileSync(path);"
+      },
+      {
+        "file": "src/core/control-intent-store.mjs",
+        "line": 273,
+        "text": "const bytes = readFileSync(legacyPath);"
+      },
+      {
+        "file": "src/core/control-intent-store.mjs",
+        "line": 338,
+        "text": "mkdirSync(root, { recursive: true });"
+      },
+      {
+        "file": "src/core/control-intent-store.mjs",
+        "line": 343,
+        "text": "try { writeFileSync(fd, bytes); fsyncSync(fd); }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core/mcp-search.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/core/mcp-search.mjs",
+        "line": 329,
+        "text": "    const child = spawn(executable, executableArgs, { env: capturedEnvironment ?? executionEnvironment(envOverrides, configPath), shell: false, windowsHide: tru"
+      },
+      {
+        "file": "src/core/program-discovery.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/core/program-discovery.mjs",
+        "line": 85,
+        "text": "const child = spawn(actual, ['--version'], { env: environment, windowsHide: true, shell: false, stdio: ['ignore', 'pipe', 'pipe'] });"
+      },
+      {
+        "file": "src/settings-ui.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [
+    "src/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "loader",
+    "profileContext"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

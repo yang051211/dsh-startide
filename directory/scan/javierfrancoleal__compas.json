@@ -1,0 +1,55 @@
+{
+  "name": "@javierfrancoleal/compas",
+  "version": "1.0.13",
+  "scannedAt": "2026-11-06T20:48:57.248Z",
+  "icon": "javierfrancoleal__compas.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/fanal-optimize.sh",
+        "line": 44,
+        "text": "if [ -n \"$(grep -l 'require(\"http\")\\|createServer' \"$SV/server.js\" 2>/dev/null)\" ]; then"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "import { readFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 33,
+        "text": "content: await readFile(SKILL_BODY_URL, \"utf8\"),"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/fanal-optimize.sh",
+        "line": 39,
+        "text": "chk \"bundled runtime spawn (process.execPath)\" \"[ -n \\\"$(grep -l process.execPath \"$APP/main.js\" 2>/dev/null)\\\" ]\""
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

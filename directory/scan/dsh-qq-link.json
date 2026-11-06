@@ -1,0 +1,145 @@
+{
+  "name": "dsh-qq-link",
+  "version": "1.5.2",
+  "scannedAt": "2026-11-06T20:48:41.519Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 19,
+        "text": "const get = (p) => fetch(B + p, { cache: 'no-store' }).then((r) => r.json()).catch(() => null)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 21,
+        "text": "fetch(B + p, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body || {}) })"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 270,
+        "text": "const r = await fetch(拿地址)"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 659,
+        "text": "const r = await fetch(url)"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 1177,
+        "text": "const r = await fetch(`${base}/${action}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 11,
+        "text": "import { readFileSync, writeFileSync, mkdirSync, existsSync, createWriteStream, renameSync, readdirSync, statSync, realpathSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 163,
+        "text": "const p = JSON.parse(readFileSync(join(dirname(fileURLToPath(import.meta.url)), '..', 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 239,
+        "text": "mkdirSync(目录, { recursive: true })"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 241,
+        "text": "writeFileSync(文件, 字节)"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 295,
+        "text": "mkdirSync(目录, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 22,
+        "text": "export const inject = ['agents', 'sessions', 'sessionTitle', 'webServer', 'timer', 'workspaceRegistry', 'attachments', 'tools']"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 2692,
+        "text": "//    （别的插件没踩是因为它们用 hostDeps.defineTool，会把属性表转成 schema；这里直连 ctx.tools.register。）"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 2794,
+        "text": "const off = agent.ctx.tools.register(做闸门工具(agent, sid))"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 3111,
+        "text": "if (!agent || !agent.ctx || !agent.ctx.tools || typeof agent.ctx.tools.register !== 'function') continue"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 3117,
+        "text": "const off = agent.ctx.tools.register(工具)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 207,
+        "text": "子 = spawn(命令, {"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 300,
+        "text": "子 = spawn(ffmpeg, ['-y', '-i', 路径, '-ar', '16000', '-ac', '1', 出], { windowsHide: true })"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 352,
+        "text": "try { 子 = spawn(命令, 参数, { windowsHide: true }) } catch (error) { return resolve(-1) }"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 1864,
+        "text": "子 = spawn(命令, 参数, { cwd: ASR家, windowsHide: true, env: { ...process.env, PYTHONUTF8: '1', PYTHONIOENCODING: 'utf-8' } })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "attachments",
+    "sessionTitle",
+    "sessions",
+    "timer",
+    "tools",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

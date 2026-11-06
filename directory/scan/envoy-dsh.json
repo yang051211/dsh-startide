@@ -1,14 +1,14 @@
 {
   "name": "envoy-dsh",
-  "version": "0.1.47",
-  "scannedAt": "2026-11-06T08:17:07.686Z",
+  "version": "0.1.48",
+  "scannedAt": "2026-11-06T20:48:42.437Z",
   "icon": "envoy-dsh.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "launch.cjs",
-        "line": 154,
+        "line": 180,
         "text": "// curl/wget are present on macOS and Linux; on Windows let Python do it."
       }
     ]
@@ -48,7 +48,7 @@
     "evidence": [
       {
         "file": "cordis.patch.yml",
-        "line": 39,
+        "line": 41,
         "text": "name: '@deepseek-ai/dsh-mcp-client'"
       },
       {
@@ -62,18 +62,23 @@
     "hit": true,
     "evidence": [
       {
+        "file": "cordis.patch.yml",
+        "line": 47,
+        "text": "# so a bare `node` fails to spawn (ENOENT) and the MCP handshake never"
+      },
+      {
         "file": "launch.cjs",
-        "line": 23,
+        "line": 24,
         "text": "const { spawn, spawnSync } = require('node:child_process')"
       },
       {
         "file": "launch.cjs",
-        "line": 93,
+        "line": 119,
         "text": "return spawnSync(command, commandArgs, options)"
       },
       {
         "file": "launch.cjs",
-        "line": 262,
+        "line": 288,
         "text": "const child = spawn(command, commandArgs, {"
       }
     ]

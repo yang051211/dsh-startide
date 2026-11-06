@@ -1,0 +1,123 @@
+{
+  "name": "@double-coding/dsh-connectors",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-06T20:48:50.408Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.js",
+        "line": 965,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "dist/host/oauth.js",
+        "line": 7,
+        "text": "response = await fetch(url, {"
+      },
+      {
+        "file": "dist/host/oauth.js",
+        "line": 43,
+        "text": "const response = await fetch(resource, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/host/cli/exec.js",
+        "line": 2,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/host/cli/service.js",
+        "line": 1,
+        "text": "import { existsSync, readdirSync, rmSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/host/cli/service.js",
+        "line": 191,
+        "text": "rmSync(dir, { recursive: true, force: true });"
+      },
+      {
+        "file": "dist/host/cli/service.js",
+        "line": 593,
+        "text": "rmSync(join(dir, file), { force: true });"
+      },
+      {
+        "file": "dist/host/providers.js",
+        "line": 1,
+        "text": "import { existsSync, readFileSync, readdirSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/host/connections.js",
+        "line": 12,
+        "text": "const MCP_CLIENT = '@deepseek-ai/dsh-mcp-client';"
+      },
+      {
+        "file": "dist/host/connections.js",
+        "line": 1167,
+        "text": "const schemas = this.ctx.tools?.schemas?.() ?? [];"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 9,
+        "text": "export const inject = ['tools', 'storageDomain', 'loader', 'webServer'];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/host/cli/exec.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "dist/host/cli/exec.js",
+        "line": 13,
+        "text": "spawn('taskkill', ['/pid', String(child.pid), '/T', '/F'], { windowsHide: true });"
+      },
+      {
+        "file": "dist/host/cli/exec.js",
+        "line": 37,
+        "text": "child = spawn(command, args, {"
+      },
+      {
+        "file": "dist/host/cli/exec.js",
+        "line": 85,
+        "text": "const child = spawn(command, args, {"
+      },
+      {
+        "file": "dist/host/openExternal.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [
+    "dist/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "loader",
+    "storageDomain",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

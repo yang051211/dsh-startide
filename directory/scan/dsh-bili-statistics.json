@@ -1,0 +1,77 @@
+{
+  "name": "dsh-bili-statistics",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-06T20:48:52.329Z",
+  "icon": "dsh-bili-statistics.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/client.js",
+        "line": 945,
+        "text": "const response = await fetch(API_BASE + '?action=' + encodeURIComponent(action), init);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/config/defaults.js",
+        "line": 5,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "src/core/migrate.js",
+        "line": 4,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "src/core/util.js",
+        "line": 2,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "src/core/util.js",
+        "line": 16,
+        "text": "fs.mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "src/core/util.js",
+        "line": 24,
+        "text": "fs.writeFileSync(tmp, JSON.stringify(value, null, 2), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 32,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "src/index.js",
+        "line": 206,
+        "text": "})) ctx.tools.register(definition);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

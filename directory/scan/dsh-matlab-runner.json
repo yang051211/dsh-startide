@@ -1,0 +1,105 @@
+{
+  "name": "dsh-matlab-runner",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-06T20:48:49.604Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/check.mjs",
+        "line": 16,
+        "text": "const response = await fetch(`${base}/matlab/api/${path}`, body === undefined"
+      },
+      {
+        "file": "bin/check.mjs",
+        "line": 97,
+        "text": "const bytes = await fetch(`${base}/matlab/api/artifact?path=${encodeURIComponent(artifact.path)}`)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 340,
+        "text": "const response = await fetch(`matlab/api/${withWorkspace(path)}`, init)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/install-local.sh",
+        "line": 32,
+        "text": "const fs = require('node:fs')"
+      },
+      {
+        "file": "bin/install-local.sh",
+        "line": 34,
+        "text": "const manifest = JSON.parse(fs.readFileSync(path, 'utf8'))"
+      },
+      {
+        "file": "bin/install-local.sh",
+        "line": 44,
+        "text": "fs.writeFileSync(path, JSON.stringify(manifest, null, 2) + '\\n')"
+      },
+      {
+        "file": "bin/preview-ui.mjs",
+        "line": 14,
+        "text": "import { readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/preview-ui.mjs",
+        "line": 18,
+        "text": "const source = readFileSync(`${root}/lib/client.js`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 185,
+        "text": "toolCtx.effect(() => toolCtx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 159,
+        "text": "spawn: (spec) => ctx.subprocess.spawn(spec),"
+      },
+      {
+        "file": "lib/runner.js",
+        "line": 16,
+        "text": "import { spawn as spawnProcess } from 'node:child_process'"
+      },
+      {
+        "file": "lib/runner.js",
+        "line": 599,
+        "text": "* @param options - { spawn(spec) -> handle, config(): Promise<config> } where the"
+      },
+      {
+        "file": "lib/runner.js",
+        "line": 736,
+        "text": "run.handle = spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "subprocess",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

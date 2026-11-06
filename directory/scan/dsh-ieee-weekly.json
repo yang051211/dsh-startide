@@ -1,0 +1,104 @@
+{
+  "name": "dsh-ieee-weekly",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-06T20:48:48.982Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/http.mjs",
+        "line": 32,
+        "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "src/screen.mjs",
+        "line": 296,
+        "text": "const res = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/cli.mjs",
+        "line": 2,
+        "text": "import { mkdir, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "src/cli.mjs",
+        "line": 148,
+        "text": "await mkdir(outDir, { recursive: true });"
+      },
+      {
+        "file": "src/cli.mjs",
+        "line": 150,
+        "text": "await writeFile(outFile, markdown, 'utf8');"
+      },
+      {
+        "file": "src/cli.mjs",
+        "line": 151,
+        "text": "await writeFile(path.join(outDir, 'last-email.html'), html, 'utf8');"
+      },
+      {
+        "file": "src/cli.mjs",
+        "line": 152,
+        "text": "await writeFile("
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 51,
+        "text": "ctx.tools.register(tool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 67,
+        "text": "const child = spawn(process.execPath, [CLI, ...argv], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 34,
+      "text": "npm i -g dsh-ieee-weekly    # 得到 ieee-weekly 命令"
+    },
+    {
+      "file": "README.md",
+      "line": 46,
+      "text": "powershell -ExecutionPolicy Bypass -File .\\setup.ps1"
+    }
+  ],
+  "skippedEntries": []
+}

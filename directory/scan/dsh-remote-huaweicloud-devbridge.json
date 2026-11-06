@@ -1,0 +1,116 @@
+{
+  "name": "dsh-remote-huaweicloud-devbridge",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-06T20:48:58.093Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 154,
+        "text": "return fetch(API + path, init).then(function (r) {"
+      },
+      {
+        "file": "lib/gate.js",
+        "line": 17,
+        "text": "import http from \"node:http\";"
+      },
+      {
+        "file": "lib/gate.js",
+        "line": 255,
+        "text": "const req = http.request({"
+      },
+      {
+        "file": "lib/gate.js",
+        "line": 406,
+        "text": "const upstream = http.request({"
+      },
+      {
+        "file": "lib/installer.js",
+        "line": 9,
+        "text": "*   curl -fsSL <官方 URL> -o /tmp/devbridge_install.sh"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/config.js",
+        "line": 7,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 108,
+        "text": "const raw = fs.readFileSync(file, \"utf8\");"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 158,
+        "text": "fs.mkdirSync(dir, { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 163,
+        "text": "fs.writeFileSync(tmp, `${JSON.stringify(next, null, 2)}\\n`, { mode: 0o600 });"
+      },
+      {
+        "file": "lib/installer.js",
+        "line": 20,
+        "text": "import fs from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/installer.js",
+        "line": 24,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/tunnel.js",
+        "line": 16,
+        "text": "import { execFile, spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/tunnel.js",
+        "line": 288,
+        "text": "const { stdout } = await this.execFile(\"which\", [\"devbridge\"], { timeout: 5000 });"
+      },
+      {
+        "file": "lib/tunnel.js",
+        "line": 300,
+        "text": "const { stdout, stderr } = await this.execFile(this.cliPath, args, { timeout });"
+      },
+      {
+        "file": "scripts/doctor.mjs",
+        "line": 11,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.postinstall: node scripts/postinstall.mjs"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

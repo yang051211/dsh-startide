@@ -1,8 +1,8 @@
 {
   "name": "dsh-trinity",
-  "version": "2.4.2",
-  "scannedAt": "2026-10-26T10:08:59.460Z",
-  "icon": null,
+  "version": "2.4.5",
+  "scannedAt": "2026-11-06T20:48:56.977Z",
+  "icon": "dsh-trinity.svg",
   "network": {
     "hit": true,
     "evidence": [
@@ -13,7 +13,7 @@
       },
       {
         "file": "lib/adapters/github.js",
-        "line": 60,
+        "line": 61,
         "text": "export async function fetch(request, signal, ctx) {"
       },
       {
@@ -37,6 +37,11 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/adapters/x.js",
+        "line": 562,
+        "text": "const fs = await import('node:fs')"
+      },
+      {
         "file": "lib/tools/pdf-extract.js",
         "line": 104,
         "text": "const fs = await import('node:fs')"
@@ -57,29 +62,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "cordis.patch.yml",
-        "line": 14,
-        "text": "#     ctx.web.registerFetchProvider + ctx.tools.register."
+        "file": "lib/index.js",
+        "line": 113,
+        "text": "export const inject = ['web', 'tools', 'systemPrompt']"
       },
       {
         "file": "lib/index.js",
-        "line": 82,
-        "text": "export const inject = ['web', 'tools', 'systemPrompt', 'settings', 'credentials', 'agents']"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 227,
+        "line": 261,
         "text": "safeRegister(ctx, logger, 'tools.web_search_ex', () => tools.register(createWebSearchEx(toolsCtx)))"
       },
       {
         "file": "lib/index.js",
-        "line": 228,
+        "line": 262,
         "text": "safeRegister(ctx, logger, 'tools.search_content', () => tools.register(createSearchContent(toolsCtx)))"
       },
       {
         "file": "lib/index.js",
-        "line": 229,
+        "line": 263,
         "text": "safeRegister(ctx, logger, 'tools.source_check', () => tools.register(createSourceCheck(toolsCtx)))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 264,
+        "text": "safeRegister(ctx, logger, 'tools.web_doctor', () => tools.register(createWebDoctor(toolsCtx)))"
       }
     ]
   },
@@ -98,18 +103,13 @@
       },
       {
         "file": "lib/util/subprocess.js",
-        "line": 107,
-        "text": "const handle = sub.spawn({"
+        "line": 15,
+        "text": "//   ctx.subprocess.spawn(spec: SubprocessSpawnSpec): SubprocessHandle"
       },
       {
         "file": "lib/util/subprocess.js",
-        "line": 119,
-        "text": "const { spawn } = await import('node:child_process')"
-      },
-      {
-        "file": "lib/util/subprocess.js",
-        "line": 120,
-        "text": "const child = spawn(spec.argv[0], spec.argv.slice(1), {"
+        "line": 188,
+        "text": "handle = seam.spawn({"
       }
     ]
   },
@@ -117,13 +117,10 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 10,
+  "dependencies": 9,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
-    "agents",
-    "credentials",
-    "settings",
     "systemPrompt",
     "tools",
     "web"

@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-deck-studio",
-  "version": "0.2.24",
-  "scannedAt": "2026-11-05T08:17:10.580Z",
+  "version": "0.2.25",
+  "scannedAt": "2026-11-06T20:48:47.515Z",
   "icon": "dsh-plugin-deck-studio.svg",
   "network": {
     "hit": true,
@@ -18,7 +18,7 @@
       },
       {
         "file": "index.js",
-        "line": 288,
+        "line": 291,
         "text": "const res = await fetch(`${brief.registry}/latest`, {"
       }
     ]
@@ -29,26 +29,26 @@
       {
         "file": "index.js",
         "line": 12,
-        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from \"node:fs\";"
+        "text": "import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from \"node:fs\";"
       },
       {
         "file": "index.js",
-        "line": 188,
+        "line": 191,
         "text": "const html = readFileSync(join(UI_DIR, \"workbench.html\"), \"utf8\");"
       },
       {
         "file": "index.js",
-        "line": 189,
+        "line": 192,
         "text": "const css = readFileSync(join(UI_DIR, \"workbench.css\"), \"utf8\");"
       },
       {
         "file": "index.js",
-        "line": 195,
+        "line": 198,
         "text": "const html = readFileSync(join(UI_DIR, \"workbench.html\"), \"utf8\");"
       },
       {
         "file": "index.js",
-        "line": 196,
+        "line": 199,
         "text": "const css = readFileSync(join(UI_DIR, \"workbench.css\"), \"utf8\");"
       }
     ]
@@ -58,28 +58,28 @@
     "evidence": [
       {
         "file": "lib/capabilities.js",
-        "line": 11,
+        "line": 12,
         "text": "export const inject = [\"tools\", \"workingDirectory\", \"agents\", \"systemPrompt\"];"
       },
       {
         "file": "lib/capabilities.js",
-        "line": 159,
+        "line": 160,
         "text": "const researchDefinitions = RESEARCH_TOOLS.map(tool => parent.ctx.tools.get(tool, parent)).filter(Boolean);"
       },
       {
         "file": "lib/capabilities.js",
-        "line": 188,
+        "line": 189,
         "text": "for (const definition of researchDefinitions) agentCtx.tools.register(definition);"
       },
       {
         "file": "lib/capabilities.js",
-        "line": 198,
+        "line": 199,
         "text": "        if ([...child.ctx.tools.schemas(child), ...assembly.tools].some(tool => !RESEARCH_TOOLS.includes(tool.name)) || assembly.sections.length !== 1 || assemb"
       },
       {
         "file": "lib/capabilities.js",
-        "line": 220,
-        "text": "ctx.tools.presentAs(\"native\");"
+        "line": 221,
+        "text": "presentNative(ctx.tools);"
       }
     ]
   },
@@ -93,7 +93,7 @@
       },
       {
         "file": "index.js",
-        "line": 46,
+        "line": 47,
         "text": "execFile(command, args, { cwd: cwd || undefined, timeout: timeoutMs, maxBuffer: 8 * 1024 * 1024, env: process.env }, (error, stdout, stderr) => {"
       },
       {
@@ -104,6 +104,11 @@
       {
         "file": "lib/git-commit.js",
         "line": 9,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/pdf-import.js",
+        "line": 16,
         "text": "import { execFileSync } from \"node:child_process\";"
       }
     ]

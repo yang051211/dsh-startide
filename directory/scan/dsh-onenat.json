@@ -1,14 +1,14 @@
 {
   "name": "dsh-onenat",
-  "version": "0.2.1",
-  "scannedAt": "2026-10-26T10:06:39.541Z",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-06T20:48:57.027Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 110,
+        "line": 109,
         "text": "const response = await globalThis.fetch(`${apiPrefix()}${path}`, {"
       },
       {
@@ -17,19 +17,19 @@
         "text": "const response = await globalThis.fetch(`${apiPrefix()}${path}`, {"
       },
       {
+        "file": "lib/engine/download.js",
+        "line": 161,
+        "text": "response = await fetch(current, {"
+      },
+      {
+        "file": "lib/engine/index.js",
+        "line": 209,
+        "text": "response = await fetch(url.toString(), {"
+      },
+      {
         "file": "lib/onenat.js",
         "line": 119,
         "text": "const res = await fetch(`${this.baseUrl}/api/v1/resources`, {"
-      },
-      {
-        "file": "lib/onenat.js",
-        "line": 256,
-        "text": "const res = await fetch(`${this.baseUrl}/api/v1/mappings/${encodeURIComponent(mappingId)}/credentials`, {"
-      },
-      {
-        "file": "lib/onenat.js",
-        "line": 291,
-        "text": "const res = await fetch(`${cleanBaseUrl(baseUrl)}/system/status`, {"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/ssh-store.js",
-        "line": 8,
-        "text": "import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';"
+        "file": "lib/engine/config.js",
+        "line": 20,
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
       },
       {
-        "file": "lib/ssh-store.js",
+        "file": "lib/engine/config.js",
+        "line": 21,
+        "text": "import { chmod } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/engine/config.js",
+        "line": 181,
+        "text": "return readFileSync(path, 'utf8');"
+      },
+      {
+        "file": "lib/engine/download.js",
         "line": 22,
-        "text": "const parsed = JSON.parse(readFileSync(this.filePath, 'utf-8'));"
+        "text": "import { createWriteStream, renameSync, rmSync } from 'node:fs';"
       },
       {
-        "file": "lib/ssh-store.js",
-        "line": 35,
-        "text": "mkdirSync(dir, { recursive: true });"
-      },
-      {
-        "file": "lib/ssh-store.js",
-        "line": 36,
-        "text": "writeFileSync(this.filePath, JSON.stringify({ resources: this.resources }, null, 2), 'utf-8');"
-      },
-      {
-        "file": "lib/store.js",
-        "line": 10,
-        "text": "import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';"
+        "file": "lib/engine/download.js",
+        "line": 153,
+        "text": "unlink();"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 26,
+        "line": 27,
         "text": "export const inject = ['tools'];"
       },
       {
@@ -94,14 +94,40 @@
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine/supervise.js",
+        "line": 27,
+        "text": "import { execFile, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/engine/supervise.js",
+        "line": 141,
+        "text": "execFile('ps', ['-p', String(pid), '-o', 'command='], { timeout: 5000 }, (error, stdout) => {"
+      },
+      {
+        "file": "lib/engine/supervise.js",
+        "line": 192,
+        "text": "execFile('pgrep', ['-x', name], { timeout: 5000 }, (error, stdout) => {"
+      },
+      {
+        "file": "lib/engine/supervise.js",
+        "line": 323,
+        "text": "child = spawn(binary, args, {"
+      },
+      {
+        "file": "lib/engine/supervise.js",
+        "line": 681,
+        "text": "execFile('tasklist', ['/fo', 'csv', '/nh'], { timeout: 5000 }, (error, stdout) => {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
     "evidence": []
   },
-  "dependencies": 2,
+  "dependencies": 3,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

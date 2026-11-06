@@ -1,0 +1,101 @@
+{
+  "name": "@zayn_/dsh-offpeak-queue",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-06T20:48:58.936Z",
+  "icon": "zayn___dsh-offpeak-queue.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 951,
+        "text": "const response = await fetch(`${ROUTE}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host/repair.js",
+        "line": 24,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "host/repair.js",
+        "line": 305,
+        "text": "const raw = fs.readFileSync(file)"
+      },
+      {
+        "file": "host/repair.js",
+        "line": 364,
+        "text": "fs.writeFileSync(temp, encodeLogFile(file, repaired.text))"
+      },
+      {
+        "file": "host/store.js",
+        "line": 14,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "host/store.js",
+        "line": 473,
+        "text": "fs.mkdirSync(path.dirname(dataFile), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host/tool.js",
+        "line": 16,
+        "text": "/** Tool name registered on `ctx.tools`. */"
+      },
+      {
+        "file": "host/tool.js",
+        "line": 270,
+        "text": "* @returns {object} `ctx.tools.register` definition."
+      },
+      {
+        "file": "host/tool.js",
+        "line": 358,
+        "text": "return ctx.tools.register(createTool({ controller, guidance }))"
+      },
+      {
+        "file": "index.js",
+        "line": 28,
+        "text": "export const inject = ['webServer', 'sessionController', 'sessions', 'tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 235,
+        "text": "() => ctx.tools.register(createTool({ controller, guidance })),"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host/repair.js",
+        "line": 27,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionController",
+    "sessions",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-session-cleanup",
-  "version": "0.2.2",
-  "scannedAt": "2026-11-02T23:01:33.599Z",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-06T20:48:55.175Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -13,7 +13,12 @@
       {
         "file": "lib/src/dsh/delete-session.js",
         "line": 1,
-        "text": "import { existsSync, readdirSync } from \"node:fs\";"
+        "text": "import { readdirSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/src/fs-utils.js",
+        "line": 1,
+        "text": "import { lstatSync } from \"node:fs\";"
       },
       {
         "file": "lib/src/orphaned.js",
@@ -27,13 +32,8 @@
       },
       {
         "file": "lib/src/trash.js",
-        "line": 207,
+        "line": 247,
         "text": "rmSync(target, { recursive: true, force: true });"
-      },
-      {
-        "file": "lib/src/trash.js",
-        "line": 209,
-        "text": "rm(targetPath);"
       }
     ]
   },
@@ -51,7 +51,7 @@
       },
       {
         "file": "lib/src/trash.js",
-        "line": 72,
+        "line": 73,
         "text": "child = spawn(command, [...args], {"
       },
       {
@@ -61,7 +61,7 @@
       },
       {
         "file": "src/trash.ts",
-        "line": 117,
+        "line": 121,
         "text": "      child = spawn(command, [...args], { // nosemgrep: javascript.lang.security.detect-child-process.detect-child-process -- command is checked against the har"
       }
     ]

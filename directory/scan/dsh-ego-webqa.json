@@ -1,0 +1,86 @@
+{
+  "name": "dsh-ego-webqa",
+  "version": "0.1.8",
+  "scannedAt": "2026-11-06T20:48:43.176Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-ego-webqa.mjs",
+        "line": 15,
+        "text": "import { createServer } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-ego-webqa.mjs",
+        "line": 4,
+        "text": "import { constants as fsConstants } from 'node:fs'"
+      },
+      {
+        "file": "bin/dsh-ego-webqa.mjs",
+        "line": 14,
+        "text": "} from 'node:fs/promises'"
+      },
+      {
+        "file": "bin/dsh-ego-webqa.mjs",
+        "line": 22,
+        "text": "const PACKAGE = JSON.parse(await readFile(join(PACKAGE_ROOT, 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "bin/dsh-ego-webqa.mjs",
+        "line": 23,
+        "text": "const PATCH = await readFile(join(PACKAGE_ROOT, 'cordis.patch.yml'), 'utf8')"
+      },
+      {
+        "file": "bin/dsh-ego-webqa.mjs",
+        "line": 815,
+        "text": "await mkdir(backupDirectory, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 8,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-ego-webqa.mjs",
+        "line": 3,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "bin/dsh-ego-webqa.mjs",
+        "line": 207,
+        "text": "return spawn(process.env.ComSpec || 'cmd.exe', ['/d', '/s', '/c', commandLineForCmd(command, args)], {"
+      },
+      {
+        "file": "bin/dsh-ego-webqa.mjs",
+        "line": 215,
+        "text": "return spawn(command, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

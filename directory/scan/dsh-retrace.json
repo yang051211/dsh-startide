@@ -1,35 +1,35 @@
 {
   "name": "dsh-retrace",
-  "version": "0.4.135",
-  "scannedAt": "2026-10-28T06:59:37.639Z",
+  "version": "0.4.139",
+  "scannedAt": "2026-11-06T20:48:50.458Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.bundle.js",
-        "line": 218,
+        "line": 242,
         "text": "unction\")return wire(op,payload);return fetch(`${ROUTE_BASE}/${op}`,{method:\"POST\",headers:{\"Content-Type\":\"application/json\",...retraceConfigHeaders()},body:JS"
       },
       {
         "file": "lib/client.js",
-        "line": 237,
+        "line": 242,
         "text": "return fetch(`${ROUTE_BASE}/${op}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 2693,
+        "line": 1868,
+        "text": "const response = await fetch(url)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3058,
         "text": "return fetch(`${ROUTE_BASE}${path}`, { headers: retraceConfigHeaders() }).then((res) => {"
       },
       {
         "file": "lib/client.js",
-        "line": 4323,
+        "line": 4688,
         "text": "return fetch(`${ROUTE_BASE}/runningState`, {"
-      },
-      {
-        "file": "lib/dynamic-client.js",
-        "line": 224,
-        "text": "unction\")return wire(op,payload);return fetch(`${ROUTE_BASE}/${op}`,{method:\"POST\",headers:{\"Content-Type\":\"application/json\",...retraceConfigHeaders()},body:JS"
       }
     ]
   },
@@ -53,13 +53,13 @@
       },
       {
         "file": "lib/adapter/dsh.js",
-        "line": 220,
+        "line": 234,
         "text": "const { statSync } = await import('node:fs')"
       },
       {
-        "file": "lib/artifact-store.js",
-        "line": 26,
-        "text": "import { constants } from 'node:fs'"
+        "file": "lib/adapter/dsh.js",
+        "line": 517,
+        "text": "const { statSync } = await import('node:fs')"
       }
     ]
   },
@@ -70,6 +70,16 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/fold-auto.js",
+        "line": 16,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/fold-auto.js",
+        "line": 227,
+        "text": "execFile(process.execPath, [cliPath, ...argv], { timeout: timeoutMs, maxBuffer: 64 * 1024 * 1024 }, (error, stdout) => {"
+      },
       {
         "file": "lib/git-adapter.js",
         "line": 58,
@@ -84,11 +94,6 @@
         "file": "lib/rollback.js",
         "line": 26,
         "text": "import { execFileSync } from 'node:child_process'"
-      },
-      {
-        "file": "lib/rollback.js",
-        "line": 280,
-        "text": "const handle = ctx.subprocess.spawn({"
       }
     ]
   },

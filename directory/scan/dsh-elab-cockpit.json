@@ -1,20 +1,20 @@
 {
   "name": "dsh-elab-cockpit",
-  "version": "0.5.0",
-  "scannedAt": "2026-11-03T20:52:22.420Z",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-06T20:48:47.748Z",
   "icon": "dsh-elab-cockpit.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/adapters/dsh-tools/tools.js",
-        "line": 17,
-        "text": "const res = await fetch(`${baseUrl}${path}`, {"
+        "file": "lib/adapters/dsh-tools/run-ops.js",
+        "line": 15,
+        "text": "const res = await fetch(`${baseUrl}/api/capabilities`, { headers: { Accept: 'application/json' } });"
       },
       {
-        "file": "lib/adapters/dsh-tools/tools.js",
-        "line": 55,
-        "text": "const res = await fetch(`${baseUrl}/api/capabilities`, { headers: { Accept: 'application/json' } });"
+        "file": "lib/adapters/dsh-tools/runtime.js",
+        "line": 11,
+        "text": "const res = await fetch(`${baseUrl}${path}`, {"
       },
       {
         "file": "lib/adapters/env/envpack.js",
@@ -23,12 +23,12 @@
       },
       {
         "file": "lib/adapters/kernel-http/routes.js",
-        "line": 208,
+        "line": 228,
         "text": "const upstream = await fetch(target, init);"
       },
       {
         "file": "lib/adapters/kernel-http/routes.js",
-        "line": 294,
+        "line": 318,
         "text": "const upstream = await fetch(target, {"
       }
     ]
@@ -73,12 +73,12 @@
       },
       {
         "file": "lib/main.js",
-        "line": 167,
+        "line": 189,
         "text": "if (resolved.tools.autoExposeTools && ctx.tools !== undefined) {"
       },
       {
         "file": "lib/main.js",
-        "line": 168,
+        "line": 190,
         "text": "const toolRegister = ctx.tools.register.bind(ctx.tools);"
       }
     ]
@@ -131,7 +131,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 133,
+      "line": 195,
       "text": "不做自动 `pip install`、不自动 `git pull`（升级内核仍手动 `git -C <elabRoot> pull --ff-only`）。"
     }
   ],

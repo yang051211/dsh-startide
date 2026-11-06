@@ -1,0 +1,122 @@
+{
+  "name": "dsh-plc-decode",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-06T20:48:55.220Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/decode-pack.mjs",
+        "line": 12,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "assets/decode-pack.mjs",
+        "line": 57,
+        "text": "const t = fs.readFileSync(p, 'utf8')"
+      },
+      {
+        "file": "assets/decode-pack.mjs",
+        "line": 62,
+        "text": "const sizeOf = (p) => { try { return B(fs.readFileSync(path.join(outd, p), 'utf8')) } catch { return 0 } }"
+      },
+      {
+        "file": "assets/decode-pack.mjs",
+        "line": 84,
+        "text": "const lines = fs.readFileSync(rep, 'utf8').split('\\n')"
+      },
+      {
+        "file": "assets/decode-pack.mjs",
+        "line": 107,
+        "text": "fs.writeFileSync(path.join(outd, '00-索引.md'), nav, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "hmi.js",
+        "line": 305,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "hmi.js",
+        "line": 348,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "hmi.js",
+        "line": 376,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "hmi.js",
+        "line": 399,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "hmi.js",
+        "line": 424,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/decode-pack.mjs",
+        "line": 14,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "assets/mcgs-decode.mjs",
+        "line": 11,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/smoke.mjs",
+        "line": 11,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/smoke.mjs",
+        "line": 42,
+        "text": "const r = spawnSync("
+      },
+      {
+        "file": "scripts/smoke.mjs",
+        "line": 81,
+        "text": "const r = spawnSync('python', ['--version'], { encoding: 'utf8' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "sandboxPolicy",
+    "shell",
+    "skills",
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 25,
+      "text": "- Python 3.9+ on `PATH` for `.project` / `.dvp` (standard library only, no `pip install`);"
+    }
+  ],
+  "skippedEntries": []
+}

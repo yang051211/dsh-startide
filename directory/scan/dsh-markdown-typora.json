@@ -1,0 +1,125 @@
+{
+  "name": "dsh-markdown-typora",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-06T20:48:52.259Z",
+  "icon": "dsh-markdown-typora.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1963,
+        "text": "const res = await fetch(API_BASE + endpoint, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2626,
+        "text": "fetch(\"/dsh-markdown-typora/api/diag\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3891,
+        "text": "fetch(API_BASE + \"docs/recent\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3907,
+        "text": "fetch(API_BASE + \"docs/recent\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3964,
+        "text": "return fetch(API_BASE + \"docs/create\", {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host/document-store.js",
+        "line": 3,
+        "text": "const fs=require('node:fs/promises');"
+      },
+      {
+        "file": "host/document-store.js",
+        "line": 43,
+        "text": "const bytes=await handle.readFile(),last=await handle.stat(),onPath=await fs.stat(file);"
+      },
+      {
+        "file": "host/document-store.js",
+        "line": 132,
+        "text": "await fs.mkdir(path.dirname(target),{recursive:true});"
+      },
+      {
+        "file": "host/document-store.js",
+        "line": 144,
+        "text": "await fs.writeFile(tmp,out,{flag:'r+'});"
+      },
+      {
+        "file": "host/live-documents.js",
+        "line": 4,
+        "text": "const fs = require('node:fs');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1649,
+        "text": "dispose = tools.register(tool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host/native-worker-lease.js",
+        "line": 10,
+        "text": "const {spawn}=require('node:child_process');"
+      },
+      {
+        "file": "host/native-worker-lease.js",
+        "line": 26,
+        "text": "const child=spawn(powershell,['-NoProfile','-NonInteractive','-EncodedCommand',Buffer.from(script,'utf16le').toString('base64')],"
+      },
+      {
+        "file": "host/safe-file.js",
+        "line": 2,
+        "text": "const fs=require('node:fs/promises'),path=require('node:path'),crypto=require('node:crypto'),{spawn}=require('node:child_process');"
+      },
+      {
+        "file": "host/safe-file.js",
+        "line": 11,
+        "text": "try {child=spawn(lease.executable,[],{cwd:lease.directory,windowsHide:true,stdio:['pipe','pipe','pipe']});}"
+      },
+      {
+        "file": "renderer-cm6/cm6/mermaid.min.js",
+        "line": 605,
+        "text": "field]=e.value,d&&r.push(u))}var p=this.spawn(r);p.updateStyle(),p.emit(e.event),o&&p.emit(o)}return this}}function W1(e){Vf[e.field]=function(){var t=this[0];i"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "renderer-cm6/cm6/app.js",
+    "renderer-cm6/cm6/markdown-worker.js",
+    "renderer-cm6/cm6/mermaid.min.js"
+  ],
+  "binaryFiles": [
+    "host/native/file-worker.exe"
+  ],
+  "requiredServices": [
+    "fs",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

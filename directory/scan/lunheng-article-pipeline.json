@@ -1,7 +1,7 @@
 {
   "name": "lunheng-article-pipeline",
-  "version": "19.27.15",
-  "scannedAt": "2026-10-30T07:08:48.864Z",
+  "version": "19.27.16",
+  "scannedAt": "2026-11-06T20:48:41.838Z",
   "icon": "lunheng-article-pipeline.svg",
   "network": {
     "hit": true,
@@ -43,12 +43,12 @@
       },
       {
         "file": "lib/commands.js",
-        "line": 134,
+        "line": 179,
         "text": "parts.push('— 主人版进展（最新在文件末尾）—', ...firstLines(readFileSync(progressPath, 'utf8'), 12, { skipHeadings: false }))"
       },
       {
         "file": "lib/commands.js",
-        "line": 140,
+        "line": 185,
         "text": "parts.push('— 状态机（status.md 前几行）—', ...firstLines(readFileSync(statusPath, 'utf8'), 10))"
       },
       {
@@ -68,22 +68,22 @@
     "evidence": [
       {
         "file": "lib/tools.js",
-        "line": 321,
+        "line": 324,
         "text": "disposers.push(tools.register(defineTool({"
       },
       {
         "file": "lib/tools.js",
-        "line": 471,
+        "line": 474,
         "text": "disposers.push(tools.register(defineTool({"
       },
       {
         "file": "lib/tools.js",
-        "line": 551,
+        "line": 554,
         "text": "disposers.push(tools.register(defineTool({"
       },
       {
         "file": "lib/tools.js",
-        "line": 671,
+        "line": 674,
         "text": "disposers.push(tools.register(defineTool({"
       }
     ]
@@ -94,27 +94,27 @@
       {
         "file": "lib/commands.js",
         "line": 13,
-        "text": "import { spawnSync } from 'node:child_process'"
+        "text": "import { spawn } from 'node:child_process'"
       },
       {
         "file": "lib/commands.js",
-        "line": 95,
-        "text": "const r = spawnSync(process.execPath, [script], { cwd: base, encoding: 'utf8', timeout: 15000, maxBuffer: 8 * 1024 * 1024 })"
+        "line": 36,
+        "text": "child = spawn(process.execPath, [script, ...args], { cwd, stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true })"
       },
       {
-        "file": "lib/commands.js",
-        "line": 241,
-        "text": "const r = spawnSync(process.execPath, [script, ...runDirArgs, ...allowed], {"
+        "file": "lib/kill-tree.mjs",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/kill-tree.mjs",
+        "line": 19,
+        "text": "const p = spawn('taskkill', ['/PID', String(child.pid), '/T', '/F'], { stdio: 'ignore', windowsHide: true })"
       },
       {
         "file": "lib/tools.js",
         "line": 28,
         "text": "import { spawn } from 'node:child_process'"
-      },
-      {
-        "file": "lib/tools.js",
-        "line": 202,
-        "text": "child = spawn(process.execPath, [scriptPath, ...args], { stdio: ['ignore', 'pipe', 'pipe'], ...(cwd ? { cwd } : {}) })"
       }
     ]
   },

@@ -1,29 +1,65 @@
 {
   "name": "dsh-worktree-plugin",
-  "version": "0.1.7",
-  "scannedAt": "2026-11-04T20:39:32.408Z",
+  "version": "0.1.14",
+  "scannedAt": "2026-11-06T20:48:55.734Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 626,
+        "text": "const result = await (await fetch(\"/api/dsh-worktree-plugin/list\")).json();"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 891,
+        "text": "const result = await (await fetch(\"/api/dsh-worktree-plugin/list\")).json();"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 917,
+        "text": "const result = await (await fetch(basePath + \"/create\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 938,
+        "text": "const result = await (await fetch(basePath + \"/list\")).json();"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 947,
+        "text": "const result = await (await fetch(basePath + \"/switch\", {"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/types/worktree-service.js",
-        "line": 9,
+        "line": 13,
         "text": "import fs from 'node:fs/promises';"
       },
       {
         "file": "lib/types/worktree-service.js",
-        "line": 10,
+        "line": 14,
         "text": "import { realpathSync } from 'node:fs';"
       },
       {
         "file": "lib/types/worktree-service.js",
-        "line": 143,
-        "text": "await fs.unlink(lockPath).catch(() => { });"
+        "line": 123,
+        "text": "const content = await fs.readFile(filePath, 'utf8');"
+      },
+      {
+        "file": "lib/types/worktree-service.js",
+        "line": 167,
+        "text": "await fs.mkdir(path.dirname(filePath), { recursive: true });"
+      },
+      {
+        "file": "lib/types/worktree-service.js",
+        "line": 168,
+        "text": "await fs.writeFile(filePath, JSON.stringify(records, null, 2));"
       }
     ]
   },
@@ -47,7 +83,7 @@
     "evidence": [
       {
         "file": "lib/types/worktree-service.js",
-        "line": 7,
+        "line": 11,
         "text": "import { execFile } from 'node:child_process';"
       }
     ]

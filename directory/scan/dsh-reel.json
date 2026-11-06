@@ -1,7 +1,7 @@
 {
   "name": "dsh-reel",
-  "version": "0.2.0",
-  "scannedAt": "2026-10-26T10:06:48.295Z",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-06T20:48:55.316Z",
   "icon": "dsh-reel.svg",
   "network": {
     "hit": true,
@@ -12,9 +12,9 @@
         "text": "const response = await fetch(`${BASE}${path}`, { headers: { accept: 'application/json' }, ...options })"
       },
       {
-        "file": "lib/reel.js",
-        "line": 30,
-        "text": "import { createServer } from 'node:http'"
+        "file": "lib/client.js",
+        "line": 107,
+        "text": ".then(() => fetch(`${REEL_PATH}/api/session`))"
       }
     ]
   },
@@ -43,7 +43,7 @@
       },
       {
         "file": "lib/reel.js",
-        "line": 28,
+        "line": 30,
         "text": "import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync, appendFileSync } from 'node:fs'"
       }
     ]
@@ -57,22 +57,22 @@
     "evidence": [
       {
         "file": "lib/reel.js",
-        "line": 26,
+        "line": 28,
         "text": "import { spawn } from 'node:child_process'"
       },
       {
         "file": "lib/reel.js",
-        "line": 1379,
+        "line": 1359,
         "text": "const child = spawn("
       },
       {
         "file": "lib/reel.js",
-        "line": 1744,
+        "line": 1724,
         "text": "child = spawn(binary, args, { stdio: 'ignore', windowsHide: true })"
       },
       {
         "file": "lib/reel.js",
-        "line": 1788,
+        "line": 1768,
         "text": "child = spawn(binary, ["
       }
     ]
@@ -84,7 +84,9 @@
   "dependencies": 2,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [],
+  "requiredServices": [
+    "webServer"
+  ],
   "setupHints": [],
   "skippedEntries": []
 }

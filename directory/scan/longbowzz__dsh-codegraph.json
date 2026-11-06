@@ -1,0 +1,136 @@
+{
+  "name": "@longbowzz/dsh-codegraph",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-06T20:48:48.327Z",
+  "icon": "longbowzz__dsh-codegraph.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "skills/codegraph/vendor/mermaid-parser.bundle.mjs",
+        "line": 1,
+        "text": "ndGroup(),t.gullet.beginGroup();var r=t.fetch().text;if(r===\"&\"||r===\"\\\\\\\\\")t.consume();else if(r===\"\\\\end\"){e[e.length-1].length===0&&e.pop();break}else throw "
+      },
+      {
+        "file": "skills/codegraph/vendor/mermaid-parser.bundle.mjs",
+        "line": 252,
+        "text": "funcName:r}=t;e.consumeSpaces();var n=e.fetch();if(B9[n.text])return(r===\"\\\\global\"||r===\"\\\\\\\\globallong\")&&(n.text=B9[n.text]),Lr(e.parseFunction(),\"internal\")"
+      },
+      {
+        "file": "skills/codegraph/vendor/mermaid-parser.bundle.mjs",
+        "line": 256,
+        "text": "}expect(e,r){if(r===void 0&&(r=!0),this.fetch().text!==e)throw new St(\"Expected '\"+e+\"', got '\"+this.fetch().text+\"'\",this.fetch());r&&this.consume()}consume(){"
+      },
+      {
+        "file": "skills/codegraph/vendor/mermaid.min.js",
+        "line": 3,
+        "text": "ndGroup(),t.gullet.beginGroup();var r=t.fetch().text;if(r===\"&\"||r===\"\\\\\\\\\")t.consume();else if(r===\"\\\\end\"){e[e.length-1].length===0&&e.pop();break}else throw "
+      },
+      {
+        "file": "skills/codegraph/vendor/mermaid.min.js",
+        "line": 254,
+        "text": "funcName:r}=t;e.consumeSpaces();var n=e.fetch();if(cR[n.text])return(r===\"\\\\global\"||r===\"\\\\\\\\globallong\")&&(n.text=cR[n.text]),mr(e.parseFunction(),\"internal\")"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/index.js",
+        "line": 11,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 458,
+        "text": "const adapter = readFileSync(ADAPTER, 'utf8')"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 459,
+        "text": "const contract = readFileSync(resolve(SKILL_DIR, 'SKILL.md'), 'utf8')"
+      },
+      {
+        "file": "dsh/lib/build.js",
+        "line": 23,
+        "text": "} from 'node:fs'"
+      },
+      {
+        "file": "dsh/lib/build.js",
+        "line": 225,
+        "text": "return JSON.parse(readFileSync(join(dir, name), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/index.js",
+        "line": 23,
+        "text": "export const inject = ['tools', 'skills', 'workingDirectory']"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 483,
+        "text": "() => ctx.tools.register(buildTool(ctx, options, SKILL_DIR)),"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 487,
+        "text": "() => ctx.tools.register(walkthroughTool(ctx, options, SKILL_DIR)),"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 491,
+        "text": "() => ctx.tools.register(listTool(ctx, options)),"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/lib/build.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "dsh/lib/build.js",
+        "line": 118,
+        "text": "const child = spawn(command, [script, ...args], {"
+      },
+      {
+        "file": "skills/codegraph/scripts/_smoke-build.mjs",
+        "line": 4,
+        "text": "import { execFileSync, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "skills/codegraph/scripts/_smoke-build.mjs",
+        "line": 23,
+        "text": "const result = spawnSync(process.execPath, [join(scripts, 'build-html.mjs'),"
+      },
+      {
+        "file": "skills/codegraph/scripts/_smoke-cli.mjs",
+        "line": 4,
+        "text": "import { spawnSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "skills/codegraph/vendor/dagre.min.js",
+    "skills/codegraph/vendor/highlight.min.js",
+    "skills/codegraph/vendor/mermaid-parser.bundle.mjs",
+    "skills/codegraph/vendor/mermaid.min.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

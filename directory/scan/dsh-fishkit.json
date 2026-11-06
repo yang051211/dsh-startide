@@ -1,7 +1,7 @@
 {
   "name": "dsh-fishkit",
-  "version": "0.3.2",
-  "scannedAt": "2026-11-04T20:39:05.067Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-06T20:48:43.144Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,18 +18,18 @@
       },
       {
         "file": "client.js",
-        "line": 280,
+        "line": 217,
+        "text": "void fetch('/dsh-fishsoul/affect').then((r) => r.json()).then((d) => { if (d && d.ok) setAffect(d) }).catch(() => {})"
+      },
+      {
+        "file": "client.js",
+        "line": 221,
+        "text": "void fetch('/dsh-fishsoul/affect', {"
+      },
+      {
+        "file": "client.js",
+        "line": 324,
         "text": "void fetch('/dsh-fishsoul/mode', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ mode: 'independent' }) })"
-      },
-      {
-        "file": "client.js",
-        "line": 283,
-        "text": "void fetch('/dsh-fishsoul/mode', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ mode: 'shared' }) })"
-      },
-      {
-        "file": "client.js",
-        "line": 291,
-        "text": "void fetch('/dsh-fishsoul/digest', { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{}' })"
       }
     ]
   },
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/soul.js",
-        "line": 276,
+        "line": 289,
         "text": "盒.offs.push(agent.ctx.tools.register({"
       },
       {
         "file": "lib/soul.js",
-        "line": 305,
+        "line": 318,
         "text": "盒.offs.push(agent.ctx.tools.register({"
       },
       {
         "file": "lib/soul.js",
-        "line": 336,
+        "line": 349,
         "text": "盒.offs.push(agent.ctx.tools.register({"
       },
       {
         "file": "lib/soul.js",
-        "line": 389,
+        "line": 402,
         "text": "盒.offs.push(agent.ctx.tools.register({"
       },
       {
         "file": "lib/soul.js",
-        "line": 418,
+        "line": 445,
         "text": "盒.offs.push(agent.ctx.tools.register({"
       }
     ]
@@ -96,6 +96,16 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/asr.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/asr.js",
+        "line": 36,
+        "text": "子 = spawn(命令, 参数, { windowsHide: true })"
+      },
       {
         "file": "lib/device.js",
         "line": 18,
@@ -110,16 +120,6 @@
         "file": "lib/platforms.js",
         "line": 14,
         "text": "import { spawn } from 'node:child_process'"
-      },
-      {
-        "file": "lib/platforms.js",
-        "line": 82,
-        "text": "子 = spawn(命令, 参数, { windowsHide: true })"
-      },
-      {
-        "file": "lib/updater.js",
-        "line": 8,
-        "text": "import { spawnSync } from 'node:child_process'"
       }
     ]
   },
@@ -132,6 +132,9 @@
   "binaryFiles": [],
   "requiredServices": [
     "agents",
+    "llm",
+    "sessionTitle",
+    "sessions",
     "systemPrompt",
     "timer",
     "webServer"

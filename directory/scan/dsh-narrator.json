@@ -1,0 +1,61 @@
+{
+  "name": "dsh-narrator",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-06T20:48:53.665Z",
+  "icon": "dsh-narrator.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/state.js",
+        "line": 9,
+        "text": "import { mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 43,
+        "text": "const parsed = JSON.parse(readFileSync(statePath(), 'utf8'))"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 58,
+        "text": "mkdirSync(narratorDir(), { recursive: true })"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 61,
+        "text": "writeFileSync(temporary, `${JSON.stringify({ version: FILE_VERSION, ...overrides }, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 74,
+        "text": "unlinkSync(statePath())"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "systemPrompt"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

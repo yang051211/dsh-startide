@@ -1,0 +1,108 @@
+{
+  "name": "dsh-workbuddy-account-care",
+  "version": "0.0.7",
+  "scannedAt": "2026-11-06T20:48:58.188Z",
+  "icon": "dsh-workbuddy-account-care.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 253,
+        "text": "const res = await fetch(STATE_URL, { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 514,
+        "text": "const res = await fetch(ACTION_URL, {"
+      },
+      {
+        "file": "scripts/watch.mjs",
+        "line": 440,
+        "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "scripts/watch.mjs",
+        "line": 696,
+        "text": "const res = await fetch(NPM_LATEST_URL, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/guard.mjs",
+        "line": 22,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/guard.mjs",
+        "line": 131,
+        "text": "const header = readFileSync(new URL(import.meta.url), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 64,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 65,
+        "text": "import { readFile, rename, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 187,
+        "text": "const text = await readFile(statePath, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/guard.mjs",
+        "line": 21,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "bin/guard.mjs",
+        "line": 44,
+        "text": "const res = spawnSync(process.execPath, [WATCH, ...extra], { encoding: 'utf8', timeout: 300_000 })"
+      },
+      {
+        "file": "index.js",
+        "line": 63,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 669,
+        "text": "child = spawn(process.execPath, args, { stdio: ['ignore', 'pipe', 'pipe'] })"
+      },
+      {
+        "file": "index.js",
+        "line": 1112,
+        "text": "child = spawn(command, args, { stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

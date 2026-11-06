@@ -1,0 +1,121 @@
+{
+  "name": "dsh-minimax-byapi",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-06T20:48:59.054Z",
+  "icon": "dsh-minimax-byapi.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 89,
+        "text": "      response = await fetch(modelsURL(baseURL), { headers: { authorization: 'Bearer ' + key, accept: 'application/json' }, redirect: 'error', signal: AbortSign"
+      },
+      {
+        "file": "src/index.js",
+        "line": 106,
+        "text": "    const response = await fetch(modelsURL(baseURL), { headers: { authorization: 'Bearer ' + key, accept: 'application/json' }, redirect: 'error', signal: Abort"
+      },
+      {
+        "file": "src/index.js",
+        "line": 136,
+        "text": "      const response = await fetch(modelsURL(baseURL), { headers: { authorization: 'Bearer ' + await resolveKey(), accept: 'application/json' }, redirect: 'erro"
+      },
+      {
+        "file": "src/media.js",
+        "line": 151,
+        "text": "const response = await this.fetch(current, { redirect: 'manual', signal, credentials: 'omit' });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 2,
+        "text": "import { readFile, writeFile, mkdir } from 'node:fs/promises';"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 3,
+        "text": "const result = await transform(await readFile(new URL('../src/client.js', import.meta.url), 'utf8'), { format: 'cjs', target: 'es2022', platform: 'browser' });"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 5,
+        "text": "await mkdir(new URL('../lib/', import.meta.url), { recursive: true });"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 6,
+        "text": "await writeFile(new URL('../lib/client.js', import.meta.url), built);"
+      },
+      {
+        "file": "src/index.js",
+        "line": 6,
+        "text": "import { mkdir, writeFile, rename } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 16,
+        "text": "export const inject = ['llm', 'credentials', 'tools'];"
+      },
+      {
+        "file": "src/index.js",
+        "line": 239,
+        "text": "toolDisposers.push(ctx.tools.register(build()));"
+      },
+      {
+        "file": "src/index.js",
+        "line": 244,
+        "text": "for (const build of toolFactories) toolDisposers.push(ctx.tools.register(build()));"
+      },
+      {
+        "file": "src/media-entry.js",
+        "line": 5,
+        "text": "export const inject = ['minimax-byapi', 'tools'];"
+      },
+      {
+        "file": "src/media-entry.js",
+        "line": 26,
+        "text": "return ctx.tools.register(defineTool(definition));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "credentials",
+    "llm",
+    "minimax-byapi",
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 245,
+      "text": "- **Files:** generated media goes to `$DSH_HOME/plugins/dsh-minimax-byapi` (or `media.dataDir`). Task records may contain time-limited upstream URLs; treat them"
+    },
+    {
+      "file": "README.zh.md",
+      "line": 245,
+      "text": "- **文件：** 生成的媒体写入 `$DSH_HOME/plugins/dsh-minimax-byapi`（或 `media.dataDir`）。任务记录里可能含有时效性的上游地址，请按私密信息对待。"
+    }
+  ],
+  "skippedEntries": []
+}

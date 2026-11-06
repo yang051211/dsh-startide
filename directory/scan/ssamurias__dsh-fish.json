@@ -1,0 +1,126 @@
+{
+  "name": "@ssamurias/dsh-fish",
+  "version": "0.9.2",
+  "scannedAt": "2026-11-06T20:48:57.333Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 276,
+        "text": "const r = await fetch(API + path, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 286,
+        "text": "const r = await fetch(API + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/ask.js",
+        "line": 30,
+        "text": "import { appendFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/ask.js",
+        "line": 221,
+        "text": "await appendFile(paths(root).events, '')"
+      },
+      {
+        "file": "lib/avatar.js",
+        "line": 13,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/avatar.js",
+        "line": 104,
+        "text": "fs.mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/avatar.js",
+        "line": 105,
+        "text": "fs.writeFileSync(tmp, buf)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/ask.js",
+        "line": 334,
+        "text": "return ctx.tools.register("
+      },
+      {
+        "file": "lib/capture.js",
+        "line": 57,
+        "text": "return ctx.tools.register("
+      },
+      {
+        "file": "lib/dream.js",
+        "line": 150,
+        "text": "return ctx.tools.register("
+      },
+      {
+        "file": "lib/herdiary.js",
+        "line": 100,
+        "text": "return ctx.tools.register("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 59,
+        "text": "export const inject = ['sessionController', 'tools', 'webServer', 'connection']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/media.js",
+        "line": 17,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/media.js",
+        "line": 50,
+        "text": "// 环境变量被设成空串时要退回默认值：spawn('') 会直接抛"
+      },
+      {
+        "file": "lib/media.js",
+        "line": 54,
+        "text": "const r = spawnSync(bin, ['-version'], { encoding: 'utf8', windowsHide: true, timeout: 8000 })"
+      },
+      {
+        "file": "lib/media.js",
+        "line": 76,
+        "text": "const p = spawn(bin, args, { windowsHide: true })"
+      },
+      {
+        "file": "lib/selfupdate.js",
+        "line": 33,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "sessionController",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

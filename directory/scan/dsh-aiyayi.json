@@ -1,0 +1,121 @@
+{
+  "name": "dsh-aiyayi",
+  "version": "1.4.0",
+  "scannedAt": "2026-11-06T20:48:51.250Z",
+  "icon": "dsh-aiyayi.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/net.js",
+        "line": 82,
+        "text": "ws = new WebSocket(wsUrl)"
+      },
+      {
+        "file": "lib/net.js",
+        "line": 118,
+        "text": "const res = await fetch(`http://127.0.0.1:${port}/json/list`, {"
+      },
+      {
+        "file": "lib/net.js",
+        "line": 135,
+        "text": "const res = await fetch(`http://127.0.0.1:${port}/json/version`, {"
+      },
+      {
+        "file": "lib/net.js",
+        "line": 205,
+        "text": "const r = await fetch(`http://127.0.0.1:${port}/json/version`, { signal: AbortSignal.timeout(1500) })"
+      },
+      {
+        "file": "lib/net.js",
+        "line": 276,
+        "text": "const res = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/doc.js",
+        "line": 32,
+        "text": "import { closeSync, existsSync, mkdirSync, openSync, readSync, readdirSync, readFileSync, rmSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/doc.js",
+        "line": 417,
+        "text": "if (now - statSync(full).mtimeMs > 30 * 60 * 1000) rmSync(full, { recursive: true, force: true })"
+      },
+      {
+        "file": "lib/doc.js",
+        "line": 451,
+        "text": "rmSync(outDir, { recursive: true, force: true })"
+      },
+      {
+        "file": "lib/doc.js",
+        "line": 461,
+        "text": "rmSync(outDir, { recursive: true, force: true })"
+      },
+      {
+        "file": "lib/doc.js",
+        "line": 483,
+        "text": "mkdirSync(convDir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/doc.js",
+        "line": 42,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/doc.js",
+        "line": 621,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 24,
+        "text": "export const inject = ['systemPrompt', 'tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 329,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 393,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/net.js",
+        "line": 29,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/net.js",
+        "line": 196,
+        "text": "const proc = spawn(browser, args, { stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

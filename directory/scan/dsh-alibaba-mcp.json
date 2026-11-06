@@ -1,0 +1,77 @@
+{
+  "name": "dsh-alibaba-mcp",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-06T20:48:55.504Z",
+  "icon": "dsh-alibaba-mcp.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 11,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 16,
+        "text": "const code = await readFile(sourceUrl, 'utf8')"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 41,
+        "text": "await mkdir(new URL('../lib/', import.meta.url), { recursive: true })"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 42,
+        "text": "await writeFile(outputUrl, built)"
+      },
+      {
+        "file": "src/index.js",
+        "line": 12,
+        "text": "import { access } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 14,
+        "text": "import { apply as connectMcp, Config as McpConfig } from '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "src/index.js",
+        "line": 24,
+        "text": "export const inject = ['credentials', 'tools']"
+      },
+      {
+        "file": "src/index.js",
+        "line": 54,
+        "text": "inject: ['tools'],"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "credentials",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

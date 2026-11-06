@@ -1,0 +1,108 @@
+{
+  "name": "dsh-project-deck",
+  "version": "0.1.8",
+  "scannedAt": "2026-11-06T20:48:55.427Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "backend/deck-node.js",
+        "line": 16,
+        "text": "const http = require('http');"
+      },
+      {
+        "file": "backend/deck-node.js",
+        "line": 17,
+        "text": "const https = require('https');"
+      },
+      {
+        "file": "backend/deck-node.ps1",
+        "line": 94,
+        "text": "    $r = Invoke-RestMethod -Uri \"$($Server.TrimEnd('/'))/api/node-scan\" -Method Post -ContentType 'application/json; charset=utf-8' -Body ([System.Text.Encoding"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 152,
+        "text": "fetch('http://127.0.0.1:9199/api/state', { cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "backend/deck-node.js",
+        "line": 13,
+        "text": "const fs = require('fs');"
+      },
+      {
+        "file": "backend/deck-node.js",
+        "line": 29,
+        "text": "try { return JSON.parse(fs.readFileSync(CONF, 'utf8')); } catch { return {}; }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import { existsSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 10,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 91,
+        "text": "tools.register(reg)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "backend/deck-node.js",
+        "line": 18,
+        "text": "const { execSync } = require('child_process');"
+      },
+      {
+        "file": "backend/deck-node.js",
+        "line": 47,
+        "text": "const out = execSync(`git -C ${JSON.stringify(dir)} log -1 --format='%ct|%h|%s'`,"
+      },
+      {
+        "file": "backend/deck-node.js",
+        "line": 51,
+        "text": "const dirty = execSync(`git -C ${JSON.stringify(dir)} status --porcelain`,"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "execFile(PAGENT, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

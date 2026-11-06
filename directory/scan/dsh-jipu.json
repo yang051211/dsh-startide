@@ -1,0 +1,82 @@
+{
+  "name": "dsh-jipu",
+  "version": "1.22.0",
+  "scannedAt": "2026-11-06T20:48:57.985Z",
+  "icon": "dsh-jipu.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { closeSync, mkdirSync, openSync, readFileSync, unlinkSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { readFile, readdir, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 41,
+        "text": "mkdirSync(RUNTIME_DIR, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 57,
+        "text": "try { output = readFileSync(logPath, 'utf8'); } catch { /* missing */ }"
+      },
+      {
+        "file": "index.js",
+        "line": 58,
+        "text": "try { unlinkSync(logPath); } catch { /* locked */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 187,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 44,
+        "text": "const child = spawn(cmd, [path.join(TOOLS_DIR, script), ...args], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

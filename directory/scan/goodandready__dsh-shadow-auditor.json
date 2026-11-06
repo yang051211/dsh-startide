@@ -1,7 +1,7 @@
 {
   "name": "@goodandready/dsh-shadow-auditor",
-  "version": "0.2.36",
-  "scannedAt": "2026-11-05T21:22:58.709Z",
+  "version": "0.2.39",
+  "scannedAt": "2026-11-06T20:48:54.038Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -37,6 +37,11 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/guards/command.js",
+        "line": 3,
+        "text": "import { realpathSync } from 'node:fs';"
+      },
+      {
         "file": "lib/recorder.js",
         "line": 2,
         "text": "import { createReadStream, createWriteStream } from 'node:fs';"
@@ -55,11 +60,6 @@
         "file": "lib/recorder.js",
         "line": 119,
         "text": "await appendFile(file, line, 'utf8');"
-      },
-      {
-        "file": "lib/recorder.js",
-        "line": 127,
-        "text": "await unlink(file).catch(() => undefined);"
       }
     ]
   },
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/guards/lifecycle-hooks.js",
-        "line": 186,
+        "line": 187,
         "text": "if (!ctx || !ctx.tools || typeof ctx.tools.guard !== 'function') return;"
       },
       {
         "file": "lib/guards/lifecycle-hooks.js",
-        "line": 190,
+        "line": 191,
         "text": "const off = ctx.tools.guard((execution) => {"
       },
       {
         "file": "lib/index.js",
-        "line": 26,
+        "line": 27,
         "text": "export const inject = ['tools', 'settings', 'webServer'];"
       },
       {
         "file": "lib/index.js",
-        "line": 154,
+        "line": 158,
         "text": "if (ctx.tools) {"
       },
       {
         "file": "lib/index.js",
-        "line": 158,
+        "line": 162,
         "text": "offs.push(ctx.tools.register({"
       }
     ]

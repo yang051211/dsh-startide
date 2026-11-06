@@ -1,14 +1,14 @@
 {
   "name": "dsh-extra-paths",
-  "version": "0.2.1",
-  "scannedAt": "2026-11-05T21:22:51.482Z",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-06T20:48:47.229Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 229,
+        "line": 817,
         "text": "const response = await fetch(`${ROUTE}?${query.toString()}`, {"
       }
     ]
@@ -18,34 +18,50 @@
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 514,
-        "text": "surfaces: [\"fs\", \"shell\"]"
+        "line": 503,
+        "text": "const SURFACES = [\"fs\", \"shell\"];"
       },
       {
         "file": "lib/client.js",
-        "line": 519,
-        "text": "surfaces: [...item.surfaces ?? [\"fs\", \"shell\"]]"
+        "line": 505,
+        "text": "const DEFAULT_SURFACES = [\"fs\", \"shell\"];"
       },
       {
-        "file": "lib/client.js",
-        "line": 626,
-        "text": "surfaces: [\"fs\", \"shell\"]"
+        "file": "lib/config.js",
+        "line": 19,
+        "text": "export const SURFACES = ['fs', 'shell'];"
       },
       {
-        "file": "lib/client.js",
-        "line": 851,
-        "text": "className: row.surfaces.includes(\"fs\") ? \"xp-button xp-button-on\" : \"xp-button xp-button-off\","
+        "file": "lib/listener.js",
+        "line": 35,
+        "text": "if (name === 'fs' && isConfiningFs(value)) {"
       },
       {
-        "file": "lib/client.js",
-        "line": 853,
-        "text": "toggleSurface(index, \"fs\");"
+        "file": "lib/name-rule.js",
+        "line": 25,
+        "text": "import { lstatSync, readdirSync } from 'node:fs';"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 138,
+        "text": "// `ctx.tools.guard` (a host without it is a silent no-op) and the disposer is"
+      },
+      {
+        "file": "lib/tool-guard.js",
+        "line": 10,
+        "text": "* `ctx.tools.guard((exec) => reason | undefined)` runs synchronously before"
+      },
+      {
+        "file": "lib/tool-guard.js",
+        "line": 181,
+        "text": "const tools = scope?.tools ?? ctx.tools;"
+      }
+    ]
   },
   "childProcess": {
     "hit": false,

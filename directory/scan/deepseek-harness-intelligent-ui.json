@@ -1,7 +1,7 @@
 {
   "name": "deepseek-harness-intelligent-ui",
-  "version": "0.2.13",
-  "scannedAt": "2026-11-02T23:01:10.561Z",
+  "version": "0.2.14",
+  "scannedAt": "2026-11-06T20:48:45.610Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -28,7 +28,7 @@
       },
       {
         "file": "src/tools/compose.js",
-        "line": 48,
+        "line": 56,
         "text": "y from ${cdn}.${policy.allowNetwork ? ' fetch() to those origins is allowed.' : ' fetch/XHR/WebSocket are blocked.'} Use Bridge.sendPrompt only in response to a"
       }
     ]
@@ -48,13 +48,13 @@
       },
       {
         "file": "bin/cli.mjs",
-        "line": 98,
+        "line": 103,
         "text": "const manifest = JSON.parse(readFileSync(path.join(dir, 'package.json'), 'utf8'))"
       },
       {
         "file": "client/client.js",
-        "line": 284,
-        "text": "t:16,bottom:34,left:48},nm=480;function rm(e,t,n,r,i=nm){let a=[],o={...r};for(let s=0;s<=i;s++){let l=t+(n-t)*s/i;o.x=l;let u;try{u=e(o)}catch{u=NaN}a.push({x:"
+        "line": 5,
+        "text": "ponentExtension:()=>nc});module.exports=rm(hw);var Qn=Object.freeze({sin:[1,Math.sin],cos:[1,Math.cos],tan:[1,Math.tan],asin:[1,Math.asin],acos:[1,Math.acos],at"
       },
       {
         "file": "examples/component-extension/serve.mjs",
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "src/plugin.js",
-        "line": 19,
+        "line": 21,
         "text": "export const inject = ['tools', 'commands'];"
       },
       {
         "file": "src/plugin.js",
-        "line": 31,
+        "line": 53,
         "text": "ctx.tools.register(createRenderTool(config));"
       },
       {
         "file": "src/plugin.js",
-        "line": 32,
-        "text": "ctx.tools.register(createPatchTool(config));"
+        "line": 54,
+        "text": "ctx.tools.register(createPatchTool(config, () => activePromise));"
       },
       {
         "file": "src/plugin.js",
-        "line": 34,
+        "line": 56,
         "text": "if (config.enableWidget) ctx.tools.register(createWidgetTool(config));"
       },
       {
         "file": "src/plugin.js",
-        "line": 36,
+        "line": 58,
         "text": "if (composeEnabled(config)) ctx.tools.register(createComposeTool(config));"
       }
     ]
@@ -103,7 +103,7 @@
       },
       {
         "file": "bin/cli.mjs",
-        "line": 111,
+        "line": 116,
         "text": "const r = spawnSync(win ? shellLine(cmd, args) : cmd, win ? [] : args, {"
       }
     ]

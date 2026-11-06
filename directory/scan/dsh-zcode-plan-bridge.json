@@ -1,39 +1,50 @@
 {
   "name": "dsh-zcode-plan-bridge",
-  "version": "0.5.2",
-  "scannedAt": "2026-10-30T23:38:24.306Z",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-06T20:48:48.011Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "community/runtime/native-attach.mjs",
+        "line": 83,
+        "text": "try { return await (await fetch(endpoint, { signal: AbortSignal.timeout(400) })).json() } catch { return null }"
+      },
+      {
+        "file": "community/runtime/native-runtime.mjs",
+        "line": 163,
+        "text": "return fetch(input, { ...init, signal: caller ? AbortSignal.any([caller, pending.signal]) : pending.signal }).then(markCommittedResponse)"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/app-server.js",
-        "line": 57,
+        "file": "community/bin/agent.cjs",
+        "line": 5,
+        "text": "const fs = require('node:fs')"
+      },
+      {
+        "file": "community/bin/agent.cjs",
+        "line": 11,
+        "text": "const source = fs.readFileSync(cli, 'utf8')"
+      },
+      {
+        "file": "community/bin/agent.cjs",
+        "line": 23,
+        "text": "raw = JSON.parse(fs.readFileSync(process.env.ZCODE_COMMUNITY_RETRY_CONFIG_FILE, 'utf8'))"
+      },
+      {
+        "file": "community/bin/tools.mjs",
+        "line": 5,
         "text": "import fs from 'node:fs'"
       },
       {
-        "file": "lib/credentials.js",
-        "line": 22,
-        "text": "import { readFileSync } from 'node:fs'"
-      },
-      {
-        "file": "lib/credentials.js",
-        "line": 151,
-        "text": "raw = JSON.parse(readFileSync(file, 'utf8'))"
-      },
-      {
-        "file": "lib/diagnostics.js",
-        "line": 26,
-        "text": "import fs from 'node:fs'"
-      },
-      {
-        "file": "lib/diagnostics.js",
-        "line": 101,
-        "text": "const raw = JSON.parse(fs.readFileSync(file, 'utf8'))"
+        "file": "community/bin/tools.mjs",
+        "line": 28,
+        "text": "    try { fs.writeFileSync(path.join(dir, `integration-${process.pid}.json`), JSON.stringify({ ...native, pluginPid: process.pid, parentPid: process.ppid })) } "
       }
     ]
   },
@@ -45,29 +56,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "community/bin/ready.mjs",
+        "line": 2,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "community/runtime/native-attach.mjs",
+        "line": 4,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
         "file": "lib/app-server.js",
         "line": 55,
         "text": "import { spawn } from 'node:child_process'"
       },
       {
         "file": "lib/app-server.js",
-        "line": 248,
+        "line": 250,
         "text": "/** @type {import('node:child_process').ChildProcessWithoutNullStreams | undefined} */"
       },
       {
         "file": "lib/app-server.js",
-        "line": 328,
-        "text": "const child = spawn(options.zcodeCliNode, [options.zcodeCliPath, 'app-server', '--surface', 'terminal', '--no-color'], {"
-      },
-      {
-        "file": "lib/app-server.js",
-        "line": 353,
-        "text": "// A failed spawn (wrong node path, EPERM from a sandbox, ...) is an 'error' event:"
-      },
-      {
-        "file": "lib/diagnostics.js",
-        "line": 25,
-        "text": "import { spawn } from 'node:child_process'"
+        "line": 348,
+        "text": "const child = spawn(options.zcodeCliNode, [...launch.args, 'app-server', '--surface', 'terminal', '--no-color'], {"
       }
     ]
   },
@@ -84,7 +95,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 63,
+      "line": 103,
       "text": "1. 装一份 ZCode CLI（`npm i -g zcode-app-cli`，或桌面客户端自带的 `zcode.cjs`），并登录有额度的账号。装了桌面端的注意：**保持 npm 全局包跟着桌面端一起升级**——桌面升级后会在 `~/.zcode/v2` 写入新版 builtin，老 CLI（<3.15.3）解析"
     }
   ],
