@@ -1,0 +1,96 @@
+{
+  "name": "dsh-dingtalk-self",
+  "version": "0.11.0",
+  "scannedAt": "2026-11-06T08:17:17.168Z",
+  "icon": "dsh-dingtalk-self.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 604,
+        "text": "return fetch(url, options).finally(function () {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/agents/headless.js",
+        "line": 2,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/agents/headless.js",
+        "line": 255,
+        "text": "fs.writeFileSync(file, text, { mode: 0o600 });"
+      },
+      {
+        "file": "lib/agents/headless.js",
+        "line": 261,
+        "text": "try { fs.rmSync(path.dirname(file), { recursive: true, force: true }); } catch { /* ignore */ }"
+      },
+      {
+        "file": "lib/core/attachments.js",
+        "line": 17,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/core/credentials.js",
+        "line": 12,
+        "text": "import fs from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 752,
+        "text": "tools.register(def);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/agents/headless.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/agents/headless.js",
+        "line": 279,
+        "text": "child = spawn(cli, args, { cwd: workdir, env, stdio: ['pipe', 'pipe', 'pipe'] });"
+      },
+      {
+        "file": "lib/core/dws.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/core/dws.js",
+        "line": 9,
+        "text": "execFile(dwsPath, full, { timeout: timeoutMs, maxBuffer: MAX_BUFFER, encoding: 'utf8' }, (err, stdout, stderr) => {"
+      },
+      {
+        "file": "lib/core/render.js",
+        "line": 31,
+        "text": "import { spawn } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

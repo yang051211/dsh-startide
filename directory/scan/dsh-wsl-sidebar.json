@@ -1,0 +1,120 @@
+{
+  "name": "dsh-wsl-sidebar",
+  "version": "1.7.2",
+  "scannedAt": "2026-11-06T08:17:13.431Z",
+  "icon": "dsh-wsl-sidebar.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 212,
+        "text": "fetch(LOG_PATH, {"
+      },
+      {
+        "file": "client.js",
+        "line": 286,
+        "text": "const response = await fetch(url, init);"
+      },
+      {
+        "file": "client.js",
+        "line": 856,
+        "text": "fetch(DISTROS_PATH).then((r) => r.json()).then((data) => {"
+      },
+      {
+        "file": "client.js",
+        "line": 876,
+        "text": "fetch(url)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "import { readdir } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/admin.js",
+        "line": 11,
+        "text": "import { copyFile, readFile, mkdir, rename, stat, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/admin.js",
+        "line": 253,
+        "text": "return { scope, path, exists: true, text: await readFile(path, \"utf8\") };"
+      },
+      {
+        "file": "lib/admin.js",
+        "line": 297,
+        "text": "await mkdir(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "lib/admin.js",
+        "line": 302,
+        "text": "await writeFile(temporary, normalized, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "export const inject = [\"webServer\", \"connection\", \"tools\"];"
+      },
+      {
+        "file": "index.js",
+        "line": 435,
+        "text": "const disposers = createTools(ctx).map((tool) => ctx.tools.register(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/admin.js",
+        "line": 10,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/admin.js",
+        "line": 21,
+        "text": "execFile("
+      },
+      {
+        "file": "lib/tasks.js",
+        "line": 12,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/tasks.js",
+        "line": 85,
+        "text": "const killer = spawn(\"taskkill\", [\"/PID\", String(pid), \"/T\", \"/F\"], { windowsHide: true, stdio: \"ignore\" });"
+      },
+      {
+        "file": "lib/tasks.js",
+        "line": 111,
+        "text": "const child = spawn(\"wsl.exe\", args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

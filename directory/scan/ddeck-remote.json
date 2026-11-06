@@ -1,0 +1,113 @@
+{
+  "name": "ddeck-remote",
+  "version": "0.9.12-beta",
+  "scannedAt": "2026-11-06T08:17:12.844Z",
+  "icon": "ddeck-remote.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 223,
+        "text": "fetch('/dsh-remote/server', { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 234,
+        "text": "const response = await fetch('/dsh-remote/server', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 276,
+        "text": "fetch('/dsh-remote/mobile-pin', { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 286,
+        "text": "const response = await fetch('/dsh-remote/mobile-pin', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 343,
+        "text": "fetch('/dsh-remote/pairing', { cache: 'no-store', method: force ? 'POST' : 'GET' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/gateway-bundle.js",
+        "line": 1978,
+        "text": "import { readFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/gateway-bundle.js",
+        "line": 1988,
+        "text": "readFile(join(directory, \"skin.css\"), \"utf8\"),"
+      },
+      {
+        "file": "lib/gateway-bundle.js",
+        "line": 1989,
+        "text": "readFile(join(directory, \"skin.js\"), \"utf8\")"
+      },
+      {
+        "file": "lib/gateway-bundle.js",
+        "line": 2016,
+        "text": "import { lstat, readFile as readFile3, readdir, stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/gateway-bundle.js",
+        "line": 2171,
+        "text": "import { mkdir, readFile as readFile2, rename, writeFile } from \"node:fs/promises\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/gateway-bundle.js",
+        "line": 6646,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/gateway-bundle.js",
+        "line": 6649,
+        "text": "execFile(file, [...args], { windowsHide: true, ...options, encoding: \"utf8\" }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 17,
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 456,
+        "text": "execFile('launchctl', ['print', `gui/${String(process.getuid())}/app.ddeck.relay`], { timeout: 2000 }, (error) => resolve(error === null))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 959,
+        "text": "const child = spawn(script.pathname, ['--ssh', suppliedSsh, '--origin', origin, '--gateway-origin', origin], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

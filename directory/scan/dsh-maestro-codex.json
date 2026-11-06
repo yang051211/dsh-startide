@@ -1,7 +1,7 @@
 {
   "name": "dsh-maestro-codex",
-  "version": "0.1.9",
-  "scannedAt": "2026-11-04T20:39:07.470Z",
+  "version": "0.1.11",
+  "scannedAt": "2026-11-06T08:17:09.251Z",
   "icon": "dsh-maestro-codex.svg",
   "network": {
     "hit": true,
@@ -13,12 +13,12 @@
       },
       {
         "file": "lib/client.js",
-        "line": 11323,
+        "line": 11415,
         "text": "const response = await fetch(teamTaskUrl(method, document.baseURI).href, {"
       },
       {
         "file": "lib/client.js",
-        "line": 12428,
+        "line": 12520,
         "text": "const response = await fetch(boardNativeUrl(method, document.baseURI), {"
       },
       {
@@ -92,6 +92,16 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/mcp-env-shim.js",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/mcp-env-shim.js",
+        "line": 30,
+        "text": "    const child = spawn(plan.file, plan.args, { ...(plan.windowsVerbatimArguments === undefined ? {} : { windowsVerbatimArguments: plan.windowsVerbatimArguments"
+      },
+      {
         "file": "lib/spawn.js",
         "line": 7,
         "text": "import { spawn } from 'node:child_process';"
@@ -105,11 +115,6 @@
         "file": "lib/spawn.js",
         "line": 21,
         "text": "export const systemSpawn = (file, args, options) => spawn(file, args, {"
-      },
-      {
-        "file": "lib/spawn.js",
-        "line": 311,
-        "text": "execFile('taskkill', ['/pid', String(pid), '/T', '/F'], { windowsHide: true, timeout: 5_000 }, () => resolvePromise());"
       }
     ]
   },

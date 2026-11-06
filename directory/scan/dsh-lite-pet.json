@@ -1,0 +1,82 @@
+{
+  "name": "dsh-lite-pet",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-06T08:17:22.406Z",
+  "icon": "dsh-lite-pet.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/index.js",
+        "line": 31,
+        "text": "const response = await fetch(path, init)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import { existsSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 92,
+        "text": "const raw = JSON.parse(readFileSync(stateFile(config), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 110,
+        "text": "current = JSON.parse(readFileSync(path, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 114,
+        "text": "writeFileSync(path, JSON.stringify({ ...current, enabled }, null, 2) + '\\n', 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 143,
+        "text": "const child = spawn(PET_EXE, ['--media', MEDIA_DIR], { stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 463,
+        "text": "const probe = spawn('reg.exe', ['query', 'HKCU\\\\Software\\\\Classes\\\\dsh', '/ve'], { windowsHide: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 494,
+        "text": "const child = spawn('cmd.exe', ['/c', 'start', '', target], { windowsHide: true, detached: true, stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "runtime/pet/DshLitePet.exe"
+  ],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

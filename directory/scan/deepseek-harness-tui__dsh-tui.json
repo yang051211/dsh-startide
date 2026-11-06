@@ -1,7 +1,7 @@
 {
   "name": "@deepseek-harness-tui/dsh-tui",
-  "version": "0.18.0",
-  "scannedAt": "2026-11-01T07:36:14.912Z",
+  "version": "0.19.0",
+  "scannedAt": "2026-11-06T08:17:02.301Z",
   "icon": "deepseek-harness-tui__dsh-tui.svg",
   "network": {
     "hit": true,
@@ -18,17 +18,17 @@
       },
       {
         "file": "lib/types/update.js",
-        "line": 306,
+        "line": 343,
         "text": "const response = await fetch(`${registryBase}/${PACKAGE_NAME}/latest`, {"
       },
       {
         "file": "lib/types/update.js",
-        "line": 409,
+        "line": 446,
         "text": "const response = await fetch(url, {"
       },
       {
         "file": "lib/types/update.js",
-        "line": 642,
+        "line": 679,
         "text": "const response = await fetch(checksumUrl, {"
       }
     ]
@@ -39,27 +39,27 @@
       {
         "file": "bin/dsh-tui.js",
         "line": 31,
-        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, realpathSync, rmSync } from 'node:fs'"
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, realpathSync, rmSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "bin/dsh-tui.js",
-        "line": 39,
+        "line": 45,
+        "text": "writeFileSync('/proc/self/comm', 'dsh-tui')"
+      },
+      {
+        "file": "bin/dsh-tui.js",
+        "line": 54,
         "text": "if (existsSync(oldBinary)) rmSync(oldBinary, { force: true })"
       },
       {
         "file": "bin/dsh-tui.js",
-        "line": 56,
+        "line": 71,
         "text": "return JSON.parse(readFileSync(p, 'utf8'))"
       },
       {
         "file": "bin/dsh-tui.js",
-        "line": 605,
+        "line": 620,
         "text": "// `healProfileModuleFallback` → mkdirSync(ownedModulesDir)），而「装坏了 →"
-      },
-      {
-        "file": "bin/dsh-tui.js",
-        "line": 684,
-        "text": "const block = /^refs:[ \\t]*\\r?\\n((?:[ \\t]+\\S.*(?:\\r?\\n|$))*)/mu.exec(readFileSync(file, 'utf8'))"
       }
     ]
   },
@@ -103,22 +103,22 @@
       },
       {
         "file": "bin/dsh-tui.js",
-        "line": 128,
+        "line": 143,
         "text": "const child = spawn(...cmd('dsh', ['--version']), { stdio: 'ignore', ...shellOpt })"
       },
       {
         "file": "bin/dsh-tui.js",
-        "line": 709,
+        "line": 724,
         "text": "const probe = spawnSync(...cmd(command, ['--version']), { stdio: 'pipe', encoding: 'utf8', ...shellOpt })"
       },
       {
         "file": "bin/dsh-tui.js",
-        "line": 857,
+        "line": 872,
         "text": "const child = spawn(...cmd('dsh', ['--profile', profile, ...dshArgs]), {"
       },
       {
         "file": "bin/dsh-tui.js",
-        "line": 889,
+        "line": 904,
         "text": "const child = spawn(process.execPath, [entry, ...appArgs], { stdio: 'inherit', env: withCompileCache(env) })"
       }
     ]
@@ -140,7 +140,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 290,
+      "line": 298,
       "text": "npm install -g @openai/codex@0.160.1"
     }
   ],

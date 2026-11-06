@@ -1,15 +1,31 @@
 {
   "name": "dsh-subagent-hub",
-  "version": "0.11.3",
-  "scannedAt": "2026-11-04T07:56:05.311Z",
+  "version": "0.11.4",
+  "scannedAt": "2026-11-06T08:17:17.408Z",
   "icon": "dsh-subagent-hub.svg",
   "network": {
     "hit": false,
     "evidence": []
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/sidecar.js",
+        "line": 9,
+        "text": "import { copyFile, readFile, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/sidecar.js",
+        "line": 30,
+        "text": "const parsed = JSON.parse(await readFile(path, 'utf8'))"
+      },
+      {
+        "file": "lib/sidecar.js",
+        "line": 48,
+        "text": "await writeFile(temporary, `${JSON.stringify(loaded, null, 2)}\\n`)"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,

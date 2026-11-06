@@ -1,7 +1,7 @@
 {
   "name": "dsh-swarm-orchestrator",
-  "version": "0.6.32",
-  "scannedAt": "2026-10-26T10:05:14.321Z",
+  "version": "0.6.33",
+  "scannedAt": "2026-11-06T08:17:15.435Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,7 +18,7 @@
       },
       {
         "file": "lib/client.js",
-        "line": 2193,
+        "line": 2201,
         "text": "void fetch(`/swarm/workspace?session=${encodeURIComponent(sessionId)}`, { signal: request.signal, cache: \"no-store\" }).then(async (response) => {"
       }
     ]
@@ -26,6 +26,11 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/artifacts.js",
+        "line": 2,
+        "text": "import { closeSync, fstatSync, lstatSync, openSync, readSync, realpathSync } from 'node:fs';"
+      },
       {
         "file": "lib/domain/duty-table.js",
         "line": 2,
@@ -45,11 +50,6 @@
         "file": "lib/domain/duty-table.js",
         "line": 151,
         "text": "unlinkSync(temporary);"
-      },
-      {
-        "file": "lib/domain/duty-table.js",
-        "line": 168,
-        "text": "raw = readFileSync(this.file, 'utf8');"
       }
     ]
   },
@@ -58,27 +58,27 @@
     "evidence": [
       {
         "file": "lib/tools/index.js",
-        "line": 40,
+        "line": 61,
         "text": "* Resolves the registry with ctx.get('tools') rather than the ctx.tools"
       },
       {
         "file": "lib/tools/index.js",
-        "line": 51,
+        "line": 72,
         "text": "disposers.push(tools.register(defineTool({"
       },
       {
         "file": "lib/tools/index.js",
-        "line": 112,
+        "line": 116,
         "text": "disposers.push(tools.register(defineTool({"
       },
       {
         "file": "lib/tools/index.js",
-        "line": 125,
+        "line": 129,
         "text": "disposers.push(tools.register(defineTool({"
       },
       {
         "file": "lib/tools/index.js",
-        "line": 144,
+        "line": 148,
         "text": "disposers.push(tools.register(defineTool({"
       }
     ]
@@ -88,12 +88,12 @@
     "evidence": [
       {
         "file": "lib/service.js",
-        "line": 2410,
+        "line": 2602,
         "text": "let outcome = await spawn(buildReviewPrompt(run, task, role));"
       },
       {
         "file": "lib/service.js",
-        "line": 2416,
+        "line": 2608,
         "text": "outcome = await spawn(buildReviewReaskPrompt(text));"
       }
     ]

@@ -1,16 +1,11 @@
 {
   "name": "dsh-agent-soul",
-  "version": "0.8.0",
-  "scannedAt": "2026-11-05T21:22:49.394Z",
+  "version": "0.9.0",
+  "scannedAt": "2026-11-06T08:17:07.699Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
-      {
-        "file": "lib/api.js",
-        "line": 524,
-        "text": "// fetch('http://127.0.0.1:PORT/api/soul/persona', {method:'POST',...}) 就能改写她的魂。"
-      },
       {
         "file": "lib/client.js",
         "line": 224,
@@ -30,6 +25,11 @@
         "file": "lib/client/api.js",
         "line": 69,
         "text": "return fetch(API + path, withToken(init))"
+      },
+      {
+        "file": "lib/http/server.js",
+        "line": 96,
+        "text": "// fetch('http://127.0.0.1:PORT/api/soul/persona', {method:'POST',...}) 就能改写她的魂。"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/api.js",
-        "line": 28,
-        "text": "import { readdirSync, readFileSync, statSync } from 'node:fs'"
-      },
-      {
-        "file": "lib/api.js",
-        "line": 1314,
-        "text": "const bytes = readFileSync(join(ASSETS_DIR, name))"
-      },
-      {
-        "file": "lib/archive.js",
+        "file": "lib/core/archive.js",
         "line": 26,
         "text": "import { readFileSync } from 'node:fs'"
       },
       {
-        "file": "lib/archive.js",
+        "file": "lib/core/archive.js",
         "line": 49,
         "text": "const data = JSON.parse(readFileSync(workspaceFile(), 'utf8'))"
       },
       {
-        "file": "lib/diary.js",
-        "line": 33,
-        "text": "import { appendFileSync, chmodSync, readFileSync, readdirSync, statSync, unlinkSync } from 'node:fs'"
+        "file": "lib/core/host.js",
+        "line": 21,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/core/host.js",
+        "line": 262,
+        "text": "const raw = readFileSync(file, 'utf8').trim()"
+      },
+      {
+        "file": "lib/core/registry.js",
+        "line": 17,
+        "text": "import { readdirSync, statSync } from 'node:fs'"
       }
     ]
   },
@@ -72,18 +72,18 @@
         "text": "const dispose = tools.register({"
       },
       {
-        "file": "lib/diary.js",
-        "line": 1212,
+        "file": "lib/diary/compose.js",
+        "line": 505,
         "text": "* 实测：工具不在 agent 或会话里，而在宿主平面的 ctx.tools 注册表，每步由"
       },
       {
-        "file": "lib/index.js",
-        "line": 67,
+        "file": "lib/host/meta.js",
+        "line": 11,
         "text": "/** 声明式依赖：没有 inject，读 ctx.systemPrompt / ctx.tools 会直接抛。 */"
       },
       {
-        "file": "lib/index.js",
-        "line": 74,
+        "file": "lib/host/meta.js",
+        "line": 18,
         "text": "export const inject = ['systemPrompt', 'tools', 'webServer', 'agentPresets', 'sessions']"
       },
       {
@@ -97,24 +97,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/api.js",
-        "line": 27,
+        "file": "lib/core/secrets.js",
+        "line": 18,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/http/routes/system.js",
+        "line": 22,
         "text": "import { spawn } from 'node:child_process'"
       },
       {
-        "file": "lib/api.js",
-        "line": 437,
-        "text": "child = spawn(cmd, args, { windowsHide: true })"
+        "file": "lib/http/routes/system.js",
+        "line": 262,
+        "text": "const child = spawn(cmd, args, { detached: true, stdio: 'ignore' })"
       },
       {
-        "file": "lib/api.js",
-        "line": 683,
-        "text": "spawn(cmd, args, { detached: true, stdio: 'ignore' }).unref()"
+        "file": "lib/http/server.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
       },
       {
-        "file": "lib/secrets.js",
-        "line": 18,
-        "text": "import { execFileSync } from 'node:child_process'"
+        "file": "tools/run-tests.mjs",
+        "line": 15,
+        "text": "import { spawnSync } from 'node:child_process'"
       }
     ]
   },
@@ -125,13 +130,7 @@
   "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [
-    "agentPresets",
-    "sessions",
-    "systemPrompt",
-    "tools",
-    "webServer"
-  ],
+  "requiredServices": [],
   "setupHints": [
     {
       "file": "README.md",

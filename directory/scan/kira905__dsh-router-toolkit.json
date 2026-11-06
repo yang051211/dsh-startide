@@ -1,0 +1,80 @@
+{
+  "name": "@kira905/dsh-router-toolkit",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-06T08:17:15.282Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/client.js",
+        "line": 123,
+        "text": "fetch(`${apiPrefix()}/state?sessionId=${encodeURIComponent(sessionId)}`)"
+      },
+      {
+        "file": "plugin/client.js",
+        "line": 143,
+        "text": "fetch(`${apiPrefix()}/run`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/alert.mjs",
+        "line": 10,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/alert.mjs",
+        "line": 46,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/alert.mjs",
+        "line": 47,
+        "text": "fs.appendFileSync(file, `${JSON.stringify(rec)}\\n`, { encoding: 'utf8' });"
+      },
+      {
+        "file": "lib/alert.mjs",
+        "line": 62,
+        "text": "try { text = fs.readFileSync(alertLogPath(opts.home), 'utf8'); } catch { return []; }"
+      },
+      {
+        "file": "lib/config.mjs",
+        "line": 22,
+        "text": "import fs from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/index.js",
+        "line": 30,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 229,
+        "text": "child = spawn(process.execPath, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

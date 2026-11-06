@@ -1,0 +1,93 @@
+{
+  "name": "dsh-plugin-take",
+  "version": "0.12.0",
+  "scannedAt": "2026-11-06T08:17:10.452Z",
+  "icon": "dsh-plugin-take.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 198,
+        "text": "const res = await fetch(path, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "index.js",
+        "line": 539,
+        "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "index.js",
+        "line": 758,
+        "text": "const res = await fetch(FEED_URL, { signal: exec && exec.signal, headers: { 'user-agent': UA } })"
+      },
+      {
+        "file": "index.js",
+        "line": 957,
+        "text": "const res = await fetch(url, { signal: exec && exec.signal, headers: { 'user-agent': UA } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "import { mkdirSync, readFileSync, renameSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 655,
+        "text": "const blob = JSON.parse(gunzipSync(readFileSync(CACHE_FILE)).toString('utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 669,
+        "text": "mkdirSync(CACHE_DIR, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 671,
+        "text": "writeFileSync(tmp, payload)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 29,
+        "text": "export const inject = ['tools', 'webServer']"
+      },
+      {
+        "file": "index.js",
+        "line": 1448,
+        "text": "if (!ctx || !ctx.tools || typeof ctx.tools.register !== 'function') {"
+      },
+      {
+        "file": "index.js",
+        "line": 1455,
+        "text": "const dispose = ctx.tools.register(definition)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

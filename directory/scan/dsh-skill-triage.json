@@ -1,0 +1,80 @@
+{
+  "name": "dsh-skill-triage",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-06T08:17:22.437Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/plugin.js",
+        "line": 21,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/plugin.js",
+        "line": 126,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/plugin.js",
+        "line": 129,
+        "text": "previous = fs.readFileSync(file, 'utf8').split('\\n').filter(Boolean)"
+      },
+      {
+        "file": "lib/plugin.js",
+        "line": 134,
+        "text": "fs.writeFileSync(file, `${next.join('\\n')}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/plugin.js",
+        "line": 14,
+        "text": "//   · ctx.tools.guard    —— 硬门禁：分诊前拒绝别的工具；use 里的 N 个 skill 没全部加载完，"
+      },
+      {
+        "file": "lib/plugin.js",
+        "line": 32,
+        "text": "export const inject = ['skills', 'tools']"
+      },
+      {
+        "file": "lib/plugin.js",
+        "line": 442,
+        "text": "ctx.tools.register(tool)"
+      },
+      {
+        "file": "lib/plugin.js",
+        "line": 579,
+        "text": "ctx.tools.guard((exec) => {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 92,
+      "text": "1. 复制插件到 `<DSH_HOME>/plugins/dsh-skill-triage`；"
+    }
+  ],
+  "skippedEntries": []
+}

@@ -1,0 +1,96 @@
+{
+  "name": "dsh-shutdown-guard",
+  "version": "1.6.0",
+  "scannedAt": "2026-11-06T08:17:17.088Z",
+  "icon": "dsh-shutdown-guard.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 728,
+        "text": "return fetch(BASE + '/ui', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 902,
+        "text": "return fetch(BASE + '/state?since=' + lastEventAt, { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 919,
+        "text": "return fetch(BASE + path, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 959,
+        "text": "fetch(BASE + '/ui', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2224,
+        "text": "return fetch(BASE + '/config', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 17,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 253,
+        "text": "fs.mkdirSync(DATA_DIR, { recursive: true })"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 254,
+        "text": "fs.appendFileSync(LOG_PATH, `[${new Date(at).toISOString()}] ${entry.kind} ${text}\\n`)"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 390,
+        "text": "raw = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'))"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 469,
+        "text": "fs.mkdirSync(DATA_DIR, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 1856,
+        "text": "const handle = subprocess.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "subprocess",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

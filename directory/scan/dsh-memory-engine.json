@@ -1,0 +1,94 @@
+{
+  "name": "dsh-memory-engine",
+  "version": "0.8.3",
+  "scannedAt": "2026-11-06T08:17:05.962Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 633,
+        "text": "return fetch(url, Object.assign({ cache: \"no-store\" }, options)).then(function (response) {"
+      },
+      {
+        "file": "lib/client.src.js",
+        "line": 54,
+        "text": "return fetch(url, Object.assign({ cache: \"no-store\" }, options)).then(function (response) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/auto-import.js",
+        "line": 1,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/auto-import.js",
+        "line": 129,
+        "text": "try { persona = await fs.readFile(settings.personaFile, 'utf8'); }"
+      },
+      {
+        "file": "lib/auto-sources.js",
+        "line": 1,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/auto-sources.js",
+        "line": 93,
+        "text": "const body = content ?? await fs.readFile(selected, 'utf8');"
+      },
+      {
+        "file": "lib/auto-sources.js",
+        "line": 96,
+        "text": "readFileSync(input) {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 9,
+        "text": "export const inject = ['tools', 'webServer'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 205,
+        "text": "for (const tool of createTools(defineTool, store, { warning: message => warn(ctx, message) })) disposers.push(ctx.tools.register(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/map.js",
+        "line": 4,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/map.js",
+        "line": 66,
+        "text": "const child = spawn(command, args, { windowsHide: true, stdio: 'ignore' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

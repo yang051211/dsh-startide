@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-garmin-connect",
-  "version": "0.1.20",
-  "scannedAt": "2026-10-26T10:04:45.774Z",
+  "version": "0.1.21",
+  "scannedAt": "2026-11-06T08:17:10.726Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -37,28 +37,28 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/fit-export.js",
-        "line": 7,
-        "text": "const node_fs_1 = require(\"node:fs\");"
-      },
-      {
-        "file": "lib/fit-export.js",
-        "line": 8,
+        "file": "lib/account-catalog.js",
+        "line": 5,
         "text": "const promises_1 = require(\"node:fs/promises\");"
       },
       {
-        "file": "lib/fit-export.js",
-        "line": 91,
-        "text": "const data = await file.readFile();"
+        "file": "lib/account-catalog.js",
+        "line": 217,
+        "text": "await handle.writeFile(JSON.stringify({ version: 1, ...value }), 'utf8');"
       },
       {
-        "file": "lib/fit-export.js",
-        "line": 296,
-        "text": "await file.writeFile(fitData);"
+        "file": "lib/cdp-browser.js",
+        "line": 8,
+        "text": "const node_fs_1 = require(\"node:fs\");"
       },
       {
-        "file": "lib/personal-client.js",
-        "line": 4,
+        "file": "lib/cdp-browser.js",
+        "line": 9,
+        "text": "const promises_1 = require(\"node:fs/promises\");"
+      },
+      {
+        "file": "lib/coach-store.js",
+        "line": 5,
         "text": "const promises_1 = require(\"node:fs/promises\");"
       }
     ]
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 12,
+        "line": 16,
         "text": "exports.inject = ['tools'];"
       },
       {
@@ -78,17 +78,17 @@
       },
       {
         "file": "lib/tools/index.js",
-        "line": 106,
-        "text": "tools.register({"
-      },
-      {
-        "file": "lib/tools/index.js",
         "line": 125,
         "text": "tools.register({"
       },
       {
         "file": "lib/tools/index.js",
-        "line": 169,
+        "line": 180,
+        "text": "tools.register({"
+      },
+      {
+        "file": "lib/tools/index.js",
+        "line": 199,
         "text": "tools.register({"
       }
     ]
@@ -97,6 +97,21 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/cdp-browser.js",
+        "line": 7,
+        "text": "const node_child_process_1 = require(\"node:child_process\");"
+      },
+      {
+        "file": "lib/cdp-browser.js",
+        "line": 114,
+        "text": "child = spawn(browserPath, browserArguments(port, profileDirectory, bridgeUrl), {"
+      },
+      {
+        "file": "lib/cdp-browser.js",
+        "line": 555,
+        "text": "const killer = spawn(taskkill, ['/pid', String(child.pid), '/T', '/F'], {"
+      },
+      {
         "file": "lib/darwin-private-acl.js",
         "line": 4,
         "text": "const node_child_process_1 = require(\"node:child_process\");"
@@ -104,16 +119,6 @@
       {
         "file": "lib/local-auth-broker.js",
         "line": 5,
-        "text": "const node_child_process_1 = require(\"node:child_process\");"
-      },
-      {
-        "file": "lib/local-auth-broker.js",
-        "line": 303,
-        "text": "child = spawn(launch.command, launch.args, {"
-      },
-      {
-        "file": "lib/windows-private-acl.js",
-        "line": 4,
         "text": "const node_child_process_1 = require(\"node:child_process\");"
       }
     ]
@@ -129,7 +134,10 @@
     ]
   },
   "dependencies": 9,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "lib/dsh-client.js",
+    "lib/workspace.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [],
   "setupHints": [],

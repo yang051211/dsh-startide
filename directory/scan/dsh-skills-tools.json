@@ -1,0 +1,82 @@
+{
+  "name": "dsh-skills-tools",
+  "version": "1.3.0",
+  "scannedAt": "2026-11-06T08:17:14.927Z",
+  "icon": "dsh-skills-tools.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 540,
+        "text": "return fetch(API_BASE + path, options).then(function (response) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/git.js",
+        "line": 6,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/git.js",
+        "line": 209,
+        "text": "fs.mkdirSync(destDir, { recursive: true })"
+      },
+      {
+        "file": "lib/git.js",
+        "line": 222,
+        "text": "try { fs.rmSync(destDir, { recursive: true, force: true }) } catch (error) {}"
+      },
+      {
+        "file": "lib/git.js",
+        "line": 223,
+        "text": "fs.mkdirSync(destDir, { recursive: true })"
+      },
+      {
+        "file": "lib/manager.js",
+        "line": 4,
+        "text": "import fs from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/git.js",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/git.js",
+        "line": 25,
+        "text": "spawn('taskkill', ['/pid', String(child.pid), '/T', '/F'], { stdio: 'ignore', windowsHide: true })"
+      },
+      {
+        "file": "lib/git.js",
+        "line": 34,
+        "text": "const child = spawn('git', args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "client/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

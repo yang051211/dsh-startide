@@ -1,0 +1,114 @@
+{
+  "name": "dsh-agent-team-workflow",
+  "version": "0.2.1-rc.1",
+  "scannedAt": "2026-11-06T08:17:21.772Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/editor/rpc.js",
+        "line": 350,
+        "text": "async fetch(request) {"
+      },
+      {
+        "file": "lib/editor/rpc.js",
+        "line": 437,
+        "text": "const response = await fetchHandler.fetch(new Request(url, init));"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/catalog/loader.js",
+        "line": 7,
+        "text": "import { readdir, readFile, lstat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/catalog/loader.js",
+        "line": 72,
+        "text": "text = await readFile(path, 'utf8');"
+      },
+      {
+        "file": "lib/engine/tracelog.js",
+        "line": 18,
+        "text": "import { appendFileSync, mkdirSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/engine/tracelog.js",
+        "line": 49,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/engine/tracelog.js",
+        "line": 51,
+        "text": "writeFileSync(logPath, '', { encoding: 'utf8', flag: 'wx' });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 27,
+        "text": "export const inject = ['commands', 'tools', 'subagents', 'agents', 'sessions', 'jobs', 'llm'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 446,
+        "text": "const disposeTools = workflowTools.map(def => ctx.tools.register(def));"
+      },
+      {
+        "file": "lib/plugin/host.js",
+        "line": 116,
+        "text": "return evaluateJudgeToolSurface(childAgent.ctx.tools.schemas(childAgent).map(s => s.name), deny);"
+      },
+      {
+        "file": "lib/plugin/host.js",
+        "line": 317,
+        "text": "const toolsSvc = adapters.ctx.tools;"
+      },
+      {
+        "file": "lib/plugin/host.js",
+        "line": 376,
+        "text": "const deny = knownDenyList(roleDenyList(run, roleKey), adapters.ctx.tools.schemas(manager).map(schema => schema.name));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/programs/runner.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/programs/runner.js",
+        "line": 17,
+        "text": "export const realSpawn = (cmd, args, options) => spawn(cmd, args, options);"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "commands",
+    "jobs",
+    "llm",
+    "sessions",
+    "subagents",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,34 +1,34 @@
 {
   "name": "@jieai/dsh-plugin-vet",
-  "version": "0.4.2",
-  "scannedAt": "2026-10-30T23:38:32.684Z",
+  "version": "0.5.27",
+  "scannedAt": "2026-11-06T08:17:12.089Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 185,
+        "line": 190,
         "text": "\"rule.R20.desc\": \"exec/spawn 实参中的下载即执行组合（curl|sh、wget|sh、curl -o 落盘）；命令别名、util.promisify 绑定、数组拼接/编码/动态段等混淆形态同判。\","
       },
       {
         "file": "lib/client.js",
-        "line": 520,
+        "line": 604,
         "text": "s in exec/spawn args (curl|sh, wget|sh, curl -o to disk); command aliases, util.promisify bindings, array-join / encoding / dynamic-segment obfuscations covered"
       },
       {
         "file": "lib/client.js",
-        "line": 1998,
+        "line": 2401,
         "text": "const res = await fetch(\"/vet/plugin?name=\" + encodeURIComponent(name), { cache: \"no-store\" });"
       },
       {
         "file": "lib/client.js",
-        "line": 2369,
+        "line": 2775,
         "text": "const res = await fetch(\"/vet/status.json\", { cache: \"no-store\" });"
       },
       {
         "file": "lib/client.js",
-        "line": 2451,
+        "line": 2857,
         "text": "const res = await fetch(\"/vet/runtime-guard\", {"
       }
     ]
@@ -39,7 +39,7 @@
       {
         "file": "lib/audit/archive.js",
         "line": 1,
-        "text": "import { existsSync, readdirSync } from 'node:fs';"
+        "text": "import { closeSync, existsSync, openSync, readdirSync, readSync } from 'node:fs';"
       },
       {
         "file": "lib/guard/config-diff.js",
@@ -48,7 +48,7 @@
       },
       {
         "file": "lib/guard/config-diff.js",
-        "line": 181,
+        "line": 183,
         "text": "out.push(readFileSync(p, 'utf8'));"
       },
       {
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/guards/official-catalog-seed.js",
-        "line": 237,
+        "line": 261,
         "text": "'@deepseek-ai/dsh-mcp-client',"
       },
       {
         "file": "lib/index.bundle.js",
-        "line": 2220,
+        "line": 2892,
         "text": "\"@deepseek-ai/dsh-mcp-client\","
       },
       {
         "file": "lib/index.bundle.js",
-        "line": 11660,
+        "line": 12958,
         "text": "var inject = [\"tools\", \"skills\"];"
       },
       {
         "file": "lib/index.bundle.js",
-        "line": 11665,
+        "line": 12963,
         "text": "ctx.tools.register(createScanPluginTool(cfg));"
       },
       {
         "file": "lib/index.bundle.js",
-        "line": 11666,
+        "line": 12964,
         "text": "ctx.tools.register(createVetDiffTool());"
       }
     ]
@@ -98,8 +98,13 @@
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 602,
+        "line": 761,
         "text": "\"suggest.spawn.unattributed\": \"Check why there is an unattributed process spawn (may come from host/core code)\","
+      },
+      {
+        "file": "lib/guard/coverage.js",
+        "line": 18,
+        "text": "export const SPAWN_MODULES = new Set(['child_process']);"
       },
       {
         "file": "lib/guard/exfil-ledger.js",
@@ -115,11 +120,6 @@
         "file": "lib/guard/metrics.js",
         "line": 43,
         "text": "        const cp = execFile(cmd, args, { encoding: 'utf8', timeout: timeoutMs, maxBuffer: 8 * 1024 * 1024 }, (err, stdout) => cb(err !== null || typeof stdout !"
-      },
-      {
-        "file": "lib/guard/runtime-classify.js",
-        "line": 42,
-        "text": "if (module === 'child_process' && PROC_OPS.has(name)) {"
       }
     ]
   },

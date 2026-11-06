@@ -1,0 +1,148 @@
+{
+  "name": "@fffangchenghao/dsh-computer-use",
+  "version": "0.4.6",
+  "scannedAt": "2026-11-06T08:17:11.742Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 199,
+        "text": "const response = await fetch(ROUTE, { credentials: 'same-origin', cache: 'no-store' });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 216,
+        "text": "const response = await fetch(ROUTE, {"
+      },
+      {
+        "file": "src/client/index.tsx",
+        "line": 286,
+        "text": "const response = await fetch(ROUTE, { credentials: 'same-origin', cache: 'no-store' })"
+      },
+      {
+        "file": "src/client/index.tsx",
+        "line": 306,
+        "text": "const response = await fetch(ROUTE, {"
+      },
+      {
+        "file": "src/web.ts",
+        "line": 3,
+        "text": "import type { IncomingMessage, ServerResponse } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/artifacts.js",
+        "line": 3,
+        "text": "import { lstat, mkdir, realpath, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/artifacts.js",
+        "line": 44,
+        "text": "await mkdir(directory, { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "lib/providers/native-helper.js",
+        "line": 3,
+        "text": "import { access, chmod, lstat, readFile, realpath, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/providers/native-helper.js",
+        "line": 4,
+        "text": "import { constants } from 'node:fs';"
+      },
+      {
+        "file": "lib/providers/native-helper.js",
+        "line": 38,
+        "text": "return createHash('sha256').update(await readFile(path)).digest('hex');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/exposure.js",
+        "line": 153,
+        "text": "this.ctx.tools.guard((exec) => {"
+      },
+      {
+        "file": "lib/exposure.js",
+        "line": 158,
+        "text": "|| !VISION_TOOL_NAMES.some(name => this.ctx.tools.get(name, exec.agent) !== undefined))"
+      },
+      {
+        "file": "lib/exposure.js",
+        "line": 211,
+        "text": "toolDisposers.push(agent.ctx.tools.register(definition));"
+      },
+      {
+        "file": "lib/exposure.js",
+        "line": 212,
+        "text": "hideActivation = agent.ctx.tools.restrict({ deny: [COMPUTER_USE_ACTIVATE] });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 22,
+        "text": "activation = ctx.tools.register(exposure.activationTool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/providers/native-helper.js",
+        "line": 178,
+        "text": "const handle = this.ctx.subprocess.spawn({"
+      },
+      {
+        "file": "lib/providers/native-helper.js",
+        "line": 227,
+        "text": "const handle = this.ctx.subprocess.spawn({"
+      },
+      {
+        "file": "lib/providers/native-helper.js",
+        "line": 465,
+        "text": "const handle = this.ctx.subprocess.spawn({"
+      },
+      {
+        "file": "lib/providers/native-helper.js",
+        "line": 519,
+        "text": "const handle = this.ctx.subprocess.spawn({"
+      },
+      {
+        "file": "lib/update.js",
+        "line": 2,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [
+    "native/macos/bin/dsh-computer-use-helper"
+  ],
+  "requiredServices": [
+    "agents",
+    "approval",
+    "sessions",
+    "settings",
+    "skills",
+    "subprocess",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

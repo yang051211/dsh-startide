@@ -1,15 +1,46 @@
 {
   "name": "dsh-offpeak-guard",
-  "version": "0.2.0",
-  "scannedAt": "2026-11-05T08:17:23.051Z",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-06T08:17:22.063Z",
   "icon": "dsh-offpeak-guard.svg",
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 228,
+        "text": "const response = await fetch('/plugins/dsh-offpeak-guard/action', {"
+      },
+      {
+        "file": "client.js",
+        "line": 483,
+        "text": "const response = await fetch('/plugins/dsh-offpeak-guard/action', {"
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 703,
+        "text": "const response = await fetch(`${options.holidayApi}/${item}`, {"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/guard.js",
+        "line": 14,
+        "text": "import { readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 667,
+        "text": "const text = await readFile(holidayCachePath, 'utf8');"
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 719,
+        "text": "await writeFile(holidayCachePath, JSON.stringify({ fetchedAt: holidayFetchedAt, dates: dynamicHolidays }, null, 2), 'utf8').catch(() => {});"
+      },
       {
         "file": "lib/store.js",
         "line": 9,
@@ -17,23 +48,8 @@
       },
       {
         "file": "lib/store.js",
-        "line": 76,
+        "line": 113,
         "text": "const text = await readFile(this.file, 'utf8');"
-      },
-      {
-        "file": "lib/store.js",
-        "line": 90,
-        "text": "await mkdir(path.dirname(this.file), { recursive: true });"
-      },
-      {
-        "file": "lib/store.js",
-        "line": 93,
-        "text": "await writeFile(temp, JSON.stringify(snapshot, null, 2), 'utf8');"
-      },
-      {
-        "file": "lib/store.js",
-        "line": 96,
-        "text": "await unlink(temp).catch(() => {});"
       }
     ]
   },
@@ -47,7 +63,7 @@
       },
       {
         "file": "index.js",
-        "line": 151,
+        "line": 177,
         "text": "disposers.push(ctx.tools.register(tool));"
       }
     ]

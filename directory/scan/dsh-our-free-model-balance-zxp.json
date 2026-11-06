@@ -1,0 +1,66 @@
+{
+  "name": "dsh-our-free-model-balance-zxp",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-06T08:17:14.019Z",
+  "icon": "dsh-our-free-model-balance-zxp.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 493,
+        "text": "const response = await fetch(`${ENDPOINT}${path}`, init);"
+      },
+      {
+        "file": "src/kernel-rpc.js",
+        "line": 91,
+        "text": "const response = await handler.fetch(request, peer)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/settings.js",
+        "line": 15,
+        "text": "import fs from 'node:fs/promises'"
+      },
+      {
+        "file": "src/settings.js",
+        "line": 109,
+        "text": "text = await fs.readFile(file, 'utf8')"
+      },
+      {
+        "file": "src/settings.js",
+        "line": 133,
+        "text": "await fs.mkdir(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "src/settings.js",
+        "line": 135,
+        "text": "await fs.writeFile(temporary, `${JSON.stringify(clean, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

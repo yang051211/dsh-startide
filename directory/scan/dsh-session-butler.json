@@ -1,14 +1,14 @@
 {
   "name": "dsh-session-butler",
-  "version": "0.1.0",
-  "scannedAt": "2026-10-28T06:59:42.118Z",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-06T08:17:20.630Z",
   "icon": "dsh-session-butler.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 53,
+        "line": 61,
         "text": "response = await fetch(`${API_PREFIX}/${method}`, {"
       }
     ]
@@ -47,14 +47,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/host/schema.js",
+        "line": 4,
+        "text": "* `ctx.tools.register()` consumes raw JSON-Schema `ToolDefinition`s: the model"
+      },
+      {
+        "file": "lib/host/schema.js",
+        "line": 91,
+        "text": "* @returns Raw object schema accepted by `ctx.tools.register()`."
+      },
+      {
         "file": "lib/host/tools.js",
         "line": 6,
         "text": "* `ctx.tools`, which is also what keeps this package free of DSH runtime"
       },
       {
         "file": "lib/host/tools.js",
-        "line": 401,
-        "text": "const disposers = [tools.register(createListTool(read)), tools.register(createDetailTool(read))];"
+        "line": 553,
+        "text": "return disposeAll([createListTool(read), createDetailTool(read)].map(definition => tools.register(definition)));"
+      },
+      {
+        "file": "lib/host/tools.js",
+        "line": 567,
+        "text": "return disposeAll(definitions.map(definition => tools.register(definition)));"
       }
     ]
   },

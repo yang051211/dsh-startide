@@ -1,7 +1,7 @@
 {
   "name": "@duke-dsh-plugins/dsh-deveco",
-  "version": "0.4.1",
-  "scannedAt": "2026-11-04T20:39:09.245Z",
+  "version": "0.4.2",
+  "scannedAt": "2026-11-06T08:17:12.134Z",
   "icon": "duke-dsh-plugins__dsh-deveco.svg",
   "network": {
     "hit": false,
@@ -32,7 +32,7 @@
       },
       {
         "file": "harmony-device.mjs",
-        "line": 30,
+        "line": 36,
         "text": "import { existsSync, readdirSync } from 'node:fs'"
       }
     ]
@@ -42,17 +42,17 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 273,
+        "line": 299,
         "text": "* `ctx.tools`（`@deepseek-ai/dsh-tools` 的 `defineTool`），让对话里的 agent"
       },
       {
         "file": "index.js",
-        "line": 447,
+        "line": 473,
         "text": "// 让对话里的 agent 可直接调用（`ctx.tools`，dsh-tools 的 defineTool）。"
       },
       {
         "file": "index.js",
-        "line": 458,
+        "line": 484,
         "text": "const off = tools.register(tool);"
       }
     ]
@@ -62,12 +62,12 @@
     "evidence": [
       {
         "file": "harmony-device.mjs",
-        "line": 29,
+        "line": 35,
         "text": "import { spawn } from 'node:child_process'"
       },
       {
         "file": "harmony-device.mjs",
-        "line": 103,
+        "line": 117,
         "text": "proc = spawn(file, argv, {"
       },
       {
@@ -77,8 +77,8 @@
       },
       {
         "file": "index.js",
-        "line": 940,
-        "text": "child = spawn(cmd, argv, {"
+        "line": 1103,
+        "text": "child = spawn(file, argv, {"
       }
     ]
   },
@@ -90,6 +90,12 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [],
-  "setupHints": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 83,
+      "text": "降级状态下设置页徽章显示「**hdc 降级（未安装 devecocli）**」；设备列表获取失败时 Tab 内会显示错误原因，而不是只给一个空下拉。想用 devecocli 的完整能力（例如更友好的 `device view` 输出）时再安装即可：`npm i -g @deveco/deveco-cli`。"
+    }
+  ],
   "skippedEntries": []
 }

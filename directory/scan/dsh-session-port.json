@@ -1,7 +1,7 @@
 {
   "name": "dsh-session-port",
-  "version": "0.2.1",
-  "scannedAt": "2026-10-26T10:05:18.825Z",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-06T08:17:17.631Z",
   "icon": "dsh-session-port.svg",
   "network": {
     "hit": true,
@@ -24,27 +24,27 @@
       {
         "file": "lib/attachments.js",
         "line": 17,
-        "text": "import { readFile } from 'node:fs/promises';"
+        "text": "import { createReadStream } from 'node:fs';"
       },
       {
         "file": "lib/attachments.js",
-        "line": 31,
-        "text": "if (typeof hostPath === 'string' && hostPath !== '') return new Uint8Array(await readFile(hostPath));"
+        "line": 18,
+        "text": "import { readFile, stat } from 'node:fs/promises';"
       },
       {
         "file": "lib/attachments.js",
-        "line": 45,
+        "line": 33,
         "text": "if (typeof hostPath === 'string' && hostPath !== '') return new Uint8Array(await readFile(hostPath));"
       },
       {
         "file": "lib/host.js",
         "line": 22,
-        "text": "import { readFile, stat, mkdir, writeFile } from 'node:fs/promises';"
+        "text": "import { createWriteStream } from 'node:fs';"
       },
       {
         "file": "lib/host.js",
-        "line": 610,
-        "text": "const buffer = await readFile(resolved);"
+        "line": 23,
+        "text": "import { readFile, stat, mkdir, rm } from 'node:fs/promises';"
       }
     ]
   },
@@ -53,12 +53,12 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 37,
+        "line": 38,
         "text": "export const inject = ['tools', 'sessionQuery', 'sessionPersistence'];"
       },
       {
         "file": "index.js",
-        "line": 268,
+        "line": 327,
         "text": "tools.register({"
       }
     ]

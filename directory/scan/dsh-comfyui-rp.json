@@ -1,0 +1,102 @@
+{
+  "name": "dsh-comfyui-rp",
+  "version": "0.2.5",
+  "scannedAt": "2026-11-06T08:17:14.340Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 151,
+        "text": "var task = fetch(key, { credentials: \"same-origin\", cache: \"force-cache\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 415,
+        "text": "var res = await fetch(API + \"/\" + action, opt);"
+      },
+      {
+        "file": "lib/comfy.js",
+        "line": 1028,
+        "text": "const res = await fetch(url, { ...options, signal: AbortSignal.timeout(timeoutMs) });"
+      },
+      {
+        "file": "lib/lora.js",
+        "line": 702,
+        "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "lib/session.js",
+        "line": 195,
+        "text": "const res = await fetch(url, { headers, signal: signal ? AbortSignal.any([ac.signal, signal]) : ac.signal });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 2,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 125,
+        "text": "fs.mkdirSync(target, { recursive: true });"
+      },
+      {
+        "file": "lib/comfy.js",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/comfy.js",
+        "line": 1186,
+        "text": "fs.mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/comfy.js",
+        "line": 1194,
+        "text": "fs.writeFileSync(full, buffer);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 144,
+        "text": "child = spawn(cmd, args, { detached: true, stdio: 'ignore' });"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 178,
+        "text": "child = spawn(cmd, args, { detached: true, stdio: 'ignore' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

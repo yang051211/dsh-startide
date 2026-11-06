@@ -1,7 +1,7 @@
 {
   "name": "@eddyskywalker/dsh-chatgpt-subscription",
-  "version": "0.59.0",
-  "scannedAt": "2026-11-05T21:22:43.477Z",
+  "version": "0.60.0",
+  "scannedAt": "2026-11-06T08:17:03.854Z",
   "icon": "eddyskywalker__dsh-chatgpt-subscription.svg",
   "network": {
     "hit": true,
@@ -38,27 +38,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 11,
+        "line": 12,
         "text": "import fs, { chmod, lstat, mkdir, open, readFile, realpath, rename, stat, unlink, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 17,
+        "line": 18,
         "text": "ants as constants$1, copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, realpathSync, rmSync, statSync, utimesSync, writeFileSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 1294,
+        "line": 1295,
         "text": "const content = await fs.readFile(catalogSnapshotPath(name), \"utf8\");"
       },
       {
         "file": "lib/index.js",
-        "line": 1326,
+        "line": 1327,
         "text": "await fs.mkdir(path.dirname(filePath), { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 1328,
+        "line": 1329,
         "text": "await fs.writeFile(tmp, JSON.stringify({"
       }
     ]
@@ -68,28 +68,28 @@
     "evidence": [
       {
         "file": "lib/codemode.js",
-        "line": 858,
+        "line": 881,
         "text": "* 2. 公开的 `ctx.tools.get(name)`（全局视图）与 `ctx.tools.get(name, key)`（该作用域视图）。"
       },
       {
         "file": "lib/codemode.js",
-        "line": 977,
+        "line": 1000,
         "text": "* 工具名不是 `run_code`：那个名字被内核保留（`tools.register()` 会抛错），所以本包"
       },
       {
         "file": "lib/codemode.js",
-        "line": 983,
-        "text": "* 子调用走公开的 `ctx.tools.execute()`，因此落到**注册表选中的执行器**上：在本预设里就是"
-      },
-      {
-        "file": "lib/codemode.js",
-        "line": 1019,
+        "line": 1115,
         "text": "* @returns 可直接交给 `ctx.tools.register()` 的原始定义。"
       },
       {
         "file": "lib/codemode.js",
-        "line": 1348,
+        "line": 1684,
         "text": "const inject = [\"tools\", \"systemPrompt\"];"
+      },
+      {
+        "file": "lib/codemode.js",
+        "line": 1835,
+        "text": "for (const definition of createDiscoveryDefinitions(rules, () => currentCatalogSnapshot() ?? catalog, () => debugRing)) tools.register(definition);"
       }
     ]
   },
@@ -98,27 +98,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 16,
+        "line": 17,
         "text": "import { execSync, spawn } from \"node:child_process\";"
       },
       {
         "file": "lib/index.js",
-        "line": 2177,
+        "line": 2178,
         "text": "const child = spawn(\"security\", args, {"
       },
       {
         "file": "lib/index.js",
-        "line": 2464,
+        "line": 2465,
         "text": "const child = spawn(\"secret-tool\", args, {"
       },
       {
         "file": "lib/index.js",
-        "line": 2618,
+        "line": 2619,
         "text": "const child = spawn(\"powershell.exe\", ["
       },
       {
         "file": "lib/index.js",
-        "line": 7678,
+        "line": 7571,
         "text": "if (process.platform === \"darwin\") spawn(\"open\", [url], {"
       }
     ]

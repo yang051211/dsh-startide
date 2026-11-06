@@ -1,7 +1,7 @@
 {
   "name": "dsh-roost",
-  "version": "1.0.2",
-  "scannedAt": "2026-11-04T20:38:49.392Z",
+  "version": "1.0.5",
+  "scannedAt": "2026-11-06T08:17:03.571Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -10,6 +10,11 @@
         "file": "client/client.js",
         "line": 49,
         "text": "const r = await fetch(API + p, { cache: 'no-store', ...init });"
+      },
+      {
+        "file": "client/client.js",
+        "line": 6428,
+        "text": "const res = await fetch(API + '/stickers/thumb?name=' + encodeURIComponent(it.name))"
       },
       {
         "file": "src/embed.js",
@@ -23,13 +28,8 @@
       },
       {
         "file": "src/host.js",
-        "line": 1274,
+        "line": 1422,
         "text": "const r = await fetch(url, { signal: AbortSignal.timeout(5000) });"
-      },
-      {
-        "file": "src/server.js",
-        "line": 12,
-        "text": "import { createServer } from 'node:http';"
       }
     ]
   },
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "src/host.js",
-        "line": 502,
+        "line": 587,
         "text": "* 优先问活着的 agent（`agent.ctx.tools.schemas()`），问不到才退回 `seen` 快照。"
       },
       {
         "file": "src/host.js",
-        "line": 547,
+        "line": 632,
         "text": "* DSH 正好给了这个口子：`ctx.tools.guard(fn)` 是**同步**守卫，"
       },
       {
         "file": "src/host.js",
-        "line": 572,
+        "line": 657,
         "text": "* 两条路都试：`ctx.tools` 是服务直接挂在上下文上的形式，"
       },
       {
         "file": "src/host.js",
-        "line": 578,
+        "line": 663,
         "text": "if (typeof ctx?.tools?.guard === 'function') t = ctx.tools;"
       },
       {
         "file": "src/host.js",
-        "line": 2026,
+        "line": 2190,
         "text": "* 挂在这里而不是插件的 ctx：`agent.ctx.tools` 是每轮都在用的那个"
       }
     ]
@@ -114,7 +114,7 @@
       {
         "file": "src/setup.js",
         "line": 15,
-        "text": "import { spawn } from 'node:child_process';"
+        "text": "import { spawn, execFileSync } from 'node:child_process';"
       },
       {
         "file": "src/setup.js",
@@ -139,7 +139,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 447,
+      "line": 478,
       "text": "setup.js       一键流程：下载解压、写配置、起停、装插件、配适配器"
     }
   ],

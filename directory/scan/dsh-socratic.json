@@ -1,0 +1,98 @@
+{
+  "name": "dsh-socratic",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-06T08:17:12.182Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 18,
+        "text": "fetch(base + '/v1/state/' + encodeURIComponent(sessionId)),"
+      },
+      {
+        "file": "client.js",
+        "line": 19,
+        "text": "fetch(base + '/v1/citations/' + encodeURIComponent(sessionId) + '?limit=8'),"
+      },
+      {
+        "file": "client.js",
+        "line": 133,
+        "text": "fetch(base + '/v1/citations/' + encodeURIComponent(sessionId) + '?turn=' + encodeURIComponent(turn))"
+      },
+      {
+        "file": "lib/transport.js",
+        "line": 27,
+        "text": "const res = await fetch(url(config, path), {"
+      },
+      {
+        "file": "lib/transport.js",
+        "line": 42,
+        "text": "const res = await fetch(url(config, path), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { appendFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "appendFileSync(LOG, JSON.stringify({ t: new Date().toISOString(), event, ...data }) + \"\\n\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "export const inject = [\"tools\", \"systemPrompt\"];"
+      },
+      {
+        "file": "index.js",
+        "line": 251,
+        "text": "ctx.tools.register(tool("
+      },
+      {
+        "file": "index.js",
+        "line": 294,
+        "text": "ctx.tools.register(tool("
+      },
+      {
+        "file": "index.js",
+        "line": 317,
+        "text": "ctx.tools.register(tool("
+      },
+      {
+        "file": "index.js",
+        "line": 336,
+        "text": "ctx.tools.register(tool("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

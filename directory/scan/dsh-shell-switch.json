@@ -1,0 +1,81 @@
+{
+  "name": "dsh-shell-switch",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-06T08:17:22.120Z",
+  "icon": "dsh-shell-switch.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 87,
+        "text": "const response = await fetch(`${apiBase()}${tail}`, init);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 23,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 94,
+        "text": "fs.appendFileSync(path.join(os.tmpdir(), 'dsh-shell-switch-debug.log'), line, 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 158,
+        "text": "const parsed = JSON.parse(fs.readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 182,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 183,
+        "text": "fs.writeFileSync(file, `${JSON.stringify(payload, null, 2)}\\n`, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 691,
+        "text": "const dispose = agent.ctx.tools.restrict({ deny: ['pwsh'] });"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sandbox",
+    "sandboxPolicy",
+    "subprocess",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

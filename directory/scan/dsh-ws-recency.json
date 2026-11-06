@@ -1,34 +1,34 @@
 {
   "name": "dsh-ws-recency",
-  "version": "0.25.1",
-  "scannedAt": "2026-11-04T20:38:51.265Z",
+  "version": "0.26.0",
+  "scannedAt": "2026-11-06T08:17:02.721Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 1558,
+        "line": 1594,
         "text": "fetch(\"/ws-recency/session-trash?sessionId=\" + encodeURIComponent(props.sessionId), {"
       },
       {
         "file": "client.js",
-        "line": 2154,
+        "line": 2190,
         "text": "var request = fetch(\"/ws-recency/session-stats?sessionId=\" + encodeURIComponent(sessionId), {"
       },
       {
         "file": "client.js",
-        "line": 2182,
+        "line": 2218,
         "text": "return fetch(\"/ws-recency/health\").then(function (response) {"
       },
       {
         "file": "client.js",
-        "line": 2249,
+        "line": 2285,
         "text": "fetch(\"/ws-recency/session-move?sessionId=\" + encodeURIComponent(sessionId), {"
       },
       {
         "file": "client.js",
-        "line": 2394,
+        "line": 2430,
         "text": "return fetch(\"/ws-recency/handoff\", {"
       }
     ]
@@ -43,23 +43,23 @@
       },
       {
         "file": "index.js",
-        "line": 143,
+        "line": 144,
         "text": "await mkdir(trashRoot, { recursive: true });"
       },
       {
         "file": "index.js",
-        "line": 634,
-        "text": "const raw = JSON.parse(await readFile(join(home, \"storages\", \"workspace.json\"), \"utf8\"));"
+        "line": 639,
+        "text": "const raw = await readFile(join(directory, `${sessionId}.json`), \"utf8\");"
       },
       {
         "file": "index.js",
-        "line": 732,
-        "text": "await mkdir(backupRoot, { recursive: true });"
+        "line": 651,
+        "text": "await mkdir(directory, { recursive: true });"
       },
       {
         "file": "index.js",
-        "line": 744,
-        "text": "if (partial !== undefined && partial !== null && typeof partial.path === \"string\") await rm(dirname(partial.path), { recursive: true, force: true });"
+        "line": 654,
+        "text": "await writeFile(temporary, JSON.stringify(payload), \"utf8\");"
       }
     ]
   },

@@ -1,11 +1,16 @@
 {
   "name": "@kira905/dsh-butler-archive",
-  "version": "0.4.0",
-  "scannedAt": "2026-10-30T23:38:41.466Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-06T08:17:14.542Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
+      {
+        "file": "bin/session-archive-health.mjs",
+        "line": 443,
+        "text": "const res = await fetch(`${baseUrl}/api/dsh-archive-sessions/auto`, { signal: AbortSignal.timeout(timeoutMs) })"
+      },
       {
         "file": "lib/client.js",
         "line": 314,
@@ -15,6 +20,11 @@
         "file": "lib/client.js",
         "line": 325,
         "text": "const res = await fetch(path, {"
+      },
+      {
+        "file": "lib/host-rpc.mjs",
+        "line": 86,
+        "text": "return fetch(`${baseUrl}${pathname}`, {"
       }
     ]
   },
@@ -22,29 +32,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/config.js",
-        "line": 19,
-        "text": "import { existsSync, readFileSync, statSync } from 'node:fs'"
+        "file": "bin/session-archive-health.mjs",
+        "line": 41,
+        "text": "import fs from 'node:fs'"
       },
       {
-        "file": "lib/config.js",
-        "line": 406,
-        "text": "return { value: JSON.parse(readFileSync(filePath, 'utf8')), error: undefined }"
+        "file": "bin/session-archive-health.mjs",
+        "line": 84,
+        "text": "return JSON.parse(fs.readFileSync(file, 'utf8'))"
       },
       {
-        "file": "lib/index.js",
-        "line": 31,
-        "text": "} from 'node:fs'"
+        "file": "bin/session-archive-health.mjs",
+        "line": 92,
+        "text": "return crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')"
       },
       {
-        "file": "lib/index.js",
-        "line": 32,
-        "text": "import { promises as fsp } from 'node:fs'"
+        "file": "bin/session-archive-health.mjs",
+        "line": 193,
+        "text": "buf = fs.readFileSync(filePath)"
       },
       {
-        "file": "lib/index.js",
-        "line": 148,
-        "text": "return JSON.parse(readFileSync(filePath, 'utf8'))"
+        "file": "bin/session-archive-health.mjs",
+        "line": 197,
+        "text": "buf = fs.readFileSync(filePath)"
       }
     ]
   },

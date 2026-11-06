@@ -1,0 +1,125 @@
+{
+  "name": "@eayonlee/dsh-tuitui-bot",
+  "version": "0.1.32",
+  "scannedAt": "2026-11-06T08:17:21.377Z",
+  "icon": "eayonlee__dsh-tuitui-bot.jpg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 209,
+        "text": "fetch(ABOUT_PATH, { cache: \"no-store\" }).then(async (res) => {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 228,
+        "text": "fetch(refresh ? UPDATE_CHECK_PATH + \"?refresh=1\" : UPDATE_CHECK_PATH, { cache: \"no-store\" }).then(async (res) => {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 252,
+        "text": "fetch(UPDATE_APPLY_PATH, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 271,
+        "text": "fetch(ABOUT_PATH, { cache: \"no-store\" }).then(async (res) => {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 510,
+        "text": "const res = await fetch(BIND_STATE_PATH, { cache: \"no-store\" });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/media/draw-tool.js",
+        "line": 8,
+        "text": "import { mkdirSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/media/draw-tool.js",
+        "line": 48,
+        "text": "mkdirSync(MEDIA_DIR, { recursive: true });"
+      },
+      {
+        "file": "lib/media/draw-tool.js",
+        "line": 50,
+        "text": "writeFileSync(file, image.bytes);"
+      },
+      {
+        "file": "lib/media/media-cleaner.js",
+        "line": 10,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/media/media-cleaner.js",
+        "line": 11,
+        "text": "import { readdir, rm, stat } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/media/draw-tool.js",
+        "line": 63,
+        "text": "tools.register(definition);"
+      },
+      {
+        "file": "lib/media/send-file-tool.js",
+        "line": 125,
+        "text": "tools.register(definition);"
+      },
+      {
+        "file": "lib/media/vision-tool.js",
+        "line": 305,
+        "text": "tools.register(definition);"
+      },
+      {
+        "file": "lib/tuitui/bot-tool.js",
+        "line": 110,
+        "text": "tools.register(definition);"
+      },
+      {
+        "file": "lib/tuitui/file-tool.js",
+        "line": 133,
+        "text": "tools.register(definition);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/setup/self-update.js",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/setup/self-update.js",
+        "line": 301,
+        "text": "const child = spawn(command, ['add', options.spec, '--save-exact'], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

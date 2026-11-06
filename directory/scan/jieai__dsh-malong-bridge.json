@@ -1,7 +1,7 @@
 {
   "name": "@jieai/dsh-malong-bridge",
-  "version": "0.5.29",
-  "scannedAt": "2026-11-02T23:01:24.737Z",
+  "version": "0.6.1",
+  "scannedAt": "2026-11-06T08:17:19.184Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -78,7 +78,7 @@
       },
       {
         "file": "dsh-bridge.mjs",
-        "line": 312,
+        "line": 320,
         "text": "ctx.tools.register({"
       }
     ]
@@ -93,8 +93,13 @@
       },
       {
         "file": "dsh-bridge.mjs",
-        "line": 157,
-        "text": "const c = spawn(process.execPath, [serverPath, \"--workspace\", stateDir, \"--max-old-space-size=512\"], {"
+        "line": 160,
+        "text": "//   spawn(node, [serverPath, '--workspace', ..., '--max-old-space-size=512'])"
+      },
+      {
+        "file": "dsh-bridge.mjs",
+        "line": 165,
+        "text": "const c = spawn(process.execPath, ['--max-old-space-size=512', serverPath, \"--workspace\", stateDir], {"
       },
       {
         "file": "server/host-config.js",
@@ -105,11 +110,6 @@
         "file": "server/host-config.js",
         "line": 133,
         "text": "const res = spawnSync(process.execPath, [cli, legacyDir, nextDir], { timeout: 60_000, encoding: 'utf8', windowsHide: true, maxBuffer: 1024 * 1024 })"
-      },
-      {
-        "file": "server/mcp-server.js",
-        "line": 4,
-        "text": "import { spawn } from 'node:child_process'"
       }
     ]
   },

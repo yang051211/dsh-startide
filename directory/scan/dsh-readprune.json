@@ -1,0 +1,86 @@
+{
+  "name": "dsh-readprune",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-06T08:17:13.613Z",
+  "icon": "dsh-readprune.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "archive.js",
+        "line": 20,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "archive.js",
+        "line": 41,
+        "text": "const raw = fs.readFileSync(indexFile(), 'utf8')"
+      },
+      {
+        "file": "archive.js",
+        "line": 54,
+        "text": "fs.mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "archive.js",
+        "line": 56,
+        "text": "fs.writeFileSync(tmp, JSON.stringify({ version: INDEX_VERSION, entries }), 'utf8')"
+      },
+      {
+        "file": "archive.js",
+        "line": 90,
+        "text": "fs.rmSync(victim, { force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "* - The catalog reads live state through ctx.tools / ctx.systemPrompt so it"
+      },
+      {
+        "file": "index.js",
+        "line": 415,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 449,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 476,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 497,
+        "text": "for (const schema of ctx.tools.schemas()) {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

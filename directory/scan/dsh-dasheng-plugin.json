@@ -1,0 +1,84 @@
+{
+  "name": "dsh-dasheng-plugin",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-06T08:17:14.410Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 20,
+        "text": "const response = await fetch(action ? 'api/dsh-dasheng/manage' : 'api/dsh-dasheng/state' + (light ? '?light=1' : ''), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 180,
+        "text": "const response = await fetch('/_dasheng/status', { credentials: 'same-origin', cache: 'no-store', signal: AbortSignal.timeout(8000) });"
+      },
+      {
+        "file": "lib/lan.mjs",
+        "line": 1,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "lib/web-gateway.mjs",
+        "line": 1,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "lib/web-gateway.mjs",
+        "line": 41,
+        "text": "const response = await fetch(launch, { redirect: 'manual', signal: AbortSignal.timeout(8000) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/images.mjs",
+        "line": 4,
+        "text": "import { constants } from 'node:fs';"
+      },
+      {
+        "file": "lib/images.mjs",
+        "line": 5,
+        "text": "import { realpath, open } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/security.mjs",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/security.mjs",
+        "line": 19,
+        "text": "saved = JSON.parse(fs.readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "lib/security.mjs",
+        "line": 24,
+        "text": "fs.mkdirSync(dir, { recursive: true, mode: 0o700 });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

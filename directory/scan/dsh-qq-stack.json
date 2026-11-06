@@ -1,0 +1,112 @@
+{
+  "name": "dsh-qq-stack",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-06T08:17:10.118Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 13,
+        "text": "const r = await fetch(API + path, {"
+      },
+      {
+        "file": "index.js",
+        "line": 98,
+        "text": "const ws = new WebSocket(url)"
+      },
+      {
+        "file": "install.sh",
+        "line": 25,
+        "text": "curl -sL -r 0-262144 -o /dev/null --connect-timeout 6 --max-time 8 -w '%{speed_download}' \"$1\" 2>/dev/null || echo 0"
+      },
+      {
+        "file": "install.sh",
+        "line": 47,
+        "text": "total=$(curl -sIL --connect-timeout 8 --max-time 15 \"$url\" 2>/dev/null | awk 'tolower($1)==\"content-length:\"{print $2}' | tail -1)"
+      },
+      {
+        "file": "install.sh",
+        "line": 48,
+        "text": "curl -fL --retry 3 --connect-timeout 15 -o \"$out\" \"$url\" >/dev/null 2>&1 &"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 3,
+        "text": "import { existsSync, readFileSync, writeFileSync, appendFileSync, renameSync, statSync, readdirSync, unlinkSync, mkdirSync, openSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "appendFileSync(file, `${new Date().toISOString()} ${line}\\n`)"
+      },
+      {
+        "file": "index.js",
+        "line": 35,
+        "text": "try { cfg = JSON.parse(readFileSync(p, 'utf8')) } catch { cfg = {} }"
+      },
+      {
+        "file": "index.js",
+        "line": 45,
+        "text": "try { writeFileSync(p, JSON.stringify(cfg, null, 2)); changed = true } catch {}"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 126,
+        "text": "const child = spawn(cmd, args, opts)"
+      },
+      {
+        "file": "index.js",
+        "line": 451,
+        "text": "try { spawnSync('bash', [`${cfg.root}/stop-qq.sh`], { timeout: 60000 }) } catch {}"
+      },
+      {
+        "file": "index.js",
+        "line": 452,
+        "text": "try { spawnSync('bash', ['-c', `rm -rf \"${cfg.root}/data/qq-home\"`], { timeout: 60000 }); pluginLog(cfg.root, 'logout 已删除 data/qq-home') } catch {}"
+      },
+      {
+        "file": "index.js",
+        "line": 468,
+        "text": "try { spawnSync('bash', [`${cfg.root}/stop-qq.sh`], { timeout: 30000 }) } catch {}"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

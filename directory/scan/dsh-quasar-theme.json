@@ -1,0 +1,77 @@
+{
+  "name": "dsh-quasar-theme",
+  "version": "0.1.7",
+  "scannedAt": "2026-11-06T08:17:15.595Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tools/audit-evidence.mjs",
+        "line": 1,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "tools/audit-evidence.mjs",
+        "line": 25,
+        "text": "try { if (existsSync(file)) record = JSON.parse(readFileSync(file, 'utf8')) } catch { /* report unverified */ }"
+      },
+      {
+        "file": "tools/audit-evidence.mjs",
+        "line": 28,
+        "text": "return [path, existsSync(file) ? sha256(readFileSync(file)) : null]"
+      },
+      {
+        "file": "tools/black-hole.test.mjs",
+        "line": 4,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "tools/black-hole.test.mjs",
+        "line": 6,
+        "text": "const source = readFileSync(new URL('../src/runtime/geodesic.js', import.meta.url), 'utf8') + '\\n' +"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tools/verify.mjs",
+        "line": 1,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "tools/verify.mjs",
+        "line": 24,
+        "text": "const child = spawnSync(process.execPath, argv, { cwd: root, stdio: 'inherit' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: node tools/build-client.mjs"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

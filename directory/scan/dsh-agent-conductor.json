@@ -1,0 +1,94 @@
+{
+  "name": "dsh-agent-conductor",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-06T08:17:16.902Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "{ id: 'grok', name: 'Grok CLI', argv: ['grok', '-p', '{task}'], install: 'npm i -g @xai-official/grok（或 curl -fsSL https://x.ai/cli/install.sh | bash）' },"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "conductor-dynamic.js",
+        "line": 14,
+        "text": "inject: ['tools', 'subprocess'],"
+      },
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "export const inject = ['tools', 'subprocess']"
+      },
+      {
+        "file": "index.js",
+        "line": 169,
+        "text": "ctx.tools.register(tool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "conductor-dynamic.js",
+        "line": 109,
+        "text": "child = subprocess.spawn({"
+      },
+      {
+        "file": "index.js",
+        "line": 116,
+        "text": "child = subprocess.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "subprocess",
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 123,
+      "text": "npm i -g @openai/codex"
+    },
+    {
+      "file": "README.md",
+      "line": 124,
+      "text": "npm i -g @anthropic-ai/claude-code"
+    },
+    {
+      "file": "README.md",
+      "line": 125,
+      "text": "npm i -g opencode-ai"
+    },
+    {
+      "file": "README.md",
+      "line": 126,
+      "text": "npm i -g @google/gemini-cli"
+    },
+    {
+      "file": "README.md",
+      "line": 127,
+      "text": "npm i -g @qwen-code/qwen-code"
+    }
+  ],
+  "skippedEntries": []
+}
