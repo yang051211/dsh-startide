@@ -1,0 +1,75 @@
+{
+  "name": "dsh-plugin-network-proxy",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-07T07:29:30.122Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 61,
+        "text": "var response = await fetch(ENDPOINT, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 99,
+        "text": "fetch(ENDPOINT, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 72,
+        "text": "const response = await fetch(url, { signal: AbortSignal.timeout(timeoutMs), redirect: 'manual' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 122,
+        "text": "const raw = await readFile(this.file, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 137,
+        "text": "await mkdir(dirname(path), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 138,
+        "text": "await writeFile(path, `${JSON.stringify({ enabled: this.enabled, proxyUrl: this.options.proxyUrl }, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 396,
+        "text": "remove = tctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

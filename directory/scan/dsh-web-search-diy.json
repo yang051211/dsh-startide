@@ -1,35 +1,35 @@
 {
   "name": "dsh-web-search-diy",
-  "version": "2.1.0",
-  "scannedAt": "2026-10-31T22:51:45.091Z",
+  "version": "2.1.1",
+  "scannedAt": "2026-11-07T07:29:28.682Z",
   "icon": "dsh-web-search-diy.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 615,
+        "line": 616,
         "text": "return await readJson(await fetch(`${OBS_BASE}/summary?${queryOf$1(filters)}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 628,
+        "line": 623,
+        "text": "return await readJson(await fetch(`${OBS_BASE}/storage`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 636,
         "text": "return await readJson(await fetch(`${OBS_BASE}/records?${queryOf$1(filters, extra)}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 639,
-        "text": "return await readJson(await fetch(`${OBS_BASE}/import`, {"
+        "line": 648,
+        "text": "await readJson(await fetch(`${OBS_BASE}/import`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 650,
-        "text": "return (await readJson(await fetch(`${OBS_BASE}/records`, {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 2345,
-        "text": "const response = await fetch(CONFIG_URL, {"
+        "line": 660,
+        "text": "return await readJson(await fetch(`${OBS_BASE}/import/status`, { headers: { accept: \"application/json\" } }));"
       }
     ]
   },
@@ -39,7 +39,7 @@
       {
         "file": "lib/index.js",
         "line": 2,
-        "text": "import { chmodSync, copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, unlinkSync, writeFileSync } from \"node:fs\";"
+        "text": "import { chmodSync, copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, statSync, unlinkSync, writeFileSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",

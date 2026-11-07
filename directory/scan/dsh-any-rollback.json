@@ -1,0 +1,70 @@
+{
+  "name": "dsh-any-rollback",
+  "version": "0.19.1-any.30",
+  "scannedAt": "2026-11-07T07:29:37.503Z",
+  "icon": "dsh-any-rollback.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1813,
+        "text": "const response = await fetch(RPC_PATH, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/artifact-track.js",
+        "line": 55,
+        "text": "} from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/artifact-track.js",
+        "line": 187,
+        "text": "await mkdir(dirname(file), { recursive: true }).catch(() => undefined);"
+      },
+      {
+        "file": "lib/artifact-track.js",
+        "line": 189,
+        "text": "await writeFile(tmp, JSON.stringify(data), 'utf8');"
+      },
+      {
+        "file": "lib/artifact-track.js",
+        "line": 415,
+        "text": "raw = await readFile(this.ownedPath(sessionId), 'utf8');"
+      },
+      {
+        "file": "lib/artifact-track.js",
+        "line": 616,
+        "text": "raw = await readFile(this.manifestPath(sessionId, key), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2845,
+        "text": "var inject = [\"commands\", \"tools\", \"settings\"];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,51 +1,41 @@
 {
   "name": "dsh-dafeiyu-emotion",
-  "version": "0.2.5",
-  "scannedAt": "2026-11-05T21:23:05.460Z",
-  "icon": null,
+  "version": "0.3.4",
+  "scannedAt": "2026-11-07T07:29:27.580Z",
+  "icon": "dsh-dafeiyu-emotion.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 741,
+        "line": 931,
         "text": "fetch(CONFIG_ENDPOINT, { cache: 'no-store' }),"
       },
       {
         "file": "lib/client.js",
-        "line": 742,
+        "line": 932,
         "text": "fetch(HEALTH_ENDPOINT, { cache: 'no-store' }),"
       },
       {
         "file": "lib/client.js",
-        "line": 758,
+        "line": 948,
         "text": "const response = await fetch(HEALTH_ENDPOINT, { cache: 'no-store' })"
       },
       {
         "file": "lib/client.js",
-        "line": 798,
+        "line": 1021,
         "text": "const response = await fetch(CONFIG_ENDPOINT, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1474,
-        "text": "const response = await fetch(ANALYZE_ENDPOINT, {"
+        "line": 1051,
+        "text": "const response = await fetch(PRIVACY_CLEANUP_ENDPOINT, { method: 'POST' })"
       }
     ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
-      {
-        "file": "scripts/test-client-registration.mjs",
-        "line": 2,
-        "text": "import { readFileSync } from 'node:fs'"
-      },
-      {
-        "file": "scripts/test-client-registration.mjs",
-        "line": 6,
-        "text": "const source = readFileSync(fileURLToPath(new URL('../lib/client.js', import.meta.url)), 'utf8')"
-      },
       {
         "file": "src/index.js",
         "line": 2,
@@ -54,12 +44,22 @@
       {
         "file": "src/index.js",
         "line": 3,
-        "text": "import { mkdtemp, rm, writeFile } from 'node:fs/promises'"
+        "text": "import { mkdtemp, readdir, readFile, rm, stat, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "src/index.js",
-        "line": 863,
-        "text": "await writeFile(wavPath, buffer)"
+        "line": 236,
+        "text": "await writeFile(input, text, 'utf8')"
+      },
+      {
+        "file": "src/index.js",
+        "line": 273,
+        "text": "return await readFile(out)"
+      },
+      {
+        "file": "src/index.js",
+        "line": 275,
+        "text": "await rm(dir, { recursive: true, force: true }).catch(() => {})"
       }
     ]
   },
@@ -73,11 +73,26 @@
       {
         "file": "src/index.js",
         "line": 1,
-        "text": "import { spawn } from 'node:child_process'"
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
       },
       {
         "file": "src/index.js",
-        "line": 582,
+        "line": 240,
+        "text": "const proc = spawn(command, ["
+      },
+      {
+        "file": "src/index.js",
+        "line": 305,
+        "text": "const probe = spawnSync("
+      },
+      {
+        "file": "src/index.js",
+        "line": 344,
+        "text": "const proc = spawn(command, ["
+      },
+      {
+        "file": "src/index.js",
+        "line": 1439,
         "text": "const proc = spawn(this.python, [defaultWorker, this.options.backendRoot], {"
       }
     ]
@@ -92,6 +107,12 @@
   "requiredServices": [
     "webServer"
   ],
-  "setupHints": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 141,
+      "text": "python -m pip install piper-tts"
+    }
+  ],
   "skippedEntries": []
 }

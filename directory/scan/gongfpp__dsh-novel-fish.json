@@ -1,7 +1,7 @@
 {
   "name": "@gongfpp/dsh-novel-fish",
-  "version": "1.0.1",
-  "scannedAt": "2026-11-05T08:17:18.538Z",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-07T07:29:30.078Z",
   "icon": "gongfpp__dsh-novel-fish.png",
   "network": {
     "hit": false,
@@ -22,17 +22,17 @@
       },
       {
         "file": "scripts/build.mjs",
-        "line": 24,
+        "line": 25,
         "text": "await writeFile(output, (await readFile(output, 'utf8')).replace(/[\\t ]+$/gmu, ''))"
       },
       {
         "file": "scripts/build.mjs",
-        "line": 33,
+        "line": 34,
         "text": "const manifest = JSON.parse(await readFile(join(directory, 'package.json'), 'utf8'))"
       },
       {
         "file": "scripts/build.mjs",
-        "line": 38,
+        "line": 39,
         "text": "? (await Promise.all(licenses.map(name => readFile(join(directory, name), 'utf8')))).join('\\n\\n')"
       }
     ]
@@ -44,6 +44,16 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "scripts/make-readme-gif.mjs",
+        "line": 7,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/make-readme-gif.mjs",
+        "line": 49,
+        "text": "const result = spawnSync('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y',"
+      },
       {
         "file": "test/host-contracts.test.js",
         "line": 3,
@@ -61,7 +71,9 @@
     "evidence": []
   },
   "dependencies": 0,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [],
   "setupHints": [],

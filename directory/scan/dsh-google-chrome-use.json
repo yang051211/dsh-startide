@@ -1,0 +1,98 @@
+{
+  "name": "dsh-google-chrome-use",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-07T07:29:29.472Z",
+  "icon": "dsh-google-chrome-use.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/plugin-version.js",
+        "line": 180,
+        "text": "fetchImpl = (url, init) => globalThis.fetch(url, init),"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/platform.js",
+        "line": 10,
+        "text": "import { accessSync, constants } from 'node:fs'"
+      },
+      {
+        "file": "src/platform.js",
+        "line": 11,
+        "text": "import { open, readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/platform.js",
+        "line": 130,
+        "text": "text = await readFile(file, 'utf8')"
+      },
+      {
+        "file": "src/plugin-version.js",
+        "line": 17,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "src/plugin-version.js",
+        "line": 18,
+        "text": "import { readdir, readFile, realpath } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 13,
+        "text": "import * as McpClient from '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "src/index.js",
+        "line": 25,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "src/index.js",
+        "line": 75,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/platform.js",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/plugin-version.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/plugin-version.js",
+        "line": 156,
+        "text": "const child = spawn(command, args, { stdio: ['ignore', 'pipe', 'pipe'], cwd, env, signal })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

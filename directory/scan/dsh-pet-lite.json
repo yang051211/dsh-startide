@@ -1,0 +1,104 @@
+{
+  "name": "dsh-pet-lite",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-07T07:29:38.087Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.cjs",
+        "line": 2,
+        "text": "n.method===`DELETE`?p(e,t):``}`,a=await fetch(i,{method:n.method,headers:r?{\"content-type\":`application/json`}:void 0,body:r?JSON.stringify(f(e,t)):void 0,cache"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 2114,
+        "text": "const response = await fetch(item.config ?? \"\", { signal: AbortSignal.timeout(15e3) });"
+      },
+      {
+        "file": "runtime/electron-helper/renderer/renderer.js",
+        "line": 42,
+        "text": " Map;async function Zt(e,t){let n=await fetch(e,t);if(!n.ok)throw Error(`Failed to fetch config ${e}: HTTP ${n.status} ${n.statusText}`);return n.text()}async f"
+      },
+      {
+        "file": "runtime/electron-helper/renderer/renderer.js",
+        "line": 70,
+        "text": "`none`)}async function Xr(){let e=await fetch(`${Rr}/dsh-pet-lite/settings`,{cache:`no-store`});if(!e.ok)throw Error(`PET_STATUS_FAILED: ${e.status}`);return aw"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 3,
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 11,
+        "text": "import { readFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 326,
+        "text": "const raw = JSON.parse(readFileSync(file, \"utf8\"));"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 342,
+        "text": "mkdirSync(join(dshHome(), \"pet-lite\"), { recursive: true });"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 344,
+        "text": "writeFileSync(tmp, JSON.stringify(value, null, 2), \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 2,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 184,
+        "text": "const child = spawn(launch.command, launch.args, {"
+      },
+      {
+        "file": "runtime/electron-helper/main.cjs",
+        "line": 332,
+        "text": "require('node:child_process').spawn("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.postinstall: skills-npm && pnpx skills experimental_install"
+      }
+    ]
+  },
+  "dependencies": 9,
+  "minifiedFiles": [
+    "dist/client.cjs",
+    "runtime/electron-helper/renderer/renderer.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

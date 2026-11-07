@@ -1,0 +1,112 @@
+{
+  "name": "dsh-easy2restart",
+  "version": "0.2.3",
+  "scannedAt": "2026-11-07T07:29:30.153Z",
+  "icon": "dsh-easy2restart.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 40,
+        "text": "fetch(API + \"/diag\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 468,
+        "text": "const r = await fetch(`${API}/health`);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 486,
+        "text": "const res = await fetch(`${API}/restart`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 862,
+        "text": "const res = await fetch(url, { headers: { accept: \"application/json\" } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 925,
+        "text": "const res = await fetch(API + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 40,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 80,
+        "text": "fs.mkdirSync(path.dirname(BOOT_FILE), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 81,
+        "text": "fs.appendFileSync(BOOT_FILE, `${new Date().toISOString()} pid=${process.pid} ${stage}\\n`, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 91,
+        "text": "fs.mkdirSync(path.dirname(DIAG_FILE), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 92,
+        "text": "fs.appendFileSync(DIAG_FILE, `${new Date().toISOString()} ${msg}\\n`, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "import { execFile, spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 310,
+        "text": "execFile("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 433,
+        "text": "execFile(\"schtasks\", [\"/Create\", \"/TN\", taskName, \"/TR\", action, \"/SC\", \"ONCE\", \"/ST\", \"00:00\", \"/F\"], (err, stdout, stderr) => {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 443,
+        "text": "execFile(\"schtasks\", [\"/Run\", \"/TN\", taskName], (err2, out2, errOut2) => {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 453,
+        "text": "execFile(\"schtasks\", [\"/Delete\", \"/TN\", taskName, \"/F\"], (e3) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

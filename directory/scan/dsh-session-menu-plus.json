@@ -1,19 +1,29 @@
 {
   "name": "dsh-session-menu-plus",
-  "version": "1.5.8",
-  "scannedAt": "2026-10-30T23:38:50.233Z",
+  "version": "1.5.10",
+  "scannedAt": "2026-11-07T07:29:32.826Z",
   "icon": "dsh-session-menu-plus.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 149,
+        "line": 271,
+        "text": "const response = await fetch(route, {"
+      },
+      {
+        "file": "client.js",
+        "line": 367,
+        "text": "const response = await fetch(CHANGES_LOCATE_ROUTE, {"
+      },
+      {
+        "file": "client.js",
+        "line": 853,
         "text": "const response = await fetch('/session-menu-plus/delete', {"
       },
       {
         "file": "client.js",
-        "line": 167,
+        "line": 871,
         "text": "const response = await fetch('/session-menu-plus/export', {"
       }
     ]
@@ -22,19 +32,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 15,
-        "text": "import { readdir, rm } from 'node:fs/promises'"
+        "file": "fs-ops.js",
+        "line": 27,
+        "text": "import { cp, lstat, mkdir, realpath, rename, rm, stat, unlink, writeFile } from 'node:fs/promises'"
       },
       {
-        "file": "index.js",
-        "line": 142,
-        "text": "await rm(onlyOwned ? directory : locationPath, { recursive: true, force: true })"
+        "file": "fs-ops.js",
+        "line": 391,
+        "text": "await writeFile(target, '', { flag: 'wx' })"
       },
       {
-        "file": "index.js",
-        "line": 154,
-        "text": "await rm(directory, { recursive: true, force: true }).catch(() => {})"
+        "file": "fs-ops.js",
+        "line": 412,
+        "text": "await mkdir(target)"
+      },
+      {
+        "file": "fs-ops.js",
+        "line": 505,
+        "text": "if (info.isSymbolicLink()) await unlink(target)"
+      },
+      {
+        "file": "fs-ops.js",
+        "line": 506,
+        "text": "else await rm(target, { recursive: true, force: false })"
       }
     ]
   },
@@ -43,8 +63,19 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "fs-ops.js",
+        "line": 26,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "fs-ops.js",
+        "line": 522,
+        "text": "const child = spawn(launcher.command, launcher.args(directory), {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

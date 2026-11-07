@@ -1,34 +1,34 @@
 {
   "name": "dsh-connect-doubao",
-  "version": "0.4.1",
-  "scannedAt": "2026-11-05T08:17:09.847Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-07T07:29:27.115Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/cli-doctor.js",
-        "line": 93,
+        "line": 88,
         "text": "const health = await fetch(`${base}/healthz`, { headers: authed });"
       },
       {
         "file": "lib/cli-doctor.js",
-        "line": 94,
+        "line": 89,
         "text": "const unauthorized = await fetch(`${base}/healthz`, { headers: { Authorization: \"Bearer wrong-secret\" } });"
       },
       {
         "file": "lib/client.js",
-        "line": 293,
+        "line": 281,
         "text": "const response = await fetch(DOUBAO_QUOTA_PATH, {"
       },
       {
         "file": "lib/client.js",
-        "line": 304,
+        "line": 292,
         "text": "const response = await fetch(DOUBAO_QUOTA_PATH, {"
       },
       {
         "file": "lib/client.js",
-        "line": 318,
+        "line": 306,
         "text": "const response = await fetch(DOUBAO_CATALOG_PATH, {"
       }
     ]
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/doubao-quota-BYF0-RMF.js",
-        "line": 3,
-        "text": "import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from \"node:fs\";"
+        "file": "lib/doubao-quota-Bq-V97h9.js",
+        "line": 2,
+        "text": "import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, unlinkSync, writeFileSync } from \"node:fs\";"
       },
       {
-        "file": "lib/doubao-quota-BYF0-RMF.js",
-        "line": 731,
+        "file": "lib/doubao-quota-Bq-V97h9.js",
+        "line": 750,
         "text": "writeFileSync(scriptPath, script, \"utf8\");"
       },
       {
-        "file": "lib/doubao-quota-BYF0-RMF.js",
-        "line": 761,
+        "file": "lib/doubao-quota-Bq-V97h9.js",
+        "line": 780,
         "text": "rmSync(scratch, {"
       },
       {
-        "file": "lib/doubao-quota-BYF0-RMF.js",
-        "line": 801,
-        "text": "mkdirSync(dirname(credentialCachePath()), { recursive: true });"
+        "file": "lib/doubao-quota-Bq-V97h9.js",
+        "line": 810,
+        "text": "mkdirSync(dirname(browserCachePath()), { recursive: true });"
       },
       {
-        "file": "lib/doubao-quota-BYF0-RMF.js",
-        "line": 802,
-        "text": "writeFileSync(credentialCachePath(), sealed, { mode: 384 });"
+        "file": "lib/doubao-quota-Bq-V97h9.js",
+        "line": 811,
+        "text": "writeFileSync(browserCachePath(), sealed, { mode: 384 });"
       }
     ]
   },
@@ -71,19 +71,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/doubao-quota-BYF0-RMF.js",
-        "line": 6,
+        "file": "lib/doubao-quota-Bq-V97h9.js",
+        "line": 5,
         "text": "import { spawnSync } from \"node:child_process\";"
       },
       {
-        "file": "lib/doubao-quota-BYF0-RMF.js",
-        "line": 460,
+        "file": "lib/doubao-quota-Bq-V97h9.js",
+        "line": 474,
         "text": "const result = spawnSync(\"powershell.exe\", ["
       },
       {
-        "file": "lib/doubao-quota-BYF0-RMF.js",
-        "line": 732,
+        "file": "lib/doubao-quota-Bq-V97h9.js",
+        "line": 751,
         "text": "const result = spawnSync(powershellPath(), ["
+      },
+      {
+        "file": "lib/doubao-status-uEa8afa1.js",
+        "line": 11,
+        "text": "import { spawn, spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/doubao-status-uEa8afa1.js",
+        "line": 1289,
+        "text": "spawnSync(\"taskkill\", ["
       }
     ]
   },
@@ -98,12 +108,12 @@
   "setupHints": [
     {
       "file": "README.en.md",
-      "line": 173,
+      "line": 197,
       "text": "npm install -g dsh-connect-doubao"
     },
     {
       "file": "README.md",
-      "line": 249,
+      "line": 266,
       "text": "npm install -g dsh-connect-doubao"
     }
   ],

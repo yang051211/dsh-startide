@@ -1,7 +1,7 @@
 {
   "name": "@ai-workbench/network",
-  "version": "0.4.9",
-  "scannedAt": "2026-10-26T10:10:50.888Z",
+  "version": "0.4.10",
+  "scannedAt": "2026-11-07T07:29:37.896Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -47,9 +47,9 @@
         "text": "const bytes = await file.readFile();"
       },
       {
-        "file": "lib/packaged-helper.js",
-        "line": 1,
-        "text": "import { readFileSync, lstatSync } from 'node:fs';"
+        "file": "lib/network.js",
+        "line": 439,
+        "text": "raw = await f.readFile();"
       }
     ]
   },
@@ -69,6 +69,11 @@
         "file": "lib/network.js",
         "line": 248,
         "text": "                child = spawn(executable.path, ['serve', '--config', settings.configFile, ...resumeIdentityOnly ? ['--resumeIdentityOnly'] : [], ...expectedConf"
+      },
+      {
+        "file": "lib/network.js",
+        "line": 456,
+        "text": "child = spawn(executable.path, ['forget', '--controlResponseMaxBytes', String(settings.controlResponseMaxBytes)], { stdio: ['pipe', 'pipe', 'ignore'] });"
       }
     ]
   },

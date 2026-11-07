@@ -1,7 +1,7 @@
 {
   "name": "dsh-cua-driver-indicator",
-  "version": "0.7.1",
-  "scannedAt": "2026-11-05T08:17:19.911Z",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-07T07:29:30.873Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,7 +18,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 455,
+        "line": 469,
         "text": "request: (url, init) => fetch(url, init),"
       }
     ]
@@ -45,6 +45,11 @@
         "file": "scripts/check-package.mjs",
         "line": 275,
         "text": "providerPatch = readFileSync(path.join(root, PROVIDER_PATCH_FILE), 'utf8');"
+      },
+      {
+        "file": "scripts/manual-snap-click-run.mjs",
+        "line": 16,
+        "text": "import { readFileSync } from 'node:fs';"
       }
     ]
   },
@@ -53,13 +58,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 133,
+        "line": 140,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "lib/index.js",
-        "line": 1108,
-        "text": "ctx.tools.register({"
+        "line": 1120,
+        "text": "disposers.push(ctx.tools.register(snapClickTool({ backend: snapBackend })));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1121,
+        "text": "disposers.push(ctx.tools.register(snapClickNamedTool({ backend: snapBackend })));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1122,
+        "text": "disposers.push(ctx.tools.register(snapSequenceTool({ backend: snapBackend })));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1123,
+        "text": "disposers.push(ctx.tools.register(snapWaitForTool({ backend: snapBackend })));"
       }
     ]
   },
@@ -73,7 +93,17 @@
       },
       {
         "file": "lib/index.js",
-        "line": 855,
+        "line": 869,
+        "text": "const proc = spawn('powershell.exe', args, { stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true });"
+      },
+      {
+        "file": "lib/snap-click.mjs",
+        "line": 30,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/snap-click.mjs",
+        "line": 689,
         "text": "const proc = spawn('powershell.exe', args, { stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true });"
       },
       {

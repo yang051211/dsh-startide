@@ -1,14 +1,14 @@
 {
   "name": "@dsh-enhanced/assistant-verifier",
-  "version": "0.1.65",
-  "scannedAt": "2026-11-03T20:52:16.159Z",
+  "version": "0.1.66",
+  "scannedAt": "2026-11-07T07:29:35.890Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/drivers.js",
-        "line": 432,
+        "line": 478,
         "text": "const response = await fetch(url, { method: 'GET', redirect: 'error', signal, headers: { accept: 'application/json,text/plain' } });"
       }
     ]
@@ -18,12 +18,12 @@
     "evidence": [
       {
         "file": "lib/creation-review-store.js",
-        "line": 1,
-        "text": "import { closeSync, constants, lstatSync, mkdirSync, openSync, realpathSync } from 'node:fs';"
+        "line": 2,
+        "text": "import { closeSync, constants, fstatSync, lstatSync, mkdirSync, openSync, realpathSync } from 'node:fs';"
       },
       {
         "file": "lib/creation-review-store.js",
-        "line": 26,
+        "line": 47,
         "text": "mkdirSync(parent, { recursive: true, mode: 0o700 });"
       },
       {
@@ -33,12 +33,12 @@
       },
       {
         "file": "lib/creation-review.js",
-        "line": 99,
+        "line": 115,
         "text": "const key = createPrivateKey(readFileSync(item.keyPath));"
       },
       {
         "file": "lib/creation-review.js",
-        "line": 106,
+        "line": 125,
         "text": "const privateKey = createPrivateKey(readFileSync(config.keyPath));"
       }
     ]
@@ -53,7 +53,7 @@
       },
       {
         "file": "lib/plugin-behavior-runner.js",
-        "line": 497,
+        "line": 524,
         "text": "const observed = await ctx.tools.execute({ callId: call.id, name: call.toolName,"
       }
     ]
@@ -68,23 +68,23 @@
       },
       {
         "file": "lib/drivers.js",
-        "line": 477,
+        "line": 523,
         "text": "        const child = spawn(authority.executable, [...authority.fixedArgs, artifactPath], { cwd: workspace, env: { ...authority.environment }, shell: false, det"
       },
       {
-        "file": "lib/plugin-behavior-runner.js",
-        "line": 239,
-        "text": "import { spawn } from 'node:child_process'"
-      },
-      {
-        "file": "lib/plugin-behavior-runner.js",
-        "line": 382,
-        "text": "child = spawn('/opt/dsh-plugin-verifier/candidate-launcher', [], {"
-      },
-      {
-        "file": "lib/source-review-git.js",
+        "file": "lib/linux-behavior-runtime.js",
         "line": 1,
-        "text": "import { spawn, spawnSync } from 'node:child_process';"
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/linux-behavior-runtime.js",
+        "line": 146,
+        "text": "const child = spawn('/usr/bin/cc', args, { cwd, env, detached: true, stdio: ['pipe', 'pipe', 'pipe'] });"
+      },
+      {
+        "file": "lib/plugin-behavior-runner.js",
+        "line": 266,
+        "text": "import { spawn } from 'node:child_process'"
       }
     ]
   },

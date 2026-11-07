@@ -1,0 +1,110 @@
+{
+  "name": "dsh-pet-skill",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-07T07:29:38.654Z",
+  "icon": "dsh-pet-skill.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/app.js",
+        "line": 16,
+        "text": "import { createServer } from \"node:http\";"
+      },
+      {
+        "file": "lib/app.js",
+        "line": 1102,
+        "text": "fetch(cb, {"
+      },
+      {
+        "file": "lib/app.js",
+        "line": 1189,
+        "text": "return fetch(url, {"
+      },
+      {
+        "file": "lib/app.js",
+        "line": 1324,
+        "text": "async fetch({ key, provider }) {"
+      },
+      {
+        "file": "lib/app.js",
+        "line": 1416,
+        "text": "async fetch({ provider, resolveAccount }) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/app.js",
+        "line": 10,
+        "text": "nc, fsyncSync, lstatSync, mkdirSync, openSync, readFileSync, readSync, readdirSync, renameSync, statSync, unlinkSync, writeFileSync, writeSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/app.js",
+        "line": 11,
+        "text": "import { appendFile, copyFile, mkdir, open, readFile, readdir, rename, stat, unlink, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/app.js",
+        "line": 134,
+        "text": "const ensureDir = () => dirReady ??= mkdir(dirname(file), { recursive: true }).then(() => void 0).catch(() => void 0);"
+      },
+      {
+        "file": "lib/app.js",
+        "line": 161,
+        "text": "if (droppedNote > 0) await appendFile(file, formatLogLine(\"warn\", `日志缓冲溢出，丢弃 ${droppedNote} 条`, now()), \"utf8\");"
+      },
+      {
+        "file": "lib/app.js",
+        "line": 162,
+        "text": "await appendFile(file, chunk, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/app.js",
+        "line": 12,
+        "text": "import { execFile, execFileSync, spawn, spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/app.js",
+        "line": 1021,
+        "text": "const child = spawn(command, args, {"
+      },
+      {
+        "file": "lib/app.js",
+        "line": 5450,
+        "text": "execFile(cmd, args, {"
+      },
+      {
+        "file": "lib/app.js",
+        "line": 14858,
+        "text": "const child = spawn(command, args, {"
+      },
+      {
+        "file": "lib/app.js",
+        "line": 14896,
+        "text": "const child = spawn(systemExe(\"rundll32.exe\"), [\"url.dll,FileProtocolHandler\", url], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 5,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

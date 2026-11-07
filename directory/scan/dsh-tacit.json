@@ -1,0 +1,64 @@
+{
+  "name": "dsh-tacit",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-07T07:29:36.252Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 666,
+        "text": "const response = await fetch('/api/tacit' + pathName, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 26,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 92,
+        "text": "fs.mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 97,
+        "text": "return JSON.parse(fs.readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 106,
+        "text": "fs.writeFileSync(tmp, JSON.stringify(value, null, 2), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

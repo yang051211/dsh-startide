@@ -1,0 +1,81 @@
+{
+  "name": "dsh-plugin-best-fit",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-07T07:29:28.911Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 69,
+        "text": "const res = await fetch('/best-fit/config.json', {"
+      },
+      {
+        "file": "lib/source.js",
+        "line": 75,
+        "text": "const res = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/asar.js",
+        "line": 13,
+        "text": "import { closeSync, existsSync, openSync, readSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 10,
+        "text": "import { chmodSync, existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 61,
+        "text": "if (!existsSync(dir)) mkdirSync(dir, { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 69,
+        "text": "writeFileSync(temp, text, { encoding: 'utf8', mode })"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 113,
+        "text": "return normalize(JSON.parse(readFileSync(path, 'utf8')))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 187,
+        "text": "tools.register(wrapped)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/proxy.js",
+        "line": 16,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

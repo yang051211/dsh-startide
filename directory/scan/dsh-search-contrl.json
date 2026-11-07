@@ -1,7 +1,7 @@
 {
   "name": "dsh-search-contrl",
-  "version": "2.2.18",
-  "scannedAt": "2026-10-26T10:10:43.313Z",
+  "version": "3.0.4",
+  "scannedAt": "2026-11-07T07:29:34.144Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,17 +13,17 @@
       },
       {
         "file": "lib/client.js",
-        "line": 132,
+        "line": 490,
         "text": "const response = await fetch(`${BRIDGE_PREFIX}/${path}`, {"
       },
       {
         "file": "lib/search-tool.js",
-        "line": 648,
+        "line": 798,
         "text": "const response = await fetch("
       },
       {
         "file": "lib/search-tool.js",
-        "line": 655,
+        "line": 805,
         "text": "'x-requested-with': 'XMLHttpRequest',"
       },
       {
@@ -36,6 +36,16 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/archive-store.js",
+        "line": 10,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/archive-store.js",
+        "line": 45,
+        "text": "raw = fs.readFileSync(`${dir}/${day}.json`, 'utf8');"
+      },
       {
         "file": "lib/cookie-capture.js",
         "line": 21,
@@ -50,16 +60,6 @@
         "file": "lib/cookie-capture.js",
         "line": 266,
         "text": "fs.rmSync(target, { recursive: true, force: true });"
-      },
-      {
-        "file": "lib/cookie-jar.js",
-        "line": 16,
-        "text": "import fs from 'node:fs';"
-      },
-      {
-        "file": "lib/cookie-jar.js",
-        "line": 167,
-        "text": "const parsed = JSON.parse(fs.readFileSync(file, 'utf8'));"
       }
     ]
   },
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 186,
+        "line": 191,
         "text": "() => toolCtx.tools.register(buildSearchTool(() => effectiveConfig(config), settingsApi)),"
       },
       {
         "file": "lib/search-tool.js",
-        "line": 607,
+        "line": 757,
         "text": "* @returns {Object} tool definition ready for ctx.tools.register"
       }
     ]

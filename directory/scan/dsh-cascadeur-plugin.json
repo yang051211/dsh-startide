@@ -1,0 +1,88 @@
+{
+  "name": "dsh-cascadeur-plugin",
+  "version": "0.4.4",
+  "scannedAt": "2026-11-07T07:29:29.112Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 92,
+        "text": "const r = await fetch(CASC_URL + '/health', { signal: ctrl.signal })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "install.ps1",
+        "line": 87,
+        "text": "& node -e \"JSON.parse(require('fs').readFileSync(process.argv[1],'utf8'));console.log('node JSON.parse: OK')\" $pkgJsonPath"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 28,
+        "text": "const PKG = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 42,
+        "text": "const raw = JSON.parse(readFileSync(SETTINGS_FILE, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 52,
+        "text": "mkdirSync(path.dirname(SETTINGS_FILE), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 37,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 348,
+        "text": "ctx.effect(() => ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 112,
+        "text": "execFile(exe, argv, { timeout: timeoutMs, maxBuffer: 64 * 1024 * 1024 }, (err, stdout, stderr) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

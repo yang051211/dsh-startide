@@ -1,7 +1,7 @@
 {
   "name": "dsh-zju-lecture-note",
-  "version": "2.2.6",
-  "scannedAt": "2026-11-06T20:48:53.512Z",
+  "version": "2.2.7",
+  "scannedAt": "2026-11-07T07:29:30.368Z",
   "icon": "dsh-zju-lecture-note.png",
   "network": {
     "hit": false,
@@ -13,11 +13,11 @@
       {
         "file": "lib/bridge.js",
         "line": 10,
-        "text": "import { existsSync, readFileSync } from \"node:fs\";"
+        "text": "import { existsSync, readFileSync, statSync } from \"node:fs\";"
       },
       {
         "file": "lib/bridge.js",
-        "line": 19,
+        "line": 67,
         "text": "return JSON.parse(readFileSync(join(PLUGIN_ROOT, \"package.json\"), \"utf8\")).version || \"0.0.0\";"
       },
       {
@@ -27,12 +27,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 456,
+        "line": 558,
         "text": "const raw = readFileSync(file, \"utf8\");"
       },
       {
         "file": "lib/index.js",
-        "line": 466,
+        "line": 568,
         "text": "const text = splitFrontmatter(readFileSync(appendixFile, \"utf8\")).body.trim();"
       }
     ]
@@ -42,8 +42,8 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 593,
-        "text": "ctx.tools.register(defineTool({"
+        "line": 696,
+        "text": "toolDisposers.push(toolsScope.tools.register(defineTool({"
       }
     ]
   },
@@ -57,18 +57,18 @@
       },
       {
         "file": "lib/bridge.js",
-        "line": 123,
-        "text": "async #spawn(candidate) {"
+        "line": 318,
+        "text": "async #spawn(candidate, session) {"
       },
       {
         "file": "lib/bridge.js",
-        "line": 140,
+        "line": 339,
         "text": "const child = spawn(candidate.command, [...candidate.args, SERVER_PATH], {"
       },
       {
         "file": "lib/bridge.js",
-        "line": 226,
-        "text": "const child = await this.#spawn(candidate);"
+        "line": 433,
+        "text": "const child = await this.#spawn(candidate, session);"
       }
     ]
   },

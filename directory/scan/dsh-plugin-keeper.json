@@ -1,0 +1,97 @@
+{
+  "name": "dsh-plugin-keeper",
+  "version": "0.3.4",
+  "scannedAt": "2026-11-07T07:29:30.885Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 912,
+        "text": "const res = await fetch(`${EXPORT_ROUTE_PREFIX}/${encodeURIComponent(filename)}`);"
+      },
+      {
+        "file": "client.js",
+        "line": 935,
+        "text": "const res = await fetch(IMPORT_UPLOAD_PATH, {"
+      },
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "import { request } from 'undici';"
+      },
+      {
+        "file": "proxy-policy.js",
+        "line": 14,
+        "text": "import { Agent, EnvHttpProxyAgent, ProxyAgent, interceptors } from 'undici';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "export.js",
+        "line": 22,
+        "text": "import { cp, mkdir, mkdtemp, readFile, readdir, rm, stat, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "export.js",
+        "line": 506,
+        "text": "const manifest = JSON.parse(await readFile(join(sourceDir, 'package.json'), 'utf8'));"
+      },
+      {
+        "file": "export.js",
+        "line": 509,
+        "text": "await mkdir(dirname(staging), { recursive: true });"
+      },
+      {
+        "file": "export.js",
+        "line": 512,
+        "text": "const patched = JSON.parse(await readFile(manifestPath, 'utf8'));"
+      },
+      {
+        "file": "export.js",
+        "line": 514,
+        "text": "await writeFile(manifestPath, `${JSON.stringify(patched, null, 2)}\\n`, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "export.js",
+        "line": 20,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 489,
+        "text": "const child = spawn('git', ['-c', 'credential.helper=', 'ls-remote', '--',"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "profileContext"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

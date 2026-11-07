@@ -1,0 +1,131 @@
+{
+  "name": "@zarpyk/dsh-mcp-manager",
+  "version": "1.5.2",
+  "scannedAt": "2026-11-07T07:29:29.774Z",
+  "icon": "zarpyk__dsh-mcp-manager.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 54,
+        "text": "return fetch(resolveApiUrl(API + path), { headers: { accept: \"application/json\" } }).then(parseJson);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 58,
+        "text": "return fetch(resolveApiUrl(`${API}/action`), {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1664,
+        "text": "const response = await route.fetch(new Request(url.toString(), { method: req.method, headers, body }));"
+      },
+      {
+        "file": "lib/probe.js",
+        "line": 269,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "lib/probe.js",
+        "line": 352,
+        "text": "const response = await fetch(spec.url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/discovery.js",
+        "line": 1,
+        "text": "import { readFile, stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/discovery.js",
+        "line": 51,
+        "text": "text = await readFile(source.file, \"utf8\");"
+      },
+      {
+        "file": "lib/probe.js",
+        "line": 2,
+        "text": "import { statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 1,
+        "text": "import { mkdir, readFile, rename, writeFile, unlink } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 79,
+        "text": "const text = await readFile(file, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge.js",
+        "line": 362,
+        "text": "const dispose = this.ctx.tools.register(definition);"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 375,
+        "text": "return typeof getTool === \"function\" ? Boolean(getTool.call(this.ctx.tools, name)) : false;"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 411,
+        "text": "record.placeholder = { name, dispose: this.ctx.tools.register(definition) };"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 10,
+        "text": "export const inject = [\"connection\", \"tools\", \"commands\", \"systemPrompt\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 181,
+        "text": "record.restrict = agent.ctx.tools.restrict({ deny: deniedNames });"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/probe.js",
+        "line": 1,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/probe.js",
+        "line": 120,
+        "text": "this.child = spawn(file, argv, {"
+      },
+      {
+        "file": "lib/probe.js",
+        "line": 232,
+        "text": "spawn(process.env.ComSpec || \"cmd.exe\", [\"/d\", \"/s\", \"/c\", `taskkill /pid ${child.pid} /T /F`], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "connection",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

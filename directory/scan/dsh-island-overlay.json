@@ -1,0 +1,95 @@
+{
+  "name": "dsh-island-overlay",
+  "version": "0.2.3",
+  "scannedAt": "2026-11-07T07:29:30.866Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 118,
+        "text": "return fetch(API + path, { cache: \"no-store\", credentials: \"same-origin\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 123,
+        "text": "return fetch(API, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/config.js",
+        "line": 1,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 57,
+        "text": "return resolve(JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8')))"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 66,
+        "text": "fs.mkdirSync(path.dirname(CONFIG_FILE), { recursive: true })"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 68,
+        "text": "fs.writeFileSync(tmp, JSON.stringify(next, null, 2), 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import fs from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { spawn, execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 219,
+        "text": "child = spawn(exe, [OVERLAY_DIR], { detached: true, stdio: 'ignore', windowsHide: true, env })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 229,
+        "text": "execFile('taskkill', ['/pid', String(child.pid), '/T', '/F'], () => {})"
+      },
+      {
+        "file": "overlay/main.js",
+        "line": 5,
+        "text": "const { execFile, spawn } = require('child_process')"
+      },
+      {
+        "file": "overlay/main.js",
+        "line": 180,
+        "text": "watchProc = spawn('powershell', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', path.join(__dirname, 'watch.ps1')], { windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

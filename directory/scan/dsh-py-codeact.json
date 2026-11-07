@@ -1,7 +1,7 @@
 {
   "name": "dsh-py-codeact",
-  "version": "0.4.2",
-  "scannedAt": "2026-11-02T23:01:27.645Z",
+  "version": "0.4.3",
+  "scannedAt": "2026-11-07T07:29:36.591Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -42,28 +42,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 692,
+        "line": 702,
         "text": "export const inject = ['tools', 'systemPrompt']"
       },
       {
         "file": "lib/index.js",
-        "line": 743,
-        "text": "const visibleSchemas = (scope) => ctx.tools.sdkSchemas(scope).filter((schema) => schema.name !== toolName)"
+        "line": 753,
+        "text": "t visibleSchemas = (scope, toolSet) => (ctx.tools.sdkSchemas ? ctx.tools.sdkSchemas(scope) : ctx.tools.definitions(scope, toolSet).map((definition) => ({ ...too"
       },
       {
         "file": "lib/index.js",
-        "line": 777,
-        "text": "p every other schema from the request. `ctx.tools.restrict()` cannot do this — it masks GLOBAL tools only, and in a preset the tools are scope-local (\"scoped re"
+        "line": 760,
+        "text": "} : (input) => ctx.tools.execute(input)"
       },
       {
         "file": "lib/index.js",
-        "line": 785,
+        "line": 797,
+        "text": "ctx.effect(() => ctx.tools.setExecutor({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 808,
         "text": "ctx.effect(() => ctx.tools.guard((execution) => {"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 836,
-        "text": "content = await ctx.waterfall(scopeTarget(ctx.tools, exec.agent), 'tools/ptc-dispatch-log', dispatch, () => Promise.resolve(working))"
       }
     ]
   },

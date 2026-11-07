@@ -1,24 +1,24 @@
 {
   "name": "dsh-notify-focus",
-  "version": "0.6.0",
-  "scannedAt": "2026-11-05T08:17:14.574Z",
+  "version": "0.7.3",
+  "scannedAt": "2026-11-07T07:29:37.112Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 86,
+        "line": 107,
         "text": "return fetch(path, {"
       },
       {
         "file": "lib/client.js",
-        "line": 377,
+        "line": 481,
         "text": "const response = await fetch(PENDING_ROUTE, { credentials: 'same-origin' })"
       },
       {
         "file": "lib/client.js",
-        "line": 493,
+        "line": 598,
         "text": "fetch(CONFIG_ROUTE, { credentials: 'same-origin' })"
       }
     ]
@@ -38,18 +38,18 @@
       },
       {
         "file": "lib/index.js",
-        "line": 25,
-        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, renameSync, statSync, unlinkSync } from 'node:fs'"
+        "line": 20,
+        "text": "import { appendFileSync, mkdirSync, renameSync, statSync } from 'node:fs'"
       },
       {
         "file": "lib/index.js",
-        "line": 272,
+        "line": 179,
         "text": "mkdirSync(dataDir, { recursive: true })"
       },
       {
         "file": "lib/index.js",
-        "line": 278,
-        "text": "appendFileSync(hostLog, `${JSON.stringify({ t: new Date().toISOString(), aumid: effectiveAumid, ...entry })}\\n`, 'utf8')"
+        "line": 187,
+        "text": "appendFileSync(hostLog, `${JSON.stringify(line)}\\n`, 'utf8')"
       }
     ]
   },
@@ -61,24 +61,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 23,
+        "file": "lib/platform/windows.js",
+        "line": 16,
         "text": "import { spawn, execFile, execFileSync } from 'node:child_process'"
       },
       {
-        "file": "lib/index.js",
-        "line": 393,
+        "file": "lib/platform/windows.js",
+        "line": 178,
         "text": "child = spawn("
       },
       {
-        "file": "lib/index.js",
-        "line": 439,
+        "file": "lib/platform/windows.js",
+        "line": 224,
         "text": "const child = spawn(command, args, { windowsHide: true, stdio: 'ignore', detached: false })"
       },
       {
-        "file": "lib/index.js",
-        "line": 654,
+        "file": "lib/platform/windows.js",
+        "line": 342,
         "text": "execFile("
+      },
+      {
+        "file": "scripts/setup.mjs",
+        "line": 9,
+        "text": "import { spawnSync } from 'node:child_process'"
       }
     ]
   },

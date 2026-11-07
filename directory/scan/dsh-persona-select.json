@@ -1,0 +1,66 @@
+{
+  "name": "dsh-persona-select",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-07T07:29:31.492Z",
+  "icon": "dsh-persona-select.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client/shared.js",
+        "line": 483,
+        "text": "const response = await fetch(ROUTE_PREFIX + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/store.js",
+        "line": 6,
+        "text": "} from 'node:fs';"
+      },
+      {
+        "file": "lib/core/store.js",
+        "line": 8,
+        "text": "import { promises as fsp } from 'node:fs';"
+      },
+      {
+        "file": "lib/core/store.js",
+        "line": 101,
+        "text": "const text = readFileSync(path, 'utf8');"
+      },
+      {
+        "file": "lib/core/store.js",
+        "line": 114,
+        "text": "await fsp.mkdir(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "lib/core/store.js",
+        "line": 117,
+        "text": "await fsp.writeFile(temporary, text, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [
+    "lib/client/shared.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

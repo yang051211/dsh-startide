@@ -1,0 +1,106 @@
+{
+  "name": "dsh-backup-rescue",
+  "version": "0.4.6",
+  "scannedAt": "2026-11-07T07:29:37.145Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 43,
+        "text": "const response = await fetch(API + path, {"
+      },
+      {
+        "file": "lib/routes.js",
+        "line": 230,
+        "text": "const response = await fetch('https://registry.npmjs.org/dsh-backup-rescue/latest');"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 213,
+        "text": "const response = await fetch('https://registry.npmjs.org/dsh-backup-rescue/latest');"
+      },
+      {
+        "file": "lib/update.js",
+        "line": 46,
+        "text": "const response = await fetch(REGISTRY_LATEST, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/backup.js",
+        "line": 14,
+        "text": "import * as fs from 'node:fs';"
+      },
+      {
+        "file": "lib/backup.js",
+        "line": 121,
+        "text": "parsed = JSON.parse(fs.readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "lib/backup.js",
+        "line": 289,
+        "text": "const raw = fs.readFileSync(path.join(modulesDir, name, 'package.json'), 'utf8');"
+      },
+      {
+        "file": "lib/backup.js",
+        "line": 459,
+        "text": "const raw = fs.readFileSync(backupPath);"
+      },
+      {
+        "file": "lib/backup.js",
+        "line": 495,
+        "text": "content = fs.readFileSync(source);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tools.js",
+        "line": 7,
+        "text": "*     才允许 `ctx.tools` 属性访问，否则抛 \"cannot get property tools without inject\"）。"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 8,
+        "text": "*  2. `tools.register(def)` 接受的是 `defineTool()` 产出的对象，形状为："
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/restore.js",
+        "line": 17,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/update.js",
+        "line": 14,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/update.js",
+        "line": 64,
+        "text": "        execFile(command, args, { cwd, timeout: timeoutMs, windowsHide: true, maxBuffer: 4 * 1024 * 1024, shell: process.platform === 'win32' }, (error, stdout,"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}
