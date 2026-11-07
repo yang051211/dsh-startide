@@ -1,20 +1,25 @@
 {
   "name": "dsh-usage-heatmap",
-  "version": "0.1.4",
-  "scannedAt": "2026-10-26T10:07:06.813Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-07T23:17:11.774Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 160,
+        "line": 195,
         "text": "_cache.promise = fetch(url, { cache: \"no-store\" }).then(function(r) {"
       },
       {
         "file": "lib/client/index.js",
-        "line": 236,
+        "line": 275,
         "text": "_cache.promise = fetch(url, { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/pricing.js",
+        "line": 109,
+        "text": "const r = await fetch('https://openrouter.ai/api/v1/models', { signal: AbortSignal.timeout(8000) });"
       }
     ]
   },
@@ -28,22 +33,22 @@
       },
       {
         "file": "lib/aggregate.js",
-        "line": 925,
+        "line": 933,
         "text": "const j = JSON.parse(fs.readFileSync(file, 'utf8'));"
       },
       {
         "file": "lib/aggregate.js",
-        "line": 978,
+        "line": 986,
         "text": "const doc = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));"
       },
       {
         "file": "lib/aggregate.js",
-        "line": 995,
+        "line": 1003,
         "text": "fs.mkdirSync(CACHE_DIR, { recursive: true });"
       },
       {
         "file": "lib/aggregate.js",
-        "line": 997,
+        "line": 1005,
         "text": "fs.writeFileSync(tmp, JSON.stringify(doc));"
       }
     ]
@@ -53,12 +58,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 8,
+        "line": 9,
         "text": "export const inject = ['tools', 'webServer'];"
       },
       {
         "file": "lib/index.js",
-        "line": 208,
+        "line": 219,
         "text": "ctx.effect(() => ctx.tools.register(defineTool({"
       }
     ]

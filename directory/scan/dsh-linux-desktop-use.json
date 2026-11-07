@@ -1,14 +1,14 @@
 {
   "name": "dsh-linux-desktop-use",
-  "version": "1.6.1",
-  "scannedAt": "2026-11-06T20:48:59.014Z",
+  "version": "1.9.0",
+  "scannedAt": "2026-11-07T23:17:14.042Z",
   "icon": "dsh-linux-desktop-use.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 137,
+        "line": 173,
         "text": "const response = await fetch(`${BASE}${path}`, {"
       }
     ]
@@ -32,14 +32,14 @@
         "text": "text = fs.readFileSync(path.join(procRoot, String(pid), 'environ'), 'utf8')"
       },
       {
+        "file": "lib/atspi.js",
+        "line": 13,
+        "text": "import { readdirSync, readFileSync } from 'node:fs'"
+      },
+      {
         "file": "lib/diagnostics.js",
         "line": 8,
         "text": "import { existsSync, statSync } from 'node:fs'"
-      },
-      {
-        "file": "lib/settings.js",
-        "line": 19,
-        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
       }
     ]
   },
@@ -77,19 +77,19 @@
         "text": "const child = spawn(plan.command, plan.argv, {"
       },
       {
+        "file": "lib/atspi.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/atspi.js",
+        "line": 253,
+        "text": "child = spawn('python3', [scriptPath], { env, stdio: ['pipe', 'pipe', 'pipe'] })"
+      },
+      {
         "file": "lib/x11.js",
         "line": 11,
         "text": "import { execFile } from 'node:child_process'"
-      },
-      {
-        "file": "lib/x11.js",
-        "line": 69,
-        "text": "const child = execFile("
-      },
-      {
-        "file": "test/integration.test.js",
-        "line": 9,
-        "text": "import { spawn } from 'node:child_process'"
       }
     ]
   },

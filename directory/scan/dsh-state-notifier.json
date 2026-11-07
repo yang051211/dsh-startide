@@ -1,0 +1,76 @@
+{
+  "name": "dsh-state-notifier",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-07T23:17:09.267Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 121,
+        "text": "async fetch(request) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/native.js",
+        "line": 9,
+        "text": "import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "src/native.js",
+        "line": 21,
+        "text": "try { return readFileSync(path, 'utf8'); } catch { return ''; }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/native.js",
+        "line": 8,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "src/native.js",
+        "line": 237,
+        "text": "execFile(executable, ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-EncodedCommand', encodeScript(script)], {"
+      },
+      {
+        "file": "src/native.js",
+        "line": 271,
+        "text": "execFile(executable, ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-EncodedCommand', encodeScript(script)], {"
+      },
+      {
+        "file": "src/native.js",
+        "line": 294,
+        "text": "execFile(executable, ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-EncodedCommand', encodeScript(script)], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

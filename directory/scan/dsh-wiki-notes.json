@@ -1,7 +1,7 @@
 {
   "name": "dsh-wiki-notes",
-  "version": "1.4.3",
-  "scannedAt": "2026-11-06T20:48:47.963Z",
+  "version": "1.5.0",
+  "scannedAt": "2026-11-07T23:17:03.951Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -17,29 +17,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/calls.js",
+        "file": "lib/config.js",
+        "line": 3,
+        "text": "import { readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 80,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 91,
+        "text": "writeFileSync(file, `${JSON.stringify(record, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "lib/corpus.js",
         "line": 15,
-        "text": "import { appendFileSync, closeSync, existsSync, fstatSync, openSync, readFileSync, readSync, statSync, writeFileSync } from 'node:fs'"
+        "text": "import { promises as fs } from 'node:fs'"
       },
       {
-        "file": "lib/calls.js",
-        "line": 87,
-        "text": "return readFileSync(file, 'utf8')"
-      },
-      {
-        "file": "lib/calls.js",
-        "line": 128,
-        "text": "return parseLines(readFileSync(file, 'utf8')).length"
-      },
-      {
-        "file": "lib/calls.js",
-        "line": 155,
-        "text": "kept = parseLines(readFileSync(file, 'utf8')).slice(-keepLines)"
-      },
-      {
-        "file": "lib/calls.js",
-        "line": 160,
-        "text": "writeFileSync(file, kept.map((row) => JSON.stringify(row) + '\\n').join(''))"
+        "file": "lib/corpus.js",
+        "line": 253,
+        "text": "text = await fs.readFile(entry.abs, 'utf8')"
       }
     ]
   },
@@ -48,27 +48,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 31,
-        "text": "export const inject = ['tools', 'webServer', 'systemPrompt']"
+        "line": 32,
+        "text": "export const inject = ['tools', 'webServer', 'systemPrompt', 'sessions']"
       },
       {
         "file": "lib/index.js",
-        "line": 930,
+        "line": 1100,
         "text": "disposers.push(ctx.tools.register({"
       },
       {
         "file": "lib/index.js",
-        "line": 977,
+        "line": 1156,
         "text": "disposers.push(ctx.tools.register({"
       },
       {
         "file": "lib/index.js",
-        "line": 1025,
+        "line": 1214,
         "text": "disposers.push(ctx.tools.register({"
       },
       {
         "file": "lib/index.js",
-        "line": 1050,
+        "line": 1242,
         "text": "const register = () => ctx.tools.register({"
       }
     ]
@@ -83,7 +83,7 @@
       },
       {
         "file": "lib/bridge.js",
-        "line": 77,
+        "line": 87,
         "text": "child = spawn(pythonExe, [script, command], {"
       }
     ]
@@ -96,6 +96,7 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
+    "sessions",
     "systemPrompt",
     "tools",
     "webServer"

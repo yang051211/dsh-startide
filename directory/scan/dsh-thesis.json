@@ -1,7 +1,7 @@
 {
   "name": "dsh-thesis",
-  "version": "2.0.2",
-  "scannedAt": "2026-10-26T10:05:42.518Z",
+  "version": "2.1.1",
+  "scannedAt": "2026-11-07T23:17:09.189Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -37,9 +37,9 @@
         "text": "content: await readFile(SKILL_BODY_PATH, 'utf8'),"
       },
       {
-        "file": "lib/index.js",
-        "line": 41,
-        "text": "export const inject = ['tools', 'fs'];"
+        "file": "lib/figure/actions.js",
+        "line": 16,
+        "text": "import { readFileSync, statSync } from 'node:fs';"
       }
     ]
   },
@@ -77,6 +77,21 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/figure/lib/export.js",
+        "line": 18,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/figure/lib/export.js",
+        "line": 27,
+        "text": "return spawnSync(command, [...args], {"
+      },
+      {
+        "file": "lib/figure/lib/export.js",
+        "line": 148,
+        "text": "result = spawn(engine.command, args, {"
+      },
+      {
         "file": "lib/paper/lib/defense.js",
         "line": 12,
         "text": "import { spawnSync } from 'node:child_process';"
@@ -85,21 +100,6 @@
         "file": "lib/paper/lib/defense.js",
         "line": 63,
         "text": "const count = spawnSync('git', ['-C', root, 'rev-list', '--count', 'HEAD'], { encoding: 'utf8' });"
-      },
-      {
-        "file": "lib/paper/lib/defense.js",
-        "line": 66,
-        "text": "const first = spawnSync('git', ['-C', root, 'log', '--reverse', '--format=%cs', 'HEAD'], { encoding: 'utf8' });"
-      },
-      {
-        "file": "lib/paper/lib/defense.js",
-        "line": 67,
-        "text": "const last = spawnSync('git', ['-C', root, 'log', '-1', '--format=%cs', 'HEAD'], { encoding: 'utf8' });"
-      },
-      {
-        "file": "lib/ppt/convert.js",
-        "line": 18,
-        "text": "import { spawnSync } from 'node:child_process';"
       }
     ]
   },

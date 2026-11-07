@@ -1,0 +1,126 @@
+{
+  "name": "dsh-seal-scripts",
+  "version": "0.4.10",
+  "scannedAt": "2026-11-07T23:17:14.129Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 29,
+        "text": "fetch(API + 'locale', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 561,
+        "text": "res = await fetch(API + path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body || {}) })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 750,
+        "text": "var res = await fetch(API + 'state')"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 819,
+        "text": "var res = await fetch(API + 'options')"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 828,
+        "text": "var res = await fetch(API + 'toolSequence')"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/assembly.js",
+        "line": 9,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/core/assembly.js",
+        "line": 90,
+        "text": "return parseMemory(fs.readFileSync(path.join(dir, file), 'utf8'))"
+      },
+      {
+        "file": "lib/core/health.js",
+        "line": 8,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/core/health.js",
+        "line": 9,
+        "text": "import fsp from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/core/health.js",
+        "line": 23,
+        "text": "const parsed = JSON.parse(fs.readFileSync(healthPath(dshHome), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/index.js",
+        "line": 380,
+        "text": "logger.warn?.('宿主没有 tools.register()，回顾工具不装')"
+      },
+      {
+        "file": "lib/core/index.js",
+        "line": 432,
+        "text": "const off = scope.tools.register(definition)"
+      },
+      {
+        "file": "lib/core/tool.js",
+        "line": 14,
+        "text": "* 不依赖 @deepseek-ai/dsh-tools：ctx.tools.register() 只要一个 { name, description,"
+      },
+      {
+        "file": "lib/core/tool.js",
+        "line": 358,
+        "text": "* 读工具定义（直接给 ctx.tools.register 用）。一次只交给模型一条命中的回顾。"
+      },
+      {
+        "file": "lib/host/capabilities.js",
+        "line": 60,
+        "text": "need('tools.register', 'tools.register()', fn(tools?.register))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/schema-runner.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/core/schema-runner.js",
+        "line": 148,
+        "text": "child = spawn(cmd, argv, { cwd, env, windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'], detached })"
+      },
+      {
+        "file": "lib/core/schema-runner.js",
+        "line": 208,
+        "text": "const k = spawn('taskkill', ['/pid', String(child.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

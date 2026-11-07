@@ -1,0 +1,95 @@
+{
+  "name": "@s0meb0dy3/dsh-scratch-workspace",
+  "version": "1.7.0",
+  "scannedAt": "2026-11-07T23:17:04.929Z",
+  "icon": "s0meb0dy3__dsh-scratch-workspace.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "core.js",
+        "line": 1,
+        "text": "import * as fs from 'node:fs/promises';"
+      },
+      {
+        "file": "core.js",
+        "line": 2,
+        "text": "import { constants } from 'node:fs';"
+      },
+      {
+        "file": "core.js",
+        "line": 93,
+        "text": "await fs.mkdir(this._stateDir, { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "core.js",
+        "line": 104,
+        "text": "state = JSON.parse(await file.readFile('utf8'));"
+      },
+      {
+        "file": "core.js",
+        "line": 167,
+        "text": "await handle.writeFile(`${JSON.stringify(next, null, 2)}\\n`);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host.js",
+        "line": 1054,
+        "text": "var inject = [\"connection\", \"webServer\", \"workspaceRegistry\", \"sessionController\", \"sessionPersistence\", \"sessions\", \"workingDirectory\", \"tools\", \"terminalContr"
+      },
+      {
+        "file": "host.js",
+        "line": 1081,
+        "text": "  ctx.effect(() => ctx.tools.guard((exec) => exec.agent && service.isBlocked(exec.agent) ? \"\\u4E34\\u65F6\\u5DE5\\u4F5C\\u533A\\u6B63\\u5728\\u6E05\\u7406\\u6216\\u5DF2\\u"
+      },
+      {
+        "file": "host.js",
+        "line": 1134,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "export const inject = ['connection','webServer','workspaceRegistry','sessionController','sessionPersistence','sessions','workingDirectory','tools','terminalCont"
+      },
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "ctx.effect(()=>ctx.tools.guard(exec => exec.agent && service.isBlocked(exec.agent) ? '临时工作区正在清理或已完成，禁止继续执行工具。' : undefined),'scratch-workspace: cleanup fence');"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host.js",
+        "line": 18,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "trash.js",
+        "line": 5,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

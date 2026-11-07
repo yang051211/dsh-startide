@@ -1,30 +1,35 @@
 {
   "name": "dsh-reload-buttons",
-  "version": "0.1.4",
-  "scannedAt": "2026-11-07T07:29:30.278Z",
+  "version": "0.1.6",
+  "scannedAt": "2026-11-07T23:17:07.188Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 102,
+        "line": 103,
         "text": "const res = await fetch(new URL(url, document.baseURI), { cache: \"no-store\" });"
       },
       {
         "file": "lib/client.js",
-        "line": 112,
-        "text": "await fetch(api(ROUTE), { method: \"POST\", headers: { \"content-type\": \"application/json\" }, body: \"{}\" });"
+        "line": 114,
+        "text": "const res = await fetch(api(PING_ROUTE), { method: \"GET\", cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 121,
+        "text": "const res = await fetch(api(ROUTE), { method: \"POST\", headers: { \"content-type\": \"application/json\" }, body: \"{}\" });"
       },
       {
         "file": "src/entry.jsx",
-        "line": 69,
+        "line": 70,
         "text": "const res = await fetch(new URL(url, document.baseURI), { cache: 'no-store' })"
       },
       {
         "file": "src/entry.jsx",
-        "line": 81,
-        "text": "await fetch(api(ROUTE), { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{}' })"
+        "line": 86,
+        "text": "const res = await fetch(api(PING_ROUTE), { method: 'GET', cache: 'no-store' })"
       }
     ]
   },
@@ -53,7 +58,7 @@
       },
       {
         "file": "index.js",
-        "line": 39,
+        "line": 41,
         "text": "mkdirSync(dir, { recursive: true })"
       }
     ]
@@ -82,7 +87,7 @@
       },
       {
         "file": "index.js",
-        "line": 70,
+        "line": 72,
         "text": "const child = spawn(process.execPath, ["
       }
     ]

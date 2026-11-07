@@ -1,24 +1,34 @@
 {
   "name": "dsh-super-ppts",
-  "version": "1.5.1",
-  "scannedAt": "2026-10-26T10:09:02.571Z",
+  "version": "2.0.0",
+  "scannedAt": "2026-11-07T23:17:13.435Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 525,
+        "line": 751,
         "text": "return fetch(API + \"/\" + method, {"
       },
       {
         "file": "lib/client.js",
-        "line": 550,
+        "line": 776,
         "text": "return fetch(\"/super-ppts/tasks/upload\" + query, {"
       },
       {
         "file": "lib/client.js",
-        "line": 3762,
+        "line": 2018,
+        "text": "return fetch(url, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2496,
+        "text": "return fetch(url, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 4819,
         "text": "fetch(UPLOAD + query, { method: \"POST\", headers: { \"content-type\": \"application/octet-stream\" }, body: file })"
       }
     ]
@@ -27,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 32,
-        "text": "import { rmSync } from 'node:fs';"
+        "file": "lib/contracts.js",
+        "line": 13,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
       },
       {
-        "file": "lib/index.js",
-        "line": 62,
-        "text": "rmSync(dir, { recursive: true, force: true });"
+        "file": "lib/contracts.js",
+        "line": 119,
+        "text": "const raw = JSON.parse(readFileSync(file, 'utf8'));"
       },
       {
-        "file": "lib/routes.js",
-        "line": 1,
-        "text": "import { existsSync, readFileSync } from 'node:fs';"
+        "file": "lib/contracts.js",
+        "line": 131,
+        "text": "mkdirSync(CONTRACTS_DIR, { recursive: true });"
       },
       {
-        "file": "lib/routes.js",
-        "line": 399,
-        "text": "const body = readFileSync(file);"
+        "file": "lib/contracts.js",
+        "line": 134,
+        "text": "writeFileSync(tmp, JSON.stringify(contract, null, 2) + '\\n', 'utf8');"
       },
       {
-        "file": "lib/routes.js",
-        "line": 446,
-        "text": "const body = readFileSync(file);"
+        "file": "lib/contracts.js",
+        "line": 138,
+        "text": "return 'sha256:' + createHash('sha256').update(readFileSync(file)).digest('hex');"
       }
     ]
   },
@@ -79,13 +89,23 @@
       {
         "file": "lib/index.js",
         "line": 86,
-        "text": "disposers.push(ctx.tools.register(pptsTaskTool));"
+        "text": "disposers.push(ctx.tools.register(pptsContractTool));"
       }
     ]
   },
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/python.js",
+        "line": 8,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/python.js",
+        "line": 19,
+        "text": "execFile(cmd, [...args], { timeout: timeoutMs, cwd: packageRoot, maxBuffer: 10 * 1024 * 1024 }, (error, stdout, stderr) => {"
+      },
       {
         "file": "lib/templates.js",
         "line": 18,
@@ -100,16 +120,6 @@
         "file": "lib/templates.js",
         "line": 344,
         "text": "            execFile('pdftoppm', ['-jpeg', '-f', '1', '-l', '1', '-scale-to', '480', pdfPath, join(workDir, 'thumb')], { timeout: 30_000, maxBuffer: 8 * 1024 * "
-      },
-      {
-        "file": "lib/tools.js",
-        "line": 18,
-        "text": "import { execFile } from 'node:child_process';"
-      },
-      {
-        "file": "lib/tools.js",
-        "line": 36,
-        "text": "execFile(cmd, [...args], { timeout: timeoutMs, cwd: packageRoot, maxBuffer: 10 * 1024 * 1024 }, (error, stdout, stderr) => {"
       }
     ]
   },

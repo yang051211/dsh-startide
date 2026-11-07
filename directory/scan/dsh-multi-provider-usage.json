@@ -1,24 +1,29 @@
 {
   "name": "dsh-multi-provider-usage",
-  "version": "0.8.0",
-  "scannedAt": "2026-11-06T08:17:21.939Z",
+  "version": "0.8.6",
+  "scannedAt": "2026-11-07T23:17:08.187Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 889,
-        "text": "const res = await fetch(url, { cache: \"no-store\" });"
+        "line": 1047,
+        "text": "const res = await fetch(url, { cache: \"no-store\", headers });"
       },
       {
         "file": "lib/client.js",
-        "line": 1369,
+        "line": 1619,
         "text": "const res = await fetch(path, init);"
       },
       {
+        "file": "lib/client.min.js",
+        "line": 3,
+        "text": " 0:{\"if-none-match\":ce.current},U=await fetch(F,{cache:\"no-store\",headers:Y});if(!s)return;if(U.status===304){N();return}const T=await U.json().catch(()=>null);"
+      },
+      {
         "file": "lib/index.js",
-        "line": 849,
+        "line": 937,
         "text": "const res = await fetch(`https://registry.npmjs.org/${NPM_PACKAGE}/latest`, {"
       }
     ]
@@ -72,7 +77,9 @@
     "evidence": []
   },
   "dependencies": 0,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "lib/client.min.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [
     "commands",

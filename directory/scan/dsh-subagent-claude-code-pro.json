@@ -1,0 +1,90 @@
+{
+  "name": "dsh-subagent-claude-code-pro",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-07T23:17:14.763Z",
+  "icon": "dsh-subagent-claude-code-pro.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/deliver.js",
+        "line": 18,
+        "text": "import { mkdirSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/deliver.js",
+        "line": 95,
+        "text": "mkdirSync(directory, { recursive: true })"
+      },
+      {
+        "file": "lib/deliver.js",
+        "line": 98,
+        "text": "writeFileSync(path, Buffer.from(image.data, 'base64'))"
+      },
+      {
+        "file": "lib/inputs.js",
+        "line": 13,
+        "text": "import { readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/inputs.js",
+        "line": 68,
+        "text": "bytes = readFileSync(path)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 401,
+        "text": "agent.ctx.tools.register(createClaudeCodeTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/run.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/run.js",
+        "line": 88,
+        "text": "/** @type {import('node:child_process').ChildProcessWithoutNullStreams} */"
+      },
+      {
+        "file": "lib/run.js",
+        "line": 91,
+        "text": "child = spawn(command, [...args], {"
+      },
+      {
+        "file": "scripts/doctor.mjs",
+        "line": 14,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/doctor.mjs",
+        "line": 27,
+        "text": "const result = spawnSync(command, args, { encoding: 'utf8', timeout })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

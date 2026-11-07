@@ -1,0 +1,131 @@
+{
+  "name": "dsh-waycraft",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-07T23:17:07.780Z",
+  "icon": "dsh-waycraft.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 2946,
+        "text": "return false; // wget writes files by default"
+      },
+      {
+        "file": "dist/auth/oauth-flow.js",
+        "line": 8,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 1538,
+        "text": "const response = await fetch(new URL(\"api/waycraft-skills.catalog\", base), {"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 13841,
+        "text": "return false; // wget writes files by default"
+      },
+      {
+        "file": "dist/http.js",
+        "line": 16,
+        "text": "import { ProxyAgent, fetch as undiciFetch } from 'undici';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/auth/claude-code-creds.js",
+        "line": 10,
+        "text": "import { chmodSync, existsSync, lstatSync, mkdirSync, readFileSync, writeFileSync, } from 'node:fs';"
+      },
+      {
+        "file": "dist/auth/claude-code-creds.js",
+        "line": 108,
+        "text": "return readFileSync(path, 'utf8');"
+      },
+      {
+        "file": "dist/auth/claude-code-creds.js",
+        "line": 122,
+        "text": "mkdirSync(dir, { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "dist/auth/claude-code-creds.js",
+        "line": 123,
+        "text": "writeFileSync(path, raw, { encoding: 'utf8', mode: 0o600 });"
+      },
+      {
+        "file": "dist/auth/store.js",
+        "line": 18,
+        "text": "import { chmod, mkdir, readFile, rename, rm, writeFile, } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/skills.js",
+        "line": 1349,
+        "text": "const stopTool = tools.register(defineTool({"
+      },
+      {
+        "file": "dist/subscriptions.js",
+        "line": 925,
+        "text": "agent.ctx.tools.restrict({ deny });"
+      },
+      {
+        "file": "dist/tools/image-generate.js",
+        "line": 245,
+        "text": "* @returns the tool to register on `ctx.tools`."
+      },
+      {
+        "file": "dist/tools/video-generate.js",
+        "line": 195,
+        "text": "* @returns the tool to register on `ctx.tools`."
+      },
+      {
+        "file": "dist/tools/x-search.js",
+        "line": 111,
+        "text": "* @returns the tool to register on `ctx.tools`."
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/auth/claude-code-creds.js",
+        "line": 9,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "dist/providers/claude.js",
+        "line": 6,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "dist/skills-repos.js",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "dist/skills-repos.js",
+        "line": 576,
+        "text": "const child = spawn(executable, [...GIT_OPTIONS, ...args], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

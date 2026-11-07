@@ -1,7 +1,7 @@
 {
   "name": "dsh-drawai",
-  "version": "0.4.0",
-  "scannedAt": "2026-11-07T14:33:13.451Z",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-07T23:17:04.450Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,22 +13,22 @@
       },
       {
         "file": "lib/client.js",
-        "line": 13266,
+        "line": 13268,
         "text": "const raw = await fetch(SAVE_ENDPOINT, {"
       },
       {
         "file": "lib/client.js",
-        "line": 13297,
+        "line": 13299,
         "text": "const raw = await fetch(SAVE_ENDPOINT, {"
       },
       {
         "file": "lib/client.js",
-        "line": 13459,
+        "line": 13461,
         "text": "const raw = await fetch(SAVE_ENDPOINT, { method: 'POST', headers: { 'content-type': 'application/json', [SAVE_HEADER]: '1' }, signal: pending.signal,"
       },
       {
         "file": "lib/client.js",
-        "line": 13585,
+        "line": 13587,
         "text": "const raw = await fetch(SAVE_ENDPOINT, {"
       }
     ]
@@ -43,22 +43,22 @@
       },
       {
         "file": "lib/audio-media.js",
-        "line": 22,
+        "line": 25,
         "text": "if(create)mkdirSync(directory,{recursive:true})"
       },
       {
         "file": "lib/audio-media.js",
-        "line": 31,
+        "line": 34,
         "text": "const manifest=JSON.parse(readFileSync(audioScopeDirectory(drawioAbs,join(directory,'audio.json')),'utf8'))"
       },
       {
         "file": "lib/audio-media.js",
-        "line": 32,
+        "line": 35,
         "text": "if(sha(readFileSync(file))!==manifest.sha256)throw new Error('音频文件已改变，请重新导入')"
       },
       {
         "file": "lib/audio-media.js",
-        "line": 54,
+        "line": 57,
         "text": "const bytes=readFileSync(join(dir,'audio.wav'))"
       }
     ]
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 2431,
+        "line": 2432,
         "text": "export const inject = ['tools', 'fs', 'sessions', 'sandboxPolicy', 'webServer']"
       },
       {
         "file": "lib/index.js",
-        "line": 6190,
+        "line": 6194,
         "text": "ctx.effect(() => ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 6217,
+        "line": 6221,
         "text": "ctx.effect(() => ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 6282,
+        "line": 6286,
         "text": "ctx.effect(() => ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 6329,
+        "line": 6333,
         "text": "ctx.effect(() => ctx.tools.register(readTool))"
       }
     ]
@@ -108,18 +108,18 @@
       },
       {
         "file": "lib/drawing-runner.js",
-        "line": 16,
-        "text": "const child = spawn(binary, ['-hide_banner', '-nostdin', '-nostats', ...args], { windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })"
+        "line": 17,
+        "text": "const child = spawn(executable, ['-hide_banner', '-nostdin', '-nostats', ...args], { windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })"
       },
       {
         "file": "lib/drawing-runner.js",
-        "line": 77,
-        "text": "const child = spawn(binary || ffmpegBinary(), ['-hide_banner', '-nostdin', '-loglevel', 'error',"
+        "line": 79,
+        "text": "const child = spawn(executable, ['-hide_banner', '-nostdin', '-loglevel', 'error',"
       },
       {
-        "file": "lib/motion-agent-tools.js",
-        "line": 4,
-        "text": "import {execFile} from 'node:child_process'"
+        "file": "lib/ffmpeg-manager.js",
+        "line": 18,
+        "text": "import { spawn } from 'node:child_process'"
       }
     ]
   },
@@ -127,7 +127,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 14,
+  "dependencies": 6,
   "minifiedFiles": [
     "lib/client.js",
     "lib/comfyui-default-workflow.mjs",

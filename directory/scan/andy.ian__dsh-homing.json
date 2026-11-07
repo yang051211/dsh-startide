@@ -1,7 +1,7 @@
 {
   "name": "@andy.ian/dsh-homing",
-  "version": "2.1.4",
-  "scannedAt": "2026-11-06T20:48:50.648Z",
+  "version": "2.1.5",
+  "scannedAt": "2026-11-07T23:17:05.517Z",
   "icon": "andy.ian__dsh-homing.svg",
   "network": {
     "hit": true,
@@ -18,17 +18,17 @@
       },
       {
         "file": "index.js",
-        "line": 132,
+        "line": 147,
         "text": "fetch(url, {"
       },
       {
         "file": "index.js",
-        "line": 271,
+        "line": 286,
         "text": "const req = http.request({"
       },
       {
         "file": "index.js",
-        "line": 634,
+        "line": 649,
         "text": "else fetch('/dsh_homing/alive', { method: 'POST', headers: { 'content-type': 'application/json' }, body, keepalive: true }).catch(() => {})"
       }
     ]
@@ -72,27 +72,27 @@
     "evidence": [
       {
         "file": "bin/backup.mjs",
-        "line": 16,
+        "line": 17,
         "text": "import { spawnSync } from 'node:child_process';"
       },
       {
         "file": "bin/backup.mjs",
-        "line": 73,
-        "text": "const tar = spawnSync('tar', ['-czf', '-', '-C', target, '.'], { maxBuffer: 64 * 1024 * 1024 });"
+        "line": 74,
+        "text": "const tar = spawnSync(tarExe(), ['-czf', '-', '-C', target, '.'], { maxBuffer: 64 * 1024 * 1024 });"
       },
       {
         "file": "bin/backup.mjs",
-        "line": 75,
+        "line": 76,
         "text": "const enc = spawnSync(openssl, ['enc', '-aes-256-cbc', '-pbkdf2', '-salt', '-pass', 'env:DSH_HOMING_BACKUP_PASS'], {"
       },
       {
         "file": "bin/bootstrap-server.mjs",
-        "line": 24,
+        "line": 25,
         "text": "import { spawn, spawnSync } from 'node:child_process';"
       },
       {
         "file": "bin/bootstrap-server.mjs",
-        "line": 103,
+        "line": 104,
         "text": "const result = spawnSync(keygen, ['-t', 'ed25519', '-N', '', '-C', 'dsh-homing', '-f', keyFile], { stdio: 'ignore', windowsHide: true });"
       }
     ]

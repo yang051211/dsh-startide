@@ -1,7 +1,7 @@
 {
   "name": "dsh-hermes-link",
-  "version": "0.8.0",
-  "scannedAt": "2026-11-05T08:17:19.468Z",
+  "version": "0.8.5",
+  "scannedAt": "2026-11-07T23:17:09.369Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -42,20 +42,25 @@
         "text": "import { existsSync } from 'node:fs'"
       },
       {
-        "file": "bin/hermes-link-setup.mjs",
-        "line": 16,
-        "text": "import { existsSync, readFileSync } from 'node:fs'"
+        "file": "bin/hermes-link-repair-agent-preset.mjs",
+        "line": 14,
+        "text": "import { readFileSync, writeFileSync, readdirSync, statSync, existsSync, copyFileSync } from 'node:fs'"
       },
       {
-        "file": "bin/hermes-link-setup.mjs",
-        "line": 36,
-        "text": "try { packageVersion = JSON.parse(readFileSync(join(pkgRoot, 'package.json'), 'utf8')).version } catch { packageVersion = null }"
+        "file": "bin/hermes-link-repair-agent-preset.mjs",
+        "line": 60,
+        "text": "result = rewriteStoredHeader(readFileSync(file), { from, to })"
       }
     ]
   },
   "agentTools": {
     "hit": true,
     "evidence": [
+      {
+        "file": "import/request-dump-to-events.mjs",
+        "line": 174,
+        "text": "// The caller passes the live snapshot (ctx.tools.schemas()); a name already in"
+      },
       {
         "file": "index.mjs",
         "line": 259,
@@ -75,11 +80,6 @@
         "file": "index.mjs",
         "line": 460,
         "text": "ctx.tools.register(createListHermesSessionsTool({ importer, sessionMirror }))"
-      },
-      {
-        "file": "index.mjs",
-        "line": 461,
-        "text": "ctx.tools.register(createImportHermesSessionTool({ importer }))"
       }
     ]
   },

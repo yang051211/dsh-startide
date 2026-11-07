@@ -1,0 +1,136 @@
+{
+  "name": "dsh-imagekit",
+  "version": "0.0.1",
+  "scannedAt": "2026-11-07T23:17:14.413Z",
+  "icon": "dsh-imagekit.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 451,
+        "text": "const response = await fetch('/api/dsh-imagekit/setup', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 470,
+        "text": "const response = await fetch('/api/dsh-imagekit/perf', {"
+      },
+      {
+        "file": "lib/engine/index.js",
+        "line": 83,
+        "text": "const res = await fetch(base + pathname, {"
+      },
+      {
+        "file": "lib/engine/index.js",
+        "line": 417,
+        "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "lib/env/util.js",
+        "line": 381,
+        "text": "const res = await fetch(url, { signal: composed, headers: { accept: 'application/json,text/plain,*/*' } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine/index.js",
+        "line": 31,
+        "text": "import { appendFileSync, closeSync, existsSync, openSync, readFileSync, readdirSync, statSync, writeFileSync, mkdirSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/engine/index.js",
+        "line": 165,
+        "text": "return JSON.parse(readFileSync(config.stateFile, \"utf8\"));"
+      },
+      {
+        "file": "lib/engine/index.js",
+        "line": 173,
+        "text": "writeFileSync(config.stateFile, JSON.stringify(state, null, 2), \"utf8\");"
+      },
+      {
+        "file": "lib/engine/index.js",
+        "line": 212,
+        "text": "mkdirSync(config.logsDir, { recursive: true });"
+      },
+      {
+        "file": "lib/engine/index.js",
+        "line": 231,
+        "text": "try { appendFileSync(path.join(config.logsDir, \"engine.err.log\"), `[spawn] ${String(e?.message ?? e)}\\n`, \"utf8\"); } catch { /* 日志写失败无声 */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine/index.js",
+        "line": 38,
+        "text": "const inject = [\"tools\", \"systemPrompt\"];"
+      },
+      {
+        "file": "lib/engine/index.js",
+        "line": 502,
+        "text": "text: ({ scope }) => (ctx.tools.get(\"comfy\", scope) === undefined ? \"\" : systemSectionText),"
+      },
+      {
+        "file": "lib/engine/index.js",
+        "line": 669,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/env/tools.js",
+        "line": 31,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/env/tools.js",
+        "line": 99,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine/index.js",
+        "line": 30,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/engine/index.js",
+        "line": 107,
+        "text": "child = spawn(file, args, { cwd, windowsHide: true, stdio: [\"ignore\", \"pipe\", \"pipe\"] });"
+      },
+      {
+        "file": "lib/engine/index.js",
+        "line": 215,
+        "text": "const child = spawn(pyExe, args, {"
+      },
+      {
+        "file": "lib/env/env.js",
+        "line": 12,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/env/util.js",
+        "line": 11,
+        "text": "import { spawn, execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

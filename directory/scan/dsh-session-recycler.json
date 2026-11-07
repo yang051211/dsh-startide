@@ -1,15 +1,30 @@
 {
   "name": "dsh-session-recycler",
-  "version": "0.2.5",
-  "scannedAt": "2026-11-07T14:33:16.764Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-07T23:17:07.279Z",
   "icon": "dsh-session-recycler.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 326,
+        "line": 376,
         "text": "const res = await fetch(API + path, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 331,
+        "text": "//   Invoke-WebRequest -Uri $u -OutFile \"$env:USERPROFILE\\Desktop\\x.exe\""
+      },
+      {
+        "file": "lib/index.js",
+        "line": 597,
+        "text": "//   Invoke-WebRequest -Uri … -OutFile \"$env:USERPROFILE\\Desktop\\x.exe\""
+      },
+      {
+        "file": "lib/index.js",
+        "line": 601,
+        "text": "// curl / wget 这类短参写法。只认绝对路径或变量前缀；纯相对路径交给工作区兜底扫描。"
       }
     ]
   },
@@ -57,12 +72,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 677,
+        "line": 934,
         "text": "const child = spawn(\"explorer.exe\", [select ? \"/select,\" + target : target], { detached: true, stdio: \"ignore\" });"
       },
       {
         "file": "lib/index.js",
-        "line": 705,
+        "line": 962,
         "text": "const child = spawn(\"powershell.exe\", ["
       }
     ]

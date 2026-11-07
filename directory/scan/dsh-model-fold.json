@@ -1,15 +1,67 @@
 {
   "name": "dsh-model-fold",
-  "version": "0.5.1",
-  "scannedAt": "2026-10-26T10:06:39.850Z",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-07T23:17:11.266Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1942,
+        "text": "return fetch(PROBE_RESULTS_URL, { method: \"GET\" }).then(function (r) { return r.json(); }).then(function (v) {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1953,
+        "text": "\t\t\t\ttry { fetch(PROBE_RESULTS_URL, { method: \"POST\", headers: { \"content-type\": \"application/json\" }, body: JSON.stringify({ results: cascadeState.probeResults "
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1994,
+        "text": "\t\t\t\t\treturn fetch(\"/plugin/dsh-model-fold/probe\", { method: \"POST\", headers: { \"content-type\": \"application/json\" }, body: JSON.stringify({ provider: gid, model"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 10,
+        "text": "import http from \"node:http\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import https from \"node:https\";"
+      }
+    ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 9,
+        "text": "import fs from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 116,
+        "text": "const text = await fs.readFile(RESULTS_FILE, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 132,
+        "text": "await fs.mkdir(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 133,
+        "text": "await fs.writeFile(tmp, text, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 137,
+        "text": "try { await fs.unlink(tmp); } catch { /* ignore */ }"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,

@@ -1,30 +1,35 @@
 {
   "name": "terminalkeeper",
-  "version": "0.1.4",
-  "scannedAt": "2026-10-28T23:43:52.546Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-07T23:17:12.721Z",
   "icon": "terminalkeeper.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 4841,
-        "text": "const response = await fetch(BASE + path, options)"
+        "line": 4696,
+        "text": "const response = await fetch(BASE + path, opts)"
       },
       {
         "file": "lib/client.js",
-        "line": 10203,
+        "line": 10078,
         "text": "const response = await fetch(BASE + '/settings')"
       },
       {
         "file": "lib/client.js",
-        "line": 10280,
+        "line": 10155,
         "text": "const response = await fetch(BASE + '/settings', {"
       },
       {
-        "file": "lib/index.js",
-        "line": 314,
-        "text": "*   1. **跨站请求伪造**：随便哪个你访问的网页都能 `fetch('http://127.0.0.1:3080/plugins/shell/keys')`"
+        "file": "lib/client.js",
+        "line": 10616,
+        "text": "const vault = await fetch('/plugins/shell/vault-list', { headers: { accept: 'application/json' }, signal }).then((r) => r.json())"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 10629,
+        "text": "const list = await fetch('/plugins/shell/list?lite=1', { headers: { accept: 'application/json' }, signal }).then((r) => r.json())"
       }
     ]
   },
@@ -63,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 307,
+        "line": 319,
         "text": "export const inject = ['tools', 'subprocess']"
       },
       {
         "file": "lib/index.js",
-        "line": 5191,
+        "line": 5358,
         "text": "ctx.tools.register(guardedTool(spec))"
       }
     ]

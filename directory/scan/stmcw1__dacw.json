@@ -1,7 +1,7 @@
 {
   "name": "@stmcw1/dacw",
-  "version": "1.0.2",
-  "scannedAt": "2026-11-05T08:17:10.610Z",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-07T23:17:12.293Z",
   "icon": "stmcw1__dacw.png",
   "network": {
     "hit": false,
@@ -22,17 +22,17 @@
       },
       {
         "file": "dist/index.js",
-        "line": 237,
+        "line": 286,
         "text": "await fs.mkdir(parentDir, {"
       },
       {
         "file": "dist/index.js",
-        "line": 252,
+        "line": 301,
         "text": "await fs.writeFile(targetPath, content, 'utf-8');"
       },
       {
         "file": "dist/index.js",
-        "line": 260,
+        "line": 309,
         "text": "return fs.readFile(realTarget, 'utf-8');"
       }
     ]
@@ -42,27 +42,27 @@
     "evidence": [
       {
         "file": "dist/plugin.js",
-        "line": 431,
+        "line": 453,
         "text": "if (!agent || !agent.ctx || !agent.ctx.tools || typeof agent.ctx.tools.restrict !== 'function') {"
       },
       {
         "file": "dist/plugin.js",
-        "line": 438,
+        "line": 461,
         "text": "dispose = agent.ctx.tools.restrict({"
       },
       {
         "file": "dist/plugin.js",
-        "line": 445,
+        "line": 467,
         "text": "if (typeof ctx.tools.schemas !== 'function') fail('无法枚举宿主全局工具（ctx.tools.schemas 缺失），无法安全回退');"
       },
       {
         "file": "dist/plugin.js",
-        "line": 446,
+        "line": 470,
         "text": "names = ctx.tools.schemas().map((schema)=>schema && schema.name).filter((name)=>typeof name === 'string' && name);"
       },
       {
         "file": "dist/plugin.js",
-        "line": 455,
+        "line": 478,
         "text": "dispose = agent.ctx.tools.restrict({"
       }
     ]
@@ -71,23 +71,28 @@
     "hit": true,
     "evidence": [
       {
+        "file": "dist/index.js",
+        "line": 6,
+        "text": "import { execFile } from 'child_process';"
+      },
+      {
         "file": "dist/runner.js",
         "line": 1,
         "text": "import { spawn, ChildProcess } from 'child_process';"
       },
       {
         "file": "dist/runner.js",
-        "line": 157,
-        "text": "child = spawn(nodeRes.absPath, ["
+        "line": 217,
+        "text": "spawn(dockerRes.absPath, ["
       },
       {
         "file": "dist/runner.js",
-        "line": 181,
-        "text": "child = spawn(resolution.absPath, args, {"
+        "line": 240,
+        "text": "child = spawn(opts.file, opts.args, {"
       },
       {
         "file": "dist/runner.js",
-        "line": 246,
+        "line": 305,
         "text": "const tk = spawn('taskkill', ["
       }
     ]

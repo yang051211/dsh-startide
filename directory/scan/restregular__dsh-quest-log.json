@@ -1,0 +1,80 @@
+{
+  "name": "@restregular/dsh-quest-log",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-07T23:17:09.034Z",
+  "icon": "restregular__dsh-quest-log.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 222,
+        "text": "const response = await fetch(url.toString(), { headers: { Accept: 'application/json' } });"
+      },
+      {
+        "file": "client.js",
+        "line": 229,
+        "text": "const response = await fetch(API, {"
+      },
+      {
+        "file": "lib/routes.js",
+        "line": 4,
+        "text": "* 客户端面板走 `fetch('/dsh-quest-log/api?...')`，与 Agent 工具共享同一份"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/store.js",
+        "line": 13,
+        "text": "import { mkdirSync, readFileSync, readdirSync, renameSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 176,
+        "text": "const parsed = JSON.parse(readFileSync(this.fileFor(key), 'utf8'));"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 199,
+        "text": "mkdirSync(this.dir, { recursive: true });"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 202,
+        "text": "writeFileSync(temp, `${JSON.stringify(state, null, 2)}\\n`, 'utf8');"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 410,
+        "text": "const parsed = JSON.parse(readFileSync(join(this.dir, `${key}.json`), 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 374,
+        "text": "scoped.effect(() => scoped.tools.register(definition), `dsh-quest-log: ${definition.name} tool`);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

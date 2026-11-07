@@ -1,0 +1,77 @@
+{
+  "name": "@weniatall/dsh-repo-wiki",
+  "version": "0.2.8",
+  "scannedAt": "2026-11-07T23:17:05.482Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/ops.js",
+        "line": 14,
+        "text": "import { promises as fsp } from 'node:fs';"
+      },
+      {
+        "file": "lib/ops.js",
+        "line": 172,
+        "text": "return JSON.parse(await fsp.readFile(file, 'utf8'));"
+      },
+      {
+        "file": "lib/ops.js",
+        "line": 233,
+        "text": "await fsp.mkdir(path.dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/ops.js",
+        "line": 235,
+        "text": "await fsp.writeFile(temp, `${JSON.stringify(merged, null, 2)}\\n`, 'utf8');"
+      },
+      {
+        "file": "lib/ops.js",
+        "line": 249,
+        "text": "await fsp.rm(file, { force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tools.js",
+        "line": 38,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 569,
+        "text": "const dispose = ctx.tools.register(definition);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/scan.js",
+        "line": 18,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

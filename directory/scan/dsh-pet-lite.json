@@ -1,7 +1,7 @@
 {
   "name": "dsh-pet-lite",
-  "version": "0.2.0",
-  "scannedAt": "2026-11-07T07:29:38.087Z",
+  "version": "0.2.4",
+  "scannedAt": "2026-11-07T23:17:14.570Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,8 +13,13 @@
       },
       {
         "file": "dist/index.js",
-        "line": 2114,
+        "line": 2263,
         "text": "const response = await fetch(item.config ?? \"\", { signal: AbortSignal.timeout(15e3) });"
+      },
+      {
+        "file": "runtime/electron-helper/main.cjs",
+        "line": 111,
+        "text": "// on 127.0.0.1. Chromium otherwise blocks fetch() with \"Failed to fetch\" because"
       },
       {
         "file": "runtime/electron-helper/renderer/renderer.js",
@@ -24,7 +29,7 @@
       {
         "file": "runtime/electron-helper/renderer/renderer.js",
         "line": 70,
-        "text": "`none`)}async function Xr(){let e=await fetch(`${Rr}/dsh-pet-lite/settings`,{cache:`no-store`});if(!e.ok)throw Error(`PET_STATUS_FAILED: ${e.status}`);return aw"
+        "text": "`none`)}async function Si(){let e=await fetch(`${ci}/dsh-pet-lite/settings`,{cache:`no-store`});if(!e.ok)throw Error(`PET_STATUS_FAILED: ${e.status}`);return aw"
       }
     ]
   },
@@ -43,18 +48,18 @@
       },
       {
         "file": "dist/index.js",
-        "line": 326,
+        "line": 133,
+        "text": "mkdirSync(targetDir, { recursive: true });"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 382,
         "text": "const raw = JSON.parse(readFileSync(file, \"utf8\"));"
       },
       {
         "file": "dist/index.js",
-        "line": 342,
+        "line": 398,
         "text": "mkdirSync(join(dshHome(), \"pet-lite\"), { recursive: true });"
-      },
-      {
-        "file": "dist/index.js",
-        "line": 344,
-        "text": "writeFileSync(tmp, JSON.stringify(value, null, 2), \"utf8\");"
       }
     ]
   },
@@ -72,25 +77,19 @@
       },
       {
         "file": "dist/index.js",
-        "line": 184,
+        "line": 230,
         "text": "const child = spawn(launch.command, launch.args, {"
       },
       {
         "file": "runtime/electron-helper/main.cjs",
-        "line": 332,
+        "line": 337,
         "text": "require('node:child_process').spawn("
       }
     ]
   },
   "installScripts": {
-    "hit": true,
-    "evidence": [
-      {
-        "file": "package.json",
-        "line": 0,
-        "text": "scripts.postinstall: skills-npm && pnpx skills experimental_install"
-      }
-    ]
+    "hit": false,
+    "evidence": []
   },
   "dependencies": 9,
   "minifiedFiles": [

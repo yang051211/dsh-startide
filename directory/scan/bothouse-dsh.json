@@ -1,7 +1,7 @@
 {
   "name": "bothouse-dsh",
-  "version": "0.1.57",
-  "scannedAt": "2026-11-06T20:48:43.278Z",
+  "version": "0.1.59",
+  "scannedAt": "2026-11-07T23:17:01.848Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -39,27 +39,27 @@
       {
         "file": "collab/attachments.mjs",
         "line": 7,
-        "text": "import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+        "text": "import { createWriteStream, mkdirSync, readFileSync, renameSync, statSync, unlinkSync, writeFileSync } from 'node:fs';"
       },
       {
         "file": "collab/attachments.mjs",
-        "line": 28,
+        "line": 49,
         "text": "if (list.length) mkdirSync(this.dir, { recursive: true });"
       },
       {
         "file": "collab/attachments.mjs",
-        "line": 33,
+        "line": 54,
         "text": "writeFileSync(join(this.dir, id), data);"
       },
       {
         "file": "collab/attachments.mjs",
-        "line": 43,
+        "line": 64,
         "text": "try { return readFileSync(join(this.dir, id)); } catch { return undefined; }"
       },
       {
-        "file": "collab/avatar-uploads.mjs",
-        "line": 2,
-        "text": "import { mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'node:fs';"
+        "file": "collab/attachments.mjs",
+        "line": 109,
+        "text": "mkdirSync(this.dir, { recursive: true });"
       }
     ]
   },
@@ -73,12 +73,17 @@
       {
         "file": "collab/cli-member.mjs",
         "line": 3,
-        "text": "import { spawn } from 'node:child_process'"
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
       },
       {
         "file": "collab/cli-member.mjs",
-        "line": 109,
-        "text": "const proc = spawn(cmd, [...args, ...a.args], {"
+        "line": 96,
+        "text": "try { spawnSync('taskkill', ['/T', '/F', '/PID', String(proc.pid)], { stdio: 'ignore' }) } catch {}"
+      },
+      {
+        "file": "collab/cli-member.mjs",
+        "line": 167,
+        "text": "const proc = spawn(launch.cmd, [...launch.args, ...a.args], {"
       },
       {
         "file": "collab/clis.mjs",
@@ -89,11 +94,6 @@
         "file": "collab/clis.mjs",
         "line": 14,
         "text": "execFile(win ? 'where.exe' : 'which', [name], (error, stdout) => {"
-      },
-      {
-        "file": "collab/dsh-member.mjs",
-        "line": 674,
-        "text": "// The room is part of the key: a CLI process gets its env once, at spawn (cli-member.mjs _start), and"
       }
     ]
   },

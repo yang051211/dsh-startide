@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-tailor",
-  "version": "0.5.1",
-  "scannedAt": "2026-11-07T07:29:32.685Z",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-07T23:17:11.112Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -16,24 +16,24 @@
         "text": "import { statSync } from 'node:fs'"
       },
       {
-        "file": "logic/brand.mjs",
-        "line": 14,
-        "text": "import { existsSync, mkdirSync, writeFileSync } from 'node:fs'"
-      },
-      {
-        "file": "logic/brand.mjs",
-        "line": 726,
-        "text": "mkdirSync(dirname(target), { recursive: true })"
-      },
-      {
-        "file": "logic/brand.mjs",
-        "line": 727,
-        "text": "writeFileSync(target, content, 'utf8')"
-      },
-      {
-        "file": "logic/facts.mjs",
+        "file": "logic/agent.mjs",
         "line": 9,
-        "text": "import { readFileSync, statSync } from 'node:fs'"
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "logic/agent.mjs",
+        "line": 167,
+        "text": "const existing = readFileSync(target, 'utf8')"
+      },
+      {
+        "file": "logic/agent.mjs",
+        "line": 178,
+        "text": "mkdirSync(dirname(join(root, entry.path)), { recursive: true })"
+      },
+      {
+        "file": "logic/agent.mjs",
+        "line": 179,
+        "text": "writeFileSync(writeInside(root, entry.path, entry.content).target, entry.content, 'utf8')"
       }
     ]
   },
@@ -47,7 +47,7 @@
       },
       {
         "file": "index.js",
-        "line": 27,
+        "line": 29,
         "text": "export const inject = ['tools']"
       }
     ]

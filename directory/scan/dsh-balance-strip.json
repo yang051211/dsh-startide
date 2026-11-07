@@ -1,0 +1,64 @@
+{
+  "name": "dsh-balance-strip",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-07T23:17:14.275Z",
+  "icon": "dsh-balance-strip.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/strip.js",
+        "line": 640,
+        "text": "var xhr = new XMLHttpRequest()"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 165,
+        "text": "const res = await fetch(BALANCE_URL, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 67,
+        "text": "const parsed = JSON.parse(fs.readFileSync(STATE_FILE, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 85,
+        "text": "fs.writeFileSync(STATE_FILE, JSON.stringify(state), 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 285,
+        "text": "body = fs.readFileSync(ASSET_FILE, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

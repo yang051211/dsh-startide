@@ -1,0 +1,74 @@
+{
+  "name": "dsh-plugin-eidos",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-07T23:17:07.222Z",
+  "icon": "dsh-plugin-eidos.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/emotion-eval.js",
+        "line": 9,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/emotion-eval.js",
+        "line": 21,
+        "text": "return readFileSync(join(PLUGIN_ROOT, 'prompts', 'emotion-eval.md'), 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 21,
+        "text": "import { appendFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 55,
+        "text": "await appendFile(path, `${new Date().toISOString()} ${line}\\n`, 'utf8');"
+      },
+      {
+        "file": "lib/learning-eval.js",
+        "line": 9,
+        "text": "import { readFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine-process.js",
+        "line": 8,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/engine-process.js",
+        "line": 57,
+        "text": "const child = spawn(python.path, [this.mainPath], {"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 8,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

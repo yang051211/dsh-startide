@@ -1,35 +1,35 @@
 {
   "name": "dsh-undo-savepoint",
-  "version": "0.5.0",
-  "scannedAt": "2026-10-26T10:04:54.437Z",
-  "icon": null,
+  "version": "0.5.1",
+  "scannedAt": "2026-11-07T23:17:03.315Z",
+  "icon": "dsh-undo-savepoint.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 295,
+        "line": 529,
+        "text": "return fetch(\"/api/undo/instances/proxy\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 536,
         "text": "return fetch(path, {"
       },
       {
-        "file": "tools/undo-server-smoke.mjs",
-        "line": 88,
-        "text": "const r = await fetch(new URL('api/undo/status', url), { signal: AbortSignal.timeout(1500) });"
+        "file": "lib/client.js",
+        "line": 1237,
+        "text": "const proxyProbe = (url, token) => fetch(\"/api/undo/instances/proxy\", {"
       },
       {
-        "file": "tools/undo-server-smoke.mjs",
-        "line": 104,
-        "text": "const listR = await fetch(new URL('api/undo/list', A.url), { signal: AbortSignal.timeout(2000) });"
+        "file": "lib/index.js",
+        "line": 476,
+        "text": "const r = await fetch(`http://127.0.0.1:${out.port}/api/undo/status`, { signal: AbortSignal.timeout(1200) });"
       },
       {
-        "file": "tools/undo-server.mjs",
-        "line": 16,
-        "text": "import { createServer } from 'node:http';"
-      },
-      {
-        "file": "tools/undo-server.mjs",
-        "line": 120,
-        "text": "const r = await fetch(new URL('api/undo/locale', base), { signal: AbortSignal.timeout(1500) });"
+        "file": "lib/index.js",
+        "line": 1330,
+        "text": "const r = await fetch(u, {"
       }
     ]
   },
@@ -43,22 +43,22 @@
       },
       {
         "file": "lib/base.mjs",
-        "line": 97,
+        "line": 106,
         "text": "const j = JSON.parse(readFileSync(SPEC_PATH, 'utf8').replace(/^\\uFEFF/, ''));"
       },
       {
         "file": "lib/base.mjs",
-        "line": 175,
+        "line": 184,
         "text": "try { return await fs.readFile(join(blobDir(cfg), hash)); } catch { return null; }"
       },
       {
         "file": "lib/base.mjs",
-        "line": 181,
+        "line": 190,
         "text": "await fs.mkdir(dir, { recursive: true });"
       },
       {
         "file": "lib/base.mjs",
-        "line": 183,
+        "line": 192,
         "text": "await fs.writeFile(tmp, buf);"
       }
     ]
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 161,
+        "line": 179,
         "text": "export const inject = ['tools', 'systemPrompt', 'webServer'];"
       },
       {
         "file": "lib/index.js",
-        "line": 244,
+        "line": 262,
         "text": "const dispose = ctx.tools.register(tool);"
       },
       {
         "file": "tools/smoke-test.mjs",
-        "line": 2427,
+        "line": 2729,
         "text": "\\n    name: dsh-undo-savepoint\\n  - id: dsh-mcp-client\\n    name: dsh-mcp-client\\n    config:\\n      headers:\\n        Authorization: Bearer sk-w46-keep\\n', 'ut"
       },
       {
         "file": "tools/smoke-test.mjs",
-        "line": 2437,
+        "line": 2739,
         "text": "await writeFile(p2, '- insert:\\n  - id: dsh-mcp-client\\n    name: dsh-mcp-client\\n    config:\\n      note: \"dsh-undo-savepoint is installed\"\\n      headers:\\n  "
       },
       {
         "file": "tools/smoke-test.mjs",
-        "line": 2445,
+        "line": 2747,
         "text": "n    config:\\n      retries: 3\\n  - id: dsh-mcp-client\\n    name: dsh-mcp-client\\n    config:\\n      headers:\\n        Authorization: Bearer sk-w46-keep\\n', 'ut"
       }
     ]
@@ -103,29 +103,40 @@
       },
       {
         "file": "lib/core.mjs",
-        "line": 308,
+        "line": 311,
         "text": "execFile(windows ? (process.env.ComSpec ?? 'cmd.exe') : 'pnpm', windows ? ['/d', '/s', '/c', 'pnpm', ...args] : args, {"
       },
       {
         "file": "lib/core.mjs",
-        "line": 1245,
+        "line": 1248,
         "text": "execFile(cmd, args, { timeout: PICK_TIMEOUT, windowsHide: true, encoding: 'utf8' }, (_err, stdout) => {"
       },
       {
         "file": "lib/core.mjs",
-        "line": 1271,
+        "line": 1274,
         "text": "execFile('powershell', ['-NoProfile', '-Command', script], {"
       },
       {
         "file": "lib/core.mjs",
-        "line": 1298,
+        "line": 1301,
         "text": "execFile('powershell', ['-NoProfile', '-Command', script], {"
       }
     ]
   },
   "installScripts": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.postinstall: node tools/install-preflight.mjs"
+      },
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: node tools/install-preflight.mjs"
+      }
+    ]
   },
   "dependencies": 0,
   "minifiedFiles": [

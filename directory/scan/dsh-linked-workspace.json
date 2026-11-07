@@ -1,0 +1,111 @@
+{
+  "name": "dsh-linked-workspace",
+  "version": "0.6.2",
+  "scannedAt": "2026-11-07T23:17:05.168Z",
+  "icon": "dsh-linked-workspace.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 2579,
+        "text": "return fetch(apiUrl(), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/git.js",
+        "line": 26,
+        "text": "import { readdir, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "import { chmodSync, cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, renameSync, rmSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 21,
+        "text": "import { mkdir, readdir, stat as fsStat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 144,
+        "text": "mkdirSync(dirname(dir), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 159,
+        "text": "mkdirSync(dir, { recursive: true, mode: 0o700 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 33,
+        "text": "export const inject = ['webServer', 'tools', 'systemPrompt', 'workingDirectory']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2832,
+        "text": "ctx.effect(() => ctx.tools.register(linkedTool), 'dsh-linked-workspace: linked tool')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2833,
+        "text": "ctx.effect(() => ctx.tools.register(localSkillsTool), 'dsh-linked-workspace: local skills tool')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/git.js",
+        "line": 25,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/git.js",
+        "line": 273,
+        "text": "execFile('git', args, execOptions, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 172,
+        "text": "child = spawn('explorer.exe', [targetPath], { detached: true, stdio: 'ignore', windowsHide: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 174,
+        "text": "child = spawn('open', [targetPath], { detached: true, stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools",
+    "webServer",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

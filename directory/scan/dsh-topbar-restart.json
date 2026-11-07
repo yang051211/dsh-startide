@@ -1,0 +1,65 @@
+{
+  "name": "dsh-topbar-restart",
+  "version": "1.0.3",
+  "scannedAt": "2026-11-07T23:17:05.977Z",
+  "icon": "dsh-topbar-restart.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 232,
+        "text": "request = fetch(ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 25,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "scripts/check-lib-encoding.mjs",
+        "line": 15,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "scripts/check-lib-encoding.mjs",
+        "line": 23,
+        "text": "const bytes = readFileSync(path)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 165,
+        "text": "child = spawn(powershellPath(), args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,118 @@
+{
+  "name": "dsh-impeccable",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-07T23:17:06.909Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/impeccable/scripts/concept-seed.mjs",
+        "line": 156,
+        "text": "fetch(`${API_BASE}/roll?${params}`, { signal: controller.signal }),"
+      },
+      {
+        "file": "assets/impeccable/scripts/concept-seed.mjs",
+        "line": 182,
+        "text": "await fetch(`${API_BASE}/chosen`, {"
+      },
+      {
+        "file": "assets/impeccable/scripts/context.mjs",
+        "line": 1006,
+        "text": "const res = await fetch(`${UPDATE_HOST}/api/version`, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) });"
+      },
+      {
+        "file": "assets/impeccable/scripts/detector/node/file-system.mjs",
+        "line": 176,
+        "text": "const res = await fetch(`http://localhost:${port}/`, { signal: controller.signal, redirect: 'follow' });"
+      },
+      {
+        "file": "assets/impeccable/scripts/generate-image.mjs",
+        "line": 216,
+        "text": "const response = await fetch('https://api.openai.com/v1/images/generations', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/impeccable/scripts/context-signals.mjs",
+        "line": 19,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "assets/impeccable/scripts/context-signals.mjs",
+        "line": 48,
+        "text": "const text = fs.readFileSync(path.join(dir, newest), 'utf-8');"
+      },
+      {
+        "file": "assets/impeccable/scripts/context.mjs",
+        "line": 29,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "assets/impeccable/scripts/context.mjs",
+        "line": 662,
+        "text": "const body = fs.readFileSync(path.join(repoRoot, 'pnpm-workspace.yaml'), 'utf-8');"
+      },
+      {
+        "file": "assets/impeccable/scripts/context.mjs",
+        "line": 735,
+        "text": "return JSON.parse(fs.readFileSync(filePath, 'utf-8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/impeccable/scripts/context-signals.mjs",
+        "line": 23,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "assets/impeccable/scripts/generate-image.mjs",
+        "line": 236,
+        "text": "const { spawnSync } = await import('node:child_process');"
+      },
+      {
+        "file": "assets/impeccable/scripts/generate-image.mjs",
+        "line": 237,
+        "text": "spawnSync(process.execPath, [new URL('./embed-prompt.mjs', import.meta.url).pathname, out, '--prompt', prompt], { stdio: 'ignore' });"
+      },
+      {
+        "file": "assets/impeccable/scripts/lib/is-generated.mjs",
+        "line": 16,
+        "text": "import { execSync } from 'node:child_process';"
+      },
+      {
+        "file": "assets/impeccable/scripts/lib/is-generated.mjs",
+        "line": 44,
+        "text": "execSync(`git check-ignore --quiet ${JSON.stringify(absPath)}`, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: node build.mjs"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "assets/impeccable/scripts/modern-screenshot.umd.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

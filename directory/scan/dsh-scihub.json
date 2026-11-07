@@ -1,0 +1,97 @@
+{
+  "name": "dsh-scihub",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-07T23:17:14.630Z",
+  "icon": "dsh-scihub.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/http.mjs",
+        "line": 5,
+        "text": "* (sci.bban.top) answers `fetch()` with an abort/timeout, while a plain"
+      },
+      {
+        "file": "lib/http.mjs",
+        "line": 10,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "lib/http.mjs",
+        "line": 11,
+        "text": "import https from 'node:https';"
+      },
+      {
+        "file": "test-smoke.mjs",
+        "line": 13,
+        "text": "import { createServer } from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.mjs",
+        "line": 44,
+        "text": "import { mkdir, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/host.mjs",
+        "line": 450,
+        "text": "await mkdir(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/host.mjs",
+        "line": 452,
+        "text": "await writeFile(path, body);"
+      },
+      {
+        "file": "lib/mirrors.mjs",
+        "line": 13,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/mirrors.mjs",
+        "line": 37,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.mjs",
+        "line": 62,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/host.mjs",
+        "line": 207,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/host.mjs",
+        "line": 271,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

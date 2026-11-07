@@ -1,0 +1,123 @@
+{
+  "name": "dsh-plugin-magic-context",
+  "version": "0.11.1",
+  "scannedAt": "2026-11-07T23:17:10.412Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1631,
+        "text": "const fetchSummaryJson = () => Promise.resolve(fetch(summaryUrl, { headers: { accept: 'application/json' } })).then("
+      },
+      {
+        "file": "vendor/onnx/ort-wasm-simd-threaded.mjs",
+        "line": 3,
+        "text": "xitCode=a;throw b;}}else if(aa||k){try{fa=(new URL(\".\",ea)).href}catch{}m||(k&&(ia=a=>{var b=new XMLHttpRequest;b.open(\"GET\",a,!1);b.responseType=\"arraybuffer\";"
+      },
+      {
+        "file": "vendor/onnx/ort-wasm-simd-threaded.mjs",
+        "line": 4,
+        "text": "a))return new Promise((d,c)=>{var e=new XMLHttpRequest;e.open(\"GET\",a,!0);e.responseType=\"arraybuffer\";e.onload=()=>{200==e.status||0==e.status&&e.response?d(e."
+      },
+      {
+        "file": "vendor/onnx/ort-wasm-simd-threaded.mjs",
+        "line": 10,
+        "text": "a){var b=Ja;if(!q&&!ja(b)&&!m)try{var d=fetch(b,{credentials:\"same-origin\"});return await WebAssembly.instantiateStreaming(d,a)}catch(c){p(`wasm streaming compi"
+      },
+      {
+        "file": "vendor/onnx/ort.node.min.mjs",
+        "line": 7,
+        "text": "/\"}${e}`,vt=async e=>{let n=await(await fetch(e,{credentials:\"same-origin\"})).blob();return URL.createObjectURL(n)},Dt=async e=>(await import(/*webpackIgnore:tr"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/corpus-store.js",
+        "line": 32,
+        "text": "import { existsSync, mkdirSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/core/corpus-store.js",
+        "line": 158,
+        "text": "mkdirSync(dirname(dbPath), { recursive: true });"
+      },
+      {
+        "file": "lib/core/embedding-local.js",
+        "line": 10,
+        "text": "import { createWriteStream, existsSync, mkdirSync, readFileSync, renameSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/core/embedding-local.js",
+        "line": 145,
+        "text": "mkdirSync(cacheDir, { recursive: true });"
+      },
+      {
+        "file": "lib/core/embedding-local.js",
+        "line": 156,
+        "text": "const digest = createHash('sha256').update(readFileSync(tmp)).digest('hex');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 36,
+        "text": "export const inject = ['tools', 'llm'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 440,
+        "text": "const registrar = ctx.tools;"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/memory-bridge.js",
+        "line": 30,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/core/memory-bridge.js",
+        "line": 99,
+        "text": "const result = spawnSync('git', ['rev-list', '--max-parents=0', 'HEAD'], {"
+      },
+      {
+        "file": "lib/dsh/project-drift.js",
+        "line": 22,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/dsh/project-drift.js",
+        "line": 54,
+        "text": "const probe = spawnSync('git', ['rev-parse', '--show-toplevel'], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [
+    "vendor/onnx/ort.node.min.mjs"
+  ],
+  "binaryFiles": [
+    "vendor/onnx/ort-wasm-simd-threaded.wasm"
+  ],
+  "requiredServices": [
+    "llm",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

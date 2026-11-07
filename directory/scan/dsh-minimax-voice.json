@@ -1,0 +1,97 @@
+{
+  "name": "dsh-minimax-voice",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-07T23:17:14.444Z",
+  "icon": "dsh-minimax-voice.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 130,
+        "text": "const res = await fetch(API + path, options)"
+      },
+      {
+        "file": "index.js",
+        "line": 172,
+        "text": "const res = await fetch(API_BASE + path, {"
+      },
+      {
+        "file": "index.js",
+        "line": 188,
+        "text": "const res = await fetch(`${API_BASE}/v1/files/upload`, {"
+      },
+      {
+        "file": "index.js",
+        "line": 210,
+        "text": "const res = await fetch(url, { signal })"
+      },
+      {
+        "file": "index.js",
+        "line": 514,
+        "text": "const res = await fetch(`${API_BASE}/v1/speech_to_text`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "import * as fsp from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 138,
+        "text": "const raw = await fsp.readFile(file, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 148,
+        "text": "await fsp.mkdir(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 149,
+        "text": "await fsp.writeFile(tmp, JSON.stringify(value, null, 2), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 347,
+        "text": "await fsp.mkdir(outputDir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 1008,
+        "text": "ctx.effect(() => ctx.tools.register(tool), `minimax-voice: tool ${tool.name}`)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

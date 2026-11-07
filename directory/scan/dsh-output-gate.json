@@ -1,0 +1,80 @@
+{
+  "name": "dsh-output-gate",
+  "version": "1.3.0",
+  "scannedAt": "2026-11-07T23:17:14.482Z",
+  "icon": "dsh-output-gate.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 567,
+        "text": "fetch(STATE_PATH, { headers: { accept: \"application/json\" } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "boot.mjs",
+        "line": 3,
+        "text": "import { statSync } from 'node:fs'"
+      },
+      {
+        "file": "discipline.mjs",
+        "line": 3,
+        "text": "import { statSync as nodeStatSync, readFileSync as nodeReadFileSync } from 'node:fs'"
+      },
+      {
+        "file": "discipline.mjs",
+        "line": 122,
+        "text": "const text = normalizeDisciplineText(readFileSync(path, 'utf8'))"
+      },
+      {
+        "file": "impl.mjs",
+        "line": 3,
+        "text": "import { mkdir, writeFile, rename, rm, readdir, readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "impl.mjs",
+        "line": 474,
+        "text": "try { await rm(join(root, entry.name), { recursive: true, force: true }); removed += 1 }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "impl.mjs",
+        "line": 57,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "impl.mjs",
+        "line": 1525,
+        "text": "const disposeGuard = ctx.tools.guard((execution) => {"
+      },
+      {
+        "file": "impl.mjs",
+        "line": 1701,
+        "text": "const disposeTool = ctx.tools.register(tool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,21 +1,67 @@
 {
   "name": "@xiguazhiprince/dsh-session-map",
-  "version": "0.3.0",
-  "scannedAt": "2026-10-31T22:51:52.800Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-07T23:17:12.514Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1021,
+        "line": 1022,
+        "text": "fetch(new URL(`${SESSION_FORK_ROUTE}/record`, document.baseURI), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1043,
+        "text": "const response = await fetch(new URL(`${SESSION_FORK_ROUTE}/state`, document.baseURI), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1551,
+        "text": "const response = await fetch(routeUrl(path), init);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3133,
+        "text": "const response = await fetch(new URL(path, document.baseURI), init);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 4585,
         "text": "const response = await fetch(new URL(path, document.baseURI), init);"
       }
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "import { chmod, lstat, mkdir, readFile, realpath, rename, rm, stat, unlink, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 916,
+        "text": "const content = await readFile(candidate.absolutePath, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1036,
+        "text": "await writeFile(temp, content, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1040,
+        "text": "await rm(temp, { force: true }).catch(() => void 0);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1074,
+        "text": "current = await readFile(target, \"utf8\");"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,
@@ -26,8 +72,13 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 601,
+        "line": 1614,
         "text": "handle = subprocess.spawn({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3697,
+        "text": "handle = this.subprocess.spawn({"
       }
     ]
   },

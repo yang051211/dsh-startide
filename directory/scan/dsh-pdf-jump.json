@@ -1,0 +1,115 @@
+{
+  "name": "dsh-pdf-jump",
+  "version": "0.1.7",
+  "scannedAt": "2026-11-07T23:17:10.253Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/server.mjs",
+        "line": 16,
+        "text": "import { createServer as createHttpServer, get as httpGet } from 'node:http'"
+      },
+      {
+        "file": "lib/server.mjs",
+        "line": 197,
+        "text": "fetch(img.src).then((r) => r.text()).then((t) => showToast('这一页没渲染出来：' + t)).catch(() => showToast('这一页没渲染出来（请求失败）'));"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/pdf.mjs",
+        "line": 13,
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/pdf.mjs",
+        "line": 118,
+        "text": "if (statSync(target).mtimeMs < cutoff) rmSync(target, { force: true })"
+      },
+      {
+        "file": "lib/pdf.mjs",
+        "line": 152,
+        "text": "return existsSync(cachePath) ? readFileSync(cachePath) : null"
+      },
+      {
+        "file": "lib/pdf.mjs",
+        "line": 166,
+        "text": "if (!existsSync(CACHE_DIR)) mkdirSync(CACHE_DIR, { recursive: true })"
+      },
+      {
+        "file": "lib/pdf.mjs",
+        "line": 169,
+        "text": "if (existsSync(cachePath)) return readFileSync(cachePath)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 5,
+        "text": "* 不 import 任何 DSH 包：工具定义按 ctx.tools.register 的形状直接写，换 DSH 版本不受影响。"
+      },
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "export const inject = ['tools', 'systemPrompt', 'commands']"
+      },
+      {
+        "file": "index.js",
+        "line": 106,
+        "text": "return typeof ctx.tools.get === 'function' && ctx.tools.get(name) !== undefined"
+      },
+      {
+        "file": "index.js",
+        "line": 114,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "native.js",
+        "line": 18,
+        "text": "export const inject = ['tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/pdf.mjs",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/pdf.mjs",
+        "line": 52,
+        "text": "const child = spawn(process.execPath, [CHILD, ...args], { env, windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })"
+      },
+      {
+        "file": "lib/resolve.mjs",
+        "line": 9,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
