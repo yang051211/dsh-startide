@@ -1,14 +1,14 @@
 {
   "name": "focus-guard",
-  "version": "3.0.7",
-  "scannedAt": "2026-10-26T10:05:43.869Z",
+  "version": "3.3.3",
+  "scannedAt": "2026-11-07T14:33:20.679Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "hooks/guard.mjs",
-        "line": 72,
+        "line": 86,
         "text": "//   [P2] SQL 的 WHERE 豁免改为按语句判定；curl 的 -d 与 -D 区分大小写；补 find -delete/rimraf/wget post/Invoke-WebRequest POST；"
       },
       {
@@ -38,22 +38,22 @@
       },
       {
         "file": "hooks/guard.mjs",
-        "line": 91,
+        "line": 105,
         "text": "rmSync(path, { force: true });"
       },
       {
         "file": "hooks/guard.mjs",
-        "line": 114,
+        "line": 128,
         "text": "let t = readFileSync(cp, \"utf8\");"
       },
       {
         "file": "hooks/guard.mjs",
-        "line": 118,
+        "line": 132,
         "text": "writeFileSync(tmp, t);"
       },
       {
         "file": "hooks/guard.mjs",
-        "line": 129,
+        "line": 143,
         "text": "readFileSync(join(projDir, \"HANDOFF.md\"), \"utf8\");"
       }
     ]
@@ -62,29 +62,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/adapters/dsh/fg-appeal-tool.mjs",
-        "line": 13,
-        "text": "/** 依赖注入：注册到 ctx.tools 即可。 */"
+        "file": "src/dsh/index.js",
+        "line": 141,
+        "text": "// 2026-10-18：`ctx.tools` 是 Cordis 服务，未声明 inject 就访问会抛"
       },
       {
-        "file": "src/adapters/dsh/fg-appeal-tool.mjs",
-        "line": 14,
+        "file": "src/dsh/index.js",
+        "line": 144,
         "text": "export const inject = ['tools']"
       },
       {
-        "file": "src/adapters/dsh/fg-appeal-tool.mjs",
-        "line": 43,
-        "text": "/** Cordis 插件入口：把 fg_appeal 注册进 ctx.tools。 */"
+        "file": "src/dsh/index.js",
+        "line": 257,
+        "text": "const tools = ctx.tools && typeof ctx.tools.schemas === 'function' ? ctx.tools.schemas() : []"
       },
       {
-        "file": "src/adapters/dsh/fg-appeal-tool.mjs",
-        "line": 46,
-        "text": "ctx.tools.register(buildFgAppealTool())"
+        "file": "src/dsh/index.js",
+        "line": 304,
+        "text": "const tools = ctx.tools && typeof ctx.tools.schemas === 'function' ? ctx.tools.schemas() : []"
       },
       {
-        "file": "src/adapters/dsh/fg-apply-tool.mjs",
-        "line": 16,
-        "text": "/** 依赖注入：注册到 ctx.tools 即可，无需其它服务。 */"
+        "file": "src/dsh/policy-audit.mjs",
+        "line": 9,
+        "text": "*   ② 与当前会话真实的工具 schema（`ctx.tools.schemas()`）求差；"
       }
     ]
   },
@@ -97,30 +97,36 @@
         "text": "import { execFileSync } from \"node:child_process\";"
       },
       {
-        "file": "src/adapters/dsh/protocol.mjs",
+        "file": "hooks/protocol.mjs",
         "line": 10,
         "text": "import { execFileSync } from \"node:child_process\";"
       },
       {
-        "file": "src/core/approval.mjs",
-        "line": 10,
+        "file": "src/core/env.mjs",
+        "line": 6,
         "text": "import { execFileSync } from \"node:child_process\";"
       },
       {
-        "file": "src/core/audit.mjs",
-        "line": 10,
-        "text": "import { execFileSync } from \"node:child_process\";"
+        "file": "src/core/redlines.mjs",
+        "line": 124,
+        "text": "//   `bash -c \"rm -rf /\"`、`node -e \"...execSync('rm -rf /')\"` 的危险内容同样在引号里，"
       },
       {
-        "file": "src/core/backup.mjs",
-        "line": 10,
+        "file": "src/core/state.mjs",
+        "line": 11,
         "text": "import { execFileSync } from \"node:child_process\";"
       }
     ]
   },
   "installScripts": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.postinstall: node tools/first-run-sweep.mjs"
+      }
+    ]
   },
   "dependencies": 0,
   "minifiedFiles": [],

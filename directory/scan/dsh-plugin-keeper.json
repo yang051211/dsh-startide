@@ -1,19 +1,19 @@
 {
   "name": "dsh-plugin-keeper",
-  "version": "0.3.4",
-  "scannedAt": "2026-11-07T07:29:30.885Z",
+  "version": "0.3.5",
+  "scannedAt": "2026-11-07T14:33:16.985Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 912,
+        "line": 936,
         "text": "const res = await fetch(`${EXPORT_ROUTE_PREFIX}/${encodeURIComponent(filename)}`);"
       },
       {
         "file": "client.js",
-        "line": 935,
+        "line": 959,
         "text": "const res = await fetch(IMPORT_UPLOAD_PATH, {"
       },
       {
@@ -77,8 +77,18 @@
       },
       {
         "file": "index.js",
-        "line": 489,
-        "text": "const child = spawn('git', ['-c', 'credential.helper=', 'ls-remote', '--',"
+        "line": 377,
+        "text": "child = spawn('gh', ['auth', 'token'], { stdio: ['ignore', 'pipe', 'ignore'], env: process.env });"
+      },
+      {
+        "file": "index.js",
+        "line": 555,
+        "text": "const child = spawn('git', args, {"
+      },
+      {
+        "file": "index.js",
+        "line": 607,
+        "text": "const child = spawn('git', args, { env, stdio: ['ignore', 'pipe', 'pipe'] });"
       }
     ]
   },

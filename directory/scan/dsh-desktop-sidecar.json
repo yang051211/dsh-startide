@@ -1,7 +1,7 @@
 {
   "name": "dsh-desktop-sidecar",
-  "version": "0.10.2",
-  "scannedAt": "2026-11-03T20:52:03.270Z",
+  "version": "0.12.0",
+  "scannedAt": "2026-11-07T14:33:11.103Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 38,
+        "line": 39,
         "text": "export const inject = ['tools', 'attachments'];"
       },
       {
         "file": "lib/index.js",
-        "line": 698,
+        "line": 717,
         "text": "// 服务必须通过 inject 拿：宿主在服务还没挂载时直接读 ctx.tools 会让整行挂掉。"
       },
       {
         "file": "lib/index.js",
-        "line": 701,
+        "line": 720,
         "text": "try { if (ctx.tools && typeof ctx.tools.register === 'function') ready = ctx; } catch {}"
       },
       {
         "file": "lib/index.js",
-        "line": 703,
+        "line": 722,
         "text": "else if (typeof ctx.inject === 'function') ctx.inject(['tools', 'attachments'], (scoped) => mountTools(scoped));"
       },
       {
         "file": "lib/index.js",
-        "line": 765,
+        "line": 784,
         "text": "return ctx.tools.register({"
       }
     ]
@@ -113,7 +113,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 1812,
+        "line": 1878,
         "text": "            const found = String(execSync('where.exe ' + bare, { timeout: 2500, windowsHide: true, stdio: ['ignore', 'pipe', 'ignore'] }) || '').split(String.fr"
       },
       {

@@ -1,0 +1,109 @@
+{
+  "name": "dsh-context-relay",
+  "version": "0.3.7",
+  "scannedAt": "2026-11-07T14:33:18.873Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 82,
+        "text": "fetch(API, { headers: { accept: \"application/json\" }, cache: \"no-store\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 205,
+        "text": "fetch(SETTINGS_API, { headers: { accept: \"application/json\" }, cache: \"no-store\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 215,
+        "text": "fetch(SETTINGS_API, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1216,
+        "text": "fetch(PANEL_API + \"?sessionId=\" + encodeURIComponent(sessionId), { headers: { accept: \"application/json\" }, cache: \"no-store\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1317,
+        "text": "fetch(PANEL_API, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/agent/chain.js",
+        "line": 13,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/agent/chain.js",
+        "line": 90,
+        "text": "try { raw = readFileSync(path, 'utf8'); } catch { return []; }"
+      },
+      {
+        "file": "lib/agent/chain.js",
+        "line": 102,
+        "text": "mkdirSync(rootOf(cwd), { recursive: true });"
+      },
+      {
+        "file": "lib/agent/chain.js",
+        "line": 105,
+        "text": "appendFileSync(path, JSON.stringify(normalizeChainEntry(input)) + '\\n', 'utf8');"
+      },
+      {
+        "file": "lib/agent/chain.js",
+        "line": 106,
+        "text": "const raw = readFileSync(path, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/agent.js",
+        "line": 24,
+        "text": "export const inject = ['tools', 'systemPrompt'];"
+      },
+      {
+        "file": "lib/agent.js",
+        "line": 148,
+        "text": "          try { runtimeCtx.tools.register(definition); } catch (error) { ctx.logger?.warn?.('[dsh-context-relay] ' + label + ' skipped ' + definition.name + ': "
+      },
+      {
+        "file": "lib/agent.js",
+        "line": 235,
+        "text": "ctx.effect(() => ctx.tools.register(definition), 'dsh-context-relay: ' + definition.name);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/lint.js",
+        "line": 19,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentPresets",
+    "skills"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

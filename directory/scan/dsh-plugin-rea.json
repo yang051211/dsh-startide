@@ -1,19 +1,19 @@
 {
   "name": "dsh-plugin-rea",
-  "version": "2.0.13",
-  "scannedAt": "2026-10-27T02:45:01.686Z",
+  "version": "2.0.16",
+  "scannedAt": "2026-11-07T14:33:12.142Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "check-updates.ps1",
-        "line": 166,
+        "line": 178,
         "text": "try { $latest = (Invoke-RestMethod \"$r/rea-agents/latest\" -TimeoutSec 20).version; Info \"最新版本($r): $latest\"; break }"
       },
       {
         "file": "check-updates.ps1",
-        "line": 236,
+        "line": 262,
         "text": "$rel = Invoke-RestMethod 'https://api.github.com/repos/NationalSecurityAgency/ghidra/releases/latest' -TimeoutSec 25 -Headers @{ 'User-Agent' = 'rea-check' }"
       },
       {
@@ -22,14 +22,14 @@
         "text": "fetch(ROUTE, {"
       },
       {
-        "file": "scripts/rea-bundle-bootstrap.ps1",
-        "line": 181,
-        "text": "# Invoke-WebRequest buffers the whole body before writing, so a slow mirror"
+        "file": "scripts/hardening.test.mjs",
+        "line": 27,
+        "text": "import { createServer } from \"node:http\";"
       },
       {
         "file": "scripts/rea-bundle-bootstrap.ps1",
-        "line": 183,
-        "text": "Invoke-WebRequest -Uri $nodeUrl -OutFile $partial -UseBasicParsing -TimeoutSec 1800"
+        "line": 181,
+        "text": "# Invoke-WebRequest buffers the whole body before writing, so a slow mirror"
       }
     ]
   },
@@ -83,12 +83,12 @@
       },
       {
         "file": "scripts/setup.test.mjs",
-        "line": 1066,
+        "line": 1073,
         "text": "ert:\", \"    - id: rea-mcp\", \"      name: '@deepseek-ai/dsh-mcp-client'\", \"      config:\", \"        serverName: rea\", \"        transport: stdio\", \"\"].join(\"\\n\"),"
       },
       {
         "file": "scripts/setup.test.mjs",
-        "line": 1086,
+        "line": 1093,
         "text": " - id: rea-mcp  # written by upstream\", \"      name: '@deepseek-ai/dsh-mcp-client'\", \"      config:\", \"        serverName: 'rea' # same server\", \"\"].join(\"\\n\"),"
       }
     ]
@@ -103,22 +103,22 @@
       },
       {
         "file": "bin/rea-shim.mjs",
-        "line": 310,
+        "line": 359,
         "text": "child = spawn(process.execPath, [setupScript, \"--root\", root], {"
       },
       {
         "file": "bin/rea-shim.mjs",
-        "line": 605,
+        "line": 657,
         "text": "spawnSync(taskkill, [\"/pid\", String(pid), \"/T\", \"/F\"], {"
       },
       {
         "file": "bin/rea-shim.mjs",
-        "line": 639,
+        "line": 691,
         "text": "* Absolute on purpose: `spawn(comspec())` is resolved against the CHILD's PATH,"
       },
       {
         "file": "bin/rea-shim.mjs",
-        "line": 696,
+        "line": 748,
         "text": "? spawn(comspec(), [\"/d\", \"/s\", \"/c\", `\"${[cmdQuote(file), \"--version\"].join(\" \")}\"`], {"
       }
     ]

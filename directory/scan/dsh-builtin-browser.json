@@ -1,35 +1,35 @@
 {
   "name": "dsh-builtin-browser",
-  "version": "0.5.7",
-  "scannedAt": "2026-11-05T08:16:55.511Z",
+  "version": "0.5.8",
+  "scannedAt": "2026-11-07T14:33:09.059Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 243,
+        "line": 324,
         "text": "const response = await fetch(ROUTE, patch === undefined"
       },
       {
         "file": "client.js",
-        "line": 684,
+        "line": 781,
         "text": "const response = await fetch(\"/dsh-builtin-browser/runtime-status\", { headers: { accept: \"application/json\" } })"
       },
       {
         "file": "client.js",
-        "line": 727,
+        "line": 809,
+        "text": "const response = await fetch(\"/dsh-builtin-browser/bridge-maintenance\", { headers: { accept: \"application/json\" } })"
+      },
+      {
+        "file": "client.js",
+        "line": 848,
         "text": "const response = await fetch(\"/dsh-builtin-browser/runtime-provision\", {"
       },
       {
         "file": "client.js",
-        "line": 1622,
-        "text": "const response = await fetch(SESSIONS, { headers: { accept: \"application/json\" } })"
-      },
-      {
-        "file": "client.js",
-        "line": 1655,
-        "text": "const response = await fetch(url, { headers: { accept: \"image/jpeg\" } })"
+        "line": 878,
+        "text": "const response = await fetch(\"/dsh-builtin-browser/bridge-maintenance\", {"
       }
     ]
   },
@@ -38,28 +38,28 @@
     "evidence": [
       {
         "file": "desktop-bridge/install.mjs",
-        "line": 69,
-        "text": "rt { closeSync, copyFileSync, existsSync, mkdirSync, openSync, readFileSync, readSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+        "line": 67,
+        "text": "import * as nodeFs from 'node:fs'"
       },
       {
         "file": "desktop-bridge/install.mjs",
-        "line": 338,
+        "line": 107,
+        "text": "|| readFileSync(marker, 'utf8') !== 'dsh-browser-installer-test-root-v1\\n') {"
+      },
+      {
+        "file": "desktop-bridge/install.mjs",
+        "line": 398,
+        "text": "writeFileSync(temporary, JSON.stringify(result))"
+      },
+      {
+        "file": "desktop-bridge/install.mjs",
+        "line": 440,
         "text": "const { watch } = await import(\"node:fs\");"
       },
       {
         "file": "desktop-bridge/install.mjs",
-        "line": 386,
+        "line": 495,
         "text": "mkdirSync(target, { recursive: true })"
-      },
-      {
-        "file": "desktop-bridge/install.mjs",
-        "line": 390,
-        "text": "mkdirSync(dirname(target), { recursive: true })"
-      },
-      {
-        "file": "desktop-bridge/install.mjs",
-        "line": 399,
-        "text": "writeFileSync(target, buffer)"
       }
     ]
   },
@@ -98,28 +98,28 @@
     "evidence": [
       {
         "file": "desktop-bridge/install.mjs",
-        "line": 70,
+        "line": 68,
         "text": "import { execFileSync, spawn } from 'node:child_process'"
       },
       {
         "file": "desktop-bridge/install.mjs",
-        "line": 247,
+        "line": 307,
         "text": "const child = spawn(exe, [], { detached: true, stdio: 'ignore', cwd: root, env })"
       },
       {
-        "file": "lib/browser-electron/bridge-install.js",
-        "line": 14,
-        "text": "import { spawn } from 'node:child_process';"
+        "file": "lib/browser-electron/automatic-maintenance.js",
+        "line": 2,
+        "text": "import { execFile, spawn } from 'node:child_process';"
       },
       {
-        "file": "lib/browser-electron/bridge-install.js",
-        "line": 44,
-        "text": "const child = spawn(command, [...argv], { stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true });"
+        "file": "lib/browser-electron/automatic-maintenance.js",
+        "line": 38,
+        "text": "execFile(command, [...args], { windowsHide: true, shell: false, encoding: 'utf8', timeout, maxBuffer: 1_048_576,"
       },
       {
-        "file": "lib/browser-electron/electron-provision.js",
-        "line": 30,
-        "text": "import { spawn } from 'node:child_process';"
+        "file": "lib/browser-electron/automatic-maintenance.js",
+        "line": 399,
+        "text": "const child = spawn(join(plan.root, 'DeepSeek Harness.exe'), [], { cwd: plan.root, env: environment, stdio: 'ignore', windowsHide: true, detached: true });"
       }
     ]
   },

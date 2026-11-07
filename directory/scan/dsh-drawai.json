@@ -1,35 +1,35 @@
 {
   "name": "dsh-drawai",
-  "version": "0.3.4",
-  "scannedAt": "2026-10-26T10:04:50.832Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-07T14:33:13.451Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 9184,
-        "text": "const raw = await fetch(SAVE_ENDPOINT, { method: 'POST', headers: { 'content-type': 'application/json', [SAVE_HEADER]: '1' }, signal: pending.signal,"
+        "line": 1316,
+        "text": "IS_WORKER){readBinary=url=>{var xhr=new XMLHttpRequest;xhr.open(\"GET\",url,false);xhr.responseType=\"arraybuffer\";xhr.send(null);return new Uint8Array(xhr.respons"
       },
       {
         "file": "lib/client.js",
-        "line": 9315,
+        "line": 13266,
         "text": "const raw = await fetch(SAVE_ENDPOINT, {"
       },
       {
         "file": "lib/client.js",
-        "line": 9464,
-        "text": "raw = await fetch(SAVE_ENDPOINT, {"
+        "line": 13297,
+        "text": "const raw = await fetch(SAVE_ENDPOINT, {"
       },
       {
         "file": "lib/client.js",
-        "line": 9610,
-        "text": "raw = await fetch(SAVE_ENDPOINT, {"
+        "line": 13459,
+        "text": "const raw = await fetch(SAVE_ENDPOINT, { method: 'POST', headers: { 'content-type': 'application/json', [SAVE_HEADER]: '1' }, signal: pending.signal,"
       },
       {
         "file": "lib/client.js",
-        "line": 9658,
-        "text": "raw = await fetch(SAVE_ENDPOINT, {"
+        "line": 13585,
+        "text": "const raw = await fetch(SAVE_ENDPOINT, {"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/drawing-runner.js",
-        "line": 3,
-        "text": "import { readFileSync, writeFileSync, copyFileSync, existsSync, mkdirSync, renameSync, mkdtempSync, rmSync, realpathSync } from 'node:fs'"
+        "file": "lib/audio-media.js",
+        "line": 5,
+        "text": "import { mkdirSync, readFileSync, writeFileSync, copyFileSync, statSync, realpathSync, existsSync, renameSync, unlinkSync } from 'node:fs'"
       },
       {
-        "file": "lib/drawing-runner.js",
-        "line": 109,
-        "text": "const output = await pool.run(readFileSync(job.input), { ...job.options, mode: 'image', profile: perf?.enabled }, { token: job.id })"
+        "file": "lib/audio-media.js",
+        "line": 22,
+        "text": "if(create)mkdirSync(directory,{recursive:true})"
       },
       {
-        "file": "lib/drawing-runner.js",
-        "line": 123,
-        "text": "const out = join(job.directory, 'stills'); mkdirSync(out, { recursive: true })"
+        "file": "lib/audio-media.js",
+        "line": 31,
+        "text": "const manifest=JSON.parse(readFileSync(audioScopeDirectory(drawioAbs,join(directory,'audio.json')),'utf8'))"
       },
       {
-        "file": "lib/drawing-runner.js",
-        "line": 141,
-        "text": "rmSync(backup, { recursive: true, force: true })"
+        "file": "lib/audio-media.js",
+        "line": 32,
+        "text": "if(sha(readFileSync(file))!==manifest.sha256)throw new Error('音频文件已改变，请重新导入')"
       },
       {
-        "file": "lib/drawing-runner.js",
-        "line": 142,
-        "text": "} finally { rmSync(stage, { recursive: true, force: true }) }"
+        "file": "lib/audio-media.js",
+        "line": 54,
+        "text": "const bytes=readFileSync(join(dir,'audio.wav'))"
       }
     ]
   },
@@ -68,24 +68,39 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 2291,
+        "line": 2431,
         "text": "export const inject = ['tools', 'fs', 'sessions', 'sandboxPolicy', 'webServer']"
       },
       {
         "file": "lib/index.js",
-        "line": 5740,
-        "text": "ctx.effect(() => ctx.tools.register(readTool))"
+        "line": 6190,
+        "text": "ctx.effect(() => ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 5741,
-        "text": "ctx.effect(() => ctx.tools.register({ ...applyTool, execute: async (args, exec) => {"
+        "line": 6217,
+        "text": "ctx.effect(() => ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 6282,
+        "text": "ctx.effect(() => ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 6329,
+        "text": "ctx.effect(() => ctx.tools.register(readTool))"
       }
     ]
   },
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/audio-media.js",
+        "line": 2,
+        "text": "import { execFile } from 'node:child_process'"
+      },
       {
         "file": "lib/drawing-runner.js",
         "line": 2,
@@ -102,14 +117,9 @@
         "text": "const child = spawn(binary || ffmpegBinary(), ['-hide_banner', '-nostdin', '-loglevel', 'error',"
       },
       {
-        "file": "lib/video-export.js",
-        "line": 3,
-        "text": "import { spawn } from 'node:child_process'"
-      },
-      {
-        "file": "lib/video-export.js",
-        "line": 15,
-        "text": "const child = spawn(binary, args, { windowsHide: true, shell: false, stdio: ['ignore', 'pipe', 'pipe'] })"
+        "file": "lib/motion-agent-tools.js",
+        "line": 4,
+        "text": "import {execFile} from 'node:child_process'"
       }
     ]
   },
@@ -117,8 +127,12 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
-  "minifiedFiles": [],
+  "dependencies": 14,
+  "minifiedFiles": [
+    "lib/client.js",
+    "lib/comfyui-default-workflow.mjs",
+    "lib/routing/vendor/libavoid.min.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [
     "fs",

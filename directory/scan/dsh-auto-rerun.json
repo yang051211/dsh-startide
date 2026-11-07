@@ -1,0 +1,64 @@
+{
+  "name": "dsh-auto-rerun",
+  "version": "1.8.5",
+  "scannedAt": "2026-11-07T14:33:16.027Z",
+  "icon": "dsh-auto-rerun.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 108,
+        "text": "const response = await fetch(urlFor(ctx, path), { credentials: 'same-origin', ...init });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 37,
+        "text": "import { appendFileSync, mkdirSync, readFileSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "index.js",
+        "line": 212,
+        "text": "versionCache = JSON.parse(readFileSync(new URL(\"./package.json\", import.meta.url), \"utf8\"))?.version ?? \"unknown\";"
+      },
+      {
+        "file": "index.js",
+        "line": 609,
+        "text": "appendFileSync(cfg.logFile, `${new Date().toISOString()} [${level}] ${msg}\\n`);"
+      },
+      {
+        "file": "index.js",
+        "line": 694,
+        "text": "mkdirSync(dirname(cfg.settingsFile), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 695,
+        "text": "writeFileSync(cfg.settingsFile, `${JSON.stringify({ settings: settingsSnapshot(), savedAt: new Date().toISOString() }, null, 2)}\\n`);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,83 @@
+{
+  "name": "campfire-dsh-plugin",
+  "version": "2.0.2",
+  "scannedAt": "2026-11-07T14:33:16.084Z",
+  "icon": "campfire-dsh-plugin.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 147,
+        "text": "const res = await fetch('/api/campfire/config', { credentials: 'same-origin' });"
+      },
+      {
+        "file": "client.js",
+        "line": 198,
+        "text": "const res = await fetch('/api/campfire/config', {"
+      },
+      {
+        "file": "src/config-api.js",
+        "line": 163,
+        "text": "const res = await fetch(`${merged.baseUrl}/v1/quota`, {"
+      },
+      {
+        "file": "src/config-api.js",
+        "line": 191,
+        "text": "const altRes = await fetch(`${altUrl}/v1/quota`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 116,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 117,
+        "text": "fs.appendFileSync(file, `${new Date().toISOString()} ${text}\\n`, 'utf8');"
+      },
+      {
+        "file": "src/bindings.js",
+        "line": 9,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "src/bindings.js",
+        "line": 65,
+        "text": "const raw = await fs.readFile(filePath, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "sessions",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

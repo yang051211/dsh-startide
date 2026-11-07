@@ -1,0 +1,82 @@
+{
+  "name": "@lls-a1/dsh-balance-float",
+  "version": "1.1.47",
+  "scannedAt": "2026-11-07T14:33:22.181Z",
+  "icon": "lls-a1__dsh-balance-float.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 765,
+        "text": "const response = await fetch(ROUTE_UPDATE + (manual ? '?fresh=1' : ''), { headers: { accept: 'application/json' }, cache: 'no-store' });"
+      },
+      {
+        "file": "client.js",
+        "line": 799,
+        "text": "const response = await fetch(ROUTE, { headers: { accept: 'application/json' }, cache: 'no-store' });"
+      },
+      {
+        "file": "index.js",
+        "line": 79,
+        "text": "const response = await fetch("
+      },
+      {
+        "file": "index.js",
+        "line": 169,
+        "text": "const response = await fetch(BALANCE_URL, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 35,
+        "text": "const pkg = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/ledger.js",
+        "line": 12,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/ledger.js",
+        "line": 45,
+        "text": "const data = JSON.parse(fs.readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/ledger.js",
+        "line": 170,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "timer",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

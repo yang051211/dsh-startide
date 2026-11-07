@@ -1,24 +1,24 @@
 {
   "name": "dsh-blender-mc",
-  "version": "0.5.4",
-  "scannedAt": "2026-10-31T13:57:56.523Z",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-07T14:33:15.070Z",
   "icon": "dsh-blender-mc.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 388,
+        "line": 400,
         "text": "return fetch(path, init).then("
       },
       {
         "file": "lib/client.js",
-        "line": 412,
+        "line": 424,
         "text": "var xhr = new XMLHttpRequest()"
       },
       {
         "file": "lib/client.js",
-        "line": 457,
+        "line": 469,
         "text": "var xhr = new XMLHttpRequest()"
       }
     ]
@@ -44,12 +44,12 @@
       {
         "file": "lib/map-routes.js",
         "line": 28,
-        "text": "import { createWriteStream, existsSync, promises as fsp } from 'node:fs'"
+        "text": "import { createWriteStream, existsSync, mkdtempSync, readFileSync, rmSync, promises as fsp, writeFileSync } from 'node:fs'"
       },
       {
         "file": "lib/map-routes.js",
-        "line": 156,
-        "text": "text = await fsp.readFile(logPath, 'utf8')"
+        "line": 71,
+        "text": "writeFileSync(script, '﻿' + PICK_FOLDER_PS, 'utf8')"
       }
     ]
   },
@@ -94,11 +94,16 @@
       {
         "file": "lib/map-routes.js",
         "line": 26,
-        "text": "import { spawn } from 'node:child_process'"
+        "text": "import { execFile, spawn } from 'node:child_process'"
       },
       {
         "file": "lib/map-routes.js",
-        "line": 123,
+        "line": 72,
+        "text": "execFile("
+      },
+      {
+        "file": "lib/map-routes.js",
+        "line": 179,
         "text": "const child = spawn(deps.python, [deps.cli, ...args], {"
       }
     ]

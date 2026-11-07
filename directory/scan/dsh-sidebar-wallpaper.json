@@ -1,0 +1,104 @@
+{
+  "name": "dsh-sidebar-wallpaper",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-07T14:33:14.872Z",
+  "icon": "dsh-sidebar-wallpaper.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 361,
+        "text": "return fetch(`${API}${method}`, body === undefined ? { cache: 'no-store' } : {"
+      },
+      {
+        "file": "client.js",
+        "line": 796,
+        "text": "const res = await fetch(`${API}/upload?name=${encodeURIComponent(f.name)}`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 1507,
+        "text": "fetch(`${API}/files/${dir}/project.json`, { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 1816,
+        "text": "const res = await fetch(`${API}/upload/${encodeURIComponent(token)}`, { method: 'DELETE' });"
+      },
+      {
+        "file": "renderer/engine/webwallgl.global.min.js",
+        "line": 3,
+        "text": "\",\"require\",\"module\",\"exports\",\"fetch\",\"XMLHttpRequest\",\"Worker\",\"importScripts\",\"location\",\"navigator\",\"alert\",\"confirm\",\"prompt\",\"setTimeout\",\"setInterval\",\"c"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { appendFileSync, createWriteStream, mkdirSync, renameSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { mkdir, rm } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 73,
+        "text": "try { mkdirSync(dirname(DIAG_FILE), { recursive: true }); } catch { /* 目录已存在 */ }"
+      },
+      {
+        "file": "index.js",
+        "line": 252,
+        "text": "await rm(dir, { recursive: true, force: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 254,
+        "text": "try { appendFileSync(DIAG_FILE, `${new Date().toISOString()} [info] upload deleted: ${dir}\\n`); } catch { /* ignore */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "renderer/engine/webwallgl.global.min.js",
+        "line": 694,
+        "text": "]);this.originX=i[0],this.originY=i[1]}}spawn(e,n){if(this._aliveCount>=this.pool.length)return null;const r=this.pool,i=r.length;let s=null,o=this._cursor||0;f"
+      },
+      {
+        "file": "scan.js",
+        "line": 18,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "scan.js",
+        "line": 82,
+        "text": "execFile(reg, ['query', 'HKCU\\\\Software\\\\Valve\\\\Steam', '/v', 'SteamPath'],"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "renderer/engine/webwallgl.global.min.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

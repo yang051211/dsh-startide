@@ -1,0 +1,108 @@
+{
+  "name": "@xiaopb/dsh-solution-explorer",
+  "version": "1.0.4",
+  "scannedAt": "2026-11-07T14:33:14.387Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 8697,
+        "text": "const result = await (await fetch(\"/solution-explorer/read?root=\" + encodeURIComponent(root) + \"&file=\" + encodeURIComponent(path))).json();"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 8992,
+        "text": "const response = await fetch(url);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 9002,
+        "text": "const request = new XMLHttpRequest();"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 9006,
+        "text": "if (request.readyState !== XMLHttpRequest.DONE) return;"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 9979,
+        "text": "return fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 9467,
+        "text": "const data = await process.getBuiltinModule(\"fs/promises\").readFile(url);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 10010,
+        "text": "const fs = process.getBuiltinModule(\"fs\");"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 21194,
+        "text": "process.getBuiltinModule(\"fs/promises\").lstat(url).then((stat) => {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 33795,
+        "text": "const data = await process.getBuiltinModule(\"fs/promises\").readFile(url);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 34338,
+        "text": "const fs = process.getBuiltinModule(\"fs\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 105803,
+        "text": "return require(\"child_process\").execSync(\"ldd --version\", { encoding: \"utf8\" }).includes(\"musl\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { execFileSync, spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1167,
+        "text": "const child = spawn(cmd, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: node scripts/gen-pdfjs-assets.mjs && tsdown"
+      }
+    ]
+  },
+  "dependencies": 2,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

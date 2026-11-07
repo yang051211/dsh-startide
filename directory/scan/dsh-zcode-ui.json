@@ -1,0 +1,107 @@
+{
+  "name": "dsh-zcode-ui",
+  "version": "2.3.5",
+  "scannedAt": "2026-11-07T14:33:22.764Z",
+  "icon": "dsh-zcode-ui.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 438,
+        "text": "const response = await fetch(CHANNELS_ENDPOINT, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 11157,
+        "text": "const response = await fetch(endpoint, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 11212,
+        "text": "const response = await fetch(`${endpoint}?action=progress`, { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 11235,
+        "text": "const response = await fetch(`${endpoint}?dependency=${encodeURIComponent(id)}`, { method: \"POST\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 11268,
+        "text": "const response = await fetch(`${endpoint}?action=update-all`, { method: \"POST\" });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 2,
+        "text": "import { existsSync, readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 3,
+        "text": "import { lstat, mkdir, open, readFile, readdir, realpath, rename, rm, unlink, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 270,
+        "text": "const bin = JSON.parse(readFileSync(anchor, \"utf8\")).bin;"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 296,
+        "text": "return JSON.parse(await readFile(resolve(profileDirectory(runtime), \"package.json\"), \"utf8\"));"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 318,
+        "text": "await rm(packagePath, {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 1,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 802,
+        "text": "const killer = spawn(\"taskkill\", ["
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 899,
+        "text": "if (packageManager !== void 0) return monitorPluginChild(spawn(packageManager.command, [...packageManager.args, ...args], {"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 915,
+        "text": "return monitorPluginChild(spawn(process.execPath, ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

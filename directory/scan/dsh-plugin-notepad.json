@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-notepad",
-  "version": "0.1.0",
-  "scannedAt": "2026-10-26T10:06:21.987Z",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-07T14:33:20.727Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,28 +18,28 @@
     "evidence": [
       {
         "file": "lib/store.js",
-        "line": 17,
+        "line": 18,
         "text": "import { existsSync } from 'node:fs'"
       },
       {
         "file": "lib/store.js",
-        "line": 18,
+        "line": 19,
         "text": "import { appendFile, mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "lib/store.js",
-        "line": 296,
+        "line": 264,
+        "text": "await writeFile(temporary, content, 'utf8')"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 267,
+        "text": "await rm(temporary, { force: true }).catch(() => {})"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 356,
         "text": "await mkdir(dirname(file), { recursive: true })"
-      },
-      {
-        "file": "lib/store.js",
-        "line": 297,
-        "text": "await appendFile(file, `${JSON.stringify(note)}\\n`, 'utf8')"
-      },
-      {
-        "file": "lib/store.js",
-        "line": 353,
-        "text": "await rm(file, { force: true })"
       }
     ]
   },
@@ -53,22 +53,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 38,
+        "line": 39,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "lib/index.js",
-        "line": 131,
+        "line": 132,
         "text": "* @param {import('@deepseek-ai/cordis').Context} ctx - plugin context. `ctx.tools` is required; `ctx.commands` is used when present."
       },
       {
         "file": "lib/index.js",
-        "line": 149,
+        "line": 156,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 189,
+        "line": 196,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
@@ -87,12 +87,6 @@
   "requiredServices": [
     "tools"
   ],
-  "setupHints": [
-    {
-      "file": "README.md",
-      "line": 281,
-      "text": "本只在 `node_modules/@deepseek-ai` 建一个指向 `$DSH_HOME/profiles/node_modules/@deepseek-ai` 的 junction，不复制、不安装任何包。插件装进 profile 后不依赖它：那时 Node 会从 `<profile>/plugins/note"
-    }
-  ],
+  "setupHints": [],
   "skippedEntries": []
 }

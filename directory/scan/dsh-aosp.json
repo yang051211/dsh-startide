@@ -1,0 +1,108 @@
+{
+  "name": "dsh-aosp",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-07T14:33:22.216Z",
+  "icon": "dsh-aosp.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/aosp.mjs",
+        "line": 53,
+        "text": "const res = await fetch(url, { method: 'GET', headers: { 'user-agent': 'dsh-aosp' } });"
+      },
+      {
+        "file": "lib/aosp.mjs",
+        "line": 244,
+        "text": "const res = await fetch(API + path, { headers: ghHeaders });"
+      },
+      {
+        "file": "lib/aosp.mjs",
+        "line": 274,
+        "text": "const res = await fetch(url, { headers: { 'user-agent': 'dsh-aosp' } });"
+      },
+      {
+        "file": "lib/aosp.mjs",
+        "line": 343,
+        "text": "const res = await fetch(`${API}/orgs/aosp-mirror/repos?per_page=100&page=${page}`, { headers: ghHeaders });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/aosp.mjs",
+        "line": 6,
+        "text": "import { createWriteStream, existsSync, mkdirSync, readdirSync, statSync, writeFileSync, readFileSync, rmSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/aosp.mjs",
+        "line": 43,
+        "text": "try { return JSON.parse(readFileSync(f, 'utf8')); } catch { return { modules: {} }; }"
+      },
+      {
+        "file": "lib/aosp.mjs",
+        "line": 47,
+        "text": "mkdirSync(root, { recursive: true });"
+      },
+      {
+        "file": "lib/aosp.mjs",
+        "line": 48,
+        "text": "writeFileSync(join(root, META), JSON.stringify(meta, null, 2));"
+      },
+      {
+        "file": "lib/aosp.mjs",
+        "line": 77,
+        "text": "mkdirSync(join(destFile, '..'), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 15,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.mjs",
+        "line": 331,
+        "text": "if (ctx.tools.get?.(def.name) !== undefined) {"
+      },
+      {
+        "file": "index.mjs",
+        "line": 336,
+        "text": "disposeFns.push(ctx.tools.register(def));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/aosp.mjs",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/aosp.mjs",
+        "line": 87,
+        "text": "const p = spawn(cmd, args, { cwd, stdio: ['ignore', 'pipe', 'pipe'] });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

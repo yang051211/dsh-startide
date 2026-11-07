@@ -1,0 +1,80 @@
+{
+  "name": "my-lan-share",
+  "version": "0.5.4",
+  "scannedAt": "2026-11-07T14:33:15.942Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 64,
+        "text": "const response = await fetch(`${BASE}/${route}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 90,
+        "text": "state: () => fetch(`${BASE}/state`, { headers: { accept: \"application/json\" } }).then(async (r) => {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import { createServer } from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "import { mkdir, readdir, readFile, stat, access } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 17,
+        "text": "import { createReadStream, createWriteStream, constants } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1058,
+        "text": "buffer = await readFile(fileAbs);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1115,
+        "text": "await mkdir(targetDir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1165,
+        "text": "await mkdir(dirname(outPath), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: echo 'ready'"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

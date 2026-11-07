@@ -1,0 +1,69 @@
+{
+  "name": "dsh-copilot-diff",
+  "version": "0.8.1",
+  "scannedAt": "2026-11-07T14:33:22.387Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/checkpoints.js",
+        "line": 1,
+        "text": "import { lstatSync, readdirSync, readFileSync, mkdirSync, writeFileSync, renameSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/checkpoints.js",
+        "line": 43,
+        "text": "const bytes = readFileSync(abs);"
+      },
+      {
+        "file": "lib/checkpoints.js",
+        "line": 138,
+        "text": "const parsed = JSON.parse(readFileSync(this.file, \"utf8\"));"
+      },
+      {
+        "file": "lib/checkpoints.js",
+        "line": 147,
+        "text": "mkdirSync(dirname(this.file), { recursive: true });"
+      },
+      {
+        "file": "lib/checkpoints.js",
+        "line": 152,
+        "text": "writeFileSync(temp, text);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/history.js",
+        "line": 16,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "fs",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-armory",
-  "version": "2.4.8",
-  "scannedAt": "2026-11-02T07:38:02.277Z",
+  "version": "2.4.9",
+  "scannedAt": "2026-11-07T14:33:11.671Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -68,17 +68,17 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 1009,
+        "line": 1030,
         "text": "//   3) 当前注册表里的全部工具 Schema（ctx.tools.schemas()，全局 + 项目 + 内置）。"
       },
       {
         "file": "lib/index.js",
-        "line": 1062,
+        "line": 1083,
         "text": "const schemas = [...ctx.tools.schemas()].map(projectToolSchema);"
       },
       {
         "file": "lib/index.js",
-        "line": 1433,
+        "line": 1454,
         "text": "static inject = [\"loader\", \"tools\"];"
       },
       {
@@ -97,11 +97,6 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/mcp-config.js",
-        "line": 187,
-        "text": "// win32 上裸 npx / npm 是 .cmd 壳，宿主 `spawn(command, args, {shell:false})` 直接 ENOENT，"
-      },
-      {
         "file": "lib/system-open.js",
         "line": 8,
         "text": "import { spawn } from 'node:child_process';"
@@ -113,13 +108,18 @@
       },
       {
         "file": "lib/win32-stdio.js",
-        "line": 5,
-        "text": "*   宿主 `@deepseek-ai/dsh-mcp-client` 用 `child_process.spawn(command, args, { shell: false })`"
+        "line": 6,
+        "text": "* 原先写的前提是「宿主 `@deepseek-ai/dsh-mcp-client` 用 `child_process.spawn(command, args,"
       },
       {
         "file": "lib/win32-stdio.js",
-        "line": 8,
-        "text": "*     - spawn('npx', …, {shell:false})   → ENOENT，实测 6ms 内子进程根本没起来"
+        "line": 11,
+        "text": "*   · @127357945 `spawn(this._serverParams.command, …, { shell:false, … })`，该 `spawn` 来自 `import spawn from \"cross-spawn\"`"
+      },
+      {
+        "file": "lib/win32-stdio.js",
+        "line": 16,
+        "text": "*   · `require('node:child_process').spawnSync('npx', ['--version'], {shell:false})`"
       }
     ]
   },

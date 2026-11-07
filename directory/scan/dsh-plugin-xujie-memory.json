@@ -1,0 +1,145 @@
+{
+  "name": "dsh-plugin-xujie-memory",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-07T14:33:14.064Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 251,
+        "text": "const res = await fetch(`${endpoint}${path}`, {"
+      },
+      {
+        "file": "lib/qq/runtime.js",
+        "line": 58,
+        "text": "const socket = new WebSocket(url)"
+      },
+      {
+        "file": "lib/qq/transport.js",
+        "line": 17,
+        "text": "const response = await fetch(`${this.endpoint}/${action}`, {"
+      },
+      {
+        "file": "runtime/win32-x64/Lib/site-packages/pip/_vendor/urllib3/contrib/emscripten/emscripten_fetch_worker.js",
+        "line": 70,
+        "text": "const response = await fetch(event.data.url, event.data.fetchParams);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/board-routes.js",
+        "line": 1,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/board-routes.js",
+        "line": 10,
+        "text": "return new Response(await readFile(boardPath, 'utf8'), {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 17,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readdirSync, readFileSync, renameSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 103,
+        "text": "mkdirSync(dirname(dbPath), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 104,
+        "text": "appendFileSync(kernelLogPath(), text, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 157,
+        "text": "child = spawn(python, args, { cwd: PACKAGE_ROOT, env, stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "runtime/win32-x64/_asyncio.pyd",
+    "runtime/win32-x64/_bz2.pyd",
+    "runtime/win32-x64/_ctypes.pyd",
+    "runtime/win32-x64/_decimal.pyd",
+    "runtime/win32-x64/_elementtree.pyd",
+    "runtime/win32-x64/_hashlib.pyd",
+    "runtime/win32-x64/_lzma.pyd",
+    "runtime/win32-x64/_msi.pyd",
+    "runtime/win32-x64/_multiprocessing.pyd",
+    "runtime/win32-x64/_overlapped.pyd",
+    "runtime/win32-x64/_queue.pyd",
+    "runtime/win32-x64/_socket.pyd",
+    "runtime/win32-x64/_sqlite3.pyd",
+    "runtime/win32-x64/_ssl.pyd",
+    "runtime/win32-x64/_uuid.pyd",
+    "runtime/win32-x64/_wmi.pyd",
+    "runtime/win32-x64/_zoneinfo.pyd",
+    "runtime/win32-x64/Lib/site-packages/pip/_vendor/distlib/t32.exe",
+    "runtime/win32-x64/Lib/site-packages/pip/_vendor/distlib/t64-arm.exe",
+    "runtime/win32-x64/Lib/site-packages/pip/_vendor/distlib/t64.exe",
+    "runtime/win32-x64/Lib/site-packages/pip/_vendor/distlib/w32.exe",
+    "runtime/win32-x64/Lib/site-packages/pip/_vendor/distlib/w64-arm.exe",
+    "runtime/win32-x64/Lib/site-packages/pip/_vendor/distlib/w64.exe",
+    "runtime/win32-x64/Lib/site-packages/pydantic_core/_pydantic_core.cp312-win_amd64.pyd",
+    "runtime/win32-x64/Lib/site-packages/yaml/_yaml.cp312-win_amd64.pyd",
+    "runtime/win32-x64/libcrypto-3.dll",
+    "runtime/win32-x64/libffi-8.dll",
+    "runtime/win32-x64/libssl-3.dll",
+    "runtime/win32-x64/pyexpat.pyd",
+    "runtime/win32-x64/python.exe",
+    "runtime/win32-x64/python3.dll",
+    "runtime/win32-x64/python312.dll",
+    "runtime/win32-x64/pythonw.exe",
+    "runtime/win32-x64/Scripts/fastapi.exe",
+    "runtime/win32-x64/Scripts/httpx.exe",
+    "runtime/win32-x64/Scripts/idna.exe",
+    "runtime/win32-x64/Scripts/pip.exe",
+    "runtime/win32-x64/Scripts/pip3.12.exe",
+    "runtime/win32-x64/Scripts/pip3.exe",
+    "runtime/win32-x64/Scripts/uvicorn.exe",
+    "runtime/win32-x64/select.pyd",
+    "runtime/win32-x64/sqlite3.dll",
+    "runtime/win32-x64/unicodedata.pyd",
+    "runtime/win32-x64/vcruntime140_1.dll",
+    "runtime/win32-x64/vcruntime140.dll",
+    "runtime/win32-x64/winsound.pyd"
+  ],
+  "requiredServices": [
+    "systemPrompt"
+  ],
+  "setupHints": [
+    {
+      "file": "cordis.patch.yml",
+      "line": 6,
+      "text": "# 不需要手动起服务、不需要 pip install（插件自动拉起包内/DSH 自带 Python 内核）。"
+    }
+  ],
+  "skippedEntries": []
+}

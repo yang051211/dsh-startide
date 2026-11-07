@@ -1,0 +1,87 @@
+{
+  "name": "dsh-session-recycler",
+  "version": "0.2.5",
+  "scannedAt": "2026-11-07T14:33:16.764Z",
+  "icon": "dsh-session-recycler.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 326,
+        "text": "const res = await fetch(API + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "import { readdir, stat, mkdir, rename, rm, rmdir, readFile, writeFile, lstat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 27,
+        "text": "import { existsSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 143,
+        "text": "try { return JSON.parse(await readFile(file, \"utf8\")); } catch { return null; }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 146,
+        "text": "await mkdir(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 147,
+        "text": "await writeFile(file, JSON.stringify(data, null, 2), \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 32,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 677,
+        "text": "const child = spawn(\"explorer.exe\", [select ? \"/select,\" + target : target], { detached: true, stdio: \"ignore\" });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 705,
+        "text": "const child = spawn(\"powershell.exe\", ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "dshHomePath",
+    "sessions",
+    "storageDomain",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

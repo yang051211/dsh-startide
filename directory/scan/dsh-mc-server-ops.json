@@ -1,35 +1,35 @@
 {
   "name": "dsh-mc-server-ops",
-  "version": "0.5.0",
-  "scannedAt": "2026-11-06T20:48:51.188Z",
+  "version": "0.5.3",
+  "scannedAt": "2026-11-07T14:33:16.272Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 83,
+        "line": 89,
+        "text": "const res = await fetch(UPDATE_ENDPOINT, { cache: \"no-store\", headers: { \"x-mc-ops-client\": \"1\" } })"
+      },
+      {
+        "file": "client.js",
+        "line": 112,
+        "text": "const res = await fetch(UPDATE_ENDPOINT, {"
+      },
+      {
+        "file": "client.js",
+        "line": 126,
         "text": "const res = await fetch(ENDPOINT, { cache: \"no-store\", headers: { \"x-mc-ops-client\": \"1\" } })"
       },
       {
         "file": "client.js",
-        "line": 92,
+        "line": 135,
         "text": "const res = await fetch(ENDPOINT, { cache: \"no-store\", headers: { \"x-mc-ops-client\": \"1\" } })"
       },
       {
         "file": "client.js",
-        "line": 190,
+        "line": 233,
         "text": "const res = await fetch(ENDPOINT, {"
-      },
-      {
-        "file": "client.js",
-        "line": 208,
-        "text": "const res = await fetch(ENDPOINT, {"
-      },
-      {
-        "file": "index.js",
-        "line": 64,
-        "text": "|Stop-Process|Invoke-Expression|\\biex\\b|Invoke-WebRequest|Invoke-RestMethod|\\bcurl\\b|\\bwget\\b|Start-Job|schtasks|\\breg\\b|\\bsc\\b|format|diskpart|shutdown|taskkil"
       }
     ]
   },
@@ -39,7 +39,7 @@
       {
         "file": "index.js",
         "line": 2,
-        "text": "import { appendFileSync, copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync, readdirSync } from 'node:fs'"
+        "text": "import { appendFileSync, copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync, readdirSync, lstatSync } from 'node:fs'"
       },
       {
         "file": "index.js",
@@ -53,13 +53,13 @@
       },
       {
         "file": "index.js",
-        "line": 342,
-        "text": "mkdirSync(dirname(out), { recursive: true })"
+        "line": 311,
+        "text": "return String(JSON.parse(readFileSync(join(SCRIPT_DIR, 'package.json'), 'utf8')).version || '')"
       },
       {
         "file": "index.js",
-        "line": 343,
-        "text": "writeFileSync(out, JSON.stringify(payload, null, 2), 'utf8')"
+        "line": 384,
+        "text": "if (readFileSync(file, 'utf8').includes(PKG_NAME)) return { name, dir: join(root, name) }"
       }
     ]
   },
@@ -73,7 +73,7 @@
       },
       {
         "file": "index.js",
-        "line": 432,
+        "line": 647,
         "text": "ctx.effect(() => tools.register({"
       }
     ]
@@ -93,18 +93,18 @@
       },
       {
         "file": "index.js",
-        "line": 693,
+        "line": 422,
+        "text": "child = spawn('cmd.exe', ['/d', '/s', '/c', '\"' + line + '\"'], {"
+      },
+      {
+        "file": "index.js",
+        "line": 427,
+        "text": "child = spawn(file, args, { windowsHide: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 908,
         "text": "child = spawn(process.execPath, argv, { windowsHide: true, cwd: paths.serverDir })"
-      },
-      {
-        "file": "ops/rcon.mjs",
-        "line": 15,
-        "text": "import { execFileSync, spawn } from 'node:child_process'"
-      },
-      {
-        "file": "ops/rcon.mjs",
-        "line": 334,
-        "text": "const child = spawn(launch.javaExe, [], { cwd: dir, detached: true, stdio: 'ignore', shell: true })"
       }
     ]
   },

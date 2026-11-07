@@ -1,7 +1,7 @@
 {
   "name": "dsh-scout",
-  "version": "0.9.3",
-  "scannedAt": "2026-10-26T10:06:23.855Z",
+  "version": "0.9.4",
+  "scannedAt": "2026-11-07T14:33:19.626Z",
   "icon": "dsh-scout.svg",
   "network": {
     "hit": false,
@@ -12,28 +12,28 @@
     "evidence": [
       {
         "file": "dist/index.js",
-        "line": 251,
+        "line": 260,
         "text": "const fsService = () => ctx.get('fs');"
       },
       {
-        "file": "scripts/check-release.mjs",
-        "line": 64,
-        "text": "import { readFileSync } from 'node:fs'"
+        "file": "scripts/acceptance-report.mjs",
+        "line": 23,
+        "text": "import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises'"
       },
       {
-        "file": "scripts/check-release.mjs",
+        "file": "scripts/acceptance-report.mjs",
+        "line": 69,
+        "text": "return readFile(target.displayPath, 'utf8')"
+      },
+      {
+        "file": "scripts/acceptance-report.mjs",
         "line": 75,
-        "text": "const packageJson = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'))"
+        "text": "await mkdir(dirname(target.displayPath), { recursive: true })"
       },
       {
-        "file": "scripts/check-release.mjs",
-        "line": 297,
-        "text": "const text = readFileSync(new URL(`../${file}`, import.meta.url), 'utf8')"
-      },
-      {
-        "file": "scripts/check-release.mjs",
-        "line": 388,
-        "text": "const lines = readFileSync(new URL(`../${file}`, import.meta.url), 'utf8').split('\\n')"
+        "file": "scripts/acceptance-report.mjs",
+        "line": 76,
+        "text": "await writeFile(target.displayPath, content, 'utf8')"
       }
     ]
   },
@@ -47,22 +47,22 @@
       },
       {
         "file": "dist/index.js",
-        "line": 425,
+        "line": 576,
         "text": "yield ctx.tools.register(defineTool({"
       },
       {
         "file": "dist/index.js",
-        "line": 456,
+        "line": 634,
         "text": "yield ctx.tools.register(defineTool({"
       },
       {
         "file": "dist/index.js",
-        "line": 498,
+        "line": 679,
         "text": "yield ctx.tools.register(defineTool({"
       },
       {
         "file": "dist/index.js",
-        "line": 663,
+        "line": 883,
         "text": "yield ctx.tools.register(defineTool({"
       }
     ]
@@ -82,12 +82,12 @@
       },
       {
         "file": "scripts/profile-smoke.mjs",
-        "line": 128,
+        "line": 130,
         "text": "import { spawnSync } from 'node:child_process'"
       },
       {
         "file": "scripts/profile-smoke.mjs",
-        "line": 217,
+        "line": 219,
         "text": "const result = spawnSync(command(program), args, {"
       }
     ]

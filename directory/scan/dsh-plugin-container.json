@@ -1,0 +1,111 @@
+{
+  "name": "dsh-plugin-container",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-07T14:33:18.986Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/apple-cli.js",
+        "line": 8,
+        "text": "import { accessSync, constants, statSync } from 'node:fs'"
+      },
+      {
+        "file": "src/host/apple.js",
+        "line": 9,
+        "text": "import { statSync } from 'node:fs'"
+      },
+      {
+        "file": "src/host/docker-cli.js",
+        "line": 8,
+        "text": "import { accessSync, constants, statSync } from 'node:fs'"
+      },
+      {
+        "file": "src/host/images.js",
+        "line": 5,
+        "text": "import { readdirSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "src/host/runtime.js",
+        "line": 9,
+        "text": "import { existsSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "export const inject = ['subprocess', 'connection', 'webServer', 'tools', 'systemPrompt']"
+      },
+      {
+        "file": "src/host/tools.js",
+        "line": 187,
+        "text": "ctx.tools.register(status(service))"
+      },
+      {
+        "file": "src/host/tools.js",
+        "line": 188,
+        "text": "ctx.tools.register(list(service))"
+      },
+      {
+        "file": "src/host/tools.js",
+        "line": 189,
+        "text": "ctx.tools.register(inspect(service))"
+      },
+      {
+        "file": "src/host/tools.js",
+        "line": 190,
+        "text": "ctx.tools.register(logs(service))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/apple-cli.js",
+        "line": 192,
+        "text": "handle = this.subprocess.spawn({"
+      },
+      {
+        "file": "src/host/docker-cli.js",
+        "line": 262,
+        "text": "handle = this.subprocess.spawn({"
+      },
+      {
+        "file": "src/host/docker-cli.js",
+        "line": 360,
+        "text": "handle = this.subprocess.spawn({"
+      },
+      {
+        "file": "src/host/jobs.js",
+        "line": 133,
+        "text": "record.handle = this.subprocess.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "subprocess",
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

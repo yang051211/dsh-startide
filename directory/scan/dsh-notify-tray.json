@@ -1,24 +1,24 @@
 {
   "name": "dsh-notify-tray",
-  "version": "0.1.7",
-  "scannedAt": "2026-10-29T07:06:27.609Z",
+  "version": "0.1.8",
+  "scannedAt": "2026-11-07T14:33:18.818Z",
   "icon": "dsh-notify-tray.webp",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 481,
+        "line": 697,
         "text": "return fetch(url, { headers: { accept: 'application/json' }, cache: 'no-store', ...init }).then(res => (res.ok ? res.json() : undefined))"
       },
       {
         "file": "lib/client.js",
-        "line": 951,
+        "line": 1283,
         "text": "fetch(RAISE_ROUTE, { method: 'POST', cache: 'no-store' }).catch(function () {})"
       },
       {
         "file": "lib/client.js",
-        "line": 961,
+        "line": 1293,
         "text": "        fetch(ROUTE + '?lite=1&after=' + cursor + (granted ? '&notify=1' : '') + (claimToast ? '&claim=1' : ''), { headers: { accept: 'application/json' }, cach"
       },
       {
@@ -47,14 +47,14 @@
         "text": "appendFileSync(join(dir, 'debug.log'), `${new Date().toISOString()} ${parts.map(p => typeof p === 'string' ? p : JSON.stringify(p)).join(' ')}\\n`)"
       },
       {
-        "file": "lib/ledger.js",
-        "line": 15,
-        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+        "file": "lib/host/routes.js",
+        "line": 12,
+        "text": "import { readFileSync } from 'node:fs'"
       },
       {
-        "file": "lib/ledger.js",
-        "line": 131,
-        "text": "const parsed = JSON.parse(await readFile(this.file, 'utf8'))"
+        "file": "lib/host/routes.js",
+        "line": 62,
+        "text": "const mascot = readFileSync(new URL('../../assets/mascot-peeking.png', import.meta.url))"
       }
     ]
   },

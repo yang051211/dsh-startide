@@ -1,0 +1,139 @@
+{
+  "name": "@fanshuishui/dsh-remote-skills",
+  "version": "0.25.0",
+  "scannedAt": "2026-11-07T14:33:22.061Z",
+  "icon": "fanshuishui__dsh-remote-skills.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 206,
+        "text": "const response = await fetch(STATUS_PATH, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 266,
+        "text": "const response = await fetch(DIAGNOSE_PATH, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 289,
+        "text": "const response = await fetch(DIAGNOSE_FIX_PATH, { method: 'POST', headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 428,
+        "text": "const response = await fetch(PROFILES_PATH, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 448,
+        "text": "const response = await fetch(PROFILES_PATH, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/diagnostics.js",
+        "line": 24,
+        "text": "import { copyFileSync, readFileSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/diagnostics.js",
+        "line": 87,
+        "text": "* `service \"fs\" has been registered`。"
+      },
+      {
+        "file": "lib/diagnostics.js",
+        "line": 133,
+        "text": "const original = readFileSync(patchPath, 'utf8')"
+      },
+      {
+        "file": "lib/diagnostics.js",
+        "line": 141,
+        "text": "writeFileSync(patchPath, text, 'utf8')"
+      },
+      {
+        "file": "lib/diagnostics.js",
+        "line": 180,
+        "text": "patchText = readFileSync(patchPath, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 99,
+        "text": "# 让 dsh-mcp-client 用 `ssh` 当 command 启动远端程序，工具就会以"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 100,
+        "text": "# mcp__<serverName>__* 的形式注册进 ctx.tools，技能文档无需改动。"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 109,
+        "text": "#       name: '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "lib/diagnostics.js",
+        "line": 335,
+        "text": "// 为什么要单独查：`ctx.tools.register()` 失败时插件会 catch 住并只记一条"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 54,
+        "text": "// 注册它必须用 `ctx.tools`。宿主 base bundle 一定有 tools 服务。"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/self-update.js",
+        "line": 27,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/self-update.js",
+        "line": 108,
+        "text": "execFile("
+      },
+      {
+        "file": "lib/ssh.js",
+        "line": 35,
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/ssh.js",
+        "line": 244,
+        "text": "child = spawn('ssh', [...this.#sshArgs(), ...extraArgs], {"
+      },
+      {
+        "file": "lib/ssh.js",
+        "line": 482,
+        "text": "execFile('ssh', [...optionArgs(["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

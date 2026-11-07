@@ -1,0 +1,69 @@
+{
+  "name": "dsh-message-actions",
+  "version": "0.2.4",
+  "scannedAt": "2026-11-07T14:33:19.642Z",
+  "icon": "dsh-message-actions.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 2966,
+        "text": "if (typeof AbortController !== \"function\") return fetch(url, init);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2970,
+        "text": "return await fetch(url, Object.assign({}, init, { signal: controller.signal }));"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/store.cjs",
+        "line": 14,
+        "text": "const fs = require(\"node:fs\");"
+      },
+      {
+        "file": "lib/store.cjs",
+        "line": 145,
+        "text": "text = fs.readFileSync(filePath, \"utf8\");"
+      },
+      {
+        "file": "lib/store.cjs",
+        "line": 189,
+        "text": "fs.mkdirSync(dir, { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "lib/store.cjs",
+        "line": 208,
+        "text": "fs.unlinkSync(tmp);"
+      },
+      {
+        "file": "lib/store.cjs",
+        "line": 221,
+        "text": "fs.unlinkSync(tmp);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}
