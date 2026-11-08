@@ -1,34 +1,34 @@
 {
   "name": "@bushizhanghan/dsh-publish-gate",
-  "version": "0.22.0",
-  "scannedAt": "2026-11-08T07:28:16.560Z",
+  "version": "0.23.0",
+  "scannedAt": "2026-11-08T14:57:23.656Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/engine.js",
-        "line": 753,
+        "line": 759,
         "text": "const res = await fetch(`${registry.replace(/\\/$/, '')}/${name.replace('/', '%2f')}`, {"
       },
       {
         "file": "lib/engine.js",
-        "line": 842,
+        "line": 848,
         "text": "const res = await fetch(`${registry.replace(/\\/$/, '')}/${name.replace('/', '%2f')}`, {"
       },
       {
         "file": "lib/engine.js",
-        "line": 931,
+        "line": 937,
         "text": "const res = await fetch(CATALOGUE_URL, { signal: AbortSignal.timeout(timeoutMs), headers: { 'user-agent': 'dsh-publish-gate' } })"
       },
       {
         "file": "lib/engine.js",
-        "line": 983,
+        "line": 989,
         "text": "const res = await fetch(`https://api.github.com/repos/${slug}`, {"
       },
       {
         "file": "lib/engine.js",
-        "line": 1048,
+        "line": 1054,
         "text": "const res = await fetch(`https://api.github.com/repos/${slug}/releases/latest`, {"
       }
     ]
@@ -39,7 +39,7 @@
       {
         "file": "lib/engine.js",
         "line": 9,
-        "text": "import { existsSync, lstatSync, readFileSync, readlinkSync, readdirSync, realpathSync, statSync } from 'node:fs'"
+        "text": "import { existsSync, lstatSync, mkdtempSync, readFileSync, readlinkSync, readdirSync, realpathSync, rmSync, statSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "lib/engine.js",
@@ -48,17 +48,17 @@
       },
       {
         "file": "lib/engine.js",
-        "line": 1091,
+        "line": 1097,
         "text": "// `x = require(…)`, `require('node:fs').readFileSync`. Quoted literals are removed"
       },
       {
         "file": "lib/engine.js",
-        "line": 2078,
+        "line": 2091,
         "text": "const { readFileSync } = await import('node:fs')"
       },
       {
         "file": "lib/engine.js",
-        "line": 2128,
+        "line": 2162,
         "text": "try { source = readFileSync(file, 'utf8') } catch (e) { records.parseError = 'unreadable: ' + String(e && e.message || e) }"
       }
     ]
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/engine.js",
-        "line": 1088,
+        "line": 1094,
         "text": "`inject`', 'Without an inject list the service is resolved late and `ctx.tools` may be undefined when apply runs.', 'Add `export const inject = [\\'tools\\']`.'))"
       },
       {
         "file": "lib/engine.js",
-        "line": 1452,
+        "line": 1458,
         "text": "// Own properties win, or ctx.tools would resolve to another no-op proxy"
       },
       {
         "file": "lib/engine.js",
-        "line": 1463,
+        "line": 1469,
         "text": "ctx.tools = {"
       },
       {
         "file": "lib/engine.js",
-        "line": 1714,
+        "line": 1720,
         "text": "'A plugin that registers nothing is only useful if it adds a client panel or a service. If you expected tools, ctx.tools was undefined when apply ran.',"
       },
       {
         "file": "lib/engine.js",
-        "line": 1715,
+        "line": 1721,
         "text": "\"Check `export const inject = ['tools']`.\","
       }
     ]
@@ -103,7 +103,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 7,
+        "line": 8,
         "text": "import { exec } from 'node:child_process'"
       }
     ]

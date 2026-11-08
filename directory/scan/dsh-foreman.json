@@ -1,0 +1,144 @@
+{
+  "name": "dsh-foreman",
+  "version": "0.3.7",
+  "scannedAt": "2026-11-08T14:57:26.445Z",
+  "icon": "dsh-foreman.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 587,
+        "text": "response = await fetch(`/orchestrator/api/${path}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 8451,
+        "text": "const response = await fetch(url, { headers: { \"x-orchestrator-request\": \"1\" } }).catch(() => void 0);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 8459,
+        "text": "const response = await fetch(url, { headers: { \"x-orchestrator-request\": \"1\" } }).catch(() => void 0);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 8552,
+        "text": "fetch(url, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4355,
+        "text": "const items = fetch(offset, size + 1);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/feishu-Du3bga5l.js",
+        "line": 5,
+        "text": "import { mkdtemp, readFile, realpath, rm, stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/feishu-Du3bga5l.js",
+        "line": 53,
+        "text": "const data = await readFile(path, { signal });"
+      },
+      {
+        "file": "lib/feishu-Du3bga5l.js",
+        "line": 67,
+        "text": "await rm(directory, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "import { appendFileSync, chmodSync, existsSync, mkdirSync, readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "import { mkdir, rmdir, stat, writeFile } from \"node:fs/promises\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 10939,
+        "text": "binding.disposers.push(agent.ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 11032,
+        "text": "if (master) binding.disposers.push(agent.ctx.tools.restrict({ allow: ["
+      },
+      {
+        "file": "lib/index.js",
+        "line": 11039,
+        "text": "] }), agent.ctx.tools.guard((execution) => noWait(execution, () => this.routed(agent))));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 11064,
+        "text": "const allow = WORK_TOOLS.filter((name) => agent.ctx.tools.get(name, parent));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 11065,
+        "text": "return [agent.ctx.tools.restrict({ allow }), agent.ctx.tools.guard(() => {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/feishu-Du3bga5l.js",
+        "line": 6,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/feishu-Du3bga5l.js",
+        "line": 648,
+        "text": "const child = spawn(bot(ctx).cli, ["
+      },
+      {
+        "file": "lib/poll-DyAjgCpF.js",
+        "line": 7,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/poll-DyAjgCpF.js",
+        "line": 589,
+        "text": "const handle = subprocess.spawn({"
+      },
+      {
+        "file": "scripts/migrate.mjs",
+        "line": 14,
+        "text": "import { spawnSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: tsdown"
+      }
+    ]
+  },
+  "dependencies": 4,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

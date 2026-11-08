@@ -1,0 +1,110 @@
+{
+  "name": "dsh-superinput",
+  "version": "0.13.0",
+  "scannedAt": "2026-11-08T14:57:26.192Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 30,
+        "text": "void fetch(`${ENDPOINT}/client-debug`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 437,
+        "text": "const res = await fetch(`${ENDPOINT}/state`, { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 472,
+        "text": "fetch(`${ENDPOINT}/forecast`, { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 770,
+        "text": "fetch(`${ENDPOINT}/turn?session=${encodeURIComponent(currentSessionId)}&from=${from}&to=${to}`, { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 839,
+        "text": "fetch(`${ENDPOINT}/turn?session=${encodeURIComponent(currentSessionId)}&from=${from}&to=${to}`, { cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 4,
+        "text": "import { appendFileSync, mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "mkdirSync(dirname(DIAG), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "appendFileSync(DIAG, `${new Date().toISOString()} ${line}\\n`, 'utf8')"
+      },
+      {
+        "file": "modules/compaction.js",
+        "line": 33,
+        "text": "import { appendFile, mkdir, readFile, readdir, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "modules/compaction.js",
+        "line": 89,
+        "text": "return sanitizeState(JSON.parse(await readFile(STATE_FILE, 'utf8')))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "modules/enhancer.js",
+        "line": 39,
+        "text": "export const inject = ['llm', 'tools']"
+      },
+      {
+        "file": "modules/enhancer.js",
+        "line": 502,
+        "text": "// suite 联合声明了 tools，apply 里 ctx.tools 仍报 cannot get property"
+      },
+      {
+        "file": "modules/enhancer.js",
+        "line": 560,
+        "text": "scope.tools.register(defineTool({"
+      },
+      {
+        "file": "server.js",
+        "line": 2934,
+        "text": "// suite 联合声明了 tools，apply 里 ctx.tools 仍报 cannot get property"
+      },
+      {
+        "file": "server.js",
+        "line": 2992,
+        "text": "scope.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

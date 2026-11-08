@@ -1,0 +1,78 @@
+{
+  "name": "dsh-plugin-syncup",
+  "version": "4.4.1",
+  "scannedAt": "2026-11-08T14:57:22.388Z",
+  "icon": "dsh-plugin-syncup.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 485,
+        "text": "const response = await fetch(endpoint(name), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/github.js",
+        "line": 1,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/github.js",
+        "line": 32,
+        "text": "const value = readFileSync(file, 'utf8').trim()"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 1,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 89,
+        "text": "const text = await readFile(path, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "export const inject = ['tools', 'pluginManager']"
+      },
+      {
+        "file": "index.js",
+        "line": 256,
+        "text": "return ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "pluginManager",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

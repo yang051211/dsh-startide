@@ -1,25 +1,25 @@
 {
   "name": "dsh-llm-codex",
-  "version": "0.1.2",
-  "scannedAt": "2026-10-26T10:07:34.119Z",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-08T14:57:27.511Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/adapter.js",
-        "line": 59,
+        "line": 61,
         "text": "* @param fetchImpl - 可注入的 fetch(测试用),覆盖 transport。"
       },
       {
         "file": "lib/index.js",
-        "line": 116,
+        "line": 130,
         "text": "fetch: (url, init) => getTransport().then((transport) => transport.fetch(url, init)),"
       },
       {
         "file": "lib/models.js",
-        "line": 91,
-        "text": "const response = await transport.fetch(url, { method: 'GET', headers, signal });"
+        "line": 110,
+        "text": "const response = await transport.fetch(url, { method: 'GET', headers, signal: liveSignal });"
       },
       {
         "file": "lib/transport.js",
@@ -43,12 +43,12 @@
       },
       {
         "file": "lib/auth.js",
-        "line": 55,
+        "line": 61,
         "text": "raw = await readFile(authFile, 'utf8');"
       },
       {
         "file": "lib/auth.js",
-        "line": 171,
+        "line": 177,
         "text": "await writeFile(tmp, `${JSON.stringify(next, null, 2)}\\n`, 'utf8');"
       },
       {
@@ -58,7 +58,7 @@
       },
       {
         "file": "lib/models.js",
-        "line": 41,
+        "line": 76,
         "text": "raw = await readFile(file, 'utf8');"
       }
     ]
@@ -75,7 +75,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 7,
+  "dependencies": 6,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [],

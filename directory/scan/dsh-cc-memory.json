@@ -1,0 +1,98 @@
+{
+  "name": "dsh-cc-memory",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-08T14:57:25.499Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/index.js",
+        "line": 83,
+        "text": "return fetch(CHANNEL + '/' + endpoint, {"
+      },
+      {
+        "file": "client/index.js",
+        "line": 480,
+        "text": "return fetch(CU_CHANNEL + '/' + endpoint, init).then(function (response) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/discovery.js",
+        "line": 26,
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, realpathSync, renameSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/discovery.js",
+        "line": 196,
+        "text": "raw = readFileSync(path, { encoding: 'utf8' })"
+      },
+      {
+        "file": "src/discovery.js",
+        "line": 384,
+        "text": "try { raw = readFileSync(candidate.path, { encoding: 'utf8' }) } catch { continue }"
+      },
+      {
+        "file": "src/discovery.js",
+        "line": 419,
+        "text": "try { text = readFileSync(path, { encoding: 'utf8' }) } catch { continue }"
+      },
+      {
+        "file": "src/discovery.js",
+        "line": 454,
+        "text": "try { raw = readFileSync(path, { encoding: 'utf8' }) } catch (error) {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 24,
+        "text": "export const inject = ['tools', 'systemPrompt']"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 6,
+        "text": "// tools.register() throws on a duplicate name, so an unprefixed `memory_read`"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 118,
+        "text": "* @param {object} ctx - plugin context (`ctx.tools`)."
+      },
+      {
+        "file": "src/tools.js",
+        "line": 124,
+        "text": "disposers.push(ctx.tools.register({"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 147,
+        "text": "disposers.push(ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

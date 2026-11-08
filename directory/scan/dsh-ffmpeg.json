@@ -1,11 +1,22 @@
 {
   "name": "dsh-ffmpeg",
-  "version": "0.5.1",
-  "scannedAt": "2026-10-26T10:04:52.537Z",
-  "icon": null,
+  "version": "0.7.7",
+  "scannedAt": "2026-11-08T14:57:18.260Z",
+  "icon": "dsh-ffmpeg.webp",
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/update-client.js",
+        "line": 301,
+        "text": "      const response = await fetch(route, { method: 'POST', credentials: 'same-origin', cache: 'no-store', signal: controller.signal, headers: { 'content-type':"
+      },
+      {
+        "file": "lib/update-client.js",
+        "line": 318,
+        "text": "  const close = () => { void fetch(route, { method: 'POST', credentials: 'same-origin', keepalive: true, headers: { 'content-type': 'application/json', 'x-stard"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
@@ -26,14 +37,14 @@
         "text": "mkdirSync(directory, { recursive: true });"
       },
       {
-        "file": "lib/tools.js",
-        "line": 7,
-        "text": "import { mkdirSync, mkdtempSync, readdirSync, rmSync, writeFileSync } from 'node:fs';"
+        "file": "lib/storyboard.js",
+        "line": 1,
+        "text": "import { constants, copyFileSync, existsSync, lstatSync, mkdirSync, mkdtempSync, rmSync } from 'node:fs';"
       },
       {
-        "file": "lib/tools.js",
-        "line": 289,
-        "text": "writeFileSync(listPath, concatListContent(absolute), 'utf8');"
+        "file": "lib/storyboard.js",
+        "line": 100,
+        "text": "mkdirSync(dirname(output), { recursive: true });"
       }
     ]
   },
@@ -42,17 +53,17 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 14,
+        "line": 15,
         "text": "/** cordis 服务注入：apply 里要用 ctx.subprocess 与 ctx.tools，必须显式声明，否则宿主会抛 cannot get property without inject。 */"
       },
       {
         "file": "lib/index.js",
-        "line": 16,
+        "line": 17,
         "text": "export const inject = ['subprocess', 'tools'];"
       },
       {
         "file": "lib/index.js",
-        "line": 27,
+        "line": 29,
         "text": "disposers.push(ctx.tools.register(definition));"
       },
       {
@@ -72,7 +83,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 24,
+        "line": 26,
         "text": "const runner = createSubprocessRunner((spec) => ctx.subprocess.spawn(spec), cfg.graceMs, cfg.timeoutMs);"
       }
     ]
@@ -81,8 +92,10 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
-  "minifiedFiles": [],
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/update-client.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [
     "subprocess",

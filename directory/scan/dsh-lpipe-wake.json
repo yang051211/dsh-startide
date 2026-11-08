@@ -1,0 +1,81 @@
+{
+  "name": "dsh-lpipe-wake",
+  "version": "0.2.3",
+  "scannedAt": "2026-11-08T14:57:24.168Z",
+  "icon": "dsh-lpipe-wake.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/rpc.mjs",
+        "line": 133,
+        "text": "async fetch(request) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/state.mjs",
+        "line": 1,
+        "text": "import { readFileSync, writeFileSync, chmodSync, mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "src/state.mjs",
+        "line": 15,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "src/state.mjs",
+        "line": 22,
+        "text": "const raw = JSON.parse(readFileSync(commonConfigPath(), 'utf8'));"
+      },
+      {
+        "file": "src/state.mjs",
+        "line": 31,
+        "text": "const raw = JSON.parse(readFileSync(statePath(), 'utf8'));"
+      },
+      {
+        "file": "src/state.mjs",
+        "line": 40,
+        "text": "writeFileSync(statePath(), `${JSON.stringify(state, null, 2)}\\n`, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 106,
+        "text": "toolsCtx.tools.register(tool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 21,
+      "text": "npm i -g dsh-life-pipline"
+    },
+    {
+      "file": "README.md",
+      "line": 22,
+      "text": "npm i -g dsh-lpipe-wake"
+    }
+  ],
+  "skippedEntries": []
+}

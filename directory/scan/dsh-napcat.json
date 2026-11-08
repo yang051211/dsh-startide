@@ -1,0 +1,134 @@
+{
+  "name": "dsh-napcat",
+  "version": "0.3.23-xb.33",
+  "scannedAt": "2026-11-08T14:57:22.785Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/media.js",
+        "line": 33,
+        "text": "const response = await fetch(url);"
+      },
+      {
+        "file": "lib/onebot.js",
+        "line": 129,
+        "text": "const socket = new WebSocket(url, { headers });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/aliyun.js",
+        "line": 9,
+        "text": "import { writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/aliyun.js",
+        "line": 167,
+        "text": "await writeFile(wav, normalized.buffer);"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 10,
+        "text": "import { mkdir } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 23,
+        "text": "import { appendFile, readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 669,
+        "text": "void appendFile(join(dir, 'napcat-inbox', '_image-debug.log'), new Date().toISOString() + ' v0.3.7 ' + note + '\\n').catch(() => undefined);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 17,
+        "text": "export const inject = ['tools', 'agents', 'workspaceRegistry', 'sessionPersistence', 'systemPrompt', 'agentDefaultModel', 'llm', 'subagents', 'agentPresets', 'a"
+      },
+      {
+        "file": "lib/tasks.js",
+        "line": 178,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tasks.js",
+        "line": 201,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 87,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 140,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/sing.js",
+        "line": 8,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/sing.js",
+        "line": 128,
+        "text": "child = spawn(bin, args, {"
+      },
+      {
+        "file": "lib/tts.js",
+        "line": 8,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/voice.js",
+        "line": 8,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/voice.js",
+        "line": 74,
+        "text": "child = spawn(bin, args, { windowsHide: true, stdio: ['ignore', 'ignore', 'pipe'] });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentDefaultModel",
+    "agentPresets",
+    "agents",
+    "approval",
+    "attachments",
+    "llm",
+    "sessionPersistence",
+    "sessionTitle",
+    "subagents",
+    "systemPrompt",
+    "tools",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

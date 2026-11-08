@@ -1,19 +1,19 @@
 {
   "name": "dsh-gallery",
-  "version": "0.11.2",
-  "scannedAt": "2026-11-08T07:28:15.445Z",
+  "version": "0.13.6",
+  "scannedAt": "2026-11-08T14:57:22.316Z",
   "icon": "dsh-gallery.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 407,
+        "line": 510,
         "text": "const response = await fetch(ROUTE, {"
       },
       {
         "file": "client.js",
-        "line": 428,
+        "line": 531,
         "text": "const response = await fetch(ROUTE, {"
       }
     ]
@@ -22,29 +22,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 11,
+        "file": "host/classify.js",
+        "line": 7,
         "text": "import { promises as fsp, readFileSync, statSync, createReadStream } from 'node:fs'"
       },
       {
-        "file": "index.js",
-        "line": 192,
-        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
+        "file": "host/fsutil.js",
+        "line": 7,
+        "text": "import { promises as fsp, readFileSync, statSync, createReadStream } from 'node:fs'"
       },
       {
-        "file": "index.js",
-        "line": 426,
-        "text": "await fsp.mkdir(path.dirname(settingsFile), { recursive: true })"
+        "file": "host/http.js",
+        "line": 11,
+        "text": "import { promises as fsp } from 'node:fs'"
       },
       {
-        "file": "index.js",
-        "line": 427,
-        "text": "await fsp.writeFile(settingsFile, JSON.stringify(next, null, 2), 'utf8')"
+        "file": "host/http.js",
+        "line": 312,
+        "text": "await fsp.mkdir(path.dirname(opts.settingsFile), { recursive: true })"
       },
       {
-        "file": "index.js",
-        "line": 495,
-        "text": "buf = await fsp.readFile(fullPath)"
+        "file": "host/http.js",
+        "line": 314,
+        "text": "await fsp.writeFile("
       }
     ]
   },
@@ -56,24 +56,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 1681,
+        "file": "host/http.js",
+        "line": 523,
+        "text": "*   旧实现 spawn('cmd.exe', ['/c','start','','explorer.exe', `/select,\"${abs}\"`])"
+      },
+      {
+        "file": "host/http.js",
+        "line": 549,
         "text": "const { spawn } = await import('node:child_process')"
       },
       {
-        "file": "index.js",
-        "line": 1687,
-        "text": "child = spawn('cmd.exe', ['/c', 'start', '', found.absolute], {"
+        "file": "host/http.js",
+        "line": 561,
+        "text": "child = spawn(absolute, [], {"
       },
       {
-        "file": "index.js",
-        "line": 1694,
-        "text": "child = spawn('cmd.exe', ["
+        "file": "host/http.js",
+        "line": 572,
+        "text": "child = spawn('explorer.exe', [`/select,${absolute}`], {"
       },
       {
-        "file": "index.js",
-        "line": 1702,
-        "text": "child = spawn('xdg-open', [mode === 'play' ? found.absolute : path.dirname(found.absolute)], {"
+        "file": "host/http.js",
+        "line": 580,
+        "text": "child = spawn('open', [absolute], { detached: true, stdio: 'ignore' })"
       }
     ]
   },

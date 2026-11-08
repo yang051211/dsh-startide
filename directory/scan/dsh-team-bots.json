@@ -1,7 +1,7 @@
 {
   "name": "dsh-team-bots",
-  "version": "0.2.395",
-  "scannedAt": "2026-11-07T23:17:06.815Z",
+  "version": "0.2.455",
+  "scannedAt": "2026-11-08T14:57:21.587Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -23,12 +23,12 @@
     "evidence": [
       {
         "file": "scripts/doctor.mjs",
-        "line": 4,
+        "line": 12,
         "text": "import { accessSync, constants, existsSync, lstatSync, readFileSync, realpathSync, statSync } from 'node:fs'"
       },
       {
         "file": "scripts/doctor.mjs",
-        "line": 100,
+        "line": 110,
         "text": "const refs = extractHostRefs(readFileSync(patchFile, 'utf8'))"
       },
       {
@@ -42,9 +42,9 @@
         "text": "mkdirSync(dirname(path), { recursive: true })"
       },
       {
-        "file": "src/http.js",
-        "line": 1,
-        "text": "import { readFile } from 'node:fs/promises'"
+        "file": "src/feishu/store.js",
+        "line": 2,
+        "text": "import { chmod, mkdir, stat } from 'node:fs/promises'"
       }
     ]
   },
@@ -63,17 +63,17 @@
       },
       {
         "file": "src/tools.js",
-        "line": 69,
+        "line": 77,
         "text": "if (!ctx.tools?.register) return"
       },
       {
         "file": "src/tools.js",
-        "line": 71,
+        "line": 79,
         "text": "ctx.tools.register({"
       },
       {
         "file": "src/tools.js",
-        "line": 102,
+        "line": 110,
         "text": "ctx.tools.register({"
       }
     ]
@@ -83,12 +83,12 @@
     "evidence": [
       {
         "file": "scripts/doctor.mjs",
-        "line": 5,
+        "line": 13,
         "text": "import { spawnSync } from 'node:child_process'"
       },
       {
         "file": "scripts/doctor.mjs",
-        "line": 80,
+        "line": 88,
         "text": "const dsh = spawnSync('dsh', ['--version'], { encoding: 'utf8' })"
       },
       {
@@ -97,14 +97,14 @@
         "text": "import { execFileSync, spawn } from 'node:child_process'"
       },
       {
-        "file": "src/services/review-watchdog.js",
-        "line": 13,
-        "text": "import { execFileSync } from 'node:child_process'"
+        "file": "src/service.js",
+        "line": 73,
+        "text": "// GitHub 触发源的 gh 执行钩子（B4-②/DSHBOTS-335）：生产用 spawnSync('gh', ...)，"
       },
       {
-        "file": "src/services/runs.js",
-        "line": 8,
-        "text": "import { execFileSync, spawnSync } from 'node:child_process'"
+        "file": "src/services/github-source.js",
+        "line": 11,
+        "text": "import { spawnSync } from 'node:child_process'"
       }
     ]
   },
@@ -112,7 +112,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [
     "vendor/dompurify/purify.min.js"
   ],

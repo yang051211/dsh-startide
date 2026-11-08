@@ -1,7 +1,7 @@
 {
   "name": "deepseek-plastic-memory",
-  "version": "3.4.5",
-  "scannedAt": "2026-11-04T20:38:58.927Z",
+  "version": "3.12.1",
+  "scannedAt": "2026-11-08T14:57:20.178Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,12 +18,12 @@
       },
       {
         "file": "client.js",
-        "line": 462,
+        "line": 623,
         "text": "fetch('/api/memory-sky/open', {"
       },
       {
         "file": "client.js",
-        "line": 500,
+        "line": 661,
         "text": "fetch('/api/memory-sky/open', {"
       },
       {
@@ -39,26 +39,26 @@
       {
         "file": "index.js",
         "line": 8,
-        "text": "import { readFileSync, existsSync, readdirSync, mkdirSync, writeFileSync, appendFileSync, renameSync, rmSync } from 'node:fs'"
+        "text": "import { readFileSync, existsSync, readdirSync, mkdirSync, writeFileSync, appendFileSync, renameSync, rmSync, statSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 46,
+        "line": 28,
+        "text": "const j = JSON.parse(readFileSync(EMO_CONFIG, 'utf8').replace(/^﻿/, ''))"
+      },
+      {
+        "file": "index.js",
+        "line": 55,
+        "text": "writeFileSync(EMO_CONFIG, JSON.stringify(next, null, 2))"
+      },
+      {
+        "file": "index.js",
+        "line": 154,
         "text": "try { meta = JSON.parse(readFileSync(metaPath, 'utf8')) } catch {}"
       },
       {
         "file": "index.js",
-        "line": 57,
-        "text": "mkdirSync(dir, { recursive: true })"
-      },
-      {
-        "file": "index.js",
-        "line": 59,
-        "text": "writeFileSync(join(dir, 'meta.json'), JSON.stringify(meta, null, 1), 'utf8')"
-      },
-      {
-        "file": "index.js",
-        "line": 97,
+        "line": 177,
         "text": "mkdirSync(dir, { recursive: true })"
       }
     ]
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 20,
+        "line": 66,
         "text": "export const inject = ['tools', 'webServer']"
       },
       {
         "file": "index.js",
-        "line": 315,
+        "line": 518,
         "text": "ctx.tools.register({"
       },
       {
         "file": "index.js",
-        "line": 336,
+        "line": 540,
         "text": "ctx.tools.register({"
       },
       {
         "file": "index.js",
-        "line": 343,
+        "line": 547,
         "text": "ctx.tools.register({"
       },
       {
         "file": "index.js",
-        "line": 350,
+        "line": 554,
         "text": "ctx.tools.register({"
       }
     ]
@@ -103,8 +103,13 @@
       },
       {
         "file": "index.js",
-        "line": 34,
+        "line": 80,
         "text": "const r = spawnSync(process.execPath, [SCRIPT, ...args], { encoding: 'utf8', env, windowsHide: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 855,
+        "text": "const r = spawnSync(npm, ['install', '--omit=dev', '--no-audit', '--no-fund'], {"
       },
       {
         "file": "sky.js",
@@ -115,11 +120,6 @@
         "file": "sky.js",
         "line": 211,
         "text": "const child = spawn(info.path, ['--new-window', url], { detached: true, stdio: 'ignore', windowsHide: false })"
-      },
-      {
-        "file": "sky.js",
-        "line": 224,
-        "text": "      child = spawn('winget', ['install', '--id', 'Microsoft.Edge', '-e', '--silent', '--accept-package-agreements', '--accept-source-agreements'], { windowsHid"
       }
     ]
   },

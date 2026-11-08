@@ -1,0 +1,112 @@
+{
+  "name": "dsh-paper-reader-studio",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-08T14:57:29.374Z",
+  "icon": "dsh-paper-reader-studio.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 258,
+        "text": "ndGroup(),r.gullet.beginGroup();var t=r.fetch().text;if(t===\"&\"||t===\"\\\\\\\\\")r.consume();else if(t===\"\\\\end\"){e[e.length-1].length===0&&e.pop();break}else throw "
+      },
+      {
+        "file": "client.js",
+        "line": 262,
+        "text": "}expect(e,t){if(t===void 0&&(t=!0),this.fetch().text!==e)throw new N(\"Expected '\"+e+\"', got '\"+this.fetch().text+\"'\",this.fetch());t&&this.consume()}consume(){t"
+      },
+      {
+        "file": "vendor/pdfjs/build/pdf.min.mjs",
+        "line": 21,
+        "text": "hUrl(t,document.baseURI)){const i=await fetch(t);if(!i.ok)throw new Error(i.statusText);switch(e){case\"arraybuffer\":return i.arrayBuffer();case\"blob\":return i.b"
+      },
+      {
+        "file": "vendor/pdfjs/build/pdf.worker.min.mjs",
+        "line": 21,
+        "text": "n a instanceof Ref&&this.xref?this.xref.fetch(a,this.suppressEncryption):a}async getAsync(e,t,i){let a=this._map.get(e);if(void 0===a&&void 0!==t){a=this._map.g"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/http.js",
+        "line": 10,
+        "text": "import { createReadStream, promises as fs } from 'node:fs';"
+      },
+      {
+        "file": "lib/library.js",
+        "line": 9,
+        "text": "import { promises as fs, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/library.js",
+        "line": 231,
+        "text": "const source = await fs.readFile(paper.path, 'utf8');"
+      },
+      {
+        "file": "lib/library.js",
+        "line": 239,
+        "text": "return readFileSync(candidate, 'utf8');"
+      },
+      {
+        "file": "lib/library.js",
+        "line": 250,
+        "text": "const bibSource = await fs.readFile(paper.bibPath, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 335,
+        "text": "const disposer = ctx.tools.register(definition);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/library.js",
+        "line": 8,
+        "text": "import { execFile as nodeExecFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/pdf.js",
+        "line": 111,
+        "text": "const handle = subprocess.spawn({"
+      },
+      {
+        "file": "lib/pdf.js",
+        "line": 141,
+        "text": "execFile(exe, argv, { timeout: 12000, windowsHide: true }, (error, _stdout, stderr) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "client.js",
+    "vendor/pdfjs/build/pdf.min.mjs",
+    "vendor/pdfjs/build/pdf.worker.min.mjs"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

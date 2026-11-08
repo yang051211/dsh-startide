@@ -1,0 +1,68 @@
+{
+  "name": "dsh-workspace-migrate",
+  "version": "0.5.3",
+  "scannedAt": "2026-11-08T14:57:24.062Z",
+  "icon": "dsh-workspace-migrate.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 243,
+        "text": "const response = await fetch(API + path, options)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { promises as fsp } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 230,
+        "text": "const text = await fsp.readFile(join(home, 'storages', 'workspace.json'), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 256,
+        "text": "const manifest = JSON.parse(await fsp.readFile(join(path, 'manifest.json'), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 320,
+        "text": "const manifest = JSON.parse(await fsp.readFile(join(dir, 'manifest.json'), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 332,
+        "text": "const doc = JSON.parse(await fsp.readFile(join(dir, 'workspaces.json'), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionPersistence",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

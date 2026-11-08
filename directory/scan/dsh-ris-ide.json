@@ -1,35 +1,35 @@
 {
   "name": "dsh-ris-ide",
-  "version": "1.7.2",
-  "scannedAt": "2026-11-03T20:52:11.222Z",
+  "version": "1.7.3",
+  "scannedAt": "2026-11-08T14:57:25.245Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
+        "file": "bin/check-listing.mjs",
+        "line": 203,
+        "text": "const res = await fetch(url, { method: 'HEAD', redirect: 'follow', signal: AbortSignal.timeout(8000) })"
+      },
+      {
         "file": "lib/client.js",
-        "line": 217,
+        "line": 312,
         "text": "* exhausted that budget: every later fetch (open a file, send a message) sat"
       },
       {
         "file": "lib/client.js",
-        "line": 516,
+        "line": 611,
         "text": "var response = await fetch(routeUrl('dsh-ris-ide/tail?' + query.toString()).href, {"
       },
       {
         "file": "lib/client.js",
-        "line": 546,
+        "line": 641,
         "text": "var response = await fetch(url.href, { headers: { accept: 'application/json' }, signal: signal })"
       },
       {
         "file": "lib/client.js",
-        "line": 643,
+        "line": 738,
         "text": "var response = await fetch(routeUrl('dsh-ris-ide/stop').href, {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 11208,
-        "text": "var response = await fetch(url.href, { headers: { accept: 'application/json' }, signal: signal })"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/client-codemirror.js",
-        "line": 11876,
-        "text": "while (curDOM != panel.dom) curDOM = rm(curDOM);"
+        "file": "bin/check-listing.mjs",
+        "line": 13,
+        "text": "import { readFile, readdir, stat } from 'node:fs/promises'"
       },
       {
-        "file": "lib/client-codemirror.js",
-        "line": 11879,
-        "text": "while (curDOM) curDOM = rm(curDOM);"
-      },
-      {
-        "file": "lib/client-codemirror.js",
-        "line": 11890,
-        "text": "function rm(node) {"
-      },
-      {
-        "file": "lib/debug/engine.js",
+        "file": "bin/check-listing.mjs",
         "line": 14,
-        "text": "import { open, stat } from 'node:fs/promises'"
+        "text": "import { existsSync } from 'node:fs'"
       },
       {
-        "file": "lib/index.js",
-        "line": 53,
-        "text": "port { appendFile, copyFile, cp, link, lstat, mkdir, open, readdir, readFile, readlink, rename, rm, stat, symlink, truncate, writeFile } from 'node:fs/promises'"
+        "file": "bin/check-listing.mjs",
+        "line": 30,
+        "text": "return JSON.parse(await readFile(join(ROOT, rel), 'utf8'))"
+      },
+      {
+        "file": "bin/check-listing.mjs",
+        "line": 35,
+        "text": "return await readFile(join(ROOT, rel), 'utf8')"
+      },
+      {
+        "file": "bin/proxy-janitor.mjs",
+        "line": 19,
+        "text": "import { appendFileSync, mkdirSync, unlinkSync } from 'node:fs'"
       }
     ]
   },
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 139,
+        "line": 155,
         "text": "export const inject = ['webServer', 'sessions', 'tools']"
       },
       {
         "file": "lib/index.js",
-        "line": 7005,
+        "line": 8137,
         "text": "* same core as the panel routes. Registered only when `ctx.tools` exists; the"
       },
       {
         "file": "lib/index.js",
-        "line": 7181,
+        "line": 8313,
         "text": "if (typeof ctx.tools?.register !== 'function') {"
       },
       {
         "file": "lib/index.js",
-        "line": 7182,
+        "line": 8314,
         "text": "ctx.logger?.warn?.('dsh-ris-ide: ctx.tools is missing; agent tools stay unregistered')"
       },
       {
         "file": "lib/index.js",
-        "line": 7188,
+        "line": 8320,
         "text": "disposers.push(ctx.tools.register(definition))"
       }
     ]
@@ -99,26 +99,26 @@
       {
         "file": "lib/index.js",
         "line": 57,
-        "text": "import { spawn } from 'node:child_process'"
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
       },
       {
         "file": "lib/index.js",
-        "line": 731,
+        "line": 899,
         "text": "const child = spawn('git', args, { cwd, windowsHide: true, stdio: [input === undefined ? 'ignore' : 'pipe', 'pipe', 'pipe'] })"
       },
       {
         "file": "lib/index.js",
-        "line": 1082,
+        "line": 1250,
         "text": "const child = spawn('git', args, { cwd, windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })"
       },
       {
         "file": "lib/index.js",
-        "line": 2404,
+        "line": 2572,
         "text": "child = spawn('powershell.exe', ["
       },
       {
         "file": "lib/index.js",
-        "line": 2429,
+        "line": 2597,
         "text": "child = spawn('taskkill.exe', ['/PID', String(Number(pid)), '/T', '/F'], {"
       }
     ]

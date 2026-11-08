@@ -1,0 +1,131 @@
+{
+  "name": "dsh-watch-ears",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-08T14:57:24.984Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/companion.mjs",
+        "line": 21,
+        "text": "const res = await fetch(url, { signal: AbortSignal.timeout(timeoutMs || 90000) })"
+      },
+      {
+        "file": "lib/asr.mjs",
+        "line": 336,
+        "text": "const res = await fetch(String(p.baseUrl || 'https://api.siliconflow.cn/v1').replace(/\\/+$/, '') + '/audio/transcriptions', {"
+      },
+      {
+        "file": "lib/asr.mjs",
+        "line": 364,
+        "text": "const res = await fetch(String(p.baseUrl).replace(/\\/+$/, '') + '/audio/transcriptions', {"
+      },
+      {
+        "file": "lib/client.mjs",
+        "line": 11,
+        "text": "const res = await fetch('http://127.0.0.1:' + port + pathname, { signal: AbortSignal.timeout(timeoutMs ?? 120000) })"
+      },
+      {
+        "file": "lib/daemon.mjs",
+        "line": 4,
+        "text": "import http from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/live.mjs",
+        "line": 13,
+        "text": "import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/live.mjs",
+        "line": 39,
+        "text": "try { text = readFileSync(join(DIR, f), 'utf8') } catch { continue }"
+      },
+      {
+        "file": "bin/live.mjs",
+        "line": 59,
+        "text": "const m = Number(readFileSync(MARK, 'utf8').trim())"
+      },
+      {
+        "file": "bin/live.mjs",
+        "line": 78,
+        "text": "mkdirSync(DIR, { recursive: true })"
+      },
+      {
+        "file": "bin/live.mjs",
+        "line": 79,
+        "text": "writeFileSync(MARK, String(Date.now()), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 25,
+        "text": "export const inject = ['tools', 'agents', 'subagents']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 214,
+        "text": "ctx.tools.register(tool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/companion.mjs",
+        "line": 5,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "bin/companion.mjs",
+        "line": 148,
+        "text": "execFile(process.execPath, [join(HERE, 'voice-digest.mjs')], { timeout: 60000, windowsHide: true },"
+      },
+      {
+        "file": "lib/asr.mjs",
+        "line": 12,
+        "text": "import { execFileSync, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/asr.mjs",
+        "line": 84,
+        "text": "const child = spawn(lc.python, [WORKER_PY], { windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'], env })"
+      },
+      {
+        "file": "lib/client.mjs",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "lib/net/Ears.dll",
+    "lib/net/NAudio.Core.dll",
+    "lib/net/NAudio.dll",
+    "lib/net/NAudio.Wasapi.dll",
+    "lib/net/NAudio.WinMM.dll"
+  ],
+  "requiredServices": [
+    "agents",
+    "subagents",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

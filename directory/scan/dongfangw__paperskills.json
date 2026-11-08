@@ -1,0 +1,127 @@
+{
+  "name": "@dongfangw/paperskills",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-08T14:57:25.698Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/skills/scihub-batch-download/fetch_oa.sh",
+        "line": 43,
+        "text": "_curl() { command curl --noproxy '*' \"$@\"; }   # 绕过代理"
+      },
+      {
+        "file": "assets/skills/scihub-batch-download/fetch_scihub.sh",
+        "line": 38,
+        "text": "code=$(curl -sk -A \"$UA\" -o /dev/null -w \"%{http_code}\" -m 8 \"https://$m/\" || echo 000)"
+      },
+      {
+        "file": "assets/skills/scihub-batch-download/fetch_scihub.sh",
+        "line": 60,
+        "text": "html=$(curl -sk -A \"$UA\" -m 25 \"https://$m/$doi\") || continue"
+      },
+      {
+        "file": "assets/skills/scihub-batch-download/fetch_scihub.sh",
+        "line": 78,
+        "text": "curl -sk -A \"$UA\" -m 90 -L -e \"https://$mirror_used/\" -o \"$out\" \"$pdf_url\" || {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 100,
+        "text": "fetch(url).then((r) => {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { realpathSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/paths.js",
+        "line": 1,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/skills-provider.js",
+        "line": 1,
+        "text": "import { readFile, readdir } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/skills-provider.js",
+        "line": 66,
+        "text": "raw = await readFile(skillPath, 'utf8');"
+      },
+      {
+        "file": "lib/static.js",
+        "line": 1,
+        "text": "import { createReadStream, existsSync, realpathSync, statSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 468,
+        "text": "children: \"MCP 服务器（在 profile 的 cordis 组合里注册 @deepseek-ai/dsh-mcp-client）\""
+      },
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "export const inject = ['skills', 'tools', 'agents', 'sessions', 'sessionProjections'];"
+      },
+      {
+        "file": "lib/skills-provider.js",
+        "line": 193,
+        "text": "{mcpServers.join('`、`')}\\`。若会话中没有 \\`mcp__<server>__*\\` 这类工具，说明对应 MCP server 未注册；请在 DSH 设置里为 \\`@deepseek-ai/dsh-mcp-client\\` 配置 serverName（需精确匹配上述名字），并重启 dsh。`);"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 107,
+        "text": "agentCtx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 135,
+        "text": "agentCtx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/run-script.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/run-script.js",
+        "line": 5,
+        "text": "const proc = spawn(cmd, args, { cwd });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "sessionProjections",
+    "sessions",
+    "skills",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,94 @@
+{
+  "name": "dsh-tool-camera",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-08T14:57:29.437Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "install.ps1",
+        "line": 157,
+        "text": "Invoke-WebRequest -Uri $spec -OutFile $local -UseBasicParsing"
+      },
+      {
+        "file": "lib/ffmpeg-bootstrap.js",
+        "line": 109,
+        "text": "const response = await fetch(url, { signal: AbortSignal.timeout(DOWNLOAD_TIMEOUT_MS) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/ffmpeg-bootstrap.js",
+        "line": 15,
+        "text": "import { access, chmod, mkdir, rename, rm, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/ffmpeg-bootstrap.js",
+        "line": 16,
+        "text": "import { constants as fsConstants } from 'node:fs'"
+      },
+      {
+        "file": "lib/ffmpeg-bootstrap.js",
+        "line": 100,
+        "text": "await mkdir(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/ffmpeg-bootstrap.js",
+        "line": 114,
+        "text": "await writeFile(scratch, hit.data)"
+      },
+      {
+        "file": "lib/ffmpeg-bootstrap.js",
+        "line": 115,
+        "text": "await rm(target, { force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 27,
+        "text": "export const inject = ['tools', 'attachments']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 328,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 390,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "attachments",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

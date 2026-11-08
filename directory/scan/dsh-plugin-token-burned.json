@@ -1,0 +1,66 @@
+{
+  "name": "dsh-plugin-token-burned",
+  "version": "0.3.3",
+  "scannedAt": "2026-11-08T14:57:20.823Z",
+  "icon": "dsh-plugin-token-burned.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 638,
+        "text": "fetch(ENDPOINT + query, { cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 2,
+        "text": "import { readFile, writeFile, rename, mkdir } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 142,
+        "text": "await mkdir(dir, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 143,
+        "text": "await writeFile(tmp, payload, 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 156,
+        "text": "saved = JSON.parse(await readFile(file, 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 159,
+        "text": "try { saved = JSON.parse(await readFile(legacy, 'utf8')); break; } catch { /* try next */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

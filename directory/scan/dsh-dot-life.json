@@ -1,7 +1,7 @@
 {
   "name": "dsh-dot-life",
-  "version": "0.20.1",
-  "scannedAt": "2026-11-07T23:17:01.790Z",
+  "version": "0.21.1",
+  "scannedAt": "2026-11-08T14:57:18.554Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,18 +18,18 @@
       },
       {
         "file": "lib/client.js",
-        "line": 111,
+        "line": 119,
         "text": "return (await fetch(`${panelUrl()}api/state`, {"
       },
       {
-        "file": "scripts/check-mac-aio.sh",
-        "line": 21,
-        "text": "code() { curl -s -o /dev/null -w '%{http_code}' --noproxy '*' --max-time 5 \"$1\" 2>/dev/null || echo 000; }"
+        "file": "lib/client.js",
+        "line": 741,
+        "text": "fetch(`${pageUrl().replace(/page\\/$/, \"\")}api/status`, { credentials: \"same-origin\" }).then((r) => r.ok ? r.json() : null).then((j) => {"
       },
       {
-        "file": "scripts/check-mac-aio.sh",
-        "line": 33,
-        "text": "curl -s --noproxy '*' --max-time 5 \"http://127.0.0.1:$SP/\" | grep -q smoke-ok && step 'port forward (detached server)' 1 || {"
+        "file": "lib/client.js",
+        "line": 754,
+        "text": "fetch(`${pageUrl().replace(/page\\/$/, \"\")}api/setup`, {"
       }
     ]
   },
@@ -43,22 +43,22 @@
       },
       {
         "file": "scripts/prompts.mjs",
-        "line": 139,
+        "line": 147,
         "text": "const readCanon = () => { try { return JSON.parse(readFileSync(canonPath(), 'utf8')); } catch { return null; } };"
       },
       {
         "file": "scripts/prompts.mjs",
-        "line": 172,
+        "line": 182,
         "text": "const builtin = readFileSync(P.builtinPath(id), 'utf8').replace(/\\n$/, '');"
       },
       {
         "file": "scripts/prompts.mjs",
-        "line": 181,
+        "line": 191,
         "text": "mkdirSync(dirname(path), { recursive: true });"
       },
       {
         "file": "scripts/prompts.mjs",
-        "line": 182,
+        "line": 192,
         "text": "writeFileSync(path, `${JSON.stringify(withCanonField(c, id.slice(6), String(text).replace(/\\r\\n/g, '\\n').replace(/\\n+$/, '')), null, 2)}\\n`);"
       }
     ]
@@ -78,17 +78,17 @@
       },
       {
         "file": "src/computer/vm.js",
-        "line": 39,
+        "line": 40,
         "text": "// Mount the VM's browser/desktop tools (mcp__dot-vm__*) through dsh-mcp-client with the key attached."
       },
       {
         "file": "src/computer/vm.js",
-        "line": 324,
+        "line": 325,
         "text": "ent = config.mcpClient ?? await import('@deepseek-ai/dsh-mcp-client'); } catch (err) { logger.error(`${VM_TOOL_PREFIX}* unavailable: ${err.message}`); return; }"
       },
       {
         "file": "src/interlude/core.js",
-        "line": 1257,
+        "line": 1278,
         "text": "scope.effect(() => scope.tools.register({"
       }
     ]

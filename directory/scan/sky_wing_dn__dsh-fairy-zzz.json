@@ -1,0 +1,109 @@
+{
+  "name": "@sky_wing_dn/dsh-fairy-zzz",
+  "version": "2.0.3",
+  "scannedAt": "2026-11-08T14:57:28.219Z",
+  "icon": "sky_wing_dn__dsh-fairy-zzz.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 224,
+        "text": "const res = await fetch('/fairy-zzz/tts', {"
+      },
+      {
+        "file": "client.js",
+        "line": 326,
+        "text": "const res = await fetch('/fairy-zzz/usage', { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 2557,
+        "text": "fetch('/fairy-zzz/health', { cache: 'no-store', signal: controller ? controller.signal : undefined })"
+      },
+      {
+        "file": "client.js",
+        "line": 2597,
+        "text": "fetch('/fairy-zzz/voice-home', { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 2618,
+        "text": "fetch('/fairy-zzz/voice-home', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { appendFileSync, createReadStream, existsSync, mkdirSync, openSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 2,
+        "text": "import { mkdir, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 47,
+        "text": "const hint = readFileSync(VOICE_HINT, 'utf8').trim()"
+      },
+      {
+        "file": "index.js",
+        "line": 59,
+        "text": "if (readFileSync(VOICE_HINT, 'utf8').trim()) return 'settings'"
+      },
+      {
+        "file": "index.js",
+        "line": 105,
+        "text": "writeFileSync(VOICE_HINT, clean + '\\n', 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 4,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 422,
+        "text": "spawn('taskkill', ['/pid', String(stale.pid), '/t', '/f'], { stdio: 'ignore', windowsHide: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 435,
+        "text": "const child = spawn(TTS_PY, [TTS_SERVER, '--port', String(TTS_PORT)], {"
+      },
+      {
+        "file": "index.js",
+        "line": 481,
+        "text": "spawn('taskkill', ['/pid', String(child.pid), '/t', '/f'], { stdio: 'ignore', windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

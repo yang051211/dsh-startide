@@ -1,0 +1,121 @@
+{
+  "name": "dsh-anic",
+  "version": "0.62.0",
+  "scannedAt": "2026-11-08T14:57:22.935Z",
+  "icon": "dsh-anic.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.js",
+        "line": 15478,
+        "text": "const res = await fetch(BOOTSTRAP_RESTART_URL, {"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 15507,
+        "text": "const res = await fetch(BOOTSTRAP_STATUS_URL, { headers });"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 18104,
+        "text": "const res = await fetch(CONFIG_URL, {"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 18158,
+        "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 18197,
+        "text": "const res = await fetch(CONFIG_URL, { headers: { Accept: \"application/json\" } });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/skill/scripts/archive-cycle.mjs",
+        "line": 8,
+        "text": "import { existsSync, mkdirSync, readdirSync, renameSync, rmSync, statSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "assets/skill/scripts/archive-cycle.mjs",
+        "line": 35,
+        "text": "const { total, pendingCount } = summarizeTaskRows(readFileSync(taskListPath, 'utf-8'));"
+      },
+      {
+        "file": "assets/skill/scripts/archive-cycle.mjs",
+        "line": 53,
+        "text": "if (!existsSync(archiveDir)) mkdirSync(archiveDir, { recursive: true });"
+      },
+      {
+        "file": "assets/skill/scripts/archive-cycle.mjs",
+        "line": 88,
+        "text": "rmSync(path, { recursive: true });"
+      },
+      {
+        "file": "assets/skill/scripts/auto-fix-loop.mjs",
+        "line": 9,
+        "text": "import { existsSync, readFileSync, mkdirSync, readdirSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/host.js",
+        "line": 8319,
+        "text": "const disposer = tools.register(wireGuard(t$1)) ?? null;"
+      },
+      {
+        "file": "dist/host.js",
+        "line": 8327,
+        "text": "const disposer = tools.register(wireGuard(prev)) ?? null;"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/skill/scripts/auto-fix-loop.mjs",
+        "line": 11,
+        "text": "import { execSync } from 'node:child_process';"
+      },
+      {
+        "file": "assets/skill/scripts/auto-fix-loop.mjs",
+        "line": 59,
+        "text": "const output = execSync(cmd, {"
+      },
+      {
+        "file": "assets/skill/scripts/band-detector.mjs",
+        "line": 18,
+        "text": "import { execSync } from 'node:child_process';"
+      },
+      {
+        "file": "assets/skill/scripts/eval-runner.mjs",
+        "line": 22,
+        "text": "import { execSync, execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "assets/skill/scripts/eval-runner.mjs",
+        "line": 135,
+        "text": "    const output = execSync(testCmd, { cwd: projectDir, timeout: resolveTimeout('test', { configMs: timeoutFromConfig(configContent, 'test') }), stdio: 'pipe', "
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

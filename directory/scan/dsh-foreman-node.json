@@ -1,0 +1,121 @@
+{
+  "name": "dsh-foreman-node",
+  "version": "0.2.3",
+  "scannedAt": "2026-11-08T14:57:26.220Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 279,
+        "text": "const response = await fetch(new URL(`${API}/${path}`, window.location.href), {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 45,
+        "text": "this.connect = input.connect ?? ((url) => new WebSocket(url));"
+      },
+      {
+        "file": "src/client.ts",
+        "line": 76,
+        "text": "this.connect = input.connect ?? (url => new WebSocket(url) as unknown as SocketLike)"
+      },
+      {
+        "file": "src/client/index.tsx",
+        "line": 28,
+        "text": "const response = await fetch(new URL(`${API}/${path}`, window.location.href), {"
+      },
+      {
+        "file": "src/routes.ts",
+        "line": 13,
+        "text": "import type { IncomingMessage, ServerResponse } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { existsSync, readFileSync, readdirSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 286,
+        "text": "comment = readFileSync(publicOf(path), \"utf8\").trim().split(/\\s+/).slice(2).join(\" \");"
+      },
+      {
+        "file": "src/keys.ts",
+        "line": 9,
+        "text": "import { existsSync, readdirSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/keys.ts",
+        "line": 43,
+        "text": "const fields = readFileSync(publicOf(path), 'utf8').trim().split(/\\s+/)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1010,
+        "text": "const registrar = agent.ctx.tools;"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 130,
+        "text": "export const inject = ['sessionController', 'sessionPersistence', 'workspaceRegistry', 'permissionPresets', 'tools', 'agents']"
+      },
+      {
+        "file": "src/session.ts",
+        "line": 171,
+        "text": "const registrar = agent.ctx.tools"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 326,
+        "text": "const child = spawn(argv[0], argv.slice(1), {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 534,
+        "text": "const realSpawn = (argv) => spawn(argv[0], argv.slice(1), {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 642,
+        "text": "child = this.spawn(argv);"
+      },
+      {
+        "file": "src/routes.ts",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

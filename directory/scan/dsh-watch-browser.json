@@ -1,0 +1,108 @@
+{
+  "name": "dsh-watch-browser",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-08T14:57:25.117Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.mjs",
+        "line": 11,
+        "text": "const res = await fetch('http://127.0.0.1:' + port + pathname, { signal: AbortSignal.timeout(timeoutMs ?? 120000) })"
+      },
+      {
+        "file": "lib/daemon.mjs",
+        "line": 3,
+        "text": "import http from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/browser.mjs",
+        "line": 32,
+        "text": "const fs = await import('node:fs')"
+      },
+      {
+        "file": "bin/browser.mjs",
+        "line": 36,
+        "text": "fs.mkdirSync(profileDir, { recursive: true })"
+      },
+      {
+        "file": "bin/browser.mjs",
+        "line": 53,
+        "text": "const { writeFileSync, mkdtempSync } = await import('node:fs')"
+      },
+      {
+        "file": "bin/browser.mjs",
+        "line": 60,
+        "text": "writeFileSync(script, ps, 'utf8')"
+      },
+      {
+        "file": "lib/daemon.mjs",
+        "line": 4,
+        "text": "import { readdirSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 9,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 81,
+        "text": "ctx.tools.register(tool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/browser.mjs",
+        "line": 31,
+        "text": "const { spawn } = await import('node:child_process')"
+      },
+      {
+        "file": "bin/browser.mjs",
+        "line": 47,
+        "text": "// Launch through WMI, not spawn()."
+      },
+      {
+        "file": "bin/browser.mjs",
+        "line": 61,
+        "text": "const { execFileSync } = await import('node:child_process')"
+      },
+      {
+        "file": "lib/client.mjs",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/client.mjs",
+        "line": 22,
+        "text": "const child = spawn(process.execPath, [DAEMON], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

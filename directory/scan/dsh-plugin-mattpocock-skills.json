@@ -1,0 +1,82 @@
+{
+  "name": "dsh-plugin-mattpocock-skills",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-08T14:57:22.744Z",
+  "icon": "dsh-plugin-mattpocock-skills.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/sync-skills.mjs",
+        "line": 18,
+        "text": "*   MATTPOCOCK_SKILLS_REF    ref to fetch (default: the repository's default branch)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 24,
+        "text": "import { existsSync, readFileSync, readdirSync, statSync, unwatchFile, watch, watchFile } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 25,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 111,
+        "text": "raw = await readFile(candidate.locator, { encoding: 'utf8', signal: options.signal })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 162,
+        "text": "const parsed = JSON.parse(readFileSync(path, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 254,
+        "text": "raw = readFileSync(locator, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/release.mjs",
+        "line": 27,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/sync-skills.mjs",
+        "line": 25,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/verify.mjs",
+        "line": 18,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

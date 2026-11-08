@@ -1,14 +1,14 @@
 {
   "name": "dsh-relay-phone",
-  "version": "0.13.1",
-  "scannedAt": "2026-11-08T07:28:14.129Z",
+  "version": "0.18.0",
+  "scannedAt": "2026-11-08T14:57:20.879Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "src/boot-source.js",
-        "line": 388,
+        "line": 432,
         "text": "var OrigXHR = window.XMLHttpRequest"
       },
       {
@@ -23,12 +23,12 @@
       },
       {
         "file": "src/mobile/assets/app.js",
-        "line": 154,
+        "line": 169,
         "text": "var res = await fetch(PREFIX + '/__relay/m/rpc?g=' + encodeURIComponent(GATE), {"
       },
       {
         "file": "src/mobile/assets/app.js",
-        "line": 215,
+        "line": 230,
         "text": "socket = new WebSocket(wsUrl())"
       }
     ]
@@ -43,23 +43,23 @@
       },
       {
         "file": "src/crypto.js",
-        "line": 79,
-        "text": "const raw = JSON.parse(fs.readFileSync(this.sessionsPath, 'utf8'))"
+        "line": 70,
+        "text": "const raw = JSON.parse(fs.readFileSync(this.noncePath, 'utf8'))"
       },
       {
         "file": "src/crypto.js",
-        "line": 98,
-        "text": "fs.writeFileSync(tmp, `${JSON.stringify(raw)}\\n`, { mode: 0o600 })"
+        "line": 85,
+        "text": "fs.mkdirSync(path.dirname(this.noncePath), { recursive: true, mode: 0o700 })"
       },
       {
-        "file": "src/files.js",
-        "line": 8,
-        "text": "import fs from 'node:fs'"
+        "file": "src/crypto.js",
+        "line": 86,
+        "text": "fs.writeFileSync(tmp, JSON.stringify({ nonces: [...this.openedNonces] }), { mode: 0o600 })"
       },
       {
-        "file": "src/identity.js",
-        "line": 15,
-        "text": "import fs from 'node:fs'"
+        "file": "src/crypto.js",
+        "line": 117,
+        "text": "const raw = JSON.parse(fs.readFileSync(this.sessionsPath, 'utf8'))"
       }
     ]
   },

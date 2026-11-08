@@ -1,0 +1,97 @@
+{
+  "name": "dsh-explorer",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-08T14:57:24.871Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 840,
+        "text": "ionId\",e),n&&o.set(\"dir\",n);let t=await fetch(`/dsh-explorer/api/tree?${o.toString()}`);if(!t.ok){let a=await t.text().catch(()=>\"\");throw new Error(`HTTP ${t.s"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 854,
+        "text": "i/watch?dir=${encodeURIComponent(e)}`;a=new WebSocket(v),a.onmessage=()=>{t()}}catch{}let l=()=>{t()},x=()=>{document.visibilityState===\"visible\"&&t()};window.a"
+      },
+      {
+        "file": "src/client/ExplorerView.tsx",
+        "line": 710,
+        "text": "await fetch(uploadUrl, { method: 'POST', body: file })"
+      },
+      {
+        "file": "src/client/hooks/useLiveSync.ts",
+        "line": 41,
+        "text": "ws = new WebSocket(wsUrl)"
+      },
+      {
+        "file": "src/client/utils/api.ts",
+        "line": 40,
+        "text": "const res = await fetch(`/dsh-explorer/api/tree?${params.toString()}`)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 9,
+        "text": "import { watch } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "import { readdir, stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 343,
+        "text": "import { readdir as readdir2 } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 430,
+        "text": "import { createWriteStream } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 431,
+        "text": "import { access, lstat, mkdir, readFile, rename, rm, unlink, writeFile } from \"node:fs/promises\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 553,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "src/git-status.ts",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

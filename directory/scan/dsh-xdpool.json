@@ -1,7 +1,7 @@
 {
   "name": "dsh-xdpool",
-  "version": "2.6.1",
-  "scannedAt": "2026-11-06T20:48:41.729Z",
+  "version": "2.6.4",
+  "scannedAt": "2026-11-08T14:57:18.600Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,17 +18,17 @@
       },
       {
         "file": "lib/client.js",
-        "line": 2322,
+        "line": 2425,
         "text": "const response = await fetch(POOL_USAGE_PATH, {"
       },
       {
         "file": "lib/client.js",
-        "line": 8302,
+        "line": 8405,
         "text": "const response = await fetch(POOL_MODEL_PROBE_PATH, {"
       },
       {
         "file": "lib/client.js",
-        "line": 8335,
+        "line": 8438,
         "text": "const response = await fetch(POOL_AGGREGATE_PATH, {"
       }
     ]
@@ -44,7 +44,7 @@
       {
         "file": "lib/bin.js",
         "line": 3,
-        "text": "import { chmod, copyFile, mkdir, readFile, readdir, rename, rm, writeFile, writeFile as writeFile$1 } from \"node:fs/promises\";"
+        "text": "import { chmod, copyFile, mkdir, readFile, readdir, rename, rm, unlink, writeFile, writeFile as writeFile$1 } from \"node:fs/promises\";"
       },
       {
         "file": "lib/bin.js",
@@ -92,14 +92,20 @@
       },
       {
         "file": "vendor/channel-pack/pack.js",
-        "line": 1313,
+        "line": 1328,
         "text": "import { spawn } from \"node:child_process\";"
       }
     ]
   },
   "installScripts": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.postinstall: node scripts/link-host-peers.mjs"
+      }
+    ]
   },
   "dependencies": 0,
   "minifiedFiles": [

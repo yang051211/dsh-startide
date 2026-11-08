@@ -1,14 +1,24 @@
 {
   "name": "dsh-plugin-xujie-memory",
-  "version": "1.0.0",
-  "scannedAt": "2026-11-07T14:33:14.064Z",
+  "version": "1.1.7",
+  "scannedAt": "2026-11-08T14:57:22.073Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
+        "file": "examples/curl.sh",
+        "line": 9,
+        "text": "curl -s \"$BASE/chat/completions\" \\"
+      },
+      {
+        "file": "examples/curl.sh",
+        "line": 17,
+        "text": "curl -s \"$BASE/chat/completions\" \\"
+      },
+      {
         "file": "lib/index.js",
-        "line": 251,
+        "line": 262,
         "text": "const res = await fetch(`${endpoint}${path}`, {"
       },
       {
@@ -20,11 +30,6 @@
         "file": "lib/qq/transport.js",
         "line": 17,
         "text": "const response = await fetch(`${this.endpoint}/${action}`, {"
-      },
-      {
-        "file": "runtime/win32-x64/Lib/site-packages/pip/_vendor/urllib3/contrib/emscripten/emscripten_fetch_worker.js",
-        "line": 70,
-        "text": "const response = await fetch(event.data.url, event.data.fetchParams);"
       }
     ]
   },
@@ -48,12 +53,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 103,
+        "line": 105,
         "text": "mkdirSync(dirname(dbPath), { recursive: true })"
       },
       {
         "file": "lib/index.js",
-        "line": 104,
+        "line": 106,
         "text": "appendFileSync(kernelLogPath(), text, 'utf8')"
       }
     ]
@@ -72,8 +77,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 157,
+        "line": 159,
         "text": "child = spawn(python, args, { cwd: PACKAGE_ROOT, env, stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true })"
+      },
+      {
+        "file": "scripts/verify-board.mjs",
+        "line": 3,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/verify-board.mjs",
+        "line": 31,
+        "text": "const child = spawn(EDGE, ["
+      },
+      {
+        "file": "scripts/verify-qq-tab.mjs",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process'"
       }
     ]
   },

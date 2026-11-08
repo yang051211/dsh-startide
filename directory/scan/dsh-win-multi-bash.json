@@ -1,11 +1,32 @@
 {
   "name": "dsh-win-multi-bash",
-  "version": "0.7.7",
-  "scannedAt": "2026-11-02T23:01:16.935Z",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-08T14:57:25.747Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1753,
+        "text": "* @param fetchImpl - the deployment's fetch (injected so a test never dials)."
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1798,
+        "text": "* @param fetchImpl - the deployment's fetch (injected so tests never post)."
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1823,
+        "text": "* @param fetchImpl - the deployment's fetch (injected so tests never post)."
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2629,
+        "text": "* @param fetchImpl - the deployment's fetch (injected so the decision is testable)."
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
@@ -21,11 +42,6 @@
         "text": "rmSync(target, { force: true });"
       },
       {
-        "file": "lib/bash-ssh/index.js",
-        "line": 44,
-        "text": "import { lstatSync } from \"node:fs\";"
-      },
-      {
         "file": "lib/bash-wsl/index.js",
         "line": 8,
         "text": "import { existsSync, lstatSync, rmSync } from \"node:fs\";"
@@ -34,6 +50,11 @@
         "file": "lib/bash-wsl/index.js",
         "line": 361,
         "text": "rmSync(target, { force: true });"
+      },
+      {
+        "file": "lib/sandbox-temp-guard.js",
+        "line": 67,
+        "text": "import { existsSync, mkdirSync, readdirSync, statSync } from 'node:fs';"
       }
     ]
   },
@@ -46,24 +67,24 @@
         "text": "export const inject = ['systemPrompt', 'tools'];"
       },
       {
+        "file": "lib/ssh-shell/hosts-tool.js",
+        "line": 88,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/ssh-shell/scp-tool.js",
+        "line": 134,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
         "file": "lib/tool-bash/types/factory.js",
-        "line": 339,
+        "line": 381,
         "text": "inject: ['tools', 'subprocess', 'sandbox', 'sandboxPolicy'],"
       },
       {
         "file": "lib/tool-bash/types/factory.js",
-        "line": 697,
+        "line": 755,
         "text": "ctx.tools.register(defineTool({"
-      },
-      {
-        "file": "lib/tool-bash/types/shell-family.js",
-        "line": 18,
-        "text": "*    (`ctx.tools.get(name, scope)`, read at every assembly), which is what"
-      },
-      {
-        "file": "lib/tool-bash/types/shell-family.js",
-        "line": 269,
-        "text": "tools = ctx.get?.('tools') ?? ctx.tools;"
       }
     ]
   },
@@ -101,7 +122,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

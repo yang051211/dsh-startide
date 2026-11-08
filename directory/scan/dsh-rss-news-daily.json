@@ -1,0 +1,134 @@
+{
+  "name": "dsh-rss-news-daily",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-08T14:57:20.847Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 26,
+        "text": "// dsh-app:// 自定义协议下 iframe 内 fetch() 会被挂起；用 webServer 的"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 95,
+        "text": "const xhr = new XMLHttpRequest()"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 185,
+        "text": "                    try { fetch(`${readerUrl}api/prefs`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ showNavEntry:"
+      },
+      {
+        "file": "lib/core/fetcher.js",
+        "line": 138,
+        "text": "undiciMod ??= await import('undici').then((m) => m).catch(() => null);"
+      },
+      {
+        "file": "lib/service.js",
+        "line": 162,
+        "text": "const doc = await opts.fetch(src.url, opts.signal, { proxy: src.proxy });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 5,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 6,
+        "text": "import { copyFile, cp, mkdir, readFile, readdir, rm, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 114,
+        "text": "const { readdir, stat } = await import('node:fs/promises');"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 200,
+        "text": "const { readFile: rf } = await import('node:fs/promises');"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 410,
+        "text": "const body = await readFile(file);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 40,
+        "text": "export const inject = ['timer', 'tools'];"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 266,
+        "text": "ctx.tools.register(newsSources(svc)),"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 267,
+        "text": "ctx.tools.register(newsAdd(svc)),"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 268,
+        "text": "ctx.tools.register(newsRemove(svc)),"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 269,
+        "text": "ctx.tools.register(newsFetch(svc)),"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 7,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 555,
+        "text": "const child = spawn(cmd, args, { detached: true, stdio: 'ignore' });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 28,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 557,
+        "text": "execFile('osascript', ['-e',"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "timer",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

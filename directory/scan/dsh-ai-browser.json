@@ -1,0 +1,111 @@
+{
+  "name": "dsh-ai-browser",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-08T14:57:22.732Z",
+  "icon": "dsh-ai-browser.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 400,
+        "text": "return fetch(ROUTE + path, init).then(function (response) {"
+      },
+      {
+        "file": "client.js",
+        "line": 1570,
+        "text": "'fetch(url,{credentials:\"include\"}).then(function(r){if(!r.ok)throw new Error(\"HTTP \"+r.status);return r.blob()})' +"
+      },
+      {
+        "file": "lib/downloads.js",
+        "line": 300,
+        "text": "response = await fetch(url, { redirect: 'follow', signal: controller.signal, headers })"
+      },
+      {
+        "file": "lib/routes.js",
+        "line": 5,
+        "text": "* `fetch('/.dsh-ai-browser/...')` 调用（Desktop 壳会把请求转发到 Host 并带 cookie）。"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 602,
+        "text": "const response = await fetch(url.href, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 29,
+        "text": "const parsed = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "lib/browser-permissions.js",
+        "line": 11,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/browser-permissions.js",
+        "line": 40,
+        "text": "const parsed = JSON.parse(fs.readFileSync(this.filePath, 'utf8'))"
+      },
+      {
+        "file": "lib/browser-permissions.js",
+        "line": 120,
+        "text": "fs.mkdirSync(path.dirname(this.filePath), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "preset.js",
+        "line": 34,
+        "text": "export const inject = ['tools', 'systemPrompt']"
+      },
+      {
+        "file": "preset.js",
+        "line": 124,
+        "text": "return ctx.tools.register(createBrowserTool(ctx))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/downloads.js",
+        "line": 17,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/downloads.js",
+        "line": 541,
+        "text": "const child = spawn(command, [target.path], { detached: true, stdio: 'ignore', windowsHide: true })"
+      },
+      {
+        "file": "lib/downloads.js",
+        "line": 551,
+        "text": "const child = spawn(command, [dir], { detached: true, stdio: 'ignore', windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

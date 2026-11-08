@@ -1,0 +1,67 @@
+{
+  "name": "dsh-life-pipline",
+  "version": "0.7.2",
+  "scannedAt": "2026-11-08T14:57:19.865Z",
+  "icon": "dsh-life-pipline.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/rpc.mjs",
+        "line": 62,
+        "text": "async fetch(request) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/away-guard.mjs",
+        "line": 21,
+        "text": "import { mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "src/away-guard.mjs",
+        "line": 87,
+        "text": "mkdirSync(join(homeDir()), { recursive: true });"
+      },
+      {
+        "file": "src/config.mjs",
+        "line": 1,
+        "text": "import { readFileSync, writeFileSync, chmodSync } from 'node:fs';"
+      },
+      {
+        "file": "src/config.mjs",
+        "line": 18,
+        "text": "return JSON.parse(readFileSync(configPath(), 'utf8'));"
+      },
+      {
+        "file": "src/config.mjs",
+        "line": 38,
+        "text": "writeFileSync(configPath(), `${JSON.stringify(merged, null, 2)}\\n`, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "client/panel.js",
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

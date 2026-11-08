@@ -1,7 +1,7 @@
 {
   "name": "@orderg-x/dsh-mobile",
-  "version": "0.4.5",
-  "scannedAt": "2026-11-08T07:28:17.022Z",
+  "version": "0.4.6",
+  "scannedAt": "2026-11-08T14:57:23.753Z",
   "icon": "orderg-x__dsh-mobile.svg",
   "network": {
     "hit": true,
@@ -23,12 +23,12 @@
       },
       {
         "file": "lib/gateway.js",
-        "line": 361,
+        "line": 368,
         "text": "const r = http.request({ host: '127.0.0.1', port: p, method: req.method, path: req.url, headers: upstreamHeaders(req, p, cookie) }, (up) => {"
       },
       {
         "file": "lib/pages.js",
-        "line": 51,
+        "line": 53,
         "text": "fetch('/__dshm/pair', { method: 'POST', credentials: 'same-origin', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ code: m[1] }) })"
       }
     ]
@@ -36,6 +36,16 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/icon.js",
+        "line": 9,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/icon.js",
+        "line": 145,
+        "text": "try { buf = fs.readFileSync(file) } catch (e) { return reject(`读不了：${e.code || e.message}`) }"
+      },
       {
         "file": "lib/index.js",
         "line": 19,
@@ -50,16 +60,6 @@
         "file": "lib/index.js",
         "line": 107,
         "text": "fs.mkdirSync(dir, { recursive: true, mode: 0o700 })"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 109,
-        "text": "fs.appendFileSync(file, `${new Date().toISOString()} ${msg}\\n`, { mode: 0o600 })"
-      },
-      {
-        "file": "lib/store.js",
-        "line": 15,
-        "text": "import fs from 'node:fs'"
       }
     ]
   },

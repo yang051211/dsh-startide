@@ -1,49 +1,112 @@
 {
   "name": "meow-push-bridge",
-  "version": "0.2.0",
-  "scannedAt": "2026-10-26T10:08:43.422Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-08T14:57:28.420Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/member-auth.js",
+        "line": 284,
+        "text": "const response = await fetch(`${SITE_BASE}${path}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 174,
+        "text": "const response = await fetch('/meow-push-bridge-api/auth/status', { headers: { 'X-MPB-Client': '1' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 217,
+        "text": "const response = await fetch('/meow-push-bridge-api/auth/start', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 254,
+        "text": "await fetch('/meow-push-bridge-api/auth/logout', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 281,
+        "text": "const response = await fetch('/meow-push-bridge-api/sync/upload', {"
+      }
+    ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/member-auth.js",
+        "line": 24,
+        "text": "import { appendFileSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/member-auth.js",
+        "line": 50,
+        "text": "appendFileSync(MEMBER_LOG_PATH, `${line}\\n`);"
+      }
+    ]
   },
   "agentTools": {
     "hit": true,
     "evidence": [
       {
         "file": "dist/index.js",
-        "line": 60,
+        "line": 65,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "dist/index.js",
-        "line": 174,
+        "line": 179,
         "text": "* @param ctx      Cordis 上下文（已声明 inject: ['tools']）"
       },
       {
         "file": "dist/index.js",
-        "line": 202,
+        "line": 207,
         "text": "const tools = ctx.tools;"
       },
       {
         "file": "dist/index.js",
-        "line": 204,
+        "line": 209,
         "text": "log(ctx, 'error', `❌ 插件未启用：tools 服务不可用（请检查 inject: ['tools'] 是否生效）。`);"
       },
       {
         "file": "dist/index.js",
-        "line": 342,
+        "line": 344,
         "text": "const dispose = tools.register(meowTool);"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/member-auth.js",
+        "line": 22,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "dist/member-auth.js",
+        "line": 98,
+        "text": "spawn('powershell.exe', ['-NoProfile', '-NonInteractive', '-WindowStyle', 'Hidden', '-Command', script], {"
+      },
+      {
+        "file": "dist/member-auth.js",
+        "line": 132,
+        "text": "const handle = subprocess.spawn({"
+      },
+      {
+        "file": "dist/member-auth.js",
+        "line": 155,
+        "text": "? spawn('cmd.exe', ['/c', 'start', '', `\"${url.replace(/\"/g, '')}\"`], {"
+      },
+      {
+        "file": "dist/member-auth.js",
+        "line": 162,
+        "text": "? spawn('open', [url], { detached: true, stdio: 'ignore' })"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

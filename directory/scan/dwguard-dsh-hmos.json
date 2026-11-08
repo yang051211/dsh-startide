@@ -1,25 +1,35 @@
 {
   "name": "dwguard-dsh-hmos",
-  "version": "0.7.1",
-  "scannedAt": "2026-11-04T20:39:05.253Z",
+  "version": "0.8.8",
+  "scannedAt": "2026-11-08T14:57:20.537Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 975,
+        "line": 1133,
         "text": "const response = await fetch(BOARD_URL + query, { cache: 'no-store', headers: { accept: 'application/json' } })"
       },
       {
         "file": "lib/design.js",
-        "line": 1041,
+        "line": 1042,
         "text": "const response = await fetch(config.endpoint, {"
       },
       {
         "file": "lib/image.js",
-        "line": 322,
+        "line": 354,
         "text": "const response = await fetch(config.endpoint, init);"
+      },
+      {
+        "file": "scripts/fetch-official-docs.mjs",
+        "line": 49,
+        "text": "const response = await fetch(indexUrl);"
+      },
+      {
+        "file": "scripts/fetch-official-docs.mjs",
+        "line": 83,
+        "text": "const page = await fetch(entry.url);"
       }
     ]
   },
@@ -28,27 +38,27 @@
     "evidence": [
       {
         "file": "lib/design.js",
-        "line": 18,
-        "text": "import { readFile } from 'node:fs/promises';"
+        "line": 19,
+        "text": "import { readFile, realpath } from 'node:fs/promises';"
       },
       {
         "file": "lib/design.js",
-        "line": 1374,
+        "line": 1396,
         "text": "const buffers = await Promise.all(batch.map((entry) => readFile(entry.file)));"
       },
       {
         "file": "lib/design.js",
-        "line": 1390,
+        "line": 1412,
         "text": "const queryImage = decodePng(await readFile(queryPath));"
       },
       {
         "file": "lib/design.js",
-        "line": 1407,
+        "line": 1429,
         "text": "const response = await client({ images: [await readFile(queryPath)] });"
       },
       {
         "file": "lib/design.js",
-        "line": 1422,
+        "line": 1444,
         "text": "features = imageFeatures(decodePng(await readFile(entry.file)));"
       }
     ]
@@ -58,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 37,
+        "line": 39,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "lib/index.js",
-        "line": 68,
+        "line": 71,
         "text": "ctx.tools.register(tool);"
       }
     ]
@@ -78,18 +88,23 @@
       },
       {
         "file": "lib/tools/deveco.js",
-        "line": 58,
-        "text": "const child = spawn(command, [...args], {"
+        "line": 83,
+        "text": "const child = spawn(command, process.platform === 'win32' ? args.map(quoteShellArg) : [...args], {"
       },
       {
         "file": "lib/tools/deveco.js",
-        "line": 74,
+        "line": 113,
         "text": "spawn('taskkill', ['/PID', String(pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' });"
       },
       {
         "file": "lib/tools/deveco.js",
-        "line": 95,
-        "text": "const child = spawn(command, [...args], {"
+        "line": 132,
+        "text": "const killer = spawn('taskkill', ['/PID', String(pid), '/T', '/F'], {"
+      },
+      {
+        "file": "lib/tools/deveco.js",
+        "line": 163,
+        "text": "const child = spawn(command, process.platform === 'win32' ? args.map(quoteShellArg) : [...args], {"
       }
     ]
   },
