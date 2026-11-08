@@ -1,24 +1,29 @@
 {
   "name": "dsh-github-hot",
-  "version": "0.1.5",
-  "scannedAt": "2026-11-06T08:17:13.577Z",
+  "version": "0.1.7",
+  "scannedAt": "2026-11-08T23:32:50.496Z",
   "icon": "dsh-github-hot.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 517,
+        "line": 581,
         "text": "const response = await fetch(BASE + path, { signal: controller.signal, headers: { Accept: 'application/json' } });"
       },
       {
+        "file": "lib/client.js",
+        "line": 1551,
+        "text": "const response = await fetch(BASE + '/explain?repo=' + encodeURIComponent(repository) + '&lang=' + lang + (first && attempt > 0 ? '&retry=1' : ''),"
+      },
+      {
         "file": "lib/index.js",
-        "line": 446,
+        "line": 523,
         "text": "const response = await fetch(url, {"
       },
       {
         "file": "lib/index.js",
-        "line": 1881,
+        "line": 2111,
         "text": "const response = await fetch(url, {"
       }
     ]
@@ -29,7 +34,7 @@
       {
         "file": "lib/index.js",
         "line": 41,
-        "text": "import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, unlinkSync, writeFileSync } from 'node:fs';"
+        "text": "import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, statSync, unlinkSync, writeFileSync } from 'node:fs';"
       },
       {
         "file": "lib/index.js",
@@ -48,8 +53,8 @@
       },
       {
         "file": "lib/index.js",
-        "line": 1196,
-        "text": "const data = JSON.parse(readFileSync(file, 'utf8'));"
+        "line": 385,
+        "text": "const data = JSON.parse(readFileSync(observationFile(), 'utf8'));"
       }
     ]
   },

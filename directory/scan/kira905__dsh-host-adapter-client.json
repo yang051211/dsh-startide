@@ -1,0 +1,100 @@
+{
+  "name": "@kira905/dsh-host-adapter-client",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-08T23:32:57.276Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "deploy.mjs",
+        "line": 36,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "deploy.mjs",
+        "line": 108,
+        "text": "const sha256 = (file) => createHash('sha256').update(fs.readFileSync(file)).digest('hex')"
+      },
+      {
+        "file": "deploy.mjs",
+        "line": 180,
+        "text": "const cur = fs.existsSync(item.file) ? fs.readFileSync(item.file, 'utf8') : null"
+      },
+      {
+        "file": "deploy.mjs",
+        "line": 210,
+        "text": "fs.mkdirSync(BACKUP, { recursive: true })"
+      },
+      {
+        "file": "deploy.mjs",
+        "line": 223,
+        "text": "fs.mkdirSync(path.join(TARGET, 'lib'), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "deploy.mjs",
+        "line": 40,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "deploy.mjs",
+        "line": 150,
+        "text": "const res = spawnSync(process.execPath, ['--check', path.join(SRC, file)], { encoding: 'utf8' })"
+      },
+      {
+        "file": "lib/deploy-guard.mjs",
+        "line": 22,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/deploy-guard.mjs",
+        "line": 266,
+        "text": "return spawnSync(process.execPath, ['--input-type=module'], {"
+      },
+      {
+        "file": "lib/deploy-guard.mjs",
+        "line": 280,
+        "text": "return spawnSync(process.execPath, ['--input-type=module'], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 11,
+      "text": "> npm i -g @kira905/dsh-host-adapter-client"
+    },
+    {
+      "file": "README.md",
+      "line": 11,
+      "text": "> npm i -g @kira905/dsh-host-adapter-client"
+    },
+    {
+      "file": "README.md",
+      "line": 54,
+      "text": "Test-Path \"$env:APPDATA\\npm\\dsh-host-adapter-deploy.CMD\"                           # npm i -g 装的"
+    }
+  ],
+  "skippedEntries": []
+}

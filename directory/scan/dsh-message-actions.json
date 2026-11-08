@@ -1,19 +1,19 @@
 {
   "name": "dsh-message-actions",
-  "version": "0.2.4",
-  "scannedAt": "2026-11-07T14:33:19.642Z",
+  "version": "0.2.8",
+  "scannedAt": "2026-11-08T23:32:54.661Z",
   "icon": "dsh-message-actions.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 2966,
+        "line": 3744,
         "text": "if (typeof AbortController !== \"function\") return fetch(url, init);"
       },
       {
         "file": "lib/client.js",
-        "line": 2970,
+        "line": 3748,
         "text": "return await fetch(url, Object.assign({}, init, { signal: controller.signal }));"
       }
     ]
@@ -22,29 +22,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/store.cjs",
-        "line": 14,
-        "text": "const fs = require(\"node:fs\");"
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "import fs from \"node:fs\";"
       },
       {
-        "file": "lib/store.cjs",
-        "line": 145,
-        "text": "text = fs.readFileSync(filePath, \"utf8\");"
+        "file": "lib/index.js",
+        "line": 789,
+        "text": "const text = await fs.promises.readFile(patchPath, \"utf8\");"
       },
       {
-        "file": "lib/store.cjs",
-        "line": 189,
-        "text": "fs.mkdirSync(dir, { recursive: true, mode: 0o700 });"
+        "file": "lib/session-manager.mjs",
+        "line": 10,
+        "text": "import fs from \"node:fs\";"
       },
       {
-        "file": "lib/store.cjs",
-        "line": 208,
-        "text": "fs.unlinkSync(tmp);"
+        "file": "lib/session-manager.mjs",
+        "line": 11,
+        "text": "import fsp from \"node:fs/promises\";"
       },
       {
-        "file": "lib/store.cjs",
-        "line": 221,
-        "text": "fs.unlinkSync(tmp);"
+        "file": "lib/session-manager.mjs",
+        "line": 182,
+        "text": "const buf = await fsp.readFile(file);"
       }
     ]
   },
@@ -64,6 +64,12 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [],
-  "setupHints": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 120,
+      "text": "- **写入位置**：费用状态在 `$DSH_HOME/plugins/dsh-message-actions/cost-state.json`（目录 `0700`、文件 `0600`），保存预算、第三方价格表、消费记录与余额基准。"
+    }
+  ],
   "skippedEntries": []
 }

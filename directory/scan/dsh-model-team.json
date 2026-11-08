@@ -1,7 +1,7 @@
 {
   "name": "dsh-model-team",
-  "version": "0.2.4",
-  "scannedAt": "2026-11-06T20:48:55.413Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-08T23:32:52.068Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -17,8 +17,18 @@
         "text": "return fetch(API_PREFIX + path, {"
       },
       {
+        "file": "lib/client.js",
+        "line": 263,
+        "text": "return fetch(API_PREFIX + \"/reverse/login/status?platform=\" + encodeURIComponent(platformId), { headers: { accept: \"application/json\" } })"
+      },
+      {
         "file": "src/gateway/transport/http-server.js",
         "line": 8,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "src/reverse/platforms/qoder/catalog.js",
+        "line": 14,
         "text": "import http from 'node:http';"
       }
     ]
@@ -27,28 +37,28 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/gateway/config/backup.js",
-        "line": 8,
+        "file": "lib/shared/patch-host-pi-ai-export.mjs",
+        "line": 26,
         "text": "import fs from 'node:fs/promises';"
       },
       {
-        "file": "src/gateway/config/backup.js",
-        "line": 86,
-        "text": "content = await fs.readFile(absolutePath, 'utf8');"
+        "file": "lib/shared/patch-host-pi-ai-export.mjs",
+        "line": 76,
+        "text": "const source = await fs.readFile(bundlePath, 'utf8');"
+      },
+      {
+        "file": "lib/shared/patch-host-pi-ai-export.mjs",
+        "line": 93,
+        "text": "await fs.writeFile(bundlePath, patched, 'utf8');"
+      },
+      {
+        "file": "lib/shared/patch-host-pi-ai-export.mjs",
+        "line": 134,
+        "text": "const source = await fs.readFile(bundlePath, 'utf8');"
       },
       {
         "file": "src/gateway/config/backup.js",
-        "line": 183,
-        "text": "await fs.mkdir(path.dirname(absolutePath), { recursive: true });"
-      },
-      {
-        "file": "src/gateway/config/backup.js",
-        "line": 184,
-        "text": "await fs.writeFile(absolutePath, entry.content, { encoding: 'utf8', mode: CREDENTIAL_FILE_MODE });"
-      },
-      {
-        "file": "src/gateway/config/config.js",
-        "line": 6,
+        "line": 8,
         "text": "import fs from 'node:fs/promises';"
       }
     ]

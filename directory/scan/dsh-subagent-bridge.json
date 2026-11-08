@@ -1,0 +1,101 @@
+{
+  "name": "dsh-subagent-bridge",
+  "version": "0.22.0",
+  "scannedAt": "2026-11-08T23:32:51.336Z",
+  "icon": "dsh-subagent-bridge.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/http.js",
+        "line": 2,
+        "text": "import { createServer } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/constants.js",
+        "line": 1,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/constants.js",
+        "line": 5,
+        "text": "return JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version ?? '0.0.0'"
+      },
+      {
+        "file": "src/http.js",
+        "line": 1,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/http.js",
+        "line": 371,
+        "text": "const parsed = JSON.parse(await readFile(endpointFile, 'utf8'))"
+      },
+      {
+        "file": "src/http.js",
+        "line": 386,
+        "text": "await mkdir(dirname(endpointFile), { recursive: true, mode: 0o700 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 74,
+        "text": "toolCtx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 134,
+        "text": "toolCtx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/api.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/api.js",
+        "line": 123,
+        "text": "async spawn({ taskName, message, forkTurns, from, cwd, model, reasoningEffort, workspace, mode }) {"
+      },
+      {
+        "file": "src/http.js",
+        "line": 202,
+        "text": "await api.spawn({"
+      },
+      {
+        "file": "src/runners/claude.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/runners/codex.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

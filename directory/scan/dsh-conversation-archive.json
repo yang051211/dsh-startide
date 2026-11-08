@@ -1,0 +1,129 @@
+{
+  "name": "dsh-conversation-archive",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-08T23:32:57.431Z",
+  "icon": "dsh-conversation-archive.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 127,
+        "text": "fetch(url)"
+      },
+      {
+        "file": "client.js",
+        "line": 149,
+        "text": "fetch(`/api/conversation-archive?op=read&id=${encodeURIComponent(selected)}&limit=40000`)"
+      },
+      {
+        "file": "client.js",
+        "line": 533,
+        "text": "const response = await fetch(url, options)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 3,
+        "text": "import { existsSync, readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 107,
+        "text": "const data = JSON.parse(readFileSync(path, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 190,
+        "text": "const text = readFileSync(path, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 220,
+        "text": "text = readFileSync(safeResolve(root, entry.path), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 435,
+        "text": "const markdown = readFileSync(path, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "export const inject = ['tools', 'webServer']"
+      },
+      {
+        "file": "index.js",
+        "line": 1268,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 1303,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 1340,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 1404,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 77,
+        "text": "execFile("
+      },
+      {
+        "file": "index.js",
+        "line": 246,
+        "text": "execFile(command, args, { timeout: timeoutMs, maxBuffer, env: process.env }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 561,
+        "text": "child = spawn(command, args, {"
+      },
+      {
+        "file": "index.js",
+        "line": 987,
+        "text": "const child = spawn(cli, ['app-server', '--stdio'], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

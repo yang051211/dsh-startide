@@ -1,0 +1,75 @@
+{
+  "name": "dsh-pr-release-workspace",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-08T23:32:57.627Z",
+  "icon": "dsh-pr-release-workspace.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 316,
+        "text": "response = await fetch(ROUTE + '/' + endpoint, {"
+      },
+      {
+        "file": "lib/host/release.js",
+        "line": 572,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/drafts.js",
+        "line": 24,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/host/drafts.js",
+        "line": 82,
+        "text": "const text = await readFile(file, 'utf8')"
+      },
+      {
+        "file": "lib/host/drafts.js",
+        "line": 128,
+        "text": "await mkdir(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/host/drafts.js",
+        "line": 130,
+        "text": "await writeFile(temp, `${JSON.stringify(doc, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/exec.js",
+        "line": 23,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/host/exec.js",
+        "line": 220,
+        "text": "execFile("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

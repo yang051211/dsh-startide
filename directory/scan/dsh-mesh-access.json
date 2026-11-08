@@ -1,0 +1,134 @@
+{
+  "name": "dsh-mesh-access",
+  "version": "1.5.7",
+  "scannedAt": "2026-11-08T23:32:55.035Z",
+  "icon": "dsh-mesh-access.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 62,
+        "text": "return fetch(url, { ...options, credentials: 'same-origin', signal: ctrl.signal })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 23,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 123,
+        "text": "const up = http.request("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 855,
+        "text": "                const r = await fetch(`${t.domain ? 'https' : 'http'}://${host}${t.domain ? '' : ':' + t.remotePort}/`, { redirect: 'manual', signal: AbortSigna"
+      },
+      {
+        "file": "tools/frpc-setup.sh",
+        "line": 74,
+        "text": "fetch() {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 294,
+        "text": "return JSON.parse(fs.readFileSync(sidecarPath(), 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 302,
+        "text": "fs.mkdirSync(path.dirname(sidecarPath()), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 303,
+        "text": "fs.writeFileSync(sidecarPath(), JSON.stringify(data, null, 2) + '\\n')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 331,
+        "text": "oldToken = String(tomlValue(fs.readFileSync(cfg.frpcConfig, 'utf8'), 'auth.token') || '')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 22,
+        "text": "import { execSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 456,
+        "text": "child = spawn(cfg.frpcBin, ['-c', cfg.frpcConfig], { stdio: ['ignore', 'pipe', 'pipe'] })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 758,
+        "text": "try { others = execSync(\"pgrep -x frpc || true\", { encoding: 'utf8' }).trim() } catch { others = '' }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 770,
+        "text": "const out = execSync(\"pgrep -f 'billion-context/dist/index.js start' || true\", { encoding: 'utf8' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 177,
+      "text": "sudo ./tools/frps-setup.sh --port 7000 --http-port 21081"
+    },
+    {
+      "file": "README.en.md",
+      "line": 181,
+      "text": "./tools/frpc-setup.sh --server <server-ip> --token <token printed in step 1> --remote-port 21081"
+    },
+    {
+      "file": "README.md",
+      "line": 72,
+      "text": "sudo ./tools/frps-setup.sh --port 7000 --http-port 21081"
+    },
+    {
+      "file": "README.md",
+      "line": 76,
+      "text": "./tools/frpc-setup.sh --server <服务器IP> --token <第 1 步打印的 token> --remote-port 21081"
+    }
+  ],
+  "skippedEntries": []
+}

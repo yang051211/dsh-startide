@@ -1,0 +1,110 @@
+{
+  "name": "dsh-bili-bg",
+  "version": "0.11.0",
+  "scannedAt": "2026-11-08T23:32:57.873Z",
+  "icon": "dsh-bili-bg.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bili.js",
+        "line": 13,
+        "text": "import https from 'node:https'"
+      },
+      {
+        "file": "lib/bili.js",
+        "line": 14,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/download.js",
+        "line": 17,
+        "text": "import https from 'node:https'"
+      },
+      {
+        "file": "lib/download.js",
+        "line": 18,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/ffmpeg.js",
+        "line": 14,
+        "text": "import http from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 122,
+        "text": "const text = fs.readFileSync(target, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 130,
+        "text": "const text = fs.readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 139,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 141,
+        "text": "fs.writeFileSync(tmp, JSON.stringify(value, null, 2), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 92,
+        "text": "? spawn('cmd', ['/c', 'start', '', url], { detached: true, stdio: 'ignore', windowsHide: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 94,
+        "text": "? spawn('open', [url], { detached: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "index.js",
+        "line": 95,
+        "text": ": spawn('xdg-open', [url], { detached: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 18,
+        "text": "import { spawnSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

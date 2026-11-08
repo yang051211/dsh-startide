@@ -1,0 +1,122 @@
+{
+  "name": "dsh-dont-stop",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-08T23:32:52.267Z",
+  "icon": "dsh-dont-stop.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 398,
+        "text": "const response = await window.fetch(RECOVERY_ENDPOINT, {"
+      },
+      {
+        "file": "client.js",
+        "line": 477,
+        "text": "const response = await window.fetch(RECOVERY_ENDPOINT, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 508,
+        "text": "const response = await window.fetch(RECOVERY_ENDPOINT, {"
+      },
+      {
+        "file": "client.js",
+        "line": 593,
+        "text": "const response = await window.fetch(POWER_ENDPOINT, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 612,
+        "text": "window.fetch(SETTINGS_ENDPOINT, { headers: { accept: 'application/json' } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "core/prompts.js",
+        "line": 16,
+        "text": "import { readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "core/prompts.js",
+        "line": 41,
+        "text": "text = JSON.parse(readFileSync(PROMPTS_URL, 'utf8'))"
+      },
+      {
+        "file": "core/settings.js",
+        "line": 15,
+        "text": "import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "core/settings.js",
+        "line": 81,
+        "text": "value = normalizeSettings({ ...DEFAULT_SETTINGS, ...JSON.parse(readFileSync(path, 'utf8')) })"
+      },
+      {
+        "file": "core/settings.js",
+        "line": 90,
+        "text": "mkdirSync(dirname(path), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "core/index.js",
+        "line": 57,
+        "text": "export const inject = ['agents', 'commands', 'tools']"
+      },
+      {
+        "file": "core/index.js",
+        "line": 1232,
+        "text": "disposeWaitTool = tools.register(waitToolDefinition())"
+      },
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "export const inject = ['agents', 'commands', 'tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "power/index.js",
+        "line": 17,
+        "text": "import { execFile as execFileCallback, spawn as spawnCallback } from 'node:child_process'"
+      },
+      {
+        "file": "power/index.js",
+        "line": 51,
+        "text": "execFile(file, args, options, (error, stdout) => {"
+      },
+      {
+        "file": "power/index.js",
+        "line": 217,
+        "text": "child = io.spawn(candidate.file, candidate.args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "commands",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-mpkg-wallpaper",
-  "version": "3.17.0",
-  "scannedAt": "2026-10-28T23:43:54.001Z",
+  "version": "5.0.0",
+  "scannedAt": "2026-11-08T23:32:51.035Z",
   "icon": "dsh-mpkg-wallpaper.svg",
   "network": {
     "hit": true,
@@ -13,23 +13,23 @@
       },
       {
         "file": "lib/client.js",
-        "line": 77,
+        "line": 134,
         "text": "\t\t\t\tfetch(HOST_URL + '/diag', { method: 'POST', body: JSON.stringify({ kind: 'js-error', why: where, at: new Date().toISOString(), url: location.href, message: "
       },
       {
         "file": "lib/client.js",
-        "line": 685,
-        "text": "fetch(HOST_URL + \"/ping\", { method: \"GET\" })"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 719,
+        "line": 756,
         "text": "fetch(HOST_URL + \"/settings\", { method: \"GET\" }).then(async (r) => {"
       },
       {
         "file": "lib/client.js",
-        "line": 1069,
+        "line": 1178,
         "text": "fetch(HOST_URL + \"/settings\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2791,
+        "text": "return fetch(mpwArmProbeUrl(u), { method: \"GET\", headers: { Range: \"bytes=0-0\" }, cache: \"no-store\", signal: ctl ? ctl.signal : void 0 }).then((r) => {"
       }
     ]
   },
@@ -38,28 +38,28 @@
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1345,
+        "line": 1454,
         "text": "`writeFileSync(tmp, JSON.stringify(settings)); renameSync`）。"
       },
       {
         "file": "lib/index.js",
         "line": 7,
-        "text": "c, statSync, readFileSync, readdirSync, writeFileSync, openSync, readSync, closeSync, renameSync, unlinkSync, chmodSync, writeSync, utimesSync } from 'node:fs';"
+        "text": "eadFileSync, readdirSync, writeFileSync, openSync, readSync, closeSync, renameSync, unlinkSync, chmodSync, writeSync, utimesSync, realpathSync } from 'node:fs';"
       },
       {
         "file": "lib/index.js",
-        "line": 131,
-        "text": "const v = JSON.parse(readFileSync(pkgPath, 'utf8')).version;"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 211,
+        "line": 183,
         "text": "const r = extractSceneMainImage(new Uint8Array(readFileSync(pkgPath)));"
       },
       {
         "file": "lib/index.js",
-        "line": 235,
+        "line": 207,
         "text": "if (!existsSync(dir)) mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 208,
+        "text": "writeFileSync(join(dir, 'custom-dir.json'), JSON.stringify({ dir: customDir }));"
       }
     ]
   },
@@ -77,12 +77,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 1896,
+        "line": 1883,
         "text": "const r = spawnSync(name, ['-version'], { encoding: 'utf8', timeout: 8000, windowsHide: true, stdio: ['ignore', 'pipe', 'ignore'] });"
       },
       {
         "file": "lib/index.js",
-        "line": 2252,
+        "line": 2239,
         "text": "proc = spawn(ff, args, { ...a.opts, cwd, stdio: errFd ? ['ignore', 'ignore', errFd] : 'ignore' });"
       },
       {

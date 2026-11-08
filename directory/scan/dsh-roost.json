@@ -1,7 +1,7 @@
 {
   "name": "dsh-roost",
-  "version": "1.0.7",
-  "scannedAt": "2026-11-07T23:17:00.687Z",
+  "version": "1.0.8",
+  "scannedAt": "2026-11-08T23:32:46.990Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,7 +13,12 @@
       },
       {
         "file": "client/client.js",
-        "line": 6491,
+        "line": 3077,
+        "text": "const res = await fetch(API + '/backup/export')"
+      },
+      {
+        "file": "client/client.js",
+        "line": 6657,
         "text": "const res = await fetch(API + '/stickers/thumb?name=' + encodeURIComponent(it.name))"
       },
       {
@@ -25,11 +30,6 @@
         "file": "src/gpt-sovits.js",
         "line": 329,
         "text": "export function createGptSovits({ log = () => {}, onReady = () => {}, fetchImpl = (...args) => fetch(...args) } = {}) {"
-      },
-      {
-        "file": "src/host.js",
-        "line": 1423,
-        "text": "const r = await fetch(url, { signal: AbortSignal.timeout(5000) });"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "scripts/backup.mjs",
+        "line": 19,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "scripts/backup.mjs",
+        "line": 38,
+        "text": "return JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version || '';"
+      },
+      {
         "file": "src/audit.js",
         "line": 14,
         "text": "import { appendFileSync, mkdirSync } from 'node:fs';"
       },
       {
         "file": "src/audit.js",
-        "line": 29,
+        "line": 30,
         "text": "mkdirSync(dir, { recursive: true });"
       },
       {
         "file": "src/audit.js",
-        "line": 44,
+        "line": 50,
         "text": "appendFileSync(join(dir, 'audit.log'), `${JSON.stringify(row)}\\n`, 'utf8');"
-      },
-      {
-        "file": "src/awake.js",
-        "line": 22,
-        "text": "import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';"
-      },
-      {
-        "file": "src/awake.js",
-        "line": 419,
-        "text": "state = { ...state, ...JSON.parse(readFileSync(file(), 'utf8')) };"
       }
     ]
   },
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "src/host.js",
-        "line": 588,
+        "line": 633,
         "text": "* 优先问活着的 agent（`agent.ctx.tools.schemas()`），问不到才退回 `seen` 快照。"
       },
       {
         "file": "src/host.js",
-        "line": 633,
+        "line": 678,
         "text": "* DSH 正好给了这个口子：`ctx.tools.guard(fn)` 是**同步**守卫，"
       },
       {
         "file": "src/host.js",
-        "line": 658,
+        "line": 703,
         "text": "* 两条路都试：`ctx.tools` 是服务直接挂在上下文上的形式，"
       },
       {
         "file": "src/host.js",
-        "line": 664,
+        "line": 709,
         "text": "if (typeof ctx?.tools?.guard === 'function') t = ctx.tools;"
       },
       {
         "file": "src/host.js",
-        "line": 2191,
+        "line": 2518,
         "text": "* 挂在这里而不是插件的 ctx：`agent.ctx.tools` 是每轮都在用的那个"
       }
     ]
@@ -139,7 +139,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 495,
+      "line": 523,
       "text": "setup.js       一键流程：下载解压、写配置、起停、装插件、配适配器"
     }
   ],

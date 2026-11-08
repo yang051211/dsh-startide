@@ -1,7 +1,7 @@
 {
   "name": "dsh-context",
-  "version": "0.82.2",
-  "scannedAt": "2026-11-07T14:33:08.456Z",
+  "version": "0.83.0",
+  "scannedAt": "2026-11-08T23:32:43.024Z",
   "icon": "dsh-context.svg",
   "network": {
     "hit": true,
@@ -9,27 +9,27 @@
       {
         "file": "lib/client.js",
         "line": 62,
-        "text": "Ir(e,t,n,r={}){let i=r.label??e,a=await fetch(e,{method:`POST`,headers:{\"content-type\":`application/json`},body:JSON.stringify(t),...r.signal===void 0?{}:{signa"
+        "text": "tion gr(e,t,n){let r=n.label??e,i=await fetch(e,{method:`POST`,headers:{\"content-type\":`application/json`},body:JSON.stringify(t),...n.signal===void 0?{}:{signa"
       },
       {
         "file": "lib/client.js",
         "line": 64,
-        "text": "catch(()=>{})}catch{}}function Oc(){try{fetch(`api/dsh-context/backfill`,{method:`POST`}).catch(()=>{})}catch{}}function kc(e){if(Array.isArray(e))return null;l"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 66,
-        "text": "ror.com`],Ou=null;function ku(e){return fetch(e+`/dsh-context/latest`).then(e=>e.ok?e.json():null).then(e=>e!==null&&typeof e.version==`string`?e.version:null)."
+        "text": "5e3);i.current+=1;let n=setTimeout(()=>{fetch(`api/dsh-context/backfill`,{method:`POST`}).catch(()=>{})},e);return()=>{clearTimeout(n)}},[t,a]),(0,u.useEffect)("
       },
       {
         "file": "lib/client.js",
         "line": 81,
-        "text": "ies.clear(),this.historyEntries.clear()}fetch(e,t,n=!1){let r=n?this.fullEntries:this.entries,i=r.get(e);if(i!==void 0&&i.updatedAt>=t)return i.pending;let a=lf"
+        "text": "is.inflight.delete(e)}).catch(()=>{}),r}fetch(e,t,n=!1){return this.track(`${n?`full`:`preview`}:${e}:${t}`,nf(e,n)).catch(()=>null)}fetchHistory(e,t){return th"
       },
       {
         "file": "lib/client.js",
         "line": 82,
-        "text": "!1}}async function Zp(){try{let e=await fetch(`api/dsh-context/recom`,{method:`POST`,headers:{\"content-type\":`application/json`},body:`{}`});if(!e.ok)return nul"
+        "text": "!1}}async function vm(){try{let e=await fetch(`api/dsh-context/recom`,{method:`POST`,headers:{\"content-type\":`application/json`},body:`{}`});if(!e.ok)return nul"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 25,
+        "text": "unction Qi(e={}){let t=e.fetch??((e,t)=>fetch(e,t)),n=e.now??(()=>Date.now()),r=e.ttlMs??36e5,i=e.currentVersion??$i(),a=Xi(),o=Xi(),s={book:null,failed:!1,vers"
       }
     ]
   },
@@ -39,12 +39,17 @@
       {
         "file": "lib/client.js",
         "line": 82,
-        "text": "hildren:t(`gate.ok`)})})]})})}}function rm(e,t,n){let{t:r,fmt:i,fmtTime:a,eventLabel:o,eventAt:s}=e;function c(e){let t=(0,d.jsxs)(d.Fragment,{children:[(0,d.js"
+        "text": "es:`https://github.com/logos`};function rm({icon:e}){return(0,d.jsx)(`svg`,{width:12,height:12,className:`lc-pi-labelicon`,viewBox:`-2 -2 28 28`,fill:`none`,\"ar"
       },
       {
         "file": "lib/index.js",
         "line": 12,
-        "text": "{copyFile as i,link as a,mkdir as o}from\"node:fs/promises\";import{basename as s,dirname as c,isAbsolute as l,join as u,normalize as d,relative as f}from\"node:pa"
+        "text": "t{existsSync as i,readFileSync as a}from\"node:fs\";import{fileURLToPath as o}from\"node:url\";import{copyFile as s,link as c,mkdir as l,readFile as u,rename as d,r"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "),sessions:e}),a=`${t}.tmp`;try{await n.mkdir(g(t)),await n.writeFile(a,i),await n.rename(a,t)}catch{try{await n.rm?.(a)}catch{}}};return{load:async(e,r)=>{let "
       }
     ]
   },

@@ -1,19 +1,19 @@
 {
   "name": "dsh-skill-hub",
-  "version": "0.3.31",
-  "scannedAt": "2026-11-03T20:52:03.599Z",
+  "version": "0.3.32",
+  "scannedAt": "2026-11-08T23:32:48.477Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 161,
+        "line": 163,
         "text": "return await fetch(typeof input === \"string\" ? resolveApiUrl(input) : input, {"
       },
       {
         "file": "src/client/api.ts",
-        "line": 145,
+        "line": 147,
         "text": "return await fetch(typeof input === 'string' ? resolveApiUrl(input) : input, { ...init, signal: controller.signal })"
       },
       {
@@ -39,7 +39,7 @@
       {
         "file": "lib/index.js",
         "line": 3,
-        "text": "import { lstat, mkdir, mkdtemp, readFile, readdir, rename, rm, stat, writeFile } from \"node:fs/promises\";"
+        "text": "import { lstat, mkdir, mkdtemp, readFile, readdir, realpath, rename, rm, stat, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
@@ -48,18 +48,18 @@
       },
       {
         "file": "lib/index.js",
-        "line": 1295,
+        "line": 1316,
         "text": "await mkdir(dirname(this.file), { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 1296,
+        "line": 1317,
         "text": "await writeFile(tmp, JSON.stringify(payload, null, 2) + \"\\n\", \"utf8\");"
       },
       {
         "file": "lib/index.js",
-        "line": 1827,
-        "text": "text = await readFile(yamlPath, \"utf8\");"
+        "line": 1855,
+        "text": "text = await readFile(join(directory, \"workbuddy.json\"), \"utf8\");"
       }
     ]
   },
@@ -77,7 +77,8 @@
   },
   "dependencies": 1,
   "minifiedFiles": [
-    "lib/client.js"
+    "lib/client.js",
+    "lib/index.js"
   ],
   "binaryFiles": [],
   "requiredServices": [],

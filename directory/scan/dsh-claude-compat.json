@@ -1,8 +1,8 @@
 {
   "name": "dsh-claude-compat",
-  "version": "1.1.0",
-  "scannedAt": "2026-11-05T08:17:06.128Z",
-  "icon": null,
+  "version": "1.2.1",
+  "scannedAt": "2026-11-08T23:32:50.078Z",
+  "icon": "dsh-claude-compat.svg",
   "network": {
     "hit": true,
     "evidence": [
@@ -10,6 +10,16 @@
         "file": "scripts/dsh-restart.sh",
         "line": 98,
         "text": "if curl -sf -o /dev/null \"http://127.0.0.1:$PORT\"; then"
+      },
+      {
+        "file": "src/compat-service.js",
+        "line": 89,
+        "text": "const response = await connection.createSharedFetchHandler('/api').fetch(new Request('http://dsh.internal/api/claude-compat', {"
+      },
+      {
+        "file": "src/compat-service.js",
+        "line": 294,
+        "text": "async fetch(request) {"
       }
     ]
   },
@@ -23,23 +33,23 @@
       },
       {
         "file": "scripts/cc-export.mjs",
-        "line": 89,
+        "line": 96,
         "text": "const raw = readFileSync(s.file, 'utf8');"
       },
       {
         "file": "scripts/cc-export.mjs",
-        "line": 111,
+        "line": 118,
         "text": "mkdirSync(targetDir, { recursive: true });"
       },
       {
         "file": "scripts/cc-export.mjs",
-        "line": 112,
+        "line": 119,
         "text": "writeFileSync(targetFile, `---\\n${yaml}\\n---\\n\\n${body}\\n`);"
       },
       {
         "file": "scripts/cc-resume.mjs",
         "line": 30,
-        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';"
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';"
       }
     ]
   },
@@ -47,19 +57,14 @@
     "hit": true,
     "evidence": [
       {
+        "file": "src/compat-service.js",
+        "line": 319,
+        "text": "toolCtx.tools.register({"
+      },
+      {
         "file": "src/hook-runners-model.js",
         "line": 17,
         "text": "// The model-facing name of an MCP tool. This is the rule of dsh-mcp-client"
-      },
-      {
-        "file": "src/hook-runners-model.js",
-        "line": 87,
-        "text": "if (ctx.tools?.get?.(name, scope) === undefined) {"
-      },
-      {
-        "file": "src/hook-runners-model.js",
-        "line": 103,
-        "text": "ctx.tools.execute({"
       },
       {
         "file": "src/index.js",
@@ -70,6 +75,11 @@
         "file": "src/mcp.js",
         "line": 4,
         "text": "// dsh-mcp-client plugin config. Each server mounts as one plugin instance:"
+      },
+      {
+        "file": "src/mcp.js",
+        "line": 166,
+        "text": "// Translate server entries, as [name, entry] pairs, into dsh-mcp-client configs. Malformed"
       }
     ]
   },
@@ -116,13 +126,13 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 389,
-      "text": "l/enable/disable; for marketplace add/update, install Claude Code (`npm install -g @anthropic-ai/claude-code`) or manage marketplaces from Claude Code directly."
+      "line": 394,
+      "text": "I unavailable\".** Install Claude Code (`npm install -g @anthropic-ai/claude-code`) to change plugins or marketplaces. Browsing local catalogs remains available;"
     },
     {
       "file": "README.zh-CN.md",
-      "line": 387,
-      "text": "` 提示 claude CLI 不可用。** 降级引擎已覆盖 install/enable/disable；marketplace add/update 需要安装 Claude Code（`npm install -g @anthropic-ai/claude-code`）或直接在 Claude Code 里管理市场。"
+      "line": 392,
+      "text": "**`/cc-plugin` 提示 claude CLI 不可用。** 安装 Claude Code（`npm install -g @anthropic-ai/claude-code`）后再变更插件或市场。仍可浏览本地目录；变更失败不会降级为直接修改注册表。"
     }
   ],
   "skippedEntries": []

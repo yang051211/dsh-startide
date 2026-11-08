@@ -1,0 +1,68 @@
+{
+  "name": "dsh-reasoning-dial",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-08T23:32:57.070Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": ".dsh-plugin/index.mjs",
+        "line": 61,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": ".dsh-plugin/index.mjs",
+        "line": 329,
+        "text": "try { raw = await readFile(file, 'utf8') } catch {"
+      },
+      {
+        "file": "test/plugin.test.mjs",
+        "line": 13,
+        "text": "import { mkdtempSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "test/plugin.test.mjs",
+        "line": 24,
+        "text": "writeFileSync(stubFile, ["
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": ".dsh-plugin/index.mjs",
+        "line": 67,
+        "text": "export const inject = ['tools', 'llm', 'settings']"
+      },
+      {
+        "file": ".dsh-plugin/index.mjs",
+        "line": 1097,
+        "text": "try { return toolCtx.tools.register(tool) } catch (error) {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "settings",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

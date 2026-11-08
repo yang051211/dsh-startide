@@ -1,0 +1,85 @@
+{
+  "name": "dsh-zotero-skill",
+  "version": "0.5.5",
+  "scannedAt": "2026-11-08T23:32:50.678Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "zotero/scripts/reader-runner.mjs",
+        "line": 81,
+        "text": "const response = await fetch(asset.url, { signal: AbortSignal.timeout(180_000) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 66,
+        "text": "parsed = parseFrontmatter(readFileSync(SKILL_FILE, 'utf8'));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 127,
+        "text": "parsed = parseFrontmatter(readFileSync(candidate.locator, 'utf8'));"
+      },
+      {
+        "file": "lib/reader-runner.js",
+        "line": 2,
+        "text": "import { realpathSync } from 'node:fs';"
+      },
+      {
+        "file": "zotero/scripts/reader-runner.mjs",
+        "line": 3,
+        "text": "import { createWriteStream, existsSync, mkdirSync, readFileSync, realpathSync, rmSync, writeFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "zotero/scripts/reader-runner.mjs",
+        "line": 7,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "zotero/scripts/reader-runner.mjs",
+        "line": 52,
+        "text": "const result = spawnSync(candidate.command, [...candidate.prefix, '-c', 'import sys;print(\"%d.%d\" % sys.version_info[:2])'],"
+      },
+      {
+        "file": "zotero/scripts/reader-runner.mjs",
+        "line": 108,
+        "text": "const child = spawn(command, args, { stdio: filterLegacyWarnings ? ['inherit', 'inherit', 'pipe'] : 'inherit', windowsHide: true, ...options });"
+      },
+      {
+        "file": "zotero/scripts/reader-runner.mjs",
+        "line": 235,
+        "text": "const child = spawn(python, [join(SKILL_ROOT, 'scripts/zotero.py'), ...args], { stdio: ['inherit', 'inherit', 'pipe'], windowsHide: true });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

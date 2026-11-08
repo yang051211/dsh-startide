@@ -1,0 +1,122 @@
+{
+  "name": "dsh-motrix",
+  "version": "0.0.2",
+  "scannedAt": "2026-11-08T23:32:58.037Z",
+  "icon": "dsh-motrix.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/guard.js",
+        "line": 53,
+        "text": "[\"Invoke-WebRequest\", new RegExp(`${CMD_START}Invoke-WebRequest\\\\b`, \"i\")],"
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 184,
+        "text": ".description(\"内置下载守卫：拦截 shell 里 curl/wget 等大文件下载，引导改用 motrix（action=download，默认 true）\"),"
+      },
+      {
+        "file": "lib/runner.js",
+        "line": 439,
+        "text": "const response = await fetch(`${info.baseUrl}/mdxp`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/inspect.js",
+        "line": 12,
+        "text": "import { createReadStream } from \"node:fs\";"
+      },
+      {
+        "file": "lib/inspect.js",
+        "line": 13,
+        "text": "import { stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/runner.js",
+        "line": 9,
+        "text": "import { existsSync, readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/runner.js",
+        "line": 223,
+        "text": "const text = readFileSync(shimPath, \"utf8\");"
+      },
+      {
+        "file": "lib/runner.js",
+        "line": 422,
+        "text": "const file = JSON.parse(readFileSync(bridgeEndpointPath(), \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 51,
+        "text": "const inject = [\"tools\", \"systemPrompt\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 129,
+        "text": "text: ({ scope }) => ctx.tools.get(\"motrix\", scope) === undefined ? \"\" : SYSTEM_SECTION_TEXT"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 762,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/runner.js",
+        "line": 8,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/runner.js",
+        "line": 89,
+        "text": "child = spawn(command, args, {"
+      },
+      {
+        "file": "lib/runner.js",
+        "line": 492,
+        "text": "const child = spawn(exe, [...HIDDEN_LAUNCH_ARGS], { windowsHide: true, detached: true, stdio: \"ignore\" });"
+      },
+      {
+        "file": "lib/runner.js",
+        "line": 519,
+        "text": "child = spawn(target.command, fullArgs, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "cordis.patch.yml",
+      "line": 8,
+      "text": "# 前置：Motrix 桌面应用 + `npm install -g @motrix/cli@latest`。"
+    },
+    {
+      "file": "README.md",
+      "line": 32,
+      "text": "npm install -g @motrix/cli@latest"
+    }
+  ],
+  "skippedEntries": []
+}

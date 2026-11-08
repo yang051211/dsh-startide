@@ -1,0 +1,121 @@
+{
+  "name": "dsh-onesoul",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-08T23:32:52.470Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugins/dashboard/lib/client.js",
+        "line": 102,
+        "text": "return readJson(await fetch(path, { headers: { Accept: 'application/json' } }))"
+      },
+      {
+        "file": "plugins/dashboard/lib/client.js",
+        "line": 105,
+        "text": "return readJson(await fetch(path, {"
+      },
+      {
+        "file": "plugins/dashboard/lib/client.js",
+        "line": 115,
+        "text": "const res = await fetch(path, { headers: { Accept: 'application/json' } })"
+      },
+      {
+        "file": "plugins/dashboard/lib/client.js",
+        "line": 122,
+        "text": "const res = await fetch(path, {"
+      },
+      {
+        "file": "plugins/dashboard/lib/client.js",
+        "line": 145,
+        "text": "const res = await fetch(route, { headers: { Accept: 'application/json' } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugins/anima/lib/ephemeral.js",
+        "line": 17,
+        "text": "import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "plugins/anima/lib/ephemeral.js",
+        "line": 46,
+        "text": "const cfg = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "plugins/anima/lib/ephemeral.js",
+        "line": 279,
+        "text": "try { text = readFileSync(item.file, 'utf8') } catch (error) { text = '' }"
+      },
+      {
+        "file": "plugins/anima/lib/ledger.js",
+        "line": 1,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "plugins/anima/lib/ledger.js",
+        "line": 25,
+        "text": "return readFileSync(path, 'utf8').split('\\n').filter(Boolean).map(function (line) {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugins/anima/lib/index.js",
+        "line": 42,
+        "text": "export const inject = ['tools', 'systemPrompt']"
+      },
+      {
+        "file": "plugins/anima/lib/index.js",
+        "line": 233,
+        "text": "if (!toolService) { try { toolService = ctx.tools || null } catch (error) { toolService = null } }"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugins/dashboard/lib/duty-cli.js",
+        "line": 22,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "plugins/dashboard/lib/duty-cli.js",
+        "line": 46,
+        "text": "const r = spawnSync('cmd.exe', ['/c', 'where', cmd], { encoding: 'utf8', windowsHide: true, timeout: 20000 })"
+      },
+      {
+        "file": "plugins/dashboard/lib/duty-cli.js",
+        "line": 90,
+        "text": "const child = spawn(nodePath, [cliPath, ...process.argv.slice(2)], { stdio: ['ignore', 'pipe', 'pipe'], env, cwd: process.cwd(), windowsHide: true })"
+      },
+      {
+        "file": "plugins/dashboard/lib/index.js",
+        "line": 11,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "plugins/dashboard/lib/index.js",
+        "line": 246,
+        "text": "try { out = String(spawnSync('cmd.exe', ['/c', 'where', 'node'], { encoding: 'utf8', windowsHide: true, timeout: 20000 }).stdout || '') } catch (ignored) {}"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 7,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

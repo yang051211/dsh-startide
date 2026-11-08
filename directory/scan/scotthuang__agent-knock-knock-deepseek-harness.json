@@ -1,0 +1,85 @@
+{
+  "name": "@scotthuang/agent-knock-knock-deepseek-harness",
+  "version": "0.1.0-rc.24",
+  "scannedAt": "2026-11-08T23:32:51.807Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bundled-skill.js",
+        "line": 1,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/bundled-skill.js",
+        "line": 22,
+        "text": "const document = fs.readFileSync(skillPath, \"utf8\");"
+      },
+      {
+        "file": "lib/callback-authority.js",
+        "line": 3,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/callback-authority.js",
+        "line": 254,
+        "text": "fs.mkdirSync(directory, { mode: 0o700 });"
+      },
+      {
+        "file": "lib/callback-authority.js",
+        "line": 275,
+        "text": "return JSON.parse(fs.readFileSync(fd, \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "export const inject = [\"agents\", \"commands\", \"tools\", \"skills\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 129,
+        "text": "disposers.push(ctx.tools.register(toolDefinition(builtAdapter, builtRoutes, tool, harnessRuntime.assertSupportedJsonSchema)));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/callback-authority.js",
+        "line": 1,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/callback-authority.js",
+        "line": 350,
+        "text": "const result = spawnSync(\"/bin/ps\", [\"-p\", String(pid), \"-o\", \"lstart=\"], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "commands",
+    "skills",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
