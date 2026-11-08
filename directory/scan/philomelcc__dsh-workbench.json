@@ -1,0 +1,51 @@
+{
+  "name": "@philomelcc/dsh-workbench",
+  "version": "0.1.7",
+  "scannedAt": "2026-11-08T07:28:23.345Z",
+  "icon": "philomelcc__dsh-workbench.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 315,
+        "text": "try { await fetch('/wb/workbench/restart', { method: 'POST' }); } catch (_e) {}"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "import { execSync } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 36,
+        "text": "try { execSync('schtasks /run /tn philomel-dsh-web', { windowsHide: true, stdio: 'ignore' }); } catch (_e) {}"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

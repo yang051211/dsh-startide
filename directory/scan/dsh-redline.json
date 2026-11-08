@@ -1,0 +1,98 @@
+{
+  "name": "dsh-redline",
+  "version": "1.0.16",
+  "scannedAt": "2026-11-08T07:28:23.581Z",
+  "icon": "dsh-redline.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 14,
+        "text": "const r = await fetch(SECRET_ROUTE, { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 30,
+        "text": "const r = await fetch(`http://127.0.0.1:${port}/.lr/health`, { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 43,
+        "text": "const r = await fetch(API_BASE + \"/.lr/settings\", { cache: \"no-store\", headers: authHeaders() });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 53,
+        "text": "await fetch(API_BASE + \"/.lr/settings\", { method: \"POST\", headers: authHeaders({ \"content-type\": \"application/json\" }), body: JSON.stringify(merged) });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 60,
+        "text": "const r = await fetch(API_BASE + \"/.lr/update\", { cache: \"no-store\", headers: authHeaders() });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "import { readFile, writeFile, mkdir, rm } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { copyFileSync, existsSync, readFileSync, mkdirSync, writeFileSync, chmodSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "try { return JSON.parse(readFileSync(path.join(PLUGIN_DIR, \"package.json\"), \"utf8\")).version ?? null; } catch { return null; }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 63,
+        "text": "const data = JSON.parse(readFileSync(DRAWINGS_FILE, \"utf8\"));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 74,
+        "text": "try { stored = JSON.parse(readFileSync(SETTINGS_FILE, \"utf8\")) ?? {}; } catch {}"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 33,
+        "text": "const child = spawn(command, args, { cwd: PROFILE_DIR, env: process.env, windowsHide: true });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/overlay.js",
+    "vendor/html2canvas.min.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

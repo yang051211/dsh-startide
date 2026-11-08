@@ -1,14 +1,14 @@
 {
   "name": "dsh-smart-mail",
-  "version": "0.4.0",
-  "scannedAt": "2026-11-06T20:48:56.843Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-08T07:28:21.898Z",
   "icon": "dsh-smart-mail.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 87,
+        "line": 94,
         "text": "const response = await fetch(API + path, {"
       }
     ]
@@ -18,28 +18,28 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 26,
-        "text": "import { readFileSync } from 'node:fs'"
+        "line": 27,
+        "text": "import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 83,
+        "line": 90,
         "text": "return JSON.parse(readFileSync(here, 'utf8')).version ?? 'unknown'"
       },
       {
-        "file": "store.mjs",
-        "line": 36,
-        "text": "} from 'node:fs'"
+        "file": "index.js",
+        "line": 849,
+        "text": "const buffer = readFileSync(one.path)"
       },
       {
-        "file": "store.mjs",
-        "line": 102,
-        "text": "return JSON.parse(readFileSync(file, 'utf8'))"
+        "file": "index.js",
+        "line": 1049,
+        "text": "mkdirSync(dir, { recursive: true })"
       },
       {
-        "file": "store.mjs",
-        "line": 109,
-        "text": "mkdirSync(path.dirname(file), { recursive: true })"
+        "file": "index.js",
+        "line": 1060,
+        "text": "writeFileSync(target, match.content)"
       }
     ]
   },
@@ -48,17 +48,22 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 639,
+        "line": 731,
         "text": "inject: ['tools', 'webServer', 'sessionController', 'llm', 'configEditor'],"
       },
       {
         "file": "index.js",
-        "line": 698,
+        "line": 790,
         "text": "ctx.effect(() => ctx.tools.register({"
       },
       {
         "file": "index.js",
-        "line": 772,
+        "line": 918,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 1000,
         "text": "ctx.effect(() => ctx.tools.register({"
       }
     ]

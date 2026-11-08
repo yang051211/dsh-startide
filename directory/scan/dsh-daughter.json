@@ -1,0 +1,100 @@
+{
+  "name": "dsh-daughter",
+  "version": "0.6.5",
+  "scannedAt": "2026-11-08T07:28:16.808Z",
+  "icon": "dsh-daughter.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/host.js",
+        "line": 3,
+        "text": "import { createServer } from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/connector-token.mjs",
+        "line": 22,
+        "text": "import { existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "bin/connector-token.mjs",
+        "line": 48,
+        "text": "if (existsSync(tokenPath)) rmSync(tokenPath, { force: true });"
+      },
+      {
+        "file": "bin/connector-token.mjs",
+        "line": 63,
+        "text": "mkdirSync(dirname(target), { recursive: true });"
+      },
+      {
+        "file": "bin/connector-token.mjs",
+        "line": 64,
+        "text": "writeFileSync(target, `${state.token}\\n`, { encoding: 'utf8', mode: 0o600 });"
+      },
+      {
+        "file": "dist/config.js",
+        "line": 1,
+        "text": "import { readFileSync, existsSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/host.js",
+        "line": 944,
+        "text": "await ctx.tools.invoke(tool, argsTemplate).catch((error) => {"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 974,
+        "text": "output = await ctx.tools.invoke(step.tool, { ...step.argsTemplate, ...invokeArgs });"
+      },
+      {
+        "file": "dist/runtime/desktop-input.js",
+        "line": 252,
+        "text": "const dispose = tools.register(createDesktopInputTool({ ...options, logger }));"
+      },
+      {
+        "file": "dist/runtime/desktop-observe.js",
+        "line": 272,
+        "text": "const dispose = tools.register(createDesktopObserveTool({"
+      },
+      {
+        "file": "dist/runtime/vpet-control.js",
+        "line": 164,
+        "text": "const dispose = tools.register(createVpetControlTool({ ...options, logger }));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

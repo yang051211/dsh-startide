@@ -1,0 +1,138 @@
+{
+  "name": "qfish",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-08T07:28:23.675Z",
+  "icon": "qfish.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/console.js",
+        "line": 1,
+        "text": "import { createServer } from \"node:http\";"
+      },
+      {
+        "file": "lib/console.js",
+        "line": 409,
+        "text": "const r = await fetch(path, opts);"
+      },
+      {
+        "file": "lib/console.js",
+        "line": 2018,
+        "text": "        const r = await fetch(\"https://passport.bilibili.com/x/passport-login/web/qrcode/generate?source=main-fe-header\", { headers: { \"user-agent\": \"Mozilla/5."
+      },
+      {
+        "file": "lib/console.js",
+        "line": 2029,
+        "text": "const r = await fetch(u, { headers: { \"user-agent\": \"Mozilla/5.0\", referer: \"https://www.bilibili.com/\" }, signal: AbortSignal.timeout(10000) });"
+      },
+      {
+        "file": "lib/console.js",
+        "line": 2059,
+        "text": "        const nr = await fetch(\"https://api.bilibili.com/x/web-interface/nav\", { headers: { \"user-agent\": \"Mozilla/5.0\", referer: \"https://www.bilibili.com/\", c"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/console.js",
+        "line": 3,
+        "text": "import { readFileSync, writeFileSync, readdirSync, unlinkSync, existsSync, mkdirSync, statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/console.js",
+        "line": 25,
+        "text": "try { mkdirSync(PDIR, { recursive: true }); } catch {}"
+      },
+      {
+        "file": "lib/console.js",
+        "line": 1915,
+        "text": "const buf = readFileSync(join(FONT_DIR, name));"
+      },
+      {
+        "file": "lib/console.js",
+        "line": 1948,
+        "text": "const settings = existsSync(SETTINGS) ? JSON.parse(noBom(readFileSync(SETTINGS, \"utf8\"))) : {};"
+      },
+      {
+        "file": "lib/console.js",
+        "line": 1950,
+        "text": "ersonaFiles().map((n) => ({ name: n, key: n.replace(/\\W/g, \"\"), label: LABEL[n] || n.replace(/\\.md$/, \"\"), text: noBom(readFileSync(join(PDIR, n), \"utf8\")) })),"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4001,
+        "text": "agentCtx.tools.register(this.replyTool(reply));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4002,
+        "text": "agentCtx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4064,
+        "text": "agentCtx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4145,
+        "text": "agentCtx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4199,
+        "text": "agentCtx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/console.js",
+        "line": 4,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/console.js",
+        "line": 29,
+        "text": "execFile(cmd, args, { timeout: 15000 }, (err, stdout, stderr) => {"
+      },
+      {
+        "file": "lib/console.js",
+        "line": 2116,
+        "text": "const __cp = process.getBuiltinModule(\"node:child_process\");"
+      },
+      {
+        "file": "lib/console.js",
+        "line": 2118,
+        "text": "              __cp.execFile(\"ffmpeg\", [\"-y\", \"-loglevel\", \"error\", \"-i\", join(STICKERS, name), \"-vf\", \"scale=180:-1:flags=lanczos\", \"-frames:v\", \"1\", tpath], (e"
+      },
+      {
+        "file": "lib/console.js",
+        "line": 2133,
+        "text": "const __cp = process.getBuiltinModule(\"node:child_process\");"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

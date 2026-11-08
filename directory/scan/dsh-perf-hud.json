@@ -1,19 +1,19 @@
 {
   "name": "dsh-perf-hud",
-  "version": "0.9.0",
-  "scannedAt": "2026-11-04T20:39:20.958Z",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-08T07:28:17.765Z",
   "icon": "dsh-perf-hud.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.model.js",
-        "line": 145,
+        "line": 147,
         "text": "* ⚠️ 读 body 也包在 deadline 里 —— 只把 `fetch()` resolve 当完成会让慢 body 永远 pending。"
       },
       {
         "file": "client.model.js",
-        "line": 162,
+        "line": 164,
         "text": "const response = await fetch(url, { ...options, signal: controller.signal });"
       },
       {
@@ -25,6 +25,11 @@
         "file": "tools/cdp.mjs",
         "line": 62,
         "text": "const ws = new WebSocket(target.webSocketDebuggerUrl);"
+      },
+      {
+        "file": "tools/measure-open-cost.mjs",
+        "line": 840,
+        "text": "await fetch(`http://127.0.0.1:${port}/json/version`, { signal: AbortSignal.timeout(800) });"
       }
     ]
   },
@@ -78,6 +83,11 @@
       {
         "file": "tools/check-counts.mjs",
         "line": 24,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "tools/measure-open-cost.mjs",
+        "line": 50,
         "text": "import { execFileSync } from 'node:child_process';"
       }
     ]

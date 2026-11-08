@@ -1,35 +1,35 @@
 {
   "name": "dsh-mobile-plugin",
-  "version": "0.5.28",
-  "scannedAt": "2026-11-07T23:16:58.343Z",
+  "version": "0.5.29",
+  "scannedAt": "2026-11-08T07:28:09.751Z",
   "icon": "dsh-mobile-plugin.png",
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/client.js",
-        "line": 166,
-        "text": "const response = await fetch(DESKTOP_VIEW_ENDPOINT, {"
+        "file": "extensions/magpie/app.js",
+        "line": 142,
+        "text": "const res = await fetch(\"/api/\" + path, {"
       },
       {
-        "file": "lib/client.js",
-        "line": 229,
-        "text": "response = await fetch(url, {"
+        "file": "extensions/magpie/app.js",
+        "line": 4611,
+        "text": "const u = await fetch(\"/api/update\").then((r) => (r.ok ? r.json() : null)).catch(() => null);"
       },
       {
-        "file": "lib/git/read.js",
-        "line": 403,
-        "text": "const response = await fetch(`https://api.github.com/repos/${target.owner}/${target.repo}`, {"
+        "file": "extensions/magpie/app.js",
+        "line": 6806,
+        "text": "const res = await fetch(\"/api/copy\", { method: \"POST\", headers: { \"Content-Type\": \"application/json\" }, body: JSON.stringify({ text }) }).catch(() => null);"
       },
       {
-        "file": "lib/mobile/cli/icons.js",
-        "line": 107,
-        "text": "const res = await fetch(entry.icon, {"
+        "file": "extensions/magpie/app.js",
+        "line": 20088,
+        "text": "const cmd = \"curl -fsS -m 1 -H 'Authorization: Bearer <gateway key>' --data-binary @- \" + gw + \"/v1/magpie/statusline || true\";"
       },
       {
-        "file": "lib/mobile/cli/registry.js",
-        "line": 153,
-        "text": "const res = await fetch(REGISTRY_URL, {"
+        "file": "extensions/magpie/ctxtext.js",
+        "line": 14,
+        "text": "const res = await fetch(\"/api/context/\" + what + \"?\" + new URLSearchParams(q));"
       }
     ]
   },
@@ -73,23 +73,23 @@
       },
       {
         "file": "lib/mobile/pet-tools.js",
-        "line": 48,
+        "line": 51,
         "text": "* 直接读 `ctx.tools` 拿到的常常是 undefined（见 `phone/tools.js` 那一整段教训）。缺失时"
       },
       {
         "file": "lib/mobile/pet-tools.js",
-        "line": 67,
+        "line": 70,
         "text": "scoped.tools.register(defineTool({"
       },
       {
         "file": "lib/mobile/pet-tools.js",
-        "line": 113,
+        "line": 116,
         "text": "scoped.tools.register(defineTool({"
       },
       {
-        "file": "lib/mobile/phone/route-hint.js",
-        "line": 11,
-        "text": "* 不能直接读 `ctx.tools`（宿主里那是个影子对象，`register` 一调就抛，被容错吞掉后一条工具都交不到"
+        "file": "lib/mobile/phone/knowledge-tools.js",
+        "line": 640,
+        "text": "scoped.tools.register(defineTool(def));"
       }
     ]
   },

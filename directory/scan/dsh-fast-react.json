@@ -1,0 +1,122 @@
+{
+  "name": "dsh-fast-react",
+  "version": "1.5.0",
+  "scannedAt": "2026-11-08T07:28:23.360Z",
+  "icon": "dsh-fast-react.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3528,
+        "text": "fetch(__FR_BASE__+'/sidebar.js?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.text()}).then(function(txt){"
+      },
+      {
+        "file": "lib/ui/sidebar.js",
+        "line": 355,
+        "text": "fetch('/fr/api/pagever?t=' + Date.now(), { cache: 'no-store' })"
+      },
+      {
+        "file": "tools/audit-ui-api.mjs",
+        "line": 7,
+        "text": "const r = await fetch(`http://127.0.0.1:${p}/fr/api/status`, { signal: AbortSignal.timeout(1200) })"
+      },
+      {
+        "file": "tools/audit-ui-api.mjs",
+        "line": 17,
+        "text": "const r = await fetch(base + p, opt)"
+      },
+      {
+        "file": "tools/regression.mjs",
+        "line": 9,
+        "text": "const r = await fetch(`http://127.0.0.1:${p}/fr/status`, { signal: AbortSignal.timeout(1200) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 10,
+        "text": "import { readFileSync, readdirSync, existsSync, statSync, openSync, readSync, fstatSync, closeSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 19,
+        "text": "try { return readFileSync(join(UI_DIR, name), 'utf8') } catch { return '' }"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 103,
+        "text": "const t = readFileSync(p, 'utf8')"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 119,
+        "text": "const text = readFileSync(p, \"utf8\")"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 132,
+        "text": "return existsSync(p) ? readFileSync(p, 'utf8').length : 0"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 83,
+        "text": "export const inject = ['agents', 'sessions', 'tools', 'timer', 'agentDefaultModel']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1007,
+        "text": "*  `tools.schemas(agent)`（含 preset 带入的工具），不能用 `ctx.tools.schemas()`——"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3597,
+        "text": "yield ctx.tools.guard((exec) => {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4221,
+        "text": "//   直接 ctx.tools.register 会抛 \"tool xxx is already registered\" 并**中断 apply**"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4250,
+        "text": "*  ⚠️ 重载兼容：ctx.tools.get(name) 查的是全局视图，热重载后旧注册仍在。"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tools/regression.mjs",
+        "line": 20,
+        "text": "const { execFileSync } = await import('node:child_process')"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentDefaultModel",
+    "agents",
+    "sessions",
+    "timer",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

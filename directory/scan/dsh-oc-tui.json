@@ -1,7 +1,7 @@
 {
   "name": "dsh-oc-tui",
-  "version": "0.2.0",
-  "scannedAt": "2026-11-01T19:09:00.617Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-08T07:28:17.857Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,12 +18,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 286,
+        "line": 353,
         "text": "const res = await fetch(src.url, { signal: AbortSignal.timeout(10000) })"
       },
       {
         "file": "lib/index.js",
-        "line": 2211,
+        "line": 2456,
         "text": "const res = await fetch(url)"
       },
       {
@@ -68,13 +68,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 371,
+        "line": 443,
         "text": "// `@deepseek-ai/dsh-mcp-client` plugin instance on the live agent's scope,"
       },
       {
-        "file": "lib/mcp.js",
-        "line": 545,
-        "text": "mcpClientModule = await import('@deepseek-ai/dsh-mcp-client')"
+        "file": "lib/mcp-monitor.js",
+        "line": 18,
+        "text": "if (!header || !text.includes('@deepseek-ai/dsh-mcp-client')) return text"
+      },
+      {
+        "file": "lib/mcp-monitor.js",
+        "line": 26,
+        "text": "if (!blocks.some((block) => block[0].includes('(@deepseek-ai/dsh-mcp-client)'))) return text"
+      },
+      {
+        "file": "lib/mcp-monitor.js",
+        "line": 27,
+        "text": "const kept = blocks.filter((block) => !block[0].includes('(@deepseek-ai/dsh-mcp-client)'))"
+      },
+      {
+        "file": "lib/mcp-monitor.js",
+        "line": 95,
+        "text": "// `@deepseek-ai/dsh-mcp-client` (which know whether a server came up)."
       }
     ]
   },
@@ -122,27 +137,6 @@
     "sessionPersistence",
     "tuiStartup"
   ],
-  "setupHints": [
-    {
-      "file": "README.md",
-      "line": 110,
-      "text": "npm install -g dsh-oc-tui"
-    },
-    {
-      "file": "README.md",
-      "line": 115,
-      "text": "— `dsh plugin … add -w dsh-oc-tui` and `npm install -g dsh-oc-tui` above — therefore give you the newest stable version, never a release candidate. Since `0.2.0"
-    },
-    {
-      "file": "README.md",
-      "line": 121,
-      "text": "npm install -g dsh-oc-tui@next"
-    },
-    {
-      "file": "README.md",
-      "line": 209,
-      "text": "It prefers the `dsh` on `PATH` and falls back to `npx --yes @deepseek-ai/dsh`. Install it with `npm install -g dsh-oc-tui`."
-    }
-  ],
+  "setupHints": [],
   "skippedEntries": []
 }

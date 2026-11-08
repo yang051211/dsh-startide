@@ -1,0 +1,83 @@
+{
+  "name": "dsh-phone-control",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-08T07:28:18.357Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 97,
+        "text": "const response = await fetch(BASE + path, init);"
+      },
+      {
+        "file": "lib/service.js",
+        "line": 2,
+        "text": "import http from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 66,
+        "text": "const raw = await readFile(entryPath, 'utf8')"
+      },
+      {
+        "file": "lib/service.js",
+        "line": 5,
+        "text": "import { readFile, rm, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/service.js",
+        "line": 6,
+        "text": "import { appendFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/service.js",
+        "line": 48,
+        "text": "appendFileSync(DEBUG_LOG, `${new Date().toISOString()} ${message}\\n`)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 8,
+        "text": "export const inject = ['tools', 'skills']"
+      },
+      {
+        "file": "index.js",
+        "line": 549,
+        "text": "ctx.effect(() => ctx.tools.register(definition), `dsh-phone-control: ${definition.name}`)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

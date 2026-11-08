@@ -1,0 +1,75 @@
+{
+  "name": "dsh-obsidian-notes",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-08T07:28:16.252Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 2192,
+        "text": "const res = await fetch(`/obsidian${path}`, {"
+      },
+      {
+        "file": "src/client.js",
+        "line": 450,
+        "text": "const res = await fetch(`/obsidian${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 6,
+        "text": "import { readdir, readFile, writeFile, rename, unlink, stat, realpath, lstat, mkdir, rm, rmdir } from \"node:fs/promises\";"
+      },
+      {
+        "file": "src/index.js",
+        "line": 165,
+        "text": "for (const abs of await resolvedImageRefs(rootCanon, relPath, await readFile(full, \"utf8\"))) refs.add(abs);"
+      },
+      {
+        "file": "src/index.js",
+        "line": 417,
+        "text": "await mkdir(newAbs, { recursive: true });"
+      },
+      {
+        "file": "src/index.js",
+        "line": 448,
+        "text": "// 用 rmdir（空目录才成功，否则 ENOTEMPTY → 保留），fs.rm(recursive:false) 在 Windows 对目录返回 EISDIR。"
+      },
+      {
+        "file": "src/index.js",
+        "line": 495,
+        "text": "content = await readFile(full, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: node build.mjs"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

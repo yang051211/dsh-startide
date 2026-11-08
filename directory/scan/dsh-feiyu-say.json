@@ -1,0 +1,115 @@
+{
+  "name": "dsh-feiyu-say",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-08T07:28:15.213Z",
+  "icon": "dsh-feiyu-say.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 16,
+        "text": "const get = (p) => fetch(B + p, { cache: 'no-store' }).then(j).catch(() => null)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 17,
+        "text": "    const post = (p, body) => fetch(B + p, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body || {}) }).then(j).catch("
+      },
+      {
+        "file": "lib/qqvoice.mjs",
+        "line": 51,
+        "text": "const r = await fetch(String(地址).replace(/\\/+$/, '') + '/send_private_msg', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/audio.mjs",
+        "line": 3,
+        "text": "import { createReadStream, existsSync, statSync, realpathSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/bailian.mjs",
+        "line": 11,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/config.mjs",
+        "line": 3,
+        "text": "import { existsSync, readFileSync, writeFileSync, renameSync, mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/config.mjs",
+        "line": 102,
+        "text": "if (existsSync(配置文件路径())) 文件 = JSON.parse(readFileSync(配置文件路径(), 'utf8'))"
+      },
+      {
+        "file": "lib/config.mjs",
+        "line": 114,
+        "text": "mkdirSync(dirname(路径), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 14,
+        "text": "export const inject = ['agents', 'webServer', 'tools']"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 141,
+        "text": "            try { const f = agent.ctx.tools.register(工具); if (typeof f === 'function') 卸.push(f) } catch (e) { console.warn('[feiyu-say] 工具注册失败：' + 工具.name + ' "
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bailian.mjs",
+        "line": 184,
+        "text": "const { spawnSync } = await import('node:child_process')"
+      },
+      {
+        "file": "lib/bailian.mjs",
+        "line": 185,
+        "text": "const ff = spawnSync(配置.ffmpeg || 'ffmpeg', ['-version'], { encoding: 'utf8', timeout: 5000 })"
+      },
+      {
+        "file": "lib/qqvoice.mjs",
+        "line": 16,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/run.mjs",
+        "line": 3,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/run.mjs",
+        "line": 11,
+        "text": "子 = spawn(cmd, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

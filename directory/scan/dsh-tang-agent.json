@@ -1,0 +1,130 @@
+{
+  "name": "dsh-tang-agent",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-08T07:28:23.813Z",
+  "icon": "dsh-tang-agent.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 796,
+        "text": "fetch(`/api/tang/runs/${encodeURIComponent(runId)}`)"
+      },
+      {
+        "file": "client.js",
+        "line": 841,
+        "text": "const list = await fetch('/api/tang/runs').then((response) => (response.ok ? response.json() : []));"
+      },
+      {
+        "file": "client.js",
+        "line": 844,
+        "text": "const detail = await fetch(`/api/tang/runs/${encodeURIComponent(item.id)}`).then((response) =>"
+      },
+      {
+        "file": "client.js",
+        "line": 876,
+        "text": "const response = await fetch('/api/tang/run', {"
+      },
+      {
+        "file": "client.js",
+        "line": 893,
+        "text": "await fetch(`/api/tang/runs/${encodeURIComponent(runId)}/cancel`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "court/prompts.js",
+        "line": 10,
+        "text": "import { statSync } from 'node:fs';"
+      },
+      {
+        "file": "court/routes.js",
+        "line": 65,
+        "text": "fs: ctx.get('fs') !== undefined,"
+      },
+      {
+        "file": "court/store.js",
+        "line": 8,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "court/store.js",
+        "line": 53,
+        "text": "this.runs = JSON.parse(await readFile(this.file, 'utf8'));"
+      },
+      {
+        "file": "court/store.js",
+        "line": 57,
+        "text": "this.mode = this.mode === 'fs-fallback' ? 'fs-fallback' : 'fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "court/agent-runner.js",
+        "line": 142,
+        "text": "agent.ctx.tools.register(tool);"
+      },
+      {
+        "file": "court/agent-runner.js",
+        "line": 149,
+        "text": "agent.ctx.tools.restrict({ allow: ['read'] });"
+      },
+      {
+        "file": "court/agent-runner.js",
+        "line": 155,
+        "text": "agent.ctx.tools.guard((exec) =>"
+      },
+      {
+        "file": "court/tools.js",
+        "line": 456,
+        "text": "const tools = ctx.tools.schemas(exec.agent).map((schema) => schema.name);"
+      },
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "export const inject = ['tools', 'agents', 'subagents', 'webServer', 'fs', 'subprocess', 'workingDirectory', 'agentDefaultModel'];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "court/prompts.js",
+        "line": 9,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "court/tools.js",
+        "line": 137,
+        "text": "const handle = ctx.subprocess.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentDefaultModel",
+    "agents",
+    "fs",
+    "subagents",
+    "subprocess",
+    "tools",
+    "webServer",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

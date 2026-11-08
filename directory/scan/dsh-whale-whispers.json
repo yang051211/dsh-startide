@@ -1,0 +1,115 @@
+{
+  "name": "dsh-whale-whispers",
+  "version": "2.0.7",
+  "scannedAt": "2026-11-08T07:28:15.683Z",
+  "icon": "dsh-whale-whispers.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 32,
+        "text": "fetch(url, { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 146,
+        "text": "const r = await fetch(url, { method: 'POST' })"
+      },
+      {
+        "file": "client.js",
+        "line": 191,
+        "text": "const r = await fetch('/dsh-quotes.config?b64path=' + encodeURIComponent(b64(next)), { method: 'POST' })"
+      },
+      {
+        "file": "client.js",
+        "line": 318,
+        "text": "          const r = await fetch('/dsh-quotes.remove?b64=' + encodeURIComponent(b64(item.text)) + '&conv=' + encodeURIComponent(item.conversation || conv || ''),"
+      },
+      {
+        "file": "client.js",
+        "line": 360,
+        "text": "                const r = await fetch('/dsh-quotes.fav?b64=' + encodeURIComponent(b64(item.text)) + '&on=' + (item.fav ? '0' : '1') + '&conv=' + encodeURICompon"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "import { readFile, writeFile, rename, mkdir, readdir, stat, unlink, open } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "import { readFileSync, readdirSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 46,
+        "text": "return JSON.parse(stripBom(await readFile(path, 'utf8')))"
+      },
+      {
+        "file": "index.js",
+        "line": 102,
+        "text": "const body = await readFile(dir + '/' + n + '.md', 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 114,
+        "text": "const body = await readFile(file, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 42,
+        "text": "export const inject = ['webServer', 'tools', 'systemPrompt', 'agents']"
+      },
+      {
+        "file": "index.js",
+        "line": 1768,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 1787,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 1809,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 1823,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

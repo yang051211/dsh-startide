@@ -1,0 +1,114 @@
+{
+  "name": "solopup-memory",
+  "version": "0.21.0-beta.1",
+  "scannedAt": "2026-11-08T07:28:16.876Z",
+  "icon": "solopup-memory.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "accept.mjs",
+        "line": 3,
+        "text": "import {readFileSync,existsSync} from 'node:fs'"
+      },
+      {
+        "file": "accept.mjs",
+        "line": 10,
+        "text": "rocess.env.DSH_HOME??join(homedir(),'.dsh')),dir=join(home,'profiles',profile),root=join(home,'memory'),read=file=>JSON.parse(readFileSync(file,'utf8')),rows=[]"
+      },
+      {
+        "file": "candidates.mjs",
+        "line": 3,
+        "text": "import { lstatSync } from 'node:fs'"
+      },
+      {
+        "file": "capture-inputs.mjs",
+        "line": 3,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "capture-jobs.mjs",
+        "line": 5,
+        "text": "import { existsSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "fixture-host.mjs",
+        "line": 34,
+        "text": "const handlers=[],register=ctx.tools?.register;let sequence=0,turn=0"
+      },
+      {
+        "file": "fixture-host.mjs",
+        "line": 38,
+        "text": "if(ctx.tools)host.tools={...ctx.tools,register(definition){"
+      },
+      {
+        "file": "fixture-host.mjs",
+        "line": 39,
+        "text": "if(definition.name!=='memory_write')return register.call(ctx.tools,definition)"
+      },
+      {
+        "file": "fixture-host.mjs",
+        "line": 41,
+        "text": "register.call(ctx.tools,{...definition,async execute(args,exec={}){"
+      },
+      {
+        "file": "index.mjs",
+        "line": 74,
+        "text": "export const inject = ['systemPrompt', 'workingDirectory', 'tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "restore.mjs",
+        "line": 5,
+        "text": "import {spawnSync} from 'node:child_process'"
+      },
+      {
+        "file": "restore.mjs",
+        "line": 46,
+        "text": " const r=spawnSync('tar',['-xOf',archive,'package/package.json'],{encoding:'utf8',maxBuffer:65536,timeout:10000});let p;try{p=JSON.parse(r.stdout)}catch{fail('i"
+      },
+      {
+        "file": "scripts/probe-load.mjs",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/probe-load.mjs",
+        "line": 41,
+        "text": "const child = spawn(CLI, ['--profile', 'probe', '--port', '0', '--no-open'], {"
+      },
+      {
+        "file": "scripts/probe-package.mjs",
+        "line": 4,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,64 @@
+{
+  "name": "dsh-token-board",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-08T07:28:15.568Z",
+  "icon": "dsh-token-board.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1274,
+        "text": "const response = await fetch(path, { headers, signal });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 39,
+        "text": "import { mkdir, readFile, rename, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 130,
+        "text": "const current = await readFile(source, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 132,
+        "text": "await writeFile(backupPath(), current, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 153,
+        "text": "const parsed = JSON.parse(await readFile(backupPath(), \"utf8\"));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 923,
+        "text": "const parsed = JSON.parse(await readFile(cachePath(), \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

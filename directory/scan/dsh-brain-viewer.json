@@ -1,39 +1,60 @@
 {
   "name": "dsh-brain-viewer",
-  "version": "0.3.0",
-  "scannedAt": "2026-10-31T22:51:48.413Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-08T07:28:18.578Z",
   "icon": "dsh-brain-viewer.png",
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 52,
+        "text": "return fetch(url, options).then(function (response) {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 118,
+        "text": "return fetch(graphApiUrl(), { cache: \"no-store\", credentials: \"same-origin\" })"
+      },
+      {
+        "file": "lib/client.template.js",
+        "line": 52,
+        "text": "return fetch(url, options).then(function (response) {"
+      },
+      {
+        "file": "lib/client.template.js",
+        "line": 118,
+        "text": "return fetch(graphApiUrl(), { cache: \"no-store\", credentials: \"same-origin\" })"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
       {
         "file": "build.mjs",
-        "line": 7,
+        "line": 8,
         "text": "import fs from \"node:fs\";"
       },
       {
         "file": "build.mjs",
-        "line": 17,
-        "text": "const brainHtml = fs.readFileSync(brainHtmlPath, \"utf8\");"
+        "line": 19,
+        "text": "const viewerHtml = fs.readFileSync(viewerPath, \"utf8\");"
       },
       {
         "file": "build.mjs",
-        "line": 18,
+        "line": 20,
+        "text": "const graphText = fs.existsSync(graphPath) ? fs.readFileSync(graphPath, \"utf8\") : \"{\\\"nodes\\\":[],\\\"edges\\\":[]}\";"
+      },
+      {
+        "file": "build.mjs",
+        "line": 21,
         "text": "const template = fs.readFileSync(templatePath, \"utf8\");"
       },
       {
         "file": "build.mjs",
-        "line": 28,
+        "line": 37,
         "text": "fs.writeFileSync(outPath, out);"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 14,
-        "text": "import fs from \"node:fs\";"
       }
     ]
   },
@@ -45,6 +66,21 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/ingest.js",
+        "line": 20,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/ingest.js",
+        "line": 811,
+        "text": "const result = spawnSync(paths.python || \"python\", [script], {"
+      },
+      {
+        "file": "lib/ingest.js",
+        "line": 822,
+        "text": "const retried = spawnSync(paths.python || \"python\", [script], {"
+      },
+      {
         "file": "tools/rebuild.mjs",
         "line": 16,
         "text": "import { spawnSync } from \"node:child_process\";"
@@ -52,16 +88,6 @@
       {
         "file": "tools/rebuild.mjs",
         "line": 39,
-        "text": "const result = spawnSync(command, argv, { cwd, stdio: \"inherit\", shell: false });"
-      },
-      {
-        "file": "tools/watch.mjs",
-        "line": 16,
-        "text": "import { spawnSync } from \"node:child_process\";"
-      },
-      {
-        "file": "tools/watch.mjs",
-        "line": 36,
         "text": "const result = spawnSync(command, argv, { cwd, stdio: \"inherit\", shell: false });"
       }
     ]

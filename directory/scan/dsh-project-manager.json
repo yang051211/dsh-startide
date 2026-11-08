@@ -1,24 +1,24 @@
 {
   "name": "dsh-project-manager",
-  "version": "0.20.1",
-  "scannedAt": "2026-10-26T10:06:57.629Z",
+  "version": "0.57.0",
+  "scannedAt": "2026-11-08T07:28:21.005Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 22,
+        "line": 69,
         "text": "res = await fetch(API + path, init);"
       },
       {
         "file": "lib/client.js",
-        "line": 4910,
+        "line": 25771,
         "text": "fetch(DSM + \"/capabilities\", { cache: \"no-store\" }).then((r) => r.json()).then((b) => {"
       },
       {
         "file": "lib/client.js",
-        "line": 4944,
+        "line": 25805,
         "text": "r = await (await fetch(DSM + \"/delete\", {"
       }
     ]
@@ -58,7 +58,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 50,
+        "line": 55,
         "text": "export const inject = ['webServer', 'tools', 'workspaceRegistry', 'sessions', 'permissionPresets', 'sessionTitle', 'systemPrompt'];"
       }
     ]
@@ -68,23 +68,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 12,
+        "line": 13,
         "text": "import { execFile } from 'node:child_process';"
       },
       {
         "file": "lib/index.js",
-        "line": 539,
-        "text": "execFile('osascript', script.flatMap((l) => ['-e', l]), { timeout: 10 * 60_000, maxBuffer: 4 * 1024 * 1024 }, (err, stdout, stderr) => {"
+        "line": 1104,
+        "text": "         await new Promise((ok, bad) => execFile('/usr/bin/open', how === 'reveal' ? ['-R', p] : [p], { timeout: 15_000 }, (err) => (err ? bad(new M.BoardError("
       },
       {
-        "file": "lib/landfill.js",
-        "line": 6,
-        "text": "import { execFileSync, spawn } from 'node:child_process';"
+        "file": "lib/index.js",
+        "line": 1117,
+        "text": "         await new Promise((ok, bad) => execFile('/usr/bin/open', folder ? [p] : ['-R', p], { timeout: 15_000 }, (err) => (err ? bad(new M.BoardError('OPEN_FAIL"
       },
       {
-        "file": "lib/landfill.js",
-        "line": 151,
-        "text": "        const child = spawn(python, [tool, ...args], { env: { ...process.env, AI_MEMORY_ROOT: aiRoot, AI_MEMORY_WRITER: 'dsh-project-manager' }, stdio: ['pipe',"
+        "file": "lib/index.js",
+        "line": 1142,
+        "text": "         await new Promise((ok, bad) => execFile('/usr/bin/open', [f.path], { timeout: 15_000 }, (err) => (err ? bad(new M.BoardError('OPEN_FAILED', '打不开这个文件：' "
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1155,
+        "text": "         await new Promise((ok, bad) => execFile('/usr/bin/open', ['-a', 'Terminal', p], { timeout: 15_000 }, (err) => (err ? bad(new M.BoardError('OPEN_FAILED'"
       }
     ]
   },

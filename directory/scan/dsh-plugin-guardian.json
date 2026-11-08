@@ -1,0 +1,98 @@
+{
+  "name": "dsh-plugin-guardian",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-08T07:28:17.783Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 17,
+        "text": "const response = await fetch(API + route, {"
+      },
+      {
+        "file": "lib/doctor.js",
+        "line": 223,
+        "text": "const response = await fetch(url, { signal: controller.signal, headers: { accept: 'application/json' } });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "integrations/bigfish/guardian-bridge.js",
+        "line": 35,
+        "text": "const fs = require('node:fs');"
+      },
+      {
+        "file": "integrations/bigfish/guardian-bridge.js",
+        "line": 41,
+        "text": "return JSON.parse(fs.readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "integrations/bigfish/guardian-bridge.js",
+        "line": 49,
+        "text": "fs.writeFileSync(tmp, `${JSON.stringify(value, null, 2)}\\n`, 'utf8');"
+      },
+      {
+        "file": "lib/doctor.js",
+        "line": 11,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/doctor.js",
+        "line": 74,
+        "text": "const pkg = JSON.parse(fs.readFileSync(path.join(path.dirname(path.dirname(binPath)), 'package.json'), 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "integrations/bigfish/guardian-bridge.js",
+        "line": 25,
+        "text": "*   // before `spawn(backend)`:"
+      },
+      {
+        "file": "integrations/bigfish/guardian-bridge.js",
+        "line": 37,
+        "text": "const { spawn } = require('node:child_process');"
+      },
+      {
+        "file": "integrations/bigfish/guardian-bridge.js",
+        "line": 103,
+        "text": "child = spawn(nodeExe, [cli, 'fix', '--profile', path.basename(profileDir()), '--home', dshHome], {"
+      },
+      {
+        "file": "lib/doctor.js",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/doctor.js",
+        "line": 480,
+        "text": "child = spawn(process.execPath, argv, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

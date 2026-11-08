@@ -1,7 +1,7 @@
 {
   "name": "dsh-scihub",
-  "version": "0.4.0",
-  "scannedAt": "2026-11-07T23:17:14.630Z",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-08T07:28:23.688Z",
   "icon": "dsh-scihub.svg",
   "network": {
     "hit": true,
@@ -34,27 +34,27 @@
       {
         "file": "lib/host.mjs",
         "line": 44,
-        "text": "import { mkdir, writeFile } from 'node:fs/promises';"
+        "text": "import { mkdir, readFile, stat, writeFile } from 'node:fs/promises';"
       },
       {
         "file": "lib/host.mjs",
-        "line": 450,
+        "line": 476,
         "text": "await mkdir(dir, { recursive: true });"
       },
       {
         "file": "lib/host.mjs",
-        "line": 452,
-        "text": "await writeFile(path, body);"
+        "line": 479,
+        "text": "if (!duplicate) await writeFile(path, body);"
+      },
+      {
+        "file": "lib/host.mjs",
+        "line": 501,
+        "text": "if ((await readFile(join(dir, candidate))).equals(body)) {"
       },
       {
         "file": "lib/mirrors.mjs",
         "line": 13,
         "text": "import { readFileSync } from 'node:fs';"
-      },
-      {
-        "file": "lib/mirrors.mjs",
-        "line": 37,
-        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
       }
     ]
   },
@@ -68,12 +68,12 @@
       },
       {
         "file": "lib/host.mjs",
-        "line": 207,
+        "line": 219,
         "text": "ctx.tools.register({"
       },
       {
         "file": "lib/host.mjs",
-        "line": 271,
+        "line": 283,
         "text": "ctx.tools.register({"
       }
     ]

@@ -1,0 +1,101 @@
+{
+  "name": "dsh-storage-monitor",
+  "version": "0.1.11",
+  "scannedAt": "2026-11-08T07:28:16.460Z",
+  "icon": "dsh-storage-monitor.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 679,
+        "text": "const response = await fetch(`/storage-monitor${path}`, { method, headers, body, cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/migrate.js",
+        "line": 24,
+        "text": "import { constants as fsConstants, promises as fsp, existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/migrate.js",
+        "line": 352,
+        "text": "await fsp.mkdir(target, { recursive: true })"
+      },
+      {
+        "file": "lib/migrate.js",
+        "line": 356,
+        "text": "await fsp.writeFile("
+      },
+      {
+        "file": "lib/migrate.js",
+        "line": 635,
+        "text": "await fsp.mkdir(scriptDir, { recursive: true })"
+      },
+      {
+        "file": "lib/migrate.js",
+        "line": 637,
+        "text": "await fsp.mkdir(target, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 122,
+        "text": "const dispose = tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/migrate.js",
+        "line": 22,
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/migrate.js",
+        "line": 388,
+        "text": "child = spawn('robocopy', args, { windowsHide: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "lib/migrate.js",
+        "line": 1466,
+        "text": "const child = spawn('powershell.exe', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-Command', command], {"
+      },
+      {
+        "file": "lib/migrate.js",
+        "line": 1486,
+        "text": "const fallback = spawn("
+      },
+      {
+        "file": "scripts/check-runner.mjs",
+        "line": 12,
+        "text": "import { spawnSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionPersistence",
+    "sessions",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

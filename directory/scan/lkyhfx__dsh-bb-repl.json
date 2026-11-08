@@ -1,0 +1,85 @@
+{
+  "name": "@lkyhfx/dsh-bb-repl",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-08T07:28:23.129Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/sessions.js",
+        "line": 6,
+        "text": "import { mkdtemp, readdir, readFile, rm } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/sessions.js",
+        "line": 35,
+        "text": "readFile(`/proc/${pid}/stat`, 'utf8').catch(() => null)))"
+      },
+      {
+        "file": "src/sessions.js",
+        "line": 258,
+        "text": "await rm(scratch, { recursive: true, force: true })"
+      },
+      {
+        "file": "src/sessions.js",
+        "line": 369,
+        "text": "await rm(session.scratch, { recursive: true, force: true }).catch(e => this.onLog(String(e)))"
+      },
+      {
+        "file": "src/version.js",
+        "line": 10,
+        "text": "import { readFileSync, readdirSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 14,
+        "text": "export const inject = ['tools', 'workingDirectory']"
+      },
+      {
+        "file": "src/index.js",
+        "line": 285,
+        "text": "disposeTool = ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/sessions.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/sessions.js",
+        "line": 261,
+        "text": "const proc = spawn(launched.argv[0], launched.argv.slice(1), {"
+      },
+      {
+        "file": "src/version.js",
+        "line": 8,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}
