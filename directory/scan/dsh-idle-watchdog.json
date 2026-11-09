@@ -1,0 +1,78 @@
+{
+  "name": "dsh-idle-watchdog",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-09T08:10:16.345Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 111,
+        "text": "return fetch(url).then(function (r) {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 117,
+        "text": "return fetch(url, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 259,
+        "text": "var curlExample = 'curl -X POST ' + origin + API + '/prompt \\\\\\n' +"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/doctor.js",
+        "line": 11,
+        "text": "import { stat, access } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/doctor.js",
+        "line": 12,
+        "text": "import { constants as FS } from 'node:fs'"
+      },
+      {
+        "file": "lib/dual-settings.js",
+        "line": 30,
+        "text": "import { existsSync, realpathSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/dual-settings.js",
+        "line": 31,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/dual-settings.js",
+        "line": 138,
+        "text": "try { text = await readFile(join(home, file), 'utf8') } catch { continue }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "settings",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

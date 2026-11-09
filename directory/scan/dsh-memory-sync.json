@@ -1,0 +1,123 @@
+{
+  "name": "dsh-memory-sync",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-09T08:10:13.389Z",
+  "icon": "dsh-memory-sync.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 43,
+        "text": "const response = await fetch(API + path, options)"
+      },
+      {
+        "file": "client.js",
+        "line": 273,
+        "text": "const response = await fetch(API + 'export')"
+      },
+      {
+        "file": "client.js",
+        "line": 295,
+        "text": "const response = await fetch(API + 'import?dryRun=1', {"
+      },
+      {
+        "file": "client.js",
+        "line": 310,
+        "text": "const response = await fetch(API + 'import', {"
+      },
+      {
+        "file": "lib/peer-http.mjs",
+        "line": 1,
+        "text": "import { createServer } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "const value = JSON.parse(readFileSync(new URL(rel, import.meta.url), 'utf8')).version"
+      },
+      {
+        "file": "lib/archive.mjs",
+        "line": 2,
+        "text": "import fs from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/archive.mjs",
+        "line": 3,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/archive.mjs",
+        "line": 54,
+        "text": "const content = await fs.readFile(item.abs, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 89,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 112,
+        "text": "disposers.push(ctx.tools.register(memorySyncToolSpec(runtime)))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/git.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/git.mjs",
+        "line": 29,
+        "text": "spawn('taskkill', ['/PID', String(child.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "lib/git.mjs",
+        "line": 77,
+        "text": "child = spawn(command, args, {"
+      },
+      {
+        "file": "lib/notify.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/notify.mjs",
+        "line": 5,
+        "text": "const child = spawn(command, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

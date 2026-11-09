@@ -1,0 +1,101 @@
+{
+  "name": "dsh-log-triage",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-09T08:10:19.208Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 154,
+        "text": "const res = await fetch(ROUTE + path, { credentials: 'same-origin', ...(init || {}) })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 419,
+        "text": "const res = await fetch(`${ROUTE}/report?structure=1`, { credentials: 'same-origin' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 431,
+        "text": "const res = await fetch(ROUTE + '/report', { credentials: 'same-origin' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 504,
+        "text": "const res = await fetch(`${ROUTE}/report?name=${encodeURIComponent(name)}`, { credentials: 'same-origin' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/stacktrace.js",
+        "line": 44,
+        "text": "const NODE_BORING = ['node:internal', 'node:fs', 'node:events', 'node:net', 'node:stream', 'node_modules']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 710,
+        "text": "const text = await readFile(join(HISTORY_DIR, name), 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 723,
+        "text": "const text = await readFile(REPORT_FILE, 'utf8')"
+      },
+      {
+        "file": "lib/runtime/browser-capture.js",
+        "line": 21,
+        "text": "import { readFile, writeFile, mkdir } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 491,
+        "text": "const dispose = toolCtx.tools.register(tool)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 496,
+        "text": "const disposeRead = toolCtx.tools.register(readTool)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 502,
+        "text": "const disposeDb = toolCtx.tools.register(dbTool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/runtime/ssh.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

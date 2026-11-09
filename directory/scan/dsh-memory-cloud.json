@@ -1,0 +1,76 @@
+{
+  "name": "dsh-memory-cloud",
+  "version": "1.3.2",
+  "scannedAt": "2026-11-09T08:10:18.976Z",
+  "icon": "dsh-memory-cloud.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "nebula.js",
+        "line": 817,
+        "text": "fetch('/memory-cloud/api/memories', { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "nebula.js",
+        "line": 1544,
+        "text": "fetch(`/memory-cloud/api/session/${encodeURIComponent(id)}`)"
+      },
+      {
+        "file": "nebula.js",
+        "line": 2104,
+        "text": "fetch('/memory-cloud/api/memories', { headers: { accept: 'application/json' } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "import { readFile, readdir, stat, mkdir, writeFile, rename } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 25,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 495,
+        "text": "const raw = await readFile(this.cacheFile, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 540,
+        "text": "if (!existsSync(dir)) await mkdir(dir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 552,
+        "text": "await writeFile(tmpFile, JSON.stringify(payload), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

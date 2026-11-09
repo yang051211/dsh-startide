@@ -1,0 +1,87 @@
+{
+  "name": "dsh-plugin-sufe-portal",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-09T08:10:14.119Z",
+  "icon": "dsh-plugin-sufe-portal.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 28,
+        "text": "} from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 699,
+        "text": "mkdirSync(stateDir, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 792,
+        "text": "unlinkSync(state.qrPath);"
+      },
+      {
+        "file": "index.js",
+        "line": 810,
+        "text": "writeFileSync(state.pidPath, String(child.pid ?? ''));"
+      },
+      {
+        "file": "index.js",
+        "line": 820,
+        "text": "log = tail(readFileSync(state.logPath, 'utf8'), 1500);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 36,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 72,
+        "text": "ctx.effect(() => ctx.tools.register(definition));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 471,
+        "text": "child = spawn(command, argv, {"
+      },
+      {
+        "file": "index.js",
+        "line": 1048,
+        "text": "const child = spawn(candidates[index], argv, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

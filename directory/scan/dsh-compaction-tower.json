@@ -1,0 +1,95 @@
+{
+  "name": "dsh-compaction-tower",
+  "version": "0.1.45",
+  "scannedAt": "2026-11-09T08:10:13.954Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 104,
+        "text": "const response = await fetch(`/tower/state${query}`, { headers: { accept: 'application/json' } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 111,
+        "text": "const response = await fetch('/tower/action', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 122,
+        "text": "const response = await fetch('/tower/config', { headers: { accept: 'application/json' } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 129,
+        "text": "const response = await fetch('/tower/config', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/config-store.js",
+        "line": 10,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/config-store.js",
+        "line": 40,
+        "text": "const raw = readFileSync(this.path, 'utf8');"
+      },
+      {
+        "file": "lib/config-store.js",
+        "line": 98,
+        "text": "mkdirSync(dirname(this.path), { recursive: true });"
+      },
+      {
+        "file": "lib/config-store.js",
+        "line": 100,
+        "text": "writeFileSync(temp, `${JSON.stringify(overrides, null, 2)}\\n`, 'utf8');"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 7,
+        "text": "import { existsSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 24,
+        "text": "export const inject = ['tools', 'tokenMeter', 'llm', 'sessions'];"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 32,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 80,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

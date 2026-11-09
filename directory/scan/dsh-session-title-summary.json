@@ -1,0 +1,64 @@
+{
+  "name": "dsh-session-title-summary",
+  "version": "1.7.6",
+  "scannedAt": "2026-11-09T08:10:14.222Z",
+  "icon": "dsh-session-title-summary.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 396,
+        "text": "const response = await fetch(endpoint(name), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { readFileSync, writeFileSync, mkdirSync, renameSync } from \"node:fs\";"
+      },
+      {
+        "file": "index.js",
+        "line": 199,
+        "text": "const raw = JSON.parse(readFileSync(settingsPath, \"utf8\"));"
+      },
+      {
+        "file": "index.js",
+        "line": 209,
+        "text": "mkdirSync(dirname(settingsPath), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 211,
+        "text": "writeFileSync(temp, `${JSON.stringify({ version: 1, ...(routeOverride ?? {}) })}\\n`, { mode: 0o600 });"
+      },
+      {
+        "file": "monitor.js",
+        "line": 3,
+        "text": "import { mkdirSync, readFileSync, writeFileSync, renameSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

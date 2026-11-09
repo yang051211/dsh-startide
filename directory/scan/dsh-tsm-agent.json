@@ -1,0 +1,81 @@
+{
+  "name": "dsh-tsm-agent",
+  "version": "0.2.4",
+  "scannedAt": "2026-11-09T08:10:15.823Z",
+  "icon": "dsh-tsm-agent.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 41,
+        "text": "const res = await fetch(url, { cache: \"no-store\" });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 60,
+        "text": "const bundledBuf = fs.readFileSync(bundled);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 62,
+        "text": "const isOurs = targetExists && fs.readFileSync(target).equals(bundledBuf);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 64,
+        "text": "if (isOurs) fs.rmSync(target);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 73,
+        "text": "fs.mkdirSync(path.dirname(target), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 22,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 50,
+      "text": " same service ships as the `tsm` CLI — `npm i -g tsm-core-dlr && tsm serve --http 28795` (first run also needs `tsm fetch-model` and a `tsm build` over an insta"
+    },
+    {
+      "file": "README.zh.md",
+      "line": 50,
+      "text": "仅有 npm 安装（无检出）时，同一服务以 `tsm` CLI 提供——`npm i -g tsm-core-dlr && tsm serve --http 28795`（首次还需 `tsm fetch-model`，并对已安装的场景跑一次 `tsm build`）。"
+    }
+  ],
+  "skippedEntries": []
+}

@@ -1,35 +1,35 @@
 {
   "name": "dsh-preset-doctor",
-  "version": "0.8.3",
-  "scannedAt": "2026-11-08T07:28:16.618Z",
+  "version": "0.9.3",
+  "scannedAt": "2026-11-09T08:10:12.980Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 129,
+        "line": 133,
         "text": "const response = await fetch(`${BRIDGE}/describe`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 138,
+        "line": 142,
         "text": "const response = await fetch(`${BRIDGE}/mutate`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 151,
+        "line": 155,
         "text": "const p = fetch(`${BRIDGE}/list`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 469,
-        "text": "const result = await fetch(`${BRIDGE}/resolve-legacy`, {"
+        "line": 371,
+        "text": "const result = await fetch(`${BRIDGE}/prompt-write`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 497,
-        "text": "const result = await fetch(`${BRIDGE}/sync`, {"
+        "line": 662,
+        "text": "const result = await fetch(`${BRIDGE}/resolve-legacy`, {"
       }
     ]
   },
@@ -47,19 +47,19 @@
         "text": "fs.writeFileSync(tmp, newText, 'utf8')"
       },
       {
+        "file": "src/fix/index.js",
+        "line": 19,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "src/fix/index.js",
+        "line": 42,
+        "text": "const original = fs.readFileSync(file, 'utf8')"
+      },
+      {
         "file": "src/fix/migrate-legacy.js",
         "line": 16,
         "text": "import fs from 'node:fs'"
-      },
-      {
-        "file": "src/fix/resolve-legacy.js",
-        "line": 16,
-        "text": "import fs from 'node:fs'"
-      },
-      {
-        "file": "src/fix/resolve-legacy.js",
-        "line": 36,
-        "text": "fs.mkdirSync(path.dirname(to), { recursive: true })"
       }
     ]
   },
@@ -88,12 +88,12 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 151,
+      "line": 186,
       "text": "npm install -g dsh-preset-doctor            # latest（以 npm 实际发布为准）"
     },
     {
       "file": "README.md",
-      "line": 168,
+      "line": 203,
       "text": "npm install -g dsh-preset-doctor"
     }
   ],

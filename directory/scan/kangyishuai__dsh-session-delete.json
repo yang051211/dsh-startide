@@ -1,0 +1,69 @@
+{
+  "name": "@kangyishuai/dsh-session-delete",
+  "version": "0.4.6",
+  "scannedAt": "2026-11-09T08:10:09.923Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/audit.js",
+        "line": 4,
+        "text": "import { appendFile, mkdir, readFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/audit.js",
+        "line": 55,
+        "text": "await mkdir(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/audit.js",
+        "line": 56,
+        "text": "await appendFile(file, `${line}\\n`, { encoding: \"utf8\", mode: 0o600 });"
+      },
+      {
+        "file": "lib/audit.js",
+        "line": 74,
+        "text": "text = await readFile(file, \"utf8\");"
+      },
+      {
+        "file": "lib/journal.js",
+        "line": 5,
+        "text": "import { mkdir, readdir, readFile, rename, unlink, writeFile } from \"node:fs/promises\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/service.js",
+        "line": 86,
+        "text": "* 必须等 ctx.tools 就绪：插件构造时 tools 运行时可能还没挂载，"
+      },
+      {
+        "file": "lib/service.js",
+        "line": 124,
+        "text": "tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

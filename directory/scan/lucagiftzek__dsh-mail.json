@@ -1,0 +1,116 @@
+{
+  "name": "@lucagiftzek/dsh-mail",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-09T08:10:14.467Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 6,
+        "text": "Ae=null;async function Pe(){let e=await fetch(oe+\"/session\",{credentials:\"same-origin\",headers:{accept:\"application/json\"}});if(!e.ok)throw new Error(\"could not"
+      },
+      {
+        "file": "lib/imap.js",
+        "line": 190,
+        "text": "for await (const m of c.fetch(range, HEADER_QUERY, { uid: true })) {"
+      },
+      {
+        "file": "lib/imap.js",
+        "line": 204,
+        "text": "for await (const m of c.fetch(lo + ':' + Math.max(maxUid, lo), { uid: true, flags: true }, { uid: true })) {"
+      },
+      {
+        "file": "lib/imap.js",
+        "line": 242,
+        "text": "for await (const m of c.fetch(uids.map(String).join(','), { uid: true, flags: true }, { uid: true })) out[m.uid] = [...(m.flags || [])]"
+      },
+      {
+        "file": "lib/imap.js",
+        "line": 273,
+        "text": "for await (const m of c.fetch(uids.map(String).join(','), HEADER_QUERY, { uid: true })) rows.push(await toRow(acc, path, m))"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/accounts.js",
+        "line": 18,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/accounts.js",
+        "line": 65,
+        "text": "const raw = readFileSync(join(home, '.config', 'agentmail', 'credentials'), 'utf8')"
+      },
+      {
+        "file": "lib/accounts.js",
+        "line": 70,
+        "text": "const raw = readFileSync(join(home, '.config', 'lettermint', 'credentials'), 'utf8')"
+      },
+      {
+        "file": "lib/accounts.js",
+        "line": 147,
+        "text": "    try { const v = matchEnv(readFileSync(out.apiKeyFile.replace(/^~(?=\\/)/, homedir()), 'utf8'), out.apiKeyVar || 'API_KEY'); if (v) { out.secrets.apiKey = v; "
+      },
+      {
+        "file": "lib/accounts.js",
+        "line": 261,
+        "text": "try { const v = readFileSync(acc.passwordFile.replace(/^~(?=\\/)/, homedir()), 'utf8').trim(); if (v) return v } catch {}"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 57,
+        "text": "export const inject = ['tools', 'webServer', 'settings']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 432,
+        "text": "else if (defineTool && ctx.tools && typeof ctx.tools.register === 'function') {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 435,
+        "text": "} else warn('defineTool or ctx.tools unavailable: agent tools not registered (the tab still works)')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1011,
+        "text": "export default { name: 'dsh-mail', apply, inject: ['tools', 'webServer', 'settings'], Config, resolveConfig, resolveDefineTool, PLUGIN_ID }"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 90,
+        "text": "* @param ctx         cordis context with ctx.tools"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 7,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "settings",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

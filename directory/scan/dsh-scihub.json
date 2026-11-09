@@ -1,7 +1,7 @@
 {
   "name": "dsh-scihub",
-  "version": "0.4.1",
-  "scannedAt": "2026-11-08T07:28:23.688Z",
+  "version": "0.4.2",
+  "scannedAt": "2026-11-09T08:10:17.484Z",
   "icon": "dsh-scihub.svg",
   "network": {
     "hit": true,
@@ -22,6 +22,11 @@
         "text": "import https from 'node:https';"
       },
       {
+        "file": "test-integration.mjs",
+        "line": 12,
+        "text": "import http from 'node:http';"
+      },
+      {
         "file": "test-smoke.mjs",
         "line": 13,
         "text": "import { createServer } from 'node:http';"
@@ -34,7 +39,7 @@
       {
         "file": "lib/host.mjs",
         "line": 44,
-        "text": "import { mkdir, readFile, stat, writeFile } from 'node:fs/promises';"
+        "text": "import { mkdir, open, readFile } from 'node:fs/promises';"
       },
       {
         "file": "lib/host.mjs",
@@ -43,13 +48,13 @@
       },
       {
         "file": "lib/host.mjs",
-        "line": 479,
-        "text": "if (!duplicate) await writeFile(path, body);"
+        "line": 498,
+        "text": "if ((await readFile(path)).equals(body)) return path;"
       },
       {
         "file": "lib/host.mjs",
-        "line": 501,
-        "text": "if ((await readFile(join(dir, candidate))).equals(body)) {"
+        "line": 505,
+        "text": "await handle.writeFile(body);"
       },
       {
         "file": "lib/mirrors.mjs",

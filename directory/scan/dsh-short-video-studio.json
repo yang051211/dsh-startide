@@ -1,35 +1,35 @@
 {
   "name": "dsh-short-video-studio",
-  "version": "1.17.2",
-  "scannedAt": "2026-11-07T23:17:07.681Z",
+  "version": "1.18.0",
+  "scannedAt": "2026-11-09T08:10:09.676Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 217,
+        "line": 264,
         "text": "fetch(CONFIG_API).then((r) => r.json()),"
       },
       {
         "file": "lib/client.js",
-        "line": 218,
+        "line": 265,
         "text": "fetch(WORKFLOWS_API).then((r) => r.json()),"
       },
       {
         "file": "lib/client.js",
-        "line": 241,
+        "line": 266,
+        "text": "fetch(ARCHIVE_STATUS_API).then((r) => r.json()).catch(() => null),"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 290,
         "text": "fetch(url, { method, headers: { 'content-type': 'application/json' }, body: body ? JSON.stringify(body) : undefined })"
       },
       {
         "file": "lib/client.js",
-        "line": 274,
-        "text": "fetch(WORKFLOWS_API).then((r) => r.json()).then((w) => { if (w && w.ok) setRegistry(w) })"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 415,
-        "text": "fetch(WORKFLOWS_API + '?id=' + encodeURIComponent(id), { method: 'DELETE' }).then((r) => r.json()).then((d) => {"
+        "line": 295,
+        "text": "fetch(ARCHIVE_STATUS_API).then((r) => r.json())"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/assets.js",
-        "line": 22,
-        "text": "import { existsSync, readFileSync, writeFileSync, mkdirSync, cpSync, rmSync } from 'node:fs'"
+        "file": "lib/archive-move.js",
+        "line": 21,
+        "text": "import { mkdir, readdir, rename, cp, rm, rmdir, stat, readFile, writeFile, unlink } from 'node:fs/promises'"
       },
       {
-        "file": "lib/assets.js",
-        "line": 71,
-        "text": "const p = JSON.parse(readFileSync(file, 'utf8'))"
+        "file": "lib/archive-move.js",
+        "line": 103,
+        "text": "await mkdir(dirname(dst), { recursive: true })"
       },
       {
-        "file": "lib/assets.js",
-        "line": 81,
-        "text": "mkdirSync(assetDir(root), { recursive: true })"
+        "file": "lib/archive-move.js",
+        "line": 115,
+        "text": "await rm(partial, { recursive: true, force: true }).catch(() => {})"
       },
       {
-        "file": "lib/assets.js",
-        "line": 82,
-        "text": "writeFileSync(assetFile(root), JSON.stringify({ version: 1, assets: (lib && lib.assets) || {} }, null, 2), 'utf8')"
+        "file": "lib/archive-move.js",
+        "line": 118,
+        "text": "await rm(src, { recursive: true, force: true })"
       },
       {
-        "file": "lib/assets.js",
-        "line": 251,
-        "text": "mkdirSync(assetImagesDir(root), { recursive: true })"
+        "file": "lib/archive-move.js",
+        "line": 135,
+        "text": "await mkdir(to, { recursive: true })"
       }
     ]
   },
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 56,
+        "line": 61,
         "text": "export const inject = ['webServer', 'tools', 'systemPrompt', 'workspaceRegistry']"
       },
       {
         "file": "lib/index.js",
-        "line": 3835,
+        "line": 4107,
         "text": "// - send_file 是 dsh-lark per-agent 注册的工具；本插件用 ctx.tools.get(name, agent)"
       },
       {
         "file": "lib/index.js",
-        "line": 3971,
+        "line": 4243,
         "text": "await ctx.tools.execute({"
       },
       {
         "file": "lib/index.js",
-        "line": 4001,
+        "line": 4273,
         "text": "if (!agent || typeof ctx.tools?.get !== 'function') return next()"
       },
       {
         "file": "lib/index.js",
-        "line": 4003,
+        "line": 4275,
         "text": "if (!ctx.tools.get('send_file', agent)) return next()"
       }
     ]
@@ -108,17 +108,17 @@
       },
       {
         "file": "lib/index.js",
-        "line": 35,
+        "line": 36,
         "text": "import { execFile } from 'node:child_process'"
       },
       {
         "file": "lib/index.js",
-        "line": 449,
+        "line": 458,
         "text": "execFile('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'default=nw=1:nk=1', absPath],"
       },
       {
         "file": "lib/index.js",
-        "line": 2918,
+        "line": 3190,
         "text": "execFile('ffmpeg', ['-y', '-i', abs, '-vn', '-ac', '2', '-ar', '32000', join(dir, outName)],"
       }
     ]

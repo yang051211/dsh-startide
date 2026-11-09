@@ -1,25 +1,35 @@
 {
   "name": "dsh-motrix",
-  "version": "0.0.2",
-  "scannedAt": "2026-11-08T23:32:58.037Z",
+  "version": "0.0.3",
+  "scannedAt": "2026-11-09T08:10:18.983Z",
   "icon": "dsh-motrix.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/guard.js",
-        "line": 53,
-        "text": "[\"Invoke-WebRequest\", new RegExp(`${CMD_START}Invoke-WebRequest\\\\b`, \"i\")],"
+        "line": 88,
+        "text": "[\"iwr\", \"Invoke-WebRequest\"],"
       },
       {
         "file": "lib/guard.js",
-        "line": 184,
-        "text": ".description(\"内置下载守卫：拦截 shell 里 curl/wget 等大文件下载，引导改用 motrix（action=download，默认 true）\"),"
+        "line": 89,
+        "text": "[\"invoke-webrequest\", \"Invoke-WebRequest\"],"
       },
       {
-        "file": "lib/runner.js",
-        "line": 439,
-        "text": "const response = await fetch(`${info.baseUrl}/mdxp`, {"
+        "file": "lib/guard.js",
+        "line": 97,
+        "text": "* wget 也有默认落盘，但 `-O -` / `-qO-` / `--spider` 例外，单独处理。"
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 205,
+        "text": "/** PowerShell 的显式落盘参数（iwr / Invoke-WebRequest）。 */"
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 213,
+        "text": "/** wget 只取头：`--spider`。 */"
       }
     ]
   },
@@ -34,7 +44,7 @@
       {
         "file": "lib/inspect.js",
         "line": 13,
-        "text": "import { stat } from \"node:fs/promises\";"
+        "text": "import { lstat, stat } from \"node:fs/promises\";"
       },
       {
         "file": "lib/runner.js",
@@ -43,12 +53,12 @@
       },
       {
         "file": "lib/runner.js",
-        "line": 223,
+        "line": 306,
         "text": "const text = readFileSync(shimPath, \"utf8\");"
       },
       {
         "file": "lib/runner.js",
-        "line": 422,
+        "line": 526,
         "text": "const file = JSON.parse(readFileSync(bridgeEndpointPath(), \"utf8\"));"
       }
     ]
@@ -68,7 +78,7 @@
       },
       {
         "file": "lib/tools.js",
-        "line": 762,
+        "line": 832,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
@@ -88,12 +98,12 @@
       },
       {
         "file": "lib/runner.js",
-        "line": 492,
+        "line": 609,
         "text": "const child = spawn(exe, [...HIDDEN_LAUNCH_ARGS], { windowsHide: true, detached: true, stdio: \"ignore\" });"
       },
       {
         "file": "lib/runner.js",
-        "line": 519,
+        "line": 640,
         "text": "child = spawn(target.command, fullArgs, {"
       }
     ]

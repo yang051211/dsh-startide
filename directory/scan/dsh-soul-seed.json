@@ -1,0 +1,122 @@
+{
+  "name": "dsh-soul-seed",
+  "version": "0.13.20",
+  "scannedAt": "2026-11-09T08:10:12.410Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 220,
+        "text": "fetch('/dsh-soul-seed/api/context').then(function (r) { return r.json() }).then(function (j) {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 260,
+        "text": "const r = await (await fetch('/dsh-soul-seed/api/soul/sessions')).json();"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 276,
+        "text": "const rr = await (await fetch('/dsh-soul-seed/api/wake/target', {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 294,
+        "text": "const rr = await (await fetch('/dsh-soul-seed/api/wake/target', {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 306,
+        "text": "const r = await (await fetch('/dsh-soul-seed/api/mood/refresh', { method:'POST' })).json();"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/adopt.mjs",
+        "line": 3,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/adopt.mjs",
+        "line": 16,
+        "text": "const j = JSON.parse(fs.readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/adopt.mjs",
+        "line": 26,
+        "text": "const text = fs.readFileSync(last, 'utf8')"
+      },
+      {
+        "file": "lib/adopt.mjs",
+        "line": 76,
+        "text": "fs.mkdirSync(dataDir, { recursive: true })"
+      },
+      {
+        "file": "lib/adopt.mjs",
+        "line": 77,
+        "text": "fs.writeFileSync(path.join(dataDir, '我学会了.md'), note, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 339,
+        "text": "inject: ['webServer', 'tools'],"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 77,
+        "text": "execFile(NODE, args, { timeout: timeoutMs, env: { ...process.env, DSH_HOME } }, (err, stdout, stderr) => {"
+      },
+      {
+        "file": "lib/soul.mjs",
+        "line": 18,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/tidy.mjs",
+        "line": 5,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "tests/all.test.mjs",
+        "line": 8,
+        "text": "import { execFile } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 212,
+      "text": "pip install edge-tts faster-whisper sounddevice numpy"
+    }
+  ],
+  "skippedEntries": []
+}

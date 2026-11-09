@@ -1,0 +1,69 @@
+{
+  "name": "dsh-memory-trigger",
+  "version": "0.2.4",
+  "scannedAt": "2026-11-09T08:10:18.826Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/backfill.mjs",
+        "line": 12,
+        "text": "import { readdirSync, readFileSync, writeFileSync, mkdirSync, statSync, unlinkSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/backfill.mjs",
+        "line": 32,
+        "text": "const buf = readFileSync(file);"
+      },
+      {
+        "file": "lib/backfill.mjs",
+        "line": 95,
+        "text": "mkdirSync(eventsDir, { recursive: true });"
+      },
+      {
+        "file": "lib/backfill.mjs",
+        "line": 99,
+        "text": "try { unlinkSync(join(eventsDir, stale)); } catch {}"
+      },
+      {
+        "file": "lib/backfill.mjs",
+        "line": 171,
+        "text": "writeFileSync(join(eventsDir, `${sessionId}.jsonl`), out.map((e) => JSON.stringify(e)).join('\\n') + '\\n', 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/backfill.mjs",
+        "line": 16,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/backfill.mjs",
+        "line": 28,
+        "text": "const cli = spawnSync('zstd', ['-dc', file], { maxBuffer: 1024 * 1024 * 1024 });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

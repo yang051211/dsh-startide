@@ -1,7 +1,7 @@
 {
   "name": "dsh-auto-compaction",
-  "version": "0.2.6",
-  "scannedAt": "2026-11-08T23:32:49.126Z",
+  "version": "0.2.7",
+  "scannedAt": "2026-11-09T08:10:08.862Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -17,23 +17,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 50,
+        "line": 51,
         "text": "const parsed = JSON.parse(readFileSync(join(STATUS_DIR, sessionId + \".json\"), \"utf8\"));"
       },
       {
         "file": "lib/index.js",
-        "line": 59,
+        "line": 68,
+        "text": "const lines = readFileSync(join(HISTORY_DIR, sessionId + \".jsonl\"), \"utf8\")"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 85,
         "text": "  try { mkdirSync(DIR, { recursive: true }); appendFileSync(UI_LOG, new Date().toISOString() + \" \" + message + String.fromCharCode(10), \"utf8\"); } catch { /* ig"
       },
       {
         "file": "lib/index.js",
-        "line": 88,
+        "line": 114,
         "text": "mkdirSync(DIR, { recursive: true });"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 89,
-        "text": "writeFileSync(SETTINGS_FILE, JSON.stringify(settings, null, 2) + \"\\n\", \"utf8\");"
       }
     ]
   },
@@ -51,12 +51,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 98,
+        "line": 124,
         "text": "const child = spawn(command, args, { detached: true, stdio: \"ignore\", windowsHide: false });"
       },
       {
         "file": "lib/index.js",
-        "line": 149,
+        "line": 175,
         "text": "execFile(command, [script, action], { timeout: 6000, windowsHide: true, env }, (error, stdout, stderr) => {"
       }
     ]

@@ -1,35 +1,35 @@
 {
   "name": "dsh-auto-approval-frame",
-  "version": "0.6.12",
-  "scannedAt": "2026-11-06T20:48:47.159Z",
+  "version": "0.6.13",
+  "scannedAt": "2026-11-09T08:10:09.558Z",
   "icon": "dsh-auto-approval-frame.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/client.js",
-        "line": 39,
-        "text": "const response = await fetch(RULES_CODEC_ROUTE, {"
+        "file": "assets/wasm/tree-sitter.js",
+        "line": 2037,
+        "text": "bytes = fetch(input).then((response) => response.arrayBuffer().then((buffer) => {"
       },
       {
-        "file": "lib/client.js",
-        "line": 1052,
-        "text": "const response = await fetch(TOOL_RULE_ROUTE, {"
+        "file": "assets/wasm/tree-sitter.js",
+        "line": 2141,
+        "text": "var xhr = new XMLHttpRequest();"
       },
       {
-        "file": "lib/client.js",
-        "line": 1531,
-        "text": "fetch(`${AUDIT_ROUTE}?${query}`, { credentials: \"same-origin\", cache: \"no-store\" })"
+        "file": "assets/wasm/tree-sitter.js",
+        "line": 2154,
+        "text": "var xhr = new XMLHttpRequest();"
       },
       {
-        "file": "lib/client.js",
-        "line": 1560,
-        "text": "fetch(FRAME_ROUTE, { credentials: \"same-origin\", cache: \"no-store\" })"
+        "file": "assets/wasm/tree-sitter.js",
+        "line": 2168,
+        "text": "var response = await fetch(url, {"
       },
       {
-        "file": "lib/client.js",
-        "line": 2629,
-        "text": "const response = await fetch(`${EXPLAIN_ROUTE}?q=${encodeURIComponent(q)}`,"
+        "file": "assets/wasm/tree-sitter.js",
+        "line": 2338,
+        "text": "var response = fetch(binaryFile, {"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/frame/audit.js",
-        "line": 12,
-        "text": "tsSync, linkSync, mkdirSync, openSync, readFileSync, readSync, readdirSync, renameSync, rmSync, statSync, unlinkSync, writeFileSync, writeSync } from 'node:fs';"
+        "file": "assets/wasm/tree-sitter.js",
+        "line": 2034,
+        "text": "const fs2 = await import(\"fs/promises\");"
       },
       {
-        "file": "lib/frame/audit.js",
-        "line": 137,
-        "text": "writeFileSync(temporary, JSON.stringify(state, null, 2));"
+        "file": "assets/wasm/tree-sitter.js",
+        "line": 2035,
+        "text": "bytes = fs2.readFile(input);"
       },
       {
-        "file": "lib/frame/audit.js",
-        "line": 148,
-        "text": "mkdirSync(dir, { recursive: true });"
+        "file": "assets/wasm/tree-sitter.js",
+        "line": 2101,
+        "text": "var fs = require(\"fs\");"
       },
       {
-        "file": "lib/frame/audit.js",
-        "line": 149,
-        "text": "appendFileSync(manifestPath, `${JSON.stringify({ ...record, timestamp: record.timestamp ?? now() })}\\n`);"
+        "file": "assets/wasm/tree-sitter.js",
+        "line": 2108,
+        "text": "var ret = fs.readFileSync(filename);"
       },
       {
-        "file": "lib/frame/audit.js",
-        "line": 159,
-        "text": "const parsed = JSON.parse(readFileSync(statePath, 'utf8'));"
+        "file": "assets/wasm/tree-sitter.js",
+        "line": 2113,
+        "text": "var ret = fs.readFileSync(filename, binary2 ? void 0 : \"utf8\");"
       }
     ]
   },
@@ -83,12 +83,12 @@
       },
       {
         "file": "lib/frame/facts.js",
-        "line": 717,
+        "line": 724,
         "text": "spawn: (command, args, timeoutMs) => spawnSync(command, args, { encoding: 'utf8', windowsHide: true, timeout: timeoutMs ?? 5_000 }),"
       },
       {
         "file": "lib/frame/facts.js",
-        "line": 1736,
+        "line": 1784,
         "text": "return probe.spawn(command, args, Math.min(left, GIT_SPAWN_MAX_MS));"
       }
     ]
@@ -99,7 +99,11 @@
   },
   "dependencies": 0,
   "minifiedFiles": [],
-  "binaryFiles": [],
+  "binaryFiles": [
+    "assets/wasm/tree-sitter-bash.wasm",
+    "assets/wasm/tree-sitter-powershell.wasm",
+    "assets/wasm/tree-sitter.wasm"
+  ],
   "requiredServices": [
     "agents",
     "approval",

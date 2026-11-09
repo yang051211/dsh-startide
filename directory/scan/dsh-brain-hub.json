@@ -1,0 +1,79 @@
+{
+  "name": "dsh-brain-hub",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-09T08:10:09.905Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 11,
+        "text": "import { promises as fs } from \"node:fs\";"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 12,
+        "text": "import { existsSync, readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 76,
+        "text": "await fs.mkdir(p.notes, { recursive: true });"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 77,
+        "text": "await fs.mkdir(p.priv, { recursive: true });"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 78,
+        "text": "await fs.mkdir(p.inbox, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 22,
+        "text": "export const inject = [\"systemPrompt\", \"tools\", \"connection\"];"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 1244,
+        "text": "const disposers = buildTools(p, config).map((def) => ctx.tools.register(def));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 15,
+        "text": "import { execFile } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

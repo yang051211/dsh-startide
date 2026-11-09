@@ -1,0 +1,140 @@
+{
+  "name": "@fengye_nobug/dsh-qq-bot",
+  "version": "0.2.12",
+  "scannedAt": "2026-11-09T08:10:11.449Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 491,
+        "text": "fetch(`${GROUP_META_API}?ids=${encodeURIComponent(ids.join(','))}`, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 517,
+        "text": "const res = await fetch(NAPCAT_API, { credentials: 'include', headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client/client.js",
+        "line": 529,
+        "text": "fetch(UPDATE_API, { credentials: 'include', headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client/client.js",
+        "line": 571,
+        "text": "const res = await fetch(UPDATE_API, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 615,
+        "text": "const res = await fetch(UPDATE_API, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 863,
+        "text": "const raw = JSON.parse(readFileSync(settingsPath, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 875,
+        "text": "mkdirSync(dirname(settingsPath), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 877,
+        "text": "writeFileSync(tmp, `${JSON.stringify({ version: 1, values }, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 1263,
+        "text": "const raw = JSON.parse(readFileSync(statePath, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 72,
+        "text": "export const inject = ['agents', 'tools', 'settings']"
+      },
+      {
+        "file": "index.js",
+        "line": 3466,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 3512,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 3535,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 3652,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 4169,
+        "text": "const handle = subprocess.spawn({"
+      },
+      {
+        "file": "index.js",
+        "line": 4304,
+        "text": "const child = spawn(command, [installDir], { detached: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "napcat.js",
+        "line": 218,
+        "text": "const handle = subprocess.spawn({"
+      },
+      {
+        "file": "updates.js",
+        "line": 19,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "settings",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,83 @@
+{
+  "name": "dsh-takeover",
+  "version": "0.10.1",
+  "scannedAt": "2026-11-09T08:10:14.386Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 467,
+        "text": "return fetch(API, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 36,
+        "text": "import { readFile, writeFile, readdir, stat, unlink, mkdir, rename } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 72,
+        "text": "await mkdir(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 74,
+        "text": "await writeFile(tmp, JSON.stringify(value, null, 2), 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 80,
+        "text": "const raw = await readFile(path, 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 247,
+        "text": "text = await readFile(rec.docPath, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 38,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 408,
+        "text": "*   ① execFile('explorer.exe') 把错误吞了 → 点了没反应却报成功；"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 467,
+        "text": "child = spawn(exe, args, { detached: true, stdio: 'ignore' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessions",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

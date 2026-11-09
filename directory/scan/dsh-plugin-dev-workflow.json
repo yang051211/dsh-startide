@@ -1,0 +1,74 @@
+{
+  "name": "dsh-plugin-dev-workflow",
+  "version": "0.2.6",
+  "scannedAt": "2026-11-09T08:10:11.287Z",
+  "icon": "dsh-plugin-dev-workflow.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 279,
+        "text": "fetch(`${ENDPOINT}?${query}`, { cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { mkdirSync, appendFileSync, readFileSync, existsSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "return readFileSync(file, 'utf8').split(/\\r?\\n/).filter(Boolean).flatMap((line) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 23,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "appendFileSync(join(dir, file), `${JSON.stringify(record)}\\n`, { mode: 0o600 });"
+      },
+      {
+        "file": "index.js",
+        "line": 40,
+        "text": "mkdirSync(dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 8,
+        "text": "export const inject = ['tools', 'workingDirectory', 'connection'];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "tools",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

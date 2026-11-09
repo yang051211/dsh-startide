@@ -1,0 +1,64 @@
+{
+  "name": "@qzsy/dsh-quick-commands",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-09T08:10:12.908Z",
+  "icon": "qzsy__dsh-quick-commands.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.js",
+        "line": 881,
+        "text": "res = await fetch(ROUTE_PATH, init);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 2,
+        "text": "import { mkdir, readFile, rename, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 38,
+        "text": "text = await readFile(file, \"utf8\");"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 58,
+        "text": "await mkdir(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 60,
+        "text": "await writeFile(`${file}.bak`, await readFile(file), { flag: \"w\" });"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 63,
+        "text": "await writeFile(tmp, JSON.stringify({ v: 1, updatedAt, items }, null, 2), \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

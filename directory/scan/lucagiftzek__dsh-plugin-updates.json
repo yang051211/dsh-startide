@@ -1,0 +1,81 @@
+{
+  "name": "@lucagiftzek/dsh-plugin-updates",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-09T08:10:15.113Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 6,
+        "text": "},o.body=JSON.stringify(a));let r=await fetch($+e,o),n=await r.json().catch(()=>({ok:!1,message:\"HTTP \"+r.status}));if(!r.ok||n.ok===!1){let p=new Error(n.messa"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/dual-settings.js",
+        "line": 30,
+        "text": "import { existsSync, realpathSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/dual-settings.js",
+        "line": 31,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/dual-settings.js",
+        "line": 138,
+        "text": "try { text = await readFile(join(home, file), 'utf8') } catch { continue }"
+      },
+      {
+        "file": "lib/inventory.js",
+        "line": 6,
+        "text": "import { readFile, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/inventory.js",
+        "line": 13,
+        "text": "try { return JSON.parse(await readFile(file, 'utf8')) } catch { return null }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 32,
+        "text": "export const inject = ['settings', 'webServer', 'tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 127,
+        "text": "const toolsService = (() => { try { return ctx.tools || ctx.get('tools') } catch { return null } })()"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "settings",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

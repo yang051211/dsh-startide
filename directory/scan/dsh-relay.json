@@ -1,7 +1,7 @@
 {
   "name": "dsh-relay",
-  "version": "0.3.5",
-  "scannedAt": "2026-11-08T23:32:53.587Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-09T08:10:14.620Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -14,7 +14,7 @@
       {
         "file": "lib/index.js",
         "line": 7,
-        "text": "import { createServer as createServer$1 } from \"node:https\";"
+        "text": "import { createServer as createServer$1, request as request$1 } from \"node:https\";"
       }
     ]
   },
@@ -28,23 +28,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 3626,
+        "line": 2429,
         "text": "await mkdir(dir, {"
       },
       {
         "file": "lib/index.js",
-        "line": 3633,
-        "text": "const raw = await readFile(file, \"utf8\");"
+        "line": 2433,
+        "text": "await writeFile(join(dir, CERT_FILE), pems.cert, { mode: SECRET_MODE$1 });"
       },
       {
         "file": "lib/index.js",
-        "line": 3644,
-        "text": "await writeFile(file, `${JSON.stringify(state, null, 2)}\\n`, { mode: SECRET_MODE$1 });"
+        "line": 2434,
+        "text": "await writeFile(join(dir, KEY_FILE), pems.private, { mode: SECRET_MODE$1 });"
       },
       {
         "file": "lib/index.js",
-        "line": 3666,
-        "text": "await writeFile(temp, `${JSON.stringify(draft, null, 2)}\\n`, { mode: SECRET_MODE$1 });"
+        "line": 2474,
+        "text": "const [cert, key] = await Promise.all([readFile(options.certPath, \"utf8\"), readFile(options.keyPath, \"utf8\")]);"
       }
     ]
   },
