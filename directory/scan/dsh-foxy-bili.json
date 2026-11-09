@@ -1,7 +1,7 @@
 {
   "name": "dsh-foxy-bili",
-  "version": "0.8.1",
-  "scannedAt": "2026-11-08T23:32:57.557Z",
+  "version": "0.8.5",
+  "scannedAt": "2026-11-09T23:06:46.090Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -23,7 +23,7 @@
       },
       {
         "file": "lib/judge.js",
-        "line": 139,
+        "line": 140,
         "text": "const response = await fetch(chatEndpoint(config.llmBaseUrl), {"
       },
       {
@@ -39,27 +39,27 @@
       {
         "file": "lib/index.js",
         "line": 17,
-        "text": "import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+        "text": "import { closeSync, mkdirSync, openSync, readFileSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "lib/index.js",
-        "line": 71,
-        "text": "const parsed = JSON.parse(readFileSync(statePath(), 'utf8'))"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 110,
+        "line": 75,
         "text": "mkdirSync(dirname(file), { recursive: true })"
       },
       {
         "file": "lib/index.js",
-        "line": 111,
-        "text": "writeFileSync(file, `${JSON.stringify(state, null, 2)}\\n`, 'utf8')"
+        "line": 78,
+        "text": "writeFileSync(fd, `${process.pid}\\n${Date.now()}\\n`, 'utf8')"
       },
       {
-        "file": "lib/judge.js",
-        "line": 8,
-        "text": "import { existsSync, readFileSync } from 'node:fs'"
+        "file": "lib/index.js",
+        "line": 86,
+        "text": "unlinkSync(file)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 96,
+        "text": "unlinkSync(lockPath())"
       }
     ]
   },

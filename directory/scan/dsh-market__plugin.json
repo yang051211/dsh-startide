@@ -1,0 +1,71 @@
+{
+  "name": "@dsh-market/plugin",
+  "version": "0.4.19",
+  "scannedAt": "2026-11-09T23:06:36.679Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 18,
+        "text": "const data = await (await fetch(\"/market/api\", {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 677,
+        "text": "case \"gh:deviceCode\": return (await fetch(\"https://github.com/login/device/code\", {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 687,
+        "text": "case \"gh:token\": return (await fetch(\"https://github.com/login/oauth/access_token\", {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 709,
+        "text": "const r = await fetch(`https://api.github.com/user/starred/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 827,
+        "text": "`   a. 安装命令是否有危险模式：curl|sh、wget 后立即执行、下载二进制执行、base64 解码后执行、从不可信 URL 拉取代码；`,"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1100,
+        "text": "execFile(file, isWin ? ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

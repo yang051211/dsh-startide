@@ -1,0 +1,59 @@
+{
+  "name": "dsh-workspace-lock",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-09T23:07:17.078Z",
+  "icon": "dsh-workspace-lock.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/index.js",
+        "line": 310,
+        "text": "const response = await fetch(API + path, init)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import { chmodSync, existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 102,
+        "text": "const raw = JSON.parse(readFileSync(statePath, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 112,
+        "text": "mkdirSync(dir, { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 114,
+        "text": "writeFileSync(tmp, `${JSON.stringify(state, null, 2)}\\n`, { mode: 0o600 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

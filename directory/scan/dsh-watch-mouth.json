@@ -1,0 +1,122 @@
+{
+  "name": "dsh-watch-mouth",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-09T23:07:01.337Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.mjs",
+        "line": 13,
+        "text": "const res = await fetch(mouthUrl() + pathname, { signal: AbortSignal.timeout(timeoutMs ?? 30000) })"
+      },
+      {
+        "file": "lib/daemon.mjs",
+        "line": 8,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 81,
+        "text": "const res = await fetch(base + '/say-stream', {"
+      },
+      {
+        "file": "lib/tts.mjs",
+        "line": 269,
+        "text": "const res = await fetch(base + '/audio/speech', {"
+      },
+      {
+        "file": "lib/tts.mjs",
+        "line": 370,
+        "text": "const res = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/daemon.mjs",
+        "line": 9,
+        "text": "import { writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/daemon.mjs",
+        "line": 262,
+        "text": "writeFileSync(PID_PATH, String(process.pid), 'utf8')"
+      },
+      {
+        "file": "lib/shared.mjs",
+        "line": 7,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, statSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/shared.mjs",
+        "line": 23,
+        "text": "mkdirSync(STATE_DIR, { recursive: true })"
+      },
+      {
+        "file": "lib/shared.mjs",
+        "line": 34,
+        "text": "const raw = readFileSync(file, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 127,
+        "text": "ctx.tools.register(tool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.mjs",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/client.mjs",
+        "line": 28,
+        "text": "const child = spawn(process.execPath, [DAEMON], {"
+      },
+      {
+        "file": "lib/tts.mjs",
+        "line": 17,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/tts.mjs",
+        "line": 108,
+        "text": "this.child = spawn("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "lib/net/NAudio.Core.dll",
+    "lib/net/NAudio.dll",
+    "lib/net/NAudio.WinMM.dll"
+  ],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

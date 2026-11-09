@@ -1,0 +1,64 @@
+{
+  "name": "dsh-lpipe-starmap",
+  "version": "0.1.6",
+  "scannedAt": "2026-11-09T23:07:15.257Z",
+  "icon": "dsh-lpipe-starmap.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/rpc.mjs",
+        "line": 110,
+        "text": "async fetch(request) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/config.mjs",
+        "line": 3,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/config.mjs",
+        "line": 37,
+        "text": "const parsed = JSON.parse(readFileSync(configFile(root), 'utf8'))"
+      },
+      {
+        "file": "src/config.mjs",
+        "line": 64,
+        "text": "mkdirSync(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "src/config.mjs",
+        "line": 66,
+        "text": "writeFileSync(staging, `${JSON.stringify(next, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "src/index.js",
+        "line": 6,
+        "text": "import { renameSync, rmSync, statSync, appendFileSync, mkdirSync, readFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

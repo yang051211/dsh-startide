@@ -1,7 +1,7 @@
 {
   "name": "dsh-plc-decode",
-  "version": "0.2.4",
-  "scannedAt": "2026-11-07T23:17:06.525Z",
+  "version": "0.2.5",
+  "scannedAt": "2026-11-09T23:06:46.921Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -42,17 +42,17 @@
     "evidence": [
       {
         "file": "hmi.js",
-        "line": 273,
+        "line": 272,
         "text": "ctx.tools.register({"
       },
       {
         "file": "hmi.js",
-        "line": 320,
+        "line": 318,
         "text": "ctx.tools.register({"
       },
       {
         "file": "hmi.js",
-        "line": 348,
+        "line": 346,
         "text": "ctx.tools.register({"
       },
       {
@@ -81,18 +81,18 @@
         "text": "import { execFile } from 'node:child_process'"
       },
       {
-        "file": "assets/mcgs-decode.mjs",
-        "line": 11,
-        "text": "import { execFileSync } from 'node:child_process'"
+        "file": "assets/hmi-auto-decode.mjs",
+        "line": 23,
+        "text": "import { spawnSync } from 'node:child_process'"
       },
       {
-        "file": "assets/smart-ladder-auto.mjs",
-        "line": 15,
-        "text": "import { execFile } from 'node:child_process'"
+        "file": "assets/hmi-auto-decode.mjs",
+        "line": 72,
+        "text": "const r = spawnSync(cmd, argv, { encoding: 'utf8', timeout: 1800000, maxBuffer: 64 * 1024 * 1024 })"
       },
       {
-        "file": "scripts/smoke.mjs",
-        "line": 11,
+        "file": "assets/hmismart-db.mjs",
+        "line": 28,
         "text": "import { spawnSync } from 'node:child_process'"
       }
     ]
@@ -101,7 +101,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 2,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

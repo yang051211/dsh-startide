@@ -1,0 +1,96 @@
+{
+  "name": "dsh-quark",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-09T23:07:16.929Z",
+  "icon": "dsh-quark.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 110,
+        "text": "return fetch(API + path, init).then(function (res) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "const fs = require('fs')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 59,
+        "text": "const md = fs.readFileSync(path.join(skillDir(), 'SKILL.md'), 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 77,
+        "text": "try { fs.mkdirSync(d, { recursive: true }) } catch { /* ignore */ }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 183,
+        "text": "try { return fs.readFileSync(p, 'utf8') } catch { return '' }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 187,
+        "text": "try { fs.unlinkSync(outFile) } catch { /* ignore */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "*   1. 注册 quark_* agent 工具（inject: ['tools'] + ctx.tools.register）"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 453,
+        "text": "inject: ['tools', 'agents'],"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 456,
+        "text": "const register = (def) => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "const { spawn } = require('child_process')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 91,
+        "text": "const { execFileSync } = require('child_process')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 194,
+        "text": "child = spawn(runner.cmd, argv, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-ris-ide",
-  "version": "1.7.3",
-  "scannedAt": "2026-11-08T14:57:25.245Z",
+  "version": "1.8.1",
+  "scannedAt": "2026-11-09T23:07:01.726Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -12,24 +12,24 @@
         "text": "const res = await fetch(url, { method: 'HEAD', redirect: 'follow', signal: AbortSignal.timeout(8000) })"
       },
       {
+        "file": "bin/risd.mjs",
+        "line": 75,
+        "text": "const response = await fetch(`${state.url}${path}`, {"
+      },
+      {
         "file": "lib/client.js",
-        "line": 312,
+        "line": 206,
+        "text": "void fetch(routeUrl('dsh-ris-ide/build').href, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 429,
         "text": "* exhausted that budget: every later fetch (open a file, send a message) sat"
       },
       {
         "file": "lib/client.js",
-        "line": 611,
+        "line": 728,
         "text": "var response = await fetch(routeUrl('dsh-ris-ide/tail?' + query.toString()).href, {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 641,
-        "text": "var response = await fetch(url.href, { headers: { accept: 'application/json' }, signal: signal })"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 738,
-        "text": "var response = await fetch(routeUrl('dsh-ris-ide/stop').href, {"
       }
     ]
   },
@@ -58,8 +58,8 @@
       },
       {
         "file": "bin/proxy-janitor.mjs",
-        "line": 19,
-        "text": "import { appendFileSync, mkdirSync, unlinkSync } from 'node:fs'"
+        "line": 25,
+        "text": "import { appendFileSync, mkdirSync, readFileSync } from 'node:fs'"
       }
     ]
   },
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 155,
+        "line": 213,
         "text": "export const inject = ['webServer', 'sessions', 'tools']"
       },
       {
         "file": "lib/index.js",
-        "line": 8137,
+        "line": 8948,
         "text": "* same core as the panel routes. Registered only when `ctx.tools` exists; the"
       },
       {
         "file": "lib/index.js",
-        "line": 8313,
+        "line": 9124,
         "text": "if (typeof ctx.tools?.register !== 'function') {"
       },
       {
         "file": "lib/index.js",
-        "line": 8314,
+        "line": 9125,
         "text": "ctx.logger?.warn?.('dsh-ris-ide: ctx.tools is missing; agent tools stay unregistered')"
       },
       {
         "file": "lib/index.js",
-        "line": 8320,
+        "line": 9131,
         "text": "disposers.push(ctx.tools.register(definition))"
       }
     ]
@@ -103,22 +103,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 899,
+        "line": 1235,
         "text": "const child = spawn('git', args, { cwd, windowsHide: true, stdio: [input === undefined ? 'ignore' : 'pipe', 'pipe', 'pipe'] })"
       },
       {
         "file": "lib/index.js",
-        "line": 1250,
+        "line": 1586,
         "text": "const child = spawn('git', args, { cwd, windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })"
       },
       {
         "file": "lib/index.js",
-        "line": 2572,
+        "line": 2949,
         "text": "child = spawn('powershell.exe', ["
       },
       {
         "file": "lib/index.js",
-        "line": 2597,
+        "line": 2974,
         "text": "child = spawn('taskkill.exe', ['/PID', String(Number(pid)), '/T', '/F'], {"
       }
     ]

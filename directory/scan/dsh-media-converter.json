@@ -1,7 +1,7 @@
 {
   "name": "dsh-media-converter",
-  "version": "1.7.1",
-  "scannedAt": "2026-11-09T08:10:09.310Z",
+  "version": "1.9.0",
+  "scannedAt": "2026-11-09T23:06:46.473Z",
   "icon": "dsh-media-converter.svg",
   "network": {
     "hit": true,
@@ -14,12 +14,12 @@
       {
         "file": "client.js",
         "line": 8,
-        "text": "3.5 3.5`}))}var uf=`把 xx.mov 裁 0:10 到 1:00 转成 mp4`,df=null,ff=()=>(df||=fetch(`/api/media-convert/status`).then(e=>e.json()).then(e=>e).catch(()=>null),df),pf=`"
+        "text": "3.5 3.5`}))}var mf=`把 xx.mov 裁 0:10 到 1:00 转成 mp4`,hf=null,gf=()=>(hf||=fetch(`/api/media-convert/status`).then(e=>e.json()).then(e=>e).catch(()=>null),hf),_f=`"
       },
       {
         "file": "client.js",
         "line": 38,
-        "text": "useState(`idle`),l=sf.useRef(!1),u=()=>{fetch(`/api/media-convert/status`).then(e=>e.json()).then(e=>{let t=e;n(t),l.current||(l.current=!0,i({outputDir:``,ffmp"
+        "text": "useState(`idle`),l=df.useRef(!1),u=()=>{fetch(`/api/media-convert/status`).then(e=>e.json()).then(e=>{let t=e;n(t),l.current||(l.current=!0,i({outputDir:``,ffmp"
       }
     ]
   },
@@ -38,18 +38,18 @@
       },
       {
         "file": "dist/index.js",
-        "line": 160,
+        "line": 230,
         "text": "fs.rm(upload.path, { force: true }, () => { });"
       },
       {
         "file": "dist/index.js",
-        "line": 182,
+        "line": 252,
         "text": "const pkg = JSON.parse(fs.readFileSync(new URL('../package.json', import.meta.url), 'utf8'));"
       },
       {
         "file": "dist/index.js",
-        "line": 409,
-        "text": "void withLedgerLock(() => fsp.appendFile(historyFile, `${JSON.stringify(entry)}\\n`, 'utf8')).catch(() => { });"
+        "line": 419,
+        "text": "await fsp.rm(out, { force: true }).catch(() => { });"
       }
     ]
   },
@@ -58,12 +58,12 @@
     "evidence": [
       {
         "file": "dist/index.js",
-        "line": 329,
+        "line": 399,
         "text": "export const inject = ['webServer', 'tools', 'settings', 'connection'];"
       },
       {
         "file": "dist/index.js",
-        "line": 1348,
+        "line": 1529,
         "text": "ctx.effect(() => ctx.tools.register({"
       }
     ]
@@ -78,23 +78,23 @@
       },
       {
         "file": "dist/index.js",
-        "line": 60,
-        "text": "execFile(ffmpeg, ['-hide_banner', '-encoders'], { timeout: 15000 }, (_e1, enc) => {"
+        "line": 76,
+        "text": "execFile(ffmpeg, args, { timeout: timeoutMs }, (err, stdout) => err ? reject(err) : resolve(String(stdout || '')));"
       },
       {
         "file": "dist/index.js",
-        "line": 61,
-        "text": "execFile(ffmpeg, ['-hide_banner', '-hwaccels'], { timeout: 15000 }, (_e2, accel) => {"
-      },
-      {
-        "file": "dist/index.js",
-        "line": 228,
+        "line": 298,
         "text": "execFile(ffmpeg, ['-hide_banner', '-i', file], { timeout: 20000 }, (_error, _stdout, stderr) => {"
       },
       {
         "file": "dist/index.js",
-        "line": 245,
+        "line": 315,
         "text": "execFile(command, args, { timeout: 20000, maxBuffer: 16 * 1024 * 1024 }, (error, stdout) => {"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 688,
+        "text": "const child = spawn(ffmpeg, args, { stdio: ['ignore', 'pipe', 'pipe'], signal: controller.signal });"
       }
     ]
   },

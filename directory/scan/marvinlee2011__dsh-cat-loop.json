@@ -1,0 +1,103 @@
+{
+  "name": "@marvinlee2011/dsh-cat-loop",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-09T23:07:15.809Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 89,
+        "text": "const response = await fetch(`/api/cat-loop/state?session=${encodeURIComponent(sessionId)}`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 117,
+        "text": "const response = await fetch(`/api/cat-loop/peek?session=${encodeURIComponent(sessionId)}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge.js",
+        "line": 34,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 35,
+        "text": "import { realpath } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 75,
+        "text": "return JSON.parse(readFileSync(path, 'utf8'))"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 130,
+        "text": "mkdirSync(dirname(stateFile), { recursive: true })"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 132,
+        "text": "writeFileSync(temporary, `${JSON.stringify(state, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 36,
+        "text": "export const inject = ['tools', 'agents', 'agentPresets', 'webServer', 'sessions', 'subagents', 'sessionTitle']"
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 12,
+        "text": "* 2. `ctx.tools.guard()` is a monotonic tool guard: it only ever denies, is"
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 129,
+        "text": "ctx.tools.guard((exec) => {"
+      },
+      {
+        "file": "lib/role.js",
+        "line": 24,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/role.js",
+        "line": 46,
+        "text": "ctx.effect(() => ctx.tools.register(sendTool(ctx, role)), 'cat-role.send()')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentPresets",
+    "agents",
+    "sessionTitle",
+    "sessions",
+    "subagents",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

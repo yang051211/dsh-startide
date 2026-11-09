@@ -1,20 +1,35 @@
 {
   "name": "@goodandready/dsh-issue-reporter",
-  "version": "0.1.14",
-  "scannedAt": "2026-10-26T10:12:28.571Z",
+  "version": "0.1.24",
+  "scannedAt": "2026-11-09T23:06:47.585Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 340,
+        "line": 790,
         "text": "const res = await fetch(path, {"
       },
       {
-        "file": "lib/plugin-updater.js",
-        "line": 151,
-        "text": "const response = await fetch(`${registry.replace(/\\/$/, '')}/${encodeURIComponent(packageName)}/latest`, {"
+        "file": "lib/client.js",
+        "line": 1043,
+        "text": "'curl -s -S -X ' + item.method + ' \"' + item.url + '\"',"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1426,
+        "text": "const res = await fetch('/dsh-issue-reporter/mre', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1455,
+        "text": "const res = await fetch('/dsh-issue-reporter/agent-replay')"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1502,
+        "text": "const res = await fetch('/dsh-issue-reporter/config-lint?plugin=' + encodeURIComponent(pName))"
       }
     ]
   },
@@ -42,9 +57,9 @@
         "text": "await rm(workDir, { recursive: true }).catch((error) => {"
       },
       {
-        "file": "lib/index.js",
-        "line": 4,
-        "text": "import { readFile } from 'node:fs/promises'"
+        "file": "lib/env-verifier.js",
+        "line": 1,
+        "text": "import { accessSync, constants, existsSync } from 'node:fs'"
       }
     ]
   },
@@ -53,7 +68,12 @@
     "evidence": [
       {
         "file": "lib/routes/agent-tool.js",
-        "line": 13,
+        "line": 14,
+        "text": "scopedCtx.tools.register({"
+      },
+      {
+        "file": "lib/routes/agent-tool.js",
+        "line": 101,
         "text": "scopedCtx.tools.register({"
       }
     ]
@@ -65,6 +85,16 @@
         "file": "lib/attachments.js",
         "line": 1,
         "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/git-patch.js",
+        "line": 1,
+        "text": "import { execSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/git-patch.js",
+        "line": 37,
+        "text": "diffContent = execSync('git diff HEAD', {"
       },
       {
         "file": "lib/plugin-updater.js",

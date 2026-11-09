@@ -1,0 +1,64 @@
+{
+  "name": "dsh-approval-review",
+  "version": "0.6.5",
+  "scannedAt": "2026-11-09T23:07:09.185Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { constants, readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { lstat, open, opendir, readFile, realpath } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 866,
+        "text": "const text = await readFile(join(dirname(documentPath), \"package.json\"), \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3756,
+        "text": "const parsed = JSON.parse(readFileSync(new URL(\"../package.json\", import.meta.url), \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2525,
+        "text": "agent.ctx.tools.restrict({ allow: [...allowed] });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2526,
+        "text": "agent.ctx.tools.guard((exec) => allowed.has(exec.name) ? void 0 : \"Approval reviewer is read-only: this tool is not permitted.\");"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

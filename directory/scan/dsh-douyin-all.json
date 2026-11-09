@@ -1,7 +1,7 @@
 {
   "name": "dsh-douyin-all",
-  "version": "0.4.9",
-  "scannedAt": "2026-11-06T20:48:57.697Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-09T23:06:45.692Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,7 +18,7 @@
       },
       {
         "file": "brain.mjs",
-        "line": 167,
+        "line": 195,
         "text": "const r = await fetch(base + '/chat/completions', {"
       },
       {
@@ -38,22 +38,22 @@
     "evidence": [
       {
         "file": "edge.mjs",
-        "line": 18,
+        "line": 15,
         "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync, openSync } from 'node:fs'"
       },
       {
         "file": "edge.mjs",
-        "line": 43,
+        "line": 40,
         "text": "try { mkdirSync(p, { recursive: true }) } catch { /* ignore */ }"
       },
       {
         "file": "edge.mjs",
-        "line": 325,
+        "line": 322,
         "text": "try { return JSON.parse(readFileSync(paths.runtime(), 'utf8')) } catch { return null }"
       },
       {
         "file": "edge.mjs",
-        "line": 331,
+        "line": 328,
         "text": "writeFileSync(paths.runtime(), JSON.stringify({ ...obj, at: new Date().toISOString() }, null, 2))"
       },
       {
@@ -68,17 +68,17 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 34,
+        "line": 33,
         "text": "export const inject = ['tools', 'systemPrompt', 'llm', 'webServer']"
       },
       {
         "file": "index.js",
-        "line": 569,
+        "line": 518,
         "text": "const nextTools = tools.map((t) => ctx.tools.register(t))"
       },
       {
         "file": "index.js",
-        "line": 573,
+        "line": 522,
         "text": "text: visibleToolText(ctx.tools, names, guidanceText()),"
       }
     ]
@@ -88,22 +88,22 @@
     "evidence": [
       {
         "file": "edge.mjs",
-        "line": 17,
-        "text": "import { spawn, execFileSync } from 'node:child_process'"
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
       },
       {
         "file": "edge.mjs",
-        "line": 361,
+        "line": 358,
         "text": "const child = spawn(exe, args, { detached: true, stdio: ['ignore', 'ignore', logFd] })"
       },
       {
         "file": "voice.mjs",
-        "line": 22,
+        "line": 16,
         "text": "import { execFile } from 'node:child_process'"
       },
       {
         "file": "voice.mjs",
-        "line": 140,
+        "line": 105,
         "text": "execFile(cmd, args, { windowsHide: true, maxBuffer: 8 * 1024 * 1024 }, (err, stdout, stderr) => {"
       }
     ]

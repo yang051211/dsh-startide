@@ -1,0 +1,141 @@
+{
+  "name": "dsh-ungate",
+  "version": "0.2.4",
+  "scannedAt": "2026-11-09T23:07:07.905Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 589,
+        "text": "const r = await fetch("
+      },
+      {
+        "file": "client.js",
+        "line": 948,
+        "text": "fetch(apiUrl(\"/dsh-purge/status\"), {"
+      },
+      {
+        "file": "client.js",
+        "line": 994,
+        "text": "fetch(apiUrl(\"/dsh-purge/restart\"), {"
+      },
+      {
+        "file": "client.js",
+        "line": 1168,
+        "text": "fetch(apiUrl(\"/dsh-purge/\" + action), {"
+      },
+      {
+        "file": "client.js",
+        "line": 1362,
+        "text": "fetch(apiUrl(\"/\"), { cache: \"no-store\", credentials: \"same-origin\" }).then((r) => {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/community.js",
+        "line": 3,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "bin/community.js",
+        "line": 10,
+        "text": "import { readFileSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "bin/community.js",
+        "line": 71,
+        "text": "const text = readFileSync(target.file, \"utf8\").replace(/\\r\\n/g, \"\\n\");"
+      },
+      {
+        "file": "bin/dsh-purge.js",
+        "line": 7,
+        "text": "import { realpathSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/anchors.js",
+        "line": 7,
+        "text": "import fs from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 53,
+        "text": "export const inject = [\"systemPrompt\", \"tools\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1675,
+        "text": "if (ctx.tools) {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1676,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1697,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1733,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/community.js",
+        "line": 4,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "bin/community.js",
+        "line": 30,
+        "text": "const run = spawnSync(process.execPath, [path.join(ROOT, \"bin\", \"dsh-purge.js\"), LEGACY[op], ...rawArgs.slice(1)], { stdio: \"inherit\" });"
+      },
+      {
+        "file": "bin/community.js",
+        "line": 270,
+        "text": "    const run = spawnSync(process.execPath, [path.join(ROOT, \"bin\", \"dsh-purge.js\"), action === \"revert\" ? \"--revert\" : \"--apply\", ...extra], { stdio: \"inherit\""
+      },
+      {
+        "file": "lib/child-process-hide.mjs",
+        "line": 4,
+        "text": "const mod = process.getBuiltinModule(\"child_process\");"
+      },
+      {
+        "file": "lib/community.js",
+        "line": 13,
+        "text": "import { execFile } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

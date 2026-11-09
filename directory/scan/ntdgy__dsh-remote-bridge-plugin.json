@@ -1,0 +1,69 @@
+{
+  "name": "@ntdgy/dsh-remote-bridge-plugin",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-09T23:06:59.919Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 211,
+        "text": "const response = await fetch(STATUS_PATH, { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/relay/client.js",
+        "line": 230,
+        "text": "socket = new WebSocket(this.opts.url, { handshakeTimeout: WS_HANDSHAKE_TIMEOUT_MS });"
+      },
+      {
+        "file": "lib/relay/client.js",
+        "line": 233,
+        "text": "// new WebSocket 对畸形 URL 会同步抛。不接住会从 socket.on('open') 的调用栈里炸出去。"
+      },
+      {
+        "file": "lib/relay/http-forward.js",
+        "line": 13,
+        "text": "import { request as httpRequest } from 'node:http';"
+      },
+      {
+        "file": "lib/relay/http-forward.js",
+        "line": 14,
+        "text": "import { request as httpsRequest } from 'node:https';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/relay/version.js",
+        "line": 10,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/relay/version.js",
+        "line": 51,
+        "text": "const raw = readFileSync(join(dir, 'package.json'), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

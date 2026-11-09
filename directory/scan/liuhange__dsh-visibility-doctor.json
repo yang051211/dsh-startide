@@ -1,7 +1,7 @@
 {
   "name": "@liuhange/dsh-visibility-doctor",
-  "version": "1.0.5",
-  "scannedAt": "2026-11-04T07:56:11.570Z",
+  "version": "1.0.6",
+  "scannedAt": "2026-11-09T23:07:09.532Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -44,8 +44,24 @@
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 2,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 40,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 74,
+        "text": "ctx.tools.register({"
+      }
+    ]
   },
   "childProcess": {
     "hit": true,
@@ -64,7 +80,9 @@
   "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [],
+  "requiredServices": [
+    "tools"
+  ],
   "setupHints": [],
   "skippedEntries": []
 }

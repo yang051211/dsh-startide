@@ -1,51 +1,19 @@
 {
   "name": "dsh-translate",
-  "version": "0.2.25",
-  "scannedAt": "2026-11-05T08:17:15.098Z",
+  "version": "0.3.5",
+  "scannedAt": "2026-11-09T23:06:57.012Z",
   "icon": null,
   "network": {
     "hit": false,
     "evidence": []
   },
   "fileSystem": {
-    "hit": true,
-    "evidence": [
-      {
-        "file": "lib/rosetta.mjs",
-        "line": 30,
-        "text": "import { readFileSync } from 'node:fs'"
-      },
-      {
-        "file": "lib/rosetta.mjs",
-        "line": 33,
-        "text": "const BUNDLED = /** @type {Record<string, any>} */ (JSON.parse(readFileSync(new URL('./rosetta-data.json', import.meta.url), 'utf8')))"
-      },
-      {
-        "file": "lib/rosetta.mjs",
-        "line": 110,
-        "text": "? JSON.parse(readFileSync(source, 'utf8'))"
-      }
-    ]
+    "hit": false,
+    "evidence": []
   },
   "agentTools": {
-    "hit": true,
-    "evidence": [
-      {
-        "file": "index.mjs",
-        "line": 48,
-        "text": "export const inject = ['commands', 'tools']"
-      },
-      {
-        "file": "index.mjs",
-        "line": 558,
-        "text": "ctx.effect(() => ctx.tools.register(/** @type {any} */ (fixJsonTool(resolved))), 'dsh-translate: fix_json tool')"
-      },
-      {
-        "file": "index.mjs",
-        "line": 568,
-        "text": "const definition = ctx.tools.get(exec.name)"
-      }
-    ]
+    "hit": false,
+    "evidence": []
   },
   "childProcess": {
     "hit": false,
@@ -55,12 +23,11 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
-    "commands",
-    "tools"
+    "sessions"
   ],
   "setupHints": [],
   "skippedEntries": []

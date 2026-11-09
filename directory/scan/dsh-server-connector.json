@@ -1,0 +1,83 @@
+{
+  "name": "dsh-server-connector",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-09T23:06:50.880Z",
+  "icon": "dsh-server-connector.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 447,
+        "text": "const response = await browserGlobal.fetch(`${API}${path}${query}`, init)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/audit.js",
+        "line": 20,
+        "text": "import { mkdir, open, rename, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/audit.js",
+        "line": 370,
+        "text": "await mkdir(dirname(this.#file), { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/audit.js",
+        "line": 371,
+        "text": "await writeFile(this.#file, line, { encoding: 'utf8', flag: 'a', mode: 0o600 })"
+      },
+      {
+        "file": "lib/audit.js",
+        "line": 390,
+        "text": "/** @type {import('node:fs/promises').FileHandle} */"
+      },
+      {
+        "file": "lib/known-hosts.js",
+        "line": 25,
+        "text": "import { mkdir, readFile, rename, unlink, writeFile } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 37,
+        "text": "export const inject = ['tools', 'systemPrompt']"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 397,
+        "text": "* Register the six tools on `ctx.tools` (§5.1)."
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 410,
+        "text": "ctx.tools.register(definition)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

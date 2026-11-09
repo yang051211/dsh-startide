@@ -1,14 +1,14 @@
 {
   "name": "dsh-zen-remote",
-  "version": "2.3.11",
-  "scannedAt": "2026-11-06T08:17:08.369Z",
+  "version": "2.4.1",
+  "scannedAt": "2026-11-09T23:06:45.924Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "dsh-push.mjs",
-        "line": 106,
+        "line": 108,
         "text": "const res = await fetch(`http://127.0.0.1:${gatewayPort}/pwa/push/send`, {"
       },
       {
@@ -17,19 +17,19 @@
         "text": "import { request as httpRequest } from 'node:http';"
       },
       {
-        "file": "lib/client-routes.js",
-        "line": 332,
-        "text": "const fetchImpl = options.fetchImpl ?? ((url, init) => fetch(url, init));"
+        "file": "lib/cli/ipc-client.js",
+        "line": 18,
+        "text": "import { request as httpRequest } from 'node:http';"
+      },
+      {
+        "file": "lib/cli/ipc-server.js",
+        "line": 25,
+        "text": "import { createServer, get } from 'node:http';"
       },
       {
         "file": "lib/client-routes.js",
-        "line": 429,
+        "line": 430,
         "text": "const fetchImpl = options.fetchImpl ?? ((url, init) => fetch(url, init));"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 4506,
-        "text": "singleton ??= createSharesStore((input, init) => fetch(input, init));"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/config.js",
-        "line": 30,
-        "text": "import { readFileSync } from 'node:fs';"
+        "file": "lib/cli/bootstrap.js",
+        "line": 19,
+        "text": "import { existsSync, readdirSync, readFileSync } from 'node:fs';"
       },
       {
-        "file": "lib/config.js",
-        "line": 347,
-        "text": "const parsed = JSON.parse(readFileSync(join(home, 'lan-gate.config.json'), 'utf8'));"
+        "file": "lib/cli/bootstrap.js",
+        "line": 163,
+        "text": "const parsed = JSON.parse(readFileSync(join(profileDir, 'package.json'), 'utf8'));"
       },
       {
-        "file": "lib/fingerprint.js",
-        "line": 65,
-        "text": "import { readFileSync, realpathSync } from 'node:fs';"
+        "file": "lib/cli/commands-status.js",
+        "line": 14,
+        "text": "import { writeFileSync } from 'node:fs';"
       },
       {
-        "file": "lib/fingerprint.js",
-        "line": 230,
-        "text": "const text = readFileSync(file, 'utf8');"
+        "file": "lib/cli/commands-status.js",
+        "line": 123,
+        "text": "writeFileSync(outPath, `${JSON.stringify(report, null, 2)}\\n`, 'utf8');"
       },
       {
-        "file": "lib/index.js",
-        "line": 18,
-        "text": "import { readFileSync } from 'node:fs';"
+        "file": "lib/cli/config-writer.js",
+        "line": 29,
+        "text": "import { chmodSync, mkdirSync, readFileSync, readdirSync, renameSync, statSync, writeFileSync } from 'node:fs';"
       }
     ]
   },
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "dsh-push.mjs",
-        "line": 293,
+        "line": 344,
         "text": "// Registers the push_notify model tool against ctx.tools, if present and not"
       },
       {
         "file": "dsh-push.mjs",
-        "line": 343,
+        "line": 394,
         "text": "ctx.effect(() => tools.register(defineTool({"
       }
     ]
@@ -87,24 +87,24 @@
         "text": "handle = ctx.subprocess.spawn({"
       },
       {
-        "file": "lib/wizard/caddy-process.js",
-        "line": 57,
-        "text": "const spawnChild = (argv, env) => subprocess.spawn({"
+        "file": "lib/cli/bootstrap.js",
+        "line": 18,
+        "text": "import { execFile } from 'node:child_process';"
       },
       {
-        "file": "lib/wizard/cloudflared.js",
-        "line": 84,
-        "text": "const spawnChild = (argv) => subprocess.spawn({"
+        "file": "lib/cli/bootstrap.js",
+        "line": 217,
+        "text": "execFile(command, [...args], { timeout: 120_000 }, (error) => {"
       },
       {
-        "file": "scripts/cdp-probe.mjs",
-        "line": 1,
-        "text": "import { spawn } from 'node:child_process';"
+        "file": "lib/cli/bootstrap.js",
+        "line": 288,
+        "text": "code = await spawn('dsh', ['plugin', '--profile', profile, 'add', 'dsh-zen-remote']);"
       },
       {
-        "file": "scripts/cdp-probe.mjs",
-        "line": 11,
-        "text": "const chrome = spawn(CHROME, ['--headless=new', '--no-sandbox', '--disable-dev-shm-usage', '--remote-debugging-port=' + port, '--user-data-dir=' + PROFILE, '--w"
+        "file": "lib/cli/bootstrap.js",
+        "line": 310,
+        "text": "execFile(command, [...args], { timeout: 10_000 }, (error, stdout) => {"
       }
     ]
   },

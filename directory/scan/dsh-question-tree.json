@@ -1,7 +1,7 @@
 {
   "name": "dsh-question-tree",
-  "version": "0.1.2",
-  "scannedAt": "2026-11-07T07:29:34.645Z",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-09T23:07:00.122Z",
   "icon": "dsh-question-tree.svg",
   "network": {
     "hit": false,
@@ -17,12 +17,12 @@
       },
       {
         "file": "build.mjs",
-        "line": 11,
-        "text": "const read = (relative) => readFile(new URL(relative, here), 'utf8');"
+        "line": 15,
+        "text": "(await readFile(new URL(relative, here), 'utf8')).replace(/\\r\\n/g, '\\n');"
       },
       {
         "file": "build.mjs",
-        "line": 82,
+        "line": 86,
         "text": "await writeFile(new URL('client.js', here), output);"
       }
     ]

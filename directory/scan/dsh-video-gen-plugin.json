@@ -1,0 +1,108 @@
+{
+  "name": "dsh-video-gen-plugin",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-09T23:07:17.012Z",
+  "icon": "dsh-video-gen-plugin.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 424,
+        "text": "const body = await (await fetch(`${CREDENTIAL_ROUTE}?ref=${encodeURIComponent(ref)}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 506,
+        "text": "const body = await (await fetch(CREDENTIAL_ROUTE, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 549,
+        "text": "const body = await (await fetch(MODELS_ROUTE, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1984,
+        "text": "const response = await fetch(`${JOBS_ROUTE}?limit=10`, { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2058,
+        "text": "const response = await fetch(`${JOBS_ROUTE}?limit=10`, { cache: \"no-store\" });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import { createReadStream } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "import { copyFile, lstat, mkdir, readFile, readdir, realpath, rename, stat, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1756,
+        "text": "return this.ctx.get(\"fs\")?.processPathFromHostPath(hostPath);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 6488,
+        "text": "const raw = await readFile(join(this.dir, HISTORY_FILE), \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 6673,
+        "text": "await mkdir(this.dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4718,
+        "text": "* `inject`: an inject entry would hold `ctx.tools` — and every tool plugin"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4752,
+        "text": "return this.layers.effect(this.ctx, (layer) => layer.tools.insert(name, definition), { label: \"tools.register()\" });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7803,
+        "text": "ctx.tools.register(tool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: pnpm run build"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,35 +1,35 @@
 {
   "name": "dsh-session-navigator",
-  "version": "1.1.3",
-  "scannedAt": "2026-11-05T21:22:52.320Z",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-09T23:06:52.333Z",
   "icon": "dsh-session-navigator.png",
   "network": {
     "hit": true,
     "evidence": [
       {
+        "file": "assets/detached/wallpaper.js",
+        "line": 141,
+        "text": "const response = await fetch(url, { cache: \"no-store\", credentials: \"same-origin\" });"
+      },
+      {
         "file": "lib/client.js",
-        "line": 1153,
+        "line": 1284,
         "text": "const response = await fetch(API + \"/bridge/poll?since=\" + cursor, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1366,
+        "line": 1497,
         "text": "return fetch(API + \"/bridge/commands\", {"
       },
       {
         "file": "lib/client.js",
-        "line": 2814,
+        "line": 3168,
         "text": "const response = await fetch(API + path, {"
       },
       {
         "file": "lib/client.js",
-        "line": 2853,
+        "line": 3207,
         "text": "const response = await fetch(API + path, {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 3354,
-        "text": "return fetch(`${API}/sessions/placement/pending`, {"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/component/borrow.js",
+        "file": "src/component/borrow.js",
         "line": 30,
         "text": "import { readdir, readFile } from \"node:fs/promises\";"
       },
       {
-        "file": "lib/component/borrow.js",
+        "file": "src/component/borrow.js",
         "line": 111,
         "text": "* @returns {Promise<import(\"node:fs\").Dirent[] | null>}"
       },
       {
-        "file": "lib/component/borrow.js",
+        "file": "src/component/borrow.js",
         "line": 135,
         "text": "text = await readFile(join(root, name), \"utf8\");"
       },
       {
-        "file": "lib/component/downloader.js",
+        "file": "src/component/downloader.js",
         "line": 27,
-        "text": "import { createWriteStream } from \"node:fs\";"
+        "text": "import { mkdir, readFile, rename, rm, stat, writeFile } from \"node:fs/promises\";"
       },
       {
-        "file": "lib/component/downloader.js",
-        "line": 28,
-        "text": "import { mkdir, readFile, rename, rm, stat, writeFile } from \"node:fs/promises\";"
+        "file": "src/component/downloader.js",
+        "line": 81,
+        "text": "const parsed = JSON.parse(await readFile(file, \"utf8\"));"
       }
     ]
   },
@@ -71,28 +71,28 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/component/downloader.js",
+        "file": "src/component/downloader.js",
         "line": 26,
         "text": "import { spawn } from \"node:child_process\";"
       },
       {
-        "file": "lib/component/downloader.js",
-        "line": 124,
+        "file": "src/component/downloader.js",
+        "line": 123,
         "text": "const child = spawn(command, args, {"
       },
       {
-        "file": "lib/component/downloader.js",
-        "line": 208,
+        "file": "src/component/downloader.js",
+        "line": 207,
         "text": "const child = spawn(\"curl\", args, { stdio: [\"ignore\", \"ignore\", \"pipe\"], windowsHide: true, signal });"
       },
       {
-        "file": "lib/component/install.js",
+        "file": "src/component/install.js",
         "line": 19,
         "text": "import { spawn } from \"node:child_process\";"
       },
       {
-        "file": "lib/component/install.js",
-        "line": 260,
+        "file": "src/component/install.js",
+        "line": 270,
         "text": "const child = spawn(command, args, { stdio: \"ignore\", windowsHide: true });"
       }
     ]
@@ -102,7 +102,9 @@
     "evidence": []
   },
   "dependencies": 0,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [
     "webServer"

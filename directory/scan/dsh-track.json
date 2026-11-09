@@ -1,0 +1,99 @@
+{
+  "name": "dsh-track",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-09T23:07:00.803Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 28,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 78,
+        "text": "const pkg = JSON.parse(readFileSync(url, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 157,
+        "text": "const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "lib/skill-provider.js",
+        "line": 21,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/skill-provider.js",
+        "line": 52,
+        "text": "raw = readFileSync(SKILL_PATH, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 174,
+        "text": "export const inject = ['tools', 'systemPrompt', 'llm']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 914,
+        "text": "register('context-checkpoint:tool-checkpoint-write', () => ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 992,
+        "text": "register('context-checkpoint:tool-checkpoint-read', () => ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1020,
+        "text": "register('context-checkpoint:tool-status', () => ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1139,
+        "text": "register('context-checkpoint:tool-compact', () => ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 152,
+      "text": "<DSH_HOME>/plugins/dsh-track/data/"
+    },
+    {
+      "file": "README.md",
+      "line": 139,
+      "text": "<DSH_HOME>/plugins/dsh-track/data/"
+    }
+  ],
+  "skippedEntries": []
+}

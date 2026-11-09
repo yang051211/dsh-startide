@@ -1,0 +1,86 @@
+{
+  "name": "@beings-labs/dsh-domain-manager",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-09T23:07:16.015Z",
+  "icon": "beings-labs__dsh-domain-manager.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "import { mkdir, readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 440,
+        "text": "await mkdir(dirname(dataFile), { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "index.js",
+        "line": 920,
+        "text": "const markdown = await readFile(args.path, 'utf8')"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 8,
+        "text": "import { mkdir, open, readFile, rename, rm } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 141,
+        "text": "text = await readFile(file, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 354,
+        "text": "const schemas = typeof ctx.tools?.schemas === 'function' ? ctx.tools.schemas() : []"
+      },
+      {
+        "file": "index.js",
+        "line": 442,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 510,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 536,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

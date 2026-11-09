@@ -1,0 +1,53 @@
+{
+  "name": "dsh-superagent-bridge",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-09T23:07:00.885Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/standalone.js",
+        "line": 8056,
+        "text": "response = await fetch(`/orchestrator/api/${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import { existsSync, readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 80,
+        "text": "if (!cached.bytes || cached.mtimeMs !== stat.mtimeMs) cached = { mtimeMs: stat.mtimeMs, bytes: readFileSync(STANDALONE) }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "dist/standalone.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

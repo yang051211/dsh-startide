@@ -1,19 +1,24 @@
 {
   "name": "@lixiangzhong/dsh-tunnel",
-  "version": "0.1.1",
-  "scannedAt": "2026-10-26T10:13:23.073Z",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-09T23:07:14.918Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "deploy.mjs",
-        "line": 398,
+        "line": 399,
         "text": "+ `  4) 本机自测: curl -i -H 'Host: 你的域名' http://127.0.0.1:${options.port}/\\n`);"
       },
       {
+        "file": "lib/client.js",
+        "line": 522,
+        "text": "const response = await fetch(STATUS_PATH, {"
+      },
+      {
         "file": "lib/proxy.js",
-        "line": 25,
+        "line": 26,
         "text": "import { createServer, request as httpRequest } from 'node:http';"
       }
     ]
@@ -28,22 +33,22 @@
       },
       {
         "file": "deploy.mjs",
-        "line": 90,
+        "line": 96,
         "text": "writeFileSync(target, content, 'utf8');"
       },
       {
         "file": "deploy.mjs",
-        "line": 129,
+        "line": 135,
         "text": "hash.update(readFileSync(full));"
       },
       {
         "file": "deploy.mjs",
-        "line": 161,
+        "line": 162,
         "text": "rmSync(join(pluginsRoot, entry.name), { recursive: true, force: true });"
       },
       {
         "file": "deploy.mjs",
-        "line": 213,
+        "line": 172,
         "text": "const original = readFileSync(patchFile, 'utf8');"
       }
     ]
@@ -62,7 +67,12 @@
       },
       {
         "file": "deploy.mjs",
-        "line": 302,
+        "line": 233,
+        "text": "const probe = spawnSync(process.execPath, ["
+      },
+      {
+        "file": "deploy.mjs",
+        "line": 299,
         "text": "const result = spawnSync('dsh', ['--profile', profile, '--dump-config'], { encoding: 'utf8' });"
       }
     ]
@@ -71,7 +81,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [],

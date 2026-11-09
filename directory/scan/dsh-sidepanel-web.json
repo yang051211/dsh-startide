@@ -1,0 +1,97 @@
+{
+  "name": "dsh-sidepanel-web",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-09T23:07:17.002Z",
+  "icon": "dsh-sidepanel-web.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cdp.js",
+        "line": 18,
+        "text": "const ws = new WebSocket(this.wsUrl);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 270,
+        "text": "return await fetch(url, opts);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 780,
+        "text": "fetch(ROUTES.viewport, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1213,
+        "text": "fetch(ROUTES.annotationsCount, { cache: \"no-store\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2487,
+        "text": "const res = await fetch(\"/api/sidepanel-web/crop\", {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/launcher.js",
+        "line": 7,
+        "text": "import { closeSync, existsSync, mkdirSync, openSync, readFileSync, rmSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/launcher.js",
+        "line": 35,
+        "text": "return /docker|kubepods|lxc|gvisor|containerd/i.test(readFileSync(\"/proc/1/cgroup\", \"utf8\"));"
+      },
+      {
+        "file": "lib/launcher.js",
+        "line": 53,
+        "text": "const lines = readFileSync(portFile, \"utf8\").split(\"\\n\").map((s) => s.trim()).filter(Boolean);"
+      },
+      {
+        "file": "lib/launcher.js",
+        "line": 87,
+        "text": "const text = readFileSync(logFile, \"utf8\");"
+      },
+      {
+        "file": "lib/launcher.js",
+        "line": 115,
+        "text": "mkdirSync(profileDir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/launcher.js",
+        "line": 6,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/launcher.js",
+        "line": 64,
+        "text": "const child = spawn(bin, args, { detached: true, stdio: [\"ignore\", \"ignore\", fd >= 0 ? fd : \"ignore\"] });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

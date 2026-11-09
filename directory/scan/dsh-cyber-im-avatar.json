@@ -1,19 +1,19 @@
 {
   "name": "dsh-cyber-im-avatar",
-  "version": "0.16.0",
-  "scannedAt": "2026-11-06T08:17:08.629Z",
+  "version": "0.18.2",
+  "scannedAt": "2026-11-09T23:06:45.494Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 263,
+        "line": 269,
         "text": "return fetch(API + path, init).then(function (r) {"
       },
       {
         "file": "web/panel.js",
-        "line": 254,
+        "line": 260,
         "text": "return fetch(API + path, init).then(function (r) {"
       }
     ]
@@ -23,28 +23,28 @@
     "evidence": [
       {
         "file": "lib/app.js",
-        "line": 12,
+        "line": 13,
         "text": "import fs from \"node:fs\";"
       },
       {
         "file": "lib/app.js",
-        "line": 912,
+        "line": 970,
         "text": "text = fs.readFileSync(file, \"utf8\");"
       },
       {
-        "file": "lib/im.js",
-        "line": 10,
+        "file": "lib/duty.js",
+        "line": 9,
         "text": "import fs from \"node:fs\";"
       },
       {
-        "file": "lib/im.js",
-        "line": 160,
-        "text": "try { return JSON.parse(fs.readFileSync(ENV_PATH, \"utf8\")); } catch { return {}; }"
+        "file": "lib/duty.js",
+        "line": 63,
+        "text": "fs.mkdirSync(decisionsDir(state), { recursive: true, mode: 0o700 });"
       },
       {
-        "file": "lib/im.js",
-        "line": 410,
-        "text": "try { return JSON.parse(fs.readFileSync(path.join(dir, \"env.json\"), \"utf8\")); } catch { return {}; }"
+        "file": "lib/duty.js",
+        "line": 72,
+        "text": "fs.writeFileSync(policy, DEFAULT_POLICY, { mode: 0o600 });"
       }
     ]
   },

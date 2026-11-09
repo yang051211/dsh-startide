@@ -1,0 +1,62 @@
+{
+  "name": "city-stroll",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-09T23:07:16.161Z",
+  "icon": "city-stroll.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 40,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 46,
+        "text": "const CITIES = JSON.parse(readFileSync(new URL('./data/cities.json', import.meta.url), 'utf8')).cities;"
+      },
+      {
+        "file": "index.js",
+        "line": 461,
+        "text": "JSON.parse(readFileSync(new URL(`./data/${city.id}.json`, import.meta.url), 'utf8')),"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 43,
+        "text": "export const inject = ['tools', 'web'];"
+      },
+      {
+        "file": "index.js",
+        "line": 1136,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "web"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,108 @@
+{
+  "name": "dsh-winshell",
+  "version": "1.0.5",
+  "scannedAt": "2026-11-09T23:06:55.852Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 39,
+        "text": "import { existsSync, lstatSync } from \"node:fs\";"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 8,
+        "text": "import { mkdirSync, readFileSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 13,
+        "text": "mkdirSync(join(root, \"dist\"), { recursive: true });"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 14,
+        "text": "mkdirSync(join(root, \"lib\"), { recursive: true });"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 27,
+        "text": "const core = readFileSync(join(root, \"dist\", \"client.core.js\"), \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "export const inject = [\"tools\", \"systemPrompt\", \"shellEnv\", \"subprocess\", \"sandbox\", \"sandboxPolicy\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 709,
+        "text": "ctx.tools.register(terminalTool(ctx, terminalRegistry, paths, currentDefaultShell, readSshShell));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 946,
+        "text": "ctx.tools.register(shellTool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 349,
+        "text": "handle = ctx.subprocess.spawn(spawnSpec(resolved, argv, env, d.signal));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 374,
+        "text": "running = ctx.subprocess.spawn(spawnSpec(resolved, argv, env, signal));"
+      },
+      {
+        "file": "lib/terminal.js",
+        "line": 490,
+        "text": "const term = nodePty.spawn(argv[0], argv.slice(1), {"
+      },
+      {
+        "file": "lib/terminal.js",
+        "line": 563,
+        "text": "const handle = await spawn({ argv, cwd, env: childEnv, rows, cols });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sandbox",
+    "sandboxPolicy",
+    "shellEnv",
+    "subprocess",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 49,
+      "text": "npm install -g dsh-winshell"
+    }
+  ],
+  "skippedEntries": []
+}

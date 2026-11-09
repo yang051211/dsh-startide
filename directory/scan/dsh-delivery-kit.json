@@ -1,0 +1,109 @@
+{
+  "name": "dsh-delivery-kit",
+  "version": "0.3.5",
+  "scannedAt": "2026-11-09T23:07:02.862Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/delivery/runtime.js",
+        "line": 14,
+        "text": "const res = await fetch(url, { signal: controller.signal, redirect: 'follow' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/delivery/runtime.js",
+        "line": 5,
+        "text": "import { existsSync, mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/delivery/runtime.js",
+        "line": 27,
+        "text": "mkdirSync(path.dirname(outPng), { recursive: true })"
+      },
+      {
+        "file": "lib/delivery/schema.js",
+        "line": 11,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/delivery/schema.js",
+        "line": 140,
+        "text": "const text = readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "lib/delivery/tools.js",
+        "line": 4,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "() => ctx.tools.register(factory()),"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/delivery/runtime.js",
+        "line": 4,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/delivery/runtime.js",
+        "line": 29,
+        "text": "const child = spawn(chrome, ["
+      },
+      {
+        "file": "lib/pyrun.js",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/pyrun.js",
+        "line": 12,
+        "text": "const child = spawn(PYTHON, [script, ...args], {"
+      },
+      {
+        "file": "lib/screens.js",
+        "line": 7,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 90,
+      "text": "python3 -m pip install python-docx"
+    }
+  ],
+  "skippedEntries": []
+}

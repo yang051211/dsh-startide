@@ -1,25 +1,35 @@
 {
   "name": "@ifrankwang/openspec-agents",
-  "version": "0.151.2",
-  "scannedAt": "2026-10-26T10:12:46.952Z",
+  "version": "1.4.0",
+  "scannedAt": "2026-11-09T23:06:48.687Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": ".mcp-server/cli.mjs",
-        "line": 30734,
+        "line": 44875,
         "text": "import { createServer as createServer2 } from \"node:http\";"
       },
       {
         "file": ".mcp-server/cli.mjs",
-        "line": 30742,
+        "line": 44883,
         "text": "import { STATUS_CODES, ServerResponse, createServer } from \"node:http\";"
       },
       {
-        "file": "src/adapters/mcp-common/index.ts",
-        "line": 6,
-        "text": "import { createServer, type Server } from \"node:http\""
+        "file": "assets/skills/frontend-e2e/assets/http-trace.ts",
+        "line": 8,
+        "text": "* XMLHttpRequest 层旁路记录请求/响应，再经 fixture 的 exposeBinding 回传给测试进程。"
+      },
+      {
+        "file": "assets/skills/frontend-e2e/assets/http-trace.ts",
+        "line": 134,
+        "text": "// ── XMLHttpRequest（axios 等基于 XHR 的客户端） ─────────"
+      },
+      {
+        "file": "assets/skills/frontend-e2e/assets/http-trace.ts",
+        "line": 135,
+        "text": "const originalOpen = XMLHttpRequest.prototype.open"
       }
     ]
   },
@@ -28,27 +38,27 @@
     "evidence": [
       {
         "file": ".dsh-plugin/opx-tools.mjs",
-        "line": 7,
-        "text": "import { rmdir } from \"node:fs/promises\";"
+        "line": 8,
+        "text": "import { copyFile, mkdir, readdir, readFile as readFile4, rmdir, rm as rm2 } from \"node:fs/promises\";"
       },
       {
         "file": ".dsh-plugin/opx-tools.mjs",
-        "line": 66,
+        "line": 67,
         "text": "import { readFile, writeFile, stat, rm, realpath } from \"node:fs/promises\";"
       },
       {
         "file": ".dsh-plugin/opx-tools.mjs",
-        "line": 122,
+        "line": 123,
         "text": "await rm(wtPath, { recursive: true, force: true, maxRetries: 3, retryDelay: 100 });"
       },
       {
         "file": ".dsh-plugin/opx-tools.mjs",
-        "line": 237,
+        "line": 257,
         "text": "content = await readFile(tasksMdPath, \"utf-8\");"
       },
       {
         "file": ".dsh-plugin/opx-tools.mjs",
-        "line": 262,
+        "line": 282,
         "text": "await writeFile(tasksMdPath, result.join(`"
       }
     ]
@@ -58,12 +68,12 @@
     "evidence": [
       {
         "file": ".dsh-plugin/opx-tools.mjs",
-        "line": 9109,
+        "line": 9912,
         "text": "var inject = [\"tools\"];"
       },
       {
         "file": ".dsh-plugin/opx-tools.mjs",
-        "line": 9114,
+        "line": 9917,
         "text": "ctx.tools.register(defineTool({"
       },
       {
@@ -88,28 +98,28 @@
     "evidence": [
       {
         "file": ".dsh-plugin/opx-tools.mjs",
-        "line": 65,
+        "line": 66,
         "text": "import { execFile } from \"node:child_process\";"
       },
       {
         "file": ".dsh-plugin/opx-tools.mjs",
-        "line": 77,
+        "line": 78,
         "text": "const child = execFile(\"git\", args, { encoding: \"utf-8\", maxBuffer: 10 * 1024 * 1024 }, (err, stdout, stderr) => {"
       },
       {
+        "file": ".dsh-plugin/opx-tools.mjs",
+        "line": 717,
+        "text": "execFile(\"openspec\", args, { cwd, encoding: \"utf-8\", maxBuffer: 10 * 1024 * 1024 }, (err, stdout, stderr) => {"
+      },
+      {
         "file": ".mcp-server/cli.mjs",
-        "line": 21725,
+        "line": 35064,
         "text": "import { execFile } from \"node:child_process\";"
       },
       {
         "file": ".mcp-server/cli.mjs",
-        "line": 21737,
+        "line": 35076,
         "text": "const child = execFile(\"git\", args, { encoding: \"utf-8\", maxBuffer: 10 * 1024 * 1024 }, (err, stdout, stderr) => {"
-      },
-      {
-        "file": "src/adapters/plugin-common/index.ts",
-        "line": 15,
-        "text": "import { spawnSync } from \"node:child_process\""
       }
     ]
   },

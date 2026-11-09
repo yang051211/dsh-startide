@@ -1,0 +1,92 @@
+{
+  "name": "dsh-desktop-hands",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-09T23:07:16.481Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "import { appendFileSync, mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 147,
+        "text": "mkdirSync(root, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 148,
+        "text": "appendFileSync(join(root, 'boot.log'), `${new Date().toISOString()} ${line}\\n`)"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 12,
+        "text": "import { existsSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 228,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 252,
+        "text": "*    calls `apply`, and a plugin that declares `inject` gets `ctx.tools` ready"
+      },
+      {
+        "file": "index.js",
+        "line": 283,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "index.js",
+        "line": 306,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "index.js",
+        "line": 373,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cli.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 141,
+        "text": "child = spawn(bin, argv, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

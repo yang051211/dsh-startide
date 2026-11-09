@@ -1,0 +1,101 @@
+{
+  "name": "dsh-smart-compact",
+  "version": "0.6.3",
+  "scannedAt": "2026-11-09T23:07:10.082Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 70,
+        "text": "const res = await fetch(\"/dsh-smart-compact/state?sessionId=\" + encodeURIComponent(sessionId), { signal });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "import { mkdirSync, writeFileSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 249,
+        "text": "return JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version ?? 'unknown';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 308,
+        "text": "mkdirSync(dirname(stateFile), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 309,
+        "text": "writeFileSync(stateFile, `${JSON.stringify(runtimeState, null, 2)}\\n`, 'utf8');"
+      },
+      {
+        "file": "lib/notes.js",
+        "line": 6,
+        "text": "import { mkdir, readFile, rename, appendFile, writeFile } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 36,
+        "text": "export const inject = ['tools', 'commands', 'llm', 'tokenMeter', 'sessions', 'webServer', 'agents'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 528,
+        "text": "ctx.effect(() => ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 550,
+        "text": "ctx.effect(() => ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 598,
+        "text": "ctx.effect(() => ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 635,
+        "text": "ctx.effect(() => ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js",
+    "lib/client/assets.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "commands",
+    "llm",
+    "sessions",
+    "tokenMeter",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

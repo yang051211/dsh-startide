@@ -1,0 +1,125 @@
+{
+  "name": "dsh-tmon",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-09T23:06:48.078Z",
+  "icon": "dsh-tmon.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 220,
+        "text": "const state = await (await fetch(RESTART_ROUTE, { headers: { accept: 'application/json' } })).json()"
+      },
+      {
+        "file": "client.js",
+        "line": 225,
+        "text": "await (await fetch(RESTART_ROUTE, {"
+      },
+      {
+        "file": "client.js",
+        "line": 245,
+        "text": "const status = await (await fetch(STATUS_ROUTE, { headers: { accept: 'application/json' } })).json()"
+      },
+      {
+        "file": "index.js",
+        "line": 207,
+        "text": "const response = await fetch(`http://127.0.0.1:${String(port)}${path}`, {"
+      },
+      {
+        "file": "index.js",
+        "line": 227,
+        "text": "const response = await fetch(`http://127.0.0.1:${String(port)}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "import { accessSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "import { access, mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 28,
+        "text": "import { constants } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 191,
+        "text": "const raw = await readFile(join(tmonHome(), 'port'), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 959,
+        "text": "const guide = parseSkill(readFileSync(new URL('./skill.md', import.meta.url), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 968,
+        "text": "toolsCtx.effect(() => toolsCtx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 25,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 273,
+        "text": "const child = spawn(process.execPath, [stop, 'kill-server'], { stdio: 'ignore', windowsHide: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 432,
+        "text": "const child = spawn(command, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 3,
+      "text": "：会话顶部多一个「命令终端」标签，里面是 tmon 自己的网页；`tmon` 技能带上它的使用说明，系统提示里有一段提醒模型把长命令套进 tmon；`tmon_tasks` 工具让模型能查任务状态和输出。**需要先装好 tmon：`npm install -g @qiu745/tmon`（Node 22.18+）。**"
+    },
+    {
+      "file": "README.md",
+      "line": 89,
+      "text": "npm install -g @qiu745/tmon"
+    },
+    {
+      "file": "README.md",
+      "line": 132,
+      "text": "- 插件不预检 tmon 装没装：提示段和技能无条件注入，模型第一次用会直接撞上 `tmon: command not found`，由提示段接管——告诉用户装 `npm install -g @qiu745/tmon`，不重试、也不悄悄改成裸跑命令。这样既不每轮做一次文件探测，提示内容也不会随环境变长变短。"
+    }
+  ],
+  "skippedEntries": []
+}

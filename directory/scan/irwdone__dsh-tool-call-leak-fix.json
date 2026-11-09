@@ -1,0 +1,59 @@
+{
+  "name": "@irwdone/dsh-tool-call-leak-fix",
+  "version": "0.5.1",
+  "scannedAt": "2026-11-09T23:07:01.263Z",
+  "icon": "irwdone__dsh-tool-call-leak-fix.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/index.js",
+        "line": 23,
+        "text": "import { appendFileSync, mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 183,
+        "text": "mkdirSync(dirname(target), { recursive: true });"
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 186,
+        "text": "appendFileSync(target, JSON.stringify({ t: Date.now(), ...line }) + '\\n');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/index.js",
+        "line": 40,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 316,
+        "text": "const runtime = this && typeof this.get === 'function' ? this : ctx.tools || undefined;"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,79 @@
+{
+  "name": "dsh-budget-guard-plugin",
+  "version": "0.4.5",
+  "scannedAt": "2026-11-09T23:06:50.028Z",
+  "icon": "dsh-budget-guard-plugin.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 130,
+        "text": "const response = await fetch("
+      },
+      {
+        "file": "lib/client.js",
+        "line": 139,
+        "text": "const response = await fetch('/dsh-budget/action', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 154,
+        "text": "const response = await fetch('/dsh-budget/config', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 164,
+        "text": "const response = await fetch('/dsh-budget/config/save', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "import { mkdirSync, readFileSync, readdirSync, renameSync, statSync, unlinkSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1507,
+        "text": "return JSON.parse(readFileSync(new URL(`../prices/${name}`, import.meta.url), 'utf8'));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1717,
+        "text": "const decoded = JSON.parse(readFileSync(path, 'utf8'));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1961,
+        "text": "mkdirSync(target.dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1963,
+        "text": "writeFileSync(temp, JSON.stringify({ version: SNAPSHOT_VERSION, savedAt: now, sessions }), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

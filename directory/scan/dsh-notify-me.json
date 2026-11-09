@@ -1,35 +1,35 @@
 {
   "name": "dsh-notify-me",
-  "version": "1.18.0",
-  "scannedAt": "2026-11-08T14:57:18.178Z",
+  "version": "1.19.0",
+  "scannedAt": "2026-11-09T23:06:40.201Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 707,
+        "line": 727,
         "text": "fetch(FOCUS_ROUTE, {"
       },
       {
         "file": "lib/client.js",
-        "line": 816,
-        "text": "return fetch(HOST_BRIDGE_ROUTE, {"
+        "line": 783,
+        "text": "p = fetch(MAC_NOTIFY_ROUTE, { cache: \"no-store\" }).then(function (res) {"
       },
       {
         "file": "lib/client.js",
-        "line": 854,
-        "text": "fetch(HOST_BRIDGE_ROUTE, { method: \"GET\", cache: \"no-store\" })"
+        "line": 837,
+        "text": "fetch(MAC_NOTIFY_ROUTE, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1871,
-        "text": "return fetch(spec.url, {"
+        "line": 846,
+        "text": "var p = fetch(MAC_NOTIFY_ROUTE, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1894,
-        "text": "return fetch(u, { method: \"GET\", cache: \"no-store\" }).then(function (res) {"
+        "line": 881,
+        "text": "fetch(WIN_TOAST_ROUTE, { cache: \"no-store\" }).then(function (res) {"
       }
     ]
   },
@@ -43,18 +43,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 134,
+        "line": 136,
         "text": "const parsed = JSON.parse(readFileSync(new URL(\"../package.json\", import.meta.url), \"utf8\"));"
       },
       {
-        "file": "lib/page-bridge.js",
-        "line": 34,
-        "text": "import { readFile } from \"node:fs/promises\";"
+        "file": "lib/mac-notify.js",
+        "line": 18,
+        "text": "import { existsSync, readFileSync, unlinkSync } from \"node:fs\";"
       },
       {
-        "file": "lib/page-bridge.js",
-        "line": 386,
-        "text": "const parsed = JSON.parse(await readFile(file, \"utf8\"));"
+        "file": "lib/mac-notify.js",
+        "line": 89,
+        "text": "const parsed = JSON.parse(readFileSync(clickFile, \"utf8\"));"
+      },
+      {
+        "file": "lib/mac-notify.js",
+        "line": 90,
+        "text": "unlinkSync(clickFile);"
       }
     ]
   },
@@ -72,8 +77,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 414,
+        "line": 416,
         "text": "child = spawn(powershellPath(), args, { windowsHide: true, stdio: [\"ignore\", \"pipe\", \"pipe\"] });"
+      },
+      {
+        "file": "lib/mac-notify.js",
+        "line": 17,
+        "text": "import { spawn, execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/mac-notify.js",
+        "line": 42,
+        "text": "* @param spawnFn - child_process.spawn (injectable so the smoke test runs on"
+      },
+      {
+        "file": "lib/win-toast.js",
+        "line": 22,
+        "text": "import { spawn, execFile } from \"node:child_process\";"
       }
     ]
   },

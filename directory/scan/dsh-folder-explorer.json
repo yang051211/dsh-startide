@@ -1,0 +1,83 @@
+{
+  "name": "dsh-folder-explorer",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-09T23:06:57.365Z",
+  "icon": "dsh-folder-explorer.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 269,
+        "text": "return window.fetch(url, options).then(parseResponse);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { watch as watchFileSystem } from \"node:fs\";"
+      },
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import * as fs from \"node:fs/promises\";"
+      },
+      {
+        "file": "index.js",
+        "line": 628,
+        "text": "/** @type {import(\"node:fs\").FSWatcher | null} */"
+      },
+      {
+        "file": "lib/ops.js",
+        "line": 14,
+        "text": "import * as fs from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/ops.js",
+        "line": 221,
+        "text": "/** @param {import(\"node:fs\").Stats} stat */"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/ops.js",
+        "line": 13,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/ops.js",
+        "line": 643,
+        "text": "/** @type {import(\"node:child_process\").ChildProcess} */"
+      },
+      {
+        "file": "lib/ops.js",
+        "line": 646,
+        "text": "child = spawn(command, args, { detached: true, stdio: \"ignore\" });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

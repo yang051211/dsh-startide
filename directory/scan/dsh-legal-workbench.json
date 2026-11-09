@@ -1,0 +1,112 @@
+{
+  "name": "dsh-legal-workbench",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-09T23:06:57.589Z",
+  "icon": "dsh-legal-workbench.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 633,
+        "text": "const response = await fetch(API + path, request)"
+      },
+      {
+        "file": "client.js",
+        "line": 966,
+        "text": "void fetch(API + '/client-log', {"
+      },
+      {
+        "file": "client.js",
+        "line": 2286,
+        "text": "void fetch(API + urlPath, { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{}', keepalive: true })"
+      },
+      {
+        "file": "client.js",
+        "line": 2333,
+        "text": "await fetch(API + '/recordings/' + encodeURIComponent(session.recId) + '/chunk' + query, {"
+      },
+      {
+        "file": "lib/iflyrec.js",
+        "line": 57,
+        "text": "response = await fetch(endpoint, { headers, signal: controller.signal })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 29,
+        "text": "import { createReadStream } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 30,
+        "text": "import { appendFile, mkdir, readFile, readdir, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 31,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 61,
+        "text": "const parsed = JSON.parse(readFileSync(USER_CONFIG_FILE, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 71,
+        "text": "const text = await readFile(USER_CONFIG_FILE, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 28,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 797,
+        "text": "execFile(settings.openCommand, [uri], { timeout: 5000 }, (error) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 814,
+        "text": "execFile(settings.openCommand, [target], { timeout: 5000 }, (error) => {"
+      },
+      {
+        "file": "lib/vault.js",
+        "line": 14,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/vault.js",
+        "line": 61,
+        "text": "execFile("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

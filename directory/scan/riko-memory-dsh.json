@@ -1,0 +1,75 @@
+{
+  "name": "riko-memory-dsh",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-09T23:07:01.500Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/tools.js",
+        "line": 172,
+        "text": "const res = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/resident.js",
+        "line": 1,
+        "text": "import { readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "dist/resident.js",
+        "line": 66,
+        "text": "content = readFileSync(filePath, \"utf8\");"
+      },
+      {
+        "file": "dist/soul.js",
+        "line": 1,
+        "text": "import { readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "dist/soul.js",
+        "line": 29,
+        "text": "const content = readFileSync(filePath, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 8,
+        "text": "export const inject = [\"tools\"];"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 55,
+        "text": "ctx.tools.register(t);"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 65,
+        "text": "ctx.tools.register(tool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

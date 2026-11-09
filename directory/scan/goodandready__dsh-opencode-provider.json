@@ -1,14 +1,14 @@
 {
   "name": "@goodandready/dsh-opencode-provider",
-  "version": "0.5.36",
-  "scannedAt": "2026-11-05T21:22:51.161Z",
+  "version": "0.5.43",
+  "scannedAt": "2026-11-09T23:06:42.087Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 557,
+        "line": 571,
         "text": "const response = await fetch(path, {"
       },
       {
@@ -18,8 +18,18 @@
       },
       {
         "file": "lib/index.js",
-        "line": 4615,
-        "text": "const response = await fetch(`${registry.replace(/\\/$/, \"\")}/${encodeURIComponent(packageName)}/latest`, { signal: AbortSignal.timeout(8e3) });"
+        "line": 60,
+        "text": "const defaultFetch = (input, init) => globalThis.fetch(input, init);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1437,
+        "text": "const live = await fetchLiveIds(provider, config, apiKey, fetchImpl ?? ((input, init) => globalThis.fetch(input, init)));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3637,
+        "text": "this.fetchImpl = deps.fetchImpl ?? ((input, init) => globalThis.fetch(input, init));"
       }
     ]
   },
@@ -34,21 +44,21 @@
       {
         "file": "lib/index.js",
         "line": 5,
-        "text": "import { appendFile, mkdir, readFile, readdir, stat, writeFile } from \"node:fs/promises\";"
+        "text": "import { appendFile, mkdir, readFile, readdir, rename, stat, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 1940,
+        "line": 2004,
         "text": "await mkdir(directory, { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 1941,
+        "line": 2005,
         "text": "await appendFile(path, line, \"utf8\");"
       },
       {
         "file": "lib/index.js",
-        "line": 1952,
+        "line": 2018,
         "text": "const lines = (await readFile(path, \"utf8\")).split(\"\\n\").filter((line) => line !== \"\");"
       }
     ]
@@ -67,7 +77,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 4651,
+        "line": 4763,
         "text": "const child = spawn(process.execPath, ["
       }
     ]

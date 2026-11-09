@@ -1,0 +1,105 @@
+{
+  "name": "@domitor-syh/dsh-knowbase",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-09T23:07:04.252Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1111,
+        "text": "const response = await options.fetch(pack.url, { signal: deadline.signal });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1207,
+        "text": "this.#fetch = options.fetch ?? ((url, init) => globalThis.fetch(url, init));"
+      },
+      {
+        "file": "lib/ocr-runtime.cjs",
+        "line": 37673,
+        "text": "var http = _interopDefault(require(\"http\"));"
+      },
+      {
+        "file": "lib/ocr-runtime.cjs",
+        "line": 37676,
+        "text": "var https = _interopDefault(require(\"https\"));"
+      },
+      {
+        "file": "lib/ocr-runtime.cjs",
+        "line": 38637,
+        "text": "function fetch(url, opts) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { existsSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import { lstat, mkdir, open, readFile, readdir, realpath, rename, rm, stat, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1075,
+        "text": "await options.fs.writeFile(temp, data);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2446,
+        "text": "await this.#fs.writeFile(path.join(this.#baseDir(base), name), file.data);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2468,
+        "text": "await this.#fs.writeFile(target, text);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5618,
+        "text": "for (const name of Object.keys(schemas)) ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3903,
+        "text": "const { spawn } = await import(\"node:child_process\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3905,
+        "text": "const child = spawn(command, [...args], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "lib/tesseract-core-relaxedsimd.wasm",
+    "lib/tesseract-core-simd.wasm",
+    "lib/tesseract-core.wasm"
+  ],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

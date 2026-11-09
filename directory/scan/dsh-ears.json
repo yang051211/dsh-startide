@@ -1,34 +1,34 @@
 {
   "name": "dsh-ears",
-  "version": "0.4.3",
-  "scannedAt": "2026-10-26T10:05:01.853Z",
+  "version": "0.4.4",
+  "scannedAt": "2026-11-09T23:06:51.411Z",
   "icon": "dsh-ears.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 1052,
+        "line": 1179,
         "text": "const response = await fetch(endpoint, {"
       },
       {
         "file": "lib/index.js",
-        "line": 1138,
+        "line": 1264,
         "text": "const response = await fetch(endpoint, {"
       },
       {
         "file": "lib/index.js",
-        "line": 1397,
+        "line": 1522,
         "text": "const response = await fetch(endpoint, {"
       },
       {
         "file": "lib/index.js",
-        "line": 1591,
+        "line": 1715,
         "text": "const response = await fetch(endpoint, {"
       },
       {
         "file": "lib/index.js",
-        "line": 2003,
+        "line": 2126,
         "text": "return new WebSocket(url);"
       }
     ]
@@ -38,27 +38,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 7,
+        "line": 8,
         "text": "import { mkdir, mkdtemp, open, readFile, rename, rm, stat, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 10,
-        "text": "import { createReadStream, readFileSync } from \"node:fs\";"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 360,
-        "text": "await rm(filePath, { force: true });"
+        "line": 11,
+        "text": "import { createReadStream, existsSync, readFileSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
         "line": 361,
-        "text": "await rm(`${filePath}${DOWNLOAD_PARTIAL_SUFFIX}`, { force: true });"
+        "text": "await rm(filePath, { force: true });"
       },
       {
         "file": "lib/index.js",
         "line": 362,
+        "text": "await rm(`${filePath}${DOWNLOAD_PARTIAL_SUFFIX}`, { force: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 363,
         "text": "await rm(`${filePath}${DOWNLOAD_MARKER_SUFFIX}`, { force: true });"
       }
     ]
@@ -68,8 +68,24 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "import { fork } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 641,
+        "text": "static spawn(options = {}) {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 797,
+        "text": "return WhisperWorkerClient.spawn(options);"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

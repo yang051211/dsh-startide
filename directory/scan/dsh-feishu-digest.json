@@ -1,0 +1,64 @@
+{
+  "name": "dsh-feishu-digest",
+  "version": "1.4.1",
+  "scannedAt": "2026-11-09T23:07:16.598Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "test/listener.test.js",
+        "line": 2,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "test/sign.test.js",
+        "line": 15,
+        "text": "import http from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 30,
+        "text": "import { mkdir, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "test/pipeline.test.js",
+        "line": 2,
+        "text": "import { mkdtemp, readFile, rm } from 'node:fs/promises'"
+      },
+      {
+        "file": "test/pipeline.test.js",
+        "line": 222,
+        "text": "assert.equal(await readFile(join(dir, `${first.id}.md`), 'utf8'), '原文内容')"
+      },
+      {
+        "file": "test/pipeline.test.js",
+        "line": 224,
+        "text": "await rm(dir, { recursive: true, force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

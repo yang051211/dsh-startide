@@ -1,7 +1,7 @@
 {
   "name": "dsh-hashline-edittool",
-  "version": "0.11.0",
-  "scannedAt": "2026-11-04T20:39:05.351Z",
+  "version": "0.11.1",
+  "scannedAt": "2026-11-09T23:06:54.597Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -68,8 +68,18 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 70,
+        "line": 82,
         "text": "export const inject = [\"tools\", \"systemPrompt\", \"fs\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 298,
+        "text": "agent.ctx.tools.register(definition, { when: coldWhen });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 304,
+        "text": "agent.ctx.tools.register(buildDiscoverTool({ onUnlock: unlockColdToolsForSession }));"
       },
       {
         "file": "lib/tools/tool-apply-patch.js",
@@ -80,16 +90,6 @@
         "file": "lib/tools/tool-ast-edit.js",
         "line": 428,
         "text": "return agentCtx.tools.register(buildAstEditTool(io, sandbox));"
-      },
-      {
-        "file": "lib/tools/tool-ast-grep.js",
-        "line": 614,
-        "text": "return agentCtx.tools.register(buildAstGrepTool(io));"
-      },
-      {
-        "file": "lib/tools/tool-delete.js",
-        "line": 339,
-        "text": "return agentCtx.tools.register(buildDeleteTool(io, sandbox));"
       }
     ]
   },
@@ -103,7 +103,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 562,
+        "line": 487,
         "text": "const handle = subprocess.spawn({"
       },
       {
@@ -159,12 +159,12 @@
     },
     {
       "file": "README.md",
-      "line": 377,
+      "line": 382,
       "text": "idle_timeout_ms: 300000 # reclaim an idle language server after 5 min (0 = never)"
     },
     {
       "file": "README.md",
-      "line": 467,
+      "line": 472,
       "text": "$DSH_HOME/plugins/dsh-hashline-edittool/<projectKey>/hash-store.sqlite"
     }
   ],

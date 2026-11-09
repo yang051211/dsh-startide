@@ -1,20 +1,25 @@
 {
   "name": "meshy-dsh",
-  "version": "0.3.4",
-  "scannedAt": "2026-11-09T08:10:11.763Z",
+  "version": "0.3.5",
+  "scannedAt": "2026-11-09T23:06:51.605Z",
   "icon": "meshy-dsh.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 2812,
+        "line": 2855,
         "text": "const res = await fetch(`api/${path}`, body === void 0 ? { cache: \"no-store\" } : {"
       },
       {
         "file": "lib/client.viewer.js",
         "line": 11,
         "text": "l}),o=this.mimeType,s=this.responseType;fetch(a).then(t=>{if(t.status===200||t.status===0){if(t.status===0&&L(`FileLoader: HTTP Status 0 received.`),typeof Read"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 300,
+        "text": "const res = await fetch(url, { headers: { accept: 'application/json' }, signal: AbortSignal.any([done.signal, AbortSignal.timeout(15_000)]) })"
       }
     ]
   },
@@ -24,7 +29,12 @@
       {
         "file": "lib/index.js",
         "line": 9,
-        "text": "import { watch } from 'node:fs'"
+        "text": "import { readFileSync, watch } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 33,
+        "text": "const VERSION = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version"
       }
     ]
   },
@@ -33,7 +43,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 305,
+        "line": 370,
         "text": "ctx.tools.register(SIGN_IN_TOOL)"
       }
     ]
@@ -48,7 +58,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 37,
+        "line": 48,
         "text": "const child = spawn(cmd, args, { env, stdio: ['ignore', 'pipe', 'ignore'], windowsHide: true })"
       }
     ]

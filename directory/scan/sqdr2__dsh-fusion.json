@@ -1,0 +1,147 @@
+{
+  "name": "@sqdr2/dsh-fusion",
+  "version": "0.3.8",
+  "scannedAt": "2026-11-09T23:06:53.749Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 136,
+        "text": "fetch(`${FUSION_API_PATH}?view=history&cursor=${encodeURIComponent(cursor)}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 168,
+        "text": "const res = await fetch(`${FUSION_API_PATH}?taskId=${encodeURIComponent(taskId)}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 485,
+        "text": "const response = await fetch(FUSION_API_PATH, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 644,
+        "text": "fetch(`${FUSION_API_PATH}?view=cache`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 938,
+        "text": "fetch(`${FUSION_API_PATH}?view=settings`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/dsh-fusion.js",
+        "line": 9,
+        "text": "import * as fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/dsh-fusion.js",
+        "line": 10,
+        "text": " lstatSync, mkdirSync, openSync, readFileSync, readSync, readdirSync, readlinkSync, realpathSync, renameSync, rmSync, rmdirSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/dsh-fusion.js",
+        "line": 1977,
+        "text": "return JSON.parse(readFileSync(path, \"utf8\"));"
+      },
+      {
+        "file": "lib/dsh-fusion.js",
+        "line": 1987,
+        "text": "lead: readFileSync(join(dir, \"lead.md\"), \"utf8\"),"
+      },
+      {
+        "file": "lib/dsh-fusion.js",
+        "line": 1988,
+        "text": "worker: readFileSync(join(dir, \"worker.md\"), \"utf8\"),"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/dsh-fusion.js",
+        "line": 3935,
+        "text": "return ctx.tools.get(name) === void 0 ? void 0 : name;"
+      },
+      {
+        "file": "lib/dsh-fusion.js",
+        "line": 5297,
+        "text": "result = await ctx.tools.execute({"
+      },
+      {
+        "file": "lib/dsh-fusion.js",
+        "line": 7861,
+        "text": "!this.#registry || !exec.agent || !this.ctx.tools.get(\"job_output\", exec.agent?.id) || !this.ctx.tools.get(\"job_kill\", exec.agent?.id)) return \"Background comma"
+      },
+      {
+        "file": "lib/dsh-fusion.js",
+        "line": 9653,
+        "text": "this.#dispose.push(ctx.tools.guard((exec) => {"
+      },
+      {
+        "file": "lib/dsh-fusion.js",
+        "line": 11784,
+        "text": "const dispose = [scope.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/dsh-fusion.js",
+        "line": 15,
+        "text": "import { execFile, execFileSync } from \"node:child_process\";"
+      },
+      {
+        "file": "src/host/native-checks.ts",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "src/host/workspace.ts",
+        "line": 1,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 179,
+      "text": "own records:** briefs, check results, usage, cache statistics and settings live in `$DSH_HOME/plugins/dsh-fusion/state.sqlite`. `DSH_HOME` defaults to `~/.dsh`."
+    },
+    {
+      "file": "README.en.md",
+      "line": 180,
+      "text": "del-fusion`, and its whole directory (`$DSH_HOME/plugins/dsh-model-fusion/`) is **migrated** to the new name on first start, so existing tasks, usage and settin"
+    },
+    {
+      "file": "README.md",
+      "line": 167,
+      "text": "- **Fusion 自己的记录：** 任务说明、检查结果、用量、缓存统计和设置，都存在 `$DSH_HOME/plugins/dsh-fusion/state.sqlite`。`DSH_HOME` 默认是 `~/.dsh`。"
+    },
+    {
+      "file": "README.md",
+      "line": 168,
+      "text": "级：** 上一版叫 `dsh-model-fusion`，它的整个数据目录（`$DSH_HOME/plugins/dsh-model-fusion/`）会在首次启动时**整体迁移**到新名字，已有的任务、用量和设置都还在。跨文件系统时会退化成复制数据库和它的 `-wal`/`-shm`/`-journal`，只删除自己"
+    }
+  ],
+  "skippedEntries": []
+}

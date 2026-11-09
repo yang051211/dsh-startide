@@ -1,7 +1,7 @@
 {
   "name": "@daweifu/capability-menu",
-  "version": "0.1.8",
-  "scannedAt": "2026-11-02T23:01:16.581Z",
+  "version": "0.1.9",
+  "scannedAt": "2026-11-09T23:06:49.787Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,39 +18,34 @@
     "evidence": [
       {
         "file": "lib/locations.js",
-        "line": 17,
-        "text": "import { access, cp, readdir, lstat, mkdir, mkdtemp, readFile, realpath, rename, rm, stat, symlink } from 'node:fs/promises';"
+        "line": 18,
+        "text": "import { access, cp, readdir, lstat, mkdir, mkdtemp, readFile, realpath, rename, rm, stat, symlink, writeFile } from 'node:fs/promises';"
       },
       {
         "file": "lib/locations.js",
-        "line": 240,
+        "line": 243,
         "text": "await mkdir(skillsDir, { recursive: true });"
       },
       {
         "file": "lib/locations.js",
-        "line": 255,
+        "line": 259,
         "text": "await mkdir(checkoutRootParent, { recursive: true });"
       },
       {
         "file": "lib/locations.js",
-        "line": 281,
+        "line": 286,
         "text": "await mkdir(skillsDir, { recursive: true });"
       },
       {
         "file": "lib/locations.js",
-        "line": 311,
-        "text": "await rm(targetStage, { recursive: true, force: true }).catch(() => undefined);"
+        "line": 314,
+        "text": "await rm(destination, { recursive: true, force: true });"
       }
     ]
   },
   "agentTools": {
     "hit": true,
     "evidence": [
-      {
-        "file": "cordis.patch.yml",
-        "line": 39,
-        "text": "#   (`ctx.tools.execute`) is untouched, so On-demand capabilities remain executable"
-      },
       {
         "file": "lib/invoke.js",
         "line": 11,
@@ -59,7 +54,7 @@
       {
         "file": "lib/invoke.js",
         "line": 23,
-        "text": "*   `ctx.tools.execute` pipeline, preserving `agent`/`signal`/parent lineage."
+        "text": "*   `ctx.tools.execute` pipeline, preserving the agent and cancellation signal."
       },
       {
         "file": "lib/invoke.js",
@@ -68,8 +63,13 @@
       },
       {
         "file": "lib/invoke.js",
-        "line": 193,
-        "text": "const result = await ctx.tools.execute({"
+        "line": 191,
+        "text": "const result = typeof ctx.tools.resolve === 'function'"
+      },
+      {
+        "file": "lib/invoke.js",
+        "line": 192,
+        "text": "? (await ctx.tools.execute({"
       }
     ]
   },

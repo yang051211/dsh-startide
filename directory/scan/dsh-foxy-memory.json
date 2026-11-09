@@ -1,0 +1,71 @@
+{
+  "name": "dsh-foxy-memory",
+  "version": "0.4.3",
+  "scannedAt": "2026-11-09T23:07:04.744Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 13,
+        "text": "const response = await fetch(API + path, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 330,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "import { appendFile, mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 68,
+        "text": "const saved = JSON.parse(readFileSync(settingsFile, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 91,
+        "text": "await writeFile(temp, body ? `${body}\\n` : '', 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 111,
+        "text": "await mkdir(dataDir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "foxy"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

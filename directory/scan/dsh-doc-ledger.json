@@ -1,0 +1,102 @@
+{
+  "name": "dsh-doc-ledger",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-09T23:07:16.505Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 46,
+        "text": "if (typeof fetch === \"function\") fetch(BASE + \"/api/_clienterror\", { method: \"POST\", body: body, keepalive: true }).catch(function () {});"
+      },
+      {
+        "file": "client.js",
+        "line": 73,
+        "text": "return fetch(BASE + path, options).then(decodeJson);"
+      },
+      {
+        "file": "client.js",
+        "line": 81,
+        "text": "return fetch(BASE + path, { method: \"POST\", headers: { accept: \"application/json\" }, cache: \"no-store\" }).then(decodeJson);"
+      },
+      {
+        "file": "lib/ui.client.js",
+        "line": 277,
+        "text": "fetch(API + \"/file?session=\" + encodeURIComponent(sessionId) + \"&path=\" + encodeURIComponent(path))"
+      },
+      {
+        "file": "lib/ui.client.js",
+        "line": 357,
+        "text": "fetch(API + \"/all\" + (ACTIVE ? \"?session=\" + encodeURIComponent(ACTIVE) : \"\"))"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "pendFileSync, closeSync, existsSync, mkdirSync, openSync, readFileSync, readSync, readdirSync, renameSync, statSync, unlinkSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "index.js",
+        "line": 352,
+        "text": "const parsed = JSON.parse(readFileSync(TITLE_FILE, \"utf8\"));"
+      },
+      {
+        "file": "index.js",
+        "line": 372,
+        "text": "mkdirSync(dirname(TITLE_FILE), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 374,
+        "text": "writeFileSync(tmp, JSON.stringify(out), \"utf8\");"
+      },
+      {
+        "file": "index.js",
+        "line": 451,
+        "text": "const parsed = JSON.parse(gunzipSync(readFileSync(LEDGER_FILE)).toString(\"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "import { execFile, spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "index.js",
+        "line": 1120,
+        "text": "child = spawn(command, args, { detached: true, stdio: \"ignore\", windowsHide: false, env: launchEnv() });"
+      },
+      {
+        "file": "index.js",
+        "line": 1140,
+        "text": "      const child = spawn(join(WINDIR, \"System32\", \"WindowsPowerShell\", \"v1.0\", \"powershell.exe\"), [\"-NoProfile\", \"-NonInteractive\", \"-WindowStyle\", \"Hidden\", \""
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

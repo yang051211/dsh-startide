@@ -1,7 +1,7 @@
 {
   "name": "dsh-a2a-groups",
-  "version": "0.1.61",
-  "scannedAt": "2026-11-09T08:10:05.416Z",
+  "version": "0.1.64",
+  "scannedAt": "2026-11-09T23:06:38.927Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -67,6 +67,11 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/dsh/toolkit.js",
+        "line": 39,
+        "text": "// Measured: `wrk_send` was defined with `output` but no `execute`. `ctx.tools.register` accepted it"
+      },
+      {
         "file": "lib/dsh/tools.js",
         "line": 12,
         "text": "*   DSH  ctx.tools.register(spec + execute)   →  execute(args, exec) → runtime.call(name, args, { sessionId: exec.agent.id })"
@@ -85,11 +90,6 @@
         "file": "lib/dsh/tools.js",
         "line": 325,
         "text": "ctx.tools.register(defineTool({"
-      },
-      {
-        "file": "lib/dsh/wrk/messaging.mjs",
-        "line": 86,
-        "text": "* @returns {object[]} tool definitions, ready for `ctx.tools.register`."
       }
     ]
   },
@@ -140,7 +140,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 68,
+      "line": 94,
       "text": "npm install -g dsh-a2a-groups     # 可选：需要 agent-groups / agent-groups-mcp 两个命令时"
     }
   ],

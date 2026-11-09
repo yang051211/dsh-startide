@@ -1,0 +1,77 @@
+{
+  "name": "dsh-layer-memory",
+  "version": "1.9.0",
+  "scannedAt": "2026-11-09T23:07:16.666Z",
+  "icon": "dsh-layer-memory.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 301,
+        "text": "const response = await fetch(url, { cache: 'no-store', ...(options ?? {}) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 8,
+        "text": "import { mkdir, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 124,
+        "text": "await mkdir(store.dataRoot, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 125,
+        "text": "await writeFile(join(store.dataRoot, '.dashboard-status.json'), JSON.stringify(payload, null, 2), 'utf8');"
+      },
+      {
+        "file": "lib/sessions.js",
+        "line": 11,
+        "text": "import { readdir, readFile, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/sessions.js",
+        "line": 99,
+        "text": "const buffer = await readFile(filePath);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 28,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 401,
+        "text": "const disposers = createMemoryTools(store).map((tool) => ctx.tools.register(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

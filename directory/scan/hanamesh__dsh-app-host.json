@@ -1,7 +1,7 @@
 {
   "name": "@hanamesh/dsh-app-host",
-  "version": "0.6.17",
-  "scannedAt": "2026-11-02T23:01:10.601Z",
+  "version": "0.6.25",
+  "scannedAt": "2026-11-09T23:06:52.748Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -23,12 +23,12 @@
       },
       {
         "file": "dist/install-target/suite.js",
-        "line": 81,
+        "line": 82,
         "text": "return await fetch(workspaceOrigin+path,{...init,headers:{...init.headers,'x-install-target-suite':token,...(method==='GET'?{}:{origin:workspaceOrigin})}});};"
       },
       {
         "file": "dist/install-target/suite.js",
-        "line": 83,
+        "line": 84,
         "text": "get:(query,headers={})=>fetch(origin+ROUTE+(query?'?'+query:''),{headers:{'x-install-target-suite':token,...headers}}),"
       }
     ]
@@ -53,13 +53,13 @@
       },
       {
         "file": "dist/git-process.js",
-        "line": 30,
-        "text": "},close(){if(closed)return;closed=true;try{closeSync(fd);}finally{rmSync(directory,{recursive:true,force:true});}}};"
+        "line": 35,
+        "text": "},close(){if(closed)return;closed=true;try{closeSync(fd);}finally{rmSync(directory,{recursive:true,force:true,maxRetries:4,retryDelay:25});}}};"
       },
       {
         "file": "dist/git-process.js",
-        "line": 62,
-        "text": "if(directory)rmSync(directory,{recursive:true,force:true});"
+        "line": 67,
+        "text": "if(directory)rmSync(directory,{recursive:true,force:true,maxRetries:4,retryDelay:25});"
       }
     ]
   },
@@ -71,6 +71,21 @@
     "hit": true,
     "evidence": [
       {
+        "file": "dist/git-command-worker.js",
+        "line": 2,
+        "text": "import {spawn,spawnSync} from 'node:child_process';"
+      },
+      {
+        "file": "dist/git-command-worker.js",
+        "line": 4,
+        "text": "const stop=()=>{spawnSync(join(process.env.SystemRoot,'System32','taskkill.exe'),['/PID',String(process.pid),'/T','/F'],{stdio:'ignore',windowsHide:true});proce"
+      },
+      {
+        "file": "dist/git-command-worker.js",
+        "line": 8,
+        "text": "const child=spawn(command,args,{...spawnOptions,stdio:[input===undefined?'ignore':'pipe','inherit','inherit'],detached:false});"
+      },
+      {
         "file": "dist/git-process.js",
         "line": 2,
         "text": "import {fork} from 'node:child_process';"
@@ -78,22 +93,7 @@
       {
         "file": "dist/git-worker.js",
         "line": 2,
-        "text": "import {spawn,spawnSync} from 'node:child_process';"
-      },
-      {
-        "file": "dist/git-worker.js",
-        "line": 13,
-        "text": "if(process.platform==='win32'){spawnSync('taskkill',['/pid',String(process.pid),'/T','/F'],{stdio:'ignore'});process.exit(1);}"
-      },
-      {
-        "file": "dist/git-worker.js",
-        "line": 44,
-        "text": "const child=spawn(command,args,{...spawnOptions,stdio:[input===undefined?'ignore':'pipe','inherit','inherit'],detached:false});"
-      },
-      {
-        "file": "dist/guardian.js",
-        "line": 3,
-        "text": "import { spawn } from 'node:child_process';"
+        "text": "import {spawn,spawnSync,fork} from 'node:child_process';"
       }
     ]
   },

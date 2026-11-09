@@ -1,7 +1,7 @@
 {
   "name": "dsh-hoi4-modding",
-  "version": "1.4.1",
-  "scannedAt": "2026-11-05T21:22:58.098Z",
+  "version": "3.2.0",
+  "scannedAt": "2026-11-09T23:06:52.273Z",
   "icon": "dsh-hoi4-modding.svg",
   "network": {
     "hit": false,
@@ -12,23 +12,75 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 10,
-        "text": "import { readFileSync } from 'node:fs'"
+        "line": 15,
+        "text": "import { existsSync } from 'node:fs';"
       },
       {
         "file": "lib/index.js",
-        "line": 54,
-        "text": "raw = readFileSync(SKILL_FILE, 'utf8')"
+        "line": 16,
+        "text": "import { readFile, readdir } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 93,
+        "text": "raw = await readFile(locator, 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 130,
+        "text": "const raw = await readFile(locator, 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 247,
+        "text": "const raw = await readFile(candidate.locator, 'utf8');"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 2,
+        "text": "# 入口同时注册 15 个技能，并通过 @deepseek-ai/dsh-mcp-client 起 python MCP 服务器（20 个工具）。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "* 2. 通过 DSH 自带的 @deepseek-ai/dsh-mcp-client 起一个 stdio MCP 服务器"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 170,
+        "text": "return await import('@deepseek-ai/dsh-mcp-client');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 178,
+        "text": "const candidate = join(root, 'app.asar', 'dsh', 'node_modules', '@deepseek-ai', 'dsh-mcp-client', 'lib', 'index.js');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 223,
+        "text": "export const inject = ['skills', 'tools'];"
+      }
+    ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 17,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 152,
+        "text": "const probe = spawnSync(command, ['-c', 'import sys; print(sys.version_info[0])'], {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
@@ -38,18 +90,14 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
-    "skills"
+    "skills",
+    "tools"
   ],
   "setupHints": [
     {
       "file": "README.md",
-      "line": 98,
-      "text": "- **Python 3.10+** for the bundled scripts (stdlib only; `dds_helper.py` needs `pip install pillow`)."
-    },
-    {
-      "file": "README.md",
-      "line": 242,
-      "text": "- **Python 3.10+**（脚本仅标准库；`dds_helper.py` 需 `pip install pillow`）"
+      "line": 195,
+      "text": "npm 全局安装（npm i -g dsh-hoi4-modding）后，工具包在 npm 全局 node_modules/dsh-hoi4-modding/（Windows 通常是 %APPDATA%\\npm\\node_modules），下文出现的 mcp-server/server.py 都指这个目录下的路径。不走"
     }
   ],
   "skippedEntries": []

@@ -1,0 +1,87 @@
+{
+  "name": "dsh-plugin-restart-button",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-09T23:07:16.845Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 88,
+        "text": "return fetch(API + path, init).then(function (response) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 70,
+        "text": "return normalise(JSON.parse(await readFile(CONFIG_PATH, 'utf8')))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 80,
+        "text": "await mkdir(DSH_HOME, { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 81,
+        "text": "await writeFile(CONFIG_PATH, JSON.stringify(merged, null, 2), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 224,
+        "text": "const child = spawn(launcherBinary.binary, [LAUNCHER_PATH, LAUNCH_LOG, PID_PATH, CANCEL_PATH, exe, IMAGE_NAME, port], {"
+      },
+      {
+        "file": "lib/relauncher.mjs",
+        "line": 20,
+        "text": "import { execFileSync, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/relauncher.mjs",
+        "line": 160,
+        "text": "const child = spawn(exe, [], { cwd: exeDir, env: appEnv(), detached: true, stdio: 'ignore', windowsHide: false })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

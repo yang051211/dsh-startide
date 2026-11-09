@@ -1,7 +1,7 @@
 {
   "name": "dsh-grok-search",
-  "version": "0.2.0",
-  "scannedAt": "2026-11-06T20:48:53.443Z",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-09T23:06:56.599Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -10,6 +10,11 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "src/core/config-opener.mjs",
+        "line": 2,
+        "text": "import { statSync } from 'node:fs';"
+      },
       {
         "file": "src/core/control-intent-store.mjs",
         "line": 4,
@@ -29,11 +34,6 @@
         "file": "src/core/control-intent-store.mjs",
         "line": 338,
         "text": "mkdirSync(root, { recursive: true });"
-      },
-      {
-        "file": "src/core/control-intent-store.mjs",
-        "line": 343,
-        "text": "try { writeFileSync(fd, bytes); fsyncSync(fd); }"
       }
     ]
   },
@@ -45,14 +45,19 @@
     "hit": true,
     "evidence": [
       {
+        "file": "src/core/config-opener.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
         "file": "src/core/mcp-search.mjs",
         "line": 1,
         "text": "import { spawn } from 'node:child_process';"
       },
       {
         "file": "src/core/mcp-search.mjs",
-        "line": 329,
-        "text": "    const child = spawn(executable, executableArgs, { env: capturedEnvironment ?? executionEnvironment(envOverrides, configPath), shell: false, windowsHide: tru"
+        "line": 378,
+        "text": "    const child = spawn(executable, executableArgs, { env: capturedEnvironment ?? executionEnvironment(envOverrides, configPath, request.testPrimary === true), "
       },
       {
         "file": "src/core/program-discovery.mjs",
@@ -63,11 +68,6 @@
         "file": "src/core/program-discovery.mjs",
         "line": 85,
         "text": "const child = spawn(actual, ['--version'], { env: environment, windowsHide: true, shell: false, stdio: ['ignore', 'pipe', 'pipe'] });"
-      },
-      {
-        "file": "src/settings-ui.mjs",
-        "line": 1,
-        "text": "import { spawn } from 'node:child_process';"
       }
     ]
   },

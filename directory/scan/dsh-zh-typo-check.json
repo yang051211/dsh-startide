@@ -1,0 +1,86 @@
+{
+  "name": "dsh-zh-typo-check",
+  "version": "0.2.3",
+  "scannedAt": "2026-11-09T23:06:53.462Z",
+  "icon": "dsh-zh-typo-check.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1057,
+        "text": "void fetch('/zh-typo-model/log?msg=' + encodeURIComponent(String(message))).catch(() => {})"
+      },
+      {
+        "file": "client.js",
+        "line": 1652,
+        "text": "fetch(url, { cache: 'no-store', signal: controller.signal })"
+      },
+      {
+        "file": "client.js",
+        "line": 2159,
+        "text": "const response = await fetch(MODEL_ENDPOINT + 'status', { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 2189,
+        "text": "const response = await fetch(url, { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 2567,
+        "text": "try { void fetch('/zh-typo-model/log?msg=' + encodeURIComponent(message)).catch(() => {}) } catch { /* ignore */ }"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import fsp from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 230,
+        "text": "await fsp.mkdir(dir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 259,
+        "text": "hash.update(await fsp.readFile(part))"
+      },
+      {
+        "file": "index.js",
+        "line": 262,
+        "text": "await fsp.rm(part, { force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

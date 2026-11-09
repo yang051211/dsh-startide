@@ -1,7 +1,7 @@
 {
   "name": "dsh-dafeiyu-home",
-  "version": "1.3.4",
-  "scannedAt": "2026-11-04T07:56:01.048Z",
+  "version": "2.0.2",
+  "scannedAt": "2026-11-09T23:06:49.870Z",
   "icon": "dsh-dafeiyu-home.svg",
   "network": {
     "hit": true,
@@ -39,27 +39,27 @@
       {
         "file": "index.js",
         "line": 10,
-        "text": "import { existsSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from 'node:fs'"
+        "text": "import { existsSync, readFileSync, readdirSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 23,
+        "line": 47,
         "text": "const PKG = JSON.parse(readFileSync(join(PKG_DIR, 'package.json'), 'utf8'))"
       },
       {
         "file": "index.js",
-        "line": 85,
+        "line": 112,
         "text": "const buf = readFileSync(file)"
       },
       {
         "file": "index.js",
-        "line": 530,
-        "text": "try { sched = JSON.parse(readFileSync(join(stateHome(), 'scheduler.json'), 'utf8')) } catch {}"
+        "line": 404,
+        "text": "const j = JSON.parse(readFileSync(join(stateHome(), 'reading-log.json'), 'utf8'))"
       },
       {
         "file": "index.js",
-        "line": 620,
-        "text": "const sched = JSON.parse(readFileSync(join(stateHome(), 'scheduler.json'), 'utf8'))"
+        "line": 467,
+        "text": "try { unlinkSync(join(stateHome(), 'weather.json')) } catch {}"
       }
     ]
   },
@@ -70,6 +70,16 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/agent-tools.mjs",
+        "line": 6,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/agent-tools.mjs",
+        "line": 77,
+        "text": "execFile('/bin/bash', ['-lc', line], { timeout: TIMEOUT_MS, maxBuffer: 2 * 1024 * 1024, cwd: HOME }, (err, stdout, stderr) => {"
+      },
       {
         "file": "lib/asr.mjs",
         "line": 23,
@@ -84,16 +94,6 @@
         "file": "lib/audio-analyze.mjs",
         "line": 54,
         "text": "child = spawn(PYTHON, args, { cwd: ENGINE_DIR })"
-      },
-      {
-        "file": "lib/image-pack.mjs",
-        "line": 14,
-        "text": "import { execFile } from 'node:child_process'"
-      },
-      {
-        "file": "lib/napcat.mjs",
-        "line": 23,
-        "text": "import { execFile, spawn } from 'node:child_process'"
       }
     ]
   },

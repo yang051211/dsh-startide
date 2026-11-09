@@ -1,0 +1,67 @@
+{
+  "name": "lin-answer-now",
+  "version": "1.2.3",
+  "scannedAt": "2026-11-09T23:07:09.359Z",
+  "icon": "lin-answer-now.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 187,
+        "text": "fetch(ROUTE, { headers: { accept: \"application/json\" } })"
+      },
+      {
+        "file": "client.js",
+        "line": 215,
+        "text": "const response = await fetch(ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 3,
+        "text": "import { mkdir, readFile, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "index.js",
+        "line": 75,
+        "text": "const raw = await readFile(filePath, \"utf8\");"
+      },
+      {
+        "file": "index.js",
+        "line": 89,
+        "text": "await mkdir(dirname(filePath), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 90,
+        "text": "await writeFile(filePath, `${JSON.stringify(current, null, 2)}\\n`, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "systemPrompt"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

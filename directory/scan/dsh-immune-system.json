@@ -1,7 +1,7 @@
 {
   "name": "dsh-immune-system",
-  "version": "1.0.32",
-  "scannedAt": "2026-11-08T14:57:23.568Z",
+  "version": "1.0.41",
+  "scannedAt": "2026-11-09T23:06:40.013Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "dsh-immune-system/dist/core/selfnoise.js",
-        "line": 18,
-        "text": "import { existsSync, readFileSync, realpathSync } from 'node:fs';"
-      },
-      {
-        "file": "dsh-immune-system/dist/core/selfnoise.js",
-        "line": 85,
-        "text": "const pkg = JSON.parse(readFileSync(resolve(root, 'package.json'), 'utf8'));"
-      },
-      {
-        "file": "dsh-immune-system/dist/core/store/global.js",
+        "file": "dsh-immune-system/dist/core/connect.js",
         "line": 16,
-        "text": "import { existsSync } from 'node:fs';"
+        "text": "import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
       },
       {
-        "file": "dsh-immune-system/dist/core/store/index.js",
-        "line": 1,
-        "text": "import { statSync } from 'node:fs';"
+        "file": "dsh-immune-system/dist/core/connect.js",
+        "line": 110,
+        "text": "const raw = readFileSync(configPath, 'utf8');"
       },
       {
-        "file": "dsh-immune-system/dist/core/store/models.js",
-        "line": 18,
-        "text": "import { existsSync } from 'node:fs';"
+        "file": "dsh-immune-system/dist/core/connect.js",
+        "line": 131,
+        "text": "writeFileSync(configPath, `${JSON.stringify(config, null, 2)}\\n`, 'utf8');"
+      },
+      {
+        "file": "dsh-immune-system/dist/core/connect.js",
+        "line": 134,
+        "text": "mkdirSync(dirname(configPath), { recursive: true });"
+      },
+      {
+        "file": "dsh-immune-system/dist/core/connect.js",
+        "line": 135,
+        "text": "writeFileSync(configPath, `${JSON.stringify(config, null, 2)}\\n`, 'utf8');"
       }
     ]
   },

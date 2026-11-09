@@ -1,0 +1,83 @@
+{
+  "name": "dsh-connect-teleagent",
+  "version": "1.2.6",
+  "scannedAt": "2026-11-09T23:06:44.477Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/adapter.js",
+        "line": 117,
+        "text": "response = await fetch(INFER_URL, {"
+      },
+      {
+        "file": "lib/rpc.js",
+        "line": 42,
+        "text": "async fetch(request) {"
+      },
+      {
+        "file": "lib/service.js",
+        "line": 55,
+        "text": "response = await fetch(url, {"
+      },
+      {
+        "file": "lib/sign.js",
+        "line": 122,
+        "text": "* ⚠️ `body` MUST be the exact string/Buffer passed to fetch(). The gateway"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/credentials.js",
+        "line": 15,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/credentials.js",
+        "line": 174,
+        "text": "const state = JSON.parse(await readFile(join(homedir(), '.dsh', 'jet-hub', 'state.json'), 'utf8'));"
+      },
+      {
+        "file": "lib/model-config.js",
+        "line": 24,
+        "text": "import { writeFile, mkdir } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/model-config.js",
+        "line": 25,
+        "text": "import { readFileSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/model-config.js",
+        "line": 118,
+        "text": "const text = readFileSync(CONFIG_PATH, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "credentials",
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

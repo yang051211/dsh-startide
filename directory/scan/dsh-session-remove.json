@@ -1,19 +1,19 @@
 {
   "name": "dsh-session-remove",
-  "version": "1.0.6",
-  "scannedAt": "2026-10-31T13:58:03.041Z",
+  "version": "1.0.9",
+  "scannedAt": "2026-11-09T23:07:07.854Z",
   "icon": "dsh-session-remove.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 307,
+        "line": 351,
         "text": "const response = await fetch(path, {"
       },
       {
         "file": "index.js",
-        "line": 1087,
+        "line": 834,
         "text": "const response = await fetch(url, {"
       }
     ]
@@ -23,28 +23,18 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 49,
-        "text": "import { appendFile, lstat, readdir, realpath, rm, rmdir } from \"node:fs/promises\";"
+        "line": 54,
+        "text": "import { appendFile, rm } from \"node:fs/promises\";"
       },
       {
         "file": "index.js",
-        "line": 642,
+        "line": 703,
         "text": "await rm(directory, { recursive: true, force: true });"
       },
       {
         "file": "index.js",
-        "line": 811,
-        "text": "await rm(file.path, { force: true });"
-      },
-      {
-        "file": "index.js",
-        "line": 901,
-        "text": "await rm(path, { force: true });"
-      },
-      {
-        "file": "index.js",
-        "line": 915,
-        "text": "await rm(aliasDir, { recursive: true, force: true });"
+        "line": 1044,
+        "text": "void appendFile(state.logPath, `${entry.time} ${line}\\n`, \"utf8\").catch(() => {});"
       }
     ]
   },

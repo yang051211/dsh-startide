@@ -1,41 +1,57 @@
 {
   "name": "@dsh-ai-providers/runtime",
-  "version": "0.6.0",
-  "scannedAt": "2026-11-05T21:22:57.322Z",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-09T23:06:51.313Z",
   "icon": "dsh-ai-providers__runtime.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 150,
+        "line": 151,
         "text": "const response = await fetch(`${AI_API_PREFIX}${AI_API_ROUTES.capabilities}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 173,
+        "line": 174,
         "text": "const response = await fetch(`${AI_API_PREFIX}${AI_API_ROUTES.probe}?capability=${this.capability}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 682,
+        "line": 683,
         "text": "const response = await fetch(`${AI_API_PREFIX}${AI_API_ROUTES.concurrency}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1040,
+        "line": 1041,
         "text": "const response = await fetch(`${AI_API_PREFIX}${AI_API_ROUTES.llm}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1068,
+        "line": 1069,
         "text": "const response = await fetch(`${AI_API_PREFIX}${AI_API_ROUTES.llmProbe}?route=${encodeURIComponent(route)}&model=${encodeURIComponent(model)}`, {"
       }
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "import { appendFile, mkdir } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1793,
+        "text": "await mkdir(directory, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1795,
+        "text": "await appendFile(join(directory, `trace-${day}.jsonl`), items.map((item) => JSON.stringify(item)).join(\"\\n\") + \"\\n\");"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,

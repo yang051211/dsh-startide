@@ -1,0 +1,81 @@
+{
+  "name": "dsh-endpoint",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-09T23:06:53.219Z",
+  "icon": "dsh-endpoint.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/client.js",
+        "line": 250,
+        "text": "fetch('/dsh-endpoint/state')"
+      },
+      {
+        "file": "src/client.js",
+        "line": 260,
+        "text": "fetch('/dsh-endpoint/config')"
+      },
+      {
+        "file": "src/client.js",
+        "line": 313,
+        "text": "fetch('/dsh-endpoint/config', {"
+      },
+      {
+        "file": "src/server.js",
+        "line": 1,
+        "text": "import { createServer } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/admin.js",
+        "line": 1,
+        "text": "import { readFile, rename, writeFile, mkdir } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/admin.js",
+        "line": 15,
+        "text": "const raw = await readFile(join(root, 'config.json'), 'utf8')"
+      },
+      {
+        "file": "src/admin.js",
+        "line": 25,
+        "text": "await mkdir(root, { recursive: true })"
+      },
+      {
+        "file": "src/admin.js",
+        "line": 28,
+        "text": "await writeFile(tmp, `${JSON.stringify(overlay, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "src/mirror.js",
+        "line": 1,
+        "text": "import { mkdir } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

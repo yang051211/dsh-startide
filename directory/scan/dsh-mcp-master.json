@@ -1,7 +1,7 @@
 {
   "name": "dsh-mcp-master",
-  "version": "0.1.0",
-  "scannedAt": "2026-10-26T10:09:08.176Z",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-09T23:07:14.077Z",
   "icon": "dsh-mcp-master.svg",
   "network": {
     "hit": true,
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 3176,
+        "line": 3182,
         "text": "var inject = [\"tools\"];"
       },
       {
         "file": "lib/index.js",
-        "line": 3205,
+        "line": 3211,
         "text": "if (agent.ctx.tools) return agent.ctx.tools;"
       }
     ]
@@ -98,8 +98,8 @@
       },
       {
         "file": "lib/index.js",
-        "line": 1352,
-        "text": "const child = spawn(isWin ? quoteWindows(spec.command) : spec.command, isWin ? spec.args.map(quoteWindows) : spec.args, {"
+        "line": 1358,
+        "text": "const child = spawn(isWin ? buildWindowsCommandLine(spec.command, spec.args) : spec.command, isWin ? [] : spec.args, {"
       }
     ]
   },

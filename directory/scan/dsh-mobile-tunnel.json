@@ -1,0 +1,98 @@
+{
+  "name": "dsh-mobile-tunnel",
+  "version": "1.1.5",
+  "scannedAt": "2026-11-09T23:07:01.532Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 90,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 921,
+        "text": "const response = await fetch(REGISTER_DEVICE_ROUTE, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 973,
+        "text": "const response = await fetch(SESSION_ROUTE, { cache: 'no-store', headers: { accept: 'application/json' } });"
+      },
+      {
+        "file": "client/client.js",
+        "line": 996,
+        "text": "await fetch(SESSION_ROUTE, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 1003,
+        "text": "await fetch(SESSION_ROUTE, { method: 'DELETE' });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/agent.js",
+        "line": 1,
+        "text": "import { appendFileSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/agent.js",
+        "line": 26,
+        "text": "writeFileSync(MUX_LOG_PATH, '');"
+      },
+      {
+        "file": "dist/agent.js",
+        "line": 31,
+        "text": "appendFileSync(MUX_LOG_PATH, `${new Date().toISOString()} ${line}\\n`);"
+      },
+      {
+        "file": "dist/auth-cookies.js",
+        "line": 1,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/dsh-credentials.js",
+        "line": 1,
+        "text": "import { appendFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/auth.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "dist/auth.js",
+        "line": 147,
+        "text": "const child = spawn(command, args, { detached: true, stdio: 'ignore' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "client/client.js",
+    "dist/app-qr.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

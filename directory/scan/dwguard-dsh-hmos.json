@@ -1,7 +1,7 @@
 {
   "name": "dwguard-dsh-hmos",
-  "version": "0.8.8",
-  "scannedAt": "2026-11-08T14:57:20.537Z",
+  "version": "0.9.0",
+  "scannedAt": "2026-11-09T23:06:46.843Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/design.js",
-        "line": 19,
-        "text": "import { readFile, realpath } from 'node:fs/promises';"
+        "file": "bin/dwguard.mjs",
+        "line": 16,
+        "text": "import { existsSync, readFileSync, statfsSync } from 'node:fs';"
       },
       {
-        "file": "lib/design.js",
-        "line": 1396,
-        "text": "const buffers = await Promise.all(batch.map((entry) => readFile(entry.file)));"
+        "file": "bin/dwguard.mjs",
+        "line": 17,
+        "text": "import { mkdir, readdir, readFile, rename, rm, stat, writeFile } from 'node:fs/promises';"
       },
       {
-        "file": "lib/design.js",
-        "line": 1412,
-        "text": "const queryImage = decodePng(await readFile(queryPath));"
+        "file": "bin/dwguard.mjs",
+        "line": 23,
+        "text": "const CLI_VERSION = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')).version;"
       },
       {
-        "file": "lib/design.js",
-        "line": 1429,
-        "text": "const response = await client({ images: [await readFile(queryPath)] });"
+        "file": "bin/dwguard.mjs",
+        "line": 72,
+        "text": "const data = await readFile(file);"
       },
       {
-        "file": "lib/design.js",
-        "line": 1444,
-        "text": "features = imageFeatures(decodePng(await readFile(entry.file)));"
+        "file": "bin/dwguard.mjs",
+        "line": 112,
+        "text": "await mkdir(dirname(file), { recursive: true });"
       }
     ]
   },
@@ -82,6 +82,16 @@
     "hit": true,
     "evidence": [
       {
+        "file": "bin/dwguard.mjs",
+        "line": 18,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "bin/dwguard.mjs",
+        "line": 56,
+        "text": "const result = spawnSync(command, process.platform === 'win32' ? args.map(shellArg) : args, {"
+      },
+      {
         "file": "lib/tools/deveco.js",
         "line": 11,
         "text": "import { spawn } from 'node:child_process';"
@@ -95,16 +105,6 @@
         "file": "lib/tools/deveco.js",
         "line": 113,
         "text": "spawn('taskkill', ['/PID', String(pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' });"
-      },
-      {
-        "file": "lib/tools/deveco.js",
-        "line": 132,
-        "text": "const killer = spawn('taskkill', ['/PID', String(pid), '/T', '/F'], {"
-      },
-      {
-        "file": "lib/tools/deveco.js",
-        "line": 163,
-        "text": "const child = spawn(command, process.platform === 'win32' ? args.map(quoteShellArg) : [...args], {"
       }
     ]
   },

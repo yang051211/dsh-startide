@@ -1,0 +1,76 @@
+{
+  "name": "dsh-card-export",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-09T23:07:16.433Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/first-run.mjs",
+        "line": 17,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/first-run.mjs",
+        "line": 42,
+        "text": "try { return JSON.parse(readFileSync(file, 'utf8')) } catch { return null }"
+      },
+      {
+        "file": "lib/first-run.mjs",
+        "line": 82,
+        "text": "mkdirSync(configDir(), { recursive: true })"
+      },
+      {
+        "file": "lib/first-run.mjs",
+        "line": 83,
+        "text": "writeFileSync(file, JSON.stringify(report, null, 2), 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "import { watch } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/render/rasterize.mjs",
+        "line": 27,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/render/rasterize.mjs",
+        "line": 85,
+        "text": "execFile(bin, args, { timeout, windowsHide: true, maxBuffer: 64 * 1024 * 1024 },"
+      },
+      {
+        "file": "tools/smoke-crop.mjs",
+        "line": 72,
+        "text": "const { execFileSync } = await import('node:child_process')"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

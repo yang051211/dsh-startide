@@ -1,34 +1,34 @@
 {
   "name": "dsh-cognition-engine",
-  "version": "0.12.0",
-  "scannedAt": "2026-11-08T14:57:21.517Z",
+  "version": "0.13.0",
+  "scannedAt": "2026-11-09T23:06:49.634Z",
   "icon": "dsh-cognition-engine.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 500,
+        "line": 507,
         "text": "fetch(path, {"
       },
       {
         "file": "client.js",
-        "line": 929,
+        "line": 937,
         "text": "const res = await fetch('/cognition-engine/snapshots', { cache: 'no-store' });"
       },
       {
         "file": "client.js",
-        "line": 941,
+        "line": 949,
         "text": "const res = await fetch('/cognition-engine/audit?limit=5', { cache: 'no-store' });"
       },
       {
         "file": "client.js",
-        "line": 2029,
+        "line": 2091,
         "text": "const res = await fetch('/cognition-engine/persona', { cache: 'no-store' });"
       },
       {
         "file": "client.js",
-        "line": 2055,
+        "line": 2117,
         "text": "const res = await fetch(path, options);"
       }
     ]
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/audit.js",
-        "line": 9,
-        "text": "import { appendFile, mkdir, readFile, rename, stat } from 'node:fs/promises';"
+        "file": "lib/agents_file.js",
+        "line": 27,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
       },
       {
-        "file": "lib/audit.js",
-        "line": 28,
-        "text": "await mkdir(dirname(this.filePath), { recursive: true });"
+        "file": "lib/agents_file.js",
+        "line": 95,
+        "text": "const previous = existsSync(this.filePath) ? readFileSync(this.filePath, 'utf8') : null;"
       },
       {
-        "file": "lib/audit.js",
-        "line": 29,
-        "text": "await appendFile(this.filePath, line, 'utf8');"
+        "file": "lib/agents_file.js",
+        "line": 105,
+        "text": "mkdirSync(dirname(this.filePath), { recursive: true });"
       },
       {
-        "file": "lib/audit.js",
-        "line": 37,
-        "text": "const raw = await readFile(this.filePath, 'utf8');"
+        "file": "lib/agents_file.js",
+        "line": 107,
+        "text": "writeFileSync(tmp, preview.content, 'utf8');"
       },
       {
-        "file": "lib/budget.js",
-        "line": 22,
-        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+        "file": "lib/agents_file.js",
+        "line": 131,
+        "text": "writeFileSync(this.filePath, '', 'utf8');"
       }
     ]
   },
@@ -73,17 +73,17 @@
       },
       {
         "file": "lib/index.js",
-        "line": 47,
+        "line": 50,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "lib/index.js",
-        "line": 522,
+        "line": 645,
         "text": "const tools = (ctx.get?.('tools') ?? ctx.tools);"
       },
       {
         "file": "lib/index.js",
-        "line": 2098,
+        "line": 2381,
         "text": "disposers.push(tools.register(definition));"
       }
     ]

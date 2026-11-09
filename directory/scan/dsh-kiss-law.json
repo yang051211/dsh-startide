@@ -1,0 +1,110 @@
+{
+  "name": "dsh-kiss-law",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-09T23:07:00.379Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "examples/demo-backtrack-run.mjs",
+        "line": 13,
+        "text": "const res = await fetch('https://api.deepseek.com/chat/completions', {"
+      },
+      {
+        "file": "examples/demo-tool-loop.mjs",
+        "line": 17,
+        "text": "const res = await fetch('https://api.deepseek.com/chat/completions', {"
+      },
+      {
+        "file": "src/core/_engine_base_20260929-preXSUB12.mjs",
+        "line": 123,
+        "text": "const REMOTE_SRC = /\\b(curl|wget|iwr|Invoke-WebRequest)\\b/i;"
+      },
+      {
+        "file": "src/core/attribution.mjs",
+        "line": 433,
+        "text": "// [2026-10-29 · lexicon stop-gap (xiaoD #29)] PS network verbs added: Invoke-RestMethod used to"
+      },
+      {
+        "file": "src/core/attribution.mjs",
+        "line": 436,
+        "text": "MD_POS + '(curl|curl\\\\.exe|wget|scp|rsync|ftp|nc|ssh|Invoke-RestMethod|Invoke-WebRequest|iwr|irm|Start-BitsTransfer)\\\\b', 'i').test(cmd)) return 'network-send';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "examples/demo-backtrack-run.mjs",
+        "line": 8,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "examples/demo-backtrack-run.mjs",
+        "line": 10,
+        "text": "const KEY = readFileSync('C:/Users/Administrator/.workbuddy/deepseek_api_key.txt', 'utf-8').trim();"
+      },
+      {
+        "file": "examples/demo-tool-loop.mjs",
+        "line": 12,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "examples/demo-tool-loop.mjs",
+        "line": 14,
+        "text": "const KEY = readFileSync('C:/Users/Administrator/.workbuddy/deepseek_api_key.txt', 'utf-8').trim();"
+      },
+      {
+        "file": "src/index.js",
+        "line": 40,
+        "text": "import { writeFileSync, appendFileSync, readFileSync, readdirSync, existsSync, mkdirSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 35,
+        "text": "//   - Tool registration: ctx.tools.register(defineTool({ name, description, parameters, output:{schema,render}, async execute(args, exec) }))"
+      },
+      {
+        "file": "src/index.js",
+        "line": 828,
+        "text": "const inject = ['tools'];"
+      },
+      {
+        "file": "src/index.js",
+        "line": 1671,
+        "text": "//      If a tool with side effects is ever added, it must go through `ctx.tools.register` directly and"
+      },
+      {
+        "file": "src/index.js",
+        "line": 1678,
+        "text": "return ctx.tools.register(def);"
+      },
+      {
+        "file": "src/index.js",
+        "line": 1884,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

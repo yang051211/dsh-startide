@@ -1,0 +1,97 @@
+{
+  "name": "dsh-embodied-memory",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-09T23:06:56.806Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 69,
+        "text": "fetch(`${API}/state`, { cache: 'no-store' }).then((r) => r.json()),"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 70,
+        "text": "fetch(`${API}/config`, { cache: 'no-store' }).then((r) => r.json())"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 88,
+        "text": "const res = await fetch(`${API}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 73,
+        "text": "const raw = JSON.parse(readFileSync(CONFIG_PATH, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 82,
+        "text": "mkdirSync(CONFIG_DIR, { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 83,
+        "text": "writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2), 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 152,
+        "text": "const text = readFileSync(cred, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 200,
+        "text": "execFile('netstat', ['-ano'], { windowsHide: true }, (err, stdout) => {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 216,
+        "text": "execFile('taskkill', ['/PID', pid, '/T', '/F'], { windowsHide: true }, () => {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 361,
+        "text": "child = spawn(svc.exe, svc.args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

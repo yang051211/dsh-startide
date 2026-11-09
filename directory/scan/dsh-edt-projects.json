@@ -1,0 +1,114 @@
+{
+  "name": "dsh-edt-projects",
+  "version": "0.11.0",
+  "scannedAt": "2026-11-09T23:06:58.741Z",
+  "icon": "dsh-edt-projects.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bsl.mjs",
+        "line": 25,
+        "text": "import { createWriteStream, existsSync, mkdirSync, readdirSync, rmSync, renameSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/bsl.mjs",
+        "line": 104,
+        "text": "mkdirSync(join(target, '..'), { recursive: true });"
+      },
+      {
+        "file": "lib/bsl.mjs",
+        "line": 131,
+        "text": "rmSync(partial, { force: true });"
+      },
+      {
+        "file": "lib/config-file.mjs",
+        "line": 5,
+        "text": "import { existsSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/config-file.mjs",
+        "line": 13,
+        "text": "const config = JSON.parse(readFileSync(path, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bsl.mjs",
+        "line": 380,
+        "text": "* dsh-mcp-client (он не объявляет capability roots)."
+      },
+      {
+        "file": "lib/index.js",
+        "line": 25,
+        "text": "export const inject = ['tools', 'workingDirectory'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 228,
+        "text": "* Собирает конфиг для @deepseek-ai/dsh-mcp-client: остаётся только то, что"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 395,
+        "text": "return ctx.tools"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 502,
+        "text": "const McpClient = await import('@deepseek-ai/dsh-mcp-client');"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bsl.mjs",
+        "line": 24,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/bsl.mjs",
+        "line": 395,
+        "text": "return spawn(java, ['-jar', jar, 'lsp', '--mcp', `--server.port=${actualPort}`], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "workingDirectory"
+  ],
+  "setupHints": [
+    {
+      "file": "cordis.patch.yml",
+      "line": 75,
+      "text": "# BSL Language Server: 10 инструментов, нужны эпизодически."
+    },
+    {
+      "file": "README.md",
+      "line": 5,
+      "text": "[EDT-MCP](https://github.com/DitriXNew/EDT-MCP), поднимает **BSL Language Server**"
+    },
+    {
+      "file": "README.md",
+      "line": 33,
+      "text": "EDT, BSL Language Server по требованию, MCP-трекер и `v8std` (стандарты 1С и"
+    }
+  ],
+  "skippedEntries": []
+}
