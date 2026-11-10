@@ -1,14 +1,14 @@
 {
   "name": "dsh-todo-time-log",
-  "version": "0.6.4",
-  "scannedAt": "2026-11-09T08:10:10.121Z",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-10T08:48:44.934Z",
   "icon": "dsh-todo-time-log.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 2888,
+        "line": 3432,
         "text": "response = await fetch(url, {"
       }
     ]
@@ -18,28 +18,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 1520,
+        "line": 1575,
         "text": "const fsService = ctx.get('fs');"
       },
       {
         "file": "lib/index.js",
-        "line": 1525,
+        "line": 1580,
         "text": "const fsService = ctx.get('fs');"
       },
       {
-        "file": "lib/store.js",
-        "line": 39,
-        "text": "import { promises as fsp } from 'node:fs';"
+        "file": "lib/settings.js",
+        "line": 19,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';"
       },
       {
-        "file": "lib/store.js",
-        "line": 522,
-        "text": "await fsp.mkdir(path.dirname(file), { recursive: true });"
+        "file": "lib/settings.js",
+        "line": 115,
+        "text": "const text = await readFile(file, 'utf8');"
       },
       {
-        "file": "lib/store.js",
-        "line": 524,
-        "text": "await fsp.writeFile(tmp, text, 'utf8');"
+        "file": "lib/settings.js",
+        "line": 150,
+        "text": "await mkdir(dirname(file), { recursive: true });"
       }
     ]
   },
@@ -48,12 +48,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 240,
+        "line": 244,
         "text": "export const inject = ['webServer', 'tools'];"
       },
       {
         "file": "lib/index.js",
-        "line": 1569,
+        "line": 1625,
         "text": "scope.effect(() => scope.tools.register(createTodoTool(store, fileIndex, getWorkspaceRoot)));"
       }
     ]

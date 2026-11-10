@@ -1,14 +1,14 @@
 {
   "name": "dsh-m",
-  "version": "0.12.11",
-  "scannedAt": "2026-11-09T23:06:36.427Z",
+  "version": "0.12.13",
+  "scannedAt": "2026-11-10T08:48:34.975Z",
   "icon": "dsh-m.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 2691,
+        "line": 2692,
         "text": "const res = await fetch(API, {"
       },
       {
@@ -58,22 +58,22 @@
       },
       {
         "file": "lib/tools.js",
-        "line": 95,
+        "line": 97,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/tools.js",
-        "line": 193,
+        "line": 195,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/tools.js",
-        "line": 238,
+        "line": 240,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/tools.js",
-        "line": 291,
+        "line": 301,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
@@ -88,7 +88,7 @@
       },
       {
         "file": "lib/core/dsh-cli.js",
-        "line": 420,
+        "line": 441,
         "text": "const child = spawn(command, args, {"
       },
       {
@@ -99,12 +99,12 @@
       {
         "file": "lib/core/dsh-version.js",
         "line": 69,
-        "text": "child = spawn('dsh', ['--version'], { stdio: ['ignore', 'pipe', 'ignore'], shell: process.platform === 'win32' });"
+        "text": "// ADR-0034（issue #65）：chip 第三通路改走 dshArgv 解析——载体宿主 spawn(node, cli.js) 复活；"
       },
       {
-        "file": "lib/core/restart.js",
-        "line": 10,
-        "text": "import { execFileSync, spawn } from 'node:child_process';"
+        "file": "lib/core/dsh-version.js",
+        "line": 73,
+        "text": "child = spawn(argv.file, [...argv.args, '--version'], { stdio: ['ignore', 'pipe', 'ignore'], shell: argv.viaShell });"
       }
     ]
   },

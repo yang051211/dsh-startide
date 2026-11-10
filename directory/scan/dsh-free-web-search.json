@@ -1,0 +1,85 @@
+{
+  "name": "dsh-free-web-search",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-10T08:48:51.255Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 220,
+        "text": "return (await fetch(`${BRIDGE_PREFIX}/describe`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 227,
+        "text": "return (await fetch(`${BRIDGE_PREFIX}/mutate`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 234,
+        "text": "return (await fetch(`${BRIDGE_PREFIX}/raw-search`, {"
+      },
+      {
+        "file": "lib/client/FreeSearchCard.js",
+        "line": 143,
+        "text": "const response = await fetch(`${BRIDGE_PREFIX}/describe`, {"
+      },
+      {
+        "file": "lib/client/FreeSearchCard.js",
+        "line": 151,
+        "text": "const response = await fetch(`${BRIDGE_PREFIX}/mutate`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1746,
+        "text": "const d = sctx.tools.register(createEngineTestTool(runEngineTest));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1752,
+        "text": "const d = sctx.tools.register(createPlatformSearchTool(() => current().platforms ?? [\"github\", \"reddit\"]));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1758,
+        "text": "const d = sctx.tools.register(createAdvancedSearchTool(provider));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1764,
+        "text": "const d = sctx.tools.register(createWebFetchTool());"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: tsdown -c tsdown.prepare.config.ts"
+      }
+    ]
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

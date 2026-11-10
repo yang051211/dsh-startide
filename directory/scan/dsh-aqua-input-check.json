@@ -1,7 +1,7 @@
 {
   "name": "dsh-aqua-input-check",
-  "version": "0.2.14",
-  "scannedAt": "2026-11-09T23:06:58.052Z",
+  "version": "0.2.15",
+  "scannedAt": "2026-11-10T08:48:51.702Z",
   "icon": "dsh-aqua-input-check.svg",
   "network": {
     "hit": false,
@@ -11,20 +11,51 @@
     "hit": true,
     "evidence": [
       {
-        "file": "samples/quickstart/run.mjs",
+        "file": "lib/index.mjs",
         "line": 1,
-        "text": "import { readFile } from 'node:fs/promises'"
+        "text": "import { readFile } from \"node:fs/promises\";"
       },
       {
-        "file": "samples/quickstart/run.mjs",
-        "line": 7,
-        "text": "const material = await readFile(join(here, 'input', \"AQ-001-unsafe.json\"), 'utf8')"
+        "file": "lib/index.mjs",
+        "line": 2,
+        "text": "import { existsSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 2453,
+        "text": "const buffer = await readFile(path);"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 2756,
+        "text": "const pending = readFile(path, \"utf8\").then((text) => loadRuleset(text));"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 2805,
+        "text": "text: await readFile(path, {"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 2763,
+        "text": "const inject = [\"tools\"];"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 2821,
+        "text": "* Registration is an effect: `ctx.tools.register` returns the disposer that"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 2829,
+        "text": "return ctx.tools.register(defineTool({"
+      }
+    ]
   },
   "childProcess": {
     "hit": false,

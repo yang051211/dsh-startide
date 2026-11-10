@@ -1,50 +1,39 @@
 {
   "name": "dsh-tag-memory",
-  "version": "0.3.7",
-  "scannedAt": "2026-10-30T07:08:51.684Z",
+  "version": "1.2.8",
+  "scannedAt": "2026-11-10T08:49:02.096Z",
   "icon": "dsh-tag-memory.svg",
   "network": {
-    "hit": true,
-    "evidence": [
-      {
-        "file": "client.js",
-        "line": 326,
-        "text": "const response = await fetch(url, {"
-      },
-      {
-        "file": "client.js",
-        "line": 341,
-        "text": "const response = await fetch(url, {"
-      }
-    ]
+    "hit": false,
+    "evidence": []
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
       {
-        "file": "importers/memory-md.mjs",
-        "line": 19,
-        "text": "import { readFileSync, writeFileSync } from 'node:fs'"
-      },
-      {
-        "file": "importers/memory-md.mjs",
-        "line": 180,
-        "text": "try { text = readFileSync(src, 'utf8') } catch (e) {"
-      },
-      {
-        "file": "importers/memory-md.mjs",
-        "line": 187,
-        "text": "writeFileSync(outPath, res.csv, 'utf8')"
+        "file": "index.js",
+        "line": 73,
+        "text": "import fsp from 'node:fs/promises';"
       },
       {
         "file": "index.js",
-        "line": 14,
-        "text": "t { readFileSync, readdirSync, writeFileSync, existsSync, mkdirSync, accessSync, appendFileSync, statSync, realpathSync, renameSync, unlinkSync } from 'node:fs'"
+        "line": 382,
+        "text": "await fsp.mkdir(layout.storeDir, { recursive: true });"
       },
       {
         "file": "index.js",
-        "line": 15,
-        "text": "import { constants as FS } from 'node:fs'"
+        "line": 383,
+        "text": "await fsp.mkdir(layout.recordsDir, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 390,
+        "text": "const raw = await fsp.readFile(file, 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 401,
+        "text": "await fsp.mkdir(dir, { recursive: true });"
       }
     ]
   },
@@ -52,29 +41,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 33,
-        "text": "export const inject = ['webServer', 'tools']"
+        "file": "cordis.patch.yml",
+        "line": 15,
+        "text": "#   不在任何 preset 里，但每个 agent 都能用——因为 ctx.tools.register() 注册进全局层，"
       },
       {
-        "file": "preset.js",
-        "line": 57,
-        "text": "export const inject = ['systemPrompt', 'tools']"
+        "file": "preset/define-tool.js",
+        "line": 359,
+        "text": "* @returns 可直接交给 `ctx.tools.register` 的定义"
       },
       {
-        "file": "preset.js",
-        "line": 499,
-        "text": "ctx.tools.register("
+        "file": "preset/index.js",
+        "line": 16,
+        "text": "*   不在任何 preset 里，但每个 agent 都能用——因为 `ctx.tools.register` 注册进**全局层**，"
       },
       {
-        "file": "preset.js",
-        "line": 577,
-        "text": "ctx.tools.register("
+        "file": "preset/index.js",
+        "line": 53,
+        "text": "/** 确定存在的服务（`ctx.tools` / `ctx.systemPrompt` 由 dsh-tools / dsh-system-prompt 提供） */"
       },
       {
-        "file": "preset.js",
-        "line": 738,
-        "text": "ctx.tools.register("
+        "file": "preset/index.js",
+        "line": 54,
+        "text": "export const inject = ['tools', 'systemPrompt'];"
       }
     ]
   },
@@ -82,29 +71,14 @@
     "hit": true,
     "evidence": [
       {
-        "file": "scripts/selftest.mjs",
-        "line": 30,
+        "file": "scripts/install.mjs",
+        "line": 43,
         "text": "import { spawnSync } from 'node:child_process'"
       },
       {
-        "file": "scripts/selftest.mjs",
-        "line": 610,
-        "text": "!indexSrc0.includes('child_process') && !indexSrc0.includes('powershell') &&"
-      },
-      {
-        "file": "scripts/selftest.mjs",
-        "line": 845,
-        "text": "!clientSrc.includes('child_process') && !clientSrc.includes('powershell') && !clientSrc.includes('/pick-dir'))"
-      },
-      {
-        "file": "scripts/selftest.mjs",
-        "line": 1225,
-        "text": "const install = (extra = []) => spawnSync(process.execPath,"
-      },
-      {
-        "file": "scripts/selftest.mjs",
-        "line": 1334,
-        "text": "const runSeed = (extra = []) => spawnSync(process.execPath,"
+        "file": "scripts/install.mjs",
+        "line": 687,
+        "text": "const r = spawnSync(process.execPath, [seedPath, 'apply'], {"
       }
     ]
   },
@@ -112,14 +86,24 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
+  "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
     "systemPrompt",
-    "tools",
-    "webServer"
+    "tools"
   ],
-  "setupHints": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 107,
+      "text": "2. **Copy the plugin** to `<DSH_HOME>/plugins/dsh-tag-memory`;"
+    },
+    {
+      "file": "README.zh.md",
+      "line": 104,
+      "text": "2. **拷本体**到 `<DSH_HOME>/plugins/dsh-tag-memory`（不能直接链到 npx 临时目录：npx 清缓存时链接会指向空气）；"
+    }
+  ],
   "skippedEntries": []
 }

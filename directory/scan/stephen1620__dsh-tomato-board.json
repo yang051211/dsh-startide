@@ -1,41 +1,67 @@
 {
   "name": "@stephen1620/dsh-tomato-board",
-  "version": "0.3.3",
-  "scannedAt": "2026-10-26T10:14:23.260Z",
+  "version": "0.3.5",
+  "scannedAt": "2026-11-10T08:49:02.633Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 222,
-        "text": "const response = await fetch(url, {"
+        "line": 468,
+        "text": "const response = await fetch(`/api/tomato-board/pr/repository?${query}`, { headers: { accept: \"application/json\" } });"
       },
       {
         "file": "lib/client.js",
-        "line": 920,
-        "text": "const response = await fetch(`/api/tomato-board/items?${query}`, { headers: { accept: \"application/json\" } });"
+        "line": 542,
+        "text": "fetch(`/api/tomato-board/pr/commit?${query}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1100,
-        "text": "\t\t\t\tfetch(\"/api/tomato-board/filters\", { headers: { accept: \"application/json\" } }).then((response) => response.ok ? response.json() : Promise.reject(/* @__PURE"
+        "line": 917,
+        "text": "fetch(`/api/tomato-board/pr/pull-request?${query}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1722,
-        "text": "fetch(`/api/tomato-board/transitions/${encodeURIComponent(itemKey)}`, {"
+        "line": 951,
+        "text": "const status = await readApiJson(await fetch(`/api/tomato-board/pr/conflict/status?${query}`, { headers: { accept: \"application/json\" } }));"
       },
       {
         "file": "lib/client.js",
-        "line": 1749,
-        "text": "const response = await fetch(`/api/tomato-board/transition/${encodeURIComponent(itemKey)}?${query}`, {"
+        "line": 1008,
+        "text": "await readApiJson(await fetch(\"/api/tomato-board/pr/review/comment\", {"
       }
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { accessSync, constants } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "import { mkdir, open, readFile, realpath, rename, unlink, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1721,
+        "text": "raw = await readFile(file, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1734,
+        "text": "await mkdir(dirname(file), {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1739,
+        "text": "await writeFile(temp, JSON.stringify(store, null, 2) + \"\\n\", {"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,

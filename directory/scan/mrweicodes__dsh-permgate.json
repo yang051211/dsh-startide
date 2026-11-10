@@ -1,34 +1,34 @@
 {
   "name": "@mrweicodes/dsh-permgate",
-  "version": "1.7.2",
-  "scannedAt": "2026-10-26T10:13:51.118Z",
+  "version": "2.2.1",
+  "scannedAt": "2026-11-10T08:48:52.060Z",
   "icon": "mrweicodes__dsh-permgate.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 490,
+        "line": 572,
         "text": "return fetch(path, opts).then((r) => {"
       },
       {
         "file": "shell-parse.js",
-        "line": 6516,
+        "line": 6106,
         "text": "//     curl -s http://example.com |&>& log & echo done   HEAD ask → 当前 **allow** ❌"
       },
       {
         "file": "shell-parse.js",
-        "line": 6660,
+        "line": 6250,
         "text": "//     curl -s http://example.com    → ask"
       },
       {
         "file": "shell-parse.js",
-        "line": 6661,
+        "line": 6251,
         "text": "//     curl -s http://example.com &  → **allow** ← 用户写的确认规则被规避"
       },
       {
         "file": "shell-parse.js",
-        "line": 6662,
+        "line": 6252,
         "text": "//     curl -s http://example.com ;  → ask（`;` 早已在豁免列表里，故这是不一致，不是设计）"
       }
     ]
@@ -38,17 +38,17 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 8,
+        "line": 19,
         "text": "dFileSync as fsReadFileSync, readdirSync as fsReaddirSync, unlinkSync as fsUnlinkSync, lstatSync as fsLstatSync, realpathSync as fsRealpathSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 234,
+        "line": 391,
         "text": "// 直接 `await import('node:fs')` —— 这条路径**不经任何工具调用**，因此也不经"
       },
       {
         "file": "index.js",
-        "line": 863,
+        "line": 1029,
         "text": "inject: ['fs', 'sandboxPolicy', 'tools', 'webServer', 'timer', 'approval', 'permissionPresets', 'sessions'],"
       }
     ]
@@ -58,23 +58,28 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 389,
+        "line": 555,
         "text": "// 由调用方用 sreUndoWrites() 探测后传入 —— 探测要读 ctx.tools，而本函数有意保持为纯函数。"
       },
       {
         "file": "index.js",
-        "line": 863,
+        "line": 1029,
         "text": "inject: ['fs', 'sandboxPolicy', 'tools', 'webServer', 'timer', 'approval', 'permissionPresets', 'sessions'],"
       },
       {
         "file": "index.js",
-        "line": 1995,
+        "line": 2555,
         "text": "const tools = ctx.tools"
       },
       {
         "file": "index.js",
-        "line": 7135,
-        "text": "onDispose(ctx.tools.register(defineTool(definition)))"
+        "line": 7141,
+        "text": "//      它是唯一权威来源：`ctx.tools.get()` 返回的是注册表当前值，而评审要判断的是"
+      },
+      {
+        "file": "index.js",
+        "line": 7143,
+        "text": "//   ② `ctx.tools.get(name, agent)` —— 回落。旧版本 session 可能没有 requestHeader，"
       }
     ]
   },
@@ -83,17 +88,17 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 1677,
+        "line": 2184,
         "text": "const handle = sub.spawn({"
       },
       {
         "file": "index.js",
-        "line": 1738,
+        "line": 2245,
         "text": "const handle = sub.spawn({"
       },
       {
         "file": "index.js",
-        "line": 7069,
+        "line": 10517,
         "text": "const handle = sub.spawn({"
       }
     ]

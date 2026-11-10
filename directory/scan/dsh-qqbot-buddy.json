@@ -1,0 +1,120 @@
+{
+  "name": "dsh-qqbot-buddy",
+  "version": "1.0.0-alpha.0",
+  "scannedAt": "2026-11-10T08:49:03.622Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/console/server.js",
+        "line": 26,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "lib/qq/attachment.js",
+        "line": 158,
+        "text": "const resp = await fetch(parsed.toString(), { signal: controller.signal, redirect: 'error' });"
+      },
+      {
+        "file": "lib/tools/vision.js",
+        "line": 95,
+        "text": "const resp = await fetch(image, { signal: effectiveSignal, redirect: 'error' });"
+      },
+      {
+        "file": "scripts/smoke-dsh.mjs",
+        "line": 152,
+        "text": "const response = await fetch(baseUrl + apiPath, {"
+      },
+      {
+        "file": "scripts/smoke-dsh.mjs",
+        "line": 173,
+        "text": "const response = await fetch(baseUrl + '/api/health', { signal: AbortSignal.timeout(2000) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/console/auth.js",
+        "line": 15,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/console/auth.js",
+        "line": 170,
+        "text": "fs.mkdirSync(path.dirname(tokenPath), { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "lib/console/auth.js",
+        "line": 176,
+        "text": "const text = fs.readFileSync(tokenPath, 'utf8').trim();"
+      },
+      {
+        "file": "lib/console/auth.js",
+        "line": 185,
+        "text": "fs.writeFileSync(tokenPath, token, { encoding: 'utf8', mode: 0o600, flag: 'w' });"
+      },
+      {
+        "file": "lib/console/server.js",
+        "line": 28,
+        "text": "import fs from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/tools.js",
+        "line": 4,
+        "text": "* 发现：ctx.tools.view(agent) 返回 { visible(Map name→definition), knownNames, restrictableNames }。"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/install.mjs",
+        "line": 22,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/install.mjs",
+        "line": 122,
+        "text": "const pack = spawnSync('npm', ['pack', '--pack-destination', tarballDir], { cwd: root, encoding: 'utf8' });"
+      },
+      {
+        "file": "scripts/install.mjs",
+        "line": 141,
+        "text": "const result = spawnSync(bin, args, { encoding: 'utf8', ...options });"
+      },
+      {
+        "file": "scripts/install.mjs",
+        "line": 159,
+        "text": "const ci = spawnSync('npm', ['--prefix', webDir, 'ci', '--no-audit', '--no-fund'], { stdio: 'inherit' });"
+      },
+      {
+        "file": "scripts/install.mjs",
+        "line": 163,
+        "text": "const build = spawnSync('npm', ['--prefix', webDir, 'run', 'build'], { stdio: 'inherit' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [
+    "web/dist/assets/index-Cf7QF0h_.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

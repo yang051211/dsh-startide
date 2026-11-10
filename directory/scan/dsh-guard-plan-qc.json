@@ -1,7 +1,7 @@
 {
   "name": "dsh-guard-plan-qc",
-  "version": "0.2.10",
-  "scannedAt": "2026-11-04T07:56:08.751Z",
+  "version": "0.2.11",
+  "scannedAt": "2026-11-10T08:48:57.510Z",
   "icon": "dsh-guard-plan-qc.svg",
   "network": {
     "hit": false,
@@ -22,18 +22,18 @@
       },
       {
         "file": "lib/index.mjs",
-        "line": 1252,
+        "line": 1268,
         "text": "const pending = readFile(path, \"utf8\").then((text) => loadRuleset(text));"
       },
       {
         "file": "lib/index.mjs",
-        "line": 1301,
-        "text": "text: await readFile(path, {"
+        "line": 1331,
+        "text": "const buffer = await readFile(path, { signal });"
       },
       {
-        "file": "samples/quickstart/run.mjs",
-        "line": 1,
-        "text": "import { readFile } from 'node:fs/promises'"
+        "file": "lib/index.mjs",
+        "line": 1347,
+        "text": "text: await readFile(path, {"
       }
     ]
   },
@@ -42,17 +42,17 @@
     "evidence": [
       {
         "file": "lib/index.mjs",
-        "line": 1259,
+        "line": 1276,
         "text": "const inject = [\"tools\"];"
       },
       {
         "file": "lib/index.mjs",
-        "line": 1317,
+        "line": 1363,
         "text": "* Registration is an effect: `ctx.tools.register` returns the disposer that"
       },
       {
         "file": "lib/index.mjs",
-        "line": 1325,
+        "line": 1371,
         "text": "return ctx.tools.register(defineTool({"
       }
     ]

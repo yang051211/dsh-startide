@@ -1,35 +1,35 @@
 {
   "name": "dsh-restart-and-update",
-  "version": "1.1.0",
-  "scannedAt": "2026-11-09T23:07:04.854Z",
+  "version": "1.2.1",
+  "scannedAt": "2026-11-10T08:48:58.155Z",
   "icon": "dsh-restart-and-update.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 422,
+        "line": 642,
         "text": "fetch(`${ROUTE}/state`, { headers: { accept: 'application/json' } })"
       },
       {
         "file": "client.js",
-        "line": 441,
+        "line": 661,
         "text": "fetch(`${ROUTE}/install-market`, {"
       },
       {
         "file": "client.js",
-        "line": 495,
+        "line": 715,
         "text": "fetch(`${ROUTE}/restart`, {"
       },
       {
         "file": "client.js",
-        "line": 516,
-        "text": "fetch(`${ROUTE}/updates`, { headers: { accept: 'application/json' } })"
+        "line": 743,
+        "text": "fetch(`${ROUTE}/updates${refresh === true ? '?refresh=1' : ''}`, { headers: { accept: 'application/json' } })"
       },
       {
         "file": "client.js",
-        "line": 565,
-        "text": "fetch(`${ROUTE}/update`, {"
+        "line": 816,
+        "text": "fetch(`${ROUTE}/settings`, { headers: { accept: 'application/json' } })"
       }
     ]
   },
@@ -43,22 +43,22 @@
       },
       {
         "file": "index.js",
-        "line": 301,
+        "line": 313,
         "text": "return readFile(path, 'utf8').then(() => true, () => false)"
       },
       {
         "file": "index.js",
-        "line": 312,
+        "line": 324,
         "text": "const manifest = JSON.parse(await readFile(join(dir, 'package.json'), 'utf8'))"
       },
       {
         "file": "index.js",
-        "line": 368,
+        "line": 380,
         "text": "const raw = JSON.parse(await readFile(pendingPath(dir), 'utf8'))"
       },
       {
         "file": "index.js",
-        "line": 378,
+        "line": 390,
         "text": "await mkdir(WORK_DIR, { recursive: true })"
       }
     ]
@@ -73,17 +73,27 @@
       {
         "file": "index.js",
         "line": 18,
-        "text": "import { execFile } from 'node:child_process'"
+        "text": "import { execFile, spawn } from 'node:child_process'"
       },
       {
         "file": "index.js",
-        "line": 254,
+        "line": 272,
         "text": "execFile("
       },
       {
         "file": "index.js",
-        "line": 554,
+        "line": 612,
+        "text": "execFile(cli, args, options, finish)"
+      },
+      {
+        "file": "index.js",
+        "line": 616,
         "text": "execFile("
+      },
+      {
+        "file": "index.js",
+        "line": 977,
+        "text": "const child = spawn("
       }
     ]
   },

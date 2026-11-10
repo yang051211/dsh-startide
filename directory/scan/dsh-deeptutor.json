@@ -1,7 +1,7 @@
 {
   "name": "dsh-deeptutor",
-  "version": "0.3.1",
-  "scannedAt": "2026-11-06T08:17:14.395Z",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-10T08:48:45.200Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -12,27 +12,27 @@
     "evidence": [
       {
         "file": ".agents/skills/html-doc/scripts/md-to-html.js",
-        "line": 16,
+        "line": 19,
         "text": "import fs from \"node:fs\";"
       },
       {
         "file": ".agents/skills/html-doc/scripts/md-to-html.js",
-        "line": 336,
+        "line": 346,
         "text": "md = fs.readFileSync(inputFile, \"utf8\");"
       },
       {
         "file": ".agents/skills/html-doc/scripts/md-to-html.js",
-        "line": 339,
+        "line": 349,
         "text": "md = fs.readFileSync(0, \"utf8\"); // stdin"
       },
       {
         "file": ".agents/skills/html-doc/scripts/md-to-html.js",
-        "line": 362,
+        "line": 386,
         "text": "let template = fs.readFileSync(templatePath, \"utf8\");"
       },
       {
         "file": ".agents/skills/html-doc/scripts/md-to-html.js",
-        "line": 381,
+        "line": 405,
         "text": "fs.writeFileSync(opts.out, template, \"utf8\");"
       }
     ]
@@ -47,7 +47,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 25,
+        "line": 26,
         "text": "ctx.tools.register(defineTool({"
       },
       {
@@ -57,7 +57,7 @@
       },
       {
         "file": "src/index.ts",
-        "line": 47,
+        "line": 50,
         "text": "ctx.tools.register("
       }
     ]
@@ -72,23 +72,23 @@
       },
       {
         "file": "lib/cli-exec.js",
-        "line": 54,
+        "line": 76,
         "text": "const child = execFile(file, args, {"
       },
       {
         "file": "lib/cli-exec.js",
-        "line": 72,
+        "line": 96,
         "text": "spawn(\"taskkill\", [\"/pid\", String(child.pid), \"/T\", \"/F\"], { stdio: \"ignore\", windowsHide: true });"
       },
       {
         "file": "lib/html-render.js",
-        "line": 6,
+        "line": 23,
         "text": "import { execFile } from \"node:child_process\";"
       },
       {
         "file": "lib/html-render.js",
-        "line": 34,
-        "text": "            execFile(process.execPath, [HTML_DOC_SCRIPT, mdPath, \"--out\", htmlPath, \"--title\", title, \"--toc\"], { windowsHide: true, timeout: 60_000 }, (err, _s"
+        "line": 141,
+        "text": "            execFile(process.execPath, [...argv, ...templateArgs(script.path, template.path)], { windowsHide: true, timeout: 60_000 }, (err, _stdout, stderr) =>"
       }
     ]
   },

@@ -1,19 +1,19 @@
 {
   "name": "dsh-cool-theme",
-  "version": "0.10.0",
-  "scannedAt": "2026-10-27T13:14:10.887Z",
+  "version": "0.11.0",
+  "scannedAt": "2026-11-10T08:48:51.615Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 3357,
+        "line": 3405,
         "text": "const response = await fetch(path, {"
       },
       {
         "file": "lib/client.js",
-        "line": 3428,
+        "line": 3477,
         "text": "const response = await fetch(`${THEME_API_PATH_THEMES}/${encodeURIComponent(id)}/${THEME_API_SEGMENT_EXPORT}`);"
       }
     ]
@@ -28,22 +28,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 520,
+        "line": 542,
         "text": "await mkdir(dir, { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 522,
+        "line": 544,
         "text": "await writeFile(temp, bytes);"
       },
       {
         "file": "lib/index.js",
-        "line": 574,
+        "line": 596,
         "text": "bytes: await readFile(mediaPath(id, name)),"
       },
       {
         "file": "lib/index.js",
-        "line": 602,
+        "line": 624,
         "text": "await rm(mediaPath(id, name), { force: true });"
       }
     ]
@@ -53,8 +53,19 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { execFile, spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1238,
+        "text": "const child = spawn(command, args, {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

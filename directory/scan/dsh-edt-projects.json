@@ -1,7 +1,7 @@
 {
   "name": "dsh-edt-projects",
-  "version": "0.11.0",
-  "scannedAt": "2026-11-09T23:06:58.741Z",
+  "version": "0.12.0",
+  "scannedAt": "2026-11-10T08:48:51.435Z",
   "icon": "dsh-edt-projects.svg",
   "network": {
     "hit": false,
@@ -17,12 +17,12 @@
       },
       {
         "file": "lib/bsl.mjs",
-        "line": 104,
+        "line": 106,
         "text": "mkdirSync(join(target, '..'), { recursive: true });"
       },
       {
         "file": "lib/bsl.mjs",
-        "line": 131,
+        "line": 133,
         "text": "rmSync(partial, { force: true });"
       },
       {
@@ -42,27 +42,27 @@
     "evidence": [
       {
         "file": "lib/bsl.mjs",
-        "line": 380,
+        "line": 382,
         "text": "* dsh-mcp-client (он не объявляет capability roots)."
       },
       {
         "file": "lib/index.js",
-        "line": 25,
+        "line": 30,
         "text": "export const inject = ['tools', 'workingDirectory'];"
       },
       {
         "file": "lib/index.js",
-        "line": 228,
+        "line": 273,
         "text": "* Собирает конфиг для @deepseek-ai/dsh-mcp-client: остаётся только то, что"
       },
       {
         "file": "lib/index.js",
-        "line": 395,
+        "line": 544,
         "text": "return ctx.tools"
       },
       {
         "file": "lib/index.js",
-        "line": 502,
+        "line": 653,
         "text": "const McpClient = await import('@deepseek-ai/dsh-mcp-client');"
       }
     ]
@@ -77,8 +77,23 @@
       },
       {
         "file": "lib/bsl.mjs",
-        "line": 395,
+        "line": 397,
         "text": "return spawn(java, ['-jar', jar, 'lsp', '--mcp', `--server.port=${actualPort}`], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 35,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 744,
+        "text": "const child = spawn(process.execPath, [initializerPath, action, '--root', root], {"
+      },
+      {
+        "file": "lib/workspace-run.mjs",
+        "line": 16,
+        "text": "import { execFile, execFileSync, spawn } from 'node:child_process';"
       }
     ]
   },
@@ -96,7 +111,7 @@
   "setupHints": [
     {
       "file": "cordis.patch.yml",
-      "line": 75,
+      "line": 85,
       "text": "# BSL Language Server: 10 инструментов, нужны эпизодически."
     },
     {
@@ -106,7 +121,7 @@
     },
     {
       "file": "README.md",
-      "line": 33,
+      "line": 41,
       "text": "EDT, BSL Language Server по требованию, MCP-трекер и `v8std` (стандарты 1С и"
     }
   ],

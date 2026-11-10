@@ -1,7 +1,7 @@
 {
   "name": "dsh-site-log-check",
-  "version": "0.3.1",
-  "scannedAt": "2026-10-30T23:38:34.682Z",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-10T08:48:58.346Z",
   "icon": "dsh-site-log-check.svg",
   "network": {
     "hit": false,
@@ -11,24 +11,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.mjs",
-        "line": 1,
-        "text": "import { readFile } from \"node:fs/promises\";"
+        "file": "bench/run.mjs",
+        "line": 9,
+        "text": "import { readFileSync } from 'node:fs'"
       },
       {
-        "file": "lib/index.mjs",
+        "file": "bench/run.mjs",
+        "line": 15,
+        "text": "const labels = JSON.parse(readFileSync(join(here, 'labels.json'), 'utf8'))"
+      },
+      {
+        "file": "bench/run.mjs",
+        "line": 25,
+        "text": "const text = readFileSync(join(here, label.file), 'utf8')"
+      },
+      {
+        "file": "lib/batch.mjs",
         "line": 2,
-        "text": "import { existsSync } from \"node:fs\";"
+        "text": "import { readdir, writeFile } from \"node:fs/promises\";"
       },
       {
-        "file": "lib/index.mjs",
-        "line": 1777,
-        "text": "const pending = readFile(path, \"utf8\").then((text) => loadRuleset(text));"
-      },
-      {
-        "file": "lib/index.mjs",
-        "line": 1827,
-        "text": "text: await readFile(path, {"
+        "file": "lib/batch.mjs",
+        "line": 104,
+        "text": "if (options.outFile !== void 0 && options.outFile.trim() !== \"\") await writeFile(resolve(options.outFile), json);"
       }
     ]
   },
@@ -36,18 +41,18 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.mjs",
-        "line": 1785,
+        "file": "lib/src-DFCkGMk4.mjs",
+        "line": 1790,
         "text": "const inject = [\"tools\"];"
       },
       {
-        "file": "lib/index.mjs",
-        "line": 1843,
+        "file": "lib/src-DFCkGMk4.mjs",
+        "line": 1918,
         "text": "* Registration is an effect: `ctx.tools.register` returns the disposer that"
       },
       {
-        "file": "lib/index.mjs",
-        "line": 1851,
+        "file": "lib/src-DFCkGMk4.mjs",
+        "line": 1926,
         "text": "return ctx.tools.register(defineTool({"
       }
     ]

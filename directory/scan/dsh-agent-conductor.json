@@ -1,11 +1,16 @@
 {
   "name": "dsh-agent-conductor",
-  "version": "0.3.2",
-  "scannedAt": "2026-11-09T08:10:17.446Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-10T08:48:58.913Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
+      {
+        "file": "client.js",
+        "line": 753,
+        "text": "const response = await fetch(`/conductor${path}`, { cache: 'no-store', ...init })"
+      },
       {
         "file": "conductor-dynamic.js",
         "line": 27,
@@ -13,14 +18,40 @@
       },
       {
         "file": "index.js",
-        "line": 27,
+        "line": 37,
         "text": "{ id: 'grok', name: 'Grok CLI', argv: ['grok', '-p', '{task}'], install: 'npm i -g @xai-official/grok（或 curl -fsSL https://x.ai/cli/install.sh | bash）' },"
       }
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { mkdirSync, readFileSync, renameSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 63,
+        "text": "const parsed = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 83,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 98,
+        "text": "mkdirSync(dirname(file), { recursive: true })"
+      }
+    ]
   },
   "agentTools": {
     "hit": true,
@@ -32,12 +63,12 @@
       },
       {
         "file": "index.js",
-        "line": 14,
+        "line": 24,
         "text": "export const inject = ['tools', 'subprocess']"
       },
       {
         "file": "index.js",
-        "line": 286,
+        "line": 560,
         "text": "ctx.tools.register(tool)"
       }
     ]
@@ -47,12 +78,12 @@
     "evidence": [
       {
         "file": "conductor-dynamic.js",
-        "line": 187,
+        "line": 195,
         "text": "child = subprocess.spawn({"
       },
       {
         "file": "index.js",
-        "line": 204,
+        "line": 444,
         "text": "child = subprocess.spawn({"
       }
     ]
@@ -71,27 +102,27 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 123,
+      "line": 155,
       "text": "npm i -g @openai/codex"
     },
     {
       "file": "README.md",
-      "line": 124,
+      "line": 156,
       "text": "npm i -g @anthropic-ai/claude-code"
     },
     {
       "file": "README.md",
-      "line": 125,
+      "line": 157,
       "text": "npm i -g opencode-ai"
     },
     {
       "file": "README.md",
-      "line": 126,
+      "line": 158,
       "text": "npm i -g @google/gemini-cli"
     },
     {
       "file": "README.md",
-      "line": 127,
+      "line": 159,
       "text": "npm i -g @qwen-code/qwen-code"
     }
   ],

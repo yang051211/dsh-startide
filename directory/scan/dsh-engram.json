@@ -1,7 +1,7 @@
 {
   "name": "dsh-engram",
-  "version": "0.9.1",
-  "scannedAt": "2026-11-09T23:06:53.158Z",
+  "version": "0.9.3",
+  "scannedAt": "2026-11-10T08:48:48.747Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,17 +18,17 @@
       },
       {
         "file": "lib/client.js",
-        "line": 67,
+        "line": 94,
         "text": "return readJson(await fetch(`${API_PREFIX}/overview`));"
       },
       {
         "file": "lib/client.js",
-        "line": 71,
+        "line": 98,
         "text": "await fetch(`${API_PREFIX}/memories${query({ workspace: opts.workspace, q: opts.q, kind: opts.kind, status: opts.status, limit: opts.limit })}`)"
       },
       {
         "file": "lib/client.js",
-        "line": 75,
+        "line": 102,
         "text": "return readJson(await fetch(`${API_PREFIX}/tasks${query({ workspace, includeStable: includeStable ? \"1\" : void 0 })}`));"
       }
     ]
@@ -87,6 +87,11 @@
     "hit": true,
     "evidence": [
       {
+        "file": "eval/skill-export-check.mjs",
+        "line": 22,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      },
+      {
         "file": "scripts/dsh-engram.mjs",
         "line": 24,
         "text": "import { execFileSync } from \"node:child_process\";"
@@ -98,18 +103,13 @@
       },
       {
         "file": "scripts/host-mount-probe.mjs",
-        "line": 141,
+        "line": 149,
         "text": "child = spawn("
       },
       {
         "file": "scripts/prepublish-check.mjs",
         "line": 17,
         "text": "import { execFileSync } from \"node:child_process\";"
-      },
-      {
-        "file": "scripts/setup-links.mjs",
-        "line": 26,
-        "text": "import { spawnSync } from \"node:child_process\";"
       }
     ]
   },

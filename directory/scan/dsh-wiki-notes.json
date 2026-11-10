@@ -1,7 +1,7 @@
 {
   "name": "dsh-wiki-notes",
-  "version": "1.6.0",
-  "scannedAt": "2026-11-08T07:28:13.931Z",
+  "version": "1.6.1",
+  "scannedAt": "2026-11-10T08:48:43.367Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -17,29 +17,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/bridge.js",
+        "line": 12,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
         "file": "lib/config.js",
         "line": 3,
-        "text": "import { readFileSync, writeFileSync } from 'node:fs'"
+        "text": "import { readFileSync, writeFileSync, existsSync, renameSync, copyFileSync } from 'node:fs'"
       },
       {
         "file": "lib/config.js",
-        "line": 80,
-        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
+        "line": 87,
+        "text": "const raw = readFileSync(file, 'utf8')"
       },
       {
         "file": "lib/config.js",
-        "line": 91,
-        "text": "writeFileSync(file, `${JSON.stringify(record, null, 2)}\\n`, 'utf8')"
+        "line": 134,
+        "text": "writeFileSync(tmp, text, 'utf8')"
       },
       {
         "file": "lib/corpus.js",
         "line": 15,
         "text": "import { promises as fs } from 'node:fs'"
-      },
-      {
-        "file": "lib/corpus.js",
-        "line": 253,
-        "text": "text = await fs.readFile(entry.abs, 'utf8')"
       }
     ]
   },
@@ -48,27 +48,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 32,
+        "line": 33,
         "text": "export const inject = ['tools', 'webServer', 'systemPrompt', 'sessions']"
       },
       {
         "file": "lib/index.js",
-        "line": 1107,
+        "line": 1131,
         "text": "disposers.push(ctx.tools.register({"
       },
       {
         "file": "lib/index.js",
-        "line": 1163,
+        "line": 1187,
         "text": "disposers.push(ctx.tools.register({"
       },
       {
         "file": "lib/index.js",
-        "line": 1221,
+        "line": 1245,
         "text": "disposers.push(ctx.tools.register({"
       },
       {
         "file": "lib/index.js",
-        "line": 1250,
+        "line": 1274,
         "text": "const register = () => ctx.tools.register({"
       }
     ]
@@ -83,7 +83,7 @@
       },
       {
         "file": "lib/bridge.js",
-        "line": 87,
+        "line": 115,
         "text": "child = spawn(pythonExe, [script, command], {"
       }
     ]

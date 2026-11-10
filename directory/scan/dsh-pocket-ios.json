@@ -1,0 +1,73 @@
+{
+  "name": "dsh-pocket-ios",
+  "version": "0.2.5",
+  "scannedAt": "2026-11-10T08:48:50.709Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "import { createServer, request as httpRequest } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "import { appendFile, mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 33,
+        "text": "await mkdir(LOG_DIR, { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 34,
+        "text": "await appendFile(join(LOG_DIR, 'tailscale.log'), `${new Date().toISOString()} ${line}\\n`)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 55,
+        "text": "await mkdir(LOG_DIR, { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 56,
+        "text": "await writeFile(PIN_FILE, nextPin, { mode: 0o600 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,35 +1,35 @@
 {
   "name": "dsh-archived-chats",
-  "version": "1.6.4",
-  "scannedAt": "2026-11-05T21:22:54.842Z",
+  "version": "2.0.1",
+  "scannedAt": "2026-11-10T08:48:43.703Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1545,
+        "line": 1626,
         "text": "const res = await fetch(`${API_BASE}/state`, { cache: \"no-store\" });"
       },
       {
         "file": "lib/client.js",
-        "line": 1560,
+        "line": 1642,
         "text": "const res = await fetch(`${API_BASE}/stats`, { cache: \"no-store\" });"
       },
       {
         "file": "lib/client.js",
-        "line": 1566,
-        "text": "const res = await fetch(`${API_BASE}/trash`, { cache: \"no-store\" });"
+        "line": 1648,
+        "text": "const res = await fetch(`${API_BASE}/lineage`, { cache: \"no-store\", signal });"
       },
       {
         "file": "lib/client.js",
-        "line": 1572,
-        "text": "const res = await fetch(`${API_BASE}/orphans${kind ? `?kind=${kind}` : \"\"}`, { cache: \"no-store\", signal });"
+        "line": 1665,
+        "text": "const res = await fetch(`${API_BASE}/preview/image`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1578,
-        "text": "const res = await fetch(`${API_BASE}/orphans/delete${kind ? `?kind=${kind}` : \"\"}`, {"
+        "line": 1732,
+        "text": "const res = await fetch(`${API_BASE}/workspace-archive/workspaces`, { cache: \"no-store\" });"
       }
     ]
   },
@@ -57,9 +57,9 @@
         "text": "import { lstat, readdir, realpath } from 'node:fs/promises';"
       },
       {
-        "file": "lib/durable.js",
+        "file": "lib/deletion-tasks.js",
         "line": 2,
-        "text": "import { chmod, mkdir, open, rename, rm, writeFile } from 'node:fs/promises';"
+        "text": "import { readFile } from 'node:fs/promises';"
       }
     ]
   },

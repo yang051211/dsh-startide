@@ -1,7 +1,7 @@
 {
   "name": "dsh-logalyze",
-  "version": "0.2.0",
-  "scannedAt": "2026-11-03T08:09:57.385Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-10T08:48:45.952Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -48,18 +48,18 @@
       },
       {
         "file": "lib/index.js",
-        "line": 887,
-        "text": "const record = reportRecordSchema.parse(JSON.parse(await readFile(path, \"utf8\")));"
+        "line": 852,
+        "text": "const bytes = await readFile(path);"
       },
       {
         "file": "lib/index.js",
-        "line": 911,
-        "text": "await mkdir(this.dir, { recursive: true });"
+        "line": 875,
+        "text": "await writeFile(temporary, content, {"
       },
       {
         "file": "lib/index.js",
-        "line": 915,
-        "text": "await writeFile(temporary, `${JSON.stringify(record)}\\n`, {"
+        "line": 881,
+        "text": "await rm(temporary, { force: true });"
       }
     ]
   },
@@ -68,28 +68,23 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 4901,
-        "text": "this.ctx.effect(() => this.ctx.tools.register(this.dispatcher.definition(), { when: (context) => this.offersTool(context) }), \"logalyze: dispatch tool\");"
+        "line": 5296,
+        "text": "this.ctx.effect(() => this.ctx.tools.register(definition, { when: (context) => this.offers(context, condition) }), `logalyze: ${label} tool`);"
       },
       {
-        "file": "lib/index.js",
-        "line": 4902,
-        "text": "\t\tthis.ctx.effect(() => this.ctx.tools.register(this.improver.definition(), { when: async (context) => this.current.skillUpdates.enabled && await this.offersToo"
+        "file": "src/host.ts",
+        "line": 78,
+        "text": "/** The `ctx.tools` registry slice. */"
       },
       {
-        "file": "lib/index.js",
-        "line": 4903,
-        "text": "this.ctx.effect(() => this.ctx.tools.register(this.viewer.definition(), { when: (context) => this.offersTool(context) }), \"logalyze: skill view tool\");"
+        "file": "src/index.ts",
+        "line": 41,
+        "text": "export const inject = ['tools', 'skills', 'subagents'] as const"
       },
       {
-        "file": "lib/index.js",
-        "line": 4904,
-        "text": "\t\tthis.ctx.effect(() => this.ctx.tools.register(this.adder.definition(), { when: (context) => this.offersTopLevel(context, () => true) }), \"logalyze: add reposi"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 4905,
-        "text": "\t\tthis.ctx.effect(() => this.ctx.tools.register(this.initializer.initDefinition(), { when: (context) => this.offersTopLevel(context, () => this.registry.setupPe"
+        "file": "src/service.ts",
+        "line": 151,
+        "text": "this.ctx.effect(() => this.ctx.tools.register(definition, { when: context => this.offers(context, condition) }), `logalyze: ${label} tool`)"
       }
     ]
   },
@@ -98,12 +93,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 6,
+        "line": 10,
         "text": "import { execFile } from \"node:child_process\";"
       },
       {
         "file": "lib/index.js",
-        "line": 963,
+        "line": 4299,
         "text": "execFile(file, args, {"
       },
       {

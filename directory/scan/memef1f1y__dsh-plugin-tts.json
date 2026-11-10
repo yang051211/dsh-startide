@@ -1,34 +1,34 @@
 {
   "name": "@memef1f1y/dsh-plugin-tts",
-  "version": "0.6.7",
-  "scannedAt": "2026-10-26T10:13:41.674Z",
+  "version": "0.7.1",
+  "scannedAt": "2026-11-10T08:48:41.007Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1238,
+        "line": 1548,
         "text": "fetch(\"/dsh-tts-api/rvc-config-save\", {"
       },
       {
         "file": "lib/client.js",
-        "line": 1247,
+        "line": 1557,
         "text": "fetch(\"/dsh-tts-api/index-config-save\", {"
       },
       {
         "file": "lib/client.js",
-        "line": 1256,
+        "line": 1566,
         "text": "fetch(\"/dsh-tts-api/cosy-config-save\", {"
       },
       {
         "file": "lib/client.js",
-        "line": 1268,
+        "line": 1578,
         "text": "fetch(\"/dsh-tts-api/cloud-config-save\", {"
       },
       {
         "file": "lib/client.js",
-        "line": 1277,
+        "line": 1587,
         "text": "fetch(\"/dsh-tts-api/cloud-config\")"
       }
     ]
@@ -36,11 +36,6 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
-      {
-        "file": ".github/workflows/publish.yml",
-        "line": 60,
-        "text": "          node -e \"const fs=require('fs');const v=require('./package.json').version;const tag=process.env.GITHUB_REF_NAME.replace(/^v/,'');if(v!==tag){console.e"
-      },
       {
         "file": "lib/index.mjs",
         "line": 16,
@@ -60,6 +55,11 @@
         "file": "lib/index.mjs",
         "line": 479,
         "text": "const audioBytes = readFileSync(mp3Path);"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 497,
+        "text": "writeFileSync(wavPath, wavBytes);"
       }
     ]
   },
@@ -84,16 +84,6 @@
         "file": "lib/index.mjs",
         "line": 559,
         "text": "const p = spawn(cfg.binary, ['--model', cfg.model, '--output_file', wavPath], {"
-      },
-      {
-        "file": "tests/package-runtime-patch.mjs",
-        "line": 7,
-        "text": "import { execFileSync } from 'node:child_process';"
-      },
-      {
-        "file": "tests/rvc-server-live.mjs",
-        "line": 16,
-        "text": "import { spawn } from 'node:child_process';"
       }
     ]
   },

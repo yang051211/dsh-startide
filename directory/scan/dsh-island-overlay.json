@@ -1,19 +1,19 @@
 {
   "name": "dsh-island-overlay",
-  "version": "0.2.3",
-  "scannedAt": "2026-11-07T07:29:30.866Z",
+  "version": "0.3.3",
+  "scannedAt": "2026-11-10T08:48:48.727Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 118,
+        "line": 134,
         "text": "return fetch(API + path, { cache: \"no-store\", credentials: \"same-origin\" })"
       },
       {
         "file": "lib/client.js",
-        "line": 123,
+        "line": 139,
         "text": "return fetch(API, {"
       }
     ]
@@ -28,17 +28,17 @@
       },
       {
         "file": "lib/config.js",
-        "line": 57,
+        "line": 68,
         "text": "return resolve(JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8')))"
       },
       {
         "file": "lib/config.js",
-        "line": 66,
+        "line": 77,
         "text": "fs.mkdirSync(path.dirname(CONFIG_FILE), { recursive: true })"
       },
       {
         "file": "lib/config.js",
-        "line": 68,
+        "line": 79,
         "text": "fs.writeFileSync(tmp, JSON.stringify(next, null, 2), 'utf8')"
       },
       {
@@ -57,28 +57,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 4,
+        "line": 5,
         "text": "import { spawn, execFile } from 'node:child_process'"
       },
       {
         "file": "lib/index.js",
-        "line": 219,
+        "line": 496,
+        "text": "execFile('taskkill', ['/PID', String(o.pid), '/T', '/F'], () => {})"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 515,
         "text": "child = spawn(exe, [OVERLAY_DIR], { detached: true, stdio: 'ignore', windowsHide: true, env })"
       },
       {
         "file": "lib/index.js",
-        "line": 229,
+        "line": 533,
         "text": "execFile('taskkill', ['/pid', String(child.pid), '/T', '/F'], () => {})"
       },
       {
         "file": "overlay/main.js",
         "line": 5,
         "text": "const { execFile, spawn } = require('child_process')"
-      },
-      {
-        "file": "overlay/main.js",
-        "line": 180,
-        "text": "watchProc = spawn('powershell', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', path.join(__dirname, 'watch.ps1')], { windowsHide: true })"
       }
     ]
   },

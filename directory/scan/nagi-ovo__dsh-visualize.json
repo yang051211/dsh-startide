@@ -1,35 +1,35 @@
 {
   "name": "@nagi-ovo/dsh-visualize",
-  "version": "0.1.7",
-  "scannedAt": "2026-10-26T10:13:51.931Z",
+  "version": "0.1.9",
+  "scannedAt": "2026-11-10T08:48:43.267Z",
   "icon": "nagi-ovo__dsh-visualize.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
+        "file": "lib/client.js",
+        "line": 1627,
+        "text": "let fetchImpl = (...args) => fetch(...args);"
+      },
+      {
         "file": "lib/index.js",
-        "line": 683,
+        "line": 8,
+        "text": "import { request } from \"node:http\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 9,
+        "text": "import { request as request$1 } from \"node:https\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 833,
         "text": "* declaration values. Every rule queries those views, so a `fetch(` in a"
       },
       {
         "file": "lib/index.js",
-        "line": 1800,
+        "line": 1988,
         "text": "const NETWORK_CONSTRUCTORS = /(?<![\\w$])(?:XMLHttpRequest|WebSocket|EventSource)(?![\\w$])/gu;"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 1802,
-        "text": "const WATCHED_NAMES = /(?<![\\w$])(?:fetch|XMLHttpRequest|WebSocket|EventSource|navigator|sendBeacon|document|currentScript|window|self|globalThis)(?![\\w$])/gu;"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 1971,
-        "text": "if (!/fetch|XMLHttpRequest|WebSocket|EventSource|sendBeacon|currentScript/u.test(js)) return;"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 1991,
-        "text": "for (const m of js.matchAll(/(?<![\\w$])fetch(?![\\w$])/gu)) {"
       }
     ]
   },
@@ -39,27 +39,27 @@
       {
         "file": "lib/index.js",
         "line": 4,
-        "text": "import { lstat, mkdir, readFile, realpath, rename, rm, writeFile } from \"node:fs/promises\";"
+        "text": "import { access, lstat, mkdir, readFile, realpath, rename, rm, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 160,
+        "line": 578,
         "text": "read: async () => await readFile(path, \"utf8\"),"
       },
       {
         "file": "lib/index.js",
-        "line": 172,
-        "text": "await mkdir(dirname(path), {"
+        "line": 641,
+        "text": "parsed = JSON.parse(await readFile(path, \"utf8\"));"
       },
       {
         "file": "lib/index.js",
-        "line": 178,
-        "text": "await writeFile(temp, content, {"
+        "line": 661,
+        "text": "if (images.length === 0) await rm(path, { force: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 185,
-        "text": "if (error.code !== \"EEXIST\") await rm(temp, { force: true }).catch(() => {});"
+        "line": 683,
+        "text": "const data = await readFile(real).catch(() => void 0);"
       }
     ]
   },
@@ -68,18 +68,18 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 2532,
+        "line": 3301,
         "text": "* @returns the tool definition to register on `ctx.tools`."
       },
       {
         "file": "lib/index.js",
-        "line": 3055,
-        "text": "let disposeTool = ctx.tools.register(visualizeTool(ctx, config.maxFragmentBytes, style));"
+        "line": 4273,
+        "text": "let disposeTool = ctx.tools.register(visualizeTool(ctx, config.maxFragmentBytes, style, images));"
       },
       {
         "file": "lib/index.js",
-        "line": 3060,
-        "text": "disposeTool = ctx.tools.register(visualizeTool(ctx, config.maxFragmentBytes, style));"
+        "line": 4278,
+        "text": "disposeTool = ctx.tools.register(visualizeTool(ctx, config.maxFragmentBytes, style, images));"
       },
       {
         "file": "src/index.ts",
@@ -88,7 +88,7 @@
       },
       {
         "file": "src/index.ts",
-        "line": 31,
+        "line": 34,
         "text": "export const inject = ['tools', 'skills', 'fs']"
       }
     ]

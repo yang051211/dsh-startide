@@ -1,35 +1,35 @@
 {
   "name": "dsh-repo",
-  "version": "0.1.0",
-  "scannedAt": "2026-11-03T08:09:54.041Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-10T08:48:45.148Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 170,
+        "line": 262,
         "text": "response = await fetch(route.slice(1), {"
       },
       {
         "file": "lib/index.js",
-        "line": 3264,
+        "line": 10,
+        "text": "import { createServer } from \"node:http\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 5488,
         "text": "const response = await fetch(`${this.baseUrl}/repos/${encodeURIComponent(repo.owner)}/${encodeURIComponent(repo.repo)}/actions/jobs/${jobId}/logs`, {"
       },
       {
         "file": "lib/index.js",
-        "line": 3274,
+        "line": 5498,
         "text": " = response.status >= 300 && response.status < 400 && location !== null ? await okBody(await fetch(location, { signal: call.signal })) : await okBody(response);"
       },
       {
         "file": "lib/index.js",
-        "line": 16125,
+        "line": 18366,
         "text": "const response = await fetch(...fetchArgs).catch((e) => {"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 16947,
-        "text": "const response = await fetch(`${this.host}/api/v4/projects/${encodeURIComponent(ref.path)}/jobs/${jobId}/trace`, {"
       }
     ]
   },
@@ -38,28 +38,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 6,
-        "text": "import { constants, readFileSync, renameSync } from \"node:fs\";"
+        "line": 5,
+        "text": "import { constants, readFileSync, realpathSync, renameSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
         "line": 7,
-        "text": "import { access, lstat, mkdir, readFile, readdir, realpath, rename, rm, stat, writeFile } from \"node:fs/promises\";"
+        "text": "import { access, chmod, copyFile, lstat, mkdir, readdir, realpath, rename, rm, stat, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 547,
-        "text": "await mkdir(dirname(file), { recursive: true });"
+        "line": 1418,
+        "text": "await mkdir(dirname(dir), { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 549,
-        "text": "await writeFile(temporary, `${JSON.stringify(value, void 0, 2)}\\n`, {"
+        "line": 1438,
+        "text": "await rm(partial, {"
       },
       {
         "file": "lib/index.js",
-        "line": 617,
-        "text": "text = readFileSync(file, \"utf8\");"
+        "line": 1449,
+        "text": "await rm(dir, { recursive: true });"
       }
     ]
   },
@@ -68,13 +68,13 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 20765,
+        "line": 23519,
         "text": "const inject = [\"tools\", \"credentials\"];"
       },
       {
         "file": "lib/index.js",
-        "line": 20853,
-        "text": "on, access } of tools) ctx.effect(() => ctx.tools.register(definition, { when: () => service.configured && toolOffered(access, service.settings.tools) && (acces"
+        "line": 23664,
+        "text": "eateTools(operations)) ctx.effect(() => ctx.tools.register(definition, { when: () => toolOffered(access, service.settings.current.tools, service.catalog.highest"
       },
       {
         "file": "src/host.ts",
@@ -83,12 +83,12 @@
       },
       {
         "file": "src/index.ts",
-        "line": 114,
+        "line": 51,
         "text": "export const inject = ['tools', 'credentials'] as const"
       },
       {
         "file": "src/index.ts",
-        "line": 208,
+        "line": 191,
         "text": "ctx.effect(() => ctx.tools.register(definition, {"
       }
     ]
@@ -103,8 +103,13 @@
       },
       {
         "file": "lib/index.js",
-        "line": 805,
-        "text": "const child = spawn(\"git\", [...args], {"
+        "line": 801,
+        "text": "const child = spawn(program, [...argv], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 23278,
+        "text": "const child = spawn(\"git\", [\"http-backend\"], {"
       },
       {
         "file": "src/mirror/git.ts",
@@ -113,8 +118,8 @@
       },
       {
         "file": "src/mirror/git.ts",
-        "line": 59,
-        "text": "const child = spawn('git', [...args], { cwd: options.cwd, env: { ...gitEnvironment(), ...options.env }, windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })"
+        "line": 73,
+        "text": "    const child = spawn(program, [...argv], { cwd: options.cwd, env: { ...gitEnvironment(), ...options.env }, windowsHide: true, stdio: ['ignore', 'pipe', 'pipe"
       }
     ]
   },

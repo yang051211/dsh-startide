@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-ssh-console",
-  "version": "1.0.2",
-  "scannedAt": "2026-11-04T07:56:02.092Z",
+  "version": "1.0.3",
+  "scannedAt": "2026-11-10T08:49:02.160Z",
   "icon": "dsh-plugin-ssh-console.svg",
   "network": {
     "hit": false,
@@ -12,18 +12,28 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 18,
-        "text": "import { readFileSync, existsSync, statSync } from 'node:fs'"
+        "line": 20,
+        "text": "} from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 190,
+        "line": 356,
         "text": "text = readFileSync(path, 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 726,
-        "text": "const key = readFileSync(candidate)"
+        "line": 644,
+        "text": "text = readFileSync(path, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 738,
+        "text": "mkdirSync(dirname(path), { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "index.js",
+        "line": 739,
+        "text": "appendFileSync(path, `${knownHostName(host, port)} ${keyType} ${keyBody}\\n`, { mode: 0o600 })"
       }
     ]
   },

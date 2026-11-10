@@ -1,11 +1,21 @@
 {
   "name": "@furongjun1999/dsh-memory",
-  "version": "0.9.23",
-  "scannedAt": "2026-11-05T21:22:42.234Z",
+  "version": "0.10.1",
+  "scannedAt": "2026-11-10T08:48:35.620Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 4,
+        "text": "    try {\\n      const response = await fetch(url, { credentials:'same-origin', ...options, signal:controller.signal });\\n      const text = await response.text"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 24,
+        "text": "fetch(d.url, { method: d.method || 'GET', body: (d.body == null ? undefined : d.body), headers: d.headers || {}, credentials: 'same-origin' })"
+      },
       {
         "file": "lib/lib/roleplay_web.js",
         "line": 252,
@@ -20,16 +30,6 @@
         "file": "lib/lib/roleplay_web.js",
         "line": 303,
         "text": "    const r = await fetch('/roleplay/api/chat', { method:'POST', headers: apiHeaders(), body: JSON.stringify({ role_id: role, message: text }) }).then(x => x.js"
-      },
-      {
-        "file": "lib/lib/roleplay_web.js",
-        "line": 335,
-        "text": "const r = await fetch('/roleplay/api/roles/' + encodeURIComponent(role) + '/items?kind=' + rdKind, { headers: apiHeaders() }).then(x => x.json());"
-      },
-      {
-        "file": "lib/lib/roleplay_web.js",
-        "line": 368,
-        "text": "m = await fetch('/roleplay/api/roles/' + encodeURIComponent(role) + '/meta', {"
       }
     ]
   },
@@ -134,18 +134,21 @@
     ]
   },
   "dependencies": 1,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "lib/client.js",
+    "ui/minimal/payload/lib/client.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [],
   "setupHints": [
     {
       "file": "README.en.md",
-      "line": 161,
+      "line": 165,
       "text": "> and **you must install `pip install zstandard` yourself** (this repository does not declare it and CI does not install it). If missing ⇒ the function returns "
     },
     {
       "file": "README.md",
-      "line": 183,
+      "line": 193,
       "text": "> **需自备 `pip install zstandard`**（本仓库不声明、CI 不代装）。未装 ⇒ 该函数返回 None 并把原因写进 `reason`，"
     }
   ],

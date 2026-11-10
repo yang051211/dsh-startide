@@ -1,0 +1,71 @@
+{
+  "name": "dsh-ctx-gate",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-10T08:48:52.295Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "fsProbe = await import('node:fs')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 28,
+        "text": "fsProbe?.appendFileSync(PROBE, `${new Date().toISOString()} ${msg}\\n`)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "* （ctx.tools.restrict({ deny }) —— 只在 agent 作用域里有效、随时可撤销），"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 73,
+        "text": "const view = agent.ctx.tools.view(agent)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 98,
+        "text": "s.dispose = agent.ctx.tools.restrict({ deny: [...deny] })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 127,
+        "text": "c.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

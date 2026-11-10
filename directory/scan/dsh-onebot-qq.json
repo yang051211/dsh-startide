@@ -1,14 +1,14 @@
 {
   "name": "dsh-onebot-qq",
-  "version": "0.9.19",
-  "scannedAt": "2026-11-08T07:28:09.364Z",
+  "version": "0.10.0",
+  "scannedAt": "2026-11-10T08:48:34.443Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/connection.js",
-        "line": 403,
+        "line": 411,
         "text": "socket = new WebSocket(url, { headers, handshakeTimeout: 10_000, maxPayload: MAX_FRAME_BYTES });"
       },
       {
@@ -27,24 +27,24 @@
         "text": "import { realpath } from 'node:fs/promises';"
       },
       {
-        "file": "lib/commands.js",
-        "line": 3,
-        "text": "import { readFileSync } from 'node:fs';"
+        "file": "lib/chat-tails.js",
+        "line": 16,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises';"
       },
       {
-        "file": "lib/commands.js",
-        "line": 4,
-        "text": "import { readFile, readdir, realpath, stat } from 'node:fs/promises';"
+        "file": "lib/chat-tails.js",
+        "line": 82,
+        "text": "parsed = JSON.parse(await readFile(this.path, 'utf8'));"
       },
       {
-        "file": "lib/commands.js",
-        "line": 1288,
-        "text": "const text = await readFile(join(root, entry.name, 'preset.yml'), 'utf8');"
+        "file": "lib/chat-tails.js",
+        "line": 139,
+        "text": "await mkdir(this.mediaDir, { recursive: true });"
       },
       {
-        "file": "lib/commands.js",
-        "line": 1310,
-        "text": "const pkg = JSON.parse(readFileSync(join(dirname(dirname(fileURLToPath(import.meta.url))), 'package.json'), 'utf8'));"
+        "file": "lib/chat-tails.js",
+        "line": 140,
+        "text": "await writeFile(this.path, JSON.stringify(this.cache, null, 2), 'utf8');"
       }
     ]
   },
@@ -58,12 +58,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 53,
+        "line": 55,
         "text": "export const inject = ['tools', 'systemPrompt', 'agents', 'sessions', 'agentDefaultModel', 'agentPresets', 'sessionPersistence', 'workspaceRegistry', 'commands'"
       },
       {
         "file": "lib/tools.js",
-        "line": 135,
+        "line": 138,
         "text": "disposers.push(ctx.tools.register(gated));"
       }
     ]
