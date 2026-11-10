@@ -1,0 +1,132 @@
+{
+  "name": "dsh-rdm",
+  "version": "0.3.4",
+  "scannedAt": "2026-11-10T20:53:55.128Z",
+  "icon": "dsh-rdm.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 837,
+        "text": "response = await fetch(ROUTE, {"
+      },
+      {
+        "file": "scripts/verify-fixture.mjs",
+        "line": 8,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "scripts/verify-fixture.mjs",
+        "line": 35,
+        "text": "const req = http.get(url)"
+      },
+      {
+        "file": "tests/fixture-server.mjs",
+        "line": 35,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "tests/fixture-server.mjs",
+        "line": 938,
+        "text": "const req = http.request(url, { method, headers }, (res) => {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 956,
+        "text": "import { accessSync, constants, existsSync, statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1389,
+        "text": "import { existsSync as existsSync2, statSync as statSync2 } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1390,
+        "text": "import { mkdir } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2645,
+        "text": "await mkdir(this.activeDataDir, { recursive: true });"
+      },
+      {
+        "file": "scripts/build-kernel.mjs",
+        "line": 15,
+        "text": "import fs from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5413,
+        "text": "ctx.effect(() => ctx.tools.register(tool), `dsh-rdm: tool ${tool.name}`);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 5419,
+        "text": "var inject = [\"tools\", \"connection\", \"systemPrompt\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 5427,
+        "text": "const tools = ctx.tools;"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 955,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1114,
+        "text": "const child = this.openEnvironment.spawn(resolution.spec.command, resolution.spec.args, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1333,
+        "text": "return spawn(command, args, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1388,
+        "text": "import { spawn as spawn2 } from \"node:child_process\";"
+      },
+      {
+        "file": "scripts/build-kernel.mjs",
+        "line": 14,
+        "text": "import { spawnSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "bin/darwin-arm64/rdm-kernel",
+    "bin/darwin-x64/rdm-kernel",
+    "bin/linux-arm64/rdm-kernel",
+    "bin/linux-x64/rdm-kernel",
+    "bin/win32-x64/rdm-kernel.exe"
+  ],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

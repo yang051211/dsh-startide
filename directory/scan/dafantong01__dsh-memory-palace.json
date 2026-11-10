@@ -1,34 +1,34 @@
 {
   "name": "@dafantong01/dsh-memory-palace",
-  "version": "0.3.10",
-  "scannedAt": "2026-11-09T23:06:40.943Z",
+  "version": "0.3.11",
+  "scannedAt": "2026-11-10T20:53:42.347Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 218,
+        "line": 235,
         "text": "fetch(`${API}?sessionId=${encodeURIComponent(sessionId)}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 228,
+        "line": 245,
         "text": "const res = await fetch(`${API}?sessionId=${encodeURIComponent(sessionId)}`)"
       },
       {
         "file": "lib/client.js",
-        "line": 248,
+        "line": 265,
         "text": "const res2 = await fetch(`${API}?sessionId=${encodeURIComponent(sessionId)}&stats=1&fresh=1`)"
       },
       {
         "file": "lib/client.js",
-        "line": 276,
+        "line": 293,
         "text": "const res2 = await fetch(`${API}?sessionId=${encodeURIComponent(sessionId)}&action=verify-cache`)"
       },
       {
         "file": "lib/client.js",
-        "line": 296,
+        "line": 313,
         "text": "const res = await fetch(API, {"
       }
     ]
@@ -94,8 +94,24 @@
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/route.js",
+        "line": 3,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/route.js",
+        "line": 630,
+        "text": "const child = spawn('powershell.exe', ['-NoProfile', '-STA', '-Command', script], { windowsHide: true, stdio: ['ignore', 'pipe', 'ignore'] })"
+      },
+      {
+        "file": "lib/route.js",
+        "line": 650,
+        "text": "const child = spawn('cmd.exe', ['/c', 'start', '', target], { detached: true, stdio: 'ignore', windowsHide: true })"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

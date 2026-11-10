@@ -1,14 +1,14 @@
 {
   "name": "dsh-rea-powerpack",
-  "version": "0.1.4",
-  "scannedAt": "2026-11-03T20:52:14.730Z",
+  "version": "0.1.6",
+  "scannedAt": "2026-11-10T20:53:56.150Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 741,
+        "line": 771,
         "text": "return fetch(API_PREFIX + '/' + route, init).then(function (response) {"
       },
       {
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/engines.js",
-        "line": 11,
-        "text": "import { createWriteStream, existsSync, readdirSync, statSync } from 'node:fs'"
+        "file": "lib/compat.js",
+        "line": 19,
+        "text": "import { readFileSync } from 'node:fs'"
       },
       {
-        "file": "lib/engines.js",
-        "line": 12,
-        "text": "import { access, appendFile, cp, mkdir, mkdtemp, readFile, readdir, rename, rm, stat, writeFile } from 'node:fs/promises'"
+        "file": "lib/compat.js",
+        "line": 20,
+        "text": "import { readdir, readFile, stat } from 'node:fs/promises'"
       },
       {
-        "file": "lib/engines.js",
-        "line": 13,
-        "text": "import { constants as FS } from 'node:fs'"
+        "file": "lib/compat.js",
+        "line": 400,
+        "text": "return JSON.parse(stripBom(await readFile(path, 'utf8')))"
       },
       {
-        "file": "lib/engines.js",
-        "line": 231,
-        "text": "return JSON.parse(await readFile(path, 'utf8'))"
+        "file": "lib/compat.js",
+        "line": 452,
+        "text": "text = await readFile(file, 'utf8')"
       },
       {
-        "file": "lib/engines.js",
-        "line": 238,
-        "text": "await mkdir(dirname(path), { recursive: true })"
+        "file": "lib/compat.js",
+        "line": 631,
+        "text": "const manifest = JSON.parse(stripBom(readFileSync(file, 'utf8')))"
       }
     ]
   },
@@ -73,7 +73,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 61,
+        "line": 62,
         "text": "const MCP_CLIENT = '@deepseek-ai/dsh-mcp-client'"
       }
     ]
@@ -103,7 +103,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 409,
+        "line": 429,
         "text": "const child = spawn(node, [LAUNCHER, profile, 'mcp'], {"
       }
     ]

@@ -1,35 +1,35 @@
 {
   "name": "@chenkai114/dsh-daemon",
-  "version": "0.1.29",
-  "scannedAt": "2026-10-29T14:01:36.526Z",
+  "version": "0.1.31",
+  "scannedAt": "2026-11-10T20:53:52.629Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 980,
-        "text": "'    const res = await fetch(HEALTH_URL, { signal: ctrl.signal });\\n' +"
+        "line": 1070,
+        "text": "'    try { res = await fetch(HEALTH_URL, { signal: ctrl.signal }); } finally { clearTimeout(t); }\\n' +"
       },
       {
         "file": "lib/index.js",
-        "line": 1246,
+        "line": 1098,
+        "text": "'      try { res = await fetch(base + p, { signal: ctrl.signal }); } finally { clearTimeout(t); }\\n' +"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1614,
         "text": "'    const res = await fetch(NPM_REGISTRY + \\'/\\' + PACKAGE_NAME + \\'/latest\\', { signal: ctrl.signal, headers: { accept: \\'application/json\\' } });\\n' +"
       },
       {
         "file": "lib/index.js",
-        "line": 1320,
+        "line": 1688,
         "text": "'    const res = await fetch(ACTIVITY_URL, { signal: ctrl.signal });\\n' +"
       },
       {
         "file": "lib/index.js",
-        "line": 1888,
+        "line": 2385,
         "text": "'    out=$(curl -s -X POST -H \"Content-Type: application/json\" -d \"$body\" \"http://127.0.0.1:${PORT}/dsh-daemon/command\")\\n' +"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 1919,
-        "text": "ON.stringify({cmd:process.argv[1],env});fetch(\\'http://127.0.0.1:%PORT%/dsh-daemon/command\\',{method:\\'POST\\',headers:{\\'content-type\\':\\'application/json\\'},bo"
       }
     ]
   },
@@ -38,27 +38,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 198,
+        "line": 208,
         "text": "try { if (typeof require === 'function') fs = require('node:fs'); } catch (e) { return null; }"
       },
       {
         "file": "lib/index.js",
-        "line": 204,
+        "line": 214,
         "text": "try { text = fs.readFileSync(cur, 'utf8'); } catch (e) { return null; }"
       },
       {
         "file": "lib/index.js",
-        "line": 332,
+        "line": 342,
         "text": "async function writeFile(absPath, content) {"
       },
       {
         "file": "lib/index.js",
-        "line": 594,
+        "line": 616,
         "text": "const fsMod = typeof require === 'function' ? require('node:fs') : null;"
       },
       {
         "file": "lib/index.js",
-        "line": 598,
+        "line": 620,
         "text": "const pkg = JSON.parse(fsMod.readFileSync(pkgPath, 'utf8'));"
       }
     ]
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 221,
+        "line": 231,
         "text": "registerTool = function (def) { return ctx.tools.register(def); };"
       },
       {
         "file": "lib/index.js",
-        "line": 2769,
+        "line": 3435,
         "text": "inject: [\"tools\", \"shell\", \"fs\", \"timer\", \"webServer\", \"agents\", \"jobs\"],"
       }
     ]
@@ -83,27 +83,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 1071,
+        "line": 1219,
         "text": "        '    const wrapper = CP.spawn(\\'powershell.exe\\', [\\'-NoProfile\\', \\'-NonInteractive\\', \\'-Command\\', ps], { cwd: WEB_CWD, stdio: fd >= 0 ? [\\'ignore\\',"
       },
       {
         "file": "lib/index.js",
-        "line": 1083,
+        "line": 1231,
         "text": "        '    const child = CP.spawn(process.execPath, args, { cwd: WEB_CWD, detached: true, stdio: fd >= 0 ? [\\'ignore\\', fd, fd] : \\'ignore\\', env: env, window"
       },
       {
         "file": "lib/index.js",
-        "line": 1206,
+        "line": 1574,
         "text": "'      const c = CP.spawn(\\'powershell.exe\\', [\\'-NoProfile\\', \\'-NonInteractive\\', \\'-Command\\', cmd], { stdio: \\'ignore\\', windowsHide: true });\\n' +"
       },
       {
         "file": "lib/index.js",
-        "line": 1216,
+        "line": 1584,
         "text": "'    const c = CP.spawn(opener, [url], { detached: true, stdio: \\'ignore\\', windowsHide: true });\\n' +"
       },
       {
         "file": "lib/index.js",
-        "line": 1304,
+        "line": 1672,
         "text": "'    const child = CP.spawn(bin.cmd, args, { cwd: PROFILE_DIR, stdio: [\\'ignore\\', \\'pipe\\', \\'pipe\\'], shell: bin.shell, env: env, windowsHide: true });\\n' +"
       }
     ]

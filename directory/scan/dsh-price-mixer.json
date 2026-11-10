@@ -1,0 +1,81 @@
+{
+  "name": "dsh-price-mixer",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-10T20:54:02.727Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 11,
+        "text": "// book for an hour, so a change lands on its next book fetch (or a restart) —"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 125,
+        "text": "fetch(API + '/override', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 138,
+        "text": "fetch(API + '/reset', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 196,
+        "text": "? fetch(API + '/reload', { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{}' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 197,
+        "text": ": fetch(API + '/models')"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 37,
+        "text": "import { readFileSync, writeFileSync, renameSync, existsSync, mkdirSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 135,
+        "text": "const parsed = JSON.parse(readFileSync(CONFIG_PATH, 'utf8'));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 154,
+        "text": "mkdirSync(dirname(CONFIG_PATH), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 156,
+        "text": "writeFileSync(tmp, body, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

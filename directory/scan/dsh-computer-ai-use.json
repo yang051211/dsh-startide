@@ -1,0 +1,99 @@
+{
+  "name": "dsh-computer-ai-use",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-10T20:54:00.438Z",
+  "icon": "dsh-computer-ai-use.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/update.js",
+        "line": 197,
+        "text": "fetchImpl = (input, init) => globalThis.fetch(input, init),"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "const { version: currentVersion } = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "lib/update.js",
+        "line": 2,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/update.js",
+        "line": 3,
+        "text": "import { mkdir, readdir, readFile, realpath, rm, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/update.js",
+        "line": 111,
+        "text": "return JSON.parse(await readFile(path, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "export const inject = ['tools', 'attachments']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 72,
+        "text": "for (const tool of tools) ctx.tools.register(tool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/update.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/update.js",
+        "line": 140,
+        "text": "const child = spawn(command, args, { cwd, env, stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true })"
+      },
+      {
+        "file": "scripts/smoke.mjs",
+        "line": 12,
+        "text": "import { execFileSync, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/smoke.mjs",
+        "line": 95,
+        "text": "spawn(isMac ? 'open' : 'notepad.exe', isMac ? ['-a', 'TextEdit'] : [], { detached: true, stdio: 'ignore' }).unref()"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 5,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "attachments",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

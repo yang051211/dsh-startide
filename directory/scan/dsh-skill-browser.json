@@ -1,34 +1,34 @@
 {
   "name": "dsh-skill-browser",
-  "version": "2.0.2",
-  "scannedAt": "2026-11-07T23:17:10.070Z",
+  "version": "2.0.15",
+  "scannedAt": "2026-11-10T20:53:48.578Z",
   "icon": "dsh-skill-browser.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 513,
+        "line": 514,
         "text": "fetch(apiBase() + \"/skills\" + (refresh ? \"?refresh=1\" : \"\"))"
       },
       {
         "file": "lib/client.js",
-        "line": 536,
+        "line": 541,
         "text": "fetch(apiBase() + \"/groups\")"
       },
       {
         "file": "lib/client.js",
-        "line": 632,
+        "line": 637,
         "text": "fetch(apiBase() + \"/groups\", {"
       },
       {
         "file": "lib/client.js",
-        "line": 1000,
-        "text": "fetch(apiBase() + \"/ledger\")"
+        "line": 1007,
+        "text": "fetch(apiBase() + \"/ledger\" + (_notify ? \"?refresh=1\" : \"\"))"
       },
       {
         "file": "lib/client.js",
-        "line": 1030,
+        "line": 1044,
         "text": "fetch(apiBase() + \"/ledger/stats?\" + qs.join(\"&\"))"
       }
     ]
@@ -68,8 +68,13 @@
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1540,
+        "line": 2083,
         "text": "h += '<div class=\"dsb-mcp-empty\">当前没有挂载任何 MCP 服务器<br><span style=\"font-size:11px\">可在 profile 的 cordis.patch.yml 里以 @deepseek-ai/dsh-mcp-client 挂载</span></div>';"
+      },
+      {
+        "file": "lib/market.js",
+        "line": 84,
+        "text": "// dsh-mcp-client 的 stdio 用 spawn 不经 shell → npx(.cmd) 在 Windows 会失败，"
       },
       {
         "file": "lib/mcp.js",
@@ -85,11 +90,6 @@
         "file": "lib/mcp.js",
         "line": 55,
         "text": "// tools 是可选服务：直接 ctx.tools 未 inject 会抛「cannot get property without inject」，"
-      },
-      {
-        "file": "lib/mcp.js",
-        "line": 59,
-        "text": "if (!tools) { try { if (ctx.tools) tools = ctx.tools; } catch (e) { tools = null; } }"
       }
     ]
   },
@@ -103,7 +103,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 171,
+        "line": 174,
         "text": "child = spawn(\"powershell.exe\", [\"-NoProfile\", \"-STA\", \"-WindowStyle\", \"Hidden\", \"-ExecutionPolicy\", \"Bypass\", \"-File\", script], {"
       }
     ]

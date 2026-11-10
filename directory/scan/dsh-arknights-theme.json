@@ -1,20 +1,35 @@
 {
   "name": "dsh-arknights-theme",
-  "version": "1.0.4",
-  "scannedAt": "2026-11-02T23:01:20.653Z",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-10T20:53:48.738Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 5325,
-        "text": "fetch(ROUTE + \"/assets/skin.css\", { cache: \"no-store\" })"
+        "line": 5852,
+        "text": "var response = await fetch(ROUTE + \"/upload\" + query, {"
       },
       {
         "file": "lib/client.js",
-        "line": 6216,
-        "text": "fetch(ROUTE + \"/diag\", {"
+        "line": 5935,
+        "text": "var response = await fetch(userRoutePrefix() + file, { cache: \"force-cache\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 5966,
+        "text": "var response = await fetch(ROUTE + \"/upload\", { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 6061,
+        "text": "await fetch(ROUTE + \"/upload?id=\" + encodeURIComponent(id), { method: \"DELETE\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 6233,
+        "text": "fetch(ROUTE + \"/assets/skin.css\", { cache: \"no-store\" })"
       }
     ]
   },
@@ -23,28 +38,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 24,
-        "text": "import { readFile, stat, writeFile } from 'node:fs/promises'"
+        "line": 31,
+        "text": "import { mkdir, readFile, rm, stat, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "lib/index.js",
-        "line": 164,
+        "line": 214,
         "text": "await writeFile("
       },
       {
         "file": "lib/index.js",
-        "line": 212,
-        "text": "const previous = JSON.parse(await readFile(DIAG_FILE, 'utf8'))"
+        "line": 265,
+        "text": "await rm(path.join(USER_DIR, file), { force: true }).catch(() => {})"
       },
       {
         "file": "lib/index.js",
-        "line": 225,
-        "text": "await writeFile("
+        "line": 304,
+        "text": "await mkdir(USER_DIR, { recursive: true })"
       },
       {
         "file": "lib/index.js",
-        "line": 234,
-        "text": "const stored = await readFile(DIAG_FILE, 'utf8')"
+        "line": 309,
+        "text": "await writeFile(path.join(USER_DIR, fileName), bytes)"
       }
     ]
   },

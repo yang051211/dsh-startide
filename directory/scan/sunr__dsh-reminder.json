@@ -1,0 +1,75 @@
+{
+  "name": "@sunr/dsh-reminder",
+  "version": "0.14.3",
+  "scannedAt": "2026-11-10T20:53:52.430Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/client.js",
+        "line": 122,
+        "text": "return fetch(ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 12,
+        "text": "import { mkdir, readFile, unlink, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/index.js",
+        "line": 13,
+        "text": "import { existsSync, readFileSync, renameSync } from 'node:fs'"
+      },
+      {
+        "file": "src/index.js",
+        "line": 48,
+        "text": "const saved = JSON.parse(readFileSync(settingsFile, 'utf8'))"
+      },
+      {
+        "file": "src/index.js",
+        "line": 59,
+        "text": "try { return JSON.parse(await readFile(reminderFile, 'utf8')) } catch { return null }"
+      },
+      {
+        "file": "src/index.js",
+        "line": 63,
+        "text": "await mkdir(dirname(reminderFile), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 26,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "src/index.js",
+        "line": 54,
+        "text": "for (const tool of buildTools({ defineTool, store, timeZone, reminderTime: () => settings.reminderTime })) ctx.tools.register(tool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

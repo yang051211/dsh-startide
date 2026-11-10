@@ -1,0 +1,118 @@
+{
+  "name": "dsh-qq-digest",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-10T20:54:02.735Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 51,
+        "text": "fetch(`${API}/client-boot`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 66,
+        "text": "const res = await fetch(`${API}${path}`, { headers: { accept: 'application/json' } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 73,
+        "text": "const res = await fetch(`${API}${path}`, {"
+      },
+      {
+        "file": "scripts/check-all.mjs",
+        "line": 63,
+        "text": "const res = await fetch(`http://127.0.0.1:${port}/qq-digest-api/state`, {"
+      },
+      {
+        "file": "scripts/check-all.mjs",
+        "line": 75,
+        "text": "const state = await (await fetch(`${base}/qq-digest-api/state`, { headers: { accept: 'application/json' } })).json();"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 34,
+        "text": "mkdirSync(dataDir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 334,
+        "text": "const parsed = JSON.parse(readFileSync(join(dir, 'client-boot.json'), 'utf8'));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 363,
+        "text": "writeFileSync(join(dir, 'client-boot.json'), `${JSON.stringify(next, null, 2)}\\n`, 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 442,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "install/cordis.patch.fragment.yml",
+        "line": 5,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/check-core-purity.mjs",
+        "line": 22,
+        "text": "\"node:child_process\","
+      },
+      {
+        "file": "scripts/final-check.mjs",
+        "line": 8,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/smoke.mjs",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/smoke.mjs",
+        "line": 43,
+        "text": "const child = spawn(process.execPath, [join(root, 'src', 'run-mcp.mjs')], {"
+      },
+      {
+        "file": "scripts/verify-dsh.mjs",
+        "line": 90,
+        "text": "const { execSync } = await import('node:child_process');"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

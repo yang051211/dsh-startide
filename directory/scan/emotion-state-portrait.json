@@ -1,0 +1,97 @@
+{
+  "name": "emotion-state-portrait",
+  "version": "1.0.5",
+  "scannedAt": "2026-11-10T20:53:48.293Z",
+  "icon": "emotion-state-portrait.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "qq-emotion-ui.mjs",
+        "line": 13,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "qq-emotion.mjs",
+        "line": 136,
+        "text": "const ws = new WebSocket(WS_URL, { headers: { Authorization: 'Bearer ' + TOKEN } });"
+      },
+      {
+        "file": "qq-emotion.mjs",
+        "line": 745,
+        "text": "const r = await fetch(cfg.llm.api + '/chat/completions', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "qq-emotion-ui.mjs",
+        "line": 14,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "qq-emotion-ui.mjs",
+        "line": 62,
+        "text": "const html = readFileSync(HTML, 'utf8');"
+      },
+      {
+        "file": "qq-emotion.mjs",
+        "line": 33,
+        "text": "} from 'node:fs';"
+      },
+      {
+        "file": "qq-emotion.mjs",
+        "line": 77,
+        "text": "try { writeFileSync(LOG, '[' + stamp + '] ' + line + '\\n', { flag: 'a' }); } catch {}"
+      },
+      {
+        "file": "qq-emotion.mjs",
+        "line": 82,
+        "text": "try { return JSON.parse(readFileSync(p, 'utf8')); } catch { return fallback; }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 127,
+        "text": "ctx.tools.register(emotionStatusTool()),"
+      },
+      {
+        "file": "index.js",
+        "line": 128,
+        "text": "ctx.tools.register(emotionTweakTool()),"
+      },
+      {
+        "file": "index.js",
+        "line": 129,
+        "text": "ctx.tools.register(emotionUpdateTool()),"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

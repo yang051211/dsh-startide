@@ -1,0 +1,110 @@
+{
+  "name": "dsh-evolve-preset",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-10T20:53:58.293Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 461,
+        "text": "const res = await fetch(api(ROUTE + \"/node\"), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 797,
+        "text": "fetch(url, { headers: { accept: \"application/json\" } }).then(async (res) => ({ res, data: await res.json().catch(() => null) })).then(({ res, data }) => {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1320,
+        "text": "const res = await fetch(api(path), { headers: { accept: \"application/json\" } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1326,
+        "text": "const res = await fetch(api(path), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/gate-check.mjs",
+        "line": 14,
+        "text": "import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "assets/gate-check.mjs",
+        "line": 88,
+        "text": "mkdirSync(GATE_DIR, { recursive: true })"
+      },
+      {
+        "file": "assets/gate-check.mjs",
+        "line": 91,
+        "text": "if (existsSync(p)) rmSync(p, { force: true })"
+      },
+      {
+        "file": "assets/gate-check.mjs",
+        "line": 92,
+        "text": "writeFileSync(p, template(String(sid)), 'utf8')"
+      },
+      {
+        "file": "assets/gate-check.mjs",
+        "line": 104,
+        "text": "if (existsSync(p)) { rmSync(p); n++ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host/check.js",
+        "line": 18,
+        "text": "export const inject = ['tools', 'shell', 'sandboxPolicy']"
+      },
+      {
+        "file": "host/check.js",
+        "line": 74,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "host/check.js",
+        "line": 101,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "host/check.js",
+        "line": 117,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "host/plan-enter.js",
+        "line": 18,
+        "text": "export const inject = ['tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "sandboxPolicy",
+    "shell",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

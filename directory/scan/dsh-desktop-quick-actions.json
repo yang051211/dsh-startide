@@ -1,0 +1,75 @@
+{
+  "name": "dsh-desktop-quick-actions",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-10T20:53:57.928Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 41,
+        "text": "return fetch(path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 19,
+        "text": "import { appendFileSync, existsSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.mjs",
+        "line": 41,
+        "text": "appendFileSync(LOG_PATH, `${line}\\n`, 'utf8')"
+      },
+      {
+        "file": "index.mjs",
+        "line": 173,
+        "text": "writeFileSync(vbsPath, `\\ufeff${vbs}`, 'utf16le')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 18,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.mjs",
+        "line": 93,
+        "text": "child = spawn(command, args, { windowsHide: true, stdio: ['ignore', 'pipe', 'ignore'] })"
+      },
+      {
+        "file": "index.mjs",
+        "line": 181,
+        "text": "const child = spawn('powershell.exe', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-Command', command], {"
+      },
+      {
+        "file": "index.mjs",
+        "line": 209,
+        "text": "const child = spawn(command, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

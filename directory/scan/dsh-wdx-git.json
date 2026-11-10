@@ -1,0 +1,78 @@
+{
+  "name": "dsh-wdx-git",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-10T20:54:01.944Z",
+  "icon": "dsh-wdx-git.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1298,
+        "text": "response = await fetch(RPC, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/ai.js",
+        "line": 8,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/ai.js",
+        "line": 428,
+        "text": "const buffer = await readFile(absolute)"
+      },
+      {
+        "file": "src/operations.js",
+        "line": 8,
+        "text": "import { access, readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/operations.js",
+        "line": 10,
+        "text": "import { writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/operations.js",
+        "line": 968,
+        "text": "merged = await readFile(join(root, path), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 72,
+        "text": "const handle = ctx.subprocess.spawn({"
+      },
+      {
+        "file": "index.js",
+        "line": 113,
+        "text": "const handle = ctx.subprocess.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "subprocess"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,90 @@
+{
+  "name": "dsh-restart-dock",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-10T20:53:54.497Z",
+  "icon": "dsh-restart-dock.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 528,
+        "text": "const res = await fetch(BASE + '/status', { headers: MARK, cache: 'no-store' });"
+      },
+      {
+        "file": "client.js",
+        "line": 541,
+        "text": "const res = await fetch(BASE + '/status', { headers: MARK, cache: 'no-store' });"
+      },
+      {
+        "file": "client.js",
+        "line": 574,
+        "text": "const res = await fetch(BASE + '/restart', {"
+      },
+      {
+        "file": "client.js",
+        "line": 671,
+        "text": "const res = await fetch(BASE + '/bundle-ready', { headers: MARK, cache: 'no-store' });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "import { mkdirSync, readFileSync, writeFileSync, existsSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 45,
+        "text": "return JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 53,
+        "text": "mkdirSync(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 54,
+        "text": "writeFileSync(file, JSON.stringify(value, null, 2), 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 146,
+        "text": "try { mkdirSync(info.stateDir, { recursive: true }); } catch { /* 下面写文件时还会再试一次 */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 22,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 158,
+        "text": "const child = spawn('cmd.exe', ['/c', 'start', '', '/b', 'powershell.exe', ...psArgs], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

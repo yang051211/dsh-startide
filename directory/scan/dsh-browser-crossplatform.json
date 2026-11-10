@@ -1,7 +1,7 @@
 {
   "name": "dsh-browser-crossplatform",
-  "version": "0.38.7",
-  "scannedAt": "2026-10-26T10:07:09.406Z",
+  "version": "0.38.8",
+  "scannedAt": "2026-11-10T20:53:57.270Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,12 +13,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 4013,
+        "line": 16051,
         "text": "const response = await this.fetchHandler.fetch(request);"
       },
       {
         "file": "src/dsh-gateway.ts",
-        "line": 114,
+        "line": 122,
         "text": "fetch(request: Request): Promise<Response>"
       },
       {
@@ -28,7 +28,7 @@
       },
       {
         "file": "src/remote-host-api.ts",
-        "line": 333,
+        "line": 339,
         "text": "const response = await this.fetchHandler.fetch(request)"
       }
     ]
@@ -39,26 +39,26 @@
       {
         "file": "lib/index.js",
         "line": 3,
-        "text": "import { existsSync, readdirSync } from \"node:fs\";"
+        "text": "import { existsSync, readFileSync, readdirSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 9,
+        "line": 6,
         "text": "import { chmod, lstat, mkdir, readFile, readdir, rename, rm, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 443,
+        "line": 5017,
         "text": "await rm(path.join(target, entry), {"
       },
       {
         "file": "lib/index.js",
-        "line": 508,
+        "line": 5082,
         "text": "return (await readFile(file, \"utf8\")).trim();"
       },
       {
         "file": "lib/index.js",
-        "line": 519,
+        "line": 5093,
         "text": "await mkdir(dirname(file), { recursive: true });"
       }
     ]
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 2639,
+        "line": 13523,
+        "text": "* `inject`: an inject entry would hold `ctx.tools` — and every tool plugin"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 13557,
+        "text": "return this.layers.effect(this.ctx, (layer) => layer.tools.insert(name, definition), { label: \"tools.register()\" });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 14641,
         "text": "* 在 `ctx.tools` 上注册浏览器工具。返回的 disposer 由调用方的 effect 持有；每个工具"
       },
       {
         "file": "lib/index.js",
-        "line": 2736,
+        "line": 14738,
         "text": "for (const tool of defineTools(call, options)) disposers.set(tool.name, ctx.tools.register(tool));"
       },
       {
         "file": "lib/invariant.js",
         "line": 14,
-        "text": "* ctx.tools 注册，由 dsh-tools 自己的 invariant 观察。"
-      },
-      {
-        "file": "src/index.ts",
-        "line": 62,
-        "text": "export const inject = ['webServer', 'typertGateway', 'connection', 'tools', 'agents']"
-      },
-      {
-        "file": "src/invariant.ts",
-        "line": 20,
         "text": "* ctx.tools 注册，由 dsh-tools 自己的 invariant 观察。"
       }
     ]
@@ -98,27 +98,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 11,
+        "line": 8,
         "text": "import { spawn } from \"node:child_process\";"
       },
       {
         "file": "lib/index.js",
-        "line": 1538,
+        "line": 9551,
         "text": "const { execFileSync } = __require(\"node:child_process\");"
       },
       {
         "file": "lib/index.js",
-        "line": 1572,
+        "line": 9585,
         "text": "const { execFileSync } = __require(\"node:child_process\");"
       },
       {
         "file": "lib/index.js",
-        "line": 1694,
+        "line": 9707,
         "text": "const { execFile } = await import(\"node:child_process\");"
       },
       {
         "file": "lib/index.js",
-        "line": 1843,
+        "line": 9856,
         "text": "const { execFile } = await import(\"node:child_process\");"
       }
     ]
@@ -127,10 +127,12 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 2,
+  "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [],
+  "requiredServices": [
+    "systemPrompt"
+  ],
   "setupHints": [],
   "skippedEntries": []
 }

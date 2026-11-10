@@ -1,0 +1,94 @@
+{
+  "name": "dsh-novelai",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-10T20:53:56.649Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/nai.mjs",
+        "line": 13,
+        "text": "import { request as httpsRequest } from 'node:https'"
+      },
+      {
+        "file": "studio.mjs",
+        "line": 7,
+        "text": "import { createServer } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 43,
+        "text": "const { existsSync } = await import('node:fs')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 188,
+        "text": "data: readFileSync(f.path),"
+      },
+      {
+        "file": "lib/nai.mjs",
+        "line": 16,
+        "text": "import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, statSync, appendFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/nai.mjs",
+        "line": 74,
+        "text": "raw = JSON.parse(readFileSync(configPath(), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "export const inject = ['tools', 'webServer', 'attachments']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 316,
+        "text": "offs.push(ctx.tools.register(makeImageTool(defineTool, ctx)))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 317,
+        "text": "offs.push(ctx.tools.register(makeStatusTool(defineTool)))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 318,
+        "text": "offs.push(ctx.tools.register(makePromptTool(defineTool)))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "attachments",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

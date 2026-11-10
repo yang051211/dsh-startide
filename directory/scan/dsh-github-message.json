@@ -1,0 +1,75 @@
+{
+  "name": "dsh-github-message",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-10T20:53:55.721Z",
+  "icon": "dsh-github-message.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/src/rpc.js",
+        "line": 52,
+        "text": "async fetch(request) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "import { appendFileSync, chmodSync, mkdirSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 31,
+        "text": "mkdirSync(dirname(path), { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 45,
+        "text": "writeFileSync(path, '', { mode: 0o600 });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "appendFileSync(path, `${JSON.stringify({ at: new Date().toISOString(), ...event })}\\n`, { encoding: 'utf8', mode: 0o600 });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 71,
+        "text": "mkdirSync(config.dataDir, { recursive: true, mode: 0o700 });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/src/gh.js",
+        "line": 3,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/src/gh.js",
+        "line": 130,
+        "text": "const child = spawn(cliPath, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,109 @@
+{
+  "name": "@ahao430/dsh-workhub",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-10T20:53:56.433Z",
+  "icon": "ahao430__dsh-workhub.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 14,
+        "text": "const res = await fetch(`/api/workhub${path}`, {"
+      },
+      {
+        "file": "lib/yunxiao/client.js",
+        "line": 1,
+        "text": "import { request } from 'node:https'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/storage/db.js",
+        "line": 9,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/storage/db.js",
+        "line": 138,
+        "text": "fs.mkdirSync(dir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 8,
+        "text": "export const inject = ['webServer', 'tools']"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 16,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 29,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 50,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 77,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/auth/dingtalk-login.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/auth/dingtalk-login.js",
+        "line": 40,
+        "text": "child = spawn('dws', ['auth', 'login'], {"
+      },
+      {
+        "file": "lib/dws-executor.js",
+        "line": 12,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/dws-executor.js",
+        "line": 84,
+        "text": "child = execFile("
+      },
+      {
+        "file": "lib/security/credential-store.js",
+        "line": 9,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

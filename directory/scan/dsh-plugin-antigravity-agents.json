@@ -1,0 +1,117 @@
+{
+  "name": "dsh-plugin-antigravity-agents",
+  "version": "1.0.3",
+  "scannedAt": "2026-11-10T20:53:53.228Z",
+  "icon": "dsh-plugin-antigravity-agents.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 477,
+        "text": "const res = await fetch(\"/api/antigravity-agents\");"
+      },
+      {
+        "file": "client.js",
+        "line": 501,
+        "text": "const res = await fetch(\"/api/antigravity-agents\", {"
+      },
+      {
+        "file": "client.js",
+        "line": 523,
+        "text": "const res = await fetch(\"/api/antigravity-agents\", {"
+      },
+      {
+        "file": "client.js",
+        "line": 787,
+        "text": "const agentsRes = await fetch(\"/api/antigravity-agents\");"
+      },
+      {
+        "file": "client.js",
+        "line": 796,
+        "text": "const sRes = await fetch(`/api/antigravity-agents/session?sessionId=${sessionId}`);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "index.js",
+        "line": 105,
+        "text": "const raw = fs.readFileSync(fullPath, \"utf8\");"
+      },
+      {
+        "file": "index.js",
+        "line": 214,
+        "text": "const raw = JSON.parse(fs.readFileSync(settingsPath, \"utf8\"));"
+      },
+      {
+        "file": "index.js",
+        "line": 228,
+        "text": "if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 229,
+        "text": "fs.writeFileSync(settingsPath, JSON.stringify(settings, null, 2), \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "export const inject = [\"systemPrompt\", \"tools\", \"workingDirectory\", \"agents\", \"webServer\", \"workspaceRegistry\"];"
+      },
+      {
+        "file": "index.js",
+        "line": 430,
+        "text": "const subagentTool = ctx.tools.get(\"subagent\");"
+      },
+      {
+        "file": "index.js",
+        "line": 443,
+        "text": "const spawnTeammateTool = ctx.tools.get(\"spawn_teammate\");"
+      },
+      {
+        "file": "index.js",
+        "line": 465,
+        "text": "ctx.tools.register(invokeSubagentTool);"
+      },
+      {
+        "file": "index.js",
+        "line": 550,
+        "text": "ctx.tools.register(agentTool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "systemPrompt",
+    "tools",
+    "webServer",
+    "workingDirectory",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,11 +1,37 @@
 {
   "name": "dsh-mm-models",
-  "version": "0.2.2",
-  "scannedAt": "2026-11-09T23:07:06.817Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-10T20:53:59.452Z",
   "icon": "dsh-mm-models.svg",
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1246,
+        "text": "const r = await fetch(url, {"
+      },
+      {
+        "file": "minimax/index.js",
+        "line": 552,
+        "text": "response = await fetch(OAUTH_TOKEN_ENDPOINT, {"
+      },
+      {
+        "file": "minimax/index.js",
+        "line": 963,
+        "text": "const response = await fetch(url, { ...init, headers });"
+      },
+      {
+        "file": "minimax/index.js",
+        "line": 1809,
+        "text": "const get=(u)=>fetch(u,{headers:{accept:'application/json'}}).then(r=>r.json());"
+      },
+      {
+        "file": "minimax/index.js",
+        "line": 1851,
+        "text": "const snap=async()=>{ try{ return await fetch(S,{headers:{accept:'application/json'}}).then(x=>x.json()); }catch(e){ return null; } };"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
@@ -42,27 +68,27 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 50,
+        "line": 51,
         "text": "export const inject = ['tools', 'credentials', 'systemPrompt']"
       },
       {
         "file": "index.js",
-        "line": 506,
+        "line": 537,
         "text": "ctx.tools.guard((exec) => {"
       },
       {
         "file": "index.js",
-        "line": 632,
+        "line": 663,
         "text": "ctx.tools.guard((exec) => {"
       },
       {
         "file": "index.js",
-        "line": 735,
+        "line": 766,
         "text": "// 0.2.1 起 `ctx.tools.scope` 需要 inject 才能读，直接访问会抛"
       },
       {
         "file": "index.js",
-        "line": 748,
+        "line": 779,
         "text": "// 每次探测都制造一条 err 文本，直接标注不可用；`ctx.tools.scope` 仍可探测。"
       }
     ]
@@ -79,6 +105,21 @@
         "file": "tools/ocr-image.mjs",
         "line": 348,
         "text": "const child = spawn(powershellPath(), args, { windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })"
+      },
+      {
+        "file": "tools/run-batch.mjs",
+        "line": 18,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "tools/run-batch.mjs",
+        "line": 105,
+        "text": "* @param {import('node:child_process').ChildProcess} child - 子进程。"
+      },
+      {
+        "file": "tools/run-batch.mjs",
+        "line": 111,
+        "text": "spawnSync('taskkill', ['/PID', String(child.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' })"
       }
     ]
   },
@@ -91,6 +132,7 @@
   "binaryFiles": [],
   "requiredServices": [
     "credentials",
+    "llm",
     "systemPrompt",
     "tools"
   ],

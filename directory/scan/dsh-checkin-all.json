@@ -1,7 +1,7 @@
 {
   "name": "dsh-checkin-all",
-  "version": "0.8.0",
-  "scannedAt": "2026-11-04T20:39:28.495Z",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-10T20:53:47.034Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,23 +13,23 @@
       },
       {
         "file": "lib/providers/astudio.js",
-        "line": 108,
+        "line": 146,
         "text": "const response = await fetch(new URL(path, BASE), {"
       },
       {
-        "file": "lib/providers/doubao.js",
-        "line": 60,
-        "text": "const res = await fetch(url, {"
+        "file": "lib/providers/buddy-login.js",
+        "line": 66,
+        "text": "response = await fetch(url, { method, headers, signal: AbortSignal.timeout(timeoutMs) })"
       },
       {
-        "file": "lib/providers/dumate.js",
-        "line": 145,
-        "text": "const response = await fetch(`${HOST}${path}`, {"
+        "file": "lib/providers/buddy.js",
+        "line": 100,
+        "text": "response = await fetch(`${product.endpoint}${path}`, {"
       },
       {
-        "file": "lib/providers/lingxi.js",
-        "line": 117,
-        "text": "const response = await fetch(`${HOST}${path}`, {"
+        "file": "lib/providers/codearts-login.js",
+        "line": 15,
+        "text": "import { createServer } from 'node:http'"
       }
     ]
   },
@@ -43,22 +43,22 @@
       },
       {
         "file": "lib/checkin-secrets.js",
-        "line": 29,
-        "text": "await mkdir(dirname(file), { recursive: true, mode: 0o700 })"
+        "line": 30,
+        "text": "await mkdir(dir, { recursive: true, mode: 0o700 })"
       },
       {
         "file": "lib/checkin-secrets.js",
-        "line": 31,
+        "line": 35,
         "text": "await writeFile(tmp, text, { mode: 0o600 })"
       },
       {
         "file": "lib/checkin-secrets.js",
-        "line": 36,
+        "line": 40,
         "text": "await rm(tmp, { force: true }).catch(() => {})"
       },
       {
         "file": "lib/checkin-secrets.js",
-        "line": 44,
+        "line": 48,
         "text": "return JSON.parse(await readFile(file, 'utf8'))"
       }
     ]
@@ -80,6 +80,26 @@
         "file": "lib/providers/browser-cookies.js",
         "line": 17,
         "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/providers/codearts-login.js",
+        "line": 17,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/providers/codearts-login.js",
+        "line": 134,
+        "text": "spawn('open', [url], { detached: true, stdio: 'ignore' }).unref()"
+      },
+      {
+        "file": "lib/providers/codearts-login.js",
+        "line": 136,
+        "text": "spawn('cmd', ['/c', 'start', '\"\"', `\"${url}\"`], { detached: true, stdio: 'ignore' }).unref()"
+      },
+      {
+        "file": "lib/providers/codearts-login.js",
+        "line": 138,
+        "text": "spawn('xdg-open', [url], { detached: true, stdio: 'ignore' }).unref()"
       }
     ]
   },

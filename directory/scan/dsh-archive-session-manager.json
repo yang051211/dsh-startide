@@ -1,0 +1,75 @@
+{
+  "name": "dsh-archive-session-manager",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-10T20:53:59.572Z",
+  "icon": "dsh-archive-session-manager.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 377,
+        "text": "var res = await fetch(API + path, { credentials: 'same-origin' });"
+      },
+      {
+        "file": "client/client.js",
+        "line": 391,
+        "text": "var res = await fetch(API + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 38,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 39,
+        "text": "import { open, readFile, readdir, realpath, rm, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 345,
+        "text": "try { buf = await readFile(file) } catch { return { hasMessage: false, sawAnyFrame: false } }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 896,
+        "text": "await rm(subDir, { recursive: true, force: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 917,
+        "text": "//    先 `drainLive()` 把缓冲事件落盘，而落盘路径会 `mkdir(dir,{recursive:true})`"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "sessionQuery",
+    "sessions",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,54 @@
+{
+  "name": "dsh-session-deliverables",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-10T20:53:53.504Z",
+  "icon": "dsh-session-deliverables.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 250,
+        "text": "fetch(`/api/session-files.list?sessionId=${encodeURIComponent(sessionId)}${workspace}`, { headers: { accept: 'application/json' } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { readdir, stat as fsStat } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 85,
+        "text": "export const inject = ['connection', 'sessionQuery', 'sessions', 'fs']"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "fs",
+    "sessionQuery",
+    "sessions"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

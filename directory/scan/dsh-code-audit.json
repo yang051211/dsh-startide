@@ -1,0 +1,75 @@
+{
+  "name": "dsh-code-audit",
+  "version": "0.4.2",
+  "scannedAt": "2026-11-10T20:53:52.198Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/web/app.js",
+        "line": 94,
+        "text": "const response = await fetch(`${API}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/api.js",
+        "line": 1,
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/api.js",
+        "line": 31,
+        "text": "mkdirSync(reportsDir, { recursive: true })"
+      },
+      {
+        "file": "src/api.js",
+        "line": 81,
+        "text": "if (resource === 'fs' && segments[1] === 'dirs' && method === 'GET') {"
+      },
+      {
+        "file": "src/api.js",
+        "line": 203,
+        "text": "writeFileSync(join(reportsDir, report.filename), report.content)"
+      },
+      {
+        "file": "src/api.js",
+        "line": 540,
+        "text": "const content = readFileSync(trajectory)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/tools.js",
+        "line": 18,
+        "text": "const tools = ctx.get('tools') ?? ctx.tools"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 25,
+        "text": "ctx.effect(() => tools.register(definition))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

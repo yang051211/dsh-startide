@@ -1,0 +1,103 @@
+{
+  "name": "dsh-alice-memory",
+  "version": "3.0.0",
+  "scannedAt": "2026-11-10T20:54:02.096Z",
+  "icon": "dsh-alice-memory.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/embedding.mjs",
+        "line": 46,
+        "text": "const res = await this.fetch(this.cfg.url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cli.mjs",
+        "line": 3,
+        "text": "import { existsSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "cli.mjs",
+        "line": 166,
+        "text": "writeFileSync(file, rows.map((r) => JSON.stringify(r)).join('\\n'), 'utf8');"
+      },
+      {
+        "file": "lib/config.mjs",
+        "line": 3,
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/config.mjs",
+        "line": 95,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "lib/config.mjs",
+        "line": 122,
+        "text": "Object.assign(out, { ...parseEnvText(readFileSync(file, 'utf8')), ...out });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 23,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.mjs",
+        "line": 218,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.mjs",
+        "line": 258,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.mjs",
+        "line": 303,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.mjs",
+        "line": 349,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/vector-index.mjs",
+        "line": 31,
+        "text": "if (preferWorker) this.#spawn();"
+      },
+      {
+        "file": "lib/vector-index.mjs",
+        "line": 58,
+        "text": "#spawn() {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

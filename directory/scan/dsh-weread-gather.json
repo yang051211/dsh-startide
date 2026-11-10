@@ -1,0 +1,71 @@
+{
+  "name": "dsh-weread-gather",
+  "version": "1.1.5",
+  "scannedAt": "2026-11-10T20:53:55.156Z",
+  "icon": "dsh-weread-gather.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 414,
+        "text": "const response = await fetch(`${API}${path}`, { headers: { accept: 'application/json' }, ...init })"
+      },
+      {
+        "file": "index.js",
+        "line": 147,
+        "text": "const response = await fetch(GATEWAY, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { copyFileSync, existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 123,
+        "text": "return JSON.parse(readFileSync(path, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 130,
+        "text": "mkdirSync(dirname(path), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 132,
+        "text": "writeFileSync(tmp, JSON.stringify(value), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 302,
+        "text": "const parsed = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

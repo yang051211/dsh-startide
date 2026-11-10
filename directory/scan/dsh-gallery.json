@@ -1,19 +1,19 @@
 {
   "name": "dsh-gallery",
-  "version": "0.14.1",
-  "scannedAt": "2026-11-09T23:06:48.929Z",
+  "version": "0.14.3",
+  "scannedAt": "2026-11-10T20:53:42.009Z",
   "icon": "dsh-gallery.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 724,
+        "line": 826,
         "text": "const response = await fetch(ROUTE, {"
       },
       {
         "file": "client.js",
-        "line": 745,
+        "line": 859,
         "text": "const response = await fetch(ROUTE, {"
       }
     ]
@@ -27,24 +27,24 @@
         "text": "import { promises as fsp, readFileSync, statSync, createReadStream } from 'node:fs'"
       },
       {
-        "file": "host/fsutil.js",
-        "line": 7,
-        "text": "import { promises as fsp, readFileSync, statSync, createReadStream } from 'node:fs'"
-      },
-      {
-        "file": "host/http.js",
-        "line": 11,
+        "file": "host/frames.js",
+        "line": 30,
         "text": "import { promises as fsp } from 'node:fs'"
       },
       {
-        "file": "host/http.js",
-        "line": 328,
-        "text": "await fsp.mkdir(path.dirname(opts.settingsFile), { recursive: true })"
+        "file": "host/frames.js",
+        "line": 51,
+        "text": "const raw = await fsp.readFile(framesFilePath(settingsFile), 'utf8')"
       },
       {
-        "file": "host/http.js",
-        "line": 330,
-        "text": "await fsp.writeFile("
+        "file": "host/frames.js",
+        "line": 65,
+        "text": "await fsp.mkdir(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "host/frames.js",
+        "line": 66,
+        "text": "await fsp.writeFile(tmp, JSON.stringify({ schema: 1, frames: frames ?? {} }, null, 2))"
       }
     ]
   },
@@ -57,27 +57,27 @@
     "evidence": [
       {
         "file": "host/http.js",
-        "line": 710,
+        "line": 900,
         "text": "*   旧实现 spawn('cmd.exe', ['/c','start','','explorer.exe', `/select,\"${abs}\"`])"
       },
       {
         "file": "host/http.js",
-        "line": 736,
+        "line": 926,
         "text": "const { spawn } = await import('node:child_process')"
       },
       {
         "file": "host/http.js",
-        "line": 748,
+        "line": 938,
         "text": "child = spawn(absolute, [], {"
       },
       {
         "file": "host/http.js",
-        "line": 759,
+        "line": 949,
         "text": "child = spawn('explorer.exe', [`/select,${absolute}`], {"
       },
       {
         "file": "host/http.js",
-        "line": 767,
+        "line": 957,
         "text": "child = spawn('open', [absolute], { detached: true, stdio: 'ignore' })"
       }
     ]

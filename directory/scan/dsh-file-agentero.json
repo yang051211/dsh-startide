@@ -1,0 +1,71 @@
+{
+  "name": "dsh-file-agentero",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-10T20:54:02.217Z",
+  "icon": "dsh-file-agentero.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 958,
+        "text": "void fetch('/file-agentero/translate', {"
+      },
+      {
+        "file": "client.js",
+        "line": 1257,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "update.js",
+        "line": 139,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "update.js",
+        "line": 17,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "update.js",
+        "line": 29,
+        "text": "const value = JSON.parse(readFileSync(PACKAGE_URL, 'utf8'))"
+      },
+      {
+        "file": "update.js",
+        "line": 113,
+        "text": "text = readFileSync(CHANGELOG_URL, 'utf8')"
+      },
+      {
+        "file": "update.js",
+        "line": 209,
+        "text": "return JSON.parse(readFileSync(`${dir}/package.json`, 'utf8'))?.dependencies?.[PACKAGE_NAME]"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

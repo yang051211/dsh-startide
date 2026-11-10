@@ -1,0 +1,126 @@
+{
+  "name": "dsh-zcode-startplan",
+  "version": "1.0.3",
+  "scannedAt": "2026-11-10T20:53:56.762Z",
+  "icon": "dsh-zcode-startplan.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 226,
+        "text": "const response = await fetch(API + path, init)"
+      },
+      {
+        "file": "client.js",
+        "line": 510,
+        "text": "const response = await fetch(`${API}/distribution-keys?op=create`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 546,
+        "text": "const response = await fetch(`${API}/distribution-keys?op=${opName}`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 767,
+        "text": "const response = await fetch(`${API}/claimable?id=${encodeURIComponent(id)}`)"
+      },
+      {
+        "file": "client.js",
+        "line": 1772,
+        "text": "const response = await fetch(`${API}/routing${query}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 20,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 178,
+        "text": "const raw = readFileSync(resolve(jwtFile), 'utf8').trim()"
+      },
+      {
+        "file": "lib/assemble.js",
+        "line": 10,
+        "text": "import { copyFileSync, readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/assemble.js",
+        "line": 103,
+        "text": "const raw = readFileSync(settingsFile, 'utf8')"
+      },
+      {
+        "file": "lib/assemble.js",
+        "line": 118,
+        "text": "mkdirSync(dataDir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 61,
+        "text": "export const inject = ['llm', 'tools', 'timer']"
+      },
+      {
+        "file": "lib/assemble.js",
+        "line": 493,
+        "text": "if (config.statusTool === true && ctx.tools !== undefined) {"
+      },
+      {
+        "file": "lib/assemble.js",
+        "line": 805,
+        "text": "return ctx.effect(() => ctx.tools.register(tool))"
+      },
+      {
+        "file": "lib/assemble.js",
+        "line": 807,
+        "text": "return ctx.tools.register(tool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/distribution-keys.js",
+        "line": 37,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/distribution-keys.js",
+        "line": 146,
+        "text": "const child = spawn('icacls', args, { stdio: 'ignore', windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "timer",
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 24,
+      "text": "**npm**：`npm install -g dsh-zcode-startplan`，然后在 DSH 会话里"
+    }
+  ],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-cli-doctor",
-  "version": "0.2.0",
-  "scannedAt": "2026-10-26T10:09:46.985Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-10T20:53:59.332Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -38,8 +38,8 @@
       },
       {
         "file": "src/host/index.js",
-        "line": 30,
-        "text": "import { readFileSync } from 'node:fs'"
+        "line": 62,
+        "text": "} from 'node:fs'"
       }
     ]
   },
@@ -62,13 +62,18 @@
       },
       {
         "file": "src/host/index.js",
-        "line": 29,
+        "line": 52,
         "text": "import { spawn } from 'node:child_process'"
       },
       {
         "file": "src/host/index.js",
-        "line": 272,
-        "text": "child = options.spawn("
+        "line": 700,
+        "text": "child = options.spawn(options.execPath, [options.checkPath, ...diagnosisArgs(mode)], {"
+      },
+      {
+        "file": "src/host/index.js",
+        "line": 829,
+        "text": "spawn('taskkill', ['/T', '/F', '/PID', String(pid)], { stdio: 'ignore' }).on?.('error', () => {})"
       }
     ]
   },

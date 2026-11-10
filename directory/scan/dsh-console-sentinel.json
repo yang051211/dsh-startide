@@ -1,0 +1,123 @@
+{
+  "name": "dsh-console-sentinel",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-10T20:53:52.214Z",
+  "icon": "dsh-console-sentinel.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 20,
+        "text": "// so fetch() from this section passes - that is why the UI lives here."
+      },
+      {
+        "file": "lib/client.js",
+        "line": 259,
+        "text": "return fetch(BASE + path, init).then(function (response) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/desktop.js",
+        "line": 22,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/desktop.js",
+        "line": 451,
+        "text": "fs.writeFileSync(psFile, withBom, 'utf8')"
+      },
+      {
+        "file": "lib/desktop.js",
+        "line": 454,
+        "text": "try { fs.unlinkSync(psFile) } catch (_) {}"
+      },
+      {
+        "file": "lib/desktop.js",
+        "line": 487,
+        "text": "try { fs.unlinkSync(outFile) } catch (_) {}"
+      },
+      {
+        "file": "lib/desktop.js",
+        "line": 501,
+        "text": "try { raw = fs.readFileSync(outFile, 'utf8') } catch (_) { raw = '' }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "// Contract notes: every registration goes through ctx.effect / ctx.tools"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 51,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 504,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 576,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 661,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/desktop.js",
+        "line": 21,
+        "text": "import { spawn, execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/desktop.js",
+        "line": 186,
+        "text": "const child = spawn('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', script],"
+      },
+      {
+        "file": "lib/desktop.js",
+        "line": 432,
+        "text": "// 🔴 Why a temp .ps1 + Start-Process -Verb RunAs instead of spawn(-Command):"
+      },
+      {
+        "file": "lib/desktop.js",
+        "line": 473,
+        "text": "child = spawn('powershell.exe', args, { stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true })"
+      },
+      {
+        "file": "lib/desktop.js",
+        "line": 591,
+        "text": "child = spawn('powershell.exe',"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

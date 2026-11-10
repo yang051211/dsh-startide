@@ -1,0 +1,108 @@
+{
+  "name": "dsh-watch-hands",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-10T20:54:00.209Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.mjs",
+        "line": 13,
+        "text": "const res = await fetch(handsUrl() + pathname, { signal: AbortSignal.timeout(timeoutMs ?? 30000) })"
+      },
+      {
+        "file": "lib/daemon.mjs",
+        "line": 19,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/sdk.mjs",
+        "line": 69,
+        "text": "const res = await fetch(url, { headers, signal: AbortSignal.timeout(timeoutMs || this.timeoutMs) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/daemon.mjs",
+        "line": 20,
+        "text": "import { writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/daemon.mjs",
+        "line": 510,
+        "text": "writeFileSync(PID_PATH, String(process.pid), 'utf8')"
+      },
+      {
+        "file": "lib/sdk.mjs",
+        "line": 22,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/sdk.mjs",
+        "line": 44,
+        "text": "const cfg = JSON.parse(readFileSync(join(homedir(), '.dsh-watch-hands', 'config.json'), 'utf8'))"
+      },
+      {
+        "file": "lib/shared.mjs",
+        "line": 2,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, statSync, renameSync, writeFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 199,
+        "text": "ctx.tools.register(tool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.mjs",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/client.mjs",
+        "line": 28,
+        "text": "const child = spawn(process.execPath, [DAEMON], {"
+      },
+      {
+        "file": "lib/worker.mjs",
+        "line": 7,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/worker.mjs",
+        "line": 45,
+        "text": "this.child = spawn("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

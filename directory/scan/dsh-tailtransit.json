@@ -1,0 +1,126 @@
+{
+  "name": "dsh-tailtransit",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-10T20:54:02.839Z",
+  "icon": "dsh-tailtransit.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 456,
+        "text": "const response = await fetch(`${API}/status`, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 486,
+        "text": "const response = await fetch(`${API}/settings`, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 508,
+        "text": "const response = await fetch(`${API}/settings?proxyPort=${value}`, { method: 'POST' })"
+      },
+      {
+        "file": "client.js",
+        "line": 523,
+        "text": "const response = await fetch(`${API}/settings?envProxy=${state === 'on' ? '1' : '0'}`, { method: 'POST' })"
+      },
+      {
+        "file": "client.js",
+        "line": 537,
+        "text": "const response = await fetch(`${API}/settings?${name}=${value ? '1' : '0'}`, { method: 'POST' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 28,
+        "text": "import { access, cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 220,
+        "text": "return (await readFile(file, 'utf8')).trim()"
+      },
+      {
+        "file": "index.js",
+        "line": 343,
+        "text": "const pid = Number.parseInt((await readFile(path.join(legacy, 'daemon.pid'), 'utf8')).trim(), 10)"
+      },
+      {
+        "file": "index.js",
+        "line": 350,
+        "text": "try { await rm(path.join(this.stateDir, 'daemon.pid'), { force: true }) } catch {}"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 47,
+        "text": "export const inject = ['web', 'tools', 'webServer', 'clientModules']"
+      },
+      {
+        "file": "index.js",
+        "line": 1249,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 25,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 247,
+        "text": "child = spawn(exe, args, { windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })"
+      },
+      {
+        "file": "index.js",
+        "line": 559,
+        "text": "child = spawn(this.config.tailscalePath, [`--socket=${this.socket}`, 'debug', 'watch-ipn'], {"
+      },
+      {
+        "file": "index.js",
+        "line": 594,
+        "text": "child = spawn(this.config.tailscaledPath, args, {"
+      },
+      {
+        "file": "index.js",
+        "line": 651,
+        "text": "child = spawn(this.config.tailscalePath, [`--socket=${this.socket}`, ...args], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "clientModules",
+    "tools",
+    "web",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

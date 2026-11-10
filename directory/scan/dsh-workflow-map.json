@@ -1,7 +1,7 @@
 {
   "name": "dsh-workflow-map",
-  "version": "1.0.1",
-  "scannedAt": "2026-11-06T08:17:09.037Z",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-10T20:53:48.874Z",
   "icon": "dsh-workflow-map.svg",
   "network": {
     "hit": true,
@@ -23,14 +23,25 @@
       },
       {
         "file": "src/orchestrator.mjs",
-        "line": 426,
+        "line": 427,
         "text": "raw = readFileSync(filePath, \"utf8\");"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 68,
+        "text": "export const inject = [\"sessionProjections\", \"sessions\", \"webServer\", \"agents\", \"tools\"];"
+      },
+      {
+        "file": "src/progress-tool.mjs",
+        "line": 128,
+        "text": "const dispose = tools.register(buildToolDefinition());"
+      }
+    ]
   },
   "childProcess": {
     "hit": false,

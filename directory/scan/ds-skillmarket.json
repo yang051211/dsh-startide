@@ -1,0 +1,79 @@
+{
+  "name": "ds-skillmarket",
+  "version": "1.0.3",
+  "scannedAt": "2026-11-10T20:54:00.612Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 769,
+        "text": "const res = await fetch(`${API}${path}`, { headers: { accept: 'application/json' }, cache: 'no-store', signal: AbortSignal.timeout(30_000) })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 777,
+        "text": "const res = await fetch(`${API}${path}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2799,
+        "text": "fetch(`${API}/prefs`, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 304,
+        "text": "const res = await fetch(url, { ...options, redirect: 'manual' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync, renameSync, rmSync, readdirSync, statSync, openSync, readSync, closeSync, cpSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 29,
+        "text": "return JSON.parse(readFileSync(new URL('../data/builtin-catalog.json', import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 38,
+        "text": "return JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version || '0.0.0'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 672,
+        "text": "return JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 688,
+        "text": "mkdirSync(dirname(file), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

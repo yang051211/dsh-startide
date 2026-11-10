@@ -1,0 +1,86 @@
+{
+  "name": "dsh-cite-verify",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-10T20:53:56.026Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cache.js",
+        "line": 11,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/cache.js",
+        "line": 41,
+        "text": "const parsed = JSON.parse(await readFile(this.#file(key), 'utf8'));"
+      },
+      {
+        "file": "lib/cache.js",
+        "line": 61,
+        "text": "await mkdir(this.directory, { recursive: true });"
+      },
+      {
+        "file": "lib/cache.js",
+        "line": 62,
+        "text": "await writeFile(this.#file(key), JSON.stringify(entry), 'utf8');"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 11,
+        "text": "import { mkdir, writeFile } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 21,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 54,
+        "text": "ctx.effect(() => ctx.tools.register(makeCiteVerifyTool(runtime)), 'cite-verify: cite_verify tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 55,
+        "text": "ctx.effect(() => ctx.tools.register(makeCiteBatchTool(runtime)), 'cite-verify: cite_batch tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 56,
+        "text": "ctx.effect(() => ctx.tools.register(makeCiteFixTool(runtime)), 'cite-verify: cite_fix tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 57,
+        "text": "ctx.effect(() => ctx.tools.register(makeCiteExportTool(runtime)), 'cite-verify: cite_export tool');"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

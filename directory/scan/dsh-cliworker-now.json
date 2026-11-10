@@ -1,8 +1,8 @@
 {
   "name": "dsh-cliworker-now",
-  "version": "0.8.6",
-  "scannedAt": "2026-11-03T20:52:12.844Z",
-  "icon": null,
+  "version": "0.8.8",
+  "scannedAt": "2026-11-10T20:53:49.440Z",
+  "icon": "dsh-cliworker-now.png",
   "network": {
     "hit": true,
     "evidence": [
@@ -48,17 +48,17 @@
       },
       {
         "file": "lib/cli-native-capabilities.mjs",
-        "line": 55,
+        "line": 59,
         "text": "await mkdir(nativePath, { recursive: true, mode: 0o700 })"
       },
       {
         "file": "lib/cli-native-capabilities.mjs",
-        "line": 65,
+        "line": 69,
         "text": "await rm(privatePath, { force: true })"
       },
       {
         "file": "lib/cli-native-capabilities.mjs",
-        "line": 68,
+        "line": 72,
         "text": "else await rm(privatePath, { recursive: true, force: true })"
       }
     ]
@@ -68,28 +68,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 16314,
-        "text": "const dispose = this.agent.ctx.tools.register({"
+        "line": 19362,
+        "text": "if (\"presentAs\" in agent.ctx.tools) return definitions;"
       },
       {
         "file": "lib/index.js",
-        "line": 31376,
-        "text": " \"enter\" || signal.aborted || agent.session.header.origin === \"subagent\" || !ctx.tools.get(\"cliworker_start\", assembleContextFor(agent).scope)) return decision;"
+        "line": 19366,
+        "text": "const definition = agent.ctx.tools.get(name, agent);"
       },
       {
         "file": "lib/index.js",
-        "line": 32395,
-        "text": "const resetPresentation = child.ctx.tools.presentAs(\"native\");"
+        "line": 19369,
+        "text": "agent.ctx.tools.setExecutor({"
       },
       {
         "file": "lib/index.js",
-        "line": 32399,
-        "text": "const schemas = child.ctx.tools.schemas(child);"
+        "line": 19475,
+        "text": "const dispose = this.agent.ctx.tools.register(definition);"
       },
       {
         "file": "lib/index.js",
-        "line": 32449,
-        "text": "return await withinCliTool(worker.runId, async () => child.ctx.tools.execute({"
+        "line": 22345,
+        "text": "const tools = ctx.tools;"
       }
     ]
   },
@@ -98,28 +98,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 18,
-        "text": "import { execFile, execFileSync } from \"node:child_process\";"
+        "line": 10,
+        "text": "import { execFile, execFileSync, spawn } from \"node:child_process\";"
       },
       {
         "file": "lib/index.js",
-        "line": 4302,
-        "text": "const child = backend.spawn({"
+        "line": 2688,
+        "text": "return spawn(executable, argv, {"
       },
       {
         "file": "lib/index.js",
-        "line": 4470,
-        "text": "const child = backend.spawn({"
+        "line": 3233,
+        "text": "spawn(argv, options = {}) {"
       },
       {
         "file": "lib/index.js",
-        "line": 5008,
-        "text": "const child = backend.spawn({"
+        "line": 3335,
+        "text": "peer = createLinePeer(io.spawn(argv, {"
       },
       {
         "file": "lib/index.js",
-        "line": 9263,
-        "text": "const child = input.backend.spawn({"
+        "line": 4753,
+        "text": "helper = io.spawn([install.runtime, fileURLToPath(new URL(\"./workbuddy-key-helper.cjs\", import.meta.url))], {"
       }
     ]
   },

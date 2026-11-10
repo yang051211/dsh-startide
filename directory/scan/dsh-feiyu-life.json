@@ -1,0 +1,87 @@
+{
+  "name": "dsh-feiyu-life",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-10T20:53:55.866Z",
+  "icon": "dsh-feiyu-life.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 78,
+        "text": "const res = await fetch(url, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 83,
+        "text": "const res = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 52,
+        "text": "const j = JSON.parse(readFileSync(剧本路径(d), 'utf8'))"
+      },
+      {
+        "file": "life.js",
+        "line": 22,
+        "text": "import { readFileSync, writeFileSync, mkdirSync, statSync, renameSync } from 'node:fs'"
+      },
+      {
+        "file": "life.js",
+        "line": 443,
+        "text": "const raw = JSON.parse(readFileSync(CONFIG_PATH, 'utf8'))"
+      },
+      {
+        "file": "life.js",
+        "line": 447,
+        "text": "try { writeFileSync(CONFIG_PATH, JSON.stringify(cfg, null, 2), 'utf8') } catch (e2) { /* 写不了不影响读 */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "export const inject = ['systemPrompt', 'agents', 'timer', 'webServer', 'llm', 'tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 103,
+        "text": "const off = agent.ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "llm",
+    "systemPrompt",
+    "timer",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

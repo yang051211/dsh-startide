@@ -1,0 +1,72 @@
+{
+  "name": "dsh-tokeneconomizer",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-10T20:53:58.250Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/diagnostics.js",
+        "line": 12,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/diagnostics.js",
+        "line": 84,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/diagnostics.js",
+        "line": 88,
+        "text": "previous = fs.readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "lib/diagnostics.js",
+        "line": 99,
+        "text": "fs.writeFileSync(file, next, 'utf8')"
+      },
+      {
+        "file": "lib/diagnostics.js",
+        "line": 116,
+        "text": "const raw = fs.readFileSync(path.join(stateDir, 'diagnostics.jsonl'), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/dsh/install.js",
+        "line": 481,
+        "text": "const dispose = agent.ctx.tools.restrict({ deny: runtime })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 30,
+        "text": "export const inject = ['systemPrompt', 'tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

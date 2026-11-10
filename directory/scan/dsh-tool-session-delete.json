@@ -1,7 +1,7 @@
 {
   "name": "dsh-tool-session-delete",
-  "version": "1.2.0",
-  "scannedAt": "2026-10-26T10:10:44.440Z",
+  "version": "1.4.0",
+  "scannedAt": "2026-11-10T20:53:57.956Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -13,12 +13,22 @@
       {
         "file": "lib/index.js",
         "line": 11,
-        "text": "import { rm, stat } from \"node:fs/promises\";"
+        "text": "import { readdir, rm, stat } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 103,
+        "line": 107,
         "text": "await rm(target, { recursive: true, force: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 409,
+        "text": "await rm(targetFile, { force: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 462,
+        "text": "await rm(join(cacheDir, file), { force: true });"
       }
     ]
   },

@@ -1,7 +1,7 @@
 {
   "name": "dsh-immune-system",
-  "version": "1.0.41",
-  "scannedAt": "2026-11-09T23:06:40.013Z",
+  "version": "1.0.58",
+  "scannedAt": "2026-11-10T20:53:37.580Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "dsh-immune-system/dist/core/audit.js",
+        "line": 17,
+        "text": "import { existsSync, readdirSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "dsh-immune-system/dist/core/audit.js",
+        "line": 238,
+        "text": "lines = readFileSync(path, 'utf8').split('\\n');"
+      },
+      {
+        "file": "dsh-immune-system/dist/core/audit.js",
+        "line": 322,
+        "text": "lines = readFileSync(path, 'utf8').split('\\n');"
+      },
+      {
         "file": "dsh-immune-system/dist/core/connect.js",
         "line": 16,
-        "text": "import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+        "text": "import { copyFileSync, cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';"
       },
       {
         "file": "dsh-immune-system/dist/core/connect.js",
-        "line": 110,
-        "text": "const raw = readFileSync(configPath, 'utf8');"
-      },
-      {
-        "file": "dsh-immune-system/dist/core/connect.js",
-        "line": 131,
-        "text": "writeFileSync(configPath, `${JSON.stringify(config, null, 2)}\\n`, 'utf8');"
-      },
-      {
-        "file": "dsh-immune-system/dist/core/connect.js",
-        "line": 134,
-        "text": "mkdirSync(dirname(configPath), { recursive: true });"
-      },
-      {
-        "file": "dsh-immune-system/dist/core/connect.js",
-        "line": 135,
-        "text": "writeFileSync(configPath, `${JSON.stringify(config, null, 2)}\\n`, 'utf8');"
+        "line": 41,
+        "text": "const raw = readFileSync(join(vendorRoot, 'version.json'), 'utf8');"
       }
     ]
   },

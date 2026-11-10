@@ -1,0 +1,138 @@
+{
+  "name": "agentdeck-super",
+  "version": "1.11.15",
+  "scannedAt": "2026-11-10T20:54:00.976Z",
+  "icon": "agentdeck-super.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/nexi-pet.mjs",
+        "line": 28,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "lib/engine/bridge.js",
+        "line": 126,
+        "text": "const res = await fetch(url, { ...init, signal: withDeadline(timeoutMs, signal) });"
+      },
+      {
+        "file": "lib/engine/bridge.js",
+        "line": 238,
+        "text": "const res = await fetch(joinUrl(base, ''), {"
+      },
+      {
+        "file": "lib/engine/bridge.js",
+        "line": 436,
+        "text": "res = await fetch(joinUrl(base, '/chat/completions'), {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2509,
+        "text": "*   - JSON 调用（脚本/curl -H 'content-type: application/json' -d '{\"key\":\"…\"}'）"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/nexi-pet.mjs",
+        "line": 29,
+        "text": "import { mkdirSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "bin/nexi-pet.mjs",
+        "line": 33,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "bin/nexi-pet.mjs",
+        "line": 179,
+        "text": "mkdirSync(dirname(resolve(String(OUT))), { recursive: true });"
+      },
+      {
+        "file": "bin/nexi-pet.mjs",
+        "line": 180,
+        "text": "writeFileSync(resolve(String(OUT)), html, 'utf8');"
+      },
+      {
+        "file": "bin/nexi.mjs",
+        "line": 19,
+        "text": "import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "*   3) 工具定义必须带 output（{schema, render}）：宿主 ctx.tools.register 在"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "*   ctx.tools.register({name, description, parameters, output, execute, timeoutMs?}) → disposer"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 58,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 114,
+        "text": "* 不影响其余工具与整个插件）；第一方插件里 async apply 是常见写法（如 dsh-mcp-client）。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 574,
+        "text": "const tools = ctx.tools;"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/nexi-pet.mjs",
+        "line": 32,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "bin/nexi-pet.mjs",
+        "line": 221,
+        "text": "const child = spawn(browser, args, { detached: true, stdio: 'ignore' });"
+      },
+      {
+        "file": "bin/nexi.mjs",
+        "line": 17,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "bin/nexi.mjs",
+        "line": 488,
+        "text": "const r = spawnSync(process.execPath, [script, ...rest], {"
+      },
+      {
+        "file": "bin/nexi.mjs",
+        "line": 844,
+        "text": "const child = spawn(process.execPath, [cli, ...passthrough], { stdio: 'inherit' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

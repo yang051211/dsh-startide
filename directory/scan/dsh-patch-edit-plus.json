@@ -1,7 +1,7 @@
 {
   "name": "dsh-patch-edit-plus",
-  "version": "0.4.7",
-  "scannedAt": "2026-11-06T20:48:48.388Z",
+  "version": "0.4.8",
+  "scannedAt": "2026-11-10T20:53:50.131Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -41,29 +41,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/guidance.js",
+        "line": 108,
+        "text": "? ctx.tools.get(toolName)"
+      },
+      {
+        "file": "lib/guidance.js",
+        "line": 109,
+        "text": ": ctx.tools.get(toolName, scope);"
+      },
+      {
         "file": "lib/index.js",
-        "line": 31,
+        "line": 32,
         "text": "* - `tools` — `registerApplyPatchTool` probes and registers (`ctx.tools`)."
       },
       {
         "file": "lib/index.js",
-        "line": 39,
+        "line": 40,
         "text": "export const inject = ['tools', 'fs'];"
       },
       {
         "file": "lib/register.js",
         "line": 4,
         "text": "* Layer 1: probe `ctx.tools.get(name)` before building the definition."
-      },
-      {
-        "file": "lib/register.js",
-        "line": 20,
-        "text": "const tools = ctx.tools;"
-      },
-      {
-        "file": "lib/register.js",
-        "line": 49,
-        "text": "return tools.register(definition);"
       }
     ]
   },

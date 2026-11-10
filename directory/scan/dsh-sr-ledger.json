@@ -1,0 +1,86 @@
+{
+  "name": "dsh-sr-ledger",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-10T20:53:53.374Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/ledger.js",
+        "line": 12,
+        "text": "import { appendFile, mkdir, readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/ledger.js",
+        "line": 18,
+        "text": "return JSON.parse(await readFile(file, 'utf8'));"
+      },
+      {
+        "file": "lib/ledger.js",
+        "line": 29,
+        "text": "const text = await readFile(file, 'utf8');"
+      },
+      {
+        "file": "lib/ledger.js",
+        "line": 67,
+        "text": "await mkdir(this.root, { recursive: true });"
+      },
+      {
+        "file": "lib/ledger.js",
+        "line": 68,
+        "text": "await mkdir(this.paths.exports, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 21,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 45,
+        "text": "ctx.effect(() => ctx.tools.register(makeSrInitTool(runtime)), 'sr-ledger: sr_init tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "ctx.effect(() => ctx.tools.register(makeSrImportTool(runtime, ctx)), 'sr-ledger: sr_import tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 47,
+        "text": "ctx.effect(() => ctx.tools.register(makeSrScreenTool(runtime)), 'sr-ledger: sr_screen tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 48,
+        "text": "ctx.effect(() => ctx.tools.register(makeSrPrismaTool(runtime)), 'sr-ledger: sr_prisma tool');"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

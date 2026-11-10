@@ -1,34 +1,34 @@
 {
   "name": "dsh-bili-watch",
-  "version": "0.4.8",
-  "scannedAt": "2026-11-07T14:33:10.621Z",
+  "version": "0.4.9",
+  "scannedAt": "2026-11-10T20:53:40.232Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 133,
+        "line": 204,
         "text": "// D40（2026-10-29）：原来两行就是 `(await fetch(...)).json()`，两个坑一起踩："
       },
       {
         "file": "client.js",
-        "line": 148,
+        "line": 219,
         "text": "r = await fetch(API + p, { credentials: 'same-origin', signal: guard.signal, ...init })"
       },
       {
         "file": "index.js",
-        "line": 974,
+        "line": 980,
         "text": "const r = await fetch(QR_GEN, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(8000) })"
       },
       {
         "file": "index.js",
-        "line": 994,
+        "line": 1000,
         "text": "const res = await fetch(QR_POLL(key), { headers: { 'User-Agent': UA }, redirect: 'manual', signal: AbortSignal.timeout(8000) })"
       },
       {
         "file": "index.js",
-        "line": 2262,
+        "line": 2268,
         "text": "//   局域网内 `curl -H 'Host: 127.0.0.1' -H 'Origin: http://127.0.0.1' -H 'Content-Type: application/json'"
       }
     ]
@@ -38,27 +38,27 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 13,
+        "line": 16,
         "text": "nc, copyFileSync, existsSync, lstatSync, mkdirSync, openSync, readFileSync, readdirSync, renameSync, rmSync, rmdirSync, statSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 98,
+        "line": 104,
         "text": "writeFileSync(f, s, 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 161,
+        "line": 167,
         "text": "mkdirSync(dst, { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 325,
+        "line": 331,
         "text": "// 用户刚下好的 yt-dlp.exe / last-bin.json 被 `rmSync(dst)` 整棵删掉（CBlazed 的现场日志）。"
       },
       {
         "file": "index.js",
-        "line": 338,
+        "line": 344,
         "text": "try { return JSON.parse(readFileSync(DEPS_LOCK_FILE, 'utf8')) } catch { return null }"
       }
     ]
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 2601,
+        "line": 2607,
         "text": "//    必须用 defineTool 包一层：ctx.tools.register 收的是编译好的 tool 对象，"
       }
     ]
@@ -79,27 +79,27 @@
       {
         "file": "index.js",
         "line": 12,
-        "text": "import { spawn, execFile, execFileSync } from 'node:child_process'"
+        "text": "import { execFile } from 'node:child_process'"
       },
       {
         "file": "index.js",
-        "line": 920,
-        "text": "child = spawn(process.execPath, [LOOK, ...args], {"
-      },
-      {
-        "file": "index.js",
-        "line": 924,
+        "line": 930,
         "text": "//   纯 node 宿主不认这个变量，spawnSync(execPath,['-e','console.log(1)']) 仍 rc=0。"
       },
       {
         "file": "index.js",
-        "line": 1190,
-        "text": "const ps = spawn('powershell.exe', ['-NoProfile', '-STA', '-Command', script], { windowsHide: false })"
+        "line": 1449,
+        "text": "execFile(file, args, opts, (err, stdout) => resolveP({ ok: !err, stdout: String(stdout ?? ''), err }))"
       },
       {
-        "file": "index.js",
-        "line": 1443,
-        "text": "execFile(file, args, opts, (err, stdout) => resolveP({ ok: !err, stdout: String(stdout ?? ''), err }))"
+        "file": "lib/exec.mjs",
+        "line": 4,
+        "text": "* 边界守卫允许 `execFileSync(` / `spawn(` 只在本文件出现；其余调用点"
+      },
+      {
+        "file": "lib/exec.mjs",
+        "line": 14,
+        "text": "import { execFileSync, spawn } from 'node:child_process'"
       }
     ]
   },
@@ -114,7 +114,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 58,
+      "line": 60,
       "text": "npm i -g dsh-bili-watch"
     }
   ],

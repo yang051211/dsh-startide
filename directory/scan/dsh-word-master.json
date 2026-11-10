@@ -1,0 +1,116 @@
+{
+  "name": "dsh-word-master",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-10T20:53:54.057Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "skills/word-master/scripts/review_ui/app.js",
+        "line": 76,
+        "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "skills/word-master/scripts/review_ui/app.js",
+        "line": 205,
+        "text": "const data = await fetch('/api/pages').then((r) => r.json());"
+      },
+      {
+        "file": "skills/word-master/scripts/review_ui/app.js",
+        "line": 213,
+        "text": "const map = await fetch('/api/page-map').then((r) => r.json()).catch(() => null);"
+      },
+      {
+        "file": "skills/word-master/scripts/review_ui/app.js",
+        "line": 282,
+        "text": "data = await fetch('/api/toc').then((r) => r.json());"
+      },
+      {
+        "file": "skills/word-master/scripts/review_ui/app.js",
+        "line": 666,
+        "text": "fetch('/api/styles').then((r) => r.json()).catch(() => null),"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 31,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 177,
+        "text": "const raw = await readFile(fileUrl, 'utf8');"
+      },
+      {
+        "file": "lib/preferences.js",
+        "line": 27,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/preferences.js",
+        "line": 176,
+        "text": "const raw = readFileSync(path, 'utf8').replace(/^\\uFEFF/, '');"
+      },
+      {
+        "file": "lib/preferences.js",
+        "line": 201,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 277,
+        "text": "export const inject = ['tools', 'skills'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 299,
+        "text": "ctx.tools.register(definition);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/runner.js",
+        "line": 6,
+        "text": "* 1. **不经 shell**。所有命令走 `spawn(bin, argv)` 数组形式，路径里有空格、"
+      },
+      {
+        "file": "lib/runner.js",
+        "line": 23,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/runner.js",
+        "line": 62,
+        "text": "child = spawn(bin, args, {"
+      },
+      {
+        "file": "verify.mjs",
+        "line": 14,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

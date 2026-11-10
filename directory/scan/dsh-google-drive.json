@@ -1,0 +1,115 @@
+{
+  "name": "dsh-google-drive",
+  "version": "0.1.8",
+  "scannedAt": "2026-11-10T20:54:01.734Z",
+  "icon": "dsh-google-drive.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/drive.js",
+        "line": 149,
+        "text": "this.fetch = fetchImpl ?? ((input, init) => globalThis.fetch(input, init));"
+      },
+      {
+        "file": "lib/host/drive.js",
+        "line": 166,
+        "text": "response = await this.fetch(url, {"
+      },
+      {
+        "file": "lib/host/google-api.js",
+        "line": 118,
+        "text": "this.fetch = dependencies.fetchImpl ?? ((input, init) => globalThis.fetch(input, init));"
+      },
+      {
+        "file": "lib/host/google-api.js",
+        "line": 134,
+        "text": "response = await this.fetch(url, { ...init, signal: combined });"
+      },
+      {
+        "file": "lib/host/oauth-flow.js",
+        "line": 18,
+        "text": "import { createServer } from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/files.js",
+        "line": 10,
+        "text": "import { chmod, lstat, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/host/files.js",
+        "line": 44,
+        "text": "await mkdir(dir, { recursive: true, mode });"
+      },
+      {
+        "file": "lib/host/files.js",
+        "line": 76,
+        "text": "await writeFile(file, `${JSON.stringify(value, null, 2)}\\n`, { mode });"
+      },
+      {
+        "file": "lib/host/files.js",
+        "line": 94,
+        "text": "text = await readFile(file, 'utf8');"
+      },
+      {
+        "file": "lib/host/files.js",
+        "line": 115,
+        "text": "await rm(file, { force: false });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/tools.js",
+        "line": 153,
+        "text": "* @returns {object[]} the tool definitions, ready for `ctx.tools.register`."
+      },
+      {
+        "file": "lib/index.js",
+        "line": 28,
+        "text": "export const inject = ['connection', 'credentials', 'tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 154,
+        "text": "for (const tool of buildDriveTools(service)) disposers.push(ctx.tools.register(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/onboarding.js",
+        "line": 16,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/host/onboarding.js",
+        "line": 684,
+        "text": "const result = spawnSync(this.binaryPath, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "credentials",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

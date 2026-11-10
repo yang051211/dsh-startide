@@ -1,0 +1,100 @@
+{
+  "name": "dsh-paper-fetcher",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-10T20:54:01.911Z",
+  "icon": "dsh-paper-fetcher.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 852,
+        "text": "response = await fetch(`${ROUTE}/${endpoint}`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 205,
+        "text": "return await fetch(url, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 493,
+        "text": "const response = await fetch('https://chinaxiv.org/api/search', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import fsp from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 119,
+        "text": "const data = JSON.parse(fs.readFileSync(url, 'utf8'));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1042,
+        "text": ");      await fsp.mkdir(directory, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1044,
+        "text": "await fsp.writeFile(target, downloaded.bytes);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1254,
+        "text": "const { spawn } = await import('node:child_process');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1256,
+        "text": "spawn('rundll32.exe', ['url.dll,FileProtocolHandler', url.href], { detached: true, stdio: 'ignore' }).unref();"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1258,
+        "text": "spawn('open', [url.href], { detached: true, stdio: 'ignore' }).unref();"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1260,
+        "text": "spawn('xdg-open', [url.href], { detached: true, stdio: 'ignore' }).unref();"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1269,
+        "text": "// unless the path is quoted, and Node's spawn() only quotes an"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

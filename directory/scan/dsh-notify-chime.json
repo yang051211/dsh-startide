@@ -1,0 +1,95 @@
+{
+  "name": "dsh-notify-chime",
+  "version": "1.8.0",
+  "scannedAt": "2026-11-10T20:53:54.690Z",
+  "icon": "dsh-notify-chime.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 366,
+        "text": "const r = await fetch(url, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 377,
+        "text": "const r = await fetch(API + '/set', {"
+      },
+      {
+        "file": "client.js",
+        "line": 393,
+        "text": "const r = await fetch(API + '/preview', {"
+      },
+      {
+        "file": "client.js",
+        "line": 619,
+        "text": "const r = await fetch(API + '/sound', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 25,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 77,
+        "text": "const raw = JSON.parse(readFileSync(file, 'utf8').replace(/^\\uFEFF/, ''))"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 367,
+        "text": "mkdirSync(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 368,
+        "text": "writeFileSync(file, `${JSON.stringify(value, null, 2)}\\n`)"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 623,
+        "text": "appendFileSync(tracePath, `${JSON.stringify(entry)}\\n`)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 24,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 640,
+        "text": "const child = spawn(chosen.command, chosen.args(file), { windowsHide: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 691,
+        "text": "const child = spawn(spec.command, spec.args, { windowsHide: true, stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

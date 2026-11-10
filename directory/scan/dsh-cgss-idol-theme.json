@@ -1,0 +1,78 @@
+{
+  "name": "dsh-cgss-idol-theme",
+  "version": "1.3.4",
+  "scannedAt": "2026-11-10T20:53:47.614Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "desktop/main.cjs",
+        "line": 221,
+        "text": "const response = await net.fetch(url, { signal: controller.signal });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "desktop/main.cjs",
+        "line": 4,
+        "text": "const fs = require('node:fs');"
+      },
+      {
+        "file": "desktop/main.cjs",
+        "line": 65,
+        "text": "fs.mkdirSync(dataRoot, { recursive: true });"
+      },
+      {
+        "file": "desktop/main.cjs",
+        "line": 67,
+        "text": "    fs.writeFileSync(temporary, JSON.stringify({ version: 3, preferences: assets.savedAppearance(preferences), bounds: window.getBounds(), petPosition: layout.p"
+      },
+      {
+        "file": "desktop/main.cjs",
+        "line": 74,
+        "text": "const value = JSON.parse(fs.readFileSync(preferencesPath, 'utf8'));"
+      },
+      {
+        "file": "desktop/main.cjs",
+        "line": 266,
+        "text": "return new Response(await fs.promises.readFile(resource.file), { headers: { 'Content-Type': resource.contentType, 'X-Content-Type-Options': 'nosniff' } });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/desktop-process.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [
+    "lib/characters.js",
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "connection",
+    "sessionProjections",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

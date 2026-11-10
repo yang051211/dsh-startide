@@ -1,0 +1,138 @@
+{
+  "name": "ocean-crew",
+  "version": "0.6.10",
+  "scannedAt": "2026-11-10T20:54:02.119Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 4732,
+        "text": "response = await fetch(ROUTE, {"
+      },
+      {
+        "file": "dist/host/chat/channel.js",
+        "line": 1232,
+        "text": "async fetch(request) {"
+      },
+      {
+        "file": "dist/host/connectors/gateway.js",
+        "line": 8,
+        "text": "import { createServer, request as httpRequest, } from \"node:http\";"
+      },
+      {
+        "file": "dist/host/connectors/gateway.js",
+        "line": 9,
+        "text": "import { request as httpsRequest } from \"node:https\";"
+      },
+      {
+        "file": "dist/host/connectors/index.js",
+        "line": 14,
+        "text": "import { createServer } from \"node:http\";"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/host/chat/btw.js",
+        "line": 9,
+        "text": "import { mkdir, readFile, rm, unlink, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "dist/host/chat/btw.js",
+        "line": 258,
+        "text": "await mkdir(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "dist/host/chat/btw.js",
+        "line": 261,
+        "text": "await writeFile(temp, JSON.stringify(cards.get(botId)?.get(partId) ?? [], null, 2), \"utf8\");"
+      },
+      {
+        "file": "dist/host/chat/btw.js",
+        "line": 265,
+        "text": "await unlink(temp).catch(() => { });"
+      },
+      {
+        "file": "dist/host/chat/btw.js",
+        "line": 293,
+        "text": "const parsed = JSON.parse(await readFile(partFile(botId, partId), \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/host/chat/steer.js",
+        "line": 156,
+        "text": "if (typeof ctx.tools?.get !== \"function\")"
+      },
+      {
+        "file": "dist/host/chat/steer.js",
+        "line": 158,
+        "text": "const def = ctx.tools.get(name, agent);"
+      },
+      {
+        "file": "dist/host/chat/steer.js",
+        "line": 174,
+        "text": "const lift = agent.ctx.tools.register({"
+      },
+      {
+        "file": "dist/host/connectors/index.js",
+        "line": 25,
+        "text": "const MCP_CLIENT = \"@deepseek-ai/dsh-mcp-client\";"
+      },
+      {
+        "file": "dist/host/team/tools.js",
+        "line": 182,
+        "text": "const tools = ctx.tools;"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/host/core/dsh-update.js",
+        "line": 8,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "dist/host/core/dsh-update.js",
+        "line": 184,
+        "text": "((command, argv, options) => spawn(command, argv, options));"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: node scripts/build.mjs --install"
+      }
+    ]
+  },
+  "dependencies": 6,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "llm",
+    "sessionController",
+    "sessionTitle",
+    "sessions",
+    "systemPrompt",
+    "tools",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

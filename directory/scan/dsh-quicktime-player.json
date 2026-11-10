@@ -1,0 +1,102 @@
+{
+  "name": "dsh-quicktime-player",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-10T20:53:43.902Z",
+  "icon": "dsh-quicktime-player.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 361,
+        "text": "fetch(prefix + '/diag', {"
+      },
+      {
+        "file": "client.js",
+        "line": 470,
+        "text": "fetch(routePrefix() + '/source?' + query.toString(), { credentials: 'same-origin' })"
+      },
+      {
+        "file": "client.js",
+        "line": 986,
+        "text": "fetch(routePrefix() + '/clip?' + query.toString(), { credentials: 'same-origin' })"
+      },
+      {
+        "file": "client.js",
+        "line": 1448,
+        "text": "fetch(routePrefix() + '/capabilities', { credentials: 'same-origin' })"
+      },
+      {
+        "file": "client.js",
+        "line": 1460,
+        "text": "fetch(routePrefix() + '/open?' + query.toString(), { credentials: 'same-origin' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1213,
+        "text": "h('button', { key: 'fs', className: 'qtp-btn', 'data-qtp': 'fs', onClick: toggleFullscreen, title: '全屏 (F)' }, h(IconExpand)),"
+      },
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "import { createReadStream, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 28,
+        "text": "import { rm } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 30,
+        "text": "import { appendFile, mkdir, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 78,
+        "text": "await mkdir(dirname(file), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "import { execFileSync, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 267,
+        "text": "const child = spawn(command.bin, command.args, { detached: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "index.js",
+        "line": 302,
+        "text": "const child = spawn(ffmpegPath, args, { stdio: ['ignore', 'ignore', 'pipe'] })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

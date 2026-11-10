@@ -1,7 +1,7 @@
 {
   "name": "dsh-btw",
-  "version": "0.0.3",
-  "scannedAt": "2026-10-26T10:08:44.580Z",
+  "version": "0.0.5",
+  "scannedAt": "2026-11-10T20:53:59.690Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -11,24 +11,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 35,
-        "text": "import { existsSync, readFileSync, rmSync, statSync, writeFileSync } from \"node:fs\";"
+        "file": "lib/host-platform.js",
+        "line": 21,
+        "text": "import { open, readFile } from \"node:fs/promises\";"
       },
       {
-        "file": "lib/index.js",
-        "line": 102,
-        "text": "rmSync(dir, { recursive: true, force: true });"
+        "file": "lib/host-platform.js",
+        "line": 33,
+        "text": "readFile: (path, encoding) => readFile(path, encoding),"
       },
       {
-        "file": "lib/index.js",
-        "line": 128,
-        "text": "const parsed = JSON.parse(readFileSync(MARKER_PATH, \"utf8\"));"
+        "file": "lib/host-platform.js",
+        "line": 46,
+        "text": "const bootId = (await env.readFile(\"/proc/sys/kernel/random/boot_id\", \"utf8\")).trim();"
       },
       {
-        "file": "lib/index.js",
-        "line": 137,
-        "text": "writeFileSync(MARKER_PATH, JSON.stringify(entries, null, 1));"
+        "file": "lib/host-platform.js",
+        "line": 47,
+        "text": "const stat = await env.readFile(`/proc/${pid}/stat`, \"utf8\");"
+      },
+      {
+        "file": "lib/host-platform.js",
+        "line": 72,
+        "text": "try { bootId = (await env.readFile(\"/proc/sys/kernel/random/boot_id\", \"utf8\")).trim(); }"
       }
     ]
   },
@@ -44,7 +49,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [],

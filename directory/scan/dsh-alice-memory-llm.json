@@ -1,0 +1,108 @@
+{
+  "name": "dsh-alice-memory-llm",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-10T20:54:02.236Z",
+  "icon": "dsh-alice-memory-llm.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/http.mjs",
+        "line": 7,
+        "text": "import { request as httpRequest } from 'node:http';"
+      },
+      {
+        "file": "lib/http.mjs",
+        "line": 8,
+        "text": "import { request as httpsRequest } from 'node:https';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cli.mjs",
+        "line": 3,
+        "text": "import { existsSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "cli.mjs",
+        "line": 178,
+        "text": "writeFileSync(file, rows.map((r) => JSON.stringify(r)).join('\\n'), 'utf8');"
+      },
+      {
+        "file": "lib/config.mjs",
+        "line": 3,
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/config.mjs",
+        "line": 91,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "lib/config.mjs",
+        "line": 118,
+        "text": "Object.assign(out, { ...parseEnvText(readFileSync(file, 'utf8')), ...out });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 31,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.mjs",
+        "line": 230,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.mjs",
+        "line": 270,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.mjs",
+        "line": 315,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.mjs",
+        "line": 361,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/vector-index.mjs",
+        "line": 31,
+        "text": "if (preferWorker) this.#spawn();"
+      },
+      {
+        "file": "lib/vector-index.mjs",
+        "line": 58,
+        "text": "#spawn() {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

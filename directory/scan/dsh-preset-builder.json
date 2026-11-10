@@ -1,0 +1,71 @@
+{
+  "name": "dsh-preset-builder",
+  "version": "0.2.9",
+  "scannedAt": "2026-11-10T20:54:02.421Z",
+  "icon": "dsh-preset-builder.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 434,
+        "text": "const response = await fetch(BASE + path, {"
+      },
+      {
+        "file": "client.js",
+        "line": 1478,
+        "text": "const response = await fetch(BASE + '/config', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "import { readFile, rename, rm, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 210,
+        "text": "return await readFile(path, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 220,
+        "text": "await writeFile(temporary, text, { encoding: 'utf8', mode: 0o600 })"
+      },
+      {
+        "file": "index.js",
+        "line": 223,
+        "text": "await rm(temporary, { force: true }).catch(() => {})"
+      },
+      {
+        "file": "lib/inventory.mjs",
+        "line": 4,
+        "text": "import { readFile } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

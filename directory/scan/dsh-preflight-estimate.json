@@ -1,0 +1,82 @@
+{
+  "name": "dsh-preflight-estimate",
+  "version": "0.4.3",
+  "scannedAt": "2026-11-10T20:54:02.384Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 117,
+        "text": "const payload = (await (await fetch(`${API}/state?sessionId=${encodeURIComponent(sessionId)}`)).json());"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 226,
+        "text": "const response = await fetch(`${API}/ledger${query}`);"
+      },
+      {
+        "file": "src/client/index.tsx",
+        "line": 171,
+        "text": "const payload = (await (await fetch(`${API}/state?sessionId=${encodeURIComponent(sessionId)}`)).json()) as StatePayload;"
+      },
+      {
+        "file": "src/client/index.tsx",
+        "line": 378,
+        "text": "const response = await fetch(`${API}/ledger${query}`);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import { appendFile, mkdir, readFile, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 353,
+        "text": "const raw = await readFile(join(ledgerDir(), \"prices.json\"), \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 396,
+        "text": "await mkdir(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 397,
+        "text": "await appendFile(join(dir, `${monthKey(row.startedAt)}.jsonl`), `${JSON.stringify(row)}\\n`, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 407,
+        "text": "const raw = await readFile(ledgerFile(month), \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

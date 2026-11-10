@@ -1,0 +1,55 @@
+{
+  "name": "@qzsy/dsh-git-badge",
+  "version": "1.3.0",
+  "scannedAt": "2026-11-10T20:53:54.373Z",
+  "icon": "qzsy__dsh-git-badge.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.js",
+        "line": 200,
+        "text": "const response = await fetch(endpointUrl(), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 3,
+        "text": "import { access, stat } from \"node:fs/promises\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 2,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 38,
+        "text": "execFile(\"git\", [\"-C\", cwd, ...args], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

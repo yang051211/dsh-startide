@@ -1,0 +1,123 @@
+{
+  "name": "dsh-watch-eyes",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-10T20:53:59.836Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.mjs",
+        "line": 11,
+        "text": "const res = await fetch('http://127.0.0.1:' + port + pathname, {"
+      },
+      {
+        "file": "lib/daemon.mjs",
+        "line": 3,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/daemon.mjs",
+        "line": 23,
+        "text": "const res = await fetch(MOUTH_URL + path, { signal: AbortSignal.timeout(timeoutMs ?? 20000) })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 170,
+        "text": "const res = await fetch(FACE_URL + path, { signal: AbortSignal.timeout(ms || 8000) })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 180,
+        "text": "const res = await fetch(MOUTH_URL + '/say?async=1&text=' + encodeURIComponent(text), { signal: AbortSignal.timeout(8000) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/daemon.mjs",
+        "line": 7,
+        "text": "import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/daemon.mjs",
+        "line": 106,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/daemon.mjs",
+        "line": 108,
+        "text": "writeFileSync(path, Buffer.from(shot.data, 'base64'))"
+      },
+      {
+        "file": "lib/daemon.mjs",
+        "line": 418,
+        "text": "const b64 = readFileSync(q.path).toString('base64')"
+      },
+      {
+        "file": "lib/daemon.mjs",
+        "line": 514,
+        "text": "writeFileSync(PID_PATH, String(process.pid), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 267,
+        "text": "ctx.tools.register(tool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/capture.mjs",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/capture.mjs",
+        "line": 22,
+        "text": "this.child = spawn("
+      },
+      {
+        "file": "lib/client.mjs",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/client.mjs",
+        "line": 28,
+        "text": "const child = spawn(process.execPath, [DAEMON], {"
+      },
+      {
+        "file": "lib/daemon.mjs",
+        "line": 8,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

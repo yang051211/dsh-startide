@@ -1,19 +1,19 @@
 {
   "name": "dsh-opendesign-go",
-  "version": "0.1.18",
-  "scannedAt": "2026-11-09T08:10:12.011Z",
+  "version": "0.1.20",
+  "scannedAt": "2026-11-10T20:53:45.607Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 1094,
+        "line": 1606,
         "text": "return await fetch(url, {"
       },
       {
         "file": "lib/index.js",
-        "line": 2405,
+        "line": 2912,
         "text": "const response = await fetch(url, { method: \"GET\", headers, signal: AbortSignal.timeout(15e3) });"
       }
     ]
@@ -23,46 +23,52 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 1450,
-        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, renameSync, statSync, writeFileSync } from \"node:fs\";"
+        "line": 830,
+        "text": "import { readFileSync as readFileSync2 } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 1479,
+        "line": 833,
+        "text": "import { readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 848,
+        "text": "return `data:${mediaTypeOf(path)};base64,${readFileSync(path).toString(\"base64\")}`;"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1981,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync as readFileSync3, renameSync, statSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2010,
         "text": "mkdirSync(dirname(this.#path), { recursive: true });"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 1480,
-        "text": "appendFileSync(this.#path, `${JSON.stringify(entry)}"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 1499,
-        "text": "raw = readFileSync(this.#path, \"utf8\");"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 1540,
-        "text": "writeFileSync(temp, kept.map((entry) => `${JSON.stringify(entry)}"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3020,
+        "text": "return ctx.tools.register(createImageTool(deps));"
+      }
+    ]
   },
   "childProcess": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 1691,
+        "line": 2222,
         "text": "import { execFile } from \"node:child_process\";"
       },
       {
         "file": "lib/index.js",
-        "line": 1719,
+        "line": 2250,
         "text": "execFile(binary, [...args], { timeout: CALL_TIMEOUT_MS, windowsHide: true }, (error, stdout) => {"
       }
     ]
@@ -78,7 +84,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 113,
+      "line": 119,
       "text": "npm install -g dsh-opendesign-go@latest"
     }
   ],

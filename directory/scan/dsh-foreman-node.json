@@ -1,7 +1,7 @@
 {
   "name": "dsh-foreman-node",
-  "version": "0.5.0",
-  "scannedAt": "2026-11-10T08:48:44.626Z",
+  "version": "0.6.1",
+  "scannedAt": "2026-11-10T20:53:45.432Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,12 +13,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 45,
+        "line": 165,
         "text": "this.connect = input.connect ?? ((url) => new WebSocket(url));"
       },
       {
         "file": "src/client.ts",
-        "line": 76,
+        "line": 87,
         "text": "this.connect = input.connect ?? (url => new WebSocket(url) as unknown as SocketLike)"
       },
       {
@@ -38,23 +38,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 6,
-        "text": "import { existsSync, readFileSync, readdirSync } from \"node:fs\";"
+        "line": 5,
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, writeFileSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 558,
+        "line": 99,
+        "text": "text = readFileSync(this.file, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 118,
+        "text": "mkdirSync(dirname(this.file), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 120,
+        "text": "writeFileSync(temporary, this.frames.map((frame) => encodeFrame(frame)).join(\"\\n\") + (this.frames.length ? \"\\n\" : \"\"));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 705,
         "text": "comment = readFileSync(publicOf(path), \"utf8\").trim().split(/\\s+/).slice(2).join(\" \");"
-      },
-      {
-        "file": "src/keys.ts",
-        "line": 9,
-        "text": "import { existsSync, readdirSync, readFileSync } from 'node:fs'"
-      },
-      {
-        "file": "src/keys.ts",
-        "line": 43,
-        "text": "const fields = readFileSync(publicOf(path), 'utf8').trim().split(/\\s+/)"
       }
     ]
   },
@@ -63,7 +68,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 1432,
+        "line": 1579,
         "text": "const registrar = agent.ctx.tools;"
       },
       {
@@ -83,27 +88,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 5,
+        "line": 6,
         "text": "import { spawn } from \"node:child_process\";"
       },
       {
         "file": "lib/index.js",
-        "line": 366,
+        "line": 513,
         "text": "const realSpawn$1 = (argv) => spawn(argv[0], argv.slice(1), {"
       },
       {
         "file": "lib/index.js",
-        "line": 455,
+        "line": 602,
         "text": "child = this.spawn(exposeArgs(this.input.ssh, this.input.remotePort, localPort));"
       },
       {
         "file": "lib/index.js",
-        "line": 694,
+        "line": 841,
         "text": "const child = spawn(argv[0], argv.slice(1), {"
       },
       {
         "file": "lib/index.js",
-        "line": 956,
+        "line": 1103,
         "text": "const realSpawn = (argv) => spawn(argv[0], argv.slice(1), {"
       }
     ]

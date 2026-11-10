@@ -1,0 +1,130 @@
+{
+  "name": "dsh-locator",
+  "version": "0.7.1",
+  "scannedAt": "2026-11-10T20:54:01.869Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 94,
+        "text": "const response = await fetch(path, {"
+      },
+      {
+        "file": "src/http.ts",
+        "line": 16,
+        "text": "import type { IncomingMessage, ServerResponse } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/content.js",
+        "line": 11,
+        "text": "import { existsSync, mkdirSync, readdirSync, readFileSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/content.js",
+        "line": 109,
+        "text": "mkdirSync(this.options.stateDir, { recursive: true });"
+      },
+      {
+        "file": "lib/content.js",
+        "line": 228,
+        "text": "raw = readFileSync(path, 'utf8');"
+      },
+      {
+        "file": "lib/content.js",
+        "line": 275,
+        "text": "text = zstdDecompressSync(readFileSync(file.path)).toString('utf8');"
+      },
+      {
+        "file": "lib/export.js",
+        "line": 10,
+        "text": "import { existsSync, mkdirSync, rmSync, statSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 58,
+        "text": "ctx.tools.register(makeSearchTool(rt));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 59,
+        "text": "ctx.tools.register(makeStatusTool(rt));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 60,
+        "text": "ctx.tools.register(makeRebuildTool(rt));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 61,
+        "text": "ctx.tools.register(makeExportTool(rt));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/reveal.js",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/reveal.js",
+        "line": 44,
+        "text": "const child = spawn(command, args, { detached: true, stdio: 'ignore', windowsHide: true });"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 6,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 53,
+        "text": "this.spawn();"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 55,
+        "text": "spawn() {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "bin/darwin-arm64/indexd",
+    "bin/darwin-x64/indexd",
+    "bin/linux-arm64/indexd",
+    "bin/linux-x64/indexd",
+    "bin/win32-arm64/indexd.exe",
+    "bin/win32-x64/indexd.exe"
+  ],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

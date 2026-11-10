@@ -1,0 +1,98 @@
+{
+  "name": "workbuddy-monitor",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-10T20:53:45.643Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/auth.js",
+        "line": 76,
+        "text": "  const res = await fetch(BASE + pathname, { method: opts.method || 'GET', headers: opts.headers || baseHeaders(), body: opts.body === undefined ? undefined : J"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 88,
+        "text": "const getJSON = async (u) => { const r = await fetch(u, { headers: { accept: 'application/json' } }); return r.json() }"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 169,
+        "text": "const response = await fetch(ENDPOINT, { method: 'GET', headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 593,
+        "text": "const response = await fetch('/api/account/getBalance', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 670,
+        "text": "async (body) => { try { const r = await fetch('/api/dsh-workbuddy/panel', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringif"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/auth.js",
+        "line": 2,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 15,
+        "text": "function readJson(p) { try { return JSON.parse(fs.readFileSync(p, 'utf8')) } catch { return null } }"
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 16,
+        "text": "function writeJson(p, v) { fs.mkdirSync(path.dirname(p), { recursive: true }); const t = p + '.tmp'; fs.writeFileSync(t, JSON.stringify(v, null, 2)); fs.renameS"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 6,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 67,
+        "text": "  try { fs.mkdirSync(path.dirname(winPath()), { recursive: true }); fs.writeFileSync(winPath(), JSON.stringify({ resetAt, at: Date.now(), note: String(text).sli"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/login.js",
+        "line": 1,
+        "text": "import { exec } from 'node:child_process'"
+      },
+      {
+        "file": "lib/version.js",
+        "line": 3,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-remote-pure",
-  "version": "0.14.0",
-  "scannedAt": "2026-11-01T19:09:01.835Z",
+  "version": "0.15.0",
+  "scannedAt": "2026-11-10T20:53:59.709Z",
   "icon": "dsh-remote-pure.svg",
   "network": {
     "hit": true,
@@ -17,8 +17,13 @@
         "text": "ws = new WebSocket(proto + window.location.host + '/remote-pure/terminal?hostId=' + encodeURIComponent(hostId) + '&cols=' + term.cols + '&rows=' + term.rows);"
       },
       {
+        "file": "lib/remote-web.js",
+        "line": 89,
+        "text": "onst command = `if command -v curl >/dev/null 2>&1; then curl -s -o /dev/null -w '%{http_code}' --max-time 2 ${url} 2>/dev/null || true; else echo unknown; fi`;"
+      },
+      {
         "file": "lib/update.js",
-        "line": 24,
+        "line": 25,
         "text": "const response = await fetch(`https://registry.npmjs.org/${pkg.name}/latest`, { signal: AbortSignal.timeout(5000) });"
       }
     ]

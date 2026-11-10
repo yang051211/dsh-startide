@@ -1,0 +1,85 @@
+{
+  "name": "dsh-progress-reminder",
+  "version": "3.0.1",
+  "scannedAt": "2026-11-10T20:54:02.747Z",
+  "icon": "dsh-progress-reminder.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 181,
+        "text": "const response = await fetch(`${API}/${method}`, {"
+      },
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "import https from 'node:https'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 25,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 150,
+        "text": "const raw = readFileSync(new URL('./package.json', import.meta.url), 'utf8')"
+      },
+      {
+        "file": "test/client.mjs",
+        "line": 11,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "test/client.mjs",
+        "line": 91,
+        "text": "const source = await readFile(new URL('../client.js', import.meta.url), 'utf8')"
+      },
+      {
+        "file": "test/package.mjs",
+        "line": 9,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "test/run.mjs",
+        "line": 15,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "test/run.mjs",
+        "line": 23,
+        "text": "const result = spawnSync(process.execPath, [join(root, 'test', name)], { stdio: 'inherit' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-simple-restart",
-  "version": "0.1.1",
-  "scannedAt": "2026-10-26T10:07:17.465Z",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-10T20:53:58.805Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,28 +18,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 28,
+        "line": 31,
         "text": "import { appendFileSync, openSync, readFileSync } from 'node:fs'"
       },
       {
         "file": "lib/index.js",
-        "line": 63,
+        "line": 69,
         "text": "return readFileSync(`/proc/${String(process.ppid)}/comm`, 'utf8').trim() === 'systemd' ? 'systemd' : null"
       },
       {
         "file": "lib/index.js",
-        "line": 161,
+        "line": 106,
+        "text": "return owningUnitFrom(readFileSync('/proc/self/cgroup', 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 324,
         "text": "\"const fs = require('node:fs')\","
       },
       {
         "file": "lib/index.js",
-        "line": 171,
+        "line": 334,
         "text": "'const note = (line) => { try { fs.appendFileSync(logErr, \"[dsh-simple-restart] \" + line + \"\\\\n\") } catch {} }',"
-      },
-      {
-        "file": "scripts/smoke.mjs",
-        "line": 15,
-        "text": "import { readFileSync } from 'node:fs'"
       }
     ]
   },
@@ -52,22 +52,22 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 27,
-        "text": "import { spawn } from 'node:child_process'"
+        "line": 30,
+        "text": "import { execFileSync, spawn } from 'node:child_process'"
       },
       {
         "file": "lib/index.js",
-        "line": 160,
+        "line": 323,
         "text": "\"const { spawn } = require('node:child_process')\","
       },
       {
         "file": "lib/index.js",
-        "line": 194,
+        "line": 357,
         "text": "'    child = spawn(file, args, { cwd, detached: true, stdio: [\"ignore\", out, err], env: process.env, shell: viaShell })',"
       },
       {
         "file": "lib/index.js",
-        "line": 222,
+        "line": 403,
         "text": "const helper = spawn(process.execPath, ['-e', helperSource(launch, { out: logOut, err: logErr }, port)], {"
       }
     ]

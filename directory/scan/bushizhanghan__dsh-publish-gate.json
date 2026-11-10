@@ -1,34 +1,34 @@
 {
   "name": "@bushizhanghan/dsh-publish-gate",
-  "version": "0.26.0",
-  "scannedAt": "2026-11-10T08:48:36.714Z",
+  "version": "0.48.0",
+  "scannedAt": "2026-11-10T20:53:37.990Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/engine.js",
-        "line": 818,
+        "line": 845,
         "text": "const res = await fetch(`${registry.replace(/\\/$/, '')}/${name.replace('/', '%2f')}`, {"
       },
       {
         "file": "lib/engine.js",
-        "line": 911,
+        "line": 938,
         "text": "const res = await fetch(`${registry.replace(/\\/$/, '')}/${name.replace('/', '%2f')}`, {"
       },
       {
         "file": "lib/engine.js",
-        "line": 1000,
+        "line": 1027,
         "text": "const res = await fetch(CATALOGUE_URL, { signal: AbortSignal.timeout(timeoutMs), headers: { 'user-agent': 'dsh-publish-gate' } })"
       },
       {
         "file": "lib/engine.js",
-        "line": 1057,
+        "line": 1090,
         "text": "const res = await fetch(`https://api.github.com/repos/${slug}`, {"
       },
       {
         "file": "lib/engine.js",
-        "line": 1122,
+        "line": 1168,
         "text": "const res = await fetch(`https://api.github.com/repos/${slug}/releases/latest`, {"
       }
     ]
@@ -43,23 +43,23 @@
       },
       {
         "file": "lib/engine.js",
-        "line": 20,
+        "line": 21,
         "text": "return readFileSync(p)"
       },
       {
         "file": "lib/engine.js",
-        "line": 1195,
+        "line": 1254,
         "text": "// `x = require(…)`, `require('node:fs').readFileSync`. Quoted literals are removed"
       },
       {
         "file": "lib/engine.js",
-        "line": 2232,
-        "text": "const { readFileSync } = await import('node:fs')"
+        "line": 2323,
+        "text": "const head = readFileSync(join(dir, target.path), 'utf8').slice(0, 80)"
       },
       {
         "file": "lib/engine.js",
-        "line": 2303,
-        "text": "try { source = readFileSync(file, 'utf8') } catch (e) { records.parseError = 'unreadable: ' + String(e && e.message || e) }"
+        "line": 2402,
+        "text": "const { readFileSync } = await import('node:fs')"
       }
     ]
   },
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/engine.js",
-        "line": 1192,
+        "line": 1251,
         "text": "inject\\``, 'Without an inject list the service is resolved late and `ctx.tools` may be undefined when apply runs.', 'Add `export const inject = [\\'tools\\']`.'))"
       },
       {
         "file": "lib/engine.js",
-        "line": 1570,
+        "line": 1643,
         "text": "// Own properties win, or ctx.tools would resolve to another no-op proxy"
       },
       {
         "file": "lib/engine.js",
-        "line": 1581,
+        "line": 1654,
         "text": "ctx.tools = {"
       },
       {
         "file": "lib/engine.js",
-        "line": 1832,
+        "line": 1905,
         "text": "'A plugin that registers nothing is only useful if it adds a client panel or a service. If you expected tools, ctx.tools was undefined when apply ran.',"
       },
       {
         "file": "lib/engine.js",
-        "line": 1833,
+        "line": 1906,
         "text": "\"Check `export const inject = ['tools']`.\","
       }
     ]
@@ -98,18 +98,23 @@
     "evidence": [
       {
         "file": "lib/engine.js",
-        "line": 13,
+        "line": 14,
         "text": "import { execFile } from 'node:child_process'"
       },
       {
         "file": "lib/engine.js",
-        "line": 3387,
+        "line": 3768,
         "text": "const script = `import { execFileSync } from 'node:child_process'"
       },
       {
         "file": "lib/index.js",
         "line": 8,
-        "text": "import { exec } from 'node:child_process'"
+        "text": "import { exec, execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/ship.js",
+        "line": 6,
+        "text": "import { execFile } from 'node:child_process'"
       }
     ]
   },
@@ -121,6 +126,7 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
+    "credentials",
     "tools"
   ],
   "setupHints": [],

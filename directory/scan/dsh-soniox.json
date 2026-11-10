@@ -1,0 +1,66 @@
+{
+  "name": "dsh-soniox",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-10T20:53:51.660Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cache.mjs",
+        "line": 7,
+        "text": "import { mkdir, readFile, readdir, stat, unlink, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "cache.mjs",
+        "line": 47,
+        "text": "const meta = JSON.parse(await readFile(this.#meta(id), 'utf8'));"
+      },
+      {
+        "file": "cache.mjs",
+        "line": 58,
+        "text": "return new Uint8Array(await readFile(this.#audio(id)));"
+      },
+      {
+        "file": "cache.mjs",
+        "line": 65,
+        "text": "await mkdir(this.directory, { recursive: true });"
+      },
+      {
+        "file": "cache.mjs",
+        "line": 67,
+        "text": "await writeFile(this.#audio(id), bytes);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tts-host.mjs",
+        "line": 234,
+        "text": "const registerTool = deps.registerTool ?? ((tool) => ctx.tools?.register?.(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "speechToText"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
