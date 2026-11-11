@@ -1,41 +1,51 @@
 {
   "name": "dsh-workspace-mesh",
-  "version": "0.2.0",
-  "scannedAt": "2026-11-01T19:08:56.215Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-11T21:01:23.223Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client/client.js",
-        "line": 458,
-        "text": "fetch(SESSION_PATH + \"?nodeId=\" + encodeURIComponent(nodeId) + \"&sessionId=\" + encodeURIComponent(sessionId) + \"&limit=50\","
+        "line": 10684,
+        "text": "fetch("
       },
       {
         "file": "client/client.js",
-        "line": 484,
+        "line": 10711,
         "text": "fetch(DISPATCH_PATH, {"
       },
       {
         "file": "client/client.js",
-        "line": 591,
-        "text": "fetch(STATE_PATH, { method: \"GET\", credentials: \"same-origin\", headers: { accept: \"application/json\" } })"
+        "line": 10804,
+        "text": "fetch(STATE_PATH2, { method: \"GET\", credentials: \"same-origin\", headers: { accept: \"application/json\" } }).then(function(response) {"
       },
       {
         "file": "client/client.js",
-        "line": 644,
+        "line": 10855,
         "text": "fetch(CONFIG_PATH, {"
       },
       {
         "file": "client/client.js",
-        "line": 951,
-        "text": "fetch(STATE_PATH, { method: \"GET\", credentials: \"same-origin\", headers: { accept: \"application/json\" } })"
+        "line": 11098,
+        "text": "fetch(HUB_STATS_PATH, { credentials: \"same-origin\", headers: { accept: \"application/json\" } }).then(function(response) {"
       }
     ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/api/relay.js",
+        "line": 1,
+        "text": "import { promises as fs } from 'node:fs';"
+      },
+      {
+        "file": "lib/api/relay.js",
+        "line": 161,
+        "text": "await fs.mkdir(target);"
+      },
       {
         "file": "lib/assignments/index.js",
         "line": 1,
@@ -50,16 +60,6 @@
         "file": "lib/config/store.js",
         "line": 1,
         "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
-      },
-      {
-        "file": "lib/config/store.js",
-        "line": 121,
-        "text": "text = readFileSync(file, 'utf8');"
-      },
-      {
-        "file": "lib/config/store.js",
-        "line": 142,
-        "text": "mkdirSync(dirname(file), { recursive: true });"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 102,
+        "line": 148,
         "text": "const tools = ctx.tools;"
       },
       {
@@ -87,7 +87,9 @@
     "evidence": []
   },
   "dependencies": 0,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "client/client.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [],
   "setupHints": [],

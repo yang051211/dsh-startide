@@ -1,0 +1,66 @@
+{
+  "name": "dsh-inline-image-ref",
+  "version": "1.0.7",
+  "scannedAt": "2026-11-11T21:01:19.741Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 254,
+        "text": "return fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "_publish-smoke.mjs",
+        "line": 9,
+        "text": "import { existsSync, readFileSync, rmSync } from 'node:fs'"
+      },
+      {
+        "file": "_publish-smoke.mjs",
+        "line": 16,
+        "text": "const pkg = JSON.parse(readFileSync(join(here, 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "_publish-smoke.mjs",
+        "line": 44,
+        "text": "const yml = readFileSync(join(here, pkg.dsh.bundle.patch), 'utf8')"
+      },
+      {
+        "file": "_publish-smoke.mjs",
+        "line": 95,
+        "text": "check('字节一致', () => assert.deepEqual([...readFileSync(saved.value.path)], [...bytes]))"
+      },
+      {
+        "file": "_publish-smoke.mjs",
+        "line": 106,
+        "text": "rmSync(saved.value.path, { force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

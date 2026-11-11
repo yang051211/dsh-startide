@@ -1,7 +1,7 @@
 {
   "name": "dsh-py-codeact",
-  "version": "0.5.0",
-  "scannedAt": "2026-11-10T20:53:58.308Z",
+  "version": "0.5.1",
+  "scannedAt": "2026-11-11T21:01:21.925Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -42,27 +42,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 713,
-        "text": "export const inject = ['tools', 'systemPrompt']"
+        "line": 733,
+        "text": "export const inject = ['tools', 'systemPrompt', 'sandboxPolicy', 'subprocess']"
       },
       {
         "file": "lib/index.js",
-        "line": 779,
+        "line": 803,
         "text": "t visibleSchemas = (scope, toolSet) => (ctx.tools.sdkSchemas ? ctx.tools.sdkSchemas(scope) : ctx.tools.definitions(scope, toolSet).map((definition) => ({ ...too"
       },
       {
         "file": "lib/index.js",
-        "line": 786,
-        "text": "} : (input) => ctx.tools.execute(input)"
+        "line": 811,
+        "text": "dispatch: async (exec) => ({ result: await ctx.tools.execute(exec) }),"
       },
       {
         "file": "lib/index.js",
-        "line": 823,
+        "line": 850,
         "text": "ctx.effect(() => ctx.tools.setExecutor({"
       },
       {
         "file": "lib/index.js",
-        "line": 846,
+        "line": 873,
         "text": "ctx.effect(() => ctx.tools.guard((execution) => {"
       }
     ]
@@ -101,10 +101,12 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
+  "dependencies": 2,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
+    "sandboxPolicy",
+    "subprocess",
     "systemPrompt",
     "tools"
   ],

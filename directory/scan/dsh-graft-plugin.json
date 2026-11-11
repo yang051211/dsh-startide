@@ -1,14 +1,14 @@
 {
   "name": "dsh-graft-plugin",
-  "version": "0.3.4",
-  "scannedAt": "2026-11-07T23:17:07.468Z",
+  "version": "0.3.5",
+  "scannedAt": "2026-11-11T21:01:18.188Z",
   "icon": "dsh-graft-plugin.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "src/index.js",
-        "line": 370,
+        "line": 371,
         "text": "const response = await fetch(`http://127.0.0.1:${port}/`, {"
       }
     ]
@@ -16,11 +16,6 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
-      {
-        "file": "scripts/postinstall.mjs",
-        "line": 26,
-        "text": "import { existsSync } from 'node:fs'"
-      },
       {
         "file": "scripts/test-command.mjs",
         "line": 14,
@@ -40,6 +35,11 @@
         "file": "scripts/test-command.mjs",
         "line": 44,
         "text": "await rm(FRESH, { recursive: true, force: true })"
+      },
+      {
+        "file": "scripts/test-command.mjs",
+        "line": 45,
+        "text": "await mkdir(join(FRESH, 'src'), { recursive: true })"
       }
     ]
   },
@@ -48,12 +48,12 @@
     "evidence": [
       {
         "file": "src/index.js",
-        "line": 61,
+        "line": 62,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "src/index.js",
-        "line": 725,
+        "line": 757,
         "text": "ctx.effect(() => ctx.tools.register(tool), `graft-status: ${tool.name}`)"
       }
     ]
@@ -62,18 +62,13 @@
     "hit": true,
     "evidence": [
       {
-        "file": "scripts/postinstall.mjs",
-        "line": 24,
+        "file": "src/auto-sync.js",
+        "line": 40,
         "text": "import { spawn } from 'node:child_process'"
       },
       {
-        "file": "scripts/postinstall.mjs",
-        "line": 57,
-        "text": "child = spawn(command, args, { stdio: 'inherit', shell: process.platform === 'win32' })"
-      },
-      {
-        "file": "src/auto-sync.js",
-        "line": 40,
+        "file": "src/ensure-graft.js",
+        "line": 33,
         "text": "import { spawn } from 'node:child_process'"
       },
       {
@@ -85,6 +80,11 @@
         "file": "src/index.js",
         "line": 45,
         "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/index.js",
+        "line": 406,
+        "text": "child = deps.spawn(root, port)"
       }
     ]
   },
@@ -106,29 +106,29 @@
   ],
   "setupHints": [
     {
+      "file": "cordis.patch.yml",
+      "line": 23,
+      "text": "#                          `npm install -g @nanonets/graft` command instead"
+    },
+    {
       "file": "README.md",
-      "line": 48,
+      "line": 47,
+      "text": "1. `npm install -g @nanonets/graft@latest`, run with a real node (never the Electron app binary) and npm's own `npm-cli.js`, no shell."
+    },
+    {
+      "file": "README.md",
+      "line": 55,
       "text": "npm install -g @nanonets/graft"
     },
     {
       "file": "README.md",
-      "line": 79,
-      "text": "plugins **do not update automatically yet** — to upgrade, uninstall and install again. The graft CLI requirement (`npm install -g @nanonets/graft`) is the same."
+      "line": 190,
+      "text": "rst use (see Install), or by hand with `npm install -g @nanonets/graft`. A bun global install (`bun add -g @nanonets/graft`) is detected too, via `$BUN_INSTALL`"
     },
     {
       "file": "README.md",
-      "line": 181,
-      "text": "- the `graft` CLI on PATH (`npm install -g @nanonets/graft`). A bun global install (`bun add -g @nanonets/graft`) is detected too, via `$BUN_INSTALL` or `~/.bun"
-    },
-    {
-      "file": "README.md",
-      "line": 214,
-      "text": "**`/graft` says the graft CLI is not on PATH.** The postinstall was blocked or skipped (see Install): `npm install -g @nanonets/graft`."
-    },
-    {
-      "file": "README.zh-CN.md",
-      "line": 48,
-      "text": "npm install -g @nanonets/graft"
+      "line": 223,
+      "text": "message carries npm's own output and the hand command: `npm install -g @nanonets/graft`. On older versions the postinstall was blocked or skipped (see Install)."
     }
   ],
   "skippedEntries": []

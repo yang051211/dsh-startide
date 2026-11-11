@@ -1,0 +1,125 @@
+{
+  "name": "dsh-netease-request",
+  "version": "1.0.5",
+  "scannedAt": "2026-11-11T21:01:13.357Z",
+  "icon": "dsh-netease-request.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 428,
+        "text": "const response = await fetch(`${API}/player/state`, { headers: { accept: 'application/json' } });"
+      },
+      {
+        "file": "client.js",
+        "line": 458,
+        "text": "const response = await fetch(`${API}/player/control`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 589,
+        "text": "const response = await fetch(`${API}/player/state`, { headers: { accept: 'application/json' } });"
+      },
+      {
+        "file": "client.js",
+        "line": 619,
+        "text": "const response = await fetch(`${API}/player/control`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 833,
+        "text": "const response = await fetch(`${API}/player/state`, { headers: { accept: 'application/json' } });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 169,
+        "text": "const text = await readFile(configFilePath(), 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 180,
+        "text": "await mkdir(directory, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 181,
+        "text": "await writeFile(configFilePath(), `${JSON.stringify(config, null, 2)}\\n`, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 2600,
+        "text": "}).map((definition) => ctx.tools.register(definition));"
+      },
+      {
+        "file": "index.js",
+        "line": 2608,
+        "text": "export const inject = ['tools', 'webServer'];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 325,
+        "text": "child = spawn(command, args, {"
+      },
+      {
+        "file": "index.js",
+        "line": 399,
+        "text": "const result = spawnSync(invocation.command, [...invocation.prefixArgs, 'stop'], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 54,
+      "text": "- 官方 CLI：`npm install -g @music163/ncm-cli`"
+    },
+    {
+      "file": "README.md",
+      "line": 64,
+      "text": "npm install -g @music163/ncm-cli"
+    }
+  ],
+  "skippedEntries": []
+}

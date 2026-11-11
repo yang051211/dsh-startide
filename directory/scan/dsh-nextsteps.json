@@ -1,0 +1,95 @@
+{
+  "name": "dsh-nextsteps",
+  "version": "1.5.2",
+  "scannedAt": "2026-11-11T21:01:06.557Z",
+  "icon": "dsh-nextsteps.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 359,
+        "text": "const response = await fetch(MODELS_ROUTE, { cache: 'no-store' });"
+      },
+      {
+        "file": "client.js",
+        "line": 394,
+        "text": "const response = await fetch(SETTINGS_ROUTE, { cache: 'no-store' });"
+      },
+      {
+        "file": "client.js",
+        "line": 524,
+        "text": "              const response = await fetch(GENERATE_ROUTE, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ sessionId, "
+      },
+      {
+        "file": "client.js",
+        "line": 581,
+        "text": "const response = await fetch(SETTINGS_ROUTE, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(patch) });"
+      },
+      {
+        "file": "client.js",
+        "line": 591,
+        "text": "const response = await fetch(UPDATE_ROUTE, { cache: 'no-store' });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 2,
+        "text": "import { readFile, writeFile, mkdir, rm } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 3,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "const PACKAGE = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 45,
+        "text": "const stored = JSON.parse(readFileSync(SETTINGS_FILE, 'utf8')) ?? {};"
+      },
+      {
+        "file": "index.js",
+        "line": 58,
+        "text": "await mkdir(path.dirname(SETTINGS_FILE), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "const inject = ['tools', 'connection'];"
+      },
+      {
+        "file": "index.js",
+        "line": 507,
+        "text": "ctx.tools.register(toolSpec(ctx, () => settings));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

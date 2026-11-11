@@ -1,0 +1,112 @@
+{
+  "name": "dsh-foxy-oopz",
+  "version": "0.1.13",
+  "scannedAt": "2026-11-11T21:01:21.853Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 10,
+        "text": "const response = await fetch(API + path, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 194,
+        "text": "const response = await fetch(`${base}/voice/captures?after=${after}`)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 212,
+        "text": "await fetch(`${base}/voice/captures/ack`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 411,
+        "text": "const response = await fetch(`${base}/health`, { signal: AbortSignal.timeout(1000) })"
+      },
+      {
+        "file": "lib/llm.js",
+        "line": 9,
+        "text": "const response = await fetch(endpoint(settings.llmBaseUrl), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/call-context.js",
+        "line": 1,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/call-context.js",
+        "line": 13,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/call-context.js",
+        "line": 23,
+        "text": "appendFileSync(file, `${JSON.stringify(header)}\\n`, 'utf8')"
+      },
+      {
+        "file": "lib/call-context.js",
+        "line": 39,
+        "text": "appendFileSync(call.file, `${JSON.stringify(entry)}\\n`, 'utf8')"
+      },
+      {
+        "file": "lib/call-context.js",
+        "line": 47,
+        "text": "const lines = readFileSync(file, 'utf8').split(/\\r?\\n/).filter(Boolean)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 433,
+        "text": "sidecarChild = spawn(process.execPath, [script], {"
+      },
+      {
+        "file": "lib/voice.js",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/voice.js",
+        "line": 16,
+        "text": "const child = spawn(command, args, { windowsHide: true })"
+      },
+      {
+        "file": "lib/voice.js",
+        "line": 34,
+        "text": "const child = spawn(command, args, { windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

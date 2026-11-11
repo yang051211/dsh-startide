@@ -1,0 +1,80 @@
+{
+  "name": "dsh-mac-pet",
+  "version": "0.9.5",
+  "scannedAt": "2026-11-11T21:01:23.913Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 43,
+        "text": "const response = await fetch(statusURL.href, { cache: 'no-store', headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 115,
+        "text": "await fetch(endpoint('api/dsh-pet/session-open/ack'), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 126,
+        "text": "const response = await fetch(endpoint('api/dsh-pet/session-open/pending'), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { chmodSync, existsSync, lstatSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 32,
+        "text": "mkdirSync(dirname(this.socketPath), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 58,
+        "text": "unlinkSync(this.socketPath);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 136,
+        "text": "unlinkSync(path);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 601,
+        "text": "mkdirSync(socketDir, {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import { execFile } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

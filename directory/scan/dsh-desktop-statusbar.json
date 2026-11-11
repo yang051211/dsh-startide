@@ -1,35 +1,35 @@
 {
   "name": "dsh-desktop-statusbar",
-  "version": "3.0.2",
-  "scannedAt": "2026-10-30T23:38:34.115Z",
+  "version": "3.0.3",
+  "scannedAt": "2026-11-11T21:01:19.177Z",
   "icon": "dsh-desktop-statusbar.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 566,
+        "line": 943,
         "text": "return window.fetch(PRICES_URL, { cache: \"no-store\" })"
       },
       {
         "file": "lib/client.js",
-        "line": 582,
+        "line": 959,
         "text": "return window.fetch(HOLIDAYS_URL + \"?year=\" + String(year), { cache: \"no-store\" })"
       },
       {
         "file": "lib/client.js",
-        "line": 2310,
+        "line": 2473,
+        "text": "relayLoading = window.fetch(RELAY_URL, { cache: \"no-store\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2488,
+        "text": "return window.fetch(RELAY_URL, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3046,
         "text": "window.fetch(TIP_DIAG_URL, {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 6829,
-        "text": "return window.fetch(VERSION_URL + \"?current=\" + encodeURIComponent(VERSION), { cache: \"no-store\" })"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 6860,
-        "text": "window.fetch(UPDATE_FAILURE_URL, {"
       }
     ]
   },
@@ -38,7 +38,7 @@
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 5809,
+        "line": 6655,
         "text": "const DEV_MCP_SERVERS = [\"fs\", \"db\", \"s3\", \"git\", \"k8s\", \"aws\", \"ssh\", \"dns\", \"http\", \"redis\", \"kafka\", \"postgres\"];"
       },
       {
@@ -73,16 +73,16 @@
       {
         "file": "lib/self-update.js",
         "line": 23,
-        "text": "import { spawn } from 'node:child_process'"
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
       },
       {
         "file": "lib/self-update.js",
-        "line": 342,
+        "line": 385,
         "text": "child = spawn(command, args, {"
       },
       {
         "file": "lib/self-update.js",
-        "line": 416,
+        "line": 459,
         "text": "if (/spawn (EPERM|EACCES)/i.test(text) || /ELIFECYCLE/.test(text)) return 'postinstall-failed'"
       },
       {
@@ -92,7 +92,7 @@
       },
       {
         "file": "tools/shot.cjs",
-        "line": 365,
+        "line": 364,
         "text": "const run = require('child_process').spawnSync(chrome, args, { encoding: 'utf8' });"
       }
     ]

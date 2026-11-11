@@ -1,7 +1,7 @@
 {
   "name": "@sharework-ai/dsh-docwright",
-  "version": "0.4.3",
-  "scannedAt": "2026-11-10T08:48:57.390Z",
+  "version": "0.4.16",
+  "scannedAt": "2026-11-11T21:01:20.426Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -20,6 +20,11 @@
         "file": "lib/client/api.js",
         "line": 34,
         "text": "await parse(await fetch('/api/docwright/pack-param', {"
+      },
+      {
+        "file": "lib/market-search.js",
+        "line": 53,
+        "text": "const response = await fetch(`${marketUrl}/api/index`, { headers: { accept: 'application/json' }, signal: AbortSignal.timeout(10_000) });"
       }
     ]
   },
@@ -33,7 +38,7 @@
       },
       {
         "file": "lib/authoring-skill.js",
-        "line": 23,
+        "line": 37,
         "text": "return await readFile(path, 'utf8');"
       },
       {
@@ -43,12 +48,12 @@
       },
       {
         "file": "lib/doc-service.js",
-        "line": 96,
+        "line": 102,
         "text": "await writeFile(`${path}.tmp`, content, 'utf8');"
       },
       {
         "file": "lib/doc-service.js",
-        "line": 211,
+        "line": 217,
         "text": "await mkdir(outDir, { recursive: true });"
       }
     ]
@@ -58,27 +63,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 16,
+        "line": 17,
         "text": "export const inject = ['tools', 'llm'];"
       },
       {
         "file": "lib/index.js",
-        "line": 54,
+        "line": 55,
         "text": "ctx.tools.register(defineDocPacksTool(deps));"
       },
       {
         "file": "lib/index.js",
-        "line": 55,
+        "line": 56,
         "text": "ctx.tools.register(defineDocGenerateTool(deps));"
       },
       {
         "file": "lib/index.js",
-        "line": 56,
+        "line": 57,
         "text": "ctx.tools.register(defineDocExtractTool(deps));"
       },
       {
         "file": "lib/index.js",
-        "line": 57,
+        "line": 58,
         "text": "ctx.tools.register(defineDocValidateTool(deps));"
       }
     ]
@@ -86,6 +91,11 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/pack-manage.js",
+        "line": 21,
+        "text": "import { execFile } from 'node:child_process';"
+      },
       {
         "file": "lib/paths.js",
         "line": 1,

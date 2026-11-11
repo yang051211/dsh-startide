@@ -1,0 +1,84 @@
+{
+  "name": "dsh-deepseek-companion",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-11T21:01:24.478Z",
+  "icon": "dsh-deepseek-companion.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 23542,
+        "text": "fetch: (url, init) => globalThis.fetch(url, init),"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 23573,
+        "text": "const response = await clock.fetch(options.url, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 23674,
+        "text": "const response = await fetch(`${origin}${DEEP_THINK_PATH}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 23692,
+        "text": "const response = await fetch(`${origin}${SEARCH_PATH}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 23718,
+        "text": "const response = await fetch(`${origin}${SESSIONS_PATH}`, { credentials: \"include\" });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "import { mkdir, readFile, readdir, unlink, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 169,
+        "text": "await mkdir(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 171,
+        "text": "await writeFile(path, bytes);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 181,
+        "text": "await unlink(path);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 203,
+        "text": "await mkdir(dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

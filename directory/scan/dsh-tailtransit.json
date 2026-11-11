@@ -1,34 +1,34 @@
 {
   "name": "dsh-tailtransit",
-  "version": "0.2.1",
-  "scannedAt": "2026-11-10T20:54:02.839Z",
+  "version": "0.2.5",
+  "scannedAt": "2026-11-11T21:01:24.196Z",
   "icon": "dsh-tailtransit.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 456,
+        "line": 517,
         "text": "const response = await fetch(`${API}/status`, { headers: { accept: 'application/json' } })"
       },
       {
         "file": "client.js",
-        "line": 486,
+        "line": 547,
         "text": "const response = await fetch(`${API}/settings`, { headers: { accept: 'application/json' } })"
       },
       {
         "file": "client.js",
-        "line": 508,
+        "line": 569,
         "text": "const response = await fetch(`${API}/settings?proxyPort=${value}`, { method: 'POST' })"
       },
       {
         "file": "client.js",
-        "line": 523,
+        "line": 584,
         "text": "const response = await fetch(`${API}/settings?envProxy=${state === 'on' ? '1' : '0'}`, { method: 'POST' })"
       },
       {
         "file": "client.js",
-        "line": 537,
+        "line": 598,
         "text": "const response = await fetch(`${API}/settings?${name}=${value ? '1' : '0'}`, { method: 'POST' })"
       }
     ]
@@ -44,22 +44,22 @@
       {
         "file": "index.js",
         "line": 28,
-        "text": "import { access, cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises'"
+        "text": "import { access, cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "index.js",
-        "line": 220,
+        "line": 209,
         "text": "return (await readFile(file, 'utf8')).trim()"
       },
       {
         "file": "index.js",
-        "line": 343,
-        "text": "const pid = Number.parseInt((await readFile(path.join(legacy, 'daemon.pid'), 'utf8')).trim(), 10)"
+        "line": 301,
+        "text": "try { text = await readFile(file, 'utf8') } catch { continue }"
       },
       {
         "file": "index.js",
-        "line": 350,
-        "text": "try { await rm(path.join(this.stateDir, 'daemon.pid'), { force: true }) } catch {}"
+        "line": 391,
+        "text": "const pid = Number.parseInt((await readFile(path.join(legacy, 'daemon.pid'), 'utf8')).trim(), 10)"
       }
     ]
   },
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 47,
+        "line": 48,
         "text": "export const inject = ['web', 'tools', 'webServer', 'clientModules']"
       },
       {
         "file": "index.js",
-        "line": 1249,
+        "line": 1389,
         "text": "ctx.effect(() => ctx.tools.register({"
       }
     ]
@@ -88,22 +88,22 @@
       },
       {
         "file": "index.js",
-        "line": 247,
+        "line": 236,
         "text": "child = spawn(exe, args, { windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })"
       },
       {
         "file": "index.js",
-        "line": 559,
+        "line": 663,
         "text": "child = spawn(this.config.tailscalePath, [`--socket=${this.socket}`, 'debug', 'watch-ipn'], {"
       },
       {
         "file": "index.js",
-        "line": 594,
+        "line": 698,
         "text": "child = spawn(this.config.tailscaledPath, args, {"
       },
       {
         "file": "index.js",
-        "line": 651,
+        "line": 755,
         "text": "child = spawn(this.config.tailscalePath, [`--socket=${this.socket}`, ...args], {"
       }
     ]

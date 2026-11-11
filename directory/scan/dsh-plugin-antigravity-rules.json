@@ -1,0 +1,88 @@
+{
+  "name": "dsh-plugin-antigravity-rules",
+  "version": "1.0.4",
+  "scannedAt": "2026-11-11T21:01:18.752Z",
+  "icon": "dsh-plugin-antigravity-rules.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 355,
+        "text": "const res = await fetch(buildUrl(\"/api/antigravity-rules\"));"
+      },
+      {
+        "file": "client.js",
+        "line": 382,
+        "text": "const res = await fetch(buildUrl(\"/api/antigravity-rules\"), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "index.js",
+        "line": 173,
+        "text": "const raw = fs.readFileSync(fullPath, \"utf8\");"
+      },
+      {
+        "file": "index.js",
+        "line": 287,
+        "text": "return JSON.parse(fs.readFileSync(settingsPath, \"utf8\"));"
+      },
+      {
+        "file": "index.js",
+        "line": 297,
+        "text": "if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 298,
+        "text": "fs.writeFileSync(settingsPath, JSON.stringify(settings, null, 2), \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 29,
+        "text": "export const inject = [\"systemPrompt\", \"tools\", \"workingDirectory\", \"agents\", \"webServer\", \"workspaceRegistry\", \"connection\"];"
+      },
+      {
+        "file": "index.js",
+        "line": 606,
+        "text": "ctx.tools.register(ruleTool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "connection",
+    "systemPrompt",
+    "tools",
+    "webServer",
+    "workingDirectory",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

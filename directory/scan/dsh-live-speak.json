@@ -1,0 +1,77 @@
+{
+  "name": "dsh-live-speak",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-11T21:01:24.700Z",
+  "icon": "dsh-live-speak.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 657,
+        "text": "return fetch(API + path, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 976,
+        "text": "fetch(AUDIO_PREFIX + item.id)"
+      },
+      {
+        "file": "client/client.js",
+        "line": 1123,
+        "text": "fetch(url)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 164,
+        "text": "parsed = JSON.parse(fs.readFileSync(SETTINGS_FILE, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 174,
+        "text": "fs.mkdirSync(DATA_DIR, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 175,
+        "text": "fs.writeFileSync(SETTINGS_FILE, JSON.stringify(settings, null, 2), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 935,
+        "text": "fs.mkdirSync(DATA_DIR, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

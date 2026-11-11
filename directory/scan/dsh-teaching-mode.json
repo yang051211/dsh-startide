@@ -1,0 +1,66 @@
+{
+  "name": "dsh-teaching-mode",
+  "version": "0.9.5",
+  "scannedAt": "2026-11-11T21:01:18.011Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 37,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 549,
+        "text": "try { fs.writeFileSync(file, lines.join('\\n'), 'utf8'); return file; } catch { return ''; }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 618,
+        "text": "fs.mkdirSync(st.dataDir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 619,
+        "text": "if (!fs.existsSync(file)) fs.writeFileSync(file, head, 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 621,
+        "text": "    fs.appendFileSync(file, `| ${at} | ${esc(m.topic)} | ${esc(m.question)} | ${esc(m.myAnswer)} | ${esc(m.correct)} | ${esc(m.cause)} | ${esc(m.layer)} |\\n`, '"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 878,
+        "text": "try { services.tools.register(t); ok++; } catch (e) { diag('tool-register-failed ' + t.name + ' ' + (e && e.message ? e.message : String(e))); }"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

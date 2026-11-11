@@ -1,0 +1,112 @@
+{
+  "name": "@adithyanraj/dsh-balance-plugin",
+  "version": "0.13.4",
+  "scannedAt": "2026-11-11T21:01:24.417Z",
+  "icon": "adithyanraj__dsh-balance-plugin.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1285,
+        "text": "const data = await (await fetch(`${BALANCE_ENDPOINT}?kind=${kind}`, { headers: { accept: \"application/json\" } })).json();"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 280,
+        "text": "const upstream = await fetch(url, {"
+      },
+      {
+        "file": "src/client/index.tsx",
+        "line": 1411,
+        "text": "const res = await fetch(`${BALANCE_ENDPOINT}?kind=${kind}`, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 28,
+        "text": "import type { IncomingMessage, ServerResponse } from 'node:http'"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 324,
+        "text": "const upstream = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/verify-client.mjs",
+        "line": 5,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "scripts/verify-client.mjs",
+        "line": 8,
+        "text": "const PACKAGE_ID = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).name"
+      },
+      {
+        "file": "scripts/verify-client.mjs",
+        "line": 23,
+        "text": "const code = readFileSync(new URL('../lib/client.js', import.meta.url), 'utf8')"
+      },
+      {
+        "file": "tsdown.config.ts",
+        "line": 9,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "tsdown.config.ts",
+        "line": 19,
+        "text": "readFileSync(new URL('./package.json', import.meta.url), 'utf8'),"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 29,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: pnpm run build"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 101,
+      "text": "npm install -g bailian-cli"
+    },
+    {
+      "file": "README.zh-CN.md",
+      "line": 101,
+      "text": "npm install -g bailian-cli"
+    }
+  ],
+  "skippedEntries": []
+}

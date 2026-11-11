@@ -1,0 +1,126 @@
+{
+  "name": "dsh-memory-nebula",
+  "version": "1.5.1",
+  "scannedAt": "2026-11-11T21:01:23.977Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/doctor.js",
+        "line": 147,
+        "text": "const res = await fetch(url, { signal: ctl.signal, headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/standalone.mjs",
+        "line": 7,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/web/api.js",
+        "line": 49,
+        "text": "const res = await fetch(u, Object.assign({ signal: ctl.signal }, init))"
+      },
+      {
+        "file": "lib/web/api.js",
+        "line": 86,
+        "text": "res = await fetch(base + '/ping', { headers: { accept: 'application/json' }, signal: ctl.signal })"
+      },
+      {
+        "file": "lib/web/api.js",
+        "line": 368,
+        "text": "const res = await fetch(other + '/ping', { headers: { accept: 'application/json' } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/adapters/index.js",
+        "line": 17,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/host/adapters/index.js",
+        "line": 56,
+        "text": "const raw = JSON.parse(readFileSync(file, 'utf8').replace(/^\\uFEFF/, ''))"
+      },
+      {
+        "file": "lib/host/adapters/ingest.js",
+        "line": 13,
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, appendFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/host/adapters/ingest.js",
+        "line": 75,
+        "text": "text = readFileSync(store.path, 'utf8').replace(/^\\uFEFF/, '')"
+      },
+      {
+        "file": "lib/host/adapters/ingest.js",
+        "line": 137,
+        "text": "mkdirSync(dir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/sources.js",
+        "line": 298,
+        "text": "// 3) MCP：profile patch + 家目录 patch 里 dsh-mcp-client 的条目"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 32,
+        "text": "export const inject = ['tools', 'systemPrompt', 'webServer', 'connection']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 172,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 206,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 248,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/release-check.mjs",
+        "line": 6,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/release-check.mjs",
+        "line": 87,
+        "text": "const r = spawnSync(process.execPath, ['--check', f], { encoding: 'utf8' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

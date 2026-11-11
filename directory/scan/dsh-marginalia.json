@@ -1,0 +1,88 @@
+{
+  "name": "dsh-marginalia",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-11T21:01:23.469Z",
+  "icon": "dsh-marginalia.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 797,
+        "text": "const res = await fetch(route('/marginalia/api/notes', { source: sourceOf(sessionId), root: cwd || '' }), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 813,
+        "text": "const res = await fetch(route('/marginalia/api/notes'), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1193,
+        "text": "const res = await fetch(route('/marginalia/api/child', { childId }), { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1642,
+        "text": "const res = await fetch(route('/marginalia/api/ask'), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1728,
+        "text": "const res = await fetch(route('/marginalia/api/thread', { sessionId }), { headers: { accept: 'application/json' } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "import { mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 52,
+        "text": "const data = JSON.parse(readFileSync(threadFile(), 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 63,
+        "text": "mkdirSync(harnessHome(), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 64,
+        "text": "writeFileSync(threadFile(), JSON.stringify({ children }))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 497,
+        "text": "return readFileSync(join(harnessHome(), 'profiles', 'desktop', 'cordis.patch.yml'), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "subagents",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

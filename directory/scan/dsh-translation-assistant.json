@@ -1,20 +1,20 @@
 {
   "name": "dsh-translation-assistant",
-  "version": "1.19.0",
-  "scannedAt": "2026-11-02T23:01:04.565Z",
+  "version": "1.20.0",
+  "scannedAt": "2026-11-11T21:01:22.591Z",
   "icon": "dsh-translation-assistant.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "client.js",
-        "line": 1093,
+        "file": "lib/client.js",
+        "line": 570,
         "text": "response = await fetch(`${API}/${action}`, {"
       },
       {
-        "file": "client.js",
-        "line": 2396,
-        "text": "fetch(`${API}/health`, { headers: { accept: 'application/json' } })"
+        "file": "lib/client.js",
+        "line": 1522,
+        "text": "    fetch(`${API}/health`, { headers: { accept: \"application/json\" } }).then((response) => response.ok ? response.json() : Promise.reject(new Error(\"unavailable"
       }
     ]
   },
@@ -22,29 +22,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "host/index.js",
-        "line": 16,
-        "text": "import fs from 'node:fs/promises';"
+        "file": "lib/host/index.js",
+        "line": 3,
+        "text": "import fs from \"node:fs/promises\";"
       },
       {
-        "file": "host/workspace.js",
-        "line": 184,
+        "file": "lib/host/workspace.js",
+        "line": 125,
         "text": "const buffer = await fs.readFile(absolute);"
       },
       {
-        "file": "host/workspace.js",
-        "line": 193,
-        "text": "const content = await fs.readFile(absolute, 'utf8');"
+        "file": "lib/host/workspace.js",
+        "line": 134,
+        "text": "const content = await fs.readFile(absolute, \"utf8\");"
       },
       {
-        "file": "host/workspace.js",
-        "line": 229,
+        "file": "lib/host/workspace.js",
+        "line": 160,
         "text": "await fs.mkdir(path.dirname(absolute), { recursive: true });"
       },
       {
-        "file": "host/workspace.js",
-        "line": 230,
-        "text": "await fs.writeFile(absolute, text, 'utf8');"
+        "file": "lib/host/workspace.js",
+        "line": 161,
+        "text": "await fs.writeFile(absolute, text, \"utf8\");"
       }
     ]
   },
@@ -52,9 +52,9 @@
     "hit": true,
     "evidence": [
       {
-        "file": "host/index.js",
-        "line": 1067,
-        "text": "ctx.effect(() => tools.register(createTool(engine, settings)), 'translation-assistant: agent tool');"
+        "file": "lib/host/index.js",
+        "line": 807,
+        "text": "ctx.effect(() => tools.register(createTool(engine, settings)), \"translation-assistant: agent tool\");"
       }
     ]
   },
@@ -67,12 +67,11 @@
     "evidence": []
   },
   "dependencies": 0,
-  "minifiedFiles": [],
-  "binaryFiles": [],
-  "requiredServices": [
-    "llm",
-    "webServer"
+  "minifiedFiles": [
+    "lib/client.js"
   ],
+  "binaryFiles": [],
+  "requiredServices": [],
   "setupHints": [],
   "skippedEntries": []
 }

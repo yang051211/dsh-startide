@@ -1,35 +1,35 @@
 {
   "name": "dsh-doc-ledger",
-  "version": "0.4.0",
-  "scannedAt": "2026-11-10T08:49:03.274Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-11T21:01:22.434Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 530,
+        "line": 626,
         "text": "if (typeof fetch === \"function\") fetch(BASE + \"/api/_clienterror\", { method: \"POST\", body: body, keepalive: true }).catch(function () {});"
       },
       {
         "file": "client.js",
-        "line": 557,
+        "line": 671,
         "text": "return fetch(BASE + path, options).then(decodeJson);"
       },
       {
         "file": "client.js",
-        "line": 565,
+        "line": 679,
         "text": "return fetch(BASE + path, { method: \"POST\", headers: { accept: \"application/json\" }, cache: \"no-store\" }).then(decodeJson);"
+      },
+      {
+        "file": "client.js",
+        "line": 3546,
+        "text": "fetch(BASE + \"/api/config\").then(function (response) {"
       },
       {
         "file": "lib/ui.client.js",
         "line": 277,
         "text": "fetch(API + \"/file?session=\" + encodeURIComponent(sessionId) + \"&path=\" + encodeURIComponent(path))"
-      },
-      {
-        "file": "lib/ui.client.js",
-        "line": 357,
-        "text": "fetch(API + \"/all\" + (ACTIVE ? \"?session=\" + encodeURIComponent(ACTIVE) : \"\"))"
       }
     ]
   },
@@ -39,27 +39,27 @@
       {
         "file": "index.js",
         "line": 17,
-        "text": "pendFileSync, closeSync, existsSync, mkdirSync, openSync, readFileSync, readSync, readdirSync, renameSync, statSync, unlinkSync, writeFileSync } from \"node:fs\";"
+        "text": "Sync, closeSync, existsSync, mkdirSync, openSync, readFileSync, readSync, readdirSync, renameSync, rmSync, statSync, unlinkSync, writeFileSync } from \"node:fs\";"
       },
       {
         "file": "index.js",
-        "line": 352,
+        "line": 140,
+        "text": "rmSync(file, { force: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 389,
         "text": "const parsed = JSON.parse(readFileSync(TITLE_FILE, \"utf8\"));"
       },
       {
         "file": "index.js",
-        "line": 372,
+        "line": 409,
         "text": "mkdirSync(dirname(TITLE_FILE), { recursive: true });"
       },
       {
         "file": "index.js",
-        "line": 374,
+        "line": 411,
         "text": "writeFileSync(tmp, JSON.stringify(out), \"utf8\");"
-      },
-      {
-        "file": "index.js",
-        "line": 451,
-        "text": "const parsed = JSON.parse(gunzipSync(readFileSync(LEDGER_FILE)).toString(\"utf8\"));"
       }
     ]
   },
@@ -77,12 +77,12 @@
       },
       {
         "file": "index.js",
-        "line": 1120,
+        "line": 1410,
         "text": "child = spawn(command, args, { detached: true, stdio: \"ignore\", windowsHide: false, env: launchEnv() });"
       },
       {
         "file": "index.js",
-        "line": 1140,
+        "line": 1430,
         "text": "      const child = spawn(join(WINDIR, \"System32\", \"WindowsPowerShell\", \"v1.0\", \"powershell.exe\"), [\"-NoProfile\", \"-NonInteractive\", \"-WindowStyle\", \"Hidden\", \""
       }
     ]

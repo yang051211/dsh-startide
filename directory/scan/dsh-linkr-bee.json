@@ -1,0 +1,132 @@
+{
+  "name": "dsh-linkr-bee",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-11T21:01:11.255Z",
+  "icon": "dsh-linkr-bee.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 13741,
+        "text": "const response = await fetch(UART_URL);"
+      },
+      {
+        "file": "client.js",
+        "line": 13762,
+        "text": "const response = await fetch(UART_URL, {"
+      },
+      {
+        "file": "client.js",
+        "line": 13867,
+        "text": "fetch(CONFIG_URL)"
+      },
+      {
+        "file": "client.js",
+        "line": 13895,
+        "text": "const response = await fetch(SCAN_URL, {"
+      },
+      {
+        "file": "client.js",
+        "line": 13927,
+        "text": "const response = await fetch(CONFIG_URL, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import { appendFile, mkdir } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { existsSync, realpathSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 2106,
+        "text": "await mkdir(dirname(DIAG_PATH), { recursive: true }).catch(() => {});"
+      },
+      {
+        "file": "index.js",
+        "line": 2109,
+        "text": "await appendFile(DIAG_PATH, line + '\\n', 'utf8').catch(() => {});"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "export const inject = ['tools', 'webServer'];"
+      },
+      {
+        "file": "index.js",
+        "line": 2216,
+        "text": "const unregister = ctx.tools.register("
+      },
+      {
+        "file": "index.js",
+        "line": 2292,
+        "text": "const unregister = ctx.tools.register("
+      },
+      {
+        "file": "index.js",
+        "line": 2426,
+        "text": "const unregister = ctx.tools.register("
+      },
+      {
+        "file": "index.js",
+        "line": 2477,
+        "text": "const unregister = ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 332,
+        "text": "child = trackChild(spawn(cli.command, [...cli.args, ...args], {"
+      },
+      {
+        "file": "index.js",
+        "line": 1211,
+        "text": "const child = trackChild(spawn(cli.command, [...cli.args, ...dial, '--json', '--serve'],"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 28,
+      "text": "npm install -g linkr-bee-cli     # puts `bee-cli` on PATH"
+    }
+  ],
+  "skippedEntries": []
+}

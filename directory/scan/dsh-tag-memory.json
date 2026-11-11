@@ -1,11 +1,22 @@
 {
   "name": "dsh-tag-memory",
-  "version": "1.4.1",
-  "scannedAt": "2026-11-11T08:05:02.365Z",
+  "version": "1.4.2",
+  "scannedAt": "2026-11-11T21:01:23.359Z",
   "icon": "dsh-tag-memory.svg",
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine/update-check.mjs",
+        "line": 28,
+        "text": "import https from 'node:https';"
+      },
+      {
+        "file": "lib/engine/update-check.mjs",
+        "line": 86,
+        "text": "req = https.get(url, { timeout: timeoutMs, headers: { accept: 'application/json' } }, (res) => {"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
@@ -17,22 +28,22 @@
       },
       {
         "file": "index.js",
-        "line": 417,
+        "line": 78,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 343,
+        "text": "const raw = readFileSync(path.join(PACKAGE_DIR, 'package.json'), 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 506,
         "text": "await fsp.mkdir(layout.storeDir, { recursive: true });"
       },
       {
         "file": "index.js",
-        "line": 418,
-        "text": "await fsp.mkdir(layout.recordsDir, { recursive: true });"
-      },
-      {
-        "file": "index.js",
-        "line": 451,
-        "text": "await fsp.mkdir(layout.storeDir, { recursive: true });"
-      },
-      {
-        "file": "index.js",
-        "line": 452,
+        "line": 507,
         "text": "await fsp.mkdir(layout.recordsDir, { recursive: true });"
       }
     ]

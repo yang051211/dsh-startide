@@ -1,0 +1,130 @@
+{
+  "name": "dsh-plugin-image-workbench",
+  "version": "1.1.30",
+  "scannedAt": "2026-11-11T21:01:09.898Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 65,
+        "text": "? await fetch(STATUS_API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action }) })"
+      },
+      {
+        "file": "client.js",
+        "line": 66,
+        "text": ": await fetch(STATUS_API, { cache: 'no-store' });"
+      },
+      {
+        "file": "host.js",
+        "line": 15,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "host.js",
+        "line": 138,
+        "text": "const req = http.get({ host: '127.0.0.1', port, path: pathname,"
+      },
+      {
+        "file": "host.js",
+        "line": 629,
+        "text": "async fetch(request) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host.js",
+        "line": 13,
+        "text": "copyFileSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "host.js",
+        "line": 51,
+        "text": "mkdirSync(dst, { recursive: true });"
+      },
+      {
+        "file": "host.js",
+        "line": 232,
+        "text": "mkdirSync(RUNTIME_DIR, { recursive: true });"
+      },
+      {
+        "file": "host.js",
+        "line": 233,
+        "text": "appendFileSync(samples.log, `[${new Date().toISOString()}] ${text}\\n`);"
+      },
+      {
+        "file": "host.js",
+        "line": 280,
+        "text": "mkdirSync(RUNTIME_DIR, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "host.js",
+        "line": 184,
+        "text": "const child = spawn(command, args, { detached: true, stdio: 'ignore', windowsHide: true });"
+      },
+      {
+        "file": "host.js",
+        "line": 358,
+        "text": "const child = spawn(command, args, { cwd, windowsHide: true,"
+      },
+      {
+        "file": "host.js",
+        "line": 563,
+        "text": "const child = spawn(state.python, ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "vendor/chatgpt2api/runtime/uv.exe"
+  ],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 154,
+      "text": ".venv/Scripts/pip install -r requirements.txt"
+    },
+    {
+      "file": "README.en.md",
+      "line": 158,
+      "text": "# .venv/bin/pip install -r requirements.txt"
+    },
+    {
+      "file": "README.md",
+      "line": 172,
+      "text": ".venv/Scripts/pip install -r requirements.txt"
+    },
+    {
+      "file": "README.md",
+      "line": 176,
+      "text": "# .venv/bin/pip install -r requirements.txt"
+    }
+  ],
+  "skippedEntries": []
+}

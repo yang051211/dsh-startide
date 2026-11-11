@@ -1,0 +1,138 @@
+{
+  "name": "dsh-skill-mcp-market",
+  "version": "0.5.18",
+  "scannedAt": "2026-11-11T21:01:24.110Z",
+  "icon": "dsh-skill-mcp-market.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 14,
+        "text": "const response = await fetch(RPC, {"
+      },
+      {
+        "file": "src/enrich.js",
+        "line": 15,
+        "text": "const response = await fetch(url, { headers: UA, signal: controller.signal });"
+      },
+      {
+        "file": "src/enrich.js",
+        "line": 177,
+        "text": "const response = await fetch(url, { headers: UA, signal: AbortSignal.timeout(4000) });"
+      },
+      {
+        "file": "src/extra-sources.js",
+        "line": 15,
+        "text": "const response = await fetch(url, { headers: UA, signal: AbortSignal.timeout(timeoutMs) });"
+      },
+      {
+        "file": "src/extra-sources.js",
+        "line": 21,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "import { existsSync } from \"node:fs\";"
+      },
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { mkdir, readFile, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { rm, stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "index.js",
+        "line": 144,
+        "text": "const fs = await import(\"node:fs\");"
+      },
+      {
+        "file": "index.js",
+        "line": 149,
+        "text": "fs.mkdirSync(skillsDir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "//   mounted as a live `@deepseek-ai/dsh-mcp-client` plugin instance, whose tools register on"
+      },
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "//   `ctx.tools` immediately — also without restarting DSH."
+      },
+      {
+        "file": "index.js",
+        "line": 31,
+        "text": "export const inject = [\"tools\"];"
+      },
+      {
+        "file": "index.js",
+        "line": 51,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "src/mcp.js",
+        "line": 1,
+        "text": "// MCP connector manager: definitions on disk, live mounts through the shipped dsh-mcp-client plugin."
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "index.js",
+        "line": 1154,
+        "text": "execFile(command, args, { windowsHide: false }, () => resolve());"
+      },
+      {
+        "file": "src/env.js",
+        "line": 3,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "src/env.js",
+        "line": 19,
+        "text": "const result = spawnSync("
+      },
+      {
+        "file": "src/env.js",
+        "line": 33,
+        "text": "const result = spawnSync(\"sh\", [\"-c\", `echo 'export ${name}=\"${String(value).replace(/\"/g, '\\\\\"')}\"' >> ~/.profile`], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

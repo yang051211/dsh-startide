@@ -1,14 +1,14 @@
 {
   "name": "@eternalheart/dsh-git-commit",
-  "version": "2.0.2",
-  "scannedAt": "2026-11-05T21:22:58.702Z",
+  "version": "2.2.0",
+  "scannedAt": "2026-11-11T21:01:20.874Z",
   "icon": "eternalheart__dsh-git-commit.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "client.js",
-        "line": 228,
+        "file": "lib/client.js",
+        "line": 389,
         "text": "response = await fetch(endpointUrl(endpoint), {"
       }
     ]
@@ -17,29 +17,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 22,
-        "text": "import { existsSync } from 'node:fs';"
+        "file": "lib/index.js",
+        "line": 21,
+        "text": "import { mkdtemp as mkdtemp2, rm as rm2, writeFile as writeFile2 } from \"node:fs/promises\";"
       },
       {
-        "file": "index.js",
-        "line": 23,
-        "text": "import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';"
+        "file": "lib/index.js",
+        "line": 260,
+        "text": "import { readdir, readlink, stat, unlink } from \"node:fs/promises\";"
       },
       {
-        "file": "index.js",
-        "line": 799,
-        "text": "const text = await readFile(path, 'utf8');"
+        "file": "lib/index.js",
+        "line": 264,
+        "text": "import { existsSync } from \"node:fs\";"
       },
       {
-        "file": "index.js",
-        "line": 1433,
-        "text": "await writeFile(file, message, 'utf8');"
+        "file": "lib/index.js",
+        "line": 453,
+        "text": "await unlink(path);"
       },
       {
-        "file": "index.js",
-        "line": 1446,
-        "text": "if (directory !== undefined) await rm(directory, { recursive: true, force: true }).catch(() => {});"
+        "file": "lib/index.js",
+        "line": 486,
+        "text": "import { existsSync as existsSync2 } from \"node:fs\";"
       }
     ]
   },
@@ -51,35 +51,36 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 21,
-        "text": "import { spawn } from 'node:child_process';"
+        "file": "lib/index.js",
+        "line": 259,
+        "text": "import { spawn } from \"node:child_process\";"
       },
       {
-        "file": "index.js",
-        "line": 224,
-        "text": "child = spawn(bin, ['-C', cwd, ...args], {"
+        "file": "lib/index.js",
+        "line": 342,
+        "text": "child = spawn(bin, args, {"
       },
       {
-        "file": "svn.js",
-        "line": 17,
-        "text": "import { spawn, spawnSync } from 'node:child_process';"
+        "file": "lib/index.js",
+        "line": 485,
+        "text": "import { spawn as spawn2, spawnSync } from \"node:child_process\";"
       },
       {
-        "file": "svn.js",
-        "line": 50,
-        "text": "const probe = spawnSync('locale', ['-a'], { encoding: 'utf8' });"
-      },
-      {
-        "file": "svn.js",
-        "line": 122,
-        "text": "child = spawn(bin, ['--non-interactive', ...args], {"
+        "file": "lib/index.js",
+        "line": 502,
+        "text": "const probe = spawnSync(\"locale\", [\"-a\"], { encoding: \"utf8\" });"
       }
     ]
   },
   "installScripts": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: node build.mjs"
+      }
+    ]
   },
   "dependencies": 0,
   "minifiedFiles": [],

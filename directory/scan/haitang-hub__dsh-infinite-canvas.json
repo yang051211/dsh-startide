@@ -1,0 +1,130 @@
+{
+  "name": "@haitang-hub/dsh-infinite-canvas",
+  "version": "0.2.20",
+  "scannedAt": "2026-11-11T21:01:14.091Z",
+  "icon": "haitang-hub__dsh-infinite-canvas.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bridge/index.js",
+        "line": 57749,
+        "text": "const response2 = await fetch(channel.relay, {"
+      },
+      {
+        "file": "bridge/index.js",
+        "line": 57771,
+        "text": "const response = await fetch(chatCompletionsUrl(channel.baseUrl), {"
+      },
+      {
+        "file": "bridge/index.js",
+        "line": 69773,
+        "text": "  const res = await fetch(`${config2.url}/api/tools`, { method: \"POST\", headers: { \"content-type\": \"application/json\", \"x-canvas-agent-token\": config2.token }, "
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 64,
+        "text": "const response = await fetch(url, { signal: signal ?? AbortSignal.timeout(2000) })"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 90,
+        "text": "health = await fetch(`${baseUrl}/health`, { signal: AbortSignal.timeout(2000) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bridge/index.js",
+        "line": 18826,
+        "text": "var fs7 = __require(\"node:fs\");"
+      },
+      {
+        "file": "bridge/index.js",
+        "line": 18920,
+        "text": "var Stats = __require(\"fs\").Stats;"
+      },
+      {
+        "file": "bridge/index.js",
+        "line": 22592,
+        "text": "var fs7 = __require(\"fs\");"
+      },
+      {
+        "file": "bridge/index.js",
+        "line": 31708,
+        "text": "var fs7 = __require(\"fs\");"
+      },
+      {
+        "file": "bridge/index.js",
+        "line": 31803,
+        "text": "var fs7 = __require(\"fs\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 3,
+        "text": "# 2. dsh-mcp-client 条目：把桥的 /mcp 门面注册为 mcp__infinite-canvas__* 工具"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 13,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 12,
+        "text": "* 工具注册不在本入口：cordis.patch.yml 里的 dsh-mcp-client 条目把桥的 /mcp 门面"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 44,
+        "text": "/** 与 dsh-mcp-client 同口径的环境清洗：去掉密钥类与 DSH_* 变量，避免把宿主侧敏感配置带给子进程。 */"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bridge/index.js",
+        "line": 51992,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "bridge/index.js",
+        "line": 70146,
+        "text": "const child = spawn(command, args, { detached: true, stdio: \"ignore\" });"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 398,
+        "text": "const child = spawn(process.execPath, [bridgeEntry], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "site/assets/index-myPB1_ze.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

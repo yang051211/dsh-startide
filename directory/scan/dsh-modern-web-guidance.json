@@ -1,7 +1,7 @@
 {
   "name": "dsh-modern-web-guidance",
-  "version": "0.8.2",
-  "scannedAt": "2026-11-11T08:04:58.918Z",
+  "version": "0.13.0",
+  "scannedAt": "2026-11-11T21:01:19.213Z",
   "icon": "dsh-modern-web-guidance.svg",
   "network": {
     "hit": false,
@@ -13,27 +13,27 @@
       {
         "file": "index.js",
         "line": 12,
-        "text": "import { readFileSync } from 'node:fs'"
+        "text": "import { readFileSync, realpathSync, statSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 540,
-        "text": "return readFileSync(join(SKILLS_DIR, relativePath), 'utf8')"
+        "line": 13,
+        "text": "import { lstat, mkdir, readFile, rename, unlink, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "index.js",
-        "line": 594,
-        "text": "const meta = JSON.parse(readFileSync(join(DATA_DIR, 'corpus.json'), 'utf8'))"
+        "line": 635,
+        "text": "return readFileSync(path, 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 610,
-        "text": "const guides = JSON.parse(readFileSync(join(DATA_DIR, 'guides.json'), 'utf8'))"
+        "line": 884,
+        "text": "text = await readFile(file, 'utf8')"
       },
       {
-        "file": "lib/guidance.js",
-        "line": 9,
-        "text": "import { readFile } from 'node:fs/promises'"
+        "file": "index.js",
+        "line": 988,
+        "text": "await mkdir(dirname(file), { recursive: true })"
       }
     ]
   },
@@ -42,17 +42,17 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 793,
+        "line": 2143,
         "text": "export const inject = ['skills', 'tools']"
       },
       {
         "file": "index.js",
-        "line": 807,
+        "line": 2163,
         "text": "ctx.effect(() => ctx.tools.register(tool), `modern-web-guidance ${tool.name}`)"
       },
       {
         "file": "index.js",
-        "line": 813,
+        "line": 2169,
         "text": "ctx.effect(() => ctx.tools.register(scanTool), `modern-web-guidance ${scanTool.name}`)"
       }
     ]

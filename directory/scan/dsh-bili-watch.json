@@ -1,7 +1,7 @@
 {
   "name": "dsh-bili-watch",
-  "version": "0.4.9",
-  "scannedAt": "2026-11-10T20:53:40.232Z",
+  "version": "0.4.10",
+  "scannedAt": "2026-11-11T21:01:06.955Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -53,13 +53,13 @@
       },
       {
         "file": "index.js",
-        "line": 331,
-        "text": "// 用户刚下好的 yt-dlp.exe / last-bin.json 被 `rmSync(dst)` 整棵删掉（CBlazed 的现场日志）。"
+        "line": 344,
+        "text": "try { return JSON.parse(readFileSync(DEPS_LOCK_FILE, 'utf8')) } catch { return null }"
       },
       {
         "file": "index.js",
-        "line": 344,
-        "text": "try { return JSON.parse(readFileSync(DEPS_LOCK_FILE, 'utf8')) } catch { return null }"
+        "line": 376,
+        "text": "try { mkdirSync(dir, { recursive: true }) } catch {}"
       }
     ]
   },
@@ -93,13 +93,13 @@
       },
       {
         "file": "lib/exec.mjs",
-        "line": 4,
-        "text": "* 边界守卫允许 `execFileSync(` / `spawn(` 只在本文件出现；其余调用点"
+        "line": 14,
+        "text": "import { execFileSync, spawn } from 'node:child_process'"
       },
       {
         "file": "lib/exec.mjs",
-        "line": 14,
-        "text": "import { execFileSync, spawn } from 'node:child_process'"
+        "line": 21,
+        "text": "return spawn(cmd, args, opts)"
       }
     ]
   },
@@ -114,7 +114,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 60,
+      "line": 62,
       "text": "npm i -g dsh-bili-watch"
     }
   ],

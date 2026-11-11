@@ -1,34 +1,34 @@
 {
   "name": "dsh-music-panel",
-  "version": "0.26.0",
-  "scannedAt": "2026-11-11T08:04:45.497Z",
+  "version": "0.27.2",
+  "scannedAt": "2026-11-11T21:01:02.610Z",
   "icon": "dsh-music-panel.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 1858,
+        "line": 1888,
         "text": "var response = await fetch(url, {"
       },
       {
         "file": "client.js",
-        "line": 1877,
+        "line": 1907,
         "text": "return fetch(url, {"
       },
       {
         "file": "client.js",
-        "line": 1905,
+        "line": 1935,
         "text": "return fetch(url, {"
       },
       {
         "file": "client.js",
-        "line": 3250,
+        "line": 3317,
         "text": "fetch(item.onlineUrl, onlineController === null ? {} : { signal: onlineController.signal })"
       },
       {
         "file": "client.js",
-        "line": 3297,
+        "line": 3364,
         "text": "fetch(streamUrl(item.path), controller === null ? {} : { signal: controller.signal })"
       }
     ]
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/favorites.js",
-        "line": 12,
-        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+        "file": "lib/json-store.js",
+        "line": 11,
+        "text": "import { copyFile, mkdir, open, readFile, rename, stat, unlink } from 'node:fs/promises'"
       },
       {
-        "file": "lib/favorites.js",
-        "line": 52,
-        "text": "parsed = JSON.parse(await readFile(file, 'utf8'))"
+        "file": "lib/json-store.js",
+        "line": 30,
+        "text": "return JSON.parse(await readFile(candidate, 'utf8'))"
       },
       {
-        "file": "lib/favorites.js",
-        "line": 61,
-        "text": "await mkdir(dir, { recursive: true })"
+        "file": "lib/json-store.js",
+        "line": 51,
+        "text": "await mkdir(dirname(file), { recursive: true })"
       },
       {
-        "file": "lib/favorites.js",
-        "line": 62,
-        "text": "await writeFile(file, `${JSON.stringify({ version: 1, favorites: cache }, null, 2)}\\n`, 'utf8')"
+        "file": "lib/json-store.js",
+        "line": 56,
+        "text": "await handle.writeFile(text, 'utf8')"
       },
       {
-        "file": "lib/library.js",
-        "line": 12,
-        "text": "import { readdir, stat } from 'node:fs/promises'"
+        "file": "lib/json-store.js",
+        "line": 86,
+        "text": "await unlink(temp).catch(() => {})"
       }
     ]
   },
@@ -83,7 +83,7 @@
       },
       {
         "file": "lib/routes.js",
-        "line": 1370,
+        "line": 1399,
         "text": "const child = spawn(opener.name, opener.args, {"
       }
     ]

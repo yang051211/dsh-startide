@@ -1,0 +1,112 @@
+{
+  "name": "dsh-um-proxy-ondemand",
+  "version": "1.5.4",
+  "scannedAt": "2026-11-11T21:01:09.920Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 45,
+        "text": "return fetch(url, options).then(function (res) {"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 20,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 180,
+        "text": "req = http.get("
+      },
+      {
+        "file": "scripts/um-recover.ps1",
+        "line": 91,
+        "text": "try { return Invoke-RestMethod -Uri \"$base/health\" -TimeoutSec 5 } catch { return $null }"
+      },
+      {
+        "file": "scripts/um-recover.ps1",
+        "line": 114,
+        "text": "$r = Invoke-WebRequest -Uri \"$base/v1/models\" -Headers $headers -TimeoutSec 20 -UseBasicParsing"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/paths.js",
+        "line": 15,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 19,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 274,
+        "text": "const value = pendingState.get(file)?.data ?? JSON.parse(fs.readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 285,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 287,
+        "text": "fs.writeFileSync(temporary, JSON.stringify(data, null, 2) + '\\n', 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/process.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 18,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 248,
+        "text": "const out = spawnSync('netstat', ['-ano'], { encoding: 'utf8', windowsHide: true, timeout: 15000 })"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 363,
+        "text": "const result = spawnSync('taskkill', ['/PID', String(pid), '/T', '/F'], {"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 459,
+        "text": "const child = spawn("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

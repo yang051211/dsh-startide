@@ -1,7 +1,7 @@
 {
   "name": "@young1lin/dsh-cc-otel",
-  "version": "0.1.8",
-  "scannedAt": "2026-11-11T08:04:59.517Z",
+  "version": "0.1.9",
+  "scannedAt": "2026-11-11T21:01:20.703Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,8 +18,23 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 33,
+        "line": 37,
         "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/self-update.js",
+        "line": 16,
+        "text": "import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/self-update.js",
+        "line": 143,
+        "text": "markerRaw = readFileSync(markerPath, 'utf8')"
+      },
+      {
+        "file": "lib/self-update.js",
+        "line": 149,
+        "text": "writeFileSync(markerPath, JSON.stringify({ checkedAt: Date.now() }) + '\\n', 'utf8')"
       }
     ]
   },
@@ -42,13 +57,18 @@
       },
       {
         "file": "lib/index.js",
-        "line": 32,
+        "line": 36,
         "text": "import { spawn } from 'node:child_process'"
       },
       {
         "file": "lib/index.js",
-        "line": 96,
+        "line": 102,
         "text": "child = spawn(bin, args, { stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true, env })"
+      },
+      {
+        "file": "lib/self-update.js",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process'"
       }
     ]
   },

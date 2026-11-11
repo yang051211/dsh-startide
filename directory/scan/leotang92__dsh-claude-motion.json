@@ -1,0 +1,114 @@
+{
+  "name": "@leotang92/dsh-claude-motion",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-11T21:01:15.232Z",
+  "icon": "leotang92__dsh-claude-motion.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1332,
+        "text": "const response = await fetch(`${route(path)}?${new URLSearchParams(params)}`, init);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1353,
+        "text": "const response = await fetch(route(listPath(skill)), { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1375,
+        "text": "const response = await fetch(`${route(openPath(view.skill))}?${new URLSearchParams({ root: view.root })}`, { method: \"POST\" });"
+      },
+      {
+        "file": "skills/claude-motion/scripts/artifact.mjs",
+        "line": 37,
+        "text": "const response = await fetch(new URL(probe, state.url), { signal: AbortSignal.timeout(2e3) });"
+      },
+      {
+        "file": "skills/claude-motion/scripts/artifact.mjs",
+        "line": 235,
+        "text": "import http from \"node:http\";"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { statSync as statSync2 } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "import { readFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 69,
+        "text": "const value = JSON.parse(readFileSync(join(root, at[0]), \"utf8\"))[at[1]];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 82,
+        "text": "const value = JSON.parse(readFileSync(file, \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { spawn as spawn2 } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 202,
+        "text": "const child = spawn(node.path, [script, ...args], { env: scriptEnv(node), stdio: [input === void 0 ? \"ignore\" : \"pipe\", \"pipe\", \"pipe\"], windowsHide: true });"
+      },
+      {
+        "file": "skills/claude-motion/scripts/artifact.mjs",
+        "line": 232,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "skills/claude-motion/scripts/artifact.mjs",
+        "line": 994,
+        "text": "const child = spawn(process.execPath, [...call.command, \"--background\"], { detached: true, stdio: [\"ignore\", \"ignore\", fd] });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "skills/claude-motion/scripts/editor/artifact-type/app.js",
+    "skills/claude-motion/scripts/editor/local-host.js",
+    "skills/claude-motion/scripts/editor/share-ui.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

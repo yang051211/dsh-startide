@@ -1,0 +1,88 @@
+{
+  "name": "dsh-scrcpy-mirror",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-11T21:01:15.594Z",
+  "icon": "dsh-scrcpy-mirror.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "} from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 77,
+        "text": "if (outPath) unlinkSync(outPath)"
+      },
+      {
+        "file": "index.js",
+        "line": 137,
+        "text": "raw = readFileSync(outPath)"
+      },
+      {
+        "file": "index.js",
+        "line": 509,
+        "text": "if (!existsSync(dir)) mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 511,
+        "text": "writeFileSync(file, shot.buffer)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 33,
+        "text": "export const inject = ['tools', 'commands']"
+      },
+      {
+        "file": "index.js",
+        "line": 625,
+        "text": "const disposable = ctx.tools.register(tool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 93,
+        "text": "child = spawn(file, args, { windowsHide: true, stdio: ['ignore', fd, fd] })"
+      },
+      {
+        "file": "index.js",
+        "line": 469,
+        "text": "const child = spawn(scrcpy, args, { stdio: 'ignore', windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

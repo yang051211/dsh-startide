@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-computer-use",
-  "version": "2.5.2",
-  "scannedAt": "2026-10-26T10:08:15.880Z",
+  "version": "2.6.0",
+  "scannedAt": "2026-11-11T21:01:22.727Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -12,17 +12,17 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 755,
+        "line": 789,
         "text": "const fs = await import('node:fs')"
       },
       {
         "file": "index.js",
-        "line": 758,
+        "line": 792,
         "text": "await fs.promises.mkdir(dirname(target), { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 759,
+        "line": 793,
         "text": "await fs.promises.writeFile(target, png)"
       },
       {
@@ -42,12 +42,12 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 90,
+        "line": 91,
         "text": "export const inject = ['tools', 'attachments']"
       },
       {
         "file": "index.js",
-        "line": 1013,
+        "line": 1056,
         "text": "ster = (definition) => ctx.effect(() => ctx.tools.register(defineTool({ ...definition, description: definition.description + platformNote })), 'computer-use: to"
       }
     ]
@@ -55,6 +55,16 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "index.js",
+        "line": 85,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 553,
+        "text": "execFile(cmd, args, { encoding: 'utf8', timeout: 8000, windowsHide: true }, (err, stdout) => err ? reject(err) : resolve(stdout))"
+      },
       {
         "file": "linux.js",
         "line": 1,

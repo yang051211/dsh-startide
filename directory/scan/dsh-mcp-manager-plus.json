@@ -1,14 +1,14 @@
 {
   "name": "dsh-mcp-manager-plus",
-  "version": "0.4.5",
-  "scannedAt": "2026-11-08T07:28:17.153Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-11T21:01:12.071Z",
   "icon": "dsh-mcp-manager-plus.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 453,
+        "line": 503,
         "text": "return fetch(API_PREFIX + '/' + route + query, {"
       }
     ]
@@ -18,34 +18,39 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 27,
-        "text": "import { accessSync, constants, existsSync, mkdirSync, renameSync, writeFileSync } from 'node:fs';"
+        "line": 36,
+        "text": "} from 'node:fs';"
       },
       {
         "file": "lib/index.js",
-        "line": 623,
+        "line": 465,
+        "text": "value = normalizeBindings(JSON.parse(readFileSync(path, 'utf8')));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 485,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 487,
+        "text": "writeFileSync(temp, `${JSON.stringify({ version: 1, servers: sorted }, null, 2)}\\n`);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1052,
         "text": "mkdirSync(dirname(patchPath), { recursive: true });"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 625,
-        "text": "writeFileSync(temp, text);"
-      },
-      {
-        "file": "lib/patch.js",
-        "line": 31,
-        "text": "import { readFileSync } from 'node:fs';"
-      },
-      {
-        "file": "lib/patch.js",
-        "line": 520,
-        "text": "return readFileSync(patchPath, 'utf8');"
       }
     ]
   },
   "agentTools": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1470,
+        "text": "export const inject = ['webServer', 'tools'];"
+      },
       {
         "file": "lib/patch.js",
         "line": 11,
@@ -70,6 +75,7 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
+    "tools",
     "webServer"
   ],
   "setupHints": [],

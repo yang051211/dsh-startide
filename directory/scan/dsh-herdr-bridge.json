@@ -1,0 +1,85 @@
+{
+  "name": "dsh-herdr-bridge",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-11T21:01:17.007Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 152,
+        "text": "const post = (ids) => fetch(VIEWING_ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "import { accessSync, appendFileSync, chmodSync, constants, existsSync, mkdirSync, realpathSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 131,
+        "text": "mkdirSync(home, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 132,
+        "text": "const log = (...a) => appendFileSync(join(home, 'bridge.log'), `${new Date().toISOString()} ${a.join(' ')}\\n`)"
+      },
+      {
+        "file": "index.js",
+        "line": 141,
+        "text": "mkdirSync(bin, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 144,
+        "text": "      writeFileSync(file, `@echo off\\r\\nset ELECTRON_RUN_AS_NODE=1\\r\\nset \"DSH_HERDR_SOCKET=${socketPath}\"\\r\\nset \"DSH_HERDR_LAUNCHER=${file}\"\\r\\n\"${process.exe"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 8,
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 190,
+        "text": "const runHc = (args, done) => execFile(hc, args, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 205,
+        "text": "const herdrApp = args => new Promise(resolve => execFile(herdrAppCandidates[0] ?? 'herdr-app', args, { timeout: 5000 },"
+      },
+      {
+        "file": "index.js",
+        "line": 332,
+        "text": "const child = spawn(hc, ['events', '--json', '--terminal', term], { stdio: ['ignore', 'pipe', 'ignore'] })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

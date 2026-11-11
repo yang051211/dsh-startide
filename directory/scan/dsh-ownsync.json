@@ -1,0 +1,102 @@
+{
+  "name": "dsh-ownsync",
+  "version": "1.3.0",
+  "scannedAt": "2026-11-11T21:01:17.302Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 17,
+        "text": "return fetch(url, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 29,
+        "text": "status: () => fetch('/ownsync/api/status').then(response => response.json()),"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 38,
+        "text": "backups: () => fetch('/ownsync/api/backups').then(response => response.json()),"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/apply.js",
+        "line": 7,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/apply.js",
+        "line": 78,
+        "text": "fs.unlinkSync(target);"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 6,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 53,
+        "text": "raw = fs.readFileSync(file, 'utf8');"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 78,
+        "text": "current = JSON.parse(fs.readFileSync(file, 'utf8').replace(/^\\uFEFF/, '')) || {};"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/git.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/git.js",
+        "line": 64,
+        "text": "child = spawn(command, ['-C', cwd, ...args], {"
+      },
+      {
+        "file": "lib/host-restart.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/host-restart.js",
+        "line": 155,
+        "text": "const { spawn, execFileSync } = require('node:child_process');"
+      },
+      {
+        "file": "lib/host-restart.js",
+        "line": 255,
+        "text": "const child = spawn(EXE, args, { detached: true, stdio: 'ignore', cwd: path.dirname(EXE), env });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

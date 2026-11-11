@@ -1,0 +1,121 @@
+{
+  "name": "@haitang-hub/dsh-3d-director-desk",
+  "version": "0.3.13",
+  "scannedAt": "2026-11-11T21:01:16.575Z",
+  "icon": "haitang-hub__dsh-3d-director-desk.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bridge/index.js",
+        "line": 11,
+        "text": "import http from \"node:http\";"
+      },
+      {
+        "file": "bridge/index.js",
+        "line": 35,
+        "text": "const req = http.get(url, { agent: new http.Agent({ keepAlive: false }) }, (res) => {"
+      },
+      {
+        "file": "bridge/src/server/http.js",
+        "line": 30,
+        "text": "import http from \"node:http\";"
+      },
+      {
+        "file": "bridge/src/server/mcp.js",
+        "line": 112,
+        "text": "res = await fetch(`${BRIDGE_URL}/director/tool`, {"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 64,
+        "text": "const response = await fetch(url, { signal: signal ?? AbortSignal.timeout(2000) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bridge/index.js",
+        "line": 10,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "bridge/index.js",
+        "line": 72,
+        "text": "fs.writeFileSync(probe, \"ok\");"
+      },
+      {
+        "file": "bridge/index.js",
+        "line": 73,
+        "text": "fs.unlinkSync(probe);"
+      },
+      {
+        "file": "bridge/src/server/bridge.js",
+        "line": 8,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "bridge/src/server/bridge.js",
+        "line": 171,
+        "text": "fs.mkdirSync(this.logsDir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 3,
+        "text": "# 2. dsh-mcp-client 条目：把桥的 /mcp HTTP 门面注册为 mcp__director-desk__* 工具"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 13,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 12,
+        "text": "* 工具注册不在本入口：cordis.patch.yml 里的 dsh-mcp-client 条目把桥的 /mcp 门面"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 44,
+        "text": "/** 与 dsh-mcp-client 同口径的环境清洗：去掉密钥类与 DSH_* 变量，避免把宿主侧敏感配置带给子进程。 */"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/index.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 398,
+        "text": "const child = spawn(process.execPath, [bridgeEntry], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "site/assets/editor-page-V4JLC_BO.js",
+    "site/assets/index-BMzlZBG5.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

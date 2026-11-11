@@ -1,0 +1,118 @@
+{
+  "name": "dsh-ensp",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-11T21:01:23.722Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/gen-scenarios-doc.mjs",
+        "line": 14,
+        "text": "import { readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "scripts/gen-scenarios-doc.mjs",
+        "line": 165,
+        "text": "current = await readFile(target, 'utf8')"
+      },
+      {
+        "file": "scripts/gen-scenarios-doc.mjs",
+        "line": 175,
+        "text": "await writeFile(target, next, 'utf8')"
+      },
+      {
+        "file": "scripts/survey-topologies.mjs",
+        "line": 12,
+        "text": "import { readFileSync, readdirSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "scripts/survey-topologies.mjs",
+        "line": 45,
+        "text": "const text = readFileSync(file, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/dsh/index.mjs",
+        "line": 10,
+        "text": "* `ctx.tools.register` wants a shape that differs from the MCP schema in two ways,"
+      },
+      {
+        "file": "src/dsh/index.mjs",
+        "line": 54,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "src/dsh/index.mjs",
+        "line": 116,
+        "text": "* @param {object} tools - `ctx.tools`"
+      },
+      {
+        "file": "src/dsh/index.mjs",
+        "line": 121,
+        "text": "return tools.register({"
+      },
+      {
+        "file": "src/dsh/index.mjs",
+        "line": 135,
+        "text": "const tools = ctx.tools"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core/calibrate.mjs",
+        "line": 35,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "src/core/calibrate.mjs",
+        "line": 205,
+        "text": "const r = spawnSync('powershell', ['-NoProfile', '-NonInteractive', '-Command', script], {"
+      },
+      {
+        "file": "src/core/calibrate.mjs",
+        "line": 250,
+        "text": "const r = spawnSync('powershell', ['-NoProfile', '-NonInteractive', '-Command', script], {"
+      },
+      {
+        "file": "src/core/doctor.mjs",
+        "line": 16,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "src/core/doctor.mjs",
+        "line": 84,
+        "text": "const r = spawnSync('powershell', ['-NoProfile', '-Command', INPUT_PROBE], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 233,
+      "text": "npm install -g dsh-ensp"
+    }
+  ],
+  "skippedEntries": []
+}

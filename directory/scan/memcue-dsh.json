@@ -1,14 +1,14 @@
 {
   "name": "memcue-dsh",
-  "version": "0.30.0",
-  "scannedAt": "2026-11-06T20:48:43.233Z",
+  "version": "0.36.2",
+  "scannedAt": "2026-11-11T21:01:14.015Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "src/install.mjs",
-        "line": 61,
+        "line": 82,
         "text": "const response = await fetch(url, { signal: AbortSignal.timeout(timeoutMs) })"
       }
     ]
@@ -18,28 +18,28 @@
     "evidence": [
       {
         "file": "src/install.mjs",
-        "line": 10,
-        "text": "import { access, constants, chmod, mkdir, mkdtemp, readFile, rename, rm, rmdir, stat, writeFile } from 'node:fs/promises'"
+        "line": 11,
+        "text": "import { access, chmod, constants, lstat, mkdir, mkdtemp, readFile, rename, rm, rmdir, stat, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "src/install.mjs",
-        "line": 25,
+        "line": 26,
         "text": "const manifest = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'))"
       },
       {
         "file": "src/install.mjs",
-        "line": 90,
+        "line": 115,
         "text": "await mkdir(dir, { recursive: true })"
       },
       {
         "file": "src/install.mjs",
-        "line": 98,
-        "text": "await mkdir(lock)"
+        "line": 117,
+        "text": "await mkdir(join(lock, '..'), { recursive: true })"
       },
       {
         "file": "src/install.mjs",
-        "line": 111,
-        "text": "await writeFile(join(tmp, archive), data)"
+        "line": 124,
+        "text": "await mkdir(lock)"
       }
     ]
   },
@@ -48,27 +48,27 @@
     "evidence": [
       {
         "file": "src/index.mjs",
-        "line": 34,
+        "line": 35,
         "text": "export const inject = ['tools', 'systemPrompt']"
       },
       {
         "file": "src/index.mjs",
-        "line": 416,
+        "line": 465,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "src/index.mjs",
-        "line": 498,
+        "line": 549,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "src/index.mjs",
-        "line": 533,
+        "line": 589,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "src/index.mjs",
-        "line": 557,
+        "line": 623,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
@@ -83,17 +83,22 @@
       },
       {
         "file": "src/index.mjs",
-        "line": 165,
-        "text": "child = spawn(settings.binary, args, { env: { ...childEnv(settings), ...options.env } })"
+        "line": 204,
+        "text": "child=spawn(process.execPath,[fileURLToPath(new URL('./process.mjs',import.meta.url))],{"
       },
       {
         "file": "src/install.mjs",
-        "line": 8,
+        "line": 9,
         "text": "import { spawn } from 'node:child_process'"
       },
       {
         "file": "src/install.mjs",
         "line": 68,
+        "text": "const child = spawn(path, ['version', '-minimum', version], { stdio: 'ignore' })"
+      },
+      {
+        "file": "src/install.mjs",
+        "line": 89,
         "text": "const child = spawn('tar', ['-xzf', archive, '-C', dir, 'memcue'], { stdio: ['ignore', 'ignore', 'pipe'] })"
       }
     ]

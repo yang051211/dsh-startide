@@ -1,0 +1,77 @@
+{
+  "name": "dsh-git-desk",
+  "version": "0.22.0",
+  "scannedAt": "2026-11-11T21:01:23.842Z",
+  "icon": "dsh-git-desk.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/host/lib/git.js",
+        "line": 1223,
+        "text": "export async function fetch(runtime, root) {"
+      },
+      {
+        "file": "dist/host/lib/rpc.js",
+        "line": 228,
+        "text": "return fetch(runtime, root);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/host/lib/exec.js",
+        "line": 1,
+        "text": "import { lstat, readFile, readdir, realpath, stat, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "dist/host/lib/exec.js",
+        "line": 132,
+        "text": "const bytes = await readFile(path);"
+      },
+      {
+        "file": "dist/host/lib/exec.js",
+        "line": 151,
+        "text": "return await readFile(path);"
+      },
+      {
+        "file": "dist/host/lib/exec.js",
+        "line": 163,
+        "text": "await writeFile(path, text, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/host/lib/exec.js",
+        "line": 77,
+        "text": "handle = subprocess.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "subprocess",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

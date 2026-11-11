@@ -1,0 +1,99 @@
+{
+  "name": "@liangjiehappy/dsh-plugin-workbench",
+  "version": "0.2.3",
+  "scannedAt": "2026-11-11T21:01:23.943Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 311,
+        "text": "const r = await fetch(url, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 427,
+        "text": "const res = await fetch(DSB + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/checks.js",
+        "line": 50,
+        "text": "\"tools\", \"systemPrompt\", \"skills\", \"fs\", \"llm\", \"web\", \"session\", \"shell\","
+      },
+      {
+        "file": "lib/index.js",
+        "line": 52,
+        "text": "return await import(\"node:fs/promises\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 58,
+        "text": "return await fs.readFile(p, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 611,
+        "text": "await fs.mkdir(dir + \"/lib\", { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 612,
+        "text": "await fs.writeFile(dir + \"/package.json\", JSON.stringify(sc.pkg, null, 2) + \"\\n\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/checks.js",
+        "line": 30,
+        "text": "*  2. inject = [\"tools\", \"skills\", \"config\"]"
+      },
+      {
+        "file": "lib/checks.js",
+        "line": 334,
+        "text": "// 收集 ctx.tools.register({...}) 的 tool 名"
+      },
+      {
+        "file": "lib/checks.js",
+        "line": 571,
+        "text": "\"每个 ctx.tools.register 必须有 output: { schema, render }\\n\" +"
+      },
+      {
+        "file": "lib/checks.js",
+        "line": 635,
+        "text": "\"每个 ctx.tools.register 都要写 output: TEXT_OUTPUT\")"
+      },
+      {
+        "file": "lib/checks.js",
+        "line": 767,
+        "text": "* 2026-11-10 实测：inject = [\"tools\",\"skills\",\"config\"]"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills",
+    "tools",
+    "tools\\"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,35 +1,35 @@
 {
   "name": "dsh-openwrite",
-  "version": "0.2.28",
-  "scannedAt": "2026-11-04T07:55:55.065Z",
+  "version": "0.2.38",
+  "scannedAt": "2026-11-11T21:01:08.397Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "packages/openwrite-bridge/lib/client.js",
-        "line": 195,
+        "line": 242,
         "text": "const response = await fetch(target, { ...init, headers, signal: AbortSignal.any(signals) });"
       },
       {
         "file": "packages/openwrite-bridge/lib/domain.js",
-        "line": 471,
+        "line": 661,
         "text": "const upstream = await fetch(new URL(`/api${sub}`, connection?.baseUrl ?? this.baseUrl), {"
       },
       {
-        "file": "packages/openwrite-bridge/lib/managed-runtime.js",
-        "line": 272,
-        "text": "const response = await fetch(connection.baseUrl + '/api/health', {"
+        "file": "packages/openwrite-bridge/lib/host-llm.js",
+        "line": 1,
+        "text": "import { createServer } from 'node:http';"
       },
       {
-        "file": "packages/openwrite-bridge/lib/managed-runtime.js",
-        "line": 476,
-        "text": "const response = await fetch(url, { signal: AbortSignal.any([signal, controller.signal]) });"
+        "file": "packages/openwrite-bridge/lib/host-web.js",
+        "line": 1,
+        "text": "import { createServer } from 'node:http';"
       },
       {
-        "file": "packages/openwrite-bridge/lib/managed-runtime.js",
-        "line": 691,
-        "text": "const health = await fetch(connection.baseUrl + '/api/health', {"
+        "file": "packages/openwrite-bridge/lib/host-web.js",
+        "line": 157,
+        "text": "json(res, 200, fetchWire(await this.options.web.fetch({ url: target }, controller.signal)));"
       }
     ]
   },
@@ -37,50 +37,35 @@
     "hit": true,
     "evidence": [
       {
-        "file": "docs/research/autosave-race-repro.mjs",
-        "line": 21,
-        "text": "import { readFile } from 'node:fs/promises'"
+        "file": "companions.mjs",
+        "line": 6,
+        "text": "import { readFile, readdir, stat, mkdir, writeFile, realpath } from 'node:fs/promises'"
       },
       {
-        "file": "docs/research/autosave-race-repro.mjs",
-        "line": 27,
-        "text": "const source = await readFile(sourceFile, 'utf8')"
+        "file": "companions.mjs",
+        "line": 76,
+        "text": "const readJson = async path => JSON.parse(await readFile(path, 'utf8'))"
       },
       {
-        "file": "packages/openwrite-bridge/lib/client.js",
-        "line": 2,
-        "text": "import { mkdir, writeFile } from 'node:fs/promises';"
+        "file": "companions.mjs",
+        "line": 438,
+        "text": "const text = await readFile(join(directory, patch), 'utf8').catch(() => null)"
       },
       {
-        "file": "packages/openwrite-bridge/lib/client.js",
-        "line": 5,
-        "text": "import { realpathSync } from 'node:fs';"
+        "file": "companions.mjs",
+        "line": 543,
+        "text": "await mkdir(join(home, 'openwrite'), { recursive: true }).catch(() => {})"
       },
       {
-        "file": "packages/openwrite-bridge/lib/client.js",
-        "line": 216,
-        "text": "await mkdir(root, { recursive: true });"
+        "file": "companions.mjs",
+        "line": 544,
+        "text": "await writeFile(cache, JSON.stringify({ fingerprint, host, build, ...result }) + '\\n').catch(() => {})"
       }
     ]
   },
   "agentTools": {
     "hit": true,
     "evidence": [
-      {
-        "file": "dog-tools.mjs",
-        "line": 2,
-        "text": "export const inject = ['tools', 'openwriteDog']"
-      },
-      {
-        "file": "dog-tools.mjs",
-        "line": 4,
-        "text": "for (const tool of ctx.openwriteDog.tools) ctx.effect(() => ctx.tools.register(tool))"
-      },
-      {
-        "file": "dog-tools.mjs",
-        "line": 5,
-        "text": "ctx.effect(() => ctx.tools.guard(execution => {"
-      },
       {
         "file": "packages/openwrite-bridge/lib/preset-tools.js",
         "line": 7,
@@ -90,6 +75,21 @@
         "file": "packages/openwrite-bridge/lib/preset-tools.js",
         "line": 12,
         "text": "ctx.effect(() => ctx.tools.presentAs(config.presentation), 'openwrite: tool presentation');"
+      },
+      {
+        "file": "packages/openwrite-bridge/lib/preset-tools.js",
+        "line": 13,
+        "text": "ctx.effect(() => ctx.tools.guard(execution => novelPolicyDenial(ctx, execution)), 'openwrite: execution policy');"
+      },
+      {
+        "file": "packages/openwrite-bridge/lib/tools.js",
+        "line": 323,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "packages/openwrite-bridge/lib/tools.js",
+        "line": 389,
+        "text": "ctx.tools.register(defineTool({"
       }
     ]
   },
@@ -103,7 +103,7 @@
       },
       {
         "file": "packages/openwrite-bridge/lib/managed-runtime.js",
-        "line": 141,
+        "line": 143,
         "text": "const killer = spawn('taskkill', ['/pid', String(child.pid), '/T', '/F'], { windowsHide: true });"
       },
       {
@@ -113,13 +113,13 @@
       },
       {
         "file": "scripts/maintenance.mjs",
-        "line": 46,
+        "line": 65,
         "text": "const result = spawnSync(command, argv, {"
       },
       {
-        "file": "scripts/prepare.mjs",
+        "file": "scripts/plugin-doctor.mjs",
         "line": 4,
-        "text": "import { spawnSync } from 'node:child_process'"
+        "text": "import { execFileSync } from 'node:child_process'"
       }
     ]
   },

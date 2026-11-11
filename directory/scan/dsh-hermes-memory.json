@@ -1,8 +1,8 @@
 {
   "name": "dsh-hermes-memory",
-  "version": "1.2.0",
-  "scannedAt": "2026-11-09T08:10:17.888Z",
-  "icon": null,
+  "version": "2.0.0",
+  "scannedAt": "2026-11-11T21:01:19.511Z",
+  "icon": "dsh-hermes-memory.svg",
   "network": {
     "hit": true,
     "evidence": [
@@ -14,21 +14,62 @@
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/build-host.mjs",
+        "line": 1,
+        "text": "import { readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "scripts/build-host.mjs",
+        "line": 14,
+        "text": "const source = await readFile(resolve(root, 'lib', file + '.js'), 'utf8')"
+      },
+      {
+        "file": "scripts/build-host.mjs",
+        "line": 18,
+        "text": "let main = await readFile(resolve(root, 'lib/index.js'), 'utf8')"
+      },
+      {
+        "file": "scripts/build-host.mjs",
+        "line": 29,
+        "text": "const current = await readFile(target, 'utf8')"
+      },
+      {
+        "file": "scripts/build-host.mjs",
+        "line": 33,
+        "text": "await writeFile(target, code)"
+      }
+    ]
   },
   "agentTools": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 52,
-        "text": "export const inject = ['tools']"
+        "file": "host.js",
+        "line": 782,
+        "text": "const inject = ['tools', 'sessionProjections', 'timer']"
+      },
+      {
+        "file": "host.js",
+        "line": 1631,
+        "text": "inject: [...new Set([...inject.filter(key => key !== 'tools'), 'timer'])],"
       },
       {
         "file": "lib/index.js",
-        "line": 301,
+        "line": 68,
+        "text": "export const inject = ['tools', 'sessionProjections', 'timer']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 451,
         "text": "return ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "scripts/build-host.mjs",
+        "line": 25,
+        "text": "main = main.replaceAll('ctx.tools.register(defineTool({', 'registerDynamicTool(ctx, defineTool({')"
       }
     ]
   },
@@ -44,6 +85,8 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
+    "sessionProjections",
+    "timer",
     "tools"
   ],
   "setupHints": [],

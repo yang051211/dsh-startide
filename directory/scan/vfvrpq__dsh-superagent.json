@@ -1,0 +1,138 @@
+{
+  "name": "@vfvrpq/dsh-superagent",
+  "version": "0.2.3",
+  "scannedAt": "2026-11-11T21:01:14.397Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "examples/im-bridges/dingtalk-stream.mjs",
+        "line": 19,
+        "text": "const response = await fetch('https://api.dingtalk.com/v1.0/oauth2/accessToken', {"
+      },
+      {
+        "file": "examples/im-bridges/dingtalk-stream.mjs",
+        "line": 32,
+        "text": "const response = await fetch('https://api.dingtalk.com/v1.0/robot/groupMessages/send', {"
+      },
+      {
+        "file": "examples/im-bridges/dingtalk-stream.mjs",
+        "line": 45,
+        "text": "const opened = await fetch('https://api.dingtalk.com/v1.0/gateway/connections/open', {"
+      },
+      {
+        "file": "examples/im-bridges/dingtalk-stream.mjs",
+        "line": 52,
+        "text": "const socket = new WebSocket(`${opened.endpoint}?ticket=${encodeURIComponent(opened.ticket)}`)"
+      },
+      {
+        "file": "examples/im-bridges/dingtalk.mjs",
+        "line": 6,
+        "text": "import { createServer } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "examples/im-bridges/wecom.mjs",
+        "line": 27,
+        "text": "import { readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "examples/im-bridges/wecom.mjs",
+        "line": 151,
+        "text": "const held = JSON.parse(readFileSync(cache, 'utf8'))"
+      },
+      {
+        "file": "examples/im-bridges/wecom.mjs",
+        "line": 157,
+        "text": "writeFileSync(cache, JSON.stringify({ token: body.access_token, expires: Date.now() + (body.expires_in ?? 7200) * 1000 }))"
+      },
+      {
+        "file": "lib/feishu-DH1Hrfhm.js",
+        "line": 5,
+        "text": "import { mkdtemp, readFile, realpath, rm, stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/feishu-DH1Hrfhm.js",
+        "line": 53,
+        "text": "const data = await readFile(path, { signal });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/claim.js",
+        "line": 3,
+        "text": "const inject = [\"tools\", \"orchestrator\"];"
+      },
+      {
+        "file": "lib/claim.js",
+        "line": 6,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/claim.js",
+        "line": 34,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 9472,
+        "text": "binding.disposers.push(agent.ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 9560,
+        "text": "...[\"bash\", \"pwsh\"].filter((name) => agent.ctx.tools.get(name)),"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/feishu-DH1Hrfhm.js",
+        "line": 6,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/feishu-DH1Hrfhm.js",
+        "line": 666,
+        "text": "const child = spawn(bot(ctx).cli, args, {"
+      },
+      {
+        "file": "lib/im-watch.js",
+        "line": 3,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/im-watch.js",
+        "line": 152,
+        "text": "const child = spawn(config.command, args, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import { spawn } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

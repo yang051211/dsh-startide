@@ -1,20 +1,35 @@
 {
   "name": "dsh-feiyu-life",
-  "version": "0.4.0",
-  "scannedAt": "2026-11-11T08:04:56.435Z",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-11T21:01:16.834Z",
   "icon": "dsh-feiyu-life.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 78,
+        "line": 98,
         "text": "const res = await fetch(url, { headers: { accept: 'application/json' } })"
       },
       {
         "file": "client.js",
-        "line": 83,
+        "line": 103,
         "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "client.js",
+        "line": 488,
+        "text": "const r = await fetch(`${API}/models${force ? '?f=1' : ''}`, { credentials: 'same-origin' })"
+      },
+      {
+        "file": "client.js",
+        "line": 502,
+        "text": "const r = await fetch(`${API}/state`, { credentials: 'same-origin' })"
+      },
+      {
+        "file": "client.js",
+        "line": 518,
+        "text": "const r = await fetch(`${API}/save`, {"
       }
     ]
   },
@@ -22,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 15,
-        "text": "import { existsSync, readFileSync } from 'node:fs'"
+        "file": "gen.js",
+        "line": 11,
+        "text": "import { appendFileSync, mkdirSync } from 'node:fs'"
       },
       {
-        "file": "index.js",
-        "line": 60,
-        "text": "const j = JSON.parse(readFileSync(剧本路径(d), 'utf8'))"
+        "file": "gen.js",
+        "line": 20,
+        "text": "mkdirSync(dshHome(), { recursive: true })"
       },
       {
-        "file": "life.js",
-        "line": 22,
-        "text": "import { readFileSync, writeFileSync, mkdirSync, statSync, renameSync } from 'node:fs'"
+        "file": "gen.js",
+        "line": 21,
+        "text": "appendFileSync(d, new Date().toISOString() + '  ' + m + '\\n')"
       },
       {
-        "file": "life.js",
-        "line": 354,
-        "text": "const d = JSON.parse(readFileSync(状态路径, 'utf8'))"
+        "file": "image-prompt.js",
+        "line": 16,
+        "text": "import { readFileSync, appendFileSync, unlinkSync } from 'node:fs'"
       },
       {
-        "file": "life.js",
-        "line": 362,
-        "text": "mkdirSync(dirname(状态路径), { recursive: true })"
+        "file": "image-prompt.js",
+        "line": 24,
+        "text": "const log = (m) => { try { appendFileSync(logFile(), new Date().toISOString() + '  ' + m + '\\n') } catch {} }"
       }
     ]
   },
@@ -52,20 +67,36 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 21,
-        "text": "export const inject = ['systemPrompt', 'agents', 'timer', 'webServer', 'llm', 'tools']"
+        "file": "image.js",
+        "line": 389,
+        "text": "ctx.effect(() => ctx.tools.register({"
       },
       {
         "file": "index.js",
-        "line": 129,
+        "line": 28,
+        "text": "export const inject = ['systemPrompt', 'agents', 'timer', 'webServer', 'llm', 'tools', 'attachments']"
+      },
+      {
+        "file": "index.js",
+        "line": 119,
         "text": "const off = agent.ctx.tools.register({"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "image-prompt.js",
+        "line": 17,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "image.js",
+        "line": 16,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
@@ -76,6 +107,7 @@
   "binaryFiles": [],
   "requiredServices": [
     "agents",
+    "attachments",
     "llm",
     "systemPrompt",
     "timer",

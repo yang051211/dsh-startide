@@ -1,7 +1,7 @@
 {
   "name": "dsh-worktree-guard",
-  "version": "0.2.3",
-  "scannedAt": "2026-11-10T08:49:02.020Z",
+  "version": "0.2.4",
+  "scannedAt": "2026-11-11T21:01:23.493Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -11,29 +11,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "src/core/capabilities.js",
+        "line": 217,
+        "text": "const exists = env.exists ?? ((p) => import(\"node:fs/promises\").then((fs) => fs.access(p).then(() => true, () => false)));"
+      },
+      {
         "file": "src/core/gitops.js",
-        "line": 112,
+        "line": 113,
         "text": "const { lstat } = await import(\"node:fs/promises\");"
       },
       {
         "file": "src/core/gitops.js",
-        "line": 145,
+        "line": 146,
         "text": "const { lstat, readdir, unlink } = await import(\"node:fs/promises\");"
       },
       {
         "file": "src/core/gitops.js",
-        "line": 167,
+        "line": 168,
         "text": "await unlink(p);"
       },
       {
         "file": "src/core/lifecycle.js",
         "line": 4,
         "text": "import { mkdir, cp, access, writeFile, readdir, stat } from \"node:fs/promises\";"
-      },
-      {
-        "file": "src/core/lifecycle.js",
-        "line": 5,
-        "text": "import { constants as fsConstants } from \"node:fs\";"
       }
     ]
   },
@@ -47,17 +47,17 @@
       },
       {
         "file": "src/index.js",
-        "line": 19,
+        "line": 23,
         "text": "export const inject = [\"tools\"];"
       },
       {
         "file": "src/index.js",
-        "line": 191,
+        "line": 252,
         "text": "const def = typeof ctx.tools?.define === \"function\" ? ctx.tools.define(spec) : spec;"
       },
       {
         "file": "src/index.js",
-        "line": 192,
+        "line": 253,
         "text": "ctx.tools.register(def);"
       }
     ]

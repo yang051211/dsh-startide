@@ -1,7 +1,7 @@
 {
   "name": "dsh-diagnostic-tutor",
-  "version": "1.0.2",
-  "scannedAt": "2026-11-11T08:04:57.915Z",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-11T21:01:18.108Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -37,6 +37,11 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/asset-tools.js",
+        "line": 4,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
         "file": "lib/assets.js",
         "line": 3,
         "text": "import { lstat, mkdir, open, readFile, rm, stat } from 'node:fs/promises';"
@@ -55,11 +60,6 @@
         "file": "lib/assets.js",
         "line": 33,
         "text": "await handle.writeFile(bytes);"
-      },
-      {
-        "file": "lib/assets.js",
-        "line": 39,
-        "text": "async remove(sha256) { await rm(this.path(sha256), { force: true }); }"
       }
     ]
   },
