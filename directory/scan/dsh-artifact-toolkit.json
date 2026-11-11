@@ -1,0 +1,75 @@
+{
+  "name": "dsh-artifact-toolkit",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-11T08:04:55.372Z",
+  "icon": "dsh-artifact-toolkit.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 231,
+        "text": "return fetch(CAPABILITY_PATH, { method: 'GET', signal: controller?.signal })"
+      },
+      {
+        "file": "client.js",
+        "line": 259,
+        "text": "response = await fetch(COPY_FILES_PATH, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { mkdtempSync, rmSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 221,
+        "text": "writeFileSync(join(dir, 'paths.json'), JSON.stringify(paths), 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 223,
+        "text": "if (dir !== undefined) rmSync(dir, { recursive: true, force: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 238,
+        "text": "rmSync(dir, { recursive: true, force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 257,
+        "text": "child = spawn("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

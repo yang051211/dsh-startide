@@ -1,0 +1,104 @@
+{
+  "name": "@suifei/dsh-ai-team",
+  "version": "0.3.67",
+  "scannedAt": "2026-11-11T08:04:47.164Z",
+  "icon": "suifei__dsh-ai-team.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 2550,
+        "text": "fetch(`/ai-team/api/projects/${encodeURIComponent(projectId || '')}/tasks/${encodeURIComponent(taskId)}/events`, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 2561,
+        "text": "fetch('/ai-team/api/pending-acceptance', { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 2572,
+        "text": "fetch('/ai-team/api/risks' + (projectId ? '?project=' + encodeURIComponent(projectId) : ''), { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 2642,
+        "text": "const response = await fetch('/ai-team/api/bootstrap' + query, {"
+      },
+      {
+        "file": "client.js",
+        "line": 2705,
+        "text": "fetch('/ai-team/api/models', { headers: { accept: 'application/json' } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { readFileSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 1052,
+        "text": "const parsed = JSON.parse(readFileSync(aliasesPath, 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 1075,
+        "text": "writeFileSync(aliasesPath, JSON.stringify(aliases, null, 2) + '\\n', 'utf8');"
+      },
+      {
+        "file": "lib/diaglog.js",
+        "line": 9,
+        "text": "import { appendFile, mkdir, readFile, rename, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/diaglog.js",
+        "line": 45,
+        "text": "if (dirReady === null) dirReady = mkdir(dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 726,
+        "text": "? tools.register(createTeamTool({"
+      },
+      {
+        "file": "lib/vendor/skillopt/src/index.js",
+        "line": 24,
+        "text": "export const inject = ['tools', 'shell']"
+      },
+      {
+        "file": "lib/vendor/skillopt/src/index.js",
+        "line": 373,
+        "text": "disposers.push(ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "permissionPresets",
+    "sandboxPolicy",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

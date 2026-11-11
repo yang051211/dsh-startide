@@ -1,15 +1,15 @@
 {
   "name": "@philomelcc/dsh-workbench",
-  "version": "0.1.8",
-  "scannedAt": "2026-11-08T23:32:57.458Z",
+  "version": "0.1.9",
+  "scannedAt": "2026-11-11T08:04:52.124Z",
   "icon": "philomelcc__dsh-workbench.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 315,
-        "text": "try { await fetch('/wb/workbench/restart', { method: 'POST' }); } catch (_e) {}"
+        "line": 492,
+        "text": "const res = await fetch('/wb/workbench/restart', { method: 'POST' });"
       }
     ]
   },
@@ -26,13 +26,23 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 9,
+        "line": 11,
         "text": "import { execSync } from 'node:child_process';"
       },
       {
         "file": "index.js",
-        "line": 36,
-        "text": "try { execSync('schtasks /run /tn philomel-dsh-web', { windowsHide: true, stdio: 'ignore' }); } catch (_e) {}"
+        "line": 23,
+        "text": "execSync(`schtasks /query /tn ${JSON.stringify(task)}`, { windowsHide: true, stdio: 'ignore' });"
+      },
+      {
+        "file": "index.js",
+        "line": 32,
+        "text": "execSync(supervisor.command, { windowsHide: true, stdio: 'ignore' });"
+      },
+      {
+        "file": "index.js",
+        "line": 35,
+        "text": "execSync(`schtasks /run /tn ${JSON.stringify(supervisor.task)}`, { windowsHide: true, stdio: 'ignore' });"
       }
     ]
   },

@@ -1,0 +1,110 @@
+{
+  "name": "dsh-plugin-verge-browser",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-11T08:04:58.763Z",
+  "icon": "dsh-plugin-verge-browser.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/bridge.js",
+        "line": 342,
+        "text": "const response = await fetch(input, {"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 329,
+        "text": "import { request as httpRequest } from \"node:http\";"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 330,
+        "text": "import { request as httpsRequest } from \"node:https\";"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 582,
+        "text": "fetchImpl: (input, init) => fetch(input, {"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 589,
+        "text": "const response = await fetch(ticket.session_url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/bridge.js",
+        "line": 150,
+        "text": "readFile(idOrAlias, path2) {"
+      },
+      {
+        "file": "dist/bridge.js",
+        "line": 155,
+        "text": "writeFile(idOrAlias, payload) {"
+      },
+      {
+        "file": "dist/bridge.js",
+        "line": 512,
+        "text": "const result = await api.readFile(this.sandbox.id, workspacePath(args.path));"
+      },
+      {
+        "file": "dist/bridge.js",
+        "line": 520,
+        "text": "await api.writeFile(this.sandbox.id, { path: path2, content, overwrite: args.overwrite === true });"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 468,
+        "text": "readFile(idOrAlias, path) {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 14,
+        "text": "import * as McpClient from \"@deepseek-ai/dsh-mcp-client\";"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 205,
+        "text": "const inherited = ctx.tools.schemas(agent).filter((tool) => tool.name.startsWith(toolPrefix));"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 209,
+        "text": "state.mask.ctx.tools.restrict({ deny: inherited.map((tool) => tool.name) });"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 233,
+        "text": "if (ctx.tools.get(exec.name, exec.agent) !== ctx.tools.get(exec.name, agent))"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 750,
+        "text": "var inject = [\"browserUse\", \"agents\", \"tools\", \"systemPrompt\", \"workingDirectory\"];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 6,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

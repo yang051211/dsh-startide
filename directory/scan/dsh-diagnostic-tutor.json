@@ -1,7 +1,7 @@
 {
   "name": "dsh-diagnostic-tutor",
-  "version": "0.4.1",
-  "scannedAt": "2026-11-05T08:17:14.822Z",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-11T08:04:57.915Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,18 +18,18 @@
       },
       {
         "file": "lib/client.js",
-        "line": 3736,
+        "line": 1987,
+        "text": "\t\t\t\tfetch(\"/diagnostic-tutor/api/scene-config\", { cache: \"no-store\" }).then((response) => response.ok ? response.json() : Promise.reject(/* @__PURE__ */ new Err"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 5699,
         "text": "const response = await fetch(`${BASE$1}${suffix}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 3763,
-        "text": "const response = await fetch(`${API}/source?id=${encodeURIComponent(sourceId)}`, {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 3778,
-        "text": "const response = await fetch(`${API}/source`, {"
+        "line": 5726,
+        "text": "const response = await fetch(`${API}/source/pdf?filename=${encodeURIComponent(file.name)}`, {"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/journal.js",
-        "line": 12,
-        "text": "import { appendFile, mkdir, readFile, rename, stat } from 'node:fs/promises';"
-      },
-      {
-        "file": "lib/journal.js",
-        "line": 75,
-        "text": "await mkdir(dirname(file), { recursive: true });"
-      },
-      {
-        "file": "lib/journal.js",
-        "line": 85,
-        "text": "await appendFile(file, line, 'utf8');"
-      },
-      {
-        "file": "lib/journal.js",
-        "line": 101,
-        "text": "text = await readFile(file, 'utf8');"
-      },
-      {
-        "file": "lib/sources.js",
+        "file": "lib/assets.js",
         "line": 3,
-        "text": "import { lstat, readFile } from 'node:fs/promises';"
+        "text": "import { lstat, mkdir, open, readFile, rm, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/assets.js",
+        "line": 25,
+        "text": "return readFile(this.path(sha256));"
+      },
+      {
+        "file": "lib/assets.js",
+        "line": 30,
+        "text": "await mkdir(parent, { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "lib/assets.js",
+        "line": 33,
+        "text": "await handle.writeFile(bytes);"
+      },
+      {
+        "file": "lib/assets.js",
+        "line": 39,
+        "text": "async remove(sha256) { await rm(this.path(sha256), { force: true }); }"
       }
     ]
   },
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 70,
+        "line": 71,
         "text": "export const inject = ['tools', 'storageDomain'];"
       },
       {
         "file": "lib/tools.js",
-        "line": 1590,
+        "line": 1816,
         "text": "host.tools.register(tool);"
       }
     ]
@@ -86,7 +86,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 2,
+  "dependencies": 3,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

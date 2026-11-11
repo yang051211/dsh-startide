@@ -1,7 +1,7 @@
 {
   "name": "dsh-locator",
-  "version": "0.7.1",
-  "scannedAt": "2026-11-10T20:54:01.869Z",
+  "version": "0.7.4",
+  "scannedAt": "2026-11-11T08:04:53.498Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -23,28 +23,28 @@
     "evidence": [
       {
         "file": "lib/content.js",
-        "line": 11,
-        "text": "import { existsSync, mkdirSync, readdirSync, readFileSync, statSync } from 'node:fs';"
+        "line": 18,
+        "text": "import { closeSync, existsSync, mkdirSync, openSync, readFileSync, rmSync, writeFileSync } from 'node:fs';"
       },
       {
         "file": "lib/content.js",
-        "line": 109,
+        "line": 19,
+        "text": "import { readdir, readFile, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/content.js",
+        "line": 110,
         "text": "mkdirSync(this.options.stateDir, { recursive: true });"
       },
       {
         "file": "lib/content.js",
-        "line": 228,
-        "text": "raw = readFileSync(path, 'utf8');"
+        "line": 115,
+        "text": "writeFileSync(fd, JSON.stringify({ pid: process.pid, startedAt: Date.now(), token: this.lockToken }));"
       },
       {
         "file": "lib/content.js",
-        "line": 275,
-        "text": "text = zstdDecompressSync(readFileSync(file.path)).toString('utf8');"
-      },
-      {
-        "file": "lib/export.js",
-        "line": 10,
-        "text": "import { existsSync, mkdirSync, rmSync, statSync } from 'node:fs';"
+        "line": 123,
+        "text": "holder = JSON.parse(readFileSync(path, 'utf8'));"
       }
     ]
   },
@@ -58,22 +58,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 58,
+        "line": 150,
         "text": "ctx.tools.register(makeSearchTool(rt));"
       },
       {
         "file": "lib/index.js",
-        "line": 59,
+        "line": 151,
         "text": "ctx.tools.register(makeStatusTool(rt));"
       },
       {
         "file": "lib/index.js",
-        "line": 60,
+        "line": 152,
         "text": "ctx.tools.register(makeRebuildTool(rt));"
       },
       {
         "file": "lib/index.js",
-        "line": 61,
+        "line": 153,
         "text": "ctx.tools.register(makeExportTool(rt));"
       }
     ]

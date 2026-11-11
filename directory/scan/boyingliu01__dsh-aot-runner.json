@@ -1,0 +1,73 @@
+{
+  "name": "@boyingliu01/dsh-aot-runner",
+  "version": "0.2.3",
+  "scannedAt": "2026-11-11T08:04:57.479Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 33,
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 128,
+        "text": "source = readFileSync(file, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "* `internals` 是实例字段，在 `spawn()` 里被展开读取"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 110,
+        "text": "* 背景：`LocalSubprocessRuntime.spawn()` 构造好 `internals` 后，调用"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 245,
+        "text": "*   a) spawn() 同步抛错（runner 不存在 / 权限不足）"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 294,
+        "text": "* launchWindowsJob/launchLinuxScope 时才有效。DSH 0.2.0-rc.2 在 spawn() 里"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 312,
+        "text": "+ '（spawn() 未把 internals 传给 launch*），注入不会生效。'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "bin/dsh-aot-runner.exe"
+  ],
+  "requiredServices": [
+    "subprocess"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

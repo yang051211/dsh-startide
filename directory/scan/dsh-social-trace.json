@@ -1,0 +1,94 @@
+{
+  "name": "dsh-social-trace",
+  "version": "0.1.13",
+  "scannedAt": "2026-11-11T08:04:56.461Z",
+  "icon": "dsh-social-trace.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 209,
+        "text": "const response = await fetch(BASE + path, body === undefined ? { cache: 'no-store', signal } : {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1296,
+        "text": "const response = await fetch(`${BASE}/export?format=${format}&uid=${encodeURIComponent(author)}`);"
+      },
+      {
+        "file": "lib/documents.js",
+        "line": 52,
+        "text": "const response = await fetch(url, { headers: { Referer: imageReferer(url) }, redirect: 'error', signal: AbortSignal.timeout(10000) });"
+      },
+      {
+        "file": "lib/platforms/weibo/index.js",
+        "line": 152,
+        "text": "timeout: 30000, extraHTTPHeaders: { Referer: 'https://weibo.com/', 'X-Requested-With': 'XMLHttpRequest' } });"
+      },
+      {
+        "file": "lib/platforms/xueqiu/index.js",
+        "line": 164,
+        "text": "timeout: 30000, extraHTTPHeaders: { Referer: sessionOrigin(this.sessionData) + '/', 'X-Requested-With': 'XMLHttpRequest' } });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/avatars.js",
+        "line": 2,
+        "text": "import { readFile, mkdir, writeFile, rename, unlink } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/avatars.js",
+        "line": 29,
+        "text": "const cached = await readFile(file);"
+      },
+      {
+        "file": "lib/avatars.js",
+        "line": 50,
+        "text": "await mkdir(this.directory, { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "lib/avatars.js",
+        "line": 53,
+        "text": "await writeFile(temporary, Buffer.concat([Buffer.from(type + '\\n'), bytes]), { mode: 0o600 });"
+      },
+      {
+        "file": "lib/avatars.js",
+        "line": 55,
+        "text": "} finally { await unlink(temporary).catch(error => { if (error.code !== 'ENOENT') throw error; }); }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/paths.js",
+        "line": 4,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

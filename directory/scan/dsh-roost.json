@@ -1,7 +1,7 @@
 {
   "name": "dsh-roost",
-  "version": "1.0.9",
-  "scannedAt": "2026-11-10T08:48:39.060Z",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-11T08:04:49.420Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,23 +13,23 @@
       },
       {
         "file": "client/client.js",
-        "line": 3106,
+        "line": 3118,
         "text": "const res = await fetch(API + '/backup/export')"
       },
       {
         "file": "client/client.js",
-        "line": 6686,
+        "line": 6701,
         "text": "const res = await fetch(API + '/stickers/thumb?name=' + encodeURIComponent(it.name))"
+      },
+      {
+        "file": "examples/hello-http/server.mjs",
+        "line": 12,
+        "text": "import http from 'node:http';"
       },
       {
         "file": "src/embed.js",
         "line": 76,
         "text": "const res = await fetch(`${c.baseUrl}/embeddings`, {"
-      },
-      {
-        "file": "src/gpt-sovits.js",
-        "line": 329,
-        "text": "export function createGptSovits({ log = () => {}, onReady = () => {}, fetchImpl = (...args) => fetch(...args) } = {}) {"
       }
     ]
   },
@@ -47,19 +47,19 @@
         "text": "return JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version || '';"
       },
       {
-        "file": "src/audit.js",
-        "line": 14,
-        "text": "import { appendFileSync, mkdirSync } from 'node:fs';"
+        "file": "scripts/build-ext-docs.mjs",
+        "line": 8,
+        "text": "import fs from 'node:fs';"
       },
       {
-        "file": "src/audit.js",
-        "line": 30,
-        "text": "mkdirSync(dir, { recursive: true });"
+        "file": "scripts/build-ext-docs.mjs",
+        "line": 19,
+        "text": "try { return JSON.parse(fs.readFileSync(join(ROOT, 'package.json'), 'utf8')).version ?? ''; }"
       },
       {
-        "file": "src/audit.js",
-        "line": 50,
-        "text": "appendFileSync(join(dir, 'audit.log'), `${JSON.stringify(row)}\\n`, 'utf8');"
+        "file": "src/agent-v1.js",
+        "line": 17,
+        "text": "import fs from 'node:fs';"
       }
     ]
   },
@@ -67,35 +67,45 @@
     "hit": true,
     "evidence": [
       {
+        "file": "src/ext-launcher.mjs",
+        "line": 4,
+        "text": "* DSH 的 `dsh-mcp-client` 按受管块 spawn `node <roost>/src/ext-launcher.mjs`；"
+      },
+      {
+        "file": "src/ext-panel.js",
+        "line": 521,
+        "text": "`mountToolGuard() 的 ctx.tools.guard 执行期兜底（fail-closed）`,"
+      },
+      {
+        "file": "src/ext-patch.js",
+        "line": 29,
+        "text": "export const MCP_CLIENT_PKG = '@deepseek-ai/dsh-mcp-client';"
+      },
+      {
         "file": "src/host.js",
-        "line": 655,
+        "line": 697,
         "text": "* 优先问活着的 agent（`agent.ctx.tools.schemas()`），问不到才退回 `seen` 快照。"
       },
       {
         "file": "src/host.js",
-        "line": 700,
+        "line": 742,
         "text": "* DSH 正好给了这个口子：`ctx.tools.guard(fn)` 是**同步**守卫，"
-      },
-      {
-        "file": "src/host.js",
-        "line": 725,
-        "text": "* 两条路都试：`ctx.tools` 是服务直接挂在上下文上的形式，"
-      },
-      {
-        "file": "src/host.js",
-        "line": 731,
-        "text": "if (typeof ctx?.tools?.guard === 'function') t = ctx.tools;"
-      },
-      {
-        "file": "src/host.js",
-        "line": 2552,
-        "text": "* 挂在这里而不是插件的 ctx：`agent.ctx.tools` 是每轮都在用的那个"
       }
     ]
   },
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "src/ext-launcher.mjs",
+        "line": 22,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/ext-launcher.mjs",
+        "line": 97,
+        "text": "const child = spawn(plan.command, plan.args, {"
+      },
       {
         "file": "src/gpt-sovits.js",
         "line": 20,
@@ -110,16 +120,6 @@
         "file": "src/gpt-sovits.js",
         "line": 481,
         "text": "const proc = spawn(p.python, args, {"
-      },
-      {
-        "file": "src/setup.js",
-        "line": 15,
-        "text": "import { spawn, execFileSync } from 'node:child_process';"
-      },
-      {
-        "file": "src/setup.js",
-        "line": 49,
-        "text": "child = spawn(cmd, args, { ...opts, stdio: ['ignore', 'pipe', 'pipe'] });"
       }
     ]
   },

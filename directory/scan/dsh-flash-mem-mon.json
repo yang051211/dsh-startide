@@ -1,36 +1,52 @@
 {
   "name": "dsh-flash-mem-mon",
-  "version": "0.1.7",
-  "scannedAt": "2026-10-26T10:08:25.968Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-11T08:05:00.185Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 703,
+        "line": 736,
+        "text": "return fetch('/plugins/dsh-flash-mem-mon/dump-heap', { method: 'POST' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 771,
         "text": "fetch('/plugins/dsh-flash-mem-mon/memory-trend?mode=summary')"
       },
       {
         "file": "lib/client.js",
-        "line": 1417,
+        "line": 1498,
         "text": "fetch('/plugins/dsh-flash/health').then(function (r) { return r.json() }).then(function (d) {"
       },
       {
         "file": "lib/client.js",
-        "line": 1438,
+        "line": 1519,
         "text": "fetch('/plugins/dsh-flash-mem-mon/memory-trend?mode=summary')"
       },
       {
         "file": "lib/client.js",
-        "line": 1449,
+        "line": 1530,
         "text": "fetch('/plugins/dsh-flash-mem-mon/memory-trend?mode=full')"
       }
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 2,
+        "text": "import { createReadStream } from 'node:fs';"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 3,
+        "text": "import { readdir, stat } from 'node:fs/promises';"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,
@@ -47,7 +63,9 @@
   "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [],
+  "requiredServices": [
+    "workspaceRegistry"
+  ],
   "setupHints": [],
   "skippedEntries": []
 }

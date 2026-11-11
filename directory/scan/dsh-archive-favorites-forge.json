@@ -1,7 +1,7 @@
 {
   "name": "dsh-archive-favorites-forge",
-  "version": "0.39.3",
-  "scannedAt": "2026-11-04T07:55:57.519Z",
+  "version": "0.42.0",
+  "scannedAt": "2026-11-11T08:04:56.413Z",
   "icon": "dsh-archive-favorites-forge.svg",
   "network": {
     "hit": true,
@@ -13,7 +13,17 @@
       },
       {
         "file": "lib/client.js",
-        "line": 5183,
+        "line": 138,
+        "text": "return fetch(ROUTE + route, init).then(function (res) {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 226,
+        "text": "fetch(ROUTE + \"/snapshot-cleanup-progress?jobId=\" + encodeURIComponent(jobId))"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 7535,
         "text": "const resp = await fetch(path, {"
       }
     ]
@@ -33,18 +43,18 @@
       },
       {
         "file": "lib/index.js",
-        "line": 131,
+        "line": 132,
         "text": "const pkg = JSON.parse(readFileSync(join(here, '..', 'package.json'), 'utf8'))"
       },
       {
         "file": "lib/index.js",
-        "line": 164,
-        "text": "const parsed = JSON.parse(readFileSync(statePath(), 'utf8'))"
+        "line": 148,
+        "text": "const pkg = JSON.parse(readFileSync(join(here, '..', 'package.json'), 'utf8'))"
       },
       {
         "file": "lib/index.js",
         "line": 189,
-        "text": "mkdirSync(dir, { recursive: true })"
+        "text": "const parsed = JSON.parse(readFileSync(statePath(), 'utf8'))"
       }
     ]
   },
@@ -57,28 +67,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 2910,
+        "line": 3033,
         "text": "const { spawn } = await import('node:child_process')"
       },
       {
         "file": "lib/index.js",
-        "line": 2915,
-        "text": "const child = spawn('explorer.exe', [target], { detached: true, stdio: 'ignore' })"
+        "line": 3035,
+        "text": "const child = spawn('cmd', ['/c', 'start', '', url], { detached: true, stdio: 'ignore', windowsHide: true })"
       },
       {
         "file": "lib/index.js",
-        "line": 2919,
-        "text": "const child = spawn('open', args, { detached: true, stdio: 'ignore' })"
+        "line": 3039,
+        "text": "const child = spawn('open', [url], { detached: true, stdio: 'ignore' })"
       },
       {
         "file": "lib/index.js",
-        "line": 2922,
-        "text": "const child = spawn('xdg-open', [existsSync(requested) ? dirname(requested) : dir], { detached: true, stdio: 'ignore' })"
+        "line": 3043,
+        "text": "const child = spawn('xdg-open', [url], { detached: true, stdio: 'ignore' })"
       },
       {
-        "file": "lib/ungrouped-guard.js",
-        "line": 953,
-        "text": "const mod = await import('node:child_process')"
+        "file": "lib/index.js",
+        "line": 4205,
+        "text": "const { spawn } = await import('node:child_process')"
       }
     ]
   },

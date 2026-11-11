@@ -1,0 +1,96 @@
+{
+  "name": "dsh-hsr",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-11T08:04:57.622Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 85,
+        "text": "const response = await fetch(BASE + path, {"
+      },
+      {
+        "file": "lib/http.js",
+        "line": 11,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "lib/http.js",
+        "line": 65,
+        "text": "const request = http.request({"
+      },
+      {
+        "file": "lib/http.js",
+        "line": 312,
+        "text": "const response = await fetch(target, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/experience.js",
+        "line": 12,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/experience.js",
+        "line": 44,
+        "text": "return await fs.readFile(file, 'utf8');"
+      },
+      {
+        "file": "lib/experience.js",
+        "line": 52,
+        "text": "await fs.mkdir(experienceDir(), { recursive: true });"
+      },
+      {
+        "file": "lib/experience.js",
+        "line": 59,
+        "text": "await fs.writeFile(file, '', 'utf8');"
+      },
+      {
+        "file": "lib/experience.js",
+        "line": 76,
+        "text": "await fs.mkdir(paths.dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 23,
+        "text": "export const inject = ['tools', 'webServer'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 448,
+        "text": "const disposeTool = ctx.tools.register(definition);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/settings.js",
+        "line": 13,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

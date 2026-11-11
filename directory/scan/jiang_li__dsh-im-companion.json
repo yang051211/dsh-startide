@@ -1,0 +1,92 @@
+{
+  "name": "@jiang_li/dsh-im-companion",
+  "version": "1.4.2",
+  "scannedAt": "2026-11-11T08:04:57.743Z",
+  "icon": "jiang_li__dsh-im-companion.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 614,
+        "text": "const response = await fetch(`${API}/state`, { credentials: 'same-origin' });"
+      },
+      {
+        "file": "client.js",
+        "line": 633,
+        "text": "const response = await fetch(`${API}/save`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 665,
+        "text": "const response = await fetch(`${API}/state`, { credentials: 'same-origin' });"
+      },
+      {
+        "file": "client.js",
+        "line": 679,
+        "text": "const response = await fetch(`${API}/test`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 698,
+        "text": "const response = await fetch(`${API}/state`, { credentials: 'same-origin' });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/onebot.mjs",
+        "line": 18,
+        "text": "import { appendFileSync } from 'node:fs';"
+      },
+      {
+        "file": "src/onebot.mjs",
+        "line": 228,
+        "text": "appendFileSync(join(dshHome(), 'dsh-im-companion-diag.log'), `${new Date().toISOString()} ${message}\\n`);"
+      },
+      {
+        "file": "src/settings.mjs",
+        "line": 2,
+        "text": "import { mkdirSync, writeFileSync, renameSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "src/settings.mjs",
+        "line": 261,
+        "text": "mkdirSync(dirname(this.#path), { recursive: true });"
+      },
+      {
+        "file": "src/settings.mjs",
+        "line": 263,
+        "text": "writeFileSync(tmp, `${JSON.stringify(this.data, null, 2)}\\n`, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/topics.mjs",
+        "line": 266,
+        "text": "toolDisposer = tools.register(toolDefinition());"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "dshIm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

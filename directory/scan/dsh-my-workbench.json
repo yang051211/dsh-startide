@@ -1,0 +1,75 @@
+{
+  "name": "dsh-my-workbench",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-11T08:05:03.373Z",
+  "icon": "dsh-my-workbench.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 208,
+        "text": "var response = await fetch(API + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import { readFile, readdir, realpath, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 569,
+        "text": "const manifest = JSON.parse(await readFile(new URL('./package.json', import.meta.url), 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 608,
+        "text": "raw = await readFile(FAVORITES_FILE, 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 643,
+        "text": "await writeFile(FAVORITES_FILE, `${JSON.stringify(snapshot, null, 2)}\\n`, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 41,
+        "text": "'mcp.none': '当前配置里没有 MCP 服务。在 profile 的 cordis.patch.yml 中插入 dsh-mcp-client 行即可出现。',"
+      },
+      {
+        "file": "client.js",
+        "line": 133,
+        "text": "'mcp.none': 'This profile configures no MCP server yet. Insert a dsh-mcp-client row in the profile’s cordis.patch.yml.',"
+      },
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "const MCP_MODULE = '@deepseek-ai/dsh-mcp-client';"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

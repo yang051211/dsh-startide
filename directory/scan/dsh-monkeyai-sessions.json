@@ -1,0 +1,98 @@
+{
+  "name": "dsh-monkeyai-sessions",
+  "version": "0.1.16",
+  "scannedAt": "2026-11-11T08:04:51.740Z",
+  "icon": "dsh-monkeyai-sessions.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/monkeyai-remote.js",
+        "line": 336,
+        "text": "const login = await fetch(`${serverOrigin}/api/auth/v1/login`, {"
+      },
+      {
+        "file": "src/host/monkeyai-remote.js",
+        "line": 354,
+        "text": "const authorize = await fetch(auth.authorizationUrl, {"
+      },
+      {
+        "file": "src/host/monkeyai-remote.js",
+        "line": 364,
+        "text": "const consentResponse = await fetch(`${serverOrigin}${requestPath}`, {"
+      },
+      {
+        "file": "src/host/monkeyai-remote.js",
+        "line": 376,
+        "text": "const approvedResponse = await fetch(`${serverOrigin}${requestPath}/complete`, {"
+      },
+      {
+        "file": "src/host/monkeyai-remote.js",
+        "line": 1403,
+        "text": "const response = await fetch(`${httpBase.endsWith('/') ? httpBase : `${httpBase}/`}read/session`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 2,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 7,
+        "text": "const packageJson = JSON.parse(await readFile(resolve(root, 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 9,
+        "text": "await mkdir(dirname(output), { recursive: true })"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 30,
+        "text": "const bundle = await readFile(output, 'utf8')"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 41,
+        "text": "await writeFile(resolve(root, 'client.js'), client)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 1,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 11,
+        "text": "const build = spawnSync('esbuild', ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "credentials",
+    "typert"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

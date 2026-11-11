@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-antigravity-agents",
-  "version": "1.0.3",
-  "scannedAt": "2026-11-10T20:53:53.228Z",
+  "version": "1.0.4",
+  "scannedAt": "2026-11-11T08:04:56.522Z",
   "icon": "dsh-plugin-antigravity-agents.svg",
   "network": {
     "hit": true,
@@ -48,17 +48,17 @@
       },
       {
         "file": "index.js",
-        "line": 214,
+        "line": 272,
         "text": "const raw = JSON.parse(fs.readFileSync(settingsPath, \"utf8\"));"
       },
       {
         "file": "index.js",
-        "line": 228,
+        "line": 286,
         "text": "if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });"
       },
       {
         "file": "index.js",
-        "line": 229,
+        "line": 287,
         "text": "fs.writeFileSync(settingsPath, JSON.stringify(settings, null, 2), \"utf8\");"
       }
     ]
@@ -69,26 +69,26 @@
       {
         "file": "index.js",
         "line": 27,
-        "text": "export const inject = [\"systemPrompt\", \"tools\", \"workingDirectory\", \"agents\", \"webServer\", \"workspaceRegistry\"];"
+        "text": "export const inject = [\"systemPrompt\", \"tools\", \"workingDirectory\", \"agents\", \"webServer\", \"workspaceRegistry\", \"connection\"];"
       },
       {
         "file": "index.js",
-        "line": 430,
+        "line": 488,
         "text": "const subagentTool = ctx.tools.get(\"subagent\");"
       },
       {
         "file": "index.js",
-        "line": 443,
+        "line": 501,
         "text": "const spawnTeammateTool = ctx.tools.get(\"spawn_teammate\");"
       },
       {
         "file": "index.js",
-        "line": 465,
+        "line": 523,
         "text": "ctx.tools.register(invokeSubagentTool);"
       },
       {
         "file": "index.js",
-        "line": 550,
+        "line": 608,
         "text": "ctx.tools.register(agentTool);"
       }
     ]
@@ -106,6 +106,7 @@
   "binaryFiles": [],
   "requiredServices": [
     "agents",
+    "connection",
     "systemPrompt",
     "tools",
     "webServer",

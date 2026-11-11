@@ -1,0 +1,77 @@
+{
+  "name": "@qzsy/dsh-git-panel",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-11T08:04:56.904Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 831,
+        "text": "const response = await fetch(endpointUrl(), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 4200,
+        "text": "\"fs\": \"fsharp\","
+      },
+      {
+        "file": "lib/index.js",
+        "line": 36,
+        "text": "import { existsSync, realpathSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 37,
+        "text": "import { readFile, rm, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 693,
+        "text": "const bytes = await readFile(absolute)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 963,
+        "text": "await rm(resolve(repository.root, path), { recursive: true, force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 35,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 146,
+        "text": "child = spawn('git', ['-C', cwd, ...args], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

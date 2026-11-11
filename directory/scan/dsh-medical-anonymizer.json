@@ -1,20 +1,25 @@
 {
   "name": "dsh-medical-anonymizer",
-  "version": "0.8.0",
-  "scannedAt": "2026-11-06T08:17:18.330Z",
+  "version": "0.9.0",
+  "scannedAt": "2026-11-11T08:04:59.432Z",
   "icon": "dsh-medical-anonymizer.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/llm.js",
-        "line": 88,
+        "line": 159,
         "text": "const response = await fetch(`${baseURL}${path}`, {"
       },
       {
         "file": "lib/llm.js",
-        "line": 169,
+        "line": 266,
         "text": "const response = await fetch(`${baseURL}/models`, {"
+      },
+      {
+        "file": "lib/pipeline.js",
+        "line": 3479,
+        "text": "const response = await fetch(url, { signal: controller.signal })"
       }
     ]
   },
@@ -53,27 +58,27 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 45,
+        "line": 46,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "index.js",
-        "line": 59,
+        "line": 63,
         "text": "ctx.tools.register(tool({"
       },
       {
         "file": "index.js",
-        "line": 87,
+        "line": 91,
         "text": "ctx.tools.register(tool({"
       },
       {
         "file": "index.js",
-        "line": 102,
+        "line": 106,
         "text": "ctx.tools.register(tool({"
       },
       {
         "file": "index.js",
-        "line": 115,
+        "line": 119,
         "text": "ctx.tools.register(tool({"
       }
     ]
@@ -88,7 +93,7 @@
       },
       {
         "file": "index.js",
-        "line": 32,
+        "line": 33,
         "text": "execFile('osascript', ['-e', script], { timeout: 10 * 60 * 1000 }, (error, stdout, stderr) => {"
       }
     ]

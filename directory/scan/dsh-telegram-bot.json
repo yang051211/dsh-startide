@@ -1,7 +1,7 @@
 {
   "name": "dsh-telegram-bot",
-  "version": "0.2.2",
-  "scannedAt": "2026-11-08T23:32:49.364Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-11T08:04:51.945Z",
   "icon": "dsh-telegram-bot.svg",
   "network": {
     "hit": true,
@@ -13,12 +13,12 @@
       },
       {
         "file": "src/app.js",
-        "line": 766,
+        "line": 840,
         "text": "const request = https.request(options, (response) => {"
       },
       {
         "file": "src/app.js",
-        "line": 901,
+        "line": 1034,
         "text": "const request = https.request({"
       }
     ]
@@ -27,35 +27,41 @@
     "hit": true,
     "evidence": [
       {
+        "file": "bin/dsh-telegram-send.js",
+        "line": 8,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/dsh-telegram-send.js",
+        "line": 51,
+        "text": "if (positionals.length === 0 && !process.stdin.isTTY) text = readFileSync(0, 'utf8')"
+      },
+      {
         "file": "src/app.js",
         "line": 3,
-        "text": "import { mkdir, rename, writeFile } from 'node:fs/promises'"
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "src/app.js",
-        "line": 98,
+        "line": 128,
         "text": "await mkdir(STATUS_DIR, { recursive: true })"
       },
       {
         "file": "src/app.js",
-        "line": 100,
+        "line": 130,
         "text": "await writeFile(temporary, JSON.stringify(state, null, 2) + '\\n', { mode: 0o600 })"
-      },
-      {
-        "file": "src/app.js",
-        "line": 2242,
-        "text": "await mkdir(STATUS_DIR, { recursive: true })"
-      },
-      {
-        "file": "src/app.js",
-        "line": 2243,
-        "text": "await writeFile(TOPICS_PATH, JSON.stringify(topics, null, 2) + '\\n', { mode: 0o600 })"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/app.js",
+        "line": 4909,
+        "text": "ctx.inject(['tools'], (scoped) => { scoped.tools.register(sendTool) })"
+      }
+    ]
   },
   "childProcess": {
     "hit": false,

@@ -1,0 +1,106 @@
+{
+  "name": "dsh-feiyu-image",
+  "version": "0.5.3",
+  "scannedAt": "2026-11-11T08:04:52.630Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 63,
+        "text": "const r = await fetch(`${API}/models${强制 ? '?f=1' : ''}`, { credentials: 'same-origin' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 77,
+        "text": "const r = await fetch(`${API}/state`, { credentials: 'same-origin' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 93,
+        "text": "const r = await fetch(`${API}/save`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 108,
+        "text": "const r = await fetch(`${API}/test`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 189,
+        "text": "const r = await fetch(ark.baseUrl.replace(/\\/+$/, '') + '/models', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 10,
+        "text": "import { readFileSync, writeFileSync, mkdirSync, statSync, readdirSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 48,
+        "text": "const raw = JSON.parse(readFileSync(CONFIG, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 55,
+        "text": "try { mkdirSync(DSH_HOME, { recursive: true }); writeFileSync(CONFIG, JSON.stringify(next, null, 2), 'utf8') } catch {}"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 78,
+        "text": "const day = JSON.parse(readFileSync(join(DAYS, ymd + '.json'), 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 162,
+        "text": "try { return 'data:image/jpeg;base64,' + readFileSync(p).toString('base64') } catch { return '' }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 44,
+        "text": "export const inject = ['tools', 'webServer', 'llm', 'agents']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 390,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "llm",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

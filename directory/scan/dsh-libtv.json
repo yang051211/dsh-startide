@@ -1,0 +1,121 @@
+{
+  "name": "dsh-libtv",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-11T08:04:57.290Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/oauth.mjs",
+        "line": 13,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/oauth.mjs",
+        "line": 78,
+        "text": "const res = await fetch(`${ISSUER}/.well-known/oauth-authorization-server`, {"
+      },
+      {
+        "file": "lib/oauth.mjs",
+        "line": 95,
+        "text": "const res = await fetch(`${ISSUER}/.well-known/oauth-protected-resource`, {"
+      },
+      {
+        "file": "lib/oauth.mjs",
+        "line": 113,
+        "text": "const res = await fetch(meta.registration_endpoint, {"
+      },
+      {
+        "file": "lib/oauth.mjs",
+        "line": 283,
+        "text": "const res = await fetch(meta.token_endpoint, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/oauth.mjs",
+        "line": 10,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/oauth.mjs",
+        "line": 50,
+        "text": "return JSON.parse(fs.readFileSync(CRED_FILE, 'utf8'))"
+      },
+      {
+        "file": "lib/oauth.mjs",
+        "line": 57,
+        "text": "fs.mkdirSync(HOME, { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/oauth.mjs",
+        "line": 58,
+        "text": "fs.writeFileSync(CRED_FILE, `${JSON.stringify(creds, null, 2)}\\n`, { mode: 0o600 })"
+      },
+      {
+        "file": "lib/oauth.mjs",
+        "line": 68,
+        "text": "fs.unlinkSync(CRED_FILE)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 5,
+        "text": "#   2. dsh-mcp-client：以 stdio 方式拉起本包的 lib/serve.mjs，由它做 OAuth 与协议透传。"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 9,
+        "text": "# env 在 dsh-mcp-client 里是「合并进已清洗的环境变量」，不是替换，所以只写这一项。"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 20,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "lib/oauth.mjs",
+        "line": 8,
+        "text": "// 刻意不读任何环境变量里的 token：dsh-mcp-client 会按 /KEY|PASSWORD|SECRET|TOKEN/i 清洗子进程环境。"
+      },
+      {
+        "file": "lib/serve.mjs",
+        "line": 3,
+        "text": "// 宿主（@deepseek-ai/dsh-mcp-client）用 newline-delimited JSON-RPC 说话；远端 LibTV 网关"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/oauth.mjs",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/oauth.mjs",
+        "line": 166,
+        "text": "spawn(target[0], target[1], { stdio: 'ignore', detached: true }).unref()"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

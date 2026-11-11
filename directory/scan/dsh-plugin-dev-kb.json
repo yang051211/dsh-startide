@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-dev-kb",
-  "version": "1.6.0",
-  "scannedAt": "2026-10-30T23:38:32.119Z",
+  "version": "1.8.0",
+  "scannedAt": "2026-11-11T08:04:59.263Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -13,11 +13,16 @@
       {
         "file": "lib/index.js",
         "line": 22,
-        "text": "import { existsSync, readdirSync, readFileSync } from 'node:fs'"
+        "text": "import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'"
       },
       {
         "file": "lib/index.js",
-        "line": 164,
+        "line": 195,
+        "text": "lines = readFileSync(abs, 'utf8').split(/\\r?\\n/)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 267,
         "text": "const fm = parseFrontmatter(readFileSync(join(SKILLS_DIR, file), 'utf8'))"
       },
       {
@@ -29,11 +34,6 @@
         "file": "lib/kb-search.js",
         "line": 73,
         "text": "return readFileSync(absPath, 'utf8').split(/\\r?\\n/)"
-      },
-      {
-        "file": "scripts/rebuild-index.mjs",
-        "line": 3,
-        "text": "import { readdirSync, readFileSync, writeFileSync, statSync, mkdirSync } from 'node:fs'"
       }
     ]
   },
@@ -47,29 +47,50 @@
       },
       {
         "file": "lib/index.js",
-        "line": 28,
+        "line": 29,
         "text": "export const inject = ['skills', 'tools']"
       },
       {
         "file": "lib/index.js",
-        "line": 89,
+        "line": 92,
         "text": "'检索关键词，空白分隔多词（如 \"ctx.tools.register\"、\"插件配置 发布\"）；空串或 \"topics\" 返回主题导航。'"
       },
       {
         "file": "lib/index.js",
-        "line": 213,
+        "line": 324,
         "text": "if (typeof ctx.tools?.register === 'function') {"
       },
       {
         "file": "lib/index.js",
-        "line": 236,
-        "text": "ctx.effect(() => ctx.tools.register(kbSearchTool(getIndex), 'dsh-plugin-dev-kb: register dsh_kb_search'), 'dsh-plugin-dev-kb: register dsh_kb_search')"
+        "line": 347,
+        "text": "      ctx.effect(() => ctx.tools.register(kbSearchTool(getIndex, hostVersion), 'dsh-plugin-dev-kb: register dsh_kb_search'), 'dsh-plugin-dev-kb: register dsh_kb"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/refresh-kb.mjs",
+        "line": 10,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/refresh-kb.mjs",
+        "line": 27,
+        "text": "const r = spawnSync(cmd, { shell: true, stdio: 'inherit', cwd: CLONE, ...opts });"
+      },
+      {
+        "file": "scripts/refresh-kb.mjs",
+        "line": 33,
+        "text": "const r = spawnSync(`robocopy \"${src}\" \"${dest}\" /MIR /NFL /NDL /NJH /NJS ${extra}`, { shell: true, stdio: 'inherit' });"
+      },
+      {
+        "file": "scripts/refresh-kb.mjs",
+        "line": 50,
+        "text": "const commit = spawnSync('git', ['rev-parse', 'HEAD'], { cwd: CLONE, encoding: 'utf8' }).stdout.trim();"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

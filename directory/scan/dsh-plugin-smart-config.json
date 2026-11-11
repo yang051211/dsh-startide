@@ -1,0 +1,87 @@
+{
+  "name": "dsh-plugin-smart-config",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-11T08:05:02.536Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/sync.js",
+        "line": 54,
+        "text": "const res = await fetch(url.toString(), {"
+      },
+      {
+        "file": "dist/sync.js",
+        "line": 63,
+        "text": "const cdnRes = await fetch(cdnUrl);"
+      },
+      {
+        "file": "src/sync.ts",
+        "line": 71,
+        "text": "const res = await fetch(url.toString(), {"
+      },
+      {
+        "file": "src/sync.ts",
+        "line": 80,
+        "text": "const cdnRes = await fetch(cdnUrl);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 5,
+        "text": "import fs from 'fs';"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 78,
+        "text": "return JSON.parse(fs.readFileSync(customPath, 'utf8'));"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 99,
+        "text": "return JSON.parse(fs.readFileSync(builtinPath, 'utf8'));"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 164,
+        "text": "fs.appendFileSync(path.join(home, 'smart-config.log'), `${new Date().toISOString()} ${message}\\n`);"
+      },
+      {
+        "file": "dist/sync.js",
+        "line": 5,
+        "text": "import fs from 'fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "settings"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

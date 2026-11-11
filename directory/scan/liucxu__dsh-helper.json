@@ -1,0 +1,110 @@
+{
+  "name": "@liucxu/dsh-helper",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-11T08:05:03.190Z",
+  "icon": "liucxu__dsh-helper.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 3732,
+        "text": "return fetch(ROUTE_BALANCE, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3742,
+        "text": "const fetchProviders = () => fetch(ROUTE_PROVIDERS).then(readEnvelope);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3748,
+        "text": "const testTemplate = (provider, template) => fetch(ROUTE_BALANCE, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3754,
+        "text": "const fetchModels = () => fetch(ROUTE_MODELS).then(readEnvelope);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3757,
+        "text": "const fetchLedger = (scope, signal) => fetch(ROUTE_LEDGER + ledgerQuery(scope), { signal, cache: \"no-store\" }).then(readEnvelope);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/model-usage.js",
+        "line": 43,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/model-usage.js",
+        "line": 642,
+        "text": "const raw = readFileSync(`${home.replace(/[\\\\/]+$/, '')}/${COMMAND_CODE_AUTH_FILE}`, 'utf8')"
+      },
+      {
+        "file": "lib/usage-ledger.js",
+        "line": 4,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/usage-ledger.js",
+        "line": 80,
+        "text": "const saved = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/usage-ledger.js",
+        "line": 109,
+        "text": "mkdirSync(dirname(file), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/reminding.js",
+        "line": 28,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/reminding.js",
+        "line": 120,
+        "text": "const child = spawn(process.execPath, [], { env, detached: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "scripts/check-pack.mjs",
+        "line": 2,
+        "text": "import { execSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/check-pack.mjs",
+        "line": 32,
+        "text": "const [pack] = JSON.parse(execSync('npm pack --dry-run --json --ignore-scripts', { cwd: root, encoding: 'utf8' }))"
+      },
+      {
+        "file": "scripts/prepare-release.mjs",
+        "line": 1,
+        "text": "import { execSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

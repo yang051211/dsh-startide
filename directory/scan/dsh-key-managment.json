@@ -1,0 +1,68 @@
+{
+  "name": "dsh-key-managment",
+  "version": "1.0.4",
+  "scannedAt": "2026-11-11T08:04:56.715Z",
+  "icon": "dsh-key-managment.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 514,
+        "text": "const response = await fetch(apiPath, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 155,
+        "text": "await mkdir(dirname(statePath), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 233,
+        "text": "return JSON.parse(await readFile(path, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 260,
+        "text": "await writeFile(tempPath, JSON.stringify(state, null, 2), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 333,
+        "text": "await writeFile(tempPath, JSON.stringify(Object.fromEntries(quotaStore), null, 2), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "credentials",
+    "llm",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

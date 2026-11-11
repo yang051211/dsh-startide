@@ -1,34 +1,34 @@
 {
   "name": "dsh-design-studio",
-  "version": "0.16.1",
-  "scannedAt": "2026-11-10T20:53:40.757Z",
+  "version": "0.17.0",
+  "scannedAt": "2026-11-11T08:04:49.213Z",
   "icon": "dsh-design-studio.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 2717,
-        "text": "const r = await fetch(`${API}state?session=${encodeURIComponent(sid)}`, { credentials: 'same-origin', cache: 'no-store' })"
+        "line": 2810,
+        "text": "            const r = await fetch(`${API}state?session=${encodeURIComponent(sid)}${anSig ? `&an=${encodeURIComponent(anSig)}` : ''}`, { credentials: 'same-origi"
       },
       {
         "file": "lib/client.js",
-        "line": 2753,
+        "line": 2856,
         "text": "const r = await fetch(API + path, {"
       },
       {
         "file": "lib/client.js",
-        "line": 5249,
+        "line": 5357,
         "text": "fetch(bundleOf(L.at || P.current.src, r.sid), { credentials: 'same-origin', cache: 'no-store' })"
       },
       {
         "file": "lib/client.js",
-        "line": 6369,
+        "line": 6575,
         "text": "const r = await fetch(API + path, { credentials: 'same-origin' })"
       },
       {
         "file": "lib/client.js",
-        "line": 6859,
+        "line": 7065,
         "text": "const r = await fetch(`${API}inspimg?id=${it.id}`, { credentials: 'same-origin' })"
       }
     ]
@@ -36,6 +36,16 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/annotations.js",
+        "line": 15,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/annotations.js",
+        "line": 123,
+        "text": "r = st.size > MAX_FILE ? { list: [], errors: ['annotations.json 太大了（最多 512 KB）'] } : parseAnnotations(fs.readFileSync(file, 'utf8'))"
+      },
       {
         "file": "lib/browser.js",
         "line": 9,
@@ -50,16 +60,6 @@
         "file": "lib/browser.js",
         "line": 146,
         "text": "try { fs.rmSync(d, { recursive: true, force: true }) } catch (e) {"
-      },
-      {
-        "file": "lib/browser.js",
-        "line": 151,
-        "text": "rm()"
-      },
-      {
-        "file": "lib/browser.js",
-        "line": 165,
-        "text": "onHostExit = () => { try { fs.rmSync(d, { recursive: true, force: true }) } catch { /* 下次开浏览器时按时间清 */ } }"
       }
     ]
   },

@@ -1,0 +1,110 @@
+{
+  "name": "dsh-offhours",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-11T08:04:53.916Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 160,
+        "text": "          const res = await fetch(`${API}/status?board=${encodeURIComponent(state.board)}`, { headers: { accept: 'application/json', 'x-nightshift': '1' }, cach"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 171,
+        "text": "const res = await fetch(`${API}/action`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 431,
+        "text": "const r = await fetch(`${API}/live?board=${encodeURIComponent(snap.board || 'ops')}`, { headers: { 'x-nightshift': '1' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1402,
+        "text": "fetch(API + '/doc', { headers: { 'x-nightshift': '1' } })"
+      },
+      {
+        "file": "mechanism/scan.sh",
+        "line": 810,
+        "text": "curl -s -m 5 -X POST \"http://127.0.0.1:3080/nightshift/api/action${tok:+?token=$tok}\" \\"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/offhours.mjs",
+        "line": 14,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/offhours.mjs",
+        "line": 104,
+        "text": "mkdirSync(join(boardFile, '..'), { recursive: true })"
+      },
+      {
+        "file": "bin/offhours.mjs",
+        "line": 105,
+        "text": "writeFileSync(boardFile, '{\\n  \"version\": 1,\\n  \"cards\": []\\n}\\n', 'utf8')"
+      },
+      {
+        "file": "bin/offhours.mjs",
+        "line": 107,
+        "text": "mkdirSync(cfg.featuresRoot, { recursive: true })"
+      },
+      {
+        "file": "bin/offhours.mjs",
+        "line": 110,
+        "text": "try { registry = JSON.parse(readFileSync(join(cfg.featuresRoot, '.repos.json'), 'utf8')) || {} } catch { /* 首次初始化 */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/offhours.mjs",
+        "line": 13,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "bin/offhours.mjs",
+        "line": 69,
+        "text": "const r = spawnSync('bash', ['-lc', `command -v ${cmd}`], { encoding: 'utf8' })"
+      },
+      {
+        "file": "bin/offhours.mjs",
+        "line": 74,
+        "text": "const r = spawnSync('git', ['-C', repo, 'symbolic-ref', '--short', 'refs/remotes/origin/HEAD'], { encoding: 'utf8' })"
+      },
+      {
+        "file": "bin/offhours.mjs",
+        "line": 77,
+        "text": "const q = spawnSync('git', ['-C', repo, 'show-ref', '--verify', '--quiet', `refs/heads/${b}`])"
+      },
+      {
+        "file": "bin/offhours.mjs",
+        "line": 124,
+        "text": "let r = spawnSync(fb, args, { env, encoding: 'utf8' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

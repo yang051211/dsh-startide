@@ -1,0 +1,109 @@
+{
+  "name": "dsh-solmirror",
+  "version": "0.15.1",
+  "scannedAt": "2026-11-11T08:04:55.983Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 67,
+        "text": "const probe = await fetch('/api/solmirror/status', { cache: 'no-store' })"
+      },
+      {
+        "file": "client/client.js",
+        "line": 430,
+        "text": "const response = await fetch(`${await resolveAdminBase()}/calls`, { cache: 'no-store' })"
+      },
+      {
+        "file": "client/client.js",
+        "line": 600,
+        "text": "const response = await fetch(`${await resolveAdminBase()}/generation?id=${encodeURIComponent(generationId)}`, { cache: 'no-store' })"
+      },
+      {
+        "file": "client/client.js",
+        "line": 753,
+        "text": "const response = await fetch(`${await resolveAdminBase()}/generation?id=${encodeURIComponent(id)}`, { cache: 'no-store' })"
+      },
+      {
+        "file": "client/client.js",
+        "line": 1131,
+        "text": "liveProbeInflight = resolveAdminBase().then(base => fetch(`${base}/calls`, { cache: 'no-store' }))"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 64,
+        "text": "import { readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 105,
+        "text": "const stored = JSON.parse(readFileSync(CALLS_FILE, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 121,
+        "text": "writeFileSync(CALLS_FILE, JSON.stringify(Object.fromEntries(callMap)))"
+      },
+      {
+        "file": "lib/upload.js",
+        "line": 20,
+        "text": "import { readFile, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/upload.js",
+        "line": 344,
+        "text": "const bytes = await readFile(filePath)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 4,
+        "text": "# 不再直接插 @deepseek-ai/dsh-mcp-client 配置行：MCP 连接由本插件的宿主入口"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "import { createMcpToolDefinition } from '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 35,
+        "text": "export const inject = ['tools', 'credentials', 'webServer']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 225,
+        "text": "disposers.set(publicName, ctx.tools.register(definition))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 4,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "credentials",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

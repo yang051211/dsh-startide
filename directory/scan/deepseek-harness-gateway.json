@@ -1,0 +1,101 @@
+{
+  "name": "deepseek-harness-gateway",
+  "version": "0.10.1",
+  "scannedAt": "2026-11-11T08:04:51.187Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/smoke.mjs",
+        "line": 30,
+        "text": "const response = await fetch(`${base}${path}`, init)"
+      },
+      {
+        "file": "scripts/smoke.mjs",
+        "line": 140,
+        "text": "const streamResponse = await fetch(`${base}/v1/sessions/${encodeURIComponent(sessionId)}/messages`, {"
+      },
+      {
+        "file": "scripts/smoke.mjs",
+        "line": 155,
+        "text": "const rawResponse = await fetch(`${base}/v1/sessions/${encodeURIComponent(sessionId)}/messages`, {"
+      },
+      {
+        "file": "scripts/smoke.mjs",
+        "line": 201,
+        "text": "const fileResponse = await fetch("
+      },
+      {
+        "file": "scripts/smoke.mjs",
+        "line": 211,
+        "text": "const ranged = await fetch("
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/test-files.mjs",
+        "line": 13,
+        "text": "import { mkdtemp, mkdir, rm, symlink, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "scripts/test-files.mjs",
+        "line": 76,
+        "text": "await mkdir(outside, { recursive: true })"
+      },
+      {
+        "file": "scripts/test-files.mjs",
+        "line": 77,
+        "text": "await writeFile(join(outside, 'secret.txt'), 'top secret')"
+      },
+      {
+        "file": "scripts/test-files.mjs",
+        "line": 96,
+        "text": "await rm(outside, { recursive: true, force: true })"
+      },
+      {
+        "file": "scripts/test-files.mjs",
+        "line": 136,
+        "text": "await writeFile(file, '0123456789abcdef')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/supervisor.mjs",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/supervisor.mjs",
+        "line": 25,
+        "text": "const child = spawn(spec.command, spec.args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 935,
+      "text": "npm i -g deepseek-harness-gateway"
+    }
+  ],
+  "skippedEntries": []
+}

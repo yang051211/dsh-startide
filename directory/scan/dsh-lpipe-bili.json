@@ -1,0 +1,122 @@
+{
+  "name": "dsh-lpipe-bili",
+  "version": "0.2.5",
+  "scannedAt": "2026-11-11T08:04:55.926Z",
+  "icon": "dsh-lpipe-bili.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/api.mjs",
+        "line": 35,
+        "text": "      const response = await this.fetch(`https://api.bilibili.com${path}?${query}`, {redirect:'error', signal:AbortSignal.any([AbortSignal.timeout(20000), ...(s"
+      },
+      {
+        "file": "src/api.mjs",
+        "line": 61,
+        "text": "const response=await this.fetch(url,{redirect:'error',signal:AbortSignal.any([AbortSignal.timeout(20000),...(signal?[signal]:[])])});"
+      },
+      {
+        "file": "src/rpc.mjs",
+        "line": 3,
+        "text": "return ctx.connection.fetch.register({path:'/api/'+ENDPOINT,methods:['POST'],requestBody:'buffered',async fetch(request){"
+      },
+      {
+        "file": "src/vendor/storyboard/lib/asr.js",
+        "line": 64,
+        "text": "* 于是 `fetch('\"http://...\"' + '/audio/transcriptions')` 直接"
+      },
+      {
+        "file": "src/vendor/storyboard/lib/asr.js",
+        "line": 275,
+        "text": "const res = await fetch(`${baseUrl.replace(/\\/$/, '')}/audio/transcriptions`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/storage.mjs",
+        "line": 3,
+        "text": "import { lstat, readdir, unlink, rmdir } from 'node:fs/promises';"
+      },
+      {
+        "file": "src/storage.mjs",
+        "line": 13,
+        "text": "y()) await clear(p); else if(s.isFile()) {const again=await lstat(p); if(again.ino===s.ino && again.mtimeMs===s.mtimeMs) await unlink(p);} } await rmdir(path);}"
+      },
+      {
+        "file": "src/vendor/storyboard/lib/asr-lifecycle.js",
+        "line": 20,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "src/vendor/storyboard/lib/asr.js",
+        "line": 13,
+        "text": "import { existsSync, readFileSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "src/vendor/storyboard/lib/asr.js",
+        "line": 42,
+        "text": "const parsed = JSON.parse(readFileSync(path, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 10,
+        "text": "export const inject=['tools','credentials','attachments','connection','configEditor'];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/vendor/storyboard/lib/asr-lifecycle.js",
+        "line": 19,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/vendor/storyboard/lib/asr-lifecycle.js",
+        "line": 119,
+        "text": "const run = execImpl ?? (await import('node:child_process')).execFile;"
+      },
+      {
+        "file": "src/vendor/storyboard/lib/asr-lifecycle.js",
+        "line": 228,
+        "text": "import('node:child_process')"
+      },
+      {
+        "file": "src/vendor/storyboard/lib/asr-lifecycle.js",
+        "line": 229,
+        "text": ".then(({ execFile }) => execFile('taskkill', ['/PID', String(pid), '/T', '/F'], () => {}))"
+      },
+      {
+        "file": "src/vendor/storyboard/lib/asr-lifecycle.js",
+        "line": 236,
+        "text": "import('node:child_process')"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "attachments",
+    "configEditor",
+    "connection",
+    "credentials",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

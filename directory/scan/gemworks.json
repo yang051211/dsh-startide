@@ -1,0 +1,138 @@
+{
+  "name": "gemworks",
+  "version": "0.3.9",
+  "scannedAt": "2026-11-11T08:04:56.619Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 64,
+        "text": "const r = await fetch(url, { credentials: 'same-origin', ...init })"
+      },
+      {
+        "file": "dist/vendor/geml/code-graph.js",
+        "line": 1318,
+        "text": "fetch(html, { method: \"HEAD\", credentials: \"omit\" }).then(function (r) {"
+      },
+      {
+        "file": "dist/vendor/geml/code-graph.js",
+        "line": 1579,
+        "text": "fetch(\"/_search?q=\" + encodeURIComponent(q))"
+      },
+      {
+        "file": "dist/vendor/geml/code-graph.js",
+        "line": 2004,
+        "text": "fetch(side).then(function (r) { return r.json(); }).then(function (j) {"
+      },
+      {
+        "file": "dist/vendor/geml/render-html.js",
+        "line": 45,
+        "text": "try { const r = await fetch(rel, { cache: \"no-cache\" }); return r.ok ? await r.text() : null; } catch { return null; }"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/antigravity.js",
+        "line": 24,
+        "text": "import { mkdirSync, readFileSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "dist/antigravity.js",
+        "line": 39,
+        "text": "return { ...fallback, ...JSON.parse(readFileSync(file, \"utf8\")) };"
+      },
+      {
+        "file": "dist/antigravity.js",
+        "line": 46,
+        "text": "mkdirSync(resolve(file, \"..\"), { recursive: true });"
+      },
+      {
+        "file": "dist/antigravity.js",
+        "line": 47,
+        "text": "writeFileSync(file, JSON.stringify(value), \"utf8\");"
+      },
+      {
+        "file": "dist/antigravity.js",
+        "line": 58,
+        "text": "text = readFileSync(path, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 10,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "dist/hosts/dsh/plugin.js",
+        "line": 25,
+        "text": "export const inject = [\"tools\", \"agents\", \"systemPrompt\"];"
+      },
+      {
+        "file": "dist/hosts/dsh/plugin.js",
+        "line": 141,
+        "text": "agent.ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "dist/hosts/dsh/plugin.js",
+        "line": 171,
+        "text": "agent.ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "dist/hosts/dsh/plugin.js",
+        "line": 435,
+        "text": "return agent.ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/board-file.js",
+        "line": 7,
+        "text": "import { spawn, spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "dist/board-file.js",
+        "line": 100,
+        "text": "const id = progIdOf(spawnSync(BROWSER_PROGID_ARGV[0], BROWSER_PROGID_ARGV.slice(1), { encoding: \"utf8\", timeout: 3000, windowsHide: true }).stdout ?? \"\");"
+      },
+      {
+        "file": "dist/board-file.js",
+        "line": 104,
+        "text": "return browserExeOf(spawnSync(argv[0], argv.slice(1), { encoding: \"utf8\", timeout: 3000, windowsHide: true }).stdout ?? \"\");"
+      },
+      {
+        "file": "dist/board-file.js",
+        "line": 153,
+        "text": "const child = spawn(first.argv[0], first.argv.slice(1), { detached: true, stdio: \"ignore\", windowsHide: true, env: { ...process.env, ...(first.env ?? {}) } });"
+      },
+      {
+        "file": "dist/gemworks-chunk-4A7KYSFU.mjs",
+        "line": 2,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "dist/hosts/claude-code/brand.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

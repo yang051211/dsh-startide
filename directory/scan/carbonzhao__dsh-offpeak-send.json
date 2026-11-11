@@ -1,0 +1,80 @@
+{
+  "name": "@carbonzhao/dsh-offpeak-send",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-11T08:04:58.537Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 251,
+        "text": "const res = await fetch(API + path, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 262,
+        "text": "const res = await fetch(API + path, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1520,
+        "text": "const res = await fetch(API + '/stage', { method: 'POST', headers, body: bytes });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/gc.js",
+        "line": 9,
+        "text": "import nodeFs from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/gc.js",
+        "line": 35,
+        "text": "readFile: (...args) => nodeFs.readFile(...args),"
+      },
+      {
+        "file": "lib/gc.js",
+        "line": 38,
+        "text": "rm: (...args) => nodeFs.rm(...args),"
+      },
+      {
+        "file": "lib/gc.js",
+        "line": 39,
+        "text": "mkdir: (...args) => nodeFs.mkdir(...args),"
+      },
+      {
+        "file": "lib/gc.js",
+        "line": 427,
+        "text": "buffer = await fs.readFile(log.path)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "attachments",
+    "sessionController",
+    "sessions",
+    "storageDomain",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

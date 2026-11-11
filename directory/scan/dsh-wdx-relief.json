@@ -1,0 +1,82 @@
+{
+  "name": "dsh-wdx-relief",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-11T08:04:54.424Z",
+  "icon": "dsh-wdx-relief.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 441,
+        "text": "var response = await fetch(RPC_PATH, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 464,
+        "text": "var response = await fetch(RECAP_PATH, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 492,
+        "text": "response = await fetch(TODAY_PATH, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 546,
+        "text": "response = await fetch(BTW_PATH, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 588,
+        "text": "response = await fetch(RECAPS_PATH, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/recapHistory.js",
+        "line": 10,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "src/recapHistory.js",
+        "line": 21,
+        "text": "const raw = JSON.parse(fs.readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "src/recapHistory.js",
+        "line": 31,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "src/recapHistory.js",
+        "line": 33,
+        "text": "fs.writeFileSync(temp, JSON.stringify({ version: 1, entries }, null, 1))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "sessions"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

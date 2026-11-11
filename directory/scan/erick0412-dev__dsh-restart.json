@@ -1,0 +1,117 @@
+{
+  "name": "@erick0412-dev/dsh-restart",
+  "version": "0.1.7-patch.1",
+  "scannedAt": "2026-11-11T08:05:02.783Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 110,
+        "text": "fs.mkdirSync(homeDir(), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 111,
+        "text": "fs.writeFileSync(path.join(homeDir(), LEGACY_WATCHDOG_STOP_FILENAME), 'disabled by dsh-restart: embedded watchdog retired\\n', 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 120,
+        "text": "fs.writeFileSync(resumeFilePath(), JSON.stringify({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 139,
+        "text": "const parsed = JSON.parse(fs.readFileSync(resumeFilePath(), 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 34,
+        "text": "export const inject = ['tools', 'commands', 'agents', 'shell', 'sandboxPolicy'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 646,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 44,
+        "text": "export const inject = ['tools', 'commands', 'agents', 'shell', 'sandboxPolicy']"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 762,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 24,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 310,
+        "text": "\"const { spawn, spawnSync } = require('node:child_process')\","
+      },
+      {
+        "file": "lib/index.js",
+        "line": 333,
+        "text": "const helper = spawn(process.execPath, [helperPath], {"
+      },
+      {
+        "file": "lib/relaunch-helper.js",
+        "line": 16,
+        "text": "const child = spawn(execPath, argv, {"
+      },
+      {
+        "file": "lib/relaunch-helper.js",
+        "line": 79,
+        "text": "const r = spawnSync(psExe, ['-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-File', psPath], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: pnpm run build"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "commands",
+    "sandboxPolicy",
+    "shell",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

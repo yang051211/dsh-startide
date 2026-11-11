@@ -1,0 +1,122 @@
+{
+  "name": "dsh-chatops-mcp",
+  "version": "1.7.1",
+  "scannedAt": "2026-11-11T08:04:55.512Z",
+  "icon": "dsh-chatops-mcp.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 195,
+        "text": "const res = await fetch(BASE + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cli.js",
+        "line": 10,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "connectors.js",
+        "line": 25,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "connectors.js",
+        "line": 214,
+        "text": "const text = readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "connectors.js",
+        "line": 224,
+        "text": "mkdirSync(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "connectors.js",
+        "line": 227,
+        "text": "const existing = existsSync(file) ? readFileSync(file, 'utf8').split(/\\r?\\n/) : []"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1752,
+        "text": "'连接会写进 Loader（一行 @deepseek-ai/dsh-mcp-client），工具名形如 mcp__dingtalk__*；同时记到 ~/.dsh/chatops/connections.json，重启后按它重建。断开即删除那一行。',"
+      },
+      {
+        "file": "connectors.js",
+        "line": 40,
+        "text": "const MCP_CLIENT_NAME = '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 3,
+        "text": "# 早期版本在这里硬编码了三条 @deepseek-ai/dsh-mcp-client（钉钉 / 飞书 / 飞书项目），"
+      },
+      {
+        "file": "index.js",
+        "line": 6,
+        "text": "*  A. 连接器（新增）：把一行 `@deepseek-ai/dsh-mcp-client` 写进 Loader 树，"
+      },
+      {
+        "file": "index.js",
+        "line": 93,
+        "text": "const inject = ['webServer', 'loader', 'tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cli.js",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "cli.js",
+        "line": 175,
+        "text": "const child = spawn(command, args, {"
+      },
+      {
+        "file": "connectors.js",
+        "line": 24,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "connectors.js",
+        "line": 345,
+        "text": "child = spawn(command, args, {"
+      },
+      {
+        "file": "connectors.js",
+        "line": 430,
+        "text": "const child = spawn(command, args, { stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true, env: process.env })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 386,
+      "text": "- `installCli` 调的是 `npm install -g <pkg>`，会改本机全局 npm 前缀；不需要时用 `npm uninstall -g` 自行回退。装 CLI 有网络与磁盘副作用，面板会在按钮文案里写明包名。"
+    }
+  ],
+  "skippedEntries": []
+}

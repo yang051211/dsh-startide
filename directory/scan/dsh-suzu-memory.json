@@ -1,15 +1,20 @@
 {
   "name": "dsh-suzu-memory",
-  "version": "0.7.0",
-  "scannedAt": "2026-11-01T19:08:52.941Z",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-11T08:04:59.154Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
+        "file": "src/memory-page.mjs",
+        "line": 1,
+        "text": "import http from 'node:http';"
+      },
+      {
         "file": "src/memory-page/app.js",
-        "line": 105,
-        "text": "const response = await fetch(path, { signal });"
+        "line": 133,
+        "text": "const response = await fetch(path.startsWith(\"/v1/\") ? \"/libraries/\" + encodeURIComponent(libraryId) + path : path,"
       }
     ]
   },
@@ -17,29 +22,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "src/library-storage.mjs",
+        "line": 2,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "src/library-storage.mjs",
+        "line": 3,
+        "text": "import { readdir, lstat, realpath, rm } from 'node:fs/promises';"
+      },
+      {
+        "file": "src/library-storage.mjs",
+        "line": 30,
+        "text": "await rm(agentRoot, { recursive: true, force: true });"
+      },
+      {
         "file": "src/memory-page.mjs",
-        "line": 1,
+        "line": 2,
         "text": "import { readFileSync } from 'node:fs';"
       },
       {
         "file": "src/memory-page.mjs",
-        "line": 37,
-        "text": "response.end(readFileSync(new URL('./memory-page/' + route[0], import.meta.url)));"
-      },
-      {
-        "file": "src/session-settings.mjs",
-        "line": 4,
-        "text": "import { readFileSync } from 'node:fs';"
-      },
-      {
-        "file": "src/session-settings.mjs",
-        "line": 5,
-        "text": "import { mkdir } from 'node:fs/promises';"
-      },
-      {
-        "file": "src/session-settings.mjs",
-        "line": 23,
-        "text": "const OFFICIAL_COMPACTION_REFERENCE = readFileSync(new URL('./prompts/dsh-compaction-rc3.txt', import.meta.url), 'utf8').trim();"
+        "line": 58,
+        "text": "const asset = route ? { contentType: route[1], content: readFileSync(new URL('./memory-page/' + route[0], import.meta.url)) }"
       }
     ]
   },
@@ -48,12 +53,12 @@
     "evidence": [
       {
         "file": "src/index.mjs",
-        "line": 11,
+        "line": 13,
         "text": "export const inject = ['llm', 'tools', 'sessions'];"
       },
       {
         "file": "src/index.mjs",
-        "line": 143,
+        "line": 151,
         "text": "if (!unregisterTools.has(agent.id)) unregisterTools.set(agent.id, agent.ctx.tools.register(searchTool));"
       }
     ]
@@ -66,7 +71,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 6,
+  "dependencies": 9,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
@@ -77,16 +82,20 @@
   "setupHints": [],
   "skippedEntries": [
     "node_modules/@suzu-memory/console/web/styles.css (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/benchmark-progress.html (outside the package)",
     "node_modules/@suzu-memory/console/web/index.html (outside the package)",
     "node_modules/@suzu-memory/console/web/app.js (outside the package)",
     "node_modules/@suzu-memory/usage-ledger/resources/default-prices.json (outside the package)",
     "node_modules/@suzu-memory/usage-ledger/schema/event.schema.json (outside the package)",
+    "node_modules/@suzu-memory/evaluation/fixtures/ingestion-cases.json (outside the package)",
     "node_modules/@suzu-memory/analysis/package.json (outside the package)",
     "node_modules/@suzu-memory/config/package.json (outside the package)",
     "node_modules/@suzu-memory/console/package.json (outside the package)",
     "node_modules/@suzu-memory/core/package.json (outside the package)",
     "node_modules/@suzu-memory/embedding-indexer/package.json (outside the package)",
+    "node_modules/@suzu-memory/evaluation/package.json (outside the package)",
     "node_modules/@suzu-memory/extraction/package.json (outside the package)",
+    "node_modules/@suzu-memory/host-adapter/package.json (outside the package)",
     "node_modules/@suzu-memory/ingestion/package.json (outside the package)",
     "node_modules/@suzu-memory/maintenance/package.json (outside the package)",
     "node_modules/@suzu-memory/providers/package.json (outside the package)",
@@ -97,6 +106,8 @@
     "node_modules/@suzu-memory/structurer/package.json (outside the package)",
     "node_modules/@suzu-memory/usage-ledger/package.json (outside the package)",
     "node_modules/@suzu-memory/visualization/package.json (outside the package)",
+    "node_modules/@suzu-memory/evaluation/resources/public-memory-datasets.json (outside the package)",
+    "node_modules/@suzu-memory/evaluation/resources/baselines/reward-credit-holdout-v1-rc1-manifest.json (outside the package)",
     "node_modules/@suzu-memory/analysis/resources/affective-association-basis-system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/analysis/resources/affective-current-relation-system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/analysis/resources/affective-experiencer-system-prompt.md (outside the package)",
@@ -124,9 +135,13 @@
     "node_modules/@suzu-memory/analysis/resources/identity-subject-attribution-system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/analysis/resources/identity-time-revision-system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/analysis/resources/preference-behavior-conditions-system-prompt.md (outside the package)",
+    "node_modules/@suzu-memory/evaluation/resources/preference-counter-match-system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/analysis/resources/preference-explicit-expression-system-prompt.md (outside the package)",
+    "node_modules/@suzu-memory/evaluation/resources/preference-labeling-system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/analysis/resources/preference-object-grounding-system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/analysis/resources/preference-sharing-affect-system-prompt.md (outside the package)",
+    "node_modules/@suzu-memory/evaluation/resources/preference-state-critic-system-prompt.md (outside the package)",
+    "node_modules/@suzu-memory/evaluation/resources/preference-state-synthesizer-system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/analysis/resources/preference-time-scope-system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/structurer/resources/relation-system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/analysis/resources/relationship-current-relation-system-prompt.md (outside the package)",
@@ -135,12 +150,17 @@
     "node_modules/@suzu-memory/analysis/resources/relationship-scope-time-system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/embedding-indexer/resources/retrieval-context-critic-system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/embedding-indexer/resources/retrieval-context-system-prompt.md (outside the package)",
+    "node_modules/@suzu-memory/evaluation/resources/retrieval-usage-system-prompt.md (outside the package)",
+    "node_modules/@suzu-memory/evaluation/resources/reward-credit-system-prompt.md (outside the package)",
+    "node_modules/@suzu-memory/evaluation/resources/reward-outcome-system-prompt.md (outside the package)",
+    "node_modules/@suzu-memory/evaluation/resources/reward-target-system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/analysis/resources/self-concept-current-relation-system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/analysis/resources/self-concept-grounding-system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/analysis/resources/self-concept-holder-system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/analysis/resources/self-concept-stability-system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/analysis/resources/self-concept-time-system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/structurer/resources/subject-attribution-system-prompt.md (outside the package)",
+    "node_modules/@suzu-memory/structurer/resources/summary-system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/extraction/resources/system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/structurer/resources/system-prompt.md (outside the package)",
     "node_modules/@suzu-memory/analysis/resources/value-current-relation-system-prompt.md (outside the package)",
@@ -161,6 +181,12 @@
     "node_modules/@suzu-memory/analysis/src/behavior-state-service.mjs (outside the package)",
     "node_modules/@suzu-memory/analysis/src/belief-contracts.mjs (outside the package)",
     "node_modules/@suzu-memory/analysis/src/belief-service.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/benchmark-cli.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/benchmark-completion.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/benchmark-contract.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/benchmark-progress.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/benchmark-support.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/benchmark.mjs (outside the package)",
     "node_modules/@suzu-memory/retriever/src/bm25-route.mjs (outside the package)",
     "node_modules/@suzu-memory/visualization/src/brain-layout.mjs (outside the package)",
     "node_modules/@suzu-memory/structurer/src/budgeted-parts.mjs (outside the package)",
@@ -174,7 +200,10 @@
     "node_modules/@suzu-memory/analysis/src/capability-contracts.mjs (outside the package)",
     "node_modules/@suzu-memory/analysis/src/capability-service.mjs (outside the package)",
     "node_modules/@suzu-memory/usage-ledger/src/catalog.mjs (outside the package)",
+    "node_modules/@suzu-memory/core/src/causal-evidence.mjs (outside the package)",
     "node_modules/@suzu-memory/embedding-indexer/src/cli.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/cli.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/code-revision.mjs (outside the package)",
     "node_modules/@suzu-memory/structurer/src/consolidation-batch.mjs (outside the package)",
     "node_modules/@suzu-memory/structurer/src/consolidation-generation-batch.mjs (outside the package)",
     "node_modules/@suzu-memory/structurer/src/consolidation-planner.mjs (outside the package)",
@@ -185,6 +214,10 @@
     "node_modules/@suzu-memory/service/src/database-backup.mjs (outside the package)",
     "node_modules/@suzu-memory/core/src/database.mjs (outside the package)",
     "node_modules/@suzu-memory/core/src/embedding-cache.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/embedding-connection.mjs (outside the package)",
+    "node_modules/@suzu-memory/extraction/src/entity-bindings.mjs (outside the package)",
+    "node_modules/@suzu-memory/core/src/entity-identity.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/evaluator.mjs (outside the package)",
     "node_modules/@suzu-memory/core/src/event-continuity-policy.mjs (outside the package)",
     "node_modules/@suzu-memory/analysis/src/event-continuity.mjs (outside the package)",
     "node_modules/@suzu-memory/core/src/event-source-cleanup.mjs (outside the package)",
@@ -201,8 +234,10 @@
     "node_modules/@suzu-memory/core/src/event-source-state.mjs (outside the package)",
     "node_modules/@suzu-memory/core/src/event-source-view.mjs (outside the package)",
     "node_modules/@suzu-memory/ingestion/src/extraction-repair.mjs (outside the package)",
+    "node_modules/@suzu-memory/structurer/src/generation-input.mjs (outside the package)",
     "node_modules/@suzu-memory/analysis/src/goal-contracts.mjs (outside the package)",
     "node_modules/@suzu-memory/analysis/src/goal-service.mjs (outside the package)",
+    "node_modules/@suzu-memory/host-adapter/test/host-adapter.test.mjs (outside the package)",
     "node_modules/@suzu-memory/analysis/src/identity-contracts.mjs (outside the package)",
     "node_modules/@suzu-memory/analysis/src/identity-service.mjs (outside the package)",
     "node_modules/@suzu-memory/analysis/src/index.mjs (outside the package)",
@@ -210,7 +245,9 @@
     "node_modules/@suzu-memory/console/src/index.mjs (outside the package)",
     "node_modules/@suzu-memory/core/src/index.mjs (outside the package)",
     "node_modules/@suzu-memory/embedding-indexer/src/index.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/index.mjs (outside the package)",
     "node_modules/@suzu-memory/extraction/src/index.mjs (outside the package)",
+    "node_modules/@suzu-memory/host-adapter/src/index.mjs (outside the package)",
     "node_modules/@suzu-memory/ingestion/src/index.mjs (outside the package)",
     "node_modules/@suzu-memory/maintenance/src/index.mjs (outside the package)",
     "node_modules/@suzu-memory/providers/src/index.mjs (outside the package)",
@@ -222,7 +259,9 @@
     "node_modules/@suzu-memory/usage-ledger/src/index.mjs (outside the package)",
     "node_modules/@suzu-memory/visualization/src/index.mjs (outside the package)",
     "node_modules/@suzu-memory/analysis/src/inferred-preference.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/ingestion-evaluator.mjs (outside the package)",
     "node_modules/@suzu-memory/providers/src/injected-generator.mjs (outside the package)",
+    "node_modules/@suzu-memory/host-adapter/src/intervention-policy.mjs (outside the package)",
     "node_modules/@suzu-memory/service/src/legacy-source-import.mjs (outside the package)",
     "node_modules/@suzu-memory/service/test/legacy-source-import.test.mjs (outside the package)",
     "node_modules/@suzu-memory/core/src/maintenance-tasks.mjs (outside the package)",
@@ -231,6 +270,8 @@
     "node_modules/@suzu-memory/console/test/memory-console.test.mjs (outside the package)",
     "node_modules/@suzu-memory/server/test/memory-server.test.mjs (outside the package)",
     "node_modules/@suzu-memory/service/test/memory-service.test.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/memory-tool-answer.mjs (outside the package)",
+    "node_modules/@suzu-memory/core/src/model-references.mjs (outside the package)",
     "node_modules/@suzu-memory/service/src/model-task-validation.mjs (outside the package)",
     "node_modules/@suzu-memory/service/test/model-task-validation.test.mjs (outside the package)",
     "node_modules/@suzu-memory/retriever/src/natural-decay.mjs (outside the package)",
@@ -242,10 +283,20 @@
     "node_modules/@suzu-memory/extraction/src/participant-identity.mjs (outside the package)",
     "node_modules/@suzu-memory/core/src/plasticity-policy.mjs (outside the package)",
     "node_modules/@suzu-memory/retriever/src/plasticity-ranking.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/plasticity-shadow.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/plasticity-simulator.mjs (outside the package)",
     "node_modules/@suzu-memory/core/src/policy.mjs (outside the package)",
     "node_modules/@suzu-memory/structurer/src/policy.mjs (outside the package)",
     "node_modules/@suzu-memory/analysis/src/preference-contract.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/preference-counter-contract.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/preference-counter-service.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/preference-evidence-policy.mjs (outside the package)",
     "node_modules/@suzu-memory/service/test/preference-integration.test.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/preference-persistence.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/preference-prompt.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/preference-review-contracts.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/preference-review-service.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/preference-service.mjs (outside the package)",
     "node_modules/@suzu-memory/analysis/src/preference-simulator.mjs (outside the package)",
     "node_modules/@suzu-memory/analysis/src/preference-snapshot.mjs (outside the package)",
     "node_modules/@suzu-memory/analysis/src/preference-specialist-contracts.mjs (outside the package)",
@@ -291,9 +342,27 @@
     "node_modules/@suzu-memory/analysis/src/reported-value-review.mjs (outside the package)",
     "node_modules/@suzu-memory/core/src/repository.mjs (outside the package)",
     "node_modules/@suzu-memory/analysis/src/request-budget.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/retrieval-benchmark-utils.mjs (outside the package)",
     "node_modules/@suzu-memory/core/src/retrieval-context.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/retrieval-usage-cli.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/retrieval-usage-contracts.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/retrieval-usage-service.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/retriever-adapter.mjs (outside the package)",
     "node_modules/@suzu-memory/retriever/src/retriever.mjs (outside the package)",
     "node_modules/@suzu-memory/service/src/review-console.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/reward-credit-benchmark-cli.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/reward-credit-benchmark.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/reward-credit-calibration-cli.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/reward-credit-calibration.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/reward-credit-cli.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/reward-credit-contracts.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/fixtures/reward-credit-holdout-v1.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/fixtures/reward-credit-mini-v1.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/reward-credit-policy.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/reward-credit-service.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/rhelm-cli.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/rhelm-contract.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/rhelm-retrieval.mjs (outside the package)",
     "node_modules/@suzu-memory/core/src/schema-event-sources.mjs (outside the package)",
     "node_modules/@suzu-memory/core/src/schema.mjs (outside the package)",
     "node_modules/@suzu-memory/core/src/search-index.mjs (outside the package)",
@@ -320,6 +389,7 @@
     "node_modules/@suzu-memory/core/src/subject-attribution-policy.mjs (outside the package)",
     "node_modules/@suzu-memory/structurer/src/subject-attribution-prompt.mjs (outside the package)",
     "node_modules/@suzu-memory/structurer/src/subject-attribution-service.mjs (outside the package)",
+    "node_modules/@suzu-memory/structurer/src/summary-service.mjs (outside the package)",
     "node_modules/@suzu-memory/server/bin/suzu-memory-server.mjs (outside the package)",
     "node_modules/@suzu-memory/extraction/src/temporal-evidence.mjs (outside the package)",
     "node_modules/@suzu-memory/retriever/src/temporal-query.mjs (outside the package)",
@@ -329,6 +399,13 @@
     "node_modules/@suzu-memory/analysis/src/value-service.mjs (outside the package)",
     "node_modules/@suzu-memory/retriever/src/worker-dispatch.mjs (outside the package)",
     "node_modules/@suzu-memory/retriever/src/worker-entry.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/zh4o-contract.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/zh4o-execution.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/zh4o-source-cli.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/zh4o-source.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/zh4o-summary.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/zh4o-system-cli.mjs (outside the package)",
+    "node_modules/@suzu-memory/evaluation/src/zh4o-system.mjs (outside the package)",
     "node_modules/@suzu-memory/console/web/icon.svg (outside the package)"
   ]
 }

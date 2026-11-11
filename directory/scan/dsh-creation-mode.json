@@ -1,0 +1,105 @@
+{
+  "name": "dsh-creation-mode",
+  "version": "3.0.2",
+  "scannedAt": "2026-11-11T08:04:57.440Z",
+  "icon": "dsh-creation-mode.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 333,
+        "text": "const source = await fetch(url).then((r) => (r.ok ? r.text() : '')).catch(() => '');"
+      },
+      {
+        "file": "client.js",
+        "line": 807,
+        "text": "fetch(`${API}/export-dir${query}`)"
+      },
+      {
+        "file": "client.js",
+        "line": 1016,
+        "text": "const res = await fetch(`${API}/export?${query}`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 1460,
+        "text": "fetch(`${API}/styles`)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "data.js",
+        "line": 12,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "data.js",
+        "line": 82,
+        "text": "const raw = JSON.parse(readFileSync(APPROVED_FILE, 'utf8'));"
+      },
+      {
+        "file": "data.js",
+        "line": 106,
+        "text": "const raw = JSON.parse(readFileSync(STYLES_FILE, 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, statSync, unlinkSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 28,
+        "text": "appendFileSync(LOG_FILE, `${new Date().toISOString()} ${line}\\n`);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tools.js",
+        "line": 277,
+        "text": "disposers.push(tools.register({"
+      },
+      {
+        "file": "tools.js",
+        "line": 327,
+        "text": "disposers.push(tools.register({"
+      },
+      {
+        "file": "tools.js",
+        "line": 377,
+        "text": "disposers.push(tools.register({"
+      },
+      {
+        "file": "tools.js",
+        "line": 487,
+        "text": "disposers.push(tools.register({"
+      },
+      {
+        "file": "tools.js",
+        "line": 534,
+        "text": "disposers.push(tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

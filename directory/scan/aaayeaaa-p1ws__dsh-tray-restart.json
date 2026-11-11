@@ -1,0 +1,76 @@
+{
+  "name": "@aaayeaaa-p1ws/dsh-tray-restart",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-11T08:05:02.971Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 32,
+        "text": "import { appendFile, mkdir } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 90,
+        "text": "await mkdir(dataDir, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 98,
+        "text": "await appendFile(logPath, `${JSON.stringify(entry)}\\n`, 'utf8');"
+      },
+      {
+        "file": "lib/tray-patch.mjs",
+        "line": 17,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/tray-patch.mjs",
+        "line": 238,
+        "text": "fs.mkdirSync(backupDir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 41,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 200,
+        "text": "const tools = ctx.tools;"
+      },
+      {
+        "file": "index.js",
+        "line": 203,
+        "text": "tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,108 @@
+{
+  "name": "dsh-tool-barotrauma",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-11T08:05:03.604Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/icon.js",
+        "line": 106,
+        "text": "response = await fetch(url, { signal: AbortSignal.timeout(100_000) });"
+      },
+      {
+        "file": "src/icon.ts",
+        "line": 124,
+        "text": "response = await fetch(url, { signal: AbortSignal.timeout(100_000) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/convert.js",
+        "line": 22,
+        "text": "import { stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/icon.js",
+        "line": 124,
+        "text": "const { writeFile } = await import('node:fs/promises');"
+      },
+      {
+        "file": "lib/icon.js",
+        "line": 125,
+        "text": "await writeFile(target, bytes);"
+      },
+      {
+        "file": "lib/l10n.js",
+        "line": 18,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/l10n.js",
+        "line": 502,
+        "text": "return await readFile(path, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 4,
+        "text": "# 插入 loader 根列表。插件自身导出 `inject: ['tools']`，因此在 tools 服务就绪后才 apply。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "* `apply` 内通过 `ctx.tools.register(defineTool({...}))` 注册全部 `barotrauma_*` 工具，"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 34,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/util.js",
+        "line": 253,
+        "text": "ctx.effect(() => ctx.tools.register(definition), `tool:${definition.name}`);"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 5,
+        "text": "* `apply` 内通过 `ctx.tools.register(defineTool({...}))` 注册全部 `barotrauma_*` 工具，"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/env.js",
+        "line": 15,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "src/env.ts",
+        "line": 17,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

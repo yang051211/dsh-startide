@@ -1,7 +1,7 @@
 {
   "name": "dsh-reel-studio",
-  "version": "0.4.1",
-  "scannedAt": "2026-11-10T20:53:54.929Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-11T08:04:58.433Z",
   "icon": "dsh-reel-studio.svg",
   "network": {
     "hit": true,
@@ -25,6 +25,11 @@
         "file": "lib/client.js",
         "line": 843,
         "text": "fetch(API + '/jobs/' + encodeURIComponent(target.id) + '/cancel', {method: 'POST'})"
+      },
+      {
+        "file": "tools/v01-film/comp-assets/three.bundle.js",
+        "line": 40,
+        "text": "l}),o=this.mimeType,l=this.responseType;fetch(a).then(c=>{if(c.status===200||c.status===0){if(c.status===0&&console.warn(\"THREE.FileLoader: HTTP Status 0 receiv"
       }
     ]
   },
@@ -38,23 +43,23 @@
       },
       {
         "file": "lib/server.js",
-        "line": 113,
+        "line": 115,
         "text": "return JSON.parse(readFileSync(file, 'utf8'));"
       },
       {
         "file": "scripts/film.mjs",
         "line": 24,
-        "text": "import {existsSync, mkdirSync, readFileSync} from 'node:fs';"
+        "text": "import {copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync} from 'node:fs';"
       },
       {
         "file": "scripts/film.mjs",
-        "line": 68,
+        "line": 69,
         "text": "spec = JSON.parse(readFileSync(casePath, 'utf8'));"
       },
       {
         "file": "scripts/film.mjs",
-        "line": 138,
-        "text": "mkdirSync(outDir, {recursive: true});"
+        "line": 104,
+        "text": "mkdirSync(dir, {recursive: true});"
       }
     ]
   },
@@ -83,7 +88,7 @@
       },
       {
         "file": "lib/server.js",
-        "line": 166,
+        "line": 172,
         "text": "firstExisting(FFMPEG_CANDIDATES) ?? (spawnSync('ffmpeg', ['-version'], {stdio: 'ignore'}).status === 0 ? 'ffmpeg' : null);"
       },
       {
@@ -93,12 +98,12 @@
       },
       {
         "file": "scripts/film.mjs",
-        "line": 114,
+        "line": 151,
         "text": "if (spawnSync(candidate, argv, {stdio: 'ignore'}).status === 0) return candidate;"
       },
       {
         "file": "scripts/film.mjs",
-        "line": 183,
+        "line": 220,
         "text": "child = spawn(command, argv, {cwd, env: process.env, stdio: ['ignore', 'pipe', 'pipe']});"
       }
     ]
@@ -107,8 +112,34 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 7,
-  "minifiedFiles": [],
+  "dependencies": 8,
+  "minifiedFiles": [
+    "tools/v01-film/comp-assets/assets.js",
+    "tools/v01-film/comp-assets/dsbotdetails.js",
+    "tools/v01-film/comp-assets/dsbotgroup.js",
+    "tools/v01-film/comp-assets/dsbotteam.js",
+    "tools/v01-film/comp-assets/dsbotusage.js",
+    "tools/v01-film/comp-assets/dshicon.js",
+    "tools/v01-film/comp-assets/dshpage.js",
+    "tools/v01-film/comp-assets/dshwin.js",
+    "tools/v01-film/comp-assets/feateditor.js",
+    "tools/v01-film/comp-assets/featfiles.js",
+    "tools/v01-film/comp-assets/featgit.js",
+    "tools/v01-film/comp-assets/featmenu.js",
+    "tools/v01-film/comp-assets/featside.js",
+    "tools/v01-film/comp-assets/feattasks.js",
+    "tools/v01-film/comp-assets/filesmenupanel.js",
+    "tools/v01-film/comp-assets/filespanel.js",
+    "tools/v01-film/comp-assets/gitgraph.js",
+    "tools/v01-film/comp-assets/gitpanel.js",
+    "tools/v01-film/comp-assets/gsbanner.js",
+    "tools/v01-film/comp-assets/gsoverview.js",
+    "tools/v01-film/comp-assets/gssocial.js",
+    "tools/v01-film/comp-assets/p550full.js",
+    "tools/v01-film/comp-assets/p550simple.js",
+    "tools/v01-film/comp-assets/p550ueg.js",
+    "tools/v01-film/comp-assets/three.bundle.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [
     "connection",

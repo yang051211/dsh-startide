@@ -1,15 +1,25 @@
 {
   "name": "dsh-conv-calendar",
-  "version": "0.2.1",
-  "scannedAt": "2026-11-06T08:17:19.009Z",
-  "icon": null,
+  "version": "0.3.1",
+  "scannedAt": "2026-11-11T08:04:57.974Z",
+  "icon": "dsh-conv-calendar.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 291,
+        "line": 356,
         "text": "const response = await fetch(refresh ? `${target}?refresh=1` : target, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1024,
+        "text": "const response = await fetch(target, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1041,
+        "text": "void fetch(STAR_ENDPOINT, {"
       }
     ]
   },
@@ -23,22 +33,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 111,
+        "line": 131,
         "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
       },
       {
         "file": "lib/index.js",
-        "line": 126,
+        "line": 145,
         "text": "mkdirSync(dirname(file), { recursive: true })"
       },
       {
         "file": "lib/index.js",
-        "line": 127,
-        "text": "writeFileSync(temporary, `${JSON.stringify(state)}\\n`, 'utf8')"
+        "line": 146,
+        "text": "writeFileSync(temporary, `${JSON.stringify(value)}\\n`, 'utf8')"
       },
       {
         "file": "lib/index.js",
-        "line": 132,
+        "line": 151,
         "text": "unlinkSync(temporary)"
       }
     ]
@@ -64,12 +74,12 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 105,
+      "line": 110,
       "text": "`$DSH_HOME/plugins/dsh-conv-calendar/state.json`, written atomically (temp file + rename):"
     },
     {
       "file": "README.zh-CN.md",
-      "line": 105,
+      "line": 110,
       "text": "`$DSH_HOME/plugins/dsh-conv-calendar/state.json`，原子写入（临时文件 + rename）："
     }
   ],
