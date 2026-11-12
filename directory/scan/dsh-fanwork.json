@@ -1,0 +1,77 @@
+{
+  "name": "dsh-fanwork",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-12T21:20:41.458Z",
+  "icon": "dsh-fanwork.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/remote-llm.js",
+        "line": 32,
+        "text": "const res = await fetch(endpoint, {"
+      },
+      {
+        "file": "lib/web/app.js",
+        "line": 57,
+        "text": "const res = await fetch(`/fanwork${path}`, {"
+      },
+      {
+        "file": "lib/web/app.js",
+        "line": 545,
+        "text": "const res = await fetch(`/fanwork/api/projects/${p.id}/run`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/http.js",
+        "line": 6,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/http.js",
+        "line": 72,
+        "text": "const text = fs.readFileSync(abs, 'utf8').replace(/^\\uFEFF/, '')"
+      },
+      {
+        "file": "lib/http.js",
+        "line": 88,
+        "text": "res.end(fs.readFileSync(file))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 76,
+        "text": "fs.mkdirSync(store.dataDir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

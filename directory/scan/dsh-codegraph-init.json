@@ -1,0 +1,91 @@
+{
+  "name": "dsh-codegraph-init",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-12T21:20:50.380Z",
+  "icon": "dsh-codegraph-init.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 23,
+        "text": "import { access, mkdir, readFile, readdir, rm, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 195,
+        "text": "return await readFile(file, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 572,
+        "text": "await mkdir(path.dirname(patchPath), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 573,
+        "text": "await writeFile(patchPath, row.text, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 579,
+        "text": "await mkdir(path.dirname(instructionsPath), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 99,
+        "text": "const MCP_CLIENT_NAME = \"@deepseek-ai/dsh-mcp-client\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 113,
+        "text": "const IS_MCP_CLIENT = /(^|[\\s{,])[\"']?name[\"']?\\s*:\\s*[\"']?@deepseek-ai\\/dsh-mcp-client[\"']?/mu;"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 22,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 216,
+        "text": "child = spawn(\"/bin/sh\", [\"-lc\", command], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 656,
+        "text": "child = spawn(\"/bin/sh\", [\"-lc\", command], { env: { ...process.env }, stdio: [\"ignore\", \"pipe\", \"pipe\"] });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 42,
+      "text": "1. **检查 CLI**：`command -v codegraph`，找不到就 `npm install -g @colbymchenry/codegraph@latest`。"
+    }
+  ],
+  "skippedEntries": []
+}

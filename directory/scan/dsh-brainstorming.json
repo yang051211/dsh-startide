@@ -1,0 +1,82 @@
+{
+  "name": "dsh-brainstorming",
+  "version": "0.0.5",
+  "scannedAt": "2026-11-12T21:20:28.959Z",
+  "icon": "dsh-brainstorming.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 6,
+        "text": "lt}async function vs(e,t,n){let r=await fetch(e,{method:\"POST\",headers:{\"content-type\":\"application/json\"},body:JSON.stringify(t),signal:n});return Td(r)}async "
+      },
+      {
+        "file": "lib/host/update/registry.js",
+        "line": 22,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 6,
+        "text": "1}return!0}return e!==e&&t!==t}function rm(e){return typeof window>\"u\"?1:(e.ownerDocument.defaultView||window).devicePixelRatio||1}function em(e,t){let n=rm(e);"
+      },
+      {
+        "file": "lib/host/update/resolve-profile.js",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/host/update/resolve-profile.js",
+        "line": 10,
+        "text": "return JSON.parse(fs.readFileSync(filePath, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/update/apply-upgrade.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/host/update/apply-upgrade.js",
+        "line": 18,
+        "text": "const child = spawn('pnpm', ['--dir', profileDir, 'add', spec], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: node scripts/ensure-built.mjs"
+      }
+    ]
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentDefaultModel",
+    "connection",
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

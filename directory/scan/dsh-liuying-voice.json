@@ -1,29 +1,29 @@
 {
   "name": "dsh-liuying-voice",
-  "version": "1.6.2",
-  "scannedAt": "2026-11-08T14:57:23.417Z",
+  "version": "1.6.4",
+  "scannedAt": "2026-11-12T21:20:18.198Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 36,
+        "line": 34,
         "text": "const res = await fetch(API, { credentials: \"same-origin\" });"
       },
       {
         "file": "lib/client.js",
-        "line": 42,
+        "line": 40,
         "text": "const res = await fetch(API, {"
       },
       {
         "file": "lib/client.js",
-        "line": 99,
+        "line": 97,
         "text": "const res = await fetch(\"/liuying-voice/test\", { method: \"POST\", credentials: \"same-origin\" });"
       },
       {
         "file": "lib/client.js",
-        "line": 354,
+        "line": 352,
         "text": "const res = await fetch(\"/liuying-voice/speak\", {"
       },
       {
@@ -68,17 +68,17 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 27,
+        "line": 28,
         "text": "export const inject = [\"tools\", \"webServer\"];"
       },
       {
         "file": "lib/index.js",
-        "line": 126,
+        "line": 127,
         "text": "disposers.push(tools.register(createTool(ctx)));"
       },
       {
         "file": "lib/index.js",
-        "line": 127,
+        "line": 128,
         "text": "disposers.push(tools.register(createSingTool()));"
       },
       {
@@ -93,17 +93,17 @@
     "evidence": [
       {
         "file": "lib/qq-guard.js",
-        "line": 9,
+        "line": 13,
         "text": "import { spawn } from \"node:child_process\";"
       },
       {
         "file": "lib/qq-guard.js",
-        "line": 84,
+        "line": 87,
         "text": "const child = spawn(file, args, {"
       },
       {
         "file": "lib/qq-guard.js",
-        "line": 154,
+        "line": 157,
         "text": "const child = spawn(\"cmd.exe\", [\"/c\", \"npm install --omit=dev\"], {"
       },
       {
@@ -119,8 +119,14 @@
     ]
   },
   "installScripts": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.postinstall: node scripts/build-persona-preset.mjs || echo [liuying-voice] 预设生成失败，忽略"
+      }
+    ]
   },
   "dependencies": 0,
   "minifiedFiles": [],

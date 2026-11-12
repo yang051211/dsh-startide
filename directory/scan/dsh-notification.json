@@ -1,21 +1,42 @@
 {
   "name": "dsh-notification",
-  "version": "0.1.2",
-  "scannedAt": "2026-10-26T10:05:32.688Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-12T21:20:36.260Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
+        "file": "client.js",
+        "line": 47,
+        "text": "fetch(FOCUS_ROUTE, {"
+      },
+      {
         "file": "index.js",
-        "line": 81,
+        "line": 318,
         "text": "fetch(config.webhookUrl, {"
       }
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 2,
+        "text": "import { appendFileSync, mkdirSync, renameSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 89,
+        "text": "mkdirSync(LOG_DIR, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 95,
+        "text": "appendFileSync(LOG_FILE, `${JSON.stringify({ ts: new Date().toISOString(), ...entry })}\\n`)"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,
@@ -31,23 +52,23 @@
       },
       {
         "file": "index.js",
-        "line": 32,
+        "line": 167,
+        "text": "child = spawn(POWERSHELL, args, {"
+      },
+      {
+        "file": "index.js",
+        "line": 192,
         "text": "* spawn() failures (missing binary, EACCES, …) are delivered ASYNCHRONOUSLY"
       },
       {
         "file": "index.js",
-        "line": 34,
+        "line": 194,
         "text": "* the synchronous spawn() call cannot catch them. Without an `'error'`"
       },
       {
         "file": "index.js",
-        "line": 47,
+        "line": 209,
         "text": "spawn('osascript', ['-e', `display notification \"${esc(body)}\" with title \"${esc(title)}\"`],"
-      },
-      {
-        "file": "index.js",
-        "line": 50,
-        "text": "spawn('notify-send', [title, body], { stdio: 'ignore', detached: true }).on('error', () => {}).unref()"
       }
     ]
   },

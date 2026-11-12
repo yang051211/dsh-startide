@@ -1,14 +1,14 @@
 {
   "name": "clawock-dsh",
-  "version": "0.4.2",
-  "scannedAt": "2026-11-01T07:36:23.296Z",
+  "version": "0.4.3",
+  "scannedAt": "2026-11-12T21:20:45.644Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/balance.js",
-        "line": 359,
+        "line": 374,
         "text": "response = await fetch(url, {"
       }
     ]
@@ -18,28 +18,28 @@
     "evidence": [
       {
         "file": "lib/balance.js",
-        "line": 3,
+        "line": 4,
         "text": "import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from \"node:fs\";"
       },
       {
         "file": "lib/balance.js",
-        "line": 309,
+        "line": 273,
         "text": "const parsed = JSON.parse(readFileSync(path, \"utf8\"));"
       },
       {
         "file": "lib/balance.js",
-        "line": 320,
+        "line": 292,
         "text": "cfg = JSON.parse(readFileSync(configPath, \"utf8\"));"
       },
       {
         "file": "lib/balance.js",
-        "line": 348,
-        "text": "mkdirSync(dirname(path), { recursive: true });"
+        "line": 335,
+        "text": "doc = JSON.parse(readFileSync(secretPath, \"utf8\"));"
       },
       {
         "file": "lib/balance.js",
-        "line": 350,
-        "text": "writeFileSync(tmp, JSON.stringify({ snapshot }), { mode: 384 });"
+        "line": 363,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
       }
     ]
   },
@@ -52,27 +52,27 @@
     "evidence": [
       {
         "file": "lib/balance.js",
-        "line": 4,
+        "line": 5,
         "text": "import { spawn } from \"node:child_process\";"
       },
       {
         "file": "lib/balance.js",
-        "line": 530,
+        "line": 545,
         "text": "const child = spawn(command, [\"app-server\"], { stdio: ["
       },
       {
         "file": "lib/taskqueue.js",
         "line": 5,
-        "text": "import { execFile } from \"node:child_process\";"
+        "text": "import { execFile, spawn } from \"node:child_process\";"
       },
       {
         "file": "lib/taskqueue.js",
-        "line": 58,
+        "line": 60,
         "text": "execFile(\"python3\", ["
       },
       {
         "file": "lib/taskqueue.js",
-        "line": 84,
+        "line": 86,
         "text": "execFile(command, args, { timeout: COMMAND_TIMEOUT_MS }, (error, stdout) => {"
       }
     ]
@@ -92,7 +92,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 52,
+      "line": 62,
       "text": "python -m pip install clawock"
     }
   ],

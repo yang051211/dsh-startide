@@ -1,0 +1,77 @@
+{
+  "name": "dsh-pighub",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-12T21:20:50.673Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 296,
+        "text": "const response = await fetch(ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/assets.js",
+        "line": 8,
+        "text": "import { readFileSync, existsSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/assets.js",
+        "line": 18,
+        "text": "const manifest = JSON.parse(readFileSync(MANIFEST_PATH, 'utf8'));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import { readFileSync, existsSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 233,
+        "text": "const body = readFileSync(file);"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 17,
+        "text": "import { readFileSync, writeFileSync, renameSync, mkdirSync, existsSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 32,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 253,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,34 +1,34 @@
 {
   "name": "@suifei/dsh-ai-team",
-  "version": "0.4.39",
-  "scannedAt": "2026-11-12T08:43:06.549Z",
+  "version": "0.4.77",
+  "scannedAt": "2026-11-12T21:20:11.958Z",
   "icon": "suifei__dsh-ai-team.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 2604,
+        "line": 2614,
         "text": "fetch(`/ai-team/api/projects/${encodeURIComponent(projectId || '')}/tasks/${encodeURIComponent(taskId)}/events`, { headers: { accept: 'application/json' } })"
       },
       {
         "file": "client.js",
-        "line": 2617,
+        "line": 2627,
         "text": "fetch('/ai-team/api/pending-acceptance', { headers: { accept: 'application/json' } })"
       },
       {
         "file": "client.js",
-        "line": 2628,
+        "line": 2638,
         "text": "fetch('/ai-team/api/risks' + (projectId ? '?project=' + encodeURIComponent(projectId) : ''), { headers: { accept: 'application/json' } })"
       },
       {
         "file": "client.js",
-        "line": 2709,
+        "line": 2726,
         "text": "const response = await fetch('/ai-team/api/bootstrap' + query, {"
       },
       {
         "file": "client.js",
-        "line": 2799,
+        "line": 2816,
         "text": "fetch('/ai-team/api/models', { headers: { accept: 'application/json' } })"
       }
     ]
@@ -39,27 +39,27 @@
       {
         "file": "index.js",
         "line": 14,
-        "text": "import { existsSync, readFileSync, statSync, writeFileSync } from 'node:fs';"
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, statSync, writeFileSync } from 'node:fs';"
       },
       {
         "file": "index.js",
-        "line": 66,
+        "line": 72,
         "text": "return JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')).version ?? '0.0.0';"
       },
       {
         "file": "index.js",
-        "line": 763,
+        "line": 211,
+        "text": "try { mkdirSync(defaultWorkspace, { recursive: true }); } catch { defaultWorkspace = ''; }"
+      },
+      {
+        "file": "index.js",
+        "line": 980,
         "text": "readText: (file) => readFileSync(file, 'utf8'),"
       },
       {
         "file": "index.js",
-        "line": 764,
+        "line": 981,
         "text": "writeText: (file, next) => writeFileSync(file, next, 'utf8'),"
-      },
-      {
-        "file": "index.js",
-        "line": 1070,
-        "text": "const result = scoreSkillRubric(readFileSync(skillPath, 'utf8'), {"
       }
     ]
   },
@@ -68,28 +68,28 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 60,
+        "line": 66,
         "text": "export const inject = ['webServer', 'permissionPresets', 'sandboxPolicy', 'tools', 'shell', 'agents', 'subagents', 'sessions'];"
       },
       {
         "file": "index.js",
-        "line": 102,
+        "line": 115,
         "text": "* 取 DSH 服务：cordis 以属性形式注入（ctx.tools / ctx.shell …），"
       },
       {
         "file": "index.js",
-        "line": 1354,
+        "line": 1616,
         "text": "? tools.register(createTeamTool({"
+      },
+      {
+        "file": "lib/runtime/shell-guard.js",
+        "line": 66,
+        "text": "* @param {object} options.tools `ctx.tools`"
       },
       {
         "file": "lib/skillopt/adopt-gate.js",
         "line": 95,
         "text": "if (definition?.name !== 'skillopt_adopt') return tools.register(definition, options);"
-      },
-      {
-        "file": "lib/skillopt/adopt-gate.js",
-        "line": 105,
-        "text": "return tools.register(guarded, options);"
       }
     ]
   },

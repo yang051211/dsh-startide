@@ -1,0 +1,104 @@
+{
+  "name": "dsh-telegram-connector",
+  "version": "0.15.1",
+  "scannedAt": "2026-11-12T21:20:30.461Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 758,
+        "text": "return await fetch(`${updaterUrl}${path}`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1648,
+        "text": "const response = await fetch(probe.url, { signal: AbortSignal.timeout(2000) });"
+      },
+      {
+        "file": "lib/supervisor.js",
+        "line": 62,
+        "text": "const response = await fetch(`${this.baseUrl.replace(/\\/$/, '')}${path}`, {"
+      },
+      {
+        "file": "lib/telegram.js",
+        "line": 63,
+        "text": "const response = await fetch(`${TG_API}/bot${this.token}/${method}`, {"
+      },
+      {
+        "file": "lib/telegram.js",
+        "line": 92,
+        "text": "const response = await fetch(`${TG_API}/file/bot${this.token}/${file.file_path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/about.js",
+        "line": 10,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/about.js",
+        "line": 15,
+        "text": "return JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));"
+      },
+      {
+        "file": "lib/bindings.js",
+        "line": 9,
+        "text": "import { mkdir, open, readFile, rename } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/bindings.js",
+        "line": 71,
+        "text": "raw = await readFile(file, 'utf8');"
+      },
+      {
+        "file": "lib/bindings.js",
+        "line": 118,
+        "text": "await mkdir(dirname(file), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "sessions"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 144,
+      "text": "./setup.sh              # asks for port, bind address, provider, key,"
+    },
+    {
+      "file": "README.md",
+      "line": 148,
+      "text": "`./setup.sh --check` prints the whole plan and changes nothing. The setup"
+    }
+  ],
+  "skippedEntries": []
+}

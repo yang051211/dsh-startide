@@ -1,0 +1,139 @@
+{
+  "name": "dsh-computers",
+  "version": "1.9.2",
+  "scannedAt": "2026-11-12T21:20:49.972Z",
+  "icon": "dsh-computers.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "agent/dsh-computers-agent.mjs",
+        "line": 922,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "agent/dsh-computers-agent.mjs",
+        "line": 1030,
+        "text": "const response = await fetch(eventsUrl(config.serverUrl), {"
+      },
+      {
+        "file": "agent/dsh-computers-agent.mjs",
+        "line": 2559,
+        "text": "const response = await fetch(eventsUrl(config.serverUrl), {"
+      },
+      {
+        "file": "client.js",
+        "line": 1658,
+        "text": "response = await fetch(url, init);"
+      },
+      {
+        "file": "lib/account.js",
+        "line": 37,
+        "text": "import { request as httpRequest } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "agent/dsh-computers-agent.mjs",
+        "line": 31,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "agent/dsh-computers-agent.mjs",
+        "line": 32,
+        "text": "import fsp from 'node:fs/promises'"
+      },
+      {
+        "file": "agent/dsh-computers-agent.mjs",
+        "line": 115,
+        "text": "const AGENT_CAPABILITIES = ['exec', 'fs']"
+      },
+      {
+        "file": "agent/dsh-computers-agent.mjs",
+        "line": 251,
+        "text": "* metadata (`version: 1`), alongside the legacy `capabilities: ['exec','fs']`"
+      },
+      {
+        "file": "agent/dsh-computers-agent.mjs",
+        "line": 613,
+        "text": "fs.mkdirSync(home, { recursive: true, mode: 0o700 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 40,
+        "text": "export const inject = ['tools', 'webServer']"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 1309,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 1385,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 1516,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 1547,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "agent/dsh-computers-agent.mjs",
+        "line": 30,
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "agent/dsh-computers-agent.mjs",
+        "line": 1169,
+        "text": "spawn('taskkill', ['/pid', String(child.pid), '/t', '/f'], { stdio: 'ignore', windowsHide: true }).unref()"
+      },
+      {
+        "file": "agent/dsh-computers-agent.mjs",
+        "line": 1193,
+        "text": "child = spawn(spec.command, spec.args, {"
+      },
+      {
+        "file": "agent/dsh-computers-agent.mjs",
+        "line": 2916,
+        "text": "execFile(file, args, { timeout, encoding: 'utf8', windowsHide: true }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "agent/dsh-computers-agent.mjs",
+        "line": 3272,
+        "text": "const child = spawn(process.execPath, [SELF_PATH, 'run'], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

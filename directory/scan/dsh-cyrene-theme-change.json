@@ -1,0 +1,119 @@
+{
+  "name": "dsh-cyrene-theme-change",
+  "version": "0.11.5",
+  "scannedAt": "2026-11-12T21:20:50.048Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1398,
+        "text": "const response = await fetch(endpoint(), method === \"POST\""
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1555,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1581,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1708,
+        "text": "const response = await fetch(new URL(REPORT_PATH, document.baseURI).href, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1749,
+        "text": "const response = await fetch(new URL(STICKERS_PATH, document.baseURI).href, { method: \"GET\" });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/ledger.js",
+        "line": 26,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/host/ledger.js",
+        "line": 135,
+        "text": "const text = await readFile(path, 'utf8')"
+      },
+      {
+        "file": "lib/host/ledger.js",
+        "line": 149,
+        "text": "await mkdir(dirname(target), { recursive: true })"
+      },
+      {
+        "file": "lib/host/ledger.js",
+        "line": 150,
+        "text": "await writeFile(temp, `${JSON.stringify(book, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 29,
+        "text": "import { readFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2206,
+        "text": "const dispose = tools.register({ ...definition, output: textOutput })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2940,
+        "text": "const dispose = tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 28,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 928,
+        "text": "spawn('explorer.exe', ['/select,', target], { detached: true, stdio: 'ignore' }).unref()"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 932,
+        "text": "spawn('open', ['-R', target], { detached: true, stdio: 'ignore' }).unref()"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 935,
+        "text": "spawn('xdg-open', [dirname(target)], { detached: true, stdio: 'ignore' }).unref()"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

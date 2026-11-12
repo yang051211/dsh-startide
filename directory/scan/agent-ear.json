@@ -1,0 +1,103 @@
+{
+  "name": "agent-ear",
+  "version": "0.2.10",
+  "scannedAt": "2026-11-12T21:20:49.533Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "install.ps1",
+        "line": 39,
+        "text": "& $curl -L --fail --noproxy \"*\" --connect-timeout 20 --max-time 900 --retry 2 --retry-delay 2 -o $dest $url"
+      },
+      {
+        "file": "install.ps1",
+        "line": 42,
+        "text": "& $curl -L --fail --connect-timeout 20 --max-time 900 --retry 2 -o $dest $url"
+      },
+      {
+        "file": "install.ps1",
+        "line": 45,
+        "text": "Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile $dest -TimeoutSec 900"
+      },
+      {
+        "file": "install.ps1",
+        "line": 161,
+        "text": "Invoke-Expression (Invoke-RestMethod \"https://astral.sh/uv/install.ps1\")"
+      },
+      {
+        "file": "install.sh",
+        "line": 22,
+        "text": "curl -LsSf https://astral.sh/uv/install.sh | sh || true"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/cli.js",
+        "line": 11,
+        "text": "import { existsSync } from \"node:fs\";"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 10,
+        "text": "import { readFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 60,
+        "text": "const markdown = await readFile(SKILL_BODY_URL, \"utf8\");"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 87,
+        "text": "content: await readFile(SKILL_BODY_URL, \"utf8\"),"
+      },
+      {
+        "file": "dsh/selfcheck.mjs",
+        "line": 10,
+        "text": "import { readFile } from \"node:fs/promises\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/cli.js",
+        "line": 10,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "dsh/cli.js",
+        "line": 49,
+        "text": "const p = spawn(cmd, argv, { stdio: \"inherit\", ...opts });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 227,
+      "text": "uv pip install --python .venv/bin/python -e \".[dev,local]\""
+    }
+  ],
+  "skippedEntries": []
+}

@@ -1,0 +1,90 @@
+{
+  "name": "dsh-plain-talk",
+  "version": "0.1.10",
+  "scannedAt": "2026-11-12T21:20:20.616Z",
+  "icon": "dsh-plain-talk.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 31,
+        "text": "return fetch(ROUTE_STATE + '?sessionId=' + encodeURIComponent(sessionId), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 38,
+        "text": "return fetch(ROUTE_STATE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/index.js",
+        "line": 19,
+        "text": "import { readFileSync, mkdirSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 79,
+        "text": "const parsed = JSON.parse(readFileSync(statePath(), 'utf8'))"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 100,
+        "text": "mkdirSync(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 102,
+        "text": "writeFileSync(tmp, `${JSON.stringify(value, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "dsh/vocab.js",
+        "line": 20,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/index.js",
+        "line": 44,
+        "text": "export const inject = ['systemPrompt', 'tools']"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 309,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 370,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

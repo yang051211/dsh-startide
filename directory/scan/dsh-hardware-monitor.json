@@ -1,0 +1,96 @@
+{
+  "name": "dsh-hardware-monitor",
+  "version": "2.0.0",
+  "scannedAt": "2026-11-12T21:20:32.427Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 67,
+        "text": "const response = await fetch('/hardware-monitor-api/summary', { cache: 'no-store' });"
+      },
+      {
+        "file": "client.js",
+        "line": 276,
+        "text": "fetch('/hardware-monitor-api/summary', { cache: 'no-store' }),"
+      },
+      {
+        "file": "client.js",
+        "line": 277,
+        "text": "fetch('/hardware-monitor-api/processes', { cache: 'no-store' }).catch(() => null),"
+      },
+      {
+        "file": "inject.js",
+        "line": 55,
+        "text": "fetch(url, { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 24,
+        "text": "import { request } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "import { appendFileSync, existsSync, mkdirSync, openSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 41,
+        "text": "appendFileSync(join(PLUGIN_DIR, 'apply.log'),"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 156,
+        "text": "mkdirSync(tempDir, { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 159,
+        "text": "try { mkdirSync(tempDir, { recursive: true }) } catch { tempDir = process.env.TEMP || '' }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 366,
+        "text": "const dispose = toolCtx.tools.register(statusTool())"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 21,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 162,
+        "text": "const child = spawn(python, ['-m', 'hardware_monitor'], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

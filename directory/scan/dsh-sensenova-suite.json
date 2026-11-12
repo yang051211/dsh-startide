@@ -1,0 +1,110 @@
+{
+  "name": "dsh-sensenova-suite",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-12T21:20:36.748Z",
+  "icon": "dsh-sensenova-suite.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 495,
+        "text": "response = await fetch(path, {"
+      },
+      {
+        "file": "client.js",
+        "line": 2870,
+        "text": "const response = await fetch(route.path, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 401,
+        "text": "const response = await fetch(jwksEndpoint, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 952,
+        "text": "return fetch(url, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1188,
+        "text": "const response = await fetch(cfg.tokenEndpoint, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { mkdir, readFile, readdir, rename, rm, stat, unlink, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "import { promises } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2255,
+        "text": "await mkdir(dir, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2306,
+        "text": "if (Date.now() - st.mtimeMs > TEMP_RECLAIM_MIN_AGE_MS) await unlink(join(dir, name));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2352,
+        "text": "await writeFile(temporary, `${payload}\\n`, {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1490,
+        "text": "* `tools` 是 DSH 的工具注册表（上游 image 插件同款 inject + ctx.tools.register；"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1492,
+        "text": "const inject = [\"webServer\", \"tools\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 8401,
+        "text": "const tools = ctx.tools ?? null;"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 8403,
+        "text": "ctx.logger?.warn?.(`${name}: ctx.tools 未注入（inject 缺 \"tools\"），出图工具未注册`);"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 23,
+        "text": "* index.ts 直接注册 ctx.tools——无 defineTool 包装（上游 lib/index.js 同为裸对象"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

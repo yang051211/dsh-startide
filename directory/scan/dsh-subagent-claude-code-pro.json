@@ -1,7 +1,7 @@
 {
   "name": "dsh-subagent-claude-code-pro",
-  "version": "0.3.1",
-  "scannedAt": "2026-11-07T23:17:14.763Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-12T21:20:38.565Z",
   "icon": "dsh-subagent-claude-code-pro.svg",
   "network": {
     "hit": false,
@@ -51,29 +51,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/run.js",
-        "line": 13,
+        "file": "lib/machine-supervision.js",
+        "line": 2,
+        "text": "import { fork } from 'node:child_process'"
+      },
+      {
+        "file": "lib/run-local.js",
+        "line": 7,
         "text": "import { spawn } from 'node:child_process'"
       },
       {
-        "file": "lib/run.js",
-        "line": 88,
-        "text": "/** @type {import('node:child_process').ChildProcessWithoutNullStreams} */"
+        "file": "lib/run-local.js",
+        "line": 61,
+        "text": "child = spawn(command, [...args], { cwd, env, stdio: ['pipe', 'pipe', 'pipe'], detached: true })"
       },
       {
         "file": "lib/run.js",
-        "line": 91,
-        "text": "child = spawn(command, [...args], {"
+        "line": 6,
+        "text": "import { fork } from 'node:child_process'"
       },
       {
         "file": "scripts/doctor.mjs",
         "line": 14,
         "text": "import { spawnSync } from 'node:child_process'"
-      },
-      {
-        "file": "scripts/doctor.mjs",
-        "line": 27,
-        "text": "const result = spawnSync(command, args, { encoding: 'utf8', timeout })"
       }
     ]
   },

@@ -1,0 +1,113 @@
+{
+  "name": "dsh-pisces",
+  "version": "0.2.9",
+  "scannedAt": "2026-11-12T21:20:22.758Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 89,
+        "text": "const res = await fetch(API + path, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 100,
+        "text": "const res = await fetch(API + path, {"
+      },
+      {
+        "file": "lib/console.js",
+        "line": 1771,
+        "text": "return fetch(API + path, { headers: { accept: 'application/json' } }).then(function (r) { return r.json() })"
+      },
+      {
+        "file": "lib/console.js",
+        "line": 1774,
+        "text": "return fetch(API + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 82,
+        "text": "const raw = readFileSync(file, 'utf8').replace(/^\\uFEFF/, '')"
+      },
+      {
+        "file": "index.js",
+        "line": 1645,
+        "text": "const raw = readFileSync(homeFile, 'utf8').replace(/^\\uFEFF/, '')"
+      },
+      {
+        "file": "index.js",
+        "line": 1656,
+        "text": "const raw = readFileSync(homeFile, 'utf8').replace(/^\\uFEFF/, '')"
+      },
+      {
+        "file": "lib/adopt.js",
+        "line": 7,
+        "text": "import fs from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 73,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 15,
+        "text": "// 缺哪个依赖就少注册哪个工具；只有 ctx.tools.register 不存在时 registerTools 才返回 ok:false。"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 938,
+        "text": "* 把工具注册到宿主。ctx.tools.register 不存在时返回 {ok:false}，不抛。"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 949,
+        "text": "register.call(ctx.tools, def)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/voice.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/voice.js",
+        "line": 136,
+        "text": "child = spawn(bin, args, { windowsHide: true, stdio: 'ignore', shell: false })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

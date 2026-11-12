@@ -1,7 +1,7 @@
 {
   "name": "@goodandready/dsh-approval-gate",
-  "version": "0.1.31",
-  "scannedAt": "2026-10-26T10:12:27.811Z",
+  "version": "0.1.32",
+  "scannedAt": "2026-11-12T21:20:46.367Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,23 +13,23 @@
       },
       {
         "file": "lib/client.js",
-        "line": 219,
-        "text": "fetch(\"/dsh-approval-gate/mode\")"
+        "line": 230,
+        "text": "fetch('/dsh-approval-gate/mode')"
       },
       {
         "file": "lib/client.js",
-        "line": 294,
-        "text": "const lrRes = await fetch(\"/dsh-approval-gate/learned-rules\");"
+        "line": 322,
+        "text": "const [lrRes, rRes] = await Promise.all([fetch('/dsh-approval-gate/learned-rules'), fetch('/dsh-approval-gate/rules')]);"
       },
       {
         "file": "lib/client.js",
-        "line": 299,
-        "text": "const rRes = await fetch(\"/dsh-approval-gate/rules\");"
+        "line": 339,
+        "text": "          const res = await fetch('/dsh-approval-gate/rules', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ whitelis"
       },
       {
         "file": "lib/client.js",
-        "line": 313,
-        "text": "await fetch(\"/dsh-approval-gate/learned-rules/revoke\", {"
+        "line": 359,
+        "text": "          const res = await fetch('/dsh-approval-gate/learned-rules/revoke', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.strin"
       }
     ]
   },
@@ -53,12 +53,12 @@
       },
       {
         "file": "lib/audit-log.js",
-        "line": 152,
+        "line": 151,
         "text": "fs.mkdirSync(dir, { recursive: true });"
       },
       {
         "file": "lib/audit-log.js",
-        "line": 155,
+        "line": 154,
         "text": "fs.appendFileSync(this.logPath, line, \"utf8\");"
       }
     ]
@@ -68,17 +68,17 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 39,
+        "line": 40,
         "text": "export const inject = [\"tools\"];"
       },
       {
         "file": "lib/index.js",
-        "line": 360,
+        "line": 354,
         "text": "bands: new BandsEngine({ toolRegistry: ctx && ctx.tools }),"
       },
       {
         "file": "lib/index.js",
-        "line": 559,
+        "line": 554,
         "text": "return ctx.tools.guard(guard);"
       }
     ]

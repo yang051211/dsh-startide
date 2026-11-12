@@ -1,21 +1,46 @@
 {
   "name": "dsh-atan-daily",
-  "version": "1.1.0",
-  "scannedAt": "2026-10-30T23:38:39.420Z",
+  "version": "1.2.1",
+  "scannedAt": "2026-11-12T21:20:46.545Z",
   "icon": "dsh-atan-daily.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 36,
+        "line": 46,
         "text": "const browserHttp = (path, init) => fetch(path, init);"
+      },
+      {
+        "file": "lib/host/account.js",
+        "line": 64,
+        "text": "const response = await fetch(`${session.origin}/auth-api/v0/users/current`, {"
+      },
+      {
+        "file": "lib/host/announcement.js",
+        "line": 29,
+        "text": "response = await fetch(`${baseUrl}/api/atan-daily/announcement/current`, {"
+      },
+      {
+        "file": "lib/host/task-hub.js",
+        "line": 249,
+        "text": "response = await fetch(`${baseUrl}/api/atan-daily/task/${action}`, {"
       }
     ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/core/documents.js",
+        "line": 11,
+        "text": "import { readFile, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/core/documents.js",
+        "line": 121,
+        "text": "return await readFile(path, 'utf8');"
+      },
       {
         "file": "lib/core/fs.js",
         "line": 10,
@@ -30,32 +55,74 @@
         "file": "lib/core/fs.js",
         "line": 20,
         "text": "await writeFile(temp, content, 'utf8');"
-      },
-      {
-        "file": "lib/core/fs.js",
-        "line": 28,
-        "text": "await rm(temp, { force: true }).catch(() => { });"
-      },
-      {
-        "file": "lib/core/fs.js",
-        "line": 50,
-        "text": "await rm(temp, { force: true }).catch(() => { });"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/plugin.js",
+        "line": 177,
+        "text": "const dispose = ctx.tools.register(definition);"
+      },
+      {
+        "file": "lib/host/tools/define.js",
+        "line": 4,
+        "text": "* 不依赖 `@deepseek-ai/dsh-tools` 的运行时导入：插件只拿到 `ctx.tools.register`，"
+      },
+      {
+        "file": "lib/host/tools/define.js",
+        "line": 15,
+        "text": "* @returns 可直接交给 `ctx.tools.register` 的定义。"
+      },
+      {
+        "file": "lib/host/tools/index.js",
+        "line": 151,
+        "text": "ctx.tools.register(toolTaskContext());"
+      },
+      {
+        "file": "lib/host/tools/index.js",
+        "line": 152,
+        "text": "ctx.tools.register(toolTaskManifest());"
+      }
+    ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/settings/suggest.js",
+        "line": 13,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/host/settings/suggest.js",
+        "line": 37,
+        "text": "execFile(command, [...args], { timeout: timeoutMs, windowsHide: true }, (error, stdout) => {"
+      },
+      {
+        "file": "lib/host/tools/index.js",
+        "line": 8,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/host/tools/index.js",
+        "line": 28,
+        "text": "const child = spawn(command, { cwd, shell: true, windowsHide: true });"
+      },
+      {
+        "file": "lib/report/custom.js",
+        "line": 11,
+        "text": "import { spawnSync } from 'node:child_process';"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
     "evidence": []
   },
-  "dependencies": 2,
+  "dependencies": 4,
   "minifiedFiles": [
     "lib/client.js"
   ],

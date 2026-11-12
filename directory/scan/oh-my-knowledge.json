@@ -1,35 +1,35 @@
 {
   "name": "oh-my-knowledge",
-  "version": "0.54.0",
-  "scannedAt": "2026-10-26T10:08:17.695Z",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-12T21:20:46.894Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "dist/cli/commands/init.js",
-        "line": 41,
-        "text": "\"context\": \"async function fetchData(url) {\\\\n  const res = await fetch(url);\\\\n  const data = await res.json();\\\\n  return data;\\\\n}\","
-      },
-      {
         "file": "dist/cli/lib/update-fetch-worker.js",
-        "line": 14,
-        "text": "const res = await fetch(`${registry.replace(/\\/$/, '')}/${name}/latest`, {"
+        "line": 15,
+        "text": "const res = await fetch(`${registry.replace(/\\/$/, '')}/${name}/${channel}`, {"
       },
       {
-        "file": "dist/executors/anthropic/api.js",
-        "line": 19,
-        "text": "const res = await fetch(`${baseUrl}/v1/messages`, {"
+        "file": "dist/cli/templates/init-samples.js",
+        "line": 29,
+        "text": "nd: 'text', text: \"审查以下代码\\n\\n```\\nasync function fetchData(url) {\\n  const res = await fetch(url);\\n  const data = await res.json();\\n  return data;\\n}\\n```\" },"
       },
       {
-        "file": "dist/executors/openai/api.js",
-        "line": 16,
-        "text": "const res = await fetch(`${baseUrl}/v1/chat/completions`, {"
+        "file": "dist/cli/templates/init-samples.js",
+        "line": 30,
+        "text": "reference: 'async function fetchData(url) {\\n  const res = await fetch(url);\\n  const data = await res.json();\\n  return data;\\n}',"
       },
       {
-        "file": "dist/inputs/url-fetcher.js",
-        "line": 102,
-        "text": "response = await fetch(url, {"
+        "file": "dist/cli/templates/init-samples.js",
+        "line": 136,
+        "text": "port async function getProfile(id) {\\n  for (;;) {\\n    try {\\n      return await fetch(`/profiles/${id}`).then(r => r.json());\\n    } catch {}\\n  }\\n}\\n```\" },"
+      },
+      {
+        "file": "dist/cli/templates/init-samples.js",
+        "line": 137,
+        "text": "ce: 'export async function getProfile(id) {\\n  for (;;) {\\n    try {\\n      return await fetch(`/profiles/${id}`).then(r => r.json());\\n    } catch {}\\n  }\\n}',"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "dist/analysis/coverage-analyzer.js",
-        "line": 6,
-        "text": "import { existsSync, readdirSync, readFileSync, realpathSync, statSync, } from 'node:fs';"
-      },
-      {
-        "file": "dist/analysis/coverage-analyzer.js",
-        "line": 87,
-        "text": "lineCount = readFileSync(fullPath, 'utf-8').split('\\n').length;"
-      },
-      {
-        "file": "dist/analysis/coverage-analyzer.js",
-        "line": 129,
-        "text": "lineCount = readFileSync(instructionPath, 'utf-8').split('\\n').length;"
-      },
-      {
-        "file": "dist/analysis/coverage-analyzer.js",
-        "line": 165,
-        "text": "lineCount = readFileSync(fullPath, 'utf-8').split('\\n').length;"
-      },
-      {
-        "file": "dist/artifact-graph/doctor.js",
+        "file": "dist/cli/commands/agents.js",
         "line": 2,
-        "text": "import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync, unlinkSync } from 'node:fs';"
+        "text": "import { existsSync, lstatSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/cli/commands/eval/index.js",
+        "line": 1,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/cli/commands/eval/task.js",
+        "line": 2,
+        "text": "import { mkdtemp, rm } from 'node:fs/promises';"
+      },
+      {
+        "file": "dist/cli/commands/eval/task.js",
+        "line": 39,
+        "text": "await rm(temporaryRoot, { recursive: true, force: true });"
+      },
+      {
+        "file": "dist/cli/commands/init.js",
+        "line": 173,
+        "text": "const { existsSync } = await import('node:fs');"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "dist/dsh-plugin/host-executor.js",
-        "line": 126,
+        "line": 124,
         "text": "const toolSchemas = ctx.tools?.schemas(options.parentAgent)"
       },
       {
@@ -82,29 +82,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "dist/cli/commands/eval/index.js",
-        "line": 316,
-        "text": "const { execFile: execFileCb } = await import('node:child_process');"
-      },
-      {
-        "file": "dist/cli/commands/promote.js",
-        "line": 1,
-        "text": "import { execFileSync } from 'node:child_process';"
-      },
-      {
-        "file": "dist/cli/commands/rollback.js",
-        "line": 1,
-        "text": "import { execFileSync } from 'node:child_process';"
+        "file": "dist/cli/commands/studio.js",
+        "line": 27,
+        "text": "const { spawn } = await import('node:child_process');"
       },
       {
         "file": "dist/cli/commands/studio.js",
+        "line": 66,
+        "text": "const child = spawn(process.execPath, childArgs, {"
+      },
+      {
+        "file": "dist/cli/lib/open-workbench.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "dist/cli/lib/open-workbench.js",
         "line": 11,
-        "text": "const { execFile } = await import('node:child_process');"
+        "text": "execFile(command, args, (error) => {"
       },
       {
-        "file": "dist/cli/commands/studio.js",
-        "line": 21,
-        "text": "execFile(command, args, (err) => {"
+        "file": "dist/cli/lib/update-check.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
       }
     ]
   },
@@ -118,30 +118,109 @@
       }
     ]
   },
-  "dependencies": 10,
-  "minifiedFiles": [],
+  "dependencies": 15,
+  "minifiedFiles": [
+    "dist/studio/web/.next/server/app/_global-error/page_client-reference-manifest.js",
+    "dist/studio/web/.next/server/app/_not-found/page_client-reference-manifest.js",
+    "dist/studio/web/.next/server/app/_not-found/page.js",
+    "dist/studio/web/.next/server/app/agents/page_client-reference-manifest.js",
+    "dist/studio/web/.next/server/app/agents/page.js",
+    "dist/studio/web/.next/server/app/knowledge/candidates/page_client-reference-manifest.js",
+    "dist/studio/web/.next/server/app/knowledge/candidates/page.js",
+    "dist/studio/web/.next/server/app/knowledge/entities/page_client-reference-manifest.js",
+    "dist/studio/web/.next/server/app/knowledge/entities/page.js",
+    "dist/studio/web/.next/server/app/knowledge/library/page_client-reference-manifest.js",
+    "dist/studio/web/.next/server/app/knowledge/library/page.js",
+    "dist/studio/web/.next/server/app/knowledge/page_client-reference-manifest.js",
+    "dist/studio/web/.next/server/app/knowledge/skills/[skillName]/page_client-reference-manifest.js",
+    "dist/studio/web/.next/server/app/measure/[runId]/page_client-reference-manifest.js",
+    "dist/studio/web/.next/server/app/measure/page_client-reference-manifest.js",
+    "dist/studio/web/.next/server/app/observe/conversations/[threadId]/page_client-reference-manifest.js",
+    "dist/studio/web/.next/server/app/observe/conversations/[threadId]/tasks/[turnId]/page_client-reference-manifest.js",
+    "dist/studio/web/.next/server/app/observe/health-diff/page_client-reference-manifest.js",
+    "dist/studio/web/.next/server/app/observe/health/[analysisId]/page_client-reference-manifest.js",
+    "dist/studio/web/.next/server/app/observe/health/page_client-reference-manifest.js",
+    "dist/studio/web/.next/server/app/observe/inbox/page_client-reference-manifest.js",
+    "dist/studio/web/.next/server/app/observe/inbox/page.js",
+    "dist/studio/web/.next/server/app/observe/page_client-reference-manifest.js",
+    "dist/studio/web/.next/server/app/observe/skill-trend/[skillName]/page_client-reference-manifest.js",
+    "dist/studio/web/.next/server/app/studio-fault/page_client-reference-manifest.js",
+    "dist/studio/web/.next/server/app/studio-fault/page.js",
+    "dist/studio/web/.next/server/chunks/158.js",
+    "dist/studio/web/.next/server/chunks/173.js",
+    "dist/studio/web/.next/server/chunks/197.js",
+    "dist/studio/web/.next/server/chunks/241.js",
+    "dist/studio/web/.next/server/chunks/276.js",
+    "dist/studio/web/.next/server/chunks/278.js",
+    "dist/studio/web/.next/server/chunks/285.js",
+    "dist/studio/web/.next/server/chunks/3.js",
+    "dist/studio/web/.next/server/chunks/464.js",
+    "dist/studio/web/.next/server/chunks/475.js",
+    "dist/studio/web/.next/server/chunks/499.js",
+    "dist/studio/web/.next/server/chunks/5.js",
+    "dist/studio/web/.next/server/chunks/520.js",
+    "dist/studio/web/.next/server/chunks/644.js",
+    "dist/studio/web/.next/server/chunks/647.js",
+    "dist/studio/web/.next/server/chunks/704.js",
+    "dist/studio/web/.next/server/chunks/757.js",
+    "dist/studio/web/.next/server/chunks/758.js",
+    "dist/studio/web/.next/server/chunks/772.js",
+    "dist/studio/web/.next/server/chunks/777.js",
+    "dist/studio/web/.next/server/chunks/78.js",
+    "dist/studio/web/.next/server/chunks/845.js",
+    "dist/studio/web/.next/server/chunks/907.js",
+    "dist/studio/web/.next/server/chunks/952.js",
+    "dist/studio/web/.next/server/chunks/996.js",
+    "dist/studio/web/.next/static/chunks/0937d497-cb7a9ff884a082ab.js",
+    "dist/studio/web/.next/static/chunks/1046-d6406775bf6e4e56.js",
+    "dist/studio/web/.next/static/chunks/130-893cf722c2625b17.js",
+    "dist/studio/web/.next/static/chunks/1492-bad4ed42c0e250f4.js",
+    "dist/studio/web/.next/static/chunks/1858-c1e4347ec29d9975.js",
+    "dist/studio/web/.next/static/chunks/2038-6693f44ecf63822c.js",
+    "dist/studio/web/.next/static/chunks/2192-3018e652a8614c1a.js",
+    "dist/studio/web/.next/static/chunks/2519-4e2ef8a5f4329f8f.js",
+    "dist/studio/web/.next/static/chunks/2974-4e69b5f46cfb7dcf.js",
+    "dist/studio/web/.next/static/chunks/3596-edc23b1335d9e066.js",
+    "dist/studio/web/.next/static/chunks/3958-a0c0cdf3f949cce5.js",
+    "dist/studio/web/.next/static/chunks/3978-7aa1fe441f992fbc.js",
+    "dist/studio/web/.next/static/chunks/4994-f4341c8b63e0b273.js",
+    "dist/studio/web/.next/static/chunks/5014-5f3f743dbdca752b.js",
+    "dist/studio/web/.next/static/chunks/5382-1b919cde624bb761.js",
+    "dist/studio/web/.next/static/chunks/5669-9c97987efcbb436b.js",
+    "dist/studio/web/.next/static/chunks/5686-ca88fb679f990180.js",
+    "dist/studio/web/.next/static/chunks/5810-175f6442bf41f93f.js",
+    "dist/studio/web/.next/static/chunks/5834-a15c5aca742e8dfe.js",
+    "dist/studio/web/.next/static/chunks/5888-7fcdb8113bad0a83.js",
+    "dist/studio/web/.next/static/chunks/6238-d5503cb2b71c7dac.js",
+    "dist/studio/web/.next/static/chunks/6722-e64d7dff19ba05f4.js",
+    "dist/studio/web/.next/static/chunks/7754-35adc2934225f819.js",
+    "dist/studio/web/.next/static/chunks/7936-e4a0d3ac28eb54cc.js",
+    "dist/studio/web/.next/static/chunks/7956-5d0381b62a26fe4d.js",
+    "dist/studio/web/.next/static/chunks/8093-42784c8dd11cb2f7.js",
+    "dist/studio/web/.next/static/chunks/8284-7f5a979f042ab2fa.js",
+    "dist/studio/web/.next/static/chunks/8791-c05283fd8a8fdb82.js",
+    "dist/studio/web/.next/static/chunks/9688-4bdad39f3387b49a.js",
+    "dist/studio/web/.next/static/chunks/9978-5c07c696f9455dda.js",
+    "dist/studio/web/.next/static/chunks/app/agents/page-d4eaa6a8179b7b19.js",
+    "dist/studio/web/.next/static/chunks/app/knowledge/library/page-94bff0d5847f1372.js",
+    "dist/studio/web/.next/static/chunks/app/layout-238de1f5bd3b0186.js",
+    "dist/studio/web/.next/static/chunks/app/observe/inbox/page-1aeba2d85fcdb064.js",
+    "dist/studio/web/.next/static/chunks/framework-c65554ff3488f9ae.js",
+    "dist/studio/web/.next/static/chunks/main-6fb9fe9da7afc450.js",
+    "dist/studio/web/.next/static/chunks/polyfills-42372ed130431b0a.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [],
   "setupHints": [
     {
       "file": "README.md",
-      "line": 41,
-      "text": "npm i -g oh-my-knowledge"
-    },
-    {
-      "file": "README.md",
-      "line": 230,
-      "text": "- Codex: install and authenticate the Codex CLI (`npm i -g @openai/codex`); Codex tasks in the ChatGPT desktop app select it automatically"
-    },
-    {
-      "file": "README.zh.md",
-      "line": 41,
+      "line": 20,
       "text": "npm i -g oh-my-knowledge"
     },
     {
       "file": "README.zh.md",
-      "line": 230,
-      "text": "- Codex：安装并登录 Codex CLI（`npm i -g @openai/codex`）；ChatGPT desktop 的 Codex 任务会自动选择它"
+      "line": 20,
+      "text": "npm i -g oh-my-knowledge"
     }
   ],
   "skippedEntries": []

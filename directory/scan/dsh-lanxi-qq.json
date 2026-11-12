@@ -1,0 +1,124 @@
+{
+  "name": "dsh-lanxi-qq",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-12T21:20:33.463Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge.js",
+        "line": 265,
+        "text": "const response = await fetch(endpoint, {"
+      },
+      {
+        "file": "lib/connection.js",
+        "line": 557,
+        "text": "socket = new WebSocket(url, { headers, handshakeTimeout: 10_000, maxPayload: MAX_FRAME_BYTES });"
+      },
+      {
+        "file": "lib/media.js",
+        "line": 208,
+        "text": "const response = await fetch(current, { redirect: 'manual', signal: AbortSignal.timeout(Math.max(0, deadline - Date.now())) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge.js",
+        "line": 11,
+        "text": "import { appendFile, mkdir, readFile, realpath } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 191,
+        "text": "await mkdir(dirname(stateFile), { recursive: true });"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 192,
+        "text": "await appendFile(stateFile, JSON.stringify(record) + '\\n', 'utf8');"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 208,
+        "text": "text = await readFile(mediaDir + '/' + WATCHDOG_ALERT_CONFIG_FILE, 'utf8');"
+      },
+      {
+        "file": "lib/commands.js",
+        "line": 3,
+        "text": "import { readFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 57,
+        "text": "export const inject = ['tools', 'systemPrompt', 'agents', 'sessions', 'agentDefaultModel', 'agentPresets', 'sessionPersistence', 'workspaceRegistry', 'commands'"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 365,
+        "text": "disposers.push(ctx.tools.register(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/commands.js",
+        "line": 2,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/inbound.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/inbound.js",
+        "line": 875,
+        "text": "child = spawn(python, [script, '--file', path, '--out', outPath, '--tmpdir', workDir], {"
+      },
+      {
+        "file": "lib/stt.js",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/stt.js",
+        "line": 19,
+        "text": "const child = spawn(program, args, { stdio: ['ignore', 'pipe', 'pipe'] });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 4,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentDefaultModel",
+    "agentPresets",
+    "agents",
+    "commands",
+    "configEditor",
+    "llm",
+    "profileContext",
+    "sessionPersistence",
+    "sessions",
+    "systemPrompt",
+    "tools",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

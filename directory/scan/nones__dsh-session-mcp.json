@@ -1,0 +1,81 @@
+{
+  "name": "@nones/dsh-session-mcp",
+  "version": "1.4.0",
+  "scannedAt": "2026-11-12T21:20:27.194Z",
+  "icon": "nones__dsh-session-mcp.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.js",
+        "line": 319,
+        "text": "g.fetch(url, {"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 399,
+        "text": "g.fetch(CONFIG_URL, { headers: { accept: 'application/json' }, credentials: 'same-origin' })"
+      },
+      {
+        "file": "dist/server.js",
+        "line": 12,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "dist/server.js",
+        "line": 33,
+        "text": "* @returns an object exposing `fetch(Request)`."
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/config.js",
+        "line": 12,
+        "text": "import { chmodSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/config.js",
+        "line": 53,
+        "text": "const parsed = JSON.parse(readFileSync(stateFile(), 'utf8'));"
+      },
+      {
+        "file": "dist/config.js",
+        "line": 75,
+        "text": "mkdirSync(join(dshHome(), 'state'), { recursive: true });"
+      },
+      {
+        "file": "dist/config.js",
+        "line": 77,
+        "text": "writeFileSync(file, `${JSON.stringify(state, null, 2)}\\n`, { encoding: 'utf8', mode: 0o600 });"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 18,
+        "text": "import { readFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionController"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

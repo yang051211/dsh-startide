@@ -1,7 +1,7 @@
 {
   "name": "dsh-chrome-bridge",
-  "version": "1.16.3",
-  "scannedAt": "2026-11-08T07:28:14.621Z",
+  "version": "1.16.4",
+  "scannedAt": "2026-11-12T21:20:28.816Z",
   "icon": "dsh-chrome-bridge.svg",
   "network": {
     "hit": true,
@@ -58,7 +58,7 @@
       },
       {
         "file": "index.js",
-        "line": 1104,
+        "line": 1111,
         "text": "ctx.tools.register(tool)"
       }
     ]
@@ -69,11 +69,21 @@
       {
         "file": "setup.js",
         "line": 25,
-        "text": "import { execFileSync, spawn } from 'node:child_process'"
+        "text": "import { execFile, execFileSync, spawn } from 'node:child_process'"
       },
       {
         "file": "setup.js",
-        "line": 420,
+        "line": 286,
+        "text": "execFile('powershell.exe', ['-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-Command', script],"
+      },
+      {
+        "file": "setup.js",
+        "line": 303,
+        "text": "return new Promise((r) => execFile('taskkill', args, { windowsHide: true, timeout: 15000 }, (e) => r(!e)))"
+      },
+      {
+        "file": "setup.js",
+        "line": 636,
         "text": "spawn(bin, [url], { detached: true, stdio: 'ignore', windowsHide: false }).unref()"
       }
     ]

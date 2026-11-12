@@ -1,0 +1,97 @@
+{
+  "name": "dsh-qwenwork-connect",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-12T21:20:50.102Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/chat-shim.js",
+        "line": 24,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "lib/chat-shim.js",
+        "line": 89,
+        "text": "* 为什么需要它：`fetch()` 会等到**响应头**到达才 resolve。若上游接受了连接"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 614,
+        "text": "const response = await fetch(QWENWORK_STATUS_PATH, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 792,
+        "text": "const response = await fetch(QWENWORK_STATUS_PATH, {"
+      },
+      {
+        "file": "lib/endpoint.js",
+        "line": 25,
+        "text": "import http from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/auth.js",
+        "line": 21,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 165,
+        "text": "const raw = JSON.parse(fs.readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 171,
+        "text": "fs.writeFileSync(tmpFile, JSON.stringify(raw, null, 2), { mode: 0o600 });"
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 200,
+        "text": "fs.writeFileSync(tmp, payload, { mode: 0o600 });"
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 203,
+        "text": "try { fs.rmSync(tmp, { force: true }); } catch { /* ignore */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/dpapi.js",
+        "line": 15,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/dpapi.js",
+        "line": 224,
+        "text": "res = spawnSync("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

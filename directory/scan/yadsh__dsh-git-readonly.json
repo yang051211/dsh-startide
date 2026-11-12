@@ -1,7 +1,7 @@
 {
   "name": "@yadsh/dsh-git-readonly",
-  "version": "0.2.8",
-  "scannedAt": "2026-11-09T23:07:13.693Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-12T21:20:45.614Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -14,6 +14,11 @@
         "file": "lib/git/repo.js",
         "line": 9,
         "text": "import { realpath, stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/tools/source-selection.js",
+        "line": 1,
+        "text": "import { realpath } from \"node:fs/promises\";"
       }
     ]
   },
@@ -22,27 +27,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 32,
+        "line": 33,
         "text": "export const inject = [\"tools\"];"
       },
       {
         "file": "lib/index.js",
-        "line": 55,
+        "line": 71,
         "text": "ctx.tools.register(createGitContextTool(deps));"
       },
       {
         "file": "lib/index.js",
-        "line": 56,
+        "line": 72,
         "text": "ctx.tools.register(createGitHistoryTool(deps));"
       },
       {
         "file": "lib/index.js",
-        "line": 57,
+        "line": 73,
         "text": "ctx.tools.register(createGitShowTool(deps));"
       },
       {
         "file": "lib/index.js",
-        "line": 58,
+        "line": 74,
         "text": "ctx.tools.register(createGitBlameTool(deps));"
       }
     ]
@@ -66,7 +71,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
+  "dependencies": 2,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

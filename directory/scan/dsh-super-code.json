@@ -1,20 +1,35 @@
 {
   "name": "dsh-super-code",
-  "version": "0.3.11",
-  "scannedAt": "2026-11-06T20:48:45.866Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-12T21:20:28.704Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/connection/client.js",
-        "line": 14,
-        "text": "fetch: (input, init) => fetch(input, init?.method === 'DELETE'"
+        "file": "builtin/skills/oil-ui/scripts/curate-media.mjs",
+        "line": 138,
+        "text": "const res = await fetch(httpUrl(url), { headers: { ...headersFor(url), Accept: 'application/json' }, signal: AbortSignal.timeout(opts.timeout) });"
       },
       {
-        "file": "lib/connection/http.js",
-        "line": 2,
-        "text": "import { createServer } from 'node:http';"
+        "file": "builtin/skills/oil-ui/scripts/curate-media.mjs",
+        "line": 586,
+        "text": "const res = await fetch(httpUrl(url), { headers: headersFor(url), signal: AbortSignal.timeout(opts['download-timeout']) });"
+      },
+      {
+        "file": "builtin/skills/oil-ui/scripts/oiloil-image.mjs",
+        "line": 206,
+        "text": "response = await fetch(`${root}/v1/${endpoint}`, {"
+      },
+      {
+        "file": "builtin/skills/oil-ui/scripts/prep-image.mjs",
+        "line": 125,
+        "text": "ws = new WebSocket(url);"
+      },
+      {
+        "file": "builtin/skills/oil-ui/scripts/shoot.mjs",
+        "line": 5,
+        "text": "import { createServer } from \"node:http\";"
       }
     ]
   },
@@ -22,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/connection/directories.js",
-        "line": 2,
-        "text": "import { realpath, stat } from 'node:fs/promises';"
+        "file": "builtin/skills/oil-ui/scripts/chrome.mjs",
+        "line": 3,
+        "text": "import { existsSync, mkdtempSync, readFileSync, rmSync } from \"node:fs\";"
       },
       {
-        "file": "lib/connection/git.js",
+        "file": "builtin/skills/oil-ui/scripts/chrome.mjs",
+        "line": 63,
+        "text": "const remove = (maxRetries) => rmSync(profile, { recursive: true, force: true, maxRetries, retryDelay: 100 });"
+      },
+      {
+        "file": "builtin/skills/oil-ui/scripts/chrome.mjs",
+        "line": 86,
+        "text": "const [port, path] = readFileSync(portFile, \"utf8\").split(\"\\n\").map((line) => line.trim());"
+      },
+      {
+        "file": "builtin/skills/oil-ui/scripts/curate-media.mjs",
+        "line": 3,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "builtin/skills/oil-ui/scripts/curate-media.mjs",
         "line": 4,
-        "text": "import { constants } from 'node:fs';"
-      },
-      {
-        "file": "lib/connection/git.js",
-        "line": 5,
-        "text": "import { lstat, open, readlink, realpath } from 'node:fs/promises';"
-      },
-      {
-        "file": "lib/connection/service.js",
-        "line": 2,
-        "text": "import { realpath, stat } from 'node:fs/promises';"
-      },
-      {
-        "file": "lib/connection/store.js",
-        "line": 2,
-        "text": "import { chmod, mkdir, open, readFile, rename, unlink, lstat } from 'node:fs/promises';"
+        "text": "import { existsSync, realpathSync } from 'node:fs';"
       }
     ]
   },
@@ -53,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/dsh/super-code.js",
-        "line": 20,
+        "line": 21,
         "text": "export const inject = ['tools', 'systemPrompt', 'sessions', 'sessionProjections'];"
       },
       {
         "file": "lib/dsh/super-code.js",
-        "line": 141,
+        "line": 107,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/dsh/super-code.js",
-        "line": 153,
+        "line": 119,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/dsh/super-code.js",
-        "line": 303,
+        "line": 270,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/dsh/windows-shell.js",
-        "line": 67,
+        "line": 68,
         "text": "export const inject = ['tools', 'systemPrompt', 'shell'];"
       }
     ]
@@ -82,17 +97,43 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/connection/git.js",
-        "line": 1,
-        "text": "import { execFile } from 'node:child_process';"
+        "file": "builtin/skills/oil-ui/scripts/chrome.mjs",
+        "line": 2,
+        "text": "import { spawn, spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "builtin/skills/oil-ui/scripts/chrome.mjs",
+        "line": 26,
+        "text": "const r = spawnSync(process.platform === \"win32\" ? \"where.exe\" : \"which\", [name], { encoding: \"utf8\" });"
+      },
+      {
+        "file": "builtin/skills/oil-ui/scripts/chrome.mjs",
+        "line": 48,
+        "text": "const r = spawnSync(\"powershell.exe\", [\"-NoProfile\", \"-NonInteractive\", \"-Command\", script], { encoding: \"utf8\", timeout: 20000, windowsHide: true });"
+      },
+      {
+        "file": "builtin/skills/oil-ui/scripts/chrome.mjs",
+        "line": 51,
+        "text": "const r = spawnSync(\"ps\", [\"-axww\", \"-o\", \"pid=,command=\"], { encoding: \"utf8\", timeout: 10000 });"
+      },
+      {
+        "file": "builtin/skills/oil-ui/scripts/chrome.mjs",
+        "line": 81,
+        "text": "chrome = spawn(chromePath, [\"--headless=new\", \"--enable-unsafe-swiftshader\", \"--remote-debugging-port=0\", `--user-data-dir=${profile}`, \"--no-first-run\","
       }
     ]
   },
   "installScripts": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
   },
-  "dependencies": 3,
+  "dependencies": 4,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [],

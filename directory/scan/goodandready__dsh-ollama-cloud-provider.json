@@ -1,7 +1,7 @@
 {
   "name": "@goodandready/dsh-ollama-cloud-provider",
-  "version": "0.1.37",
-  "scannedAt": "2026-11-11T21:01:06.347Z",
+  "version": "0.1.38",
+  "scannedAt": "2026-11-12T21:20:15.459Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -12,23 +12,23 @@
         "text": "const response = await fetch(path, {"
       },
       {
-        "file": "lib/index.js",
-        "line": 3815,
+        "file": "lib/plugin-updater.js",
+        "line": 145,
         "text": "const response = await fetch(`${registry.replace(/\\/$/, \"\")}/${encodeURIComponent(packageName)}/latest`, { signal: AbortSignal.timeout(8e3) });"
       },
       {
-        "file": "lib/index.js",
-        "line": 4660,
+        "file": "lib/routes.js",
+        "line": 56,
         "text": "const response = await fetch(`${localOrigin}/api/version`, {"
       },
       {
-        "file": "lib/index.js",
-        "line": 4671,
+        "file": "lib/routes.js",
+        "line": 67,
         "text": "const anonymous = await fetch(`${localOrigin}/api/version`, {"
       },
       {
-        "file": "lib/index.js",
-        "line": 5902,
+        "file": "lib/web.js",
+        "line": 124,
         "text": "async fetch(request, signal) {"
       }
     ]
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 2,
-        "text": "import { existsSync, readFileSync, statSync, unlinkSync } from \"node:fs\";"
+        "file": "lib/adapter.js",
+        "line": 18,
+        "text": "import { readFileSync } from \"node:fs\";"
       },
       {
-        "file": "lib/index.js",
-        "line": 3,
-        "text": "import { appendFile, mkdir, readFile, readdir, rename, rm, stat, unlink, writeFile } from \"node:fs/promises\";"
+        "file": "lib/adapter.js",
+        "line": 19,
+        "text": "import { mkdir, rename, rm, writeFile } from \"node:fs/promises\";"
       },
       {
-        "file": "lib/index.js",
-        "line": 424,
-        "text": "const parsed = parse(JSON.parse(await readFile(catalogCachePath(), \"utf8\")));"
+        "file": "lib/adapter.js",
+        "line": 34,
+        "text": "await mkdir(dir, { recursive: true });"
       },
       {
-        "file": "lib/index.js",
-        "line": 446,
-        "text": "await mkdir(dirname(path), { recursive: true });"
+        "file": "lib/adapter.js",
+        "line": 37,
+        "text": "await writeFile(tmp, data, \"utf8\");"
       },
       {
-        "file": "lib/index.js",
-        "line": 447,
-        "text": "await writeFile(temp, `${JSON.stringify(payload)}\\n`, \"utf8\");"
+        "file": "lib/adapter.js",
+        "line": 40,
+        "text": "await rm(tmp, { force: true }).catch((err) => bestEffortFailed(\"atomicWriteFile:rm-tmp\", err));"
       }
     ]
   },
@@ -71,13 +71,13 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 10,
+        "file": "lib/plugin-updater.js",
+        "line": 6,
         "text": "import { spawn } from \"node:child_process\";"
       },
       {
-        "file": "lib/index.js",
-        "line": 3851,
+        "file": "lib/plugin-updater.js",
+        "line": 181,
         "text": "const child = spawn(process.execPath, ["
       }
     ]

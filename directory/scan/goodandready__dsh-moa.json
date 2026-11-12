@@ -1,35 +1,35 @@
 {
   "name": "@goodandready/dsh-moa",
-  "version": "0.2.88",
-  "scannedAt": "2026-11-10T20:53:40.614Z",
+  "version": "0.2.89",
+  "scannedAt": "2026-11-12T21:20:16.707Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 960,
-        "text": "fetch(\"/dsh-moa/history?limit=30\", { cache: \"no-store\" }).then((r) => r.json()).then((data) => {"
+        "line": 2910,
+        "text": "const res = await fetch(\"/api/dsh-moa/update\", { cache: \"no-store\" });"
       },
       {
         "file": "lib/client.js",
-        "line": 984,
-        "text": "fetch(\"/dsh-moa/diff?\" + params.toString(), { cache: \"no-store\" }).then((r) => {"
+        "line": 2932,
+        "text": "const res = await fetch(\"/api/dsh-moa/update\", {"
       },
       {
         "file": "lib/client.js",
-        "line": 1167,
-        "text": "fetch(\"/dsh-moa/history?limit=30\", { cache: \"no-store\" }).then((r) => r.json()).then((data) => {"
+        "line": 2980,
+        "text": "fetch(\"/dsh-moa/status\", { cache: \"no-store\" }).then((r) => r.json()).then((data) => {"
       },
       {
         "file": "lib/client.js",
-        "line": 1185,
-        "text": "fetch(\"/dsh-moa/runs/\" + encodeURIComponent(selectedRunId) + \"/workbench\", { cache: \"no-store\" }).then(async (r) => {"
+        "line": 2990,
+        "text": "fetch(lbUrl, { cache: \"no-store\" }).then((r) => r.json()).then((data) => {"
       },
       {
         "file": "lib/client.js",
-        "line": 1223,
-        "text": "fetch(\"/dsh-moa/runs/\" + encodeURIComponent(selectedRunId) + \"/workbench/assemble\", {"
+        "line": 2997,
+        "text": "fetch(\"/dsh-moa/history?limit=100\", { cache: \"no-store\" }).then((r) => r.json()).then((data) => {"
       }
     ]
   },
@@ -38,27 +38,27 @@
     "evidence": [
       {
         "file": "lib/history.js",
-        "line": 9,
+        "line": 10,
         "text": "import fs from 'node:fs'"
       },
       {
         "file": "lib/history.js",
-        "line": 74,
+        "line": 75,
         "text": "try { fs.unlinkSync(backupPath) } catch { /* backup unlink best-effort */ }"
       },
       {
         "file": "lib/history.js",
-        "line": 144,
-        "text": "await fs.promises.mkdir(dir, { recursive: true }).catch(() => {})"
+        "line": 145,
+        "text": "await bestEffort('ensure history directory', () => fs.promises.mkdir(dir, { recursive: true }), logger)"
       },
       {
         "file": "lib/history.js",
-        "line": 150,
+        "line": 151,
         "text": "await fs.promises.appendFile(filePath, line, 'utf8')"
       },
       {
         "file": "lib/history.js",
-        "line": 281,
+        "line": 282,
         "text": "const raw = fs.readFileSync(filePath, 'utf8')"
       }
     ]

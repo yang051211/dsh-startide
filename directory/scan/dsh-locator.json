@@ -1,20 +1,20 @@
 {
   "name": "dsh-locator",
-  "version": "0.8.2",
-  "scannedAt": "2026-11-12T08:43:10.500Z",
+  "version": "0.10.1",
+  "scannedAt": "2026-11-12T21:20:18.805Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 141,
+        "line": 172,
         "text": "const response = await fetch(path, {"
       },
       {
         "file": "src/http.ts",
-        "line": 16,
-        "text": "import type { IncomingMessage, ServerResponse } from 'node:http'"
+        "line": 26,
+        "text": "import type { IncomingHttpHeaders, IncomingMessage, ServerResponse } from 'node:http'"
       }
     ]
   },
@@ -24,7 +24,7 @@
       {
         "file": "lib/content.js",
         "line": 18,
-        "text": "import { chmodSync, closeSync, existsSync, mkdirSync, openSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';"
+        "text": "import { chmodSync, closeSync, existsSync, mkdirSync, openSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs';"
       },
       {
         "file": "lib/content.js",
@@ -33,17 +33,17 @@
       },
       {
         "file": "lib/content.js",
-        "line": 139,
+        "line": 142,
         "text": "mkdirSync(this.options.stateDir, { recursive: true, mode: 0o700 });"
       },
       {
         "file": "lib/content.js",
-        "line": 144,
+        "line": 147,
         "text": "writeFileSync(fd, JSON.stringify({ pid: process.pid, startedAt: Date.now(), token: this.lockToken, procStart: PROCESS_START }));"
       },
       {
         "file": "lib/content.js",
-        "line": 152,
+        "line": 155,
         "text": "holder = JSON.parse(readFileSync(path, 'utf8'));"
       }
     ]
@@ -83,12 +83,12 @@
     "evidence": [
       {
         "file": "lib/reveal.js",
-        "line": 5,
+        "line": 14,
         "text": "import { spawn } from 'node:child_process';"
       },
       {
         "file": "lib/reveal.js",
-        "line": 44,
+        "line": 173,
         "text": "const child = spawn(command, args, { detached: true, stdio: 'ignore', windowsHide: true });"
       },
       {

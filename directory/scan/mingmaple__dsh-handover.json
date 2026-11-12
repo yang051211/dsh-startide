@@ -1,0 +1,136 @@
+{
+  "name": "@mingmaple/dsh-handover",
+  "version": "0.9.22",
+  "scannedAt": "2026-11-12T21:20:35.454Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/blank-smoke.mjs",
+        "line": 113,
+        "text": "const res = await carrier.fetch(req);"
+      },
+      {
+        "file": "scripts/blank-smoke.mjs",
+        "line": 124,
+        "text": "const rpcBadEnv = await carrier.fetch(new Request('http://127.0.0.1/api/dsh-handover', { method: 'POST', headers: { 'content-type': 'application/json' }, body: "
+      },
+      {
+        "file": "scripts/blank-smoke.mjs",
+        "line": 127,
+        "text": "const rpcGet = await carrier.fetch(new Request('http://127.0.0.1/api/dsh-handover', { method: 'GET' }));"
+      },
+      {
+        "file": "src/client.js",
+        "line": 72,
+        "text": "return await fetch(url, Object.assign({ signal: ac.signal }, opts || {}));"
+      },
+      {
+        "file": "src/lib/rpc-carrier.mjs",
+        "line": 28,
+        "text": "async fetch(request) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/blank-dsh.mjs",
+        "line": 7,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "scripts/blank-dsh.mjs",
+        "line": 28,
+        "text": "fs.mkdirSync(HOME, { recursive: true });"
+      },
+      {
+        "file": "scripts/blank-dsh.mjs",
+        "line": 29,
+        "text": "fs.mkdirSync(WORK, { recursive: true });"
+      },
+      {
+        "file": "scripts/blank-dsh.mjs",
+        "line": 143,
+        "text": "]) fs.rmSync(path.join(WS, rel), { force: true });"
+      },
+      {
+        "file": "scripts/blank-dsh.mjs",
+        "line": 158,
+        "text": "fs.writeFileSync(path.join(WS, '_Control_Center', 'rules', 'Workspace_Charter.md'), '# empty\\n', 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/blank-smoke.mjs",
+        "line": 816,
+        "text": "plugin: { name: '@mingmaple/dsh-handover', version: 'test', tools: 22, inject: ['tools', 'systemPrompt'], initErrors: [], scheduler: '就绪' },"
+      },
+      {
+        "file": "scripts/blank-smoke.mjs",
+        "line": 995,
+        "text": "plugin: { name: '@mingmaple/dsh-handover', version: 'test', tools: 22, inject: ['tools'], initErrors: [], scheduler: '就绪' },"
+      },
+      {
+        "file": "src/index.mjs",
+        "line": 51,
+        "text": "export const inject = ['tools', 'systemPrompt', 'sessionController'];"
+      },
+      {
+        "file": "src/index.mjs",
+        "line": 103,
+        "text": "const perStep = (() => { try { return !!(ctx.tools && typeof ctx.tools.resolve === 'function'); } catch { return false; } })();"
+      },
+      {
+        "file": "src/index.mjs",
+        "line": 531,
+        "text": "ctx.tools.register(tools[i], { when: visibleTo(tools[i].name) });"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/e2e-migration.mjs",
+        "line": 71,
+        "text": "const { execFileSync } = await import('node:child_process');"
+      },
+      {
+        "file": "src/lib/mover.mjs",
+        "line": 18,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/lib/mover.mjs",
+        "line": 257,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/lib/mover.mjs",
+        "line": 327,
+        "text": "      spawn(process.execPath, [RETARGET_HELPER, '0'], { detached: true, stdio: 'ignore', windowsHide: true, env: Object.assign({}, process.env, { ELECTRON_RUN_A"
+      },
+      {
+        "file": "src/lib/mover.mjs",
+        "line": 336,
+        "text": "spawn(EXE, [], { detached: true, stdio: 'ignore', env: Object.assign({}, process.env, { ELECTRON_RUN_AS_NODE: undefined }) }).unref();"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

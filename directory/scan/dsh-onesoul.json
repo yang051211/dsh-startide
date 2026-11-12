@@ -1,35 +1,35 @@
 {
   "name": "dsh-onesoul",
-  "version": "0.1.2",
-  "scannedAt": "2026-11-08T23:32:52.470Z",
+  "version": "0.2.6",
+  "scannedAt": "2026-11-12T21:20:46.748Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
+        "file": "plugins/anima/lib/index.js",
+        "line": 7,
+        "text": "import { createServer } from 'node:http'"
+      },
+      {
+        "file": "plugins/anima/lib/voice.js",
+        "line": 41,
+        "text": "const res = await fetch(url, { headers: { 'User-Agent': UA, Referer: 'https://fanyi.baidu.com/' } })"
+      },
+      {
+        "file": "plugins/anima/lib/xiaomi.js",
+        "line": 7,
+        "text": "import { request as httpsRequest } from 'node:https'"
+      },
+      {
         "file": "plugins/dashboard/lib/client.js",
-        "line": 102,
+        "line": 211,
         "text": "return readJson(await fetch(path, { headers: { Accept: 'application/json' } }))"
       },
       {
         "file": "plugins/dashboard/lib/client.js",
-        "line": 105,
+        "line": 214,
         "text": "return readJson(await fetch(path, {"
-      },
-      {
-        "file": "plugins/dashboard/lib/client.js",
-        "line": 115,
-        "text": "const res = await fetch(path, { headers: { Accept: 'application/json' } })"
-      },
-      {
-        "file": "plugins/dashboard/lib/client.js",
-        "line": 122,
-        "text": "const res = await fetch(path, {"
-      },
-      {
-        "file": "plugins/dashboard/lib/client.js",
-        "line": 145,
-        "text": "const res = await fetch(route, { headers: { Accept: 'application/json' } })"
       }
     ]
   },
@@ -52,14 +52,14 @@
         "text": "try { text = readFileSync(item.file, 'utf8') } catch (error) { text = '' }"
       },
       {
-        "file": "plugins/anima/lib/ledger.js",
-        "line": 1,
-        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync } from 'node:fs'"
+        "file": "plugins/anima/lib/index.js",
+        "line": 8,
+        "text": "import { appendFileSync, createReadStream, statSync, writeFileSync } from 'node:fs'"
       },
       {
-        "file": "plugins/anima/lib/ledger.js",
-        "line": 25,
-        "text": "return readFileSync(path, 'utf8').split('\\n').filter(Boolean).map(function (line) {"
+        "file": "plugins/anima/lib/index.js",
+        "line": 1123,
+        "text": "if (tooBig) writeFileSync(file, nowIso() + ' ---- 前面的太长了，这里开始重记 ----\\n')"
       }
     ]
   },
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "plugins/anima/lib/index.js",
-        "line": 42,
-        "text": "export const inject = ['tools', 'systemPrompt']"
+        "line": 53,
+        "text": "export const inject = ['tools', 'systemPrompt', 'agents', 'agentDefaultModel']"
       },
       {
         "file": "plugins/anima/lib/index.js",
-        "line": 233,
+        "line": 296,
         "text": "if (!toolService) { try { toolService = ctx.tools || null } catch (error) { toolService = null } }"
       }
     ]
@@ -81,6 +81,21 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "plugins/anima/lib/voice.js",
+        "line": 8,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "plugins/anima/lib/voice.js",
+        "line": 105,
+        "text": "const child = spawn('powershell', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', ps1, txt, wav], { windowsHide: true })"
+      },
+      {
+        "file": "plugins/anima/lib/voice.js",
+        "line": 180,
+        "text": "const child = spawn(bin, ['-nodisp', '-autoexit', '-loglevel', 'quiet', path], { windowsHide: true, stdio: 'ignore' })"
+      },
       {
         "file": "plugins/dashboard/lib/duty-cli.js",
         "line": 22,
@@ -90,21 +105,6 @@
         "file": "plugins/dashboard/lib/duty-cli.js",
         "line": 46,
         "text": "const r = spawnSync('cmd.exe', ['/c', 'where', cmd], { encoding: 'utf8', windowsHide: true, timeout: 20000 })"
-      },
-      {
-        "file": "plugins/dashboard/lib/duty-cli.js",
-        "line": 90,
-        "text": "const child = spawn(nodePath, [cliPath, ...process.argv.slice(2)], { stdio: ['ignore', 'pipe', 'pipe'], env, cwd: process.cwd(), windowsHide: true })"
-      },
-      {
-        "file": "plugins/dashboard/lib/index.js",
-        "line": 11,
-        "text": "import { spawn, spawnSync } from 'node:child_process'"
-      },
-      {
-        "file": "plugins/dashboard/lib/index.js",
-        "line": 246,
-        "text": "try { out = String(spawnSync('cmd.exe', ['/c', 'where', 'node'], { encoding: 'utf8', windowsHide: true, timeout: 20000 }).stdout || '') } catch (ignored) {}"
       }
     ]
   },

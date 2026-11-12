@@ -1,7 +1,7 @@
 {
   "name": "dsh-refresh-restart",
-  "version": "0.3.1",
-  "scannedAt": "2026-10-30T23:38:25.955Z",
+  "version": "0.3.3",
+  "scannedAt": "2026-11-12T21:20:43.063Z",
   "icon": "dsh-refresh-restart.svg",
   "network": {
     "hit": true,
@@ -28,17 +28,17 @@
     "evidence": [
       {
         "file": "lib/platform.js",
-        "line": 196,
+        "line": 262,
         "text": "const fs = require('node:fs')"
       },
       {
         "file": "lib/platform.js",
-        "line": 207,
+        "line": 273,
         "text": "fs.appendFileSync(plan.logPath, '[' + stamp() + '] refresh-restart: ' + message + '\\\\n')"
       },
       {
         "file": "lib/platform.js",
-        "line": 218,
+        "line": 284,
         "text": "fs.writeFileSync("
       },
       {
@@ -62,28 +62,28 @@
     "evidence": [
       {
         "file": "lib/platform.js",
-        "line": 195,
+        "line": 261,
         "text": "const { spawn, spawnSync } = require('node:child_process')"
       },
       {
         "file": "lib/platform.js",
-        "line": 249,
+        "line": 315,
         "text": "return spawnSync(command, args, { encoding: 'utf8', timeout: 20000, windowsHide: true, env: childEnv })"
       },
       {
         "file": "lib/platform.js",
-        "line": 386,
+        "line": 550,
         "text": "const child = spawn(plan.launch.path, [], {"
       },
       {
         "file": "lib/restart.js",
         "line": 27,
-        "text": "import { spawn } from 'node:child_process'"
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
       },
       {
         "file": "lib/restart.js",
-        "line": 220,
-        "text": "const child = spawn(execPath, [scriptPath], {"
+        "line": 111,
+        "text": "const result = spawnSync('ps', ['-Ao', 'pid=,ppid=,command='], {"
       }
     ]
   },

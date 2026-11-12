@@ -1,0 +1,49 @@
+{
+  "name": "dsh-system-proxy",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-12T21:20:36.917Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/proxy-policy.js",
+        "line": 6,
+        "text": "} from 'undici'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/system-proxy.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/system-proxy.js",
+        "line": 131,
+        "text": "execFile(options.powershell ?? 'powershell.exe', ['-NoLogo', '-NoProfile', '-NonInteractive', '-Command', script], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

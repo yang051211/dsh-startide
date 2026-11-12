@@ -1,35 +1,35 @@
 {
   "name": "@mingozhou/dsh-replay",
-  "version": "0.4.2",
-  "scannedAt": "2026-10-26T10:13:44.303Z",
-  "icon": "mingozhou__dsh-replay.png",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-12T21:20:41.233Z",
+  "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 6,
+        "line": 8,
         "text": "e=t}base;async fetchJson(t){let r=await fetch(`${this.base}${t}`);if(!r.ok)throw new Error(`replay api ${t}: HTTP ${r.status}`);return r.json()}async listSessio"
       },
       {
         "file": "lib/viewer.js",
-        "line": 11,
-        "text": " unavailable in this mode\");let t=await fetch(this.viewerUrl);if(!t.ok)throw new Error(`viewer bundle: HTTP ${t.status}`);return t.text()}async listSessions(){r"
+        "line": 13,
+        "text": "s.getViewerSource=async()=>{let a=await fetch(t);if(!a.ok)throw new Error(`viewer bundle: HTTP ${a.status}`);return a.text()},this}static fromParsed(t){let a=ne"
       },
       {
         "file": "src/client/api.ts",
-        "line": 64,
+        "line": 42,
         "text": "const response = await fetch(`${this.base}${path}`)"
       },
       {
         "file": "src/client/api.ts",
-        "line": 90,
+        "line": 75,
         "text": "const response = await fetch(`${this.base}/viewer.js`)"
       },
       {
         "file": "src/client/api.ts",
-        "line": 125,
-        "text": "const response = await fetch(this.viewerUrl)"
+        "line": 102,
+        "text": "const response = await fetch(url)"
       }
     ]
   },
@@ -43,18 +43,18 @@
       },
       {
         "file": "lib/index.js",
-        "line": 1066,
-        "text": "source = await readFile(new URL(\"./viewer.js\", import.meta.url), \"utf8\");"
+        "line": 1100,
+        "text": "const source = await readFile(new URL(\"./viewer.js\", import.meta.url), \"utf8\");"
       },
       {
         "file": "lib/viewer.js",
         "line": 8,
-        "text": "e(Pa,Pa.current):ne(Pa,t.pool)}function rm(){var e=xc();return e===null?null:{parent:Te._currentValue,pool:e}}var sl=Error(k(460)),Sc=Error(k(474)),Ys=Error(k(5"
+        "text": "]=t}catch(l){ve(e,e.return,l)}}function rm(e){return e.tag===5||e.tag===3||e.tag===26||e.tag===27&&pn(e.type)||e.tag===4}function Bo(e){e:for(;;){for(;e.sibling"
       },
       {
         "file": "scripts/build.mjs",
         "line": 11,
-        "text": "import { copyFile, mkdir, stat, writeFile } from 'node:fs/promises'"
+        "text": "import { copyFile, mkdir, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "scripts/build.mjs",

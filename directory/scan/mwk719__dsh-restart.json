@@ -1,0 +1,97 @@
+{
+  "name": "@mwk719/dsh-restart",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-12T21:20:34.937Z",
+  "icon": "mwk719__dsh-restart.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 85,
+        "text": "void fetch(`${HOST_BASE}/state?event=${encodeURIComponent(event)}`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 180,
+        "text": "const response = await fetch(`${HOST_BASE}/state`, { cache: 'no-store', credentials: 'same-origin' });"
+      },
+      {
+        "file": "client.js",
+        "line": 265,
+        "text": "const response = await fetch(`${HOST_BASE}/restart?force=1`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "import { appendFileSync, existsSync, mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 56,
+        "text": "mkdirSync(join(stateHome(), '.dsh'), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 61,
+        "text": "appendFileSync(LOG_PATH, `${new Date().toISOString()} ${text}\\n`)"
+      },
+      {
+        "file": "restart-child.mjs",
+        "line": 14,
+        "text": "import { appendFileSync, existsSync } from 'node:fs'"
+      },
+      {
+        "file": "restart-child.mjs",
+        "line": 28,
+        "text": "appendFileSync(logPath, `${new Date().toISOString()} helper: ${String(value).replace(/[\\r\\n]+/gu, ' ').slice(0, 2000)}\\n`)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 23,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 134,
+        "text": "const child = spawn(process.execPath, [HELPER_PATH, String(target.mainPid), String(target.hostPid), target.executable, LOG_PATH], {"
+      },
+      {
+        "file": "restart-child.mjs",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "restart-child.mjs",
+        "line": 55,
+        "text": "const child = spawn(executable, [], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

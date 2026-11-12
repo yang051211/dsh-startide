@@ -1,11 +1,16 @@
 {
   "name": "dsh-desktop-kit",
-  "version": "2.8.0",
-  "scannedAt": "2026-11-12T08:43:11.381Z",
+  "version": "2.23.2",
+  "scannedAt": "2026-11-12T21:20:23.804Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
+      {
+        "file": "integrations/vscode/extension.js",
+        "line": 11,
+        "text": "const response = await fetch(`${url}${path}`, { headers: token ? { authorization: `Bearer ${token}` } : {} });"
+      },
       {
         "file": "plugins/dsh-browser-qa/lib/cdp.js",
         "line": 27,
@@ -22,13 +27,8 @@
         "text": "const request = http.get("
       },
       {
-        "file": "plugins/dsh-mcp-manager/lib/client.js",
-        "line": 114,
-        "text": "const response = await fetch(this.config.url, {"
-      },
-      {
-        "file": "plugins/dsh-mcp-manager/lib/oauth.js",
-        "line": 11,
+        "file": "plugins/dsh-integrations/lib/bridge.js",
+        "line": 8,
         "text": "import http from \"node:http\";"
       }
     ]
@@ -43,7 +43,7 @@
       },
       {
         "file": "index.js",
-        "line": 46,
+        "line": 47,
         "text": "return JSON.parse(fs.readFileSync(path.join(here, \"package.json\"), \"utf8\")).version ?? \"unknown\";"
       },
       {
@@ -68,28 +68,28 @@
     "evidence": [
       {
         "file": "plugins/dsh-agent-extensions/index.js",
-        "line": 23,
+        "line": 28,
         "text": "export const inject = [\"tools\", \"systemPrompt\"];"
       },
       {
         "file": "plugins/dsh-agent-extensions/index.js",
-        "line": 192,
+        "line": 349,
         "text": "ctx.effect(() => ctx.tools.register(toolDefinition(ctx)), \"agent-extensions: project_agent tool\");"
       },
       {
         "file": "plugins/dsh-agent-extensions/index.js",
-        "line": 193,
+        "line": 350,
         "text": "ctx.effect(() => ctx.tools.register(worktreeToolDefinition()), \"agent-extensions: project_worktree tool\");"
       },
       {
-        "file": "plugins/dsh-browser-qa/index.js",
-        "line": 17,
-        "text": "export const inject = [\"tools\"];"
+        "file": "plugins/dsh-agent-extensions/index.js",
+        "line": 351,
+        "text": "ctx.effect(() => ctx.tools.register(boardToolDefinition()), \"agent-extensions: team_board tool\");"
       },
       {
-        "file": "plugins/dsh-browser-qa/index.js",
-        "line": 152,
-        "text": "const register = () => ctx.tools.register(tool);"
+        "file": "plugins/dsh-agent-extensions/index.js",
+        "line": 352,
+        "text": "ctx.effect(() => ctx.tools.register(teamMessageToolDefinition()), \"agent-extensions: team_message tool\");"
       }
     ]
   },

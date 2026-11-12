@@ -1,0 +1,95 @@
+{
+  "name": "dsh-plugin-exe",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-12T21:20:31.854Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 516,
+        "text": "const response = await fetch(STATE_URL, { cache: \"no-store\", headers: { accept: \"application/json\" } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 531,
+        "text": "const response = await fetch(EDIT_URL, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 557,
+        "text": "const response = await fetch(PING_URL, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 8,
+        "text": "import { existsSync, readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4529,
+        "text": "text2 = readFileSync(path, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4974,
+        "text": "import { copyFileSync, existsSync as existsSync2, readFileSync as readFileSync2, renameSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4990,
+        "text": "writeFileSync(temporary, text2, { mode: 384 });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 5012,
+        "text": "writeFileSync(temporary, `${JSON.stringify({ trust: labels }, null, 2)}"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5273,
+        "text": "var inject = [\"tools\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 5325,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 5391,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 5450,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

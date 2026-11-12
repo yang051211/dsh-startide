@@ -1,0 +1,79 @@
+{
+  "name": "dsh-progress-target",
+  "version": "2.1.0",
+  "scannedAt": "2026-11-12T21:20:50.739Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 231,
+        "text": "var response = await fetch('/api/progress-target?sessionId=' + encodeURIComponent(sessionId), { cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { readFile, writeFile, mkdir, unlink } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 2,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 90,
+        "text": "const plan = JSON.parse(await readFile(path, 'utf-8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 102,
+        "text": "if (!existsSync(dir)) await mkdir(dir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 103,
+        "text": "await writeFile(path, JSON.stringify(plan, null, 2), { encoding: 'utf-8', flag: exclusive ? 'wx' : 'w' })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 5,
+        "text": "export const inject = ['webServer', 'tools', 'agents']"
+      },
+      {
+        "file": "index.js",
+        "line": 959,
+        "text": "ctx.effect(() => ctx.tools.register(toolDefinition), 'progress-target: tool')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

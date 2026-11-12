@@ -1,0 +1,90 @@
+{
+  "name": "dsh-voice-prompt-enhancer",
+  "version": "3.5.1",
+  "scannedAt": "2026-11-12T21:20:33.646Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.cjs",
+        "line": 15,
+        "text": "return fetch('/dsh-voice-prompt-enhancer/rpc', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/harness.cjs",
+        "line": 14,
+        "text": "const fs = require('node:fs');"
+      },
+      {
+        "file": "lib/harness.cjs",
+        "line": 47,
+        "text": "const rawPj = fs.readFileSync(pj, 'utf8').replace(/^\\uFEFF/, '');"
+      },
+      {
+        "file": "lib/index.cjs",
+        "line": 26,
+        "text": "const fs = require('node:fs');"
+      },
+      {
+        "file": "lib/index.cjs",
+        "line": 44,
+        "text": "const BODY = fs.readFileSync(path.join(__dirname, '..', 'plugin-host.js'), 'utf8');"
+      },
+      {
+        "file": "lib/integrity.cjs",
+        "line": 7,
+        "text": "const fs = require('node:fs');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/maintain-lib.cjs",
+        "line": 12,
+        "text": "const { spawnSync } = require('node:child_process');"
+      },
+      {
+        "file": "lib/maintain-lib.cjs",
+        "line": 36,
+        "text": "? spawnSync(process.execPath, [bin].concat(baseArgs), { encoding: 'utf8', windowsHide: true, timeout: o.timeoutMs || 60000 })"
+      },
+      {
+        "file": "lib/maintain-lib.cjs",
+        "line": 37,
+        "text": ": spawnSync(bin, baseArgs, { encoding: 'utf8', windowsHide: true, timeout: o.timeoutMs || 60000 });"
+      },
+      {
+        "file": "lib/maintain-lib.cjs",
+        "line": 100,
+        "text": "const r = spawnSync('reg', ['query', 'HKLM\\\\SYSTEM\\\\CurrentControlSet\\\\Services\\\\dsh-web\\\\Parameters', '/v', 'AppParameters'], {"
+      },
+      {
+        "file": "lib/net-proxy.cjs",
+        "line": 14,
+        "text": "const { spawnSync } = require('node:child_process');"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "@anionex/dsh-vision-toolkit",
-  "version": "0.1.49",
-  "scannedAt": "2026-11-06T20:48:40.008Z",
+  "version": "0.1.50",
+  "scannedAt": "2026-11-12T21:20:19.078Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -9,21 +9,21 @@
       {
         "file": "lib/client.js",
         "line": 34,
-        "text": "const response = await fetch(exports.DISPLAY_CONFIG_ROUTE, { cache: 'no-store' });"
+        "text": "const response = await fetch(exports.DISPLAY_CONFIG_ROUTE, { cache: 'no-store', headers: { 'X-DSH-Vision-Request': '1' } });"
       },
       {
         "file": "lib/client.js",
-        "line": 698,
-        "text": "const response = await fetch(SETTINGS_ROUTE, { credentials: 'same-origin', ...init });"
+        "line": 700,
+        "text": "const response = await fetch(SETTINGS_ROUTE, { credentials: 'same-origin', ...init, headers });"
       },
       {
         "file": "lib/client.js",
-        "line": 1771,
-        "text": "request = fetch(`${exports.PASTE_POLICY_ROUTE}?${query.toString()}`);"
+        "line": 1773,
+        "text": "request = fetch(`${exports.PASTE_POLICY_ROUTE}?${query.toString()}`, { headers: { 'X-DSH-Vision-Request': '1' } });"
       },
       {
         "file": "lib/client.js",
-        "line": 2030,
+        "line": 2032,
         "text": "const body = await responseJson(await fetch(`${exports.PASTE_IMAGES_ROUTE}?${query.toString()}`, {"
       },
       {

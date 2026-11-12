@@ -1,7 +1,7 @@
 {
   "name": "dsh-rss-news-daily",
-  "version": "0.8.1",
-  "scannedAt": "2026-11-09T23:06:48.664Z",
+  "version": "0.8.2",
+  "scannedAt": "2026-11-12T21:20:27.593Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,12 +13,12 @@
       },
       {
         "file": "lib/client.js",
-        "line": 95,
+        "line": 111,
         "text": "const xhr = new XMLHttpRequest()"
       },
       {
         "file": "lib/client.js",
-        "line": 185,
+        "line": 201,
         "text": "                    try { fetch(`${readerUrl}api/prefs`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ showNavEntry:"
       },
       {
@@ -58,7 +58,7 @@
       },
       {
         "file": "lib/api.js",
-        "line": 411,
+        "line": 416,
         "text": "const body = await readFile(file);"
       }
     ]
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 41,
+        "line": 43,
         "text": "export const inject = ['timer', 'tools'];"
       },
       {
@@ -103,18 +103,23 @@
       },
       {
         "file": "lib/api.js",
-        "line": 612,
+        "line": 617,
         "text": "const child = spawn(cmd, args, { detached: true, stdio: 'ignore' });"
       },
       {
         "file": "lib/index.js",
-        "line": 28,
+        "line": 29,
         "text": "import { execFile } from 'node:child_process';"
       },
       {
         "file": "lib/index.js",
-        "line": 544,
+        "line": 674,
         "text": "execFile('osascript', ['-e',"
+      },
+      {
+        "file": "lib/notify.js",
+        "line": 15,
+        "text": "import { spawn as nodeSpawn } from 'node:child_process';"
       }
     ]
   },
@@ -124,7 +129,9 @@
   },
   "dependencies": 0,
   "minifiedFiles": [],
-  "binaryFiles": [],
+  "binaryFiles": [
+    "native/RndNotify.app/Contents/MacOS/RndNotify"
+  ],
   "requiredServices": [
     "timer",
     "tools"

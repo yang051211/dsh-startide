@@ -1,0 +1,140 @@
+{
+  "name": "mino-aurabot",
+  "version": "1.1.24",
+  "scannedAt": "2026-11-12T21:20:25.026Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 18,
+        "text": "const get = (p) => fetch(API + p, { cache: 'no-store' }).then((r) => r.json()).catch((e) => ({ ok: false, message: '连不上插件：' + e.message }))"
+      },
+      {
+        "file": "client/client.js",
+        "line": 20,
+        "text": "fetch(API + p, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body || {}) })"
+      },
+      {
+        "file": "client/client.js",
+        "line": 2251,
+        "text": "const r = await fetch(API + '/song/import?name=' + encodeURIComponent(file.name), { method: 'POST', body: file })"
+      },
+      {
+        "file": "client/client.js",
+        "line": 2616,
+        "text": "        fetch(API + '/modules/panel?id=' + encodeURIComponent(m.id) + '&t=' + Date.now(), { cache: 'no-store' }).then((r) => (r.ok ? r.text() : Promise.reject(n"
+      },
+      {
+        "file": "extensions/tieba-reader/browser.cjs",
+        "line": 62,
+        "text": "const response = await fetch('/f/user/json_userinfo', { credentials: 'include', cache: 'no-store', signal: AbortSignal.timeout(5000) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "extensions/tieba-reader/browser-client.mjs",
+        "line": 5,
+        "text": "import { existsSync, mkdirSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "extensions/tieba-reader/browser-client.mjs",
+        "line": 49,
+        "text": "mkdirSync(profile, { recursive: true });"
+      },
+      {
+        "file": "extensions/tieba-reader/browser-client.mjs",
+        "line": 50,
+        "text": "writeFileSync(join(profile, 'logout-requested'), '', { mode: 0o600 });"
+      },
+      {
+        "file": "extensions/tieba-reader/browser.cjs",
+        "line": 6,
+        "text": "const fs = require('node:fs');"
+      },
+      {
+        "file": "extensions/tieba-reader/browser.cjs",
+        "line": 20,
+        "text": "if (fs.existsSync(resetFile)) { await clearSession(ses, profile); fs.unlinkSync(resetFile); }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/chat/hub.js",
+        "line": 360,
+        "text": "try { offs.push(agent.ctx.tools.restrict({ deny: denied })) } catch (error) { log.debug('屏蔽联动工具：', error.message) }"
+      },
+      {
+        "file": "src/chat/hub.js",
+        "line": 395,
+        "text": "const off = agent.ctx.tools.register(reg)"
+      },
+      {
+        "file": "src/core/bridge.js",
+        "line": 134,
+        "text": "toolOffs.push(tools.register(t))"
+      },
+      {
+        "file": "src/tools/tools.js",
+        "line": 1,
+        "text": "// 工具的写法。具体的工具都在各个模块里（src/modules/*），按会话注册（agent.ctx.tools.register），只出现在 Aurabot 的会话里。"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "extensions/tieba-reader/browser-client.mjs",
+        "line": 4,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "extensions/tieba-reader/build.test.mjs",
+        "line": 7,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "extensions/tieba-reader/build.test.mjs",
+        "line": 17,
+        "text": "    const result=spawnSync(process.execPath,['--input-type=module','-e',`const m=await import(${JSON.stringify(pathToFileURL(join(dir,'index.mjs')).href)}); con"
+      },
+      {
+        "file": "extensions/tieba-reader/external-browser.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/bili/vision.js",
+        "line": 7,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "attachments",
+    "llm",
+    "sessions",
+    "systemPrompt",
+    "timer",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

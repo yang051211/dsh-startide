@@ -1,7 +1,7 @@
 {
   "name": "dsh-budget-guard-plugin",
-  "version": "0.4.5",
-  "scannedAt": "2026-11-09T23:06:50.028Z",
+  "version": "0.4.8",
+  "scannedAt": "2026-11-12T21:20:43.223Z",
   "icon": "dsh-budget-guard-plugin.svg",
   "network": {
     "hit": true,
@@ -25,6 +25,11 @@
         "file": "lib/client.js",
         "line": 164,
         "text": "const response = await fetch('/dsh-budget/config/save', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 182,
+        "text": "const response = await fetch('/dsh-budget/prices', {"
       }
     ]
   },
@@ -34,27 +39,27 @@
       {
         "file": "lib/index.js",
         "line": 26,
-        "text": "import { mkdirSync, readFileSync, readdirSync, renameSync, statSync, unlinkSync, writeFileSync } from 'node:fs';"
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, statSync, unlinkSync, writeFileSync } from 'node:fs';"
       },
       {
         "file": "lib/index.js",
-        "line": 1507,
+        "line": 1559,
+        "text": "return JSON.parse(readFileSync(path, 'utf8'));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1567,
         "text": "return JSON.parse(readFileSync(new URL(`../prices/${name}`, import.meta.url), 'utf8'));"
       },
       {
         "file": "lib/index.js",
-        "line": 1717,
-        "text": "const decoded = JSON.parse(readFileSync(path, 'utf8'));"
+        "line": 1801,
+        "text": "mkdirSync(dirname(localPath), { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 1961,
-        "text": "mkdirSync(target.dir, { recursive: true });"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 1963,
-        "text": "writeFileSync(temp, JSON.stringify({ version: SNAPSHOT_VERSION, savedAt: now, sessions }), 'utf8');"
+        "line": 1806,
+        "text": "writeFileSync(temporary, `${JSON.stringify(document, null, 2)}\\n`, 'utf8');"
       }
     ]
   },

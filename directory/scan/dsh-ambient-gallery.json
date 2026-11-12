@@ -1,0 +1,81 @@
+{
+  "name": "dsh-ambient-gallery",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-12T21:20:49.845Z",
+  "icon": "dsh-ambient-gallery.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 563,
+        "text": "const response = await fetch(endpoint(\"/state\"), { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 586,
+        "text": "const response = await fetch(endpoint(\"/state\"), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 633,
+        "text": "const response = await fetch(endpoint(\"/import\"), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 674,
+        "text": "await fetch(endpoint(`/remove?id=${encodeURIComponent(frameId)}`), { method: \"POST\" });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 29,
+        "text": "import { createReadStream, promises as fs } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 275,
+        "text": "const text = await fs.readFile(STATE_PATH, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 294,
+        "text": "await fs.mkdir(MEDIA_DIR, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 296,
+        "text": "await fs.writeFile(temp, JSON.stringify(profile, null, 2), \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 365,
+        "text": "await fs.mkdir(MEDIA_DIR, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

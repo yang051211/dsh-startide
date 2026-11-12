@@ -1,19 +1,19 @@
 {
   "name": "dsh-rtk-workbench",
-  "version": "1.0.1",
-  "scannedAt": "2026-11-05T21:22:55.727Z",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-12T21:20:34.500Z",
   "icon": "dsh-rtk-workbench.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 562,
-        "text": "const response = await fetch(statusUrl(), {"
+        "line": 631,
+        "text": "const response = await fetch(statusUrl(store.currentSessionKey), {"
       },
       {
         "file": "lib/client.js",
-        "line": 599,
+        "line": 681,
         "text": "const response = await fetch(doctorUrl(), {"
       }
     ]
@@ -33,17 +33,17 @@
       },
       {
         "file": "lib/index.js",
-        "line": 2045,
+        "line": 2103,
         "text": "mkdirSync(dir, { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 2049,
+        "line": 2107,
         "text": "current = readFileSync(file, \"utf8\");"
       },
       {
         "file": "lib/index.js",
-        "line": 2053,
+        "line": 2111,
         "text": "ml are untouched.\\nschema_version = 1\\n\\n[pipeline]\\nname    = \\\"dsh-rtk-workbench\\\"\\nextends = \\\"rtk:posthook\\\"\\n\") writeFileSync(file, PIPELINE_TOML, \"utf8\");"
       }
     ]
@@ -53,27 +53,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 982,
+        "line": 1038,
         "text": "names = ctx.tools.schemas(agent).map((schema) => schema.name);"
       },
       {
         "file": "lib/index.js",
-        "line": 1645,
+        "line": 1703,
         "text": "* - **Per definition, not per name.** `ctx.tools.get(name, scope)` can return"
       },
       {
         "file": "lib/index.js",
-        "line": 1725,
+        "line": 1783,
         "text": "definition = ctx.tools.get(name, scope);"
       },
       {
         "file": "lib/index.js",
-        "line": 1815,
+        "line": 1873,
         "text": "if (ctx.tools.get(name, scope)?.execute !== wrapped) {"
       },
       {
         "file": "lib/index.js",
-        "line": 2765,
+        "line": 2856,
         "text": "const inject = [\"tools\"];"
       }
     ]
@@ -90,6 +90,11 @@
         "file": "lib/index.js",
         "line": 230,
         "text": "child = spawn(binary, [...args], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 555,
+        "text": "* spawn (~206 ms) and returns the command unchanged, but the pre-filter exists"
       }
     ]
   },

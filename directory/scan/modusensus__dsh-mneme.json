@@ -1,0 +1,149 @@
+{
+  "name": "@modusensus/dsh-mneme",
+  "version": "0.14.0",
+  "scannedAt": "2026-11-12T21:20:17.086Z",
+  "icon": "modusensus__dsh-mneme.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 348,
+        "text": "res = await fetch(url, {"
+      },
+      {
+        "file": "bin/dsh-mneme-mcp.mjs",
+        "line": 91,
+        "text": "res = await fetch(`${config.url}${pathname}${search}`, {"
+      },
+      {
+        "file": "lib/api-standalone.js",
+        "line": 16,
+        "text": "import { createServer } from \"node:http\";"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 295,
+        "text": "return fetch(path, { ...opts, headers });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 9380,
+        "text": "// One query string behind every browse-list fetch (initial page,"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 11,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 12,
+        "text": "import fsp from 'node:fs/promises';"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 39,
+        "text": "return JSON.parse(fs.readFileSync(pkgPath, 'utf8')).version ?? '?';"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 211,
+        "text": "const data = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));"
+      },
+      {
+        "file": "bin/cli.mjs",
+        "line": 474,
+        "text": "await fsp.mkdir(CONFIG_DIR, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/capabilities.js",
+        "line": 786,
+        "text": "why: \"由 @deepseek-ai/dsh-mcp-client 在运行时把工具注册到 ctx.tools（public name 形如 mcp__<serverName>__<rawName>），不落盘\","
+      },
+      {
+        "file": "lib/capabilities.js",
+        "line": 787,
+        "text": "howToAsk: \"宿主侧读 Loader / ctx.tools；文件层拿不到时不猜\""
+      },
+      {
+        "file": "lib/index.js",
+        "line": 70,
+        "text": "export const inject = [\"tools\", \"systemPrompt\", \"llm\", \"agentDefaultModel\", \"commands\", \"webServer\"];"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 108,
+        "text": "const toolsRegistry = ctx.tools;"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 1328,
+        "text": "// （属性上的 required:true、output.schema 用 spec 写法），直接 ctx.tools.register"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bootstrap.js",
+        "line": 11,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/wiki/claims.js",
+        "line": 13,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/wiki/scan.js",
+        "line": 56,
+        "text": "\"assert\", \"buffer\", \"child_process\", \"cluster\", \"console\", \"constants\","
+      },
+      {
+        "file": "lib/wiki/t0.js",
+        "line": 14,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/wiki/t1-jobs.js",
+        "line": 16,
+        "text": "import { spawn as nodeSpawn } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentDefaultModel",
+    "commands",
+    "llm",
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 636,
+      "text": "npm i -g @modusensus/dsh-mneme"
+    }
+  ],
+  "skippedEntries": []
+}

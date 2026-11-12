@@ -1,0 +1,134 @@
+{
+  "name": "dsh-steam",
+  "version": "0.9.1",
+  "scannedAt": "2026-11-12T21:20:36.503Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/steam-account-api.js",
+        "line": 12,
+        "text": "res = await fetch(url, {"
+      },
+      {
+        "file": "lib/steam-api.js",
+        "line": 35,
+        "text": "res = await fetch(url, {"
+      },
+      {
+        "file": "lib/steam-media-api.js",
+        "line": 13,
+        "text": "res = await fetch(url, {"
+      },
+      {
+        "file": "lib/steam-stats-api.js",
+        "line": 13,
+        "text": "res = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/local-steamid.js",
+        "line": 14,
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/local-steamid.js",
+        "line": 41,
+        "text": "const users = parseLoginUsers(readFileSync(vdf, 'utf8'));"
+      },
+      {
+        "file": "lib/price-history.js",
+        "line": 13,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/price-history.js",
+        "line": 34,
+        "text": "const parsed = JSON.parse(readFileSync(path, 'utf8'));"
+      },
+      {
+        "file": "lib/price-history.js",
+        "line": 47,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "*   - export const inject = ['tools']（缺了报 cannot get property \"tools\" without inject）"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 22,
+        "text": "/** 声明依赖的宿主服务；少了这一行 cordis 会拒绝 ctx.tools。 */"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 23,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/tool-helpers.js",
+        "line": 136,
+        "text": "const dispose = ctx.tools.register(tool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/steam-local.js",
+        "line": 25,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/tool-helpers.js",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/tool-helpers.js",
+        "line": 61,
+        "text": "child = spawn(comspec, ['/c', 'start', '\"\"', uri], {"
+      },
+      {
+        "file": "lib/tool-helpers.js",
+        "line": 67,
+        "text": "child = spawn('open', [uri], { detached: true, stdio: 'ignore' });"
+      },
+      {
+        "file": "lib/tool-helpers.js",
+        "line": 69,
+        "text": "child = spawn('xdg-open', [uri], { detached: true, stdio: 'ignore' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 49,
+      "text": "npm i -g dsh-steam"
+    }
+  ],
+  "skippedEntries": []
+}

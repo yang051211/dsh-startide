@@ -1,14 +1,14 @@
 {
   "name": "dsh-mastery-loop",
-  "version": "0.2.0",
-  "scannedAt": "2026-10-26T10:06:03.494Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-12T21:20:42.300Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "skills/mastery-loop/scripts/graph.mjs",
-        "line": 373,
+        "file": "skills/_shared/scripts/graph.mjs",
+        "line": 583,
         "text": "res = await fetch(MIYO_ENDPOINT, {"
       }
     ]
@@ -17,27 +17,27 @@
     "hit": true,
     "evidence": [
       {
-        "file": "skills/mastery-loop/scripts/_lib.mjs",
+        "file": "skills/_shared/scripts/_lib.mjs",
         "line": 7,
         "text": "import { readFileSync, writeFileSync, existsSync, statSync, readdirSync, mkdirSync } from 'node:fs';"
       },
       {
-        "file": "skills/mastery-loop/scripts/_lib.mjs",
-        "line": 20,
+        "file": "skills/_shared/scripts/_lib.mjs",
+        "line": 23,
         "text": "return readFileSync(p, 'utf8');"
       },
       {
-        "file": "skills/mastery-loop/scripts/_lib.mjs",
-        "line": 27,
+        "file": "skills/_shared/scripts/_lib.mjs",
+        "line": 30,
         "text": "mkdirSync(dirname(p), { recursive: true });"
       },
       {
-        "file": "skills/mastery-loop/scripts/_lib.mjs",
-        "line": 28,
+        "file": "skills/_shared/scripts/_lib.mjs",
+        "line": 31,
         "text": "writeFileSync(p, text, 'utf8');"
       },
       {
-        "file": "skills/mastery-loop/scripts/aggregate.mjs",
+        "file": "skills/_shared/scripts/aggregate.mjs",
         "line": 11,
         "text": "import { existsSync, statSync } from 'node:fs';"
       }
@@ -51,13 +51,23 @@
     "hit": true,
     "evidence": [
       {
-        "file": "skills/mastery-loop/scripts/scan.mjs",
+        "file": "skills/_shared/scripts/review.mjs",
+        "line": 17,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "skills/_shared/scripts/review.mjs",
+        "line": 46,
+        "text": "const r = spawnSync('git', ['-C', root, '-c', 'core.quotePath=false', ...args], { stdio: ['ignore', fd, fd] });"
+      },
+      {
+        "file": "skills/_shared/scripts/scan.mjs",
         "line": 11,
         "text": "import { spawnSync } from 'node:child_process';"
       },
       {
-        "file": "skills/mastery-loop/scripts/scan.mjs",
-        "line": 41,
+        "file": "skills/_shared/scripts/scan.mjs",
+        "line": 40,
         "text": "const r = spawnSync('git', ['-C', root, '-c', 'core.quotePath=false', ...args], { stdio: ['ignore', fd, fd] });"
       }
     ]

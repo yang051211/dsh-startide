@@ -1,0 +1,113 @@
+{
+  "name": "dsh-awesome-optimizer",
+  "version": "2.0.0",
+  "scannedAt": "2026-11-12T21:20:42.902Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/typecheck.mjs",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "scripts/typecheck.mjs",
+        "line": 22,
+        "text": "const pkg = JSON.parse(fs.readFileSync(pkgFile, 'utf8'));"
+      },
+      {
+        "file": "scripts/typecheck.mjs",
+        "line": 44,
+        "text": "const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));"
+      },
+      {
+        "file": "src/custom-prompt.js",
+        "line": 2,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "src/custom-prompt.js",
+        "line": 155,
+        "text": "this.cachedGlobal = fs.readFileSync(this.globalFilePath, 'utf8').trim();"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/composite-tools.js",
+        "line": 65,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "src/composite-tools.js",
+        "line": 212,
+        "text": "}, { when: ({ agent }) => ctx.tools.get('read', agent) !== undefined });"
+      },
+      {
+        "file": "src/composite-tools.js",
+        "line": 216,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "src/composite-tools.js",
+        "line": 388,
+        "text": "}, { when: ({ agent }) => ctx.tools.get('edit', agent) !== undefined });"
+      },
+      {
+        "file": "src/composite-tools.js",
+        "line": 411,
+        "text": "export const inject = ['tools'];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/benchmark.mjs",
+        "line": 2,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/benchmark.mjs",
+        "line": 113,
+        "text": "const res = spawnSync('python', ['-c', code], { encoding: 'utf-8' });"
+      },
+      {
+        "file": "scripts/typecheck.mjs",
+        "line": 3,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/typecheck.mjs",
+        "line": 36,
+        "text": "const res = spawnSync(process.execPath, [tscBin, '--project', path.join(root, 'tsconfig.json'), '--noEmit'], {"
+      },
+      {
+        "file": "src/custom-prompt.js",
+        "line": 1,
+        "text": "import { spawnSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

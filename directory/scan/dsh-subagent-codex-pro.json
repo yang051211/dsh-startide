@@ -1,7 +1,7 @@
 {
   "name": "dsh-subagent-codex-pro",
-  "version": "0.8.0",
-  "scannedAt": "2026-11-03T20:52:20.764Z",
+  "version": "0.9.0",
+  "scannedAt": "2026-11-12T21:20:40.664Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -61,6 +61,11 @@
         "text": "const child = spawn(command, argv, {"
       },
       {
+        "file": "lib/machine-supervision.js",
+        "line": 2,
+        "text": "import { fork } from 'node:child_process';"
+      },
+      {
         "file": "lib/process-guardian.js",
         "line": 21,
         "text": "import { spawn } from 'node:child_process';"
@@ -74,11 +79,6 @@
         "file": "lib/run.js",
         "line": 17,
         "text": "import { spawn } from 'node:child_process';"
-      },
-      {
-        "file": "lib/run.js",
-        "line": 135,
-        "text": "const proc = spawn(posix ? process.execPath : spec.command, posix ? [guardian, spec.command, String(graceMs)] : ['app-server', '--stdio'], {"
       }
     ]
   },

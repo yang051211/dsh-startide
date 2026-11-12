@@ -1,19 +1,19 @@
 {
   "name": "dsh-db-mcp",
-  "version": "0.9.4",
-  "scannedAt": "2026-11-11T21:01:09.319Z",
+  "version": "0.9.6",
+  "scannedAt": "2026-11-12T21:20:20.540Z",
   "icon": "dsh-db-mcp.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 1893,
+        "line": 2247,
         "text": "const response = await fetch(API + path, { credentials: 'same-origin', headers: { accept: 'application/json' } })"
       },
       {
         "file": "client.js",
-        "line": 1906,
+        "line": 2260,
         "text": "const response = await fetch(API + path, {"
       }
     ]
@@ -33,17 +33,17 @@
       },
       {
         "file": "src/host.js",
-        "line": 79,
+        "line": 84,
         "text": "raw = await readFile(file, 'utf8')"
       },
       {
         "file": "src/host.js",
-        "line": 92,
+        "line": 97,
         "text": "await mkdir(join(file, '..'), { recursive: true })"
       },
       {
         "file": "src/host.js",
-        "line": 94,
+        "line": 99,
         "text": "await writeFile(temp, `${JSON.stringify(value, null, 2)}\\n`, { encoding: 'utf8', mode: mode || 0o600 })"
       }
     ]
@@ -58,7 +58,7 @@
       },
       {
         "file": "src/tools.js",
-        "line": 155,
+        "line": 169,
         "text": "return ctx.tools;"
       }
     ]
@@ -73,7 +73,7 @@
       },
       {
         "file": "src/host.js",
-        "line": 414,
+        "line": 419,
         "text": "execFile(file, args, { timeout, windowsHide: true }, (error, stdout, stderr) => {"
       },
       {
@@ -85,6 +85,11 @@
         "file": "src/mcp.js",
         "line": 106,
         "text": "const child = spawn(this.command, this.args, {"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process';"
       }
     ]
   },
@@ -98,6 +103,17 @@
   "requiredServices": [
     "webServer"
   ],
-  "setupHints": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 27,
+      "text": "- **Do not prepare a Python environment.** No venv to create, no `pip install` to"
+    },
+    {
+      "file": "README.zh.md",
+      "line": 18,
+      "text": "- **不用手工准备 Python 环境。** 不用自己建 venv、不用手跑 `pip install`：面板会找解释器、建 `.venv`、装驱动包，入口在 **运行时诊断 → 安装 / 修复依赖**。"
+    }
+  ],
   "skippedEntries": []
 }

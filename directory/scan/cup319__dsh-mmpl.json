@@ -1,34 +1,34 @@
 {
   "name": "@cup319/dsh-mmpl",
-  "version": "3.16.0",
-  "scannedAt": "2026-11-12T08:43:11.157Z",
+  "version": "3.17.2",
+  "scannedAt": "2026-11-12T21:20:20.361Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 518,
+        "line": 532,
         "text": "const response = await fetch(url, { ...fetchOptions, redirect: 'error', signal: ctrl.signal })"
       },
       {
         "file": "index.js",
-        "line": 423,
+        "line": 455,
         "text": "const metaRes = await fetch('https://registry.npmjs.org/@cup319/mmpl/latest', { signal: AbortSignal.timeout(15000) })"
       },
       {
         "file": "index.js",
-        "line": 432,
+        "line": 464,
         "text": "const tgzRes = await fetch(`https://registry.npmjs.org/@cup319/mmpl/-/mmpl-${version}.tgz`)"
       },
       {
         "file": "index.js",
-        "line": 493,
+        "line": 525,
         "text": "const metaRes = await fetch('https://registry.npmjs.org/@cup319/dsh-mmpl/latest', { signal: AbortSignal.timeout(15000) })"
       },
       {
         "file": "index.js",
-        "line": 503,
+        "line": 535,
         "text": "const tgzRes = await fetch(`https://registry.npmjs.org/@cup319/dsh-mmpl/-/dsh-mmpl-${version}.tgz`)"
       }
     ]
@@ -78,7 +78,7 @@
       },
       {
         "file": "index.js",
-        "line": 553,
+        "line": 585,
         "text": "e?.options?.name === '@deepseek-ai/dsh-mcp-client' &&"
       }
     ]
@@ -89,7 +89,7 @@
       {
         "file": "index.js",
         "line": 32,
-        "text": "import { execFile, spawn } from 'node:child_process'"
+        "text": "import { execFile, execSync, spawn } from 'node:child_process'"
       },
       {
         "file": "index.js",
@@ -108,8 +108,8 @@
       },
       {
         "file": "index.js",
-        "line": 390,
-        "text": "execFile('taskkill', ['/F', '/IM', 'mmpl.exe'], { windowsHide: true }, () => {})"
+        "line": 394,
+        "text": "if (process.platform === 'win32') execFile('taskkill', ['/PID', String(p), '/F'], { windowsHide: true }, () => {})"
       }
     ]
   },
@@ -129,7 +129,7 @@
     },
     {
       "file": "README.md",
-      "line": 101,
+      "line": 114,
       "text": "npm install -g @cup319/mmpl"
     }
   ],
