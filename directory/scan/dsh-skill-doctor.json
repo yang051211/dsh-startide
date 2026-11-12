@@ -1,15 +1,35 @@
 {
   "name": "dsh-skill-doctor",
-  "version": "0.16.0",
-  "scannedAt": "2026-11-11T21:01:13.576Z",
+  "version": "0.17.0",
+  "scannedAt": "2026-11-12T08:43:15.152Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/plugins/review.js",
-        "line": 210,
-        "text": "detail: 'preinstall/install/postinstall/prepare 里出现了 curl、wget 或 shell -c；合法构建也常这样，但值得确认脚本内容。',"
+        "file": "lib/cli.js",
+        "line": 2631,
+        "text": "const response = await fetch(`${base}/${encoded}`, {"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 2652,
+        "text": "const response = await fetch(url, { signal: AbortSignal.timeout(3e4) });"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 2683,
+        "text": "install/prepare \\u91CC\\u51FA\\u73B0 curl|wget \\u7BA1\\u9053\\u8FDB shell\\u3001eval $(curl) \\u6216 base64 \\u89E3\\u7801\\u540E\\u6267\\u884C\\uFF1B\\u8FD9\\u662F\\u4F9B\\u5E"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1531,
+        "text": "const response = await fetch(`${base}/${encoded}`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1552,
+        "text": "const response = await fetch(url, { signal: AbortSignal.timeout(3e4) });"
       }
     ]
   },
@@ -39,7 +59,7 @@
       {
         "file": "lib/cli.js",
         "line": 5,
-        "text": "import { readFileSync } from \"node:fs\";"
+        "text": "import { readFileSync as readFileSync2 } from \"node:fs\";"
       }
     ]
   },
@@ -48,17 +68,17 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 4180,
+        "line": 4623,
         "text": "var inject = [\"tools\", \"skills\", \"workingDirectory\"];"
       },
       {
         "file": "lib/index.js",
-        "line": 4199,
+        "line": 4642,
         "text": "if (ctx.tools.get(toolName) !== void 0) {"
       },
       {
         "file": "lib/index.js",
-        "line": 4203,
+        "line": 4646,
         "text": "ctx.tools.register(tool);"
       }
     ]

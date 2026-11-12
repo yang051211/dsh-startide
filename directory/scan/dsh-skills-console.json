@@ -1,0 +1,102 @@
+{
+  "name": "dsh-skills-console",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-12T08:43:22.303Z",
+  "icon": "dsh-skills-console.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 1592,
+        "text": "return fetch(API + path, {"
+      },
+      {
+        "file": "core/market.js",
+        "line": 21,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "core/backup.js",
+        "line": 8,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "core/backup.js",
+        "line": 9,
+        "text": "import fsp from 'node:fs/promises'"
+      },
+      {
+        "file": "core/backup.js",
+        "line": 40,
+        "text": "await fsp.mkdir(dir, { recursive: true })"
+      },
+      {
+        "file": "core/backup.js",
+        "line": 50,
+        "text": "await fsp.writeFile(path.join(dir, 'backup.json'), JSON.stringify(meta, null, 2) + '\\n', 'utf8')"
+      },
+      {
+        "file": "core/backup.js",
+        "line": 75,
+        "text": "await fsp.rm(target, { recursive: true, force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "core/market.js",
+        "line": 4,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "core/market.js",
+        "line": 14,
+        "text": "execFile(cmd, args, { encoding: 'utf8', timeout, maxBuffer: 4 * 1024 * 1024, env: process.env }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "core/skills-cli.js",
+        "line": 12,
+        "text": "import { execFile, execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "core/skills-cli.js",
+        "line": 48,
+        "text": "execFile('npx', ['--yes', 'skills', ...args], {"
+      },
+      {
+        "file": "core/sync.js",
+        "line": 11,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "sessionPersistence",
+    "sessionSkillCatalog",
+    "sessions",
+    "skills",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

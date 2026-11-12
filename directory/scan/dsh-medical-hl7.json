@@ -1,0 +1,87 @@
+{
+  "name": "dsh-medical-hl7",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-12T08:43:22.148Z",
+  "icon": "dsh-medical-hl7.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/definitions.js",
+        "line": 7,
+        "text": "import { mkdir, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/definitions.js",
+        "line": 60,
+        "text": "await mkdir(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/definitions.js",
+        "line": 64,
+        "text": "await writeFile(join(dir, `StructureDefinition-${sd.id}.json`), JSON.stringify(sd, null, 1))"
+      },
+      {
+        "file": "lib/definitions.js",
+        "line": 86,
+        "text": "await writeFile(join(dir, `CodeSystem-${id}.json`), JSON.stringify(cs, null, 1))"
+      },
+      {
+        "file": "lib/output.js",
+        "line": 8,
+        "text": "import { createWriteStream } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "// ctx.tools.register is scoped to this plugin's fiber (same as the sibling medical plugins)"
+      },
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "const register = (def) => ctx.tools.register(tool(def))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/service.js",
+        "line": 17,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/service.js",
+        "line": 375,
+        "text": "        execFile(settings.javaPath || 'java', ['-Xmx6g', '-jar', settings.validatorJar, join(bundlesDir, n), '-version', '4.0.1', '-ig', definitionsDir, '-tx', "
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

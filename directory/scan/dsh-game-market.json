@@ -1,0 +1,110 @@
+{
+  "name": "dsh-game-market",
+  "version": "1.5.7",
+  "scannedAt": "2026-11-12T08:43:16.362Z",
+  "icon": "dsh-game-market.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 3849,
+        "text": "*   verified DSH pattern `fetch('api/...')`)."
+      },
+      {
+        "file": "games/2048/test/build.test.js",
+        "line": 85,
+        "text": "for (const banned of ['fetch(', 'XMLHttpRequest', 'WebSocket(', 'EventSource(', 'sendBeacon(']) {"
+      },
+      {
+        "file": "games/orbit-courier/dist/scripts/audio.js",
+        "line": 48,
+        "text": "const response = await fetch(url, { cache: 'no-store' });"
+      },
+      {
+        "file": "games/orbit-courier/dist/scripts/main.js",
+        "line": 17,
+        "text": "const response = await fetch(LEVEL_URL, { cache: 'no-store' });"
+      },
+      {
+        "file": "games/orbit-courier/src/audio.js",
+        "line": 48,
+        "text": "const response = await fetch(url, { cache: 'no-store' });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "games/2048/build.mjs",
+        "line": 17,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "games/2048/build.mjs",
+        "line": 64,
+        "text": "manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));"
+      },
+      {
+        "file": "games/2048/build.mjs",
+        "line": 122,
+        "text": "const template = fs.readFileSync(templatePath, 'utf8');"
+      },
+      {
+        "file": "games/2048/build.mjs",
+        "line": 171,
+        "text": "fs.mkdirSync(path.dirname(outFile), { recursive: true });"
+      },
+      {
+        "file": "games/2048/build.mjs",
+        "line": 172,
+        "text": "fs.writeFileSync(outFile, result.html, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/cli/lib/package-v2.mjs",
+        "line": 18,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/cli/lib/package-v2.mjs",
+        "line": 446,
+        "text": "const result = spawnSync(command, {"
+      },
+      {
+        "file": "scripts/cli/test-support/helpers.mjs",
+        "line": 1,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/cli/test-support/helpers.mjs",
+        "line": 111,
+        "text": "const result = spawnSync(process.execPath, [CLI, ...args], {"
+      },
+      {
+        "file": "scripts/cli/test-support/helpers.mjs",
+        "line": 120,
+        "text": "const result = spawnSync(process.execPath, [CREATE_CLI, ...args], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,103 @@
+{
+  "name": "@suiji-ai/dsh-agentic-notes",
+  "version": "0.2.4",
+  "scannedAt": "2026-11-12T08:43:15.482Z",
+  "icon": "suiji-ai__dsh-agentic-notes.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 37,
+        "text": "const res = await fetch(API, {"
+      },
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import https from 'node:https'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 8,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 59,
+        "text": "fs.mkdirSync(path.dirname(path.join(root, job.logPath)), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 60,
+        "text": "fs.appendFileSync(path.join(root, job.logPath), `[${nowIso()}] ${String(line).slice(0, 20000)}\\n`)"
+      },
+      {
+        "file": "index.js",
+        "line": 73,
+        "text": "try { if (fs.statSync(abs).mtimeMs < cutoff) { fs.unlinkSync(abs); removed += 1 } } catch { /* ignore */ }"
+      },
+      {
+        "file": "index.js",
+        "line": 109,
+        "text": "fs.mkdirSync(dir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "import { execFile, execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 152,
+        "text": "execFile('osascript', ['-e', `display notification \"${escape(cleanBody)}\" with title \"${escape(cleanTitle)}\"`], () => { })"
+      },
+      {
+        "file": "index.js",
+        "line": 213,
+        "text": "execFile('say', args, (err) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 214,
+        "text": "if (err && voice) execFile('say', ['-r', '180', spoken], () => { })"
+      },
+      {
+        "file": "index.js",
+        "line": 243,
+        "text": "execFile('afplay', ['-v', volume, sound], (err) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

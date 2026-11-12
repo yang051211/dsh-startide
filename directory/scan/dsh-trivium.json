@@ -1,24 +1,24 @@
 {
   "name": "dsh-trivium",
-  "version": "0.8.8",
-  "scannedAt": "2026-11-11T21:01:13.903Z",
+  "version": "0.8.9",
+  "scannedAt": "2026-11-12T08:43:15.115Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1162,
+        "line": 1182,
         "text": "const resp = await fetch(path, opts);"
       },
       {
         "file": "lib/client.js",
-        "line": 1379,
+        "line": 1405,
         "text": "const resp = await fetch(path, opts);"
       },
       {
         "file": "lib/client.js",
-        "line": 3609,
+        "line": 3685,
         "text": "const resp = await fetch(workspacePath(\"/api/dsh-trivium/export.md\"));"
       },
       {
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 68,
+        "line": 67,
         "text": "export const inject = [\"tools\"];"
       },
       {
@@ -94,8 +94,19 @@
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/read-snapshots.js",
+        "line": 1,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/read-snapshots.js",
+        "line": 160,
+        "text": "const child = spawn(process.execPath, [\"--max-old-space-size=256\", WORKER], {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

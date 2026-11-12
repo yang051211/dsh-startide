@@ -1,0 +1,95 @@
+{
+  "name": "dsh-leader-agent",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-12T08:43:16.628Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/cards/store.js",
+        "line": 23,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/host/cards/store.js",
+        "line": 51,
+        "text": "const raw = await io.readFile(file, 'utf8').catch(() => undefined)"
+      },
+      {
+        "file": "src/host/cards/store.js",
+        "line": 120,
+        "text": "await io.mkdir(directory, { recursive: true })"
+      },
+      {
+        "file": "src/host/cards/store.js",
+        "line": 121,
+        "text": "await io.writeFile(temporary, `${JSON.stringify(store, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "src/host/leader-context.js",
+        "line": 15,
+        "text": "import { readFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/index.js",
+        "line": 58,
+        "text": "export const inject = ['skills', 'tools', 'systemPrompt']"
+      },
+      {
+        "file": "src/host/index.js",
+        "line": 251,
+        "text": "})) ctx.tools.register(tool)"
+      },
+      {
+        "file": "src/host/tools/gate.js",
+        "line": 4,
+        "text": "* 宿主（0.2.1-rc.2）的 `tools.register()` 不接受按步条件，`tools.restrict()`"
+      },
+      {
+        "file": "src/host/tools/gate.js",
+        "line": 155,
+        "text": "agent.ctx.tools.restrict({ deny: denied })"
+      },
+      {
+        "file": "src/host/tools/gate.js",
+        "line": 187,
+        "text": "agent.ctx.tools.restrict({ deny: [name] })"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/dispatch.js",
+        "line": 783,
+        "text": "const { sessionId: childId, permission } = await workerSessions.spawn({"
+      },
+      {
+        "file": "src/host/worker-sessions.js",
+        "line": 290,
+        "text": "async spawn({ cwd, name, signal, permissionFrom, deferPresentation = false }) {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

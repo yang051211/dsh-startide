@@ -1,7 +1,7 @@
 {
   "name": "dsh-desktop-kit",
-  "version": "2.7.6",
-  "scannedAt": "2026-11-11T21:01:09.623Z",
+  "version": "2.8.0",
+  "scannedAt": "2026-11-12T08:43:11.381Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -23,13 +23,13 @@
       },
       {
         "file": "plugins/dsh-mcp-manager/lib/client.js",
-        "line": 113,
+        "line": 114,
         "text": "const response = await fetch(this.config.url, {"
       },
       {
-        "file": "skills/seo/assets/scripts/lib/browser.mjs",
-        "line": 13,
-        "text": "import http from 'node:http';"
+        "file": "plugins/dsh-mcp-manager/lib/oauth.js",
+        "line": 11,
+        "text": "import http from \"node:http\";"
       }
     ]
   },
@@ -68,13 +68,18 @@
     "evidence": [
       {
         "file": "plugins/dsh-agent-extensions/index.js",
-        "line": 21,
+        "line": 23,
         "text": "export const inject = [\"tools\", \"systemPrompt\"];"
       },
       {
         "file": "plugins/dsh-agent-extensions/index.js",
-        "line": 104,
+        "line": 192,
         "text": "ctx.effect(() => ctx.tools.register(toolDefinition(ctx)), \"agent-extensions: project_agent tool\");"
+      },
+      {
+        "file": "plugins/dsh-agent-extensions/index.js",
+        "line": 193,
+        "text": "ctx.effect(() => ctx.tools.register(worktreeToolDefinition()), \"agent-extensions: project_worktree tool\");"
       },
       {
         "file": "plugins/dsh-browser-qa/index.js",
@@ -85,11 +90,6 @@
         "file": "plugins/dsh-browser-qa/index.js",
         "line": 152,
         "text": "const register = () => ctx.tools.register(tool);"
-      },
-      {
-        "file": "plugins/dsh-checkpoints/index.js",
-        "line": 8,
-        "text": "export const inject = [\"tools\"];"
       }
     ]
   },

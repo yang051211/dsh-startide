@@ -1,24 +1,24 @@
 {
   "name": "dsh-ping-me",
-  "version": "0.1.2",
-  "scannedAt": "2026-11-01T19:08:57.086Z",
+  "version": "0.1.6",
+  "scannedAt": "2026-11-12T08:43:21.182Z",
   "icon": "dsh-ping-me.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 98,
+        "line": 128,
         "text": "fetch(ROUTE, { cache: \"no-store\" }).then((r) => (r.ok ? r.json() : null)).then(setInfo, () => {});"
       },
       {
         "file": "lib/client.js",
-        "line": 121,
+        "line": 151,
         "text": "const r = await (await fetch(ROUTE + \"?do=\" + what, { method: \"POST\" })).json();"
       },
       {
         "file": "lib/client.js",
-        "line": 205,
+        "line": 235,
         "text": "fetch(ROUTE + \"?do=seen\", { method: \"POST\", body: window.location.origin }).catch(() => {});"
       }
     ]
@@ -33,17 +33,17 @@
       },
       {
         "file": "lib/index.js",
-        "line": 148,
+        "line": 149,
         "text": "function readState() { try { return JSON.parse(readFileSync(STATE_FILE, 'utf8')) } catch { return {} } }"
       },
       {
         "file": "lib/index.js",
-        "line": 149,
+        "line": 150,
         "text": "function writeState(state) { mkdirSync(HOME, { recursive: true }); writeFileSync(STATE_FILE, JSON.stringify(state), { mode: 0o600 }) }"
       },
       {
         "file": "lib/index.js",
-        "line": 161,
+        "line": 162,
         "text": "try { mkdirSync(HOME, { recursive: true }); appendFileSync(LOG_FILE, JSON.stringify(recent[0]) + '\\n') } catch {}"
       }
     ]
@@ -53,7 +53,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 314,
+        "line": 316,
         "text": "if (ctx.agents.roots().includes(agent)) ctx.effect(() => agent.ctx.effect(() => agent.ctx.tools.register(tool)))"
       }
     ]

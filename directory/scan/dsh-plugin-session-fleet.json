@@ -1,37 +1,68 @@
 {
   "name": "dsh-plugin-session-fleet",
-  "version": "0.2.2",
-  "scannedAt": "2026-10-26T10:05:30.320Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-12T08:43:21.618Z",
   "icon": "dsh-plugin-session-fleet.svg",
   "network": {
     "hit": false,
     "evidence": []
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "import { mkdtemp, open, rename, rm } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 161,
+        "text": "if (this.directory !== void 0) await rm(this.directory, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 182,
+        "text": "await rm(path, { force: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 192,
+        "text": "await rm(oldest, { force: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 232,
+        "text": "await file.writeFile(line, \"utf8\");"
+      }
+    ]
   },
   "agentTools": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 197,
+        "line": 1130,
         "text": "register(scoped.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 230,
+        "line": 1169,
         "text": "register(scoped.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 252,
+        "line": 1279,
         "text": "register(scoped.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 291,
+        "line": 1288,
+        "text": "register(scoped.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1327,
         "text": "register(scoped.tools.register(defineTool({"
       }
     ]

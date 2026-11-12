@@ -1,0 +1,112 @@
+{
+  "name": "dsh-host-plugin-kit",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-12T08:43:18.061Z",
+  "icon": "dsh-host-plugin-kit.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dev/bin-selftest.mjs",
+        "line": 2,
+        "text": "import { mkdtempSync, rmSync } from 'node:fs';"
+      },
+      {
+        "file": "dev/bin-selftest.mjs",
+        "line": 37,
+        "text": "rmSync(dir, { recursive: true, force: true });"
+      },
+      {
+        "file": "dev/rt.mjs",
+        "line": 7,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "dev/rt.mjs",
+        "line": 37,
+        "text": "fs.mkdirSync(tmpBase, { recursive: true });"
+      },
+      {
+        "file": "dev/rt.mjs",
+        "line": 67,
+        "text": "const pkg = JSON.parse(fs.readFileSync(path.join(dir, 'package.json'), 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dev/rt.mjs",
+        "line": 58,
+        "text": "await t('plugin_kit_new 注册进 ctx.tools', () => {"
+      },
+      {
+        "file": "index.mjs",
+        "line": 16,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.mjs",
+        "line": 80,
+        "text": "if (ctx.tools.get?.(tool.name) !== undefined) {"
+      },
+      {
+        "file": "index.mjs",
+        "line": 84,
+        "text": "const off = ctx.tools.register(tool)"
+      },
+      {
+        "file": "lib/scaffold.mjs",
+        "line": 49,
+        "text": "export const inject = ['tools'];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dev/bin-selftest.mjs",
+        "line": 5,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "dev/bin-selftest.mjs",
+        "line": 15,
+        "text": "const r = spawnSync(process.execPath, [join(import.meta.dirname, '..', 'new.mjs'), dir, '--name', 'dsh-kitdemo'], { encoding: 'utf8' });"
+      },
+      {
+        "file": "dev/bin-selftest.mjs",
+        "line": 20,
+        "text": "const r = spawnSync(process.execPath, [join(dir, 'dev', 'test.mjs')], { encoding: 'utf8' });"
+      },
+      {
+        "file": "dev/bin-selftest.mjs",
+        "line": 26,
+        "text": "const r = spawnSync(process.execPath, [join(dir, 'host-test', 'rt.mjs')], { encoding: 'utf8' });"
+      },
+      {
+        "file": "dev/bin-selftest.mjs",
+        "line": 32,
+        "text": "const r = spawnSync(process.execPath, [join(import.meta.dirname, '..', 'new.mjs'), dir, '--name', 'dsh-kitdemo'], { encoding: 'utf8' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

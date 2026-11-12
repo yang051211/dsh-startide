@@ -1,0 +1,83 @@
+{
+  "name": "dsh-bjtuca",
+  "version": "1.1.4",
+  "scannedAt": "2026-11-12T08:43:16.510Z",
+  "icon": "dsh-bjtuca.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge.js",
+        "line": 85,
+        "text": "response = await fetch(target, {"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 99,
+        "text": "const response = await fetch(new URL('health', baseUrl(url)), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cli.js",
+        "line": 11,
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 55,
+        "text": "const text = readFileSync(launcher, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "ctx.effect(() => ctx.tools.register(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cli.js",
+        "line": 10,
+        "text": "import { execFile, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 141,
+        "text": "const child = spawn(invocation.file, invocation.args, {"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 176,
+        "text": "execFile(invocation.file, invocation.args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

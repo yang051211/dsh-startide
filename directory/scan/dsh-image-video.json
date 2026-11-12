@@ -1,20 +1,35 @@
 {
   "name": "dsh-image-video",
-  "version": "0.3.1",
-  "scannedAt": "2026-10-26T10:08:46.385Z",
+  "version": "1.0.4",
+  "scannedAt": "2026-11-12T08:43:21.544Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
+        "file": "lib/client/plugin.js",
+        "line": 153,
+        "text": "const response = await fetch(\"/image-video/defaults\", {"
+      },
+      {
         "file": "lib/index.js",
-        "line": 424,
+        "line": 2090,
         "text": "const res = await fetch(opts.url, init);"
       },
       {
         "file": "lib/index.js",
-        "line": 568,
+        "line": 2248,
         "text": "const res = await fetch(url, { signal: controller.signal });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4040,
+        "text": "response = await fetch(url, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4942,
+        "text": "response = await this.#fetch(url, { signal: AbortSignal.timeout(2e4) });"
       }
     ]
   },
@@ -24,27 +39,27 @@
       {
         "file": "lib/index.js",
         "line": 2,
+        "text": "import { access, appendFile, constants, copyFile, cp, mkdir, readFile, readdir, rename, rm, stat, unlink, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7,
         "text": "import { createReadStream } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 3,
-        "text": "import { mkdir, readFile, stat, unlink, writeFile } from \"node:fs/promises\";"
+        "line": 78,
+        "text": "await mkdir(dirname(path), { recursive: true }).catch(() => void 0);"
       },
       {
         "file": "lib/index.js",
-        "line": 639,
-        "text": "await mkdir(dir, { recursive: true });"
+        "line": 83,
+        "text": "await unlink(rotatedName(path, keep - 1)).catch(() => void 0);"
       },
       {
         "file": "lib/index.js",
-        "line": 643,
-        "text": "await writeFile(localPath, data);"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 697,
-        "text": "const data = await readFile(ref);"
+        "line": 87,
+        "text": "await appendFile(path, line, \"utf8\");"
       }
     ]
   },
@@ -53,28 +68,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 3460,
+        "line": 15311,
+        "text": "* @returns 工具定义数组（调用方用 `ctx.tools.register` 注册，disposer 交给框架）。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 16323,
         "text": "const inject = [\"tools\"];"
       },
       {
         "file": "lib/index.js",
-        "line": 3467,
+        "line": 16330,
         "text": "* `ctx.tools.register` 的 disposer 自动注销工具。"
       },
       {
         "file": "lib/index.js",
-        "line": 3469,
+        "line": 16332,
         "text": "* `generate_video` 不依赖 attachments，始终注册。工具注册的 disposer 由 `ctx.tools.register`"
       },
       {
         "file": "lib/index.js",
-        "line": 3484,
-        "text": "imageCtx.tools.register(createGenerateImageTool({"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 3493,
-        "text": "ctx.tools.register(createGenerateVideoTool({"
+        "line": 16405,
+        "text": "imageCtx.tools.register(imageTool);"
       }
     ]
   },
@@ -83,8 +98,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 7,
-        "text": "import { execFile } from \"node:child_process\";"
+        "line": 3,
+        "text": "import { execFile, spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 369,
+        "text": "execFile(file, [...args], { timeout: 1e4 }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1312,
+        "text": "const child = spawn(ffmpegPath, [...args], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1490,
+        "text": "const child = spawn(ffmpegPath, args, { stdio: ["
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1514,
+        "text": "const child = spawn(ffmpegPath, ["
       }
     ]
   },
@@ -93,7 +128,9 @@
     "evidence": []
   },
   "dependencies": 2,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "lib/client/client.Workbench.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [],
   "setupHints": [],

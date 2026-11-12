@@ -1,0 +1,98 @@
+{
+  "name": "dsh-done-check",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-12T08:43:15.774Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/fingerprint.js",
+        "line": 2,
+        "text": "import { lstat, readFile, readlink } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/core/fingerprint.js",
+        "line": 44,
+        "text": "return sha256(await readFile(abs));"
+      },
+      {
+        "file": "lib/service.js",
+        "line": 7,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/service.js",
+        "line": 34,
+        "text": "text = await readFile(join(root, CHECKLIST_FILE), 'utf8');"
+      },
+      {
+        "file": "lib/store/state.js",
+        "line": 2,
+        "text": "import { mkdir, readFile, realpath, rename, rm, stat, writeFile } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/plugin/index.js",
+        "line": 7,
+        "text": "*   `ctx.tools.execute`, so the session's permission policies apply to it."
+      },
+      {
+        "file": "lib/plugin/index.js",
+        "line": 20,
+        "text": "export const inject = ['tools', 'commands'];"
+      },
+      {
+        "file": "lib/plugin/index.js",
+        "line": 83,
+        "text": "const tools = ctx.tools;"
+      },
+      {
+        "file": "lib/plugin/index.js",
+        "line": 98,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/plugin/index.js",
+        "line": 140,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/fingerprint.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/plugin/index.js",
+        "line": 9,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

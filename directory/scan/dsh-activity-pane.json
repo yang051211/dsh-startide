@@ -1,34 +1,34 @@
 {
   "name": "dsh-activity-pane",
-  "version": "0.18.0",
-  "scannedAt": "2026-10-26T10:05:59.782Z",
+  "version": "0.19.0",
+  "scannedAt": "2026-11-12T08:43:19.867Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": ".dsh-plugin/client.js",
-        "line": 4667,
+        "line": 5196,
         "text": "const response = await fetch(`${PANE_API_BASE}/ack`, {"
       },
       {
         "file": ".dsh-plugin/client.js",
-        "line": 4760,
+        "line": 5327,
         "text": "fetch(`${PANE_API_BASE}/busy?ids=${encodeURIComponent(pending.join(\",\"))}`, { cache: \"no-store\" })"
       },
       {
         "file": "scripts/check.mjs",
-        "line": 4233,
+        "line": 4573,
         "text": "assert.ok(bundle.includes(\"fetch(`${PANE_API_BASE}/ack`\"), \"确认写回经宿主侧 ack 路由（R-01-002/AC-10、AC-11）\");"
       },
       {
         "file": "scripts/check.mjs",
-        "line": 4430,
+        "line": 4794,
         "text": "&& bundle.includes(\"fetch(`${PANE_API_BASE}/ack`\")"
       },
       {
         "file": "scripts/check.mjs",
-        "line": 4431,
+        "line": 4795,
         "text": "&& bundle.includes(\"fetch(`${PANE_API_BASE}/busy?ids=\"),"
       }
     ]
@@ -43,22 +43,22 @@
       },
       {
         "file": "scripts/build-client.mjs",
-        "line": 13,
+        "line": 16,
         "text": "const core = (await readFile(join(root, 'src/core.mjs'), 'utf8')).replace("
       },
       {
         "file": "scripts/build-client.mjs",
-        "line": 17,
+        "line": 20,
         "text": "const navigation = (await readFile(join(root, 'src/navigation.mjs'), 'utf8')).replace("
       },
       {
         "file": "scripts/build-client.mjs",
-        "line": 21,
+        "line": 24,
         "text": "const client = await readFile(join(root, 'src/client.mjs'), 'utf8')"
       },
       {
         "file": "scripts/build-client.mjs",
-        "line": 36,
+        "line": 39,
         "text": "await writeFile(tmp, bundle)"
       }
     ]
@@ -79,6 +79,16 @@
         "file": "scripts/check.mjs",
         "line": 8,
         "text": "import { execFileSync } from \"node:child_process\";"
+      },
+      {
+        "file": "scripts/perf-ab.mjs",
+        "line": 25,
+        "text": "import { execFileSync, spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "scripts/perf-ab.mjs",
+        "line": 140,
+        "text": "const child = spawn(chromeBin, ["
       }
     ]
   },

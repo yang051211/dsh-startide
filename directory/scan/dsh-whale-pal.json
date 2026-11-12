@@ -1,0 +1,122 @@
+{
+  "name": "dsh-whale-pal",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-12T08:43:22.316Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 203,
+        "text": "response = await fetch(STATUS_ROUTE, { headers: { accept: \"application/json\" } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 226,
+        "text": "response = await fetch(WORKSPACES_ROUTE, { headers: { accept: \"application/json\" } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 254,
+        "text": "response = await fetch(SETTINGS_ROUTE, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 291,
+        "text": "response = await fetch(route, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 320,
+        "text": "response = await fetch(PICK_ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 40,
+        "text": "parsed = JSON.parse(readFileSync(manifest, 'utf8'))"
+      },
+      {
+        "file": "lib/atomic.js",
+        "line": 14,
+        "text": "import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/atomic.js",
+        "line": 83,
+        "text": "mkdirSync(archiveDir, { recursive: true })"
+      },
+      {
+        "file": "lib/atomic.js",
+        "line": 89,
+        "text": "unlinkSync(path)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "export const inject = ['systemPrompt', 'webServer', 'commands', 'tools', 'workspaceController']"
+      },
+      {
+        "file": "lib/ctx/host-bridge.js",
+        "line": 836,
+        "text": "keep('工具没挂上', () => tools.register({"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 864,
+        "text": "tools.register({"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 910,
+        "text": "tools.register({"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 1016,
+        "text": "tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/vault-io.js",
+        "line": 12,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "systemPrompt",
+    "tools",
+    "webServer",
+    "workspaceController"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

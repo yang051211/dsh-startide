@@ -1,48 +1,74 @@
 {
   "name": "dsh-usage-dock",
-  "version": "0.9.0",
-  "scannedAt": "2026-10-26T10:05:16.316Z",
+  "version": "0.10.2",
+  "scannedAt": "2026-11-12T08:43:20.967Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 1699,
+        "line": 2009,
         "text": "return fetch('/api/plan-usage', aborter ? { signal: aborter.signal } : undefined)"
       },
       {
         "file": "client.js",
-        "line": 2387,
+        "line": 2786,
         "text": "return fetch('/api/plan-usage/config')"
       },
       {
         "file": "client.js",
-        "line": 2469,
+        "line": 2868,
         "text": "return fetch('/api/plan-usage/config', {"
       },
       {
         "file": "client.js",
-        "line": 4541,
-        "text": "return fetch('/api/plan-usage/quota-windows', { headers: { accept: 'application/json' } })"
+        "line": 6782,
+        "text": "return globalThis.fetch(MIMO_DISPLAY_ROUTE, {"
       },
       {
         "file": "client.js",
-        "line": 4614,
-        "text": "fetch('/api/plan-usage/workbuddy-accounts', { headers: { accept: 'application/json' } })"
+        "line": 8348,
+        "text": "return fetch('/api/plan-usage/quota-windows', { headers: { accept: 'application/json' } })"
       }
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plans/codex-subscription-patch.js",
+        "line": 12,
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "plans/codex-subscription-patch.js",
+        "line": 30,
+        "text": "return JSON.parse(readFileSync(MANIFEST_PATH, 'utf8'))"
+      },
+      {
+        "file": "plans/codex-subscription-patch.js",
+        "line": 50,
+        "text": "try { version = String(JSON.parse(readFileSync(pkgJson, 'utf8')).version || '') || null } catch { version = null }"
+      },
+      {
+        "file": "plans/codex-subscription-patch.js",
+        "line": 51,
+        "text": "const currentSha = sha256(readFileSync(target))"
+      },
+      {
+        "file": "plans/codex-subscription-patch.js",
+        "line": 52,
+        "text": "const serviceAvailable = readFileSync(target, 'utf8').includes('codexSubscriptionUsage')"
+      }
+    ]
   },
   "agentTools": {
     "hit": true,
     "evidence": [
       {
         "file": "index.js",
-        "line": 1319,
+        "line": 1568,
         "text": "*   - `ctx.tools.register(definition)` 返回**精确 disposer**，卸载时调用即可；"
       },
       {
@@ -58,8 +84,14 @@
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plans/mimo-auth/windows-dpapi.js",
+        "line": 17,
+        "text": "import { spawn as nodeSpawn } from 'node:child_process'"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

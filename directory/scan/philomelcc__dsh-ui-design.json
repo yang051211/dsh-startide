@@ -1,0 +1,99 @@
+{
+  "name": "@philomelcc/dsh-ui-design",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-12T08:43:15.983Z",
+  "icon": "philomelcc__dsh-ui-design.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 410,
+        "text": "fetch(GET_URL + '?id=' + encodeURIComponent(designId), { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 640,
+        "text": "const res = await fetch(editing ? UPDATE_URL : CREATE_URL, {"
+      },
+      {
+        "file": "client.js",
+        "line": 807,
+        "text": "const res = await fetch(LIST_URL + '?' + params.toString(), { cache: 'no-store' });"
+      },
+      {
+        "file": "client.js",
+        "line": 834,
+        "text": "const res = await fetch(GET_URL + '?id=' + encodeURIComponent(meta.id), { cache: 'no-store' });"
+      },
+      {
+        "file": "client.js",
+        "line": 846,
+        "text": "const res = await fetch(DELETE_URL, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "import { readFileSync, statSync } from \"node:fs\";"
+      },
+      {
+        "file": "index.js",
+        "line": 35,
+        "text": "guideCache = { mtime, text: readFileSync(GUIDE_PATH, \"utf8\") };"
+      },
+      {
+        "file": "lib/embedding.js",
+        "line": 17,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/embedding.js",
+        "line": 30,
+        "text": "const raw = JSON.parse(fs.readFileSync(CONFIG_FILE, \"utf8\"));"
+      },
+      {
+        "file": "lib/embedding.js",
+        "line": 78,
+        "text": "const parsed = JSON.parse(fs.readFileSync(VECTORS_FILE, \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "export const inject = [\"webServer\", \"tools\", \"systemPrompt\"];"
+      },
+      {
+        "file": "index.js",
+        "line": 447,
+        "text": "ctx.effect(() => ctx.tools.register(uiDesign), \"ui-design: tool ui_design\");"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

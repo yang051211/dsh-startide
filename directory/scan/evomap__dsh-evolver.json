@@ -1,7 +1,7 @@
 {
   "name": "@evomap/dsh-evolver",
-  "version": "1.0.9",
-  "scannedAt": "2026-11-10T08:48:55.220Z",
+  "version": "1.0.10",
+  "scannedAt": "2026-11-12T08:43:16.884Z",
   "icon": "evomap__dsh-evolver.png",
   "network": {
     "hit": true,
@@ -32,19 +32,19 @@
         "text": "import { stat } from 'node:fs/promises';"
       },
       {
-        "file": "lib/runtime/command-jobs.js",
-        "line": 5,
-        "text": "import { lstatSync, readFileSync } from 'node:fs';"
+        "file": "lib/runtime/acp-model.js",
+        "line": 8,
+        "text": "} from 'node:fs';"
       },
       {
-        "file": "lib/runtime/command-jobs.js",
-        "line": 32,
-        "text": "const jobs = JSON.parse(readFileSync(file, 'utf8'));"
+        "file": "lib/runtime/acp-model.js",
+        "line": 72,
+        "text": "mkdirSync(dirname(target), { recursive: true, mode: 0o700 });"
       },
       {
-        "file": "lib/runtime/engine/install.js",
-        "line": 4,
-        "text": "import fs from 'node:fs';"
+        "file": "lib/runtime/acp-model.js",
+        "line": 73,
+        "text": "writeFileSync(target, text, { mode: 0o600, flag: 'wx' });"
       }
     ]
   },
@@ -62,6 +62,21 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/runtime/acp-model.js",
+        "line": 4,
+        "text": "import { fork } from 'node:child_process';"
+      },
+      {
+        "file": "lib/runtime/process/acp-child.js",
+        "line": 4,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/runtime/process/acp-child.js",
+        "line": 124,
+        "text": "child = spawn(spec.command, spec.args, {"
+      },
+      {
         "file": "lib/runtime/process/identity.js",
         "line": 4,
         "text": "import { spawnSync } from 'node:child_process';"
@@ -70,21 +85,6 @@
         "file": "lib/runtime/process/owner.js",
         "line": 4,
         "text": "import { spawnSync } from 'node:child_process';"
-      },
-      {
-        "file": "lib/runtime/process/owner.js",
-        "line": 29,
-        "text": "const result = spawnSync(executable, args, {"
-      },
-      {
-        "file": "lib/runtime/process/owner.js",
-        "line": 70,
-        "text": "const probe = spawnSync('ps', ['-o', 'ppid=,comm=', '-p', String(pid)], { encoding: 'utf8', timeout: PROCESS_START_TIMEOUT_MS });"
-      },
-      {
-        "file": "lib/runtime/process/spawn.js",
-        "line": 4,
-        "text": "import { execFile, spawn } from 'node:child_process';"
       }
     ]
   },

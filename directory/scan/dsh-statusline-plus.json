@@ -1,34 +1,34 @@
 {
   "name": "dsh-statusline-plus",
-  "version": "0.1.15",
-  "scannedAt": "2026-11-07T14:33:12.580Z",
+  "version": "0.1.17",
+  "scannedAt": "2026-11-12T08:43:14.159Z",
   "icon": "dsh-statusline-plus.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 670,
+        "line": 744,
         "text": "return fetch('/statusline/api/' + endpoint, {"
       },
       {
         "file": "lib/client.js",
-        "line": 687,
+        "line": 761,
         "text": "return fetch('/statusline/api/usage', opts).then(function (r) { return r.json() })"
       },
       {
         "file": "lib/client.js",
-        "line": 701,
+        "line": 775,
         "text": "return fetch('/statusline/api/git', opts)"
       },
       {
         "file": "lib/client.js",
-        "line": 1285,
+        "line": 1359,
         "text": "return fetch('/statusline/api/session-model', { method: 'POST',"
       },
       {
         "file": "lib/client.js",
-        "line": 1471,
+        "line": 1545,
         "text": "fetch('/statusline/api/peak-schedule').then(function (response) { return response.json() }).then(function (result) {"
       }
     ]
@@ -52,14 +52,14 @@
         "text": "import { existsSync, statSync } from 'node:fs'"
       },
       {
-        "file": "lib/model-pricing.js",
-        "line": 2,
-        "text": "import { readFileSync, existsSync } from 'node:fs'"
+        "file": "lib/host-update.js",
+        "line": 14,
+        "text": "import { accessSync, constants, existsSync, readFileSync, realpathSync } from 'node:fs'"
       },
       {
-        "file": "lib/model-pricing.js",
-        "line": 108,
-        "text": "const manifest = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'))"
+        "file": "lib/host-update.js",
+        "line": 45,
+        "text": "try { return JSON.parse(readFileSync(join(dir, 'package.json'), 'utf8')) } catch { return null }"
       }
     ]
   },
@@ -74,6 +74,21 @@
         "file": "lib/git-status.js",
         "line": 27,
         "text": "const handle = subprocess.spawn({"
+      },
+      {
+        "file": "lib/host-update.js",
+        "line": 13,
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/host-update.js",
+        "line": 74,
+        "text": "execFile(command, args, { timeout, encoding: 'utf8' }, (error, stdout) => error ? reject(error) : resolve(String(stdout).trim()))"
+      },
+      {
+        "file": "lib/restart.js",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process'"
       },
       {
         "file": "lib/update.js",

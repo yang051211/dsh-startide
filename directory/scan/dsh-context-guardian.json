@@ -1,7 +1,7 @@
 {
   "name": "dsh-context-guardian",
-  "version": "0.4.0-beta.1",
-  "scannedAt": "2026-11-05T08:17:11.478Z",
+  "version": "0.5.0-beta.1",
+  "scannedAt": "2026-11-12T08:43:16.108Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -48,7 +48,7 @@
     "evidence": [
       {
         "file": "engine.js",
-        "line": 1355,
+        "line": 1380,
         "text": "for (const tool of options.tools) inner.tools.register(definitions[tool])"
       }
     ]
@@ -65,6 +65,21 @@
         "file": "index.js",
         "line": 138,
         "text": "const child = spawn(this.options.python, [BRIDGE_SCRIPT], {"
+      },
+      {
+        "file": "launch.mjs",
+        "line": 9,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "launch.mjs",
+        "line": 30,
+        "text": "const probe = spawnSync(py, ['-c', 'import sys, fastapi, uvicorn, httpx; assert sys.version_info >= (3, 10)'], { stdio: 'ignore' })"
+      },
+      {
+        "file": "launch.mjs",
+        "line": 49,
+        "text": "const child = spawn(py, [join(here, 'cg_launch.py'), ...process.argv.slice(2)], {"
       }
     ]
   },
@@ -79,27 +94,27 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 74,
+      "line": 34,
       "text": "pip install context-guardian && context-guardian   # proxy on :8786 in front of Ollama on :11434; set OPENAI_BASE_URL=http://localhost:8786/v1"
     },
     {
       "file": "README.md",
-      "line": 85,
+      "line": 47,
       "text": "pip install context-guardian"
     },
     {
       "file": "README.md",
-      "line": 576,
+      "line": 635,
       "text": "1. Install the extra: `pip install \"context-guardian[encrypt]\"` (it adds one package, `cryptography`)."
     },
     {
       "file": "README.md",
-      "line": 594,
+      "line": 653,
       "text": "context-guardian-configure   # after pip install context-guardian"
     },
     {
       "file": "README.md",
-      "line": 680,
+      "line": 751,
       "text": "pip install -r requirements.txt"
     }
   ],

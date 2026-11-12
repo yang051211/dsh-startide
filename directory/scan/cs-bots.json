@@ -1,0 +1,101 @@
+{
+  "name": "cs-bots",
+  "version": "0.9.0",
+  "scannedAt": "2026-11-12T08:43:19.060Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/api.js",
+        "line": 2184,
+        "text": "//   公网 `curl -X POST http://<IP>/cs-bots/api/tasks` 直接 200，"
+      },
+      {
+        "file": "src/client.js",
+        "line": 90,
+        "text": "const res = await fetch(API + path, {"
+      },
+      {
+        "file": "src/fence.js",
+        "line": 6,
+        "text": "*   `curl -X POST http://<公网IP>/cs-bots/api/tasks -d '{\"subject\":\"x\"}'` 返回 200，"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/api.js",
+        "line": 15,
+        "text": "import { readFileSync, readdirSync, statSync, existsSync, writeFileSync, renameSync } from 'node:fs'"
+      },
+      {
+        "file": "src/api.js",
+        "line": 1436,
+        "text": "writeFileSync(tmp, nextRows.map((r) => JSON.stringify(r)).join('\\n') + (nextRows.length ? '\\n' : ''), 'utf8')"
+      },
+      {
+        "file": "src/api.js",
+        "line": 2849,
+        "text": "const text = readFileSync(join(root, name), 'utf8')"
+      },
+      {
+        "file": "src/api.js",
+        "line": 2919,
+        "text": "buf = readFileSync(abs)"
+      },
+      {
+        "file": "src/api.js",
+        "line": 2980,
+        "text": "text = readFileSync(abs, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/kernel.js",
+        "line": 680,
+        "text": "return tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/api.js",
+        "line": 26,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "src/api.js",
+        "line": 1945,
+        "text": "execFile(argv[0], argv.slice(1), { cwd, timeout: timeoutMs, maxBuffer: 4 * 1024 * 1024 }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "src/verify.js",
+        "line": 19,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "src/verify.js",
+        "line": 112,
+        "text": "execFile(file, args, { cwd, timeout: timeoutMs, maxBuffer: 8 * 1024 * 1024, shell: false }, (error, stdout, stderr) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

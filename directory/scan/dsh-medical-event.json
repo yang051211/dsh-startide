@@ -1,0 +1,92 @@
+{
+  "name": "dsh-medical-event",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-12T08:43:22.090Z",
+  "icon": "dsh-medical-event.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/llm.js",
+        "line": 20,
+        "text": "const res = await fetch(`${base}/chat/completions`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine/source.js",
+        "line": 6,
+        "text": "import { readdir, readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/engine/source.js",
+        "line": 28,
+        "text": "const data = JSON.parse(await readFile(file, 'utf8'))"
+      },
+      {
+        "file": "lib/model.js",
+        "line": 15,
+        "text": "import { appendFile, readFile, mkdir } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/model.js",
+        "line": 175,
+        "text": "for (const l of (await readFile(cachePath, 'utf8')).split('\\n')) {"
+      },
+      {
+        "file": "lib/model.js",
+        "line": 199,
+        "text": "if (callsPath) { await mkdir(runDir, { recursive: true }); await appendFile(callsPath, JSON.stringify(entry) + '\\n') }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 28,
+        "text": "ctx.tools.register(tool({"
+      },
+      {
+        "file": "index.js",
+        "line": 44,
+        "text": "ctx.tools.register(tool({"
+      },
+      {
+        "file": "index.js",
+        "line": 52,
+        "text": "ctx.tools.register(tool({"
+      },
+      {
+        "file": "index.js",
+        "line": 73,
+        "text": "ctx.tools.register(tool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

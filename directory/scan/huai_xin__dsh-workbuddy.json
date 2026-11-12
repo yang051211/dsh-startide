@@ -1,7 +1,7 @@
 {
   "name": "@huai_xin/dsh-workbuddy",
-  "version": "0.8.5",
-  "scannedAt": "2026-11-03T20:52:06.908Z",
+  "version": "0.8.6",
+  "scannedAt": "2026-11-12T08:43:16.458Z",
   "icon": "huai_xin__dsh-workbuddy.webp",
   "network": {
     "hit": true,
@@ -13,12 +13,12 @@
       },
       {
         "file": "client/index.js",
-        "line": 644,
+        "line": 653,
         "text": "const response = await fetch(`${API}${path}`, {"
       },
       {
         "file": "src/catalog/availability.js",
-        "line": 187,
+        "line": 208,
         "text": "const response = await fetch(`${route.endpoint}/v2/chat/completions`, {"
       },
       {
@@ -28,7 +28,7 @@
       },
       {
         "file": "src/llm/adapter.js",
-        "line": 736,
+        "line": 792,
         "text": "return await fetch(`${route.endpoint}/v2/chat/completions`, {"
       }
     ]
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "src/account/pool.js",
+        "line": 22,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/account/pool.js",
+        "line": 67,
+        "text": "const parsed = JSON.parse(readFileSync(poolPath(regionId), 'utf8'))"
+      },
+      {
+        "file": "src/account/pool.js",
+        "line": 82,
+        "text": "mkdirSync(ensurePluginDir(), { recursive: true })"
+      },
+      {
+        "file": "src/account/pool.js",
+        "line": 85,
+        "text": "writeFileSync(staging, JSON.stringify({"
+      },
+      {
         "file": "src/catalog/availability.js",
         "line": 31,
         "text": "import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
-      },
-      {
-        "file": "src/catalog/availability.js",
-        "line": 275,
-        "text": "const parsed = JSON.parse(readFileSync(ledgerPath(regionId), 'utf8'))"
-      },
-      {
-        "file": "src/catalog/availability.js",
-        "line": 304,
-        "text": "mkdirSync(ledgerDir(), { recursive: true })"
-      },
-      {
-        "file": "src/catalog/availability.js",
-        "line": 305,
-        "text": "writeFileSync(ledgerPath(regionId), JSON.stringify({"
-      },
-      {
-        "file": "src/catalog/catalog-cache.js",
-        "line": 44,
-        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
       }
     ]
   },
@@ -77,12 +77,12 @@
       },
       {
         "file": "src/core/regions.js",
-        "line": 144,
+        "line": 149,
         "text": "const child = spawn('cmd', ['/c', 'start', '\"\"', `\"${url}\"`], {"
       },
       {
         "file": "src/core/regions.js",
-        "line": 158,
+        "line": 163,
         "text": "const child = spawn(command, [url], { detached: true, stdio: 'ignore' })"
       }
     ]

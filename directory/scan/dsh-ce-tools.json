@@ -1,0 +1,128 @@
+{
+  "name": "dsh-ce-tools",
+  "version": "0.1.10",
+  "scannedAt": "2026-11-12T08:43:21.750Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 95,
+        "text": "const response = await fetch(STATUS_API, { method: \"GET\", signal, headers: { accept: \"application/json\" } });"
+      },
+      {
+        "file": "lib/kernel-driver.js",
+        "line": 609,
+        "text": "const response = await fetch(pageUrl, {"
+      },
+      {
+        "file": "lib/kernel-driver.js",
+        "line": 638,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/elevation-backend.js",
+        "line": 42,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/elevation-impl.js",
+        "line": 35,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 74,
+        "text": "import { readFileSync, realpathSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 431,
+        "text": "const svg = readFileSync(join(PLUGIN_DIR, \"icons\", fileName));"
+      },
+      {
+        "file": "lib/kernel-driver.js",
+        "line": 41,
+        "text": "import fs from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 47,
+        "text": "*    注册表校验对不上时 `tools.register()` 直接抛错、插件显示 `failed` 且极难定位。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 123,
+        "text": "export const inject = [\"tools\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 263,
+        "text": "for (const tool of tools) ctx.tools.register(tool);"
+      },
+      {
+        "file": "lib/toolkit.js",
+        "line": 9,
+        "text": "* 注册表的校验规则对不上时 `tools.register()` 直接抛错、整个插件激活失败，"
+      },
+      {
+        "file": "lib/toolkit.js",
+        "line": 259,
+        "text": "* @returns {object} 可直接交给 ctx.tools.register 的工具定义"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/elevation-impl.js",
+        "line": 37,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/elevation-impl.js",
+        "line": 143,
+        "text": "const result = spawnSync(\"net\", [\"session\"], {"
+      },
+      {
+        "file": "lib/kernel-driver.js",
+        "line": 39,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/kernel-driver.js",
+        "line": 253,
+        "text": "const result = spawnSync(command, args, {"
+      },
+      {
+        "file": "lib/remote/kernel-elevate.js",
+        "line": 38,
+        "text": "import { spawn } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

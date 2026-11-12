@@ -1,11 +1,16 @@
 {
   "name": "dsh-stock-analysis",
-  "version": "0.2.10",
-  "scannedAt": "2026-10-31T13:58:02.150Z",
+  "version": "0.2.11",
+  "scannedAt": "2026-11-12T08:43:20.019Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
+      {
+        "file": "dist/web/app.js",
+        "line": 216,
+        "text": "response = await fetch(path, { ...options, signal: controller.signal });"
+      },
       {
         "file": "scripts/ci-resolve-llm-host.mjs",
         "line": 18,
@@ -39,12 +44,12 @@
       {
         "file": "dist/index.js",
         "line": 84,
-        "text": "import { existsSync, readdirSync, readFileSync } from \"node:fs\";"
+        "text": "import { existsSync as existsSync2, readdirSync, readFileSync as readFileSync2 } from \"node:fs\";"
       },
       {
         "file": "dist/index.js",
-        "line": 217,
-        "text": "const raw = readFileSync(skillFile, \"utf-8\");"
+        "line": 158,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from \"node:fs\";"
       }
     ]
   },
@@ -54,27 +59,27 @@
       {
         "file": "dist/index.js",
         "line": 104,
-        "text": "(typeof ctx.on !== \"function\" || typeof ctx.tools.get !== \"function\" || typeof ctx.tools.presentAs !== \"function\" || names.size === 0 || ctx.tools.get(SEARCH)) "
+        "text": "if (typeof ctx.tools.resolve !== \"function\" || ctx.tools.get(SEARCH)) return () => void 0;"
       },
       {
         "file": "dist/index.js",
-        "line": 106,
+        "line": 109,
+        "text": "if (ctx.tools.get(SEARCH, agent) && !ptc.has(agent)) return true;"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 113,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "dist/index.js",
-        "line": 124,
-        "text": "idates = state.catalog.filter((tool) => ctx.tools.get(tool.name, exec.agent)).map((tool) => ({ tool, text: `${tool.name} ${tool.description}`.toLowerCase() }));"
+        "line": 131,
+        "text": "idates = [...names].filter(([name2]) => ctx.tools.get(name2, agent)).map(([name2, description]) => ({ tool: { name: name2, description }, text: `${name2} ${desc"
       },
       {
         "file": "dist/index.js",
-        "line": 231,
+        "line": 736,
         "text": "var inject = [\"tools\", \"skills\"];"
-      },
-      {
-        "file": "dist/index.js",
-        "line": 236,
-        "text": "const previousTools = new Set(ctx.tools.schemas?.().map((tool) => tool.name));"
       }
     ]
   },

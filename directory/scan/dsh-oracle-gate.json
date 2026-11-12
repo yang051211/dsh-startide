@@ -1,0 +1,112 @@
+{
+  "name": "dsh-oracle-gate",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-12T08:43:17.884Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/adapters/index.js",
+        "line": 11,
+        "text": "import { readdir, readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/adapters/index.js",
+        "line": 133,
+        "text": "raw = await readFile(join(HERE, name, 'domain.json'), 'utf8')"
+      },
+      {
+        "file": "src/index.js",
+        "line": 1,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/index.js",
+        "line": 58,
+        "text": "const VERSION = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version"
+      },
+      {
+        "file": "src/kernel/command.js",
+        "line": 13,
+        "text": "import { statSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 55,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "src/index.js",
+        "line": 130,
+        "text": "safe('oracle_gate_ping', () => ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "src/tools/check.js",
+        "line": 48,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "src/tools/design.js",
+        "line": 115,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "src/tools/domain.js",
+        "line": 26,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/kernel/command.js",
+        "line": 3,
+        "text": "// 为什么需要这一层：执行用 spawn(shell:false)，这在 POSIX 上没问题，但在 Windows 上"
+      },
+      {
+        "file": "src/kernel/command.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/kernel/command.js",
+        "line": 130,
+        "text": "const killer = spawn('taskkill', ['/pid', String(child.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "src/kernel/fingerprint.js",
+        "line": 10,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "src/kernel/fingerprint.js",
+        "line": 17,
+        "text": "const result = spawnSync('git', ['-C', root, ...args], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

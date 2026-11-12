@@ -1,24 +1,24 @@
 {
   "name": "dsh-deepmoyu",
-  "version": "2.7.1",
-  "scannedAt": "2026-11-10T20:53:48.794Z",
+  "version": "2.7.2",
+  "scannedAt": "2026-11-12T08:43:14.842Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 72,
-        "text": "const jget = async (p) => asJson(await fetch(API + p, { credentials: 'same-origin' }))"
+        "line": 80,
+        "text": "const jget = async (p) => asJson(await fetch(API + p, { credentials: 'same-origin', signal: fetchSignal() }))"
       },
       {
         "file": "client.js",
-        "line": 73,
+        "line": 81,
         "text": "const jpost = async (p, body) => asJson(await fetch(API + p, {"
       },
       {
         "file": "index.js",
-        "line": 4583,
+        "line": 4765,
         "text": "* 🔴 2026-10-14 事故（使用者那边表现为\"DSH 突然崩了、网页 Failed to fetch (gateway/internal)\"）："
       },
       {
@@ -48,18 +48,18 @@
       },
       {
         "file": "index.js",
-        "line": 391,
-        "text": "writeFileSync(overrideFile, JSON.stringify(cur, null, 2), 'utf8')"
-      },
-      {
-        "file": "index.js",
-        "line": 396,
+        "line": 400,
         "text": "mkdirSync(outDir, { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 400,
+        "line": 404,
         "text": "try { appendFileSync(logFile, line + '\\n', 'utf8') } catch { /* 日志写不进去也不致命 */ }"
+      },
+      {
+        "file": "index.js",
+        "line": 2752,
+        "text": "const hash = createHash('sha256').update(readFileSync(shot.file)).digest('hex')"
       }
     ]
   },
@@ -73,12 +73,12 @@
       },
       {
         "file": "index.js",
-        "line": 4096,
+        "line": 4250,
         "text": "yml.push('- insert:', '    - id: mcp-dafeiyu-learn-review', \"      name: '@deepseek-ai/dsh-mcp-client'\", '      config:',"
       },
       {
         "file": "index.js",
-        "line": 4103,
+        "line": 4257,
         "text": "yml.push('- insert:', '    - id: mcp-dafeiyu-background', \"      name: '@deepseek-ai/dsh-mcp-client'\", '      config:',"
       },
       {
@@ -103,22 +103,22 @@
       },
       {
         "file": "index.js",
-        "line": 3969,
+        "line": 4123,
         "text": "const child = spawn(command.command, command.args, {"
       },
       {
         "file": "index.js",
-        "line": 4247,
+        "line": 4424,
         "text": "const killer = spawn('taskkill', ['/PID', String(child.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' })"
       },
       {
         "file": "index.js",
-        "line": 4405,
+        "line": 4582,
         "text": "const child = spawn(dsh.command, args, {"
       },
       {
         "file": "index.js",
-        "line": 6175,
+        "line": 6369,
         "text": "c = spawn(cmd, args, { windowsHide: true, stdio: 'ignore' })"
       }
     ]

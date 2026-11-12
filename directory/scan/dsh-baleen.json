@@ -1,14 +1,19 @@
 {
   "name": "dsh-baleen",
-  "version": "0.1.1",
-  "scannedAt": "2026-11-04T20:39:17.191Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-12T08:43:20.230Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
+        "file": "lib/mcp/xhs-client.js",
+        "line": 119,
+        "text": "const res = await fetch(record.baseUrl + '/mcp', { method: 'POST', headers: headers(), body: JSON.stringify(body), signal: params?.signal })"
+      },
+      {
         "file": "lib/runner.js",
-        "line": 55,
+        "line": 69,
         "text": "const items = await adapter.fetch(job.source, {"
       }
     ]
@@ -23,22 +28,22 @@
       },
       {
         "file": "index.js",
-        "line": 254,
+        "line": 283,
         "text": "fs.mkdirSync(path.join(dir, 'backups'), { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 511,
+        "line": 657,
         "text": "fs.mkdirSync(path.dirname(credFile), { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 513,
+        "line": 659,
         "text": "fs.writeFileSync(credFile, body.content, { mode: 0o600 })"
       },
       {
         "file": "index.js",
-        "line": 537,
+        "line": 683,
         "text": "try { raw = fs.readFileSync(path.join(dir, 'logs', 'diagnostics.jsonl'), 'utf8') } catch {"
       }
     ]
@@ -48,17 +53,17 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 15,
+        "line": 18,
         "text": "export const inject = ['tools', 'systemPrompt', 'webServer']"
       },
       {
         "file": "index.js",
-        "line": 622,
+        "line": 768,
         "text": "const tools = toolsCtx?.tools ?? ctx.tools ?? null"
       },
       {
         "file": "index.js",
-        "line": 635,
+        "line": 781,
         "text": "tools.register(t)"
       }
     ]
@@ -72,9 +77,24 @@
         "text": "import { spawn } from 'node:child_process'"
       },
       {
+        "file": "index.js",
+        "line": 56,
+        "text": "const child = spawn('rundll32', ['url.dll,FileProtocolHandler', url], { stdio: 'ignore' })"
+      },
+      {
         "file": "lib/adapters/yt.js",
         "line": 1,
         "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/mcp/xhs-client.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/mcp/xhs-client.js",
+        "line": 66,
+        "text": "const child = spawn(exePath, ['-port', `127.0.0.1:${port}`, '-token', token], {"
       }
     ]
   },

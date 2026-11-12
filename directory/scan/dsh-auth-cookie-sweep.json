@@ -1,15 +1,36 @@
 {
   "name": "dsh-auth-cookie-sweep",
-  "version": "0.3.0",
-  "scannedAt": "2026-11-10T20:54:01.289Z",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-12T08:43:12.467Z",
   "icon": null,
   "network": {
     "hit": false,
     "evidence": []
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/budget-state.js",
+        "line": 21,
+        "text": "import { mkdirSync, readFileSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/budget-state.js",
+        "line": 55,
+        "text": "const parsed = JSON.parse(readFileSync(file, \"utf8\"));"
+      },
+      {
+        "file": "lib/budget-state.js",
+        "line": 75,
+        "text": "mkdirSync(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/budget-state.js",
+        "line": 76,
+        "text": "writeFileSync("
+      }
+    ]
   },
   "agentTools": {
     "hit": false,

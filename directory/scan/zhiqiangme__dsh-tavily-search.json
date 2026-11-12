@@ -1,14 +1,14 @@
 {
   "name": "@zhiqiangme/dsh-tavily-search",
-  "version": "26.11.11",
-  "scannedAt": "2026-11-11T08:04:57.462Z",
+  "version": "26.11.12",
+  "scannedAt": "2026-11-12T08:43:15.453Z",
   "icon": "zhiqiangme__dsh-tavily-search.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 511,
+        "line": 521,
         "text": "const response = await fetch(path, {"
       },
       {
@@ -28,7 +28,7 @@
       },
       {
         "file": "lib/web.js",
-        "line": 153,
+        "line": 170,
         "text": "response = await fetch(request.url, {"
       }
     ]
@@ -37,24 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/config.js",
-        "line": 14,
+        "file": "lib/auto-connect.js",
+        "line": 1,
         "text": "import { existsSync, readFileSync } from 'node:fs';"
       },
       {
+        "file": "lib/auto-connect.js",
+        "line": 2,
+        "text": "import { writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/auto-connect.js",
+        "line": 11,
+        "text": "const manifest = JSON.parse(readFileSync(join(dir, 'package.json'), 'utf8'));"
+      },
+      {
+        "file": "lib/auto-connect.js",
+        "line": 65,
+        "text": "await writeFile(marker, '', { flag: 'wx' });"
+      },
+      {
         "file": "lib/config.js",
-        "line": 82,
-        "text": "text = readFileSync(path, 'utf8');"
-      },
-      {
-        "file": "lib/update.js",
-        "line": 10,
-        "text": "import { readFileSync } from 'node:fs';"
-      },
-      {
-        "file": "lib/update.js",
-        "line": 13,
-        "text": "const PACKAGE = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));"
+        "line": 14,
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
       }
     ]
   },

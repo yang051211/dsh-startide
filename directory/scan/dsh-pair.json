@@ -1,0 +1,106 @@
+{
+  "name": "dsh-pair",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-12T08:43:14.882Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "app/app.js",
+        "line": 247,
+        "text": "const response = await fetch(`${API}${path}`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 207,
+        "text": "const response = await fetch(`${ENDPOINT}${rotate ? '?rotate=1' : ''}`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 252,
+        "text": "await fetch(REVOKE_ENDPOINT, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-pair-serve.mjs",
+        "line": 28,
+        "text": "import { mkdirSync, openSync, readFileSync, writeFileSync, unlinkSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/dsh-pair-serve.mjs",
+        "line": 75,
+        "text": "text = readFileSync(configPath, 'utf8')"
+      },
+      {
+        "file": "bin/dsh-pair-serve.mjs",
+        "line": 100,
+        "text": "pid = Number(readFileSync(pidPath, 'utf8').trim())"
+      },
+      {
+        "file": "bin/dsh-pair-serve.mjs",
+        "line": 119,
+        "text": "text = readFileSync(logPath, 'utf8')"
+      },
+      {
+        "file": "bin/dsh-pair-serve.mjs",
+        "line": 186,
+        "text": "text = readFileSync(logPath, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-pair-serve.mjs",
+        "line": 27,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "bin/dsh-pair-serve.mjs",
+        "line": 91,
+        "text": "const has = name => spawnSync(name, ['-V'], { stdio: 'ignore' }).status === 0"
+      },
+      {
+        "file": "bin/dsh-pair-serve.mjs",
+        "line": 94,
+        "text": "const sessionAlive = () => has('tmux') && spawnSync('tmux', ['has-session', '-t', SESSION], { stdio: 'ignore' }).status === 0"
+      },
+      {
+        "file": "bin/dsh-pair-serve.mjs",
+        "line": 181,
+        "text": "const result = spawnSync('tmux', ['attach', '-t', SESSION], { stdio: 'inherit' })"
+      },
+      {
+        "file": "bin/dsh-pair-serve.mjs",
+        "line": 199,
+        "text": "spawnSync('tmux', ['kill-session', '-t', SESSION], { stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "sessionController",
+    "sessionQuery",
+    "webServer",
+    "workspaceController"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

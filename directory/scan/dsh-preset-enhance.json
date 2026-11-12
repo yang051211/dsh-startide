@@ -1,7 +1,7 @@
 {
   "name": "dsh-preset-enhance",
-  "version": "0.3.6-rc.1",
-  "scannedAt": "2026-10-26T10:05:28.819Z",
+  "version": "0.3.7-rc.1",
+  "scannedAt": "2026-11-12T08:43:15.865Z",
   "icon": "dsh-preset-enhance.svg",
   "network": {
     "hit": true,
@@ -13,7 +13,7 @@
       },
       {
         "file": "web/editor.js",
-        "line": 80,
+        "line": 88,
         "text": "  const res = await fetch(`/preset-enhance/api?sessionId=${encodeURIComponent(sessionId)}${!sessionId && inputModeId ? '&modeId=' + encodeURIComponent(inputMode"
       },
       {
@@ -23,7 +23,7 @@
       },
       {
         "file": "web/spreset.js",
-        "line": 119,
+        "line": 120,
         "text": "const res = await fetch(url, body ? {"
       }
     ]
@@ -33,27 +33,27 @@
     "evidence": [
       {
         "file": "index.mjs",
-        "line": 6,
+        "line": 8,
         "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';"
       },
       {
         "file": "index.mjs",
-        "line": 97,
+        "line": 101,
         "text": "const existing = await readFile(file).catch(() => null);"
       },
       {
         "file": "index.mjs",
-        "line": 101,
+        "line": 105,
         "text": "await writeFile(temp, desired);"
       },
       {
         "file": "index.mjs",
-        "line": 585,
+        "line": 638,
         "text": "res.end(await readFile(new URL(file, import.meta.url)));"
       },
       {
         "file": "index.mjs",
-        "line": 1401,
+        "line": 1558,
         "text": "const world = ctx.get?.('fs')"
       }
     ]
@@ -63,27 +63,27 @@
     "evidence": [
       {
         "file": "index.mjs",
-        "line": 35,
+        "line": 39,
         "text": "export const inject = ['llm', 'sessions', 'webServer', 'commands', 'tools', 'agentPresets', 'agents'];"
       },
       {
         "file": "index.mjs",
-        "line": 290,
+        "line": 306,
         "text": "const tools = ctx.tools;"
       },
       {
         "file": "index.mjs",
-        "line": 515,
+        "line": 566,
         "text": "if (ctx.tools?.register)"
       },
       {
         "file": "index.mjs",
-        "line": 516,
+        "line": 567,
         "text": "ctx.effect(() => ctx.tools.register(reader.tool), 'preset-enhance: read tool');"
       },
       {
         "file": "index.mjs",
-        "line": 1567,
+        "line": 1724,
         "text": "if (!ctx.tools?.schemas)"
       }
     ]
@@ -96,7 +96,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
+  "dependencies": 2,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

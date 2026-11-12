@@ -1,35 +1,30 @@
 {
   "name": "dsh-helper",
-  "version": "0.17.1",
-  "scannedAt": "2026-11-11T08:05:01.314Z",
+  "version": "0.20.2",
+  "scannedAt": "2026-11-12T08:43:20.566Z",
   "icon": "dsh-helper.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 23493,
+        "line": 1947,
         "text": "const response = await fetch(CONFIG_PATH, { headers: { accept: \"application/json\" } });"
       },
       {
         "file": "lib/client.js",
-        "line": 23498,
+        "line": 1952,
         "text": "const response = await fetch(CONFIG_PATH, {"
       },
       {
         "file": "lib/client.js",
-        "line": 23718,
+        "line": 2158,
         "text": "    fetch(RESTART_STATUS_PATH, { headers: { accept: \"application/json\" } }).then((r) => r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))).then((v"
       },
       {
         "file": "lib/client.js",
-        "line": 23736,
+        "line": 2176,
         "text": "const response = await fetch(RESTART_PATH, {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 23823,
-        "text": "    fetch(CONFIG_PATH, { headers: { accept: \"application/json\" } }).then((response) => response.ok ? response.json() : Promise.reject(new Error(`HTTP ${response"
       }
     ]
   },
@@ -39,27 +34,27 @@
       {
         "file": "lib/index.js",
         "line": 21,
-        "text": "import { copyFileSync, cpSync, existsSync, mkdirSync, readFileSync, readdirSync, realpathSync, renameSync, rmSync, writeFileSync } from 'node:fs';"
+        "text": "import { cpSync, existsSync, readFileSync, readdirSync, realpathSync, renameSync, rmSync } from 'node:fs';"
       },
       {
         "file": "lib/index.js",
         "line": 22,
-        "text": "import { mkdir, readFile, stat } from 'node:fs/promises';"
+        "text": "import { readFile, stat } from 'node:fs/promises';"
       },
       {
         "file": "lib/index.js",
-        "line": 179,
+        "line": 184,
         "text": "rmSync(from, { recursive: true, force: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 219,
-        "text": "const items = JSON.parse(readFileSync(file, 'utf8'))?.items;"
+        "line": 204,
+        "text": "const value = JSON.parse(await readFile(configFile(), 'utf8'));"
       },
       {
         "file": "lib/index.js",
-        "line": 232,
-        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
+        "line": 766,
+        "text": "const raw = JSON.parse(await readFile(join(dir, 'accounts', botId, 'state.json'), 'utf8'));"
       }
     ]
   },
@@ -68,17 +63,17 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 1335,
-        "text": "const dispose = toolCtx.tools.register(definition);"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 1808,
+        "line": 1386,
         "text": "// tools / systemPrompt 必须通过注入拿到：在 cordis 里直接读 ctx.tools 会得到"
       },
       {
         "file": "lib/index.js",
-        "line": 1816,
+        "line": 1394,
+        "text": "imCtx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1483,
         "text": "imCtx.tools.register({"
       }
     ]
@@ -88,22 +83,22 @@
     "evidence": [
       {
         "file": "src/host/restart.js",
-        "line": 20,
+        "line": 21,
         "text": "import { spawn } from 'node:child_process';"
       },
       {
         "file": "src/host/restart.js",
-        "line": 204,
+        "line": 205,
         "text": "\"const { spawn } = require('node:child_process')\","
       },
       {
         "file": "src/host/restart.js",
-        "line": 247,
+        "line": 248,
         "text": "'    child = spawn(file, args, { cwd, detached, stdio: [\"ignore\", out, err], env: process.env, shell: viaShell, windowsHide: true })',"
       },
       {
         "file": "src/host/restart.js",
-        "line": 298,
+        "line": 299,
         "text": "const helper = spawn("
       }
     ]
@@ -112,7 +107,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 2,
+  "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [],
