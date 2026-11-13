@@ -1,0 +1,98 @@
+{
+  "name": "dsh-tool-switch",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-13T08:14:59.361Z",
+  "icon": "dsh-tool-switch.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 43,
+        "text": "const response = await fetch(`${ROUTE}?session=${encodeURIComponent(sessionId)}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 52,
+        "text": "const response = await fetch(ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 57,
+        "text": "id: 'fs',"
+      },
+      {
+        "file": "index.js",
+        "line": 116,
+        "text": "return JSON.parse(fs.readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 168,
+        "text": "fs.mkdirSync(path.dirname(this.file), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 169,
+        "text": "fs.writeFileSync(this.file, `${JSON.stringify(this.data, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 6,
+        "text": "//   1. `ctx.tools.restrict({ allow })` 是 DSH 已有的按 agent 遮罩 API：只有"
+      },
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "export const inject = ['tools', 'agents']"
+      },
+      {
+        "file": "index.js",
+        "line": 200,
+        "text": "return ctx.tools.view(agent)"
+      },
+      {
+        "file": "index.js",
+        "line": 244,
+        "text": "const dispose = agent.ctx.tools.restrict({ allow })"
+      },
+      {
+        "file": "index.js",
+        "line": 345,
+        "text": "const definitions = ctx.tools.definitions()"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

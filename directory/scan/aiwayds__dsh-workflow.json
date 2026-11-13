@@ -1,0 +1,114 @@
+{
+  "name": "@aiwayds/dsh-workflow",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-13T08:14:55.920Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/commands.js",
+        "line": 18,
+        "text": "import { readFileSync, readdirSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/commands.js",
+        "line": 92,
+        "text": "const head = readFileSync(join(dir, file), 'utf8').split('\\n').slice(0, 40);"
+      },
+      {
+        "file": "lib/commands.js",
+        "line": 274,
+        "text": "const yamlText = readFileSync(picked.file, 'utf8');"
+      },
+      {
+        "file": "lib/commands.js",
+        "line": 287,
+        "text": "const yamlText = readFileSync(picked.file, 'utf8');"
+      },
+      {
+        "file": "lib/commands.js",
+        "line": 326,
+        "text": "const { workflow } = loadWorkflow(readFileSync(join(dir, file), 'utf8'), { filePath: file });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/composition.js",
+        "line": 35,
+        "text": "child.ctx.tools.restrict(composition.toolFilter);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 30,
+        "text": "export const inject = ['commands', 'subagents', 'agents', 'tools', 'systemPrompt', 'jobs', 'skills'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 102,
+        "text": "const toolDisposer = tools.register(tool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/install-profile.mjs",
+        "line": 29,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/install-profile.mjs",
+        "line": 69,
+        "text": "const r = spawnSync(cmd, cmdArgs, { stdio: 'inherit', ...opts })"
+      },
+      {
+        "file": "scripts/link-dsh-closure.mjs",
+        "line": 26,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/smoke-boot.mjs",
+        "line": 26,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/smoke-boot.mjs",
+        "line": 49,
+        "text": "const pack = spawnSync('npm', ['pack', '--pack-destination', work], { cwd: repoRoot, encoding: 'utf8' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.postinstall: node scripts/link-dsh-closure.mjs"
+      }
+    ]
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "commands",
+    "jobs",
+    "skills",
+    "subagents",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

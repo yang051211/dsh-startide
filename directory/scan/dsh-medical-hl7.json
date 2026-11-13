@@ -1,11 +1,22 @@
 {
   "name": "dsh-medical-hl7",
-  "version": "0.5.0",
-  "scannedAt": "2026-11-12T21:20:50.531Z",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-13T08:14:59.204Z",
   "icon": "dsh-medical-hl7.svg",
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/model/client.js",
+        "line": 25,
+        "text": "      const res = await fetch(`${base}${path}`, { method: 'POST', headers: headers(), body: JSON.stringify(body), signal: AbortSignal.any([controller.signal, si"
+      },
+      {
+        "file": "lib/model/client.js",
+        "line": 64,
+        "text": "      const res = await fetch(`${base}/models`, { headers: apiKey ? { authorization: `Bearer ${apiKey}` } : undefined, signal: AbortSignal.any([controller.signa"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
@@ -31,9 +42,9 @@
         "text": "await writeFile(join(dir, `CodeSystem-${id}.json`), JSON.stringify(cs, null, 1))"
       },
       {
-        "file": "lib/output.js",
-        "line": 8,
-        "text": "import { createWriteStream } from 'node:fs'"
+        "file": "lib/model/codetable.js",
+        "line": 10,
+        "text": "import { createReadStream } from 'node:fs'"
       }
     ]
   },
@@ -42,17 +53,17 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 9,
+        "line": 11,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "index.js",
-        "line": 20,
+        "line": 22,
         "text": "// ctx.tools.register is scoped to this plugin's fiber (same as the sibling medical plugins)"
       },
       {
         "file": "index.js",
-        "line": 21,
+        "line": 23,
         "text": "const register = (def) => ctx.tools.register(tool(def))"
       }
     ]
@@ -62,12 +73,12 @@
     "evidence": [
       {
         "file": "lib/service.js",
-        "line": 17,
+        "line": 18,
         "text": "import { execFile } from 'node:child_process'"
       },
       {
         "file": "lib/service.js",
-        "line": 375,
+        "line": 454,
         "text": "        execFile(settings.javaPath || 'java', ['-Xmx6g', '-jar', settings.validatorJar, join(bundlesDir, n), '-version', '4.0.1', '-ig', definitionsDir, '-tx', "
       }
     ]

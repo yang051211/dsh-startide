@@ -1,7 +1,7 @@
 {
   "name": "dsh-pwsh-plugin",
-  "version": "0.2.18",
-  "scannedAt": "2026-11-12T21:20:46.263Z",
+  "version": "0.2.19",
+  "scannedAt": "2026-11-13T08:14:58.351Z",
   "icon": "dsh-pwsh-plugin.svg",
   "network": {
     "hit": true,
@@ -28,7 +28,7 @@
       },
       {
         "file": "plugin/index.mjs",
-        "line": 44,
+        "line": 46,
         "text": "const SERVER_SOURCE = readFileSync(new URL('./session-server.ps1', import.meta.url), 'utf8')"
       }
     ]
@@ -38,28 +38,28 @@
     "evidence": [
       {
         "file": "plugin/index.mjs",
-        "line": 38,
+        "line": 40,
         "text": "export const inject = ['subprocess', 'tools']"
       },
       {
         "file": "plugin/index.mjs",
-        "line": 316,
+        "line": 324,
         "text": "// 旧注册不撤的话 ctx.tools.register 会抛 \"already registered\"。"
       },
       {
         "file": "plugin/index.mjs",
-        "line": 317,
+        "line": 325,
         "text": "ctx.effect(() => ctx.tools.register({"
       },
       {
-        "file": "wsl/custom-bash.mjs",
-        "line": 64,
-        "text": "export const inject = ['subprocess', 'tools']"
+        "file": "plugin/native-pwsh-guard.mjs",
+        "line": 21,
+        "text": "if (typeof ctx.tools.guard !== 'function') {"
       },
       {
-        "file": "wsl/custom-bash.mjs",
-        "line": 287,
-        "text": "ctx.tools.register({"
+        "file": "plugin/native-pwsh-guard.mjs",
+        "line": 26,
+        "text": "ctx.effect(() => ctx.tools.guard((exec) => {"
       }
     ]
   },
@@ -87,7 +87,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [
     "wsl/llrun"

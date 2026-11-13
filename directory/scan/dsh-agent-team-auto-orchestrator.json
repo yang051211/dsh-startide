@@ -1,0 +1,64 @@
+{
+  "name": "dsh-agent-team-auto-orchestrator",
+  "version": "1.5.10",
+  "scannedAt": "2026-11-13T08:14:51.391Z",
+  "icon": "dsh-agent-team-auto-orchestrator.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 892,
+        "text": "e|Invoke-Expression|iex|Remove-Variable|Invoke-WebRequest|Invoke-RestMethod|cmd|powershell|wsl|python|pip|curl|rm|del|rmdir|git\\s+(push|commit|reset|checkout|st"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 37,
+        "text": "import { readFileSync, statSync, writeFileSync, renameSync, unlinkSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "return JSON.parse(readFileSync(join(here, \"..\", \"package.json\"), \"utf8\")).version;"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 96,
+        "text": "var raw = readFileSync(p, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 530,
+        "text": "writeFileSync(tmp, JSON.stringify(next, null, 2) + \"\\n\", \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 533,
+        "text": "try { unlinkSync(tmp); } catch (e2) { /* 临时文件没建成，忽略 */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

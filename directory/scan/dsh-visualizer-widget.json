@@ -1,11 +1,17 @@
 {
   "name": "dsh-visualizer-widget",
-  "version": "0.3.1",
-  "scannedAt": "2026-10-26T10:07:20.301Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-13T08:14:57.521Z",
   "icon": "dsh-visualizer-widget.svg",
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 765,
+        "text": "return fetch(API_BASE + \"/\" + method, {"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
@@ -17,8 +23,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 72,
+        "line": 95,
         "text": "const text = readFileSync(SPEC_URL, \"utf8\");"
+      },
+      {
+        "file": "lib/prompt-file.mjs",
+        "line": 5,
+        "text": "import { mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/prompt-file.mjs",
+        "line": 19,
+        "text": "mkdirSync(dir, { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "lib/prompt-file.mjs",
+        "line": 21,
+        "text": "writeFileSync(file, fallbackText, { encoding: \"utf8\", flag: \"wx\", mode: 0o600 });"
       }
     ]
   },
@@ -27,17 +48,17 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 13,
+        "line": 15,
         "text": "export const inject = [\"tools\", \"systemPrompt\"];"
       },
       {
         "file": "lib/index.js",
-        "line": 188,
+        "line": 260,
         "text": "ctx.tools.register(specTool);"
       },
       {
         "file": "lib/index.js",
-        "line": 189,
+        "line": 261,
         "text": "ctx.tools.register(renderTool);"
       }
     ]

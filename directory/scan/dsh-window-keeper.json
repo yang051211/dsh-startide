@@ -1,0 +1,95 @@
+{
+  "name": "dsh-window-keeper",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-13T08:14:53.559Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 48,
+        "text": "fetch(ROUTE + '/state', { headers: { Accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 57,
+        "text": "fetch(ROUTE + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 10,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 21,
+        "text": "try { return JSON.parse(fs.readFileSync(path.join(PACKAGE_ROOT, 'package.json'), 'utf8')).version || '0.0.0' }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 42,
+        "text": "try { fs.appendFileSync(LOG_FILE, new Date().toISOString() + ' shell: ' + msg + '\\n') } catch {}"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "try { return JSON.parse(fs.readFileSync(file, 'utf8').replace(/^\\uFEFF/, '')) } catch { return null }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 50,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 97,
+        "text": "const r = spawnSync(POWERSHELL, ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-Command', ps], { windowsHide: true, encoding: 'utf8', timeout: 20000 })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 125,
+        "text": "const r = spawnSync(POWERSHELL, ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-Command', create], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 150,
+        "text": "const r = spawnSync(POWERSHELL, ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', SCRIPT, '-Apply'], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 259,
+        "text": "try { spawn(EXPLORER, [DATA_DIR], { detached: true, stdio: 'ignore', windowsHide: true }).unref(); result = { ok: true } }"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

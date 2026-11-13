@@ -1,0 +1,109 @@
+{
+  "name": "dsh-feiyu-affinity",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-13T08:14:54.241Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 36,
+        "text": "const j = await (await fetch('/dsh-feiyu-affinity/state', { headers: { accept: 'application/json' } })).json()"
+      },
+      {
+        "file": "client.js",
+        "line": 45,
+        "text": "          await fetch('/dsh-feiyu-affinity/config', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ ...form, judgeKey:"
+      },
+      {
+        "file": "client.js",
+        "line": 50,
+        "text": "        try { await fetch('/dsh-feiyu-affinity/' + path, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) }); load("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 324,
+        "text": "async function load(){const r=await fetch('/dsh-feiyu-affinity/state');const j=await r.json();const L=document.getElementById('list');L.innerHTML='';const c=j.c"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 325,
+        "text": "async function adj(qq,d){await fetch('/dsh-feiyu-affinity/adjust',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({qq,delta:d,rea"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { writeFileSync as __w } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 8,
+        "text": "import { readFileSync, writeFileSync, mkdirSync, appendFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 28,
+        "text": "try { return JSON.parse(readFileSync(cfgPath, 'utf8')) } catch { return {} }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 31,
+        "text": "try { mkdirSync(DIR, { recursive: true }) } catch { /* 忽略 */ }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 32,
+        "text": "try { writeFileSync(cfgPath, JSON.stringify(c, null, 2), 'utf8') } catch { /* 忽略 */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "export const inject = ['tools', 'webServer', 'systemPrompt']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 427,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 441,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 452,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

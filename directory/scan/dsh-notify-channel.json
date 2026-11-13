@@ -1,14 +1,24 @@
 {
   "name": "dsh-notify-channel",
-  "version": "0.5.2",
-  "scannedAt": "2026-11-04T07:56:04.729Z",
+  "version": "0.7.2",
+  "scannedAt": "2026-11-13T08:14:58.678Z",
   "icon": "dsh-notify-channel.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "src/lib.mjs",
-        "line": 70,
+        "line": 14,
+        "text": "import { request as httpsRequest, Agent as HttpsAgent } from 'node:https';"
+      },
+      {
+        "file": "src/lib.mjs",
+        "line": 15,
+        "text": "import { request as httpRequest, Agent as HttpAgent } from 'node:http';"
+      },
+      {
+        "file": "src/lib.mjs",
+        "line": 278,
         "text": "const res = await fetch(url, { ...init, signal: controller.signal });"
       }
     ]
@@ -19,26 +29,26 @@
       {
         "file": "index.js",
         "line": 2,
-        "text": "import { appendFileSync, mkdirSync, readFileSync } from 'node:fs';"
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
       },
       {
         "file": "index.js",
-        "line": 25,
+        "line": 29,
         "text": "const pkg = JSON.parse(readFileSync(join(dir, 'package.json'), 'utf8'));"
       },
       {
         "file": "index.js",
-        "line": 38,
+        "line": 42,
         "text": "return JSON.parse(readFileSync(join(dirname(fileURLToPath(import.meta.url)), 'package.json'), 'utf8')).name;"
       },
       {
         "file": "index.js",
-        "line": 221,
+        "line": 316,
         "text": "mkdirSync(dirname(auditFile), { recursive: true });"
       },
       {
         "file": "index.js",
-        "line": 222,
+        "line": 317,
         "text": "appendFileSync(auditFile, `${JSON.stringify(row)}\\n`, 'utf8');"
       }
     ]
@@ -62,7 +72,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 86,
+      "line": 186,
       "text": "npm i -g dsh-notify-channel"
     }
   ],

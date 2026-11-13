@@ -1,0 +1,91 @@
+{
+  "name": "dsh-codex-handoff",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-13T08:14:54.289Z",
+  "icon": "dsh-codex-handoff.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 415,
+        "text": "const response = await fetch(url, { headers: { accept: \"application/json\" } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 719,
+        "text": "const response = await fetch(`${ROUTE}/send`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 825,
+        "text": "const response = await fetch(`${ROUTE}/promote`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 62,
+        "text": "fs.mkdirSync(path.join(root, dir), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 124,
+        "text": "const parsed = JSON.parse(fs.readFileSync(p, UTF8));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 135,
+        "text": "fs.writeFileSync(tmp, JSON.stringify(index, null, 2), UTF8);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 141,
+        "text": "return JSON.parse(fs.readFileSync(p, UTF8));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1062,
+        "text": "const dispose = tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import { spawn, execFileSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 490,
+        "text": "child = spawn(argv[0], argv.slice(1), {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

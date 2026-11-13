@@ -1,35 +1,35 @@
 {
   "name": "dsh-font-enhancer",
-  "version": "1.5.5",
-  "scannedAt": "2026-10-30T23:38:26.728Z",
+  "version": "1.5.14",
+  "scannedAt": "2026-11-13T08:14:55.457Z",
   "icon": "dsh-font-enhancer.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 701,
+        "line": 70,
+        "text": "fetch(EXTRAS_URL,{credentials:\"same-origin\"}).then(function(r){"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 440,
+        "text": "fetch(base + \"/plugin-update-apply?pkg=\" + encodeURIComponent(pkg), { method: \"POST\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 452,
+        "text": "fetch(base + \"/plugin-update?pkg=\" + encodeURIComponent(pkg))"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 769,
         "text": "fetch(\"/dsh-font-enhancer/get\", { cache: \"no-store\" }).then(function (r) {"
       },
       {
         "file": "lib/client.js",
-        "line": 720,
+        "line": 788,
         "text": "fetch(\"/dsh-font-enhancer/set\", {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 981,
-        "text": "return fetch(\"/dsh-font-enhancer/installed-fonts\", { cache: \"no-store\" })"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 1454,
-        "text": "      try { fetch(\"/dsh-font-enhancer/log\", { method: \"POST\", headers: { \"Content-Type\": \"application/json\" }, body: JSON.stringify(payload) }).catch(function()"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 2248,
-        "text": "try { fetch(\"/dsh-font-enhancer/client-alive\").catch(function(){}); } catch (e) {}"
       }
     ]
   },
@@ -43,23 +43,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 60,
+        "line": 32,
+        "text": "var raw = readFileSync(SKINS_EXTRA_FILE, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 77,
         "text": "if (existsSync(SETTINGS_STORE)) return JSON.parse(readFileSync(SETTINGS_STORE, \"utf8\"));"
       },
       {
         "file": "lib/index.js",
-        "line": 67,
+        "line": 84,
         "text": "mkdirSync(dirname(SETTINGS_STORE), { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 68,
+        "line": 85,
         "text": "writeFileSync(SETTINGS_STORE, JSON.stringify(data, null, 2), \"utf8\");"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 96,
-        "text": "          try { writeFileSync(dest, Buffer.concat(chunks)); if (fontId) DOWNLOAD_PROGRESS[fontId] = { state: \"done\", pct: 100, received: received, total: total,"
       }
     ]
   },
@@ -77,13 +77,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 188,
+        "line": 205,
         "text": "execFile(\"reg.exe\", [\"add\", USER_FONTS_REG_KEY, \"/v\", regName, \"/t\", \"REG_SZ\", \"/d\", filePath, \"/f\"], { windowsHide: true, timeout: 20000 }, function (regErr) {"
       },
       {
         "file": "lib/index.js",
-        "line": 199,
+        "line": 216,
         "text": "      execFile(\"powershell.exe\", [\"-NoProfile\", \"-NonInteractive\", \"-ExecutionPolicy\", \"Bypass\", \"-Command\", ps], { windowsHide: true, timeout: 30000 }, functio"
+      },
+      {
+        "file": "lib/selfupdate.js",
+        "line": 32,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/selfupdate.js",
+        "line": 255,
+        "text": "child = execFile(cmd, args, {"
       }
     ]
   },

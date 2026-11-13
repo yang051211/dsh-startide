@@ -1,0 +1,66 @@
+{
+  "name": "dsh-browser-hub",
+  "version": "0.2.8",
+  "scannedAt": "2026-11-13T08:14:53.401Z",
+  "icon": "dsh-browser-hub.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 81,
+        "text": "const r = await fetch(url, { headers: { accept: \"application/json\" } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 86,
+        "text": "const r = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 38,
+        "text": "fs.mkdirSync(DATA_DIR, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "return JSON.parse(fs.readFileSync(file, \"utf8\"));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 55,
+        "text": "fs.writeFileSync(tmp, JSON.stringify(obj, null, 2), \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

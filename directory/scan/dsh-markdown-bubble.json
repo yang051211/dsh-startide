@@ -1,15 +1,47 @@
 {
   "name": "dsh-markdown-bubble",
-  "version": "0.1.5",
-  "scannedAt": "2026-10-26T10:08:43.696Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-13T08:14:58.540Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/client.js",
+        "line": 206,
+        "text": "const response = await fetch('/api/dsh-markdown-bubble/config', { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "src/client.js",
+        "line": 1161,
+        "text": "fetch('/api/dsh-markdown-bubble/config', {"
+      }
+    ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 13,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "src/index.js",
+        "line": 47,
+        "text": "const parsed = JSON.parse(fs.readFileSync(configPath(home), 'utf8'))"
+      },
+      {
+        "file": "src/index.js",
+        "line": 65,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "src/index.js",
+        "line": 66,
+        "text": "fs.writeFileSync(file + '.tmp', JSON.stringify({ layout }))"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,
@@ -26,7 +58,9 @@
   "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [],
+  "requiredServices": [
+    "webServer"
+  ],
   "setupHints": [],
   "skippedEntries": []
 }

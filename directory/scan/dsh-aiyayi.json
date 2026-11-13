@@ -1,7 +1,7 @@
 {
   "name": "dsh-aiyayi",
-  "version": "1.5.45",
-  "scannedAt": "2026-11-12T21:20:15.483Z",
+  "version": "1.6.1",
+  "scannedAt": "2026-11-13T08:14:46.821Z",
   "icon": "dsh-aiyayi.svg",
   "network": {
     "hit": true,
@@ -13,17 +13,17 @@
       },
       {
         "file": "lib/feishu-logic.js",
-        "line": 1039,
+        "line": 1112,
         "text": "const res = await fetch(`${domain}/open-apis/auth/v3/tenant_access_token/internal`, {"
       },
       {
         "file": "lib/feishu-logic.js",
-        "line": 1059,
+        "line": 1132,
         "text": "const res = await fetch("
       },
       {
         "file": "lib/feishu-logic.js",
-        "line": 1073,
+        "line": 1146,
         "text": "const res = await fetch(url, {"
       },
       {
@@ -37,6 +37,21 @@
     "hit": true,
     "evidence": [
       {
+        "file": "examples/mem_sync.js",
+        "line": 37,
+        "text": "import { existsSync, readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "examples/mem_sync.js",
+        "line": 86,
+        "text": "const parsed = JSON.parse(readFileSync(pointer, 'utf8'))"
+      },
+      {
+        "file": "examples/mem_sync.js",
+        "line": 396,
+        "text": "if (statSync(target).isFile()) content = readFileSync(target, 'utf8').slice(0, 512 * 1024)"
+      },
+      {
         "file": "lib/doc.js",
         "line": 32,
         "text": "import { closeSync, existsSync, mkdirSync, openSync, readSync, readdirSync, readFileSync, rmSync, statSync } from 'node:fs'"
@@ -45,21 +60,6 @@
         "file": "lib/doc.js",
         "line": 417,
         "text": "if (now - statSync(full).mtimeMs > 30 * 60 * 1000) rmSync(full, { recursive: true, force: true })"
-      },
-      {
-        "file": "lib/doc.js",
-        "line": 451,
-        "text": "rmSync(outDir, { recursive: true, force: true })"
-      },
-      {
-        "file": "lib/doc.js",
-        "line": 461,
-        "text": "rmSync(outDir, { recursive: true, force: true })"
-      },
-      {
-        "file": "lib/doc.js",
-        "line": 483,
-        "text": "mkdirSync(convDir, { recursive: true })"
       }
     ]
   },
@@ -78,12 +78,12 @@
       },
       {
         "file": "lib/feishu.js",
-        "line": 1530,
+        "line": 1605,
         "text": "tools.register({"
       },
       {
         "file": "lib/feishu.js",
-        "line": 1637,
+        "line": 1712,
         "text": "tools.register({"
       },
       {
@@ -97,6 +97,16 @@
     "hit": true,
     "evidence": [
       {
+        "file": "examples/mem_sync.js",
+        "line": 36,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "examples/mem_sync.js",
+        "line": 113,
+        "text": "const result = spawnSync('git', ['-c', 'core.quotepath=false', ...args], {"
+      },
+      {
         "file": "lib/home.js",
         "line": 29,
         "text": "import { spawn } from 'node:child_process'"
@@ -109,16 +119,6 @@
       {
         "file": "lib/net.js",
         "line": 29,
-        "text": "import { spawn } from 'node:child_process'"
-      },
-      {
-        "file": "lib/net.js",
-        "line": 196,
-        "text": "const proc = spawn(browser, args, { stdio: 'ignore' })"
-      },
-      {
-        "file": "lib/pwsh-check.js",
-        "line": 32,
         "text": "import { spawn } from 'node:child_process'"
       }
     ]

@@ -1,14 +1,14 @@
 {
   "name": "dsh-remote-harness",
-  "version": "0.1.8",
-  "scannedAt": "2026-11-12T08:43:22.250Z",
+  "version": "0.1.17",
+  "scannedAt": "2026-11-13T08:14:53.033Z",
   "icon": "dsh-remote-harness.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client/index.js",
-        "line": 121,
+        "line": 164,
         "text": "var response = await fetch(\"/dsh-remote/state\", { credentials: \"same-origin\", cache: \"no-store\" });"
       },
       {
@@ -53,14 +53,8 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": true,
-    "evidence": [
-      {
-        "file": "src/net/cloudflare.mjs",
-        "line": 14,
-        "text": "import { spawn } from \"node:child_process\";"
-      }
-    ]
+    "hit": false,
+    "evidence": []
   },
   "installScripts": {
     "hit": false,
@@ -75,13 +69,8 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 28,
-      "text": "### 2) 或用自带安装脚本（复制到 `<DSH_HOME>/plugins/dsh-remote` 并自动打 patch）"
-    },
-    {
-      "file": "README.md",
-      "line": 39,
-      "text": "- 配对信息：`<DSH_HOME>/plugins/dsh-remote/pairing.json` / `pairing.png` / `pairing.txt`"
+      "line": 80,
+      "text": "配对信息写入插件数据目录中的 `pairing.json`、`pairing.png` 和 `pairing.txt`。默认目录为 `<DSH_HOME>/plugins/dsh-remote`。"
     }
   ],
   "skippedEntries": []

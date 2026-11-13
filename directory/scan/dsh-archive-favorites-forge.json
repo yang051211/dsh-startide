@@ -1,7 +1,7 @@
 {
   "name": "dsh-archive-favorites-forge",
-  "version": "0.42.1",
-  "scannedAt": "2026-11-11T21:01:16.245Z",
+  "version": "0.43.1",
+  "scannedAt": "2026-11-13T08:14:53.011Z",
   "icon": "dsh-archive-favorites-forge.svg",
   "network": {
     "hit": true,
@@ -23,7 +23,7 @@
       },
       {
         "file": "lib/client.js",
-        "line": 7535,
+        "line": 8038,
         "text": "const resp = await fetch(path, {"
       }
     ]
@@ -31,6 +31,11 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/billion-cache.js",
+        "line": 13,
+        "text": "import * as fs from 'node:fs/promises'"
+      },
       {
         "file": "lib/index.js",
         "line": 73,
@@ -43,18 +48,13 @@
       },
       {
         "file": "lib/index.js",
-        "line": 132,
+        "line": 135,
         "text": "const pkg = JSON.parse(readFileSync(join(here, '..', 'package.json'), 'utf8'))"
       },
       {
         "file": "lib/index.js",
-        "line": 148,
+        "line": 151,
         "text": "const pkg = JSON.parse(readFileSync(join(here, '..', 'package.json'), 'utf8'))"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 189,
-        "text": "const parsed = JSON.parse(readFileSync(statePath(), 'utf8'))"
       }
     ]
   },
@@ -66,29 +66,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/billion-cache.js",
+        "line": 224,
+        "text": "const mod = await import('node:child_process')"
+      },
+      {
+        "file": "lib/billion-cache.js",
+        "line": 242,
+        "text": "child = spawn('powershell.exe', ['-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-Command', script], {"
+      },
+      {
         "file": "lib/index.js",
-        "line": 3033,
+        "line": 3036,
         "text": "const { spawn } = await import('node:child_process')"
       },
       {
         "file": "lib/index.js",
-        "line": 3035,
+        "line": 3038,
         "text": "const child = spawn('cmd', ['/c', 'start', '', url], { detached: true, stdio: 'ignore', windowsHide: true })"
       },
       {
         "file": "lib/index.js",
-        "line": 3039,
+        "line": 3042,
         "text": "const child = spawn('open', [url], { detached: true, stdio: 'ignore' })"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 3043,
-        "text": "const child = spawn('xdg-open', [url], { detached: true, stdio: 'ignore' })"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 4205,
-        "text": "const { spawn } = await import('node:child_process')"
       }
     ]
   },

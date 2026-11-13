@@ -1,7 +1,7 @@
 {
   "name": "dsh-toomuch-plugins",
-  "version": "0.3.1",
-  "scannedAt": "2026-11-03T20:52:18.732Z",
+  "version": "0.3.3",
+  "scannedAt": "2026-11-13T08:14:57.534Z",
   "icon": "dsh-toomuch-plugins.svg",
   "network": {
     "hit": false,
@@ -11,24 +11,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/index.js",
-        "line": 11,
-        "text": "import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+        "file": "src/history.js",
+        "line": 21,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
       },
       {
-        "file": "src/index.js",
-        "line": 29,
-        "text": "const parsed = JSON.parse(readFileSync(countsFile(), 'utf8'))"
+        "file": "src/history.js",
+        "line": 80,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
       },
       {
-        "file": "src/index.js",
-        "line": 39,
+        "file": "src/history.js",
+        "line": 99,
         "text": "mkdirSync(dirname(file), { recursive: true })"
       },
       {
-        "file": "src/index.js",
-        "line": 40,
-        "text": "writeFileSync(file, JSON.stringify(counts, null, 2) + '\\n')"
+        "file": "src/history.js",
+        "line": 105,
+        "text": "writeFileSync(temporary, body)"
+      },
+      {
+        "file": "src/history.js",
+        "line": 118,
+        "text": "const manifest = JSON.parse(readFileSync(join(profile.dir, 'package.json'), 'utf8'))"
       }
     ]
   },

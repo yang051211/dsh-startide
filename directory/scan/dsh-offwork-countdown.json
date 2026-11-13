@@ -1,0 +1,71 @@
+{
+  "name": "dsh-offwork-countdown",
+  "version": "1.2.1",
+  "scannedAt": "2026-11-13T08:14:52.427Z",
+  "icon": "dsh-offwork-countdown.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 960,
+        "text": "fetch(STATE_PATH, { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 969,
+        "text": "fetch(STATE_PATH, { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 989,
+        "text": "const response = await fetch(STATE_PATH, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host.js",
+        "line": 30,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "host.js",
+        "line": 213,
+        "text": "raw = await readFile(stateFile(), 'utf8')"
+      },
+      {
+        "file": "host.js",
+        "line": 304,
+        "text": "await mkdir(join(dataRoot(), 'offwork-countdown'), { recursive: true })"
+      },
+      {
+        "file": "host.js",
+        "line": 306,
+        "text": "await writeFile(temporary, `${JSON.stringify(state, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

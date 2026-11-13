@@ -1,0 +1,110 @@
+{
+  "name": "@zizon/gitfeed-native",
+  "version": "3.9.15",
+  "scannedAt": "2026-11-13T08:14:53.389Z",
+  "icon": "zizon__gitfeed-native.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 235,
+        "text": "return fetch(PREFIX + route, init).then(async function(res) {"
+      },
+      {
+        "file": "lib/host/custom.js",
+        "line": 204,
+        "text": "const answer = await input.fetch(input.url, {"
+      },
+      {
+        "file": "lib/host/feeds.js",
+        "line": 110,
+        "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "lib/host/fetch.js",
+        "line": 163,
+        "text": "const res = await fetch(feed.url, { headers: headers, redirect: 'follow', signal: signal });"
+      },
+      {
+        "file": "lib/host/jobs.js",
+        "line": 95,
+        "text": "const result = await options.fetch(scope.only ? { only: scope.only } : { feeds: wanted });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/custom.js",
+        "line": 16,
+        "text": "import { realpath, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/host/fetch.js",
+        "line": 9,
+        "text": "import { readdir, unlink } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/host/fetch.js",
+        "line": 291,
+        "text": "await unlink(path.join(itemsDir, name));"
+      },
+      {
+        "file": "lib/host/git.js",
+        "line": 3,
+        "text": "import { existsSync, readdirSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/host/opml.js",
+        "line": 4,
+        "text": "import { readFile } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/tool.js",
+        "line": 92,
+        "text": "return ctx.tools.register({"
+      },
+      {
+        "file": "lib/host/tool.js",
+        "line": 169,
+        "text": "return ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/git.js",
+        "line": 2,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: node build.mjs"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "timer",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

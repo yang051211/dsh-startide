@@ -1,0 +1,92 @@
+{
+  "name": "dsh-svn-review",
+  "version": "0.2.5",
+  "scannedAt": "2026-11-13T08:14:59.324Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/detect.js",
+        "line": 10,
+        "text": "import { readFileSync, readdirSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/detect.js",
+        "line": 18,
+        "text": "const buffer = readFileSync(absolute)"
+      },
+      {
+        "file": "lib/detect.js",
+        "line": 29,
+        "text": "return JSON.parse(readFileSync(absolute, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "import { statSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 67,
+        "text": "const parsed = JSON.parse(readFileSync(configPath, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 23,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 169,
+        "text": "* @param {any} ctx Cordis 上下文，这里只用到 ctx.tools。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 172,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 298,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/wc.js",
+        "line": 11,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/wc.js",
+        "line": 122,
+        "text": "const result = spawnSync(interpreter, [FALLBACK_SCRIPT, root, output], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

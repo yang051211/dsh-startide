@@ -1,26 +1,62 @@
 {
   "name": "@cs-qyzhang/dsh-llm-quota",
-  "version": "1.1.1",
-  "scannedAt": "2026-11-10T20:54:00.566Z",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-13T08:14:57.841Z",
   "icon": "cs-qyzhang__dsh-llm-quota.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 363,
+        "line": 433,
         "text": "const response = await fetch(`/api/llm-quota${query}`, {"
       },
       {
-        "file": "providers/shared.js",
-        "line": 17,
-        "text": "const response = await fetch(url, {"
+        "file": "client.js",
+        "line": 449,
+        "text": "const response = await fetch('/api/llm-quota/i18n', {"
+      },
+      {
+        "file": "client.js",
+        "line": 462,
+        "text": "const response = await fetch('/api/llm-quota/views', { signal, headers: { Accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 477,
+        "text": "const response = await fetch(`/api/llm-quota/history?${query}`, {"
+      },
+      {
+        "file": "providers/core.js",
+        "line": 25,
+        "text": "const response = await fetch(url, init)"
       }
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "history.js",
+        "line": 1,
+        "text": "import { mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "history.js",
+        "line": 109,
+        "text": "mkdirSync(dirname(filePath), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "import { readdirSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 179,
+        "text": "const parsed = JSON.parse(readFileSync(new URL(entry.name, directory), 'utf8'))"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,
@@ -34,7 +70,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

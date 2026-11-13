@@ -1,0 +1,104 @@
+{
+  "name": "dsh-feiyu-vision",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-13T08:14:52.164Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 33,
+        "text": "const j = await (await fetch('/dsh-feiyu-vision/state', { headers: { accept: 'application/json' } })).json()"
+      },
+      {
+        "file": "client.js",
+        "line": 44,
+        "text": "        try { await fetch('/dsh-feiyu-vision/config', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) }); setMsg('"
+      },
+      {
+        "file": "index.js",
+        "line": 40,
+        "text": "nc function load(){const j=await (await fetch('/dsh-feiyu-vision/state')).json();const ok=b=>b?'<span class=\"ok\">已配置</span>':'<span class=\"bad\">未配置</span>';docu"
+      },
+      {
+        "file": "index.js",
+        "line": 41,
+        "text": "u'?'zhipuApiKey':'sauceApiKey']=v}await fetch('/dsh-feiyu-vision/config',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(b)});awa"
+      },
+      {
+        "file": "index.js",
+        "line": 87,
+        "text": "const r = await fetch(url, { signal: AbortSignal.timeout(30000) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 64,
+        "text": "try { const fsx = await import('node:fs'); fsx.writeFileSync(CONFIG_PATH, JSON.stringify({"
+      },
+      {
+        "file": "index.js",
+        "line": 90,
+        "text": "const { mkdirSync, writeFileSync } = await import('node:fs')"
+      },
+      {
+        "file": "index.js",
+        "line": 94,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 96,
+        "text": "writeFileSync(file, Buffer.from(await r.arrayBuffer()))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "export const inject = ['tools', 'webServer']"
+      },
+      {
+        "file": "index.js",
+        "line": 73,
+        "text": "const register = () => ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core.js",
+        "line": 11,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

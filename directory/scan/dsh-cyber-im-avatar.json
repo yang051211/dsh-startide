@@ -1,7 +1,7 @@
 {
   "name": "dsh-cyber-im-avatar",
-  "version": "0.19.0",
-  "scannedAt": "2026-11-12T21:20:22.940Z",
+  "version": "0.20.0",
+  "scannedAt": "2026-11-13T08:14:50.040Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,7 +13,7 @@
       },
       {
         "file": "lib/client.js",
-        "line": 3464,
+        "line": 3537,
         "text": "fetch(api + \"/api/debug/boot\", {"
       },
       {
@@ -33,12 +33,17 @@
     "evidence": [
       {
         "file": "lib/app.js",
-        "line": 13,
+        "line": 14,
         "text": "import fs from \"node:fs\";"
       },
       {
         "file": "lib/app.js",
-        "line": 1017,
+        "line": 135,
+        "text": "try { fs.unlinkSync(duty.decisionPath(this.state, pending)); } catch { /* best effort */ }"
+      },
+      {
+        "file": "lib/app.js",
+        "line": 1038,
         "text": "text = fs.readFileSync(file, \"utf8\");"
       },
       {
@@ -50,11 +55,6 @@
         "file": "lib/duty.js",
         "line": 64,
         "text": "fs.mkdirSync(decisionsDir(state), { recursive: true, mode: 0o700 });"
-      },
-      {
-        "file": "lib/duty.js",
-        "line": 73,
-        "text": "fs.writeFileSync(policy, DEFAULT_POLICY, { mode: 0o600 });"
       }
     ]
   },

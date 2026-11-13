@@ -1,35 +1,35 @@
 {
   "name": "dsh-model-fold",
-  "version": "1.0.3",
-  "scannedAt": "2026-11-11T21:01:14.802Z",
-  "icon": null,
+  "version": "1.0.6",
+  "scannedAt": "2026-11-13T08:14:52.267Z",
+  "icon": "dsh-model-fold.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1942,
+        "line": 1975,
         "text": "return fetch(PROBE_RESULTS_URL, { method: \"GET\" }).then(function (r) { return r.json(); }).then(function (v) {"
       },
       {
         "file": "lib/client.js",
-        "line": 1953,
+        "line": 1986,
         "text": "\t\t\t\ttry { fetch(PROBE_RESULTS_URL, { method: \"POST\", headers: { \"content-type\": \"application/json\" }, body: JSON.stringify({ results: cascadeState.probeResults "
       },
       {
         "file": "lib/client.js",
-        "line": 1994,
-        "text": "\t\t\t\t\treturn fetch(\"/plugin/dsh-model-fold/probe\", { method: \"POST\", headers: { \"content-type\": \"application/json\" }, body: JSON.stringify({ provider: gid, model"
+        "line": 2052,
+        "text": "\t\t\t\t\treturn fetch(\"/plugin/dsh-model-fold/probe\", { method: \"POST\", headers: { \"content-type\": \"application/json\" }, body: JSON.stringify({ provider: item.pid, "
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2073,
+        "text": "fetch(\"https://registry.npmjs.org/dsh-model-fold/latest\", { headers: { accept: \"application/json\" } })"
       },
       {
         "file": "lib/index.js",
         "line": 10,
         "text": "import http from \"node:http\";"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 11,
-        "text": "import https from \"node:https\";"
       }
     ]
   },
@@ -43,23 +43,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 155,
-        "text": "const text = await fs.readFile(file, \"utf8\");"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 231,
+        "line": 198,
         "text": "const text = await fs.readFile(RESULTS_FILE, \"utf8\");"
       },
       {
         "file": "lib/index.js",
-        "line": 250,
+        "line": 217,
         "text": "await fs.mkdir(dir, { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 251,
+        "line": 218,
         "text": "await fs.writeFile(tmp, text, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 222,
+        "text": "try { await fs.unlink(tmp); } catch { /* ignore */ }"
       }
     ]
   },

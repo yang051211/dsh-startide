@@ -1,35 +1,35 @@
 {
   "name": "dsh-vscode-workbench",
-  "version": "0.1.9",
-  "scannedAt": "2026-10-26T10:05:39.097Z",
+  "version": "0.2.7",
+  "scannedAt": "2026-11-13T08:14:51.250Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 7476,
-        "text": "const response = await fetch(`/dsh-vscode-terminal/api/${method}`, {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 7497,
-        "text": "this.socket = new WebSocket(`${protocol}://${location.host}/dsh-vscode-terminal/ws?sessionId=${encodeURIComponent(sessionId)}&id=${encodeURIComponent(id)}`);"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 7900,
+        "line": 8195,
         "text": "const response = await fetch(`/dsh-vscode/api/${method}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 25101,
+        "line": 15718,
+        "text": "const socket = this.socket = new WebSocket(url);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 29025,
         "text": "const response = await fetch(url);"
       },
       {
         "file": "lib/client.js",
-        "line": 25111,
+        "line": 29035,
         "text": "const request = new XMLHttpRequest();"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 29039,
+        "text": "if (request.readyState !== XMLHttpRequest.DONE) return;"
       }
     ]
   },
@@ -38,28 +38,28 @@
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 25278,
+        "line": 29202,
         "text": "const data = await process.getBuiltinModule(\"fs\").promises.readFile(url);"
       },
       {
         "file": "lib/client.js",
-        "line": 37220,
+        "line": 41144,
         "text": "const fs = process.getBuiltinModule(\"fs\");"
       },
       {
         "file": "lib/client.js",
-        "line": 37307,
+        "line": 41231,
         "text": "const fs = process.getBuiltinModule(\"fs\");"
       },
       {
         "file": "lib/index.js",
         "line": 2,
-        "text": "import { access, lstat, mkdir, open, readFile, readdir, realpath, rename, rm, stat, writeFile } from \"node:fs/promises\";"
+        "text": "import { constants, createReadStream } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 8,
-        "text": "import { constants, realpathSync } from \"node:fs\";"
+        "line": 3,
+        "text": "import { access, lstat, mkdir, open, readFile, readdir, realpath, rename, rm, stat } from \"node:fs/promises\";"
       }
     ]
   },
@@ -72,28 +72,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 7,
-        "text": "import { spawn } from \"node:child_process\";"
+        "line": 5,
+        "text": "import { execFile, spawn } from \"node:child_process\";"
       },
       {
         "file": "lib/index.js",
-        "line": 266,
+        "line": 586,
         "text": "const child = spawn(command, args, {"
       },
       {
         "file": "lib/index.js",
-        "line": 738,
-        "text": "const child = pty.spawn(shell, args, {"
+        "line": 1497,
+        "text": "const child = spawn(\"npm\", ["
       },
       {
-        "file": "src/host.ts",
-        "line": 2,
-        "text": "import { spawn } from 'node:child_process'"
+        "file": "lib/index.js",
+        "line": 1613,
+        "text": "const child = spawn(process.platform === \"win32\" ? \"where\" : \"which\", [command], { windowsHide: true });"
       },
       {
-        "file": "src/host.ts",
-        "line": 143,
-        "text": "const child = spawn(command, args, { cwd, shell: false, windowsHide: true })"
+        "file": "lib/index.js",
+        "line": 2298,
+        "text": "const child = spawn(server.command, server.args, {"
       }
     ]
   },
@@ -101,7 +101,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 12,
+  "dependencies": 14,
   "minifiedFiles": [
     "lib/client.js"
   ],

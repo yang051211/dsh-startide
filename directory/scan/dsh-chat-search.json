@@ -1,0 +1,67 @@
+{
+  "name": "dsh-chat-search",
+  "version": "1.2.4",
+  "scannedAt": "2026-11-13T08:14:52.982Z",
+  "icon": "dsh-chat-search.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 2051,
+        "text": "const response = await fetch(apiUrl(GLOBAL_ROUTE), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { promises as fsPromises } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 269,
+        "text": "const text = await fsPromises.readFile(recentPath(), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 292,
+        "text": "await fsPromises.mkdir(path.dirname(target), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 294,
+        "text": "await fsPromises.writeFile(temporary, JSON.stringify(next, null, 2), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 448,
+        "text": "const text = await fsPromises.readFile(path.join(dataDir(), FILTER_FILE), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionQuery",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

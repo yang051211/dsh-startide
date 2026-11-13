@@ -1,34 +1,34 @@
 {
   "name": "dsh-provider-qoder",
-  "version": "0.6.1",
-  "scannedAt": "2026-11-06T20:48:47.910Z",
+  "version": "0.6.2",
+  "scannedAt": "2026-11-13T08:14:53.607Z",
   "icon": "dsh-provider-qoder.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 2886,
+        "line": 2923,
         "text": "function createSessionTierEvents(send = (...args) => globalThis.fetch(...args)) {"
       },
       {
         "file": "lib/client.js",
-        "line": 3029,
+        "line": 3066,
         "text": "const send = transport.fetch ?? ((input, init) => globalThis.fetch(input, init));"
       },
       {
         "file": "lib/index.js",
-        "line": 9,
+        "line": 11,
         "text": "import { request } from \"node:http\";"
       },
       {
         "file": "lib/index.js",
-        "line": 10,
+        "line": 12,
         "text": "import { request as request$1 } from \"node:https\";"
       },
       {
         "file": "lib/index.js",
-        "line": 2981,
+        "line": 3020,
         "text": "const pending = deps.fetch(url, {"
       }
     ]
@@ -38,28 +38,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 4,
-        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from \"node:fs\";"
+        "line": 5,
+        "text": "import { mkdir, readFile, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 641,
-        "text": "const value = readFileSync(path, \"utf8\").trim();"
+        "line": 680,
+        "text": "uuid: (await readFile(\"/proc/cpuinfo\", {"
       },
       {
         "file": "lib/index.js",
-        "line": 648,
-        "text": "mkdirSync(dirname(savePath), { recursive: true });"
+        "line": 743,
+        "text": "return (await readFile(path, {"
       },
       {
         "file": "lib/index.js",
-        "line": 649,
-        "text": "writeFileSync(savePath, machineId, {"
+        "line": 756,
+        "text": "await mkdir(dirname(path), { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 655,
-        "text": "const existing = readFileSync(savePath, \"utf8\").trim();"
+        "line": 757,
+        "text": "await writeFile(path, machineId, {"
       }
     ]
   },
@@ -68,19 +68,25 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 6273,
+        "line": 6360,
         "text": "} else if (!removeSearch) removeSearch = toolCtx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 6343,
+        "line": 6430,
         "text": "removeGeneration = imageCtx.tools.register(defineTool({"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { execFile } from \"node:child_process\";"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

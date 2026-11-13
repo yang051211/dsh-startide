@@ -1,7 +1,7 @@
 {
   "name": "dsh-atan-daily",
-  "version": "1.2.1",
-  "scannedAt": "2026-11-12T21:20:46.545Z",
+  "version": "1.2.2",
+  "scannedAt": "2026-11-13T08:14:57.107Z",
   "icon": "dsh-atan-daily.svg",
   "network": {
     "hit": true,
@@ -78,12 +78,12 @@
       },
       {
         "file": "lib/host/tools/index.js",
-        "line": 151,
+        "line": 170,
         "text": "ctx.tools.register(toolTaskContext());"
       },
       {
         "file": "lib/host/tools/index.js",
-        "line": 152,
+        "line": 171,
         "text": "ctx.tools.register(toolTaskManifest());"
       }
     ]
@@ -108,13 +108,13 @@
       },
       {
         "file": "lib/host/tools/index.js",
-        "line": 28,
-        "text": "const child = spawn(command, { cwd, shell: true, windowsHide: true });"
+        "line": 54,
+        "text": "return collect(spawn(command, { cwd, shell: true, windowsHide: true }), timeoutMs);"
       },
       {
-        "file": "lib/report/custom.js",
-        "line": 11,
-        "text": "import { spawnSync } from 'node:child_process';"
+        "file": "lib/host/tools/index.js",
+        "line": 65,
+        "text": "return collect(spawn(file, [...argv], { cwd, shell: false, windowsHide: true }), timeoutMs);"
       }
     ]
   },
