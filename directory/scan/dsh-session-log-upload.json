@@ -1,0 +1,98 @@
+{
+  "name": "dsh-session-log-upload",
+  "version": "1.1.7",
+  "scannedAt": "2026-11-13T21:10:52.349Z",
+  "icon": "dsh-session-log-upload.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 331,
+        "text": "const response = await fetch('/__dsh-session-log-upload/status', {"
+      },
+      {
+        "file": "client.js",
+        "line": 371,
+        "text": "const response = await fetch('/__dsh-session-log-upload/upload', {"
+      },
+      {
+        "file": "index.js",
+        "line": 411,
+        "text": "const response = await fetch(ENDPOINT, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tools/asar.mjs",
+        "line": 20,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "tools/check-client.mjs",
+        "line": 11,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "tools/check-client.mjs",
+        "line": 16,
+        "text": "const SOURCE = fs.readFileSync(path.join(HERE, '..', 'client.js'), 'utf8');"
+      },
+      {
+        "file": "tools/check-compat.mjs",
+        "line": 21,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "tools/check-compat.mjs",
+        "line": 72,
+        "text": "const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tools/check-docs.mjs",
+        "line": 12,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "tools/check-package.mjs",
+        "line": 17,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "tools/check-package.mjs",
+        "line": 39,
+        "text": "const result = spawnSync('npm', ['pack', '--dry-run', '--json'], {"
+      },
+      {
+        "file": "tools/check-version.mjs",
+        "line": 10,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "credentials",
+    "sessions"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

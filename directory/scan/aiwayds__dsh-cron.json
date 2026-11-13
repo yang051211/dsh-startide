@@ -1,7 +1,7 @@
 {
   "name": "@aiwayds/dsh-cron",
-  "version": "0.7.0",
-  "scannedAt": "2026-11-05T21:22:57.866Z",
+  "version": "0.7.1",
+  "scannedAt": "2026-11-13T21:10:56.214Z",
   "icon": "aiwayds__dsh-cron.svg",
   "network": {
     "hit": false,
@@ -72,27 +72,27 @@
     "evidence": [
       {
         "file": "scripts/link-dsh-closure.mjs",
-        "line": 26,
+        "line": 31,
         "text": "import { execFileSync } from 'node:child_process'"
       },
       {
         "file": "scripts/smoke-boot.mjs",
-        "line": 25,
+        "line": 28,
         "text": "import { spawnSync } from 'node:child_process'"
       },
       {
         "file": "scripts/smoke-boot.mjs",
-        "line": 48,
+        "line": 51,
         "text": "const pack = spawnSync('npm', ['pack', '--pack-destination', work], { cwd: repoRoot, encoding: 'utf8' })"
       },
       {
         "file": "scripts/smoke-boot.mjs",
-        "line": 80,
+        "line": 83,
         "text": "const install = spawnSync('npm', ['install', '--no-audit', '--no-fund', '--loglevel=error'], { cwd: profile, encoding: 'utf8' })"
       },
       {
         "file": "scripts/smoke-boot.mjs",
-        "line": 94,
+        "line": 97,
         "text": "const dump = spawnSync('dsh', ['--profile', 'smoke', '--dump-config'], { cwd: profile, encoding: 'utf8', env: dshEnv })"
       }
     ]
@@ -103,7 +103,7 @@
       {
         "file": "package.json",
         "line": 0,
-        "text": "scripts.postinstall: node scripts/link-dsh-closure.mjs"
+        "text": "scripts.prepare: node scripts/link-dsh-closure.mjs"
       }
     ]
   },

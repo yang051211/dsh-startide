@@ -1,7 +1,7 @@
 {
   "name": "@goodandready/dsh-tts",
-  "version": "0.4.42",
-  "scannedAt": "2026-11-08T23:32:49.244Z",
+  "version": "0.4.43",
+  "scannedAt": "2026-11-13T21:10:40.917Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -23,28 +23,28 @@
     "evidence": [
       {
         "file": "lib/cache.js",
-        "line": 5,
+        "line": 6,
         "text": "import fs from 'node:fs'"
       },
       {
         "file": "lib/cache.js",
-        "line": 18,
+        "line": 19,
         "text": "if (!ready) ready = fs.promises.mkdir(dir, { recursive: true })"
       },
       {
         "file": "lib/cache.js",
-        "line": 77,
+        "line": 78,
         "text": "const meta = JSON.parse(await fs.promises.readFile(path.join(dir, key + '.json'), 'utf8'))"
       },
       {
         "file": "lib/cache.js",
-        "line": 101,
-        "text": "await fs.promises.rm(path.join(dir, key + AUDIO_EXT), { force: true }).catch(() => {})"
+        "line": 102,
+        "text": "await fs.promises.rm(path.join(dir, key + AUDIO_EXT), { force: true }).catch(bestEffort)"
       },
       {
         "file": "lib/cache.js",
-        "line": 102,
-        "text": "await fs.promises.rm(path.join(dir, key + '.json'), { force: true }).catch(() => {})"
+        "line": 103,
+        "text": "await fs.promises.rm(path.join(dir, key + '.json'), { force: true }).catch(bestEffort)"
       }
     ]
   },
@@ -58,7 +58,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 929,
+        "line": 949,
         "text": "ctx.tools.register("
       }
     ]

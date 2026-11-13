@@ -1,0 +1,82 @@
+{
+  "name": "dsh-use-codex",
+  "version": "0.4.2",
+  "scannedAt": "2026-11-13T21:10:48.371Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "} from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 53,
+        "text": "const parsed = JSON.parse(readFileSync(STATE_FILE, 'utf8'));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 64,
+        "text": "mkdirSync(join(STATE_FILE, '..'), { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 65,
+        "text": "writeFileSync(temp, `${JSON.stringify(next, null, 2)}\\n`, { encoding: 'utf8', mode: 0o600 });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 69,
+        "text": "try { writeFileSync(temp, '', 'utf8'); } catch { /* ignore */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 27,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 526,
+        "text": "const dispose = ctx.tools.register(tool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 179,
+        "text": "child = spawn(bin, argv, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

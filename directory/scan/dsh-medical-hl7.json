@@ -1,7 +1,7 @@
 {
   "name": "dsh-medical-hl7",
-  "version": "0.6.0",
-  "scannedAt": "2026-11-13T08:14:59.204Z",
+  "version": "0.6.5",
+  "scannedAt": "2026-11-13T21:11:05.344Z",
   "icon": "dsh-medical-hl7.svg",
   "network": {
     "hit": true,
@@ -53,17 +53,17 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 11,
+        "line": 12,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "index.js",
-        "line": 22,
+        "line": 23,
         "text": "// ctx.tools.register is scoped to this plugin's fiber (same as the sibling medical plugins)"
       },
       {
         "file": "index.js",
-        "line": 23,
+        "line": 24,
         "text": "const register = (def) => ctx.tools.register(tool(def))"
       }
     ]
@@ -72,13 +72,23 @@
     "hit": true,
     "evidence": [
       {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 211,
+        "text": "execFile('osascript', ['-e', script], { timeout: 10 * 60 * 1000 }, (error, stdout, stderr) => {"
+      },
+      {
         "file": "lib/service.js",
         "line": 18,
         "text": "import { execFile } from 'node:child_process'"
       },
       {
         "file": "lib/service.js",
-        "line": 454,
+        "line": 461,
         "text": "        execFile(settings.javaPath || 'java', ['-Xmx6g', '-jar', settings.validatorJar, join(bundlesDir, n), '-version', '4.0.1', '-ig', definitionsDir, '-tx', "
       }
     ]

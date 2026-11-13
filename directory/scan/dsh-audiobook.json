@@ -1,7 +1,7 @@
 {
   "name": "dsh-audiobook",
-  "version": "0.6.0",
-  "scannedAt": "2026-10-26T10:08:24.265Z",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-13T21:11:02.025Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -27,9 +27,9 @@
         "text": "const res = await fetch(u, { redirect: 'follow', signal: AbortSignal.timeout(300000) })"
       },
       {
-        "file": "lib/edge.js",
-        "line": 79,
-        "text": "const res = await fetch(url, { redirect: 'follow', signal: AbortSignal.timeout(180000) })"
+        "file": "lib/discover.js",
+        "line": 23,
+        "text": "  const res = await fetch(url, { redirect: 'follow', signal: AbortSignal.timeout(timeout), headers: { 'user-agent': UA, accept: 'text/html,application/xhtml+xml"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "plugin/tools.js",
-        "line": 303,
+        "line": 333,
         "text": "return defs.map(def => (deps.effect ? deps.effect(() => tools.register(def)) : tools.register(def)))"
       }
     ]
@@ -97,8 +97,8 @@
         "text": "execFile(cmd, args, { timeout, maxBuffer: 8 << 20, env: env ? { ...process.env, ...env } : undefined }, (err, stdout, stderr) => {"
       },
       {
-        "file": "lib/extract.js",
-        "line": 13,
+        "file": "lib/exporter.js",
+        "line": 12,
         "text": "import { execFile } from 'node:child_process'"
       }
     ]

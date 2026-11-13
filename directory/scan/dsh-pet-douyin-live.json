@@ -1,0 +1,103 @@
+{
+  "name": "dsh-pet-douyin-live",
+  "version": "0.6.3",
+  "scannedAt": "2026-11-13T21:10:51.406Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 17,
+        "text": "const res = await fetch(PREFIX + path, {"
+      },
+      {
+        "file": "src/bubble-watcher.mjs",
+        "line": 12,
+        "text": "const res = await fetch(url, { signal: AbortSignal.timeout(5000) });"
+      },
+      {
+        "file": "src/pet.mjs",
+        "line": 26,
+        "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "src/pet.mjs",
+        "line": 71,
+        "text": "const res = await fetch(new URL('/dsh-pet-7340/state', baseUrl), {"
+      },
+      {
+        "file": "src/providers.mjs",
+        "line": 110,
+        "text": "const res = await fetch(url, { method: 'POST', headers, body, signal: AbortSignal.timeout(timeoutMs) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/bridge.mjs",
+        "line": 9,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "src/bridge.mjs",
+        "line": 48,
+        "text": "raw = JSON.parse(fs.readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "src/bridge.mjs",
+        "line": 56,
+        "text": "fs.mkdirSync(LOG_DIR, { recursive: true });"
+      },
+      {
+        "file": "src/bridge.mjs",
+        "line": 63,
+        "text": "fs.appendFileSync(file, `${text}\\n`, 'utf8');"
+      },
+      {
+        "file": "src/config.mjs",
+        "line": 5,
+        "text": "import fs from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/tts.mjs",
+        "line": 17,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/tts.mjs",
+        "line": 30,
+        "text": "const child = spawn(command, args, { stdio: ['pipe', 'ignore', 'pipe'], windowsHide: true });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 49,
+      "text": "> 也可以直接装进全局：`npm i -g dsh-pet-douyin-live`。"
+    }
+  ],
+  "skippedEntries": []
+}

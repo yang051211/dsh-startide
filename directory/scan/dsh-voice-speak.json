@@ -1,7 +1,7 @@
 {
   "name": "dsh-voice-speak",
-  "version": "3.4.2",
-  "scannedAt": "2026-10-31T07:05:30.039Z",
+  "version": "3.5.0",
+  "scannedAt": "2026-11-13T21:11:03.797Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -29,17 +29,17 @@
       {
         "file": "lib/pet-bridge.js",
         "line": 26,
-        "text": "import { openSync, appendFileSync } from 'node:fs'"
+        "text": "import { appendFileSync, existsSync, openSync, readFileSync } from 'node:fs'"
       },
       {
         "file": "lib/pet-bridge.js",
-        "line": 270,
-        "text": "appendFileSync(LOG_PATH, `${stamp} ${line}\\n`, 'utf8')"
+        "line": 53,
+        "text": "const parsed = JSON.parse(readFileSync(HOME_CONFIG, 'utf8'))"
       },
       {
-        "file": "lib/tts.js",
-        "line": 44,
-        "text": "import { openSync, writeFileSync, appendFileSync, unlinkSync } from 'node:fs'"
+        "file": "lib/pet-bridge.js",
+        "line": 344,
+        "text": "appendFileSync(LOG_PATH, `${stamp} ${line}\\n`, 'utf8')"
       }
     ]
   },
@@ -73,7 +73,7 @@
       },
       {
         "file": "lib/pet-bridge.js",
-        "line": 205,
+        "line": 274,
         "text": "child = spawn(POWERSHELL, ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-EncodedCommand', BUBBLE_COMMAND], {"
       },
       {

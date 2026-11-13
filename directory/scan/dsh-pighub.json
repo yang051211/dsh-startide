@@ -1,15 +1,25 @@
 {
   "name": "dsh-pighub",
-  "version": "0.3.1",
-  "scannedAt": "2026-11-12T21:20:50.673Z",
+  "version": "0.9.56",
+  "scannedAt": "2026-11-13T21:11:05.634Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 296,
+        "line": 388,
         "text": "const response = await fetch(ROUTE, {"
+      },
+      {
+        "file": "test/_d4.mjs",
+        "line": 5,
+        "text": "const raw = Buffer.from(await (await fetch(pig.source.url)).arrayBuffer());"
+      },
+      {
+        "file": "test/_gif.mjs",
+        "line": 1,
+        "text": "const r = await fetch('https://pighub.top/api/images?sort=2', { headers: { accept: 'application/json' } });"
       }
     ]
   },
@@ -27,19 +37,19 @@
         "text": "const manifest = JSON.parse(readFileSync(MANIFEST_PATH, 'utf8'));"
       },
       {
-        "file": "lib/index.js",
-        "line": 15,
-        "text": "import { readFileSync, existsSync } from 'node:fs';"
+        "file": "lib/desktop-pet.js",
+        "line": 18,
+        "text": "import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';"
       },
       {
-        "file": "lib/index.js",
-        "line": 233,
-        "text": "const body = readFileSync(file);"
+        "file": "lib/desktop-pet.js",
+        "line": 29,
+        "text": "const hash = createHash('sha256').update(readFileSync(sourcePath)).digest('hex').slice(0, 20);"
       },
       {
-        "file": "lib/store.js",
-        "line": 17,
-        "text": "import { readFileSync, writeFileSync, renameSync, mkdirSync, existsSync } from 'node:fs';"
+        "file": "lib/desktop-pet.js",
+        "line": 70,
+        "text": "mkdirSync(plan.directory, { recursive: true });"
       }
     ]
   },
@@ -48,19 +58,35 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 32,
+        "line": 38,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "lib/index.js",
-        "line": 253,
+        "line": 514,
         "text": "ctx.tools.register({"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/desktop-pet.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/desktop-pet.js",
+        "line": 54,
+        "text": "const child = spawn(file, args, { windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] });"
+      },
+      {
+        "file": "lib/desktop-pet.js",
+        "line": 132,
+        "text": "const child = spawn(binary.exe, [directory], { windowsHide: true, stdio: 'ignore' });"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

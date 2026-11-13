@@ -1,0 +1,79 @@
+{
+  "name": "dsh-psd-batch-studio",
+  "version": "0.2.5",
+  "scannedAt": "2026-11-13T21:10:52.468Z",
+  "icon": "dsh-psd-batch-studio.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "server.js",
+        "line": 15646,
+        "text": "import fs from \"node:fs/promises\";"
+      },
+      {
+        "file": "server.js",
+        "line": 17126,
+        "text": "const buffer = await fs.readFile(absolutePath);"
+      },
+      {
+        "file": "server.js",
+        "line": 17273,
+        "text": "await fs.mkdir(absoluteOut, { recursive: true });"
+      },
+      {
+        "file": "server.js",
+        "line": 17299,
+        "text": "await fs.writeFile(path.join(absoluteOut, name), buffer);"
+      },
+      {
+        "file": "server.js",
+        "line": 17307,
+        "text": "await fs.writeFile(zipPath, data);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "export const inject = ['tools', 'workingDirectory']"
+      },
+      {
+        "file": "server.js",
+        "line": 17328,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "server.js",
+        "line": 17420,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

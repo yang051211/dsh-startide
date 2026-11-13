@@ -1,7 +1,7 @@
 {
   "name": "dsh-skill-mcp-market",
-  "version": "0.5.24",
-  "scannedAt": "2026-11-13T08:14:47.387Z",
+  "version": "0.5.28",
+  "scannedAt": "2026-11-13T21:10:38.564Z",
   "icon": "dsh-skill-mcp-market.svg",
   "network": {
     "hit": true,
@@ -12,6 +12,16 @@
         "text": "const response = await fetch(RPC, {"
       },
       {
+        "file": "index.js",
+        "line": 55,
+        "text": "response = await fetch(url, {"
+      },
+      {
+        "file": "src/cli-install.js",
+        "line": 333,
+        "text": "const response = await fetch(url, { signal: controller.signal });"
+      },
+      {
         "file": "src/enrich.js",
         "line": 15,
         "text": "const response = await fetch(url, { headers: UA, signal: controller.signal });"
@@ -20,16 +30,6 @@
         "file": "src/enrich.js",
         "line": 177,
         "text": "const response = await fetch(url, { headers: UA, signal: AbortSignal.timeout(4000) });"
-      },
-      {
-        "file": "src/extra-sources.js",
-        "line": 15,
-        "text": "const response = await fetch(url, { headers: UA, signal: AbortSignal.timeout(timeoutMs) });"
-      },
-      {
-        "file": "src/extra-sources.js",
-        "line": 21,
-        "text": "const response = await fetch(url, {"
       }
     ]
   },
@@ -53,12 +53,12 @@
       },
       {
         "file": "index.js",
-        "line": 147,
+        "line": 190,
         "text": "const fs = await import(\"node:fs\");"
       },
       {
         "file": "index.js",
-        "line": 152,
+        "line": 195,
         "text": "fs.mkdirSync(skillsDir, { recursive: true });"
       }
     ]
@@ -83,7 +83,7 @@
       },
       {
         "file": "index.js",
-        "line": 54,
+        "line": 97,
         "text": "ctx.tools.register({"
       },
       {
@@ -103,23 +103,23 @@
       },
       {
         "file": "index.js",
-        "line": 1367,
+        "line": 1410,
         "text": "execFile(command, args, { windowsHide: false }, () => resolve());"
       },
       {
-        "file": "src/env.js",
-        "line": 3,
-        "text": "import { spawnSync } from \"node:child_process\";"
+        "file": "src/cli-install.js",
+        "line": 18,
+        "text": "import { execFile } from \"node:child_process\";"
       },
       {
-        "file": "src/env.js",
-        "line": 19,
-        "text": "const result = spawnSync("
+        "file": "src/cli-install.js",
+        "line": 32,
+        "text": "execFile("
       },
       {
-        "file": "src/env.js",
-        "line": 33,
-        "text": "const result = spawnSync(\"sh\", [\"-c\", `echo 'export ${name}=\"${String(value).replace(/\"/g, '\\\\\"')}\"' >> ~/.profile`], {"
+        "file": "src/cli-install.js",
+        "line": 343,
+        "text": "execFile(\"curl\", curlArgs, { timeout: timeoutMs + 20000, windowsHide: true }, (err, _stdout, stderr) => {"
       }
     ]
   },

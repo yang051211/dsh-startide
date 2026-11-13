@@ -1,7 +1,7 @@
 {
   "name": "dsh-penpot-plugin",
-  "version": "0.4.6",
-  "scannedAt": "2026-11-13T08:14:54.396Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-13T21:10:53.258Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -17,18 +17,23 @@
       },
       {
         "file": "lib/api-backend.js",
-        "line": 173,
+        "line": 331,
         "text": "const bytes = await readFile(path);"
       },
       {
         "file": "lib/index.js",
-        "line": 261,
+        "line": 621,
         "text": "const { writeFile } = await import('node:fs/promises');"
       },
       {
         "file": "lib/index.js",
-        "line": 262,
+        "line": 622,
         "text": "await writeFile(args.path, bytes);"
+      },
+      {
+        "file": "lib/skill.js",
+        "line": 10,
+        "text": "import { readFile } from 'node:fs/promises';"
       }
     ]
   },
@@ -37,27 +42,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 17,
-        "text": "// `ctx.tools` is a declared service: Cordis refuses the property without an"
-      },
-      {
-        "file": "lib/index.js",
         "line": 20,
-        "text": "export const inject = ['tools'];"
+        "text": "// `ctx.tools` and `ctx.skills` are declared services: Cordis refuses the"
       },
       {
         "file": "lib/index.js",
-        "line": 48,
+        "line": 24,
+        "text": "export const inject = ['tools', 'skills'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 64,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 70,
+        "line": 86,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 102,
+        "line": 118,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
@@ -80,6 +85,7 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
+    "skills",
     "tools"
   ],
   "setupHints": [],

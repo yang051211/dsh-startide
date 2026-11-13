@@ -1,0 +1,136 @@
+{
+  "name": "dsh-bufeng",
+  "version": "0.67.1",
+  "scannedAt": "2026-11-13T21:10:54.314Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 647,
+        "text": "const fetchOnce = () => fetch(\"/bufeng/api/snapshot\", { cache: \"no-store\" })"
+      },
+      {
+        "file": "client/client.js",
+        "line": 865,
+        "text": "const r = await fetch(\"/bufeng/api/improve\", { method: \"POST\","
+      },
+      {
+        "file": "client/client.js",
+        "line": 902,
+        "text": "const r = await fetch(\"/bufeng/api/retire\", { method: \"POST\","
+      },
+      {
+        "file": "client/client.js",
+        "line": 968,
+        "text": "const r = await fetch(\"/bufeng/api/node/update\", { method: \"POST\","
+      },
+      {
+        "file": "client/client.js",
+        "line": 1219,
+        "text": "const res = await fetch('/bufeng/api/equip', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(payload) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/build-client.mjs",
+        "line": 17,
+        "text": "import { readdirSync, readFileSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "client/build-client.mjs",
+        "line": 29,
+        "text": "const raw = readFileSync(join(srcDir, f), 'utf8');"
+      },
+      {
+        "file": "client/build-client.mjs",
+        "line": 158,
+        "text": "writeFileSync(outFile, out, 'utf8');"
+      },
+      {
+        "file": "lib/bootstrap.js",
+        "line": 9,
+        "text": "import { mkdir } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/bootstrap.js",
+        "line": 29,
+        "text": "await mkdir(workspace, { recursive: true }).catch(() => {}); // 目录建不了不阻塞编制登记（下次引导再试）"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/board/server.js",
+        "line": 71,
+        "text": "/** v0.29.0 批1 能力面采集（skills.list / ctx.tools.view mcp__ 过滤归并 / agentPresets compositionInventory）："
+      },
+      {
+        "file": "lib/core.js",
+        "line": 384,
+        "text": "recordEvent(ledger, 'bufeng.register.error', `ctx.tools 不可用，工具 ${definition.name} 未注册`);"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 394,
+        "text": "ctx.tools.register(definition);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 40,
+        "text": "export const inject = ['tools', 'subagents', 'sessionController', 'workspaceRegistry', 'agentDefaultModel']; // 'llm' 已撤：档位系统全删后全 lib 零直调 ctx.llm（v0.37.3 补入它只为 "
+      },
+      {
+        "file": "lib/session/node-session.js",
+        "line": 354,
+        "text": "* 与能力面（capabilities.collectMcpView）同源同形状：ctx.tools.view().visible（宿主 registry 公开 API，"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/scope.js",
+        "line": 16,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/session/evidence.js",
+        "line": 20,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/tools/run.js",
+        "line": 9,
+        "text": "import { execFile } from 'node:child_process'; // A1（k-mvhyyd1302g）开工预检 git status --porcelain 快照（execFile 直调不进 shell）"
+      },
+      {
+        "file": "lib/tools/run.js",
+        "line": 242,
+        "text": "execFile('git', ['status', '--porcelain'], { cwd, windowsHide: true, timeout: 5000 }, (error, stdout) => {"
+      },
+      {
+        "file": "lib/tools/run.js",
+        "line": 258,
+        "text": "execFile('git', ['-C', ws, 'log', '--all', `--grep=Task-Id: ${taskId}`, '--format=%H'], { windowsHide: true, timeout: 5000 }, (error, stdout) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

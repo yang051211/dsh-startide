@@ -1,0 +1,131 @@
+{
+  "name": "@hedeqiang/dsh-nl2sql",
+  "version": "0.17.0",
+  "scannedAt": "2026-11-13T21:11:04.906Z",
+  "icon": "hedeqiang__dsh-nl2sql.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/nl2sql-mcp.mjs",
+        "line": 91,
+        "text": "const res = await fetch(URL_, { method: 'GET', headers, signal: ctl.signal })"
+      },
+      {
+        "file": "bin/nl2sql-mcp.mjs",
+        "line": 112,
+        "text": "res = await fetch(URL_, { method: 'POST', headers: headersFor(msg), body: JSON.stringify(msg), signal: ctl.signal })"
+      },
+      {
+        "file": "channels/lark.js",
+        "line": 64,
+        "text": "res = await fetch(base + path, {"
+      },
+      {
+        "file": "channels/telegram.js",
+        "line": 17,
+        "text": "* No SDK: plain fetch (via ./http.js request, every call has a timeout)."
+      },
+      {
+        "file": "drivers.js",
+        "line": 553,
+        "text": "res = await fetch(`${this.base}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 49,
+        "text": "await mkdir(this.dir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 51,
+        "text": "const raw = JSON.parse(await readFile(this.file, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 130,
+        "text": "await writeFile(tmp, snapshot, { mode: 0o600 })"
+      },
+      {
+        "file": "lib/client.echarts.js",
+        "line": 52,
+        "text": "ction im(t){return Qy(t.model)}function rm(t){var e=t.model,n=t.ecModel,i=t.api,r=t.payload,o=e.pipelineContext.progressiveRender,a=t.view,s=r&&Jy(r).updateMeth"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 32,
+        "text": "export const inject = ['tools', 'connection']"
+      },
+      {
+        "file": "index.js",
+        "line": 177,
+        "text": "const tools = ctx.tools"
+      },
+      {
+        "file": "index.js",
+        "line": 186,
+        "text": "tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 224,
+        "text": "tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 274,
+        "text": "tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "sqlite-driver.js",
+        "line": 30,
+        "text": "import { fork } from 'node:child_process'"
+      },
+      {
+        "file": "sqlite-driver.js",
+        "line": 382,
+        "text": "spawn() {"
+      },
+      {
+        "file": "sqlite-driver.js",
+        "line": 428,
+        "text": "this.child = this.spawn()"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 6,
+  "minifiedFiles": [
+    "lib/client.echarts.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

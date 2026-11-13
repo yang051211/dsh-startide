@@ -1,19 +1,19 @@
 {
   "name": "dsh-nerd-mode",
-  "version": "0.5.0",
-  "scannedAt": "2026-11-11T08:04:59.046Z",
+  "version": "0.5.2",
+  "scannedAt": "2026-11-13T21:10:55.234Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 83,
+        "line": 401,
         "text": "const response = await fetch(url, {"
       },
       {
         "file": "client.js",
-        "line": 1804,
+        "line": 1748,
         "text": "const response = await fetch(`${STUDY_SESSIONS_API}?cursor=${cursor}`);"
       },
       {
@@ -38,28 +38,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 11,
+        "line": 12,
         "text": "import { readFileSync } from 'node:fs'"
       },
       {
         "file": "lib/index.js",
-        "line": 23,
+        "line": 25,
         "text": "const BUNDLED_SECTION = readFileSync("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 60,
+        "text": "readFileSync(fileURLToPath(new URL('../package.json', import.meta.url)), 'utf8'),"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 243,
+        "text": "return JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'))"
       },
       {
         "file": "lib/study-sessions.js",
         "line": 8,
         "text": "import { mkdirSync, readdirSync, readFileSync, renameSync, statSync, writeFileSync } from 'node:fs'"
-      },
-      {
-        "file": "lib/study-sessions.js",
-        "line": 118,
-        "text": "const bytes = readFileSync(file)"
-      },
-      {
-        "file": "lib/study-sessions.js",
-        "line": 150,
-        "text": "text = readFileSync(file, 'utf8')"
       }
     ]
   },
@@ -70,6 +70,16 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 446,
+        "text": "child = spawn(command, [...prefix, ...args], {"
+      },
       {
         "file": "skills/answer-me-with-html/scripts/am.mjs",
         "line": 1309,
@@ -84,16 +94,6 @@
         "file": "skills/answer-me-with-html/scripts/am.mjs",
         "line": 10113,
         "text": "import { spawnSync } from \"node:child_process\";"
-      },
-      {
-        "file": "skills/answer-me-with-html/scripts/am.mjs",
-        "line": 10116,
-        "text": "return spawnSync(process.platform === \"win32\" ? \"where\" : \"which\", [cmd], { stdio: \"ignore\" }).status === 0;"
-      },
-      {
-        "file": "skills/answer-me-with-html/scripts/am.mjs",
-        "line": 10353,
-        "text": "const p = spawn(cmd, args, { stdio: [\"ignore\", \"ignore\", \"pipe\"] });"
       }
     ]
   },

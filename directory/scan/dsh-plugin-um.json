@@ -1,0 +1,94 @@
+{
+  "name": "dsh-plugin-um",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-13T21:10:51.167Z",
+  "icon": "dsh-plugin-um.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 528,
+        "text": "const response = await fetch(API, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/runner.js",
+        "line": 2,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 1,
+        "text": "import { promises as fs } from 'node:fs';"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 43,
+        "text": "text = await fs.readFile(this.filePath, 'utf8');"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 79,
+        "text": "await fs.mkdir(path.dirname(this.filePath), { recursive: true });"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 100,
+        "text": "await fs.mkdir(directory, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 38,
+        "text": "export const inject = ['tools', 'systemPrompt'];"
+      },
+      {
+        "file": "index.js",
+        "line": 771,
+        "text": "ctx.effect(() => ctx.tools.register(definition), `dsh-plugin-um: tool ${definition.name}`);"
+      },
+      {
+        "file": "index.js",
+        "line": 785,
+        "text": "text: ({ scope }) => (ctx.tools.get('um_list_machines', scope) === undefined"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/runner.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/runner.js",
+        "line": 125,
+        "text": "child = spawn(POSIX_SHELL, shellArgs(command), {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

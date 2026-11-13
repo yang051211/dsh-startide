@@ -1,8 +1,8 @@
 {
   "name": "dsh-mishu",
-  "version": "0.7.4",
-  "scannedAt": "2026-11-12T08:43:20.136Z",
-  "icon": null,
+  "version": "0.8.0",
+  "scannedAt": "2026-11-13T21:10:52.206Z",
+  "icon": "dsh-mishu.svg",
   "network": {
     "hit": true,
     "evidence": [
@@ -18,7 +18,7 @@
       },
       {
         "file": "lib/core/mail/imap.js",
-        "line": 85,
+        "line": 248,
         "text": "for await (const fetched of client.fetch(uids, { uid: true, envelope: true, internalDate: true, bodyStructure: true, headers: HEADERS }, { uid: true })) {"
       },
       {
@@ -37,6 +37,16 @@
         "text": "import { accessSync, constants } from 'node:fs';"
       },
       {
+        "file": "lib/core/mail/send.js",
+        "line": 10,
+        "text": "import { readFile, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/core/mail/send.js",
+        "line": 215,
+        "text": "content: await readFile(file.path),"
+      },
+      {
         "file": "lib/core/restart.js",
         "line": 28,
         "text": "import { readFileSync, readlinkSync } from 'node:fs';"
@@ -45,16 +55,6 @@
         "file": "lib/core/restart.js",
         "line": 62,
         "text": "return readFileSync(`/proc/${ppid}/cmdline`, 'utf8').split('\\0').filter(Boolean);"
-      },
-      {
-        "file": "lib/core/restart.js",
-        "line": 138,
-        "text": "\"const fs = require('node:fs')\","
-      },
-      {
-        "file": "lib/core/restart.js",
-        "line": 142,
-        "text": "\"const note = (line) => { try { fs.appendFileSync(log, new Date().toISOString() + ' ' + line + '\\\\n') } catch {} }\","
       }
     ]
   },
@@ -62,28 +62,28 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/dsh/tools.js",
-        "line": 70,
+        "file": "lib/dsh/mail-tools.js",
+        "line": 255,
         "text": "tools.register(defineTool({"
       },
       {
-        "file": "lib/dsh/tools.js",
-        "line": 100,
+        "file": "lib/dsh/mail-tools.js",
+        "line": 281,
         "text": "tools.register(defineTool({"
       },
       {
-        "file": "lib/dsh/tools.js",
-        "line": 107,
+        "file": "lib/dsh/mail-tools.js",
+        "line": 300,
         "text": "tools.register(defineTool({"
       },
       {
-        "file": "lib/dsh/tools.js",
-        "line": 122,
+        "file": "lib/dsh/mail-tools.js",
+        "line": 332,
         "text": "tools.register(defineTool({"
       },
       {
-        "file": "lib/dsh/tools.js",
-        "line": 139,
+        "file": "lib/dsh/mail-tools.js",
+        "line": 378,
         "text": "tools.register(defineTool({"
       }
     ]
@@ -122,7 +122,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
+  "dependencies": 2,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [],

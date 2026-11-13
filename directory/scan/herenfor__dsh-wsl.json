@@ -1,0 +1,116 @@
+{
+  "name": "@herenfor/dsh-wsl",
+  "version": "0.1.12",
+  "scannedAt": "2026-11-13T21:11:04.981Z",
+  "icon": "herenfor__dsh-wsl.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 252,
+        "text": "const api = (path, body) => window.fetch(new URL(path, window.document.baseURI), {"
+      },
+      {
+        "file": "index.mjs",
+        "line": 11,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "index.mjs",
+        "line": 184,
+        "text": "      const req = http.request({ agent: bridge.agent, host: url.hostname, port: url.port, path: url.pathname + url.search, method, headers: { ...headers, host: "
+      },
+      {
+        "file": "index.mjs",
+        "line": 328,
+        "text": "const r = await fetch(`${ws.getOrigin()}/api/${endpoint}`, {"
+      },
+      {
+        "file": "index.mjs",
+        "line": 681,
+        "text": "fetch(`${ws.getOrigin()}/api/settings/describe`, { method: 'POST', headers, body }).then((r) => r.json()),"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "agent/broker.mjs",
+        "line": 11,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "agent/broker.mjs",
+        "line": 24,
+        "text": "socket.write(`${readFileSync(this.tokenPath, 'utf8').trim()} broker\\n`)"
+      },
+      {
+        "file": "agent/follow.mjs",
+        "line": 15,
+        "text": "import { existsSync, mkdirSync, readFileSync, realpathSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "agent/follow.mjs",
+        "line": 105,
+        "text": "const readJson = (file) => { try { return JSON.parse(readFileSync(file, 'utf8')) } catch { return undefined } }"
+      },
+      {
+        "file": "agent/follow.mjs",
+        "line": 106,
+        "text": "const writeAtomic = (file, text) => { mkdirSync(dirname(file), { recursive: true }); writeFileSync(`${file}.tmp`, text); renameSync(`${file}.tmp`, file) }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "agent/follow.mjs",
+        "line": 14,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "agent/follow.mjs",
+        "line": 214,
+        "text": "const r = spawnSync(process.execPath, [dshEntry, ...argv], { env, encoding: 'utf8', timeout: 300_000 })"
+      },
+      {
+        "file": "index.mjs",
+        "line": 7,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.mjs",
+        "line": 533,
+        "text": "    const child = spawn(process.env.DSH_WSL_COMMAND ?? 'wsl.exe', ['-d', setup.distro, '--exec', 'bash', '-c', setup.script], { windowsHide: true, stdio: ['igno"
+      },
+      {
+        "file": "setup.mjs",
+        "line": 19,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "clientModules",
+    "connection",
+    "settings",
+    "typertGateway",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

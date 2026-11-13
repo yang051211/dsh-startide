@@ -1,0 +1,121 @@
+{
+  "name": "dsh-litellm-panel",
+  "version": "0.2.6",
+  "scannedAt": "2026-11-13T21:11:05.247Z",
+  "icon": "dsh-litellm-panel.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 113,
+        "text": "fetch(ROUTE + '?op=preview&name=' + encodeURIComponent(name), { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 132,
+        "text": "return fetch(url, init).then(function (res) {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 899,
+        "text": "fetch(ROUTE + '?op=spend&start=' + start + '&end=' + end, { headers: { accept: 'application/json' } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/mcp.js",
+        "line": 7,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/mcp.js",
+        "line": 10,
+        "text": "const PKG_VERSION = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version"
+      },
+      {
+        "file": "lib/release.js",
+        "line": 10,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/release.js",
+        "line": 11,
+        "text": "import { mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/release.js",
+        "line": 29,
+        "text": "return JSON.parse(readFileSync(file, 'utf8')).version"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "* Enabled MCP rows mount @deepseek-ai/dsh-mcp-client as child plugins."
+      },
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "export const inject = ['webServer', 'configEditor', 'tools', 'credentials']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 91,
+        "text": "if (ctx && typeof ctx.tools?.guard === 'function') {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 93,
+        "text": "const dispose = ctx.tools.guard(execution => denyReason(runtime.servers, execution))"
+      },
+      {
+        "file": "lib/mcp.js",
+        "line": 3,
+        "text": "* Mounting uses the host's @deepseek-ai/dsh-mcp-client. The probe is a separate"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/release.js",
+        "line": 8,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/release.js",
+        "line": 122,
+        "text": "await spawn(profile, status.latest, { registry: status.registry, fetch: options.fetch })"
+      },
+      {
+        "file": "lib/skills.js",
+        "line": 6,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "configEditor",
+    "credentials",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

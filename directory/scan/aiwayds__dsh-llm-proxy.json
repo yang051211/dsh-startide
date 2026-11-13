@@ -1,7 +1,7 @@
 {
   "name": "@aiwayds/dsh-llm-proxy",
-  "version": "0.8.0",
-  "scannedAt": "2026-11-05T21:22:59.130Z",
+  "version": "0.8.1",
+  "scannedAt": "2026-11-13T21:10:50.991Z",
   "icon": "aiwayds__dsh-llm-proxy.svg",
   "network": {
     "hit": true,
@@ -43,17 +43,17 @@
       },
       {
         "file": "scripts/link-dsh-closure.mjs",
-        "line": 27,
+        "line": 32,
         "text": "import { existsSync, mkdirSync, readdirSync, realpathSync, rmSync, symlinkSync } from 'node:fs'"
       },
       {
         "file": "scripts/link-dsh-closure.mjs",
-        "line": 87,
+        "line": 103,
         "text": "mkdirSync(scopeDir, { recursive: true })"
       },
       {
         "file": "scripts/link-dsh-closure.mjs",
-        "line": 95,
+        "line": 111,
         "text": "rmSync(target, { recursive: true, force: true })"
       }
     ]
@@ -67,27 +67,27 @@
     "evidence": [
       {
         "file": "scripts/link-dsh-closure.mjs",
-        "line": 26,
+        "line": 31,
         "text": "import { execFileSync } from 'node:child_process'"
       },
       {
         "file": "scripts/smoke-boot.mjs",
-        "line": 40,
+        "line": 44,
         "text": "import { spawnSync } from 'node:child_process'"
       },
       {
         "file": "scripts/smoke-boot.mjs",
-        "line": 63,
+        "line": 67,
         "text": "const pack = spawnSync('npm', ['pack', '--pack-destination', work], { cwd: repoRoot, encoding: 'utf8' })"
       },
       {
         "file": "scripts/smoke-boot.mjs",
-        "line": 107,
+        "line": 111,
         "text": "const install = spawnSync('npm', ['install', '--no-audit', '--no-fund', '--loglevel=error'], { cwd: profile, encoding: 'utf8' })"
       },
       {
         "file": "scripts/smoke-boot.mjs",
-        "line": 121,
+        "line": 125,
         "text": "const dump = spawnSync('dsh', ['--profile', 'smoke', '--dump-config'], { cwd: profile, encoding: 'utf8', env: dshEnv })"
       }
     ]
@@ -98,12 +98,7 @@
       {
         "file": "package.json",
         "line": 0,
-        "text": "scripts.postinstall: node scripts/link-dsh-closure.mjs"
-      },
-      {
-        "file": "package.json",
-        "line": 0,
-        "text": "scripts.prepare: npm run build"
+        "text": "scripts.prepare: node scripts/link-dsh-closure.mjs && npm run build"
       }
     ]
   },

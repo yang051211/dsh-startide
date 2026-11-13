@@ -1,35 +1,35 @@
 {
   "name": "phone-lens",
-  "version": "1.1.4",
-  "scannedAt": "2026-11-05T21:23:00.120Z",
+  "version": "1.1.6",
+  "scannedAt": "2026-11-13T21:10:56.725Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 280,
+        "line": 48,
+        "text": "const r = await fetch(`http://127.0.0.1:${p}/info`, { cache: \"no-store\", signal: ctl.signal });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 335,
         "text": "const resp = await fetch(`http://127.0.0.1:${port}/pending/${attachmentId}`).catch((e) => { throw new Error(\"fetch pending: \" + String(e)); });"
       },
       {
         "file": "lib/client.js",
-        "line": 375,
+        "line": 448,
         "text": "const r = await fetch(`${baseUrl}/update-check`, { cache: \"no-store\" });"
       },
       {
         "file": "lib/client.js",
-        "line": 398,
+        "line": 471,
         "text": "ws = new WebSocket(wsUrl);"
       },
       {
         "file": "lib/client.js",
-        "line": 578,
+        "line": 663,
         "text": "const r = await fetch(`${baseUrl}/qr.json`, { cache: \"no-store\" });"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 607,
-        "text": "const r = await fetch(`${baseUrl}/app-settings`, { cache: \"no-store\" });"
       }
     ]
   },
@@ -39,26 +39,26 @@
       {
         "file": "lib/dev.js",
         "line": 2,
-        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from \"node:fs\";"
+        "text": "import { closeSync, existsSync, mkdirSync, openSync, readFileSync, renameSync, writeFileSync, writeSync } from \"node:fs\";"
       },
       {
         "file": "lib/dev.js",
         "line": 5,
-        "text": "import { readFile, readdir, rm, stat, unlink } from \"node:fs/promises\";"
+        "text": "import { open, readFile, readdir, rm, stat, unlink } from \"node:fs/promises\";"
       },
       {
         "file": "lib/dev.js",
-        "line": 240,
+        "line": 209,
         "text": "mkdirSync(dataDir$1, { recursive: true });"
       },
       {
         "file": "lib/dev.js",
-        "line": 247,
+        "line": 216,
         "text": "const raw = JSON.parse(readFileSync(this.file, \"utf8\"));"
       },
       {
         "file": "lib/dev.js",
-        "line": 259,
+        "line": 229,
         "text": "writeFileSync(tmp, JSON.stringify({"
       }
     ]
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 2716,
-        "text": "static inject = [\"tools\"];"
+        "line": 5449,
+        "text": "static inject = [\"tools\", \"typertGateway\"];"
       },
       {
         "file": "lib/index.js",
-        "line": 2775,
+        "line": 5488,
         "text": "const toolsSvc = ctx.tools;"
       }
     ]
@@ -90,7 +90,8 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
-    "tools"
+    "tools",
+    "typertGateway"
   ],
   "setupHints": [],
   "skippedEntries": []

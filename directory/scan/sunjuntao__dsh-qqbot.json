@@ -1,35 +1,35 @@
 {
   "name": "@sunjuntao/dsh-qqbot",
-  "version": "0.1.16",
-  "scannedAt": "2026-11-11T21:01:17.644Z",
+  "version": "2.0.0",
+  "scannedAt": "2026-11-13T21:10:55.025Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
+        "file": "lib/cli.js",
+        "line": 1106,
+        "text": "import _ from \"node:https\";"
+      },
+      {
         "file": "lib/client.js",
-        "line": 5521,
+        "line": 5988,
         "text": "ws = new WebSocket(`${location.protocol === \"https:\" ? \"wss:\" : \"ws:\"}//${location.host}${WS_PATH}`);"
       },
       {
         "file": "lib/index.js",
-        "line": 3202,
+        "line": 3292,
         "text": "const res = await fetch(url, {"
       },
       {
         "file": "lib/index.js",
-        "line": 4108,
+        "line": 4223,
         "text": "const res = await fetch(this.#options.getTokenUrl(), {"
       },
       {
         "file": "lib/index.js",
-        "line": 4130,
+        "line": 4245,
         "text": "const res = await fetch("
-      },
-      {
-        "file": "lib/index.js",
-        "line": 5544,
-        "text": "const res = await fetch(url, { signal: AbortSignal.timeout(DOWNLOAD_TIMEOUT_MS) });"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 38,
-        "text": "import { mkdir, readFile as readFile2, rename, rm, writeFile } from \"node:fs/promises\";"
+        "file": "lib/cli.js",
+        "line": 1099,
+        "text": "import { unlink } from \"node:fs/promises\";"
       },
       {
-        "file": "lib/index.js",
-        "line": 57,
+        "file": "lib/cli.js",
+        "line": 1241,
+        "text": "import { mkdir, readFile, rename, rm, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 1252,
+        "text": "return JSON.parse(await readFile(path, \"utf8\"));"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 1258,
         "text": "await mkdir(pluginDataDir(), { recursive: true });"
       },
       {
-        "file": "lib/index.js",
-        "line": 60,
+        "file": "lib/cli.js",
+        "line": 1261,
         "text": "await writeFile(tmp, text, privateFile ? { mode: 384 } : \"utf8\");"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 61,
-        "text": "if (!privateFile) await writeFile(tmp, text, \"utf8\");"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 62,
-        "text": "await rm(path5, { force: true });"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 9965,
+        "line": 10251,
         "text": "deps.logger.warn(\"[dsh-qqbot] ctx.tools 不可用，AI 定时工具未注册（聊天命令仍可用）\");"
       }
     ]
@@ -78,7 +78,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 7945,
+        "line": 8231,
         "text": "import { exec } from \"node:child_process\";"
       }
     ]

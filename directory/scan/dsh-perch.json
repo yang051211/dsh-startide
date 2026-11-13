@@ -1,0 +1,141 @@
+{
+  "name": "dsh-perch",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-13T21:10:54.610Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/channels/douyin.js",
+        "line": 148,
+        "text": "`fetch(${JSON.stringify(target)}, { credentials: 'include' }).then((r) => r.text()).then((t) => t.slice(0, 400000)).catch((e) => 'ERR:' + e.message)`,"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 206,
+        "text": "const r = await fetch(API + path, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 216,
+        "text": "const r = await fetch(API + path, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3533,
+        "text": "fetch(API + '/state', { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/douyinlook.js",
+        "line": 163,
+        "text": "return `fetch('${FEED_PATH}${n}&refresh_index=1',{credentials:'include'}).then(function(r){return r.text()})`"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/avatar.js",
+        "line": 13,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/avatar.js",
+        "line": 105,
+        "text": "fs.mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/avatar.js",
+        "line": 106,
+        "text": "fs.writeFileSync(tmp, buf)"
+      },
+      {
+        "file": "lib/avatar.js",
+        "line": 111,
+        "text": "try { fs.unlinkSync(path.join(dir, `avatar.${other}`)) } catch { /* 没有就算了 */ }"
+      },
+      {
+        "file": "lib/avatar.js",
+        "line": 115,
+        "text": "try { fs.unlinkSync(tmp) } catch { /* 清临时文件失败不影响结论 */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/ask.js",
+        "line": 289,
+        "text": "return ctx.tools.register("
+      },
+      {
+        "file": "lib/capture.js",
+        "line": 105,
+        "text": "return ctx.tools.register("
+      },
+      {
+        "file": "lib/capture.js",
+        "line": 677,
+        "text": "return ctx.tools.register("
+      },
+      {
+        "file": "lib/douyinlook.js",
+        "line": 565,
+        "text": "return ctx.tools.register("
+      },
+      {
+        "file": "lib/herdiary.js",
+        "line": 69,
+        "text": "return ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 89,
+        "text": "const child = spawn(p, Array.isArray(args) ? args : [], {"
+      },
+      {
+        "file": "lib/media.js",
+        "line": 17,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/media.js",
+        "line": 64,
+        "text": "// 环境变量被设成空串时要退回默认值：spawn('') 会直接抛"
+      },
+      {
+        "file": "lib/media.js",
+        "line": 83,
+        "text": "const r = spawnSync(bin, ['-version'], { encoding: 'utf8', windowsHide: true, timeout: 8000 })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "sessionController",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

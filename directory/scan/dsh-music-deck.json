@@ -1,0 +1,92 @@
+{
+  "name": "dsh-music-deck",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-13T21:11:05.336Z",
+  "icon": "dsh-music-deck.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 427,
+        "text": "const response = await fetch('/music-deck/state', { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 824,
+        "text": "await fetch('/music-deck/cmd', {"
+      },
+      {
+        "file": "client.js",
+        "line": 920,
+        "text": "fetch('/music-deck/cmd', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 2,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 63,
+        "text": "fs.writeFileSync(temporary, text, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 83,
+        "text": "fs.mkdirSync(temporaryRoot, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 105,
+        "text": "payload = JSON.parse(fs.readFileSync(stateFile, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 136,
+        "text": "fs.mkdirSync(workDir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 138,
+        "text": "child = spawn("
+      },
+      {
+        "file": "index.js",
+        "line": 192,
+        "text": "const killer = spawn(path.join(root, 'System32', 'taskkill.exe'), ['/pid', String(current.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

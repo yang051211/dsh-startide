@@ -1,34 +1,34 @@
 {
   "name": "dsh-shutdown-guard",
-  "version": "1.6.1",
-  "scannedAt": "2026-11-12T21:20:30.821Z",
-  "icon": "dsh-shutdown-guard.png",
+  "version": "1.6.2",
+  "scannedAt": "2026-11-13T21:10:48.578Z",
+  "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 982,
+        "line": 988,
         "text": "return fetch(BASE + '/ui', {"
       },
       {
         "file": "lib/client.js",
-        "line": 1199,
+        "line": 1205,
         "text": "return fetch(BASE + '/state?since=' + lastEventAt, { cache: 'no-store' })"
       },
       {
         "file": "lib/client.js",
-        "line": 1216,
+        "line": 1222,
         "text": "return fetch(BASE + path, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1255,
+        "line": 1261,
         "text": "return fetch(BASE + '/arm', {"
       },
       {
         "file": "lib/client.js",
-        "line": 1310,
+        "line": 1316,
         "text": "fetch(BASE + '/ui', {"
       }
     ]
@@ -38,27 +38,27 @@
     "evidence": [
       {
         "file": "lib/index.mjs",
-        "line": 21,
+        "line": 22,
         "text": "import fs from 'node:fs'"
       },
       {
         "file": "lib/index.mjs",
-        "line": 166,
+        "line": 168,
         "text": "const hash = createHash('sha256').update(fs.readFileSync(file)).digest('hex')"
       },
       {
         "file": "lib/index.mjs",
-        "line": 205,
+        "line": 207,
         "text": "fs.mkdirSync(SCRIPTS_DIR, { recursive: true })"
       },
       {
         "file": "lib/index.mjs",
-        "line": 206,
+        "line": 208,
         "text": "fs.writeFileSync(temp, content, 'utf8')"
       },
       {
         "file": "lib/index.mjs",
-        "line": 212,
+        "line": 214,
         "text": "try { fs.unlinkSync(temp) } catch { /* nothing to clean */ }"
       }
     ]
@@ -72,13 +72,28 @@
     "evidence": [
       {
         "file": "lib/index.mjs",
-        "line": 2434,
+        "line": 20,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 2780,
         "text": "// only a few seconds after the spawn (firedTimer), so cancelling in between must"
       },
       {
         "file": "lib/index.mjs",
-        "line": 2784,
+        "line": 3172,
         "text": "handle = subprocess.spawn({"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 3268,
+        "text": "const child = spawn(launch.file, launch.args, { detached: true, stdio: 'ignore', windowsHide: true })"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 3313,
+        "text": "const child = spawn('cmd', ['/c', plan.helperPath], { detached: true, stdio: 'ignore', windowsHide: true })"
       }
     ]
   },

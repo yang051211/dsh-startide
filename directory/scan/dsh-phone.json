@@ -1,0 +1,99 @@
+{
+  "name": "dsh-phone",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-13T21:10:59.682Z",
+  "icon": "dsh-phone.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 58,
+        "text": "const response = await fetch(`${SERVER()}/api/cli-script?file=launcher.mjs`, { signal: AbortSignal.timeout(15_000), headers: { 'User-Agent': 'dsh-phone' } })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 234,
+        "text": "const post=p=>fetch('${API}/'+p,{method:'POST',headers:{'content-type':'application/json'},body:'{}'}).then(r=>r.json());"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 253,
+        "text": "async function tick(){try{render(await (await fetch('${API}/state')).json())}catch{}}"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 10,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 31,
+        "text": "oad() { try { const value = JSON.parse(fs.readFileSync(STATE_FILE, 'utf8')); return value && typeof value === 'object' ? value : null } catch { return null } },"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 32,
+        "text": "  save(value) { try { fs.mkdirSync(ADVERT_DIR, { recursive: true, mode: 0o700 }); fs.writeFileSync(STATE_FILE, JSON.stringify(value), { mode: 0o600 }) } catch {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 33,
+        "text": "clear() { try { fs.rmSync(STATE_FILE, { force: true }) } catch { /* already gone */ } },"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 60,
+        "text": "fs.mkdirSync(dir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 9,
+        "text": "import { execFile, spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 41,
+        "text": "const command = spawnSync('ps', ['-p', String(pid), '-o', 'command='], { encoding: 'utf8' }).stdout || ''"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 74,
+        "text": "    execFile(process.execPath, [fileURLToPath(new URL('./qr-svg.cjs', import.meta.url)), url], { timeout: 10_000, env: { ...process.env, ELECTRON_RUN_AS_NODE: '"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 127,
+        "text": "        proc = spawn(command.cmd, [...command.args, 'remote', '--json', '--source', 'dsh', ...(switching ? ['--switch'] : [])], { stdio: ['ignore', 'pipe', 'pip"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

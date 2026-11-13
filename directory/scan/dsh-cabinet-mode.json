@@ -1,20 +1,35 @@
 {
   "name": "dsh-cabinet-mode",
-  "version": "0.8.0",
-  "scannedAt": "2026-11-11T21:01:05.185Z",
+  "version": "0.9.1",
+  "scannedAt": "2026-11-13T21:10:37.571Z",
   "icon": "dsh-cabinet-mode.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "scripts/market-index.mjs",
-        "line": 161,
-        "text": "const response = await fetch(url, {"
+        "file": "scripts/fixtures/protocol-session-browser.mjs",
+        "line": 17,
+        "text": "const response=await route.fetch({maxRetries:0,maxRedirects:0,timeout:30000}),ack=await response.json();"
       },
       {
-        "file": "scripts/test-panel-browser.mjs",
-        "line": 6,
-        "text": "import {createServer} from 'node:http';"
+        "file": "scripts/fixtures/protocol-session-browser.mjs",
+        "line": 29,
+        "text": "const response=await route.fetch({maxRetries:0,maxRedirects:0,timeout:30000}),ack=await response.json();"
+      },
+      {
+        "file": "scripts/fixtures/protocol-team-browser.mjs",
+        "line": 82,
+        "text": "const response=await route.fetch({maxRetries:0,maxRedirects:0,timeout:30000});"
+      },
+      {
+        "file": "scripts/fixtures/protocol-team-browser.mjs",
+        "line": 118,
+        "text": "const response=await route.fetch({maxRetries:0,maxRedirects:0,timeout:30000});"
+      },
+      {
+        "file": "scripts/fixtures/protocol-team-browser.mjs",
+        "line": 165,
+        "text": "const response=await route.fetch({maxRetries:0,maxRedirects:0,timeout:30000});"
       }
     ]
   },
@@ -22,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "scripts/install.mjs",
-        "line": 29,
-        "text": "import { copyFileSync, existsSync, readFileSync, readdirSync, appendFileSync, writeFileSync } from 'node:fs';"
+        "file": "scripts/fixtures/protocol-team-browser.mjs",
+        "line": 6,
+        "text": "import {readFile} from 'node:fs/promises';"
       },
       {
-        "file": "scripts/install.mjs",
-        "line": 106,
-        "text": "const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));"
+        "file": "scripts/fixtures/protocol-team-browser.mjs",
+        "line": 17,
+        "text": "const localClient=(await readFile(join(repo,'client.js'),'utf8')).trim();"
       },
       {
-        "file": "scripts/install.mjs",
-        "line": 154,
-        "text": "const presetOperations = readFileSync(PATCH_FILE, 'utf8').split(/(?=^- )/m)"
+        "file": "scripts/fixtures/protocol-team-driver.mjs",
+        "line": 3,
+        "text": "import {writeFile} from 'node:fs/promises';"
       },
       {
-        "file": "scripts/install.mjs",
-        "line": 194,
-        "text": "const targetBuffer = readFileSync(target);"
+        "file": "scripts/fixtures/protocol-team-driver.mjs",
+        "line": 35,
+        "text": "await writeFile(process.env.CABINET_FIXTURE_RESULT,JSON.stringify({ok:true,members:summaries}));"
       },
       {
-        "file": "scripts/install.mjs",
-        "line": 247,
-        "text": "const backupBuffer = readFileSync(backupPath);"
+        "file": "scripts/fixtures/protocol-team-driver.mjs",
+        "line": 39,
+        "text": "t(()=>{run().catch(async(error)=>{await writeFile(process.env.CABINET_FIXTURE_RESULT,JSON.stringify({ok:false,stage,errorCategory:error?.code==='ENOENT'?'ENOENT"
       }
     ]
   },
@@ -56,29 +71,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "scripts/test-install.mjs",
-        "line": 6,
-        "text": "import { spawnSync } from 'node:child_process';"
-      },
-      {
-        "file": "scripts/test-install.mjs",
-        "line": 11,
-        "text": "const run = (script, target, args = []) => spawnSync(process.execPath,"
-      },
-      {
-        "file": "scripts/test-market-index.mjs",
+        "file": "scripts/test-dsh-protocol-fixture.mjs",
         "line": 5,
-        "text": "import { spawnSync } from 'node:child_process';"
+        "text": "import {spawn} from 'node:child_process';"
       },
       {
-        "file": "scripts/test-market-index.mjs",
-        "line": 18,
-        "text": "return spawnSync(process.execPath, ['scripts/market-index.mjs'], {"
+        "file": "scripts/test-dsh-protocol-fixture.mjs",
+        "line": 65,
+        "text": " child=spawn(join(resolve(modules),'.bin','dsh'),['--profile','headless','--patch',patch,'--json','--approval-policy','never',prompt],{cwd,env,detached:true,std"
       },
       {
-        "file": "scripts/verify.mjs",
-        "line": 31,
-        "text": "import { spawnSync } from 'node:child_process';"
+        "file": "scripts/test-dsh-team-protocol-fixture.mjs",
+        "line": 6,
+        "text": "import {spawn} from 'node:child_process';"
+      },
+      {
+        "file": "scripts/test-dsh-team-protocol-fixture.mjs",
+        "line": 52,
+        "text": "child=spawn(join(resolve(modules),'.bin','dsh'),args,{cwd,env,detached:true,stdio:['ignore','pipe','pipe']});"
+      },
+      {
+        "file": "scripts/test-dsh-team-protocol-fixture.mjs",
+        "line": 121,
+        "text": " child=spawn(join(resolve(modules),'.bin','dsh'),['--profile','web',...(headless?[]:['--patch',join(repo,'cordis.patch.yml')]),'--patch',join(resolve(modules),'"
       }
     ]
   },

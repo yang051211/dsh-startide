@@ -1,0 +1,123 @@
+{
+  "name": "dsh-yunpa",
+  "version": "0.10.7",
+  "scannedAt": "2026-11-13T21:10:50.613Z",
+  "icon": "dsh-yunpa.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "browser.js",
+        "line": 123,
+        "text": "const list = async (port) => (await fetch(`http://127.0.0.1:${port}/json/list`)).json()"
+      },
+      {
+        "file": "browser.js",
+        "line": 134,
+        "text": "const t = await (await fetch(`http://127.0.0.1:${port}/json/new?${encodeURIComponent(url)}`, { method: 'PUT' })).json()"
+      },
+      {
+        "file": "browser.js",
+        "line": 141,
+        "text": "await fetch(`http://127.0.0.1:${port}/json/close/${id}`)"
+      },
+      {
+        "file": "check-all.mjs",
+        "line": 76,
+        "text": "const v = await (await fetch('http://127.0.0.1:' + b.port + '/json/version')).json()"
+      },
+      {
+        "file": "check-all.mjs",
+        "line": 118,
+        "text": "const j = await (await fetch('http://127.0.0.1:' + port + '/api/yunpa/status')).json()"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "api.js",
+        "line": 8,
+        "text": "import { readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "api.js",
+        "line": 13,
+        "text": "try { return readFileSync(TOKEN_FILE, 'utf8').trim() } catch {"
+      },
+      {
+        "file": "api.js",
+        "line": 15,
+        "text": "try { writeFileSync(TOKEN_FILE, t, { mode: 0o600 }) } catch {}"
+      },
+      {
+        "file": "api.js",
+        "line": 29,
+        "text": "const { readFile: rf } = await import('node:fs/promises')"
+      },
+      {
+        "file": "api.js",
+        "line": 87,
+        "text": "const { readFile: rf } = await import('node:fs/promises')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 353,
+        "text": "for (const t of TOOLS) ctx.tools.register(guard(t))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "check-all.mjs",
+        "line": 146,
+        "text": "const { execFileSync } = await import('node:child_process')"
+      },
+      {
+        "file": "check-all.mjs",
+        "line": 166,
+        "text": "const { execFileSync } = await import('node:child_process')"
+      },
+      {
+        "file": "core.js",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "core.js",
+        "line": 103,
+        "text": "const p = spawn('powershell', ['-NoProfile', '-NonInteractive', '-Command', script], { windowsHide: true })"
+      },
+      {
+        "file": "core.js",
+        "line": 130,
+        "text": "if (principal) spawn(\"icacls\", [ROOT, \"/grant:r\", principal + \":(OI)(CI)F\"], { windowsHide: true }).unref()"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

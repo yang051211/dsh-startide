@@ -1,7 +1,7 @@
 {
   "name": "dsh-grok-search",
-  "version": "0.2.1",
-  "scannedAt": "2026-11-09T23:06:56.599Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-13T21:10:55.599Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -22,24 +22,30 @@
       },
       {
         "file": "src/core/control-intent-store.mjs",
-        "line": 233,
+        "line": 258,
         "text": "return readFileSync(path);"
       },
       {
         "file": "src/core/control-intent-store.mjs",
-        "line": 273,
+        "line": 387,
         "text": "const bytes = readFileSync(legacyPath);"
       },
       {
         "file": "src/core/control-intent-store.mjs",
-        "line": 338,
-        "text": "mkdirSync(root, { recursive: true });"
+        "line": 412,
+        "text": "const bytes = readFileSync(checkpointPath);"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core/github-host.mjs",
+        "line": 96,
+        "text": "try { unregister = registrationContext.tools.register(definition); registrationError = null; }"
+      }
+    ]
   },
   "childProcess": {
     "hit": true,

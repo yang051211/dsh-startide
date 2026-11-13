@@ -1,0 +1,104 @@
+{
+  "name": "dsh-claude-whiteboard",
+  "version": "2.16.0",
+  "scannedAt": "2026-11-13T21:10:51.807Z",
+  "icon": "dsh-claude-whiteboard.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "skills/claude-whiteboard/scripts/artifact.mjs",
+        "line": 36,
+        "text": "const response = await fetch(new URL(probe, state.url), { signal: AbortSignal.timeout(2e3) });"
+      },
+      {
+        "file": "skills/claude-whiteboard/scripts/artifact.mjs",
+        "line": 248,
+        "text": "import http from \"node:http\";"
+      },
+      {
+        "file": "skills/claude-whiteboard/scripts/artifact.mjs",
+        "line": 969,
+        "text": "const response = await fetch(`${origin}${HUB_ROUTE}`, { signal: AbortSignal.timeout(1e3) });"
+      },
+      {
+        "file": "skills/claude-whiteboard/scripts/artifact.mjs",
+        "line": 985,
+        "text": "const response = await fetch(`${origins[i]}${HUB_ROUTE}`, {"
+      },
+      {
+        "file": "skills/claude-whiteboard/scripts/artifact.mjs",
+        "line": 1001,
+        "text": "const response = await fetch(`${new URL(state.url).origin}${HUB_ROUTE}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { readFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 17,
+        "text": "import { statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 157,
+        "text": "const raw = await readFile(candidate.path, { encoding: \"utf8\", signal: options?.signal });"
+      },
+      {
+        "file": "skills/claude-whiteboard/scripts/artifact.mjs",
+        "line": 5,
+        "text": "import fs10 from \"node:fs\";"
+      },
+      {
+        "file": "skills/claude-whiteboard/scripts/artifact.mjs",
+        "line": 10,
+        "text": "import fs from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "skills/claude-whiteboard/scripts/artifact.mjs",
+        "line": 244,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "skills/claude-whiteboard/scripts/artifact.mjs",
+        "line": 1055,
+        "text": "const child = spawn(process.execPath, [...call.command, \"--background\"], { detached: true, stdio: [\"ignore\", \"ignore\", fd] });"
+      },
+      {
+        "file": "skills/claude-whiteboard/scripts/artifact.mjs",
+        "line": 3369,
+        "text": "import { spawn as spawn2 } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "skills/claude-whiteboard/scripts/editor/artifact-type/app.js",
+    "skills/claude-whiteboard/scripts/editor/local-host.js",
+    "skills/claude-whiteboard/scripts/editor/share-ui.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

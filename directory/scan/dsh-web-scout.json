@@ -1,0 +1,139 @@
+{
+  "name": "dsh-web-scout",
+  "version": "1.23.0",
+  "scannedAt": "2026-11-13T21:11:06.926Z",
+  "icon": "dsh-web-scout.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "browserAuth.js",
+        "line": 89,
+        "text": "const response = await fetch(`http://127.0.0.1:${port}/json/version`, {"
+      },
+      {
+        "file": "browserAuth.js",
+        "line": 120,
+        "text": "socket = new WebSocket(wsUrl);"
+      },
+      {
+        "file": "browserAuth.js",
+        "line": 237,
+        "text": "await fetch(`http://127.0.0.1:${port}/json/new?${encodeURIComponent(url)}`, { method: 'PUT' });"
+      },
+      {
+        "file": "client.js",
+        "line": 698,
+        "text": "const response = await fetch(API, {"
+      },
+      {
+        "file": "net.js",
+        "line": 2,
+        "text": "import http from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "browserAuth.js",
+        "line": 5,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "browserAuth.js",
+        "line": 101,
+        "text": "return JSON.parse(fs.readFileSync(statePath(), 'utf8'));"
+      },
+      {
+        "file": "browserAuth.js",
+        "line": 109,
+        "text": "fs.mkdirSync(profileDir(), { recursive: true });"
+      },
+      {
+        "file": "browserAuth.js",
+        "line": 110,
+        "text": "fs.writeFileSync(statePath(), JSON.stringify(value, null, 2));"
+      },
+      {
+        "file": "browserAuth.js",
+        "line": 181,
+        "text": "const raw = fs.readFileSync(path.join(profileDir(), 'DevToolsActivePort'), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 35,
+        "text": "export const inject = ['tools', 'webServer'];"
+      },
+      {
+        "file": "index.js",
+        "line": 304,
+        "text": "ctx.tools.register(withPlainOutput({"
+      },
+      {
+        "file": "index.js",
+        "line": 415,
+        "text": "ctx.tools.register(withPlainOutput({"
+      },
+      {
+        "file": "index.js",
+        "line": 447,
+        "text": "ctx.tools.register(withPlainOutput({"
+      },
+      {
+        "file": "index.js",
+        "line": 482,
+        "text": "ctx.tools.register(withPlainOutput({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "browserAuth.js",
+        "line": 4,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "browserAuth.js",
+        "line": 226,
+        "text": "const child = spawn(exe, args, { detached: true, stdio: 'ignore', windowsHide: false });"
+      },
+      {
+        "file": "browserAuth.js",
+        "line": 346,
+        "text": "if (process.platform === 'win32') spawnSync('taskkill', ['/F', '/T', '/PID', String(pid)], { stdio: 'ignore' });"
+      },
+      {
+        "file": "open.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "open.js",
+        "line": 23,
+        "text": "const child = spawn(command, args, { detached: true, stdio: 'ignore', windowsHide: true });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

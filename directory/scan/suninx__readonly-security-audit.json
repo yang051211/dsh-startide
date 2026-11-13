@@ -1,0 +1,75 @@
+{
+  "name": "@suninx/readonly-security-audit",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-13T21:11:06.249Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/install-desktop.sh",
+        "line": 9,
+        "text": "#   bash <(curl -Ls https://raw.githubusercontent.com/my-dsh-plugin/readonly-security-audit/main/scripts/install-desktop.sh) --restart"
+      },
+      {
+        "file": "scripts/install-desktop.sh",
+        "line": 69,
+        "text": "curl -fsSL \"$CURL_BASE/$REPO/tar.gz/refs/heads/$BRANCH\" -o \"$TMP/plugin.tgz\" \\"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/install-preset.mjs",
+        "line": 9,
+        "text": "import { cp, mkdir, rm } from 'node:fs/promises'"
+      },
+      {
+        "file": "scripts/install-preset.mjs",
+        "line": 23,
+        "text": "await rm(presetDestination, { recursive: true, force: true })"
+      },
+      {
+        "file": "scripts/install-preset.mjs",
+        "line": 24,
+        "text": "await mkdir(presetDestination, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 201,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 270,
+        "text": "static inject = ['tools', 'systemPrompt', 'sandboxPolicy', 'userQuestions']"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 334,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 4,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

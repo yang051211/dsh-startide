@@ -1,0 +1,112 @@
+{
+  "name": "dsh-comfyui-gallery",
+  "version": "0.8.4",
+  "scannedAt": "2026-11-13T21:11:06.389Z",
+  "icon": "dsh-comfyui-gallery.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 15,
+        "text": "var response = await fetch(endpoint(name, params), { signal: signal })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 98,
+        "text": "      var response = await fetch(API + name, { method: 'POST', headers: { 'content-type': 'application/json', 'x-gallery-token': token }, body: JSON.stringify(b"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 113,
+        "text": "var response = await fetch(endpoint('file', { id: id }), { signal: signal })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 357,
+        "text": "          var response = await fetch(API + 'interrogate/upload', { method: 'POST', headers: { 'content-type': 'application/octet-stream', 'x-gallery-token': pro"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 86,
+        "text": "if (route === '/loras/fetch') return send(202, await loras.fetch(body.id, { mode: 'refresh' }))"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/imports.js",
+        "line": 1,
+        "text": "import fs from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/imports.js",
+        "line": 53,
+        "text": "const bytes = await fs.readFile(source.real)"
+      },
+      {
+        "file": "lib/imports.js",
+        "line": 55,
+        "text": "await fs.mkdir(directory, { recursive: true })"
+      },
+      {
+        "file": "lib/imports.js",
+        "line": 66,
+        "text": "await fs.writeFile(input, bytes, { flag: 'wx' })"
+      },
+      {
+        "file": "lib/imports.js",
+        "line": 68,
+        "text": "await fs.rm(input)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/interrogate.js",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/interrogate.js",
+        "line": 212,
+        "text": "const child = spawn(this.store.config.python, ['-X', 'utf8', script, ...args], { windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'],"
+      },
+      {
+        "file": "lib/similarity.js",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/similarity.js",
+        "line": 71,
+        "text": "      const child = spawn(this.store.config.python, ['-X', 'utf8', script], { windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'], env: { ...process.env, OMP_NUM"
+      },
+      {
+        "file": "lib/thumb.js",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

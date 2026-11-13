@@ -1,24 +1,24 @@
 {
   "name": "dsh-live-speak",
-  "version": "1.0.0",
-  "scannedAt": "2026-11-11T21:01:24.700Z",
+  "version": "1.0.8",
+  "scannedAt": "2026-11-13T21:11:02.396Z",
   "icon": "dsh-live-speak.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client/client.js",
-        "line": 657,
+        "line": 745,
         "text": "return fetch(API + path, {"
       },
       {
         "file": "client/client.js",
-        "line": 976,
+        "line": 1154,
         "text": "fetch(AUDIO_PREFIX + item.id)"
       },
       {
         "file": "client/client.js",
-        "line": 1123,
+        "line": 1301,
         "text": "fetch(url)"
       }
     ]
@@ -33,22 +33,22 @@
       },
       {
         "file": "index.js",
-        "line": 164,
+        "line": 304,
         "text": "parsed = JSON.parse(fs.readFileSync(SETTINGS_FILE, 'utf8'))"
       },
       {
         "file": "index.js",
-        "line": 174,
+        "line": 314,
         "text": "fs.mkdirSync(DATA_DIR, { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 175,
+        "line": 315,
         "text": "fs.writeFileSync(SETTINGS_FILE, JSON.stringify(settings, null, 2), 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 935,
+        "line": 1105,
         "text": "fs.mkdirSync(DATA_DIR, { recursive: true })"
       }
     ]
@@ -58,8 +58,34 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 1347,
+        "text": "execFile("
+      },
+      {
+        "file": "index.js",
+        "line": 1378,
+        "text": "execFile("
+      },
+      {
+        "file": "index.js",
+        "line": 1407,
+        "text": "execFile('say', ['-v', '?'], { timeout: 15_000 }, (error, stdout) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 1432,
+        "text": "execFile(bin, ['--voices'], { timeout: 15_000 }, (error, stdout) => {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

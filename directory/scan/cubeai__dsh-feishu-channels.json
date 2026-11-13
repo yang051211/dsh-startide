@@ -1,0 +1,82 @@
+{
+  "name": "@cubeai/dsh-feishu-channels",
+  "version": "0.2.6",
+  "scannedAt": "2026-11-13T21:10:50.630Z",
+  "icon": "cubeai__dsh-feishu-channels.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1057,
+        "text": "return fetch(API_BASE + path, request).then((r) => r.json()).then((data) => {"
+      },
+      {
+        "file": "src/channels/qr/feishu.js",
+        "line": 57,
+        "text": "const response = await fetch(`${FEISHU_ACCOUNTS}/oauth/v1/app/registration`, {"
+      },
+      {
+        "file": "src/engine/session-export.js",
+        "line": 19,
+        "text": "const pending = connection.createSharedFetchHandler('/api').fetch(new Request(url, { signal }), connection.browserPeer);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/engine/atomic-file.js",
+        "line": 2,
+        "text": "import { chmodSync, closeSync, existsSync, fsyncSync, mkdirSync, openSync, renameSync, unlinkSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "src/engine/atomic-file.js",
+        "line": 7,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "src/engine/atomic-file.js",
+        "line": 12,
+        "text": "writeFileSync(fd, data, 'utf8');"
+      },
+      {
+        "file": "src/engine/atomic-file.js",
+        "line": 32,
+        "text": "unlinkSync(temp);"
+      },
+      {
+        "file": "src/engine/credentials.js",
+        "line": 1,
+        "text": "import { mkdirSync, readFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentDefaultModel",
+    "agentPresets",
+    "agents",
+    "credentials",
+    "llm",
+    "permissionPresets",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

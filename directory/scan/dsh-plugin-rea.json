@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-rea",
-  "version": "2.0.16",
-  "scannedAt": "2026-11-07T14:33:12.142Z",
+  "version": "2.0.18",
+  "scannedAt": "2026-11-13T21:10:40.534Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -27,9 +27,9 @@
         "text": "import { createServer } from \"node:http\";"
       },
       {
-        "file": "scripts/rea-bundle-bootstrap.ps1",
-        "line": 181,
-        "text": "# Invoke-WebRequest buffers the whole body before writing, so a slow mirror"
+        "file": "scripts/hardening.test.mjs",
+        "line": 396,
+        "text": "const { createServer } = require(\"node:http\");"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "assets/make-screenshots.ps1",
-        "line": 126,
+        "line": 131,
         "text": "Draw-Text $g \"@deepseek-ai/dsh-mcp-client`nserverName = rea / transport = stdio`ncommand = 当前 Node 可执行文件`nargs[0] = <DSH_HOME>/plugins/rea-bundle/`n            "
       },
       {
@@ -83,12 +83,12 @@
       },
       {
         "file": "scripts/setup.test.mjs",
-        "line": 1073,
+        "line": 1110,
         "text": "ert:\", \"    - id: rea-mcp\", \"      name: '@deepseek-ai/dsh-mcp-client'\", \"      config:\", \"        serverName: rea\", \"        transport: stdio\", \"\"].join(\"\\n\"),"
       },
       {
         "file": "scripts/setup.test.mjs",
-        "line": 1093,
+        "line": 1130,
         "text": " - id: rea-mcp  # written by upstream\", \"      name: '@deepseek-ai/dsh-mcp-client'\", \"      config:\", \"        serverName: 'rea' # same server\", \"\"].join(\"\\n\"),"
       }
     ]

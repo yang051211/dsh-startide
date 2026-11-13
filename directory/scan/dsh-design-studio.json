@@ -1,7 +1,7 @@
 {
   "name": "dsh-design-studio",
-  "version": "0.19.0",
-  "scannedAt": "2026-11-12T21:20:15.820Z",
+  "version": "0.19.1",
+  "scannedAt": "2026-11-13T21:10:38.016Z",
   "icon": "dsh-design-studio.svg",
   "network": {
     "hit": true,
@@ -37,6 +37,11 @@
     "hit": true,
     "evidence": [
       {
+        "file": "cordis.patch.yml",
+        "line": 70,
+        "text": "solve('@deepseek-ai/dsh-agent-preset/package.json')), 'skills'); return process.getBuiltinModule('node:fs').existsSync(d) ? [d] : [] } catch { return [] } })()\""
+      },
+      {
         "file": "lib/annotations.js",
         "line": 15,
         "text": "import fs from 'node:fs'"
@@ -55,11 +60,6 @@
         "file": "lib/browser.js",
         "line": 66,
         "text": "try { if (now - fs.statSync(p).mtimeMs > STALE_MS) fs.rmSync(p, { recursive: true, force: true }) } catch { /* 下次再说 */ }"
-      },
-      {
-        "file": "lib/browser.js",
-        "line": 146,
-        "text": "try { fs.rmSync(d, { recursive: true, force: true }) } catch (e) {"
       }
     ]
   },

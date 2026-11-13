@@ -1,7 +1,7 @@
 {
   "name": "@lemoncat7/dsh-partner",
-  "version": "2.23.55",
-  "scannedAt": "2026-11-04T07:55:57.031Z",
+  "version": "2.26.10",
+  "scannedAt": "2026-11-13T21:10:48.806Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -12,24 +12,24 @@
         "text": "过已授权 bash 使用 node，先检查 process.version 和 require(\"node:http\")、require(\"node:https\")；这些是内置模块，不需要 npm 安装。Node 内置 fetch 不要求安装独立 undici，但不能假定 fetch 自动使用代理。使用当前环境实测能力"
       },
       {
-        "file": "lib/channels/direct/avatar.js",
-        "line": 6,
-        "text": "const response = await fetch(config.baseUrl + path, {"
+        "file": "lib/browser/cdp.js",
+        "line": 1,
+        "text": "import { request as httpRequest } from 'node:http';"
       },
       {
-        "file": "lib/channels/direct/login.js",
-        "line": 28,
-        "text": "const response = await fetch(config.baseUrl + path, {"
+        "file": "lib/browser/cdp.js",
+        "line": 2,
+        "text": "import { request as httpsRequest } from 'node:https';"
       },
       {
-        "file": "lib/channels/direct/login.js",
-        "line": 48,
-        "text": "const response = await fetch(config.baseUrl + (matrix ? '/_matrix/client/v3/login' : '/api/v4/users/login'), {"
+        "file": "lib/channels/bilibili/media.js",
+        "line": 56,
+        "text": "        const response = await fetch(url + (images ? '/stage-images/' : '/stage/') + encodeURIComponent(channel), { method: 'POST', headers: { authorization: 'B"
       },
       {
-        "file": "lib/channels/direct/media.js",
-        "line": 18,
-        "text": "const response = await fetch(this.config.baseUrl + path, {"
+        "file": "lib/channels/bilibili/service.js",
+        "line": 9,
+        "text": "        const response = await fetch((process.env.PARTNER_BILIBILI_URL ?? 'http://dsh-bilibili:8091') + '/call', { method: 'POST', headers: { authorization: 'Be"
       }
     ]
   },
@@ -38,22 +38,22 @@
     "evidence": [
       {
         "file": "lib/agent-runtime.js",
-        "line": 45,
+        "line": 58,
         "text": "import { mkdir, realpath, stat, writeFile } from 'node:fs/promises';"
       },
       {
         "file": "lib/agent-runtime.js",
-        "line": 1462,
+        "line": 1620,
         "text": "await mkdir(directory, { recursive: true, mode: 0o700 });"
       },
       {
         "file": "lib/agent-runtime.js",
-        "line": 1470,
+        "line": 1628,
         "text": "await writeFile(path, attachment.data, { flag: 'wx', mode: 0o600 });"
       },
       {
         "file": "lib/agent-runtime.js",
-        "line": 1576,
+        "line": 1734,
         "text": "await mkdir(cwd, { recursive: true, mode: 0o700 });"
       },
       {
@@ -68,28 +68,28 @@
     "evidence": [
       {
         "file": "lib/agent-runtime.js",
-        "line": 137,
-        "text": "this.disposeToolAuthority = typeof this.ctx.tools?.guard === 'function' ? installToolAccessGuard(this.ctx.tools, () => this.store.snapshot()) : (() => { });"
+        "line": 168,
+        "text": "if (typeof this.ctx.on === 'function' && typeof this.ctx.tools?.resolve === 'function') {"
       },
       {
         "file": "lib/agent-runtime.js",
-        "line": 676,
+        "line": 179,
+        "text": "if (typeof store.subscribe === 'function' && typeof this.ctx.tools?.resolve === 'function')"
+      },
+      {
+        "file": "lib/agent-runtime.js",
+        "line": 191,
+        "text": "this.disposeToolAuthority = typeof this.ctx.tools?.guard === 'function' ? installToolAccessGuard(this.ctx.tools, this.store) : (() => { });"
+      },
+      {
+        "file": "lib/agent-runtime.js",
+        "line": 208,
+        "text": "const assembly = { ...presentation, tools: 'tools' in presentation ? presentation.tools : context.agent.ctx.tools.schemas(context.agent, context.toolSet) };"
+      },
+      {
+        "file": "lib/agent-runtime.js",
+        "line": 747,
         "text": "disposers.push(agent.ctx.tools.register(tool));"
-      },
-      {
-        "file": "lib/agent-runtime.js",
-        "line": 726,
-        "text": "noteDisposers.push(agent.ctx.tools.register(tool));"
-      },
-      {
-        "file": "lib/agent-runtime.js",
-        "line": 1090,
-        "text": "if (stableNative && !this.replyPresentations.has(agent) && typeof agent.ctx.tools?.presentAs === 'function') {"
-      },
-      {
-        "file": "lib/agent-runtime.js",
-        "line": 1091,
-        "text": "this.replyPresentations.set(agent, agent.ctx.tools.presentAs('native'));"
       }
     ]
   },
@@ -128,17 +128,20 @@
       }
     ]
   },
-  "dependencies": 6,
+  "dependencies": 7,
   "minifiedFiles": [
     "lib/character/role-reference-data.js",
     "lib/chat/sticker-builtins.js",
+    "lib/client.activities.js",
+    "lib/client.browser.js",
     "lib/client.pendant.js",
+    "lib/client.tts.js",
     "lib/pendant-renderer.js",
     "lib/pendant/settings-panel.js",
     "lib/ui/attachment-storage.js",
+    "lib/ui/bilibili-settings.js",
     "lib/ui/channels-panel.js",
     "lib/ui/identity-editor.js",
-    "lib/ui/idle-contact-editor.js",
     "lib/ui/memory/memory-library.js",
     "lib/ui/memory/memory-panel.js",
     "lib/ui/push-editor.js",
@@ -146,7 +149,9 @@
     "lib/ui/qq-channel-settings.js",
     "lib/ui/requirement-tasks-panel.js",
     "lib/ui/skills-panel.js",
-    "lib/ui/sleep-editor.js"
+    "lib/ui/sleep-editor.js",
+    "lib/ui/thoughts-panel.js",
+    "lib/ui/tts-settings.js"
   ],
   "binaryFiles": [],
   "requiredServices": [

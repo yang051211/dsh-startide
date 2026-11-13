@@ -1,8 +1,8 @@
 {
   "name": "dsh-ensp",
-  "version": "0.5.1",
-  "scannedAt": "2026-11-12T21:20:36.660Z",
-  "icon": null,
+  "version": "0.7.0",
+  "scannedAt": "2026-11-13T21:10:42.337Z",
+  "icon": "dsh-ensp.webp",
   "network": {
     "hit": false,
     "evidence": []
@@ -11,29 +11,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "scripts/gen-curriculum.mjs",
+        "line": 20,
+        "text": "import { readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "scripts/gen-curriculum.mjs",
+        "line": 167,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "scripts/gen-curriculum.mjs",
+        "line": 172,
+        "text": "writeFileSync(target, JSON.stringify(index, null, 1) + '\\n')"
+      },
+      {
         "file": "scripts/gen-knowledge.mjs",
         "line": 23,
         "text": "import { readFileSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "scripts/gen-knowledge.mjs",
-        "line": 151,
-        "text": "const source = JSON.parse(readFileSync(sourcePath, 'utf8'))"
-      },
-      {
-        "file": "scripts/gen-knowledge.mjs",
-        "line": 154,
-        "text": "writeFileSync(target, JSON.stringify(index, null, 1) + '\\n', 'utf8')"
-      },
-      {
-        "file": "scripts/gen-scenarios-doc.mjs",
-        "line": 14,
-        "text": "import { readFile, writeFile } from 'node:fs/promises'"
-      },
-      {
-        "file": "scripts/gen-scenarios-doc.mjs",
-        "line": 165,
-        "text": "current = await readFile(target, 'utf8')"
+        "line": 189,
+        "text": "const source = sourcePaths.flatMap((p) => JSON.parse(readFileSync(p, 'utf8')))"
       }
     ]
   },
@@ -47,22 +47,22 @@
       },
       {
         "file": "src/dsh/index.mjs",
-        "line": 55,
+        "line": 56,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "src/dsh/index.mjs",
-        "line": 156,
+        "line": 157,
         "text": "* @param {object} tools - `ctx.tools`"
       },
       {
         "file": "src/dsh/index.mjs",
-        "line": 161,
+        "line": 162,
         "text": "return tools.register({"
       },
       {
         "file": "src/dsh/index.mjs",
-        "line": 176,
+        "line": 177,
         "text": "const tools = ctx.tools"
       }
     ]
@@ -110,12 +110,12 @@
   "setupHints": [
     {
       "file": "README.en.md",
-      "line": 251,
+      "line": 270,
       "text": "npm install -g dsh-ensp"
     },
     {
       "file": "README.md",
-      "line": 251,
+      "line": 270,
       "text": "npm install -g dsh-ensp"
     }
   ],

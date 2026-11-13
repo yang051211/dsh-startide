@@ -1,0 +1,147 @@
+{
+  "name": "dsh-ris-yds",
+  "version": "1.2.1",
+  "scannedAt": "2026-11-13T21:10:53.784Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/dev-extension/sw.js",
+        "line": 31,
+        "text": "const response = await fetch(chrome.runtime.getURL('config.json'), { cache: 'no-store' })"
+      },
+      {
+        "file": "assets/dev-extension/sw.js",
+        "line": 49,
+        "text": "const response = await fetch(`http://127.0.0.1:${port}/dsh-ris-yds/dev-config${query}`, { cache: 'no-store' })"
+      },
+      {
+        "file": "bin/check-listing.mjs",
+        "line": 203,
+        "text": "const res = await fetch(url, { method: 'HEAD', redirect: 'follow', signal: AbortSignal.timeout(8000) })"
+      },
+      {
+        "file": "lib/confcenter.js",
+        "line": 55,
+        "text": "const res = await fetch(url, { headers: { YYCToken: token }, signal: signalOrTimeout })"
+      },
+      {
+        "file": "lib/dev-browser.js",
+        "line": 40,
+        "text": "const list = await (await fetch(`http://127.0.0.1:${port}/json/list`)).json()"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/check-listing.mjs",
+        "line": 13,
+        "text": "import { readFile, readdir, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "bin/check-listing.mjs",
+        "line": 14,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/check-listing.mjs",
+        "line": 30,
+        "text": "return JSON.parse(await readFile(join(ROOT, rel), 'utf8'))"
+      },
+      {
+        "file": "bin/check-listing.mjs",
+        "line": 35,
+        "text": "return await readFile(join(ROOT, rel), 'utf8')"
+      },
+      {
+        "file": "lib/build.js",
+        "line": 6,
+        "text": "import { existsSync, mkdirSync, readdirSync, statSync, writeFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 4,
+        "text": "# the plugin so its ctx.tools registrations reach the agent session."
+      },
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "export const inject = ['sessions', 'tools', 'webServer']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 229,
+        "text": "if (typeof ctx.tools?.register !== 'function') {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 230,
+        "text": "ctx.logger?.warn?.('dsh-ris-yds: ctx.tools missing; tools stay unregistered')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 236,
+        "text": "disposers.push(ctx.tools.register(definition))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/browser.js",
+        "line": 17,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/build.js",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/build.js",
+        "line": 101,
+        "text": "const child = spawn(useShell ? 'mvn.cmd' : 'mvn', args, { cwd: bootstrap, signal, shell: useShell, windowsHide: true })"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 19,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/dev-browser.js",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "native/yds-rust.darwin-arm64.node",
+    "native/yds-rust.darwin-x64.node",
+    "native/yds-rust.linux-arm64.node",
+    "native/yds-rust.linux-x64.node",
+    "native/yds-rust.win32-arm64.node",
+    "native/yds-rust.win32-x64.node"
+  ],
+  "requiredServices": [
+    "sessions",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

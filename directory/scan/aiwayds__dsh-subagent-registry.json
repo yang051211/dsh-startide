@@ -1,7 +1,7 @@
 {
   "name": "@aiwayds/dsh-subagent-registry",
-  "version": "0.20.0",
-  "scannedAt": "2026-11-13T08:14:51.110Z",
+  "version": "0.20.1",
+  "scannedAt": "2026-11-13T21:10:44.675Z",
   "icon": "aiwayds__dsh-subagent-registry.svg",
   "network": {
     "hit": true,
@@ -83,27 +83,27 @@
     "evidence": [
       {
         "file": "scripts/link-dsh-closure.mjs",
-        "line": 38,
+        "line": 42,
         "text": "import { execFileSync } from 'node:child_process'"
       },
       {
         "file": "scripts/smoke-boot.mjs",
-        "line": 30,
+        "line": 33,
         "text": "import { spawnSync } from 'node:child_process'"
       },
       {
         "file": "scripts/smoke-boot.mjs",
-        "line": 56,
+        "line": 59,
         "text": "const pack = spawnSync(npm, [...npmArgs, 'pack', '--pack-destination', work], { cwd: repoRoot, encoding: 'utf8' })"
       },
       {
         "file": "scripts/smoke-boot.mjs",
-        "line": 87,
+        "line": 90,
         "text": "const install = spawnSync(npm, [...npmArgs, 'install', '--registry=https://registry.npmjs.org', '--no-audit', '--no-fund', '--loglevel=error'], { cwd: profile, "
       },
       {
         "file": "scripts/smoke-boot.mjs",
-        "line": 101,
+        "line": 104,
         "text": "const dump = spawnSync('dsh', ['--profile', 'smoke', '--dump-config'], { cwd: profile, encoding: 'utf8', env: dshEnv })"
       }
     ]
@@ -114,7 +114,7 @@
       {
         "file": "package.json",
         "line": 0,
-        "text": "scripts.postinstall: node scripts/link-dsh-closure.mjs"
+        "text": "scripts.prepare: node scripts/link-dsh-closure.mjs"
       }
     ]
   },

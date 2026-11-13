@@ -1,0 +1,60 @@
+{
+  "name": "@1234yqcg/dsh-preset-force",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-13T21:11:05.708Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 15,
+        "text": "fetch(\"/dsh-preset-force/status\" + (sessionId ? \"?sessionId=\" + encodeURIComponent(sessionId) : \"\")).then((r) => r.json()),"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 17,
+        "text": "fetch(\"/dsh-preset-force/switch\", {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "export const inject = [\"commands\", \"tools\", \"agentPresets\", \"agents\", \"webServer\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 134,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentPresets",
+    "agents",
+    "commands",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,34 +1,34 @@
 {
   "name": "dsh-apk-vm",
-  "version": "0.11.1",
-  "scannedAt": "2026-11-04T20:39:00.168Z",
+  "version": "0.12.0",
+  "scannedAt": "2026-11-13T21:10:55.991Z",
   "icon": "dsh-apk-vm.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 886,
+        "line": 986,
         "text": "return fetch(url, init)"
       },
       {
         "file": "client.js",
-        "line": 933,
+        "line": 1033,
         "text": "return fetch(framePath || ('/apk-vm/frame?t=' + Date.now()), { cache: 'no-store' })"
       },
       {
         "file": "client.js",
-        "line": 1844,
+        "line": 2495,
         "text": "fetch('/apk-vm/client-report', {"
       },
       {
         "file": "client.js",
-        "line": 2172,
+        "line": 2823,
         "text": "ws = new WebSocket(wsBase + wsPath);"
       },
       {
         "file": "client.js",
-        "line": 3568,
+        "line": 4357,
         "text": "var xhr = new XMLHttpRequest();"
       }
     ]
@@ -39,7 +39,7 @@
       {
         "file": "index.js",
         "line": 17,
-        "text": "import { createReadStream, existsSync, readFileSync } from 'node:fs';"
+        "text": "import { createReadStream, existsSync, readFileSync, realpathSync } from 'node:fs';"
       },
       {
         "file": "index.js",
@@ -48,18 +48,18 @@
       },
       {
         "file": "index.js",
-        "line": 47,
+        "line": 51,
         "text": "return JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')).version || 'unknown';"
       },
       {
         "file": "index.js",
-        "line": 756,
-        "text": "await fsp.mkdir(uploadDir, { recursive: true });"
+        "line": 1002,
+        "text": "await fsp.mkdir(archiveDir, { recursive: true });"
       },
       {
         "file": "index.js",
-        "line": 764,
-        "text": "if (stat && stat.isFile() && stat.mtimeMs < cutoff) await fsp.rm(file, { force: true }).catch(() => {});"
+        "line": 1016,
+        "text": "await fsp.rm(path.join(archiveDir, stale.name), { force: true }).catch(() => {});"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 4649,
+        "line": 5486,
         "text": "return host.tools.register(apkVmTool);"
       }
     ]
@@ -114,12 +114,12 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 249,
+      "line": 283,
       "text": "- **Cross-platform SDK discovery.** `lib/setup.js` and `lib/android.js` discover Android SDK,"
     },
     {
       "file": "README.md",
-      "line": 670,
+      "line": 788,
       "text": "│  ├─ lib/setup.js    Environment detection, createAvd, installSystemImage │"
     }
   ],

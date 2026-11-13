@@ -1,14 +1,14 @@
 {
   "name": "dsh-sidebar-suite",
-  "version": "0.5.0",
-  "scannedAt": "2026-11-12T08:43:14.104Z",
+  "version": "0.6.1",
+  "scannedAt": "2026-11-13T21:10:42.747Z",
   "icon": "dsh-sidebar-suite.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 906,
+        "line": 930,
         "text": "return fetch(tempUrl(path), init)"
       }
     ]
@@ -24,7 +24,7 @@
       {
         "file": "lib/temp-session-host.mjs",
         "line": 26,
-        "text": "import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+        "text": "import { existsSync, lstatSync, mkdirSync, readdirSync, readFileSync, realpathSync, rmSync, statSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "lib/temp-session-host.mjs",
@@ -38,8 +38,8 @@
       },
       {
         "file": "lib/temp-session-host.mjs",
-        "line": 169,
-        "text": "raw = readFileSync(configPath(), 'utf8')"
+        "line": 271,
+        "text": "seed = readFileSync(legacyConfigPath(), 'utf8')"
       }
     ]
   },

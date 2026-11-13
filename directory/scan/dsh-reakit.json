@@ -1,0 +1,109 @@
+{
+  "name": "dsh-reakit",
+  "version": "0.1.6",
+  "scannedAt": "2026-11-13T21:10:49.053Z",
+  "icon": "dsh-reakit.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/components-host.js",
+        "line": 399,
+        "text": "const managedNodeDownload = await fetch(artifactUrl(), { method: 'HEAD', signal: AbortSignal.timeout(3_000) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bootstrap.js",
+        "line": 3,
+        "text": "import { open, readFile, writeFile, mkdir, mkdtemp, readdir, rename, lstat, rm, stat, unlink } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/bootstrap.js",
+        "line": 61,
+        "text": "const lock = await readFile(new URL('../assets/engine/dependencies.lock.json', import.meta.url))"
+      },
+      {
+        "file": "lib/bootstrap.js",
+        "line": 63,
+        "text": "const manifest = await readFile(new URL('../assets/engine/package.json', import.meta.url))"
+      },
+      {
+        "file": "lib/bootstrap.js",
+        "line": 66,
+        "text": "await mkdir(engineDirectory, { recursive: true })"
+      },
+      {
+        "file": "lib/bootstrap.js",
+        "line": 67,
+        "text": "await writeFile(join(engineDirectory, 'package.json'), manifest, { flag: 'wx' })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "import * as mcpClient from '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "export const inject = ['tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bootstrap.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/bootstrap.js",
+        "line": 133,
+        "text": "const child = spawn(command, args, { cwd, env, shell: false, windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })"
+      },
+      {
+        "file": "lib/components.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/existing-rea.js",
+        "line": 6,
+        "text": "import { execFile as execFileCallback } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 48,
+      "text": "om official sources with a fully locked dependency graph. No global `npm i -g rea-agents`, and your system Node, shell `PATH` and user `npmrc` are never touched"
+    }
+  ],
+  "skippedEntries": []
+}

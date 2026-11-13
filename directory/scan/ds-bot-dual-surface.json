@@ -1,0 +1,148 @@
+{
+  "name": "ds-bot-dual-surface",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-13T21:10:50.846Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1815,
+        "text": "response = await fetch(ROUTE, {"
+      },
+      {
+        "file": "src/host/connectors/gateway.js",
+        "line": 7,
+        "text": "import { createServer } from 'node:http'"
+      },
+      {
+        "file": "src/host/connectors/gateway.js",
+        "line": 9,
+        "text": "import { request as httpsRequest } from 'node:https'"
+      },
+      {
+        "file": "src/host/connectors/gateway.js",
+        "line": 10,
+        "text": "import { request as httpRequest } from 'node:http'"
+      },
+      {
+        "file": "src/host/connectors/index.js",
+        "line": 7,
+        "text": "import { createServer } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "office.js",
+        "line": 6517,
+        "text": "2, mkdirSync as mkdirSync2, readFileSync as readFileSync2, readdirSync as readdirSync2, statSync as statSync2, writeFileSync as writeFileSync2 } from \"node:fs\";"
+      },
+      {
+        "file": "office.js",
+        "line": 6522,
+        "text": "import { existsSync, lstatSync, mkdirSync, readFileSync, readdirSync, realpathSync, rmdirSync, statSync, unlinkSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "office.js",
+        "line": 6796,
+        "text": "for (const member of readZip(readFileSync(file))) {"
+      },
+      {
+        "file": "office.js",
+        "line": 6811,
+        "text": "const data = readFileSync(join(base, path));"
+      },
+      {
+        "file": "office.js",
+        "line": 6970,
+        "text": "mkdirSync(dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 54,
+        "text": "export const inject = ['llm', 'tools', 'systemPrompt', 'sessionController', 'sessions', 'sessionTitle', 'workspaceRegistry', 'connection']"
+      },
+      {
+        "file": "src/host/browser/mount.js",
+        "line": 124,
+        "text": "const registerTool = register ?? (tool => ctx.tools.register(tool))"
+      },
+      {
+        "file": "src/host/capabilities.js",
+        "line": 5,
+        "text": "const MCP_CLIENT = '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "src/host/computer/index.js",
+        "line": 225,
+        "text": "const denyNames = agent => (typeof ctx.tools?.schemas === 'function' ? ctx.tools.schemas(agent) : [])"
+      },
+      {
+        "file": "src/host/computer/index.js",
+        "line": 259,
+        "text": "if (def !== undefined && typeof agent.ctx.tools?.register === 'function') {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/browser/script-runner.js",
+        "line": 5,
+        "text": "import { fork } from 'node:child_process'"
+      },
+      {
+        "file": "src/host/computer/mac-helper.js",
+        "line": 5,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "src/host/dsh-update.js",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/host/dsh-update.js",
+        "line": 150,
+        "text": "const runner = rt.dshSpawn ?? ((command, argv, options) => spawn(command, argv, options))"
+      },
+      {
+        "file": "src/host/local-agents/discover.js",
+        "line": 4,
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 7,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "llm",
+    "sessionController",
+    "sessionTitle",
+    "sessions",
+    "systemPrompt",
+    "tools",
+    "web",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

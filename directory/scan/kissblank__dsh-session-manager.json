@@ -1,24 +1,24 @@
 {
   "name": "@kissblank/dsh-session-manager",
-  "version": "1.0.1",
-  "scannedAt": "2026-11-02T23:01:08.127Z",
+  "version": "1.0.4",
+  "scannedAt": "2026-11-13T21:11:03.720Z",
   "icon": "kissblank__dsh-session-manager.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1899,
+        "line": 2028,
         "text": "const response = await fetch(endpoint(PURGE_PATH), {"
       },
       {
         "file": "lib/client.js",
-        "line": 1972,
+        "line": 2128,
         "text": "const response = await fetch(endpoint(INVENTORY_PATH), { method: 'GET', headers: { accept: 'application/json' } })"
       },
       {
         "file": "lib/client.js",
-        "line": 2000,
+        "line": 2165,
         "text": "const response = await fetch(endpoint(path), {"
       }
     ]
@@ -28,13 +28,18 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 22,
-        "text": "import { readdir, rm, rmdir, stat as statPath } from 'node:fs/promises'"
+        "line": 25,
+        "text": "import { readdir, readFile as readTextFile, rm, rmdir, stat as statPath, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "lib/index.js",
-        "line": 351,
-        "text": "for (const directory of directories) await rm(directory, { recursive: true, force: true })"
+        "line": 373,
+        "text": "await writeFile(path, next, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 632,
+        "text": "await rm(directory, { recursive: true, force: true })"
       }
     ]
   },

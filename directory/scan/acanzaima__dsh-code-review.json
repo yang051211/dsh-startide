@@ -1,0 +1,75 @@
+{
+  "name": "@acanzaima/dsh-code-review",
+  "version": "0.2.4",
+  "scannedAt": "2026-11-13T21:10:51.908Z",
+  "icon": "acanzaima__dsh-code-review.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1488,
+        "text": "return globalThis.fetch(input, init);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/git.js",
+        "line": 14,
+        "text": "import fsp from 'node:fs/promises';"
+      },
+      {
+        "file": "src/host/git.js",
+        "line": 15,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "src/host/git.js",
+        "line": 555,
+        "text": "const buf = await fsp.readFile(full);"
+      },
+      {
+        "file": "src/host/index.js",
+        "line": 17,
+        "text": "import { lstat, readdir, readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "src/host/index.js",
+        "line": 109,
+        "text": "const text = await readFile(full, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/git.js",
+        "line": 17,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/host/git.js",
+        "line": 106,
+        "text": "child = spawn(binary, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

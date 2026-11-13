@@ -1,0 +1,83 @@
+{
+  "name": "dsh-cortex-memory",
+  "version": "0.4.19",
+  "scannedAt": "2026-11-13T21:10:55.411Z",
+  "icon": "dsh-cortex-memory.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 762,
+        "text": "const response = await fetch(`${API}${path}`, { cache: 'no-store', credentials: 'same-origin', ...init, headers });"
+      },
+      {
+        "file": "test/unit/external-ann-search.test.js",
+        "line": 3,
+        "text": "import http from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bench/ab-engine.mjs",
+        "line": 1,
+        "text": "import { mkdtempSync, rmSync } from 'node:fs';"
+      },
+      {
+        "file": "bench/ab-engine.mjs",
+        "line": 59,
+        "text": "rmSync(dir, { recursive: true, force: true });"
+      },
+      {
+        "file": "bench/migration-bench.mjs",
+        "line": 1,
+        "text": "import { mkdtempSync, rmSync } from 'node:fs';"
+      },
+      {
+        "file": "bench/migration-bench.mjs",
+        "line": 68,
+        "text": "rmSync(dir, { recursive: true, force: true });"
+      },
+      {
+        "file": "bench/run.js",
+        "line": 1,
+        "text": "import { mkdtempSync, rmSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "export const inject = ['tools', 'systemPrompt'];"
+      },
+      {
+        "file": "index.js",
+        "line": 163,
+        "text": "for (const tool of createToolDefinitions(cortex)) disposers.push(ctx.tools.register(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

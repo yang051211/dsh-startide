@@ -1,8 +1,8 @@
 {
   "name": "dsh-persona-switcher",
-  "version": "0.4.4",
-  "scannedAt": "2026-11-08T23:32:51.219Z",
-  "icon": null,
+  "version": "0.4.6",
+  "scannedAt": "2026-11-13T21:10:43.995Z",
+  "icon": "dsh-persona-switcher.svg",
   "network": {
     "hit": true,
     "evidence": [
@@ -37,6 +37,16 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/atomic-file.js",
+        "line": 5,
+        "text": "* replace their file with \"`rm(destination)` then `rename(temp, destination)`\","
+      },
+      {
+        "file": "lib/atomic-file.js",
+        "line": 21,
+        "text": "import { copyFile, rename, rm, writeFile } from 'node:fs/promises'"
+      },
+      {
         "file": "lib/index.js",
         "line": 50,
         "text": "import { mkdir, readdir, readFile, rm, stat, writeFile } from 'node:fs/promises'"
@@ -50,16 +60,6 @@
         "file": "lib/index.js",
         "line": 481,
         "text": "await rm(target, { force: true })"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 681,
-        "text": "text = await readFile(file, 'utf8')"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 901,
-        "text": "text = await readFile(file, 'utf8')"
       }
     ]
   },

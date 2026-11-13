@@ -1,0 +1,131 @@
+{
+  "name": "@philomelcc/dsh-downloads",
+  "version": "0.1.6",
+  "scannedAt": "2026-11-13T21:10:49.678Z",
+  "icon": "philomelcc__dsh-downloads.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "chrome-extension/background.js",
+        "line": 46,
+        "text": "const response = await fetch(listEndpoint(config), { cache: \"no-store\" });"
+      },
+      {
+        "file": "chrome-extension/background.js",
+        "line": 65,
+        "text": "const response = await fetch(config.endpoint, {"
+      },
+      {
+        "file": "client.js",
+        "line": 81,
+        "text": "const response = await fetch(path, options);"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 200,
+        "text": "\"下载文件时，优先调用 fast_download 工具而不是 curl / Invoke-WebRequest：\","
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 8,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "index.js",
+        "line": 163,
+        "text": "fs.mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 167,
+        "text": "fs.writeFileSync(file, buffer);"
+      },
+      {
+        "file": "lib/engines.js",
+        "line": 9,
+        "text": "import { copyFileSync, existsSync, mkdirSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/engines.js",
+        "line": 33,
+        "text": "mkdirSync(path.dirname(RUNTIME_ARIA2), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "export const inject = [\"webServer\", \"workingDirectory\", \"tools\", \"systemPrompt\"];"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 190,
+        "text": "ctx.effect(() => ctx.tools.register(fastDownload), \"download-center: tool fast_download\");"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 191,
+        "text": "ctx.effect(() => ctx.tools.register(downloadStatus), \"download-center: tool download_status\");"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 192,
+        "text": "ctx.effect(() => ctx.tools.register(downloadCancel), \"download-center: tool download_cancel\");"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engines.js",
+        "line": 8,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/engines.js",
+        "line": 157,
+        "text": "const proc = spawn(ensureAria2(), buildAria2Args(task), {"
+      },
+      {
+        "file": "lib/engines.js",
+        "line": 176,
+        "text": "if (proc.pid) spawn(\"taskkill\", [\"/PID\", String(proc.pid), \"/T\", \"/F\"], { windowsHide: true });"
+      },
+      {
+        "file": "lib/engines.js",
+        "line": 197,
+        "text": "const proc = spawn(process.execPath, [workerPath()], {"
+      },
+      {
+        "file": "lib/engines.js",
+        "line": 241,
+        "text": "if (proc.pid) spawn(\"taskkill\", [\"/PID\", String(proc.pid), \"/T\", \"/F\"], { windowsHide: true });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools",
+    "webServer",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-dafeiyu-home",
-  "version": "2.0.2",
-  "scannedAt": "2026-11-09T23:06:49.870Z",
+  "version": "2.0.4",
+  "scannedAt": "2026-11-13T21:10:54.497Z",
   "icon": "dsh-dafeiyu-home.svg",
   "network": {
     "hit": true,
@@ -53,12 +53,12 @@
       },
       {
         "file": "index.js",
-        "line": 404,
+        "line": 410,
         "text": "const j = JSON.parse(readFileSync(join(stateHome(), 'reading-log.json'), 'utf8'))"
       },
       {
         "file": "index.js",
-        "line": 467,
+        "line": 473,
         "text": "try { unlinkSync(join(stateHome(), 'weather.json')) } catch {}"
       }
     ]
@@ -81,6 +81,11 @@
         "text": "execFile('/bin/bash', ['-lc', line], { timeout: TIMEOUT_MS, maxBuffer: 2 * 1024 * 1024, cwd: HOME }, (err, stdout, stderr) => {"
       },
       {
+        "file": "lib/agent-tools.mjs",
+        "line": 157,
+        "text": "execFile('/data/data/com.termux/files/usr/bin/adb', ['-s', '100.70.39.118:39837', 'shell', cmd], { timeout: 15000 }, (err, stdout, stderr) => {"
+      },
+      {
         "file": "lib/asr.mjs",
         "line": 23,
         "text": "import { execFile } from 'node:child_process'"
@@ -89,11 +94,6 @@
         "file": "lib/audio-analyze.mjs",
         "line": 10,
         "text": "import { spawn } from 'node:child_process'"
-      },
-      {
-        "file": "lib/audio-analyze.mjs",
-        "line": 54,
-        "text": "child = spawn(PYTHON, args, { cwd: ENGINE_DIR })"
       }
     ]
   },

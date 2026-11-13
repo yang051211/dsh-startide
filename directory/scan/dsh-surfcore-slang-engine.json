@@ -1,0 +1,92 @@
+{
+  "name": "dsh-surfcore-slang-engine",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-13T21:11:06.887Z",
+  "icon": "dsh-surfcore-slang-engine.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 9,
+        "text": "const res = await fetch(`/api/slang-engine/${path}`, {"
+      },
+      {
+        "file": "test/host-prune.test.mjs",
+        "line": 6,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "test/host-prune.test.mjs",
+        "line": 32,
+        "text": "const res = await fetch(`${base}${p}`, {"
+      },
+      {
+        "file": "test/host.test.mjs",
+        "line": 6,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "test/host.test.mjs",
+        "line": 38,
+        "text": "const res = await fetch(`${base}${pathname}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 727,
+        "text": "try { fs.mkdirSync(path.dirname(TOKEN_FILE), { recursive: true }); } catch {}"
+      },
+      {
+        "file": "lib/common-words.mjs",
+        "line": 4,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/common-words.mjs",
+        "line": 22,
+        "text": "const raw = JSON.parse(fs.readFileSync(COMMON_WORDS_FILE, 'utf8').replace(/^\\uFEFF/, ''));"
+      },
+      {
+        "file": "lib/common-words.mjs",
+        "line": 41,
+        "text": "fs.mkdirSync(path.dirname(COMMON_WORDS_FILE), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/register-mcp.mjs",
+        "line": 44,
+        "text": "\"      name: '@deepseek-ai/dsh-mcp-client'\","
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

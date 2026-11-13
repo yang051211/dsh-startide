@@ -1,0 +1,129 @@
+{
+  "name": "dsh-mo-image",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-13T21:10:50.682Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 855,
+        "text": "const response = await fetch('/api/mo-image/config', { cache: 'no-store', signal: AbortSignal.timeout(15000) });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 896,
+        "text": "const response = await fetch('/api/mo-image/config', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1179,
+        "text": "const response = await fetch('/api/mo-image/models', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1412,
+        "text": "const response = await fetch('/api/mo-image/comfy/analyze', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 5114,
+        "text": "const response = await fetch('/api/mo-image/update', { cache: 'no-store', signal: AbortSignal.timeout(5000) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { mkdirSync, existsSync, appendFileSync, readFileSync, writeFileSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "import { readFile, writeFile, stat, rename, unlink } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 44,
+        "text": "return String(JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version || '0.0.0');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 58,
+        "text": "function ensureDirs() { mkdirSync(outputDir(), { recursive: true }); }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 60,
+        "text": "try { appendFileSync(hostLogFile(), new Date().toISOString() + ' ' + message + '\\n'); } catch (_error) { /* diagnostics */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/config-guard.js",
+        "line": 4,
+        "text": "* 通过 ctx.tools.guard() 注册到宿主，任何工具调用只要“目标”指向插件配置文件"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1236,
+        "text": "export const inject = ['webServer', 'tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1318,
+        "text": "if (ctx.tools && typeof ctx.tools.guard === 'function') {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1319,
+        "text": "ctx.effect(() => ctx.tools.guard((execution) => configWriteReason(execution && execution.arguments, execution && execution.name)), 'mo-image: config guard');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1635,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/proxy.js",
+        "line": 7,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/release.mjs",
+        "line": 18,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/release.mjs",
+        "line": 142,
+        "text": "const result = spawnSync(command, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

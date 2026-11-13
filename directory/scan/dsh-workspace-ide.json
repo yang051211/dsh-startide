@@ -1,0 +1,92 @@
+{
+  "name": "dsh-workspace-ide",
+  "version": "1.8.11",
+  "scannedAt": "2026-11-13T21:11:05.470Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1175,
+        "text": "response = await fetch(url, init);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1234,
+        "text": "const request = fetch(ROUTES.ping, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2629,
+        "text": "functions: words('echo printf cd pwd read cat grep sed awk find mkdir rmdir rm cp mv ls chmod chown chgrp curl wget git npm ' +"
+      },
+      {
+        "file": "lib/host/routes.js",
+        "line": 72,
+        "text": "async fetch(request) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/file.js",
+        "line": 12,
+        "text": "import { lstat, open, rename, stat, unlink, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/host/file.js",
+        "line": 194,
+        "text": "await writeFile(temporary, content, { encoding: 'utf8', mode: info.mode & 0o777, flag: 'wx' });"
+      },
+      {
+        "file": "lib/host/file.js",
+        "line": 198,
+        "text": "await unlink(temporary);"
+      },
+      {
+        "file": "lib/host/files.js",
+        "line": 12,
+        "text": "import { readdir } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/host/git.js",
+        "line": 15,
+        "text": "import { realpath } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/git.js",
+        "line": 5,
+        "text": "* Every git invocation goes through `execFile('git', args, { cwd, maxBuffer,"
+      },
+      {
+        "file": "lib/host/git.js",
+        "line": 14,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

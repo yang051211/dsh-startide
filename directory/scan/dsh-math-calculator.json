@@ -1,7 +1,7 @@
 {
   "name": "dsh-math-calculator",
-  "version": "2.3.6",
-  "scannedAt": "2026-11-08T23:32:56.941Z",
+  "version": "3.0.0",
+  "scannedAt": "2026-11-13T21:10:43.727Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -13,27 +13,27 @@
       {
         "file": "lib/awareness.js",
         "line": 29,
-        "text": "import { existsSync } from 'node:fs';"
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
       },
       {
-        "file": "lib/derivation-log.js",
-        "line": 17,
-        "text": "import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';"
+        "file": "lib/awareness.js",
+        "line": 41,
+        "text": "const data = JSON.parse(readFileSync(join(dirname(fileURLToPath(import.meta.url)), '..', 'src', 'data', 'formulas.json'), 'utf8'));"
       },
       {
-        "file": "lib/derivation-log.js",
-        "line": 30,
-        "text": "const raw = JSON.parse(readFileSync(file, 'utf8'));"
+        "file": "lib/core/engine.js",
+        "line": 623,
+        "text": "* 用户表达式里的 `import(\"fs\")` 就不可用了。"
       },
       {
-        "file": "lib/derivation-log.js",
-        "line": 45,
-        "text": "mkdirSync(dir, { recursive: true });"
+        "file": "lib/core/units-custom-store.js",
+        "line": 32,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
       },
       {
-        "file": "lib/derivation-log.js",
-        "line": 47,
-        "text": "writeFileSync(temp, JSON.stringify({ workspace, versions }, null, 2), 'utf8');"
+        "file": "lib/core/units-custom-store.js",
+        "line": 48,
+        "text": "const raw = readFileSync(file, 'utf8');"
       }
     ]
   },
@@ -42,28 +42,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 4499,
-        "text": "export const inject = ['tools'];"
+        "line": 45,
+        "text": "if (!ctx || typeof ctx.tools?.register !== \"function\") {"
       },
       {
         "file": "lib/index.js",
-        "line": 4602,
-        "text": "if (!ctx || typeof ctx.tools?.register !== 'function') {"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 4641,
+        "line": 50,
         "text": "ctx.tools.register(mathExecuteTool);"
       },
       {
-        "file": "src/index.ts",
-        "line": 4955,
-        "text": "export const inject = ['tools']"
+        "file": "lib/index.js",
+        "line": 160,
+        "text": "export const inject = [\"tools\"];"
       },
       {
         "file": "src/index.ts",
-        "line": 5054,
-        "text": "if (!ctx || typeof ctx.tools?.register !== 'function') {"
+        "line": 46,
+        "text": "if (!ctx || typeof ctx.tools?.register !== \"function\") {"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 52,
+        "text": "ctx.tools.register(mathExecuteTool)"
       }
     ]
   },
@@ -75,7 +75,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 2,
+  "dependencies": 12,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

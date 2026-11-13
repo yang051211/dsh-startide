@@ -1,0 +1,77 @@
+{
+  "name": "dsh-sys-monitor",
+  "version": "0.3.3",
+  "scannedAt": "2026-11-13T21:10:49.654Z",
+  "icon": "dsh-sys-monitor.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 293,
+        "text": "const response = await fetch(API_PATH, {"
+      },
+      {
+        "file": "client.js",
+        "line": 973,
+        "text": "const response = await fetch(KILL_API, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import { readFile, readdir, rm, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 368,
+        "text": "const buffer = await readFile(output);"
+      },
+      {
+        "file": "index.js",
+        "line": 376,
+        "text": "await rm(output, { force: true }).catch(() => {});"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 47,
+        "text": "execFile("
+      },
+      {
+        "file": "index.js",
+        "line": 61,
+        "text": "execFile("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,96 @@
+{
+  "name": "dsh-go-token-usage",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-13T21:11:05.103Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/install.mjs",
+        "line": 389,
+        "text": "const res = await fetch(url, { redirect: 'follow' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/install.mjs",
+        "line": 13,
+        "text": "import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/install.mjs",
+        "line": 14,
+        "text": "import { chmod, chown, cp, lstat, mkdir, readdir, readFile, realpath, rename, rm, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "bin/install.mjs",
+        "line": 21,
+        "text": "const OWN = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "bin/install.mjs",
+        "line": 220,
+        "text": "// Node 24/22: mkdirSync('/proc/x', {recursive:true}) can spin forever, so refuse"
+      },
+      {
+        "file": "bin/install.mjs",
+        "line": 244,
+        "text": "return JSON.parse(readFileSync(profilePkgPath, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/install.mjs",
+        "line": 16,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/render.js",
+        "line": 6,
+        "text": "import { execFile, execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 72,
+      "text": "nstall**: `--from <dir>` is copied to `$DSH_HOME/dsh-go/plugins/<name>` before installing, so the engine is never pointed at an npx cache, ADB temp directory or"
+    },
+    {
+      "file": "README.en.md",
+      "line": 74,
+      "text": "ts with an error). Use WSL to install, or copy the package directory to `$DSH_HOME/dsh-go/plugins/<name>` and run `dsh plugin --profile web add <dir>` manually."
+    },
+    {
+      "file": "README.md",
+      "line": 72,
+      "text": "- **ADB / 本地目录安装**：`--from <目录>` 会先复制到 `$DSH_HOME/dsh-go/plugins/<包名>` 再安装，不会给引擎留一个指向 npx 缓存/ADB 临时目录/私有目录的 `link:`。"
+    },
+    {
+      "file": "README.md",
+      "line": 74,
+      "text": ".exe`/`.com`，不执行 npm 生成的 `.cmd`/`.bat`/无扩展名 shim，会直接报错退出）。Windows 用户请用 WSL 安装，或手动把包目录放到 `$DSH_HOME/dsh-go/plugins/<包名>` 后执行 `dsh plugin --profile web add <目录>`。"
+    }
+  ],
+  "skippedEntries": []
+}

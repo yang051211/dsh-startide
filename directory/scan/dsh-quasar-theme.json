@@ -1,7 +1,7 @@
 {
   "name": "dsh-quasar-theme",
-  "version": "0.1.7",
-  "scannedAt": "2026-11-06T08:17:15.595Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-13T21:10:55.333Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -11,29 +11,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "tools/audit-evidence.mjs",
-        "line": 1,
-        "text": "import { existsSync, readFileSync } from 'node:fs'"
+        "file": "tools/build-client.mjs",
+        "line": 69,
+        "text": "import { readFileSync, writeFileSync, existsSync } from 'node:fs'"
       },
       {
-        "file": "tools/audit-evidence.mjs",
-        "line": 25,
-        "text": "try { if (existsSync(file)) record = JSON.parse(readFileSync(file, 'utf8')) } catch { /* report unverified */ }"
+        "file": "tools/build-client.mjs",
+        "line": 78,
+        "text": "const read = (relative) => readFileSync(join(ROOT, relative), 'utf8')"
       },
       {
-        "file": "tools/audit-evidence.mjs",
-        "line": 28,
-        "text": "return [path, existsSync(file) ? sha256(readFileSync(file)) : null]"
+        "file": "tools/build-client.mjs",
+        "line": 330,
+        "text": "const brandMark = readFileSync(join(ROOT, 'build', 'brand-mark-black-hole.png')).toString('base64')"
       },
       {
-        "file": "tools/black-hole.test.mjs",
-        "line": 4,
-        "text": "import { readFileSync } from 'node:fs'"
+        "file": "tools/build-client.mjs",
+        "line": 373,
+        "text": "const fonts = JSON.parse(readFileSync(FONTS_FILE, 'utf8'))"
       },
       {
-        "file": "tools/black-hole.test.mjs",
-        "line": 6,
-        "text": "const source = readFileSync(new URL('../src/runtime/geodesic.js', import.meta.url), 'utf8') + '\\n' +"
+        "file": "tools/build-client.mjs",
+        "line": 375,
+        "text": "const bytes = readFileSync(join(ROOT, font.file))"
       }
     ]
   },
@@ -42,19 +42,8 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": true,
-    "evidence": [
-      {
-        "file": "tools/verify.mjs",
-        "line": 1,
-        "text": "import { spawnSync } from 'node:child_process'"
-      },
-      {
-        "file": "tools/verify.mjs",
-        "line": 24,
-        "text": "const child = spawnSync(process.execPath, argv, { cwd: root, stdio: 'inherit' })"
-      }
-    ]
+    "hit": false,
+    "evidence": []
   },
   "installScripts": {
     "hit": true,

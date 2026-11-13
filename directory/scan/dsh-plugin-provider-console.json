@@ -1,0 +1,107 @@
+{
+  "name": "dsh-plugin-provider-console",
+  "version": "0.2.3",
+  "scannedAt": "2026-11-13T21:11:06.807Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/http.js",
+        "line": 12,
+        "text": "const response = await fetch(request.url, {"
+      },
+      {
+        "file": "lib/dashboard.js",
+        "line": 8,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "src/core/http.ts",
+        "line": 53,
+        "text": "const response = await fetch(request.url, {"
+      },
+      {
+        "file": "src/dashboard.ts",
+        "line": 8,
+        "text": "import { createServer, type Server } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/config.js",
+        "line": 10,
+        "text": "import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 155,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "lib/dashboard.js",
+        "line": 9,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/dashboard.js",
+        "line": 21,
+        "text": "return readFileSync(HTML_PATH, 'utf8').replace('__POLL_MS__', String(options.pollMs));"
+      },
+      {
+        "file": "lib/hostdeps.js",
+        "line": 17,
+        "text": "import { existsSync, readFileSync, readdirSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "const toolDisposers = ctx.tools"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 47,
+        "text": "? registerTools({ tools: ctx.tools }, {"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 28,
+        "text": "const register = (tool) => disposers.push(ctx.tools.register(tool));"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 7,
+        "text": "* 全部宿主接缝都是可选降级：ctx.tools 不存在时仍能通过 ctx.get('providerConsole')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,83 @@
+{
+  "name": "@leiyi-works/dsh-keyrule",
+  "version": "1.7.6",
+  "scannedAt": "2026-11-13T21:10:47.796Z",
+  "icon": "leiyi-works__dsh-keyrule.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 205,
+        "text": "fetch(endpointUrl('state', sessionId), { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 240,
+        "text": "fetch(endpointUrl('secrets'), { cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 103,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 151,
+        "text": "try { out.readme = readFileSync(readme.path, 'utf8').slice(0, 8000) } catch { /* ignore */ }"
+      },
+      {
+        "file": "index.js",
+        "line": 173,
+        "text": "existing = readFileSync(file, 'utf8').replace(/^\\uFEFF/, '')"
+      },
+      {
+        "file": "index.js",
+        "line": 201,
+        "text": "mkdirSync(dir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "export const inject = ['systemPrompt', 'tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 600,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

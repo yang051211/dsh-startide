@@ -1,7 +1,7 @@
 {
   "name": "xnip-cli",
-  "version": "0.5.7",
-  "scannedAt": "2026-10-29T07:06:39.340Z",
+  "version": "0.6.4",
+  "scannedAt": "2026-11-13T21:11:00.587Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -11,29 +11,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/native.cjs",
-        "line": 3,
-        "text": "const fs = require(\"node:fs\");"
+        "file": "integrations/cline-native/extension.mjs",
+        "line": 1,
+        "text": "import { readFile } from 'node:fs/promises';"
       },
       {
-        "file": "lib/native.cjs",
-        "line": 10,
-        "text": "return crypto.createHash(\"sha256\").update(fs.readFileSync(file)).digest(\"hex\");"
-      },
-      {
-        "file": "lib/native.cjs",
-        "line": 21,
-        "text": "try { manifest = JSON.parse(fs.readFileSync(manifestPath, \"utf8\")); }"
-      },
-      {
-        "file": "lib/native.cjs",
+        "file": "integrations/cline-native/extension.mjs",
         "line": 57,
-        "text": "const metadata = JSON.parse(fs.readFileSync(path.join(payloadRoot, \"binary.json\"), \"utf8\"));"
+        "text": "try { originals.set(source, await readFile(source)); }"
       },
       {
-        "file": "lib/native.cjs",
-        "line": 66,
-        "text": "fs.mkdirSync(root, { recursive: true, mode: 0o700 });"
+        "file": "integrations/cline-native/extension.mjs",
+        "line": 81,
+        "text": "const current = await readFile(source);"
+      },
+      {
+        "file": "integrations/cline-native/extension.mjs",
+        "line": 103,
+        "text": "try { previous = await readFile(destination); }"
+      },
+      {
+        "file": "integrations/dsh-native/lifecycle.mjs",
+        "line": 3,
+        "text": "import fs from 'node:fs/promises';"
       }
     ]
   },
@@ -41,14 +41,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "integrations/dsh/index.mjs",
-        "line": 17,
-        "text": "return import('@deepseek-ai/dsh-mcp-client');"
+        "file": "integrations/dsh-native/rewind-validation.mjs",
+        "line": 62,
+        "text": "const call = (name, args) => ctx.tools.execute({"
+      },
+      {
+        "file": "integrations/dsh-native/rewind-validation.mjs",
+        "line": 76,
+        "text": "const tool = ctx.tools.get('edit', agent);"
+      },
+      {
+        "file": "integrations/dsh-native/runtime.mjs",
+        "line": 57,
+        "text": "return { tools: ctx.tools.schemas(agent), prompt: host['dsh-system-prompt'].renderPrompt(assembly) };"
+      },
+      {
+        "file": "integrations/dsh-native/runtime.mjs",
+        "line": 60,
+        "text": "return ctx.tools.execute({ signal, callId: `native-${++nextCall}`, name, arguments: args, agent });"
       },
       {
         "file": "integrations/dsh/index.mjs",
-        "line": 69,
-        "text": "inject: ['tools'],"
+        "line": 17,
+        "text": "return import('@deepseek-ai/dsh-mcp-client');"
       }
     ]
   },
@@ -62,8 +77,23 @@
       },
       {
         "file": "bin/xnip.cjs",
-        "line": 9,
+        "line": 10,
         "text": "child = spawn(resolveNativeExecutable(), process.argv.slice(2), {"
+      },
+      {
+        "file": "integrations/dsh-native/lifecycle.mjs",
+        "line": 6,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "integrations/native/editor-client.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "integrations/native/editor-client.mjs",
+        "line": 10,
+        "text": "this.child = spawn(executable, ['native', 'serve'], {"
       }
     ]
   },
@@ -79,16 +109,16 @@
     {
       "file": "README.md",
       "line": 15,
-      "text": "npm install --global xnip-cli"
-    },
-    {
-      "file": "README.md",
-      "line": 122,
       "text": "npm install --global xnip-cli@latest"
     },
     {
       "file": "README.md",
-      "line": 127,
+      "line": 186,
+      "text": "npm install --global xnip-cli@latest"
+    },
+    {
+      "file": "README.md",
+      "line": 191,
       "text": "`npm install --global 'xnip-cli@<version>'`. For a project-local installation,"
     }
   ],

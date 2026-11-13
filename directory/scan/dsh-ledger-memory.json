@@ -1,7 +1,7 @@
 {
   "name": "dsh-ledger-memory",
-  "version": "1.6.2",
-  "scannedAt": "2026-11-03T20:52:13.883Z",
+  "version": "1.7.0",
+  "scannedAt": "2026-11-13T21:10:57.156Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -12,8 +12,13 @@
         "text": "const res = await fetch(url, opts);"
       },
       {
+        "file": "lib/client.js",
+        "line": 2495,
+        "text": "const response = await fetch(BOARD_API + pathAndQuery, Object.assign({ credentials: \"same-origin\" }, init || {}));"
+      },
+      {
         "file": "lib/part5.js",
-        "line": 331,
+        "line": 332,
         "text": "\"With mode:'events', the exact seqs to fetch (take them from a mode:'index' result). \" +"
       }
     ]
@@ -22,29 +27,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/base.js",
-        "line": 23,
+        "file": "lib/backup.js",
+        "line": 50,
         "text": "import fs from \"node:fs\";"
       },
       {
-        "file": "lib/base.js",
-        "line": 190,
-        "text": "*    `fs.writeFileSync(abs, next)`**。注入\"先写 8 字节再抛异常\" ⇒ **旧内容已丢，文件只剩"
+        "file": "lib/backup.js",
+        "line": 181,
+        "text": "fs.mkdirSync(path.dirname(abs), { recursive: true });"
       },
       {
-        "file": "lib/base.js",
-        "line": 258,
-        "text": "const b = fs.readFileSync(sChild);"
+        "file": "lib/backup.js",
+        "line": 192,
+        "text": "fs.writeFileSync(tmp, prevText, { encoding: \"utf8\", flag: \"wx\" });"
       },
       {
-        "file": "lib/base.js",
-        "line": 259,
-        "text": "fs.writeFileSync(dChild, b);"
+        "file": "lib/backup.js",
+        "line": 195,
+        "text": "fs.unlinkSync(tmp);"
       },
       {
-        "file": "lib/base.js",
-        "line": 260,
-        "text": "const chk = fs.readFileSync(dChild);"
+        "file": "lib/backup.js",
+        "line": 205,
+        "text": "fs.unlinkSync(tmp);"
       }
     ]
   },
@@ -58,12 +63,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 256,
+        "line": 232,
         "text": "const d = ctx.tools.register(tool);"
       },
       {
         "file": "lib/part3.js",
-        "line": 3229,
+        "line": 3145,
         "text": "*   ③ 官方 `dsh-tool-ask-user` 本身就是这么做的（`inject = [\"tools\",\"userQuestions\"]`），"
       }
     ]
@@ -83,7 +88,7 @@
       },
       {
         "file": "lib/part2.js",
-        "line": 3343,
+        "line": 3645,
         "text": "const r = spawnSync(\"git\", args, {"
       }
     ]

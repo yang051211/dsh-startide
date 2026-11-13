@@ -1,21 +1,11 @@
 {
   "name": "dsh-git-push",
-  "version": "2.20.11",
-  "scannedAt": "2026-11-06T20:48:40.053Z",
+  "version": "2.20.18",
+  "scannedAt": "2026-11-13T21:11:04.131Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
-      {
-        "file": "assets/start.sh",
-        "line": 242,
-        "text": "if curl -sf -m 3 \"http://127.0.0.1:$port/preview-ping\" > /dev/null 2>&1; then"
-      },
-      {
-        "file": "assets/start.sh",
-        "line": 338,
-        "text": "curlout=\"$(curl -sS -m 5 -o /tmp/${PROJECT_NAME}-status.body -w '%{http_code} %{time_total}' \"http://127.0.0.1:$port/preview-ping\" 2>/dev/null || echo \"000 0\")\""
-      },
       {
         "file": "lib/app/inject-text.js",
         "line": 148,
@@ -30,22 +20,22 @@
         "file": "lib/audit/file-context.js",
         "line": 291,
         "text": "* robustness/timeout-on-external-api 规则用纯 regex 匹配 `fetch(`/`axios.(` 等调用，"
+      },
+      {
+        "file": "lib/audit/file-context.js",
+        "line": 297,
+        "text": "*   `const init = { signal: AbortSignal.timeout(MS) }; await fetch(url, init)` 的"
+      },
+      {
+        "file": "lib/audit/file-context.js",
+        "line": 329,
+        "text": "* 跨行对象（fetch(url, { ... })）从下一行算起时首行的 `},` 会把深度归零提前"
       }
     ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
-      {
-        "file": "cli.mjs",
-        "line": 14,
-        "text": "import { readFileSync, realpathSync } from 'node:fs';"
-      },
-      {
-        "file": "cli.mjs",
-        "line": 289,
-        "text": "return JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8'));"
-      },
       {
         "file": "lib/app/apply.js",
         "line": 75,
@@ -60,6 +50,16 @@
         "file": "lib/app/handlers/npm.js",
         "line": 7,
         "text": "import { existsSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/app/handlers/npm.js",
+        "line": 99,
+        "text": "const pkg = existsSync(pkgPath) ? JSON.parse(readFileSync(pkgPath, 'utf8')) : {};"
+      },
+      {
+        "file": "lib/app/handlers/repos.js",
+        "line": 7,
+        "text": "import { existsSync } from 'node:fs';"
       }
     ]
   },

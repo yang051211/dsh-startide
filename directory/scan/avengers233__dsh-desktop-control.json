@@ -1,0 +1,97 @@
+{
+  "name": "@avengers233/dsh-desktop-control",
+  "version": "1.3.0",
+  "scannedAt": "2026-11-13T21:11:05.731Z",
+  "icon": "avengers233__dsh-desktop-control.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import { mkdir, readFile, readdir, stat, unlink } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 250,
+        "text": "for (const stale of shots.slice(SCREENSHOT_KEEP)) await unlink(stale.path);"
+      },
+      {
+        "file": "index.js",
+        "line": 575,
+        "text": "await mkdir(SCREENSHOT_DIR, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 589,
+        "text": "const data = await readFile(shot.path);"
+      },
+      {
+        "file": "index.js",
+        "line": 768,
+        "text": "await mkdir(SCREENSHOT_DIR, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 456,
+        "text": "const publish = (definition, label) => ctx.effect(() => ctx.tools.register(definition), label);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 112,
+        "text": "proc = spawn(executable, ['-NoLogo', '-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-File', HELPER_PATH], {"
+      },
+      {
+        "file": "scripts/selftest.mjs",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/selftest.mjs",
+        "line": 36,
+        "text": "const child = spawn(powershellPath(), ['-NoLogo', '-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-File', HELPER_PATH], {"
+      },
+      {
+        "file": "scripts/selftest.mjs",
+        "line": 166,
+        "text": "const form = spawn(powershellPath(), ['-NoProfile', '-STA', '-ExecutionPolicy', 'Bypass', '-File', formPath], { stdio: 'ignore' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,35 +1,35 @@
 {
   "name": "dsh-opencode-bridge",
-  "version": "0.5.5",
-  "scannedAt": "2026-10-26T10:05:00.122Z",
+  "version": "1.0.3",
+  "scannedAt": "2026-11-13T21:10:59.032Z",
   "icon": "dsh-opencode-bridge.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
+        "file": "lib/bun-transport.js",
+        "line": 202,
+        "text": "const response = await wreq.fetch(url, {"
+      },
+      {
         "file": "lib/catalog.js",
-        "line": 209,
+        "line": 210,
         "text": "const response = await fetch(MODELS_DEV_URL, { signal });"
       },
       {
         "file": "lib/proxy-pool.js",
-        "line": 305,
+        "line": 314,
         "text": "const doFetch = input.fetchImpl ?? ((url, init) => fetch(url, init));"
       },
       {
         "file": "lib/proxy-pool.js",
-        "line": 405,
+        "line": 420,
         "text": "const { ProxyAgent } = await import('undici');"
       },
       {
         "file": "lib/proxy-service.js",
-        "line": 105,
+        "line": 110,
         "text": "response = await fetch(`${this.options.baseUrl.replace(/\\/$/, '')}/models`, {"
-      },
-      {
-        "file": "lib/socks-dispatcher.js",
-        "line": 2,
-        "text": "import { Agent } from 'undici';"
       }
     ]
   },
@@ -67,11 +67,6 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/bridge-audit.js",
-        "line": 73,
-        "text": "return tools.register(createBridgeAuditTool(tools, settings));"
-      },
-      {
         "file": "lib/context-service.js",
         "line": 126,
         "text": "disposers.push(tools.register(createContextPreferenceTool(service)));"
@@ -84,8 +79,14 @@
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/project-identity.js",
+        "line": 2,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

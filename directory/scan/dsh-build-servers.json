@@ -1,0 +1,112 @@
+{
+  "name": "dsh-build-servers",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-13T21:10:52.982Z",
+  "icon": "dsh-build-servers.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 613,
+        "text": "const response = await fetch(`/build-servers${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import { mkdir, readFile, rename, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 1282,
+        "text": "const raw = await readFile(bindingsFile(), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 1314,
+        "text": "await mkdir(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 1316,
+        "text": "await writeFile(temporary, `${JSON.stringify(all, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 1336,
+        "text": "const raw = await readFile(settingsFile(), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 41,
+        "text": "export const inject = ['webServer', 'tools', 'workspaceRegistry']"
+      },
+      {
+        "file": "index.js",
+        "line": 330,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 503,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 697,
+        "text": "const child = spawn('ssh', ['-tt', ...sshArguments(server), 'bash -l'], {"
+      },
+      {
+        "file": "index.js",
+        "line": 827,
+        "text": "child = spawn('ssh', [...sshArguments(server), command], {"
+      },
+      {
+        "file": "index.js",
+        "line": 922,
+        "text": "tarChild = spawn('tar', tarArgs, {"
+      },
+      {
+        "file": "index.js",
+        "line": 926,
+        "text": "sshChild = spawn("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

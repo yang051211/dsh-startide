@@ -1,19 +1,14 @@
 {
   "name": "dsh-experience-plugin",
-  "version": "0.7.13",
-  "scannedAt": "2026-11-06T08:17:19.736Z",
+  "version": "0.7.14",
+  "scannedAt": "2026-11-13T21:11:00.074Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 103,
-        "text": "fetch(\"/api/open-folder\", {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 681,
+        "line": 454,
         "text": "const response = await fetch(EXPERIENCE_RPC_PATH, {"
       },
       {
@@ -23,13 +18,18 @@
       },
       {
         "file": "lib/index.js",
-        "line": 2716,
+        "line": 2736,
         "text": "rn rpcError(\"skillhub CLI not installed; run: curl -fsSL https://skillhub-1388575217.cos.ap-guangzhou.myqcloud.com/install/install.sh | bash -s -- --cli-only\");"
       },
       {
         "file": "lib/types/client/rpc-transport.js",
         "line": 6,
         "text": "const response = await fetch(EXPERIENCE_RPC_PATH, {"
+      },
+      {
+        "file": "lib/types/features/cli-mimic/host.js",
+        "line": 8,
+        "text": "import { createServer } from 'node:http';"
       }
     ]
   },
@@ -38,28 +38,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 10,
-        "text": "import { stat } from \"node:fs/promises\";"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 11,
+        "line": 9,
         "text": "import fs, { copyFileSync, existsSync, readFileSync, renameSync, writeFileSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 1184,
+        "line": 1054,
         "text": "return fs.readFileSync(file, \"utf8\");"
       },
       {
         "file": "lib/index.js",
-        "line": 1228,
+        "line": 1098,
         "text": "if (fs.existsSync(file)) fs.rmSync(file);"
       },
       {
         "file": "lib/index.js",
-        "line": 1231,
+        "line": 1101,
         "text": "fs.mkdirSync(path.dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1102,
+        "text": "fs.writeFileSync(file, content, \"utf8\");"
       }
     ]
   },
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 14,
+        "line": 12,
         "text": "import { apply as apply$1 } from \"@deepseek-ai/dsh-mcp-client\";"
       },
       {
         "file": "lib/index.js",
-        "line": 781,
+        "line": 780,
         "text": "if (ctx.tools) {"
       },
       {
         "file": "lib/index.js",
-        "line": 782,
+        "line": 781,
         "text": "ctx.effect(() => ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 797,
+        "line": 796,
         "text": "ctx.effect(() => ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 923,
+        "line": 922,
         "text": "ctx.effect(() => ctx.tools.register(defineTool({"
       }
     ]
@@ -98,28 +98,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 9,
-        "text": "import { spawn, spawnSync } from \"node:child_process\";"
+        "line": 15,
+        "text": "import { spawnSync } from \"node:child_process\";"
       },
       {
         "file": "lib/index.js",
-        "line": 1019,
-        "text": "const child = spawn(cmd, args(path), {"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 2712,
+        "line": 2732,
         "text": "const probe = spawnSync(\"skillhub\", [\"--version\"], {"
       },
       {
         "file": "lib/index.js",
-        "line": 2717,
+        "line": 2737,
         "text": "const run = spawnSync(\"skillhub\", ["
       },
       {
         "file": "lib/types/features/open-folder/host.js",
         "line": 16,
         "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/types/features/open-folder/host.js",
+        "line": 54,
+        "text": "const child = spawn(cmd, args(path), { detached: true, stdio: 'ignore' });"
       }
     ]
   },

@@ -1,0 +1,110 @@
+{
+  "name": "@lornatang/dsh-atlassian",
+  "version": "0.1.6",
+  "scannedAt": "2026-11-13T21:11:06.132Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 74,
+        "text": "    const response = await fetch(prefix + path, { method, cache: 'no-store', ...(body === undefined ? {} : { headers: { 'content-type': 'application/json' }, bo"
+      },
+      {
+        "file": "lib/oauth.js",
+        "line": 2,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "lib/oauth.js",
+        "line": 72,
+        "text": "const response = await globalThis.fetch(value, { ...init, redirect: init?.redirect === 'error' ? 'error' : 'manual' });"
+      },
+      {
+        "file": "lib/server-http.js",
+        "line": 1,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "lib/server-http.js",
+        "line": 2,
+        "text": "import https from 'node:https';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/server-http.js",
+        "line": 3,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/server-http.js",
+        "line": 30,
+        "text": "this.#ca = caFile ? [...rootCertificates, readFileSync(caFile, 'utf8')] : undefined;"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 2,
+        "text": "import { constants } from 'node:fs';"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 3,
+        "text": "import { lstat, mkdir, open, rename, rm } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 74,
+        "text": "raw = await handle.readFile('utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 8,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "const host = { register: (definition) => ctx.tools.register(definition), logger: ctx.logger };"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/open-url.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/open-url.js",
+        "line": 17,
+        "text": "const child = spawn(command, args, { detached: true, stdio: 'ignore', windowsHide: true });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

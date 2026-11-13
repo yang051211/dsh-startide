@@ -1,7 +1,7 @@
 {
   "name": "@dsh-enhanced/assistant-isolation",
-  "version": "0.1.67",
-  "scannedAt": "2026-11-08T07:28:22.253Z",
+  "version": "0.1.68",
+  "scannedAt": "2026-11-13T21:10:58.775Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -56,27 +56,27 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/cleanup-receipt.js",
+        "file": "lib/linux-cgroups.js",
         "line": 1,
         "text": "import { spawn } from 'node:child_process';"
-      },
-      {
-        "file": "lib/cleanup-receipt.js",
-        "line": 42,
-        "text": "child = spawn(dockerPath, ['--config', configDirectory, '-H', `unix://${socketPath}`, ...args], {"
-      },
-      {
-        "file": "lib/daemon-binding.js",
-        "line": 1,
-        "text": "import { spawn } from 'node:child_process';"
-      },
-      {
-        "file": "lib/daemon-binding.js",
-        "line": 27,
-        "text": "            child = spawn(systemctl, ['show', unit, ...properties.map(property => `--property=${property}`)], { shell: false, env: { LANG: 'C', LC_ALL: 'C' }, s"
       },
       {
         "file": "lib/linux-cgroups.js",
+        "line": 178,
+        "text": "        const child = spawn('/usr/bin/python3', ['-I', '-S', '-c', source, JSON.stringify(data)], { stdio: ['ignore', 'ignore', 'pipe'], env: { PATH: '/usr/bin:"
+      },
+      {
+        "file": "lib/linux-namespace.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/linux-namespace.js",
+        "line": 187,
+        "text": "const child = spawn('/bin/sh', ['-c',"
+      },
+      {
+        "file": "lib/linux-runtime-source.js",
         "line": 1,
         "text": "import { spawn } from 'node:child_process';"
       }

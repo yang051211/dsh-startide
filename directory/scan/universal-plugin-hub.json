@@ -1,35 +1,35 @@
 {
   "name": "universal-plugin-hub",
-  "version": "1.1.0",
-  "scannedAt": "2026-11-11T08:04:53.575Z",
+  "version": "1.3.1",
+  "scannedAt": "2026-11-13T21:10:44.122Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client/client.js",
-        "line": 152,
+        "line": 383,
         "text": "const response = await window.fetch(\"/universal-plugin-hub/api\" + path, {"
       },
       {
         "file": "client/client.js",
-        "line": 174,
+        "line": 405,
         "text": "const response = await window.fetch(`/universal-plugin-hub/api${path}?sessionId=${encodeURIComponent(pending.sessionId)}`);"
       },
       {
         "file": "client/client.js",
-        "line": 212,
+        "line": 443,
         "text": "const response = await window.fetch(\"/universal-plugin-hub/api\" + verifyPath, {"
       },
       {
         "file": "client/client.js",
-        "line": 220,
+        "line": 451,
         "text": "\t\t\t\t\t\tvoid window.fetch(\"/universal-plugin-hub/api\" + path, { method: \"POST\", headers: { \"Content-Type\": \"application/json\" }, body: JSON.stringify({ sessionId:"
       },
       {
         "file": "client/client.js",
-        "line": 3805,
-        "text": "const res = await fetch(\"/universal-plugin-hub/api\" + path, {"
+        "line": 505,
+        "text": "const response = await window.fetch(\"/universal-plugin-hub/api\" + verifyPath, {"
       }
     ]
   },
@@ -59,7 +59,7 @@
       {
         "file": "src/icons.js",
         "line": 2,
-        "text": "import { mkdir, readFile, writeFile, stat } from 'node:fs/promises'"
+        "text": "import { mkdir, readFile, writeFile, stat, realpath } from 'node:fs/promises'"
       }
     ]
   },
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "src/install.js",
-        "line": 288,
+        "line": 362,
         "text": "name: '@deepseek-ai/dsh-mcp-client',"
       },
       {
         "file": "src/install.js",
-        "line": 2416,
+        "line": 2830,
         "text": ".filter(entry => entry?.name === '@deepseek-ai/dsh-mcp-client' && /^[A-Za-z0-9_-]{1,32}$/.test(entry.config?.serverName || ''))"
       }
     ]
@@ -84,26 +84,26 @@
       {
         "file": "src/install.js",
         "line": 13,
-        "text": "import { spawn, execFile, execFileSync } from 'node:child_process'"
+        "text": "import { execFile, execFileSync } from 'node:child_process'"
       },
       {
         "file": "src/install.js",
-        "line": 690,
+        "line": 834,
         "text": "execFile(realBin, realArgs, { cwd, windowsHide: true, maxBuffer: 64 * 1024 * 1024 }, (err, stdout, stderr) => {"
-      },
-      {
-        "file": "src/install.js",
-        "line": 1516,
-        "text": "? spawn([cmd, ...argv].map(quoteArgForShell).join(' '), {"
-      },
-      {
-        "file": "src/install.js",
-        "line": 1521,
-        "text": ": spawn(cmd, argv, {"
       },
       {
         "file": "src/local.js",
         "line": 4,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "src/market.js",
+        "line": 4,
+        "text": "* Every command runs through execFile (no shell), and every path argument"
+      },
+      {
+        "file": "src/market.js",
+        "line": 8,
         "text": "import { execFile } from 'node:child_process'"
       }
     ]

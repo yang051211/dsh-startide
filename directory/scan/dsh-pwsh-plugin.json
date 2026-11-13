@@ -1,7 +1,7 @@
 {
   "name": "dsh-pwsh-plugin",
-  "version": "0.2.19",
-  "scannedAt": "2026-11-13T08:14:58.351Z",
+  "version": "0.2.20",
+  "scannedAt": "2026-11-13T21:11:03.828Z",
   "icon": "dsh-pwsh-plugin.svg",
   "network": {
     "hit": true,
@@ -22,14 +22,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "plugin/index.mjs",
-        "line": 31,
+        "file": "plugin/file-tools.mjs",
+        "line": 1,
         "text": "import { readFileSync } from 'node:fs'"
       },
       {
-        "file": "plugin/index.mjs",
-        "line": 46,
-        "text": "const SERVER_SOURCE = readFileSync(new URL('./session-server.ps1', import.meta.url), 'utf8')"
+        "file": "plugin/file-tools.mjs",
+        "line": 7,
+        "text": "const recycleSource = readFileSync(new URL('./file-recycle.cs', import.meta.url), 'utf8')"
+      },
+      {
+        "file": "plugin/file-tools.mjs",
+        "line": 8,
+        "text": "const WINDOWS_SOURCE = readFileSync(new URL('./file-worker.ps1', import.meta.url), 'utf8').replace('# RECYCLE_HELPER',()=>\"$null = Add-Type -TypeDefinition ([Te"
+      },
+      {
+        "file": "plugin/file-tools.mjs",
+        "line": 10,
+        "text": "const POSIX_SOURCE = readFileSync(new URL('./file-worker.cjs', import.meta.url), 'utf8')"
+      },
+      {
+        "file": "plugin/file-worker.cjs",
+        "line": 2,
+        "text": "const fs = require('node:fs/promises'), path = require('node:path'), os = require('node:os'), crypto = require('node:crypto'), cp = require('node:child_process'"
       }
     ]
   },
@@ -37,35 +52,50 @@
     "hit": true,
     "evidence": [
       {
+        "file": "plugin/deletion-guard.mjs",
+        "line": 18,
+        "text": "if(typeof ctx.tools.guard!=='function')throw Error('The deletion guard requires DSH tools.guard().')"
+      },
+      {
+        "file": "plugin/deletion-guard.mjs",
+        "line": 19,
+        "text": "ctx.effect(()=>ctx.tools.guard(exec=>{"
+      },
+      {
+        "file": "plugin/file-tools.mjs",
+        "line": 100,
+        "text": "rties,required,execute)=>ctx.effect(()=>ctx.tools.register({name,description,parameters:{type:'object',properties,required,additionalProperties:false},output,ex"
+      },
+      {
         "file": "plugin/index.mjs",
-        "line": 40,
+        "line": 42,
         "text": "export const inject = ['subprocess', 'tools']"
       },
       {
         "file": "plugin/index.mjs",
-        "line": 324,
+        "line": 328,
         "text": "// 旧注册不撤的话 ctx.tools.register 会抛 \"already registered\"。"
-      },
-      {
-        "file": "plugin/index.mjs",
-        "line": 325,
-        "text": "ctx.effect(() => ctx.tools.register({"
-      },
-      {
-        "file": "plugin/native-pwsh-guard.mjs",
-        "line": 21,
-        "text": "if (typeof ctx.tools.guard !== 'function') {"
-      },
-      {
-        "file": "plugin/native-pwsh-guard.mjs",
-        "line": 26,
-        "text": "ctx.effect(() => ctx.tools.guard((exec) => {"
       }
     ]
   },
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "plugin/file-tools.mjs",
+        "line": 75,
+        "text": "const h=ctx.subprocess.spawn({argv,cwd:c.cwd,stdio:{stdin:{data:JSON.stringify(q)},stdout:{maxBytes:1024*1024},stderr:{maxBytes:65536}},signal,graceMs:3000})"
+      },
+      {
+        "file": "plugin/file-worker.cjs",
+        "line": 2,
+        "text": "onst fs = require('node:fs/promises'), path = require('node:path'), os = require('node:os'), crypto = require('node:crypto'), cp = require('node:child_process')"
+      },
+      {
+        "file": "plugin/file-worker.cjs",
+        "line": 59,
+        "text": "ise((resolve,reject)=> { const child=cp.spawn('gio',['trash','--',p],{stdio:['ignore','ignore','pipe']}); let error=''; child.stderr.on('data',b=>error+=b); chi"
+      },
       {
         "file": "plugin/session.mjs",
         "line": 214,
@@ -74,11 +104,6 @@
       {
         "file": "wsl/custom-bash.mjs",
         "line": 268,
-        "text": "const handle = ctx.subprocess.spawn({"
-      },
-      {
-        "file": "wsl/custom-bash.mjs",
-        "line": 359,
         "text": "const handle = ctx.subprocess.spawn({"
       }
     ]

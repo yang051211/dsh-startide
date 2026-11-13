@@ -1,0 +1,78 @@
+{
+  "name": "@beings-labs/dsh-cloudflare-connector",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-13T21:11:06.138Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/store.js",
+        "line": 2,
+        "text": "import { chmodSync, closeSync, existsSync, fsyncSync, lstatSync, mkdirSync, openSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 54,
+        "text": "value = JSON.parse(readFileSync(this.path, 'utf8'))"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 72,
+        "text": "mkdirSync(dirname(this.path), { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 77,
+        "text": "writeFileSync(descriptor, `${JSON.stringify(next)}\\n`)"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 85,
+        "text": "if (existsSync(temporary)) unlinkSync(temporary)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "export const inject = ['tools', 'systemPrompt', 'webServer']"
+      },
+      {
+        "file": "index.js",
+        "line": 55,
+        "text": "for (const tool of buildTools(flow, connection, service)) disposers.push(ctx.tools.register(tool))"
+      },
+      {
+        "file": "lib/connection.js",
+        "line": 130,
+        "text": "this.disposers.push(this.ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

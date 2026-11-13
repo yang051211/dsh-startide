@@ -1,7 +1,7 @@
 {
   "name": "dsh-kaogong",
-  "version": "1.14.0",
-  "scannedAt": "2026-11-13T08:14:54.453Z",
+  "version": "1.15.0",
+  "scannedAt": "2026-11-13T21:10:53.657Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,22 +13,22 @@
       },
       {
         "file": "dist/client/client.js",
-        "line": 6508,
+        "line": 6596,
         "text": "const r = await fetch(`${MOUNT_PATH}/api/status`, { signal: AbortSignal.timeout(1200) });"
       },
       {
         "file": "dist/client/client.js",
-        "line": 6519,
+        "line": 6607,
         "text": "const r = await fetch(`http://127.0.0.1:${port}/api/status`, { signal: AbortSignal.timeout(900) });"
       },
       {
         "file": "dist/client/client.js",
-        "line": 6563,
+        "line": 6651,
         "text": "const r = await fetch(`${channel.base}/api${p}${sep}ws=${encodeURIComponent(wsKey)}`, opts);"
       },
       {
         "file": "dist/client/client.js",
-        "line": 6704,
+        "line": 6792,
         "text": "const r = await fetch(`${channel.base}/api/stats?ws=${encodeURIComponent(wsKey)}`, { signal: AbortSignal.timeout(4000) });"
       }
     ]
@@ -103,13 +103,23 @@
       },
       {
         "file": "dist/server/repoManager.js",
-        "line": 33,
+        "line": 75,
         "text": "const p = spawn('git', ['--version'], { stdio: 'ignore', windowsHide: true });"
       },
       {
         "file": "dist/server/repoManager.js",
-        "line": 80,
+        "line": 156,
         "text": "            proc = spawn('git', args, { stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true, env: { ...process.env, GIT_TERMINAL_PROMPT: '0', 'GIT_CONFIG_NOSYS"
+      },
+      {
+        "file": "scripts/assert-combo.mjs",
+        "line": 24,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/assert-combo.mjs",
+        "line": 58,
+        "text": "const r = spawnSync(process.execPath, ['scripts/bundle-client.mjs'], { cwd: root, stdio: 'inherit' })"
       }
     ]
   },
@@ -119,7 +129,7 @@
       {
         "file": "package.json",
         "line": 0,
-        "text": "scripts.prepare: tsc && node scripts/bundle-client.mjs"
+        "text": "scripts.prepare: tsc && node scripts/bundle-client.mjs && node scripts/assert-combo.mjs --fix"
       }
     ]
   },

@@ -1,7 +1,7 @@
 {
   "name": "@lemoncat7/dsh-ssh",
-  "version": "1.14.1",
-  "scannedAt": "2026-11-02T23:01:07.233Z",
+  "version": "1.16.24",
+  "scannedAt": "2026-11-13T21:10:45.130Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -37,6 +37,11 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/client.js",
+        "line": 31,
+        "text": "on\"?(t,e)=>e&&(\"json\"in e||\"lossy\"in e)?rm(sm(t,e)):structuredClone(t):(t,e)=>rm(sm(t,e));function WE(t,e){let r=[{type:\"text\",value:\"\\u21A9\"}];return e>1&&r.pu"
+      },
+      {
         "file": "lib/gist-sync.js",
         "line": 2,
         "text": "import { mkdir, open, readFile, rename, rm } from 'node:fs/promises';"
@@ -55,11 +60,6 @@
         "file": "lib/gist-sync.js",
         "line": 772,
         "text": "await handle.writeFile(`${JSON.stringify(value, null, 2)}\\n`, 'utf8');"
-      },
-      {
-        "file": "lib/gist-sync.js",
-        "line": 784,
-        "text": "await rm(path, { force: true });"
       }
     ]
   },
@@ -69,7 +69,7 @@
       {
         "file": "lib/file-transfer-tools.js",
         "line": 14,
-        "text": "const disposers = definitions.map(definition => register ? register(definition) : ctx.tools.register(definition));"
+        "text": "on => register ? register(definition) : ctx.tools.register(definition, { when: ({ agent }) => { const injection = store.injection(agent.session.id); const view "
       },
       {
         "file": "lib/index.js",
