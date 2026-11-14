@@ -1,0 +1,109 @@
+{
+  "name": "dsh-custom-prompt-mode",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-14T07:59:13.803Z",
+  "icon": "dsh-custom-prompt-mode.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 316,
+        "text": "fetch(API_URL, { method: 'GET', headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 343,
+        "text": "fetch(API_URL, {"
+      },
+      {
+        "file": "client.js",
+        "line": 411,
+        "text": "fetch(API_URL, {"
+      },
+      {
+        "file": "client.js",
+        "line": 450,
+        "text": "fetch(API_URL, { method: 'GET', headers: { accept: 'application/json' } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 42,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 63,
+        "text": "const parsed = JSON.parse(readFileSync(join(PACKAGE_ROOT, 'package.json'), 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 538,
+        "text": "const parsed = JSON.parse(readFileSync(path, 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 548,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 550,
+        "text": "writeFileSync("
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "gate.js",
+        "line": 27,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "gate.js",
+        "line": 39,
+        "text": "if (ctx === undefined || ctx.tools === undefined) return;"
+      },
+      {
+        "file": "gate.js",
+        "line": 50,
+        "text": "visible = ctx.tools.schemas().map((schema) => schema.name);"
+      },
+      {
+        "file": "gate.js",
+        "line": 71,
+        "text": "release = ctx.tools.restrict({ deny });"
+      },
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "*  3. **Scan** the live tool registry (`ctx.tools.schemas()`) so the settings"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentPresets",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

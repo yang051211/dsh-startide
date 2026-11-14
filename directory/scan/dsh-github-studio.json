@@ -1,0 +1,113 @@
+{
+  "name": "dsh-github-studio",
+  "version": "0.6.6",
+  "scannedAt": "2026-11-14T07:59:07.174Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 14121,
+        "text": "  const r = await fetch(API + name3, { method, headers: body instanceof File ? headers : { \"Content-Type\": \"application/json\", ...headers }, body: body === void"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 19,
+        "text": "   let response;try{response=await this.fetch(this.base+route,{method,headers:{Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Ag"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 50,
+        "text": ".auth.token();const response=await this.fetch(`${this.uploadBase}${base}/releases/${a.releaseId}/assets?name=${enc(asset.name)}`,{method:'POST',headers:{Authori"
+      },
+      {
+        "file": "lib/core.mjs",
+        "line": 19,
+        "text": "   let response;try{response=await this.fetch(this.base+route,{method,headers:{Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Ag"
+      },
+      {
+        "file": "lib/core.mjs",
+        "line": 50,
+        "text": ".auth.token();const response=await this.fetch(`${this.uploadBase}${base}/releases/${a.releaseId}/assets?name=${enc(asset.name)}`,{method:'POST',headers:{Authori"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core.js",
+        "line": 2,
+        "text": "import {mkdir,writeFile,readFile,stat,unlink} from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 3,
+        "text": "import {createReadStream} from 'node:fs';"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 57,
+        "text": "  async init(){await mkdir(path.join(this.root,'attachments'),{recursive:true});let pruned=false;try{const items=JSON.parse(await readFile(path.join(this.root,'"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 59,
+        "text": "if(a.purpose==='intro'&&!(Date.parse(a.createdAt??'')>=cutoff)){await unlink(path.join(this.root,'attachments',a.id)).catch(()=>{});pruned=true;continue;}"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 61,
+        "text": "async saveAssets(){await writeFile(path.join(this.root,'attachments.json'),JSON.stringify([...this.assets.values()].map(({diskPath,...a})=>a)),{mode:0o600});}"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "for(const definition of definitions(api,ops))host.effect(()=>host.tools.register(definition,{when:({agent})=>localAgent(agent)}));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/gh.js",
+        "line": 1,
+        "text": "import {spawn} from 'node:child_process';"
+      },
+      {
+        "file": "lib/gh.js",
+        "line": 4,
+        "text": " Promise((resolve,reject)=>{const child=spawn(exe,args,{windowsHide:true,stdio:['pipe','pipe','pipe']});let stdout='';const timer=setTimeout(()=>{child.kill();r"
+      },
+      {
+        "file": "lib/gh.mjs",
+        "line": 1,
+        "text": "import {spawn} from 'node:child_process';"
+      },
+      {
+        "file": "lib/gh.mjs",
+        "line": 4,
+        "text": " Promise((resolve,reject)=>{const child=spawn(exe,args,{windowsHide:true,stdio:['pipe','pipe','pipe']});let stdout='';const timer=setTimeout(()=>{child.kill();r"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

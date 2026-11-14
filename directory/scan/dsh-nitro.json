@@ -1,0 +1,96 @@
+{
+  "name": "dsh-nitro",
+  "version": "1.0.6",
+  "scannedAt": "2026-11-14T07:59:06.829Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 132,
+        "text": "fetch(url, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 162,
+        "text": "const response = await fetch(TOGGLE_URL, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 17,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 296,
+        "text": "export const inject = ['webServer', 'tools', 'systemPrompt', 'fs', 'workingDirectory']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 406,
+        "text": "const next = normalizeState(JSON.parse(fs.readFileSync(STATE_FILE, 'utf8')))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 540,
+        "text": "fs.mkdirSync(DSH_HOME, { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 541,
+        "text": "fs.writeFileSync(STATE_FILE, JSON.stringify(next, null, 2), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 265,
+        "text": "* output, execute}` in the shape `ctx.tools.register` expects. Argument"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 296,
+        "text": "export const inject = ['webServer', 'tools', 'systemPrompt', 'fs', 'workingDirectory']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 614,
+        "text": "schema = ctx.tools.get(exec.name, exec.agent)?.output?.schema"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 763,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "fs",
+    "systemPrompt",
+    "tools",
+    "webServer",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

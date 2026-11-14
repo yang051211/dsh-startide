@@ -1,34 +1,34 @@
 {
   "name": "dsh-apk-vm",
-  "version": "0.12.0",
-  "scannedAt": "2026-11-13T21:10:55.991Z",
+  "version": "0.12.1",
+  "scannedAt": "2026-11-14T07:59:08.847Z",
   "icon": "dsh-apk-vm.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 986,
+        "line": 1056,
         "text": "return fetch(url, init)"
       },
       {
         "file": "client.js",
-        "line": 1033,
+        "line": 1103,
         "text": "return fetch(framePath || ('/apk-vm/frame?t=' + Date.now()), { cache: 'no-store' })"
       },
       {
         "file": "client.js",
-        "line": 2495,
+        "line": 2837,
         "text": "fetch('/apk-vm/client-report', {"
       },
       {
         "file": "client.js",
-        "line": 2823,
+        "line": 3165,
         "text": "ws = new WebSocket(wsBase + wsPath);"
       },
       {
         "file": "client.js",
-        "line": 4357,
+        "line": 4727,
         "text": "var xhr = new XMLHttpRequest();"
       }
     ]
@@ -48,18 +48,18 @@
       },
       {
         "file": "index.js",
-        "line": 51,
+        "line": 54,
         "text": "return JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')).version || 'unknown';"
       },
       {
         "file": "index.js",
-        "line": 1002,
-        "text": "await fsp.mkdir(archiveDir, { recursive: true });"
+        "line": 88,
+        "text": "stored = JSON.parse(readFileSync(mediaSettingsPath(dataRoot), 'utf8'));"
       },
       {
         "file": "index.js",
-        "line": 1016,
-        "text": "await fsp.rm(path.join(archiveDir, stale.name), { force: true }).catch(() => {});"
+        "line": 960,
+        "text": "await fsp.mkdir(path.dirname(target), { recursive: true });"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 5486,
+        "line": 5947,
         "text": "return host.tools.register(apkVmTool);"
       }
     ]
@@ -76,6 +76,16 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 1034,
+        "text": "const child = spawn('ssh', args, { stdio: ['pipe', 'ignore', 'pipe'], windowsHide: true });"
+      },
       {
         "file": "lib/aab.js",
         "line": 19,
@@ -90,16 +100,6 @@
         "file": "lib/aab.js",
         "line": 385,
         "text": "child = spawn(target.file, target.args, {"
-      },
-      {
-        "file": "lib/android.js",
-        "line": 19,
-        "text": "* child_process.spawn(exe, argvArray). The only string command is the *remote* command"
-      },
-      {
-        "file": "lib/android.js",
-        "line": 47,
-        "text": "import { spawn } from 'node:child_process';"
       }
     ]
   },
@@ -114,12 +114,12 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 283,
+      "line": 311,
       "text": "- **Cross-platform SDK discovery.** `lib/setup.js` and `lib/android.js` discover Android SDK,"
     },
     {
       "file": "README.md",
-      "line": 788,
+      "line": 829,
       "text": "│  ├─ lib/setup.js    Environment detection, createAvd, installSystemImage │"
     }
   ],

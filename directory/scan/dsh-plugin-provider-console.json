@@ -1,11 +1,21 @@
 {
   "name": "dsh-plugin-provider-console",
-  "version": "0.2.3",
-  "scannedAt": "2026-11-13T21:11:06.807Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-14T07:59:14.029Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
+      {
+        "file": "client.js",
+        "line": 885,
+        "text": "fetch(debugEndpoints().accounts, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 899,
+        "text": "return fetch(debugEndpoints().request, {"
+      },
       {
         "file": "lib/core/http.js",
         "line": 12,
@@ -20,11 +30,6 @@
         "file": "src/core/http.ts",
         "line": 53,
         "text": "const response = await fetch(request.url, {"
-      },
-      {
-        "file": "src/dashboard.ts",
-        "line": 8,
-        "text": "import { createServer, type Server } from 'node:http'"
       }
     ]
   },
@@ -38,7 +43,7 @@
       },
       {
         "file": "lib/config.js",
-        "line": 155,
+        "line": 178,
         "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
       },
       {
@@ -48,7 +53,7 @@
       },
       {
         "file": "lib/dashboard.js",
-        "line": 21,
+        "line": 43,
         "text": "return readFileSync(HTML_PATH, 'utf8').replace('__POLL_MS__', String(options.pollMs));"
       },
       {
@@ -63,17 +68,17 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 16,
+        "line": 20,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "lib/index.js",
-        "line": 46,
+        "line": 67,
         "text": "const toolDisposers = ctx.tools"
       },
       {
         "file": "lib/index.js",
-        "line": 47,
+        "line": 68,
         "text": "? registerTools({ tools: ctx.tools }, {"
       },
       {

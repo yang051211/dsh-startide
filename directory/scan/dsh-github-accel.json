@@ -1,0 +1,88 @@
+{
+  "name": "dsh-github-accel",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-14T07:59:07.801Z",
+  "icon": "dsh-github-accel.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 118,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import { createWriteStream } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { mkdir, readdir, rename, rm, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 245,
+        "text": "await mkdir(dirname(dest), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 251,
+        "text": "await rm(temp, { force: true }).catch(() => {})"
+      },
+      {
+        "file": "index.js",
+        "line": 851,
+        "text": "await rm(dest, { recursive: true, force: true }).catch(() => {})"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 47,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 456,
+        "text": "const dispose = ctx.tools.register(tool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 296,
+        "text": "child = spawn('git', args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

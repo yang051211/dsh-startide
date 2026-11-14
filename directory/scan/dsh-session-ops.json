@@ -1,0 +1,107 @@
+{
+  "name": "dsh-session-ops",
+  "version": "0.2.3",
+  "scannedAt": "2026-11-14T07:59:06.510Z",
+  "icon": "dsh-session-ops.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 171,
+        "text": "const response = await fetch(`${API}/${method}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1367,
+        "text": "const response = await fetch(`${API}/${method}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/admin.js",
+        "line": 28,
+        "text": "import { existsSync, readFileSync, readdirSync, rmSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/admin.js",
+        "line": 72,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "lib/admin.js",
+        "line": 228,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "lib/admin.js",
+        "line": 383,
+        "text": "rmSync(record.dir, { recursive: true, force: true });"
+      },
+      {
+        "file": "lib/admin.js",
+        "line": 391,
+        "text": "rmSync(cacheFile, { force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/admin.js",
+        "line": 608,
+        "text": "* 必须是**真正的 JSON Schema**：`ctx.tools.register()` 收的是「已编译」的"
+      },
+      {
+        "file": "lib/admin.js",
+        "line": 730,
+        "text": "* @returns `ctx.tools.register` 接受的普通对象定义。"
+      },
+      {
+        "file": "lib/admin.js",
+        "line": 907,
+        "text": "ctx.effect(() => ctx.tools.register(buildTool(admin, config, log, holds)), 'dsh-session-admin: session_admin tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 66,
+        "text": "* `ctx.webServer` / `ctx.tools` / `ctx.sessions` / `ctx.sessionPersistence` 会静默是"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 73,
+        "text": "export const inject = ['webServer', 'tools', 'sessions', 'sessionPersistence', 'workspaceRegistry'];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionPersistence",
+    "sessions",
+    "tools",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

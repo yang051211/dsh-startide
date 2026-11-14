@@ -1,0 +1,82 @@
+{
+  "name": "dsh-novels",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-14T07:59:06.879Z",
+  "icon": "dsh-novels.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/index.mjs",
+        "line": 505,
+        "text": "const response = await fetch(apiPath(suffix), {"
+      },
+      {
+        "file": "client/index.mjs",
+        "line": 521,
+        "text": "const response = await fetch(apiPath(suffix), { credentials: 'same-origin', cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 21,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 36,
+        "text": "const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "lib/store.mjs",
+        "line": 19,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/store.mjs",
+        "line": 99,
+        "text": "mkdirSync(this.booksDir, { recursive: true })"
+      },
+      {
+        "file": "lib/store.mjs",
+        "line": 160,
+        "text": "raw = readFileSync(this.libraryPath, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 22,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 72,
+        "text": "const child = spawn(command, args, { detached: true, stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

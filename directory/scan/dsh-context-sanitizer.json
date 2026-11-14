@@ -1,0 +1,87 @@
+{
+  "name": "dsh-context-sanitizer",
+  "version": "1.1.4",
+  "scannedAt": "2026-11-14T07:59:07.356Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 292,
+        "text": "const response = await fetch(new URL(\"api/context-sanitizer/blacklist\", document.baseURI), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 318,
+        "text": "const response = await fetch(new URL(\"api/context-sanitizer/blacklist\", document.baseURI), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 380,
+        "text": "const response = await fetch(new URL(\"api/context-sanitizer/settings\", document.baseURI), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 418,
+        "text": "const response = await fetch(new URL(\"api/context-sanitizer/settings\", document.baseURI), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 452,
+        "text": "const response = await fetch(new URL(\"api/context-sanitizer/settings\", document.baseURI), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/abnormal.js",
+        "line": 16,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/abnormal.js",
+        "line": 79,
+        "text": "const parsed = JSON.parse(readFileSync(this.file, 'utf8'));"
+      },
+      {
+        "file": "lib/abnormal.js",
+        "line": 179,
+        "text": "mkdirSync(dirname(this.file), { recursive: true });"
+      },
+      {
+        "file": "lib/abnormal.js",
+        "line": 181,
+        "text": "writeFileSync("
+      },
+      {
+        "file": "lib/abnormal.js",
+        "line": 199,
+        "text": "if (existsSync(`${this.file}.tmp-${process.pid}`)) unlinkSync(`${this.file}.tmp-${process.pid}`);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "sessions"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

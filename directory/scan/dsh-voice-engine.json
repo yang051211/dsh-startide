@@ -1,0 +1,144 @@
+{
+  "name": "dsh-voice-engine",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-14T07:59:14.147Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-voice-engine.mjs",
+        "line": 57,
+        "text": "const health = await fetch(`${cfg.url}/v1/health`).then((r) => r.json()).catch((e) => ({ error: e.message }))"
+      },
+      {
+        "file": "bin/dsh-voice-engine.mjs",
+        "line": 61,
+        "text": "const engines = await fetch(`${cfg.url}/v1/engines`, { headers: auth }).then((r) => r.json())"
+      },
+      {
+        "file": "bin/dsh-voice-engine.mjs",
+        "line": 65,
+        "text": "    const res = await fetch(`${cfg.url}/v1/speak`, { method: 'POST', headers: { ...auth, 'content-type': 'application/json' }, body: JSON.stringify({ text: '你好，"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 62,
+        "text": "res = await fetch(path, {"
+      },
+      {
+        "file": "lib/engine/server.js",
+        "line": 10,
+        "text": "import { createServer } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-voice-engine.mjs",
+        "line": 11,
+        "text": "import { readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "bin/dsh-voice-engine.mjs",
+        "line": 45,
+        "text": "await writeFile(file, r.audio)"
+      },
+      {
+        "file": "bin/dsh-voice-engine.mjs",
+        "line": 52,
+        "text": "cfg = JSON.parse(await readFile(join(paths().root, 'engine.json'), 'utf8'))"
+      },
+      {
+        "file": "bin/dsh-voice-engine.mjs",
+        "line": 72,
+        "text": "await writeFile(file, Buffer.from(await res.arrayBuffer()))"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 6,
+        "text": "import { chmod, copyFile, cp, mkdir, readFile, rename, stat, writeFile } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/guard.js",
+        "line": 3,
+        "text": "// 四层里的硬拦截这一层，靠 ctx.tools.guard（同步，返回字符串就是拒绝理由）。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 22,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 118,
+        "text": "if (typeof ctx.tools?.guard === 'function') {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 119,
+        "text": "ctx.tools.guard(voiceGuard)"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 476,
+        "text": "return defs.map((def) => ctx.tools.register(def))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine/edge.js",
+        "line": 7,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/engine/edge.js",
+        "line": 73,
+        "text": "execFile(cmd, args, { timeout, maxBuffer: 8 << 20 }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "lib/engine/index.js",
+        "line": 127,
+        "text": "const { spawnSync } = await import('node:child_process')"
+      },
+      {
+        "file": "lib/engine/index.js",
+        "line": 132,
+        "text": "const r = spawnSync(bin, ['-y', '-loglevel', 'error', '-i', src, '-ac', '1', out])"
+      },
+      {
+        "file": "lib/engine/ming.js",
+        "line": 7,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 186,
+      "text": "pip3 install --user pypinyin"
+    }
+  ],
+  "skippedEntries": []
+}

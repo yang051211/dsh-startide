@@ -1,7 +1,7 @@
 {
   "name": "dsh-locator",
-  "version": "0.11.3",
-  "scannedAt": "2026-11-13T21:10:39.040Z",
+  "version": "0.12.1",
+  "scannedAt": "2026-11-14T07:59:02.141Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -33,17 +33,17 @@
       },
       {
         "file": "lib/content.js",
-        "line": 148,
+        "line": 155,
         "text": "mkdirSync(this.options.stateDir, { recursive: true, mode: 0o700 });"
       },
       {
         "file": "lib/content.js",
-        "line": 153,
+        "line": 160,
         "text": "writeFileSync(fd, JSON.stringify({ pid: process.pid, startedAt: Date.now(), token: this.lockToken, procStart: PROCESS_START }));"
       },
       {
         "file": "lib/content.js",
-        "line": 161,
+        "line": 168,
         "text": "holder = JSON.parse(readFileSync(path, 'utf8'));"
       }
     ]
@@ -58,22 +58,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 155,
+        "line": 156,
         "text": "ctx.tools.register(makeSearchTool(rt));"
       },
       {
         "file": "lib/index.js",
-        "line": 156,
-        "text": "ctx.tools.register(makeStatusTool(rt));"
-      },
-      {
-        "file": "lib/index.js",
         "line": 157,
-        "text": "ctx.tools.register(makeRebuildTool(rt));"
+        "text": "ctx.tools.register(makeStatusTool(rt, content));"
       },
       {
         "file": "lib/index.js",
         "line": 158,
+        "text": "ctx.tools.register(makeRebuildTool(rt));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 159,
         "text": "ctx.tools.register(makeExportTool(rt));"
       }
     ]
@@ -88,7 +88,7 @@
       },
       {
         "file": "lib/reveal.js",
-        "line": 225,
+        "line": 284,
         "text": "const child = spawn(command, args, { detached: true, stdio: 'ignore', windowsHide: true });"
       },
       {

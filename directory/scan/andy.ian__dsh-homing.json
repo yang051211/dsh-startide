@@ -1,7 +1,7 @@
 {
   "name": "@andy.ian/dsh-homing",
-  "version": "2.1.15",
-  "scannedAt": "2026-11-10T08:48:40.254Z",
+  "version": "2.2.2",
+  "scannedAt": "2026-11-14T07:59:03.254Z",
   "icon": "andy.ian__dsh-homing.svg",
   "network": {
     "hit": true,
@@ -18,18 +18,18 @@
       },
       {
         "file": "index.js",
-        "line": 149,
+        "line": 154,
         "text": "fetch(url, {"
       },
       {
         "file": "index.js",
-        "line": 288,
+        "line": 293,
         "text": "const req = http.request({"
       },
       {
         "file": "index.js",
-        "line": 651,
-        "text": "else fetch('/dsh_homing/alive', { method: 'POST', headers: { 'content-type': 'application/json' }, body, keepalive: true }).catch(() => {})"
+        "line": 468,
+        "text": "const request = http.request({ host: '127.0.0.1', port: restartDaemonPort, path: '/health', method: 'GET', timeout: 1500, agent: false }, (res) => {"
       }
     ]
   },
@@ -110,7 +110,13 @@
     "credentials",
     "webServer"
   ],
-  "setupHints": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 34,
+      "text": "node \"$DSH_HOME/plugins/dsh-homing/bin/entry-link.mjs\""
+    }
+  ],
   "skippedEntries": [
     "lib/vendor/node_modules/ssh2/.eslintignore (outside the package)",
     "lib/vendor/node_modules/asn1/Jenkinsfile (outside the package)",

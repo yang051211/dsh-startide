@@ -1,0 +1,129 @@
+{
+  "name": "dsh-operator-agent",
+  "version": "0.2.5",
+  "scannedAt": "2026-11-14T07:59:07.453Z",
+  "icon": "dsh-operator-agent.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "model-relay.mjs",
+        "line": 5,
+        "text": "import { createServer } from \"node:http\";"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/setup.mjs",
+        "line": 20,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync, copyFileSync, realpathSync } from \"node:fs\";"
+      },
+      {
+        "file": "bin/setup.mjs",
+        "line": 193,
+        "text": "mkdirSync(receipt, { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "bin/setup.mjs",
+        "line": 195,
+        "text": "writeFileSync(join(receipt, \"receipt.json\"),"
+      },
+      {
+        "file": "bin/setup.mjs",
+        "line": 199,
+        "text": "mkdirSync(dirname(patch), { recursive: true });"
+      },
+      {
+        "file": "bin/setup.mjs",
+        "line": 200,
+        "text": "writeFileSync(temp, next, { mode: 0o600 });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 10,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "host-model-budget.mjs",
+        "line": 210,
+        "text": "disposers.push(ctx.tools.guard(exec => {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/setup.mjs",
+        "line": 23,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "bin/setup.mjs",
+        "line": 147,
+        "text": "return spawnSync(argv[0], argv.slice(1), { encoding: \"utf8\", ...options });"
+      },
+      {
+        "file": "host-model-ledger.mjs",
+        "line": 3,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      },
+      {
+        "file": "index.mjs",
+        "line": 16,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "index.mjs",
+        "line": 162,
+        "text": "execFile(command, argv, { timeout: timeoutMs, maxBuffer: 8 << 20, env, signal }, done);"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands"
+  ],
+  "setupHints": [
+    {
+      "file": "cordis.patch.yml",
+      "line": 6,
+      "text": "# 这里**不写死绝对路径**：默认假定 `pip install operator-agent` 装出了 `operator-agent`"
+    },
+    {
+      "file": "cordis.patch.yml",
+      "line": 36,
+      "text": "# 从源码树跑的形态（没 pip install 时）："
+    },
+    {
+      "file": "README.md",
+      "line": 26,
+      "text": "cd /path/to/operatorAgent && pip install ."
+    },
+    {
+      "file": "README.md",
+      "line": 29,
+      "text": "pip install operator-agent"
+    },
+    {
+      "file": "README.md",
+      "line": 42,
+      "text": "ME/.local/share/operator-agent/v0.7.2/venv/bin/python\" -m pip install \"$HOME/.local/share/operator-agent/v0.7.2/artifacts/operator_agent-0.7.2-py3-none-any.whl\""
+    }
+  ],
+  "skippedEntries": []
+}

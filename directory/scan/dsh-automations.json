@@ -1,0 +1,108 @@
+{
+  "name": "dsh-automations",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-14T07:59:08.354Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/actions.js",
+        "line": 186,
+        "text": "const response = await fetch(action.url, { method, headers, body, signal: controller.signal });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 191,
+        "text": "const response = await fetch(API + path, { headers: { accept: \"application/json\" } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 207,
+        "text": "const response = await fetch(API + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/store.js",
+        "line": 12,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 33,
+        "text": "return JSON.parse(readFileSync(file, \"utf8\").replace(/^\\uFEFF/, \"\"));"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 53,
+        "text": "writeFileSync(temp, text, \"utf8\");"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 57,
+        "text": "writeFileSync(file, text, \"utf8\");"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 68,
+        "text": "mkdirSync(dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 35,
+        "text": "export const inject = [\"tools\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 107,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/actions.js",
+        "line": 9,
+        "text": "import { spawn, spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/actions.js",
+        "line": 48,
+        "text": "* @param {import(\"node:child_process\").ChildProcess} child - the process."
+      },
+      {
+        "file": "lib/actions.js",
+        "line": 54,
+        "text": "spawnSync(\"taskkill\", [\"/pid\", String(child.pid), \"/T\", \"/F\"], { windowsHide: true, stdio: \"ignore\" });"
+      },
+      {
+        "file": "lib/actions.js",
+        "line": 130,
+        "text": "child = spawn(file, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

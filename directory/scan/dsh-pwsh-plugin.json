@@ -1,7 +1,7 @@
 {
   "name": "dsh-pwsh-plugin",
-  "version": "0.2.20",
-  "scannedAt": "2026-11-13T21:11:03.828Z",
+  "version": "0.2.21",
+  "scannedAt": "2026-11-14T07:59:12.212Z",
   "icon": "dsh-pwsh-plugin.svg",
   "network": {
     "hit": true,
@@ -28,17 +28,17 @@
       },
       {
         "file": "plugin/file-tools.mjs",
-        "line": 7,
+        "line": 8,
         "text": "const recycleSource = readFileSync(new URL('./file-recycle.cs', import.meta.url), 'utf8')"
       },
       {
         "file": "plugin/file-tools.mjs",
-        "line": 8,
+        "line": 9,
         "text": "const WINDOWS_SOURCE = readFileSync(new URL('./file-worker.ps1', import.meta.url), 'utf8').replace('# RECYCLE_HELPER',()=>\"$null = Add-Type -TypeDefinition ([Te"
       },
       {
         "file": "plugin/file-tools.mjs",
-        "line": 10,
+        "line": 11,
         "text": "const POSIX_SOURCE = readFileSync(new URL('./file-worker.cjs', import.meta.url), 'utf8')"
       },
       {
@@ -63,17 +63,17 @@
       },
       {
         "file": "plugin/file-tools.mjs",
-        "line": 100,
+        "line": 102,
         "text": "rties,required,execute)=>ctx.effect(()=>ctx.tools.register({name,description,parameters:{type:'object',properties,required,additionalProperties:false},output,ex"
       },
       {
         "file": "plugin/index.mjs",
-        "line": 42,
+        "line": 43,
         "text": "export const inject = ['subprocess', 'tools']"
       },
       {
         "file": "plugin/index.mjs",
-        "line": 328,
+        "line": 346,
         "text": "// 旧注册不撤的话 ctx.tools.register 会抛 \"already registered\"。"
       }
     ]
@@ -83,7 +83,7 @@
     "evidence": [
       {
         "file": "plugin/file-tools.mjs",
-        "line": 75,
+        "line": 77,
         "text": "const h=ctx.subprocess.spawn({argv,cwd:c.cwd,stdio:{stdin:{data:JSON.stringify(q)},stdout:{maxBytes:1024*1024},stderr:{maxBytes:65536}},signal,graceMs:3000})"
       },
       {

@@ -1,0 +1,93 @@
+{
+  "name": "dsh-tool-budget",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-14T07:59:14.071Z",
+  "icon": "dsh-tool-budget.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 530,
+        "text": "const response = await fetch(url, { credentials: 'same-origin', headers: { accept: 'application/json' }, ...options })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 61,
+        "text": "id: 'fs',"
+      },
+      {
+        "file": "index.js",
+        "line": 490,
+        "text": "const text = decodeLog(fs.readFileSync(log.file))"
+      },
+      {
+        "file": "index.js",
+        "line": 540,
+        "text": "const text = decodeLog(fs.readFileSync(log.file))"
+      },
+      {
+        "file": "index.js",
+        "line": 560,
+        "text": "const text = decodeLog(fs.readFileSync(log.file))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 33,
+        "text": "export const inject = ['tools', 'agents']"
+      },
+      {
+        "file": "index.js",
+        "line": 171,
+        "text": "return ctx.tools.view(agent)"
+      },
+      {
+        "file": "index.js",
+        "line": 210,
+        "text": "const global = ctx.tools.definitions()"
+      },
+      {
+        "file": "index.js",
+        "line": 220,
+        "text": "const scoped = ctx.tools.definitions(agent)"
+      },
+      {
+        "file": "index.js",
+        "line": 336,
+        "text": "disposers.push(agent.ctx.tools.restrict({ allow }))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

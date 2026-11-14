@@ -1,15 +1,25 @@
 {
   "name": "dsh-ppt-canvas",
-  "version": "1.0.0",
-  "scannedAt": "2026-10-26T10:07:56.174Z",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-14T07:59:09.011Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "plugin/client.js",
-        "line": 154,
+        "line": 156,
         "text": "response = await win.fetch(url, init)"
+      },
+      {
+        "file": "plugin/client.js",
+        "line": 257,
+        "text": "        const response = await win.fetch(renderUrl({ page: slideIndex + 1, width, rev: deck.rev, file: deck.file, fingerprint: status.deckFingerprint }), { sign"
+      },
+      {
+        "file": "plugin/client.js",
+        "line": 3922,
+        "text": "const response = await win.fetch(renderUrl({ page, width, rev: deck.rev, file: deck.file, fingerprint }), { signal: controller.signal, cache: 'no-store' })"
       },
       {
         "file": "plugin/standalone-server.js",
@@ -22,29 +32,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "plugin/deck-store.js",
-        "line": 6,
-        "text": "import { existsSync, statSync } from 'node:fs'"
+        "file": "plugin/client.js",
+        "line": 2860,
+        "text": "const selected = await fileImport.readFile(target.file)"
+      },
+      {
+        "file": "plugin/client.js",
+        "line": 3714,
+        "text": "async function readFile(file) {"
       },
       {
         "file": "plugin/deck-store.js",
-        "line": 7,
+        "line": 6,
+        "text": "import { existsSync, readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "plugin/deck-store.js",
+        "line": 8,
         "text": "import { readFile } from 'node:fs/promises'"
       },
       {
         "file": "plugin/deck-store.js",
-        "line": 144,
-        "text": "const { mkdirSync, unlinkSync, writeFileSync } = await import('node:fs')"
-      },
-      {
-        "file": "plugin/deck-store.js",
-        "line": 157,
-        "text": "mkdirSync(dir, { recursive: true })"
-      },
-      {
-        "file": "plugin/deck-store.js",
-        "line": 163,
-        "text": "writeFileSync(filePath, bytes)"
+        "line": 142,
+        "text": "if (readFileSync(open.filePath).equals(expected)) return"
       }
     ]
   },
@@ -58,22 +68,22 @@
       },
       {
         "file": "plugin/tools.js",
-        "line": 34,
+        "line": 42,
         "text": "// 宿主的 tools.register() 对 parameters 是**原样透传**（它不同于 defineTool："
       },
       {
         "file": "plugin/tools.js",
-        "line": 89,
+        "line": 97,
         "text": "disposers.push(tools.register({"
       },
       {
         "file": "plugin/tools.js",
-        "line": 120,
+        "line": 128,
         "text": "disposers.push(tools.register({"
       },
       {
         "file": "plugin/tools.js",
-        "line": 143,
+        "line": 151,
         "text": "disposers.push(tools.register({"
       }
     ]
@@ -88,7 +98,7 @@
       },
       {
         "file": "plugin/render.js",
-        "line": 115,
+        "line": 153,
         "text": "const child = spawn(soffice, args, { stdio: 'ignore', windowsHide: true })"
       }
     ]
