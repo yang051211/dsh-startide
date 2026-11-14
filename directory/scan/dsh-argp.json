@@ -1,36 +1,15 @@
 {
   "name": "dsh-argp",
-  "version": "1.11.2",
-  "scannedAt": "2026-11-09T23:07:02.094Z",
+  "version": "2.0.0",
+  "scannedAt": "2026-11-14T23:52:57.908Z",
   "icon": null,
   "network": {
-    "hit": true,
-    "evidence": [
-      {
-        "file": "lib/peratom/cite-declarer.js",
-        "line": 392,
-        "text": "this.fetchImpl = config.fetchImpl ?? ((...args) => fetch(...args));"
-      },
-      {
-        "file": "lib/peratom/compressor.js",
-        "line": 145,
-        "text": "this.fetchImpl = config.fetchImpl ?? ((...args) => fetch(...args));"
-      }
-    ]
+    "hit": false,
+    "evidence": []
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
-      {
-        "file": "lib/peratom/cite-declarer.js",
-        "line": 11,
-        "text": "import { appendFileSync } from 'node:fs';"
-      },
-      {
-        "file": "lib/peratom/cite-declarer.js",
-        "line": 609,
-        "text": "appendFileSync(file, JSON.stringify(row) + '\\n');"
-      },
       {
         "file": "lib/peratom/llm-adapter.js",
         "line": 18,
@@ -38,7 +17,7 @@
       },
       {
         "file": "lib/peratom/llm-adapter.js",
-        "line": 220,
+        "line": 219,
         "text": "writeFileSync(file, JSON.stringify(payload, null, 2));"
       }
     ]
@@ -48,28 +27,18 @@
     "evidence": [
       {
         "file": "lib/argp-graph-engine.js",
-        "line": 112,
-        "text": "static inject = ['tools', 'systemPrompt'];"
+        "line": 89,
+        "text": "static inject = ['tools'];"
       },
       {
-        "file": "lib/peratom/recall-zoom.js",
-        "line": 193,
-        "text": "ctx.tools.register(summaryTool);"
+        "file": "lib/factor/recall-labels.js",
+        "line": 298,
+        "text": "ctx.tools.register(recallHistoryTool);"
       },
       {
-        "file": "lib/peratom/recall-zoom.js",
-        "line": 211,
-        "text": "ctx.tools.register(detailTool);"
-      },
-      {
-        "file": "lib/recall-tools.js",
-        "line": 34,
-        "text": "* 注册三个召回工具到 ctx.tools；register 顺序即工具在 ctx.tools 中的列出次序。"
-      },
-      {
-        "file": "lib/recall-tools.js",
-        "line": 116,
-        "text": "ctx.tools.register(recallTool);"
+        "file": "lib/factor/recall-labels.js",
+        "line": 363,
+        "text": "ctx.tools.register(listLabelsTool);"
       }
     ]
   },

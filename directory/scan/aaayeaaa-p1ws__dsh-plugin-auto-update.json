@@ -1,0 +1,99 @@
+{
+  "name": "@aaayeaaa-p1ws/dsh-plugin-auto-update",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-14T23:52:59.386Z",
+  "icon": "aaayeaaa-p1ws__dsh-plugin-auto-update.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 18,
+        "text": "const res = await fetch(API + path, {"
+      },
+      {
+        "file": "index.js",
+        "line": 146,
+        "text": "const response = await fetch(url, init);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 28,
+        "text": "import { appendFile, mkdir, readFile, rename, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 239,
+        "text": "const text = await readFile(statePath, 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 264,
+        "text": "await mkdir(stateDir, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 266,
+        "text": "await writeFile(tmp, `${JSON.stringify(state, null, 2)}\\n`, 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 278,
+        "text": "await mkdir(stateDir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 37,
+        "text": "export const inject = ['tools', 'webServer'];"
+      },
+      {
+        "file": "index.js",
+        "line": 1024,
+        "text": "const tools = ctx.tools; // 靠 inject: ['tools'] 注入；以前这里 ctx.get('tools') 恒为空，工具从没注册成功"
+      },
+      {
+        "file": "index.js",
+        "line": 1027,
+        "text": "tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/restart.mjs",
+        "line": 6,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/restart.mjs",
+        "line": 38,
+        "text": "const child = spawn('powershell.exe', ['-NoProfile', '-NonInteractive', '-WindowStyle', 'Hidden', '-Command', script], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
