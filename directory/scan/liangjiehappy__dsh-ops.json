@@ -1,26 +1,52 @@
 {
   "name": "@liangjiehappy/dsh-ops",
-  "version": "0.3.7",
-  "scannedAt": "2026-11-14T07:59:02.641Z",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-14T19:29:23.741Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 75,
+        "line": 95,
         "text": "const r = await fetch(url, {"
       },
       {
         "file": "lib/index.js",
-        "line": 176,
+        "line": 197,
         "text": "const res = await fetch(base + path, {"
       }
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 35,
+        "text": "import { readFileSync, writeFileSync, mkdirSync, rmSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 47,
+        "text": "const j = JSON.parse(readFileSync(TOKEN_FILE, \"utf8\"));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 53,
+        "text": "mkdirSync(TOKEN_DIR, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 54,
+        "text": "writeFileSync(TOKEN_FILE, JSON.stringify({ token: tok, account, at: new Date().toISOString() }, null, 2), { mode: 0o600 });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 278,
+        "text": "mkdirSync(TOKEN_DIR, { recursive: true });"
+      }
+    ]
   },
   "agentTools": {
     "hit": true,
@@ -32,13 +58,8 @@
       },
       {
         "file": "lib/index.js",
-        "line": 40,
+        "line": 60,
         "text": "export const inject = [\"tools\", \"skills\"];"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 247,
-        "text": "ctx.tools.register({"
       },
       {
         "file": "lib/index.js",
@@ -47,7 +68,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 312,
+        "line": 287,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 308,
         "text": "ctx.tools.register({"
       }
     ]

@@ -1,7 +1,7 @@
 {
   "name": "dsh-subagent-codex-pro",
-  "version": "0.9.0",
-  "scannedAt": "2026-11-12T21:20:40.664Z",
+  "version": "0.10.0",
+  "scannedAt": "2026-11-14T19:29:40.163Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -17,12 +17,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 233,
+        "line": 237,
         "text": "appendFileSync(join(process.env.DSH_HOME ?? join(homedir(), '.dsh'), 'codex-pro.log'), `${new Date().toISOString()} ${message}\\n`);"
       },
       {
         "file": "lib/index.js",
-        "line": 517,
+        "line": 543,
         "text": "payloads.push({ data: readFileSync(image.path), mediaType });"
       },
       {
@@ -42,12 +42,17 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 733,
-        "text": "agent.ctx.tools.register(createCodexTool({"
+        "line": 818,
+        "text": "agent.ctx.tools.register(createCodexTool(toolOptions));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 819,
+        "text": "agent.ctx.tools.register(createCodexReviewTool(toolOptions));"
       },
       {
         "file": "lib/tool.js",
-        "line": 40,
+        "line": 42,
         "text": "* @returns a definition ready for `agent.ctx.tools.register`."
       }
     ]
@@ -72,12 +77,12 @@
       },
       {
         "file": "lib/process-guardian.js",
-        "line": 129,
-        "text": "child = spawn(command, ['app-server', '--stdio'], {"
+        "line": 139,
+        "text": "child = spawn(command, [...overrides, 'app-server', '--stdio'], {"
       },
       {
         "file": "lib/run.js",
-        "line": 17,
+        "line": 18,
         "text": "import { spawn } from 'node:child_process';"
       }
     ]

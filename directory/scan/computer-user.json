@@ -1,14 +1,14 @@
 {
   "name": "computer-user",
-  "version": "0.5.9",
-  "scannedAt": "2026-10-29T07:06:29.337Z",
+  "version": "0.6.1",
+  "scannedAt": "2026-11-14T19:29:35.229Z",
   "icon": "computer-user.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "src/tools.js",
-        "line": 653,
+        "line": 695,
         "text": "const res = await fetch(url, opts);"
       }
     ]
@@ -17,29 +17,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/ps.js",
-        "line": 2,
-        "text": "import { existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';"
+        "file": "scripts/crop-platform.mjs",
+        "line": 18,
+        "text": "import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';"
       },
       {
-        "file": "src/ps.js",
-        "line": 107,
-        "text": "mkdirSync(GUARD_DIR, { recursive: true });"
+        "file": "scripts/crop-platform.mjs",
+        "line": 144,
+        "text": "if (existsSync(outDir)) rmSync(outDir, { recursive: true, force: true });"
       },
       {
-        "file": "src/ps.js",
-        "line": 108,
-        "text": "writeFileSync(GUARD_STOP_FLAG, 'reason=' + reason + ' at=' + new Date().toISOString(), 'utf8');"
+        "file": "scripts/crop-platform.mjs",
+        "line": 145,
+        "text": "mkdirSync(outDir, { recursive: true });"
       },
       {
-        "file": "src/ps.js",
-        "line": 114,
-        "text": "try { rmSync(GUARD_STOP_FLAG, { force: true }); } catch { /* best effort */ }"
+        "file": "scripts/crop-platform.mjs",
+        "line": 156,
+        "text": "mkdirSync(dirname(dst), { recursive: true });"
       },
       {
-        "file": "src/ps.js",
-        "line": 127,
-        "text": "const raw = readFileSync(GUARD_PID_FILE, 'utf8').trim();"
+        "file": "scripts/crop-platform.mjs",
+        "line": 162,
+        "text": "let source = readFileSync(backendPath, 'utf8');"
       }
     ]
   },
@@ -53,7 +53,7 @@
       },
       {
         "file": "src/index.js",
-        "line": 137,
+        "line": 151,
         "text": "disposers.push(ctx.tools.register({"
       },
       {
@@ -67,19 +67,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/ps.js",
-        "line": 1,
+        "file": "scripts/crop-platform.mjs",
+        "line": 19,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "src/platform/darwin/exec.js",
+        "line": 10,
         "text": "import { spawn } from 'node:child_process';"
       },
       {
-        "file": "src/ps.js",
+        "file": "src/platform/darwin/exec.js",
         "line": 28,
-        "text": "const child = spawn("
+        "text": "child = spawn(cmd, args, { windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'] });"
       },
       {
-        "file": "src/ps.js",
-        "line": 176,
-        "text": "const child = spawn("
+        "file": "src/platform/darwin/guard.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/platform/darwin/guard.js",
+        "line": 32,
+        "text": "const child = spawn(cmd, args, { stdio: 'ignore', detached: false, windowsHide: true });"
       }
     ]
   },

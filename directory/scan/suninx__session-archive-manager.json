@@ -1,15 +1,36 @@
 {
   "name": "@suninx/session-archive-manager",
-  "version": "0.1.0",
-  "scannedAt": "2026-11-13T21:11:06.345Z",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-14T19:29:49.337Z",
   "icon": null,
   "network": {
     "hit": false,
     "evidence": []
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { rm } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 271,
+        "text": "await rm(target, {"
+      },
+      {
+        "file": "src/archive-admin.ts",
+        "line": 23,
+        "text": "import { rm } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/archive-admin.ts",
+        "line": 164,
+        "text": "await rm(target, { recursive: true, force: true })"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,
@@ -23,12 +44,16 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [
     "lib/client.js"
   ],
   "binaryFiles": [],
-  "requiredServices": [],
+  "requiredServices": [
+    "sessionPersistence",
+    "sessions",
+    "workspaceRegistry"
+  ],
   "setupHints": [],
   "skippedEntries": []
 }

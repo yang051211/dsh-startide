@@ -1,25 +1,35 @@
 {
   "name": "@yyfather/dsh-mimo-plugin",
-  "version": "1.0.2",
-  "scannedAt": "2026-10-26T10:15:21.968Z",
-  "icon": null,
+  "version": "1.0.5",
+  "scannedAt": "2026-11-14T19:29:49.160Z",
+  "icon": "yyfather__dsh-mimo-plugin.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 82,
+        "line": 67,
+        "text": "fetch(url)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 128,
         "text": "fetch(saveUrl(), {"
       },
       {
         "file": "lib/client.js",
-        "line": 134,
+        "line": 182,
         "text": "fetch(statusUrl())"
       },
       {
         "file": "lib/index.js",
-        "line": 151,
+        "line": 184,
         "text": "const res = await fetch(base.replace(/\\/+$/, '') + '/chat/completions', {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 237,
+        "text": "const res = await fetch(url, {"
       }
     ]
   },
@@ -28,27 +38,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 23,
+        "line": 25,
         "text": "import fs from 'node:fs';"
       },
       {
         "file": "lib/index.js",
-        "line": 65,
+        "line": 94,
         "text": "const parsed = JSON.parse(fs.readFileSync(configPath(), 'utf8'));"
       },
       {
         "file": "lib/index.js",
-        "line": 73,
+        "line": 102,
         "text": "fs.mkdirSync(dshHome(), { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 74,
+        "line": 103,
         "text": "fs.writeFileSync(configPath(), JSON.stringify(cfg, null, 2), 'utf8');"
       },
       {
         "file": "lib/index.js",
-        "line": 176,
+        "line": 209,
         "text": "const buf = fs.readFileSync(s);"
       }
     ]
@@ -64,23 +74,29 @@
       {
         "file": "lib/index.js",
         "line": 10,
-        "text": "*   1. Register 8 native tools via ctx.tools.register (raw JSON schemas)."
+        "text": "*   1. Register 9 native tools via ctx.tools.register (raw JSON schemas),"
       },
       {
         "file": "lib/index.js",
-        "line": 519,
-        "text": "const inject = ['tools', 'sandboxPolicy', 'webServer', 'systemPrompt'];"
+        "line": 897,
+        "text": "export const inject = ['tools', 'sandboxPolicy', 'webServer', 'systemPrompt'];"
       },
       {
         "file": "lib/index.js",
-        "line": 544,
+        "line": 923,
         "text": "disposers.push(ctx.tools.register(def));"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 28,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
@@ -89,7 +105,12 @@
   "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [],
+  "requiredServices": [
+    "sandboxPolicy",
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
   "setupHints": [],
   "skippedEntries": []
 }

@@ -1,0 +1,64 @@
+{
+  "name": "dsh-default-full-permission",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-14T19:29:50.906Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/_guard.cjs",
+        "line": 7,
+        "text": "const fs = require(\"fs\");"
+      },
+      {
+        "file": "scripts/patch-sessions.cjs",
+        "line": 9,
+        "text": "const fs = require(\"fs\");"
+      },
+      {
+        "file": "scripts/patch-sessions.cjs",
+        "line": 47,
+        "text": "const raw = fs.readFileSync(file);"
+      },
+      {
+        "file": "scripts/patch-sessions.cjs",
+        "line": 135,
+        "text": "fs.appendFileSync(file, payload);"
+      },
+      {
+        "file": "scripts/sync-projection-cache.cjs",
+        "line": 14,
+        "text": "const fs = require(\"fs\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/_guard.cjs",
+        "line": 9,
+        "text": "const { execFileSync } = require(\"child_process\");"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

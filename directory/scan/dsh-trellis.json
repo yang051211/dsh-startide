@@ -1,7 +1,7 @@
 {
   "name": "dsh-trellis",
-  "version": "0.1.20",
-  "scannedAt": "2026-11-14T07:59:11.778Z",
+  "version": "0.1.21",
+  "scannedAt": "2026-11-14T19:29:45.270Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -11,29 +11,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/node-fs.js",
-        "line": 6,
-        "text": "import { stat as nodeStat, readFile as nodeReadFile } from \"node:fs/promises\";"
+        "file": "lib/doctor.js",
+        "line": 383,
+        "text": "const activeTaskPy = await fs.readFile("
+      },
+      {
+        "file": "lib/doctor.js",
+        "line": 401,
+        "text": "const raw = await fs.readFile(fullPath);"
+      },
+      {
+        "file": "lib/doctor.js",
+        "line": 417,
+        "text": "await fs.writeFile(fullPath, encoded);"
       },
       {
         "file": "lib/node-fs.js",
-        "line": 26,
-        "text": "async readFile(path) {"
+        "line": 10,
+        "text": "} from \"node:fs/promises\";"
       },
       {
-        "file": "lib/workflow.js",
-        "line": 70,
-        "text": "* @param {{readFile(path: string): Promise<string | null>, stat(path: string): Promise<{mtimeMs: number} | null>}} fs"
-      },
-      {
-        "file": "lib/workflow.js",
-        "line": 80,
-        "text": "const content = await fs.readFile(path);"
-      },
-      {
-        "file": "lib/workflow.js",
-        "line": 98,
-        "text": "* @param {{readFile(path: string): Promise<string | null>}} fs"
+        "file": "lib/node-fs.js",
+        "line": 12,
+        "text": "/** @type {import(\"./workflow.js\").FsShim & { writeFile(path: string, content: string): Promise<void> }} */"
       }
     ]
   },
@@ -42,12 +42,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 39,
+        "line": 57,
         "text": "export const inject = [\"commands\", \"shellEnv\", \"subagents\", \"tools\", \"sessionProjections\"];"
       },
       {
         "file": "lib/wait-tool.js",
-        "line": 161,
+        "line": 214,
         "text": "const unregister = ctx.tools.register("
       }
     ]
@@ -66,7 +66,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
+  "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

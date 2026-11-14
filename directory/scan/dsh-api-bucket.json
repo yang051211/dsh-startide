@@ -1,0 +1,97 @@
+{
+  "name": "dsh-api-bucket",
+  "version": "3.0.1",
+  "scannedAt": "2026-11-14T19:29:50.901Z",
+  "icon": "dsh-api-bucket.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 232,
+        "text": "const response = await window.fetch(ENDPOINT, { cache: 'no-store', headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 254,
+        "text": "const response = await window.fetch(`${ENDPOINT}?probe=1`, { cache: 'no-store', headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 268,
+        "text": "const response = await window.fetch(ENDPOINT, {"
+      },
+      {
+        "file": "index.js",
+        "line": 316,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "index.js",
+        "line": 337,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 125,
+        "text": "return normalizeConfig(JSON.parse(fs.readFileSync(file, 'utf8')))"
+      },
+      {
+        "file": "index.js",
+        "line": 130,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 131,
+        "text": "fs.writeFileSync(file, `${JSON.stringify(seeded, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 146,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 32,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 762,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

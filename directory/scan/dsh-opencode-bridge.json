@@ -1,7 +1,7 @@
 {
   "name": "dsh-opencode-bridge",
-  "version": "1.0.3",
-  "scannedAt": "2026-11-13T21:10:59.032Z",
+  "version": "1.0.4",
+  "scannedAt": "2026-11-14T19:29:43.441Z",
   "icon": "dsh-opencode-bridge.svg",
   "network": {
     "hit": true,
@@ -13,7 +13,7 @@
       },
       {
         "file": "lib/catalog.js",
-        "line": 210,
+        "line": 222,
         "text": "const response = await fetch(MODELS_DEV_URL, { signal });"
       },
       {
@@ -37,6 +37,16 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/adapter.js",
+        "line": 1,
+        "text": "import { appendFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/adapter.js",
+        "line": 527,
+        "text": "appendFileSync(dumpTo, JSON.stringify(record) + '\\n');"
+      },
+      {
         "file": "lib/logger.js",
         "line": 20,
         "text": "import fs from 'node:fs';"
@@ -50,16 +60,6 @@
         "file": "lib/logger.js",
         "line": 195,
         "text": "fs.mkdirSync(this.dir, { recursive: true });"
-      },
-      {
-        "file": "lib/logger.js",
-        "line": 199,
-        "text": "fs.appendFileSync(this.base, `${line}\\n`, 'utf8');"
-      },
-      {
-        "file": "lib/logger.js",
-        "line": 213,
-        "text": "fs.unlinkSync(oldest);"
       }
     ]
   },

@@ -1,0 +1,112 @@
+{
+  "name": "@nikodem5/dsh-web-terminal",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-14T19:29:50.716Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/agy-hook.mjs",
+        "line": 11,
+        "text": "import { request } from 'node:http'"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 841,
+        "text": "    infoDone = fetch(\"/api/dsh-web-terminal/info\", { headers: withAuth({ accept: \"application/json\" }) }).then((response) => response.ok ? response.json() : voi"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 16244,
+        "text": "const res = await fetch(PATHS_URL, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 16319,
+        "text": "const res = await fetch(OPEN_URL, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 18282,
+        "text": "const socket = new WebSocket(`${socketBase()}/terminal/ws?${params.toString()}`, socketProtocols());"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/agy-integration.js",
+        "line": 14,
+        "text": "import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/agy-integration.js",
+        "line": 133,
+        "text": "return JSON.parse(readFileSync(stateFile, 'utf8'))?.enabled === true"
+      },
+      {
+        "file": "lib/agy-integration.js",
+        "line": 142,
+        "text": "rmSync(settingsFile, { force: true })"
+      },
+      {
+        "file": "lib/agy-integration.js",
+        "line": 147,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/agy-integration.js",
+        "line": 148,
+        "text": "writeFileSync(settingsFile, `${JSON.stringify(settings, null, 2)}\\n`)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/agy-integration.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/agy-integration.js",
+        "line": 90,
+        "text": "child = spawn(argv[0], argv.slice(1), { stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true, env, windowsVerbatimArguments: verbatim })"
+      },
+      {
+        "file": "lib/git-bash.js",
+        "line": 7,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/git-bash.js",
+        "line": 47,
+        "text": "execFile('reg.exe', ['query', key, '/v', 'InstallPath'], { windowsHide: true, timeout: 5000 }, (error, stdout) => {"
+      },
+      {
+        "file": "lib/git-header.js",
+        "line": 13,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

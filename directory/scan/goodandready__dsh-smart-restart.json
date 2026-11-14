@@ -1,7 +1,7 @@
 {
   "name": "@goodandready/dsh-smart-restart",
-  "version": "0.1.17",
-  "scannedAt": "2026-11-13T21:11:01.692Z",
+  "version": "0.1.18",
+  "scannedAt": "2026-11-14T19:29:45.694Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -27,29 +27,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 13,
-        "text": "import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'"
+        "file": "lib/health.js",
+        "line": 4,
+        "text": "import { readFileSync } from 'node:fs'"
       },
       {
-        "file": "lib/index.js",
-        "line": 214,
-        "text": "return JSON.parse(readFileSync(pathOf(file), 'utf8'))"
+        "file": "lib/health.js",
+        "line": 26,
+        "text": "return JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version || fallback"
       },
       {
-        "file": "lib/index.js",
-        "line": 222,
-        "text": "mkdirSync(stateDir(), { recursive: true })"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 225,
-        "text": "writeFileSync(pathOf(file), `${JSON.stringify(clean, null, 2)}\\n`, { mode: 0o600 })"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 241,
+        "file": "lib/health.js",
+        "line": 46,
         "text": "const data = JSON.parse(readFileSync(p, 'utf8'))"
+      },
+      {
+        "file": "lib/health.js",
+        "line": 58,
+        "text": "return parseCgroupUnit(readFileSync('/proc/self/cgroup', 'utf8'))"
+      },
+      {
+        "file": "lib/health.js",
+        "line": 157,
+        "text": "cgroupText = readFileSync('/proc/self/cgroup', 'utf8')"
       }
     ]
   },
@@ -57,14 +57,19 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 644,
-        "text": "const reg = ctx.tools.register(definition)"
+        "file": "lib/health.js",
+        "line": 135,
+        "text": "const service = ctx.get ? ctx.get('tools') : ctx.tools"
       },
       {
         "file": "lib/index.js",
-        "line": 1245,
+        "line": 598,
         "text": "export const inject = ['tools', 'agents', 'settings']"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 43,
+        "text": "const reg = ctx.tools.register(definition)"
       }
     ]
   },
@@ -72,13 +77,18 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/health.js",
+        "line": 3,
+        "text": "import { execFile, execFileSync } from 'node:child_process'"
+      },
+      {
         "file": "lib/index.js",
         "line": 12,
         "text": "import { execFile } from 'node:child_process'"
       },
       {
         "file": "lib/index.js",
-        "line": 685,
+        "line": 445,
         "text": "const child = execFile('systemctl', restartArgs, { detached: true })"
       }
     ]

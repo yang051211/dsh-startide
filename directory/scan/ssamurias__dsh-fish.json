@@ -1,20 +1,30 @@
 {
   "name": "@ssamurias/dsh-fish",
-  "version": "1.0.0",
-  "scannedAt": "2026-11-13T21:10:37.289Z",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-14T19:29:22.410Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 325,
+        "line": 333,
         "text": "const r = await fetch(API + path, { headers: { accept: 'application/json' } })"
       },
       {
         "file": "lib/client.js",
-        "line": 335,
+        "line": 343,
         "text": "const r = await fetch(API + path, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 5181,
+        "text": "const r = await fetch(API + '/backup/restore/enc' + (skipBad ? '?skipBad=1' : ''), {"
+      },
+      {
+        "file": "lib/clouddrive.js",
+        "line": 49,
+        "text": "const r = await fetch(url, {"
       }
     ]
   },
@@ -32,19 +42,19 @@
         "text": "await appendFile(paths(root).events, '')"
       },
       {
-        "file": "lib/avatar.js",
-        "line": 13,
-        "text": "import fs from 'node:fs'"
+        "file": "lib/autobackup.js",
+        "line": 42,
+        "text": "import { promises as fs } from 'node:fs'"
       },
       {
-        "file": "lib/avatar.js",
-        "line": 104,
-        "text": "fs.mkdirSync(dir, { recursive: true })"
+        "file": "lib/autobackup.js",
+        "line": 219,
+        "text": "await fs.unlink(join(autoBackupDir(root), one.name))"
       },
       {
-        "file": "lib/avatar.js",
-        "line": 105,
-        "text": "fs.writeFileSync(tmp, buf)"
+        "file": "lib/autobackup.js",
+        "line": 250,
+        "text": "await fs.mkdir(dir, { recursive: true })"
       }
     ]
   },
@@ -82,6 +92,16 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/clouddrive.js",
+        "line": 23,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/clouddrive.js",
+        "line": 521,
+        "text": "execFile(file, args, { timeout: timeoutMs, windowsHide: true, maxBuffer: 4 * 1024 * 1024 }, (err, stdout, stderr) => {"
+      },
+      {
         "file": "lib/media.js",
         "line": 17,
         "text": "import { spawn, spawnSync } from 'node:child_process'"
@@ -95,16 +115,6 @@
         "file": "lib/media.js",
         "line": 54,
         "text": "const r = spawnSync(bin, ['-version'], { encoding: 'utf8', windowsHide: true, timeout: 8000 })"
-      },
-      {
-        "file": "lib/media.js",
-        "line": 76,
-        "text": "const p = spawn(bin, args, { windowsHide: true })"
-      },
-      {
-        "file": "lib/selfupdate.js",
-        "line": 33,
-        "text": "import { spawn } from 'node:child_process'"
       }
     ]
   },

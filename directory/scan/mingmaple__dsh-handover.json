@@ -1,24 +1,24 @@
 {
   "name": "@mingmaple/dsh-handover",
-  "version": "0.9.22",
-  "scannedAt": "2026-11-12T21:20:35.454Z",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-14T19:29:33.343Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "scripts/blank-smoke.mjs",
-        "line": 113,
+        "line": 129,
         "text": "const res = await carrier.fetch(req);"
       },
       {
         "file": "scripts/blank-smoke.mjs",
-        "line": 124,
+        "line": 140,
         "text": "const rpcBadEnv = await carrier.fetch(new Request('http://127.0.0.1/api/dsh-handover', { method: 'POST', headers: { 'content-type': 'application/json' }, body: "
       },
       {
         "file": "scripts/blank-smoke.mjs",
-        "line": 127,
+        "line": 143,
         "text": "const rpcGet = await carrier.fetch(new Request('http://127.0.0.1/api/dsh-handover', { method: 'GET' }));"
       },
       {
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "scripts/blank-dsh.mjs",
-        "line": 7,
+        "file": "scripts/behavior.mjs",
+        "line": 15,
         "text": "import fs from 'node:fs';"
       },
       {
-        "file": "scripts/blank-dsh.mjs",
-        "line": 28,
+        "file": "scripts/behavior.mjs",
+        "line": 32,
         "text": "fs.mkdirSync(HOME, { recursive: true });"
       },
       {
-        "file": "scripts/blank-dsh.mjs",
-        "line": 29,
-        "text": "fs.mkdirSync(WORK, { recursive: true });"
+        "file": "scripts/behavior.mjs",
+        "line": 33,
+        "text": "fs.mkdirSync(WS, { recursive: true });"
       },
       {
-        "file": "scripts/blank-dsh.mjs",
-        "line": 143,
-        "text": "]) fs.rmSync(path.join(WS, rel), { force: true });"
+        "file": "scripts/behavior.mjs",
+        "line": 60,
+        "text": "fs.mkdirSync(path.dirname(p), { recursive: true });"
       },
       {
-        "file": "scripts/blank-dsh.mjs",
-        "line": 158,
-        "text": "fs.writeFileSync(path.join(WS, '_Control_Center', 'rules', 'Workspace_Charter.md'), '# empty\\n', 'utf8');"
+        "file": "scripts/behavior.mjs",
+        "line": 61,
+        "text": "fs.writeFileSync(p, text, 'utf8');"
       }
     ]
   },
@@ -68,34 +68,44 @@
     "evidence": [
       {
         "file": "scripts/blank-smoke.mjs",
-        "line": 816,
+        "line": 849,
         "text": "plugin: { name: '@mingmaple/dsh-handover', version: 'test', tools: 22, inject: ['tools', 'systemPrompt'], initErrors: [], scheduler: '就绪' },"
       },
       {
         "file": "scripts/blank-smoke.mjs",
-        "line": 995,
+        "line": 1046,
         "text": "plugin: { name: '@mingmaple/dsh-handover', version: 'test', tools: 22, inject: ['tools'], initErrors: [], scheduler: '就绪' },"
       },
       {
         "file": "src/index.mjs",
-        "line": 51,
+        "line": 57,
         "text": "export const inject = ['tools', 'systemPrompt', 'sessionController'];"
       },
       {
         "file": "src/index.mjs",
-        "line": 103,
+        "line": 110,
         "text": "const perStep = (() => { try { return !!(ctx.tools && typeof ctx.tools.resolve === 'function'); } catch { return false; } })();"
       },
       {
         "file": "src/index.mjs",
-        "line": 531,
-        "text": "ctx.tools.register(tools[i], { when: visibleTo(tools[i].name) });"
+        "line": 640,
+        "text": "ctx.tools.register(withReminderTail(tools[i]), { when: visibleTo(tools[i].name) });"
       }
     ]
   },
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "scripts/behavior.mjs",
+        "line": 20,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/behavior.mjs",
+        "line": 268,
+        "text": "const r = spawnSync(process.execPath, [path.join(repo, 'scripts', 'style-gate.mjs')], { encoding: 'utf8', cwd: repo });"
+      },
       {
         "file": "scripts/e2e-migration.mjs",
         "line": 71,
@@ -108,18 +118,8 @@
       },
       {
         "file": "src/lib/mover.mjs",
-        "line": 257,
+        "line": 261,
         "text": "import { spawn } from 'node:child_process';"
-      },
-      {
-        "file": "src/lib/mover.mjs",
-        "line": 327,
-        "text": "      spawn(process.execPath, [RETARGET_HELPER, '0'], { detached: true, stdio: 'ignore', windowsHide: true, env: Object.assign({}, process.env, { ELECTRON_RUN_A"
-      },
-      {
-        "file": "src/lib/mover.mjs",
-        "line": 336,
-        "text": "spawn(EXE, [], { detached: true, stdio: 'ignore', env: Object.assign({}, process.env, { ELECTRON_RUN_AS_NODE: undefined }) }).unref();"
       }
     ]
   },

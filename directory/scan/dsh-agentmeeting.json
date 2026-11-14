@@ -1,0 +1,98 @@
+{
+  "name": "dsh-agentmeeting",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-14T19:29:50.878Z",
+  "icon": "dsh-agentmeeting.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/client.js",
+        "line": 138,
+        "text": "const response = await fetch(`${PROXY}?${query.toString()}`, {"
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 25,
+        "text": "response = await fetch(serverUrl + path, {"
+      },
+      {
+        "file": "server/server.mjs",
+        "line": 10,
+        "text": "import { createServer } from 'node:http'"
+      },
+      {
+        "file": "server/server.mjs",
+        "line": 304,
+        "text": "const response = await fetch(endpoint, {"
+      },
+      {
+        "file": "server/server.mjs",
+        "line": 386,
+        "text": "const profileResponse = await fetch('https://api.github.com/user', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/index.js",
+        "line": 16,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 272,
+        "text": "return JSON.parse(readFileSync(url, 'utf8'))"
+      },
+      {
+        "file": "server/server.mjs",
+        "line": 11,
+        "text": "import { promises as fs } from 'node:fs'"
+      },
+      {
+        "file": "server/server.mjs",
+        "line": 53,
+        "text": "state = { ...empty(), ...JSON.parse(await fs.readFile(DATA_FILE, 'utf8')) }"
+      },
+      {
+        "file": "server/server.mjs",
+        "line": 69,
+        "text": "await fs.mkdir(path.dirname(DATA_FILE), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/index.js",
+        "line": 286,
+        "text": "inner.effect(() => inner.tools.register(definition), `agentmeeting: ${definition.name}`)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 33,
+      "text": "node setup.mjs --server http://127.0.0.1:8790"
+    }
+  ],
+  "skippedEntries": []
+}

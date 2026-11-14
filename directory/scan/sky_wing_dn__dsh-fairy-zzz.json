@@ -1,7 +1,7 @@
 {
   "name": "@sky_wing_dn/dsh-fairy-zzz",
-  "version": "2.1.1",
-  "scannedAt": "2026-11-13T21:10:44.621Z",
+  "version": "2.2.0",
+  "scannedAt": "2026-11-14T19:29:29.546Z",
   "icon": "sky_wing_dn__dsh-fairy-zzz.png",
   "network": {
     "hit": true,
@@ -73,22 +73,27 @@
       {
         "file": "index.js",
         "line": 4,
-        "text": "import { spawn } from 'node:child_process'"
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
       },
       {
         "file": "index.js",
-        "line": 422,
-        "text": "spawn('taskkill', ['/pid', String(stale.pid), '/t', '/f'], { stdio: 'ignore', windowsHide: true })"
+        "line": 414,
+        "text": "return spawnSync('taskkill', ['/pid', String(id), '/t', '/f'], { stdio: 'ignore', windowsHide: true }).status === 0"
       },
       {
         "file": "index.js",
-        "line": 435,
-        "text": "const child = spawn(TTS_PY, [TTS_SERVER, '--port', String(TTS_PORT)], {"
+        "line": 439,
+        "text": "const { spawnSync } = require('node:child_process')"
       },
       {
         "file": "index.js",
-        "line": 481,
-        "text": "spawn('taskkill', ['/pid', String(child.pid), '/t', '/f'], { stdio: 'ignore', windowsHide: true })"
+        "line": 447,
+        "text": "spawnSync('taskkill', ['/pid', String(pid), '/t', '/f'], { stdio: 'ignore', windowsHide: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 464,
+        "text": "const watchdog = spawn(process.execPath, ['-e', code], {"
       }
     ]
   },

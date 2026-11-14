@@ -1,7 +1,7 @@
 {
   "name": "dsh-session-conductor",
-  "version": "1.4.22",
-  "scannedAt": "2026-11-10T08:48:46.832Z",
+  "version": "1.5.0",
+  "scannedAt": "2026-11-14T19:29:32.560Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -94,8 +94,19 @@
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/features/session-action-routes.js",
+        "line": 673,
+        "text": "const { spawn } = await import(\"node:child_process\");"
+      },
+      {
+        "file": "lib/features/session-action-routes.js",
+        "line": 683,
+        "text": "const child = spawn(command, args, { detached: true, stdio: \"ignore\" });"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

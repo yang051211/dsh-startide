@@ -1,0 +1,97 @@
+{
+  "name": "dsh-astro-plan",
+  "version": "0.2.6",
+  "scannedAt": "2026-11-14T19:29:34.416Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/aurora.js",
+        "line": 62,
+        "text": "const res = await fetch(KP_URL, { signal: controller.signal })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 517,
+        "text": "fetch('/astro-plan/api/geo').then(function (r) { return r.json() }).then(function (d) {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 680,
+        "text": "fetch('/astro-plan/api/bortle?lat=' + Number(lat).toFixed(6) + '&lon=' + Number(lon).toFixed(6))"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2134,
+        "text": "fetch('/astro-plan/api/meta').then(function (r) { return r.json() }).then(function (m) {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2162,
+        "text": "fetch('/astro-plan/api/search?' + qs.toString()).then(function (r) { return r.json() }).then(function (d) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 60,
+        "text": "geoCache = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/catalog.js",
+        "line": 8,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/catalog.js",
+        "line": 16,
+        "text": "return JSON.parse(readFileSync(join(DATA, name), 'utf8'))"
+      },
+      {
+        "file": "lib/catalog.js",
+        "line": 64,
+        "text": "userSites = JSON.parse(readFileSync(join(DATA, 'sites.user.json'), 'utf8')).rows.map(expand)"
+      },
+      {
+        "file": "lib/comets.js",
+        "line": 14,
+        "text": "import { readFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 245,
+        "text": "ctx.effect(() => ctx.tools.register(tool()), 'dsh-astro-plan: astro_plan tool')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

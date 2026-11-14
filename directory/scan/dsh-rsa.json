@@ -1,0 +1,76 @@
+{
+  "name": "dsh-rsa",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-14T19:29:35.127Z",
+  "icon": "dsh-rsa.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 72,
+        "text": "const res = await fetch('/rsa' + path, {"
+      },
+      {
+        "file": "client.js",
+        "line": 481,
+        "text": "fetch('/rsa/preview', {"
+      },
+      {
+        "file": "index.js",
+        "line": 117,
+        "text": "* Reject cross-site writes. Browsers always attach Sec-Fetch-Site to fetch()"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/asar.mjs",
+        "line": 16,
+        "text": "fs = require(\"node:fs\");"
+      },
+      {
+        "file": "lib/compat.mjs",
+        "line": 26,
+        "text": "fs = require(\"node:fs\");"
+      },
+      {
+        "file": "lib/compat.mjs",
+        "line": 214,
+        "text": "if (fs.existsSync(tmp)) fs.unlinkSync(tmp);"
+      },
+      {
+        "file": "lib/deploy.mjs",
+        "line": 20,
+        "text": "fs = require(\"node:fs\");"
+      },
+      {
+        "file": "lib/deploy.mjs",
+        "line": 81,
+        "text": "return `data:${mime};base64,` + fs.readFileSync(customPath).toString(\"base64\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,29 +1,29 @@
 {
   "name": "dsh-any-audio",
-  "version": "0.2.0",
-  "scannedAt": "2026-11-10T20:53:53.530Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-14T19:29:31.830Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 608,
+        "line": 720,
         "text": "const response = await fetch(`${API}${path}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 2123,
+        "line": 2809,
         "text": "const request = fetch(materialUrl(root, projectId, materialId)).then((response) => {"
       },
       {
         "file": "lib/client.js",
-        "line": 2566,
+        "line": 3263,
         "text": "const pending = fetch(url).then((response) => response.ok ? response.json() : null).catch(() => null);"
       },
       {
         "file": "src/audio/fonts.js",
-        "line": 187,
+        "line": 194,
         "text": "response = await fetch(url, { redirect: 'follow', signal: signal ?? AbortSignal.timeout(180000) })"
       },
       {
@@ -68,13 +68,8 @@
     "evidence": [
       {
         "file": "src/index.js",
-        "line": 9,
+        "line": 13,
         "text": "export const inject = ['tools']"
-      },
-      {
-        "file": "src/tools/mix.js",
-        "line": 348,
-        "text": "ctx.tools.register(mixToolDefinition)"
       },
       {
         "file": "src/tools/music.js",
@@ -88,8 +83,13 @@
       },
       {
         "file": "src/tools/sfx.js",
-        "line": 445,
+        "line": 822,
         "text": "ctx.tools.register(sfxToolDefinition)"
+      },
+      {
+        "file": "src/tools/sources.js",
+        "line": 226,
+        "text": "ctx.tools.register(sourcesToolDefinition)"
       }
     ]
   },
@@ -97,29 +97,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/audio/tts-providers.js",
-        "line": 1,
-        "text": "import { spawn, spawnSync } from 'node:child_process'"
-      },
-      {
-        "file": "src/audio/tts-providers.js",
-        "line": 165,
-        "text": "const result = spawnSync(command, ['-e', 'process.stdout.write(process.version)'], {"
-      },
-      {
-        "file": "src/audio/tts-providers.js",
-        "line": 199,
-        "text": "const child = spawn(runtime, [EDGE_WORKER], { stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true })"
-      },
-      {
-        "file": "src/project/import.js",
-        "line": 12,
+        "file": "scripts/build-sfx-pack.mjs",
+        "line": 24,
         "text": "import { spawn } from 'node:child_process'"
       },
       {
-        "file": "src/project/import.js",
-        "line": 54,
-        "text": "const child = spawn(command, args, { windowsHide: true, signal })"
+        "file": "scripts/build-sfx-pack.mjs",
+        "line": 59,
+        "text": "const child = spawn(command, argv, { windowsHide: true })"
+      },
+      {
+        "file": "scripts/build-sfx-pack.mjs",
+        "line": 79,
+        "text": "const child = spawn(command, ["
+      },
+      {
+        "file": "src/audio/mux.js",
+        "line": 8,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/audio/mux.js",
+        "line": 20,
+        "text": "child = spawn(command, ['-hide_banner', '-i', file], { windowsHide: true, stdio: ['ignore', 'ignore', 'pipe'], signal: combined })"
       }
     ]
   },

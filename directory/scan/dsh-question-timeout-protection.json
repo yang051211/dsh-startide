@@ -1,0 +1,61 @@
+{
+  "name": "dsh-question-timeout-protection",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-14T19:29:39.884Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.js",
+        "line": 601,
+        "text": "return fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.mjs",
+        "line": 4,
+        "text": "import { existsSync, readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 1023,
+        "text": "const table = parseTranslationSection(readFileSync(filePath, \"utf-8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.mjs",
+        "line": 945,
+        "text": "this.perAgent.set(key, agent.ctx.tools.register(createAskUserQuestionTool(this.ctx, this.config)));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: node scripts/check-translation.mjs && tsdown"
+      }
+    ]
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

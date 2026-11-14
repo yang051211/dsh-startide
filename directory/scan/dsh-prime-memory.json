@@ -1,7 +1,7 @@
 {
   "name": "dsh-prime-memory",
-  "version": "0.26.37",
-  "scannedAt": "2026-11-06T20:48:38.000Z",
+  "version": "0.26.41",
+  "scannedAt": "2026-11-14T19:29:25.806Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,18 +18,18 @@
       },
       {
         "file": "dist/client.js",
-        "line": 39030,
+        "line": 39642,
         "text": "response = await fetch(`/dsh-memory/rpc/${shortMethod(endpoint)}`, {"
+      },
+      {
+        "file": "dist/ext-memory/http.js",
+        "line": 28,
+        "text": "const response = await h.fetch(url, {"
       },
       {
         "file": "dist/llm.js",
         "line": 305,
         "text": "res = await fetch(url, {"
-      },
-      {
-        "file": "dist/store/download-queue.js",
-        "line": 20,
-        "text": "import { fetch as undiciFetch, ProxyAgent } from 'undici';"
       }
     ]
   },
@@ -52,14 +52,14 @@
         "text": "const e2 = rm(this.context.options, t2);"
       },
       {
-        "file": "dist/memport/scan.js",
-        "line": 15,
-        "text": "import { readdir, readFile, stat } from 'node:fs/promises';"
+        "file": "dist/ext-memory/drivers/local-drivers.js",
+        "line": 16,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
       },
       {
-        "file": "dist/memport/scan.js",
-        "line": 71,
-        "text": "text = await readFile(f, 'utf8');"
+        "file": "dist/ext-memory/drivers/local-drivers.js",
+        "line": 64,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "dist/index.js",
-        "line": 99,
+        "line": 111,
         "text": "export const inject = ['llm', 'tools', 'systemPrompt', 'connection', 'webServer'];"
       },
       {
@@ -97,28 +97,28 @@
     "hit": true,
     "evidence": [
       {
-        "file": "dist/keyword-backfill.js",
-        "line": 226,
-        "text": "spawn();"
+        "file": "dist/ext-memory/proc.js",
+        "line": 5,
+        "text": "* - `spawn(command, args, { shell: false })`——绝不拼 shell 字符串,查询原文"
       },
       {
-        "file": "dist/redistill-backfill.js",
-        "line": 356,
-        "text": "spawn();"
+        "file": "dist/ext-memory/proc.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process';"
       },
       {
-        "file": "dist/store/local-embedding.js",
-        "line": 24,
-        "text": "import { fork, spawn } from 'node:child_process';"
+        "file": "dist/ext-memory/proc.js",
+        "line": 26,
+        "text": "const killer = spawn('taskkill', ['/pid', String(child.pid), '/T', '/F'], { shell: false, stdio: 'ignore', windowsHide: true });"
       },
       {
-        "file": "dist/store/local-embedding.js",
-        "line": 248,
-        "text": "const tk = spawn('taskkill', ['/pid', String(this.child.pid), '/T', '/F'], { windowsHide: true });"
+        "file": "dist/ext-memory/proc.js",
+        "line": 59,
+        "text": "child = spawn(command, [...args], spawnOpts);"
       },
       {
-        "file": "dist/store/runtime-installer.js",
-        "line": 16,
+        "file": "dist/ext-memory/secrets.js",
+        "line": 22,
         "text": "import { spawn } from 'node:child_process';"
       }
     ]

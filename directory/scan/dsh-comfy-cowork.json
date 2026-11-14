@@ -1,34 +1,34 @@
 {
   "name": "dsh-comfy-cowork",
-  "version": "0.1.2",
-  "scannedAt": "2026-11-07T14:33:16.309Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-14T19:29:47.567Z",
   "icon": "dsh-comfy-cowork.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 3686,
+        "line": 3898,
         "text": "const response = await fetch(`${BASE}${path}`, {"
       },
       {
         "file": "client.js",
-        "line": 3813,
+        "line": 4037,
         "text": "const response = await fetch(`${BASE}/asset?${sessionQuery(sessionId)}&name=${encodeURIComponent(name)}`, {"
       },
       {
         "file": "client.js",
-        "line": 3824,
+        "line": 4048,
         "text": "await fetch(`${BASE}/asset?${sessionQuery(sessionId)}&name=${encodeURIComponent(name)}`, {"
       },
       {
         "file": "client.js",
-        "line": 5089,
+        "line": 5712,
         "text": "fetch(asset(\"mask-brush.png\")).then((response) => response.ok ? response.blob() : null).then(async (blob) => {"
       },
       {
         "file": "client.js",
-        "line": 5091,
+        "line": 5714,
         "text": "const source = blob ?? await (await fetch(asset(\"mask.png\"))).blob();"
       }
     ]
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/routes.js",
-        "line": 3,
+        "file": "lib/model-catalog.js",
+        "line": 21,
         "text": "import { promises as fs } from 'node:fs'"
       },
       {
-        "file": "lib/routes.js",
-        "line": 123,
-        "text": "data = await fs.readFile(target)"
+        "file": "lib/model-catalog.js",
+        "line": 87,
+        "text": "const parsed = JSON.parse(await fs.readFile(this.fileFor(root), 'utf8'))"
       },
       {
-        "file": "lib/store.js",
-        "line": 8,
+        "file": "lib/model-catalog.js",
+        "line": 161,
+        "text": "await fs.mkdir(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/model-catalog.js",
+        "line": 170,
+        "text": "await fs.writeFile(temporary, `${JSON.stringify(body, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "lib/node-catalog.js",
+        "line": 21,
         "text": "import { promises as fs } from 'node:fs'"
-      },
-      {
-        "file": "lib/store.js",
-        "line": 100,
-        "text": "await fs.mkdir(path.join(dir, 'assets'), { recursive: true })"
-      },
-      {
-        "file": "lib/store.js",
-        "line": 101,
-        "text": "await fs.mkdir(path.join(dir, 'runs'), { recursive: true })"
       }
     ]
   },
@@ -73,12 +73,12 @@
       },
       {
         "file": "lib/plugin.js",
-        "line": 63,
+        "line": 105,
         "text": "register: (definition) => scope.tools.register(definition),"
       },
       {
         "file": "lib/tools.js",
-        "line": 130,
+        "line": 498,
         "text": ": (definition) => ctx.effect(() => ctx.tools.register(definition), `comfy-cowork: ${definition.name}`)"
       }
     ]

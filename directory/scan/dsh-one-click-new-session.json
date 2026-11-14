@@ -1,0 +1,64 @@
+{
+  "name": "dsh-one-click-new-session",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-14T19:29:51.038Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 36,
+        "text": "const response = await fetch(url, { cache: \"no-store\" });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 44,
+        "text": "fs.mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 60,
+        "text": "fs.appendFileSync(LOG_FILE, new Date().toISOString() + \" \" + message + \"\\n\", \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 69,
+        "text": "fs.mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 84,
+        "text": "const code = fs.readFileSync(CLIENT_FILE, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

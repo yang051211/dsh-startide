@@ -1,19 +1,19 @@
 {
   "name": "@klarkxy/dsh-session-manager",
-  "version": "0.5.0",
-  "scannedAt": "2026-11-09T23:06:59.681Z",
+  "version": "0.5.2",
+  "scannedAt": "2026-11-14T19:29:37.404Z",
   "icon": "klarkxy__dsh-session-manager.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.inner.cjs",
-        "line": 6101,
+        "line": 6376,
         "text": "const response = await fetch(`/api/session/uploadFileBinary?${query}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 6107,
+        "line": 6382,
         "text": "const response = await fetch(`/api/session/uploadFileBinary?${query}`, {"
       }
     ]
@@ -23,13 +23,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 10,
+        "line": 11,
+        "text": "import { appendFileSync, existsSync, lstatSync, mkdirSync, readdirSync, realpathSync, renameSync, unlinkSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 15,
         "text": "import { lstat, mkdir, realpath } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 3885,
-        "text": "await mkdir(directory);"
+        "line": 4061,
+        "text": "appendFileSync(this.file, line, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4138,
+        "text": "unlinkSync(file);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4153,
+        "text": "unlinkSync(join(this.directory, oldest.name));"
       }
     ]
   },
@@ -38,22 +53,22 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 3346,
+        "line": 3390,
         "text": "const registerReadOnly = (definition) => host.tools.register({"
       },
       {
         "file": "lib/index.js",
-        "line": 3567,
+        "line": 3611,
         "text": "...config.allowSelfFork ? [host.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 3584,
+        "line": 3628,
         "text": "...config.allowSendMessage ? [host.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 5475,
+        "line": 6306,
         "text": "const inject = [\"tools\", \"sessionQuery\"];"
       }
     ]

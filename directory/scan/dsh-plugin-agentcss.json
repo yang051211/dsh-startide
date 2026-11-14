@@ -1,0 +1,97 @@
+{
+  "name": "dsh-plugin-agentcss",
+  "version": "0.2.6",
+  "scannedAt": "2026-11-14T19:29:34.357Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 31,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 76,
+        "text": "return JSON.parse(fs.readFileSync(path.join(libraryRoot(), rel), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 83,
+        "text": "fs.readFileSync(require.resolve('agentcss/package.json'), 'utf8'),"
+      },
+      {
+        "file": "index.js",
+        "line": 351,
+        "text": "*    旧实现是 `fs.rmSync(to, {recursive:true})` 再整目录复制：用户自己放在"
+      },
+      {
+        "file": "index.js",
+        "line": 358,
+        "text": "fs.mkdirSync(cssDir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 40,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 944,
+        "text": "ctx.tools.register(catalogTool())"
+      },
+      {
+        "file": "index.js",
+        "line": 945,
+        "text": "ctx.tools.register(newPageTool(recipes))"
+      },
+      {
+        "file": "index.js",
+        "line": 946,
+        "text": "ctx.tools.register(checkTool(recipes))"
+      },
+      {
+        "file": "index.js",
+        "line": 947,
+        "text": "ctx.tools.register(pdfTool())"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 29,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 161,
+        "text": "execFile("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

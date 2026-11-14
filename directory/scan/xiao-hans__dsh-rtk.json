@@ -1,0 +1,101 @@
+{
+  "name": "@xiao-hans/dsh-rtk",
+  "version": "0.4.4",
+  "scannedAt": "2026-11-14T19:29:51.005Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/awareness.js",
+        "line": 1,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/awareness.js",
+        "line": 55,
+        "text": "const raw = readFile(file, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/foreground-schema.js",
+        "line": 5,
+        "text": "* `ctx.tools.register` (see tests/schema.test.mjs)."
+      },
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "export const inject = ['tools', 'shell', 'systemPrompt', 'shellEnv', 'subprocess']"
+      },
+      {
+        "file": "lib/pwsh-tool.js",
+        "line": 83,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/rtk-tool.js",
+        "line": 35,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/stats-tool.js",
+        "line": 61,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/post-execute.js",
+        "line": 83,
+        "text": "const handle = subprocess.spawn({"
+      },
+      {
+        "file": "lib/rewrite.js",
+        "line": 200,
+        "text": "handle = subprocess.spawn({"
+      },
+      {
+        "file": "scripts/live-verify.mjs",
+        "line": 17,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/live-verify.mjs",
+        "line": 29,
+        "text": "return spawnSync(cmd, args, { stdio: 'ignore' }).status === 0"
+      },
+      {
+        "file": "scripts/live-verify.mjs",
+        "line": 58,
+        "text": "const child = spawn(SHELL.cmd, SHELL.argv(spec.command), {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "shell",
+    "shellEnv",
+    "subprocess",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

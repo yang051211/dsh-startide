@@ -1,35 +1,35 @@
 {
   "name": "dsh-memvault",
-  "version": "0.9.12",
-  "scannedAt": "2026-11-01T19:08:57.535Z",
-  "icon": null,
+  "version": "0.10.0",
+  "scannedAt": "2026-11-14T19:29:46.529Z",
+  "icon": "dsh-memvault.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 252,
+        "line": 161,
+        "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 322,
         "text": "fetch(`${MEMORY_URL}?id=${encodeURIComponent(id)}`)"
       },
       {
         "file": "lib/client.js",
-        "line": 317,
+        "line": 387,
         "text": "fetch(REVIEW_URL)"
       },
       {
         "file": "lib/client.js",
-        "line": 356,
+        "line": 426,
         "text": "const res = await fetch(FLAG_URL, {"
       },
       {
         "file": "lib/client.js",
-        "line": 379,
+        "line": 449,
         "text": "const res = await fetch(REPLAY_URL, {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 541,
-        "text": "fetch(STRUCTURE_URL)"
       }
     ]
   },
@@ -42,60 +42,45 @@
         "text": "import { statSync } from 'node:fs'"
       },
       {
-        "file": "lib/extract.js",
-        "line": 18,
-        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+        "file": "lib/core/env.js",
+        "line": 10,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
       },
       {
-        "file": "lib/extract.js",
-        "line": 185,
-        "text": "const parsed = JSON.parse(readFileSync(statePath, 'utf8'))"
+        "file": "lib/core/env.js",
+        "line": 19,
+        "text": "for (const line of readFileSync(path, 'utf8').split(/\\r?\\n/)) {"
       },
       {
-        "file": "lib/extract.js",
-        "line": 210,
-        "text": "const parsed = JSON.parse(readFileSync(statePath, 'utf8'))"
+        "file": "lib/core/importers.js",
+        "line": 16,
+        "text": "import { readdirSync, readFileSync, statSync } from 'node:fs'"
       },
       {
-        "file": "lib/extract.js",
-        "line": 253,
-        "text": "mkdirSync(dirname(statePath), { recursive: true })"
+        "file": "lib/core/importers.js",
+        "line": 192,
+        "text": "const [meta, body] = splitFrontmatter(readFileSync(file, 'utf8').replace(/^\\uFEFF/, ''))"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
-  },
-  "childProcess": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/cli.js",
-        "line": 25,
-        "text": "import { spawn as nodeSpawn } from 'node:child_process'"
+        "file": "lib/core/tools.js",
+        "line": 17,
+        "text": "* Registration is `ctx.tools.register(tool)`; the returned disposer belongs to"
       },
       {
-        "file": "lib/cli.js",
-        "line": 39,
-        "text": "* @param options.spawn - injectable spawn (tests)."
-      },
-      {
-        "file": "lib/cli.js",
-        "line": 47,
-        "text": "child = spawn(command, argv, {"
-      },
-      {
-        "file": "lib/reindex.js",
-        "line": 9,
-        "text": "import { spawnSync } from 'node:child_process'"
-      },
-      {
-        "file": "lib/reindex.js",
-        "line": 15,
-        "text": "const result = spawnSync(pythonPath, args, {"
+        "file": "lib/core/tools.js",
+        "line": 167,
+        "text": "const disposers = buildMemoryTools(store, { embedder, adjudicator }).map((tool) => tools.register(tool))"
       }
     ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
   },
   "installScripts": {
     "hit": false,

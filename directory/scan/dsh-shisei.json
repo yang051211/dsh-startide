@@ -1,0 +1,136 @@
+{
+  "name": "dsh-shisei",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-14T19:29:41.266Z",
+  "icon": "dsh-shisei.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.ui.js",
+        "line": 8879,
+        "text": "const xhr = new XMLHttpRequest();"
+      },
+      {
+        "file": "lib/client.ui.js",
+        "line": 11203,
+        "text": "const r = await fetch(`api/dsh-shisei/ref-upload?${q}`, {"
+      },
+      {
+        "file": "lib/client.ui.js",
+        "line": 12717,
+        "text": "const xhr = new XMLHttpRequest();"
+      },
+      {
+        "file": "lib/client.ui.js",
+        "line": 14277,
+        "text": "const r = await fetch(`api/dsh-shisei/cast-upload?${q}`, {"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 7,
+        "text": "import { createServer } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 5,
+        "text": "import { createReadStream, createWriteStream, existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 6,
+        "text": "import { copyFile, mkdir, open, readdir, readFile, rename, rm, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 116,
+        "text": "m = process.platform, { arch = process.arch, execPath = process.execPath, home = homedir(), exists = existsSync, read = (f) => readFileSync(f, 'utf8') } = {}) {"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 192,
+        "text": "const p = JSON.parse(await readFile(file, 'utf8'))"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 259,
+        "text": "try { text = (await readFile(file, 'utf8')).slice(from) } catch { /* nothing written */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 3,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 151,
+        "text": "const spawnPy = (args, opts) => spawn(PY.cmd, [...PY.args, ...PY_UTF8, ...args], { windowsHide: true, ...opts })"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 388,
+        "text": "const child = spawn(cmd, args, { env: { ...process.env, PYTHONUTF8: '1', ...env }, signal, timeout: timeoutMs, windowsHide: true })"
+      },
+      {
+        "file": "lib/ssh.cjs",
+        "line": 7758,
+        "text": "var { execFile, spawn } = require(\"child_process\");"
+      },
+      {
+        "file": "lib/ssh.cjs",
+        "line": 7935,
+        "text": "const proc = this.proc = spawn(EXEPATH, [data.length]);"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.ui.js",
+    "lib/ssh.cjs"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills"
+  ],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 247,
+      "text": "e price, the plugin starts it, reruns [`setup.sh`](skills/shisei-motion/assets/image/setup.sh) (only what changed), runs the security check and stops it again. "
+    },
+    {
+      "file": "README.ja.md",
+      "line": 247,
+      "text": "てから「環境を更新…」を押してください。価格を確認するとプラグインが起動し、[`setup.sh`](skills/shisei-motion/assets/image/setup.sh) をもう一度実行し（変わった部分だけを補います）、セキュリティチェックの後で停止します。ルールは [docs/IMAGE.md](d"
+    },
+    {
+      "file": "README.ko.md",
+      "line": 247,
+      "text": "경 업데이트…」를 누르면, 가격을 확인한 뒤 플러그인이 머신을 켜서 [`setup.sh`](skills/shisei-motion/assets/image/setup.sh)를 다시 실행하고(바뀐 부분만 채움) 보안 점검 뒤 다시 끕니다. 규칙은 [docs/IMAGE.md](docs/IMAG"
+    },
+    {
+      "file": "README.md",
+      "line": 247,
+      "text": "“机器”页也会在那台上标“环境旧了”；等它停下，点“更新环境…”即可：确认价钱后插件开机、重跑 [`setup.sh`](skills/shisei-motion/assets/image/setup.sh)（只补变了的部分）、做完安全检查自动停机。规则见 [docs/IMAGE.md](docs/IMAGE.md)。"
+    }
+  ],
+  "skippedEntries": []
+}

@@ -1,0 +1,124 @@
+{
+  "name": "dsh-blue-team-mode",
+  "version": "1.5.3",
+  "scannedAt": "2026-11-14T19:29:29.234Z",
+  "icon": "dsh-blue-team-mode.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 850,
+        "text": "const response = await fetch(\"/blue/api\", {"
+      },
+      {
+        "file": "scripts/decoy-server.mjs",
+        "line": 9,
+        "text": "import { createServer } from 'node:http'"
+      },
+      {
+        "file": "scripts/test-decoy-server.mjs",
+        "line": 42,
+        "text": "const admin = await fetch(base + '/admin')"
+      },
+      {
+        "file": "scripts/test-decoy-server.mjs",
+        "line": 46,
+        "text": "const git = await fetch(base + '/.git/config')"
+      },
+      {
+        "file": "scripts/test-decoy-server.mjs",
+        "line": 50,
+        "text": "const backup = await fetch(base + '/backup.sql')"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bindings.js",
+        "line": 8,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/bindings.js",
+        "line": 19,
+        "text": "const data = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/bindings.js",
+        "line": 27,
+        "text": "mkdirSync(root, { recursive: true })"
+      },
+      {
+        "file": "lib/bindings.js",
+        "line": 30,
+        "text": "writeFileSync(temp, JSON.stringify(map, null, 2), 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tools.js",
+        "line": 85,
+        "text": "export const inject = ['blueTeam', 'tools']"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 577,
+        "text": "ctx.effect(() => ctx.tools.register({ ...definition, execute }))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tools.js",
+        "line": 15,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 470,
+        "text": "const result = spawnSync(command, args, {"
+      },
+      {
+        "file": "scripts/check-compliance.mjs",
+        "line": 10,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/install-hooks.mjs",
+        "line": 3,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/test-decoy-server.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "blueTeam",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

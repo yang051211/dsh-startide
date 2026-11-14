@@ -1,25 +1,20 @@
 {
   "name": "dsh-pighub",
-  "version": "0.9.56",
-  "scannedAt": "2026-11-13T21:11:05.634Z",
+  "version": "0.9.83",
+  "scannedAt": "2026-11-14T19:29:39.512Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 388,
+        "line": 541,
         "text": "const response = await fetch(ROUTE, {"
       },
       {
-        "file": "test/_d4.mjs",
-        "line": 5,
-        "text": "const raw = Buffer.from(await (await fetch(pig.source.url)).arrayBuffer());"
-      },
-      {
-        "file": "test/_gif.mjs",
-        "line": 1,
-        "text": "const r = await fetch('https://pighub.top/api/images?sort=2', { headers: { accept: 'application/json' } });"
+        "file": "lib/client.js",
+        "line": 1839,
+        "text": "return fetch(ROUTE, {"
       }
     ]
   },
@@ -33,23 +28,23 @@
       },
       {
         "file": "lib/assets.js",
-        "line": 18,
+        "line": 31,
         "text": "const manifest = JSON.parse(readFileSync(MANIFEST_PATH, 'utf8'));"
       },
       {
-        "file": "lib/desktop-pet.js",
-        "line": 18,
-        "text": "import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';"
+        "file": "lib/auto-update.js",
+        "line": 13,
+        "text": "import { appendFileSync, mkdirSync } from 'node:fs';"
       },
       {
-        "file": "lib/desktop-pet.js",
-        "line": 29,
-        "text": "const hash = createHash('sha256').update(readFileSync(sourcePath)).digest('hex').slice(0, 20);"
+        "file": "lib/auto-update.js",
+        "line": 50,
+        "text": "mkdirSync(dir, { recursive: true });"
       },
       {
-        "file": "lib/desktop-pet.js",
-        "line": 70,
-        "text": "mkdirSync(plan.directory, { recursive: true });"
+        "file": "lib/auto-update.js",
+        "line": 51,
+        "text": "appendFileSync(file, new Date().toISOString() + ' ' + line + '\\n', 'utf8');"
       }
     ]
   },
@@ -58,12 +53,17 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 38,
+        "line": 42,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "lib/index.js",
-        "line": 514,
+        "line": 946,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1000,
         "text": "ctx.tools.register({"
       }
     ]
@@ -72,19 +72,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/auto-update.js",
+        "line": 15,
+        "text": "import { execFile as execFileCallback } from 'node:child_process';"
+      },
+      {
         "file": "lib/desktop-pet.js",
-        "line": 16,
+        "line": 27,
         "text": "import { spawn } from 'node:child_process';"
       },
       {
         "file": "lib/desktop-pet.js",
-        "line": 54,
+        "line": 65,
         "text": "const child = spawn(file, args, { windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] });"
       },
       {
         "file": "lib/desktop-pet.js",
-        "line": 132,
-        "text": "const child = spawn(binary.exe, [directory], { windowsHide: true, stdio: 'ignore' });"
+        "line": 201,
+        "text": "const killer = spawn('taskkill', ['/PID', String(pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' });"
+      },
+      {
+        "file": "lib/desktop-pet.js",
+        "line": 216,
+        "text": "const child = spawn('tasklist', ['/FI', 'IMAGENAME eq pighub-pet.exe', '/FO', 'CSV', '/NH'], { windowsHide: true, stdio: ['ignore', 'pipe', 'ignore'] });"
       }
     ]
   },

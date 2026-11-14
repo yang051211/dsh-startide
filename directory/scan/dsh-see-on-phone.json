@@ -1,0 +1,120 @@
+{
+  "name": "dsh-see-on-phone",
+  "version": "2.2.1",
+  "scannedAt": "2026-11-14T19:29:49.819Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/phone.js",
+        "line": 62,
+        "text": "res = await fetch(url, { signal: AbortSignal.timeout(timeoutMs) });"
+      },
+      {
+        "file": "src/portable/bridge.mjs",
+        "line": 119,
+        "text": "const r = await fetch(`${phoneBase()}${pathname}`, { signal: AbortSignal.timeout(timeoutMs) });"
+      },
+      {
+        "file": "src/portable/bridge.mjs",
+        "line": 241,
+        "text": "const res = await fetch(`${phoneBase()}/import?name=${encodeURIComponent(n)}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/check-syntax.mjs",
+        "line": 6,
+        "text": "import { readdirSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "scripts/smoke.mjs",
+        "line": 15,
+        "text": "import { writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "scripts/smoke.mjs",
+        "line": 36,
+        "text": "writeFileSync(out, shot.bytes);"
+      },
+      {
+        "file": "src/bin.js",
+        "line": 8,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "src/inbox.js",
+        "line": 23,
+        "text": "import { existsSync, readFileSync, writeFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 29,
+        "text": "export const inject = ['tools', 'attachments'];"
+      },
+      {
+        "file": "src/index.js",
+        "line": 296,
+        "text": "disposers.push(ctx.tools.register(defineTool(tool)));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/check-syntax.mjs",
+        "line": 5,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "src/bin.js",
+        "line": 7,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/bin.js",
+        "line": 21,
+        "text": "child = spawn('sh', ['-c', `command -v ${bin}`], { windowsHide: true });"
+      },
+      {
+        "file": "src/portable/bridge.mjs",
+        "line": 42,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/portable/bridge.mjs",
+        "line": 85,
+        "text": "const p = spawn(bin, argv, { stdio: ['ignore', 'pipe', 'pipe'] });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "attachments",
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 143,
+      "text": "npm i -g dsh-see-on-phone      # 或者从 Release 里的 .tgz 装"
+    }
+  ],
+  "skippedEntries": []
+}

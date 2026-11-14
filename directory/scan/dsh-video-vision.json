@@ -1,0 +1,98 @@
+{
+  "name": "dsh-video-vision",
+  "version": "0.4.11",
+  "scannedAt": "2026-11-14T19:29:30.079Z",
+  "icon": "dsh-video-vision.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 448,
+        "text": "const response = await fetch('https://api.audd.io/', { method: 'POST', body: form, signal });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { readFileSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 378,
+        "text": "const fs = ctx.get('fs');"
+      },
+      {
+        "file": "index.js",
+        "line": 467,
+        "text": "await writeFile(target, wav);"
+      },
+      {
+        "file": "index.js",
+        "line": 586,
+        "text": "const self = readFileSync(selfPath, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 40,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 1208,
+        "text": "return ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/media.js",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/media.js",
+        "line": 46,
+        "text": "* @param {import('node:child_process').ChildProcess} child - the running process."
+      },
+      {
+        "file": "lib/media.js",
+        "line": 84,
+        "text": "const child = spawn(command, [...args], {"
+      },
+      {
+        "file": "lib/media.js",
+        "line": 148,
+        "text": "child = spawn(command, [...args], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

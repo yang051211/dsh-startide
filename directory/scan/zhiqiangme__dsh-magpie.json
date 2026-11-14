@@ -1,20 +1,30 @@
 {
   "name": "@zhiqiangme/dsh-magpie",
-  "version": "26.11.10",
-  "scannedAt": "2026-11-10T20:53:50.830Z",
+  "version": "26.11.14",
+  "scannedAt": "2026-11-14T19:29:37.277Z",
   "icon": "zhiqiangme__dsh-magpie.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 202,
+        "line": 220,
         "text": "const response = await fetch(url, { cache: 'no-store' });"
       },
       {
         "file": "lib/client.js",
-        "line": 371,
+        "line": 390,
         "text": "const res = await fetch(path, body ? { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) } : { cache: 'no-store' });"
+      },
+      {
+        "file": "lib/router-endpoint.js",
+        "line": 1,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 30,
+        "text": "router = createMagpieRouter({ current: () => this.current(), credentials: () => this.credentials, env: this.env, fetchImpl: (...args) => this.fetch(...args) });"
       }
     ]
   },

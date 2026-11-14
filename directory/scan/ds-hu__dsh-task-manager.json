@@ -1,0 +1,82 @@
+{
+  "name": "@ds-hu/dsh-task-manager",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-14T19:29:50.276Z",
+  "icon": "ds-hu__dsh-task-manager.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 59,
+        "text": "const response = await fetch(`${base}${path}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 67,
+        "text": "const response = await fetch(`${base}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/metrics.js",
+        "line": 28,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/metrics.js",
+        "line": 156,
+        "text": "export function resolveDshVersion({ argv = process.argv, readFile = (file) => fs.readFileSync(file, 'utf8') } = {}) {"
+      },
+      {
+        "file": "lib/metrics.js",
+        "line": 183,
+        "text": "const pkg = JSON.parse(readFile(file));"
+      },
+      {
+        "file": "lib/metrics.js",
+        "line": 241,
+        "text": "readFile = (file) => fs.readFileSync(file, 'utf8'),"
+      },
+      {
+        "file": "lib/metrics.js",
+        "line": 303,
+        "text": "text = readFile(path.join(dir, file));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/metrics.js",
+        "line": 27,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/metrics.js",
+        "line": 404,
+        "text": "execFile('systemctl', args, { timeout: 3000, maxBuffer: 8 * 1024 * 1024, encoding: 'utf8' }, (error, stdout) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

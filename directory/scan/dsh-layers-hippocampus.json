@@ -1,0 +1,78 @@
+{
+  "name": "dsh-layers-hippocampus",
+  "version": "1.6.4",
+  "scannedAt": "2026-11-14T19:29:44.450Z",
+  "icon": "dsh-layers-hippocampus.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "ui/client.js",
+        "line": 212,
+        "text": "const response = await fetch(url, { credentials: 'same-origin', ...init });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1071,
+        "text": "const { existsSync } = await import('node:fs');"
+      },
+      {
+        "file": "src/deletePipeline.js",
+        "line": 21,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "src/deletePipeline.js",
+        "line": 269,
+        "text": "if (job.archiveFile) fs.rmSync(job.archiveFile, { force: true });"
+      },
+      {
+        "file": "src/index/indexStore.js",
+        "line": 15,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "src/index/indexStore.js",
+        "line": 171,
+        "text": "fs.rmSync(path.join(this.root, gen), { recursive: true, force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 48,
+        "text": "export const inject = ['tools', 'systemPrompt'];"
+      },
+      {
+        "file": "index.js",
+        "line": 1937,
+        "text": "disposers.push(ctx.tools.register(definition));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

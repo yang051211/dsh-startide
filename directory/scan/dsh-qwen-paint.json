@@ -1,0 +1,167 @@
+{
+  "name": "dsh-qwen-paint",
+  "version": "0.32.1",
+  "scannedAt": "2026-11-14T19:29:40.520Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/cpu-accel.js",
+        "line": 216,
+        "text": "fetch(SET_PATH, {"
+      },
+      {
+        "file": "assets/cpu-accel.js",
+        "line": 240,
+        "text": "fetch(PROFILE_PATH, { headers: { accept: 'application/json' }, cache: 'no-store' })"
+      },
+      {
+        "file": "assets/draft.js",
+        "line": 300,
+        "text": "fetch(SAVE_API, {"
+      },
+      {
+        "file": "assets/history.js",
+        "line": 142,
+        "text": "fetch('api/qwen-paint/history/thumb', {"
+      },
+      {
+        "file": "assets/history.js",
+        "line": 252,
+        "text": "fetch(buildQuery(), { headers: { accept: 'application/json' }, cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/asr-client.js",
+        "line": 18,
+        "text": "import { readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/asr-client.js",
+        "line": 244,
+        "text": "buf = readFileSync(file)"
+      },
+      {
+        "file": "lib/asset-route.js",
+        "line": 20,
+        "text": "import fsp from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/asset-route.js",
+        "line": 68,
+        "text": "const bytes = await fsp.readFile(fileURLToPath(new URL(`../assets/${name}`, import.meta.url)))"
+      },
+      {
+        "file": "lib/comfy-accel.js",
+        "line": 19,
+        "text": "import { promises as fsp } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/config.js",
+        "line": 2329,
+        "text": "// ★ 0.32.1 审计翻案：插件走 ctx.tools.register，那条路径只校验 output.schema；"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 8,
+        "text": "*    理由 —— `tools.register()` 只强校验 `output.schema` 必须是标准 JSON Schema"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 108,
+        "text": "*   · `@liustack/modlens`：`export const inject = ['tools','agents','attachments','llm']`，"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 109,
+        "text": "*     然后 `apply(ctx, config)` 里**直接** `ctx.tools.register(...)`"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 110,
+        "text": "*   · `dsh-univer-office`：`inject = ['univer','tools']`，同样直接 `ctx.tools.register(...)`"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/comfy-accel.js",
+        "line": 18,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/comfy-launch.js",
+        "line": 6,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/comfy-launch.js",
+        "line": 570,
+        "text": "//     · `spawn(detached: true)` + unref()     → ❌ 进程随即消失"
+      },
+      {
+        "file": "lib/comfy-launch.js",
+        "line": 571,
+        "text": "//     · `spawn()`（普通、不 detached）         → ❌ 进程随即消失"
+      },
+      {
+        "file": "lib/comfy-launch.js",
+        "line": 593,
+        "text": "//   ③ Node spawn(detached) ❌　④ WMI + 内联长命令 ❌ 引号被吃、没跑"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "attachments",
+    "llm",
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "cordis.patch.yml",
+      "line": 51,
+      "text": "#   ⚠ 会真的改动用户环境（git clone / pip install 第三方代码），介意就设为 false ——"
+    },
+    {
+      "file": "README.md",
+      "line": 21,
+      "text": "- **模型自动下载包（可选）**：`node scripts/setup.mjs --video-models` 提供**视频模型自动下载包** —— 默认不装、需你显式执行，官方仓库文件清单运行时动态列举、由你选档位，多源轮询 + 断点续传 + 服务器权威 size + sha256 双校验，不合格删除；核显档位另"
+    },
+    {
+      "file": "README.md",
+      "line": 31,
+      "text": "> **不想碰命令行**：双击仓库根目录的 `一键安装.cmd` —— 它会先自报版本与 `setup.mjs` 指纹，检测后问一句再装。"
+    },
+    {
+      "file": "README.md",
+      "line": 86,
+      "text": "下载厂商专用加速包（`pip install --upgrade` / `git clone`）。**这会访问外部地址**，"
+    },
+    {
+      "file": "README.md",
+      "line": 198,
+      "text": "- **安装**：npm 发布物补进 `scripts/setup.mjs` 与 `scripts/video-model-catalog.mjs` —— 图形化引导里那些「复制就能跑」的命令，按包名安装的用户现在真的能跑。"
+    }
+  ],
+  "skippedEntries": []
+}

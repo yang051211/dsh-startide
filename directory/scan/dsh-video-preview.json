@@ -1,11 +1,16 @@
 {
   "name": "dsh-video-preview",
-  "version": "0.1.4",
-  "scannedAt": "2026-10-26T10:06:26.910Z",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-14T19:29:43.563Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
+      {
+        "file": "client.js",
+        "line": 104,
+        "text": "fetch(url, { headers: { Range: \"bytes=0-0\" } }).then(function (res) {"
+      },
       {
         "file": "test/route.test.mjs",
         "line": 11,
@@ -13,7 +18,7 @@
       },
       {
         "file": "test/route.test.mjs",
-        "line": 46,
+        "line": 54,
         "text": "const req = (path, opts = {}) => fetch(path, opts).then(async (res) => ({ status: res.status, headers: res.headers, buf: Buffer.from(await res.arrayBuffer()) })"
       }
     ]
@@ -23,12 +28,12 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 22,
+        "line": 23,
         "text": "import { createReadStream } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 23,
+        "line": 24,
         "text": "import { stat } from 'node:fs/promises'"
       },
       {
@@ -59,8 +64,8 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
+    "connection",
     "sessions",
-    "webRuntime",
     "webServer"
   ],
   "setupHints": [],

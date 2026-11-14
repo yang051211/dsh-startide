@@ -1,0 +1,140 @@
+{
+  "name": "dsh-aurabot-cola",
+  "version": "1.3.4",
+  "scannedAt": "2026-11-14T19:29:36.304Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 18,
+        "text": "const get = (p) => fetch(API + p, { cache: 'no-store' }).then((r) => r.json()).catch((e) => ({ ok: false, message: '连不上插件：' + e.message }))"
+      },
+      {
+        "file": "client/client.js",
+        "line": 20,
+        "text": "fetch(API + p, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body || {}) })"
+      },
+      {
+        "file": "client/client.js",
+        "line": 3446,
+        "text": "const r = await fetch(API + '/song/import?name=' + encodeURIComponent(file.name), { method: 'POST', body: file })"
+      },
+      {
+        "file": "client/client.js",
+        "line": 3935,
+        "text": "        fetch(API + '/modules/panel?id=' + encodeURIComponent(m.id) + '&t=' + Date.now(), { cache: 'no-store' }).then((r) => (r.ok ? r.text() : Promise.reject(n"
+      },
+      {
+        "file": "client/client.js",
+        "line": 4054,
+        "text": "const response = await fetch(API + '/bili/danmaku/' + kind, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/bili/shots.js",
+        "line": 7,
+        "text": "import { unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/bili/shots.js",
+        "line": 86,
+        "text": "writeFileSync(join(dir(), file), buf)"
+      },
+      {
+        "file": "src/bili/shots.js",
+        "line": 101,
+        "text": "try { unlinkSync(join(dir(), out.file)) } catch (error) {}"
+      },
+      {
+        "file": "src/bili/shots.js",
+        "line": 123,
+        "text": "try { unlinkSync(join(dir(), out.file)) } catch (error) {}"
+      },
+      {
+        "file": "src/bili/shots.js",
+        "line": 137,
+        "text": "try { unlinkSync(shotPath(it)) } catch (error) {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/chat/hub.js",
+        "line": 521,
+        "text": "try { offs.push(agent.ctx.tools.restrict({ deny: denied })) } catch (error) { log.debug('屏蔽联动工具：', error.message) }"
+      },
+      {
+        "file": "src/chat/hub.js",
+        "line": 561,
+        "text": "const off = agent.ctx.tools.register(reg)"
+      },
+      {
+        "file": "src/core/bridge.js",
+        "line": 143,
+        "text": "toolOffs.push(tools.register(t))"
+      },
+      {
+        "file": "src/tools/tools.js",
+        "line": 1,
+        "text": "// 工具的写法。具体的工具都在各个模块里（src/modules/*），按会话注册（agent.ctx.tools.register），只出现在 Aurabot 的会话里。"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/bili/vision.js",
+        "line": 7,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/bili/vision.js",
+        "line": 47,
+        "text": "proc = spawn(ffmpeg, ["
+      },
+      {
+        "file": "src/core/img.js",
+        "line": 3,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/core/img.js",
+        "line": 74,
+        "text": "proc = spawn(ffmpeg, ["
+      },
+      {
+        "file": "src/core/workspace-move.js",
+        "line": 4,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "attachments",
+    "llm",
+    "sessions",
+    "systemPrompt",
+    "timer",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

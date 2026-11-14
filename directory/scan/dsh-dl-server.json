@@ -1,0 +1,114 @@
+{
+  "name": "dsh-dl-server",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-14T19:29:31.162Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/transport.js",
+        "line": 154,
+        "text": "const response = await fetch(this.url, {"
+      },
+      {
+        "file": "lib/transport.js",
+        "line": 330,
+        "text": "const response = await fetch(url, { method: 'HEAD', headers, signal: controller.signal })"
+      },
+      {
+        "file": "lib/transport.js",
+        "line": 417,
+        "text": "const response = await fetch(url, { headers: requestHeaders, signal })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bootlog.js",
+        "line": 1,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/bootlog.js",
+        "line": 17,
+        "text": "fs.writeFileSync(BOOT_LOG, `dsh-dl-server boot trace\\n`)"
+      },
+      {
+        "file": "lib/bootlog.js",
+        "line": 21,
+        "text": "fs.appendFileSync(BOOT_LOG, `${line}\\n`)"
+      },
+      {
+        "file": "lib/queue.js",
+        "line": 2,
+        "text": "import { createReadStream } from 'node:fs'"
+      },
+      {
+        "file": "lib/queue.js",
+        "line": 3,
+        "text": "import fs from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 8,
+        "text": "export const inject = ['tools', 'storageDomain']"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 58,
+        "text": "tools.register({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 121,
+        "text": "tools.register({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 147,
+        "text": "tools.register({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 181,
+        "text": "tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/transport.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/transport.js",
+        "line": 231,
+        "text": "this.aria2 = spawn(binary, args, { windowsHide: true, stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "storageDomain",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

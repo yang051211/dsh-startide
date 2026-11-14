@@ -1,35 +1,35 @@
 {
   "name": "dsh-gsv-tts",
-  "version": "5.2.0",
-  "scannedAt": "2026-11-10T08:48:44.047Z",
+  "version": "5.3.0",
+  "scannedAt": "2026-11-14T19:29:28.683Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 628,
+        "line": 649,
         "text": "const resp = await fetch(\"/dsh-gsv-tts/speak/full\", {"
       },
       {
         "file": "lib/client.js",
-        "line": 698,
+        "line": 719,
         "text": "const resp = await fetch(\"/dsh-gsv-tts/speak\", {"
       },
       {
         "file": "lib/client.js",
-        "line": 807,
+        "line": 828,
         "text": "const resp = await fetch(\"/dsh-gsv-tts/speak\", {"
       },
       {
         "file": "lib/client.js",
-        "line": 948,
-        "text": "const vr = await fetch(\"/dsh-gsv-tts/provider/voices\", { method: \"POST\", headers: { \"Content-Type\": \"application/json\" }, body: \"{}\" });"
+        "line": 979,
+        "text": "const vr = await fetch(\"/dsh-gsv-tts/provider/voices\", { method: \"POST\", headers: { \"Content-Type\": \"application/json\" }, body: JSON.stringify({ provider }) });"
       },
       {
         "file": "lib/client.js",
-        "line": 953,
-        "text": "const hr = await fetch(\"/dsh-gsv-tts/provider/health\", { method: \"POST\", headers: { \"Content-Type\": \"application/json\" }, body: \"{}\" });"
+        "line": 988,
+        "text": "const hr = await fetch(\"/dsh-gsv-tts/provider/health\", { method: \"POST\", headers: { \"Content-Type\": \"application/json\" }, body: JSON.stringify({ provider }) });"
       }
     ]
   },
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 18,
+        "line": 20,
         "text": "export const inject = ['tools', 'webServer', 'settings'];"
       },
       {
         "file": "lib/index.js",
-        "line": 1102,
+        "line": 1184,
         "text": "ctx.tools.register(speakTool);"
       },
       {
         "file": "lib/index.js",
-        "line": 1103,
+        "line": 1185,
         "text": "ctx.tools.register(listVoicesTool);"
       },
       {
         "file": "lib/index.js",
-        "line": 1104,
+        "line": 1186,
         "text": "ctx.tools.register(healthCheckTool);"
       },
       {
         "file": "lib/index.js",
-        "line": 1105,
+        "line": 1187,
         "text": "ctx.tools.register(setupEngineTool);"
       }
     ]
@@ -139,12 +139,12 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 159,
+      "line": 178,
       "text": "2. 安装核心包：`pip install gsv-tts-lite==0.4.7`"
     },
     {
       "file": "README.md",
-      "line": 161,
+      "line": 180,
       "text": "4. 安装 API 依赖：`pip install -r <仓库>/API/requirements.txt`"
     }
   ],

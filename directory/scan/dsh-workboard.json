@@ -1,0 +1,115 @@
+{
+  "name": "dsh-workboard",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-14T19:29:44.361Z",
+  "icon": "dsh-workboard.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 815,
+        "text": "async fetch({paths} = {}) {"
+      },
+      {
+        "file": "index.js",
+        "line": 870,
+        "text": "return services.git.fetch({paths: p?.paths});"
+      },
+      {
+        "file": "lib/trending.js",
+        "line": 34,
+        "text": "const d = await get('https://weibo.com/ajax/side/hotSearch', {headers: {...BROWSER, referer: 'https://weibo.com/', 'x-requested-with': 'XMLHttpRequest'}});"
+      },
+      {
+        "file": "lib/widgets.js",
+        "line": 141,
+        "text": "warnings.push('external images, styles, fonts and frames are blocked by the sandbox; load images with workboard.fetch(url, {as: \"dataUrl\"})');"
+      },
+      {
+        "file": "lib/widgets.js",
+        "line": 142,
+        "text": "if (/\\b(fetch|XMLHttpRequest|WebSocket|EventSource)\\s*\\(/.test(html.replace(/workboard\\.fetch\\s*\\(/g, '')))"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import {readFileSync} from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 43,
+        "text": "import {stat} from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 1364,
+        "text": "const content = readFileSync(new URL('./skills/workboard-widget.md', import.meta.url), 'utf8');"
+      },
+      {
+        "file": "lib/apps.js",
+        "line": 5,
+        "text": "import {mkdir, readdir, readFile, rm, stat} from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/apps.js",
+        "line": 164,
+        "text": "await mkdir(cacheDir, {recursive: true});"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1360,
+        "text": "if (tools) for (const tool of createTools(store, {context})) ctx.effect(() => tools.register(tool), `dsh-workboard: ${tool.name} tool`);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "import {spawn} from 'node:child_process';"
+      },
+      {
+        "file": "lib/exec.js",
+        "line": 2,
+        "text": "import {execFile} from 'node:child_process';"
+      },
+      {
+        "file": "lib/exec.js",
+        "line": 17,
+        "text": "    execFile(cmd, args, {cwd, timeout: timeoutMs, maxBuffer, env: {...env, ...(win ? {} : {PATH: path}), GIT_TERMINAL_PROMPT: '0', GH_PROMPT_DISABLED: '1', NO_C"
+      },
+      {
+        "file": "lib/nowplaying.js",
+        "line": 161,
+        "text": "const c = spawn(ADAPTER[0], [...ADAPTER.slice(1), 'stream', '--micros'], {stdio: ['ignore', 'pipe', 'ignore']});"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "vendor/mediaremote-adapter/MediaRemoteAdapter.framework/MediaRemoteAdapter"
+  ],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
