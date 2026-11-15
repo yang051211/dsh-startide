@@ -1,7 +1,7 @@
 {
   "name": "dsh-redline",
-  "version": "1.2.3",
-  "scannedAt": "2026-11-14T23:52:57.035Z",
+  "version": "1.3.0",
+  "scannedAt": "2026-11-15T20:14:27.793Z",
   "icon": "dsh-redline.png",
   "network": {
     "hit": true,
@@ -44,21 +44,21 @@
       {
         "file": "lib/index.js",
         "line": 4,
-        "text": "import { copyFileSync, existsSync, readFileSync, mkdirSync, writeFileSync, chmodSync } from \"node:fs\";"
+        "text": "import { copyFileSync, readFileSync, mkdirSync, writeFileSync, chmodSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 63,
+        "line": 31,
         "text": "try { return JSON.parse(readFileSync(path.join(PLUGIN_DIR, \"package.json\"), \"utf8\")).version ?? null; } catch { return null; }"
       },
       {
         "file": "lib/index.js",
-        "line": 138,
+        "line": 106,
         "text": "const data = JSON.parse(readFileSync(DRAWINGS_FILE, \"utf8\"));"
       },
       {
         "file": "lib/index.js",
-        "line": 149,
+        "line": 117,
         "text": "try { stored = JSON.parse(readFileSync(SETTINGS_FILE, \"utf8\")) ?? {}; } catch {}"
       }
     ]
@@ -68,19 +68,8 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": true,
-    "evidence": [
-      {
-        "file": "lib/index.js",
-        "line": 5,
-        "text": "import { spawn } from \"node:child_process\";"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 50,
-        "text": "const child = spawn(command, args, { cwd: PROFILE_DIR, env: process.env, windowsHide: true });"
-      }
-    ]
+    "hit": false,
+    "evidence": []
   },
   "installScripts": {
     "hit": false,

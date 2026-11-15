@@ -1,0 +1,103 @@
+{
+  "name": "dsh-envdock",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-15T20:14:37.234Z",
+  "icon": "dsh-envdock.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 493,
+        "text": "const res = await fetch('/envdock-api', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { existsSync, readFileSync, writeFileSync, renameSync, unlinkSync, copyFileSync, mkdirSync, readdirSync, statSync, realpathSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 164,
+        "text": "raw = JSON.parse(readFileSync(STATE_FILE, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 189,
+        "text": "mkdirSync(STATE_DIR, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 194,
+        "text": "writeFileSync(tmp, JSON.stringify(next, null, 2) + '\\n', 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 202,
+        "text": "writeFileSync(STATE_FILE, JSON.stringify(next, null, 2) + '\\n', 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 2669,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 2908,
+        "text": "() => ctx.tools.register(envdTool(ctx, getDetection, getState, false, rt, gateFor, hasToolFor, familyProbeFor), 'envdock tool'),"
+      },
+      {
+        "file": "index.js",
+        "line": 2921,
+        "text": "ctx.tools.guard((exec) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 3297,
+        "text": "dispose = ctx.tools.register(definition)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 498,
+        "text": "handle = sp.spawn({"
+      },
+      {
+        "file": "index.js",
+        "line": 1921,
+        "text": "* 沙箱受限的会话里 EnvDock 不能自己 spawn(subprocess 接口没有 sandboxPolicy 入口),"
+      },
+      {
+        "file": "index.js",
+        "line": 2616,
+        "text": "handle = service.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

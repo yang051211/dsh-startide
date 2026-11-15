@@ -1,34 +1,34 @@
 {
   "name": "dsh-image-forge",
-  "version": "0.2.0",
-  "scannedAt": "2026-10-26T10:08:23.880Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-15T20:14:40.666Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 866,
+        "line": 864,
         "text": "const response = await fetch(STUDIO_BOARD_ROUTE, {"
       },
       {
         "file": "lib/client.js",
-        "line": 945,
+        "line": 943,
         "text": "const response = await fetch(`${STUDIO_BOARD_ROUTE}?board=${encodeURIComponent(id)}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 979,
+        "line": 977,
         "text": "const response = await fetch(STUDIO_CONFIG_ROUTE, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1065,
+        "line": 1063,
         "text": "const response = await fetch(STUDIO_CONFIG_ROUTE, { credentials: \"same-origin\" });"
       },
       {
         "file": "lib/client.js",
-        "line": 1104,
+        "line": 1102,
         "text": "const response = await fetch(`${STUDIO_ASSETS_ROUTE}?${params.toString()}`, {"
       }
     ]
@@ -48,17 +48,17 @@
       },
       {
         "file": "lib/index.js",
-        "line": 174,
+        "line": 172,
         "text": "return `${readFileSync(new URL(\"../skill.md\", import.meta.url), \"utf8\")}\\n> 下面两处路径由插件在注册时填入，可直接用 read 工具打开：\\n${REFERENCE_FILES.map((relative) => {"
       },
       {
         "file": "lib/index.js",
-        "line": 395,
+        "line": 428,
         "text": "raw = await readFile(boardFile(outputDir, id), \"utf8\");"
       },
       {
         "file": "lib/index.js",
-        "line": 490,
+        "line": 523,
         "text": "const parsed = JSON.parse(await readFile(stateFile(outputDir), \"utf8\"));"
       }
     ]
@@ -68,22 +68,22 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 4312,
+        "line": 4265,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 4462,
+        "line": 4363,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 4631,
+        "line": 4494,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 4703,
+        "line": 4554,
         "text": "const inject = [\"tools\", \"skills\"];"
       },
       {
@@ -94,8 +94,24 @@
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/start-comfyui.mjs",
+        "line": 33,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/start-comfyui.mjs",
+        "line": 401,
+        "text": "if (IS_WIN) spawnSync('taskkill', ['/PID', String(record.pid), '/T', '/F'], { stdio: 'inherit' })"
+      },
+      {
+        "file": "scripts/start-comfyui.mjs",
+        "line": 441,
+        "text": "const child = spawn(plan.python, plan.argv, {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

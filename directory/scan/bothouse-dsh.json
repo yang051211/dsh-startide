@@ -1,7 +1,7 @@
 {
   "name": "bothouse-dsh",
-  "version": "0.1.75",
-  "scannedAt": "2026-11-14T19:29:23.923Z",
+  "version": "0.1.77",
+  "scannedAt": "2026-11-15T20:14:29.530Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -12,24 +12,24 @@
         "text": "import { createServer } from 'node:http';"
       },
       {
-        "file": "collab/gate-context.mjs",
-        "line": 114,
-        "text": "const res = await this.fetch(`http://127.0.0.1:${this.port}/context`, {"
+        "file": "collab/bridge.mjs",
+        "line": 152,
+        "text": "      : await run('/bin/sh', ['-c', `curl -fsSL ${INSTALL_SH} | sh`], { timeout: INSTALL_TIMEOUT_MS, log: join(this.dataDir, 'bothouse-install.log'), env: this."
       },
       {
-        "file": "collab/later.mjs",
-        "line": 104,
-        "text": "    const curl = `curl -sS -X POST ${quote(url)} -H 'content-type: application/json' -H ${quote(`X-Later-Ticket: ${ticket}`)} -d '{\"title\":\"任务标题\",\"owner\":\"接活人id"
+        "file": "collab/bridge.mjs",
+        "line": 198,
+        "text": "      const res = await fetch(`http://${dialHost(s.host)}:${s.port}/api/v1/${what}`, { method: 'POST', headers: s.token ? { authorization: `Bearer ${s.token}` }"
       },
       {
-        "file": "collab/later.mjs",
-        "line": 144,
-        "text": "const res = await fetch(new URL(`/collab/api/rooms/${room}/workspaces`, origin), { method: 'POST',"
+        "file": "collab/local-host.mjs",
+        "line": 2,
+        "text": "import { request as httpRequest } from 'node:http';"
       },
       {
-        "file": "collab/later.mjs",
-        "line": 153,
-        "text": "const res = await fetch(new URL(`/collab/api/rooms/${room}/team`, origin), { method: 'POST',"
+        "file": "collab/pairing.mjs",
+        "line": 15,
+        "text": "import { createServer, request as httpRequest } from 'node:http';"
       }
     ]
   },
@@ -71,19 +71,19 @@
     "hit": true,
     "evidence": [
       {
-        "file": "collab/cli-member.mjs",
-        "line": 3,
-        "text": "import { spawn, spawnSync } from 'node:child_process'"
+        "file": "collab/bridge.mjs",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process';"
       },
       {
-        "file": "collab/cli-member.mjs",
-        "line": 96,
-        "text": "try { spawnSync('taskkill', ['/T', '/F', '/PID', String(proc.pid)], { stdio: 'ignore' }) } catch {}"
+        "file": "collab/bridge.mjs",
+        "line": 73,
+        "text": "const child = spawn(cmd, args, { stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true, env });"
       },
       {
-        "file": "collab/cli-member.mjs",
-        "line": 167,
-        "text": "const proc = spawn(launch.cmd, [...launch.args, ...a.args], {"
+        "file": "collab/bridge.mjs",
+        "line": 208,
+        "text": "const child = spawn(bin, ['--headless'], { detached: true, stdio: ['ignore', log, log], windowsHide: true, env: this.env });"
       },
       {
         "file": "collab/clis.mjs",
@@ -101,7 +101,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 7,
+  "dependencies": 5,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

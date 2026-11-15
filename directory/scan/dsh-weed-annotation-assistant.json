@@ -1,0 +1,114 @@
+{
+  "name": "dsh-weed-annotation-assistant",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-15T20:14:36.154Z",
+  "icon": "dsh-weed-annotation-assistant.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 71,
+        "text": "const res = await fetch(p, init)"
+      },
+      {
+        "file": "client.js",
+        "line": 209,
+        "text": "const r = await (await fetch(`${API}/active`)).json()"
+      },
+      {
+        "file": "client.js",
+        "line": 221,
+        "text": "const s = await (await fetch(`${API}/stamp?out=${encodeURIComponent(out)}`)).json()"
+      },
+      {
+        "file": "client.js",
+        "line": 226,
+        "text": "const r = await (await fetch(`${API}/review?out=${encodeURIComponent(out)}`)).json()"
+      },
+      {
+        "file": "client.js",
+        "line": 240,
+        "text": "const r = await (await fetch(`${API}/active`)).json()"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "return JSON.parse(fs.readFileSync(ACTIVE_FILE, 'utf8')).out || ''"
+      },
+      {
+        "file": "index.js",
+        "line": 28,
+        "text": "fs.mkdirSync(path.dirname(ACTIVE_FILE), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 29,
+        "text": "fs.writeFileSync(ACTIVE_FILE, JSON.stringify({ out: activeProject }, null, 2), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 63,
+        "text": "return JSON.parse(fs.readFileSync(file, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "export const inject = ['webServer', 'tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 826,
+        "text": "const offs = disposers.map((d) => ctx.tools.register(d))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 4,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 280,
+        "text": "const r = spawnSync(cmd, ['-c', 'import cv2,numpy'], { timeout: 20_000, windowsHide: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 800,
+        "text": "const proc = spawnSync(py.command, [...py.prefix, ...args], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,19 +1,24 @@
 {
   "name": "dsh-telegram-connector",
-  "version": "0.19.0",
-  "scannedAt": "2026-11-14T19:29:30.220Z",
+  "version": "0.22.0",
+  "scannedAt": "2026-11-15T20:14:33.079Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 768,
+        "line": 770,
         "text": "return await fetch(`${updaterUrl}${path}`, {"
       },
       {
         "file": "lib/index.js",
-        "line": 1667,
+        "line": 1632,
+        "text": "const response = await fetch(url, { signal: AbortSignal.timeout(2000) });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1709,
         "text": "const response = await fetch(probe.url, { signal: AbortSignal.timeout(2000) });"
       },
       {
@@ -25,11 +30,6 @@
         "file": "lib/telegram.js",
         "line": 71,
         "text": "const response = await fetch(`${TG_API}/bot${this.token}/${method}`, {"
-      },
-      {
-        "file": "lib/telegram.js",
-        "line": 100,
-        "text": "const response = await fetch(`${TG_API}/file/bot${this.token}/${file.file_path}`, {"
       }
     ]
   },
@@ -53,12 +53,12 @@
       },
       {
         "file": "lib/bindings.js",
-        "line": 79,
+        "line": 80,
         "text": "raw = await readFile(file, 'utf8');"
       },
       {
         "file": "lib/bindings.js",
-        "line": 127,
+        "line": 128,
         "text": "await mkdir(dirname(file), { recursive: true });"
       }
     ]
@@ -91,12 +91,12 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 148,
+      "line": 160,
       "text": "./setup.sh              # asks for port, bind address, provider, key,"
     },
     {
       "file": "README.md",
-      "line": 152,
+      "line": 164,
       "text": "`./setup.sh --check` prints the whole plan and changes nothing. The setup"
     }
   ],

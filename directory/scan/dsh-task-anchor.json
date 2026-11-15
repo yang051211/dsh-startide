@@ -1,0 +1,60 @@
+{
+  "name": "dsh-task-anchor",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-15T20:14:42.384Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/store.js",
+        "line": 16,
+        "text": "import { mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 57,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 58,
+        "text": "writeFileSync(join(dir, snapshotFileName(sessionId)), `${JSON.stringify(snapshot, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 69,
+        "text": "const raw = JSON.parse(readFileSync(join(dir, snapshotFileName(sessionId)), 'utf8'))"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 85,
+        "text": "rmSync(join(dir, snapshotFileName(sessionId)), { force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

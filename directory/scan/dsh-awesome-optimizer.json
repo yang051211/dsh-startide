@@ -1,7 +1,7 @@
 {
   "name": "dsh-awesome-optimizer",
-  "version": "2.1.0",
-  "scannedAt": "2026-11-13T21:11:01.559Z",
+  "version": "3.1.0",
+  "scannedAt": "2026-11-15T20:14:33.689Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -17,23 +17,23 @@
       },
       {
         "file": "scripts/typecheck.mjs",
-        "line": 22,
+        "line": 31,
         "text": "const pkg = JSON.parse(fs.readFileSync(pkgFile, 'utf8'));"
       },
       {
         "file": "scripts/typecheck.mjs",
-        "line": 44,
+        "line": 62,
         "text": "const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));"
       },
       {
-        "file": "src/custom-prompt.js",
-        "line": 2,
-        "text": "import fs from 'node:fs';"
+        "file": "src/composite-tools.js",
+        "line": 1,
+        "text": "import fs from 'node:fs/promises';"
       },
       {
-        "file": "src/custom-prompt.js",
-        "line": 155,
-        "text": "this.cachedGlobal = fs.readFileSync(this.globalFilePath, 'utf8').trim();"
+        "file": "src/composite-tools.js",
+        "line": 145,
+        "text": "const content = await fsService.readFile(filePath, { cwd, signal });"
       }
     ]
   },
@@ -42,28 +42,28 @@
     "evidence": [
       {
         "file": "src/composite-tools.js",
-        "line": 65,
+        "line": 301,
         "text": "ctx.tools.register({"
       },
       {
         "file": "src/composite-tools.js",
-        "line": 212,
-        "text": "}, { when: ({ agent }) => ctx.tools.get('read', agent) !== undefined });"
+        "line": 460,
+        "text": "const canRead = contextLines > 0 && ctx.tools.get('read', exec.agent) !== undefined;"
       },
       {
         "file": "src/composite-tools.js",
-        "line": 216,
+        "line": 572,
+        "text": "}, { when: ({ agent }) => ctx.tools.get('grep', agent) !== undefined });"
+      },
+      {
+        "file": "src/composite-tools.js",
+        "line": 576,
         "text": "ctx.tools.register({"
       },
       {
         "file": "src/composite-tools.js",
-        "line": 388,
+        "line": 795,
         "text": "}, { when: ({ agent }) => ctx.tools.get('edit', agent) !== undefined });"
-      },
-      {
-        "file": "src/composite-tools.js",
-        "line": 411,
-        "text": "export const inject = ['tools'];"
       }
     ]
   },
@@ -77,7 +77,7 @@
       },
       {
         "file": "scripts/benchmark.mjs",
-        "line": 113,
+        "line": 120,
         "text": "const res = spawnSync('python', ['-c', code], { encoding: 'utf-8' });"
       },
       {
@@ -87,13 +87,13 @@
       },
       {
         "file": "scripts/typecheck.mjs",
-        "line": 36,
-        "text": "const res = spawnSync(process.execPath, [tscBin, '--project', path.join(root, 'tsconfig.json'), '--noEmit'], {"
+        "line": 16,
+        "text": "const res = spawnSync('npm root -g', {"
       },
       {
-        "file": "src/custom-prompt.js",
-        "line": 1,
-        "text": "import { spawnSync } from 'node:child_process';"
+        "file": "scripts/typecheck.mjs",
+        "line": 45,
+        "text": "const res = spawnSync(process.execPath, [tscBin, '--project', path.join(root, 'tsconfig.json'), '--noEmit'], {"
       }
     ]
   },

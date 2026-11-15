@@ -1,0 +1,93 @@
+{
+  "name": "dsh-mcp-scopes",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-15T20:14:41.819Z",
+  "icon": "dsh-mcp-scopes.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 1178,
+        "text": "import { createServer } from \"node:http\";"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 1881,
+        "text": "async fetch(request) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 2,
+        "text": "import { chmod, mkdir, readFile, rename, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 511,
+        "text": "await mkdir(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 513,
+        "text": "await writeFile(temporary, text, { mode });"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 542,
+        "text": "text = await readFile(path, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 1070,
+        "text": "for (const definition of entry.definitions) disposers.push(owner.ctx.tools.register(definition));"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 1509,
+        "text": "return isRecord(ctx) && isRecord(ctx.tools) && typeof ctx.tools.register === \"function\";"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 1921,
+        "text": "var inject = [\"tools\", \"credentials\", \"workspaceRegistry\"];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 8,
+      "text": "- Two scopes. Profile servers come from `$DSH_HOME/plugins/mcp-manager/<profile>.json`; workspace servers come from `<workspace>/.dsh/mcp.json`."
+    },
+    {
+      "file": "README.md",
+      "line": 66,
+      "text": "Profile file: `$DSH_HOME/plugins/mcp-manager/<profile>.json`. It is created with mode 0600 on the first save."
+    }
+  ],
+  "skippedEntries": []
+}

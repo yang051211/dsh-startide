@@ -1,0 +1,86 @@
+{
+  "name": "@perrylink/dsh-claim-check",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-15T20:14:36.957Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/runtime.js",
+        "line": 10,
+        "text": "import { mkdir, readFile, realpath, stat, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 110,
+        "text": "const text = await readFile(resolved.absolute, 'utf8');"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 186,
+        "text": "await mkdir(directory, { recursive: true });"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 188,
+        "text": "await writeFile(file, `${JSON.stringify(record, null, 2)}\\n`, 'utf8');"
+      },
+      {
+        "file": "src/runtime.ts",
+        "line": 11,
+        "text": "import { mkdir, readFile, realpath, stat, writeFile } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "ctx.effect(() => ctx.tools.register(makeClaimCheckTool(runtime)), 'claim-check: claim_check tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 47,
+        "text": "ctx.effect(() => ctx.tools.register(makeClaimBindTool(runtime)), 'claim-check: claim_bind tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 48,
+        "text": "ctx.effect(() => ctx.tools.register(makeClaimReportTool()), 'claim-check: claim_report tool');"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 24,
+        "text": "export const inject = ['tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

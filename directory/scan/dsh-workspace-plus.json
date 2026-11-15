@@ -1,7 +1,7 @@
 {
   "name": "dsh-workspace-plus",
-  "version": "0.6.1",
-  "scannedAt": "2026-10-26T10:05:57.600Z",
+  "version": "0.7.3",
+  "scannedAt": "2026-11-15T20:14:40.883Z",
   "icon": "dsh-workspace-plus.svg",
   "network": {
     "hit": true,
@@ -18,17 +18,17 @@
       },
       {
         "file": "lib/client.js",
-        "line": 565,
+        "line": 593,
         "text": "const response = await fetch(`${NOTICE_PENDING_PATH}?_=${Date.now()}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1019,
+        "line": 1048,
         "text": "const response = await fetch(apiUrl(), {"
       },
       {
         "file": "lib/client.js",
-        "line": 1036,
+        "line": 1065,
         "text": "const response = await fetch(apiUrl(), {"
       }
     ]
@@ -38,28 +38,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 29,
+        "line": 31,
         "text": "import { existsSync, mkdirSync, readFileSync, renameSync, statSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "lib/index.js",
-        "line": 208,
+        "line": 210,
         "text": "return normalizeState(JSON.parse(readFileSync(file, 'utf8')))"
       },
       {
         "file": "lib/index.js",
-        "line": 222,
+        "line": 224,
         "text": "mkdirSync(dirname(file), { recursive: true })"
       },
       {
         "file": "lib/index.js",
-        "line": 224,
+        "line": 226,
         "text": "writeFileSync(temporary, `${JSON.stringify(state, null, 2)}\\n`, 'utf8')"
       },
       {
-        "file": "lib/notice/settings.js",
-        "line": 23,
-        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+        "file": "lib/notice/launcher.js",
+        "line": 47,
+        "text": "} from 'node:fs'"
       }
     ]
   },
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 37,
+        "line": 39,
         "text": "export const inject = ['tools', 'systemPrompt']"
       },
       {
         "file": "lib/index.js",
-        "line": 660,
+        "line": 711,
         "text": "ctx.tools.register({"
       }
     ]
@@ -81,6 +81,11 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/notice/launcher.js",
+        "line": 38,
+        "text": "import { spawn } from 'node:child_process'"
+      },
       {
         "file": "lib/notice/toast.js",
         "line": 18,
@@ -93,17 +98,12 @@
       },
       {
         "file": "lib/notice/win32.js",
-        "line": 23,
+        "line": 28,
         "text": "import { execFile } from 'node:child_process'"
       },
       {
         "file": "lib/notice/win32.js",
-        "line": 110,
-        "text": "execFile("
-      },
-      {
-        "file": "lib/notice/win32.js",
-        "line": 199,
+        "line": 134,
         "text": "execFile("
       }
     ]

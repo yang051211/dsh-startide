@@ -1,0 +1,105 @@
+{
+  "name": "@whyshu/argent-erp",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-15T20:14:36.248Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.js",
+        "line": 170,
+        "text": "fetch(API + path, { headers: { accept: \"application/json\" } })"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 527,
+        "text": "React.useEffect(() => { try { fetch(API + \"/ping?from=view\") } catch { /* noop */ } }, [])"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 616,
+        "text": "try { fetch(API + \"/ping?from=client\").catch(() => {}) } catch { /* noop */ }"
+      },
+      {
+        "file": "src/data.mjs",
+        "line": 33,
+        "text": "r = await fetch(url, { headers: { 'x-api-key': token, accept: 'application/json' }, signal: AbortSignal.timeout(TIMEOUT_MS) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 19,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/index.js",
+        "line": 37,
+        "text": "return JSON.parse(readFileSync(join(dirname(dirname(fileURLToPath(import.meta.url))), 'package.json'), 'utf8')).version || '0.0.0'"
+      },
+      {
+        "file": "src/vendor/account-token.mjs",
+        "line": 18,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/vendor/account-token.mjs",
+        "line": 25,
+        "text": "const raw = readFileSync(join(dshHome, '.credentials.yaml'), 'utf8')"
+      },
+      {
+        "file": "src/vendor/compat.mjs",
+        "line": 29,
+        "text": "import { readFileSync, realpathSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 79,
+        "text": "* ⚠️ 用 ctx.get('tools') 而不是 ctx.tools：本插件没有 inject tools，直接取会抛。"
+      },
+      {
+        "file": "src/office-guard.js",
+        "line": 6,
+        "text": "* 这里用 `ctx.tools.restrict({ allow })` 把**本 preset 作用域**内可见的全局工具收敛成"
+      },
+      {
+        "file": "src/office-guard.js",
+        "line": 13,
+        "text": "*  - ⛔ 无循环：allow 集合从**全局视图**（`ctx.tools.definitions()` 不带 scope）计算，"
+      },
+      {
+        "file": "src/office-guard.js",
+        "line": 17,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "src/office-guard.js",
+        "line": 25,
+        "text": "* @param {string[]} names - `ctx.tools.definitions()` 的 name 集合（全局视图）"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

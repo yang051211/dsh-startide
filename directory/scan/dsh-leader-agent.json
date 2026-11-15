@@ -1,39 +1,45 @@
 {
   "name": "dsh-leader-agent",
-  "version": "0.4.1",
-  "scannedAt": "2026-11-12T21:20:36.810Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-15T20:14:37.440Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": ".agents/skills/doubao-tts/scripts/tts.mjs",
+        "line": 230,
+        "text": "const response = await fetch(endpointUrl, {"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
       {
-        "file": "src/host/cards/store.js",
-        "line": 23,
-        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+        "file": ".agents/skills/doubao-tts/scripts/tts.mjs",
+        "line": 16,
+        "text": "import { readFile, writeFile } from 'node:fs/promises'"
       },
       {
-        "file": "src/host/cards/store.js",
-        "line": 51,
-        "text": "const raw = await io.readFile(file, 'utf8').catch(() => undefined)"
+        "file": ".agents/skills/doubao-tts/scripts/tts.mjs",
+        "line": 197,
+        "text": "? await readFile(String(args['text-file']), 'utf8')"
       },
       {
-        "file": "src/host/cards/store.js",
-        "line": 120,
-        "text": "await io.mkdir(directory, { recursive: true })"
+        "file": ".agents/skills/doubao-tts/scripts/tts.mjs",
+        "line": 246,
+        "text": "await writeFile(out, audio)"
       },
       {
-        "file": "src/host/cards/store.js",
-        "line": 121,
-        "text": "await io.writeFile(temporary, `${JSON.stringify(store, null, 2)}\\n`, 'utf8')"
+        "file": ".agents/skills/promo-stills/scripts/render.mjs",
+        "line": 13,
+        "text": "import { mkdir } from 'node:fs/promises'"
       },
       {
-        "file": "src/host/leader-context.js",
-        "line": 15,
-        "text": "import { readFileSync } from 'node:fs'"
+        "file": ".agents/skills/promo-stills/scripts/render.mjs",
+        "line": 171,
+        "text": "await mkdir(dirname(resolve(args.out)), { recursive: true })"
       }
     ]
   },
@@ -47,7 +53,7 @@
       },
       {
         "file": "src/host/index.js",
-        "line": 251,
+        "line": 258,
         "text": "})) ctx.tools.register(tool)"
       },
       {
@@ -57,12 +63,12 @@
       },
       {
         "file": "src/host/tools/gate.js",
-        "line": 155,
+        "line": 180,
         "text": "agent.ctx.tools.restrict({ deny: denied })"
       },
       {
         "file": "src/host/tools/gate.js",
-        "line": 187,
+        "line": 212,
         "text": "agent.ctx.tools.restrict({ deny: [name] })"
       }
     ]

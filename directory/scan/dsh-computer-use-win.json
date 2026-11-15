@@ -1,14 +1,14 @@
 {
   "name": "dsh-computer-use-win",
-  "version": "0.5.7",
-  "scannedAt": "2026-11-11T21:01:03.456Z",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-15T20:14:26.511Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "mcp/browser.mjs",
-        "line": 760,
+        "line": 1057,
         "text": "const response = await fetch(new URL('/json/version', url), { signal: AbortSignal.timeout(3000) });"
       }
     ]
@@ -18,27 +18,27 @@
     "evidence": [
       {
         "file": "mcp/browser-bidi.mjs",
-        "line": 5,
+        "line": 7,
         "text": "import { existsSync, readFileSync, mkdirSync, mkdtempSync, writeFileSync, rmSync } from 'node:fs';"
       },
       {
         "file": "mcp/browser-bidi.mjs",
-        "line": 38,
+        "line": 55,
         "text": "const app = /(?:^|\\r?\\n)\\[App\\]\\s*\\r?\\n([\\s\\S]*?)(?=\\r?\\n\\[|$)/i.exec(readFileSync(file, 'utf8'))?.[1] ?? '';"
       },
       {
         "file": "mcp/browser-bidi.mjs",
-        "line": 141,
+        "line": 159,
         "text": "mkdirSync(root, { recursive: true });"
       },
       {
         "file": "mcp/browser-bidi.mjs",
-        "line": 143,
+        "line": 161,
         "text": "mkdirSync(profile, { recursive: true });"
       },
       {
         "file": "mcp/browser-bidi.mjs",
-        "line": 146,
+        "line": 164,
         "text": "try { writeFileSync(lock, String(process.pid), { flag: 'wx' }); break; }"
       }
     ]
@@ -53,13 +53,18 @@
       },
       {
         "file": "mcp/dsh-plugin.mjs",
-        "line": 13,
+        "line": 18,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "mcp/dsh-plugin.mjs",
-        "line": 150,
+        "line": 147,
         "text": "const bridge = await import('@deepseek-ai/dsh-mcp-client');"
+      },
+      {
+        "file": "mcp/host-compat.mjs",
+        "line": 9,
+        "text": "let version='unknown';try{version=require('@deepseek-ai/dsh-mcp-client/package.json').version;}catch{}"
       }
     ]
   },
@@ -68,28 +73,28 @@
     "evidence": [
       {
         "file": "mcp/browser-bidi.mjs",
-        "line": 3,
-        "text": "import { execFile, spawn } from 'node:child_process';"
-      },
-      {
-        "file": "mcp/browser-bidi.mjs",
-        "line": 22,
-        "text": "const regBytes = args => new Promise(resolve => execFile('reg.exe', args,"
-      },
-      {
-        "file": "mcp/browser.mjs",
         "line": 5,
         "text": "import { execFile, spawn } from 'node:child_process';"
       },
       {
-        "file": "mcp/browser.mjs",
-        "line": 111,
-        "text": "st output = await new Promise(resolve => execFile('reg.exe', ['query', 'HKCU\\\\Software\\\\Microsoft\\\\Windows\\\\Shell\\\\Associations\\\\UrlAssociations\\\\https', '/s'],"
+        "file": "mcp/browser-bidi.mjs",
+        "line": 39,
+        "text": "const regBytes = args => new Promise(resolve => execFile('reg.exe', args,"
       },
       {
         "file": "mcp/browser.mjs",
-        "line": 860,
-        "text": "const child = this.agentChild = spawn(executable.path, ['--remote-debugging-port=0', `--user-data-dir=${profile}`, '--no-first-run',"
+        "line": 11,
+        "text": "import { execFile, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "mcp/browser.mjs",
+        "line": 145,
+        "text": "const child = spawn(executablePath, args, {"
+      },
+      {
+        "file": "mcp/browser.mjs",
+        "line": 422,
+        "text": "nst output = await new Promise(resolve => execFile(registry, ['query', 'HKCU\\\\Software\\\\Microsoft\\\\Windows\\\\Shell\\\\Associations\\\\UrlAssociations\\\\https', '/s'],"
       }
     ]
   },
@@ -99,7 +104,12 @@
   },
   "dependencies": 0,
   "minifiedFiles": [],
-  "binaryFiles": [],
+  "binaryFiles": [
+    "scripts/native/wcu-clipboard-netfx.dll",
+    "scripts/native/wcu-native-netfx.dll",
+    "scripts/native/wcu-ocr-netfx.dll",
+    "scripts/native/wcu-takeover-netfx.dll"
+  ],
   "requiredServices": [
     "tools"
   ],

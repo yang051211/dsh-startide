@@ -1,34 +1,34 @@
 {
   "name": "@wjj865-code/dsh-orchestrator",
-  "version": "0.10.0",
-  "scannedAt": "2026-11-15T08:06:33.307Z",
+  "version": "0.14.1",
+  "scannedAt": "2026-11-15T20:14:41.690Z",
   "icon": "wjj865-code__dsh-orchestrator.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "client.js",
-        "line": 58,
+        "file": "dist/client.js",
+        "line": 171,
         "text": "const response = await fetch(ROUTE, {"
       },
       {
-        "file": "client.js",
-        "line": 72,
+        "file": "dist/client.js",
+        "line": 183,
         "text": "const response = await fetch(ROUTE, {"
       },
       {
-        "file": "client.js",
-        "line": 101,
+        "file": "dist/client.js",
+        "line": 204,
         "text": "const response = await fetch(ROUTE, {"
       },
       {
-        "file": "client.js",
-        "line": 113,
+        "file": "dist/client.js",
+        "line": 214,
         "text": "const response = await fetch(ROUTE, {"
       },
       {
-        "file": "client.js",
-        "line": 125,
+        "file": "dist/client.js",
+        "line": 225,
         "text": "const response = await fetch(ROUTE, {"
       }
     ]
@@ -36,6 +36,21 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "scripts/mirror-sync.mjs",
+        "line": 20,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "scripts/mirror-sync.mjs",
+        "line": 103,
+        "text": "const text = await readFile(join(here, '..', 'package.json'), 'utf8')"
+      },
+      {
+        "file": "scripts/verify-access-full.mjs",
+        "line": 11,
+        "text": "import { mkdtempSync } from 'node:fs'"
+      },
       {
         "file": "src/artifact-collect.js",
         "line": 6,
@@ -45,21 +60,6 @@
         "file": "src/brief.js",
         "line": 2,
         "text": "import { statSync } from 'node:fs'"
-      },
-      {
-        "file": "src/debug-preset.js",
-        "line": 15,
-        "text": "import { closeSync, existsSync, mkdirSync, openSync, readFileSync, readSync, readdirSync, writeFileSync } from 'node:fs'"
-      },
-      {
-        "file": "src/debug-preset.js",
-        "line": 136,
-        "text": "mkdirSync(dirname(target), { recursive: true })"
-      },
-      {
-        "file": "src/debug-preset.js",
-        "line": 137,
-        "text": "writeFileSync(target, content, 'utf8')"
       }
     ]
   },
@@ -67,29 +67,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "cordis.patch.yml",
+        "line": 74,
+        "text": "# （index.js 的 createTools(...).map(tool => ctx.tools.register(tool))），不是独立预设包，所以这里没有"
+      },
+      {
         "file": "index.js",
-        "line": 25,
+        "line": 28,
         "text": "export const inject = ['tools', 'agents', 'systemPrompt', 'subagents']"
       },
       {
         "file": "index.js",
-        "line": 82,
+        "line": 138,
         "text": "if (ctx.tools === undefined) warnings('dsh-orchestrator: 缺少 tools 服务，工具注册/白名单/guard 不可用')"
       },
       {
         "file": "index.js",
-        "line": 83,
+        "line": 139,
         "text": "else if (typeof ctx.tools.guard !== 'function') warnings('dsh-orchestrator: tools.guard 缺失，wait_agent 执行期拦截不可用')"
       },
       {
         "file": "index.js",
-        "line": 211,
+        "line": 267,
         "text": "const guardDisposer = ctx.tools?.guard?.(exec => {"
-      },
-      {
-        "file": "index.js",
-        "line": 425,
-        "text": "}).map(tool => ctx.tools.register(tool))"
       }
     ]
   },
@@ -98,23 +98,28 @@
     "evidence": [
       {
         "file": "src/dispatch.js",
-        "line": 76,
-        "text": "async spawn({ name, description, prompt, signal, readOnly, taskId, goal }) {"
+        "line": 77,
+        "text": "async spawn({ name, description, prompt, signal, readOnly, planFirst, access, taskId, goal }) {"
       },
       {
         "file": "src/dispatch.js",
-        "line": 335,
-        "text": "async spawn({ name, label, prompt, signal, taskId, cwd, readOnly, goal }) {"
+        "line": 516,
+        "text": "async spawn({ name, label, prompt, signal, taskId, cwd, readOnly, planFirst, access, goal }) {"
       },
       {
         "file": "src/dispatch.js",
-        "line": 500,
+        "line": 751,
         "text": "async spawn() { fail() },"
       },
       {
         "file": "src/queue.js",
-        "line": 78,
+        "line": 119,
         "text": "member = await dispatcher.spawn({"
+      },
+      {
+        "file": "src/worktree.js",
+        "line": 9,
+        "text": "import { execFile } from 'node:child_process'"
       }
     ]
   },

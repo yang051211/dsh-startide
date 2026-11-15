@@ -1,7 +1,7 @@
 {
   "name": "dsh-qwen-paint",
-  "version": "0.32.1",
-  "scannedAt": "2026-11-14T19:29:40.520Z",
+  "version": "0.34.0",
+  "scannedAt": "2026-11-15T20:14:33.542Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -53,13 +53,13 @@
       },
       {
         "file": "lib/asset-route.js",
-        "line": 68,
+        "line": 70,
         "text": "const bytes = await fsp.readFile(fileURLToPath(new URL(`../assets/${name}`, import.meta.url)))"
       },
       {
-        "file": "lib/comfy-accel.js",
-        "line": 19,
-        "text": "import { promises as fsp } from 'node:fs'"
+        "file": "lib/audio-sample.js",
+        "line": 24,
+        "text": "import * as nodeFsSync from 'node:fs'"
       }
     ]
   },
@@ -68,28 +68,28 @@
     "evidence": [
       {
         "file": "lib/config.js",
-        "line": 2329,
+        "line": 2356,
         "text": "// ★ 0.32.1 审计翻案：插件走 ctx.tools.register，那条路径只校验 output.schema；"
       },
       {
         "file": "lib/index.js",
-        "line": 8,
-        "text": "*    理由 —— `tools.register()` 只强校验 `output.schema` 必须是标准 JSON Schema"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 108,
+        "line": 79,
         "text": "*   · `@liustack/modlens`：`export const inject = ['tools','agents','attachments','llm']`，"
       },
       {
         "file": "lib/index.js",
-        "line": 109,
+        "line": 80,
         "text": "*     然后 `apply(ctx, config)` 里**直接** `ctx.tools.register(...)`"
       },
       {
         "file": "lib/index.js",
-        "line": 110,
+        "line": 81,
         "text": "*   · `dsh-univer-office`：`inject = ['univer','tools']`，同样直接 `ctx.tools.register(...)`"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 87,
+        "text": "*   ① 这里声明 `inject = ['tools']`；"
       }
     ]
   },
@@ -159,8 +159,8 @@
     },
     {
       "file": "README.md",
-      "line": 198,
-      "text": "- **安装**：npm 发布物补进 `scripts/setup.mjs` 与 `scripts/video-model-catalog.mjs` —— 图形化引导里那些「复制就能跑」的命令，按包名安装的用户现在真的能跑。"
+      "line": 227,
+      "text": "- 诚实边界：音频权重不自动下载、缺件给清单；插件不 `pip install`、不建 venv / conda / Docker、不拉镜像；第三方节点类名与槽位未核实一律降级。"
     }
   ],
   "skippedEntries": []

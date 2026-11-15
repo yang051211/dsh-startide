@@ -1,20 +1,15 @@
 {
   "name": "@having5548/dsh-downloader",
-  "version": "0.6.0",
-  "scannedAt": "2026-10-26T10:12:36.804Z",
+  "version": "0.7.6",
+  "scannedAt": "2026-11-15T20:14:41.421Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 201,
-        "text": "return fetch(API_BASE + path, {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 403,
-        "text": "return fetch(API_BASE + path, {"
+        "line": 397,
+        "text": "return fetch(API_BASE + path, init).then(function (response) {"
       },
       {
         "file": "lib/core/proxy-server.js",
@@ -30,6 +25,11 @@
         "file": "lib/core/shell-proxy.js",
         "line": 49,
         "text": "* `curl`、`wget`、`Invoke-WebRequest`。SSH 形式（`git@github.com:…`）不走 HTTP，"
+      },
+      {
+        "file": "lib/core/subscription.js",
+        "line": 34,
+        "text": "* @param insecure - skip TLS certificate verification for this fetch (the plugin's"
       }
     ]
   },
@@ -67,6 +67,11 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/core/shell-proxy.js",
+        "line": 150,
+        "text": "* @param available - 可见工具名（`ctx.tools.definitions()` 的 name 集合）。"
+      },
+      {
         "file": "lib/index.js",
         "line": 50,
         "text": "const inject = [\"tools\"];"
@@ -84,11 +89,6 @@
       {
         "file": "lib/index.js",
         "line": 672,
-        "text": "ctx.tools.register({"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 700,
         "text": "ctx.tools.register({"
       }
     ]

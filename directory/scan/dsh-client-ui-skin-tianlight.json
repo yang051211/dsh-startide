@@ -1,0 +1,115 @@
+{
+  "name": "dsh-client-ui-skin-tianlight",
+  "version": "2.2.3",
+  "scannedAt": "2026-11-15T20:14:36.607Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1722,
+        "text": "const response = await fetch(TL5_SETTINGS_ROUTE, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 7443,
+        "text": "manifestPromise = fetch(ASSET_BASE + \"/_manifest\", { cache: \"no-store\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 7770,
+        "text": "catalogPromise = fetch(ASSET_BASE + \"/_wallpapers\", { cache: \"no-store\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 9136,
+        "text": "frameCacheSupport = fetch(ASSET_BASE + \"/_engines\", { cache: \"no-store\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 9239,
+        "text": "fetch(FRAME_CACHE_ROUTE + \"?key=\" + encodeURIComponent(key), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/cli.mjs",
+        "line": 9,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/installer.mjs",
+        "line": 34,
+        "text": "} from 'node:fs'"
+      },
+      {
+        "file": "bin/installer.mjs",
+        "line": 50,
+        "text": "return JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "bin/installer.mjs",
+        "line": 56,
+        "text": "writeFileSync(tmp, JSON.stringify(value, null, 2) + '\\n', 'utf8')"
+      },
+      {
+        "file": "bin/installer.mjs",
+        "line": 222,
+        "text": "for (const finding of scanPatchText(readFileSync(file, 'utf8'))) result.push({ file, finding })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/installer.mjs",
+        "line": 18,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "bin/installer.mjs",
+        "line": 124,
+        "text": "const result = spawnSync('tasklist', ['/FO', 'CSV', '/NH'], { encoding: 'utf8', windowsHide: true })"
+      },
+      {
+        "file": "bin/installer.mjs",
+        "line": 128,
+        "text": "const result = spawnSync('ps', ['-A', '-o', 'pid=,comm='], { encoding: 'utf8' })"
+      },
+      {
+        "file": "lib/transcode.js",
+        "line": 19,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/transcode.js",
+        "line": 97,
+        "text": "child = spawn(command, ['-version'], { windowsHide: true, stdio: ['ignore', 'pipe', 'ignore'] })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js",
+    "vendor/webwallgl/webwallgl.global.min.js"
+  ],
+  "binaryFiles": [
+    "vendor/we-wallpaper/wcap/wcap-x64.exe"
+  ],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

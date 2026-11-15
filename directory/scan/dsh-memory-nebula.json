@@ -1,19 +1,19 @@
 {
   "name": "dsh-memory-nebula",
-  "version": "1.11.40",
-  "scannedAt": "2026-11-15T08:06:25.802Z",
+  "version": "1.11.55",
+  "scannedAt": "2026-11-15T20:14:28.972Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/host/doctor.js",
-        "line": 180,
+        "line": 199,
         "text": "const res = await fetch(url, { signal: ctl.signal, headers })"
       },
       {
         "file": "lib/host/http.js",
-        "line": 525,
+        "line": 527,
         "text": "// 探活脚本、CDN 预检、`curl -I` 都走这条路，之前 HEAD /app 会掉进 404。"
       },
       {
@@ -73,22 +73,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 32,
+        "line": 33,
         "text": "export const inject = ['tools', 'systemPrompt', 'webServer', 'connection']"
       },
       {
         "file": "lib/index.js",
-        "line": 172,
+        "line": 169,
         "text": "ctx.tools.register({"
       },
       {
         "file": "lib/index.js",
-        "line": 206,
+        "line": 203,
         "text": "ctx.tools.register({"
       },
       {
         "file": "lib/index.js",
-        "line": 248,
+        "line": 245,
         "text": "ctx.tools.register({"
       }
     ]
@@ -103,7 +103,7 @@
       },
       {
         "file": "scripts/release-check.mjs",
-        "line": 87,
+        "line": 96,
         "text": "const r = spawnSync(process.execPath, ['--check', f], { encoding: 'utf8' })"
       },
       {
@@ -113,12 +113,12 @@
       },
       {
         "file": "scripts/verify-all.mjs",
-        "line": 71,
-        "text": "const child = spawn(cmd, args, { cwd: opts.cwd || PKG, env: { ...process.env, ...(opts.env || {}) } })"
+        "line": 87,
+        "text": "const child = spawn(cmd, args, { cwd: opts.cwd || PKG, env: { ...process.env, ...(opts.env || {}), DSH_HOME: home } })"
       },
       {
         "file": "scripts/verify-all.mjs",
-        "line": 91,
+        "line": 107,
         "text": "const child = spawn(process.execPath, ['lib/standalone.mjs', '--demo', '--port', String(port)], { cwd: PKG })"
       }
     ]

@@ -1,0 +1,119 @@
+{
+  "name": "dsh-research-suite",
+  "version": "3.2.1",
+  "scannedAt": "2026-11-15T20:14:33.296Z",
+  "icon": "dsh-research-suite.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "knowledge/catalog.json",
+        "line": 3823,
+        "text": "tten to output/monitor/. Modes: default fetch (all due enabled sources), targeted fetch (source_id argument), all (force-fetch all enabled), preview (dry-run — "
+      },
+      {
+        "file": "knowledge/skills/format/qinyan-citation__assets/scripts/search.sh",
+        "line": 47,
+        "text": "RESPONSE=$(curl -s -w \"\\n%{http_code}\" \\"
+      },
+      {
+        "file": "knowledge/skills/literature/qinyan-paper-search__assets/scripts/search.sh",
+        "line": 47,
+        "text": "RESPONSE=$(curl -s -w \"\\n%{http_code}\" \\"
+      },
+      {
+        "file": "lib/verify.js",
+        "line": 68,
+        "text": "{ re: /\\biwr\\s/i, detail: 'Invoke-WebRequest 简写 iwr' },"
+      },
+      {
+        "file": "lib/verify.js",
+        "line": 69,
+        "text": "{ re: /\\bInvoke-WebRequest\\b/i, detail: 'Invoke-WebRequest 外联下载' },"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core.js",
+        "line": 10,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 18,
+        "text": "const raw = fs.readFileSync(file, 'utf8');"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 40,
+        "text": "const text = fs.readFileSync(file, 'utf8');"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 227,
+        "text": "const raw = fs.readFileSync(url, 'utf8');"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 683,
+        "text": "version = JSON.parse(fs.readFileSync(path.join(pluginRoot, 'package.json'), 'utf8')).version ?? '';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 31,
+        "text": "export const inject = ['skills', 'tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 236,
+        "text": "track(tools.register(definition));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/verify.js",
+        "line": 33,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/verify.js",
+        "line": 631,
+        "text": "const res = spawnSync(runtime.command, [script], {"
+      },
+      {
+        "file": "scripts/test-docx.mjs",
+        "line": 18,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/test-docx.mjs",
+        "line": 333,
+        "text": "const run = spawnSync(pythonExe, ['-c', code], { encoding: 'utf8', timeout: 60000 });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,66 @@
+{
+  "name": "chinese2english",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-15T20:14:42.180Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 2,
+        "text": "ion api(path,init){const response=await fetch(`${ROUTE}${path}`,{credentials:\"same-origin\",...init});if(!response.ok)throw new Error(`HTTP ${response.status}`);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1039,
+        "text": "const response = await fetch(url, { ...init, signal: AbortSignal.timeout(15e3) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 872,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 918,
+        "text": "mkdirSync(dirname(options.cacheFile), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 920,
+        "text": "writeFileSync(tmp, JSON.stringify({ version: 1, entries: Object.fromEntries(cache) }));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1011,
+        "text": "const parsed = JSON.parse(readFileSync(file, \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-cmd-guard",
-  "version": "0.3.0",
-  "scannedAt": "2026-11-15T08:06:29.612Z",
+  "version": "0.4.2",
+  "scannedAt": "2026-11-15T20:14:33.935Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -31,12 +31,12 @@
       },
       {
         "file": "lib/src/index.js",
-        "line": 175,
+        "line": 181,
         "text": "if (typeof ctx.tools?.guard === 'function') {"
       },
       {
         "file": "lib/src/index.js",
-        "line": 176,
+        "line": 182,
         "text": "dispose(ctx.tools.guard((exec) => {"
       }
     ]
@@ -61,6 +61,12 @@
   "requiredServices": [
     "tools"
   ],
-  "setupHints": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 240,
+      "text": "明确**不拦**的（有意画的边界，不是漏）：`curl … | python setup.py` 判 pass —— 解释器带了脚本参数，管道里的内容是喂给脚本的数据，不是送去执行的代码；`bash script.sh` 同理，它不读 stdin。真正要拦的是没有脚本参数、直接吃流的那种，也就是 `curl … | s"
+    }
+  ],
   "skippedEntries": []
 }

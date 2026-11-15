@@ -1,0 +1,132 @@
+{
+  "name": "@58catmiao/dsh-sciwork",
+  "version": "0.4.10",
+  "scannedAt": "2026-11-15T20:14:33.884Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/actions/system.js",
+        "line": 253,
+        "text": "const res = await fetch(RAW_PACKAGE, { signal: AbortSignal.timeout(timeoutMs), headers: { 'cache-control': 'no-cache' } });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 239,
+        "text": "// 注意：精确路由注册表是**服务本身**的 `connection.fetch`（`HostConnectionService.get fetch()`），"
+      },
+      {
+        "file": "lib/refmeta.js",
+        "line": 108,
+        "text": "res = await fetch(url, {"
+      },
+      {
+        "file": "library/scripts/cdp-text.mjs",
+        "line": 74,
+        "text": "const r = await fetch(`http://127.0.0.1:${port}/json/list`);"
+      },
+      {
+        "file": "library/scripts/cdp-text.mjs",
+        "line": 87,
+        "text": "const ws = new WebSocket(target.webSocketDebuggerUrl);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/actions/data.js",
+        "line": 8,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/actions/data.js",
+        "line": 96,
+        "text": "fs.mkdirSync(outDir, { recursive: true });"
+      },
+      {
+        "file": "lib/actions/data.js",
+        "line": 97,
+        "text": "fs.writeFileSync(outAbs, tableToCsv(res.table), 'utf8');"
+      },
+      {
+        "file": "lib/actions/data.js",
+        "line": 99,
+        "text": "fs.mkdirSync(traceDir, { recursive: true });"
+      },
+      {
+        "file": "lib/actions/data.js",
+        "line": 112,
+        "text": "fs.writeFileSync(path.join(traceDir, `${outName}.json`), JSON.stringify(trace, null, 1), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tools.js",
+        "line": 8,
+        "text": "*   1. `tools.register()` 吃普通对象，**不 import 任何 @deepseek-ai/* 宿主包**"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 89,
+        "text": "tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/actions/system.js",
+        "line": 12,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/actions/system.js",
+        "line": 189,
+        "text": "execFile('git', ['-C', dir, ...args], { timeout: timeoutMs, windowsHide: true }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "lib/backup.js",
+        "line": 12,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/backup.js",
+        "line": 72,
+        "text": "const r = spawnSync('tar', args, { encoding: 'utf8', cwd, ...opts });"
+      },
+      {
+        "file": "lib/import.js",
+        "line": 26,
+        "text": "import { spawn } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 310,
+      "text": "python -m pip install pyyaml"
+    },
+    {
+      "file": "README.md",
+      "line": 324,
+      "text": "python -m pip install pyyaml"
+    }
+  ],
+  "skippedEntries": []
+}

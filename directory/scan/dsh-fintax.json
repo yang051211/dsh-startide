@@ -1,0 +1,103 @@
+{
+  "name": "dsh-fintax",
+  "version": "0.4.2",
+  "scannedAt": "2026-11-15T20:14:31.906Z",
+  "icon": "dsh-fintax.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 175,
+        "text": "const res = await fetch(`${API_BASE}${path}`, {"
+      },
+      {
+        "file": "index.js",
+        "line": 359,
+        "text": "const res = await fetch(data.url_info.url, {"
+      },
+      {
+        "file": "lib/ima.js",
+        "line": 148,
+        "text": "res = await fetch(`${BASE_URL}/${apiPath}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 7,
+        "text": "import { readFileSync, readdirSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "const PKG_VERSION = JSON.parse(readFileSync(join(PKG_DIR, 'package.json'), 'utf8')).version"
+      },
+      {
+        "file": "index.js",
+        "line": 594,
+        "text": "const raw = readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "lib/ima.js",
+        "line": 5,
+        "text": "import { chmodSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/ima.js",
+        "line": 18,
+        "text": "return readFileSync(p, 'utf8').trim()"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 3,
+        "text": "//   1. 向 ctx.tools 注册 6 个工具（4 个 IMA 知识库只读工具 + 1 个原始结算账单离线初筛体检雷达 fintax_parse_statement + 1 个 7 场景确定性算税与对账引擎 fintax_calc）；"
+      },
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "export const inject = ['tools', 'skills']"
+      },
+      {
+        "file": "index.js",
+        "line": 178,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 215,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 272,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

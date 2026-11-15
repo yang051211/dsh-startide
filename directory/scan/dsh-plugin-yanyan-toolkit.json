@@ -1,14 +1,24 @@
 {
   "name": "dsh-plugin-yanyan-toolkit",
-  "version": "1.2.0",
-  "scannedAt": "2026-11-15T08:06:33.542Z",
+  "version": "1.4.1",
+  "scannedAt": "2026-11-15T20:14:42.301Z",
   "icon": "dsh-plugin-yanyan-toolkit.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
+        "file": "lib/client.js",
+        "line": 66,
+        "text": "fetch(BASE, { credentials: 'same-origin' })"
+      },
+      {
+        "file": "packages/dsh-plugin-yanyan-icon/lib/client.js",
+        "line": 232,
+        "text": "return fetch(pathname, {"
+      },
+      {
         "file": "packages/dsh-plugin-yanyan-subagent/lib/index.js",
-        "line": 501,
+        "line": 535,
         "text": "const resp = await fetch(origin.replace(/\\/$/, '') + DELETE_API, {"
       },
       {
@@ -27,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 34,
+        "text": "return JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "packages/dsh-plugin-yanyan-icon/lib/index.js",
+        "line": 13,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "packages/dsh-plugin-yanyan-icon/lib/index.js",
+        "line": 27,
+        "text": "return JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
         "file": "packages/dsh-plugin-yanyan-subagent/lib/index.js",
         "line": 25,
         "text": "} from 'node:fs';"
-      },
-      {
-        "file": "packages/dsh-plugin-yanyan-subagent/lib/index.js",
-        "line": 230,
-        "text": "try { return JSON.parse(readFileSync(p, 'utf8')); } catch (error) { return null; }"
-      },
-      {
-        "file": "packages/dsh-plugin-yanyan-subagent/lib/index.js",
-        "line": 234,
-        "text": "writeFileSync(tmp, JSON.stringify(obj), 'utf8');"
-      },
-      {
-        "file": "packages/dsh-plugin-yanyan-subagent/lib/index.js",
-        "line": 274,
-        "text": "rmSync(real, { recursive: true, force: true });"
-      },
-      {
-        "file": "packages/dsh-plugin-yanyan-subagent/lib/index.js",
-        "line": 298,
-        "text": "try { unlinkSync(p); } catch (error) { /* 已不存在 */ }"
       }
     ]
   },
@@ -58,7 +68,7 @@
     "evidence": [
       {
         "file": "packages/dsh-plugin-yanyan-subagent/lib/index.js",
-        "line": 888,
+        "line": 922,
         "text": "for (const def of definitions) tools.register(def);"
       }
     ]
@@ -77,7 +87,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 3,
+  "dependencies": 4,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

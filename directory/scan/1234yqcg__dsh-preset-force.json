@@ -1,7 +1,7 @@
 {
   "name": "@1234yqcg/dsh-preset-force",
-  "version": "0.1.4",
-  "scannedAt": "2026-11-13T21:11:05.708Z",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-15T20:14:39.764Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -27,13 +27,23 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 26,
+        "line": 30,
+        "text": "* 交给 ctx.tools.register()（它只要求 { name, description, parameters, output }）。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 35,
         "text": "export const inject = [\"commands\", \"tools\", \"agentPresets\", \"agents\", \"webServer\"];"
       },
       {
         "file": "lib/index.js",
-        "line": 134,
-        "text": "ctx.tools.register(defineTool({"
+        "line": 166,
+        "text": "* 宿主 ctx.tools.register() 不强制要求预先校验，模型侧 schema 已经约束了类型；"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 217,
+        "text": "ctx.effect(() => ctx.tools.register({"
       }
     ]
   },

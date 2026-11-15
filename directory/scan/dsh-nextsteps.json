@@ -1,35 +1,35 @@
 {
   "name": "dsh-nextsteps",
-  "version": "1.8.1",
-  "scannedAt": "2026-11-14T23:52:57.203Z",
+  "version": "1.9.0",
+  "scannedAt": "2026-11-15T20:14:28.641Z",
   "icon": "dsh-nextsteps.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 57,
+        "line": 63,
         "text": "const r = await fetch(SECRET_ROUTE, { cache: 'no-store', signal: AbortSignal.timeout(SECRET_TIMEOUT_MS) });"
       },
       {
         "file": "client.js",
-        "line": 85,
+        "line": 91,
         "text": "const r = await fetch(`http://127.0.0.1:${port}/.ns/health`, { cache: 'no-store', signal: AbortSignal.timeout(HEALTH_TIMEOUT_MS) });"
       },
       {
         "file": "client.js",
-        "line": 1276,
+        "line": 1293,
         "text": "const response = await fetch(GENERATE_ROUTE, {"
       },
       {
         "file": "client.js",
-        "line": 1414,
-        "text": "              const response = await fetch(GENERATE_ROUTE, { method: 'POST', headers: { 'content-type': 'application/json' }, body, signal: AbortSignal.timeout("
+        "line": 1835,
+        "text": "const response = await fetch(GENERATE_ROUTE, {"
       },
       {
         "file": "client.js",
-        "line": 1616,
-        "text": "const response = await fetch(MODELS_ROUTE, { cache: 'no-store' });"
+        "line": 2000,
+        "text": "              const response = await fetch(GENERATE_ROUTE, { method: 'POST', headers: { 'content-type': 'application/json' }, body, signal: AbortSignal.timeout("
       }
     ]
   },
@@ -48,17 +48,17 @@
       },
       {
         "file": "index.js",
-        "line": 69,
+        "line": 46,
         "text": "try { return JSON.parse(readFileSync(path.join(PLUGIN_DIR, 'package.json'), 'utf8')).version ?? null; } catch { return null; }"
       },
       {
         "file": "index.js",
-        "line": 118,
+        "line": 95,
         "text": "const stored = readFileSync(SECRET_FILE, 'utf8').trim();"
       },
       {
         "file": "index.js",
-        "line": 126,
+        "line": 103,
         "text": "mkdirSync(path.dirname(SECRET_FILE), { recursive: true });"
       }
     ]
@@ -73,7 +73,7 @@
       },
       {
         "file": "index.js",
-        "line": 971,
+        "line": 983,
         "text": "ctx.tools.register(toolSpec(ctx, () => settings));"
       }
     ]
@@ -85,11 +85,6 @@
         "file": "index.js",
         "line": 5,
         "text": "import { spawn } from 'node:child_process';"
-      },
-      {
-        "file": "index.js",
-        "line": 55,
-        "text": "const child = spawn(command, args, { cwd: PROFILE_DIR, env: process.env, windowsHide: true });"
       }
     ]
   },
@@ -98,7 +93,9 @@
     "evidence": []
   },
   "dependencies": 0,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "client.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [],
   "setupHints": [],

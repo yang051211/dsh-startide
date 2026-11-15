@@ -1,25 +1,15 @@
 {
   "name": "dsh-rescue-guard",
-  "version": "0.5.3",
-  "scannedAt": "2026-11-10T20:53:57.667Z",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-15T20:14:31.937Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 414,
+        "line": 484,
         "text": "const response = await fetch(url, init);"
-      },
-      {
-        "file": "client.js",
-        "line": 1717,
-        "text": "fetch('/dsh-rescue/client-errors.json', {"
-      },
-      {
-        "file": "client.js",
-        "line": 1757,
-        "text": "fetch('/dsh-rescue/client-errors.json', {"
       }
     ]
   },
@@ -28,27 +18,27 @@
     "evidence": [
       {
         "file": "bin/dsh-rescue-watch.mjs",
-        "line": 13,
-        "text": "import { existsSync, mkdirSync, openSync, readFileSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
+        "line": 14,
+        "text": "import { closeSync, existsSync, mkdirSync, openSync, statSync, unlinkSync, utimesSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "bin/dsh-rescue-watch.mjs",
-        "line": 24,
+        "line": 44,
+        "text": "writeFileSync(fd, payload)"
+      },
+      {
+        "file": "bin/dsh-rescue-watch.mjs",
+        "line": 53,
+        "text": "unlinkSync(file)"
+      },
+      {
+        "file": "bin/dsh-rescue-watch.mjs",
+        "line": 70,
         "text": "if (!existsSync(dir)) mkdirSync(dir, { recursive: true })"
       },
       {
         "file": "bin/dsh-rescue-watch.mjs",
-        "line": 32,
-        "text": "unlinkSync(file) // stale"
-      },
-      {
-        "file": "bin/dsh-rescue-watch.mjs",
-        "line": 35,
-        "text": "writeFileSync(fd, JSON.stringify({ pid: process.pid, at: new Date().toISOString() }))"
-      },
-      {
-        "file": "bin/dsh-rescue-watch.mjs",
-        "line": 41,
+        "line": 94,
         "text": "unlinkSync(file)"
       }
     ]
@@ -67,22 +57,22 @@
       },
       {
         "file": "bin/dsh-rescue.mjs",
-        "line": 639,
+        "line": 705,
         "text": "const { spawnSync } = await import('node:child_process')"
       },
       {
         "file": "bin/dsh-rescue.mjs",
-        "line": 640,
+        "line": 706,
         "text": "const result = spawnSync(process.execPath, [self, ...argv], { stdio: 'inherit', windowsHide: false })"
       },
       {
         "file": "bin/dsh-rescue.mjs",
-        "line": 647,
+        "line": 713,
         "text": "const { spawnSync } = await import('node:child_process')"
       },
       {
         "file": "bin/dsh-rescue.mjs",
-        "line": 649,
+        "line": 715,
         "text": "const result = spawnSync(process.execPath, [script, ...rest], { stdio: 'inherit' })"
       }
     ]

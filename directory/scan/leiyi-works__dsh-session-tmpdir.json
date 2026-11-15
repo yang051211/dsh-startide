@@ -1,0 +1,96 @@
+{
+  "name": "@leiyi-works/dsh-session-tmpdir",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-15T20:14:31.685Z",
+  "icon": "leiyi-works__dsh-session-tmpdir.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 125,
+        "text": "ent|Add-Content|Out-File|Expand-Archive|Invoke-WebRequest|Invoke-RestMethod|curl|wget|robocopy|git\\s+clone|tar|unzip|7z|touch|tee|New-ItemProperty|cp|mv|ln|inst"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { existsSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 2,
+        "text": "import { appendFile, mkdir, readdir, readFile, rename, rm, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 141,
+        "text": "save\\s*\\(|imwrite\\s*\\(|np\\.save\\w*\\s*\\(|writeFile(?:Sync)?\\s*\\(|appendFile(?:Sync)?\\s*\\(|createWriteStream\\s*\\(|writeTextFile\\s*\\(|fs\\.(?:copyFile\\w*|rename\\w*|"
+      },
+      {
+        "file": "index.js",
+        "line": 932,
+        "text": "return JSON.parse(await readFile(join(dir, MARKER_FILE), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 942,
+        "text": "await writeFile(join(dir, MARKER_FILE), JSON.stringify(payload, null, 2), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 152,
+        "text": "export const inject = ['sessions', 'sessionTitle', 'workingDirectory', 'systemPrompt', 'tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 1814,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 1848,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 1947,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 2017,
+        "text": "ctx.tools.guard((execution) => {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionTitle",
+    "sessions",
+    "systemPrompt",
+    "tools",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

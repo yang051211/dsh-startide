@@ -1,16 +1,11 @@
 {
   "name": "dsh-fast-react",
-  "version": "0.5.1",
-  "scannedAt": "2026-11-13T21:11:01.424Z",
+  "version": "1.6.8",
+  "scannedAt": "2026-11-15T20:14:37.150Z",
   "icon": "dsh-fast-react.svg",
   "network": {
     "hit": true,
     "evidence": [
-      {
-        "file": "lib/index.js",
-        "line": 3528,
-        "text": "fetch(__FR_BASE__+'/sidebar.js?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.text()}).then(function(txt){"
-      },
       {
         "file": "lib/ui/sidebar.js",
         "line": 355,
@@ -27,6 +22,11 @@
         "text": "const r = await fetch(base + p, opt)"
       },
       {
+        "file": "tools/post-restart-smoke.mjs",
+        "line": 6,
+        "text": "const j = async (p, opt) => (await fetch(BASE + p, opt)).json()"
+      },
+      {
         "file": "tools/regression.mjs",
         "line": 9,
         "text": "const r = await fetch(`http://127.0.0.1:${p}/fr/status`, { signal: AbortSignal.timeout(1200) })"
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/api.js",
-        "line": 10,
-        "text": "import { readFileSync, readdirSync, existsSync, statSync, openSync, readSync, fstatSync, closeSync } from 'node:fs'"
+        "file": "lib/api-app.js",
+        "line": 17,
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync } from 'node:fs'"
       },
       {
-        "file": "lib/api.js",
-        "line": 19,
-        "text": "try { return readFileSync(join(UI_DIR, name), 'utf8') } catch { return '' }"
+        "file": "lib/api-app.js",
+        "line": 409,
+        "text": "mkdirSync(join(boardDir, 'stale'), { recursive: true })"
       },
       {
-        "file": "lib/api.js",
-        "line": 103,
-        "text": "const t = readFileSync(p, 'utf8')"
+        "file": "lib/api-app.js",
+        "line": 436,
+        "text": "mkdirSync(staleDir, { recursive: true })"
       },
       {
-        "file": "lib/api.js",
-        "line": 119,
-        "text": "const text = readFileSync(p, \"utf8\")"
+        "file": "lib/api-app.js",
+        "line": 564,
+        "text": "    try { Object.assign(cfg, JSON.parse(readFileSync(D.cfgFile, 'utf8')) || {}); D.resolveAgents(); return { reloaded: true } } catch (e) { return { error: Stri"
       },
       {
-        "file": "lib/api.js",
-        "line": 132,
-        "text": "return existsSync(p) ? readFileSync(p, 'utf8').length : 0"
+        "file": "lib/api-app.js",
+        "line": 659,
+        "text": "try { body = readFileSync(join(P.stepsDir, f), 'utf8') } catch { continue }"
       }
     ]
   },
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 83,
+        "line": 78,
         "text": "export const inject = ['agents', 'sessions', 'tools', 'timer', 'agentDefaultModel']"
       },
       {
         "file": "lib/index.js",
-        "line": 1007,
+        "line": 823,
         "text": "*  `tools.schemas(agent)`（含 preset 带入的工具），不能用 `ctx.tools.schemas()`——"
       },
       {
         "file": "lib/index.js",
-        "line": 3597,
+        "line": 1300,
         "text": "yield ctx.tools.guard((exec) => {"
       },
       {
-        "file": "lib/index.js",
-        "line": 4221,
+        "file": "lib/tools-reg.js",
+        "line": 29,
         "text": "//   直接 ctx.tools.register 会抛 \"tool xxx is already registered\" 并**中断 apply**"
       },
       {
-        "file": "lib/index.js",
-        "line": 4250,
+        "file": "lib/tools-reg.js",
+        "line": 58,
         "text": "*  ⚠️ 重载兼容：ctx.tools.get(name) 查的是全局视图，热重载后旧注册仍在。"
       }
     ]

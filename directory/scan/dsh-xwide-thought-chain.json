@@ -1,0 +1,89 @@
+{
+  "name": "dsh-xwide-thought-chain",
+  "version": "0.1.12",
+  "scannedAt": "2026-11-15T20:14:33.101Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 412,
+        "text": "async fetch(request) {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 99,
+        "text": "return fetch(API_PATH, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 260,
+        "text": "\t\t\tconst report = (body) => { try { fetch(API_PATH, { method: \"POST\", credentials: \"same-origin\", headers: { \"content-type\": \"application/json\" }, body: JSON.st"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "index.js",
+        "line": 35,
+        "text": "const j = JSON.parse(fs.readFileSync(LESSONS_FILE, \"utf8\"));"
+      },
+      {
+        "file": "index.js",
+        "line": 49,
+        "text": "  try { fs.mkdirSync(DATA, { recursive: true }); fs.appendFileSync(BOOT_LOG, new Date().toISOString() + \" | v\" + version + \" | \" + msg + \"\\n\", \"utf8\"); } catch "
+      },
+      {
+        "file": "index.js",
+        "line": 87,
+        "text": "const disk = (() => { try { return JSON.parse(fs.readFileSync(SETTINGS_FILE, \"utf8\")); } catch { return {}; } })();"
+      },
+      {
+        "file": "index.js",
+        "line": 99,
+        "text": "fs.mkdirSync(DATA, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 25,
+        "text": "export const inject = [\"tools\", \"systemPrompt\", \"settings\"];"
+      },
+      {
+        "file": "index.js",
+        "line": 381,
+        "text": "for (const d of defs) ctx.tools.register(d);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "settings",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

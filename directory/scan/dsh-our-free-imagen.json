@@ -1,0 +1,143 @@
+{
+  "name": "dsh-our-free-imagen",
+  "version": "0.10.0",
+  "scannedAt": "2026-11-15T20:14:42.257Z",
+  "icon": "dsh-our-free-imagen.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1833,
+        "text": "const res = await fetch(apiUrl(relative), {"
+      },
+      {
+        "file": "lib/kaggle/oauth/callback-server.js",
+        "line": 12,
+        "text": "import { createServer } from 'node:http'"
+      },
+      {
+        "file": "lib/net.js",
+        "line": 66,
+        "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "lib/net.js",
+        "line": 112,
+        "text": "// 大请求体（如 11MB img2img）直接走 --data-binary @- 流式入 stdin，避开 argv 长度限制与 curl -K 单行 10MB 上限；"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bundle.js",
+        "line": 16,
+        "text": "import { readFile, readdir, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/bundle.js",
+        "line": 173,
+        "text": "entries.push({ name: `${archivePrefix}/${child.name}`, data: await readFile(source) })"
+      },
+      {
+        "file": "lib/bundle.js",
+        "line": 183,
+        "text": "const data = await readFile(item.from).catch((error) => {"
+      },
+      {
+        "file": "lib/fs-atomic.js",
+        "line": 15,
+        "text": "import { chmodSync, mkdirSync, readdirSync, renameSync, rmSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/fs-atomic.js",
+        "line": 16,
+        "text": "import { chmod, mkdir, readdir, rename, rm, writeFile } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 35,
+        "text": "export const inject = ['webServer', 'subprocess', 'tools']"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 149,
+        "text": "if (!ctx.tools) return"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 151,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 174,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 194,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/kaggle.js",
+        "line": 95,
+        "text": "handle = ctx.subprocess.spawn({"
+      },
+      {
+        "file": "lib/kaggle/oauth/browser.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/net.js",
+        "line": 130,
+        "text": "const handle = ctx.subprocess.spawn({"
+      },
+      {
+        "file": "lib/routes/files.js",
+        "line": 24,
+        "text": "const handle = ctx.subprocess.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "subprocess",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 228,
+      "text": "pip install -U kaggle"
+    },
+    {
+      "file": "README.md",
+      "line": 229,
+      "text": "pip install -U kaggle"
+    }
+  ],
+  "skippedEntries": []
+}

@@ -1,15 +1,15 @@
 {
   "name": "token-contribution",
-  "version": "0.1.1",
-  "scannedAt": "2026-10-26T10:10:03.064Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-15T20:14:41.470Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 98,
-        "text": "fetch(\"/api/token-contribution/stats\").then((r) => {"
+        "line": 237,
+        "text": "fetch(`/api/token-contribution/stats?range=${encodeURIComponent(range)}`).then((r) => {"
       }
     ]
   },
@@ -17,9 +17,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/aggregator.js",
-        "line": 1,
+        "file": "lib/index.js",
+        "line": 2,
         "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 107,
+        "text": "const buf = fs.readFileSync(file);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 118,
+        "text": "return decodeZstdFrames(fs.readFileSync(file), from, onChunk);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 143,
+        "text": "const buf = fs.readFileSync(file);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 274,
+        "text": "fs.mkdirSync(path.dirname(options.cacheFile), { recursive: true });"
       }
     ]
   },
@@ -31,14 +51,14 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/aggregator.js",
-        "line": 4,
-        "text": "import { spawn } from \"node:child_process\";"
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { execFileSync, spawn } from \"node:child_process\";"
       },
       {
-        "file": "lib/aggregator.js",
-        "line": 131,
-        "text": "const proc = spawn(\"zstd\", [\"-dc\", filePath], { stdio: [\"ignore\", \"pipe\", \"ignore\"] });"
+        "file": "lib/index.js",
+        "line": 71,
+        "text": "const proc = spawn(\"zstd\", [\"-dcq\", file], { stdio: [\"ignore\", \"pipe\", \"pipe\"] });"
       }
     ]
   },

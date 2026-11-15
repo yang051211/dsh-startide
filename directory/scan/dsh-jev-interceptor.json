@@ -1,7 +1,7 @@
 {
   "name": "dsh-jev-interceptor",
-  "version": "0.8.0",
-  "scannedAt": "2026-11-08T23:32:51.921Z",
+  "version": "0.9.0",
+  "scannedAt": "2026-11-15T20:14:36.337Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -23,7 +23,7 @@
       },
       {
         "file": "lib/client.js",
-        "line": 2400,
+        "line": 2399,
         "text": "\t\t\t\tconst [sr, tr] = await Promise.all([fetch(\"/api/jev-interceptor/status\", { headers: { \"cache-control\": \"no-store\" } }), fetch(\"/api/jev-interceptor/stats\", "
       }
     ]
@@ -33,27 +33,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 6,
+        "line": 3,
         "text": "import { appendFile, mkdir, readFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 1881,
+        "line": 1899,
         "text": "this.writeQueue = this.writeQueue.then(() => this.ready()).then(() => appendFile(this.file, line, \"utf8\")).catch(() => {});"
       },
       {
         "file": "lib/index.js",
-        "line": 1890,
+        "line": 1908,
         "text": "const raw = await readFile(this.file, \"utf8\");"
       },
       {
         "file": "lib/index.js",
-        "line": 1904,
+        "line": 1922,
         "text": "this.dirReady ??= mkdir(dirname(this.file), { recursive: true }).then(() => void 0, () => void 0);"
       },
       {
-        "file": "lib/jev-C4D1Wb3p.js",
-        "line": 2,
+        "file": "lib/jev-BXX675Lk.js",
+        "line": 3,
         "text": "import { appendFile, mkdir, open, readFile, rename, stat } from \"node:fs/promises\";"
       }
     ]
@@ -76,7 +76,7 @@
       }
     ]
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

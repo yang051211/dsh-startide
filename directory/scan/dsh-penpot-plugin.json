@@ -1,11 +1,22 @@
 {
   "name": "dsh-penpot-plugin",
-  "version": "0.6.1",
-  "scannedAt": "2026-11-14T19:29:29.395Z",
+  "version": "0.10.4",
+  "scannedAt": "2026-11-15T20:14:31.485Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/browser-shot.js",
+        "line": 35,
+        "text": "const response = await fetch(`http://127.0.0.1:${String(port)}/json/list`);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1695,
+        "text": "const response = await fetch(url, { headers: { authorization: `Token ${token}` } });"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
@@ -17,23 +28,23 @@
       },
       {
         "file": "lib/api-backend.js",
-        "line": 361,
+        "line": 271,
         "text": "const bytes = await readFile(path);"
       },
       {
-        "file": "lib/index.js",
-        "line": 1149,
-        "text": "const { writeFile } = await import('node:fs/promises');"
+        "file": "lib/api-backend.js",
+        "line": 454,
+        "text": "const bytes = await readFile(path);"
       },
       {
-        "file": "lib/index.js",
-        "line": 1150,
-        "text": "await writeFile(args.path, bytes);"
+        "file": "lib/browser-shot.js",
+        "line": 14,
+        "text": "import { mkdtemp, rm } from 'node:fs/promises';"
       },
       {
-        "file": "lib/skill.js",
-        "line": 10,
-        "text": "import { readFile } from 'node:fs/promises';"
+        "file": "lib/browser-shot.js",
+        "line": 157,
+        "text": "await rm(directory, { recursive: true, force: true });"
       }
     ]
   },
@@ -42,34 +53,55 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 22,
+        "line": 25,
         "text": "// `ctx.tools` and `ctx.skills` are declared services: Cordis refuses the"
       },
       {
         "file": "lib/index.js",
-        "line": 26,
+        "line": 29,
         "text": "export const inject = ['tools', 'skills'];"
       },
       {
         "file": "lib/index.js",
-        "line": 128,
+        "line": 139,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 150,
+        "line": 161,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 182,
+        "line": 193,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/browser-shot.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/browser-shot.js",
+        "line": 59,
+        "text": "const child = spawn(input.browserPath, ["
+      },
+      {
+        "file": "lib/preview.js",
+        "line": 10,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/preview.js",
+        "line": 33,
+        "text": "execFile(input.browserPath, args, { timeout: 60_000 }, (error, _stdout, stderr) => {"
+      }
+    ]
   },
   "installScripts": {
     "hit": true,

@@ -1,0 +1,93 @@
+{
+  "name": "dsh-cet6",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-15T20:14:36.948Z",
+  "icon": "dsh-cet6.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "app/js/store.js",
+        "line": 18,
+        "text": "const res = await fetch(DATA_BASE + name, { cache: 'no-cache' });"
+      },
+      {
+        "file": "build/e2e.mjs",
+        "line": 138,
+        "text": "fetch(new URL('../data/index.json', location.href), { cache: 'no-store' }).then((r) => r.json())"
+      },
+      {
+        "file": "build/serve-plugin.mjs",
+        "line": 6,
+        "text": "import http from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "build/build.mjs",
+        "line": 36,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "build/build.mjs",
+        "line": 128,
+        "text": "buf = fs.readFileSync(file)"
+      },
+      {
+        "file": "build/build.mjs",
+        "line": 176,
+        "text": "buf = fs.readFileSync(file)"
+      },
+      {
+        "file": "build/build.mjs",
+        "line": 292,
+        "text": "if (!FORCE && fs.existsSync(cached)) return fs.readFileSync(cached, 'utf8')"
+      },
+      {
+        "file": "build/build.mjs",
+        "line": 293,
+        "text": "if (fs.existsSync(sidecar)) return fs.readFileSync(sidecar, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "build/build.mjs",
+        "line": 35,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "build/pack-data.mjs",
+        "line": 20,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 256,
+      "text": "js/setup.js         「准备题库」引导页 + 资料目录结构自检"
+    }
+  ],
+  "skippedEntries": []
+}

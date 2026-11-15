@@ -1,0 +1,86 @@
+{
+  "name": "dsh-image-integrity",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-15T20:14:36.437Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/runtime.js",
+        "line": 5,
+        "text": "import { mkdir, readFile, realpath, stat, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 89,
+        "text": "const bytes = await readFile(real);"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 136,
+        "text": "await mkdir(directory, { recursive: true });"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 138,
+        "text": "await writeFile(file, `${JSON.stringify(record, null, 2)}\\n`, 'utf8');"
+      },
+      {
+        "file": "src/runtime.ts",
+        "line": 6,
+        "text": "import { mkdir, readFile, realpath, stat, writeFile } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "ctx.effect(() => ctx.tools.register(makeImageCheckTool(runtime)), 'image-integrity: image_check tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 47,
+        "text": "ctx.effect(() => ctx.tools.register(makeImageCompareTool(runtime)), 'image-integrity: image_compare tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 48,
+        "text": "ctx.effect(() => ctx.tools.register(makeImageReportTool()), 'image-integrity: image_report tool');"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 23,
+        "text": "export const inject = ['tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

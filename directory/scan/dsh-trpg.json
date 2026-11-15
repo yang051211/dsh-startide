@@ -1,0 +1,90 @@
+{
+  "name": "dsh-trpg",
+  "version": "0.16.9",
+  "scannedAt": "2026-11-15T20:14:32.979Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 75,
+        "text": "const res = await fetch(ENDPOINT + '/trpg/panel', { headers: authHeaders() });"
+      },
+      {
+        "file": "client/client.js",
+        "line": 96,
+        "text": "const res = await fetch(ENDPOINT + '/trpg/modules');"
+      },
+      {
+        "file": "client/client.js",
+        "line": 112,
+        "text": "await fetch(ENDPOINT + '/trpg/panel/card', {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 124,
+        "text": "const res = await fetch(ENDPOINT + '/trpg/panel/module', {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 145,
+        "text": "const res = await fetch(ENDPOINT + '/trpg/panel/config', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/db.js",
+        "line": 2,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "src/db.js",
+        "line": 71,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true });"
+      },
+      {
+        "file": "src/impl.js",
+        "line": 5,
+        "text": "import { mkdirSync, readFileSync, writeFileSync, readdirSync } from 'node:fs';"
+      },
+      {
+        "file": "src/impl.js",
+        "line": 90,
+        "text": "const m = JSON.parse(readFileSync(join(dir, name), 'utf8'));"
+      },
+      {
+        "file": "src/impl.js",
+        "line": 107,
+        "text": "const o = JSON.parse(readFileSync(f, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/impl.js",
+        "line": 249,
+        "text": "* 但 `ctx.tools.register` 收的是标准 JSON Schema。以前直接把扁平表交过去，"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

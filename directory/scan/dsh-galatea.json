@@ -1,0 +1,89 @@
+{
+  "name": "dsh-galatea",
+  "version": "0.5.1",
+  "scannedAt": "2026-11-15T20:14:41.827Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import { appendFileSync, mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 155,
+        "text": "appendFileSync(marker, `  ${line}\\n`);"
+      },
+      {
+        "file": "index.js",
+        "line": 165,
+        "text": "mkdirSync(dirname(marker), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 166,
+        "text": "appendFileSync(marker, `galatea loaded at ${new Date().toISOString()} pid=${process.pid}\\n`);"
+      },
+      {
+        "file": "index.js",
+        "line": 332,
+        "text": "appendFileSync(marker, `  ${note}\\n`);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 78,
+        "text": "export const inject = ['systemPrompt', 'tools', 'agents', 'timer'];"
+      },
+      {
+        "file": "index.js",
+        "line": 188,
+        "text": "if (ctx && ctx.tools && typeof ctx.tools.register === 'function') {"
+      },
+      {
+        "file": "index.js",
+        "line": 189,
+        "text": "ctx.tools.register(remember);"
+      },
+      {
+        "file": "index.js",
+        "line": 190,
+        "text": "ctx.tools.register(recall);"
+      },
+      {
+        "file": "index.js",
+        "line": 193,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "systemPrompt",
+    "timer",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

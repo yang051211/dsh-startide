@@ -1,20 +1,25 @@
 {
   "name": "dsh-gallery",
-  "version": "0.17.0",
-  "scannedAt": "2026-11-14T19:29:23.529Z",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-15T20:14:29.467Z",
   "icon": "dsh-gallery.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 1360,
+        "line": 1402,
         "text": "const response = await fetch(ROUTE, {"
       },
       {
         "file": "client.js",
-        "line": 1410,
+        "line": 1452,
         "text": "const response = await fetch(ROUTE, {"
+      },
+      {
+        "file": "client.js",
+        "line": 7822,
+        "text": "const response = await fetch(mediaUrlOf(relPath, target?.mtime), { credentials: 'same-origin' })"
       }
     ]
   },
@@ -49,8 +54,34 @@
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host/tools.js",
+        "line": 7,
+        "text": "* `ctx.tools.register` —— 注册后 schema 自动进每轮请求。"
+      },
+      {
+        "file": "host/tools.js",
+        "line": 10,
+        "text": "* `ctx.tools.register` 接受裸定义对象（不强制 defineTool），宿主实测校验："
+      },
+      {
+        "file": "host/tools.js",
+        "line": 326,
+        "text": "if (!ctx?.tools || typeof ctx.tools.register !== 'function') {"
+      },
+      {
+        "file": "host/tools.js",
+        "line": 327,
+        "text": "ctx?.logger?.warn?.('dsh-gallery: ctx.tools 不可用，Agent 工具未注册')"
+      },
+      {
+        "file": "host/tools.js",
+        "line": 334,
+        "text": "const dispose = ctx.tools.register(def)"
+      }
+    ]
   },
   "childProcess": {
     "hit": true,
@@ -72,12 +103,12 @@
       },
       {
         "file": "host/http.js",
-        "line": 1356,
+        "line": 1582,
         "text": "*   旧实现 spawn('cmd.exe', ['/c','start','','explorer.exe', `/select,\"${abs}\"`])"
       },
       {
         "file": "host/http.js",
-        "line": 1382,
+        "line": 1608,
         "text": "const { spawn } = await import('node:child_process')"
       }
     ]
@@ -91,6 +122,7 @@
   "binaryFiles": [],
   "requiredServices": [
     "connection",
+    "tools",
     "webServer"
   ],
   "setupHints": [],

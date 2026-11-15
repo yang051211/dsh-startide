@@ -1,0 +1,99 @@
+{
+  "name": "dsh-quote-shot",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-15T20:14:35.458Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 109,
+        "text": "fetch('/quote-shot/log', {"
+      },
+      {
+        "file": "client.js",
+        "line": 134,
+        "text": "fetch(HINT_ROUTE, {"
+      },
+      {
+        "file": "client.js",
+        "line": 553,
+        "text": "const response = await fetch(INJECT_ROUTE, {"
+      },
+      {
+        "file": "client.js",
+        "line": 1083,
+        "text": "const response = await fetch('/quote-shot/message', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import { appendFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 37,
+        "text": "appendFileSync(TRACE_FILE, `${new Date().toISOString()} ${line}\\n`);"
+      },
+      {
+        "file": "install.mjs",
+        "line": 12,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync, rmSync, lstatSync, symlinkSync } from 'node:fs';"
+      },
+      {
+        "file": "install.mjs",
+        "line": 36,
+        "text": "return JSON.parse(readFileSync(manifestPath, 'utf8'));"
+      },
+      {
+        "file": "install.mjs",
+        "line": 58,
+        "text": "mkdirSync(join(PROFILE, 'node_modules'), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 53,
+        "text": "export const inject = ['webServer', 'agents', 'tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 441,
+        "text": "const disposer = ctx.tools.register({"
+      },
+      {
+        "file": "verify.mjs",
+        "line": 70,
+        "text": "src.includes(\"export const inject = ['webServer', 'agents', 'tools']\"),"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,71 @@
+{
+  "name": "dsh-windows-notifications",
+  "version": "1.2.1",
+  "scannedAt": "2026-11-15T20:14:36.061Z",
+  "icon": "dsh-windows-notifications.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 83,
+        "text": "fetch(`${API}/config`, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 105,
+        "text": "fetch(`${API}/config`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "import { appendFileSync, renameSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 367,
+        "text": "appendFileSync(this.logFile, `${new Date().toISOString()} ${message}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 188,
+        "text": "scoped.effect(() => tools.register(definition), 'windows-notifications.tool')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 990,
+        "text": "child = spawn(POWERSHELL, ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

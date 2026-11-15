@@ -1,34 +1,34 @@
 {
   "name": "dsh-mo-image",
-  "version": "0.6.0",
-  "scannedAt": "2026-11-13T21:10:50.682Z",
-  "icon": null,
+  "version": "0.7.0",
+  "scannedAt": "2026-11-15T20:14:32.164Z",
+  "icon": "dsh-mo-image.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 855,
+        "line": 868,
         "text": "const response = await fetch('/api/mo-image/config', { cache: 'no-store', signal: AbortSignal.timeout(15000) });"
       },
       {
         "file": "lib/client.js",
-        "line": 896,
+        "line": 909,
         "text": "const response = await fetch('/api/mo-image/config', {"
       },
       {
         "file": "lib/client.js",
-        "line": 1179,
+        "line": 1194,
         "text": "const response = await fetch('/api/mo-image/models', {"
       },
       {
         "file": "lib/client.js",
-        "line": 1412,
+        "line": 1427,
         "text": "const response = await fetch('/api/mo-image/comfy/analyze', {"
       },
       {
         "file": "lib/client.js",
-        "line": 5114,
+        "line": 5439,
         "text": "const response = await fetch('/api/mo-image/update', { cache: 'no-store', signal: AbortSignal.timeout(5000) });"
       }
     ]
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 1,
-        "text": "import { mkdirSync, existsSync, appendFileSync, readFileSync, writeFileSync, statSync } from 'node:fs';"
+        "file": "lib/config-store.js",
+        "line": 7,
+        "text": "import { existsSync, readFileSync, statSync } from 'node:fs';"
       },
       {
-        "file": "lib/index.js",
-        "line": 2,
-        "text": "import { readFile, writeFile, stat, rename, unlink } from 'node:fs/promises';"
+        "file": "lib/config-store.js",
+        "line": 8,
+        "text": "import { readFile, writeFile, rename, unlink } from 'node:fs/promises';"
       },
       {
-        "file": "lib/index.js",
-        "line": 44,
-        "text": "return String(JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version || '0.0.0');"
+        "file": "lib/config-store.js",
+        "line": 398,
+        "text": "store.cache = normalizeConfig(JSON.parse(readFileSync(store.configFile, 'utf8')));"
       },
       {
-        "file": "lib/index.js",
-        "line": 58,
-        "text": "function ensureDirs() { mkdirSync(outputDir(), { recursive: true }); }"
+        "file": "lib/config-store.js",
+        "line": 585,
+        "text": "let config = normalizeConfig(JSON.parse(await readFile(store.configFile, 'utf8')));"
       },
       {
-        "file": "lib/index.js",
-        "line": 60,
-        "text": "try { appendFileSync(hostLogFile(), new Date().toISOString() + ' ' + message + '\\n'); } catch (_error) { /* diagnostics */ }"
+        "file": "lib/config-store.js",
+        "line": 599,
+        "text": "await writeFile(tempFile, JSON.stringify(next, null, 2), { encoding: 'utf8', mode: 0o600 });"
       }
     ]
   },
@@ -73,22 +73,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 1236,
+        "line": 687,
         "text": "export const inject = ['webServer', 'tools'];"
       },
       {
         "file": "lib/index.js",
-        "line": 1318,
+        "line": 770,
         "text": "if (ctx.tools && typeof ctx.tools.guard === 'function') {"
       },
       {
         "file": "lib/index.js",
-        "line": 1319,
+        "line": 771,
         "text": "ctx.effect(() => ctx.tools.guard((execution) => configWriteReason(execution && execution.arguments, execution && execution.name)), 'mo-image: config guard');"
       },
       {
         "file": "lib/index.js",
-        "line": 1635,
+        "line": 1172,
         "text": "ctx.tools.register({"
       }
     ]

@@ -1,7 +1,7 @@
 {
   "name": "dsh-shiori",
-  "version": "0.3.1",
-  "scannedAt": "2026-11-11T21:01:19.623Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-15T20:14:38.115Z",
   "icon": "dsh-shiori.png",
   "network": {
     "hit": true,
@@ -15,6 +15,21 @@
         "file": "src/acceptance/loopback-capture.mjs",
         "line": 292,
         "text": "const response = await fetch(`${capture.url}/v1/chat`, {"
+      },
+      {
+        "file": "test/acceptance/loopback-capture.test.mjs",
+        "line": 90,
+        "text": "const response = await fetch(`${url}/v1/chat`, {"
+      },
+      {
+        "file": "test/acceptance/loopback-capture.test.mjs",
+        "line": 122,
+        "text": "fetch(`${url}/v1/chat`, { method: \"POST\", body: \"{}\", signal: AbortSignal.timeout(3000) }),"
+      },
+      {
+        "file": "test/acceptance/loopback-capture.test.mjs",
+        "line": 132,
+        "text": "const response = await fetch(`${url}/v1/chat`, {"
       }
     ]
   },
@@ -22,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/acceptance/cli.mjs",
-        "line": 15,
-        "text": "import { readFile, writeFile } from \"node:fs/promises\";"
+        "file": "bin/admin.mjs",
+        "line": 21,
+        "text": "import { realpathSync } from \"node:fs\";"
       },
       {
-        "file": "src/acceptance/cli.mjs",
-        "line": 71,
-        "text": "await writeFile(bundlePath, JSON.stringify(bundle, null, 2), \"utf8\");"
+        "file": "scripts/eval-recall.mjs",
+        "line": 20,
+        "text": "import { readFileSync } from \"node:fs\";"
       },
       {
-        "file": "src/acceptance/cli.mjs",
-        "line": 86,
-        "text": "const bundle = JSON.parse(await readFile(args.bundle, \"utf8\"));"
+        "file": "scripts/eval-recall.mjs",
+        "line": 51,
+        "text": "const fixtures = JSON.parse(readFileSync(new URL(\"../test/semantic/eval-fixtures.json\", import.meta.url), \"utf8\"));"
       },
       {
-        "file": "src/acceptance/global-fallback-child.mjs",
-        "line": 15,
-        "text": "import { readFile, writeFile } from \"node:fs/promises\";"
+        "file": "scripts/run-tests.mjs",
+        "line": 20,
+        "text": "import { readdirSync } from \"node:fs\";"
       },
       {
-        "file": "src/acceptance/global-fallback-child.mjs",
-        "line": 30,
-        "text": "const payload = JSON.parse(await readFile(payloadPath, \"utf8\"));"
+        "file": "scripts/verify-package.mjs",
+        "line": 4,
+        "text": "import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync } from \"node:fs\";"
       }
     ]
   },
@@ -82,24 +97,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/acceptance/index.mjs",
-        "line": 957,
-        "text": "const { spawnSync } = await import(\"node:child_process\");"
+        "file": "scripts/run-tests.mjs",
+        "line": 21,
+        "text": "import { spawnSync } from \"node:child_process\";"
       },
       {
-        "file": "src/acceptance/index.mjs",
-        "line": 967,
-        "text": "const run = spawnSync(process.execPath, [childScript, phase, stateRoot, scopeId, outPath], { encoding: \"utf8\", timeout: 30_000 });"
+        "file": "scripts/run-tests.mjs",
+        "line": 151,
+        "text": "const res = spawnSync(process.execPath, [\"--test\", ...files.map((rel) => join(TEST_ROOT, rel))], {"
       },
       {
-        "file": "src/acceptance/index.mjs",
-        "line": 1142,
-        "text": "const { spawnSync } = await import(\"node:child_process\");"
+        "file": "scripts/verify-package.mjs",
+        "line": 5,
+        "text": "import { execFileSync, spawnSync } from \"node:child_process\";"
       },
       {
-        "file": "src/acceptance/index.mjs",
-        "line": 1190,
-        "text": "const run = spawnSync(process.execPath, [childScript, dataRoot, ACTIVE_SCOPE, payloadPath, childOut], { encoding: \"utf8\", timeout: 30_000 });"
+        "file": "scripts/verify-package.mjs",
+        "line": 298,
+        "text": "const syntax = spawnSync(process.execPath, [\"--check\", \"scripts/run-tests.mjs\"], { cwd: pkgDir, encoding: \"utf8\", windowsHide: true });"
+      },
+      {
+        "file": "scripts/verify-package.mjs",
+        "line": 302,
+        "text": "const res = spawnSync(process.execPath, [\"scripts/run-tests.mjs\", \"dev\", \"--collect-only\"], {"
       }
     ]
   },
