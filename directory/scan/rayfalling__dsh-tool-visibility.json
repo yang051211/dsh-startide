@@ -1,7 +1,7 @@
 {
   "name": "@rayfalling/dsh-tool-visibility",
-  "version": "0.3.5",
-  "scannedAt": "2026-10-26T10:14:09.517Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-15T08:06:32.894Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -12,22 +12,22 @@
     "evidence": [
       {
         "file": "src/index.js",
-        "line": 44,
+        "line": 45,
         "text": "import { readFile, writeFile, mkdir } from 'node:fs/promises';"
       },
       {
         "file": "src/index.js",
-        "line": 112,
+        "line": 159,
         "text": "const parsed = JSON.parse(await readFile(stateFile, 'utf8'));"
       },
       {
         "file": "src/index.js",
-        "line": 129,
+        "line": 176,
         "text": "await mkdir(path.dirname(stateFile), { recursive: true });"
       },
       {
         "file": "src/index.js",
-        "line": 134,
+        "line": 181,
         "text": "await writeFile(stateFile, JSON.stringify(state, null, 2), 'utf8');"
       }
     ]
@@ -43,22 +43,22 @@
       {
         "file": "src/index.js",
         "line": 8,
-        "text": "*  1. `ctx.tools.restrict({ deny })` — the ToolRuntime's per-scope visibility"
+        "text": "*  `ctx.tools.restrict({ deny })` is the ToolRuntime's per-scope visibility"
       },
       {
         "file": "src/index.js",
-        "line": 33,
-        "text": "* (`ctx.tools`, `ctx.systemPrompt`, `ctx.connection`), so the package loads in"
+        "line": 34,
+        "text": "* (`ctx.tools`, `ctx.connection`), so the package loads in any profile where the"
       },
       {
         "file": "src/index.js",
-        "line": 50,
+        "line": 51,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "src/index.js",
-        "line": 182,
-        "text": "lift = ctx.tools.restrict({ deny });"
+        "line": 148,
+        "text": "return ctx.tools.schemas(scope);"
       }
     ]
   },

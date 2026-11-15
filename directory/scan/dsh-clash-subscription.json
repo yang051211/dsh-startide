@@ -1,0 +1,123 @@
+{
+  "name": "dsh-clash-subscription",
+  "version": "0.6.2",
+  "scannedAt": "2026-11-15T08:06:30.061Z",
+  "icon": "dsh-clash-subscription.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 846,
+        "text": "const response = await fetch('/clash-proxy/status', { credentials: 'same-origin' })"
+      },
+      {
+        "file": "client.js",
+        "line": 909,
+        "text": "const response = await fetch('/clash-proxy/action', {"
+      },
+      {
+        "file": "client.js",
+        "line": 917,
+        "text": "const refreshed = await fetch('/clash-proxy/status', { credentials: 'same-origin' })"
+      },
+      {
+        "file": "client.js",
+        "line": 930,
+        "text": "const response = await fetch('/clash-proxy/probe', {"
+      },
+      {
+        "file": "client.js",
+        "line": 998,
+        "text": "const response = await fetch('/clash-proxy/status', { credentials: 'same-origin' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 1036,
+        "text": "mkdirSync(this.dataDir, { recursive: true })"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 15,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 110,
+        "text": "mkdirSync(workDir, { recursive: true })"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 117,
+        "text": "same = readFileSync(path, 'utf8') === body"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 41,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 1452,
+        "text": "ctx.tools.register(subscriptionTool(runtime))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 380,
+        "text": "const child = spawn(this.binary, ['-d', this.workDir, '-f', this.configPath], {"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 831,
+        "text": "const killer = spawn('taskkill', ['/F', '/PID', String(child.pid)], { windowsHide: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "lib/corefetch.js",
+        "line": 24,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/corefetch.js",
+        "line": 511,
+        "text": "const child = spawn(command, args, { windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

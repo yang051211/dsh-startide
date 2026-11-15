@@ -1,0 +1,74 @@
+{
+  "name": "@dsh-plugin/dsh-claude-provider",
+  "version": "0.9.0",
+  "scannedAt": "2026-11-15T08:06:32.512Z",
+  "icon": "dsh-plugin__dsh-claude-provider.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/migrate-legacy-types.js",
+        "line": 1,
+        "text": "import { copyFile, readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/migrate-legacy-types.js",
+        "line": 37,
+        "text": "legacy = yaml.load(await readFile(join(home, 'settings.yaml.imported'), 'utf8'));"
+      },
+      {
+        "file": "lib/migrate-legacy-types.js",
+        "line": 44,
+        "text": "const text = await readFile(target, 'utf8');"
+      },
+      {
+        "file": "lib/migrate-legacy-types.js",
+        "line": 62,
+        "text": "await writeFile(target, yaml.dump(patches, { lineWidth: -1, noRefs: true }), { mode: 0o600 });"
+      },
+      {
+        "file": "scripts/build-client.ts",
+        "line": 13,
+        "text": "import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/build-client.ts",
+        "line": 12,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/build-client.ts",
+        "line": 124,
+        "text": "const checked = spawnSync(process.execPath, ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "settings"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,86 @@
+{
+  "name": "dsh-virtual-product-risk",
+  "version": "1.1.2",
+  "scannedAt": "2026-11-15T08:06:27.747Z",
+  "icon": "dsh-virtual-product-risk.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 366,
+        "text": "fetch(apiUrl('virtual-product-risk/api/meta'), { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 369,
+        "text": "fetch(apiUrl('virtual-product-risk/api/models'), { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 399,
+        "text": "const r = await fetch(apiUrl('virtual-product-risk/api/library'), { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 408,
+        "text": "          const r = await fetch(apiUrl('virtual-product-risk/api/library?cat=' + encodeURIComponent(cat) + '&q=' + encodeURIComponent(q || '') + '&offset=0&limi"
+      },
+      {
+        "file": "client.js",
+        "line": 416,
+        "text": "        const r = await fetch(apiUrl('virtual-product-risk/api/library?cat=' + encodeURIComponent(libSel) + '&q=' + encodeURIComponent(libQ) + '&offset=' + libO"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "import { readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "return JSON.parse(readFileSync(join(ASSET_DIR, name), 'utf8').replace(/^\\uFEFF/, ''))"
+      },
+      {
+        "file": "index.js",
+        "line": 1191,
+        "text": "nction fsWriteUpdateStatus(obj) { try { writeFileSync(join(PKG_DIR, '.update-status.json'), JSON.stringify({ at: new Date().toISOString(), ...obj })) } catch (e"
+      },
+      {
+        "file": "index.js",
+        "line": 1192,
+        "text": "const PKG_VERSION = (() => { try { return JSON.parse(readFileSync(join(PKG_DIR, 'package.json'), 'utf8')).version || '' } catch (e) { return '' } })()"
+      },
+      {
+        "file": "index.js",
+        "line": 1272,
+        "text": "try { status = JSON.parse(readFileSync(join(PKG_DIR, '.update-status.json'), 'utf8')) } catch (e) { status = null }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

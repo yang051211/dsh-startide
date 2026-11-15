@@ -1,0 +1,75 @@
+{
+  "name": "@dsh-plugin/dsh-git-sidebar",
+  "version": "0.0.1",
+  "scannedAt": "2026-11-15T08:06:32.997Z",
+  "icon": "dsh-plugin__dsh-git-sidebar.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1201,
+        "text": "import { readFile, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1212,
+        "text": "const bytes = await readFile(absolute);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1308,
+        "text": "await writeFile(join(root, path), render(segments, choices), \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1429,
+        "text": "import { stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1688,
+        "text": "import { rm, writeFile as writeFile2 } from \"node:fs/promises\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1387,
+        "text": "const child = ctx.subprocess.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 82,
+      "text": "node run/setup.mjs        # 生成隔离的 DSH home 与 profile，用 junction 挂载本插件"
+    },
+    {
+      "file": "README.md",
+      "line": 87,
+      "text": "- `run/setup.mjs` 在 `run/home` 下建独立 profile（`base` + `web-app` + 本插件），不触碰日常使用的 profile。**本插件必须写进 profile 的 `dsh.profile.bundles`**，只加 patch 行会加载插件但插件管理器里没有条目。"
+    }
+  ],
+  "skippedEntries": []
+}

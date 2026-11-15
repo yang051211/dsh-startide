@@ -1,0 +1,66 @@
+{
+  "name": "dsh-draft-persistence",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-15T08:06:33.485Z",
+  "icon": "dsh-draft-persistence.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 84,
+        "text": "const response = await fetch(API_PREFIX + path, init)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import { mkdir, readFile, rename, stat, unlink, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { appendFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 140,
+        "text": "const start = ready ? Promise.resolve() : mkdir(directory, { recursive: true }).then(() => { ready = true; rotateIfNeeded() })"
+      },
+      {
+        "file": "index.js",
+        "line": 141,
+        "text": "start.then(() => appendFile(file, line, 'utf8')).catch(() => {})"
+      },
+      {
+        "file": "index.js",
+        "line": 208,
+        "text": "contents = await readFile(this.#filePath, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

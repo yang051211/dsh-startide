@@ -1,0 +1,104 @@
+{
+  "name": "gemini-dsh",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-15T08:06:28.942Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/agy.js",
+        "line": 3,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "lib/google.js",
+        "line": 4,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "lib/google.js",
+        "line": 5,
+        "text": "import https from 'node:https';"
+      },
+      {
+        "file": "lib/google.js",
+        "line": 48,
+        "text": "    const req = http.request({ host: proxy.hostname, port: proxy.port || 8080, method: 'CONNECT', path: `${host}:${port}`, headers: { Host: `${host}:${port}`, ."
+      },
+      {
+        "file": "lib/google.js",
+        "line": 60,
+        "text": "* Requête HTTPS rendue comme une Response de fetch (status, ok, headers, text, json, body en flux)."
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 3,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 4,
+        "text": "import { mkdir, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 29,
+        "text": "return cleanSettings(JSON.parse(readFileSync(SETTINGS_PATH, 'utf8')));"
+      },
+      {
+        "file": "index.js",
+        "line": 225,
+        "text": "ctx.inject(['tools', 'fs'], (c) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 278,
+        "text": "await mkdir(dirname(SETTINGS_PATH), { recursive: true, mode: 0o700 });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 218,
+        "text": "if (settings[key] && !registered[key]) registered[key] = toolCtx.tools.register(tool(toolCtx.fs));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/agy.js",
+        "line": 4,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/agy.js",
+        "line": 187,
+        "text": "const child = spawn(cmd, [...args, url], { stdio: 'ignore', detached: true });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "attachments",
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

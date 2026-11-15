@@ -1,15 +1,35 @@
 {
   "name": "dsh-pocket-ios",
-  "version": "0.2.5",
-  "scannedAt": "2026-11-10T08:48:50.709Z",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-15T08:06:28.744Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 12,
-        "text": "import { createServer, request as httpRequest } from 'node:http'"
+        "file": "bin/dsh-pocket-ios.js",
+        "line": 56,
+        "text": "const res = await fetch(`${base}${CHANNEL}/cli.pair`, { method: 'POST' })"
+      },
+      {
+        "file": "bin/dsh-pocket-ios.js",
+        "line": 75,
+        "text": "const res = await fetch(`${base}${CHANNEL_PREFIX}/cli.status`, { method: 'POST' })"
+      },
+      {
+        "file": "bin/dsh-pocket-ios.js",
+        "line": 85,
+        "text": "const res = await fetch(`${base}${CHANNEL_PREFIX}/cli.mode`, {"
+      },
+      {
+        "file": "lib/cloudflared-download.js",
+        "line": 94,
+        "text": "res = await fetch(TUNA_BOTTLES, { signal: signal ?? AbortSignal.timeout(20_000) })"
+      },
+      {
+        "file": "lib/cloudflared-download.js",
+        "line": 156,
+        "text": "const head = await fetch(url, { method: 'HEAD', signal: scope })"
       }
     ]
   },
@@ -17,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 7,
-        "text": "import { appendFile, mkdir, readFile, writeFile } from 'node:fs/promises'"
+        "file": "bin/dsh-pocket-ios.js",
+        "line": 16,
+        "text": "import { readFile } from 'node:fs/promises'"
       },
       {
-        "file": "lib/index.js",
-        "line": 33,
-        "text": "await mkdir(LOG_DIR, { recursive: true })"
+        "file": "lib/cloudflare.js",
+        "line": 13,
+        "text": "import { access, constants } from 'node:fs/promises'"
       },
       {
-        "file": "lib/index.js",
-        "line": 34,
-        "text": "await appendFile(join(LOG_DIR, 'tailscale.log'), `${new Date().toISOString()} ${line}\\n`)"
+        "file": "lib/cloudflared-download.js",
+        "line": 14,
+        "text": "import { createWriteStream } from 'node:fs'"
       },
       {
-        "file": "lib/index.js",
-        "line": 55,
-        "text": "await mkdir(LOG_DIR, { recursive: true })"
+        "file": "lib/cloudflared-download.js",
+        "line": 15,
+        "text": "import { mkdir, rm, stat } from 'node:fs/promises'"
       },
       {
-        "file": "lib/index.js",
-        "line": 56,
-        "text": "await writeFile(PIN_FILE, nextPin, { mode: 0o600 })"
+        "file": "lib/cloudflared-download.js",
+        "line": 122,
+        "text": "const { createReadStream } = await import('node:fs')"
       }
     ]
   },
@@ -51,9 +71,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 11,
-        "text": "import { execFile } from 'node:child_process'"
+        "file": "bin/dsh-pocket-ios.js",
+        "line": 137,
+        "text": "const { execFile } = await import('node:child_process')"
+      },
+      {
+        "file": "lib/cloudflare.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/cloudflare.js",
+        "line": 145,
+        "text": "const child = spawn(bin, ["
+      },
+      {
+        "file": "lib/cloudflared-download.js",
+        "line": 251,
+        "text": "const { execFile } = await import('node:child_process')"
+      },
+      {
+        "file": "lib/cloudflared-download.js",
+        "line": 258,
+        "text": "execFile('tar', ['-xzf', archivePath, '-C', workDir], (error) =>"
       }
     ]
   },

@@ -1,0 +1,111 @@
+{
+  "name": "@restregular/dsh-versions",
+  "version": "0.2.5",
+  "scannedAt": "2026-11-15T08:06:33.300Z",
+  "icon": "restregular__dsh-versions.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 272,
+        "text": "const response = await fetch(url.toString(), { headers: { Accept: 'application/json' } });"
+      },
+      {
+        "file": "client.js",
+        "line": 279,
+        "text": "const response = await fetch(API, {"
+      },
+      {
+        "file": "lib/catalog.js",
+        "line": 54,
+        "text": "return await fetch(url, { ...init, signal: controller.signal });"
+      },
+      {
+        "file": "lib/installer.js",
+        "line": 158,
+        "text": "const response = await fetch(request.url, { headers: { accept: '*/*' } });"
+      },
+      {
+        "file": "lib/routes.js",
+        "line": 4,
+        "text": "* 客户端面板 `fetch('/dsh-versions/api?op=…')`，与 Agent 工具共享同一份"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/apply.js",
+        "line": 29,
+        "text": "import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/apply.js",
+        "line": 61,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/apply.js",
+        "line": 100,
+        "text": "const parsed = JSON.parse(readFileSync(path, 'utf8').replace(/^\\uFEFF/u, ''));"
+      },
+      {
+        "file": "lib/apply.js",
+        "line": 121,
+        "text": "const lines = readFileSync(path, 'utf8')"
+      },
+      {
+        "file": "lib/apply.js",
+        "line": 147,
+        "text": "writeFileSync(requestPath, JSON.stringify(request, null, 2), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 119,
+        "text": "scoped.effect(() => scoped.tools.register(definition), `dsh-versions: ${definition.name} tool`);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/apply.js",
+        "line": 28,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/apply.js",
+        "line": 156,
+        "text": "const child = spawn('powershell.exe', ["
+      },
+      {
+        "file": "lib/installer.js",
+        "line": 21,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/installer.js",
+        "line": 221,
+        "text": "const child = spawn(path, [], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

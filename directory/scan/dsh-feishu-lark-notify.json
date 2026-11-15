@@ -1,0 +1,69 @@
+{
+  "name": "dsh-feishu-lark-notify",
+  "version": "0.28.1",
+  "scannedAt": "2026-11-15T08:06:27.785Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/settings-page.js",
+        "line": 223,
+        "text": "return fetch(url, { headers: { 'x-feishu-notify-token': token } }).then(function (response) { return response.json(); });"
+      },
+      {
+        "file": "lib/settings-page.js",
+        "line": 227,
+        "text": "return fetch(url, { method: 'POST', headers: headers(), body: JSON.stringify(body) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/chats.js",
+        "line": 13,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/chats.js",
+        "line": 82,
+        "text": "const parsed = JSON.parse(fs.readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/chats.js",
+        "line": 98,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/chats.js",
+        "line": 99,
+        "text": "fs.writeFileSync(file, `${JSON.stringify({ version: 1, chats: list }, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "lib/doctor.js",
+        "line": 12,
+        "text": "import fs from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

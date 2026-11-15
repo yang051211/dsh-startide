@@ -1,7 +1,7 @@
 {
   "name": "@kenz1117/dsh-engram",
-  "version": "0.13.10",
-  "scannedAt": "2026-11-11T08:04:48.341Z",
+  "version": "0.13.11",
+  "scannedAt": "2026-11-15T08:06:25.974Z",
   "icon": "kenz1117__dsh-engram.svg",
   "network": {
     "hit": true,
@@ -17,19 +17,19 @@
         "text": "],n=!1;return(async()=>{try{let r=await fetch(`/api/engram/locales`);if(!r.ok)return;let i=await r.json(),a=Array.isArray(i.packs)?i.packs:[];for(let r of a){if"
       },
       {
-        "file": "lib/index.js",
-        "line": 5935,
-        "text": "response = await fetch(endpoint, {"
+        "file": "lib/engine/ort-wasm-simd-threaded.jsep.mjs",
+        "line": 8,
+        "text": "tCode=a;throw b;}}else if(aa||ba){try{ka=(new URL(\".\",ja)).href}catch{}h||(ba&&(ma=a=>{var b=new XMLHttpRequest;b.open(\"GET\",a,!1);b.responseType=\"arraybuffer\";"
       },
       {
-        "file": "lib/index.js",
-        "line": 9225,
-        "text": "response = await fetch(connection.endpoint, {"
+        "file": "lib/engine/ort-wasm-simd-threaded.jsep.mjs",
+        "line": 9,
+        "text": "a))return new Promise((d,c)=>{var e=new XMLHttpRequest;e.open(\"GET\",a,!0);e.responseType=\"arraybuffer\";e.onload=()=>{200==e.status||0==e.status&&e.response?d(e."
       },
       {
-        "file": "lib/index.js",
-        "line": 9554,
-        "text": "const response = await fetch(url, {"
+        "file": "lib/engine/ort-wasm-simd-threaded.jsep.mjs",
+        "line": 15,
+        "text": "){var b=Sa;if(!ta&&!na(b)&&!h)try{var d=fetch(b,{credentials:\"same-origin\"});return await WebAssembly.instantiateStreaming(d,a)}catch(c){r(`wasm streaming compi"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 2,
-        "text": "import { cpSync, createWriteStream, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from \"node:fs\";"
+        "file": "lib/engine/ort-wasm-simd-threaded.jsep.mjs",
+        "line": 8,
+        "text": "if(h){var fs=require(\"fs\");ja.startsWith(\"file:\")&&(ka=require(\"path\").dirname(require(\"url\").fileURLToPath(ja))+\"/\");ma=a=>{a=na(a)?new URL(a):a;return fs.read"
       },
       {
-        "file": "lib/index.js",
-        "line": 9,
-        "text": "import { mkdir, mkdtemp, readFile, readdir, rename, rm, stat, writeFile } from \"node:fs/promises\";"
+        "file": "lib/engine/ort.bundle.min.mjs",
+        "line": 7,
+        "text": "return yi}})(l=>{s().then(l)});function rm(s){return s>>>=0,vi(async()=>{var l=await He(s);return Ke(l)})}var On=[],nm=s=>{var l=On.length;return On.push(s),l},"
       },
       {
-        "file": "lib/index.js",
-        "line": 1956,
-        "text": "text = readFileSync(path, \"utf8\");"
+        "file": "lib/engine/ort.bundle.min.mjs",
+        "line": 11,
+        "text": "==\"string\")if(!1)try{let{readFile:e}=qn(\"node:fs/promises\");return new Uint8Array(await e(t))}catch(e){if(e.code===\"ERR_FS_FILE_TOO_LARGE\"){let{createReadStream"
       },
       {
-        "file": "lib/index.js",
-        "line": 4206,
-        "text": "mkdirSync(dirname(paths.user), { recursive: true });"
+        "file": "lib/engine/transformers.web.js",
+        "line": 6566,
+        "text": "const data = await node_fs_default.promises.readFile(this.filePath);"
       },
       {
-        "file": "lib/index.js",
-        "line": 4208,
-        "text": "writeFileSync(temporary, text, \"utf8\");"
+        "file": "lib/engine/transformers.web.js",
+        "line": 6579,
+        "text": "const data = await node_fs_default.promises.readFile(this.filePath);"
       }
     ]
   },
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 18798,
+        "line": 19129,
         "text": "const inject = [\"tools\", \"llm\"];"
       },
       {
         "file": "lib/index.js",
-        "line": 20259,
+        "line": 20597,
         "text": "})) ctx.tools.register(tool);"
       }
     ]
@@ -87,19 +87,24 @@
         "text": "import { execFileSync } from \"node:child_process\";"
       },
       {
-        "file": "scripts/ensure-build.mjs",
-        "line": 12,
+        "file": "scripts/engine-smoke.mjs",
+        "line": 27,
         "text": "import { execSync } from 'node:child_process'"
       },
       {
-        "file": "scripts/ensure-build.mjs",
-        "line": 20,
-        "text": "execSync('pnpm run bundle', { stdio: 'inherit', cwd: fileURLToPath(new URL('..', import.meta.url)) })"
+        "file": "scripts/engine-smoke.mjs",
+        "line": 93,
+        "text": "execSync(`npm pack \"${repoRoot}\" --pack-destination .`, { cwd: workDir, stdio: ['ignore', 'ignore', 'inherit'] })"
       },
       {
-        "file": "scripts/verify-panel-layout.mjs",
-        "line": 28,
-        "text": "import { execFileSync } from 'node:child_process'"
+        "file": "scripts/engine-smoke.mjs",
+        "line": 106,
+        "text": "execSync(`npm install \"${tarball}\" --no-audit --no-fund`, {"
+      },
+      {
+        "file": "scripts/ensure-build.mjs",
+        "line": 12,
+        "text": "import { execSync } from 'node:child_process'"
       }
     ]
   },
@@ -115,10 +120,18 @@
   },
   "dependencies": 0,
   "minifiedFiles": [
-    "lib/client.js"
+    "lib/client.js",
+    "lib/engine/ort.bundle.min.mjs"
   ],
-  "binaryFiles": [],
+  "binaryFiles": [
+    "lib/engine/ort-wasm-simd-threaded.jsep.wasm"
+  ],
   "requiredServices": [],
   "setupHints": [],
-  "skippedEntries": []
+  "skippedEntries": [
+    "lib/engine/node_modules/onnxruntime-common/package.json (outside the package)",
+    "lib/engine/node_modules/onnxruntime-web/package.json (outside the package)",
+    "lib/engine/node_modules/onnxruntime-common/index.mjs (outside the package)",
+    "lib/engine/node_modules/onnxruntime-web/webgpu.mjs (outside the package)"
+  ]
 }

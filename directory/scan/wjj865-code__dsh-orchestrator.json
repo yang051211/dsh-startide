@@ -1,0 +1,136 @@
+{
+  "name": "@wjj865-code/dsh-orchestrator",
+  "version": "0.10.0",
+  "scannedAt": "2026-11-15T08:06:33.307Z",
+  "icon": "wjj865-code__dsh-orchestrator.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 58,
+        "text": "const response = await fetch(ROUTE, {"
+      },
+      {
+        "file": "client.js",
+        "line": 72,
+        "text": "const response = await fetch(ROUTE, {"
+      },
+      {
+        "file": "client.js",
+        "line": 101,
+        "text": "const response = await fetch(ROUTE, {"
+      },
+      {
+        "file": "client.js",
+        "line": 113,
+        "text": "const response = await fetch(ROUTE, {"
+      },
+      {
+        "file": "client.js",
+        "line": 125,
+        "text": "const response = await fetch(ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/artifact-collect.js",
+        "line": 6,
+        "text": "import { statSync } from 'node:fs'"
+      },
+      {
+        "file": "src/brief.js",
+        "line": 2,
+        "text": "import { statSync } from 'node:fs'"
+      },
+      {
+        "file": "src/debug-preset.js",
+        "line": 15,
+        "text": "import { closeSync, existsSync, mkdirSync, openSync, readFileSync, readSync, readdirSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/debug-preset.js",
+        "line": 136,
+        "text": "mkdirSync(dirname(target), { recursive: true })"
+      },
+      {
+        "file": "src/debug-preset.js",
+        "line": 137,
+        "text": "writeFileSync(target, content, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 25,
+        "text": "export const inject = ['tools', 'agents', 'systemPrompt', 'subagents']"
+      },
+      {
+        "file": "index.js",
+        "line": 82,
+        "text": "if (ctx.tools === undefined) warnings('dsh-orchestrator: 缺少 tools 服务，工具注册/白名单/guard 不可用')"
+      },
+      {
+        "file": "index.js",
+        "line": 83,
+        "text": "else if (typeof ctx.tools.guard !== 'function') warnings('dsh-orchestrator: tools.guard 缺失，wait_agent 执行期拦截不可用')"
+      },
+      {
+        "file": "index.js",
+        "line": 211,
+        "text": "const guardDisposer = ctx.tools?.guard?.(exec => {"
+      },
+      {
+        "file": "index.js",
+        "line": 425,
+        "text": "}).map(tool => ctx.tools.register(tool))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/dispatch.js",
+        "line": 76,
+        "text": "async spawn({ name, description, prompt, signal, readOnly, taskId, goal }) {"
+      },
+      {
+        "file": "src/dispatch.js",
+        "line": 335,
+        "text": "async spawn({ name, label, prompt, signal, taskId, cwd, readOnly, goal }) {"
+      },
+      {
+        "file": "src/dispatch.js",
+        "line": 500,
+        "text": "async spawn() { fail() },"
+      },
+      {
+        "file": "src/queue.js",
+        "line": 78,
+        "text": "member = await dispatcher.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "subagents",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

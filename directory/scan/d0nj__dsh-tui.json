@@ -1,29 +1,24 @@
 {
   "name": "@d0nj/dsh-tui",
-  "version": "0.11.1",
-  "scannedAt": "2026-11-08T07:28:23.269Z",
+  "version": "1.2.47",
+  "scannedAt": "2026-11-15T08:06:25.698Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "dist/plugin.js",
-        "line": 28716,
-        "text": "const socket = new WebSocket(url);"
-      },
-      {
-        "file": "dist/plugin.js",
-        "line": 31135,
+        "line": 10602,
         "text": "}) : fetch(H, { credentials: \"same-origin\" }).then(function(a) {"
       },
       {
         "file": "dist/plugin.js",
-        "line": 32262,
+        "line": 11729,
         "text": "ypeof WebAssembly.instantiateStreaming != \"function\" || ua(H) || typeof fetch != \"function\" ? c(b) : fetch(H, { credentials: \"same-origin\" }).then(function(e) {"
       },
       {
         "file": "dist/tools.js",
-        "line": 344,
+        "line": 347,
         "text": "[window.XMLHttpRequest, \"XMLHttpRequest\"],"
       }
     ]
@@ -33,28 +28,28 @@
     "evidence": [
       {
         "file": "bin/dsh-tui.mjs",
-        "line": 18,
-        "text": "import { existsSync, readFileSync, realpathSync } from 'node:fs'"
+        "line": 4,
+        "text": "import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "bin/dsh-tui.mjs",
-        "line": 101,
-        "text": "text = readFileSync(shim, 'utf8')"
+        "line": 10,
+        "text": "const version = JSON.parse(readFileSync(join(packageRoot, 'package.json'), 'utf8')).version"
       },
       {
-        "file": "dist/install.js",
-        "line": 4,
-        "text": "import { copyFileSync, existsSync, mkdirSync, readFileSync as readFileSync2, writeFileSync } from \"node:fs\";"
+        "file": "bin/dsh-tui.mjs",
+        "line": 29,
+        "text": "return JSON.parse(readFileSync(path, 'utf8'))"
       },
       {
-        "file": "dist/install.js",
-        "line": 9,
-        "text": "import { readFileSync, statSync } from \"node:fs\";"
+        "file": "bin/dsh-tui.mjs",
+        "line": 88,
+        "text": "const current = readFileSync(target, 'utf8')"
       },
       {
-        "file": "dist/install.js",
-        "line": 87,
-        "text": "const text = readFileSync(path, \"utf8\");"
+        "file": "bin/dsh-tui.mjs",
+        "line": 93,
+        "text": "const entries = extractProfileEntries(readFileSync(source, 'utf8'))"
       }
     ]
   },
@@ -63,12 +58,12 @@
     "evidence": [
       {
         "file": "dist/tools.js",
-        "line": 4986,
+        "line": 4990,
         "text": "var inject = [\"tools\"];"
       },
       {
         "file": "dist/tools.js",
-        "line": 4993,
+        "line": 4997,
         "text": "const disposers = tools.map((tool) => ctx.tools.register(tool));"
       }
     ]
@@ -78,28 +73,28 @@
     "evidence": [
       {
         "file": "bin/dsh-tui.mjs",
-        "line": 17,
-        "text": "import { spawn } from 'node:child_process'"
+        "line": 3,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
       },
       {
         "file": "bin/dsh-tui.mjs",
-        "line": 54,
-        "text": "const child = spawn(process.execPath, [installerPath, ...process.argv.slice(2)], {"
+        "line": 36,
+        "text": "const direct = spawnSync('dsh', ['--version'], { encoding: 'utf8' })"
       },
       {
         "file": "bin/dsh-tui.mjs",
-        "line": 77,
-        "text": "const child = spawn(process.execPath, [profileBin, ...process.argv.slice(2)], {"
+        "line": 38,
+        "text": "const shelled = spawnSync(...cmd('dsh', ['--version']), { encoding: 'utf8', ...shellOpt })"
       },
       {
         "file": "bin/dsh-tui.mjs",
-        "line": 189,
-        "text": "const child = spawn(target, needsShell ? [] : args, {"
+        "line": 45,
+        "text": "? spawnSync('where.exe', ['dsh'], { encoding: 'utf8' })"
       },
       {
-        "file": "dist/install.js",
-        "line": 2,
-        "text": "import { spawn as spawnNode } from \"node:child_process\";"
+        "file": "bin/dsh-tui.mjs",
+        "line": 46,
+        "text": ": spawnSync('which', ['-a', 'dsh'], { encoding: 'utf8' })"
       }
     ]
   },
@@ -107,7 +102,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 11,
+  "dependencies": 0,
   "minifiedFiles": [
     "dist/plugin.js"
   ],
@@ -116,8 +111,8 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 30,
-      "text": "npm install -g @d0nj/dsh-tui @deepseek-ai/dsh"
+      "line": 32,
+      "text": "npm install -g @d0nj/dsh-tui      # this terminal surface"
     }
   ],
   "skippedEntries": []

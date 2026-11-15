@@ -1,0 +1,89 @@
+{
+  "name": "dsh-plugin-yanyan-toolkit",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-15T08:06:33.542Z",
+  "icon": "dsh-plugin-yanyan-toolkit.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "packages/dsh-plugin-yanyan-subagent/lib/index.js",
+        "line": 501,
+        "text": "const resp = await fetch(origin.replace(/\\/$/, '') + DELETE_API, {"
+      },
+      {
+        "file": "packages/dsh-plugin-yanyan-update/lib/client.js",
+        "line": 243,
+        "text": "return fetch(pathname, {"
+      },
+      {
+        "file": "packages/dsh-plugin-yanyan-update/lib/index.js",
+        "line": 286,
+        "text": "const resp = await fetch(url, { signal: AbortSignal.timeout(cfg.timeoutMs) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "packages/dsh-plugin-yanyan-subagent/lib/index.js",
+        "line": 25,
+        "text": "} from 'node:fs';"
+      },
+      {
+        "file": "packages/dsh-plugin-yanyan-subagent/lib/index.js",
+        "line": 230,
+        "text": "try { return JSON.parse(readFileSync(p, 'utf8')); } catch (error) { return null; }"
+      },
+      {
+        "file": "packages/dsh-plugin-yanyan-subagent/lib/index.js",
+        "line": 234,
+        "text": "writeFileSync(tmp, JSON.stringify(obj), 'utf8');"
+      },
+      {
+        "file": "packages/dsh-plugin-yanyan-subagent/lib/index.js",
+        "line": 274,
+        "text": "rmSync(real, { recursive: true, force: true });"
+      },
+      {
+        "file": "packages/dsh-plugin-yanyan-subagent/lib/index.js",
+        "line": 298,
+        "text": "try { unlinkSync(p); } catch (error) { /* 已不存在 */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "packages/dsh-plugin-yanyan-subagent/lib/index.js",
+        "line": 888,
+        "text": "for (const def of definitions) tools.register(def);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "packages/dsh-plugin-yanyan-update/lib/index.js",
+        "line": 16,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

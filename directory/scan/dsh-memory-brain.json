@@ -1,0 +1,71 @@
+{
+  "name": "dsh-memory-brain",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-15T08:06:30.727Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 59,
+        "text": "return JSON.parse(await readFile(path, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 65,
+        "text": "await mkdir(dirname(path), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 68,
+        "text": "await writeFile(tmp, `${JSON.stringify(data, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 608,
+        "text": "for (const tool of makeTools()) disposers.push(ctx.tools.register(tool))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

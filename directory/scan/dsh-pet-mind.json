@@ -1,0 +1,110 @@
+{
+  "name": "dsh-pet-mind",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-15T08:06:33.936Z",
+  "icon": "dsh-pet-mind.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 557,
+        "text": "const res = await fetch(url, { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 693,
+        "text": "const res = await fetch(baseUrl, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1481,
+        "text": "const res = await fetch(baseUrl, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2119,
+        "text": "const r = await fetch(\"/dsh-pet-7340/config\");"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3014,
+        "text": "fetch(\"/dsh-pet-7340/config/meta\").then((r) => r.ok ? r.json() : null).then((p) => setPaths(p)).catch(() => console.warn(\"[dsh-pet] 读取配置文件路径失败\"));"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { createReadStream, existsSync, fstatSync, mkdirSync, readFileSync, readdirSync, renameSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "import { mkdir, readFile, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 819,
+        "text": "]) if (!existsSync(dir)) mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 824,
+        "text": "writeFileSync(tmp, text, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 847,
+        "text": "writeFileSync(file, (exists ? readFileSync(file, \"utf8\") : header) + renderCompanionNote(trimmed, at) + \"\\n\", \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 8,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1127,
+        "text": "const spawned = spawn(\"powershell.exe\", ["
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1441,
+        "text": "const child = spawn(\"powershell.exe\", ["
+      },
+      {
+        "file": "lib/index.js",
+        "line": 5146,
+        "text": "const child = spawn(command, args, {"
+      },
+      {
+        "file": "lib/standalone.js",
+        "line": 4,
+        "text": "import { execFileSync, spawn } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 5,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

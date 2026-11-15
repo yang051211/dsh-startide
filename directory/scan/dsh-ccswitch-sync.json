@@ -1,0 +1,58 @@
+{
+  "name": "dsh-ccswitch-sync",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-15T08:06:33.428Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "import { appendFile, mkdir, readFile, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 17,
+        "text": "import { appendFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 31,
+        "text": "appendFileSync(LOG_PATH, `[${new Date().toISOString()}] import: module evaluated pid=${process.pid}\\n`)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 48,
+        "text": "await mkdir(STATE_DIR, { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 49,
+        "text": "await appendFile(LOG_PATH, `[${new Date().toISOString()}] ${line}\\n`)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

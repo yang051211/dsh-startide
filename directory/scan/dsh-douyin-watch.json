@@ -1,35 +1,35 @@
 {
   "name": "dsh-douyin-watch",
-  "version": "0.4.23",
-  "scannedAt": "2026-11-11T08:04:51.232Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-15T08:06:27.521Z",
   "icon": "dsh-douyin-watch.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 136,
+        "line": 261,
+        "text": "const post = (path, body) => fetch('/api/douyin-watch/onboard/' + path, {"
+      },
+      {
+        "file": "client.js",
+        "line": 267,
+        "text": "fetch('/api/douyin-watch/sessions').then((r) => r.json())"
+      },
+      {
+        "file": "client.js",
+        "line": 287,
+        "text": "fetch('/api/douyin-watch/browser-mode', {"
+      },
+      {
+        "file": "client.js",
+        "line": 346,
+        "text": "return fetch('/api/douyin-watch/doctor', { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{}' }).then((r) => r.json())"
+      },
+      {
+        "file": "client.js",
+        "line": 527,
         "text": "fetch('/api/douyin-watch/sessions')"
-      },
-      {
-        "file": "client.js",
-        "line": 240,
-        "text": "const loadPersonas = () => fetch('/api/douyin-watch/personas')"
-      },
-      {
-        "file": "client.js",
-        "line": 246,
-        "text": "const mutatePersonas = (body) => fetch('/api/douyin-watch/personas', {"
-      },
-      {
-        "file": "client.js",
-        "line": 264,
-        "text": "fetch('/api/douyin-watch/personas?id=' + encodeURIComponent(p.id))"
-      },
-      {
-        "file": "client.js",
-        "line": 344,
-        "text": "const load = () => fetch('/api/douyin-watch/config')"
       }
     ]
   },
@@ -43,23 +43,23 @@
       },
       {
         "file": "index.js",
-        "line": 354,
+        "line": 359,
         "text": "const raw = readFileSync(cfgPath, 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 367,
+        "line": 372,
         "text": "try { appendFileSync(cfg.logFile, `[${new Date().toISOString()}] ${m}\\n`) } catch { /* 日志写不进去不影响主流程 */ }"
       },
       {
         "file": "index.js",
-        "line": 433,
-        "text": "const j = JSON.parse(readFileSync(join(cfg.home || HOME, 'browser-mode.json'), 'utf8'))"
+        "line": 382,
+        "text": "const o = JSON.parse(readFileSync(join(cfg.home || HOME, 'owner.json'), 'utf8'))"
       },
       {
         "file": "index.js",
-        "line": 501,
-        "text": "const head = zlib.zstdDecompressSync(readFileSync(file)).toString('utf8').split('\\n')[0]"
+        "line": 388,
+        "text": "try { disk = JSON.parse(readFileSync(cfgPath, 'utf8')) || {} } catch { disk = {} }"
       }
     ]
   },
@@ -73,17 +73,17 @@
       },
       {
         "file": "index.js",
-        "line": 1761,
+        "line": 1947,
         "text": "const d = targetCtx.tools.register(spec)"
       },
       {
         "file": "index.js",
-        "line": 2572,
+        "line": 2758,
         "text": "if (agent.ctx && agent.ctx.tools && typeof agent.ctx.tools.register === 'function') {"
       },
       {
         "file": "index.js",
-        "line": 2576,
+        "line": 2762,
         "text": "log('agent.ctx.tools 不可用，跳过工具注册')"
       }
     ]
@@ -98,22 +98,22 @@
       },
       {
         "file": "index.js",
-        "line": 372,
+        "line": 398,
         "text": "execFile(cfg.nodeBin || process.execPath, [script, ...args], {"
       },
       {
         "file": "index.js",
-        "line": 1559,
+        "line": 1745,
         "text": "execFile(bin, [script, '--limit', String(limit)], {"
       },
       {
         "file": "index.js",
-        "line": 1590,
+        "line": 1776,
         "text": "execFile(node, [script, '--to', peer, '--text', text], {"
       },
       {
         "file": "index.js",
-        "line": 2433,
+        "line": 2619,
         "text": "execFile(node, [script, aweme, peer], {"
       }
     ]

@@ -1,7 +1,7 @@
 {
   "name": "dsh-dock",
-  "version": "0.23.1",
-  "scannedAt": "2026-11-07T07:29:26.717Z",
+  "version": "0.24.0",
+  "scannedAt": "2026-11-15T08:06:30.791Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -37,6 +37,11 @@
     "hit": true,
     "evidence": [
       {
+        "file": "features/dshtools/host.js",
+        "line": 178,
+        "text": "const fs = ctx.get('fs')"
+      },
+      {
         "file": "features/mcpconfig/host.js",
         "line": 18,
         "text": "import { readFile } from 'node:fs/promises'"
@@ -55,11 +60,6 @@
         "file": "features/mcpconfig/host.js",
         "line": 232,
         "text": "await writeFile(tmp, text, { mode: 0o600 })"
-      },
-      {
-        "file": "features/mcpconfig/host.js",
-        "line": 236,
-        "text": "try { await unlink(tmp) } catch { /* 清理失败忽略 */ }"
       }
     ]
   },

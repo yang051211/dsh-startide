@@ -1,7 +1,7 @@
 {
   "name": "dsh-icey",
-  "version": "1.0.0",
-  "scannedAt": "2026-11-08T14:57:25.628Z",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-15T08:06:31.856Z",
   "icon": "dsh-icey.svg",
   "network": {
     "hit": true,
@@ -52,9 +52,9 @@
         "text": "try { text = readFileSync(path, 'utf8') } catch (e) { return `读不到日志：${e?.message || e}` }"
       },
       {
-        "file": "lib/game.mjs",
-        "line": 19,
-        "text": "import { existsSync } from 'node:fs'"
+        "file": "lib/episodes.mjs",
+        "line": 23,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readdirSync, readFileSync, unlinkSync } from 'node:fs'"
       }
     ]
   },
@@ -63,17 +63,17 @@
     "evidence": [
       {
         "file": "agent.js",
-        "line": 36,
+        "line": 102,
         "text": "export const inject = ['tools', 'attachments']"
       },
       {
         "file": "agent.js",
-        "line": 119,
+        "line": 185,
         "text": "const tool = (spec) => ctx.effect(() => ctx.tools.register(defineTool({"
       },
       {
         "file": "index.js",
-        "line": 464,
+        "line": 478,
         "text": "// agent.js 的 apply 是同步的（只调 ctx.tools.register）"
       }
     ]
@@ -88,7 +88,7 @@
       },
       {
         "file": "index.js",
-        "line": 122,
+        "line": 136,
         "text": "const child = spawn(spec.command, spec.args || [], {"
       },
       {
