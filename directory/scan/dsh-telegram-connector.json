@@ -1,24 +1,24 @@
 {
   "name": "dsh-telegram-connector",
-  "version": "0.22.0",
-  "scannedAt": "2026-11-15T20:14:33.079Z",
+  "version": "0.24.0",
+  "scannedAt": "2026-11-16T08:06:27.758Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 770,
+        "line": 793,
         "text": "return await fetch(`${updaterUrl}${path}`, {"
       },
       {
         "file": "lib/index.js",
-        "line": 1632,
+        "line": 1656,
         "text": "const response = await fetch(url, { signal: AbortSignal.timeout(2000) });"
       },
       {
         "file": "lib/index.js",
-        "line": 1709,
+        "line": 1733,
         "text": "const response = await fetch(probe.url, { signal: AbortSignal.timeout(2000) });"
       },
       {
@@ -48,17 +48,17 @@
       },
       {
         "file": "lib/bindings.js",
-        "line": 9,
+        "line": 10,
         "text": "import { mkdir, open, readFile, rename } from 'node:fs/promises';"
       },
       {
         "file": "lib/bindings.js",
-        "line": 80,
+        "line": 87,
         "text": "raw = await readFile(file, 'utf8');"
       },
       {
         "file": "lib/bindings.js",
-        "line": 128,
+        "line": 136,
         "text": "await mkdir(dirname(file), { recursive: true });"
       }
     ]
@@ -68,8 +68,14 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/devtools.js",
+        "line": 10,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
   },
   "installScripts": {
     "hit": true,
@@ -91,12 +97,12 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 160,
+      "line": 171,
       "text": "./setup.sh              # asks for port, bind address, provider, key,"
     },
     {
       "file": "README.md",
-      "line": 164,
+      "line": 175,
       "text": "`./setup.sh --check` prints the whole plan and changes nothing. The setup"
     }
   ],

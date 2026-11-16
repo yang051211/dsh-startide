@@ -1,0 +1,100 @@
+{
+  "name": "dsh-custom-api",
+  "version": "1.0.3",
+  "scannedAt": "2026-11-16T08:06:31.866Z",
+  "icon": "dsh-custom-api.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 181,
+        "text": "fetch(MODELS_DEV_URL, { signal: AbortSignal.timeout(15000) })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 499,
+        "text": "const res = await fetch(url, { method: 'GET', headers });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 153,
+        "text": "const content = fs.readFileSync(CACHE_PATH, 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 163,
+        "text": "const content = fs.readFileSync(CACHE_PATH, 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 187,
+        "text": "fs.mkdirSync(path.dirname(CACHE_PATH), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 188,
+        "text": "fs.writeFileSync(CACHE_PATH, JSON.stringify(data), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "export const inject = ['llm', 'tools', 'commands', 'configEditor'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 797,
+        "text": "if (ctx.tools && typeof ctx.tools.register === 'function') {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 798,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 933,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1063,
+        "text": "const tool = ctx.tools.get('discover_custom_models');"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "configEditor",
+    "llm",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

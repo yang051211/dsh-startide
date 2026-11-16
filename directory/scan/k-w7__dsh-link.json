@@ -1,0 +1,100 @@
+{
+  "name": "@k-w7/dsh-link",
+  "version": "0.22.0",
+  "scannedAt": "2026-11-16T08:06:34.846Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 50,
+        "text": "return fetch(BRIDGE_ROUTE, init).then("
+      },
+      {
+        "file": "lib/client.js",
+        "line": 68,
+        "text": "return fetch(LINK_ROUTE + '/role', { cache: 'no-store', headers: { accept: 'application/json' } }).then("
+      },
+      {
+        "file": "lib/client.js",
+        "line": 104,
+        "text": "return fetch(url, init).then(function (res) {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 525,
+        "text": "fetch(url, { method: 'POST', cache: 'no-store' }).then(function () {}, function () {});"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 575,
+        "text": "fetch(LINK_ROUTE + '/claim-info', { cache: 'no-store', headers: { accept: 'application/json' } }).then(function (res) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/desktop/device-auth.js",
+        "line": 24,
+        "text": "import { chmodSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/desktop/device-auth.js",
+        "line": 154,
+        "text": "mkdirSync(dirname(file), { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "lib/desktop/device-auth.js",
+        "line": 156,
+        "text": "writeFileSync(tmp, content, { encoding: 'utf8', mode });"
+      },
+      {
+        "file": "lib/desktop/device-auth.js",
+        "line": 241,
+        "text": "raw = readFileSync(devicesPath, 'utf8');"
+      },
+      {
+        "file": "lib/desktop/device-auth.js",
+        "line": 556,
+        "text": "const parsed = JSON.parse(readFileSync(devicesPath, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/shared/gateway-core.js",
+        "line": 40,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/shared/gateway-core.js",
+        "line": 279,
+        "text": "const result = spawnSync('icacls', [file, '/inheritance:r', '/grant:r', `${user}:R`], { windowsHide: true, stdio: 'ignore' });"
+      },
+      {
+        "file": "tests/check-syntax.mjs",
+        "line": 22,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

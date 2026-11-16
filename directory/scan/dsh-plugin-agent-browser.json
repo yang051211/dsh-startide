@@ -1,35 +1,35 @@
 {
   "name": "dsh-plugin-agent-browser",
-  "version": "2.1.1",
-  "scannedAt": "2026-11-14T23:52:57.803Z",
+  "version": "2.2.0",
+  "scannedAt": "2026-11-16T08:06:34.600Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 63,
+        "line": 74,
         "text": "bootstrapPromise = fetch(BRIDGE + \"/bootstrap\", { cache: \"no-store\" })"
       },
       {
         "file": "lib/client.js",
-        "line": 193,
-        "text": "return fetch(BRIDGE + path, { cache: \"no-store\", headers: headers() }).then(function (r) {"
+        "line": 221,
+        "text": "return fetch(BRIDGE + path, options).then(function (response) {"
       },
       {
         "file": "lib/client.js",
-        "line": 200,
-        "text": "return fetch(BRIDGE + path, {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 1052,
+        "line": 1268,
         "text": "\"var r;try{r=await fetch(url,{credentials:'include'});}catch(e){\" +"
       },
       {
         "file": "lib/index.js",
-        "line": 657,
+        "line": 696,
         "text": "response = await fetch(`${base.url}${pathname}`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1826,
+        "text": "const response = await fetch(`${base.url}/health`, {"
       }
     ]
   },
@@ -43,23 +43,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 31,
+        "line": 32,
         "text": "const manifest = JSON.parse(readFileSync(fileURLToPath(new URL('../package.json', import.meta.url)), 'utf8'))"
       },
       {
         "file": "lib/index.js",
-        "line": 188,
+        "line": 56,
+        "text": "const manifest = JSON.parse(readFileSync(MANIFEST_FILE, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 220,
         "text": "const raw = readFileSync(STORAGE_FILE, 'utf8')"
       },
       {
         "file": "lib/index.js",
-        "line": 200,
+        "line": 232,
         "text": "writeFileSync(tmp, JSON.stringify(cache, null, 1), 'utf8')"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 254,
-        "text": "base64: readFileSync(target).toString('base64'),"
       }
     ]
   },
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 20,
+        "line": 21,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "lib/index.js",
-        "line": 1645,
+        "line": 1805,
         "text": "ctx.tools.register({"
       }
     ]

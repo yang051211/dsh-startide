@@ -1,7 +1,7 @@
 {
   "name": "plantomics-hub",
-  "version": "0.2.1",
-  "scannedAt": "2026-11-08T14:57:26.974Z",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-16T08:06:33.126Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,8 +13,23 @@
       },
       {
         "file": "dist/service/http.js",
-        "line": 14,
+        "line": 17,
         "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "dist/sources/ensemblplants/bulk.js",
+        "line": 568,
+        "text": "fetch: options.fetchImpl ?? ((...args) => globalThis.fetch(...args)),"
+      },
+      {
+        "file": "dist/sources/ic4r/bulk.js",
+        "line": 625,
+        "text": "fetch: options.fetchImpl ?? ((...args) => globalThis.fetch(...args)),"
+      },
+      {
+        "file": "dist/sources/interpro/tools.js",
+        "line": 414,
+        "text": "fetch: options.fetchImpl ?? ((...args) => globalThis.fetch(...args)),"
       }
     ]
   },
@@ -32,19 +47,19 @@
         "text": "text = readFileSync(url, 'utf8');"
       },
       {
+        "file": "dist/service/evidence.js",
+        "line": 15,
+        "text": "import { appendFileSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/service/evidence.js",
+        "line": 23,
+        "text": "appendFileSync(file, `${JSON.stringify({ at: new Date().toISOString(), ...event })}\\n`, { mode: 0o600 });"
+      },
+      {
         "file": "dist/service/http.js",
-        "line": 21,
+        "line": 24,
         "text": "import { readFileSync } from 'node:fs';"
-      },
-      {
-        "file": "dist/service/http.js",
-        "line": 251,
-        "text": "const servedVersion = serviceVersion(SERVER_INFO.version, readBuildRev((file) => readFileSync(file, 'utf8'),"
-      },
-      {
-        "file": "dist/service/version.js",
-        "line": 37,
-        "text": "const parsed = JSON.parse(readFile(buildInfoPath));"
       }
     ]
   },

@@ -1,0 +1,96 @@
+{
+  "name": "dsh-healthkit",
+  "version": "0.5.3",
+  "scannedAt": "2026-11-16T08:06:34.948Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 107,
+        "text": "fetch(API, { cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/audit.mjs",
+        "line": 2,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "bin/audit.mjs",
+        "line": 22,
+        "text": "var pj = JSON.parse(fs.readFileSync(path.join(h, 'profiles', d.name, 'package.json'), 'utf8'));"
+      },
+      {
+        "file": "bin/audit.mjs",
+        "line": 32,
+        "text": "fs.mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "bin/audit.mjs",
+        "line": 33,
+        "text": "fs.writeFileSync(path.join(dir, 'cordis.yml'), '[]\\n');"
+      },
+      {
+        "file": "bin/audit.mjs",
+        "line": 34,
+        "text": "    fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify({ name: 'dsh-profile-probe', private: true, dsh: { profile: { bundles: bundles } } }, null, "
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 4,
+        "text": "//   工具面 = `ctx.inject(['tools'], cb)` 等到服务 → `ctx.effect(() => ctx.tools.register({name, description, parameters, output:{schema,render}, execute}))`。"
+      },
+      {
+        "file": "index.js",
+        "line": 8,
+        "text": "//      旧版把 `ctx.tools` 探测放在 try 外 → apply() 抛穿 → 插件实例创建失败 →"
+      },
+      {
+        "file": "index.js",
+        "line": 661,
+        "text": "try { disposers.push(tools.register(t)); registered.push(t.name); }"
+      },
+      {
+        "file": "test/apply-inject.mjs",
+        "line": 2,
+        "text": "//  ① 8 个工具经 ctx.tools.register 注册"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/audit.mjs",
+        "line": 5,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "bin/audit.mjs",
+        "line": 35,
+        "text": "var r = spawnSync('dsh', ['--profile', 'probe', '--dump-config'], { encoding: 'utf8', shell: true, timeout: 60000 });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

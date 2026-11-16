@@ -1,7 +1,7 @@
 {
   "name": "dsh-rss-news-daily",
-  "version": "0.9.1",
-  "scannedAt": "2026-11-14T19:29:31.055Z",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-16T08:06:28.713Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -48,18 +48,18 @@
       },
       {
         "file": "lib/api.js",
-        "line": 146,
+        "line": 147,
         "text": "const { readdir, stat } = await import('node:fs/promises');"
       },
       {
         "file": "lib/api.js",
-        "line": 236,
+        "line": 237,
         "text": "const { readFile: rf } = await import('node:fs/promises');"
       },
       {
         "file": "lib/api.js",
-        "line": 405,
-        "text": "const markdown = await readFile(join(topicsDirOf(deps.digestsDir), `${id}.md`), 'utf8').catch(() => undefined);"
+        "line": 314,
+        "text": "const md = await readFile(briefFileFor(deps.digestsDir, type, day), 'utf8');"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 47,
+        "line": 48,
         "text": "export const inject = ['timer', 'tools'];"
       },
       {
@@ -103,7 +103,7 @@
       },
       {
         "file": "lib/api.js",
-        "line": 773,
+        "line": 883,
         "text": "const child = spawn(cmd, args, { detached: true, stdio: 'ignore' });"
       },
       {
@@ -113,7 +113,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 1309,
+        "line": 1328,
         "text": "execFile('osascript', ['-e',"
       },
       {

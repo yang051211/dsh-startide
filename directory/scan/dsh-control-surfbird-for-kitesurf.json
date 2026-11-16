@@ -1,0 +1,118 @@
+{
+  "name": "dsh-control-surfbird-for-kitesurf",
+  "version": "0.5.1",
+  "scannedAt": "2026-11-16T08:06:34.712Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 111,
+        "text": "const res = await fetch(STATUS_URL + (probe ? '?probe=1' : ''), { cache: 'no-store' })"
+      },
+      {
+        "file": "client/client.js",
+        "line": 293,
+        "text": "const res = await fetch(TOKENFILE_URL, {"
+      },
+      {
+        "file": "lib/cdp/transport.js",
+        "line": 40,
+        "text": "const ws = new WebSocket(wsUrl, { headers });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 273,
+        "text": "const res = await fetch(`${base}/json/version`, { signal: ctrl.signal, headers });"
+      },
+      {
+        "file": "src/cdp/transport.ts",
+        "line": 71,
+        "text": "const ws = new WebSocket(wsUrl, { headers })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cdp/extract.js",
+        "line": 21,
+        "text": "readabilitySrc = req('node:fs').readFileSync(req.resolve('@mozilla/readability'), 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "import { appendFileSync, mkdirSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 224,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 229,
+        "text": "writeFileSync(file, encryptToken(content) + '\\n', { mode: 0o600 });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 234,
+        "text": "writeFileSync(file, content + '\\n', { mode: 0o600 });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 27,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 862,
+        "text": "disposers.push(ctx.tools.register(tool));"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 34,
+        "text": "export const inject: string[] = ['tools']"
+      },
+      {
+        "file": "src/tools.ts",
+        "line": 879,
+        "text": "disposers.push(ctx.tools.register(tool))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tokenfile.js",
+        "line": 20,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "src/tokenfile.ts",
+        "line": 21,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 5,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

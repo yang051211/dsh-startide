@@ -1,35 +1,35 @@
 {
   "name": "dsh-feiyu-life",
-  "version": "1.1.0",
-  "scannedAt": "2026-11-14T19:29:23.474Z",
+  "version": "1.2.2",
+  "scannedAt": "2026-11-16T08:06:26.381Z",
   "icon": "dsh-feiyu-life.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 174,
+        "line": 189,
         "text": "const res = await fetch(url, { headers: { accept: 'application/json' } })"
       },
       {
         "file": "client.js",
-        "line": 179,
+        "line": 194,
         "text": "const res = await fetch(url, {"
       },
       {
         "file": "client.js",
-        "line": 896,
+        "line": 656,
+        "text": "const res = await fetch(API + '/settings-backup', { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 1217,
         "text": "const r = await fetch(`${API}/models${force ? '?f=1' : ''}`, { credentials: 'same-origin' })"
       },
       {
         "file": "client.js",
-        "line": 910,
+        "line": 1231,
         "text": "const r = await fetch(`${API}/state`, { credentials: 'same-origin' })"
-      },
-      {
-        "file": "client.js",
-        "line": 962,
-        "text": "const r = await fetch(`${API}/save`, {"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "gen.js",
-        "line": 11,
-        "text": "import { mkdirSync } from 'node:fs'"
+        "file": "continuity.js",
+        "line": 8,
+        "text": "import { closeSync, existsSync, mkdirSync, openSync, readFileSync, readdirSync, renameSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
       },
       {
-        "file": "gen.js",
-        "line": 22,
-        "text": "mkdirSync(dshHome(), { recursive: true })"
+        "file": "continuity.js",
+        "line": 27,
+        "text": "mkdirSync(join(path, '..'), { recursive: true })"
       },
       {
-        "file": "image-prompt.js",
-        "line": 16,
-        "text": "import { readFileSync, mkdirSync, unlinkSync } from 'node:fs'"
-      },
-      {
-        "file": "image-prompt.js",
+        "file": "continuity.js",
         "line": 29,
-        "text": "mkdirSync(dshHome(), { recursive: true })"
+        "text": "writeFileSync(tmp, JSON.stringify(value, null, 2) + '\\n', 'utf8')"
       },
       {
-        "file": "image-prompt.js",
-        "line": 277,
-        "text": "const buf = readFileSync(toCheck)"
+        "file": "continuity.js",
+        "line": 34,
+        "text": "mkdirSync(join(path, '..'), { recursive: true })"
+      },
+      {
+        "file": "continuity.js",
+        "line": 36,
+        "text": "writeFileSync(tmp, value, 'utf8')"
       }
     ]
   },
@@ -68,17 +68,27 @@
     "evidence": [
       {
         "file": "image.js",
-        "line": 732,
+        "line": 739,
         "text": "ctx.effect(() => ctx.tools.register({"
       },
       {
         "file": "index.js",
-        "line": 35,
+        "line": 46,
         "text": "export const inject = ['systemPrompt', 'agents', 'timer', 'webServer', 'connection', 'llm', 'tools', 'attachments']"
       },
       {
         "file": "index.js",
-        "line": 126,
+        "line": 140,
+        "text": "const off = agent.ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 215,
+        "text": "const off = agent.ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 248,
         "text": "const off = agent.ctx.tools.register({"
       }
     ]

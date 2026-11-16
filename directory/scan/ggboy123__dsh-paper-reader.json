@@ -1,7 +1,7 @@
 {
   "name": "@ggboy123/dsh-paper-reader",
-  "version": "1.12.1",
-  "scannedAt": "2026-11-12T21:20:15.556Z",
+  "version": "1.13.0",
+  "scannedAt": "2026-11-16T08:06:26.583Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -9,7 +9,17 @@
       {
         "file": "dist/babeldoc-install.js",
         "line": 100,
+        "text": "const r = await fetch(url, { method: 'HEAD', signal: AbortSignal.timeout(ms) });"
+      },
+      {
+        "file": "dist/babeldoc-install.js",
+        "line": 147,
         "text": "const r = await fetch(url, init);"
+      },
+      {
+        "file": "dist/babeldoc-install.js",
+        "line": 289,
+        "text": "const r = await fetch(base, { method: 'HEAD', signal: AbortSignal.timeout(3_000) });"
       },
       {
         "file": "dist/harness-translate.js",
@@ -20,16 +30,6 @@
         "file": "dist/mineru-config.js",
         "line": 229,
         "text": "const r = await fetch(`${base}/health`, { signal: AbortSignal.timeout(timeoutMs) });"
-      },
-      {
-        "file": "dist/mineru-config.js",
-        "line": 267,
-        "text": "const r = await fetch(`${base}/extract-results/batch/_test`, {"
-      },
-      {
-        "file": "dist/mineru.js",
-        "line": 746,
-        "text": "submitRes = await fetch(`${base}/tasks`, {"
       }
     ]
   },
@@ -38,27 +38,27 @@
     "evidence": [
       {
         "file": "dist/babeldoc-install.js",
-        "line": 16,
+        "line": 19,
         "text": "import { existsSync } from 'node:fs';"
       },
       {
         "file": "dist/babeldoc-install.js",
-        "line": 17,
+        "line": 20,
         "text": "import { chmod, mkdir, rename, rm, writeFile } from 'node:fs/promises';"
       },
       {
         "file": "dist/babeldoc-install.js",
-        "line": 126,
+        "line": 178,
         "text": "await mkdir(tmp, { recursive: true });"
       },
       {
         "file": "dist/babeldoc-install.js",
-        "line": 160,
+        "line": 214,
         "text": "await writeFile(pkgPath, body);"
       },
       {
         "file": "dist/babeldoc-install.js",
-        "line": 177,
+        "line": 231,
         "text": "await rm(tmp, { recursive: true, force: true });"
       }
     ]
@@ -98,28 +98,28 @@
     "evidence": [
       {
         "file": "dist/babeldoc-install.js",
-        "line": 14,
+        "line": 17,
         "text": "import { execFile } from 'node:child_process';"
       },
       {
         "file": "dist/babeldoc-install.js",
-        "line": 39,
+        "line": 42,
         "text": "execFile(cmd, args, {"
       },
       {
         "file": "dist/babeldoc-install.js",
-        "line": 56,
+        "line": 59,
         "text": "execFile(isWin ? 'where' : 'which', [cmd], (err, stdout) => res(!err && stdout.trim() !== ''));"
       },
       {
         "file": "dist/babeldoc-install.js",
-        "line": 197,
+        "line": 251,
         "text": "execFile(bin, ['--version'], { timeout: 60_000 }, (err, stdout, stderr) => {"
       },
       {
-        "file": "dist/translate.js",
-        "line": 9,
-        "text": "import { execFile, spawn } from 'node:child_process';"
+        "file": "dist/babeldoc-install.js",
+        "line": 341,
+        "text": "execFile(cmd, [...pre, '-c', 'import sys; sys.exit(0 if sys.version_info >= (3, 10) else 1)'], { timeout: 15_000 }, (err) => res(!err));"
       }
     ]
   },
@@ -129,7 +129,9 @@
   },
   "dependencies": 3,
   "minifiedFiles": [
+    "reader/vendor/jbig2_nowasm_fallback.js",
     "reader/vendor/katex.min.js",
+    "reader/vendor/openjpeg_nowasm_fallback.js",
     "reader/vendor/pdf.min.mjs",
     "reader/vendor/pdf.worker.min.mjs"
   ],

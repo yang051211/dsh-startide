@@ -1,7 +1,7 @@
 {
   "name": "dsh-git-push",
-  "version": "2.20.19",
-  "scannedAt": "2026-11-14T07:59:13.075Z",
+  "version": "3.0.0",
+  "scannedAt": "2026-11-16T08:06:31.737Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -12,24 +12,24 @@
         "text": "L.push(`  curl -L '${base}?${qs}'`); // -L：宿主反代一次 302 中转（不带 -L 会显示 302 误判失败）"
       },
       {
-        "file": "lib/audit-rules/audit-rules-nodejs.yml",
-        "line": 301,
-        "text": "# 负向后瞻排除自定义封装名（apiFetch/githubFetch 等）——\"fetch(\" 子串会把"
+        "file": "lib/client-parts/git/utils.js",
+        "line": 14,
+        "text": "const resp = await fetch(url, { credentials: 'same-origin', signal: AbortSignal.timeout(dshgp_FETCH_TIMEOUT_MS) });"
       },
       {
-        "file": "lib/audit/file-context.js",
-        "line": 291,
-        "text": "* robustness/timeout-on-external-api 规则用纯 regex 匹配 `fetch(`/`axios.(` 等调用，"
+        "file": "lib/client-parts/git/utils.js",
+        "line": 19,
+        "text": "const resp = await fetch(url, {"
       },
       {
-        "file": "lib/audit/file-context.js",
-        "line": 297,
-        "text": "*   `const init = { signal: AbortSignal.timeout(MS) }; await fetch(url, init)` 的"
+        "file": "lib/client.js",
+        "line": 266,
+        "text": "const resp = await fetch(url, { credentials: 'same-origin', signal: AbortSignal.timeout(dshgp_FETCH_TIMEOUT_MS) });"
       },
       {
-        "file": "lib/audit/file-context.js",
-        "line": 329,
-        "text": "* 跨行对象（fetch(url, { ... })）从下一行算起时首行的 `},` 会把深度归零提前"
+        "file": "lib/client.js",
+        "line": 271,
+        "text": "const resp = await fetch(url, {"
       }
     ]
   },
@@ -82,24 +82,24 @@
         "text": "import { spawnSync } from 'node:child_process';"
       },
       {
-        "file": "lib/audit-rules/audit-rules-dsh.yml",
-        "line": 57,
-        "text": "description: \"浏览器 client 半部无 Node 运行时；require('fs'/'path'/'os'/'child_process'/'net'/'http'(无 window)) 必然运行失败\""
+        "file": "lib/cli/commands-account.mjs",
+        "line": 15,
+        "text": "import { execFileSync } from 'node:child_process';"
       },
       {
-        "file": "lib/audit/collector.js",
-        "line": 13,
-        "text": "import { execFileSync, spawnSync } from 'node:child_process';"
+        "file": "lib/cli/commands-preprocess.mjs",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process';"
       },
       {
-        "file": "lib/audit/collector.js",
-        "line": 94,
-        "text": "const r = spawnSync('git', [...GIT_QUOTEPATH_ARGS, '-C', dir, 'rev-parse', '--is-inside-work-tree'], {"
+        "file": "lib/cli/commands-preprocess.mjs",
+        "line": 63,
+        "text": "const child = spawn(process.execPath, [resolved.path, action, ...forwardArgs], { stdio: 'inherit' });"
       },
       {
-        "file": "lib/audit/collector.js",
-        "line": 210,
-        "text": "const probe = spawnSync('git', [...GIT_QUOTEPATH_ARGS, '-C', root, 'rev-parse', '--is-inside-work-tree'], {"
+        "file": "lib/commit-push/pre-commit-engine.js",
+        "line": 20,
+        "text": "import { spawn } from 'node:child_process';"
       }
     ]
   },
@@ -113,7 +113,7 @@
       }
     ]
   },
-  "dependencies": 3,
+  "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [],

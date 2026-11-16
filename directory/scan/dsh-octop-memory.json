@@ -1,0 +1,54 @@
+{
+  "name": "dsh-octop-memory",
+  "version": "0.1.8",
+  "scannedAt": "2026-11-16T08:06:30.769Z",
+  "icon": "dsh-octop-memory.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 142,
+        "text": "const response = await fetch(connection.endpoint, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 35,
+        "text": "fs.appendFileSync('/tmp/dsh-octop-memory.log', `${new Date().toISOString()} ${line}\\n`)"
+      },
+      {
+        "file": "index.js",
+        "line": 99,
+        "text": "return JSON.parse(fs.readFileSync(expanded, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

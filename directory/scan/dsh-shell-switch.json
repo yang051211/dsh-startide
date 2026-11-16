@@ -1,14 +1,14 @@
 {
   "name": "dsh-shell-switch",
-  "version": "0.1.2",
-  "scannedAt": "2026-11-06T08:17:22.120Z",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-16T08:06:34.342Z",
   "icon": "dsh-shell-switch.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 87,
+        "line": 113,
         "text": "const response = await fetch(`${apiBase()}${tail}`, init);"
       }
     ]
@@ -23,35 +23,29 @@
       },
       {
         "file": "index.js",
-        "line": 94,
+        "line": 131,
         "text": "fs.appendFileSync(path.join(os.tmpdir(), 'dsh-shell-switch-debug.log'), line, 'utf8');"
       },
       {
         "file": "index.js",
-        "line": 158,
+        "line": 196,
         "text": "const parsed = JSON.parse(fs.readFileSync(file, 'utf8'));"
       },
       {
         "file": "index.js",
-        "line": 182,
+        "line": 230,
         "text": "fs.mkdirSync(path.dirname(file), { recursive: true });"
       },
       {
         "file": "index.js",
-        "line": 183,
+        "line": 231,
         "text": "fs.writeFileSync(file, `${JSON.stringify(payload, null, 2)}\\n`, 'utf8');"
       }
     ]
   },
   "agentTools": {
-    "hit": true,
-    "evidence": [
-      {
-        "file": "index.js",
-        "line": 691,
-        "text": "const dispose = agent.ctx.tools.restrict({ deny: ['pwsh'] });"
-      }
-    ]
+    "hit": false,
+    "evidence": []
   },
   "childProcess": {
     "hit": true,

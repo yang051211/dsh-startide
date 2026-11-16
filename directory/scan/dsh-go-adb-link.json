@@ -1,0 +1,96 @@
+{
+  "name": "dsh-go-adb-link",
+  "version": "1.2.4",
+  "scannedAt": "2026-11-16T08:06:32.385Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cli.js",
+        "line": 9,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 6,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 41,
+        "text": "raw = JSON.parse(fs.readFileSync(FILE, 'utf8'))"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 54,
+        "text": "fs.mkdirSync(path.dirname(FILE), { recursive: true })"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 56,
+        "text": "fs.writeFileSync(tmp, `${JSON.stringify(current, null, 2)}\\n`, { mode: 0o600 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 769,
+        "text": "scope.tools.register(adbToolDefinition('adb'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 772,
+        "text": "try { scope.tools.register(adbToolDefinition('adb_shell')) } catch {}"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cli.js",
+        "line": 8,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 77,
+        "text": "child = spawn(file, args, {"
+      },
+      {
+        "file": "scripts/check.mjs",
+        "line": 3,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/check.mjs",
+        "line": 12,
+        "text": "const result = spawnSync(process.execPath, [checker, root, '--load'], { stdio: 'inherit' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 28,
+      "text": "dsh plugin --profile web add \"$DSH_HOME/dsh-go/plugins/dsh-go-adb-link\""
+    }
+  ],
+  "skippedEntries": []
+}

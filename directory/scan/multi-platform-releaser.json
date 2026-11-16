@@ -1,0 +1,105 @@
+{
+  "name": "multi-platform-releaser",
+  "version": "0.4.5",
+  "scannedAt": "2026-11-16T08:06:29.831Z",
+  "icon": "multi-platform-releaser.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/platforms.mjs",
+        "line": 781,
+        "text": "response = await fetch(url, { headers, signal: AbortSignal.timeout(timeoutMs) })"
+      },
+      {
+        "file": "lib/platforms.mjs",
+        "line": 1141,
+        "text": "const response = await fetch(`${normalizeBaseUrl(registry)}/-/ping`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import fsp from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 270,
+        "text": "const text = await fsp.readFile(file, 'utf8')"
+      },
+      {
+        "file": "lib/git.mjs",
+        "line": 19,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/git.mjs",
+        "line": 794,
+        "text": "await fs.mkdir(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/git.mjs",
+        "line": 973,
+        "text": "await fs.writeFile(file, script, { mode: 0o700, encoding: 'utf8' });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 576,
+        "text": "return tools.register(definition)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/git.mjs",
+        "line": 18,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/git.mjs",
+        "line": 396,
+        "text": "child = spawn('git', isolated, {"
+      },
+      {
+        "file": "lib/platforms.mjs",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/platforms.mjs",
+        "line": 709,
+        "text": "child = spawn(nodeBinaryFor(), [cli, ...argv], {"
+      },
+      {
+        "file": "lib/platforms.mjs",
+        "line": 1173,
+        "text": "child = spawn('powershell.exe', ['-NoLogo', '-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-Command', script], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/licenses.mjs"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

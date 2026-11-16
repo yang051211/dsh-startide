@@ -1,0 +1,124 @@
+{
+  "name": "dsh-weekly-retro",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-16T08:06:28.284Z",
+  "icon": "dsh-weekly-retro.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 215,
+        "text": "fetch(API + path, { headers: { Accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 827,
+        "text": "          const r = await fetch(API + '/land', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ key: confirm.key, sync:"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 995,
+        "text": "const r = await fetch(API + '/ui/job?id=' + encodeURIComponent(id));"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1011,
+        "text": "const r = await fetch(API + '/ui/run', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mode }) });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1024,
+        "text": "          const r = await fetch(API + '/ui/repeat-candidate', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ key: rep"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/data.js",
+        "line": 6,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/data.js",
+        "line": 81,
+        "text": "raw = fs.readFileSync(file, 'utf8');"
+      },
+      {
+        "file": "lib/data.js",
+        "line": 113,
+        "text": "try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch { return fallback; }"
+      },
+      {
+        "file": "lib/data.js",
+        "line": 119,
+        "text": "try { raw = fs.readFileSync(file, 'utf8'); } catch { return { ok: true, value: null, missing: true }; }"
+      },
+      {
+        "file": "lib/data.js",
+        "line": 133,
+        "text": "const rows = fs.readFileSync(path.join(WEEKLY, 'history.jsonl'), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "export const inject = ['tools', 'webServer'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 382,
+        "text": "const reg = (def) => tctx.effect(() => tctx.tools.register(defineTool(def)), `dsh-weekly-retro: tool ${def.name}`);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/data.js",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/data.js",
+        "line": 232,
+        "text": "child = spawn(cmd, args, { env, stdio: ['ignore', 'pipe', 'pipe'], detached: true });"
+      },
+      {
+        "file": "pipeline/collect.mjs",
+        "line": 7,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "pipeline/collect.mjs",
+        "line": 33,
+        "text": "const probe = spawnSync('zstd', ['--version'], { stdio: 'ignore' });"
+      },
+      {
+        "file": "pipeline/collect.mjs",
+        "line": 77,
+        "text": "const r = spawnSync(ZSTD, ['-dc', file], { maxBuffer: 1 << 30 });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

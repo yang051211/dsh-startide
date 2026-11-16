@@ -1,11 +1,21 @@
 {
   "name": "dsh-dual-proxy",
-  "version": "0.7.3",
-  "scannedAt": "2026-11-08T23:32:51.432Z",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-16T08:06:33.721Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
+      {
+        "file": "src/discovery.js",
+        "line": 2,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "src/discovery.js",
+        "line": 141,
+        "text": "const req = http.request({"
+      },
       {
         "file": "src/fetch-route.js",
         "line": 7,
@@ -18,7 +28,7 @@
       },
       {
         "file": "src/server.js",
-        "line": 454,
+        "line": 589,
         "text": "const upstreamReq = http.request(reqOpts, (up) => {"
       }
     ]
@@ -35,6 +45,21 @@
         "file": "bin/dsh-dual-proxy.js",
         "line": 3,
         "text": "import { realpathSync } from 'node:fs';"
+      },
+      {
+        "file": "src/discovery.js",
+        "line": 1,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "src/discovery.js",
+        "line": 179,
+        "text": "try { tcp = await readFile('/proc/net/tcp', 'utf8'); } catch (e) { /* non-Linux or unreadable */ }"
+      },
+      {
+        "file": "src/discovery.js",
+        "line": 180,
+        "text": "try { tcp6 = await readFile('/proc/net/tcp6', 'utf8'); } catch (e) { /* non-Linux or unreadable */ }"
       }
     ]
   },

@@ -1,0 +1,121 @@
+{
+  "name": "@kira905/dsh-butler-panel",
+  "version": "0.9.6",
+  "scannedAt": "2026-11-16T08:06:31.025Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 813,
+        "text": "const res = await fetch(url, { cache: \"no-store\", ...(opts ?? {}) });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 823,
+        "text": "const res = await fetch(url, { cache: \"no-store\", ...(opts ?? {}) });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3076,
+        "text": "const r = await fetch(\"/api/dsh-butler/v1/p4-candidates\", { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3251,
+        "text": "const res = await fetch(\"/api/dsh-butler/v1/action\", {"
+      },
+      {
+        "file": "lib/fetch-json-timeout.mjs",
+        "line": 4,
+        "text": "//   `lib/index.js` 的 `fetchMainTitleMap()` 原先直接 `await fetch(...)` **既无超时也无 AbortController** ——"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/audit-guard.js",
+        "line": 17,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/audit-guard.js",
+        "line": 168,
+        "text": "fs.mkdirSync(BAK_DIR, { recursive: true });"
+      },
+      {
+        "file": "lib/audit-guard.js",
+        "line": 176,
+        "text": "hitelist: [BAK_DIR], op: '删', reason: 'audit-guard: rotate write-ahead backups', action: () => fs.unlinkSync(path.join(BAK_DIR, n)) }); } catch { /* ignore */ }"
+      },
+      {
+        "file": "lib/audit-guard.js",
+        "line": 291,
+        "text": "readFile: (p) => fs.readFileSync(p, 'utf8'),"
+      },
+      {
+        "file": "lib/audit-guard.js",
+        "line": 333,
+        "text": "text = fs.readFileSync(file, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/checks.mjs",
+        "line": 10,
+        "text": "import { spawnSync, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/checks.mjs",
+        "line": 113,
+        "text": "const r = spawnSync('tasklist', ['/FI', 'IMAGENAME eq cloudflared.exe', '/NH'], {"
+      },
+      {
+        "file": "lib/checks.mjs",
+        "line": 159,
+        "text": "const r = spawnSync('git', ['-C', cwd, ...args], { encoding: 'utf8', timeout, windowsHide: true });"
+      },
+      {
+        "file": "lib/checks.mjs",
+        "line": 178,
+        "text": "child = spawn('git', ['-C', cwd, ...args], { windowsHide: true, stdio: 'ignore' });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "import { spawnSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 46,
+      "text": "npm i -g @kira905/dsh-butler-engine"
+    },
+    {
+      "file": "README.md",
+      "line": 67,
+      "text": "[butler-panel] 缺 store.mjs：装 npm i -g @kira905/dsh-butler-engine@^0.5.0，或设 BUTLER_ROOT=<你的大管家工具目录>，或设 DSH_WORKSPACE=<你的 DSH 工作区（tools/ 与 docs/ 所在那层）>"
+    }
+  ],
+  "skippedEntries": []
+}
