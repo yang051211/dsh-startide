@@ -1,24 +1,24 @@
 {
   "name": "dsh-desktop-sidecar",
-  "version": "0.12.0",
-  "scannedAt": "2026-11-07T14:33:11.103Z",
+  "version": "0.13.1",
+  "scannedAt": "2026-11-16T23:37:23.536Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/composer.js",
-        "line": 41,
-        "text": "fetch(ROUTE)"
+        "line": 46,
+        "text": "fetch(ROUTE + '?t=' + Date.now())"
       },
       {
         "file": "lib/composer.js",
-        "line": 53,
+        "line": 74,
         "text": "const r = await fetch(ROUTE, {"
       },
       {
         "file": "lib/composer.js",
-        "line": 160,
+        "line": 189,
         "text": "fetch('/dsh-sidecar/active' + qs, { headers: { accept: 'application/json' } })"
       },
       {
@@ -38,28 +38,28 @@
     "evidence": [
       {
         "file": "lib/actions-log.mjs",
-        "line": 3,
+        "line": 6,
         "text": "import { appendFileSync, readFileSync, writeFileSync, mkdirSync, existsSync, renameSync } from 'node:fs';"
       },
       {
         "file": "lib/actions-log.mjs",
-        "line": 12,
-        "text": "try { mkdirSync(DIR, { recursive: true }); } catch {}"
-      },
-      {
-        "file": "lib/actions-log.mjs",
-        "line": 26,
-        "text": "appendFileSync(FILE, line + '\\n', 'utf8');"
-      },
-      {
-        "file": "lib/actions-log.mjs",
-        "line": 28,
-        "text": "const raw = readFileSync(FILE, 'utf8');"
+        "line": 29,
+        "text": "mkdirSync(dir, { recursive: true });"
       },
       {
         "file": "lib/actions-log.mjs",
         "line": 31,
-        "text": "writeFileSync(FILE, lines.slice(-MAX_LINES).join('\\n') + '\\n', 'utf8');"
+        "text": "appendFileSync(probe, 'ok', 'utf8');"
+      },
+      {
+        "file": "lib/actions-log.mjs",
+        "line": 83,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/actions-log.mjs",
+        "line": 84,
+        "text": "appendFileSync(file, line + '\\n', 'utf8');"
       }
     ]
   },
@@ -73,22 +73,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 717,
+        "line": 756,
         "text": "// 服务必须通过 inject 拿：宿主在服务还没挂载时直接读 ctx.tools 会让整行挂掉。"
       },
       {
         "file": "lib/index.js",
-        "line": 720,
+        "line": 759,
         "text": "try { if (ctx.tools && typeof ctx.tools.register === 'function') ready = ctx; } catch {}"
       },
       {
         "file": "lib/index.js",
-        "line": 722,
+        "line": 761,
         "text": "else if (typeof ctx.inject === 'function') ctx.inject(['tools', 'attachments'], (scoped) => mountTools(scoped));"
       },
       {
         "file": "lib/index.js",
-        "line": 784,
+        "line": 867,
         "text": "return ctx.tools.register({"
       }
     ]
@@ -113,7 +113,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 1878,
+        "line": 2077,
         "text": "            const found = String(execSync('where.exe ' + bare, { timeout: 2500, windowsHide: true, stdio: ['ignore', 'pipe', 'ignore'] }) || '').split(String.fr"
       },
       {

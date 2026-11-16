@@ -1,0 +1,82 @@
+{
+  "name": "dsh-novel-assistant",
+  "version": "0.27.2",
+  "scannedAt": "2026-11-16T23:37:24.761Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 96,
+        "text": "const response = await fetch(url, options)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 598,
+        "text": "const response = await fetch(`/novel-panel/graph.svg?project=${encodeURIComponent(project)}&kind=${kind}${volQuery}&t=${stamp || 0}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 22,
+        "text": "import { existsSync, readdirSync, readFileSync, renameSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 76,
+        "text": "for (const row of tableRows(readFileSync(file, 'utf8'))) {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 101,
+        "text": "const lines = readFileSync(file, 'utf8').split(/\\r?\\n/)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 124,
+        "text": "const plotText = existsSync(plotFile) ? readFileSync(plotFile, 'utf8') : ''"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 125,
+        "text": "const digestText = existsSync(digestFile) ? readFileSync(digestFile, 'utf8') : ''"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 23,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 50,
+        "text": "execFile(process.execPath, [join(GRAPH_TOOLS, script), ...args], { timeout: 60000 }, (error, stdout, stderr) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

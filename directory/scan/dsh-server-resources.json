@@ -1,0 +1,77 @@
+{
+  "name": "dsh-server-resources",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-16T23:37:33.333Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 63,
+        "text": "const res = await fetch(url, { headers: { accept: 'application/json' }, signal: guard })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import { realpath, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "import { readdir, lstat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/platform/linux.js",
+        "line": 2,
+        "text": "import { readFile, readdir } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/platform/linux.js",
+        "line": 16,
+        "text": "return await readFile(p, 'utf8')"
+      },
+      {
+        "file": "lib/walker.js",
+        "line": 9,
+        "text": "import { opendir, lstat } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/platform/shared.js",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/platform/shared.js",
+        "line": 42,
+        "text": "child = spawn(cmd, args, { stdio: ['ignore', 'pipe', 'ignore'], windowsHide: true, env: { ...process.env, LC_ALL: 'C', LANG: 'C', ...(env ?? {}) } })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

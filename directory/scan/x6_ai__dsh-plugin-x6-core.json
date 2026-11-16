@@ -1,0 +1,112 @@
+{
+  "name": "@x6_ai/dsh-plugin-x6-core",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-16T23:37:42.311Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 446,
+        "text": "return parseJson$3(await fetch(new URL(LINE_STATUS_PATH, window.location.origin)));"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 714,
+        "text": "return normalizeWalletStatus(await parseJson$2(await fetch(url)));"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 720,
+        "text": "return normalizeWalletBalance(await parseJson$2(await fetch(url)));"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 753,
+        "text": "return parseJson$1(await fetch(url));"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 759,
+        "text": "return parseJson$1(await fetch(url));"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import { existsSync, readFileSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1422,
+        "text": "const version = JSON.parse(readFileSync(packageJsonPath, \"utf8\")).version?.trim();"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1453,
+        "text": "text = readFileSync(patchPath, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1484,
+        "text": "const declared = JSON.parse(readFileSync(join(packageDir, \"package.json\"), \"utf8\")).dsh?.bundle?.patch?.trim();"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1491,
+        "text": "const text = readFileSync(patchPath, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { spawn, spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1353,
+        "text": "const result = spawnSync(nodeBinary, args, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1716,
+        "text": "\"const { spawn } = require('node:child_process')\","
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1729,
+        "text": "\"    const child = spawn(file, args, { cwd, detached, stdio: ['ignore', out, err], env: process.env, shell: viaShell })\","
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1734,
+        "text": "const helper = spawn(proc.execPath, [\"-e\", helperCode], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-zcode-plan-bridge",
-  "version": "0.6.2",
-  "scannedAt": "2026-11-14T19:29:32.607Z",
+  "version": "0.6.3",
+  "scannedAt": "2026-11-16T23:37:25.852Z",
   "icon": "dsh-zcode-plan-bridge.webp",
   "network": {
     "hit": true,
@@ -15,6 +15,16 @@
         "file": "community/runtime/native-runtime.mjs",
         "line": 163,
         "text": "return fetch(input, { ...init, signal: caller ? AbortSignal.any([caller, pending.signal]) : pending.signal }).then(markCommittedResponse)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 172,
+        "text": "const response = await fetch(route, { method: 'POST', credentials: 'same-origin', signal: controller.signal,"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 179,
+        "text": "const response = await fetch(route, { credentials: 'same-origin', signal: controller.signal })"
       }
     ]
   },

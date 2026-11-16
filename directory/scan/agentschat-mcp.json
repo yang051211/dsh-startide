@@ -1,19 +1,19 @@
 {
   "name": "agentschat-mcp",
-  "version": "0.36.26",
-  "scannedAt": "2026-11-15T20:14:36.696Z",
+  "version": "0.36.28",
+  "scannedAt": "2026-11-16T23:37:27.303Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "codex/transport.ts",
-        "line": 62,
+        "line": 69,
         "text": "response = await fetch(resolved, { method: body ? \"POST\" : \"GET\", redirect: \"error\","
       },
       {
         "file": "codex/transport.ts",
-        "line": 146,
+        "line": 153,
         "text": "const socket = new WebSocket(this.config.wsUrl, { maxPayload: 1_048_576, handshakeTimeout: 15_000 });"
       },
       {
@@ -48,7 +48,7 @@
       },
       {
         "file": "codex/bots-config.ts",
-        "line": 49,
+        "line": 50,
         "text": "mkdirSync(defaultDir, { recursive: true, mode: 0o700 });"
       },
       {
@@ -58,7 +58,7 @@
       },
       {
         "file": "codex/bridge.ts",
-        "line": 70,
+        "line": 71,
         "text": "mkdirSync(config.stateDir, { recursive: true, mode: 0o700 });"
       }
     ]
@@ -77,19 +77,19 @@
         "text": "name: '@deepseek-ai/dsh-mcp-client'"
       },
       {
+        "file": "cordis.patch.yml",
+        "line": 18,
+        "text": "hat' || (e.options.name === '@deepseek-ai/dsh-mcp-client' && e.options.config && e.options.config.serverName === 'agentschat')) && e.options.disabled !== true)\""
+      },
+      {
         "file": "dist/dsh.js",
-        "line": 1661,
+        "line": 1674,
         "text": "`${indent}  name: '@deepseek-ai/dsh-mcp-client'`,"
       },
       {
         "file": "dist/dsh.js",
-        "line": 2150,
+        "line": 2163,
         "text": "2. Patch setup (injects @deepseek-ai/dsh-mcp-client into cordis.patch.yml):"
-      },
-      {
-        "file": "dist/dsh.js",
-        "line": 2176,
-        "text": "e.log(changed ? `[dsh] Configured mcp-agentschat (@deepseek-ai/dsh-mcp-client) in ${patchPath}` : `[dsh] mcp-agentschat is already configured in ${patchPath}`);"
       }
     ]
   },
@@ -103,7 +103,7 @@
       },
       {
         "file": "codex/app-server.ts",
-        "line": 66,
+        "line": 83,
         "text": "this.child = spawn(resolved.cmd, resolved.args, { env, stdio: \"pipe\", windowsHide: true });"
       },
       {

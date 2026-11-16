@@ -1,35 +1,35 @@
 {
   "name": "@louisremi/dsh-always-on",
-  "version": "0.4.0",
-  "scannedAt": "2026-11-12T21:20:41.662Z",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-16T23:37:33.820Z",
   "icon": "louisremi__dsh-always-on.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "dist/client.js",
-        "line": 282,
+        "line": 395,
         "text": "return (await fetch(url, { method: 'HEAD' })).ok;"
       },
       {
         "file": "dist/client.js",
-        "line": 434,
+        "line": 547,
         "text": "const response = await fetch(new URL(route, document.baseURI).href, {"
       },
       {
         "file": "dist/client.js",
-        "line": 781,
-        "text": "const response = await fetch(pathUrl(absolutePath), { method: 'HEAD' });"
+        "line": 728,
+        "text": "let xhr = new XMLHttpRequest();"
       },
       {
         "file": "dist/client.js",
-        "line": 1214,
-        "text": "const response = await fetch(new URL(SAVE_ROUTE, document.baseURI).href, {"
+        "line": 760,
+        "text": "xhr = new XMLHttpRequest();"
       },
       {
-        "file": "src/client.ts",
-        "line": 389,
-        "text": "return (await fetch(url, { method: 'HEAD' })).ok;"
+        "file": "dist/client.js",
+        "line": 1066,
+        "text": "const res = await fetch(url.href);"
       }
     ]
   },
@@ -38,12 +38,12 @@
     "evidence": [
       {
         "file": "dist/client.js",
-        "line": 1101,
+        "line": 1673,
         "text": "async function readFile(remote, sessionId, path, signal) {"
       },
       {
         "file": "dist/client.js",
-        "line": 1168,
+        "line": 1740,
         "text": "const loaded = await readFile(remote, sessionId, path, tab.signal);"
       },
       {
@@ -53,12 +53,12 @@
       },
       {
         "file": "dist/create-route.js",
-        "line": 86,
-        "text": "const first = await mkdir(parent, { recursive: true });"
+        "line": 79,
+        "text": "const firstCreated = await mkdir(parent, { recursive: true });"
       },
       {
         "file": "dist/create-route.js",
-        "line": 89,
+        "line": 82,
         "text": "await mkdir(hostPath);"
       }
     ]
@@ -68,8 +68,29 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/entry.js",
+        "line": 11,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "dist/entry.js",
+        "line": 90,
+        "text": "        execFile(MOVE_COMMAND, ['--no-copy', '--no-clobber', '-T', '--', from, to], { timeout: 30_000, env: { ...process.env, LC_ALL: 'C' } }, (error, _stdout, "
+      },
+      {
+        "file": "src/entry.ts",
+        "line": 11,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "src/entry.ts",
+        "line": 114,
+        "text": "execFile("
+      }
+    ]
   },
   "installScripts": {
     "hit": true,

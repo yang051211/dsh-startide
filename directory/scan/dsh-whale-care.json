@@ -1,0 +1,112 @@
+{
+  "name": "dsh-whale-care",
+  "version": "0.5.7",
+  "scannedAt": "2026-11-16T23:37:44.552Z",
+  "icon": "dsh-whale-care.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/openmeteo.js",
+        "line": 32,
+        "text": "const res = await fetch(url, { signal: AbortSignal.timeout(15000) });"
+      },
+      {
+        "file": "lib/openmeteo.js",
+        "line": 42,
+        "text": "const res = await fetch("
+      },
+      {
+        "file": "lib/openmeteo.js",
+        "line": 70,
+        "text": "const res = await fetch(`https://api.open-meteo.com/v1/forecast?${params.toString()}`, {"
+      },
+      {
+        "file": "lib/weather.js",
+        "line": 57,
+        "text": "const res = await fetch("
+      },
+      {
+        "file": "lib/weather.js",
+        "line": 76,
+        "text": "const res = await fetch(`https://wttr.in/${encodeURIComponent(place)}?format=j1&lang=zh`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/alerts.js",
+        "line": 7,
+        "text": "import { readFile, writeFile, mkdir } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/alerts.js",
+        "line": 147,
+        "text": "const parsed = JSON.parse(await readFile(alertsStatePath(), 'utf8'));"
+      },
+      {
+        "file": "lib/alerts.js",
+        "line": 156,
+        "text": "await mkdir(path.dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/alerts.js",
+        "line": 159,
+        "text": "await writeFile(file, JSON.stringify(kept, null, 2) + '\\n', { encoding: 'utf8', mode: 0o600 });"
+      },
+      {
+        "file": "lib/profile.js",
+        "line": 4,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 25,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 40,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 58,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 76,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 110,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,14 +1,14 @@
 {
   "name": "@game25011/dsh-notify-toast",
-  "version": "0.5.1",
-  "scannedAt": "2026-11-15T20:14:38.180Z",
+  "version": "0.5.2",
+  "scannedAt": "2026-11-16T23:37:41.803Z",
   "icon": "game25011__dsh-notify-toast.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/native-toast.js",
-        "line": 10,
+        "line": 11,
         "text": "import { createServer } from 'node:http'"
       }
     ]
@@ -22,24 +22,24 @@
         "text": "import { existsSync } from 'node:fs'"
       },
       {
+        "file": "lib/native-toast.js",
+        "line": 10,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/native-toast.js",
+        "line": 201,
+        "text": "const hash = createHash('sha256').update(readFileSync(helperSourcePath)).digest('hex')"
+      },
+      {
         "file": "lib/taskbar-badge.js",
-        "line": 14,
+        "line": 16,
         "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, statSync } from 'node:fs'"
       },
       {
         "file": "lib/taskbar-badge.js",
-        "line": 99,
+        "line": 106,
         "text": "try { rmSync(entry.path, { force: true }) } catch { /* ignore */ }"
-      },
-      {
-        "file": "lib/taskbar-badge.js",
-        "line": 119,
-        "text": ".update(readFileSync(sourcePath))"
-      },
-      {
-        "file": "lib/taskbar-badge.js",
-        "line": 120,
-        "text": ".update(readFileSync(mainSourcePath))"
       }
     ]
   },
@@ -57,7 +57,7 @@
       },
       {
         "file": "lib/taskbar-badge.js",
-        "line": 12,
+        "line": 14,
         "text": "import { spawn } from 'node:child_process'"
       }
     ]

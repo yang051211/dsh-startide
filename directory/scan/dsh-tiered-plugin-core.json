@@ -1,0 +1,101 @@
+{
+  "name": "dsh-tiered-plugin-core",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-16T23:37:26.166Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/src-stFoKuEA.js",
+        "line": 4500,
+        "text": "fetch(ctx, owner, value) {"
+      },
+      {
+        "file": "dist/src-stFoKuEA.js",
+        "line": 4522,
+        "text": "return selected.value.fetch(this.request(request));"
+      },
+      {
+        "file": "dist/src-stFoKuEA.js",
+        "line": 4931,
+        "text": "get fetch() {"
+      },
+      {
+        "file": "dist/src-stFoKuEA.js",
+        "line": 4932,
+        "text": "return { register: (value) => this.broker.fetch(this.ctx, this.owner, value) };"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/component.js",
+        "line": 4,
+        "text": "import { readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "dist/component.js",
+        "line": 12,
+        "text": "const metadata = JSON.parse(readFileSync(new URL(\"../package.json\", import.meta.url), \"utf8\"));"
+      },
+      {
+        "file": "dist/src-stFoKuEA.js",
+        "line": 14,
+        "text": "import { readFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "dist/src-stFoKuEA.js",
+        "line": 17,
+        "text": "import fs, { existsSync, mkdirSync, readFileSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "dist/src-stFoKuEA.js",
+        "line": 35,
+        "text": "before = await readFile(profile.patchPath, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/src-stFoKuEA.js",
+        "line": 73,
+        "text": "const mcpModule = \"@deepseek-ai/dsh-mcp-client\";"
+      },
+      {
+        "file": "dist/src-stFoKuEA.js",
+        "line": 5796,
+        "text": "const plugins = installed.filter((item) => item.options.name !== \"@deepseek-ai/dsh-mcp-client\" && !infrastructure.includes(item.package));"
+      },
+      {
+        "file": "dist/src-stFoKuEA.js",
+        "line": 5797,
+        "text": "rent.tree !== this.runtime && entry.options.name === \"@deepseek-ai/dsh-mcp-client\") plugins.push(mcpAdapter(`mcp:${entry.id}`, entry.options, !entry.disabled));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 9,
+      "text": "配置继续保存在 `DSH_HOME/plugins/tiered-plugin-menu.json`。旧界面的自定义 `dataFile` 同样保留。不同 DSH 进程不共享内存中的管理器。"
+    }
+  ],
+  "skippedEntries": []
+}

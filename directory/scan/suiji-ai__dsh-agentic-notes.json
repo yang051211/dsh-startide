@@ -1,7 +1,7 @@
 {
   "name": "@suiji-ai/dsh-agentic-notes",
-  "version": "0.3.0",
-  "scannedAt": "2026-11-14T19:29:32.737Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-16T23:37:24.075Z",
   "icon": "suiji-ai__dsh-agentic-notes.svg",
   "network": {
     "hit": true,
@@ -27,29 +27,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 8,
+        "file": "appearance.js",
+        "line": 1,
         "text": "import fs from 'node:fs'"
       },
       {
-        "file": "index.js",
-        "line": 89,
-        "text": "fs.mkdirSync(path.dirname(path.join(root, job.logPath)), { recursive: true })"
+        "file": "appearance.js",
+        "line": 31,
+        "text": "bytes = fs.readFileSync(file)"
       },
       {
-        "file": "index.js",
-        "line": 90,
-        "text": "fs.appendFileSync(path.join(root, job.logPath), `[${nowIso()}] ${String(line)}\\n`)"
-      },
-      {
-        "file": "index.js",
-        "line": 103,
-        "text": "try { if (fs.statSync(abs).mtimeMs < cutoff) { fs.unlinkSync(abs); removed += 1 } } catch { /* ignore */ }"
-      },
-      {
-        "file": "index.js",
-        "line": 139,
+        "file": "appearance.js",
+        "line": 68,
         "text": "fs.mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "appearance.js",
+        "line": 74,
+        "text": "try { fd = fs.openSync(dest, 'wx', 0o600); fs.writeFileSync(fd, source.bytes) }"
+      },
+      {
+        "file": "appearance.js",
+        "line": 75,
+        "text": "catch (err) { if (fd !== undefined && fs.existsSync(dest)) fs.unlinkSync(dest); throw err }"
       }
     ]
   },
@@ -67,22 +67,22 @@
       },
       {
         "file": "index.js",
-        "line": 183,
+        "line": 189,
         "text": "execFile('osascript', ['-e', `display notification \"${escape(cleanBody)}\" with title \"${escape(cleanTitle)}\"`], () => { })"
       },
       {
         "file": "index.js",
-        "line": 244,
+        "line": 250,
         "text": "execFile('say', args, (err) => {"
       },
       {
         "file": "index.js",
-        "line": 245,
+        "line": 251,
         "text": "if (err && voice) execFile('say', ['-r', '180', spoken], () => { })"
       },
       {
         "file": "index.js",
-        "line": 274,
+        "line": 280,
         "text": "execFile('afplay', ['-v', volume, sound], (err) => {"
       }
     ]

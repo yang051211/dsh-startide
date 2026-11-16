@@ -1,25 +1,35 @@
 {
   "name": "dsh-xwide-thought-chain",
-  "version": "0.1.12",
-  "scannedAt": "2026-11-15T20:14:33.101Z",
+  "version": "0.1.29",
+  "scannedAt": "2026-11-16T23:37:24.992Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "index.js",
-        "line": 412,
+        "line": 564,
         "text": "async fetch(request) {"
       },
       {
         "file": "lib/client.js",
-        "line": 99,
+        "line": 131,
         "text": "return fetch(API_PATH, {"
       },
       {
         "file": "lib/client.js",
-        "line": 260,
+        "line": 454,
         "text": "\t\t\tconst report = (body) => { try { fetch(API_PATH, { method: \"POST\", credentials: \"same-origin\", headers: { \"content-type\": \"application/json\" }, body: JSON.st"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 494,
+        "text": "all = async (body) => { const r = await fetch(\"/api/selflearn/settings\", { method: \"POST\", credentials: \"same-origin\", headers: { \"content-type\": \"application/j"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 543,
+        "text": "wReport = (total, collapsed) => { try { fetch(\"/api/selflearn/settings\", { method: \"POST\", credentials: \"same-origin\", headers: { \"content-type\": \"application/j"
       }
     ]
   },
@@ -33,22 +43,22 @@
       },
       {
         "file": "index.js",
-        "line": 35,
+        "line": 38,
         "text": "const j = JSON.parse(fs.readFileSync(LESSONS_FILE, \"utf8\"));"
       },
       {
         "file": "index.js",
-        "line": 49,
+        "line": 52,
         "text": "  try { fs.mkdirSync(DATA, { recursive: true }); fs.appendFileSync(BOOT_LOG, new Date().toISOString() + \" | v\" + version + \" | \" + msg + \"\\n\", \"utf8\"); } catch "
       },
       {
         "file": "index.js",
-        "line": 87,
+        "line": 118,
         "text": "const disk = (() => { try { return JSON.parse(fs.readFileSync(SETTINGS_FILE, \"utf8\")); } catch { return {}; } })();"
       },
       {
         "file": "index.js",
-        "line": 99,
+        "line": 130,
         "text": "fs.mkdirSync(DATA, { recursive: true });"
       }
     ]
@@ -58,19 +68,45 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 25,
+        "line": 28,
         "text": "export const inject = [\"tools\", \"systemPrompt\", \"settings\"];"
       },
       {
         "file": "index.js",
-        "line": 381,
+        "line": 487,
         "text": "for (const d of defs) ctx.tools.register(d);"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bootcheck.mjs",
+        "line": 19,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/bootcheck.mjs",
+        "line": 49,
+        "text": "r = spawnSync(process.execPath, [\"--check\", f], {"
+      },
+      {
+        "file": "lib/rules-git.mjs",
+        "line": 4,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/watchdog.mjs",
+        "line": 23,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/watchdog.mjs",
+        "line": 86,
+        "text": "child = spawn(\"cmd.exe\", [\"/c\", launcher], { windowsHide: true, shell: false });"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

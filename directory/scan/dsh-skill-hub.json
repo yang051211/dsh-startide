@@ -1,19 +1,19 @@
 {
   "name": "dsh-skill-hub",
-  "version": "0.3.35",
-  "scannedAt": "2026-11-13T21:10:41.045Z",
+  "version": "0.3.36",
+  "scannedAt": "2026-11-16T23:37:17.966Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1039,
+        "line": 1055,
         "text": "return await fetch(typeof input === \"string\" ? resolveApiUrl(input) : input, {"
       },
       {
         "file": "src/client/api.ts",
-        "line": 165,
+        "line": 172,
         "text": "return await fetch(typeof input === 'string' ? resolveApiUrl(input) : input, { ...init, signal })"
       },
       {
@@ -43,23 +43,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 776,
+        "line": 11,
+        "text": "import { realpathSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 780,
         "text": "* `finally { rm(tempDir) }` raced with `writeFile` (worked around with a 60ms"
       },
       {
         "file": "lib/index.js",
-        "line": 885,
+        "line": 889,
         "text": "text = await readFile(join(directory, \"workbuddy.json\"), \"utf8\");"
       },
       {
         "file": "lib/index.js",
-        "line": 909,
+        "line": 913,
         "text": "text = await readFile(join(directory, \"SKILL.md\"), \"utf8\");"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 949,
-        "text": "text = await readFile(yamlPath, \"utf8\");"
       }
     ]
   },
@@ -68,8 +68,29 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 10,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4642,
+        "text": "const child = spawn(command, args, {"
+      },
+      {
+        "file": "src/update.ts",
+        "line": 16,
+        "text": "import { spawn, type ChildProcess } from 'node:child_process'"
+      },
+      {
+        "file": "src/update.ts",
+        "line": 382,
+        "text": "const child = spawn(command, args, {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
@@ -77,8 +98,7 @@
   },
   "dependencies": 1,
   "minifiedFiles": [
-    "lib/client.js",
-    "lib/index.js"
+    "lib/client.js"
   ],
   "binaryFiles": [],
   "requiredServices": [],

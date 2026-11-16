@@ -1,0 +1,77 @@
+{
+  "name": "@goodandready/dsh-dsml-artifact-guard",
+  "version": "0.2.17",
+  "scannedAt": "2026-11-16T23:37:32.540Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 278,
+        "text": "const res = await fetch('/api/dsh-dsml-artifact-guard/stats');"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 305,
+        "text": "const res = await fetch('/api/dsh-dsml-artifact-guard/update');"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 322,
+        "text": "const res = await fetch('/api/dsh-dsml-artifact-guard/stats', { method: 'POST', headers: { 'content-type': 'application/json', 'x-dsh-plugin-stats': '1' } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 336,
+        "text": "const res = await fetch('/api/dsh-dsml-artifact-guard/update', { method: 'POST', headers: { 'content-type': 'application/json', 'x-dsh-plugin-update': '1' } });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/updater.js",
+        "line": 2,
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/updater.js",
+        "line": 3,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/updater.js",
+        "line": 125,
+        "text": "const raw = await readFile(manifestUrl, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/updater.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

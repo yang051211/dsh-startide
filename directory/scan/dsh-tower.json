@@ -1,7 +1,7 @@
 {
   "name": "dsh-tower",
-  "version": "2.8.0",
-  "scannedAt": "2026-11-12T08:43:17.934Z",
+  "version": "2.9.0",
+  "scannedAt": "2026-11-16T23:37:30.840Z",
   "icon": "dsh-tower.svg",
   "network": {
     "hit": false,
@@ -26,20 +26,25 @@
         "text": "await fs.unlink(probePath)"
       },
       {
-        "file": "adapters/leases.js",
-        "line": 75,
-        "text": "await unlink(file)"
+        "file": "adapters/git.js",
+        "line": 320,
+        "text": "const text = fs.readFileSync(dotGit, 'utf8')"
       },
       {
-        "file": "adapters/leases.js",
-        "line": 93,
-        "text": "text = await fsp.readFile(file, 'utf8')"
+        "file": "adapters/git.js",
+        "line": 331,
+        "text": "const common = fs.readFileSync(commonPointer, 'utf8').trim()"
       }
     ]
   },
   "agentTools": {
     "hit": true,
     "evidence": [
+      {
+        "file": "domain/exposure.js",
+        "line": 12,
+        "text": "//        survey-sandbox) own theirs through `ctx.tools.restrict({ allow })` in"
+      },
       {
         "file": "host/capability-batch.js",
         "line": 10,
@@ -59,11 +64,6 @@
         "file": "host/capability-leases.js",
         "line": 6,
         "text": "export const inject = ['tools', 'tower']"
-      },
-      {
-        "file": "host/capability-tests.js",
-        "line": 11,
-        "text": "export const inject = ['tools', 'tower']"
       }
     ]
   },
@@ -72,7 +72,7 @@
     "evidence": [
       {
         "file": "adapters/git.js",
-        "line": 76,
+        "line": 78,
         "text": "execFile("
       },
       {
@@ -107,7 +107,6 @@
   "requiredServices": [
     "agentPresets",
     "skills",
-    "tools",
     "tower"
   ],
   "setupHints": [],

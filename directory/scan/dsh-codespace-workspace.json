@@ -1,7 +1,7 @@
 {
   "name": "dsh-codespace-workspace",
-  "version": "0.1.1",
-  "scannedAt": "2026-10-26T10:09:16.942Z",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-16T23:37:34.278Z",
   "icon": "dsh-codespace-workspace.svg",
   "network": {
     "hit": true,
@@ -28,22 +28,22 @@
       },
       {
         "file": "lib/host/codespaces.js",
-        "line": 274,
+        "line": 292,
         "text": "mkdirSync(this.root, { recursive: true })"
       },
       {
         "file": "lib/host/codespaces.js",
-        "line": 282,
+        "line": 300,
         "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
       },
       {
         "file": "lib/host/codespaces.js",
-        "line": 305,
+        "line": 323,
         "text": "mkdirSync(this.root, { recursive: true })"
       },
       {
         "file": "lib/host/codespaces.js",
-        "line": 308,
+        "line": 326,
         "text": "writeFileSync(temporary, JSON.stringify({ version: 1, workspaces: [...this.records.values()] }, null, 2))"
       }
     ]
@@ -53,18 +53,28 @@
     "evidence": [
       {
         "file": "lib/host/remote-tools.js",
-        "line": 451,
+        "line": 507,
         "text": "* `agent.ctx.tools` at `agent/created` time is `undefined`, and it fails"
       },
       {
         "file": "lib/host/remote-tools.js",
-        "line": 526,
-        "text": "disposers.push(tools.register(definition))"
+        "line": 582,
+        "text": "disposers.push(tools.register(registryDefinition(definition)))"
       },
       {
-        "file": "lib/index.js",
-        "line": 36,
-        "text": "export const inject = ['tools', 'systemPrompt']"
+        "file": "lib/host/schema.js",
+        "line": 4,
+        "text": "* `tools.register()` takes a REGISTRY-READY raw JSON Schema — not the authoring"
+      },
+      {
+        "file": "lib/host/schema.js",
+        "line": 107,
+        "text": "* Normalize one tool definition for `tools.register()`."
+      },
+      {
+        "file": "lib/host/schema.js",
+        "line": 113,
+        "text": "* @returns {object} a copy safe to hand to `tools.register()`."
       }
     ]
   },

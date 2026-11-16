@@ -1,35 +1,35 @@
 {
   "name": "bgjobs",
-  "version": "0.3.2",
-  "scannedAt": "2026-11-01T19:09:00.334Z",
+  "version": "0.4.2",
+  "scannedAt": "2026-11-16T23:37:36.383Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 554,
+        "line": 402,
         "text": "fetch(\"/bgjobs/uiprefs?sidebarEntry=\" + (next ? 1 : 0), { method: \"POST\" }).then((r) => r.json()).then((d) => {"
       },
       {
         "file": "lib/client.js",
-        "line": 610,
+        "line": 458,
         "text": "fetch(\"/bgjobs/uiprefs\", {"
       },
       {
         "file": "lib/client.js",
-        "line": 625,
+        "line": 475,
+        "text": "fetch(\"/bgjobs/uiprefs\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 491,
         "text": "const persistDisplay = (next) => fetch(\"/bgjobs/uiprefs\", {"
       },
       {
         "file": "lib/client.js",
-        "line": 641,
+        "line": 507,
         "text": "fetch(\"/bgjobs/uiprefs\", {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 654,
-        "text": "fetch(\"/bgjobs/uiprefs?action=resetDisplay\", { method: \"POST\" }).then((r) => r.json()).then(applyHostPrefs).catch(() => {"
       }
     ]
   },
@@ -67,35 +67,50 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/client.js",
-        "line": 170,
-        "text": "\"settings.mcp.exportDesc\": \"导出 DSH 兼容片段（@deepseek-ai/dsh-mcp-client，可直接并入 cordis.patch.yml）或 bgjobs 原生 JSON（备份/迁移，可被下方「导入」原样吃回）。\","
+        "file": "lib/core/tools.js",
+        "line": 2,
+        "text": "// 8 个 ctx.tools.register：bgjob_submit / bgjob_status / bgjob_wait（logic: any|all）/"
       },
       {
-        "file": "lib/client.js",
-        "line": 181,
-        "text": "\"settings.mcp.importDesc\": \"粘贴或选择文件：支持 DSH 的 cordis.patch.yml 片段（@deepseek-ai/dsh-mcp-client）、bgjobs 导出的 JSON，或单个/多个 server 配置对象（需带 serverName）。\","
+        "file": "lib/core/tools.js",
+        "line": 99,
+        "text": "entry.dispose = ctx.tools.register(entry.def)"
       },
       {
-        "file": "lib/client.js",
-        "line": 390,
-        "text": " a DSH-compatible snippet (@deepseek-ai/dsh-mcp-client, paste into cordis.patch.yml) or bgjobs-native JSON (backup/migration; the import box below reads it back"
+        "file": "lib/core/tools.js",
+        "line": 111,
+        "text": "const disposeSubmit = ctx.tools.register({"
       },
       {
-        "file": "lib/client.js",
-        "line": 401,
-        "text": "or pick a file: a DSH cordis.patch.yml snippet (@deepseek-ai/dsh-mcp-client), bgjobs-exported JSON, or one/more server config objects (each needs serverName).\","
+        "file": "lib/core/tools.js",
+        "line": 227,
+        "text": "const disposeStatus = ctx.tools.register({"
       },
       {
-        "file": "lib/core/mcp.js",
-        "line": 3,
-        "text": "// 工具数/工具名来源优先级：live 工具注册表 ctx.tools.schemas() 的 `mcp__<server>__*`（零"
+        "file": "lib/core/tools.js",
+        "line": 287,
+        "text": "const disposeWait = ctx.tools.register({"
       }
     ]
   },
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/exec/host.mjs",
+        "line": 17,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/exec/host.mjs",
+        "line": 180,
+        "text": "child = spawn(plan.execute, plan.args, {"
+      },
+      {
+        "file": "lib/exec/launch.mjs",
+        "line": 12,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
       {
         "file": "lib/gui-launch.js",
         "line": 25,
@@ -105,21 +120,6 @@
         "file": "lib/gui-launch.js",
         "line": 48,
         "text": "let guiExec = (file, args, options, cb) => execFile(file, args, options, cb)"
-      },
-      {
-        "file": "lib/runners.js",
-        "line": 5,
-        "text": "import { spawn } from 'node:child_process'"
-      },
-      {
-        "file": "lib/runners.js",
-        "line": 30,
-        "text": "child = spawn(argv[0], argv.slice(1), { cwd, windowsHide: true })"
-      },
-      {
-        "file": "lib/runners.js",
-        "line": 316,
-        "text": "child = spawn(nodeExe, ['--version'], { windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })"
       }
     ]
   },
@@ -127,7 +127,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 3,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

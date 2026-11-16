@@ -1,0 +1,87 @@
+{
+  "name": "@ds-hu/dsh-better-mcp-manager",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-16T23:37:44.179Z",
+  "icon": "ds-hu__dsh-better-mcp-manager.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 110,
+        "text": "const response = await fetch(API_BASE + path, request);"
+      },
+      {
+        "file": "lib/mcp.js",
+        "line": 293,
+        "text": "response = await fetch(oauth.tokenUrl, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/mcp-manager.mjs",
+        "line": 18,
+        "text": "import { existsSync, readFileSync, rmSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "bin/mcp-manager.mjs",
+        "line": 46,
+        "text": "text = readFileSync(file, 'utf8');"
+      },
+      {
+        "file": "bin/mcp-manager.mjs",
+        "line": 139,
+        "text": "rmSync(resolved, { recursive: true, force: true });"
+      },
+      {
+        "file": "lib/icons.js",
+        "line": 20,
+        "text": "import { chmod, mkdir, readdir, readFile, rename, rm, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/icons.js",
+        "line": 124,
+        "text": "await mkdir(dir, { recursive: true, mode: 0o700 });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/model.js",
+        "line": 193,
+        "text": "* the same contract `@deepseek-ai/dsh-mcp-client` uses; tool names stay stable"
+      },
+      {
+        "file": "lib/presets.js",
+        "line": 128,
+        "text": "disposers.push(tools.register(definition));"
+      },
+      {
+        "file": "lib/result-projection.js",
+        "line": 4,
+        "text": "* Adapted from `@deepseek-ai/dsh-mcp-client` (MIT, DeepSeek) — see NOTICE. Its"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-outsourcing-expert",
-  "version": "1.2.4",
-  "scannedAt": "2026-10-26T10:07:17.494Z",
+  "version": "1.2.5",
+  "scannedAt": "2026-11-16T23:37:36.503Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -12,27 +12,27 @@
     "evidence": [
       {
         "file": "src/index.js",
-        "line": 51,
+        "line": 53,
         "text": "import { mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "src/index.js",
-        "line": 517,
+        "line": 529,
         "text": "raw = readFileSync(legacyFile, 'utf8')"
       },
       {
         "file": "src/index.js",
-        "line": 542,
+        "line": 554,
         "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
       },
       {
         "file": "src/index.js",
-        "line": 587,
+        "line": 599,
         "text": "mkdirSync(dir, { recursive: true })"
       },
       {
         "file": "src/index.js",
-        "line": 589,
+        "line": 601,
         "text": "writeFileSync(temp, `${JSON.stringify(payload, null, 2)}\\n`, 'utf8')"
       }
     ]
@@ -42,23 +42,28 @@
     "evidence": [
       {
         "file": "src/index.js",
-        "line": 62,
+        "line": 64,
         "text": "export const inject = ['tools', 'systemPrompt']"
       },
       {
         "file": "src/index.js",
-        "line": 906,
+        "line": 945,
         "text": "const names = ctx.tools.schemas(agent)"
       },
       {
         "file": "src/index.js",
-        "line": 918,
+        "line": 957,
         "text": "return ctx.tools.schemas(agent).some(candidate => candidate?.name === toolName)"
       },
       {
         "file": "src/index.js",
-        "line": 927,
+        "line": 966,
         "text": "const schema = ctx.tools.schemas(agent).find(candidate => candidate?.name === toolName)"
+      },
+      {
+        "file": "src/index.js",
+        "line": 1224,
+        "text": "? ctx.tools.schemas(agent).find(schema => schema.name === naming.main)?.parameters?.properties"
       }
     ]
   },

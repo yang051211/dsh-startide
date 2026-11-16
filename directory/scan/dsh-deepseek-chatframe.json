@@ -1,0 +1,84 @@
+{
+  "name": "dsh-deepseek-chatframe",
+  "version": "1.0.6",
+  "scannedAt": "2026-11-16T23:37:26.893Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 569,
+        "text": "return fetch(STATE_URL, { headers: { Accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 746,
+        "text": "return fetch(STATE_URL, opts)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 861,
+        "text": "fetch(STATE_URL.replace('/state.json', '/frames') + '?id=' + encodeURIComponent(targetBubble.id))"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 872,
+        "text": "fetch(STATE_URL.replace('/state.json', '/frames'), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 904,
+        "text": "fetch(STATE_URL.replace('/state.json', '/delete-bubble'), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 55,
+        "text": "try { raw = JSON.parse(fs.readFileSync(STATE_FILE, 'utf8')) } catch (err) { return }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 73,
+        "text": "const cfg = JSON.parse(fs.readFileSync(cfgPath, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 82,
+        "text": "fs.writeFileSync(cfgPath, JSON.stringify(cfg, null, 2), 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 101,
+        "text": "const v = String(JSON.parse(fs.readFileSync(path.join(PACKAGE_ROOT, 'package.json'), 'utf8')).version || '').trim()"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

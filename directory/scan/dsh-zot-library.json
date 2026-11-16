@@ -1,0 +1,131 @@
+{
+  "name": "dsh-zot-library",
+  "version": "0.6.3",
+  "scannedAt": "2026-11-16T23:37:25.028Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 6,
+        "text": "nc function Ge(t,e,A){let i;try{i=await fetch(Vb,{method:\"POST\",credentials:\"same-origin\",headers:{\"content-type\":\"application/json\"},body:JSON.stringify({endpo"
+      },
+      {
+        "file": "client.js",
+        "line": 18,
+        "text": "{if(Pr(t,document.baseURI)){let A=await fetch(t);if(!A.ok)throw new Error(A.statusText);switch(e){case\"arraybuffer\":return A.arrayBuffer();case\"blob\":return A.b"
+      },
+      {
+        "file": "client.js",
+        "line": 19,
+        "text": "his.baseUrl=e,this.isCompressed=A}async fetch({name:e}){if(!this.baseUrl)throw new Error(\"Ensure that the `cMapUrl` and `cMapPacked` API parameters are provided"
+      },
+      {
+        "file": "client.js",
+        "line": 29,
+        "text": ")),s instanceof Me&&this.xref?this.xref.fetch(s,this.suppressEncryption):s}async getAsync(e,A,i){let s=this._map.get(e);return s===void 0&&A!==void 0&&(s=this._"
+      },
+      {
+        "file": "client.js",
+        "line": 30,
+        "text": "Me){if(i.has(t))return;s=t,i.put(s),t=e.fetch(t)}if(Array.isArray(t))for(let a of t)Gc(a,e,A,i);else if(t instanceof J){if(gA(t.get(\"S\"),\"JavaScript\")){let a=t."
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 19,
+        "text": "t){let A=await process.getBuiltinModule(\"fs\").promises.readFile(t);return new Uint8Array(A)}var uh=class extends ic{},fh=class extends ec{_createCanvas(e,A){ret"
+      },
+      {
+        "file": "index.js",
+        "line": 6,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "src/host/chat.js",
+        "line": 3,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "src/host/chat.js",
+        "line": 14,
+        "text": "fs.mkdirSync(workspaceDir(home), { recursive: true })"
+      },
+      {
+        "file": "src/host/ingest.js",
+        "line": 2,
+        "text": "import fs from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 71,
+        "text": "// The tools fiber pends independently: a composition without ctx.tools still"
+      },
+      {
+        "file": "index.js",
+        "line": 95,
+        "text": "const disposers = definitions.map(definition => scoped.tools.register(definition))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/assoc.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/host/assoc.js",
+        "line": 28,
+        "text": "child = spawn('reg', ['query', ...args], { windowsHide: true, stdio: ['ignore', 'pipe', 'ignore'] })"
+      },
+      {
+        "file": "src/host/assoc.js",
+        "line": 169,
+        "text": "child = spawn('powershell.exe', ['-NoProfile', '-NonInteractive', '-EncodedCommand', Buffer.from(script, 'utf16le').toString('base64')], {"
+      },
+      {
+        "file": "src/host/assoc.js",
+        "line": 311,
+        "text": "const child = spawn(exe, args, { detached: true, stdio: 'ignore', windowsHide: true })"
+      },
+      {
+        "file": "src/host/office/installer.js",
+        "line": 22,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "client.js",
+    "src/host/schema-data.js",
+    "src/host/userdata-sql.js",
+    "vendor/deps.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "sessionController",
+    "sessionTitle",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

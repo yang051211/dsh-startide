@@ -1,0 +1,76 @@
+{
+  "name": "dsh-context-kit",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-16T23:37:43.847Z",
+  "icon": "dsh-context-kit.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import { appendFile, mkdir } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 174,
+        "text": "await mkdir(path.dirname(cfg.auditManifest), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 175,
+        "text": "await appendFile(cfg.auditManifest, `${JSON.stringify({ ts: Date.now(), ...entry })}\\n`, 'utf8')"
+      },
+      {
+        "file": "lib/index/sources.cjs",
+        "line": 11,
+        "text": "const fs = require('node:fs')"
+      },
+      {
+        "file": "lib/kit-ops.mjs",
+        "line": 9,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 93,
+        "text": "export const inject = ['tools', 'systemPrompt']"
+      },
+      {
+        "file": "tuner.js",
+        "line": 5,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "tuner.js",
+        "line": 116,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

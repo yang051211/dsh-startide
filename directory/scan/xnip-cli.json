@@ -1,7 +1,7 @@
 {
   "name": "xnip-cli",
-  "version": "0.6.4",
-  "scannedAt": "2026-11-13T21:11:00.587Z",
+  "version": "0.6.8",
+  "scannedAt": "2026-11-16T23:37:42.565Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -31,9 +31,9 @@
         "text": "try { previous = await readFile(destination); }"
       },
       {
-        "file": "integrations/dsh-native/lifecycle.mjs",
-        "line": 3,
-        "text": "import fs from 'node:fs/promises';"
+        "file": "integrations/dsh-native/compact-tools.mjs",
+        "line": 30,
+        "text": "name: 'xnip-compact-tools', inject: ['tools', 'fs', 'systemPrompt', 'workingDirectory'],"
       }
     ]
   },
@@ -41,29 +41,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "integrations/dsh-native/rewind-validation.mjs",
-        "line": 62,
-        "text": "const call = (name, args) => ctx.tools.execute({"
+        "file": "integrations/dsh-native/compact-tools.mjs",
+        "line": 30,
+        "text": "name: 'xnip-compact-tools', inject: ['tools', 'fs', 'systemPrompt', 'workingDirectory'],"
       },
       {
-        "file": "integrations/dsh-native/rewind-validation.mjs",
-        "line": 76,
+        "file": "integrations/dsh-native/compact-tools.mjs",
+        "line": 35,
+        "text": "const tools = new Proxy(ctx.tools, { get(target, key) {"
+      },
+      {
+        "file": "integrations/dsh-native/host-governance.mjs",
+        "line": 50,
         "text": "const tool = ctx.tools.get('edit', agent);"
       },
       {
         "file": "integrations/dsh-native/runtime.mjs",
-        "line": 57,
-        "text": "return { tools: ctx.tools.schemas(agent), prompt: host['dsh-system-prompt'].renderPrompt(assembly) };"
+        "line": 22,
+        "text": "if (typeof ctx.tools.setExecutor === 'function') {"
       },
       {
         "file": "integrations/dsh-native/runtime.mjs",
-        "line": 60,
-        "text": "return ctx.tools.execute({ signal, callId: `native-${++nextCall}`, name, arguments: args, agent });"
-      },
-      {
-        "file": "integrations/dsh/index.mjs",
-        "line": 17,
-        "text": "return import('@deepseek-ai/dsh-mcp-client');"
+        "line": 23,
+        "text": "const batch = await ctx.tools.execute({ signal, agent,"
       }
     ]
   },
@@ -113,12 +113,12 @@
     },
     {
       "file": "README.md",
-      "line": 186,
+      "line": 196,
       "text": "npm install --global xnip-cli@latest"
     },
     {
       "file": "README.md",
-      "line": 191,
+      "line": 201,
       "text": "`npm install --global 'xnip-cli@<version>'`. For a project-local installation,"
     }
   ],

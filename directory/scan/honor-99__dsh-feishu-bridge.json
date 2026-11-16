@@ -1,0 +1,107 @@
+{
+  "name": "@honor-99/dsh-feishu-bridge",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-16T23:37:30.044Z",
+  "icon": "honor-99__dsh-feishu-bridge.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 166,
+        "text": "const response = await fetch(STATUS_ENDPOINT, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 231,
+        "text": "const response = await fetch(ENDPOINT, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 266,
+        "text": "const response = await fetch(ENDPOINT, {"
+      },
+      {
+        "file": "client.js",
+        "line": 273,
+        "text": "const refreshed = await fetch(ENDPOINT, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "index.js",
+        "line": 181,
+        "text": "fetch(`${origin}${ROUTE}/config`)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bridge.js",
+        "line": 13,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "bridge.js",
+        "line": 142,
+        "text": "marker = JSON.parse(fs.readFileSync(markerFile, 'utf8'))"
+      },
+      {
+        "file": "bridge.js",
+        "line": 160,
+        "text": "fs.mkdirSync(this.config.stateDir, { recursive: true })"
+      },
+      {
+        "file": "bridge.js",
+        "line": 161,
+        "text": "fs.writeFileSync(markerFile, `${JSON.stringify({ appId: stamp, sentAt: Date.now(), sent }, null, 2)}\\n`, { mode: 0o600 })"
+      },
+      {
+        "file": "bridge.js",
+        "line": 344,
+        "text": "fs.mkdirSync(directory, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lark.js",
+        "line": 8,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lark.js",
+        "line": 63,
+        "text": "const result = spawnSync(probe, [command], { encoding: 'utf8', windowsHide: true })"
+      },
+      {
+        "file": "lark.js",
+        "line": 134,
+        "text": "return spawn(target.nodePath ?? process.execPath, [target.script, ...args], spawnOptions)"
+      },
+      {
+        "file": "lark.js",
+        "line": 136,
+        "text": "return spawn(target.command, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionController"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

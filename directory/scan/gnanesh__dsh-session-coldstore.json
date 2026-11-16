@@ -1,0 +1,75 @@
+{
+  "name": "@gnanesh/dsh-session-coldstore",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-16T23:37:33.148Z",
+  "icon": "gnanesh__dsh-session-coldstore.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 414,
+        "text": "return fetch(API_BASE + path, init).then(async (response) => {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/coldstore.mjs",
+        "line": 21,
+        "text": "import { readdir, readFile, rename, copyFile, mkdir, rm } from 'node:fs/promises'"
+      },
+      {
+        "file": "bin/coldstore.mjs",
+        "line": 23,
+        "text": "import { createReadStream } from 'node:fs'"
+      },
+      {
+        "file": "bin/coldstore.mjs",
+        "line": 24,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/coldstore.mjs",
+        "line": 52,
+        "text": "const parsed = JSON.parse(await readFile(path.join(coldRoot, 'manifest.json'), 'utf8'))"
+      },
+      {
+        "file": "bin/coldstore.mjs",
+        "line": 184,
+        "text": "await mkdir(path.dirname(to), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 105,
+        "text": "execFile('osascript', ['-e', script], { timeout: 5_000 }, (error) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

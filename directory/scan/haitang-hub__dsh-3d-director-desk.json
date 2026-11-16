@@ -1,7 +1,7 @@
 {
   "name": "@haitang-hub/dsh-3d-director-desk",
-  "version": "0.3.20",
-  "scannedAt": "2026-11-14T07:59:06.164Z",
+  "version": "0.3.22",
+  "scannedAt": "2026-11-16T23:37:22.491Z",
   "icon": "haitang-hub__dsh-3d-director-desk.png",
   "network": {
     "hit": true,
@@ -23,13 +23,13 @@
       },
       {
         "file": "bridge/src/server/mcp.js",
-        "line": 112,
-        "text": "res = await fetch(`${BRIDGE_URL}/director/tool`, {"
+        "line": 25,
+        "text": "const res = await fetch(`${BRIDGE_URL}/bootstrap`, { signal: AbortSignal.timeout(2000) });"
       },
       {
-        "file": "dsh/index.js",
-        "line": 65,
-        "text": "const response = await fetch(url, { signal: signal ?? AbortSignal.timeout(2000) })"
+        "file": "bridge/src/server/mcp.js",
+        "line": 137,
+        "text": "res = await fetch(`${BRIDGE_URL}/director/tool`, {"
       }
     ]
   },
@@ -43,23 +43,23 @@
       },
       {
         "file": "bridge/index.js",
-        "line": 72,
+        "line": 68,
+        "text": "token = fs.readFileSync(join(DATA_DIR, \"bridge-token.txt\"), \"utf8\").trim();"
+      },
+      {
+        "file": "bridge/index.js",
+        "line": 79,
         "text": "fs.writeFileSync(probe, \"ok\");"
       },
       {
         "file": "bridge/index.js",
-        "line": 73,
+        "line": 80,
         "text": "fs.unlinkSync(probe);"
       },
       {
         "file": "bridge/src/server/bridge.js",
         "line": 8,
         "text": "import fs from \"node:fs\";"
-      },
-      {
-        "file": "bridge/src/server/bridge.js",
-        "line": 171,
-        "text": "fs.mkdirSync(this.logsDir, { recursive: true });"
       }
     ]
   },
@@ -107,10 +107,10 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
+  "dependencies": 0,
   "minifiedFiles": [
-    "site/assets/editor-page-DQfRuAlQ.js",
-    "site/assets/index-8Z0rEin5.js"
+    "site/assets/editor-page-B25TAS7l.js",
+    "site/assets/index-CKtXwOs4.js"
   ],
   "binaryFiles": [],
   "requiredServices": [

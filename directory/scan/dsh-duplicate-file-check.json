@@ -1,0 +1,92 @@
+{
+  "name": "dsh-duplicate-file-check",
+  "version": "0.5.2",
+  "scannedAt": "2026-11-16T23:37:27.751Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 129,
+        "text": "return fetch(API + pathname, opts).then(function (r) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/fingerprint-db.mjs",
+        "line": 10,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/fingerprint-db.mjs",
+        "line": 236,
+        "text": "fs.mkdirSync(path.dirname(dbPath), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import fsp from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 176,
+        "text": "try { fs.appendFileSync(LOG_FILE, line, 'utf8') } catch { /* 日志失败不能拖垮任务 */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 306,
+        "text": "spawn('taskkill', ['/PID', String(child.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 532,
+        "text": "const child = spawn(process.execPath, ["
+      },
+      {
+        "file": "lib/index.js",
+        "line": 752,
+        "text": "const child = execFile(cmd, args, { maxBuffer: 8 * 1024 * 1024, timeout, windowsHide: true }, (err, stdout, stderr) => {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 771,
+        "text": "const child = execFile("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

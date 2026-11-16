@@ -1,7 +1,7 @@
 {
   "name": "dsh-daughter",
-  "version": "0.7.1",
-  "scannedAt": "2026-11-10T20:53:46.812Z",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-16T23:37:27.097Z",
   "icon": "dsh-daughter.svg",
   "network": {
     "hit": true,
@@ -48,7 +48,7 @@
     "evidence": [
       {
         "file": "dist/host.js",
-        "line": 984,
+        "line": 1176,
         "text": "await ctx.tools.invoke(tool, argsTemplate).catch((error) => {"
       },
       {
@@ -74,8 +74,14 @@
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/runtime/feedback.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
   },
   "installScripts": {
     "hit": true,
@@ -87,7 +93,7 @@
       }
     ]
   },
-  "dependencies": 1,
+  "dependencies": 2,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

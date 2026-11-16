@@ -1,0 +1,78 @@
+{
+  "name": "dsh-screenwrite",
+  "version": "1.6.3",
+  "scannedAt": "2026-11-16T23:37:26.541Z",
+  "icon": "dsh-screenwrite.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 776,
+        "text": "const response = await fetch(API + path, init)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "import { access, cp, mkdir, readFile, readdir, rename, unlink, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 46,
+        "text": "versionPromise = readFile(new URL('./package.json', import.meta.url), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 80,
+        "text": "await mkdir(SCRIPT_DIR, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 141,
+        "text": "raw = await readFile(scriptPath(id), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 169,
+        "text": "await writeFile(temporary, `${JSON.stringify(payload, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 25,
+        "text": "export const inject = ['tools', 'webServer']"
+      },
+      {
+        "file": "index.js",
+        "line": 641,
+        "text": "ctx.effect(() => ctx.tools.register(buildToolDefinition()))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

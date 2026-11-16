@@ -1,0 +1,77 @@
+{
+  "name": "dsh-onekey-update",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-16T23:37:40.540Z",
+  "icon": "dsh-onekey-update.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 80,
+        "text": "const response = await fetch(routeUrl(`${ROUTE}/${path}`), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/check.mjs",
+        "line": 7,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/check.mjs",
+        "line": 76,
+        "text": "return fs.readFileSync(file, 'utf8').replace(/^\\uFEFF/, '');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 59,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 68,
+        "text": "writeFileSync(LOG_FILE, `${new Date().toISOString()} ${line}\\n`, { flag: 'a' });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 154,
+        "text": "child = spawn(launcher.command, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,14 +1,14 @@
 {
   "name": "dsh-agentmeeting",
-  "version": "0.4.0",
-  "scannedAt": "2026-11-16T08:06:33.945Z",
+  "version": "0.4.2",
+  "scannedAt": "2026-11-16T23:37:36.746Z",
   "icon": "dsh-agentmeeting.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "agent-cli.mjs",
-        "line": 68,
+        "line": 75,
         "text": "response = await fetch(SERVER + path, {"
       },
       {
@@ -18,12 +18,12 @@
       },
       {
         "file": "plugin/client.js",
-        "line": 362,
+        "line": 368,
         "text": "const response = await fetch(`${PROXY}?${query.toString()}`, {"
       },
       {
         "file": "plugin/client.js",
-        "line": 636,
+        "line": 647,
         "text": "const response = await fetch('/plugin-agentmeeting/info', { headers: { accept: 'application/json' } })"
       },
       {
@@ -48,18 +48,18 @@
       },
       {
         "file": "agent-cli.mjs",
-        "line": 164,
-        "text": "mkdirSync(workDir, { recursive: true })"
+        "line": 117,
+        "text": "const { openSync } = await import('node:fs')"
       },
       {
         "file": "agent-cli.mjs",
-        "line": 167,
-        "text": "const { readdirSync, statSync } = await import('node:fs')"
+        "line": 120,
+        "text": "mkdirSync(dir, { recursive: true })"
       },
       {
         "file": "agent-cli.mjs",
-        "line": 171,
-        "text": "if (Date.now() - statSync(full).mtimeMs > 86400000) unlinkSync(full)"
+        "line": 146,
+        "text": "const { writeFileSync } = await import('node:fs')"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "plugin/index.js",
-        "line": 687,
+        "line": 707,
         "text": "inner.effect(() => inner.tools.register(definition), `agentmeeting: ${definition.name}`)"
       }
     ]
@@ -78,28 +78,28 @@
     "evidence": [
       {
         "file": "agent-cli.mjs",
-        "line": 260,
+        "line": 116,
         "text": "const { spawn } = await import('node:child_process')"
       },
       {
         "file": "agent-cli.mjs",
-        "line": 264,
-        "text": "const child = spawn(cmd, {"
+        "line": 123,
+        "text": "const child = spawn(process.execPath, [WATCH_SCRIPT, ...watchArgsWithout('--detach')], {"
       },
       {
-        "file": "plugin/index.js",
-        "line": 20,
-        "text": "import { spawn } from 'node:child_process'"
+        "file": "agent-cli.mjs",
+        "line": 161,
+        "text": "const { spawn } = await import('node:child_process')"
       },
       {
-        "file": "plugin/index.js",
-        "line": 96,
-        "text": "const child = spawn(execPath, [script, '--port', String(port)], {"
+        "file": "agent-cli.mjs",
+        "line": 162,
+        "text": "const child = spawn('wscript.exe', [target], { detached: true, stdio: 'ignore', windowsHide: true })"
       },
       {
-        "file": "plugin/index.js",
-        "line": 568,
-        "text": "const child = spawn(nodePath, args, {"
+        "file": "agent-cli.mjs",
+        "line": 346,
+        "text": "const { spawn } = await import('node:child_process')"
       }
     ]
   },
@@ -116,7 +116,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 38,
+      "line": 43,
       "text": "node setup.mjs --server http://127.0.0.1:8790"
     }
   ],

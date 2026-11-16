@@ -1,7 +1,7 @@
 {
   "name": "@gsnowdrift/dsh-archive-manager",
-  "version": "0.3.0",
-  "scannedAt": "2026-11-10T20:53:59.883Z",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-16T23:37:36.644Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -13,12 +13,17 @@
       {
         "file": "lib/index.js",
         "line": 29,
-        "text": "import { rm } from 'node:fs/promises'"
+        "text": "import { readdir, rm, stat } from 'node:fs/promises'"
       },
       {
         "file": "lib/index.js",
-        "line": 978,
+        "line": 1014,
         "text": "await rm(directory, { recursive: true, force: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1015,
+        "text": "// Windows keeps handles open: `rm(force)` can return without having"
       }
     ]
   },

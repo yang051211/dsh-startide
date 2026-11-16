@@ -1,0 +1,123 @@
+{
+  "name": "dsh-campus-net",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-16T23:37:26.681Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/http.js",
+        "line": 1,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/http.js",
+        "line": 2,
+        "text": "import https from 'node:https'"
+      },
+      {
+        "file": "lib/http.js",
+        "line": 8,
+        "text": "'X-Requested-With': 'XMLHttpRequest',"
+      },
+      {
+        "file": "lib/setup-server.js",
+        "line": 2,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/setup-server.js",
+        "line": 187,
+        "text": "const res = await fetch(path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/campus-netd.js",
+        "line": 2,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "bin/campus-netd.js",
+        "line": 33,
+        "text": "fs.rmSync(PID_PATH, { force: true })"
+      },
+      {
+        "file": "bin/campus-netd.js",
+        "line": 61,
+        "text": "fs.writeFileSync(PID_PATH, JSON.stringify({ pid: process.pid, port: cfg.lockPort, startedAt: new Date().toISOString() }), 'utf8')"
+      },
+      {
+        "file": "bin/campus-netd.js",
+        "line": 72,
+        "text": "fs.rmSync(STOP_PATH, { force: true })"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 1,
+        "text": "import fs from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "ctx.tools.register(tool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/creds.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/creds.js",
+        "line": 25,
+        "text": "const child = spawn("
+      },
+      {
+        "file": "lib/daemon.js",
+        "line": 1,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/daemon.js",
+        "line": 239,
+        "text": "const { spawn } = await import('node:child_process')"
+      },
+      {
+        "file": "lib/daemon.js",
+        "line": 240,
+        "text": "const child = spawn(process.execPath, [path.join(ROOT, 'bin', 'campus-netd.js'), '--home', HOME], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "oh-my-clm",
-  "version": "0.1.18",
-  "scannedAt": "2026-11-11T08:04:54.234Z",
+  "version": "0.1.20",
+  "scannedAt": "2026-11-16T23:37:25.314Z",
   "icon": "oh-my-clm.svg",
   "network": {
     "hit": false,
@@ -17,23 +17,23 @@
       },
       {
         "file": "dist/dsh/index.js",
-        "line": 44,
+        "line": 732,
         "text": "return fs.readFileSync(filePath, \"utf8\");"
       },
       {
-        "file": "dist/src/lib/clm-files.js",
+        "file": "dist/src/features/live-context/plugin-record.js",
+        "line": 53,
+        "text": "import { realpathSync } from \"node:fs\";"
+      },
+      {
+        "file": "dist/src/lib/clm-config.js",
         "line": 1,
         "text": "import * as fs from \"node:fs\";"
       },
       {
-        "file": "dist/src/lib/clm-files.js",
-        "line": 12,
-        "text": "fs.mkdirSync(directory, { recursive: true, mode: PRIVATE_DIRECTORY_MODE });"
-      },
-      {
-        "file": "dist/src/lib/clm-files.js",
-        "line": 16,
-        "text": "fs.writeFileSync(temporaryPath, content, { encoding: \"utf8\", mode: PRIVATE_FILE_MODE });"
+        "file": "dist/src/lib/clm-config.js",
+        "line": 241,
+        "text": "text = fs.readFileSync(filePath, \"utf8\");"
       }
     ]
   },
@@ -42,34 +42,40 @@
     "evidence": [
       {
         "file": "dist/dsh/index.js",
-        "line": 264,
+        "line": 987,
         "text": "// `ctx.tools[TOOL_RUNTIME_SCHEDULER]` is undefined and every model tool call"
       },
       {
         "file": "dist/dsh/index.js",
-        "line": 518,
+        "line": 1298,
         "text": "if (ctx.tools) {"
       },
       {
         "file": "dist/dsh/index.js",
-        "line": 521,
+        "line": 1301,
         "text": "ctx.tools.register(createDshCleanupTool((sessionId) => states.get(sessionId)));"
       },
       {
         "file": "dist/dsh/index.js",
-        "line": 595,
+        "line": 1417,
         "text": "export const inject = [\"systemPrompt\", \"tools\", \"commands\"];"
       },
       {
         "file": "dsh/index.ts",
-        "line": 387,
+        "line": 1326,
         "text": "// `ctx.tools[TOOL_RUNTIME_SCHEDULER]` is undefined and every model tool call"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/canary-replay.mjs",
+        "line": 25,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

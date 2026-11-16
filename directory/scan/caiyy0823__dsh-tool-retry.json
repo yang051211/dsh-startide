@@ -1,0 +1,86 @@
+{
+  "name": "@caiyy0823/dsh-tool-retry",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-16T23:37:43.994Z",
+  "icon": "caiyy0823__dsh-tool-retry.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 40,
+        "text": "import { appendFile, mkdir } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 338,
+        "text": "await mkdir(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 339,
+        "text": "await appendFile(file, `${JSON.stringify(entry)}\\n`, 'utf8')"
+      },
+      {
+        "file": "tests/tool-retry.test.mjs",
+        "line": 13,
+        "text": "import { mkdtemp, readFile, rm } from 'node:fs/promises'"
+      },
+      {
+        "file": "tests/tool-retry.test.mjs",
+        "line": 221,
+        "text": "const lines = (await readFile(file, 'utf8')).trim().split('\\n').map((line) => JSON.parse(line))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "* chain. It re-dispatches instead: `ctx.tools.execute()` with one call and no"
+      },
+      {
+        "file": "index.js",
+        "line": 49,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 368,
+        "text": "const batch = await ctx.tools.execute({"
+      },
+      {
+        "file": "tests/tool-retry.test.mjs",
+        "line": 6,
+        "text": "* every retry goes through `ctx.tools.execute()`. No network, no long timers, no"
+      },
+      {
+        "file": "tests/tool-retry.test.mjs",
+        "line": 259,
+        "text": "h.ctx.tools.execute = async (input) => {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

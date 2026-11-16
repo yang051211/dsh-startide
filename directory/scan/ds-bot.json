@@ -1,24 +1,24 @@
 {
   "name": "ds-bot",
-  "version": "0.3.6",
-  "scannedAt": "2026-11-12T21:20:09.365Z",
+  "version": "0.3.8",
+  "scannedAt": "2026-11-16T23:37:11.674Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 13534,
+        "line": 14413,
         "text": "response = await fetch(ROUTE, {"
       },
       {
         "file": "link.js",
-        "line": 7620,
+        "line": 7630,
         "text": "const socket = this.options.createSocket?.(this.options.url) ?? new WebSocket(this.options.url);"
       },
       {
         "file": "link.js",
-        "line": 7883,
+        "line": 7898,
         "text": "this.socket = this.options.createSocket?.(this.url) ?? new WebSocket(this.url);"
       },
       {
@@ -28,14 +28,29 @@
       },
       {
         "file": "src/host/connectors/gateway.js",
-        "line": 9,
-        "text": "import { request as httpsRequest } from 'node:https'"
+        "line": 13,
+        "text": "const loadUndici = () => undici ??= import('undici')"
       }
     ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "bin/ds-bot-doctor.mjs",
+        "line": 23,
+        "text": "import { existsSync, readdirSync, readFileSync, realpathSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/ds-bot-doctor.mjs",
+        "line": 82,
+        "text": "manifest = JSON.parse(readFileSync(join(dir, 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "bin/ds-bot-doctor.mjs",
+        "line": 101,
+        "text": "writeFileSync(join(entry.dir, 'package.json'), `${JSON.stringify(entry.manifest, null, 2)}\\n`)"
+      },
       {
         "file": "office.js",
         "line": 6517,
@@ -45,21 +60,6 @@
         "file": "office.js",
         "line": 6522,
         "text": "import { existsSync, lstatSync, mkdirSync, readFileSync, readdirSync, realpathSync, rmdirSync, statSync, unlinkSync, writeFileSync } from \"node:fs\";"
-      },
-      {
-        "file": "office.js",
-        "line": 6796,
-        "text": "for (const member of readZip(readFileSync(file))) {"
-      },
-      {
-        "file": "office.js",
-        "line": 6811,
-        "text": "const data = readFileSync(join(base, path));"
-      },
-      {
-        "file": "office.js",
-        "line": 6970,
-        "text": "mkdirSync(dir, { recursive: true });"
       }
     ]
   },
@@ -67,13 +67,8 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 56,
-        "text": "export const inject = ['llm', 'tools', 'systemPrompt', 'sessionController', 'sessions', 'sessionTitle', 'workspaceRegistry', 'connection']"
-      },
-      {
         "file": "src/host/browser/mount.js",
-        "line": 124,
+        "line": 127,
         "text": "const registerTool = register ?? (tool => ctx.tools.register(tool))"
       },
       {
@@ -83,12 +78,17 @@
       },
       {
         "file": "src/host/computer/index.js",
-        "line": 226,
+        "line": 227,
         "text": "const denyNames = agent => (typeof ctx.tools?.schemas === 'function' ? ctx.tools.schemas(agent) : [])"
       },
       {
         "file": "src/host/computer/index.js",
-        "line": 260,
+        "line": 251,
+        "text": "const lift = agent.ctx.tools?.restrict?.({ deny: [name] })"
+      },
+      {
+        "file": "src/host/computer/index.js",
+        "line": 278,
         "text": "if (def !== undefined && typeof agent.ctx.tools?.register === 'function') {"
       }
     ]
@@ -96,6 +96,16 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "bin/ds-bot-doctor.mjs",
+        "line": 22,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "bin/ds-bot-doctor.mjs",
+        "line": 32,
+        "text": "return spawnSync(launch.file, launch.args, { ...options, ...launch.options })"
+      },
       {
         "file": "src/host/browser/script-runner.js",
         "line": 5,
@@ -110,16 +120,6 @@
         "file": "src/host/dsh-update.js",
         "line": 9,
         "text": "import { spawn } from 'node:child_process'"
-      },
-      {
-        "file": "src/host/dsh-update.js",
-        "line": 150,
-        "text": "const runner = rt.dshSpawn ?? ((command, argv, options) => spawn(command, argv, options))"
-      },
-      {
-        "file": "src/host/local-agents/discover.js",
-        "line": 4,
-        "text": "import { execFile, spawn } from 'node:child_process'"
       }
     ]
   },
@@ -127,21 +127,13 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 9,
+  "dependencies": 11,
   "minifiedFiles": [
     "client.js"
   ],
   "binaryFiles": [],
   "requiredServices": [
-    "connection",
-    "llm",
-    "sessionController",
-    "sessionTitle",
-    "sessions",
-    "systemPrompt",
-    "tools",
-    "web",
-    "workspaceRegistry"
+    "web"
   ],
   "setupHints": [],
   "skippedEntries": []

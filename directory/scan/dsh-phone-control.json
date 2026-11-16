@@ -1,7 +1,7 @@
 {
   "name": "dsh-phone-control",
-  "version": "0.1.15",
-  "scannedAt": "2026-11-14T19:29:29.049Z",
+  "version": "0.1.17",
+  "scannedAt": "2026-11-16T23:37:26.333Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -28,23 +28,23 @@
       },
       {
         "file": "index.js",
-        "line": 67,
+        "line": 68,
         "text": "const raw = await readFile(entryPath, 'utf8')"
       },
       {
-        "file": "lib/service.js",
-        "line": 5,
-        "text": "import { readFile, rm, writeFile } from 'node:fs/promises'"
+        "file": "lib/eventlog.js",
+        "line": 1,
+        "text": "import { existsSync, readFileSync, renameSync, statSync, writeFileSync } from 'node:fs'"
       },
       {
-        "file": "lib/service.js",
-        "line": 6,
-        "text": "import { appendFileSync } from 'node:fs'"
+        "file": "lib/eventlog.js",
+        "line": 46,
+        "text": "const text = readFileSync(file, 'utf8')"
       },
       {
-        "file": "lib/service.js",
-        "line": 64,
-        "text": "appendFileSync(DEBUG_LOG, `${new Date().toISOString()} ${message}\\n`)"
+        "file": "lib/eventlog.js",
+        "line": 95,
+        "text": "writeFileSync(temp, payload, 'utf8')"
       }
     ]
   },
@@ -53,12 +53,12 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 9,
+        "line": 10,
         "text": "export const inject = ['tools', 'skills']"
       },
       {
         "file": "index.js",
-        "line": 552,
+        "line": 602,
         "text": "ctx.effect(() => ctx.tools.register(definition), `dsh-phone-control: ${definition.name}`)"
       }
     ]

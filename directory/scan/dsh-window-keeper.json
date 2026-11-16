@@ -1,7 +1,7 @@
 {
   "name": "dsh-window-keeper",
-  "version": "0.1.2",
-  "scannedAt": "2026-11-13T08:14:53.559Z",
+  "version": "0.1.6",
+  "scannedAt": "2026-11-16T23:37:40.254Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -33,17 +33,17 @@
       },
       {
         "file": "lib/index.js",
-        "line": 42,
+        "line": 46,
         "text": "try { fs.appendFileSync(LOG_FILE, new Date().toISOString() + ' shell: ' + msg + '\\n') } catch {}"
       },
       {
         "file": "lib/index.js",
-        "line": 46,
+        "line": 50,
         "text": "try { return JSON.parse(fs.readFileSync(file, 'utf8').replace(/^\\uFEFF/, '')) } catch { return null }"
       },
       {
         "file": "lib/index.js",
-        "line": 50,
+        "line": 54,
         "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
       }
     ]
@@ -62,22 +62,17 @@
       },
       {
         "file": "lib/index.js",
-        "line": 97,
-        "text": "const r = spawnSync(POWERSHELL, ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-Command', ps], { windowsHide: true, encoding: 'utf8', timeout: 20000 })"
+        "line": 118,
+        "text": "const child = spawn(POWERSHELL, ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-WindowStyle', 'Hidden', '-File', SCRIPT], {"
       },
       {
         "file": "lib/index.js",
-        "line": 125,
-        "text": "const r = spawnSync(POWERSHELL, ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-Command', create], {"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 150,
+        "line": 180,
         "text": "const r = spawnSync(POWERSHELL, ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', SCRIPT, '-Apply'], {"
       },
       {
         "file": "lib/index.js",
-        "line": 259,
+        "line": 308,
         "text": "try { spawn(EXPLORER, [DATA_DIR], { detached: true, stdio: 'ignore', windowsHide: true }).unref(); result = { ok: true } }"
       }
     ]

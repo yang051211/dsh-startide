@@ -1,11 +1,26 @@
 {
   "name": "@lornatang/dsh-atlassian",
-  "version": "0.1.6",
-  "scannedAt": "2026-11-13T21:11:06.132Z",
+  "version": "0.1.10",
+  "scannedAt": "2026-11-16T23:37:35.436Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/bridge.js",
+        "line": 73,
+        "text": "return network.fetch(value, init);"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 90,
+        "text": "return network.fetch(value, { ...init, signal });"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 144,
+        "text": "const response = await network.fetch(value, { ...init, signal: AbortSignal.timeout(Math.max(30000, this.#options.toolCallTimeoutMs)) });"
+      },
       {
         "file": "lib/client.js",
         "line": 74,
@@ -15,21 +30,6 @@
         "file": "lib/oauth.js",
         "line": 2,
         "text": "import { createServer } from 'node:http';"
-      },
-      {
-        "file": "lib/oauth.js",
-        "line": 72,
-        "text": "const response = await globalThis.fetch(value, { ...init, redirect: init?.redirect === 'error' ? 'error' : 'manual' });"
-      },
-      {
-        "file": "lib/server-http.js",
-        "line": 1,
-        "text": "import http from 'node:http';"
-      },
-      {
-        "file": "lib/server-http.js",
-        "line": 2,
-        "text": "import https from 'node:https';"
       }
     ]
   },
@@ -58,8 +58,8 @@
       },
       {
         "file": "lib/store.js",
-        "line": 74,
-        "text": "raw = await handle.readFile('utf8');"
+        "line": 75,
+        "text": "await mkdir(dirname(lockFile), { recursive: true, mode: 0o700 });"
       }
     ]
   },

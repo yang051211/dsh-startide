@@ -1,0 +1,101 @@
+{
+  "name": "dsh-hud-capsule",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-16T23:37:44.355Z",
+  "icon": "dsh-hud-capsule.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/index.js",
+        "line": 222,
+        "text": "const res = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/index.js",
+        "line": 44,
+        "text": "import { mkdir, writeFile, rename, rm, readdir, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 45,
+        "text": "import { appendFileSync, createReadStream, createWriteStream, existsSync, readFileSync, renameSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 129,
+        "text": "const obj = JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 241,
+        "text": "await rm(dest, { force: true }).catch(() => {});"
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 271,
+        "text": "await rm(zip, { force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/index.js",
+        "line": 34,
+        "text": "*   - subprocess.spawn(spec: SubprocessSpawnSpec): SubprocessHandle"
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 49,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 289,
+        "text": "const child = spawn('powershell.exe', ['-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-Command', ps], {"
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 675,
+        "text": "const p = spawn("
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 700,
+        "text": "const p = spawn('explorer.exe', [file], { windowsHide: true, stdio: 'ignore' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 189,
+      "text": "├─ scripts/                 # setup.mjs（一键环境）、run-hud-capture.cmd、probe-webui.mjs"
+    },
+    {
+      "file": "README.md",
+      "line": 203,
+      "text": "node scripts/setup.mjs            # 检查 Node、下载 Electron 44.7.0、写 config.local.json"
+    }
+  ],
+  "skippedEntries": []
+}

@@ -1,0 +1,86 @@
+{
+  "name": "dsh-retraction-watch",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-16T23:37:33.131Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/runtime.js",
+        "line": 10,
+        "text": "import { appendFile, mkdir, readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 54,
+        "text": "const text = await readFile(file, 'utf8');"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 114,
+        "text": "await mkdir(this.config.root, { recursive: true });"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 122,
+        "text": "await appendFile(this.timelineFile, `${JSON.stringify(line)}\\n`, 'utf8');"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 129,
+        "text": "const parsed = JSON.parse(await readFile(path.join(this.config.root, 'cache', `${sha256Hex(key)}.json`), 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 47,
+        "text": "ctx.effect(() => ctx.tools.register(makeRetractionCheckTool(runtime)), 'retraction-watch: retraction_check tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 48,
+        "text": "ctx.effect(() => ctx.tools.register(makeRetractionWatchTool(runtime)), 'retraction-watch: retraction_watch tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 49,
+        "text": "ctx.effect(() => ctx.tools.register(makeRetractionReportTool()), 'retraction-watch: retraction_report tool');"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 24,
+        "text": "export const inject = ['tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

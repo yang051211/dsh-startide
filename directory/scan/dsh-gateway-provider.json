@@ -1,25 +1,25 @@
 {
   "name": "dsh-gateway-provider",
-  "version": "1.1.5",
-  "scannedAt": "2026-11-13T08:14:54.815Z",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-16T23:37:33.158Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/catalog.js",
-        "line": 80,
-        "text": "const res = await fetch(`${baseURL}/v1/models`, {"
-      },
-      {
-        "file": "lib/catalog.js",
-        "line": 103,
-        "text": "const res = await fetch(`${baseURL}/api/user/models`, {"
+        "line": 132,
+        "text": "res = await fetch(url, { headers, signal: bounded });"
       },
       {
         "file": "lib/modelsdev.js",
-        "line": 63,
-        "text": "const res = await fetch(modelsUrl, { signal });"
+        "line": 54,
+        "text": "* @param timeoutMs - hard cap on one fetch (a stalled mirror must not hang discovery)."
+      },
+      {
+        "file": "lib/modelsdev.js",
+        "line": 65,
+        "text": "const res = await fetch(modelsUrl, { signal: signal === undefined ? timeout : AbortSignal.any([signal, timeout]) });"
       }
     ]
   },

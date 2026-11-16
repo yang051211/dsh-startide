@@ -1,15 +1,30 @@
 {
   "name": "dsh-chat-embed",
-  "version": "0.6.12",
-  "scannedAt": "2026-11-13T08:14:57.087Z",
+  "version": "0.6.14",
+  "scannedAt": "2026-11-16T23:37:18.177Z",
   "icon": "dsh-chat-embed.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 2596,
+        "line": 2640,
         "text": "response = await fetch('./dsh-chat-embed/patch-check', {"
+      },
+      {
+        "file": "client.js",
+        "line": 2730,
+        "text": "response = await fetch('./dsh-chat-embed/patch?action=' + action + '&token=' + encodeURIComponent(token), {"
+      },
+      {
+        "file": "client.js",
+        "line": 3477,
+        "text": "fetch('./dsh-chat-embed/cache', {"
+      },
+      {
+        "file": "client.js",
+        "line": 3508,
+        "text": "fetch('./dsh-chat-embed/cache-clear?token=' + encodeURIComponent(token), {"
       }
     ]
   },
@@ -18,49 +33,64 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 21,
-        "text": "import { accessSync, constants, existsSync, readdirSync, readFileSync, statSync } from 'node:fs'"
+        "line": 24,
+        "text": "import { accessSync, constants, existsSync, readFileSync, readdirSync, statSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 106,
+        "line": 235,
         "text": "* `.asar` as a directory, so `readFileSync('<install>/app.asar')` raises ENOENT"
       },
       {
         "file": "index.js",
-        "line": 114,
-        "text": "const fallback = () => readFileSync(file)"
+        "line": 243,
+        "text": "if (ORIGINAL_FS !== undefined) return ORIGINAL_FS.readFileSync(file)"
       },
       {
         "file": "index.js",
-        "line": 118,
-        "text": "return original.readFileSync(file)"
+        "line": 244,
+        "text": "return readFileSync(file)"
       },
       {
-        "file": "tools/shell-patch/patch-asar.cjs",
-        "line": 23,
-        "text": "const fs = require('node:fs')"
+        "file": "tools/shell-patch/shell-patch.mjs",
+        "line": 38,
+        "text": "import * as nodeFs from 'node:fs'"
       }
     ]
   },
   "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
     "hit": true,
     "evidence": [
       {
         "file": "index.js",
-        "line": 36,
-        "text": "export const inject = ['webServer', 'tools']"
+        "line": 22,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
       },
       {
         "file": "index.js",
-        "line": 398,
-        "text": "const dispose = tools.register(definition)"
+        "line": 911,
+        "text": "* @returns {import('node:child_process').ChildProcess | { kill: () => void } | undefined}"
+      },
+      {
+        "file": "tools/shell-patch/shell-patch.mjs",
+        "line": 36,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "tools/shell-patch/shell-patch.mjs",
+        "line": 536,
+        "text": "spawnSync(join(systemRoot, 'System32', 'schtasks.exe'), ['/delete', '/tn', name, '/f'], {"
+      },
+      {
+        "file": "tools/shell-patch/shell-patch.mjs",
+        "line": 708,
+        "text": "? spawn(exe, [], { detached: true, stdio: 'ignore' })"
       }
     ]
-  },
-  "childProcess": {
-    "hit": false,
-    "evidence": []
   },
   "installScripts": {
     "hit": false,
@@ -70,7 +100,6 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
-    "tools",
     "webServer"
   ],
   "setupHints": [],
