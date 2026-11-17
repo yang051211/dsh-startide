@@ -1,0 +1,118 @@
+{
+  "name": "dsh-pc-bridge",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-17T22:17:02.502Z",
+  "icon": "dsh-pc-bridge.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 48,
+        "text": "const response = await fetch(API + path, options)"
+      },
+      {
+        "file": "lib/client.mjs",
+        "line": 14,
+        "text": "const response = await fetch(target, {"
+      },
+      {
+        "file": "lib/runtime.mjs",
+        "line": 744,
+        "text": "response = await fetch(`${base}/pair`, {"
+      },
+      {
+        "file": "lib/server.mjs",
+        "line": 1,
+        "text": "import { createServer as createHttpServer } from 'node:http'"
+      },
+      {
+        "file": "test/routes.test.mjs",
+        "line": 3,
+        "text": "import { createServer } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/pcctl.mjs",
+        "line": 2,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "bin/pcctl.mjs",
+        "line": 22,
+        "text": "return (await readFile(file, 'utf8')).trim()"
+      },
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 2,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "const pkg = JSON.parse(await readFile(join(dir, 'package.json'), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 74,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/runtime.mjs",
+        "line": 277,
+        "text": "const disposer = register.call(ctx.tools, spec)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/exec.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/exec.mjs",
+        "line": 9,
+        "text": "spawn('taskkill', ['/PID', String(child.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "lib/exec.mjs",
+        "line": 107,
+        "text": "child = spawn(exe, args, {"
+      },
+      {
+        "file": "lib/tunnel.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

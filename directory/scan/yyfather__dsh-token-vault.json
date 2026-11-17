@@ -1,20 +1,25 @@
 {
   "name": "@yyfather/dsh-token-vault",
-  "version": "1.0.3",
-  "scannedAt": "2026-10-26T10:15:21.976Z",
-  "icon": null,
+  "version": "1.0.5",
+  "scannedAt": "2026-11-17T22:17:01.815Z",
+  "icon": "yyfather__dsh-token-vault.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 20,
+        "line": 25,
         "text": "return fetch(url, {"
       },
       {
         "file": "lib/client.js",
-        "line": 46,
+        "line": 78,
         "text": "return fetch(statusUrl())"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 86,
+        "text": "fetch(typesUrl())"
       }
     ]
   },
@@ -23,12 +28,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 32,
+        "line": 41,
         "text": "import fs from 'node:fs';"
       },
       {
         "file": "lib/index.js",
-        "line": 87,
+        "line": 483,
         "text": "try { rc = fs.readFileSync(rcPath, 'utf8'); } catch { /* absent */ }"
       }
     ]
@@ -43,12 +48,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 272,
-        "text": "const inject = ['tools', 'credentials', 'webServer', 'systemPrompt'];"
+        "line": 722,
+        "text": "export const inject = ['tools', 'credentials', 'webServer', 'systemPrompt'];"
       },
       {
         "file": "lib/index.js",
-        "line": 311,
+        "line": 833,
         "text": "disposers.push(ctx.tools.register(def));"
       }
     ]
@@ -58,8 +63,18 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 30,
-        "text": "import { execFile } from 'node:child_process';"
+        "line": 39,
+        "text": "import { execFile, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 142,
+        "text": "// On Windows `npm` / `npx` are .cmd shims. `execFile('npm')` fails with ENOENT"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 262,
+        "text": "const child = spawn('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', PS_LOOP], {"
       }
     ]
   },
@@ -70,7 +85,12 @@
   "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [],
+  "requiredServices": [
+    "credentials",
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
   "setupHints": [],
   "skippedEntries": []
 }

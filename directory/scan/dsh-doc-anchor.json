@@ -1,0 +1,102 @@
+{
+  "name": "dsh-doc-anchor",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-17T22:16:58.631Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/extract/pdf-command.js",
+        "line": 11,
+        "text": "import { mkdtemp, rm, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/extract/pdf-command.js",
+        "line": 41,
+        "text": "await writeFile(file, bytes);"
+      },
+      {
+        "file": "lib/extract/pdf-command.js",
+        "line": 101,
+        "text": "await rm(dir, { recursive: true, force: true });"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 12,
+        "text": "import { mkdir, readFile, realpath, stat, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 227,
+        "text": "const bytes = await readFile(id);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 56,
+        "text": "ctx.effect(() => ctx.tools.register(makeDocAnchorTool(runtime)), 'doc-anchor: doc_anchor tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 57,
+        "text": "ctx.effect(() => ctx.tools.register(makeDocLocateTool(runtime)), 'doc-anchor: doc_locate tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 58,
+        "text": "ctx.effect(() => ctx.tools.register(makeDocTablesTool(runtime)), 'doc-anchor: doc_tables tool');"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 30,
+        "text": "export const inject = ['tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/extract/pdf-command.js",
+        "line": 49,
+        "text": "const handle = subprocess.spawn({"
+      },
+      {
+        "file": "src/extract/pdf-command.ts",
+        "line": 20,
+        "text": "spawn(spec: {"
+      },
+      {
+        "file": "src/extract/pdf-command.ts",
+        "line": 84,
+        "text": "const handle = subprocess.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

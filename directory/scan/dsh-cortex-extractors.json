@@ -1,0 +1,77 @@
+{
+  "name": "dsh-cortex-extractors",
+  "version": "0.3.5",
+  "scannedAt": "2026-11-17T22:16:43.468Z",
+  "icon": "dsh-cortex-extractors.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/extractor.js",
+        "line": 3,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/extractor.js",
+        "line": 160,
+        "text": "fs.mkdirSync(tempDir, { recursive: true });"
+      },
+      {
+        "file": "lib/extractor.js",
+        "line": 173,
+        "text": "let text = fs.readFileSync(output, 'utf8');"
+      },
+      {
+        "file": "lib/extractor.js",
+        "line": 181,
+        "text": "try { fs.rmSync(output, { force: true }); } catch { /* best-effort cleanup */ }"
+      },
+      {
+        "file": "test/extractor.test.js",
+        "line": 3,
+        "text": "import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 6,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 97,
+        "text": "const disposeTool = ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/extractor.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

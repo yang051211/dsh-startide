@@ -1,0 +1,86 @@
+{
+  "name": "dsh-grant-cn",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-17T22:17:03.343Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/pack.js",
+        "line": 8,
+        "text": "import { readdir, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 5,
+        "text": "import { mkdir, readFile, realpath, stat, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 129,
+        "text": "text = await readFile(file.absolute, 'utf8');"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 165,
+        "text": "await mkdir(directory, { recursive: true });"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 167,
+        "text": "await writeFile(file, `${JSON.stringify(record, null, 2)}\\n`, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 17,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "ctx.effect(() => ctx.tools.register(makeGrantCheckTool(runtime)), 'grant-cn: grant_check tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 47,
+        "text": "ctx.effect(() => ctx.tools.register(makeGrantBudgetTool(runtime)), 'grant-cn: grant_budget tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 48,
+        "text": "ctx.effect(() => ctx.tools.register(makeGrantPackTool(runtime)), 'grant-cn: grant_pack tool');"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 21,
+        "text": "export const inject = ['tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

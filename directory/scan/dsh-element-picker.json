@@ -1,0 +1,112 @@
+{
+  "name": "dsh-element-picker",
+  "version": "0.10.3",
+  "scannedAt": "2026-11-17T22:17:02.813Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cdp.js",
+        "line": 17,
+        "text": "import { request } from 'node:http'"
+      },
+      {
+        "file": "client.js",
+        "line": 1981,
+        "text": "fetch('/element-picker/os/focus', {"
+      },
+      {
+        "file": "client.js",
+        "line": 2045,
+        "text": "const response = await fetch('/element-picker/os/state?since=' + String(osRevision), {"
+      },
+      {
+        "file": "native/os-pick.ps1",
+        "line": 275,
+        "text": "Invoke-RestMethod -Method Post -Uri $uri -ContentType 'application/json; charset=utf-8' -Body $bytes -TimeoutSec 5 | Out-Null"
+      },
+      {
+        "file": "native/os-pick.ps1",
+        "line": 305,
+        "text": "return Invoke-RestMethod -Method Post -Uri $uri -ContentType 'application/json; charset=utf-8' -Body $bytes -TimeoutSec 100"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cdp.js",
+        "line": 16,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "protocols.js",
+        "line": 33,
+        "text": "import { existsSync, mkdirSync, readdirSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "protocols.js",
+        "line": 56,
+        "text": "if (!existsSync(dir)) mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "scripts/check-pack.mjs",
+        "line": 7,
+        "text": "import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 279,
+        "text": "child = spawn("
+      },
+      {
+        "file": "protocols.js",
+        "line": 32,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "protocols.js",
+        "line": 72,
+        "text": "const child = spawn("
+      },
+      {
+        "file": "protocols.js",
+        "line": 192,
+        "text": "child = spawn(POWERSHELL, ['-NoProfile', '-NonInteractive', '-Command', script], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

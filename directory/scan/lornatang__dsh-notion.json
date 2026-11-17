@@ -1,25 +1,25 @@
 {
   "name": "@lornatang/dsh-notion",
-  "version": "0.1.6",
-  "scannedAt": "2026-11-17T09:25:37.595Z",
+  "version": "0.1.7",
+  "scannedAt": "2026-11-17T22:16:49.307Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/bridge.js",
-        "line": 249,
+        "line": 281,
         "text": "return await network.fetch(value, { ...init, signal: combined });"
       },
       {
         "file": "lib/bridge.js",
-        "line": 256,
+        "line": 288,
         "text": "return network.fetch(value, { ...init, signal: combined });"
       },
       {
         "file": "lib/client.js",
-        "line": 67,
-        "text": "const response = await fetch(prefix + path, { method, cache: 'no-store' });"
+        "line": 69,
+        "text": "const response = await fetch(prefix + path, { method, cache: 'no-store', signal: AbortSignal.timeout(method === 'GET' ? 10_000 : 30_000) });"
       },
       {
         "file": "lib/oauth.js",
@@ -90,6 +90,16 @@
         "file": "lib/open-url.js",
         "line": 17,
         "text": "const child = spawn(command, args, { detached: true, stdio: 'ignore', windowsHide: true });"
+      },
+      {
+        "file": "lib/output-validator.js",
+        "line": 64,
+        "text": "function spawn() {"
+      },
+      {
+        "file": "lib/output-validator.js",
+        "line": 111,
+        "text": "return spawn();"
       }
     ]
   },

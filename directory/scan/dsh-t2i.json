@@ -1,0 +1,82 @@
+{
+  "name": "dsh-t2i",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-17T22:16:49.326Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 55,
+        "text": "const r = await fetch(`${wallet.baseUrl}/v1/images/generations`, {"
+      },
+      {
+        "file": "index.js",
+        "line": 74,
+        "text": "const rr = await fetch(it.url, { signal: AbortSignal.timeout(120000) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 3,
+        "text": "import { mkdirSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 66,
+        "text": "mkdirSync(outputDir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 72,
+        "text": "if (it.b64_json) { writeFileSync(p, Buffer.from(it.b64_json, 'base64')); files.push({ path: p, revisedPrompt: it.revised_prompt }) }"
+      },
+      {
+        "file": "index.js",
+        "line": 75,
+        "text": "if (rr.ok) { writeFileSync(p, Buffer.from(await rr.arrayBuffer())); files.push({ path: p, url: it.url, revisedPrompt: it.revised_prompt }) }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 107,
+        "text": "for (const d of createDefinitions(ctx, config)) ctx.tools.register(d)"
+      },
+      {
+        "file": "index.js",
+        "line": 108,
+        "text": "ctx.tools.register(walletTool())"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

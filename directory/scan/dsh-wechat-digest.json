@@ -1,0 +1,96 @@
+{
+  "name": "dsh-wechat-digest",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-17T22:16:47.003Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 84,
+        "text": "const res = await fetch(url, { credentials: 'same-origin', ...options })"
+      },
+      {
+        "file": "scripts/settings-server.mjs",
+        "line": 10,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "scripts/settings-server.mjs",
+        "line": 190,
+        "text": "const res = await fetch('/api/' + path, options);"
+      },
+      {
+        "file": "test/llmSummarize.test.js",
+        "line": 3,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "test/settingsServer.test.js",
+        "line": 31,
+        "text": "fetch(`${base}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/scheduler.mjs",
+        "line": 13,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/scheduler.mjs",
+        "line": 77,
+        "text": "return { path, state: JSON.parse(readFileSync(path, 'utf8')) };"
+      },
+      {
+        "file": "lib/scheduler.mjs",
+        "line": 105,
+        "text": "mkdirSync(paths.dataDir, { recursive: true });"
+      },
+      {
+        "file": "lib/scheduler.mjs",
+        "line": 125,
+        "text": "writeFileSync(path, `${JSON.stringify({ lastKey: key, firedAt: new Date().toISOString() })}\\n`, 'utf8');"
+      },
+      {
+        "file": "scripts/check-core-purity.mjs",
+        "line": 12,
+        "text": "import { readdir, readFile } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "install/cordis.patch.fragment.yml",
+        "line": 14,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/check-core-purity.mjs",
+        "line": 28,
+        "text": "'child_process',"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

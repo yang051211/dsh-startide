@@ -1,0 +1,142 @@
+{
+  "name": "dsh-wangchao",
+  "version": "0.3.3",
+  "scannedAt": "2026-11-17T22:16:56.056Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 850,
+        "text": "const r = await fetch('/api/dsh-wangchao/work', { signal: ctrl.signal, cache: 'no-store' });"
+      },
+      {
+        "file": "client.js",
+        "line": 879,
+        "text": "const r = await fetch('/api/dsh-wangchao/work', {"
+      },
+      {
+        "file": "client.js",
+        "line": 902,
+        "text": "const r = await fetch('/api/dsh-wangchao/work', {"
+      },
+      {
+        "file": "client.js",
+        "line": 1117,
+        "text": "const r = await fetch('/api/dsh-wangchao/summaries', {"
+      },
+      {
+        "file": "client.js",
+        "line": 1168,
+        "text": "r = await fetch('/api/dsh-wangchao/refs', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/check-host-compat.mjs",
+        "line": 24,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "bin/check-host-compat.mjs",
+        "line": 33,
+        "text": "const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));"
+      },
+      {
+        "file": "bin/check-host-compat.mjs",
+        "line": 172,
+        "text": "try { info = JSON.parse(fs.readFileSync(pkgFile, 'utf8')); } catch { return null; }"
+      },
+      {
+        "file": "bin/check-host-compat.mjs",
+        "line": 271,
+        "text": "fs.mkdirSync(modules, { recursive: true });"
+      },
+      {
+        "file": "bin/check-host-compat.mjs",
+        "line": 272,
+        "text": "fs.mkdirSync(work, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/host-compat-probe/index.mjs",
+        "line": 6,
+        "text": "//   2) ctx.tools.guard           —— 守卫注册与 checkGuards 的真实执行点"
+      },
+      {
+        "file": "bin/host-compat-probe/index.mjs",
+        "line": 252,
+        "text": "// 2) tools.guard：插件作用域（ctx.tools）与 Agent 作用域（agent.ctx.tools）各验证一次。"
+      },
+      {
+        "file": "bin/host-compat-probe/index.mjs",
+        "line": 270,
+        "text": "agentScoped = { registered: false, reason: 'agent.ctx.tools.guard unavailable' };"
+      },
+      {
+        "file": "bin/host-compat-probe/index.mjs",
+        "line": 271,
+        "text": "result.notCovered.push('agent-scoped tools.guard (agent.ctx.tools)');"
+      },
+      {
+        "file": "index.mjs",
+        "line": 24,
+        "text": "//   ctx.tools 与 ctx.get('tools') 返回的是**绑定调用者 ctx 的视图**，guard 的 effect 归属调用插件，"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/check-host-compat.mjs",
+        "line": 28,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "bin/check-host-compat.mjs",
+        "line": 312,
+        "text": "const res = spawnSync(NETSTAT, ['-ano'], { encoding: 'utf8', windowsHide: true, timeout: 5000 });"
+      },
+      {
+        "file": "bin/check-host-compat.mjs",
+        "line": 333,
+        "text": "const res = spawnSync(POWERSHELL, ['-NoProfile', '-NonInteractive', '-Command', script], {"
+      },
+      {
+        "file": "bin/check-host-compat.mjs",
+        "line": 395,
+        "text": "spawnSync(TASKKILL, ['/PID', String(child.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' });"
+      },
+      {
+        "file": "bin/check-host-compat.mjs",
+        "line": 491,
+        "text": "child = spawn(host.nodeCmd, [...host.nodeArgsPrefix, host.cliPath, ...cliArgs], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentLoop",
+    "connection",
+    "sessionQuery",
+    "timer",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

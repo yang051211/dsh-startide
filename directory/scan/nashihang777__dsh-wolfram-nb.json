@@ -1,0 +1,103 @@
+{
+  "name": "@nashihang777/dsh-wolfram-nb",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-17T22:17:03.626Z",
+  "icon": "nashihang777__dsh-wolfram-nb.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "import { existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 143,
+        "text": "mkdirSync(this.tmpDir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 217,
+        "text": "jsonText = readFileSync(payload, 'utf8').trim()"
+      },
+      {
+        "file": "index.js",
+        "line": 223,
+        "text": "try { unlinkSync(waiter.requestPath) } catch { /* ignore */ }"
+      },
+      {
+        "file": "index.js",
+        "line": 224,
+        "text": "try { unlinkSync(waiter.responsePath) } catch { /* ignore */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 312,
+        "text": "export const inject = ['tools', 'workingDirectory']"
+      },
+      {
+        "file": "index.js",
+        "line": 593,
+        "text": "ctx.effect(() => ctx.tools.register(wolframEval), 'wolfram notebook: wolfram_eval tool')"
+      },
+      {
+        "file": "index.js",
+        "line": 594,
+        "text": "ctx.effect(() => ctx.tools.register(wolframNotebook), 'wolfram notebook: wolfram_notebook tool')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 8,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 144,
+        "text": "const child = spawn(this.kernelPath, ['-noprompt'], {"
+      },
+      {
+        "file": "kernel-discovery.js",
+        "line": 16,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "kernel-discovery.js",
+        "line": 114,
+        "text": "const result = spawnSync('reg.exe', ['query', key, '/s'], {"
+      },
+      {
+        "file": "kernel-discovery.js",
+        "line": 176,
+        "text": "const result = spawnSync(command, arguments_, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

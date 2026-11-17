@@ -1,0 +1,141 @@
+{
+  "name": "dsh-cura",
+  "version": "0.9.2",
+  "scannedAt": "2026-11-17T22:16:48.291Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/chat.js",
+        "line": 88,
+        "text": "const r = await fetch(`${napcat.baseUrl}/get_record`, {"
+      },
+      {
+        "file": "lib/chat.js",
+        "line": 105,
+        "text": "const r = await fetch(`${baseUrl}/${action}`, {"
+      },
+      {
+        "file": "lib/rules-remote.js",
+        "line": 559,
+        "text": "const res = await fetch(`${proxyUrl}/chat/completions`, {"
+      },
+      {
+        "file": "lib/travel.js",
+        "line": 181,
+        "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "lib/travel.js",
+        "line": 279,
+        "text": "await fetch(url, { method: 'DELETE', headers: Object.assign({ 'mcp-session-id': session }, extraHeaders || {}) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/butler.js",
+        "line": 17,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/butler.js",
+        "line": 76,
+        "text": "const tables = JSON.parse(fs.readFileSync(file, 'utf8'))?.tables ?? {};"
+      },
+      {
+        "file": "lib/chat.js",
+        "line": 3,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/chat.js",
+        "line": 14,
+        "text": "try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch { return fallback; }"
+      },
+      {
+        "file": "lib/chat.js",
+        "line": 27,
+        "text": "const raw = fs.readFileSync(full, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/butler.js",
+        "line": 15,
+        "text": "// `@deepseek-ai/dsh-mcp-client`，在 agent scope 上 `scope.plugin(mcpPlugin, config)`。"
+      },
+      {
+        "file": "lib/butler.js",
+        "line": 20,
+        "text": "const MCP_CLIENT = '@deepseek-ai/dsh-mcp-client';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 41,
+        "text": "export const inject = ['agents', 'tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 531,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 549,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/chat.js",
+        "line": 6,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 28,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 491,
+        "text": "engine = spawn(cfg.enginePython, ['engine.py'], {"
+      },
+      {
+        "file": "lib/rules-remote.js",
+        "line": 21,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "configEditor",
+    "llm",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

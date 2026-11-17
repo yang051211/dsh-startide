@@ -1,0 +1,110 @@
+{
+  "name": "dsh-to-figma",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-17T22:16:52.385Z",
+  "icon": "dsh-to-figma.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge.mjs",
+        "line": 1,
+        "text": "import { createServer } from 'node:http'"
+      },
+      {
+        "file": "lib/oauth.mjs",
+        "line": 1,
+        "text": "import { createServer } from 'node:http'"
+      },
+      {
+        "file": "lib/oauth.mjs",
+        "line": 7,
+        "text": "export const oauthFetch=async(url,init={})=>{trusted(typeof url==='string'||url instanceof URL?url:url.url);return fetch(url,{...init,redirect:'error'})}"
+      },
+      {
+        "file": "lib/official.mjs",
+        "line": 15,
+        "text": "(target,init)=>{if(new URL(target).origin!==new URL(url).origin)throw new Error('Unexpected desktop endpoint');return fetch(target,{...init,redirect:'error'})},"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cli.mjs",
+        "line": 3,
+        "text": "import { readFile, rm } from 'node:fs/promises'"
+      },
+      {
+        "file": "cli.mjs",
+        "line": 21,
+        "text": "  if(opts.command==='logout'){await rm(join(await privateDirectory(home),'oauth.json'),{force:true});console.log('Local Figma OAuth credentials removed. Reconne"
+      },
+      {
+        "file": "index.mjs",
+        "line": 6,
+        "text": "import { readFile, realpath } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.mjs",
+        "line": 48,
+        "text": "const path=join(skillDir,'SKILL.md'),raw=await readFile(path,'utf8'),front=/^---\\n([\\s\\S]*?)\\n---\\n/.exec(raw)"
+      },
+      {
+        "file": "index.mjs",
+        "line": 142,
+        "text": " new Error('Unknown Figma guide');return {content:[{type:'text',text:await readFile(join(skillDir,'references',args.topic+'.md'),'utf8')}] }},{qualified:false})"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 11,
+        "text": "import { createMcpToolDefinition } from '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "index.mjs",
+        "line": 34,
+        "text": "export const inject=['tools','skills','systemPrompt']"
+      },
+      {
+        "file": "index.mjs",
+        "line": 73,
+        "text": "const dispose=ctx.tools.register(tool);(qualified?dynamic:disposers).push(dispose)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cli.mjs",
+        "line": 7,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "cli.mjs",
+        "line": 24,
+        "text": "const child=spawnSync(opts.cli??'dsh',args,{stdio:'inherit',env:{...process.env,DSH_HOME:home},shell:false})"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 4,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

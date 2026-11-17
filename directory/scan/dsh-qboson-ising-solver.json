@@ -1,14 +1,14 @@
 {
   "name": "dsh-qboson-ising-solver",
-  "version": "0.2.1",
-  "scannedAt": "2026-10-29T14:01:35.671Z",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-17T22:16:53.402Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "src/runtime-manager.js",
-        "line": 202,
+        "line": 320,
         "text": "response = await fetch(url, { signal })"
       }
     ]
@@ -19,17 +19,7 @@
       {
         "file": "bin/dsh-ising-doctor.js",
         "line": 2,
-        "text": "import { existsSync, readFileSync } from 'node:fs'"
-      },
-      {
-        "file": "bin/dsh-ising-doctor.js",
-        "line": 32,
-        "text": "for (const raw of readFileSync(path, 'utf8').split(/\\r?\\n/)) {"
-      },
-      {
-        "file": "bin/dsh-ising-doctor.js",
-        "line": 45,
-        "text": "for (const raw of readFileSync(path, 'utf8').split(/\\r?\\n/)) {"
+        "text": "import { existsSync } from 'node:fs'"
       },
       {
         "file": "src/runtime-manager.js",
@@ -38,8 +28,18 @@
       },
       {
         "file": "src/runtime-manager.js",
-        "line": 2,
+        "line": 3,
         "text": "import { access, mkdir, readFile, rm, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/runtime-manager.js",
+        "line": 111,
+        "text": "await mkdir(this.root, { recursive: true })"
+      },
+      {
+        "file": "src/runtime-manager.js",
+        "line": 154,
+        "text": "const value = JSON.parse(await readFile(join(this.root, 'runtime.json'), 'utf8'))"
       }
     ]
   },
@@ -48,23 +48,28 @@
     "evidence": [
       {
         "file": "src/execution-tools.js",
-        "line": 11,
+        "line": 35,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "src/execution-tools.js",
-        "line": 34,
+        "line": 63,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "src/execution-tools.js",
+        "line": 76,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "src/execution-tools.js",
+        "line": 89,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "src/tool.js",
         "line": 5,
         "text": "export const inject = ['tools', 'isingSolver']"
-      },
-      {
-        "file": "src/tool.js",
-        "line": 8,
-        "text": "ctx.tools.register(defineTool({"
       }
     ]
   },
@@ -78,12 +83,12 @@
       },
       {
         "file": "bin/dsh-ising-doctor.js",
-        "line": 100,
+        "line": 41,
         "text": "const result = spawnSync(python, args, {"
       },
       {
         "file": "src/runtime-manager.js",
-        "line": 271,
+        "line": 398,
         "text": "handle = this.ctx.subprocess.spawn({"
       },
       {
@@ -101,7 +106,6 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
-    "credentials",
     "isingSolver",
     "skills",
     "subprocess",

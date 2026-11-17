@@ -1,0 +1,101 @@
+{
+  "name": "@lucagiftzek/dsh-note-keeper",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-17T22:17:03.159Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 3,
+        "text": "urn t?\"?\"+t:\"\"};function gn(n,e){return fetch(sr+n+Ps(e),{credentials:\"same-origin\"}).then(Ya)}function vt(n,e,t,i){return fetch(sr+e+Ps(i),{method:n,credential"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 125,
+        "text": "=>{if(D.code===\"still_encrypted\")return fetch(\"/note-keeper/api/lock?folder=\"+encodeURIComponent(m)+\"&force=1\",{method:\"DELETE\",credentials:\"same-origin\",header"
+      },
+      {
+        "file": "lib/daemon.js",
+        "line": 26,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/daemon.js",
+        "line": 143,
+        "text": "return http.request({ host, port, method, path, headers: { ...headers, 'x-nk-secret': this.secret } }, onResponse)"
+      },
+      {
+        "file": "lib/daemon.js",
+        "line": 155,
+        "text": "const req = http.request({"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/ai.js",
+        "line": 12,
+        "text": "import { readFileSync, writeFileSync, mkdirSync, renameSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/ai.js",
+        "line": 97,
+        "text": "try { return { ...AI_DEFAULTS, ...JSON.parse(readFileSync(stateFile, 'utf8')) } } catch { return { ...AI_DEFAULTS } }"
+      },
+      {
+        "file": "lib/ai.js",
+        "line": 122,
+        "text": "mkdirSync(dirname(stateFile), { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/ai.js",
+        "line": 123,
+        "text": "writeFileSync(stateFile + '.tmp', JSON.stringify(next, null, 2), { mode: 0o600 })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 76,
+        "text": "attributes\"),e.type==\"childList\"){let i=rm(t,e.previousSibling||e.target.previousSibling,-1),r=rm(t,e.nextSibling||e.target.nextSibling,1);return{from:i?t.posAf"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/daemon.js",
+        "line": 23,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/daemon.js",
+        "line": 79,
+        "text": "const child = spawn(this.binary, ['-addr', '127.0.0.1:0', '-parent-stdin'], { env, stdio: ['pipe', 'pipe', 'pipe'] })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 11,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [
+    "bin/notekeeperd"
+  ],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

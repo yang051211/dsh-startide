@@ -1,20 +1,30 @@
 {
   "name": "dsh-pdf-jump",
-  "version": "0.1.9",
-  "scannedAt": "2026-11-13T21:10:47.835Z",
+  "version": "0.1.10",
+  "scannedAt": "2026-11-17T22:16:53.100Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/server.mjs",
-        "line": 16,
+        "line": 22,
         "text": "import { createServer as createHttpServer, get as httpGet } from 'node:http'"
       },
       {
         "file": "lib/server.mjs",
-        "line": 197,
-        "text": "fetch(img.src).then((r) => r.text()).then((t) => showToast('这一页没渲染出来：' + t)).catch(() => showToast('这一页没渲染出来（请求失败）'));"
+        "line": 250,
+        "text": ": fetch('/x/' + ID + '/' + page + '?q=' + encodeURIComponent(q), { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/server.mjs",
+        "line": 333,
+        "text": "fetch('/search/' + ID + '?q=' + encodeURIComponent(q), { signal: ctl.signal, cache: 'no-store' })"
+      },
+      {
+        "file": "lib/server.mjs",
+        "line": 503,
+        "text": "fetch(img.src).then(function (r) { return r.text(); }).then(function (t) { showToast('这一页没渲染出来：' + t); })"
       }
     ]
   },
@@ -23,27 +33,27 @@
     "evidence": [
       {
         "file": "lib/pdf.mjs",
-        "line": 13,
+        "line": 14,
         "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "lib/pdf.mjs",
-        "line": 118,
-        "text": "if (statSync(target).mtimeMs < cutoff) rmSync(target, { force: true })"
-      },
-      {
-        "file": "lib/pdf.mjs",
-        "line": 152,
-        "text": "return existsSync(cachePath) ? readFileSync(cachePath) : null"
-      },
-      {
-        "file": "lib/pdf.mjs",
-        "line": 166,
+        "line": 50,
         "text": "if (!existsSync(CACHE_DIR)) mkdirSync(CACHE_DIR, { recursive: true })"
       },
       {
         "file": "lib/pdf.mjs",
-        "line": 169,
+        "line": 65,
+        "text": "if (statSync(target).mtimeMs < cutoff) rmSync(target, { force: true })"
+      },
+      {
+        "file": "lib/pdf.mjs",
+        "line": 113,
+        "text": "return existsSync(cachePath) ? readFileSync(cachePath) : null"
+      },
+      {
+        "file": "lib/pdf.mjs",
+        "line": 131,
         "text": "if (existsSync(cachePath)) return readFileSync(cachePath)"
       }
     ]
@@ -58,7 +68,7 @@
       },
       {
         "file": "index.js",
-        "line": 16,
+        "line": 18,
         "text": "export const inject = ['tools', 'systemPrompt', 'commands']"
       },
       {
@@ -88,13 +98,23 @@
       },
       {
         "file": "lib/pdf.mjs",
-        "line": 52,
-        "text": "const child = spawn(process.execPath, [CHILD, ...args], { env, windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })"
+        "line": 255,
+        "text": "const child = spawn(process.execPath, [TEXT_CHILD, '--file', file], {"
       },
       {
         "file": "lib/resolve.mjs",
         "line": 9,
         "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/worker-host.mjs",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/worker-host.mjs",
+        "line": 82,
+        "text": "const proc = spawn(process.execPath, [WORKER], { env, windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'] })"
       }
     ]
   },

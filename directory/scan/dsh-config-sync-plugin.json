@@ -1,0 +1,110 @@
+{
+  "name": "dsh-config-sync-plugin",
+  "version": "0.3.61",
+  "scannedAt": "2026-11-17T22:17:05.490Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 292,
+        "text": "const res = await fetch('/config-sync/status', {"
+      },
+      {
+        "file": "client.js",
+        "line": 333,
+        "text": "const res = await fetch('/config-sync/prepare', {"
+      },
+      {
+        "file": "client.js",
+        "line": 348,
+        "text": "const res = await fetch('/config-sync/settings', {"
+      },
+      {
+        "file": "client.js",
+        "line": 364,
+        "text": "const res = await fetch('/config-sync/auto', {"
+      },
+      {
+        "file": "client.js",
+        "line": 383,
+        "text": "const res = await fetch('/config-sync/scope', payload"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 23,
+        "text": "ort { closeSync, existsSync, mkdirSync, mkdtempSync, openSync, readdirSync, readFileSync, readSync, rmSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 67,
+        "text": "const pkg = JSON.parse(readFileSync(join(PLUGIN_DIR, 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 202,
+        "text": "try { return JSON.parse(readFileSync(path, 'utf8')) } catch { return null }"
+      },
+      {
+        "file": "index.js",
+        "line": 206,
+        "text": "try { return readFileSync(path, 'utf8') } catch { return '' }"
+      },
+      {
+        "file": "index.js",
+        "line": 258,
+        "text": "writeFileSync(settingsPath(dshHome), payload, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { execFile, execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 396,
+        "text": "execFile(resolveGitExe(), ['-C', repo, ...args], { windowsHide: true, timeout: 20000 }, (err, stdout) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 433,
+        "text": "execFile(resolveGitExe(), args, { windowsHide: true, timeout, env }, (err, stdout) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 472,
+        "text": "execFile(resolveGitExe(), ['ls-remote', '--heads', url], { windowsHide: true, timeout: 15000, env: headsEnv }, (err, stdout) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

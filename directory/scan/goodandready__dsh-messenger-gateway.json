@@ -1,7 +1,7 @@
 {
   "name": "@goodandready/dsh-messenger-gateway",
-  "version": "0.4.37",
-  "scannedAt": "2026-11-16T23:37:21.933Z",
+  "version": "0.4.47",
+  "scannedAt": "2026-11-17T22:16:43.394Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -53,13 +53,13 @@
       },
       {
         "file": "lib/adapters/telegram.js",
-        "line": 808,
-        "text": "const bytes = file.bytes || (file.path ? await readFile(file.path) : null)"
+        "line": 2,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
       },
       {
-        "file": "lib/artifacts.js",
-        "line": 3,
-        "text": "import { writeFileSync, readFileSync, unlinkSync } from \"node:fs\""
+        "file": "lib/adapters/telegram.js",
+        "line": 118,
+        "text": "const raw = JSON.parse(readFileSync(this.offsetPath, 'utf8'))"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "lib/gateway-commands.js",
-        "line": 181,
+        "line": 177,
         "text": "const tools = gw.ctx.get?.('tools') || gw.ctx.tools"
       },
       {
@@ -78,12 +78,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 327,
+        "line": 411,
         "text": "const tools = ctx.get?.('tools') || ctx.tools"
       },
       {
         "file": "lib/index.js",
-        "line": 329,
+        "line": 413,
         "text": "ctx.effect(() => tools.register(defineTool({"
       }
     ]

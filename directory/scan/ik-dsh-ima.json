@@ -1,0 +1,123 @@
+{
+  "name": "ik-dsh-ima",
+  "version": "1.11.4",
+  "scannedAt": "2026-11-17T22:16:55.552Z",
+  "icon": "ik-dsh-ima.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 12,
+        "text": "?\");if(d.read=function(e){try{var A=new XMLHttpRequest;return A.open(\"GET\",e,!1),A.send(null),A.responseText}catch(A){var r=vr(e);if(r)return kr(r);throw A}},l&"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 76,
+        "text": "erCase();if(o.indexOf(f)!=-1){var d=new XMLHttpRequest;n._xhrs.push(d),n._imgs.push(l),d.open(\"GET\",u),d.responseType=\"arraybuffer\",d.onload=n._imgLoaded,d.send"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 84,
+        "text": " cRr(t){let{url:e}=t,r=uJ(t,RMr);return fetch(e,r)}function fRr(t){let{version:e=bz,eventTargets:r=[],sid:n=mnt(),transmissionMode:a=l4e}=t,i=uJ(t,IMr);return H"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 114,
+        "text": "et e=this.licenseXhr;e&&(e.readyState!==XMLHttpRequest.DONE&&e.abort(),this.licenseXhr=void 0),this.onmessage=this.onkeystatuseschange=void 0}},vp=class extends"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 115,
+        "text": "this.config.keyLoadPolicy.default,u=new XMLHttpRequest;u.responseType=\"arraybuffer\",u.onreadystatechange=()=>{if(!this.hls||!e.mediaKeysSession)return i(new Err"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 12,
+        "text": "e){var r;return(r=vr(A))||(i=i||require(\"fs\"),A=(f=f||require(\"path\")).normalize(A),r=i.readFileSync(A)),e?r:r.toString()},d.readBinary=function(A){var e=d.read"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1551,
+        "text": "ne){let n=await this.fileSystemProvider.readFile(e);return this.createAsync(e,n,r)}fromTextDocument(e,r,n){return r=r??Up.parse(e.uri),jo.CancellationToken.is(n"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1556,
+        "text": "w Error(\"No file system is available.\")}readFile(){throw new Error(\"No file system is available.\")}readFileSync(){throw new Error(\"No file system is available.\""
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3783,
+        "text": "of Wx<\"u\"&&Wx.writeFileSync)return r?Wx.writeFileSync(t,e,r):Wx.writeFileSync(t,e);if(typeof Deno<\"u\"){if(r&&typeof e==\"string\")switch(r){case\"utf8\":e=new TextE"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3829,
+        "text": ";return i instanceof Function||(i=r),Wx.writeFile(t,vX(e,a),i)}function qYt(t,e,r,n,a,i,o){var s=Pa(r),l=o.defval,u=o.raw||!Object.prototype.hasOwnProperty.call"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "*   1. 注册 4 个 agent 工具（inject: ['tools'] + ctx.tools.register）"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 185,
+        "text": "inject: ['tools', 'agents'],"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 190,
+        "text": "const register = (def) => ctx.tools.register(defineTool(def))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 757,
+        "text": "field]=t.value,f&&r.push(l))}var h=this.spawn(r);h.updateStyle(),h.emit(t.event),o&&h.emit(o)}return this}}function oI(t){Yk[t.field]=function(){var e=this[0];i"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 760,
+        "text": "qs++,n.updateItem(o);else{var s={eles:t.spawn().merge(t),level:e,reqs:1,key:i};n.push(s),a[i]=s}};Y0.dequeue=function(t){for(var e=this,r=e.getElementQueue(),n="
+      },
+      {
+        "file": "lib/ima-browser.js",
+        "line": 18,
+        "text": "const { spawn } = require('child_process')"
+      },
+      {
+        "file": "lib/ima-browser.js",
+        "line": 141,
+        "text": "proc = spawn(browser, ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

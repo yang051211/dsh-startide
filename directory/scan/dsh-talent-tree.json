@@ -1,0 +1,74 @@
+{
+  "name": "dsh-talent-tree",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-17T22:16:48.804Z",
+  "icon": "dsh-talent-tree.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1841,
+        "text": "          const response = await fetch(new URL(LIBRARY_ROUTE, document.baseURI).href, { credentials: 'same-origin', cache: 'no-store', headers: { accept: 'appli"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 346,
+        "text": "const parsed = JSON.parse(await readFile(file, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 359,
+        "text": "await mkdir(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 361,
+        "text": "await writeFile(tmp, JSON.stringify(next, null, 1), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "export const inject = ['tools', 'systemPrompt', 'sessionProjections']"
+      },
+      {
+        "file": "index.js",
+        "line": 133,
+        "text": "const register = definition => ctx.effect(() => ctx.tools.register(withSnapshotOutput(definition)))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionProjections",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

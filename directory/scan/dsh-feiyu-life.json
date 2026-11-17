@@ -1,35 +1,35 @@
 {
   "name": "dsh-feiyu-life",
-  "version": "2.5.3",
-  "scannedAt": "2026-11-17T09:25:30.372Z",
+  "version": "2.6.0",
+  "scannedAt": "2026-11-17T22:16:38.658Z",
   "icon": "dsh-feiyu-life.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 194,
-        "text": "const res = await fetch(url, { headers: { accept: 'application/json' } })"
+        "line": 79,
+        "text": "const r = await fetch(`${API}/models${force ? \"?f=1\" : \"\"}`, { credentials: \"same-origin\" });"
       },
       {
         "file": "client.js",
-        "line": 199,
-        "text": "const res = await fetch(url, {"
+        "line": 91,
+        "text": "const r = await fetch(`${API}/state`, { credentials: \"same-origin\" });"
       },
       {
         "file": "client.js",
-        "line": 703,
-        "text": "const res = await fetch(API + '/settings-backup', { headers: { accept: 'application/json' } })"
+        "line": 153,
+        "text": "const r = await fetch(`${API}/save`, {"
       },
       {
         "file": "client.js",
-        "line": 1381,
-        "text": "const r = await fetch(`${API}/models${force ? '?f=1' : ''}`, { credentials: 'same-origin' })"
+        "line": 176,
+        "text": "const r = await fetch(`${API}/test`, {"
       },
       {
         "file": "client.js",
-        "line": 1395,
-        "text": "const r = await fetch(`${API}/state`, { credentials: 'same-origin' })"
+        "line": 605,
+        "text": "const res = await fetch(url, { headers: { accept: \"application/json\" } });"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "continuity.js",
-        "line": 8,
-        "text": "import { closeSync, existsSync, mkdirSync, openSync, readFileSync, readdirSync, renameSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
+        "file": "scripts/build-client.mjs",
+        "line": 4,
+        "text": "import { readFileSync } from 'node:fs'"
       },
       {
-        "file": "continuity.js",
-        "line": 28,
-        "text": "mkdirSync(join(path, '..'), { recursive: true })"
+        "file": "scripts/build-client.mjs",
+        "line": 16,
+        "text": "try { current = readFileSync(target, 'utf8') } catch {}"
       },
       {
-        "file": "continuity.js",
-        "line": 30,
-        "text": "writeFileSync(tmp, JSON.stringify(value, null, 2) + '\\n', 'utf8')"
+        "file": "scripts/build-client.mjs",
+        "line": 22,
+        "text": "const { writeFileSync } = await import('node:fs')"
       },
       {
-        "file": "continuity.js",
-        "line": 35,
-        "text": "mkdirSync(join(path, '..'), { recursive: true })"
+        "file": "scripts/build-client.mjs",
+        "line": 23,
+        "text": "writeFileSync(target, output)"
       },
       {
-        "file": "continuity.js",
-        "line": 37,
-        "text": "writeFileSync(tmp, value, 'utf8')"
+        "file": "scripts/build-xueyuan-map.mjs",
+        "line": 1,
+        "text": "import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
       }
     ]
   },
@@ -67,14 +67,14 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 61,
-        "text": "export const inject = ['systemPrompt', 'agents', 'timer', 'webServer', 'connection', 'llm', 'tools', 'attachments']"
-      },
-      {
         "file": "src/media/image.js",
         "line": 746,
         "text": "ctx.effect(() => ctx.tools.register({"
+      },
+      {
+        "file": "src/plugin/app.js",
+        "line": 61,
+        "text": "export const inject = ['systemPrompt', 'agents', 'timer', 'webServer', 'connection', 'llm', 'tools', 'attachments']"
       },
       {
         "file": "src/plugin/tools.js",
@@ -97,6 +97,11 @@
     "hit": true,
     "evidence": [
       {
+        "file": "scripts/check-syntax.mjs",
+        "line": 1,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
         "file": "src/media/image-prompt.js",
         "line": 16,
         "text": "import { execFile } from 'node:child_process'"
@@ -115,16 +120,7 @@
   "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [
-    "agents",
-    "attachments",
-    "connection",
-    "llm",
-    "systemPrompt",
-    "timer",
-    "tools",
-    "webServer"
-  ],
+  "requiredServices": [],
   "setupHints": [],
   "skippedEntries": []
 }

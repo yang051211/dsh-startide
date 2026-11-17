@@ -1,0 +1,86 @@
+{
+  "name": "@sixzjd/dsh-opencode-connect",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-17T22:16:51.680Z",
+  "icon": "sixzjd__dsh-opencode-connect.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 158,
+        "text": "const res = await fetch(STATUS_PATH, { headers: { accept: \"application/json\" } })"
+      },
+      {
+        "file": "client.js",
+        "line": 182,
+        "text": "const res = await fetch(path, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 21,
+        "text": "import { createServer } from 'node:http'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 172,
+        "text": "const res = await fetch('https://registry.npmjs.org/opencode-ai/latest', {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 420,
+        "text": "const res = await fetch('https://models.dev/api.json', { headers: { accept: 'application/json' }, signal: AbortSignal.timeout(20_000) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 23,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 112,
+        "text": "const parsed = JSON.parse(readFileSync(path, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 120,
+        "text": "mkdirSync(dirname(path), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 122,
+        "text": "writeFileSync(tmp, JSON.stringify(value, null, 2))"
+      },
+      {
+        "file": "test/smoke.mjs",
+        "line": 11,
+        "text": "import { readFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

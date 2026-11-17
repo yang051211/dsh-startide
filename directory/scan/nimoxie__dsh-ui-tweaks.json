@@ -1,7 +1,7 @@
 {
   "name": "@nimoxie/dsh-ui-tweaks",
-  "version": "0.2.3",
-  "scannedAt": "2026-10-28T06:59:38.417Z",
+  "version": "0.2.4",
+  "scannedAt": "2026-11-17T22:17:05.339Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,13 +18,18 @@
       },
       {
         "file": "lib/client.js",
-        "line": 3248,
+        "line": 3298,
         "text": "fetch(SUMMARY_ROUTE + \"?\" + new URLSearchParams({ sessionId: String(sessionId), seq: String(seq) }),"
       },
       {
         "file": "lib/index.js",
-        "line": 697,
+        "line": 700,
         "text": "const res = await fetch(\"https://registry.npmjs.org/\" + path, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 760,
+        "text": "const res = await fetch(registry + \"/\" + path, {"
       }
     ]
   },
@@ -33,27 +38,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 52,
+        "line": 55,
         "text": "import { appendFileSync, existsSync, mkdirSync, readdirSync, readFileSync, renameSync, statSync, unlinkSync, writeFileSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 69,
+        "line": 72,
         "text": "try { return JSON.parse(readFileSync(p, \"utf8\")); } catch { return null; }"
       },
       {
         "file": "lib/index.js",
-        "line": 213,
+        "line": 216,
         "text": "try { raw = readFileSync(wsPath, \"utf8\"); }"
       },
       {
         "file": "lib/index.js",
-        "line": 223,
+        "line": 226,
         "text": "try { locked = parseLockVersions(readFileSync(join(dir, \"pnpm-lock.yaml\"), \"utf8\")); lockKnown = true; } catch { /* 无 lockfile */ }"
       },
       {
         "file": "lib/index.js",
-        "line": 304,
+        "line": 307,
         "text": "mkdirSync(dir, { recursive: true });"
       }
     ]
@@ -67,27 +72,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 56,
+        "line": 59,
         "text": "import { spawn, spawnSync } from \"node:child_process\";"
       },
       {
         "file": "lib/index.js",
-        "line": 333,
+        "line": 336,
         "text": "const r = spawnSync(csc, [\"-nologo\", \"-target:library\", \"-optimize+\", `-out:${dllPath}`, csPath], { timeout: 30000 });"
       },
       {
         "file": "lib/index.js",
-        "line": 345,
+        "line": 348,
         "text": "const child = spawn(ps, ["
       },
       {
         "file": "lib/index.js",
-        "line": 580,
+        "line": 583,
         "text": "child = spawn(cmd, args, { detached: true, windowsHide: false, stdio: \"ignore\" });"
       },
       {
         "file": "lib/index.js",
-        "line": 669,
+        "line": 672,
         "text": "try { child = spawn(\"cmd.exe\", [\"/c\", \"echo\", \"probe\"], { windowsHide: true, stdio: [\"ignore\", \"pipe\", \"pipe\"] }); }"
       }
     ]

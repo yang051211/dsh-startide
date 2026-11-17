@@ -1,19 +1,19 @@
 {
   "name": "dsh-control-surfbird-for-kitesurf",
-  "version": "0.5.1",
-  "scannedAt": "2026-11-16T08:06:34.712Z",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-17T22:16:45.379Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client/client.js",
-        "line": 111,
-        "text": "const res = await fetch(STATUS_URL + (probe ? '?probe=1' : ''), { cache: 'no-store' })"
+        "line": 114,
+        "text": "const res = await fetch(STATUS_URL + qs, { cache: 'no-store', headers: { 'x-surfbird-ui': '1' } })"
       },
       {
         "file": "client/client.js",
-        "line": 293,
+        "line": 296,
         "text": "const res = await fetch(TOKENFILE_URL, {"
       },
       {
@@ -23,7 +23,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 273,
+        "line": 346,
         "text": "const res = await fetch(`${base}/json/version`, { signal: ctrl.signal, headers });"
       },
       {
@@ -43,23 +43,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 16,
-        "text": "import { appendFileSync, mkdirSync, writeFileSync } from 'node:fs';"
+        "line": 17,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';"
       },
       {
         "file": "lib/index.js",
-        "line": 224,
-        "text": "mkdirSync(dir, { recursive: true });"
+        "line": 146,
+        "text": "const j = JSON.parse(readFileSync(SETUP_PROMPT_FILE, 'utf8'));"
       },
       {
         "file": "lib/index.js",
-        "line": 229,
-        "text": "writeFileSync(file, encryptToken(content) + '\\n', { mode: 0o600 });"
+        "line": 156,
+        "text": "mkdirSync(join(homedir(), '.dsh'), { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 234,
-        "text": "writeFileSync(file, content + '\\n', { mode: 0o600 });"
+        "line": 157,
+        "text": "writeFileSync(SETUP_PROMPT_FILE, JSON.stringify(st));"
       }
     ]
   },
@@ -68,22 +68,22 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 27,
+        "line": 29,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "lib/tools.js",
-        "line": 862,
+        "line": 876,
         "text": "disposers.push(ctx.tools.register(tool));"
       },
       {
         "file": "src/index.ts",
-        "line": 34,
+        "line": 36,
         "text": "export const inject: string[] = ['tools']"
       },
       {
         "file": "src/tools.ts",
-        "line": 879,
+        "line": 894,
         "text": "disposers.push(ctx.tools.register(tool))"
       }
     ]

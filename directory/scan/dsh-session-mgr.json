@@ -1,14 +1,14 @@
 {
   "name": "dsh-session-mgr",
-  "version": "0.6.9",
-  "scannedAt": "2026-11-14T19:29:46.337Z",
+  "version": "0.6.10",
+  "scannedAt": "2026-11-17T22:16:55.910Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 615,
+        "line": 623,
         "text": "return fetch(\"/dsh-session-mgr/\" + action, {"
       }
     ]
@@ -19,27 +19,27 @@
       {
         "file": "lib/host.js",
         "line": 41,
+        "text": "import { readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 42,
         "text": "import { cp, mkdir, mkdtemp, readFile, readdir, realpath, rename, rm, stat, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/host.js",
-        "line": 235,
+        "line": 66,
+        "text": "const pkg = JSON.parse(readFileSync(new URL(\"../package.json\", import.meta.url), \"utf8\"));"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 266,
         "text": "const raw = await readFile(oldLogPath);"
       },
       {
         "file": "lib/host.js",
-        "line": 237,
+        "line": 268,
         "text": "await mkdir(dirname(newDir), { recursive: true });"
-      },
-      {
-        "file": "lib/host.js",
-        "line": 248,
-        "text": "await rm(oldDir, { recursive: true, force: true });"
-      },
-      {
-        "file": "lib/host.js",
-        "line": 252,
-        "text": "await writeFile(tmp, newContent);"
       }
     ]
   },

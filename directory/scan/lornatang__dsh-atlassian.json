@@ -1,7 +1,7 @@
 {
   "name": "@lornatang/dsh-atlassian",
-  "version": "0.1.10",
-  "scannedAt": "2026-11-16T23:37:35.436Z",
+  "version": "0.1.11",
+  "scannedAt": "2026-11-17T22:16:56.807Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,8 +18,8 @@
       },
       {
         "file": "lib/bridge.js",
-        "line": 144,
-        "text": "const response = await network.fetch(value, { ...init, signal: AbortSignal.timeout(Math.max(30000, this.#options.toolCallTimeoutMs)) });"
+        "line": 145,
+        "text": "const response = await network.fetch(value, { ...init, signal: AbortSignal.timeout(Math.min(120000, Math.max(30000, this.#options.toolCallTimeoutMs))) });"
       },
       {
         "file": "lib/client.js",
@@ -43,7 +43,7 @@
       },
       {
         "file": "lib/server-http.js",
-        "line": 30,
+        "line": 31,
         "text": "this.#ca = caFile ? [...rootCertificates, readFileSync(caFile, 'utf8')] : undefined;"
       },
       {
@@ -73,7 +73,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 14,
+        "line": 17,
         "text": "const host = { register: (definition) => ctx.tools.register(definition), logger: ctx.logger };"
       }
     ]

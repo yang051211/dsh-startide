@@ -1,19 +1,19 @@
 {
   "name": "@mirai27/dsh-provider-card",
-  "version": "0.1.2",
-  "scannedAt": "2026-10-30T23:38:40.634Z",
+  "version": "2.0.0",
+  "scannedAt": "2026-11-17T22:17:00.922Z",
   "icon": "mirai27__dsh-provider-card.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "src/client.js",
-        "line": 6650,
+        "line": 5316,
         "text": "const r = await fetch(url, { credentials: 'same-origin', cache: 'no-store' });"
       },
       {
         "file": "src/client.js",
-        "line": 7243,
+        "line": 5970,
         "text": "r = await fetch(url, init);"
       }
     ]
@@ -23,28 +23,28 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 32,
+        "line": 3,
         "text": "import * as nodeFs from 'node:fs';"
       },
       {
         "file": "index.js",
-        "line": 213,
+        "line": 208,
         "text": "nodeFs.mkdirSync(assetsDir, { recursive: true });"
       },
       {
         "file": "index.js",
-        "line": 214,
-        "text": "nodeFs.writeFileSync(nodePath.join(root, '.probe'), 'ok'); // 可写性实测（写完即留，无害标记）"
+        "line": 210,
+        "text": "nodeFs.writeFileSync(probeFile, 'ok');"
       },
       {
         "file": "index.js",
-        "line": 434,
-        "text": "try { await fs.unlink(file); return true; } catch { /* 不存在即已回滚/已删 */ return false; }"
+        "line": 211,
+        "text": "try { nodeFs.unlinkSync(probeFile); } catch {   }"
       },
       {
         "file": "index.js",
-        "line": 699,
-        "text": "const j = JSON.parse(nodeFs.readFileSync(p, 'utf8'));"
+        "line": 523,
+        "text": "try { await fs.unlink(file); return true; } catch {   return false; }"
       }
     ]
   },

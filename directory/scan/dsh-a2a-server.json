@@ -1,11 +1,21 @@
 {
   "name": "dsh-a2a-server",
-  "version": "0.4.1",
-  "scannedAt": "2026-11-05T21:23:02.685Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-17T22:17:02.692Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
+      {
+        "file": "calendar/auth.mjs",
+        "line": 1,
+        "text": "import { createServer } from 'node:http'"
+      },
+      {
+        "file": "calendar/providers.mjs",
+        "line": 13,
+        "text": "try { response = await this.fetch(url, { ...init, redirect: 'error', signal: AbortSignal.timeout(15000) }) }"
+      },
       {
         "file": "lib/management.js",
         "line": 2,
@@ -17,29 +27,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/briefing.js",
+        "file": "calendar/google-client.mjs",
+        "line": 1,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "calendar/store.mjs",
         "line": 2,
-        "text": "import { mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs';"
+        "text": "import { mkdir, readFile, writeFile, rename, rm } from 'node:fs/promises'"
       },
       {
-        "file": "lib/briefing.js",
-        "line": 29,
-        "text": "mkdirSync(options.stateDirectory, { recursive: true, mode: 0o700 });"
+        "file": "calendar/store.mjs",
+        "line": 13,
+        "text": "try { await writeFile(temp, JSON.stringify(value), { mode: 0o600, flag: 'wx' }); await rename(temp, file) }"
       },
       {
-        "file": "lib/briefing.js",
-        "line": 32,
-        "text": "const state = JSON.parse(readFileSync(this.stateFile, 'utf8'));"
+        "file": "calendar/store.mjs",
+        "line": 14,
+        "text": "finally { await rm(temp, { force: true }) }"
       },
       {
-        "file": "lib/briefing.js",
-        "line": 46,
-        "text": "writeFileSync(temporary, JSON.stringify({ enabled: this.enabled, nextRunAt: this.nextRunAt }), { mode: 0o600 });"
-      },
-      {
-        "file": "lib/briefing.js",
-        "line": 50,
-        "text": "rmSync(temporary, { force: true });"
+        "file": "calendar/store.mjs",
+        "line": 17,
+        "text": "try { return JSON.parse(await readFile(file, 'utf8')) } catch (e) { if (e.code === 'ENOENT') return; throw e }"
       }
     ]
   },
@@ -48,19 +58,34 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 31,
+        "line": 32,
         "text": "export const inject = ['agents', 'webServer', 'credentials', 'tools', 'systemPrompt'];"
       },
       {
         "file": "lib/index.js",
-        "line": 326,
+        "line": 330,
         "text": "agentCtx.tools.register(visitorSandboxes ? microsandboxReadTool(reader, peer, visitorSandboxes) : config.isolation.execution === 'docker'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 334,
+        "text": "agentCtx.tools.register(tool);"
       }
     ]
   },
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "calendar/store.mjs",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "calendar/store.mjs",
+        "line": 23,
+        "text": "const child = spawn('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', command], { windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'] })"
+      },
       {
         "file": "lib/docker-executor.js",
         "line": 1,
@@ -75,16 +100,6 @@
         "file": "lib/microsandbox-runtime.js",
         "line": 9,
         "text": "import { spawn } from 'node:child_process';"
-      },
-      {
-        "file": "lib/microsandbox-runtime.js",
-        "line": 37,
-        "text": "const child = spawn(command, args, { env, windowsHide: true, detached: process.platform !== 'win32', stdio: ['ignore', 'pipe', 'pipe'] });"
-      },
-      {
-        "file": "lib/microsandbox-runtime.js",
-        "line": 46,
-        "text": "const killer = spawn('taskkill', ['/PID', String(child.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' });"
       }
     ]
   },
@@ -92,7 +107,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 2,
+  "dependencies": 3,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

@@ -1,8 +1,8 @@
 {
   "name": "ggb-plugins-dsh",
-  "version": "0.8.5",
-  "scannedAt": "2026-10-26T10:09:59.273Z",
-  "icon": null,
+  "version": "0.9.0",
+  "scannedAt": "2026-11-17T22:17:03.769Z",
+  "icon": "ggb-plugins-dsh.svg",
   "network": {
     "hit": true,
     "evidence": [
@@ -32,6 +32,21 @@
     "hit": true,
     "evidence": [
       {
+        "file": "delivery-card.js",
+        "line": 3,
+        "text": "import { readFile, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "delivery-card.js",
+        "line": 26,
+        "text": "try { return JSON.parse(await readFile(path, 'utf8')); }"
+      },
+      {
+        "file": "delivery-card.js",
+        "line": 206,
+        "text": "const data = await readFile(card.previewPath);"
+      },
+      {
         "file": "dist/src/atomic-file.js",
         "line": 3,
         "text": "import { lstat, open, rename, rm } from 'node:fs/promises';"
@@ -40,21 +55,6 @@
         "file": "dist/src/atomic-file.js",
         "line": 30,
         "text": "await handle.writeFile(data);"
-      },
-      {
-        "file": "dist/src/atomic-file.js",
-        "line": 51,
-        "text": "await rm(temporary, { force: true }).catch(() => { });"
-      },
-      {
-        "file": "dist/src/browser-target.js",
-        "line": 6,
-        "text": "import { existsSync } from 'node:fs';"
-      },
-      {
-        "file": "dist/src/browser.js",
-        "line": 5,
-        "text": "import { readFile } from 'node:fs/promises';"
       }
     ]
   },
@@ -62,6 +62,11 @@
     "hit": true,
     "evidence": [
       {
+        "file": "delivery-card.js",
+        "line": 182,
+        "text": "const register = () => tools.register({"
+      },
+      {
         "file": "dsh/server.js",
         "line": 11,
         "text": "export const inject = ['tools', 'systemPrompt'];"
@@ -72,14 +77,14 @@
         "text": "for (const toolName of TOOL_NAMES) ctx.tools.register(createTool(toolName));"
       },
       {
-        "file": "source/dsh/server.js",
-        "line": 11,
-        "text": "export const inject = ['tools', 'systemPrompt'];"
+        "file": "source/dsh/delivery-card.js",
+        "line": 182,
+        "text": "const register = () => tools.register({"
       },
       {
         "file": "source/dsh/server.js",
-        "line": 42,
-        "text": "for (const toolName of TOOL_NAMES) ctx.tools.register(createTool(toolName));"
+        "line": 11,
+        "text": "export const inject = ['tools', 'systemPrompt'];"
       }
     ]
   },
@@ -87,29 +92,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "delivery-card.js",
+        "line": 2,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
         "file": "dist/src/browser.js",
         "line": 6,
         "text": "import { execFile } from 'node:child_process';"
       },
       {
         "file": "scripts/setup-plugin.mjs",
-        "line": 1,
-        "text": "import { execFileSync } from 'node:child_process';"
+        "line": 2,
+        "text": "import { execFileSync, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/setup-plugin.mjs",
+        "line": 81,
+        "text": "const doctor = spawnSync(process.execPath,"
       },
       {
         "file": "scripts/setup-runtime.mjs",
-        "line": 2,
-        "text": "import { execFileSync } from 'node:child_process';"
-      },
-      {
-        "file": "source/dsh/test/executor.test.mjs",
-        "line": 11,
-        "text": "import {execFileSync} from 'node:child_process';"
-      },
-      {
-        "file": "source/dsh/test/server.test.mjs",
         "line": 3,
-        "text": "import {execFileSync} from 'node:child_process';"
+        "text": "import { execFileSync } from 'node:child_process';"
       }
     ]
   },

@@ -1,35 +1,35 @@
 {
   "name": "@suifei/dsh-ai-team",
-  "version": "0.4.118",
-  "scannedAt": "2026-11-17T09:25:28.750Z",
+  "version": "0.4.129",
+  "scannedAt": "2026-11-17T22:16:34.990Z",
   "icon": "suifei__dsh-ai-team.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 2540,
+        "line": 2770,
+        "text": "fetch('/ai-team/api/skills-install', { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 2801,
+        "text": "\t\t\t\t\tconst res = await fetch('/ai-team/api/talents', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ ...talentFormToBo"
+      },
+      {
+        "file": "client.js",
+        "line": 2807,
+        "text": "\t\t\t\t\t\tconst r2 = await fetch('/ai-team/api/talents/' + encodeURIComponent(id) + '/skills', { method: 'POST', headers: { 'content-type': 'application/json' }, bo"
+      },
+      {
+        "file": "client.js",
+        "line": 2858,
+        "text": "const res = await fetch('/ai-team/api/teams', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });"
+      },
+      {
+        "file": "client.js",
+        "line": 2911,
         "text": "fetch('/ai-team/api/model-efforts' + query, { headers: { accept: 'application/json' } })"
-      },
-      {
-        "file": "client.js",
-        "line": 2803,
-        "text": "fetch(`/ai-team/api/projects/${encodeURIComponent(projectId || '')}/tasks/${encodeURIComponent(taskId)}/events`, { headers: { accept: 'application/json' } })"
-      },
-      {
-        "file": "client.js",
-        "line": 2816,
-        "text": "fetch('/ai-team/api/pending-acceptance', { headers: { accept: 'application/json' } })"
-      },
-      {
-        "file": "client.js",
-        "line": 2827,
-        "text": "fetch('/ai-team/api/risks' + (projectId ? '?project=' + encodeURIComponent(projectId) : ''), { headers: { accept: 'application/json' } })"
-      },
-      {
-        "file": "client.js",
-        "line": 2927,
-        "text": "const response = await fetch('/ai-team/api/bootstrap' + query, {"
       }
     ]
   },
@@ -43,22 +43,22 @@
       },
       {
         "file": "index.js",
-        "line": 84,
+        "line": 88,
         "text": "return JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')).version ?? '0.0.0';"
       },
       {
         "file": "index.js",
-        "line": 226,
+        "line": 260,
         "text": "try { mkdirSync(defaultWorkspace, { recursive: true }); } catch { defaultWorkspace = ''; }"
       },
       {
         "file": "index.js",
-        "line": 1181,
+        "line": 1232,
         "text": "mkdirSync(answerCwd, { recursive: true });"
       },
       {
         "file": "index.js",
-        "line": 1246,
+        "line": 1297,
         "text": "readText: (file) => readFileSync(file, 'utf8'),"
       }
     ]
@@ -68,17 +68,17 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 78,
+        "line": 82,
         "text": "export const inject = ['webServer', 'connection', 'permissionPresets', 'sandboxPolicy', 'tools', 'shell', 'agents', 'subagents', 'sessions', 'systemPrompt'];"
       },
       {
         "file": "index.js",
-        "line": 130,
+        "line": 164,
         "text": "* 取 DSH 服务：cordis 以属性形式注入（ctx.tools / ctx.shell …），"
       },
       {
         "file": "index.js",
-        "line": 1842,
+        "line": 1893,
         "text": "? tools.register(createTeamTool({"
       },
       {
@@ -98,12 +98,12 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 50,
+        "line": 51,
         "text": "import { execFile } from 'node:child_process';"
       },
       {
         "file": "index.js",
-        "line": 1206,
+        "line": 1257,
         "text": "execFile('powershell.exe', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', runScript], { windowsHide: true, timeout: 30 * 60 * 1000 }, (error) => {"
       }
     ]
@@ -112,7 +112,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
+  "dependencies": 2,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

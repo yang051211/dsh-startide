@@ -1,19 +1,29 @@
 {
   "name": "@zhucher/dsh-file-drop",
-  "version": "0.2.0",
-  "scannedAt": "2026-10-26T10:15:27.874Z",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-17T22:17:05.460Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 212,
+        "line": 217,
         "text": "const response = await fetch(UPLOAD_ROUTE, {"
       },
       {
         "file": "lib/client.js",
-        "line": 434,
+        "line": 520,
+        "text": "const response = await fetch(MCP_IMPORT_ROUTE, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 547,
+        "text": "const response = await fetch(MCP_INVENTORY_ROUTE, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 656,
         "text": "const response = await fetch(CONTEXT_ROUTE, { headers: { accept: 'application/json' } })"
       }
     ]
@@ -49,8 +59,14 @@
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/mcp-import.js",
+        "line": 7,
+        "text": "const MCP_CLIENT = '@deepseek-ai/dsh-mcp-client'"
+      }
+    ]
   },
   "childProcess": {
     "hit": true,
@@ -76,10 +92,11 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
+    "loader",
     "webServer"
   ],
   "setupHints": [],

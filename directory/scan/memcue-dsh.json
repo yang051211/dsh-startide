@@ -1,15 +1,15 @@
 {
   "name": "memcue-dsh",
-  "version": "0.37.1",
-  "scannedAt": "2026-11-12T21:20:39.210Z",
+  "version": "0.40.0",
+  "scannedAt": "2026-11-17T22:16:47.276Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "src/install.mjs",
-        "line": 82,
-        "text": "const response = await fetch(url, { signal: AbortSignal.timeout(timeoutMs) })"
+        "file": "plugins/transport/install.mjs",
+        "line": 67,
+        "text": "const response = await fetch(url, { signal: AbortSignal.timeout(timeoutMs) });"
       }
     ]
   },
@@ -17,29 +17,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/install.mjs",
-        "line": 11,
-        "text": "import { access, chmod, constants, lstat, mkdir, mkdtemp, readFile, rename, rm, rmdir, stat, writeFile } from 'node:fs/promises'"
+        "file": "plugins/deepseek-harness/src/install.mjs",
+        "line": 12,
+        "text": "import { readFile } from 'node:fs/promises'"
       },
       {
-        "file": "src/install.mjs",
-        "line": 26,
-        "text": "const manifest = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'))"
+        "file": "plugins/deepseek-harness/src/install.mjs",
+        "line": 21,
+        "text": "const manifest = JSON.parse(await readFile(new URL('../../../package.json', import.meta.url), 'utf8'))"
       },
       {
-        "file": "src/install.mjs",
-        "line": 115,
-        "text": "await mkdir(dir, { recursive: true })"
+        "file": "plugins/transport/install.mjs",
+        "line": 12,
+        "text": "import { access, chmod, constants, lstat, mkdir, mkdtemp, readFile, rename, rm, rmdir, stat, writeFile } from 'node:fs/promises';"
       },
       {
-        "file": "src/install.mjs",
-        "line": 117,
-        "text": "await mkdir(join(lock, '..'), { recursive: true })"
+        "file": "plugins/transport/install.mjs",
+        "line": 100,
+        "text": "await mkdir(dir, { recursive: true });"
       },
       {
-        "file": "src/install.mjs",
-        "line": 124,
-        "text": "await mkdir(lock)"
+        "file": "plugins/transport/install.mjs",
+        "line": 102,
+        "text": "await mkdir(dirname(lock), { recursive: true });"
       }
     ]
   },
@@ -47,28 +47,28 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/index.mjs",
-        "line": 35,
+        "file": "plugins/deepseek-harness/src/index.mjs",
+        "line": 36,
         "text": "export const inject = ['tools', 'systemPrompt']"
       },
       {
-        "file": "src/index.mjs",
-        "line": 465,
+        "file": "plugins/deepseek-harness/src/index.mjs",
+        "line": 422,
         "text": "ctx.tools.register(defineTool({"
       },
       {
-        "file": "src/index.mjs",
-        "line": 549,
+        "file": "plugins/deepseek-harness/src/index.mjs",
+        "line": 493,
         "text": "ctx.tools.register(defineTool({"
       },
       {
-        "file": "src/index.mjs",
-        "line": 589,
+        "file": "plugins/deepseek-harness/src/index.mjs",
+        "line": 544,
         "text": "ctx.tools.register(defineTool({"
       },
       {
-        "file": "src/index.mjs",
-        "line": 623,
+        "file": "plugins/deepseek-harness/src/index.mjs",
+        "line": 584,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
@@ -77,29 +77,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/index.mjs",
-        "line": 22,
-        "text": "import { spawn } from 'node:child_process'"
+        "file": "plugins/transport/install.mjs",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process';"
       },
       {
-        "file": "src/index.mjs",
-        "line": 204,
-        "text": "child=spawn(process.execPath,[fileURLToPath(new URL('./process.mjs',import.meta.url))],{"
+        "file": "plugins/transport/install.mjs",
+        "line": 52,
+        "text": "const child = spawn(path, ['version', '-minimum', version], { stdio: 'ignore' });"
       },
       {
-        "file": "src/install.mjs",
-        "line": 9,
-        "text": "import { spawn } from 'node:child_process'"
+        "file": "plugins/transport/install.mjs",
+        "line": 75,
+        "text": "const child = spawn('tar', ['-xzf', archive, '-C', dir, 'memcue'], { stdio: ['ignore', 'ignore', 'pipe'] });"
       },
       {
-        "file": "src/install.mjs",
-        "line": 68,
-        "text": "const child = spawn(path, ['version', '-minimum', version], { stdio: 'ignore' })"
+        "file": "plugins/transport/transport.mjs",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process';"
       },
       {
-        "file": "src/install.mjs",
-        "line": 89,
-        "text": "const child = spawn('tar', ['-xzf', archive, '-C', dir, 'memcue'], { stdio: ['ignore', 'ignore', 'pipe'] })"
+        "file": "plugins/transport/transport.mjs",
+        "line": 118,
+        "text": "/** @type {import('node:child_process').ChildProcess | undefined} */"
       }
     ]
   },

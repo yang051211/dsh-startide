@@ -1,0 +1,71 @@
+{
+  "name": "dsh-quick-notes",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-17T22:17:03.198Z",
+  "icon": "dsh-quick-notes.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 934,
+        "text": "void fetch(DIAGNOSTIC_PATH, {"
+      },
+      {
+        "file": "src/shared/sanitize.js",
+        "line": 183,
+        "text": "* keywords. Anything that can execute or fetch (`expression`, `url`, `var`,"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')).version ??"
+      },
+      {
+        "file": "src/host/diagnostics.js",
+        "line": 9,
+        "text": "import { appendFile, mkdir, readFile, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/host/diagnostics.js",
+        "line": 113,
+        "text": "const text = await readFile(file, 'utf8')"
+      },
+      {
+        "file": "src/host/diagnostics.js",
+        "line": 115,
+        "text": "await writeFile(file, text.slice(-keep), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

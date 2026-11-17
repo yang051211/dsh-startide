@@ -1,0 +1,64 @@
+{
+  "name": "dsh-scalpel",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-17T22:17:02.033Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 861,
+        "text": "return fetch(apiBase + path, { cache: 'no-store', ...options }).then((res) => {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/scalpel.mjs",
+        "line": 3,
+        "text": "import { accessSync, appendFileSync, constants, existsSync, mkdirSync, readFileSync, readdirSync, realpathSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/scalpel.mjs",
+        "line": 45,
+        "text": "return JSON.parse(readFileSync(RULES, 'utf8'))"
+      },
+      {
+        "file": "bin/scalpel.mjs",
+        "line": 51,
+        "text": "writeFileSync(RULES, JSON.stringify(rules, null, 2) + '\\n', 'utf8')"
+      },
+      {
+        "file": "bin/scalpel.mjs",
+        "line": 54,
+        "text": "appendFileSync(AUDIT, JSON.stringify({ at: new Date().toISOString(), ...entry }) + '\\n', 'utf8')"
+      },
+      {
+        "file": "bin/scalpel.mjs",
+        "line": 172,
+        "text": "const lines = readFileSync(AUDIT, 'utf8').trim().split('\\n').slice(-limit)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

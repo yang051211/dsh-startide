@@ -1,19 +1,19 @@
 {
   "name": "dsh-ris-yds",
-  "version": "1.2.1",
-  "scannedAt": "2026-11-13T21:10:53.784Z",
+  "version": "1.2.2",
+  "scannedAt": "2026-11-17T22:16:49.970Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "assets/dev-extension/sw.js",
-        "line": 31,
+        "line": 37,
         "text": "const response = await fetch(chrome.runtime.getURL('config.json'), { cache: 'no-store' })"
       },
       {
         "file": "assets/dev-extension/sw.js",
-        "line": 49,
+        "line": 55,
         "text": "const response = await fetch(`http://127.0.0.1:${port}/dsh-ris-yds/dev-config${query}`, { cache: 'no-store' })"
       },
       {
@@ -28,7 +28,7 @@
       },
       {
         "file": "lib/dev-browser.js",
-        "line": 40,
+        "line": 102,
         "text": "const list = await (await fetch(`http://127.0.0.1:${port}/json/list`)).json()"
       }
     ]
@@ -73,22 +73,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 14,
+        "line": 16,
         "text": "export const inject = ['sessions', 'tools', 'webServer']"
       },
       {
         "file": "lib/index.js",
-        "line": 229,
+        "line": 241,
         "text": "if (typeof ctx.tools?.register !== 'function') {"
       },
       {
         "file": "lib/index.js",
-        "line": 230,
+        "line": 242,
         "text": "ctx.logger?.warn?.('dsh-ris-yds: ctx.tools missing; tools stay unregistered')"
       },
       {
         "file": "lib/index.js",
-        "line": 236,
+        "line": 248,
         "text": "disposers.push(ctx.tools.register(definition))"
       }
     ]
@@ -119,7 +119,7 @@
       {
         "file": "lib/dev-browser.js",
         "line": 15,
-        "text": "import { spawn } from 'node:child_process'"
+        "text": "import { execFile, spawn } from 'node:child_process'"
       }
     ]
   },

@@ -1,35 +1,35 @@
 {
   "name": "@he0119/dsh-session-manager",
-  "version": "0.7.3",
-  "scannedAt": "2026-11-14T19:29:47.326Z",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-17T22:16:47.834Z",
   "icon": "he0119__dsh-session-manager.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1406,
+        "line": 1474,
         "text": "const response = await fetch(`${API_PREFIX}/meta`, { headers: { accept: \"application/json\" } });"
       },
       {
         "file": "lib/client.js",
-        "line": 1432,
+        "line": 1500,
         "text": "return asJson(await fetch(`${API_PREFIX}/sync-diff?${query.toString()}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1496,
+        "line": 1515,
+        "text": "const response = await fetch(`${API_PREFIX}/remote`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1591,
         "text": "const response = await fetch(`${API_PREFIX}/export`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1527,
+        "line": 1622,
         "text": "return readEventStream(await fetch(url, {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 1564,
-        "text": "return readEventStream(await fetch(`${API_PREFIX}/sync`, {"
       }
     ]
   },
@@ -43,23 +43,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 7,
-        "text": "import { cp, mkdir, readFile, rename, rm, rmdir, writeFile } from \"node:fs/promises\";"
+        "line": 8,
+        "text": "import { chmod, cp, mkdir, readFile, readdir, rename, rm, rmdir, stat, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 874,
-        "text": "header: readHeaderQuick(take === bytes ? prefix : readFileSync(path), decodeAll).header,"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 1389,
+        "line": 515,
         "text": "raw = readFileSync(join(cacheDir, `${encodeSegment(query.id)}.json`), \"utf8\");"
       },
       {
         "file": "lib/index.js",
-        "line": 2116,
-        "text": "await mkdir(join(dir, \"sessions\"), { recursive: true });"
+        "line": 1446,
+        "text": "await mkdir(dirname(path), {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1451,
+        "text": "await writeFile(part, bytes, { mode: 256 });"
       }
     ]
   },
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 8943,
+        "line": 10255,
         "text": "const when = (on) => (definition) => on ? ctx.tools.register(definition) : () => {};"
       },
       {
         "file": "lib/index.js",
-        "line": 11697,
+        "line": 12570,
         "text": "const inject = [\"tools\"];"
       }
     ]

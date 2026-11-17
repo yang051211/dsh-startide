@@ -1,0 +1,82 @@
+{
+  "name": "@philomelcc/dsh-interaction",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-17T22:17:06.386Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 2829,
+        "text": "fetch(API + \"/settings\", { cache: \"no-store\" })"
+      },
+      {
+        "file": "client.js",
+        "line": 2845,
+        "text": "fetch(API + \"/settings\", {"
+      },
+      {
+        "file": "client.js",
+        "line": 3053,
+        "text": "fetch(API + \"/settings\", { cache: \"no-store\" })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 79,
+        "text": "const raw = await readFile(SETTINGS_FILE, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 87,
+        "text": "await mkdir(dirname(SETTINGS_FILE), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 88,
+        "text": "await writeFile(SETTINGS_FILE, `${JSON.stringify(settings, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 29,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 385,
+        "text": "for (const tool of next) toolDisposers.push(ctx.tools.register(tool))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

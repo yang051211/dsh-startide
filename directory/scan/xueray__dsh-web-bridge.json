@@ -1,0 +1,95 @@
+{
+  "name": "@xueray/dsh-web-bridge",
+  "version": "0.4.8",
+  "scannedAt": "2026-11-17T22:16:55.325Z",
+  "icon": "xueray__dsh-web-bridge.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1435,
+        "text": "return window.fetch(API_BASE + path, init).then(async function (response) {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1880,
+        "text": "var response = await window.fetch(API_BASE + \"/image?fileId=\" + encodeURIComponent(file.id) + \"&retry=\" + (attempt * 4 + retry), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "import { mkdir, readFile, rename, unlink, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1051,
+        "text": "const value = (await readFile(join(composerPreferencesDir, mode), \"utf8\")).trim();"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1074,
+        "text": "await mkdir(composerPreferencesDir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1075,
+        "text": "await writeFile(temporary, String(enabled) + \"\\n\", { encoding: \"utf8\", flag: \"wx\", mode: 0o600 });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1078,
+        "text": "await unlink(temporary).catch(() => {});"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 679,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 754,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 809,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 862,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 974,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,106 @@
+{
+  "name": "dsh-pixel-dashboard",
+  "version": "2.13.0",
+  "scannedAt": "2026-11-17T22:17:04.361Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 755,
+        "text": "const response = await fetch(RATES_URL, { signal: controller.signal, headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 778,
+        "text": "const response = await fetch(RATES_URL, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1020,
+        "text": "const response = await fetch(url, { signal: controller.signal, headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1046,
+        "text": "const response = await fetch(TOGGLE_URL, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1336,
+        "text": "const response = await fetch(url, { signal: controller.signal, headers: { accept: 'application/json' } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/custom-rates.js",
+        "line": 49,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/custom-rates.js",
+        "line": 50,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/custom-rates.js",
+        "line": 114,
+        "text": "const { stat } = await import('node:fs/promises')"
+      },
+      {
+        "file": "lib/custom-rates.js",
+        "line": 122,
+        "text": "text = await readFile(this.path, 'utf8')"
+      },
+      {
+        "file": "lib/custom-rates.js",
+        "line": 168,
+        "text": "await mkdir(dirname(this.path), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 73,
+        "text": "const { spawn } = await import('node:child_process')"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 77,
+        "text": "const child = spawn('cmd', ['/c', 'start', '', 'dsh://open'], {"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 86,
+        "text": "const child = spawn(opener, ['dsh://open'], { detached: true, stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 187,
+      "text": "用量账本默认在 `$DSH_HOME/plugins/dsh-pixel-dashboard/usage-ledger.jsonl`，按 `sessionId:seq` 去重，"
+    }
+  ],
+  "skippedEntries": []
+}

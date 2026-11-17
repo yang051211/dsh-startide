@@ -1,0 +1,112 @@
+{
+  "name": "dsh-plugin-update-manager",
+  "version": "0.1.7",
+  "scannedAt": "2026-11-17T22:16:45.763Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 436,
+        "text": "var response = await fetch(API_PREFIX + \"/state\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 452,
+        "text": "var response = await fetch(API_PREFIX + path, init);"
+      },
+      {
+        "file": "lib/core/http.js",
+        "line": 18,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/core/http.js",
+        "line": 19,
+        "text": "import https from 'node:https'"
+      },
+      {
+        "file": "lib/core/http.js",
+        "line": 208,
+        "text": "response = await globalThis.fetch(url, { headers: options.headers ?? {}, signal, redirect: 'follow' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/diagnose.js",
+        "line": 11,
+        "text": "import { existsSync, promises as fs } from 'node:fs'"
+      },
+      {
+        "file": "lib/core/profile.js",
+        "line": 13,
+        "text": "import { access, readFile, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/core/profile.js",
+        "line": 14,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/core/profile.js",
+        "line": 54,
+        "text": "const text = await readFile(file, 'utf8')"
+      },
+      {
+        "file": "lib/core/remove.js",
+        "line": 15,
+        "text": "import { promises as fs } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/remove.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/core/remove.js",
+        "line": 244,
+        "text": "* @param {import('node:child_process').ChildProcess} child"
+      },
+      {
+        "file": "lib/core/remove.js",
+        "line": 250,
+        "text": "const killer = spawn('taskkill', ['/pid', String(child.pid), '/t', '/f'], {"
+      },
+      {
+        "file": "lib/core/remove.js",
+        "line": 304,
+        "text": "child = spawn(spec.file, spec.args, {"
+      },
+      {
+        "file": "lib/core/restart.js",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

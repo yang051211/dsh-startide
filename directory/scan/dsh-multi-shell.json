@@ -1,0 +1,77 @@
+{
+  "name": "dsh-multi-shell",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-17T22:17:03.663Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 35,
+        "text": "import { statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/shells.js",
+        "line": 10,
+        "text": "import { lstatSync } from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 68,
+        "text": "export const inject = [\"tools\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 839,
+        "text": "ctx.get(\"jobs\") === undefined ? ctx.tools.register(buildTool(undefined)) : undefined;"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 843,
+        "text": "const unregisterJobsTool = ctx.tools.register(buildTool(jobCtx.jobs));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 847,
+        "text": "foregroundOnly = ctx.tools.register(buildTool(undefined));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 193,
+        "text": "handle = subprocess.spawn({ ...spec, signal: deadline.signal });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 244,
+        "text": "const running = subprocess.spawn({ ...spec, signal: controller.signal });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,96 @@
+{
+  "name": "dsh-esp32-status",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-17T22:17:05.632Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 248,
+        "text": "const res = await fetch(url, init)"
+      },
+      {
+        "file": "client.js",
+        "line": 257,
+        "text": "return fetch(url, { signal: controller.signal }).finally(() => clearTimeout(timer))"
+      },
+      {
+        "file": "lib/server.mjs",
+        "line": 1,
+        "text": "import http from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/flash.mjs",
+        "line": 2,
+        "text": "import { existsSync, readdirSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/flash.mjs",
+        "line": 76,
+        "text": "const manifest = JSON.parse(readFileSync(FW_MANIFEST, 'utf8'))"
+      },
+      {
+        "file": "lib/server.mjs",
+        "line": 3,
+        "text": "import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/server.mjs",
+        "line": 110,
+        "text": "const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "lib/server.mjs",
+        "line": 119,
+        "text": "const saved = JSON.parse(readFileSync(this.tokenFile, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/flash.mjs",
+        "line": 1,
+        "text": "import { spawn, execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/flash.mjs",
+        "line": 170,
+        "text": "const child = spawn(args[0], args.slice(1), { stdio: ['ignore', 'pipe', 'pipe'] })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 69,
+      "text": "pip install esptool"
+    },
+    {
+      "file": "README.md",
+      "line": 153,
+      "text": "python3 -m venv .venv && .venv/bin/pip install platformio"
+    }
+  ],
+  "skippedEntries": []
+}

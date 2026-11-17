@@ -1,0 +1,110 @@
+{
+  "name": "dsh-rss-news-browser-fetch",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-17T22:17:06.509Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cdp.js",
+        "line": 29,
+        "text": "const cdp = new Cdp(new WebSocket(wsUrl));"
+      },
+      {
+        "file": "lib/instance.js",
+        "line": 85,
+        "text": "const r = await fetch(`http://127.0.0.1:${port}/json/version`, { signal: AbortSignal.timeout(1500) });"
+      },
+      {
+        "file": "lib/service.js",
+        "line": 4,
+        "text": "*   fetch(domain, url, init?)        唯一抓取面：在域的轻量同源页内执行 fetch（不暴露裸 evaluate）"
+      },
+      {
+        "file": "lib/service.js",
+        "line": 50,
+        "text": "async fetch(domain, url, init) {"
+      },
+      {
+        "file": "lib/tabs.js",
+        "line": 149,
+        "text": "const expr = `fetch(${JSON.stringify(url)}, ${JSON.stringify(init ?? {})})"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/instance.js",
+        "line": 9,
+        "text": "import { mkdtempSync, mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/instance.js",
+        "line": 65,
+        "text": "mkdirSync(this.profileDir, { recursive: true });"
+      },
+      {
+        "file": "lib/locate.js",
+        "line": 2,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/service.js",
+        "line": 11,
+        "text": "import { rm } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/service.js",
+        "line": 104,
+        "text": "await rm(this.dataDir, { recursive: true, force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/instance.js",
+        "line": 8,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/instance.js",
+        "line": 60,
+        "text": "this.starting ??= this.spawn(firstUrl).finally(() => { this.starting = undefined; });"
+      },
+      {
+        "file": "lib/instance.js",
+        "line": 63,
+        "text": "async spawn(firstUrl) {"
+      },
+      {
+        "file": "lib/instance.js",
+        "line": 78,
+        "text": "const proc = spawn(this.binary, args, { detached: true, stdio: 'ignore' });"
+      },
+      {
+        "file": "lib/locate.js",
+        "line": 3,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

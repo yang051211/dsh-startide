@@ -1,0 +1,107 @@
+{
+  "name": "specrune-dsh-host",
+  "version": "0.10.1",
+  "scannedAt": "2026-11-17T22:16:47.998Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "panel/lib/client.js",
+        "line": 68,
+        "text": "async get(path) { return (await fetch(path)).json(); },"
+      },
+      {
+        "file": "panel/lib/client.js",
+        "line": 69,
+        "text": "post: (path) => fetch(path, { method: \"POST\" }).then((r) => r.json()),"
+      },
+      {
+        "file": "panel/lib/client.js",
+        "line": 2136,
+        "text": "const r = await fetch(\"/_dsh/desktop/pick-directory\", { method: \"POST\", headers: { accept: \"application/json\" } });"
+      },
+      {
+        "file": "panel/lib/client.js",
+        "line": 2763,
+        "text": "fetch(\"/specrune/ui-state\", { cache: \"no-store\" }).then((r) => r.json())"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "locate.js",
+        "line": 20,
+        "text": "import { existsSync } from \"node:fs\";"
+      },
+      {
+        "file": "panel_follow.js",
+        "line": 8,
+        "text": "import { mkdirSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "panel_follow.js",
+        "line": 17,
+        "text": "mkdirSync(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "panel_follow.js",
+        "line": 18,
+        "text": "writeFileSync(file, repoRoot + \"\\n\", \"utf8\");"
+      },
+      {
+        "file": "panel/lib/index.js",
+        "line": 204,
+        "text": "try { text = readFileSync(file, \"utf8\"); } catch { return []; }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "panel/lib/index.js",
+        "line": 407,
+        "text": "subSvc.subprocess.spawn({"
+      },
+      {
+        "file": "panel/lib/index.js",
+        "line": 438,
+        "text": ".then((bin) => subprocess.spawn({"
+      },
+      {
+        "file": "panel/lib/index.js",
+        "line": 469,
+        "text": "const handle = subprocess.spawn({"
+      },
+      {
+        "file": "panel/lib/index.js",
+        "line": 1496,
+        "text": "const handle = subprocess.spawn({"
+      },
+      {
+        "file": "panel/test/clone-route.test.mjs",
+        "line": 5,
+        "text": "import { execFile, execFileSync } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

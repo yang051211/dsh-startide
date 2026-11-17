@@ -1,0 +1,91 @@
+{
+  "name": "dsh-weknora-ops",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-17T22:17:03.352Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/api.ts",
+        "line": 78,
+        "text": "const res = await fetch(cfg.baseUrl + path, { method, headers, body, signal: ctrl.signal });"
+      },
+      {
+        "file": "src/api.ts",
+        "line": 89,
+        "text": "const res = await fetch(baseUrl.replace(/\\/+$/, \"\") + \"/health\", { signal: AbortSignal.timeout(10_000) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/api.ts",
+        "line": 2,
+        "text": "import { readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "src/api.ts",
+        "line": 37,
+        "text": "const text = readFileSync(file, \"utf8\");"
+      },
+      {
+        "file": "src/commands.ts",
+        "line": 4,
+        "text": "import { readFile, stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "src/commands.ts",
+        "line": 121,
+        "text": "fd.append(\"file\", new Blob([await readFile(file)]), file);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/weknora-ops.js",
+        "line": 9,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "bin/weknora-ops.js",
+        "line": 16,
+        "text": "const child = spawnSync(process.execPath, [\"--import\", \"tsx\", entry, ...process.argv.slice(2)], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "cordis.patch.yml",
+      "line": 9,
+      "text": "#   npm i -g vicfei/dsh-weknora-ops                       # puts weknora-ops on PATH"
+    },
+    {
+      "file": "README.md",
+      "line": 42,
+      "text": "npm i -g dsh-weknora-ops        # exposes the weknora-ops CLI"
+    },
+    {
+      "file": "README.zh-CN.md",
+      "line": 40,
+      "text": "npm i -g dsh-weknora-ops        # 暴露 weknora-ops CLI"
+    }
+  ],
+  "skippedEntries": []
+}

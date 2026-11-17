@@ -1,0 +1,77 @@
+{
+  "name": "@ds-hu/dsh-better-search",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-17T22:17:06.014Z",
+  "icon": "ds-hu__dsh-better-search.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 139,
+        "text": "const response = await fetch(API_BASE + path, request);"
+      },
+      {
+        "file": "lib/search/http.js",
+        "line": 58,
+        "text": "let fetchImpl = (input, init) => globalThis.fetch(input, init);"
+      },
+      {
+        "file": "lib/search/http.js",
+        "line": 75,
+        "text": "fetchImpl = (input, init) => globalThis.fetch(input, init);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/better-search.mjs",
+        "line": 21,
+        "text": "import { existsSync, readFileSync, readdirSync, rmSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "bin/better-search.mjs",
+        "line": 61,
+        "text": "document = JSON.parse(readFileSync(storeFile(), 'utf8'));"
+      },
+      {
+        "file": "bin/better-search.mjs",
+        "line": 99,
+        "text": "rmSync(dir, { recursive: true, force: true });"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 14,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 166,
+        "text": "const svg = await readFile(join(BRAND_DIR, brand[1]));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "web",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

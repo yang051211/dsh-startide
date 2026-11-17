@@ -1,0 +1,61 @@
+{
+  "name": "dsh-usage-overview",
+  "version": "1.1.4",
+  "scannedAt": "2026-11-17T22:16:50.456Z",
+  "icon": "dsh-usage-overview.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1342,
+        "text": "const response = await fetch(`${USAGE_STATS_PATH}?range=${encodeURIComponent(query)}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/log-fold.js",
+        "line": 1,
+        "text": "import { readFileSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/log-fold.js",
+        "line": 7,
+        "text": "const compressed = readFileSync(path);"
+      },
+      {
+        "file": "lib/usage.js",
+        "line": 1,
+        "text": "import { readdir, readFile, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/usage.js",
+        "line": 35,
+        "text": "const text = await readFile(path, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

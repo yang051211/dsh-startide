@@ -1,7 +1,7 @@
 {
   "name": "@whaletalk/dsh-codex-collab",
-  "version": "0.1.10",
-  "scannedAt": "2026-10-26T10:14:59.917Z",
+  "version": "0.1.12",
+  "scannedAt": "2026-11-17T22:17:02.274Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -67,29 +67,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "cordis.patch.yml",
-        "line": 21,
-        "text": "#    可以把活交回 Codex。两端都是现成的（DSH 自带 @deepseek-ai/dsh-mcp-client，"
-      },
-      {
-        "file": "cordis.patch.yml",
-        "line": 38,
-        "text": "name: '@deepseek-ai/dsh-mcp-client'"
-      },
-      {
         "file": "harness/dsh-bridge.mjs",
         "line": 73,
         "text": "export const inject = ['webServer', 'agents', 'subagents', 'tools']"
       },
       {
         "file": "harness/dsh-bridge.mjs",
-        "line": 3464,
+        "line": 3475,
         "text": "ctx.effect(() => ctx.tools.register(defineTool({"
       },
       {
         "file": "harness/dsh-bridge.mjs",
-        "line": 3575,
+        "line": 3586,
         "text": "ctx.effect(() => ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "templates/codex-mcp/cordis.patch.yml",
+        "line": 9,
+        "text": "#   - DSH 侧：@deepseek-ai/dsh-mcp-client（harness 自带）——连外部 MCP 服务器，"
+      },
+      {
+        "file": "templates/codex-mcp/cordis.patch.yml",
+        "line": 10,
+        "text": "#     并把它们的工具以 mcp__<serverName>__<tool> 注册进 ctx.tools。"
       }
     ]
   },
@@ -134,7 +134,7 @@
     },
     {
       "file": "README.md",
-      "line": 143,
+      "line": 149,
       "text": "npm install -g @whaletalk/dsh-codex-collab@X.Y.Z"
     }
   ],

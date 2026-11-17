@@ -1,7 +1,7 @@
 {
   "name": "dsh-awesome-optimizer",
-  "version": "3.1.0",
-  "scannedAt": "2026-11-15T20:14:33.689Z",
+  "version": "3.3.0",
+  "scannedAt": "2026-11-17T22:16:45.094Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -11,6 +11,21 @@
     "hit": true,
     "evidence": [
       {
+        "file": "scripts/benchmark-outline.mjs",
+        "line": 2,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "scripts/benchmark-outline.mjs",
+        "line": 32,
+        "text": "get(name) { return name === 'fs' ? filesystem : undefined; }"
+      },
+      {
+        "file": "scripts/benchmark-outline.mjs",
+        "line": 99,
+        "text": "if (outputPath) await fs.writeFile(outputPath, JSON.stringify(report, null, 2) + '\\n', 'utf8');"
+      },
+      {
         "file": "scripts/typecheck.mjs",
         "line": 1,
         "text": "import fs from 'node:fs';"
@@ -19,21 +34,6 @@
         "file": "scripts/typecheck.mjs",
         "line": 31,
         "text": "const pkg = JSON.parse(fs.readFileSync(pkgFile, 'utf8'));"
-      },
-      {
-        "file": "scripts/typecheck.mjs",
-        "line": 62,
-        "text": "const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));"
-      },
-      {
-        "file": "src/composite-tools.js",
-        "line": 1,
-        "text": "import fs from 'node:fs/promises';"
-      },
-      {
-        "file": "src/composite-tools.js",
-        "line": 145,
-        "text": "const content = await fsService.readFile(filePath, { cwd, signal });"
       }
     ]
   },
@@ -42,27 +42,27 @@
     "evidence": [
       {
         "file": "src/composite-tools.js",
-        "line": 301,
+        "line": 310,
         "text": "ctx.tools.register({"
       },
       {
         "file": "src/composite-tools.js",
-        "line": 460,
+        "line": 467,
         "text": "const canRead = contextLines > 0 && ctx.tools.get('read', exec.agent) !== undefined;"
       },
       {
         "file": "src/composite-tools.js",
-        "line": 572,
+        "line": 516,
         "text": "}, { when: ({ agent }) => ctx.tools.get('grep', agent) !== undefined });"
       },
       {
         "file": "src/composite-tools.js",
-        "line": 576,
+        "line": 520,
         "text": "ctx.tools.register({"
       },
       {
         "file": "src/composite-tools.js",
-        "line": 795,
+        "line": 743,
         "text": "}, { when: ({ agent }) => ctx.tools.get('edit', agent) !== undefined });"
       }
     ]

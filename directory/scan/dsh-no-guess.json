@@ -1,0 +1,77 @@
+{
+  "name": "dsh-no-guess",
+  "version": "0.5.1",
+  "scannedAt": "2026-11-17T22:16:52.370Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 133,
+        "text": "fetch(API + '/config', { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 158,
+        "text": "return fetch(API + '/config', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import { appendFileSync, copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, renameSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "const pkg = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 246,
+        "text": "mkdirSync(next, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 281,
+        "text": "mkdirSync(dataDir(), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 308,
+        "text": "raw = JSON.parse(readFileSync(configPath(), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "export const inject = ['tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

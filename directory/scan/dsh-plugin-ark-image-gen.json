@@ -1,0 +1,87 @@
+{
+  "name": "dsh-plugin-ark-image-gen",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-17T22:16:58.930Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/ark.mjs",
+        "line": 94,
+        "text": "const res = await fetch(`${cfg.baseUrl}/images/generations`, {"
+      },
+      {
+        "file": "lib/ark.mjs",
+        "line": 108,
+        "text": "? Buffer.from(await (await fetch(got, { signal: AbortSignal.timeout(timeoutMs) })).arrayBuffer())"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 164,
+        "text": "const { readFile } = await import('node:fs/promises');"
+      },
+      {
+        "file": "index.js",
+        "line": 170,
+        "text": "body: await readFile(SKILL_BODY_URL, 'utf8'),"
+      },
+      {
+        "file": "lib/ark.mjs",
+        "line": 5,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/ark.mjs",
+        "line": 60,
+        "text": "return `data:image/${ext};base64,${fs.readFileSync(abs).toString('base64')}`;"
+      },
+      {
+        "file": "lib/ark.mjs",
+        "line": 123,
+        "text": "fs.mkdirSync(cfg.outDir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 180,
+        "text": "ctx.tools.register(statusTool);"
+      },
+      {
+        "file": "index.js",
+        "line": 181,
+        "text": "ctx.tools.register(generateTool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,91 @@
+{
+  "name": "@fgfg163/dsh-agentmemory-plugin",
+  "version": "0.12.0",
+  "scannedAt": "2026-11-17T22:16:47.862Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1080,
+        "text": "const response = await fetch(`${url}/agentmemory${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "syncSync, mkdirSync, openSync, readFileSync, readdirSync, realpathSync, renameSync, statSync, unlinkSync, utimesSync, writeFileSync, writeSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 35,
+        "text": "content = readFileSync(process.env[\"AGENTMEMORY_ENV_FILE\"] || join(homedir(), \".agentmemory\", \".env\"), \"utf-8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 56,
+        "text": "return usable(readFileSync(path, \"utf-8\"));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 520,
+        "text": "mkdirSync(dir, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 540,
+        "text": "if (Date.now() - statSync(path).mtimeMs > staleMs) unlinkSync(path);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import { execSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 284,
+        "text": "const [top, gitDir, commonDir] = execSync(\"git rev-parse --show-toplevel --git-dir --git-common-dir\", {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 24,
+      "text": "eparate package. Changing a single line therefore means patching a 200k-line repo, and **every `npm i -g @agentmemory/agentmemory` upgrade reverts the change**."
+    },
+    {
+      "file": "README.md",
+      "line": 71,
+      "text": "npm i -g @agentmemory/agentmemory"
+    },
+    {
+      "file": "README.md",
+      "line": 80,
+      "text": "npm i -g @fgfg163/dsh-agentmemory-plugin"
+    }
+  ],
+  "skippedEntries": []
+}

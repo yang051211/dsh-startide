@@ -1,34 +1,34 @@
 {
   "name": "dsh-context-relay",
-  "version": "0.5.0",
-  "scannedAt": "2026-11-10T20:53:45.219Z",
+  "version": "0.11.0",
+  "scannedAt": "2026-11-17T22:16:58.855Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 83,
-        "text": "fetch(API, { headers: { accept: \"application/json\" }, cache: \"no-store\" })"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 206,
-        "text": "fetch(SETTINGS_API, { headers: { accept: \"application/json\" }, cache: \"no-store\" })"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 216,
-        "text": "fetch(SETTINGS_API, {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 1233,
+        "line": 66,
         "text": "fetch(PANEL_API + \"?sessionId=\" + encodeURIComponent(sessionId), { headers: { accept: \"application/json\" }, cache: \"no-store\" })"
       },
       {
         "file": "lib/client.js",
-        "line": 1334,
+        "line": 76,
+        "text": "fetch(WORK_ITEMS_API + \"?sessionId=\" + encodeURIComponent(sessionId), { headers: { accept: \"application/json\" }, cache: \"no-store\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 204,
+        "text": "fetch(SETTINGS_API, { headers: { accept: \"application/json\" }, cache: \"no-store\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 214,
+        "text": "fetch(SETTINGS_API, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1257,
         "text": "fetch(PANEL_API, {"
       }
     ]
@@ -38,27 +38,27 @@
     "evidence": [
       {
         "file": "lib/agent/chain.js",
-        "line": 13,
-        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
+        "line": 14,
+        "text": "import { existsSync, readdirSync, readFileSync } from 'node:fs';"
       },
       {
         "file": "lib/agent/chain.js",
-        "line": 90,
+        "line": 117,
+        "text": "try { previous = readFileSync(path, 'utf8'); } catch (error) { if (error.code !== 'ENOENT') throw error; }"
+      },
+      {
+        "file": "lib/agent/chain.js",
+        "line": 127,
         "text": "try { raw = readFileSync(path, 'utf8'); } catch { return []; }"
       },
       {
         "file": "lib/agent/chain.js",
-        "line": 102,
-        "text": "mkdirSync(rootOf(cwd), { recursive: true });"
+        "line": 140,
+        "text": "try { entries.push(...parseLines(readFileSync(join(rootOf(cwd), name), 'utf8'))); } catch { /* 坏文件跳过：归档可降级，不阻断召回 */ }"
       },
       {
         "file": "lib/agent/chain.js",
-        "line": 105,
-        "text": "appendFileSync(path, JSON.stringify(normalizeChainEntry(input)) + '\\n', 'utf8');"
-      },
-      {
-        "file": "lib/agent/chain.js",
-        "line": 106,
+        "line": 161,
         "text": "const raw = readFileSync(path, 'utf8');"
       }
     ]
@@ -68,17 +68,12 @@
     "evidence": [
       {
         "file": "lib/agent.js",
-        "line": 25,
+        "line": 33,
         "text": "export const inject = ['tools', 'systemPrompt'];"
       },
       {
         "file": "lib/agent.js",
-        "line": 175,
-        "text": "          try { runtimeCtx.tools.register(definition); } catch (error) { ctx.logger?.warn?.('[dsh-context-relay] ' + label + ' skipped ' + definition.name + ': "
-      },
-      {
-        "file": "lib/agent.js",
-        "line": 267,
+        "line": 323,
         "text": "ctx.effect(() => ctx.tools.register(definition), 'dsh-context-relay: ' + definition.name);"
       }
     ]

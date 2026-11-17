@@ -1,15 +1,20 @@
 {
   "name": "dsh-blue-team-mode",
-  "version": "1.5.4",
-  "scannedAt": "2026-11-15T20:14:30.734Z",
+  "version": "2.0.0",
+  "scannedAt": "2026-11-17T22:16:40.532Z",
   "icon": "dsh-blue-team-mode.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 850,
+        "line": 918,
         "text": "const response = await fetch(\"/blue/api\", {"
+      },
+      {
+        "file": "lib/gateway.js",
+        "line": 6,
+        "text": "import { createServer, request as httpRequest } from 'node:http'"
       },
       {
         "file": "scripts/decoy-server.mjs",
@@ -17,25 +22,35 @@
         "text": "import { createServer } from 'node:http'"
       },
       {
-        "file": "scripts/test-decoy-server.mjs",
-        "line": 42,
-        "text": "const admin = await fetch(base + '/admin')"
+        "file": "scripts/decoy-server.mjs",
+        "line": 10,
+        "text": "import { createServer as createHttpsServer } from 'node:https'"
       },
       {
-        "file": "scripts/test-decoy-server.mjs",
-        "line": 46,
-        "text": "const git = await fetch(base + '/.git/config')"
-      },
-      {
-        "file": "scripts/test-decoy-server.mjs",
-        "line": 50,
-        "text": "const backup = await fetch(base + '/backup.sql')"
+        "file": "scripts/maintenance-check.mjs",
+        "line": 44,
+        "text": "const res = await fetch(url, { signal: AbortSignal.timeout(15000), headers: { 'user-agent': 'dsh-blue-maintenance' } })"
       }
     ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/anchor.js",
+        "line": 7,
+        "text": "import { existsSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/anchor.js",
+        "line": 12,
+        "text": "if (existsSync(path)) return { path, privateKey: readFileSync(path, 'utf8') }"
+      },
+      {
+        "file": "lib/anchor.js",
+        "line": 15,
+        "text": "writeFileSync(path, pem, { encoding: 'utf8', mode: 0o600 })"
+      },
       {
         "file": "lib/bindings.js",
         "line": 8,
@@ -45,21 +60,6 @@
         "file": "lib/bindings.js",
         "line": 19,
         "text": "const data = JSON.parse(readFileSync(file, 'utf8'))"
-      },
-      {
-        "file": "lib/bindings.js",
-        "line": 27,
-        "text": "mkdirSync(root, { recursive: true })"
-      },
-      {
-        "file": "lib/bindings.js",
-        "line": 30,
-        "text": "writeFileSync(temp, JSON.stringify(map, null, 2), 'utf8')"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 13,
-        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'"
       }
     ]
   },
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/tools.js",
-        "line": 85,
+        "line": 111,
         "text": "export const inject = ['blueTeam', 'tools']"
       },
       {
         "file": "lib/tools.js",
-        "line": 577,
+        "line": 653,
         "text": "ctx.effect(() => ctx.tools.register({ ...definition, execute }))"
       }
     ]
@@ -88,7 +88,7 @@
       },
       {
         "file": "lib/tools.js",
-        "line": 470,
+        "line": 546,
         "text": "const result = spawnSync(command, args, {"
       },
       {
@@ -102,9 +102,9 @@
         "text": "import { execFileSync } from 'node:child_process'"
       },
       {
-        "file": "scripts/test-decoy-server.mjs",
-        "line": 1,
-        "text": "import { spawn } from 'node:child_process'"
+        "file": "scripts/maintenance-check.mjs",
+        "line": 10,
+        "text": "import { execFileSync } from 'node:child_process'"
       }
     ]
   },

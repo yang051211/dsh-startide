@@ -1,0 +1,78 @@
+{
+  "name": "@lyra_wang/dsh-session-board",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-17T22:16:50.661Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 53,
+        "text": "const response = await fetch(path, init);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 23,
+        "text": "import { mkdirSync, readFileSync, writeFileSync, rmSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 206,
+        "text": "const raw = JSON.parse(readFileSync(statePath(sessionId), 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 225,
+        "text": "mkdirSync(storeDir(), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 226,
+        "text": "writeFileSync("
+      },
+      {
+        "file": "index.js",
+        "line": 585,
+        "text": "rmSync(statePath(sessionId), { force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "export const inject = ['webServer', 'tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 613,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

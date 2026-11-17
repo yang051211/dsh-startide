@@ -1,15 +1,35 @@
 {
   "name": "dsh-apis-plugin",
-  "version": "0.3.1",
-  "scannedAt": "2026-10-26T10:07:18.069Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-17T22:17:02.366Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "api-tools.js",
-        "line": 301,
+        "line": 315,
         "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "client.js",
+        "line": 193,
+        "text": "\t\t\t\tcurl: (b) => `curl -X POST ${b}/v1/chat/completions \\\\\\n  -H \"Content-Type: application/json\" \\\\\\n  -d '{\"messages\":[{\"role\":\"user\",\"content\":[{\"type\":\"text"
+      },
+      {
+        "file": "client.js",
+        "line": 198,
+        "text": "curl: (b) => `curl -X POST ${b}/ask \\\\\\n  -H \"Content-Type: application/json\" \\\\\\n  -d '{\"task\":\"运行一下测试并总结结果\"}'`,"
+      },
+      {
+        "file": "rest-server.js",
+        "line": 7,
+        "text": "import { createServer } from 'node:http'"
+      },
+      {
+        "file": "rest-server.js",
+        "line": 58,
+        "text": "const r = await fetch(url)"
       }
     ]
   },
@@ -23,22 +43,22 @@
       },
       {
         "file": "api-tools.js",
-        "line": 18,
+        "line": 19,
         "text": "for (const raw of readFileSync(file, 'utf8').replace(/^\\uFEFF/, '').split(/\\r?\\n/)) {"
       },
       {
         "file": "api-tools.js",
-        "line": 71,
+        "line": 72,
         "text": "return readFileSync(join(dir, 'api_doc.md'), 'utf8').replace(/^\\uFEFF/, '')"
       },
       {
         "file": "api-tools.js",
-        "line": 95,
+        "line": 96,
         "text": "const m = readFileSync(join(dir, 'cordis.patch.yml'), 'utf8').match(/^\\s*-\\s*id:\\s*(\\S+)\\s*$/m)"
       },
       {
         "file": "api-tools.js",
-        "line": 103,
+        "line": 104,
         "text": "const code = readFileSync(file, 'utf8')"
       }
     ]
@@ -48,17 +68,17 @@
     "evidence": [
       {
         "file": "api-tools.js",
-        "line": 145,
-        "text": "const inject = ['tools', 'settings']"
+        "line": 148,
+        "text": "const inject = ['tools', 'settings', 'agents', 'sessions', 'agentDefaultModel']"
       },
       {
         "file": "api-tools.js",
-        "line": 243,
+        "line": 257,
         "text": "ctx.tools.register({"
       },
       {
         "file": "api-tools.js",
-        "line": 262,
+        "line": 276,
         "text": "ctx.tools.register({"
       }
     ]

@@ -1,0 +1,86 @@
+{
+  "name": "dsh-plugin-skin",
+  "version": "0.7.1",
+  "scannedAt": "2026-11-17T22:16:57.985Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { createReadStream, existsSync, statSync, mkdirSync, readFileSync, writeFileSync, rmSync, openSync, closeSync, appendFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "index.js",
+        "line": 392,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 393,
+        "text": "writeFileSync(path, JSON.stringify(payload, null, 2), \"utf8\");"
+      },
+      {
+        "file": "index.js",
+        "line": 398,
+        "text": "const raw = JSON.parse(readFileSync(desktopPaths().pid, \"utf8\"));"
+      },
+      {
+        "file": "index.js",
+        "line": 425,
+        "text": "const raw = JSON.parse(readFileSync(join(RUNTIME_DIR, \"pet-closed.json\"), \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "index.js",
+        "line": 285,
+        "text": "const handle = service.spawn({"
+      },
+      {
+        "file": "index.js",
+        "line": 363,
+        "text": "child = spawn(exe, argv.slice(1), { stdio: \"ignore\", windowsHide: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 550,
+        "text": "route = \"child_process\";"
+      },
+      {
+        "file": "index.js",
+        "line": 552,
+        "text": "const child = spawn(exe, argv.slice(1), {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
