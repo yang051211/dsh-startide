@@ -1,35 +1,35 @@
 {
   "name": "@lininn/ds-bot",
-  "version": "0.3.3",
-  "scannedAt": "2026-11-10T08:48:44.075Z",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-17T09:25:43.042Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 1472,
+        "line": 13436,
         "text": "response = await fetch(ROUTE, {"
       },
       {
-        "file": "src/host/update.js",
-        "line": 66,
-        "text": "const response = await fetch(url, { headers: { accept: 'application/json', ...headers }, signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) })"
+        "file": "link.js",
+        "line": 7620,
+        "text": "const socket = this.options.createSocket?.(this.options.url) ?? new WebSocket(this.options.url);"
       },
       {
-        "file": "web-search.js",
-        "line": 567,
-        "text": "response = await deps.fetch(candidate.url, {"
+        "file": "link.js",
+        "line": 7883,
+        "text": "this.socket = this.options.createSocket?.(this.url) ?? new WebSocket(this.url);"
       },
       {
-        "file": "web-search.js",
-        "line": 772,
-        "text": "fetch: (url, init) => fetch(url, init),"
+        "file": "src/host/connectors/gateway.js",
+        "line": 7,
+        "text": "import { createServer } from 'node:http'"
       },
       {
-        "file": "web-search.js",
-        "line": 773,
-        "text": "webFetch: (request, signal) => ctx.web.fetch(request, signal),"
+        "file": "src/host/connectors/gateway.js",
+        "line": 9,
+        "text": "import { request as httpsRequest } from 'node:https'"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 51,
+        "line": 56,
         "text": "export const inject = ['llm', 'tools', 'systemPrompt', 'sessionController', 'sessions', 'sessionTitle', 'workspaceRegistry', 'connection']"
       },
       {
@@ -82,14 +82,14 @@
         "text": "const MCP_CLIENT = '@deepseek-ai/dsh-mcp-client'"
       },
       {
-        "file": "src/host/connectors.js",
-        "line": 14,
-        "text": "const MCP_CLIENT = '@deepseek-ai/dsh-mcp-client'"
+        "file": "src/host/computer/index.js",
+        "line": 226,
+        "text": "const denyNames = agent => (typeof ctx.tools?.schemas === 'function' ? ctx.tools.schemas(agent) : [])"
       },
       {
-        "file": "src/host/steer.js",
-        "line": 122,
-        "text": "if (typeof ctx.tools?.get !== 'function') return"
+        "file": "src/host/computer/index.js",
+        "line": 260,
+        "text": "if (def !== undefined && typeof agent.ctx.tools?.register === 'function') {"
       }
     ]
   },
@@ -107,19 +107,19 @@
         "text": "child = spawn(dsh.command, [...dsh.prefix, ...dshArgv(options)], {"
       },
       {
+        "file": "src/host/browser/script-runner.js",
+        "line": 5,
+        "text": "import { fork } from 'node:child_process'"
+      },
+      {
+        "file": "src/host/computer/mac-helper.js",
+        "line": 5,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
         "file": "src/host/dsh-update.js",
         "line": 9,
         "text": "import { spawn } from 'node:child_process'"
-      },
-      {
-        "file": "src/host/dsh-update.js",
-        "line": 150,
-        "text": "const runner = rt.dshSpawn ?? ((command, argv, options) => spawn(command, argv, options))"
-      },
-      {
-        "file": "src/host/relay.js",
-        "line": 15,
-        "text": "import { execFileSync } from 'node:child_process'"
       }
     ]
   },
@@ -127,8 +127,10 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
-  "minifiedFiles": [],
+  "dependencies": 9,
+  "minifiedFiles": [
+    "client.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [
     "connection",
@@ -146,11 +148,6 @@
       "file": "README.md",
       "line": 65,
       "text": "npm install -g @lininn/ds-bot        # then: ds-bot <command>"
-    },
-    {
-      "file": "README.md",
-      "line": 299,
-      "text": "npm install -g @lininn/ds-bot"
     }
   ],
   "skippedEntries": []

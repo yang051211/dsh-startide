@@ -1,15 +1,35 @@
 {
   "name": "@chengxianglibra/dsh-data-analysis",
-  "version": "0.2.3",
-  "scannedAt": "2026-10-26T10:11:23.389Z",
+  "version": "0.3.4",
+  "scannedAt": "2026-11-17T09:25:38.357Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/rpc.js",
-        "line": 23,
-        "text": "fetch(request) {"
+        "file": "lib/client-composition.js",
+        "line": 5535,
+        "text": ",t,r){let n=VRe(r.env);await globalThis.fetch(n.captureUrl,{method:\"POST\",headers:{\"content-type\":\"application/json\"},body:JSON.stringify({api_key:n.apiKey,even"
+      },
+      {
+        "file": "lib/client-composition.js",
+        "line": 5788,
+        "text": "eepSeq|derivation|dirOf|div|elem(?:At)?|fetch(?:Tarball|url)|filter(?:Source)?|fromJSON|genList|getAttr|getEnv|hasAttr|hashString|head|import|intersectAttrs|is("
+      },
+      {
+        "file": "lib/client-composition.js",
+        "line": 5814,
+        "text": "ndGroup(),e.gullet.beginGroup();var r=e.fetch().text;if(r===\"&\"||r===\"\\\\\\\\\")e.consume();else if(r===\"\\\\end\"){t[t.length-1].length===0&&t.pop();break}else throw "
+      },
+      {
+        "file": "lib/client-composition.js",
+        "line": 6065,
+        "text": "funcName:r}=e;t.consumeSpaces();var n=t.fetch();if(Dye[n.text])return(r===\"\\\\global\"||r===\"\\\\\\\\globallong\")&&(n.text=Dye[n.text]),Mr(t.parseFunction(),\"internal"
+      },
+      {
+        "file": "lib/client-composition.js",
+        "line": 6069,
+        "text": "}expect(t,r){if(r===void 0&&(r=!0),this.fetch().text!==t)throw new Ve(\"Expected '\"+t+\"', got '\"+this.fetch().text+\"'\",this.fetch());r&&this.consume()}consume(){"
       }
     ]
   },
@@ -17,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/client-composition.js",
-        "line": 591,
-        "text": "e=32*1024*1024;var Srt=16*1024;function rm(e,t){if(!Array.isArray(e)||e.length>t)throw new Error(\"invalid-catalog\");return e}function Ou(e){return Et(e,ibe,!0)}"
+        "file": "lib/bin/environment.js",
+        "line": 35,
+        "text": "import { access, constants, realpath, stat } from \"node:fs/promises\";"
       },
       {
-        "file": "lib/environment/binding.js",
-        "line": 2,
-        "text": "import { access, constants, realpath, stat } from 'node:fs/promises';"
+        "file": "lib/bin/environment.js",
+        "line": 40,
+        "text": "import { realpathSync } from \"node:fs\";"
       },
       {
-        "file": "lib/environment/runtime.js",
-        "line": 2,
-        "text": "import { constants } from 'node:fs';"
+        "file": "lib/bin/environment.js",
+        "line": 485,
+        "text": "import { constants as constants2 } from \"node:fs\";"
       },
       {
-        "file": "lib/environment/runtime.js",
-        "line": 3,
-        "text": "import { access, chmod, cp, mkdir, readFile, realpath, rename, rm, stat, writeFile, } from 'node:fs/promises';"
+        "file": "lib/bin/environment.js",
+        "line": 486,
+        "text": "import { access as access2, chmod, cp, lstat, mkdir, readFile, realpath as realpath2, rename, rm, stat as stat2, writeFile } from \"node:fs/promises\";"
       },
       {
-        "file": "lib/environment/runtime.js",
-        "line": 255,
-        "text": "const lines = (await readFile(skillFile, 'utf8')).split(/\\r?\\n/);"
+        "file": "lib/bin/environment.js",
+        "line": 692,
+        "text": "const lines = (await readFile(skillFile, \"utf8\")).split(/\\r?\\n/);"
       }
     ]
   },
@@ -48,13 +68,23 @@
     "evidence": [
       {
         "file": "lib/disclosure/activation.js",
-        "line": 293,
+        "line": 536,
         "text": "const inheritedSkillTool = this.agent.ctx.tools.get(SKILL_TOOL_NAME, scopeParentOf(this.agent));"
       },
       {
         "file": "lib/disclosure/activation.js",
-        "line": 295,
+        "line": 538,
         "text": "this.agent.ctx.tools.get(SKILL_TOOL_NAME, this.agent) === inheritedSkillTool);"
+      },
+      {
+        "file": "lib/next-steps/agent.js",
+        "line": 23,
+        "text": "const presentationTool = agent.ctx.tools.get(MARIVO_PRESENT_TOOL_NAME, agent);"
+      },
+      {
+        "file": "lib/next-steps/agent.js",
+        "line": 44,
+        "text": "agent.ctx.tools.get(exec.name, agent) === presentationTool) {"
       },
       {
         "file": "lib/tool-lifecycle.js",
@@ -67,19 +97,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/environment/subprocess.js",
-        "line": 1,
-        "text": "import { spawn } from 'node:child_process';"
+        "file": "lib/bin/environment.js",
+        "line": 72,
+        "text": "import { spawn } from \"node:child_process\";"
       },
       {
-        "file": "lib/environment/subprocess.js",
-        "line": 68,
+        "file": "lib/bin/environment.js",
+        "line": 131,
         "text": "const spawnChild = () => spawn(request.executable, request.args, {"
       },
       {
-        "file": "lib/environment/subprocess.js",
-        "line": 101,
-        "text": "const killer = spawn('taskkill', ['/pid', String(child.pid), '/t', '/f'], {"
+        "file": "lib/bin/environment.js",
+        "line": 163,
+        "text": "const killer = spawn(\"taskkill\", [\"/pid\", String(child.pid), \"/t\", \"/f\"], {"
+      },
+      {
+        "file": "lib/client-composition.js",
+        "line": 5535,
+        "text": "ction ttn(e){let t=e.getBuiltinModule?.(\"node:child_process\")?.execFile;return t?new Promise(r=>{try{t(\"git\",[\"config\",\"--local\",\"--get\",\"remote.origin.url\"],{e"
+      },
+      {
+        "file": "lib/client-composition.js",
+        "line": 9730,
+        "text": "ction b8r(e){let t=e.getBuiltinModule?.(\"node:child_process\")?.execFile;return t?new Promise(r=>{try{t(\"git\",[\"config\",\"--local\",\"--get\",\"remote.origin.url\"],{e"
       }
     ]
   },
@@ -87,12 +127,12 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 4,
+  "dependencies": 15,
   "minifiedFiles": [
     "lib/client-composition.js",
     "lib/client.js",
-    "lib/presentation/assets/portable.js",
-    "lib/presentation/assets/static.js"
+    "lib/client/analysis-ui/offline-runtime.generated.js",
+    "lib/client/ui/styles.generated.js"
   ],
   "binaryFiles": [],
   "requiredServices": [],

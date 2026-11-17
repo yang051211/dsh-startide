@@ -1,0 +1,77 @@
+{
+  "name": "dsh-lumegaze-bridge",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-17T09:25:48.781Z",
+  "icon": "dsh-lumegaze-bridge.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "walkerChannel.js",
+        "line": 110,
+        "text": "socket = new WebSocket(url, { headers: secret.length > 0 ? { 'x-guanlingyu-auth': secret } : {} });"
+      },
+      {
+        "file": "walkerChannel.js",
+        "line": 113,
+        "text": "socket = new WebSocket(url);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "agent-driver.js",
+        "line": 32,
+        "text": "import { mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "agent-driver.js",
+        "line": 73,
+        "text": "mkdirSync(resolved, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 28,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, renameSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 55,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 67,
+        "text": "mkdirSync(dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

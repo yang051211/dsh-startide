@@ -1,0 +1,93 @@
+{
+  "name": "dsh-clone",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-17T09:25:37.871Z",
+  "icon": "dsh-clone.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 140,
+        "text": "fetch(url, { cache: 'no-store', credentials: 'same-origin' })"
+      },
+      {
+        "file": "client.js",
+        "line": 179,
+        "text": "const response = await fetch(ACTION_URL, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import { cp, copyFile, mkdir, readFile, readdir, realpath, rm, stat, symlink, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 229,
+        "text": "const [referencePng, renderPng] = await Promise.all([readFile(referencePath), readFile(renderPath)])"
+      },
+      {
+        "file": "index.js",
+        "line": 255,
+        "text": "await mkdir(dirname(diagnosticPath), { recursive: true }).catch(() => {})"
+      },
+      {
+        "file": "index.js",
+        "line": 256,
+        "text": "await writeFile(diagnosticPath, JSON.stringify({ ...lastInspectDiagnostic, dir, viewport }, null, 2)).catch(() => {})"
+      },
+      {
+        "file": "index.js",
+        "line": 263,
+        "text": "const [referencePng, renderPng] = await Promise.all([readFile(referencePath), readFile(renderPath)])"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 45,
+        "text": "export const inject = ['commands', 'tools', 'workingDirectory', 'subagents', 'agents', 'subprocess']"
+      },
+      {
+        "file": "index.js",
+        "line": 518,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 112,
+        "text": "const handle = ctx.subprocess.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "commands",
+    "subagents",
+    "subprocess",
+    "tools",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

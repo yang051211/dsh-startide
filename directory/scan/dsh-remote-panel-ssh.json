@@ -1,7 +1,7 @@
 {
   "name": "dsh-remote-panel-ssh",
-  "version": "0.1.2",
-  "scannedAt": "2026-11-08T14:57:25.941Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-17T09:25:46.868Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -23,19 +23,29 @@
       },
       {
         "file": "lib/client.js",
-        "line": 518,
-        "text": "fetch('/api/remote-dsh/hosts', { headers: { accept: 'application/json' } })"
+        "line": 575,
+        "text": "fetch(base + '/list?path=' + encodeURIComponent(target || '') + extra)"
       },
       {
         "file": "lib/client.js",
-        "line": 562,
-        "text": "const state = await jsonOf(await fetch('/api/remote-dsh/state', { headers: { accept: 'application/json' } }))"
+        "line": 688,
+        "text": "const post = (pane, action, body) => fetch(pane.base + '/' + action, {"
       }
     ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 857,
+        "text": "onMkdir: () => mkdir(local),"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 881,
+        "text": "onMkdir: () => mkdir(remote),"
+      },
       {
         "file": "lib/hosts.js",
         "line": 11,
@@ -50,16 +60,6 @@
         "file": "lib/hosts.js",
         "line": 38,
         "text": "fs.mkdirSync(DSH_HOME, { recursive: true, mode: 0o700 })"
-      },
-      {
-        "file": "lib/hosts.js",
-        "line": 40,
-        "text": "fs.writeFileSync(tmp, JSON.stringify({ version: 1, hosts }, null, 2), { mode: 0o600 })"
-      },
-      {
-        "file": "lib/hosts.js",
-        "line": 111,
-        "text": "fs.writeFileSync(tmp, JSON.stringify({ ...value, hosts: next }, null, 2), { mode: 0o600 })"
       }
     ]
   },

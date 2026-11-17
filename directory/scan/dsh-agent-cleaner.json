@@ -1,0 +1,103 @@
+{
+  "name": "dsh-agent-cleaner",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-17T09:25:48.524Z",
+  "icon": "dsh-agent-cleaner.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.js",
+        "line": 366,
+        "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 119,
+        "text": "const res = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 6,
+        "text": "import { chmodSync, existsSync, mkdirSync, renameSync, rmSync, statSync, writeFileSync, } from 'node:fs';"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 114,
+        "text": "mkdirSync(destDir, { recursive: true });"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 142,
+        "text": "writeFileSync(tmpZip, archiveBuffer);"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 144,
+        "text": "mkdirSync(extractDir, { recursive: true });"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 158,
+        "text": "rmSync(tmpZip, { force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 15,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 338,
+        "text": "tools.register({"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 362,
+        "text": "tools.register({"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 399,
+        "text": "tools.register({"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 419,
+        "text": "tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 5,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

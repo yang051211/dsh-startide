@@ -1,34 +1,34 @@
 {
   "name": "dsh-web-service",
-  "version": "0.6.2",
-  "scannedAt": "2026-11-10T08:48:58.795Z",
+  "version": "0.7.6",
+  "scannedAt": "2026-11-17T09:25:40.397Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/api-keys-page.js",
-        "line": 558,
+        "line": 561,
         "text": "res = await fetch(BASE + path, {"
       },
       {
         "file": "lib/api-keys-page.js",
-        "line": 1493,
+        "line": 1498,
         "text": "const r = await fetch(BASE + '/system/updates', { cache: 'no-store' });"
       },
       {
         "file": "lib/api-keys-page.js",
-        "line": 1560,
+        "line": 1565,
         "text": "// ---------- curl ----------"
       },
       {
         "file": "lib/api-keys-page.js",
-        "line": 1564,
+        "line": 1569,
         "text": "'curl -H \"Authorization: Bearer <key>\" ' + url + '/system/status\\\\n\\\\n' +"
       },
       {
         "file": "lib/api-keys-page.js",
-        "line": 1566,
+        "line": 1571,
         "text": "'curl -H \"X-API-Key: <key>\" ' + url + '/system/status';"
       }
     ]
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 30,
+        "line": 34,
         "text": "export const inject = ['webServer', 'tools'];"
       },
       {
         "file": "lib/index.js",
-        "line": 431,
+        "line": 452,
         "text": "ctx.effect(() => ctx.tools.register(defineTool({"
       }
     ]
@@ -81,6 +81,21 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/node-runtime.js",
+        "line": 3,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/onenat-tunnel.js",
+        "line": 4,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/onenat-tunnel.js",
+        "line": 457,
+        "text": "nfig=' + this.configFile, 'managed']) : spawn(this.binary, ['-log=stdout', '-log-level=INFO', '-config=' + this.configFile, 'managed'], { stdio: ['ignore', 'pip"
+      },
       {
         "file": "lib/skill-utils.js",
         "line": 12,

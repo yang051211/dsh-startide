@@ -1,34 +1,34 @@
 {
   "name": "@goodandready/dsh-session-control",
-  "version": "0.2.11",
-  "scannedAt": "2026-11-09T23:07:07.494Z",
+  "version": "0.2.13",
+  "scannedAt": "2026-11-17T09:25:37.311Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 980,
+        "line": 983,
         "text": "fetch('/dsh-session-control/transcript?session=' + encodeURIComponent(sessionId) + (workspaceId ? '&workspace=' + encodeURIComponent(workspaceId) : ''),"
       },
       {
         "file": "lib/client.js",
-        "line": 1011,
+        "line": 1014,
         "text": "const grab = () => fetch('/dsh-session-control/transcript?session='"
       },
       {
         "file": "lib/client.js",
-        "line": 1624,
+        "line": 1627,
         "text": "fetch('/dsh-session-control/titles?sessions=' + want.map(encodeURIComponent).join(','))"
       },
       {
         "file": "lib/client.js",
-        "line": 1661,
+        "line": 1664,
         "text": "fetch('/dsh-session-control/sizes?sessions=' + want.map(encodeURIComponent).join(','))"
       },
       {
         "file": "lib/client.js",
-        "line": 1694,
+        "line": 1697,
         "text": "response = await fetch('/dsh-session-control/handoff-summary', {"
       }
     ]
@@ -36,16 +36,6 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
-      {
-        "file": "lib/index.js",
-        "line": 1,
-        "text": "import fs from 'node:fs'"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 330,
-        "text": "const raw = fs.readFileSync(storageFile, 'utf8')"
-      },
       {
         "file": "lib/updater.js",
         "line": 2,
@@ -60,12 +50,33 @@
         "file": "lib/updater.js",
         "line": 66,
         "text": "const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'))"
+      },
+      {
+        "file": "lib/updater.js",
+        "line": 164,
+        "text": "const value = JSON.parse(await readFile(manifestUrl, 'utf8'))"
+      },
+      {
+        "file": "lib/workspace.js",
+        "line": 1,
+        "text": "import fs from 'node:fs'"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/search-tool.js",
+        "line": 78,
+        "text": "return ctx.effect(() => ctx.tools.register(toolDef))"
+      },
+      {
+        "file": "lib/search-tool.js",
+        "line": 80,
+        "text": "return ctx.tools.register(toolDef)"
+      }
+    ]
   },
   "childProcess": {
     "hit": true,

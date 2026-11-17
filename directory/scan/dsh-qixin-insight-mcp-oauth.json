@@ -1,0 +1,90 @@
+{
+  "name": "dsh-qixin-insight-mcp-oauth",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-17T09:25:47.175Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/oauth/callback-server.js",
+        "line": 21,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "lib/oauth/http.js",
+        "line": 72,
+        "text": "return await fetch(url, { ...init, signal });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "export const inject = ['tools', 'storageDomain', 'credentials'];"
+      },
+      {
+        "file": "lib/mount.js",
+        "line": 1,
+        "text": "import * as mcpClient from '@deepseek-ai/dsh-mcp-client';"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 44,
+        "text": "* @param ctx - 提供 `ctx.tools` 的插件上下文。"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 50,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 62,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/browser.js",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/browser.js",
+        "line": 49,
+        "text": "const child = spawn(command, [...args], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "credentials",
+    "storageDomain",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

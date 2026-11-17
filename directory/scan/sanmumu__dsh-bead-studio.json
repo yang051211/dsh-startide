@@ -1,0 +1,94 @@
+{
+  "name": "@sanmumu/dsh-bead-studio",
+  "version": "0.5.2-beta.1",
+  "scannedAt": "2026-11-17T09:25:48.624Z",
+  "icon": "sanmumu__dsh-bead-studio.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "ai-http.js",
+        "line": 3,
+        "text": "import {request as httpsRequest} from 'node:https';"
+      },
+      {
+        "file": "client.js",
+        "line": 794,
+        "text": "  const response=await fetch('/api/local-bead-studio/ai',{method:'POST',headers:{'Content-Type':'application/json','X-DSH-Bead-Studio':'1'},body:JSON.stringify("
+      },
+      {
+        "file": "client.js",
+        "line": 1000,
+        "text": "abort(),15000);try{const response=await fetch('/api/local-bead-studio/library',{method:'POST',headers:{'Content-Type':'application/json','X-DSH-Bead-Studio':'1'"
+      },
+      {
+        "file": "client.js",
+        "line": 1072,
+        "text": "        const response=await fetch('/api/local-bead-studio/generate',{method:'POST',headers:{'Content-Type':'application/json','X-DSH-Bead-Studio':'1'},body:JSO"
+      },
+      {
+        "file": "client.js",
+        "line": 1121,
+        "text": "      try{const response=await fetch('/api/local-bead-studio/edit',{method:'POST',headers:{'Content-Type':'application/json','X-DSH-Bead-Studio':'1'},body:JSON."
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "ai-codex-adapter.js",
+        "line": 24,
+        "text": "s?.withInitiator==='function' && typeof ctx.tools?.execute==='function' && typeof ctx.attachments?.saveImage==='function' && typeof ctx.attachments?.readImage=="
+      },
+      {
+        "file": "ai-codex-adapter.js",
+        "line": 26,
+        "text": "    try{return{available:ready()&&!!ctx.tools.get?.(TOOL),engine:'Codex image',model:'configured',sessions:roots().slice(-100).reverse().map(agent=>{let title;t"
+      },
+      {
+        "file": "ai-codex-adapter.js",
+        "line": 44,
+        "text": "if(!ctx.tools.get?.(TOOL,agent))throw publicError('UNAVAILABLE','所选会话当前没有可用的 Codex 图像工具。');"
+      },
+      {
+        "file": "ai-codex-adapter.js",
+        "line": 62,
+        "text": "wait ctx.agents.withInitiator(agent,()=>ctx.tools.execute({callId,name:TOOL,arguments:{prompt,referenceImages:[{attachmentId:source.attachmentId}]},agent,signal"
+      },
+      {
+        "file": "ai-host.js",
+        "line": 5,
+        "text": "export const inject=['webServer','tools','agents','attachments','sessions','credentials'];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "attachments",
+    "credentials",
+    "sessions",
+    "storageDomain",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

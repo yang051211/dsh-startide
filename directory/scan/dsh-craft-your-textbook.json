@@ -1,0 +1,143 @@
+{
+  "name": "dsh-craft-your-textbook",
+  "version": "2.0.2",
+  "scannedAt": "2026-11-17T09:25:44.151Z",
+  "icon": "dsh-craft-your-textbook.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 17298,
+        "text": "const res = await fetch("
+      },
+      {
+        "file": "lib/client.js",
+        "line": 17639,
+        "text": "const res = await fetch(url, { method: \"POST\", body: bytes });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 18731,
+        "text": "void fetch(`/textbook/projects?session=${encodeURIComponent(id)}`).then((res) => res.ok ? res.json() : null).then((json) => {"
+      },
+      {
+        "file": "src/agent-tool.js",
+        "line": 854,
+        "text": "*   （`fetch(...)` 读的是**调用那一刻**的全局）。若在这里抓一次引用，`apply` 之后才替换"
+      },
+      {
+        "file": "src/client-entry.js",
+        "line": 1102,
+        "text": "const res = await fetch("
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/setup.mjs",
+        "line": 78,
+        "text": "import { existsSync, readFileSync, renameSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "scripts/setup.mjs",
+        "line": 79,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "scripts/setup.mjs",
+        "line": 734,
+        "text": "text = await readFile(path, 'utf8')"
+      },
+      {
+        "file": "scripts/setup.mjs",
+        "line": 1388,
+        "text": "pkg = JSON.parse(readFileSync(profilePkg, 'utf8'))"
+      },
+      {
+        "file": "scripts/setup.mjs",
+        "line": 1397,
+        "text": "writeFileSync(profilePkg, JSON.stringify(pkg, null, 2) + '\\n', 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/agent-tool.js",
+        "line": 70,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "src/agent-tool.js",
+        "line": 831,
+        "text": "* @param ctx 宿主 ctx（只读 `ctx.tools`；另读**可选**服务 `ctx.get('webApp')`，见 {@link advertisedBaseUrl}）。"
+      },
+      {
+        "file": "src/agent-tool.js",
+        "line": 864,
+        "text": "ctx.tools.register(defineToolLocal({"
+      },
+      {
+        "file": "src/agent-tool.js",
+        "line": 993,
+        "text": "ctx.tools.register(defineToolLocal({"
+      },
+      {
+        "file": "src/workflow/mechanism-facts.js",
+        "line": 211,
+        "text": "'只看得见声明面：没进这些常量的代码分支看不见；靠源码字面闭包交叉核对，而它只认 `case \\'…\\'` 与 `ctx.tools.register(...name: \\'…\\')` 两种形状。',"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/setup.mjs",
+        "line": 77,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/setup.mjs",
+        "line": 196,
+        "text": "* 实测（2026-09-28，本机 Node）：`spawnSync('dsh.cmd', ['--version'])` 恒定返回"
+      },
+      {
+        "file": "scripts/setup.mjs",
+        "line": 212,
+        "text": "* `spawnSync('dsh.cmd', …)` 恒返回 `EINVAL`。而宿主 CLI 在 Windows 上正是 npm/pnpm 装的"
+      },
+      {
+        "file": "scripts/setup.mjs",
+        "line": 223,
+        "text": "* `test-mode-capability-baseline.mjs` 有一条断言钉着「本文件里 `spawnSync(` 只出现一处」。"
+      },
+      {
+        "file": "scripts/setup.mjs",
+        "line": 256,
+        "text": "* 裸 `spawnSync('npm.cmd', …)`，于是「模式声明闸」与「在线版本」两格在 Windows 上被记成"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "jobs",
+    "sessionProjections",
+    "sessions",
+    "subagents",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

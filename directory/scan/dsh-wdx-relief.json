@@ -1,34 +1,34 @@
 {
   "name": "dsh-wdx-relief",
-  "version": "0.5.2",
-  "scannedAt": "2026-11-14T07:59:04.436Z",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-17T09:25:32.709Z",
   "icon": "dsh-wdx-relief.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client/client.js",
-        "line": 462,
+        "line": 485,
         "text": "var response = await fetch(RPC_PATH, {"
       },
       {
         "file": "client/client.js",
-        "line": 485,
+        "line": 508,
         "text": "var response = await fetch(RECAP_PATH, {"
       },
       {
         "file": "client/client.js",
-        "line": 513,
+        "line": 536,
         "text": "response = await fetch(TODAY_PATH, {"
       },
       {
         "file": "client/client.js",
-        "line": 563,
+        "line": 586,
         "text": "response = await fetch(path, {"
       },
       {
         "file": "client/client.js",
-        "line": 599,
+        "line": 622,
         "text": "response = await fetch(BTW_PATH, {"
       }
     ]
@@ -64,8 +64,19 @@
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 34,
+        "text": "export const inject = ['connection', 'sessions', 'tools']"
+      },
+      {
+        "file": "src/toolCallRepair.js",
+        "line": 329,
+        "text": "const runtime = this && typeof this.get === 'function' ? this : ctx.tools || undefined;"
+      }
+    ]
   },
   "childProcess": {
     "hit": false,
@@ -80,7 +91,8 @@
   "binaryFiles": [],
   "requiredServices": [
     "connection",
-    "sessions"
+    "sessions",
+    "tools"
   ],
   "setupHints": [],
   "skippedEntries": []

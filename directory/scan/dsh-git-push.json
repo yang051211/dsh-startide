@@ -1,14 +1,14 @@
 {
   "name": "dsh-git-push",
-  "version": "3.0.0",
-  "scannedAt": "2026-11-16T08:06:31.737Z",
+  "version": "3.1.0",
+  "scannedAt": "2026-11-17T09:25:35.656Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/app/inject-text.js",
-        "line": 149,
+        "line": 134,
         "text": "L.push(`  curl -L '${base}?${qs}'`); // -L：宿主反代一次 302 中转（不带 -L 会显示 302 误判失败）"
       },
       {
@@ -23,12 +23,12 @@
       },
       {
         "file": "lib/client.js",
-        "line": 266,
+        "line": 298,
         "text": "const resp = await fetch(url, { credentials: 'same-origin', signal: AbortSignal.timeout(dshgp_FETCH_TIMEOUT_MS) });"
       },
       {
         "file": "lib/client.js",
-        "line": 271,
+        "line": 303,
         "text": "const resp = await fetch(url, {"
       }
     ]
@@ -38,12 +38,12 @@
     "evidence": [
       {
         "file": "lib/app/apply.js",
-        "line": 75,
+        "line": 74,
         "text": "//   必须走 ctx.inject(['fs'])：project 内直接 ctx.get('fs') 会抛 \"without inject\"（本文件早前踩过）。"
       },
       {
         "file": "lib/app/apply.js",
-        "line": 78,
+        "line": 77,
         "text": "ctx.inject(['fs'], (c) => { fsCtx = c; });"
       },
       {

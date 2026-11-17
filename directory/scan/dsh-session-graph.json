@@ -1,0 +1,76 @@
+{
+  "name": "dsh-session-graph",
+  "version": "0.7.12",
+  "scannedAt": "2026-11-17T09:25:36.131Z",
+  "icon": "dsh-session-graph.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import { existsSync, readFileSync, rmSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 52,
+        "text": "rmSync(progressPath, { force: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 109,
+        "text": "text = readFileSync(join(project, GRAPH_FILE), \"utf8\");"
+      },
+      {
+        "file": "test/host.mjs",
+        "line": 7,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "test/host.mjs",
+        "line": 11,
+        "text": "const manifest = JSON.parse(fs.readFileSync(new URL(\"../package.json\", import.meta.url), \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 60,
+        "text": "const child = spawn(PYTHON, args, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 250,
+        "text": "const child = spawn(PYTHON, ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

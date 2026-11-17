@@ -1,0 +1,85 @@
+{
+  "name": "dsh-patent-review-skills",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-17T09:25:48.929Z",
+  "icon": "dsh-patent-review-skills.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/doc-convert.js",
+        "line": 3,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/docx.js",
+        "line": 2,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/docx.js",
+        "line": 9,
+        "text": "const buf = fs.readFileSync(filePath);"
+      },
+      {
+        "file": "lib/docx.js",
+        "line": 148,
+        "text": "fs.writeFileSync(filePath, writeZip(entries));"
+      },
+      {
+        "file": "lib/review.js",
+        "line": 2,
+        "text": "import fs from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 180,
+        "text": "ctx.tools.register(createCheckTool());"
+      },
+      {
+        "file": "index.js",
+        "line": 181,
+        "text": "ctx.tools.register(createReportTool(config.author || '专利'));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/doc-convert.js",
+        "line": 2,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/doc-convert.js",
+        "line": 31,
+        "text": "const r = spawnSync('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', script], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

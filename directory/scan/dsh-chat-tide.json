@@ -1,0 +1,113 @@
+{
+  "name": "dsh-chat-tide",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-17T09:25:34.769Z",
+  "icon": "dsh-chat-tide.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 59,
+        "text": "const r = await fetch(BASE + path, { headers: { accept: 'application/json' } });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 64,
+        "text": "const r = await fetch(BASE + path, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 517,
+        "text": "void fetch(BASE + '/client-loaded', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 51,
+        "text": "const { appendFileSync, mkdirSync } = await import('node:fs');"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 54,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 55,
+        "text": "appendFileSync("
+      },
+      {
+        "file": "lib/const.js",
+        "line": 4,
+        "text": "import { mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/const.js",
+        "line": 24,
+        "text": "mkdirSync(dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 39,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1178,
+        "text": "ctx.tools.register({ ...def, execute: guardTool(def.execute), isConcurrencySafe: () => true, when });"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/embed.js",
+        "line": 5,
+        "text": "import { fork } from 'node:child_process';"
+      },
+      {
+        "file": "probes/42-embedder-restart.mjs",
+        "line": 3,
+        "text": "import { execSync } from 'node:child_process';"
+      },
+      {
+        "file": "probes/42-embedder-restart.mjs",
+        "line": 21,
+        "text": "const out = execSync(`powershell -NoProfile -Command \"${ps}\"`, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });"
+      },
+      {
+        "file": "probes/42-embedder-restart.mjs",
+        "line": 24,
+        "text": "const out = execSync('ps -Ao pid=,ppid=,args=', { encoding: 'utf8' });"
+      },
+      {
+        "file": "scripts/check-privacy.mjs",
+        "line": 4,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

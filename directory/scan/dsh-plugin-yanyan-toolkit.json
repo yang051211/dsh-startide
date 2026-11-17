@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-yanyan-toolkit",
-  "version": "1.4.1",
-  "scannedAt": "2026-11-15T20:14:42.301Z",
+  "version": "1.4.2",
+  "scannedAt": "2026-11-17T09:25:39.539Z",
   "icon": "dsh-plugin-yanyan-toolkit.svg",
   "network": {
     "hit": true,
@@ -22,14 +22,14 @@
         "text": "const resp = await fetch(origin.replace(/\\/$/, '') + DELETE_API, {"
       },
       {
+        "file": "packages/dsh-plugin-yanyan-trash/lib/client.js",
+        "line": 265,
+        "text": "return fetch(path, {"
+      },
+      {
         "file": "packages/dsh-plugin-yanyan-update/lib/client.js",
         "line": 243,
         "text": "return fetch(pathname, {"
-      },
-      {
-        "file": "packages/dsh-plugin-yanyan-update/lib/index.js",
-        "line": 286,
-        "text": "const resp = await fetch(url, { signal: AbortSignal.timeout(cfg.timeoutMs) });"
       }
     ]
   },
@@ -43,23 +43,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 34,
+        "line": 39,
         "text": "return JSON.parse(readFileSync(file, 'utf8'));"
       },
       {
-        "file": "packages/dsh-plugin-yanyan-icon/lib/index.js",
-        "line": 13,
-        "text": "import { readFileSync } from 'node:fs';"
+        "file": "lib/session-purge.js",
+        "line": 37,
+        "text": "import { rmSync } from 'node:fs';"
       },
       {
-        "file": "packages/dsh-plugin-yanyan-icon/lib/index.js",
-        "line": 27,
-        "text": "return JSON.parse(readFileSync(file, 'utf8'));"
+        "file": "lib/session-purge.js",
+        "line": 73,
+        "text": "return { ...baseFs, rm: (p, opts) => rmSync(p, opts) };"
       },
       {
-        "file": "packages/dsh-plugin-yanyan-subagent/lib/index.js",
-        "line": 25,
-        "text": "} from 'node:fs';"
+        "file": "lib/session-purge.js",
+        "line": 93,
+        "text": "fs.rm(realPath, { recursive: true, force: false });"
       }
     ]
   },
@@ -87,8 +87,10 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 4,
-  "minifiedFiles": [],
+  "dependencies": 5,
+  "minifiedFiles": [
+    "packages/dsh-plugin-yanyan-trash/lib/client.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [
     "connection",

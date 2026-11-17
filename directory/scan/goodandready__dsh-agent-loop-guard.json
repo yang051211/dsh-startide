@@ -1,34 +1,34 @@
 {
   "name": "@goodandready/dsh-agent-loop-guard",
-  "version": "0.2.26",
-  "scannedAt": "2026-10-26T10:12:27.453Z",
+  "version": "0.3.3",
+  "scannedAt": "2026-11-17T09:25:35.066Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 270,
+        "line": 293,
         "text": "const res = await fetch('/api/@goodandready/dsh-agent-loop-guard/update');"
       },
       {
         "file": "lib/client.js",
-        "line": 287,
+        "line": 311,
         "text": "const res = await fetch('/api/@goodandready/dsh-agent-loop-guard/telemetry');"
       },
       {
         "file": "lib/client.js",
-        "line": 338,
+        "line": 380,
         "text": "const res = await fetch('/api/@goodandready/dsh-agent-loop-guard/update', {"
       },
       {
         "file": "lib/client.js",
-        "line": 356,
+        "line": 395,
         "text": "const res = await fetch('/api/@goodandready/dsh-agent-loop-guard/telemetry', {"
       },
       {
         "file": "lib/plugin-updater.js",
-        "line": 277,
+        "line": 292,
         "text": "const response = await fetch(`${registry.replace(/\\/$/, '')}/${encodeURIComponent(packageName)}/latest`, {"
       }
     ]
@@ -48,13 +48,18 @@
       },
       {
         "file": "lib/plugin-updater.js",
-        "line": 195,
+        "line": 210,
         "text": "const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));"
       },
       {
         "file": "lib/plugin-updater.js",
-        "line": 292,
+        "line": 307,
         "text": "const raw = await readFile(manifestUrl, 'utf8');"
+      },
+      {
+        "file": "lib/target-quota-guard.js",
+        "line": 2,
+        "text": "import fs from 'node:fs';"
       }
     ]
   },
@@ -63,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 12,
+        "line": 11,
         "text": "export const inject = ['tools', 'agents', 'sessions'];"
       },
       {
         "file": "lib/index.js",
-        "line": 368,
+        "line": 515,
         "text": "return ctx.tools.guard((execution) => state.denyReason(execution.agent, execution.name, execution.arguments, execution.callId));"
       }
     ]
@@ -83,12 +88,12 @@
       },
       {
         "file": "lib/plugin-updater.js",
-        "line": 329,
+        "line": 344,
         "text": "? spawn(target.cliEntry, ["
       },
       {
         "file": "lib/plugin-updater.js",
-        "line": 340,
+        "line": 355,
         "text": ": spawn(process.execPath, ["
       }
     ]

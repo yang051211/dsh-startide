@@ -1,0 +1,144 @@
+{
+  "name": "dsh-sound-atelier",
+  "version": "1.0.6",
+  "scannedAt": "2026-11-17T09:25:35.246Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client-src/04-core.js",
+        "line": 194,
+        "text": "return fetch(url, fetchOpts).then("
+      },
+      {
+        "file": "lib/client-src/33-speech-delivery.js",
+        "line": 99,
+        "text": "    try{const r=await fetch('/dsh-sound-atelier/speech-bridge/status',{credentials:'same-origin',signal:controller.signal,cache:'no-store'});if(!r.ok)throw Erro"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 319,
+        "text": "return fetch(url, fetchOpts).then("
+      },
+      {
+        "file": "lib/client.js",
+        "line": 7976,
+        "text": "    try{const r=await fetch('/dsh-sound-atelier/speech-bridge/status',{credentials:'same-origin',signal:controller.signal,cache:'no-store'});if(!r.ok)throw Erro"
+      },
+      {
+        "file": "lib/providers/local-http.js",
+        "line": 1,
+        "text": "import http from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cache.js",
+        "line": 5,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/cache.js",
+        "line": 19,
+        "text": "if (!ready) ready = fs.promises.mkdir(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/cache.js",
+        "line": 78,
+        "text": "const meta = JSON.parse(await fs.promises.readFile(path.join(dir, key + '.json'), 'utf8'))"
+      },
+      {
+        "file": "lib/cache.js",
+        "line": 102,
+        "text": "await fs.promises.rm(path.join(dir, key + AUDIO_EXT), { force: true }).catch(() => {})"
+      },
+      {
+        "file": "lib/cache.js",
+        "line": 103,
+        "text": "await fs.promises.rm(path.join(dir, key + '.json'), { force: true }).catch(() => {})"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 58,
+        "text": "export const inject = ['tools', 'credentials', 'llm', 'webServer']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1056,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "lib/speech-bridge/index.js",
+        "line": 64,
+        "text": "const existing = typeof ctx.tools.get === 'function' ? ctx.tools.get(SPEECH_BRIDGE_TOOL) : undefined"
+      },
+      {
+        "file": "lib/speech-bridge/index.js",
+        "line": 69,
+        "text": "tools: ctx.tools,"
+      },
+      {
+        "file": "lib/speech-bridge/index.js",
+        "line": 79,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/audio-format.js",
+        "line": 1,
+        "text": "import {spawn} from 'node:child_process'"
+      },
+      {
+        "file": "lib/audio-format.js",
+        "line": 15,
+        "text": "  const child=spawn(ffmpeg,['-hide_banner','-loglevel','error','-protocol_whitelist','pipe','-i','pipe:0','-vn',...(rate!==1||volume!==1?['-af',[...(rate!==1?['"
+      },
+      {
+        "file": "lib/audio-join.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/audio-join.js",
+        "line": 9,
+        "text": "    const child = spawn(ffmpeg, ['-hide_banner', '-loglevel', 'error', '-protocol_whitelist', 'pipe', '-i', 'pipe:0', '-vn', ...(speed!==1?['-filter:a','atempo="
+      },
+      {
+        "file": "lib/catalog.js",
+        "line": 2,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 9,
+  "minifiedFiles": [
+    "lib/client-src/02-opencc.vendor.js",
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "credentials",
+    "llm",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

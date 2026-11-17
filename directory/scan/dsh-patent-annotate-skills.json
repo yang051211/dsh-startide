@@ -1,0 +1,110 @@
+{
+  "name": "dsh-patent-annotate-skills",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-17T09:25:48.961Z",
+  "icon": "dsh-patent-annotate-skills.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "claims/index.js",
+        "line": 24,
+        "text": "import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "claims/index.js",
+        "line": 1059,
+        "text": "mkdirSync(outDir, { recursive: true })"
+      },
+      {
+        "file": "claims/index.js",
+        "line": 1661,
+        "text": "description: parseSkill(readFileSync(locator, 'utf8')).description,"
+      },
+      {
+        "file": "claims/index.js",
+        "line": 1675,
+        "text": "return Promise.resolve({ ...summary, content: parseSkill(readFileSync(locator, 'utf8')).content })"
+      },
+      {
+        "file": "claims/lib/annotate.js",
+        "line": 28,
+        "text": "import { copyFileSync, existsSync, writeFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "claims/index.js",
+        "line": 44,
+        "text": "const inject = ['tools', 'skills']"
+      },
+      {
+        "file": "claims/index.js",
+        "line": 1688,
+        "text": "for (const tool of createTools(ctx, config)) ctx.tools.register(tool)"
+      },
+      {
+        "file": "figures/index.js",
+        "line": 51,
+        "text": "const inject = ['tools', 'skills']"
+      },
+      {
+        "file": "figures/index.js",
+        "line": 3328,
+        "text": "for (const tool of createTools(ctx, config)) ctx.tools.register(tool)"
+      },
+      {
+        "file": "index.js",
+        "line": 38,
+        "text": "const inject = ['tools', 'skills']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "claims/lib/ocr.js",
+        "line": 14,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "claims/scripts/audit-plugin.mjs",
+        "line": 15,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "figures/lib/ocr.js",
+        "line": 19,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "references/lib/ocr.js",
+        "line": 14,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "references/scripts/audit-plugin.mjs",
+        "line": 15,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 4,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

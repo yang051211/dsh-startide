@@ -1,7 +1,7 @@
 {
   "name": "@leiyi-works/dsh-aivideo",
-  "version": "2.8.7",
-  "scannedAt": "2026-11-16T08:06:30.485Z",
+  "version": "2.9.4",
+  "scannedAt": "2026-11-17T09:25:35.280Z",
   "icon": "leiyi-works__dsh-aivideo.svg",
   "network": {
     "hit": true,
@@ -28,8 +28,8 @@
       },
       {
         "file": "client.js",
-        "line": 460,
-        "text": "fetch(\"/runninghub-app/plan\", { headers: { accept: \"application/json\" } })"
+        "line": 474,
+        "text": "fetch(\"/runninghub-app/plans\", { headers: { accept: \"application/json\" } })"
       }
     ]
   },
@@ -39,27 +39,27 @@
       {
         "file": "index.js",
         "line": 2,
-        "text": "import { cpSync, createReadStream, existsSync, renameSync } from \"node:fs\";"
+        "text": "import { cpSync, copyFileSync, createReadStream, existsSync, mkdirSync, readFileSync, renameSync, statSync } from \"node:fs\";"
       },
       {
         "file": "index.js",
         "line": 3,
-        "text": "import { mkdir, open, readFile, readdir, stat, writeFile } from \"node:fs/promises\";"
+        "text": "import { mkdir, open, readFile, readdir, stat, unlink, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "index.js",
-        "line": 216,
-        "text": "content: await readFile(FLOVA_SKILL_BODY_PATH, \"utf8\")"
+        "line": 84,
+        "text": "await mkdir(PLAN_DIR, { recursive: true });"
       },
       {
         "file": "index.js",
-        "line": 281,
-        "text": "const bytes = await readFile(MANUAL_PATH);"
+        "line": 89,
+        "text": "await unlink(LEGACY_PLAN_PATH);"
       },
       {
         "file": "index.js",
-        "line": 282,
-        "text": "await mkdir(MANUAL_KIT_DIR, { recursive: true });"
+        "line": 100,
+        "text": "await writeFile(PLAN_PATH, await readFile(LEGACY_PLAN_PATH));"
       }
     ]
   },
@@ -69,11 +69,11 @@
       {
         "file": "index.js",
         "line": 9,
-        "text": "export const inject = [\"tools\", \"webServer\", \"skills\"];"
+        "text": "export const inject = [\"tools\", \"webServer\", \"skills\", \"systemPrompt\"];"
       },
       {
         "file": "index.js",
-        "line": 1217,
+        "line": 1352,
         "text": "ctx.tools.register("
       }
     ]
@@ -88,23 +88,8 @@
       },
       {
         "file": "index.js",
-        "line": 123,
+        "line": 306,
         "text": "execFile("
-      },
-      {
-        "file": "scripts/run-battle2x15.js",
-        "line": 3,
-        "text": "const { execFileSync } = require(\"child_process\");"
-      },
-      {
-        "file": "scripts/run-miyu-v2.js",
-        "line": 3,
-        "text": "const { execFileSync } = require(\"child_process\");"
-      },
-      {
-        "file": "scripts/run-xianxia-v6b.js",
-        "line": 3,
-        "text": "const { execFileSync } = require(\"child_process\");"
       }
     ]
   },
@@ -117,6 +102,7 @@
   "binaryFiles": [],
   "requiredServices": [
     "skills",
+    "systemPrompt",
     "tools",
     "webServer"
   ],

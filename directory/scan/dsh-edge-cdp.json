@@ -1,20 +1,30 @@
 {
   "name": "dsh-edge-cdp",
-  "version": "0.1.4",
-  "scannedAt": "2026-11-02T23:01:31.326Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-17T09:25:39.362Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 38,
-        "text": "const res = await fetch(`http://127.0.0.1:${port}${path}`, {"
+        "file": "lib/cdp.js",
+        "line": 18,
+        "text": "const res = await fetch(`http://127.0.0.1:${port}${path}`, { signal: AbortSignal.timeout(8000) });"
       },
       {
-        "file": "lib/index.js",
-        "line": 59,
+        "file": "lib/cdp.js",
+        "line": 97,
         "text": "this.ws = new WebSocket(wsUrl);"
+      },
+      {
+        "file": "scripts/selftest.mjs",
+        "line": 226,
+        "text": "await evalIn(cdp, \"fetch('https://example.com/__net_probe__').then(r => r.text()).catch(e => String(e))\");"
+      },
+      {
+        "file": "scripts/selftest.mjs",
+        "line": 446,
+        "text": "nextJs: \"(async () => JSON.stringify(await (await fetch('/next')).json()))()\","
       }
     ]
   },
@@ -22,18 +32,28 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 13,
-        "text": "import { mkdirSync, writeFileSync } from \"node:fs\";"
+        "file": "lib/cdp.js",
+        "line": 10,
+        "text": "import { mkdirSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/cdp.js",
+        "line": 34,
+        "text": "mkdirSync(profileDir, { recursive: true });"
+      },
+      {
+        "file": "lib/cdp.js",
+        "line": 707,
+        "text": "const fsPromises = await import(\"node:fs/promises\");"
       },
       {
         "file": "lib/index.js",
-        "line": 209,
-        "text": "mkdirSync(c.profileDir, { recursive: true });"
+        "line": 12,
+        "text": "import { writeFileSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 577,
+        "line": 478,
         "text": "writeFileSync(args.path, Buffer.from(b64, \"base64\"));"
       }
     ]
@@ -43,12 +63,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 19,
+        "line": 62,
         "text": "const inject = [\"tools\"];"
       },
       {
         "file": "lib/index.js",
-        "line": 309,
+        "line": 210,
         "text": "const reg = (tool) => toolsCtx.tools.register(defineTool(tool));"
       }
     ]
@@ -57,13 +77,13 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 12,
+        "file": "lib/cdp.js",
+        "line": 9,
         "text": "import { spawn } from \"node:child_process\";"
       },
       {
-        "file": "lib/index.js",
-        "line": 210,
+        "file": "lib/cdp.js",
+        "line": 35,
         "text": "const child = spawn("
       }
     ]
@@ -79,7 +99,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 112,
+      "line": 190,
       "text": "pip install websocket-client"
     }
   ],

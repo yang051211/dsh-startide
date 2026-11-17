@@ -1,0 +1,79 @@
+{
+  "name": "dsh-local-trim",
+  "version": "0.5.6",
+  "scannedAt": "2026-11-17T09:25:36.951Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 48,
+        "text": "const response = await fetch(BRIDGE + '/' + name, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "import { appendFileSync, readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 348,
+        "text": "appendFileSync(LOG_PATH, `${new Date().toISOString()} ${text}\\n`)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 431,
+        "text": "const text = readFileSync(LIGHT_INJECT_PATH, 'utf8').trim()"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1293,
+        "text": "const text = readFileSync(LOG_PATH, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2555,
+        "text": "const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 85,
+        "text": "export const inject = ['tools', 'systemPrompt']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/launcher.js",
+        "line": 27,
+        "text": "import { execFileSync as nodeExecFileSync, spawn as nodeSpawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

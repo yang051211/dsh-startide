@@ -1,0 +1,101 @@
+{
+  "name": "@jkljkluiouio/dsh-skills-mcp-group-manager",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-17T09:25:46.946Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 250,
+        "text": "const data = await (await fetch(RPC_PATH, {"
+      },
+      {
+        "file": "lib/types/client/index.js",
+        "line": 235,
+        "text": "const res = await fetch(RPC_PATH, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { mkdir, readFile, rename, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 372,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 374,
+        "text": "writeFileSync(tmp, content, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 410,
+        "text": "state = normalizeState(JSON.parse(readFileSync(file, \"utf8\")));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 166,
+        "text": "description: \"Per-callTool timeout in ms (dsh-mcp-client default 60000).\""
+      },
+      {
+        "file": "lib/index.js",
+        "line": 197,
+        "text": "/** Same domain as dsh-mcp-client's SERVER_NAME_PATTERN. Mirrored in lib/client.js (the browser bundle cannot import this module). */"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 283,
+        "text": "* Pick the known dsh-mcp-client config fields out of a raw args object (tool"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 307,
+        "text": "* field name (empty object = valid). Every rule mirrors the dsh-mcp-client"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 480,
+        "text": "* MCP servers live as `@deepseek-ai/dsh-mcp-client` plugin entries composed"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

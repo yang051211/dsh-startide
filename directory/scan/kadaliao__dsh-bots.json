@@ -1,0 +1,108 @@
+{
+  "name": "@kadaliao/dsh-bots",
+  "version": "0.7.1",
+  "scannedAt": "2026-11-17T09:25:38.972Z",
+  "icon": "kadaliao__dsh-bots.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 118,
+        "text": "fetch(`${R}${path}`, { cache: 'no-store', credentials: 'same-origin' }).then((r) => (r && r.ok ? r.json() : null));"
+      },
+      {
+        "file": "client.js",
+        "line": 120,
+        "text": "fetch(`${R}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 23,
+        "text": "import { createReadStream, existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 143,
+        "text": "const { mkdtempSync } = await import('node:fs');"
+      },
+      {
+        "file": "index.js",
+        "line": 163,
+        "text": "writeFileSync(tgz, Buffer.from(await bin.arrayBuffer()));"
+      },
+      {
+        "file": "index.js",
+        "line": 173,
+        "text": "rmSync(work, { recursive: true, force: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 229,
+        "text": "mkdirSync(dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 77,
+        "text": "const mcpClient = (await harnessModule('@deepseek-ai/dsh-mcp-client')) ?? null;"
+      },
+      {
+        "file": "index.js",
+        "line": 83,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 348,
+        "text": "const view = ctx.tools?.view?.(scopeOf(actx));"
+      },
+      {
+        "file": "index.js",
+        "line": 349,
+        "text": "const known = view?.restrictableNames instanceof Set ? view.restrictableNames : new Set((ctx.tools?.definitions?.() ?? []).map((d) => d.name));"
+      },
+      {
+        "file": "index.js",
+        "line": 1114,
+        "text": "return ctx.tools?.get?.('generate_image');"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 145,
+        "text": "const { execFile } = await import('node:child_process');"
+      },
+      {
+        "file": "index.js",
+        "line": 148,
+        "text": "execFile(cmd, args, { timeout: 120_000, maxBuffer: 4 * 1024 * 1024, ...opts }, (error, stdout, stderr) =>"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

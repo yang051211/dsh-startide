@@ -1,0 +1,98 @@
+{
+  "name": "dsh-workbuddy-memory",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-17T09:25:35.535Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/client.js",
+        "line": 1611,
+        "text": "const response = await fetch(url, { credentials: 'same-origin', headers: { accept: 'application/json' }, ...(options ?? {}) })"
+      },
+      {
+        "file": "src/client.js",
+        "line": 1623,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/env.js",
+        "line": 8,
+        "text": "import { readdirSync } from 'node:fs'"
+      },
+      {
+        "file": "src/fsx.js",
+        "line": 3,
+        "text": "import { accessSync, closeSync, constants, fstatSync, openSync, readSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "src/host/catalog.js",
+        "line": 23,
+        "text": "import { readdirSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "src/host/routes.js",
+        "line": 16,
+        "text": "import { existsSync, readdirSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "src/index.js",
+        "line": 8,
+        "text": "import { readFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 20,
+        "text": "export const inject = ['systemPrompt', 'tools']"
+      },
+      {
+        "file": "src/index.js",
+        "line": 169,
+        "text": "if (typeof ctx.tools?.guard !== 'function' || !cfg.guard?.enabled) return"
+      },
+      {
+        "file": "src/tools/index.js",
+        "line": 119,
+        "text": "const off = ctx.tools.register(harden(tool))"
+      },
+      {
+        "file": "src/write/guard.js",
+        "line": 116,
+        "text": "if (typeof ctx.tools?.guard !== 'function') return false"
+      },
+      {
+        "file": "src/write/guard.js",
+        "line": 120,
+        "text": "ctx.tools.guard((exec) => {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

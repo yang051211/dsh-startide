@@ -1,14 +1,14 @@
 {
   "name": "deep-read-summarize",
-  "version": "0.6.4",
-  "scannedAt": "2026-11-15T20:14:30.704Z",
+  "version": "0.6.5",
+  "scannedAt": "2026-11-17T09:25:32.466Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "parsers/video.js",
-        "line": 74,
+        "line": 85,
         "text": "        \"  0) 短链用 curl -L 取得完整最终 URL，保留 query。输入明确带 p 时保留该分P选择；否则读取重定向最终 URL 的 p；都没有才默认 p=1。不能只提取 BV 号而丢掉 p。p 必须为正整数，非法则 saved=false，禁止偷偷改读第1P。\" + (requestedPag"
       },
       {
@@ -22,29 +22,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 17,
-        "text": "const { readFileSync } = require('node:fs');"
+        "file": "benchmarks/quality/prepare.js",
+        "line": 3,
+        "text": "const fs = require('node:fs');"
       },
       {
-        "file": "index.js",
-        "line": 56,
-        "text": "const body = readFileSync(path.join(skillDir, 'SKILL.md'), 'utf8');"
+        "file": "benchmarks/quality/prepare.js",
+        "line": 10,
+        "text": "fs.mkdirSync(root, { recursive: true });"
       },
       {
-        "file": "lib/cache.js",
-        "line": 15,
-        "text": "const fs = require(\"fs\");"
+        "file": "benchmarks/quality/prepare.js",
+        "line": 13,
+        "text": "fs.mkdirSync(sources); fs.mkdirSync(reviews); fs.mkdirSync(results);"
       },
       {
-        "file": "lib/cache.js",
-        "line": 55,
-        "text": "const lines = fs.readFileSync(cacheFile, \"utf8\").split(\"\\n\");"
+        "file": "benchmarks/quality/prepare.js",
+        "line": 16,
+        "text": "fs.writeFileSync(path.join(sources, item.id + '.txt'), item.source.join('\\n') + '\\n', { flag: 'wx' });"
       },
       {
-        "file": "lib/cache.js",
-        "line": 91,
-        "text": "if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });"
+        "file": "benchmarks/quality/prepare.js",
+        "line": 18,
+        "text": "fs.writeFileSync(path.join(reviews, item.id + '.json'), JSON.stringify(template, null, 2) + '\\n', { flag: 'wx' });"
       }
     ]
   },
@@ -53,12 +53,12 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 202,
+        "line": 263,
         "text": "const releaseTool = tools.register(readingTool(engine, normalizeOptions(config), registry));"
       },
       {
         "file": "index.js",
-        "line": 236,
+        "line": 297,
         "text": "const unregisterTool = canRunDirectly ? tools.register(readingTool(engine, normalizeOptions(config), registry)) : undefined;"
       }
     ]
