@@ -1,0 +1,98 @@
+{
+  "name": "dsh-plugin-gzh-studio",
+  "version": "0.4.5",
+  "scannedAt": "2026-11-18T09:00:23.079Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 149,
+        "text": "const response = await fetch(url, { ...init, credentials: \"same-origin\", signal: controller.signal });"
+      },
+      {
+        "file": "client.js",
+        "line": 4929,
+        "text": "fetch(url, { credentials: \"same-origin\" })"
+      },
+      {
+        "file": "lib/generate.js",
+        "line": 347,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "lib/generate.js",
+        "line": 384,
+        "text": "const imageResponse = await fetch(imageUrl.url, { signal: controller2.signal });"
+      },
+      {
+        "file": "lib/hostImage.js",
+        "line": 137,
+        "text": "const response = await fetch(image.url, { signal: controller.signal });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { readFile, stat, readdir, rename } from \"node:fs/promises\";"
+      },
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { watch, mkdirSync, createReadStream, readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import { mkdir } from \"node:fs/promises\";"
+      },
+      {
+        "file": "index.js",
+        "line": 365,
+        "text": "const raw = JSON.parse(await readFile(join(dir, entry), \"utf8\"));"
+      },
+      {
+        "file": "index.js",
+        "line": 1210,
+        "text": "await mkdir(target, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/repo.js",
+        "line": 26,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/repo.js",
+        "line": 624,
+        "text": "execFile(file, args, { ...options }, (error, stdout, stderr) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,128 @@
+{
+  "name": "dsh-aihot-radar",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-18T09:00:16.023Z",
+  "icon": "dsh-aihot-radar.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 506,
+        "text": "const res = await fetch(url, { headers: { Accept: 'text/markdown, text/plain' }, signal: ctrl.signal })"
+      },
+      {
+        "file": "client.js",
+        "line": 736,
+        "text": "await fetch(LOCAL_API + '/status', { mode: 'no-cors', cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 749,
+        "text": "const res = await fetch(LOCAL_API + '/status', { headers: { Accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 785,
+        "text": "const res = await fetch(LOCAL_API + path, body === undefined"
+      },
+      {
+        "file": "client.js",
+        "line": 862,
+        "text": "const res = await fetch(LOCAL_API + '/status', { headers: { Accept: 'application/json' } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/digest.js",
+        "line": 6,
+        "text": "import { mkdirSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/digest.js",
+        "line": 102,
+        "text": "mkdirSync(dir, { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/digest.js",
+        "line": 103,
+        "text": "writeFileSync(join(dir, `${date}.md`), renderReportMarkdown(report), 'utf8')"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 6,
+        "text": "import { mkdirSync, readFileSync, writeFileSync, renameSync, chmodSync, unlinkSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/state.js",
+        "line": 44,
+        "text": "raw = readFileSync(file, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 81,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 55,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 69,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 81,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/verify-dedup.mjs",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/verify-dedup.mjs",
+        "line": 55,
+        "text": "const child = spawn(process.execPath, ['--input-type=module', '-e', workerCode], {"
+      },
+      {
+        "file": "scripts/verify-dedup.mjs",
+        "line": 103,
+        "text": "const child = spawn(process.execPath, ['--input-type=module', '-e', code], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

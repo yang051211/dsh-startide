@@ -1,0 +1,71 @@
+{
+  "name": "dsh-clamawake",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-18T09:00:17.613Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 38,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 117,
+        "text": "fp = fs.readFileSync(fpPath, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 37,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 97,
+        "text": "run = spawnSync(engine, ['version'], { encoding: 'utf8', timeout: LIST_TIMEOUT_MS })"
+      },
+      {
+        "file": "index.js",
+        "line": 137,
+        "text": "const run = spawnSync(engine, ['list'], { encoding: 'utf8', timeout: LIST_TIMEOUT_MS })"
+      },
+      {
+        "file": "index.js",
+        "line": 162,
+        "text": "const child = spawn(engine, ['create', String(SCREEN_W), String(SCREEN_H), '--hidpi', '--hold', '--mirror-main'], {"
+      },
+      {
+        "file": "index.js",
+        "line": 214,
+        "text": "const child = spawn(CAFFEINATE, ['-d'], { stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "bin/vd-engine"
+  ],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

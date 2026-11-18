@@ -1,0 +1,69 @@
+{
+  "name": "dsh-ink-splash",
+  "version": "0.3.8",
+  "scannedAt": "2026-11-18T09:00:16.920Z",
+  "icon": "dsh-ink-splash.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 2309,
+        "text": "const sent = window.fetch(\"/ink-splash/config\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2389,
+        "text": "fetch(\"/ink-splash/boot-report\", {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "import { readFile, writeFile, stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "import { createReadStream, mkdirSync, readFileSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 144,
+        "text": "const prior = (await readFile(path, \"utf8\").catch(() => \"\")).split(\"\\n\").filter(Boolean).slice(-19);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 146,
+        "text": "await writeFile(path, prior.join(\"\\n\") + \"\\n\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 155,
+        "text": "const prior = JSON.parse(await readFile(path, \"utf8\").catch(() => \"{}\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

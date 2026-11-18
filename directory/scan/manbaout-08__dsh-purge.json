@@ -1,0 +1,55 @@
+{
+  "name": "@manbaout-08/dsh-purge",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-18T09:00:13.257Z",
+  "icon": "manbaout-08__dsh-purge.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { promises as fs } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "return JSON.parse(await fs.readFile(registryFile(), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 23,
+        "text": "await fs.writeFile(tmp, JSON.stringify(data, null, 2), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 52,
+        "text": "for (const dir of dirs) await fs.rm(dir, { recursive: true, force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

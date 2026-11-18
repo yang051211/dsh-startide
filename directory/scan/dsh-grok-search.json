@@ -1,7 +1,7 @@
 {
   "name": "dsh-grok-search",
-  "version": "0.3.0",
-  "scannedAt": "2026-11-13T21:10:55.599Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-18T09:00:20.043Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -11,29 +11,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/core/config-opener.mjs",
-        "line": 2,
-        "text": "import { statSync } from 'node:fs';"
+        "file": "src/bundle.mjs",
+        "line": 1,
+        "text": "import { readFileSync } from 'node:fs';"
       },
       {
-        "file": "src/core/control-intent-store.mjs",
-        "line": 4,
+        "file": "src/bundle.mjs",
+        "line": 25,
+        "text": "const pluginVersion = JSON.parse(readFileSync(fileURLToPath(new URL('../package.json', import.meta.url)), 'utf8')).version;"
+      },
+      {
+        "file": "src/core/compatibility-cli.mjs",
+        "line": 3,
+        "text": "import { realpathSync } from 'node:fs';"
+      },
+      {
+        "file": "src/core/compatibility-state.mjs",
+        "line": 5,
         "text": "} from 'node:fs';"
       },
       {
-        "file": "src/core/control-intent-store.mjs",
-        "line": 258,
-        "text": "return readFileSync(path);"
-      },
-      {
-        "file": "src/core/control-intent-store.mjs",
-        "line": 387,
-        "text": "const bytes = readFileSync(legacyPath);"
-      },
-      {
-        "file": "src/core/control-intent-store.mjs",
-        "line": 412,
-        "text": "const bytes = readFileSync(checkpointPath);"
+        "file": "src/core/compatibility-state.mjs",
+        "line": 129,
+        "text": "if (ordinaryFile(current) && sameIdentity(current, identity)) unlinkSync(path);"
       }
     ]
   },
@@ -42,7 +42,7 @@
     "evidence": [
       {
         "file": "src/core/github-host.mjs",
-        "line": 96,
+        "line": 117,
         "text": "try { unregister = registrationContext.tools.register(definition); registrationError = null; }"
       }
     ]
@@ -72,7 +72,7 @@
       },
       {
         "file": "src/core/program-discovery.mjs",
-        "line": 85,
+        "line": 89,
         "text": "const child = spawn(actual, ['--version'], { env: environment, windowsHide: true, shell: false, stdio: ['ignore', 'pipe', 'pipe'] });"
       }
     ]
@@ -81,7 +81,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 2,
+  "dependencies": 3,
   "minifiedFiles": [
     "src/client.js"
   ],

@@ -1,11 +1,17 @@
 {
   "name": "@michengai/dsh-btw",
-  "version": "1.3.11",
-  "scannedAt": "2026-11-14T07:59:01.292Z",
+  "version": "1.3.12",
+  "scannedAt": "2026-11-18T09:00:09.822Z",
   "icon": "michengai__dsh-btw.svg",
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 15804,
+        "text": "const resp = await window.fetch(`${JOB_ROUTE_PATH}?session=${encodeURIComponent(session)}&id=${encodeURIComponent(id)}`, { signal });"
+      }
+    ]
   },
   "fileSystem": {
     "hit": false,
@@ -16,22 +22,22 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 1225,
+        "line": 1274,
         "text": "var inject = [\"commands\", \"subagents\", \"tools\"];"
       },
       {
         "file": "lib/index.js",
-        "line": 1236,
+        "line": 1285,
         "text": "const releasePluginGuard = ctx.tools.guard(protection);"
       },
       {
         "file": "lib/index.js",
-        "line": 1241,
+        "line": 1290,
         "text": "childGuards.set(agent, agent.ctx.tools.guard(protection));"
       },
       {
         "file": "lib/index.js",
-        "line": 1278,
+        "line": 1327,
         "text": "const sendTool = ctx.tools.get?.(\"send_message\", parentAgent);"
       }
     ]

@@ -1,0 +1,92 @@
+{
+  "name": "dsh-rss-news-zhuikan",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-18T09:00:25.676Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 34,
+        "text": "const res = await fetch(API, { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 44,
+        "text": "await fetch(API + '/dismiss', {"
+      },
+      {
+        "file": "lib/transport.js",
+        "line": 12,
+        "text": "const b = await bf.fetch(domain, url, { method: opt?.method, headers: opt?.headers, body: opt?.body });"
+      },
+      {
+        "file": "lib/transport.js",
+        "line": 39,
+        "text": "const b = await bf.fetch(domain, url, { method: opt?.method, headers: opt?.headers, body: opt?.body });"
+      },
+      {
+        "file": "lib/transport.js",
+        "line": 47,
+        "text": "const r = await ctx.fetch(url, ctx.signal, { headers: opt?.headers, proxy: proxyArg(opt?.proxy) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/db.js",
+        "line": 6,
+        "text": "import { existsSync, mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/db.js",
+        "line": 73,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/dep-prompt.js",
+        "line": 17,
+        "text": "import { mkdirSync, readFileSync, readdirSync, realpathSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/dep-prompt.js",
+        "line": 32,
+        "text": "const s = JSON.parse(readFileSync(statePath(dataDir), 'utf8'));"
+      },
+      {
+        "file": "lib/dep-prompt.js",
+        "line": 41,
+        "text": "mkdirSync(dataDir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/vendor/cheerio.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 51,
+      "text": "npm install -g dsh-rss-news-zhuikan   # 或按 dsh 插件安装流程指向本包"
+    }
+  ],
+  "skippedEntries": []
+}

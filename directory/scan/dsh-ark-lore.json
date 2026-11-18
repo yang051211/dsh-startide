@@ -1,0 +1,80 @@
+{
+  "name": "dsh-ark-lore",
+  "version": "0.11.3",
+  "scannedAt": "2026-11-18T09:00:21.057Z",
+  "icon": "dsh-ark-lore.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "源码/live.js",
+        "line": 33,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "源码/live.js",
+        "line": 265,
+        "text": "const response = await fetch(STORY_CDN + row.txt + '.txt', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "源码/live.js",
+        "line": 1,
+        "text": "import { existsSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "源码/live.js",
+        "line": 61,
+        "text": "return JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "源码/live.js",
+        "line": 68,
+        "text": "writeFileSync(join(dataDir, 'corrections.json'), `${JSON.stringify(corrections, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "源码/live.js",
+        "line": 75,
+        "text": "const doc = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "源码/live.js",
+        "line": 83,
+        "text": "writeFileSync(join(dataDir, 'dynamic.json'), `${JSON.stringify(dynamic, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "export const inject = ['tools', 'skills']"
+      },
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "disposers.push(ctx.tools.register(definition))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

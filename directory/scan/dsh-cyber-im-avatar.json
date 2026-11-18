@@ -1,7 +1,7 @@
 {
   "name": "dsh-cyber-im-avatar",
-  "version": "0.22.0",
-  "scannedAt": "2026-11-17T09:25:33.637Z",
+  "version": "0.24.1",
+  "scannedAt": "2026-11-18T09:00:15.535Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,7 +13,7 @@
       },
       {
         "file": "lib/client.js",
-        "line": 3589,
+        "line": 3986,
         "text": "fetch(api + \"/api/debug/boot\", {"
       },
       {
@@ -38,23 +38,23 @@
       },
       {
         "file": "lib/app.js",
-        "line": 135,
+        "line": 145,
         "text": "try { fs.unlinkSync(duty.decisionPath(this.state, pending)); } catch { /* best effort */ }"
       },
       {
         "file": "lib/app.js",
-        "line": 1062,
-        "text": "text = fs.readFileSync(file, \"utf8\");"
+        "line": 1084,
+        "text": "const buf = fs.readFileSync(hit.file);"
       },
       {
-        "file": "lib/duty.js",
-        "line": 9,
-        "text": "import fs from \"node:fs\";"
+        "file": "lib/app.js",
+        "line": 1119,
+        "text": "try { fs.unlinkSync(hit.file); } catch { /* 已经不存在也算清空 */ }"
       },
       {
-        "file": "lib/duty.js",
-        "line": 64,
-        "text": "fs.mkdirSync(decisionsDir(state), { recursive: true, mode: 0o700 });"
+        "file": "lib/app.js",
+        "line": 1123,
+        "text": "fs.mkdirSync(hit.dir, { recursive: true, mode: 0o700 });"
       }
     ]
   },

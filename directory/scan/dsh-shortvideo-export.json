@@ -1,0 +1,146 @@
+{
+  "name": "dsh-shortvideo-export",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-18T09:00:17.826Z",
+  "icon": "dsh-shortvideo-export.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 219,
+        "text": "const response = await fetch(path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 229,
+        "text": "fs.mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 235,
+        "text": "fs.unlinkSync(progressPath)"
+      },
+      {
+        "file": "index.js",
+        "line": 271,
+        "text": "fs.writeFileSync(metaPath, JSON.stringify(meta, null, 2), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 295,
+        "text": "const raw = fs.readFileSync(file, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 25,
+        "text": "export const inject = ['tools', 'skills', 'llm']"
+      },
+      {
+        "file": "index.js",
+        "line": 583,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 619,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 654,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 706,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 148,
+        "text": "const child = spawn(exe, args, {"
+      },
+      {
+        "file": "index.js",
+        "line": 247,
+        "text": "child = spawn(exe, args, {"
+      },
+      {
+        "file": "index.js",
+        "line": 361,
+        "text": "spawn('taskkill', ['/PID', String(meta.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "server.js",
+        "line": 318,
+        "text": "const { spawn } = await import('node:child_process')"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "skills",
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 33,
+      "text": "python -m pip install playwright numpy python-docx"
+    },
+    {
+      "file": "README.md",
+      "line": 35,
+      "text": "python -m pip install sherpa-onnx        # default local engine (SenseVoice)"
+    },
+    {
+      "file": "README.md",
+      "line": 36,
+      "text": "python -m pip install faster-whisper     # alternative local engine"
+    },
+    {
+      "file": "README.zh-CN.md",
+      "line": 33,
+      "text": "python -m pip install playwright numpy python-docx"
+    },
+    {
+      "file": "README.zh-CN.md",
+      "line": 35,
+      "text": "python -m pip install sherpa-onnx        # 默认本地引擎 SenseVoice"
+    }
+  ],
+  "skippedEntries": []
+}

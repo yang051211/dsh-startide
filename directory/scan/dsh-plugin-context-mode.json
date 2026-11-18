@@ -1,0 +1,114 @@
+{
+  "name": "dsh-plugin-context-mode",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-18T09:00:18.233Z",
+  "icon": "dsh-plugin-context-mode.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 177,
+        "text": "fetch(\"/api/context-mode?action=stats\").then(r => r.json()),"
+      },
+      {
+        "file": "client.js",
+        "line": 178,
+        "text": "fetch(\"/api/context-mode?action=doctor\").then(r => r.json())"
+      },
+      {
+        "file": "client.js",
+        "line": 199,
+        "text": "await fetch(\"/api/context-mode?action=purge\", {"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 3,
+        "text": "import http from \"node:http\";"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 4,
+        "text": "import https from \"node:https\";"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/executor.js",
+        "line": 2,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 1,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 54,
+        "text": "fs.mkdirSync(dbDir, { recursive: true });"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 1,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 426,
+        "text": "textContent = fs.readFileSync(filePath, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 36,
+        "text": "export const inject = [\"systemPrompt\", \"tools\", \"workingDirectory\", \"agents\", \"webServer\", \"workspaceRegistry\", \"connection\"];"
+      },
+      {
+        "file": "index.js",
+        "line": 135,
+        "text": "ctx.tools.register(tool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/executor.js",
+        "line": 1,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/executor.js",
+        "line": 37,
+        "text": "const child = spawn(cmd, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "connection",
+    "systemPrompt",
+    "tools",
+    "webServer",
+    "workingDirectory",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

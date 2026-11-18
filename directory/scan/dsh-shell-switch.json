@@ -1,14 +1,14 @@
 {
   "name": "dsh-shell-switch",
-  "version": "0.2.2",
-  "scannedAt": "2026-11-16T08:06:34.342Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-18T09:00:18.579Z",
   "icon": "dsh-shell-switch.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 113,
+        "line": 185,
         "text": "const response = await fetch(`${apiBase()}${tail}`, init);"
       }
     ]
@@ -17,39 +17,65 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 23,
+        "file": "background.js",
+        "line": 29,
         "text": "import fs from 'node:fs';"
       },
       {
-        "file": "index.js",
-        "line": 131,
-        "text": "fs.appendFileSync(path.join(os.tmpdir(), 'dsh-shell-switch-debug.log'), line, 'utf8');"
+        "file": "background.js",
+        "line": 123,
+        "text": "fs.mkdirSync(jobsDir(), { recursive: true });"
       },
       {
-        "file": "index.js",
+        "file": "background.js",
+        "line": 138,
+        "text": "parsed = JSON.parse(fs.readFileSync(indexFile(), 'utf8'));"
+      },
+      {
+        "file": "background.js",
+        "line": 181,
+        "text": "fs.writeFileSync(tmp, JSON.stringify(payload, null, 2), 'utf8');"
+      },
+      {
+        "file": "background.js",
         "line": 196,
-        "text": "const parsed = JSON.parse(fs.readFileSync(file, 'utf8'));"
-      },
-      {
-        "file": "index.js",
-        "line": 230,
-        "text": "fs.mkdirSync(path.dirname(file), { recursive: true });"
-      },
-      {
-        "file": "index.js",
-        "line": 231,
-        "text": "fs.writeFileSync(file, `${JSON.stringify(payload, null, 2)}\\n`, 'utf8');"
+        "text": "fs.unlinkSync(victim.logPath);"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1590,
+        "text": "inject: ['subprocess', 'sandbox', 'sandboxPolicy', 'tools', 'workingDirectory'],"
+      },
+      {
+        "file": "index.js",
+        "line": 1643,
+        "text": "const reg = inner.tools.register(def);"
+      }
+    ]
   },
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "background.js",
+        "line": 11,
+        "text": "*  - `spawn(..., { detached: true })` + `unref()` so the child survives the tool"
+      },
+      {
+        "file": "background.js",
+        "line": 27,
+        "text": "import { spawn, execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "background.js",
+        "line": 227,
+        "text": "child = spawn(input.argv[0], input.argv.slice(1), {"
+      },
       {
         "file": "index.js",
         "line": 22,

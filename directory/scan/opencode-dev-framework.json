@@ -1,0 +1,93 @@
+{
+  "name": "opencode-dev-framework",
+  "version": "1.10.1",
+  "scannedAt": "2026-11-18T09:00:13.188Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/adapters/dsh/index.js",
+        "line": 20,
+        "text": "import { readFile, stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "dist/adapters/dsh/index.js",
+        "line": 503,
+        "text": "return await readFile(join(directory, rel, `${kind}.md`), \"utf8\");"
+      },
+      {
+        "file": "dist/adapters/opencode/index.js",
+        "line": 28,
+        "text": "import { stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "dist/core/config.js",
+        "line": 7,
+        "text": "import { existsSync, readFileSync, statSync } from \"node:fs\";"
+      },
+      {
+        "file": "dist/core/config.js",
+        "line": 551,
+        "text": "const parsed = parseYaml(readFileSync(configPath, \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/adapters/dsh/index.js",
+        "line": 123,
+        "text": "tools = ctx.tools;"
+      },
+      {
+        "file": "dist/adapters/dsh/index.js",
+        "line": 133,
+        "text": "tools.register({"
+      },
+      {
+        "file": "dist/adapters/dsh/index.js",
+        "line": 579,
+        "text": "tools: hasServiceMethod(() => ctx.tools, \"register\"),"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/adapters/dsh/index.js",
+        "line": 79,
+        "text": "const handle = ctx.subprocess.spawn({"
+      },
+      {
+        "file": "dist/core/host.js",
+        "line": 8,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "dist/core/host.js",
+        "line": 34,
+        "text": "child = spawn(cmd, args, { cwd: options.cwd });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 4,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "subprocess"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

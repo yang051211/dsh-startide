@@ -1,0 +1,72 @@
+{
+  "name": "@dylanzbot/dsh-netease-music",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-18T09:00:25.465Z",
+  "icon": "dylanzbot__dsh-netease-music.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 138,
+        "text": "response = await fetch(path, init);"
+      },
+      {
+        "file": "lib/host/utils/request.js",
+        "line": 31,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/config.js",
+        "line": 1,
+        "text": "import { chmodSync, existsSync, mkdirSync, readFileSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/host/config.js",
+        "line": 34,
+        "text": "const parsed = JSON.parse(readFileSync(path, \"utf8\"));"
+      },
+      {
+        "file": "lib/host/config.js",
+        "line": 46,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "lib/host/config.js",
+        "line": 47,
+        "text": "writeFileSync(path, JSON.stringify(config, null, 2), {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: husky"
+      }
+    ]
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

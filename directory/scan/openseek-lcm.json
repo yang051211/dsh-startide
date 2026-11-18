@@ -1,24 +1,29 @@
 {
   "name": "openseek-lcm",
-  "version": "0.2.2",
-  "scannedAt": "2026-11-12T21:20:47.578Z",
+  "version": "0.3.5",
+  "scannedAt": "2026-11-18T09:00:14.928Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 111,
+        "line": 148,
         "text": "const response = await fetch(ROUTE, { headers: { accept: 'application/json' } });"
       },
       {
         "file": "client.js",
-        "line": 137,
+        "line": 161,
+        "text": "const response = await fetch(MAINTENANCE_ROUTE, {"
+      },
+      {
+        "file": "client.js",
+        "line": 211,
         "text": "const response = await fetch(ROUTE, {"
       },
       {
         "file": "lib/source.js",
-        "line": 197,
+        "line": 373,
         "text": "// \"run whatever dev was when this clone last fetched\". A failed fetch (offline,"
       }
     ]
@@ -39,16 +44,16 @@
       {
         "file": "lib/maintenance.js",
         "line": 12,
-        "text": "import { existsSync, readFileSync, writeFileSync } from 'node:fs';"
+        "text": "import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';"
       },
       {
         "file": "lib/maintenance.js",
-        "line": 753,
+        "line": 870,
         "text": "writeFileSync(filePath, JSON.stringify(snapshot), 'utf8');"
       },
       {
         "file": "lib/maintenance.js",
-        "line": 781,
+        "line": 898,
         "text": "snapshot = JSON.parse(readFileSync(filePath, 'utf8'));"
       }
     ]
@@ -63,12 +68,12 @@
       },
       {
         "file": "index.js",
-        "line": 73,
+        "line": 82,
         "text": "export const inject = ['tools', 'systemPrompt', 'sessionQuery', 'agents'];"
       },
       {
         "file": "index.js",
-        "line": 452,
+        "line": 461,
         "text": "const dispose = ctx.tools.register(definition);"
       }
     ]

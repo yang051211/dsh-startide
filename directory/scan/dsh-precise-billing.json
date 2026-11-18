@@ -1,0 +1,98 @@
+{
+  "name": "dsh-precise-billing",
+  "version": "0.2.5",
+  "scannedAt": "2026-11-18T09:00:18.487Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 206,
+        "text": "const res = await fetch('/api/precise-billing/account', { cache: 'no-store' });"
+      },
+      {
+        "file": "client.js",
+        "line": 335,
+        "text": "const res = await fetch('/api/precise-billing' + query, { cache: 'no-store' });"
+      },
+      {
+        "file": "client.js",
+        "line": 584,
+        "text": "fetch('/api/precise-billing/session?session=' + encodeURIComponent(props.sessionId), { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 688,
+        "text": "const res = await fetch('/api/precise-billing/restart', {"
+      },
+      {
+        "file": "client.js",
+        "line": 705,
+        "text": "const res = await fetch('/api/precise-billing/restart', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 380,
+        "text": "buf = fs.readFileSync(file);"
+      },
+      {
+        "file": "index.js",
+        "line": 526,
+        "text": "const raw = JSON.parse(fs.readFileSync(storePath(), 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 557,
+        "text": "fs.mkdirSync(path.dirname(target), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 559,
+        "text": "fs.writeFileSync(tmp, JSON.stringify(store), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 1367,
+        "text": "const child = spawn('explorer.exe', [wrapper], { detached: true, stdio: 'ignore', windowsHide: true });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "credentials",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

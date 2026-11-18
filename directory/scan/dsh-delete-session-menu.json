@@ -1,0 +1,54 @@
+{
+  "name": "dsh-delete-session-menu",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-18T09:00:20.666Z",
+  "icon": "dsh-delete-session-menu.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 93,
+        "text": "response = await fetch(url.href, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "import { readdir, rm, rmdir, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 101,
+        "text": "await rm(dir, { recursive: true, force: true, maxRetries: 3, retryDelay: 100 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "sessions",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

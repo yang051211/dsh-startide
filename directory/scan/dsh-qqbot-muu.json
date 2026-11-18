@@ -1,7 +1,7 @@
 {
   "name": "dsh-qqbot-muu",
-  "version": "0.1.6",
-  "scannedAt": "2026-11-10T20:53:55.436Z",
+  "version": "0.1.8",
+  "scannedAt": "2026-11-18T09:00:19.737Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -98,28 +98,28 @@
     "evidence": [
       {
         "file": "dist/commands/exit.js",
-        "line": 10,
+        "line": 12,
+        "text": "*  - 助手: 延迟→杀当前宿主进程→等 2s→按原命令 + 原环境变量重 spawn(失败最多 3 次)→日志。"
+      },
+      {
+        "file": "dist/commands/exit.js",
+        "line": 15,
         "text": "import { spawn } from 'node:child_process';"
       },
       {
         "file": "dist/commands/exit.js",
-        "line": 27,
+        "line": 40,
         "text": "\"const { spawn } = require('child_process');\","
       },
       {
         "file": "dist/commands/exit.js",
-        "line": 36,
-        "text": "'      const c = spawn(exe, args, { detached: true, stdio: \\'ignore\\', cwd });',"
+        "line": 58,
+        "text": "\"        const c = spawn(exe, args, { detached: true, stdio: 'ignore', cwd, env });\","
       },
       {
         "file": "dist/commands/exit.js",
-        "line": 46,
-        "text": "const child = spawn(exe, [tmpFile], { detached: true, stdio: 'ignore', windowsHide: true });"
-      },
-      {
-        "file": "dist/features/qun-login.js",
-        "line": 19,
-        "text": "import { spawn, spawnSync } from 'node:child_process';"
+        "line": 76,
+        "text": "const child = spawn(exe, [tmpFile], { detached: true, stdio: 'ignore', windowsHide: true, env });"
       }
     ]
   },
@@ -127,7 +127,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 8,
+  "dependencies": 10,
   "minifiedFiles": [
     "client/qqbot-settings.js"
   ],

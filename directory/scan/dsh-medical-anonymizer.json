@@ -1,7 +1,7 @@
 {
   "name": "dsh-medical-anonymizer",
-  "version": "0.11.2",
-  "scannedAt": "2026-11-15T20:14:34.818Z",
+  "version": "0.11.3",
+  "scannedAt": "2026-11-18T09:00:14.501Z",
   "icon": "dsh-medical-anonymizer.svg",
   "network": {
     "hit": true,
@@ -18,7 +18,7 @@
       },
       {
         "file": "lib/pipeline.js",
-        "line": 3693,
+        "line": 3720,
         "text": "const response = await fetch(url, { signal: controller.signal })"
       }
     ]
@@ -26,6 +26,16 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/assess.js",
+        "line": 19,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/assess.js",
+        "line": 186,
+        "text": "const buffer = await readFile(path)"
+      },
       {
         "file": "lib/dicom/codec.js",
         "line": 14,
@@ -40,16 +50,6 @@
         "file": "lib/dicom/index.js",
         "line": 10,
         "text": "import { mkdir, rename, rm, stat } from 'node:fs/promises'"
-      },
-      {
-        "file": "lib/dicom/index.js",
-        "line": 136,
-        "text": "await mkdir(dirname(target), { recursive: true })"
-      },
-      {
-        "file": "lib/dicom/index.js",
-        "line": 161,
-        "text": "await rm(temp, { force: true }).catch(() => {})"
       }
     ]
   },
@@ -58,27 +58,27 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 46,
+        "line": 63,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "index.js",
-        "line": 63,
+        "line": 80,
         "text": "ctx.tools.register(tool({"
       },
       {
         "file": "index.js",
-        "line": 91,
+        "line": 112,
         "text": "ctx.tools.register(tool({"
       },
       {
         "file": "index.js",
-        "line": 106,
+        "line": 127,
         "text": "ctx.tools.register(tool({"
       },
       {
         "file": "index.js",
-        "line": 119,
+        "line": 140,
         "text": "ctx.tools.register(tool({"
       }
     ]
@@ -95,6 +95,11 @@
         "file": "index.js",
         "line": 33,
         "text": "execFile('osascript', ['-e', script], { timeout: 10 * 60 * 1000 }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 54,
+        "text": "execFile(command, args, { timeout: 30000 }, (error) => {"
       }
     ]
   },

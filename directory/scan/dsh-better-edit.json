@@ -1,7 +1,7 @@
 {
   "name": "dsh-better-edit",
-  "version": "1.2.4",
-  "scannedAt": "2026-11-17T22:16:52.145Z",
+  "version": "1.2.5",
+  "scannedAt": "2026-11-18T09:00:15.677Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -22,18 +22,18 @@
       },
       {
         "file": "lib/file-view.js",
-        "line": 20,
-        "text": "import { constants } from \"node:fs\";"
+        "line": 18,
+        "text": "import { stat as fsStat } from \"fs/promises\";"
       },
       {
-        "file": "lib/file-view.js",
-        "line": 21,
-        "text": "import { open as fsOpen, stat as fsStat } from \"fs/promises\";"
+        "file": "lib/fs-bridge.js",
+        "line": 17,
+        "text": "import { readFile } from \"node:fs/promises\";"
       },
       {
-        "file": "lib/file-view.js",
-        "line": 22,
-        "text": "import { access as fsAccess } from \"fs/promises\";"
+        "file": "lib/fs-bridge.js",
+        "line": 273,
+        "text": "const bytes = await readFile(absolutePath);"
       }
     ]
   },
@@ -42,27 +42,22 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 24,
+        "line": 25,
         "text": "export const inject = [\"tools\", \"systemPrompt\", \"fs\"];"
       },
       {
-        "file": "lib/index.js",
-        "line": 102,
-        "text": "disposers.push(agent.ctx.tools.register(hashReadDef));"
+        "file": "lib/reclaim.js",
+        "line": 37,
+        "text": "return agentCtx.tools.register(def);"
       },
       {
-        "file": "lib/index.js",
-        "line": 105,
-        "text": "disposers.push(agent.ctx.tools.register(hashEditDef));"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 113,
-        "text": "disposers.push(agent.ctx.tools.register(hashStrReplaceDef));"
+        "file": "lib/reclaim.js",
+        "line": 56,
+        "text": "const dispose = agentCtx.tools.register(def);"
       },
       {
         "file": "lib/self-heal.js",
-        "line": 72,
+        "line": 68,
         "text": "agentCtx.tools.register(def);"
       }
     ]

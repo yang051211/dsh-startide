@@ -1,7 +1,7 @@
 {
   "name": "dsh-browser-cdp",
-  "version": "1.9.9",
-  "scannedAt": "2026-11-10T20:53:39.832Z",
+  "version": "1.13.2",
+  "scannedAt": "2026-11-18T09:00:06.437Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,13 +13,13 @@
       },
       {
         "file": "bin/cdp-cast-worker.mjs",
-        "line": 6708,
+        "line": 6759,
         "text": "const response = await fetch(`http://127.0.0.1:${state.port}/json/version`, { signal: AbortSignal.timeout(1500) });"
       },
       {
         "file": "bin/cdp-cast-worker.mjs",
-        "line": 6725,
-        "text": "const response = await fetch(`http://127.0.0.1:${active.port}/json/list`, { signal: AbortSignal.timeout(1500) });"
+        "line": 6848,
+        "text": "const response = await fetch(`${target.base}/json/list`, { signal: AbortSignal.timeout(1500) });"
       },
       {
         "file": "bin/cdp-render-worker.mjs",
@@ -28,7 +28,7 @@
       },
       {
         "file": "lib/client.js",
-        "line": 853,
+        "line": 702,
         "text": "return fetch(path, {"
       }
     ]
@@ -48,17 +48,17 @@
       },
       {
         "file": "bin/cdp-cast-worker.mjs",
-        "line": 6695,
+        "line": 6746,
         "text": "return JSON.parse(await import(\"node:fs/promises\").then((fs) => fs.readFile(BROWSER_STATE_FILE, \"utf8\")));"
       },
       {
         "file": "bin/cdp-cast-worker.mjs",
-        "line": 6871,
+        "line": 7031,
         "text": "rmSync(CAST_STATE_FILE, { force: true });"
       },
       {
         "file": "bin/cdp-cast-worker.mjs",
-        "line": 7309,
+        "line": 7498,
         "text": "mkdirSync(STATE_DIR, { recursive: true });"
       }
     ]
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 10322,
+        "line": 12827,
         "text": "tHasCtx=${scopeProbe.agentHasCtx} agent.ctx.tools=${scopeProbe.agentCtxTools} agent.ctx.tools.restrict=${scopeProbe.agentCtxRestrict}` + (scopeProbe.error !== \""
       },
       {
         "file": "lib/index.js",
-        "line": 10536,
-        "text": "const dispose = ctx.tools.register(tool);"
+        "line": 13049,
+        "text": "const dispose = ctx.tools.register(registered);"
       },
       {
         "file": "lib/index.js",
-        "line": 10580,
+        "line": 13095,
         "text": "const restrictFn = ctx.tools.restrict;"
       },
       {
         "file": "runtime/ego-browser/dist/out/index.js",
-        "line": 6468,
+        "line": 6608,
         "text": "www.google.com/search?q=test'); console.log(ctx.tools); const results = await site.runTool('google', 'search_and_extract', { query: 'openai', maxResults: 5 })\","
       },
       {
         "file": "runtime/ego-browser/dist/out/index.js",
-        "line": 6493,
+        "line": 6633,
         "text": "const ctx = await site.learnContext('https://x.com/home'); console.log(ctx.tools); const post = await site.runBrowserTool('x-com', 'post_from_active_element')\","
       }
     ]
@@ -103,7 +103,7 @@
       },
       {
         "file": "bin/cdp-cast-worker.mjs",
-        "line": 4916,
+        "line": 4959,
         "text": "const child = this.spawn(path, argv, {"
       },
       {
@@ -118,7 +118,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 1193,
+        "line": 1300,
         "text": "const handle = subprocess.spawn(spec);"
       }
     ]

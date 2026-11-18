@@ -1,11 +1,16 @@
 {
   "name": "dsh-session-conductor",
-  "version": "1.5.0",
-  "scannedAt": "2026-11-14T19:29:32.560Z",
+  "version": "1.5.6",
+  "scannedAt": "2026-11-18T09:00:14.653Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/apply.js",
+        "line": 303,
+        "text": "// 先剔掉引号内的内容再判：`curl -d '{\"a\":\">b\"}'` 里那个 `>` 是 JSON 字符，"
+      },
       {
         "file": "lib/client-parts/foundation/bootstrap.js",
         "line": 23,
@@ -25,11 +30,6 @@
         "file": "lib/client.js",
         "line": 116,
         "text": "return fetch(url, next).finally(() => clearTimeout(timer));"
-      },
-      {
-        "file": "lib/group.js",
-        "line": 280,
-        "text": "const prompt = await fetch(`http://127.0.0.1:${hostPort}/api/session.prompt`, {"
       }
     ]
   },
@@ -48,17 +48,17 @@
       },
       {
         "file": "lib/core/config.js",
-        "line": 121,
+        "line": 134,
         "text": "const parsed = JSON.parse(await readFile(file, \"utf8\"));"
       },
       {
         "file": "lib/core/config.js",
-        "line": 148,
+        "line": 161,
         "text": "await mkdir(path.dirname(file), { recursive: true });"
       },
       {
         "file": "lib/core/config.js",
-        "line": 151,
+        "line": 164,
         "text": "await writeFile(tmpPath, JSON.stringify({"
       }
     ]
@@ -98,12 +98,12 @@
     "evidence": [
       {
         "file": "lib/features/session-action-routes.js",
-        "line": 673,
+        "line": 693,
         "text": "const { spawn } = await import(\"node:child_process\");"
       },
       {
         "file": "lib/features/session-action-routes.js",
-        "line": 683,
+        "line": 703,
         "text": "const child = spawn(command, args, { detached: true, stdio: \"ignore\" });"
       }
     ]

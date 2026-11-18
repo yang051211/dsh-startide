@@ -1,24 +1,24 @@
 {
   "name": "dsh-gallery",
-  "version": "1.1.0",
-  "scannedAt": "2026-11-16T08:06:26.864Z",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-18T09:00:11.984Z",
   "icon": "dsh-gallery.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 1410,
+        "line": 1450,
         "text": "const response = await fetch(ROUTE, {"
       },
       {
         "file": "client.js",
-        "line": 1460,
+        "line": 1500,
         "text": "const response = await fetch(ROUTE, {"
       },
       {
         "file": "client.js",
-        "line": 8061,
+        "line": 8622,
         "text": "const response = await fetch(mediaUrlOf(relPath, target?.mtime), { credentials: 'same-origin' })"
       }
     ]
@@ -26,6 +26,11 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "host/changes.js",
+        "line": 18,
+        "text": "import { promises as fsp, watch } from 'node:fs'"
+      },
       {
         "file": "host/classify.js",
         "line": 7,
@@ -45,11 +50,6 @@
         "file": "host/clipboard.js",
         "line": 119,
         "text": "try { await fsp.rm(outFile, { force: true }) } catch { /* 忽略 */ }"
-      },
-      {
-        "file": "host/clipboard.js",
-        "line": 149,
-        "text": "await fsp.writeFile(inFile, cleaned.join('\\n'), 'utf8')"
       }
     ]
   },
@@ -103,12 +103,12 @@
       },
       {
         "file": "host/http.js",
-        "line": 1691,
+        "line": 1705,
         "text": "*   旧实现 spawn('cmd.exe', ['/c','start','','explorer.exe', `/select,\"${abs}\"`])"
       },
       {
         "file": "host/http.js",
-        "line": 1717,
+        "line": 1731,
         "text": "const { spawn } = await import('node:child_process')"
       }
     ]

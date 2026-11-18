@@ -1,0 +1,72 @@
+{
+  "name": "dsh-brutal-delete",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-18T09:00:23.687Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 115,
+        "text": "const response = await fetch(endpoint(), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "import { readdir, rm, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 125,
+        "text": "await rm(dir, { recursive: true, force: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 132,
+        "text": "await rm(join(home, 'attachments', target), { recursive: true, force: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 364,
+        "text": "await rm(join(projRoot, `${target}.json${suffix}`), { recursive: true, force: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 380,
+        "text": "await rm(join(projRoot, entry.name), { recursive: true, force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "connection",
+    "sessionPersistence",
+    "sessionProjectionCache",
+    "sessions",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

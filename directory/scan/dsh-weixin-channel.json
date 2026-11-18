@@ -1,0 +1,128 @@
+{
+  "name": "dsh-weixin-channel",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-18T09:00:23.843Z",
+  "icon": "dsh-weixin-channel.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/ui.js",
+        "line": 42,
+        "text": "const res = await fetch(`${BASE}/status`, { cache: 'no-store' })"
+      },
+      {
+        "file": "client/ui.js",
+        "line": 122,
+        "text": "const res = await fetch(`${BASE}/login`, { method: 'POST' })"
+      },
+      {
+        "file": "lib/qr-page.js",
+        "line": 102,
+        "text": "var r = await fetch('/wechat-channel/status', { cache: 'no-store' });"
+      },
+      {
+        "file": "lib/qr-page.js",
+        "line": 122,
+        "text": "var pr = await fetch('/wechat-channel/qr.png', { cache: 'no-store' });"
+      },
+      {
+        "file": "lib/qr-page.js",
+        "line": 135,
+        "text": "await fetch('/wechat-channel/login', { method: 'POST' });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 28,
+        "text": "import { mkdirSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 174,
+        "text": "mkdirSync(stateDir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 175,
+        "text": "writeFileSync(diagFile, `${JSON.stringify({ ...diagnostics, updatedAt: new Date().toISOString() }, null, 2)}\\n`)"
+      },
+      {
+        "file": "index.js",
+        "line": 623,
+        "text": "const { readFile } = await import('node:fs/promises')"
+      },
+      {
+        "file": "index.js",
+        "line": 625,
+        "text": "const data = await readFile(file)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 380,
+        "text": "tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 498,
+        "text": "tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 574,
+        "text": "tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tools/run-tests.mjs",
+        "line": 2,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "tools/run-tests.mjs",
+        "line": 19,
+        "text": "const res = spawnSync(suite.cmd, suite.args, {"
+      },
+      {
+        "file": "tools/verify-qr.mjs",
+        "line": 13,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "tools/verify-qr.mjs",
+        "line": 18,
+        "text": "const res = spawnSync(cmd, args, {"
+      },
+      {
+        "file": "tools/verify-qr.mjs",
+        "line": 33,
+        "text": "spawnSync('python', ['tools/cv-ref-any.py', 'q'.repeat(CAP[v]), `tmp-cv-ref-v${v}.json`], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

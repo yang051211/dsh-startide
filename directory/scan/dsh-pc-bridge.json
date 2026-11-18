@@ -1,15 +1,20 @@
 {
   "name": "dsh-pc-bridge",
-  "version": "0.3.1",
-  "scannedAt": "2026-11-17T22:17:02.502Z",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-18T09:00:23.320Z",
   "icon": "dsh-pc-bridge.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 48,
+        "line": 51,
         "text": "const response = await fetch(API + path, options)"
+      },
+      {
+        "file": "client.js",
+        "line": 77,
+        "text": "void fetch(API + 'ui-event', {"
       },
       {
         "file": "lib/client.mjs",
@@ -18,18 +23,13 @@
       },
       {
         "file": "lib/runtime.mjs",
-        "line": 744,
+        "line": 979,
         "text": "response = await fetch(`${base}/pair`, {"
       },
       {
         "file": "lib/server.mjs",
         "line": 1,
         "text": "import { createServer as createHttpServer } from 'node:http'"
-      },
-      {
-        "file": "test/routes.test.mjs",
-        "line": 3,
-        "text": "import { createServer } from 'node:http'"
       }
     ]
   },
@@ -73,7 +73,7 @@
       },
       {
         "file": "lib/runtime.mjs",
-        "line": 277,
+        "line": 296,
         "text": "const disposer = register.call(ctx.tools, spec)"
       }
     ]
@@ -95,6 +95,11 @@
         "file": "lib/exec.mjs",
         "line": 107,
         "text": "child = spawn(exe, args, {"
+      },
+      {
+        "file": "lib/tailscale.mjs",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process'"
       },
       {
         "file": "lib/tunnel.mjs",

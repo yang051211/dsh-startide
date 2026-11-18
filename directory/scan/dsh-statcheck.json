@@ -1,0 +1,86 @@
+{
+  "name": "dsh-statcheck",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-18T09:00:23.741Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/runtime.js",
+        "line": 12,
+        "text": "import { mkdir, readFile, realpath, stat, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 143,
+        "text": "text = await readFile(resolved.absolute, 'utf8');"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 196,
+        "text": "await mkdir(directory, { recursive: true });"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 198,
+        "text": "await writeFile(file, `${JSON.stringify(record, null, 2)}\\n`, 'utf8');"
+      },
+      {
+        "file": "src/runtime.ts",
+        "line": 13,
+        "text": "import { mkdir, readFile, realpath, stat, writeFile } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "ctx.effect(() => ctx.tools.register(makeStatCheckTool(runtime)), 'statcheck: stat_check tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 47,
+        "text": "ctx.effect(() => ctx.tools.register(makeStatRecomputeTool(runtime)), 'statcheck: stat_recompute tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 48,
+        "text": "ctx.effect(() => ctx.tools.register(makeStatReportTool()), 'statcheck: stat_report tool');"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 23,
+        "text": "export const inject = ['tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

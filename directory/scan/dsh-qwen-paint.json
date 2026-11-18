@@ -1,7 +1,7 @@
 {
   "name": "dsh-qwen-paint",
-  "version": "1.1.1",
-  "scannedAt": "2026-11-17T22:16:41.590Z",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-18T09:00:11.737Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -67,18 +67,13 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/config.js",
-        "line": 2459,
-        "text": "// ★ 0.32.1 审计翻案：插件走 ctx.tools.register，那条路径只校验 output.schema；"
-      },
-      {
         "file": "lib/index.js",
         "line": 58,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "lib/index.js",
-        "line": 2802,
+        "line": 2811,
         "text": "return ctx.tools.register(withDeclaredOutput(t))"
       }
     ]
@@ -103,12 +98,12 @@
       },
       {
         "file": "lib/comfy-launch.js",
-        "line": 570,
+        "line": 572,
         "text": "//     · `spawn(detached: true)` + unref()     → ❌ 进程随即消失"
       },
       {
         "file": "lib/comfy-launch.js",
-        "line": 571,
+        "line": 573,
         "text": "//     · `spawn()`（普通、不 detached）         → ❌ 进程随即消失"
       }
     ]
@@ -120,6 +115,7 @@
   "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [
+    "assets/bin/dshqp-portrait.exe",
     "assets/bin/resvg.exe"
   ],
   "requiredServices": [
@@ -148,7 +144,7 @@
     },
     {
       "file": "README.md",
-      "line": 501,
+      "line": 584,
       "text": "- 诚实边界：音频权重不自动下载、缺件给清单；插件不 `pip install`、不建 venv / conda / Docker、不拉镜像；第三方节点类名与槽位未核实一律降级。"
     }
   ],

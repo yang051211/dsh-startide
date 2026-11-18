@@ -1,25 +1,35 @@
 {
   "name": "dsh-split-workspace",
-  "version": "0.8.0",
-  "scannedAt": "2026-11-17T22:17:00.511Z",
+  "version": "0.11.0",
+  "scannedAt": "2026-11-18T09:00:22.311Z",
   "icon": "dsh-split-workspace.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 3360,
-        "text": "return fetch(\"/dsv/system-window\", {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 9708,
+        "line": 9914,
         "text": "fetch(src, { mode: \"cors\" }).then((res) => (res.ok ? res.blob() : null)).then((blob) => {"
       },
       {
         "file": "lib/client.js",
-        "line": 11758,
+        "line": 12053,
         "text": "fetch(\"/dsv/version\", { cache: \"no-store\" }).then((response) => {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 12993,
+        "text": "fetch(\"/dsv/restart\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 14206,
+        "text": "return fetch(\"/dsv/system-window\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 14263,
+        "text": "fetch(\"/dsv/system-window\", {"
       }
     ]
   },
@@ -29,12 +39,22 @@
       {
         "file": "lib/index.js",
         "line": 21,
-        "text": "import { readFileSync } from \"node:fs\";"
+        "text": "import { appendFileSync, closeSync, openSync, readFileSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 32,
+        "line": 55,
         "text": "const manifest = JSON.parse(readFileSync(new URL(\"../package.json\", import.meta.url), \"utf8\"));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 88,
+        "text": "appendFileSync(NATIVE_WINDOW_LOG, `[${new Date().toISOString()}] ${level} ${message}\\n`);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 357,
+        "text": "const data = readFileSync(new URL(HELP_ASSETS[name], HELP_ASSET_DIR));"
       }
     ]
   },
@@ -43,8 +63,24 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 136,
+        "text": "child = spawn(\"/usr/bin/osascript\", [\"-l\", \"JavaScript\", NATIVE_WINDOW_SCRIPT, url + marker], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 275,
+        "text": "spawn(command.command, command.args, {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

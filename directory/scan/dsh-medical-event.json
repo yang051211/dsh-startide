@@ -1,15 +1,25 @@
 {
   "name": "dsh-medical-event",
-  "version": "0.1.0",
-  "scannedAt": "2026-11-12T08:43:22.090Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-18T09:00:22.216Z",
   "icon": "dsh-medical-event.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
+        "file": "lib/engine/gate.js",
+        "line": 109,
+        "text": "const res = await fetch(url, { signal: controller.signal })"
+      },
+      {
         "file": "lib/llm.js",
-        "line": 20,
+        "line": 33,
         "text": "const res = await fetch(`${base}/chat/completions`, {"
+      },
+      {
+        "file": "lib/llm.js",
+        "line": 62,
+        "text": "const res = await fetch(`${base}/models`, { headers: apiKey ? { authorization: `Bearer ${apiKey}` } : {}, signal: AbortSignal.timeout(timeoutMs) })"
       }
     ]
   },
@@ -17,29 +27,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/engine/source.js",
-        "line": 6,
-        "text": "import { readdir, readFile } from 'node:fs/promises'"
+        "file": "index.js",
+        "line": 8,
+        "text": "import { readFileSync } from 'node:fs'"
       },
       {
-        "file": "lib/engine/source.js",
-        "line": 28,
-        "text": "const data = JSON.parse(await readFile(file, 'utf8'))"
+        "file": "index.js",
+        "line": 17,
+        "text": "const VERSION = (() => { try { return JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')).version } catch { return null } })()"
       },
       {
-        "file": "lib/model.js",
-        "line": 15,
-        "text": "import { appendFile, readFile, mkdir } from 'node:fs/promises'"
+        "file": "lib/engine/shard.js",
+        "line": 10,
+        "text": "import { createWriteStream } from 'node:fs'"
       },
       {
-        "file": "lib/model.js",
-        "line": 175,
-        "text": "for (const l of (await readFile(cachePath, 'utf8')).split('\\n')) {"
+        "file": "lib/engine/shard.js",
+        "line": 11,
+        "text": "import { mkdir, rename, rm } from 'node:fs/promises'"
       },
       {
-        "file": "lib/model.js",
-        "line": 199,
-        "text": "if (callsPath) { await mkdir(runDir, { recursive: true }); await appendFile(callsPath, JSON.stringify(entry) + '\\n') }"
+        "file": "lib/engine/shard.js",
+        "line": 125,
+        "text": "await mkdir(join(task.workDir, 'review'), { recursive: true })"
       }
     ]
   },
@@ -48,34 +58,45 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 12,
+        "line": 14,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "index.js",
-        "line": 28,
+        "line": 31,
         "text": "ctx.tools.register(tool({"
       },
       {
         "file": "index.js",
-        "line": 44,
+        "line": 46,
         "text": "ctx.tools.register(tool({"
       },
       {
         "file": "index.js",
-        "line": 52,
+        "line": 54,
         "text": "ctx.tools.register(tool({"
       },
       {
         "file": "index.js",
-        "line": 73,
+        "line": 76,
         "text": "ctx.tools.register(tool({"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 7,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 231,
+        "text": "execFile('osascript', ['-e', script], { timeout: 10 * 60 * 1000 }, (error, stdout, stderr) => {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

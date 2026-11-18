@@ -1,14 +1,14 @@
 {
   "name": "@ai-workbench/network",
-  "version": "0.4.14",
-  "scannedAt": "2026-11-17T22:16:57.638Z",
+  "version": "0.4.15",
+  "scannedAt": "2026-11-18T09:00:21.545Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client/index.cjs",
-        "line": 9,
+        "line": 7,
         "text": "const response=await fetch('/ai-workbench-network/policy',{method:'GET',credentials:'same-origin',signal});"
       },
       {
@@ -27,29 +27,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/employee-endpoint.js",
-        "line": 3,
-        "text": "import { realpath, stat } from 'node:fs/promises';"
+        "file": "lib/launch-agent.js",
+        "line": 4,
+        "text": "import { mkdir, readFile, writeFile, rename, rm, copyFile, chmod, open } from 'node:fs/promises';"
       },
       {
-        "file": "lib/network.js",
-        "line": 2,
-        "text": "import { writeSync } from 'node:fs';"
+        "file": "lib/launch-agent.js",
+        "line": 5,
+        "text": "import { constants } from 'node:fs';"
       },
       {
-        "file": "lib/network.js",
-        "line": 6,
-        "text": "import { realpath, lstat } from 'node:fs/promises';"
+        "file": "lib/launch-agent.js",
+        "line": 66,
+        "text": "return createHash('sha256').update(await readFile(path)).digest('hex');"
       },
       {
-        "file": "lib/network.js",
-        "line": 157,
-        "text": "const bytes = await file.readFile();"
+        "file": "lib/launch-agent.js",
+        "line": 106,
+        "text": "async function stop() { await bootout(); await rm(plist, { force: true }); }"
       },
       {
-        "file": "lib/network.js",
-        "line": 452,
-        "text": "raw = await f.readFile();"
+        "file": "lib/launch-agent.js",
+        "line": 111,
+        "text": "await mkdir(join(root, 'bin'), { recursive: true, mode: 0o700 });"
       }
     ]
   },
@@ -61,18 +61,23 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/launch-agent.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/launch-agent.js",
+        "line": 9,
+        "text": "nchctl = args => new Promise(resolve => execFile('/bin/launchctl', args, { encoding: 'utf8' }, (error, stdout, stderr) => resolve({ code: error ? (typeof error."
+      },
+      {
         "file": "lib/network.js",
         "line": 1,
         "text": "import { spawn } from 'node:child_process';"
       },
       {
         "file": "lib/network.js",
-        "line": 249,
-        "text": "                child = spawn(executable.path, ['serve', '--config', settings.configFile, ...resumeIdentityOnly ? ['--resumeIdentityOnly'] : [], ...expectedConf"
-      },
-      {
-        "file": "lib/network.js",
-        "line": 469,
+        "line": 400,
         "text": "child = spawn(executable.path, ['forget', '--controlResponseMaxBytes', String(settings.controlResponseMaxBytes)], { stdio: ['pipe', 'pipe', 'ignore'] });"
       }
     ]

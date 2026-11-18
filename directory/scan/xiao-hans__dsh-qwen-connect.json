@@ -1,7 +1,7 @@
 {
   "name": "@xiao-hans/dsh-qwen-connect",
-  "version": "0.2.6",
-  "scannedAt": "2026-11-17T22:17:01.330Z",
+  "version": "0.2.8",
+  "scannedAt": "2026-11-18T09:00:23.227Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,12 +18,12 @@
       },
       {
         "file": "lib/client.js",
-        "line": 614,
+        "line": 711,
         "text": "const response = await fetch(QWENWORK_STATUS_PATH, {"
       },
       {
         "file": "lib/client.js",
-        "line": 792,
+        "line": 889,
         "text": "const response = await fetch(QWENWORK_STATUS_PATH, {"
       },
       {
@@ -43,23 +43,23 @@
       },
       {
         "file": "lib/auth.js",
-        "line": 185,
+        "line": 169,
+        "text": "const raw = JSON.parse(fs.readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 177,
+        "text": "fs.writeFileSync(tmpFile, JSON.stringify(raw, null, 2), { mode: 0o600 });"
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 181,
+        "text": "try { fs.rmSync(tmpFile, { force: true }); } catch { /* ignore */ }"
+      },
+      {
+        "file": "lib/auth.js",
+        "line": 207,
         "text": "fs.writeFileSync(tmp, payload, { mode: 0o600 });"
-      },
-      {
-        "file": "lib/auth.js",
-        "line": 188,
-        "text": "try { fs.rmSync(tmp, { force: true }); } catch { /* ignore */ }"
-      },
-      {
-        "file": "lib/auth.js",
-        "line": 195,
-        "text": "return decryptV10(fs.readFileSync(file), masterKey);"
-      },
-      {
-        "file": "lib/credentials.js",
-        "line": 15,
-        "text": "import fs from 'node:fs';"
       }
     ]
   },
@@ -79,6 +79,11 @@
         "file": "lib/dpapi.js",
         "line": 224,
         "text": "res = spawnSync("
+      },
+      {
+        "file": "lib/runtime-identity.js",
+        "line": 23,
+        "text": "import { execFileSync } from 'node:child_process';"
       }
     ]
   },

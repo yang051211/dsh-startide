@@ -1,0 +1,83 @@
+{
+  "name": "dsh-lanhu-dds",
+  "version": "0.9.12",
+  "scannedAt": "2026-11-18T09:00:11.886Z",
+  "icon": "dsh-lanhu-dds.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/lanhu-api.mjs",
+        "line": 10,
+        "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "lib/lanhu-api.mjs",
+        "line": 29,
+        "text": "const res = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 355,
+        "text": "canvases = Object.entries(JSON.parse(readFileSync(join(sessionPath, PLANS_FILE), 'utf8')))"
+      },
+      {
+        "file": "index.js",
+        "line": 360,
+        "text": "try { plan = JSON.parse(readFileSync(join(sessionPath, PLAN_FILE), 'utf8')) } catch { /* 还没编译过 */ }"
+      },
+      {
+        "file": "index.js",
+        "line": 454,
+        "text": "const raw = readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "lib/assets.mjs",
+        "line": 3,
+        "text": "import { mkdirSync, writeFileSync, readFileSync, existsSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 23,
+        "text": "export const inject = ['tools', 'skills']"
+      },
+      {
+        "file": "index.js",
+        "line": 481,
+        "text": "const dispose = ctx.tools.register(make())"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

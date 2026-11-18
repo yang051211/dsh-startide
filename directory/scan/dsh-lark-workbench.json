@@ -1,0 +1,120 @@
+{
+  "name": "dsh-lark-workbench",
+  "version": "1.2.2",
+  "scannedAt": "2026-11-18T09:00:18.121Z",
+  "icon": "dsh-lark-workbench.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 45,
+        "text": "const jget = async (p) => asJson(await fetch(API + p, { credentials: 'same-origin' }));"
+      },
+      {
+        "file": "client.js",
+        "line": 46,
+        "text": "const jpost = async (p, body) => asJson(await fetch(API + p, {"
+      },
+      {
+        "file": "index.js",
+        "line": 275,
+        "text": "const res = await fetch(OKR_MCP.url, {"
+      },
+      {
+        "file": "index.js",
+        "line": 296,
+        "text": "const initRes = await fetch(OKR_MCP.url, {"
+      },
+      {
+        "file": "index.js",
+        "line": 312,
+        "text": "await fetch(OKR_MCP.url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "import { existsSync, mkdirSync, copyFileSync, writeFileSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 38,
+        "text": "mkdirSync(cliHome, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 51,
+        "text": "const saved = JSON.parse(readFileSync(settingsFile, 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 162,
+        "text": "res.end(readFileSync(qrPath));"
+      },
+      {
+        "file": "index.js",
+        "line": 185,
+        "text": "mkdirSync(join(stateDir, 'debug'), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 70,
+        "text": "? spawn('cmd.exe', ['/c', 'lark-cli', ...args], { env, windowsHide: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 71,
+        "text": ": spawn('lark-cli', args, { env });"
+      },
+      {
+        "file": "index.js",
+        "line": 98,
+        "text": "? spawn('cmd.exe', ['/c', 'lark-cli', ...args], { env, windowsHide: true, cwd: opts.cwd || cliHome })"
+      },
+      {
+        "file": "index.js",
+        "line": 99,
+        "text": ": spawn('lark-cli', args, { env, cwd: opts.cwd || cliHome });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentDefaultModel",
+    "llm",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 30,
+      "text": "k-cli 状态。本机没有 lark-cli 时，面板顶部会给出两条安装命令（`npm i -g @larksuite/cli` 和 `lark-cli config init --new`，后者会打开浏览器完成应用绑定）；lark-cli 已有但缺授权时，直接点面板里的「扫码授权」按钮，飞书扫一下即可，待办 / 日程"
+    }
+  ],
+  "skippedEntries": []
+}

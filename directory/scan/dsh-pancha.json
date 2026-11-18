@@ -1,0 +1,93 @@
+{
+  "name": "dsh-pancha",
+  "version": "3.0.2",
+  "scannedAt": "2026-11-18T09:00:23.658Z",
+  "icon": "dsh-pancha.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 271,
+        "text": "const res = await fetch(url, { headers: { accept: 'application/json' }, ...init })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 6,
+        "text": "import { stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.mjs",
+        "line": 7,
+        "text": "import { cpSync, existsSync, mkdirSync, renameSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/src/ledger.mjs",
+        "line": 4,
+        "text": "import { mkdirSync, readFileSync, writeFileSync, renameSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/src/ledger.mjs",
+        "line": 21,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/src/ledger.mjs",
+        "line": 59,
+        "text": "mkdirSync(base, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 20,
+        "text": "export const inject = ['tools', 'webServer']"
+      },
+      {
+        "file": "index.mjs",
+        "line": 570,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "index.mjs",
+        "line": 599,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "index.mjs",
+        "line": 622,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "index.mjs",
+        "line": 647,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,24 +1,24 @@
 {
   "name": "dsh-codearts",
-  "version": "1.4.4",
-  "scannedAt": "2026-11-17T22:16:40.591Z",
+  "version": "1.4.6",
+  "scannedAt": "2026-11-18T09:00:12.232Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/auth-Cd2SvQIy.mjs",
+        "file": "lib/auth-q6MY-TXM.mjs",
         "line": 5,
         "text": "import http from \"node:http\";"
       },
       {
-        "file": "lib/auth-Cd2SvQIy.mjs",
-        "line": 191,
+        "file": "lib/auth-q6MY-TXM.mjs",
+        "line": 192,
         "text": "const res = await fetch(`${htu}`, {"
       },
       {
-        "file": "lib/auth-Cd2SvQIy.mjs",
-        "line": 216,
+        "file": "lib/auth-q6MY-TXM.mjs",
+        "line": 217,
         "text": "const res = await fetch(`${htu}`, {"
       },
       {
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/auth-Cd2SvQIy.mjs",
+        "file": "lib/auth-q6MY-TXM.mjs",
         "line": 2,
-        "text": "import { chmod, mkdir, readFile, rename, unlink, writeFile } from \"node:fs/promises\";"
+        "text": "import { chmod, mkdir, open, readFile, rename, unlink, utimes, writeFile } from \"node:fs/promises\";"
       },
       {
-        "file": "lib/auth-Cd2SvQIy.mjs",
-        "line": 388,
-        "text": "const raw = await readFile(path, \"utf8\");"
+        "file": "lib/auth-q6MY-TXM.mjs",
+        "line": 400,
+        "text": "const parsed = JSON.parse(await readFile(path, \"utf8\"));"
       },
       {
-        "file": "lib/auth-Cd2SvQIy.mjs",
-        "line": 401,
-        "text": "await mkdir(dirname(path), { recursive: true });"
+        "file": "lib/auth-q6MY-TXM.mjs",
+        "line": 428,
+        "text": "await unlink(path);"
       },
       {
-        "file": "lib/auth-Cd2SvQIy.mjs",
-        "line": 405,
-        "text": "await writeFile(tmp, body, { mode: 384 });"
+        "file": "lib/auth-q6MY-TXM.mjs",
+        "line": 448,
+        "text": "await handle.writeFile(JSON.stringify(payload));"
       },
       {
-        "file": "lib/auth-Cd2SvQIy.mjs",
-        "line": 409,
-        "text": "await unlink(tmp).catch(() => {});"
+        "file": "lib/auth-q6MY-TXM.mjs",
+        "line": 470,
+        "text": "writeFile(path, JSON.stringify(payload), { mode: 384 }).then(() => utimes(path, /* @__PURE__ */ new Date(), /* @__PURE__ */ new Date())).catch(() => {});"
       }
     ]
   },
@@ -71,13 +71,18 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/keeper-DJLwIiR4.mjs",
-        "line": 4,
-        "text": "import { spawn } from \"node:child_process\";"
+        "file": "lib/auth-q6MY-TXM.mjs",
+        "line": 6,
+        "text": "import { execFileSync } from \"node:child_process\";"
       },
       {
-        "file": "lib/keeper-DJLwIiR4.mjs",
-        "line": 218,
+        "file": "lib/keeper-BWHQDFAh.mjs",
+        "line": 4,
+        "text": "import { execFileSync, spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/keeper-BWHQDFAh.mjs",
+        "line": 262,
         "text": "const child = spawn(command, ["
       }
     ]
