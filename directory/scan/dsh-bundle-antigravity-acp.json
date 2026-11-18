@@ -1,0 +1,108 @@
+{
+  "name": "dsh-bundle-antigravity-acp",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-18T21:46:12.928Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/accounts/oauth.js",
+        "line": 15,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "dist/bridge/mcp-bridge.js",
+        "line": 25,
+        "text": "import { createServer } from 'node:http';"
+      },
+      {
+        "file": "dist/runtime/proxied-fetch.js",
+        "line": 5,
+        "text": "const module = (await import('undici'));"
+      },
+      {
+        "file": "dist/runtime/proxied-fetch.js",
+        "line": 79,
+        "text": "const fallback = deps.fallback ?? ((input, init) => globalThis.fetch(input, init));"
+      },
+      {
+        "file": "dist/runtime/proxied-fetch.js",
+        "line": 135,
+        "text": "return route.undici.fetch(url, { ...requestInit, ...init, dispatcher: route.agent });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/accounts/manager.js",
+        "line": 8,
+        "text": "import { existsSync, readdirSync, rmSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/accounts/manager.js",
+        "line": 9,
+        "text": "import { mkdir, rename, rm } from 'node:fs/promises';"
+      },
+      {
+        "file": "dist/accounts/manager.js",
+        "line": 60,
+        "text": "rmSync(join(this.baseDir, entry), { recursive: true, force: true });"
+      },
+      {
+        "file": "dist/accounts/manager.js",
+        "line": 124,
+        "text": "void rm(pending.staging, { recursive: true, force: true }).catch(() => undefined);"
+      },
+      {
+        "file": "dist/accounts/manager.js",
+        "line": 220,
+        "text": "await rm(record.dir, { recursive: true, force: true }).catch((error) => {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 362,
+        "text": "const handle = subprocess.spawn({"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 423,
+        "text": "const handle = subprocess.spawn({"
+      },
+      {
+        "file": "dist/protocol/agent-link.js",
+        "line": 643,
+        "text": "return subprocess.spawn({"
+      },
+      {
+        "file": "dist/runtime/agy-cli.js",
+        "line": 302,
+        "text": "handle = subprocess.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 6,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "subprocess"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,110 @@
+{
+  "name": "dsh-inbox-bridge",
+  "version": "2.23.0",
+  "scannedAt": "2026-11-18T21:46:13.042Z",
+  "icon": "dsh-inbox-bridge.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 37,
+        "text": "void fetch(url, { cache: \"no-store\" }).catch(() => {});"
+      },
+      {
+        "file": "client.js",
+        "line": 710,
+        "text": "const response = await fetch(url, { cache: \"no-store\" });"
+      },
+      {
+        "file": "client.js",
+        "line": 757,
+        "text": "const response = await fetch(url, { cache: \"no-store\" });"
+      },
+      {
+        "file": "scripts/clear-inbox.mjs",
+        "line": 141,
+        "text": "const response = await fetch(`${base}/json/version`);"
+      },
+      {
+        "file": "scripts/clear-inbox.mjs",
+        "line": 153,
+        "text": "const socket = new WebSocket(wsUrl);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "import { appendFileSync, mkdirSync, readFileSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "index.js",
+        "line": 178,
+        "text": "return JSON.parse(readFileSync(file, \"utf8\"));"
+      },
+      {
+        "file": "index.js",
+        "line": 288,
+        "text": "mkdirSync(dirname(prefsFile), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 289,
+        "text": "writeFileSync(prefsFile, `${JSON.stringify(next, null, 2)}\\n`);"
+      },
+      {
+        "file": "index.js",
+        "line": 353,
+        "text": "mkdirSync(dirname(logPath), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "import { execFile, execFileSync, spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "index.js",
+        "line": 537,
+        "text": "const child = spawn(process.execPath, [script, \"--login\", \"--json\"], {"
+      },
+      {
+        "file": "index.js",
+        "line": 1685,
+        "text": "execFile("
+      },
+      {
+        "file": "scripts/clear-inbox.mjs",
+        "line": 17,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "scripts/clear-inbox.mjs",
+        "line": 325,
+        "text": "const child = spawn(browser, args, { detached: false, stdio: \"ignore\" });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

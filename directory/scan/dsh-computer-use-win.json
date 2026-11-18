@@ -1,15 +1,20 @@
 {
   "name": "dsh-computer-use-win",
-  "version": "0.6.0",
-  "scannedAt": "2026-11-15T20:14:26.511Z",
+  "version": "0.6.1",
+  "scannedAt": "2026-11-18T21:45:45.265Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "mcp/browser.mjs",
-        "line": 1057,
+        "line": 1071,
         "text": "const response = await fetch(new URL('/json/version', url), { signal: AbortSignal.timeout(3000) });"
+      },
+      {
+        "file": "mcp/client.js",
+        "line": 1230,
+        "text": "        const response=await fetch(url,{method,cache:'no-store',credentials:'same-origin',headers:{...(body===undefined?{}:{'content-type':'application/json'}),"
       }
     ]
   },
@@ -52,13 +57,18 @@
         "text": "# @deepseek-ai/dsh-mcp-client bridge. After DSH starts, the model sees tools"
       },
       {
+        "file": "mcp/diagnostics.mjs",
+        "line": 268,
+        "text": ".join(' / ')}` : ''}${facts.mcpClient ? `, dsh-mcp-client ${facts.mcpClient}` : ''}${facts.electron ? `, Electron ${facts.electron}` : ''}, Node ${facts.node}`,"
+      },
+      {
         "file": "mcp/dsh-plugin.mjs",
-        "line": 18,
+        "line": 19,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "mcp/dsh-plugin.mjs",
-        "line": 147,
+        "line": 148,
         "text": "const bridge = await import('@deepseek-ai/dsh-mcp-client');"
       },
       {
@@ -88,12 +98,12 @@
       },
       {
         "file": "mcp/browser.mjs",
-        "line": 145,
+        "line": 158,
         "text": "const child = spawn(executablePath, args, {"
       },
       {
         "file": "mcp/browser.mjs",
-        "line": 422,
+        "line": 436,
         "text": "nst output = await new Promise(resolve => execFile(registry, ['query', 'HKCU\\\\Software\\\\Microsoft\\\\Windows\\\\Shell\\\\Associations\\\\UrlAssociations\\\\https', '/s'],"
       }
     ]

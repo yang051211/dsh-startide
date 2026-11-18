@@ -1,34 +1,34 @@
 {
   "name": "dsh-connect-agnes-token-plan",
-  "version": "0.13.5",
-  "scannedAt": "2026-11-06T08:17:13.195Z",
+  "version": "0.14.0",
+  "scannedAt": "2026-11-18T21:46:03.704Z",
   "icon": "dsh-connect-agnes-token-plan.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 669,
+        "line": 731,
         "text": "const response = await fetch(path, {"
       },
       {
         "file": "client.js",
-        "line": 3671,
-        "text": "const response = await fetch(AGNESCODE_PATH, {"
+        "line": 3996,
+        "text": "const response = await fetch(agnescodeRouteFor(forSite), {"
       },
       {
         "file": "client.js",
-        "line": 4298,
+        "line": 4694,
         "text": "const response = await fetch(route.path, {"
       },
       {
         "file": "client.js",
-        "line": 4909,
+        "line": 5343,
         "text": "const response = await fetch(SNAPSHOT_PATH, {"
       },
       {
         "file": "lib/agnescode-stats-store.js",
-        "line": 458,
+        "line": 464,
         "text": "response = await fetch(url, {"
       }
     ]
@@ -43,22 +43,22 @@
       },
       {
         "file": "lib/agnescode-stats-store.js",
-        "line": 690,
+        "line": 696,
         "text": "await mkdir(dir, {"
       },
       {
         "file": "lib/agnescode-stats-store.js",
-        "line": 729,
+        "line": 735,
         "text": "await writeFile(temporary, `${body}\\n`, {"
       },
       {
         "file": "lib/agnescode-stats-store.js",
-        "line": 833,
+        "line": 839,
         "text": "return JSON.parse(await readFile(file, \"utf8\"));"
       },
       {
         "file": "lib/agnescode-stats-store.js",
-        "line": 1019,
+        "line": 1030,
         "text": "await rm(temporary, { force: true }).catch(() => {});"
       }
     ]
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 3719,
+        "line": 4453,
         "text": "* `ctx.tools` registration are loaded lazily and only when the `drawEnabled`"
       },
       {
         "file": "lib/index.js",
-        "line": 4261,
+        "line": 4995,
         "text": "* Build the agent tool object for `ctx.tools.register`."
       },
       {
         "file": "lib/index.js",
-        "line": 4282,
+        "line": 5016,
         "text": "* @returns {object} the tool definition for `ctx.tools.register`."
       },
       {
         "file": "lib/index.js",
-        "line": 7689,
+        "line": 8735,
         "text": "* Build the agent tool object for `ctx.tools.register`."
       },
       {
         "file": "lib/index.js",
-        "line": 7702,
+        "line": 8748,
         "text": "* @returns {object} the tool definition for `ctx.tools.register`."
       }
     ]
@@ -98,12 +98,12 @@
     "evidence": [
       {
         "file": "lib/agnescode-stats-store.js",
-        "line": 1447,
+        "line": 1496,
         "text": "const { spawn } = await import(\"node:child_process\");"
       },
       {
         "file": "lib/agnescode-stats-store.js",
-        "line": 1457,
+        "line": 1506,
         "text": "const child = spawn(\"powershell.exe\", ["
       },
       {
@@ -113,14 +113,20 @@
       },
       {
         "file": "lib/index.js",
-        "line": 6301,
+        "line": 7248,
         "text": "child = spawn(cmd, args, {"
       }
     ]
   },
   "installScripts": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
   },
   "dependencies": 0,
   "minifiedFiles": [],

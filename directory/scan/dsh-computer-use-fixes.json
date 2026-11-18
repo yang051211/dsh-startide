@@ -1,0 +1,125 @@
+{
+  "name": "dsh-computer-use-fixes",
+  "version": "0.4.3",
+  "scannedAt": "2026-11-18T21:46:00.323Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/vision.js",
+        "line": 202,
+        "text": "res = await fetch(VISION_BASE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine.js",
+        "line": 22,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/host-deps.js",
+        "line": 25,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/vision.js",
+        "line": 18,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/vision.js",
+        "line": 46,
+        "text": "const v = readFileSync(f, 'utf8').trim()"
+      },
+      {
+        "file": "tools/check.mjs",
+        "line": 2,
+        "text": "import { readdirSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 52,
+        "text": "export const inject = ['tools', 'approval']"
+      },
+      {
+        "file": "index.js",
+        "line": 216,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 271,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 296,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 306,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cua.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/cua.js",
+        "line": 72,
+        "text": "const child = spawn(CUA_BIN, ['call', tool, JSON.stringify(args)], {"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 21,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 137,
+        "text": "child = spawn(CUA_BIN, ['mcp'], { stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true })"
+      },
+      {
+        "file": "tools/check.mjs",
+        "line": 3,
+        "text": "import { spawnSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "approval",
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 33,
+      "text": "- **npm**（0.4.0 起已发布）：`npm install -g dsh-computer-use-fixes`，或按宿主版本用 `dsh plugin add dsh-computer-use-fixes`"
+    }
+  ],
+  "skippedEntries": []
+}

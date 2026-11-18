@@ -1,7 +1,7 @@
 {
   "name": "dsh-blender-mc",
-  "version": "0.6.2",
-  "scannedAt": "2026-11-16T23:37:33.467Z",
+  "version": "0.6.3",
+  "scannedAt": "2026-11-18T21:46:00.187Z",
   "icon": "dsh-blender-mc.svg",
   "network": {
     "hit": true,
@@ -29,27 +29,27 @@
       {
         "file": "lib/index.js",
         "line": 17,
-        "text": "import { existsSync, readFileSync } from 'node:fs'"
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "lib/index.js",
-        "line": 321,
-        "text": "return JSON.parse(readFileSync(p, 'utf8'))"
+        "line": 203,
+        "text": "mkdirSync(dir, { recursive: true })"
       },
       {
-        "file": "lib/map-resolve.js",
-        "line": 19,
-        "text": "import { existsSync } from 'node:fs'"
+        "file": "lib/index.js",
+        "line": 216,
+        "text": "writeFileSync(specPath, JSON.stringify(spec, null, 2), 'utf8')"
       },
       {
-        "file": "lib/map-routes.js",
-        "line": 28,
-        "text": "import { createWriteStream, existsSync, mkdtempSync, readFileSync, rmSync, promises as fsp, writeFileSync } from 'node:fs'"
+        "file": "lib/index.js",
+        "line": 249,
+        "text": "st = JSON.parse(readFileSync(status, 'utf8'))"
       },
       {
-        "file": "lib/map-routes.js",
-        "line": 71,
-        "text": "writeFileSync(script, '﻿' + PICK_FOLDER_PS, 'utf8')"
+        "file": "lib/index.js",
+        "line": 257,
+        "text": "const lines = readFileSync(log, 'utf8').split(/\\r?\\n/).filter((l) => l.trim())"
       }
     ]
   },
@@ -63,17 +63,17 @@
       },
       {
         "file": "lib/index.js",
-        "line": 193,
+        "line": 312,
         "text": "* 只写 { schema } 会在 ctx.tools.register() 里抛 TypeError → apply 直接中断 →"
       },
       {
         "file": "lib/index.js",
-        "line": 281,
+        "line": 400,
         "text": "// 单个工具注册失败不能拖垮整批：旧写法里 ctx.tools.register 第一次抛错就把"
       },
       {
         "file": "lib/index.js",
-        "line": 285,
+        "line": 404,
         "text": "const dispose = ctx.tools.register(def)"
       }
     ]
@@ -92,6 +92,11 @@
         "text": "child = spawn(py, argv, {"
       },
       {
+        "file": "lib/index.js",
+        "line": 218,
+        "text": "const child = spawn(py, [join(PY_DIR, 'job.py'), '--spec', specPath], {"
+      },
+      {
         "file": "lib/map-routes.js",
         "line": 26,
         "text": "import { execFile, spawn } from 'node:child_process'"
@@ -100,11 +105,6 @@
         "file": "lib/map-routes.js",
         "line": 72,
         "text": "execFile("
-      },
-      {
-        "file": "lib/map-routes.js",
-        "line": 179,
-        "text": "const child = spawn(deps.python, [deps.cli, ...args], {"
       }
     ]
   },

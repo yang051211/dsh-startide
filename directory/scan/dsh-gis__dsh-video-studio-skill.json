@@ -1,7 +1,7 @@
 {
   "name": "@dsh-gis/dsh-video-studio-skill",
-  "version": "2.0.0",
-  "scannedAt": "2026-11-18T09:00:13.155Z",
+  "version": "2.3.0",
+  "scannedAt": "2026-11-18T21:45:53.542Z",
   "icon": "dsh-gis__dsh-video-studio-skill.svg",
   "network": {
     "hit": false,
@@ -12,8 +12,28 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 15,
-        "text": "import { existsSync } from \"node:fs\";"
+        "line": 32,
+        "text": "import { readFile, readdir } from \"node:fs/promises\";"
+      },
+      {
+        "file": "index.js",
+        "line": 104,
+        "text": "parsed = parseSkillFile(await readFile(file, \"utf8\"));"
+      },
+      {
+        "file": "index.js",
+        "line": 143,
+        "text": "raw = await readFile(file, \"utf8\");"
+      },
+      {
+        "file": "tools/plugin_entry_check.mjs",
+        "line": 18,
+        "text": "import { readFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "tools/plugin_entry_check.mjs",
+        "line": 110,
+        "text": "const raw = await readFile(ROOT + \"skills/\" + SKILL_NAME + \"/SKILL.md\", \"utf8\");"
       }
     ]
   },

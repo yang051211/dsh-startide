@@ -1,0 +1,87 @@
+{
+  "name": "dsh-transfer-dock",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-18T21:46:14.050Z",
+  "icon": "dsh-transfer-dock.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 6,
+        "text": "* aria2、curl -# 等）。两路合起来：有百分比就用百分比，没有就用字节曲线。"
+      },
+      {
+        "file": "client.js",
+        "line": 210,
+        "text": "// curl -# 的哈希进度条：###########  45.0%"
+      },
+      {
+        "file": "client.js",
+        "line": 437,
+        "text": "const response = await fetch(STATE_PATH, { cache: 'no-store' })"
+      },
+      {
+        "file": "index.js",
+        "line": 62,
+        "text": "'curl/wget/aria2c, Invoke-WebRequest, winget/choco/scoop install, cargo/go/docker pull),',"
+      },
+      {
+        "file": "index.js",
+        "line": 64,
+        "text": "'progress-friendly flags where they exist (`git clone --progress`, `curl -# -L`; wget and',"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/sampler.js",
+        "line": 9,
+        "text": "import { lstat, readdir } from 'node:fs/promises'"
+      },
+      {
+        "file": "test/smoke.mjs",
+        "line": 7,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "test/smoke.mjs",
+        "line": 12,
+        "text": "const pluginSource = readFileSync(new URL('../client.js', import.meta.url), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "jobs"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 71,
+      "text": "ks you to wrap a command. `git clone`, `pip install`, `curl -o`, `npm install` and `winget install` work as they are; progress-friendly flags only make the card"
+    },
+    {
+      "file": "README.zh.md",
+      "line": 71,
+      "text": "它也不要求你改命令。`git clone`、`pip install`、`curl -o`、`npm install`、`winget install` 原样跑就行；想要更多可见性时，带上进度友好参数即可（见[它能识别什么](#它能识别什么)）。"
+    }
+  ],
+  "skippedEntries": []
+}

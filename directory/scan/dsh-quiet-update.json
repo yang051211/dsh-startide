@@ -1,0 +1,92 @@
+{
+  "name": "dsh-quiet-update",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-18T21:46:13.804Z",
+  "icon": "dsh-quiet-update.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/run.js",
+        "line": 8,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/run.js",
+        "line": 89,
+        "text": "raw = readFileSync(file, 'utf8').trim()"
+      },
+      {
+        "file": "lib/run.js",
+        "line": 107,
+        "text": "const parsed = JSON.parse(readFileSync(join(profileDir, '.dsh-market', 'pending-updates.json'), 'utf8'))"
+      },
+      {
+        "file": "lib/settings.js",
+        "line": 8,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/settings.js",
+        "line": 39,
+        "text": "const parsed = JSON.parse(readFileSync(userConfigPath(profileDir), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tools.js",
+        "line": 15,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 85,
+        "text": "() => tools.register({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 110,
+        "text": "() => tools.register({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 156,
+        "text": "() => tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/toast.js",
+        "line": 8,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/toast.js",
+        "line": 40,
+        "text": "const child = spawn("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

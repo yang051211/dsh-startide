@@ -1,0 +1,91 @@
+{
+  "name": "dsh-moss-live",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-18T21:45:58.248Z",
+  "icon": "dsh-moss-live.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/doctor.mjs",
+        "line": 194,
+        "text": "ws = new WebSocket(target, {"
+      },
+      {
+        "file": "client.js",
+        "line": 74,
+        "text": "const response = await fetch(`/speech/call/open?embed=1&session=${encodeURIComponent(sessionId)}`, { method: 'POST' })"
+      },
+      {
+        "file": "vendor/runtime/server.mjs",
+        "line": 1,
+        "text": "import {createServer} from 'node:http';"
+      },
+      {
+        "file": "vendor/runtime/server.mjs",
+        "line": 117,
+        "text": "const upstream=new WebSocket(address,{headers:{Authorization:`Bearer ${apiKey}`},followRedirects:false,handshakeTimeout:15000,maxPayload:16*1024*1024});"
+      },
+      {
+        "file": "vendor/web/js/client-demo.js",
+        "line": 67,
+        "text": "const ws = new WebSocket(`${relay || `${location.protocol === 'https:' ? 'wss' : 'ws'}://${location.host}`}/connect?token=${encodeURIComponent(token)}`);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/doctor.mjs",
+        "line": 16,
+        "text": "import { readFile, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "bin/doctor.mjs",
+        "line": 136,
+        "text": "const value = (await readFile(path, 'utf8')).trim()"
+      },
+      {
+        "file": "bin/doctor.mjs",
+        "line": 146,
+        "text": "const value = (await readFile(path, 'utf8')).trim()"
+      },
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { appendFileSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 160,
+        "text": "return readFileSync(target, 'utf8').trim()"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "sessionController",
+    "sessions",
+    "subagents",
+    "webServer",
+    "workspaceController"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,77 @@
+{
+  "name": "dsh-token-trim",
+  "version": "0.2.4",
+  "scannedAt": "2026-11-18T21:45:58.698Z",
+  "icon": "dsh-token-trim.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index-host.js",
+        "line": 21,
+        "text": "import { appendFile, mkdir } from 'node:fs/promises'"
+      },
+      {
+        "file": "index-host.js",
+        "line": 174,
+        "text": "await mkdir(path.dirname(cfg.auditManifest), { recursive: true })"
+      },
+      {
+        "file": "index-host.js",
+        "line": 175,
+        "text": "await appendFile(cfg.auditManifest, `${JSON.stringify({ ts: Date.now(), ...entry })}\\n`, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "import { mkdir, writeFile, appendFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "import { mkdirSync, appendFileSync, existsSync, renameSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index-host.js",
+        "line": 93,
+        "text": "export const inject = ['tools', 'systemPrompt']"
+      },
+      {
+        "file": "index.js",
+        "line": 127,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 175,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

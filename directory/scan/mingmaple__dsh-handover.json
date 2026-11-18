@@ -1,7 +1,7 @@
 {
   "name": "@mingmaple/dsh-handover",
-  "version": "1.0.1",
-  "scannedAt": "2026-11-15T20:14:33.845Z",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-18T21:45:57.407Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -28,7 +28,7 @@
       },
       {
         "file": "src/lib/rpc-carrier.mjs",
-        "line": 28,
+        "line": 29,
         "text": "async fetch(request) {"
       }
     ]
@@ -38,27 +38,27 @@
     "evidence": [
       {
         "file": "scripts/behavior.mjs",
-        "line": 15,
+        "line": 16,
         "text": "import fs from 'node:fs';"
       },
       {
         "file": "scripts/behavior.mjs",
-        "line": 32,
+        "line": 34,
         "text": "fs.mkdirSync(HOME, { recursive: true });"
       },
       {
         "file": "scripts/behavior.mjs",
-        "line": 33,
+        "line": 35,
         "text": "fs.mkdirSync(WS, { recursive: true });"
       },
       {
         "file": "scripts/behavior.mjs",
-        "line": 60,
+        "line": 68,
         "text": "fs.mkdirSync(path.dirname(p), { recursive: true });"
       },
       {
         "file": "scripts/behavior.mjs",
-        "line": 61,
+        "line": 69,
         "text": "fs.writeFileSync(p, text, 'utf8');"
       }
     ]
@@ -67,29 +67,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "scripts/behavior.mjs",
+        "line": 573,
+        "text": "ok(/inject = \\['tools', 'systemPrompt', 'sessionController'\\]/.test(idx), '注入面只有官方扩缝');"
+      },
+      {
         "file": "scripts/blank-smoke.mjs",
-        "line": 861,
+        "line": 849,
         "text": "plugin: { name: '@mingmaple/dsh-handover', version: 'test', tools: 22, inject: ['tools', 'systemPrompt'], initErrors: [], scheduler: '就绪' },"
       },
       {
         "file": "scripts/blank-smoke.mjs",
-        "line": 1058,
+        "line": 1045,
         "text": "plugin: { name: '@mingmaple/dsh-handover', version: 'test', tools: 22, inject: ['tools'], initErrors: [], scheduler: '就绪' },"
       },
       {
         "file": "src/index.mjs",
-        "line": 57,
+        "line": 36,
         "text": "export const inject = ['tools', 'systemPrompt', 'sessionController'];"
       },
       {
         "file": "src/index.mjs",
-        "line": 110,
+        "line": 107,
         "text": "const perStep = (() => { try { return !!(ctx.tools && typeof ctx.tools.resolve === 'function'); } catch { return false; } })();"
-      },
-      {
-        "file": "src/index.mjs",
-        "line": 640,
-        "text": "ctx.tools.register(withReminderTail(tools[i]), { when: visibleTo(tools[i].name) });"
       }
     ]
   },
@@ -98,12 +98,12 @@
     "evidence": [
       {
         "file": "scripts/behavior.mjs",
-        "line": 20,
+        "line": 22,
         "text": "import { spawnSync } from 'node:child_process';"
       },
       {
         "file": "scripts/behavior.mjs",
-        "line": 271,
+        "line": 376,
         "text": "const r = spawnSync(process.execPath, [path.join(repo, 'scripts', 'style-gate.mjs')], { encoding: 'utf8', cwd: repo });"
       },
       {
@@ -112,14 +112,14 @@
         "text": "const { execFileSync } = await import('node:child_process');"
       },
       {
-        "file": "src/lib/mover.mjs",
-        "line": 18,
-        "text": "import { spawn } from 'node:child_process';"
+        "file": "scripts/ensure-dist.mjs",
+        "line": 3,
+        "text": "import { spawnSync } from 'node:child_process';"
       },
       {
-        "file": "src/lib/mover.mjs",
-        "line": 261,
-        "text": "import { spawn } from 'node:child_process';"
+        "file": "scripts/ensure-dist.mjs",
+        "line": 6,
+        "text": "const r = spawnSync(process.execPath, ['scripts/build.mjs'], { stdio: 'inherit' });"
       }
     ]
   },

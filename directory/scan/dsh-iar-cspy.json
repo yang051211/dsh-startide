@@ -1,0 +1,112 @@
+{
+  "name": "dsh-iar-cspy",
+  "version": "0.0.2",
+  "scannedAt": "2026-11-18T21:46:09.971Z",
+  "icon": "dsh-iar-cspy.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 459,
+        "text": "const response = await fetch(CONFIG_ENDPOINT, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 486,
+        "text": "const response = await fetch(CONFIG_ENDPOINT, {"
+      },
+      {
+        "file": "client.js",
+        "line": 529,
+        "text": "const response = await fetch(PROVISION_ENDPOINT, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 2,
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "return JSON.parse(readFileSync(join(STATE_DIR, 'config.json'), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 281,
+        "text": "mkdirSync(STATE_DIR, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 11,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "index.js",
+        "line": 520,
+        "text": "ctx.effect(() => tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 3,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 282,
+        "text": "child = spawn(command, args, { cwd: STATE_DIR, windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 15,
+      "text": "The upstream Python packages are left untouched: `scripts\\setup.ps1` installs"
+    },
+    {
+      "file": "README.en.md",
+      "line": 59,
+      "text": "- Running `scripts\\setup.ps1` needs Python 3.10+, Git, and network access to"
+    },
+    {
+      "file": "README.en.md",
+      "line": 88,
+      "text": "$setup = Get-ChildItem \"$env:USERPROFILE\\.dsh\\profiles\\*\\node_modules\\dsh-iar-cspy\\scripts\\setup.ps1\" |"
+    },
+    {
+      "file": "README.en.md",
+      "line": 94,
+      "text": "`scripts\\setup.ps1` directly from an unpacked release."
+    },
+    {
+      "file": "README.en.md",
+      "line": 102,
+      "text": "- copies `setup.ps1`, `doctor.ps1` and `iar-launch.ps1` into"
+    }
+  ],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-knj-obsidian",
-  "version": "2026.11.18",
-  "scannedAt": "2026-11-11T08:04:52.269Z",
+  "version": "2026.11.27",
+  "scannedAt": "2026-11-18T21:46:02.299Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/tools.js",
-        "line": 274,
+        "line": 355,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/tools.js",
-        "line": 447,
+        "line": 528,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/tools.js",
-        "line": 546,
+        "line": 627,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/tools.js",
-        "line": 712,
+        "line": 793,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/tools.js",
-        "line": 807,
+        "line": 888,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
@@ -97,24 +97,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/codegraph-run.js",
+        "line": 17,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/codegraph-run.js",
+        "line": 189,
+        "text": "const spawnImpl = opts.spawnFn ?? ((spawnCommand, spawnArgv, spawnOptions) => spawn(spawnCommand, spawnArgv, spawnOptions));"
+      },
+      {
+        "file": "lib/codegraph.js",
+        "line": 15,
+        "text": "import { exec } from 'node:child_process';"
+      },
+      {
         "file": "lib/semantic.js",
         "line": 9,
         "text": "import { execFile } from 'node:child_process';"
       },
       {
-        "file": "src/semantic.ts",
-        "line": 9,
-        "text": "import { execFile } from 'node:child_process'"
-      },
-      {
-        "file": "wiki-distill/extract-dsh-sessions.test.cjs",
-        "line": 72,
-        "text": "const { spawnSync } = require('child_process');"
-      },
-      {
-        "file": "wiki-distill/extract-dsh-sessions.test.cjs",
-        "line": 90,
-        "text": "const r = spawnSync(process.execPath, [script, path.join(root, 'sessions'), outDir, '--proj--', '', ''], { encoding: 'utf8' });"
+        "file": "src/codegraph-run.ts",
+        "line": 17,
+        "text": "import { spawn, type ChildProcess } from 'node:child_process'"
       }
     ]
   },

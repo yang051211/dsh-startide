@@ -1,0 +1,96 @@
+{
+  "name": "dsh-net-hosts",
+  "version": "0.7.3",
+  "scannedAt": "2026-11-18T21:45:58.750Z",
+  "icon": "dsh-net-hosts.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/proxy.js",
+        "line": 16,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 114,
+        "text": "const req = http.request(options, (res) => {"
+      },
+      {
+        "file": "lib/ui.js",
+        "line": 1864,
+        "text": "const response = await fetch(`/net-hosts/api/snapshot${fresh ? '?fresh=1' : ''}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 17,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 119,
+        "text": "pkgVersion = String(JSON.parse(readFileSync(join(PKG_ROOT, 'package.json'), 'utf8')).version || pkgVersion)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 127,
+        "text": "return readFile(file, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 133,
+        "text": "const { stat } = await import('node:fs/promises')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 352,
+        "text": "disposers.push(toolCtx.tools.register(tool))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/collect.js",
+        "line": 15,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/collect.js",
+        "line": 351,
+        "text": "execFile('lsof', ['-nP', '-i', '-F', 'pcnPT'], {"
+      },
+      {
+        "file": "lib/collect.js",
+        "line": 501,
+        "text": "execFile('ps', ['-axo', 'pid=,ppid=,comm='], { timeout: 1200, maxBuffer: 2 * 1024 * 1024, env }, (err, out) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

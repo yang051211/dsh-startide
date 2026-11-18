@@ -1,15 +1,30 @@
 {
   "name": "@hhxg/dsh-hhxg-market",
-  "version": "0.7.1",
-  "scannedAt": "2026-11-10T20:53:48.929Z",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-18T21:46:06.086Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/api.js",
-        "line": 131,
+        "line": 142,
         "text": "return fetch(url, {"
+      },
+      {
+        "file": "lib/hist_download_text.js",
+        "line": 12,
+        "text": "* `curl --fail -o \"<文件名>\" \"<链接>\"`（直链不重定向，所以不带 -L；--fail 不把错误页写成数据文件）。"
+      },
+      {
+        "file": "lib/hist_download_text.js",
+        "line": 278,
+        "text": "? `下载命令：curl --fail -o \"${filename}\" \"${url}\"`"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 803,
+        "text": "'（curl --fail -o \"<文件名>\" \"<链接>\"，当前目录下的同名文件会被覆盖）。' +"
       }
     ]
   },
@@ -22,17 +37,17 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 22,
+        "line": 24,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "lib/index.js",
-        "line": 62,
+        "line": 66,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/tools.js",
-        "line": 8,
+        "line": 10,
         "text": "* index.js 负责把它们包成 defineTool 并 ctx.tools.register；执行统一走 runTool。"
       }
     ]

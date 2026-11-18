@@ -1,0 +1,94 @@
+{
+  "name": "@wobuxcm/dsh-win-tools",
+  "version": "0.2.3",
+  "scannedAt": "2026-11-18T21:45:59.978Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/web.js",
+        "line": 17,
+        "text": "const fs = require(\"fs\");"
+      },
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 89,
+        "text": "const pid = Number(readFileSync(pidFile, 'utf8').trim())"
+      },
+      {
+        "file": "index.js",
+        "line": 253,
+        "text": "const png = readFileSync(imgPath)"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 12,
+        "text": "import { existsSync, mkdirSync, writeFileSync, rmSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 53,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 374,
+        "text": "disposers.push(ctx.tools.register(tool))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 76,
+        "text": "    child = spawn('cmd.exe', ['/c', 'start', '', '/b', 'powershell.exe', '-NoProfile', '-STA', '-WindowStyle', 'Hidden', '-ExecutionPolicy', 'Bypass', '-File', "
+      },
+      {
+        "file": "lib/core.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 96,
+        "text": "const child = spawn(file, args, { windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "bin/agent-desktop-win32-x64.exe"
+  ],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

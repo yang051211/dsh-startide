@@ -1,7 +1,7 @@
 {
   "name": "@shiqyka/dsh-ssh-workspace",
-  "version": "0.3.4",
-  "scannedAt": "2026-11-14T19:29:35.536Z",
+  "version": "0.3.5",
+  "scannedAt": "2026-11-18T21:45:57.897Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,22 +13,22 @@
       },
       {
         "file": "lib/client.js",
-        "line": 108,
+        "line": 111,
         "text": "const res = await fetch(url, init)"
       },
       {
         "file": "lib/client.js",
-        "line": 132,
+        "line": 135,
         "text": "const res = await fetch(API.supportBundle)"
       },
       {
         "file": "lib/client.js",
-        "line": 7446,
+        "line": 7642,
         "text": "const response = await fetch(`${route}${query}`)"
       },
       {
         "file": "lib/client.js",
-        "line": 8476,
+        "line": 8672,
         "text": "const response = await fetch(API.uploadChunk, {"
       }
     ]
@@ -43,7 +43,7 @@
       },
       {
         "file": "lib/engine.js",
-        "line": 596,
+        "line": 661,
         "text": "config.privateKey = readFileSync(keyPath, 'utf8')"
       },
       {
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 59,
+        "line": 62,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "lib/index.js",
-        "line": 429,
+        "line": 503,
         "text": "const installed = workspaceTools(ctx, engine, router, forwards, shells, reverseForwards).map(tool => ctx.tools.register(tool))"
       }
     ]
@@ -82,24 +82,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/patch-subprocess.js",
-        "line": 451,
-        "text": "spawn (spec) {"
+        "file": "lib/git-history.js",
+        "line": 336,
+        "text": "handle = subprocess.spawn({"
       },
       {
         "file": "lib/patch-subprocess.js",
-        "line": 692,
+        "line": 998,
+        "text": "spawn (spec, route) {"
+      },
+      {
+        "file": "lib/patch-subprocess.js",
+        "line": 1245,
         "text": "* @throws {Error} when the mounted service has no `spawn()` to wrap."
       },
       {
         "file": "lib/patch-subprocess.js",
-        "line": 701,
+        "line": 1254,
         "text": "throw new Error('ssh-workspace: the mounted ctx.subprocess service has no spawn() to wrap')"
       },
       {
         "file": "lib/patch-subprocess.js",
-        "line": 707,
-        "text": "return router.spawn(spec)"
+        "line": 1260,
+        "text": "if (isRemotePath(spec.cwd)) return router.spawn(spec)"
       }
     ]
   },

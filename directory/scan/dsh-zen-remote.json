@@ -1,15 +1,15 @@
 {
   "name": "dsh-zen-remote",
-  "version": "2.5.0",
-  "scannedAt": "2026-11-17T09:25:32.324Z",
+  "version": "2.5.2",
+  "scannedAt": "2026-11-18T21:45:52.660Z",
   "icon": "dsh-zen-remote.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "dsh-push.mjs",
-        "line": 108,
-        "text": "const res = await fetch(`http://127.0.0.1:${gatewayPort}/pwa/push/send`, {"
+        "line": 133,
+        "text": "const res = await fetch(`http://127.0.0.1:${livePort}/pwa/push/send`, {"
       },
       {
         "file": "lib/admin-routes.js",
@@ -28,7 +28,7 @@
       },
       {
         "file": "lib/client-routes.js",
-        "line": 581,
+        "line": 590,
         "text": "const fetchImpl = options.fetchImpl ?? ((url, init) => fetch(url, init));"
       }
     ]
@@ -36,6 +36,16 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "dsh-push.mjs",
+        "line": 35,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "dsh-push.mjs",
+        "line": 110,
+        "text": "const meta = JSON.parse(readFileSync(join(home, 'lan-gate-runtime.json'), 'utf8'))"
+      },
       {
         "file": "lib/cli/bootstrap.js",
         "line": 19,
@@ -50,16 +60,6 @@
         "file": "lib/cli/commands-status.js",
         "line": 14,
         "text": "import { writeFileSync } from 'node:fs';"
-      },
-      {
-        "file": "lib/cli/commands-status.js",
-        "line": 195,
-        "text": "writeFileSync(outPath, `${JSON.stringify(report, null, 2)}\\n`, 'utf8');"
-      },
-      {
-        "file": "lib/cli/config-writer.js",
-        "line": 29,
-        "text": "import { chmodSync, mkdirSync, readFileSync, readdirSync, renameSync, statSync, writeFileSync } from 'node:fs';"
       }
     ]
   },
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "dsh-push.mjs",
-        "line": 344,
+        "line": 369,
         "text": "// Registers the push_notify model tool against ctx.tools, if present and not"
       },
       {
         "file": "dsh-push.mjs",
-        "line": 394,
+        "line": 419,
         "text": "ctx.effect(() => tools.register(defineTool({"
       }
     ]
@@ -83,7 +83,7 @@
     "evidence": [
       {
         "file": "lan-gate.mjs",
-        "line": 121,
+        "line": 122,
         "text": "handle = ctx.subprocess.spawn({"
       },
       {

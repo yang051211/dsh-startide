@@ -1,0 +1,64 @@
+{
+  "name": "@sunt2049/dsh-next-prompt",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-18T21:46:13.390Z",
+  "icon": "sunt2049__dsh-next-prompt.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/desktop/client.js",
+        "line": 235,
+        "text": "const response = await fetch(`${ROUTE}${path}`, init)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/desktop/host.js",
+        "line": 9,
+        "text": "import { mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/desktop/host.js",
+        "line": 52,
+        "text": "mkdirSync(candidate, { recursive: true })"
+      },
+      {
+        "file": "lib/settings.js",
+        "line": 3,
+        "text": "import { readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/settings.js",
+        "line": 65,
+        "text": "return sanitize(JSON.parse(readFileSync(settingsPath(dir), 'utf8')))"
+      },
+      {
+        "file": "lib/settings.js",
+        "line": 76,
+        "text": "writeFileSync(tmp, `${JSON.stringify(value, null, 2)}\\n`)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

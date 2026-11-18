@@ -1,0 +1,120 @@
+{
+  "name": "dsh-auralife",
+  "version": "1.78.91",
+  "scannedAt": "2026-11-18T21:46:09.782Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "public/app.js",
+        "line": 32,
+        "text": "return fetch(BASE + path, { ...opts, headers }).then(async (r) => {"
+      },
+      {
+        "file": "public/app.js",
+        "line": 1122,
+        "text": "const buf = await (await fetch(src)).arrayBuffer()"
+      },
+      {
+        "file": "src/core/net.js",
+        "line": 68,
+        "text": "const resp = await fetch(src, { signal: AbortSignal.timeout(options.timeoutMs ?? 20000), redirect: 'follow' })"
+      },
+      {
+        "file": "src/features/imagegen.js",
+        "line": 14,
+        "text": "const r = await fetch(`${base}/images/generations`, {"
+      },
+      {
+        "file": "src/features/imagegen.js",
+        "line": 31,
+        "text": "const r = await fetch(`${base}/sdapi/v1/txt2img`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/chat/history.js",
+        "line": 9,
+        "text": "import { existsSync, mkdirSync, readdirSync, renameSync, rmSync, statSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/chat/history.js",
+        "line": 147,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "src/chat/history.js",
+        "line": 148,
+        "text": "writeFileSync(join(dir, mediaId), buf)"
+      },
+      {
+        "file": "src/chat/history.js",
+        "line": 159,
+        "text": "try { unlinkSync(p) } catch {}"
+      },
+      {
+        "file": "src/chat/history.js",
+        "line": 339,
+        "text": "unlinkSync(p)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/chat/hub.js",
+        "line": 411,
+        "text": "const d = agent.ctx.tools.register(tool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/organs/organ-guard.js",
+        "line": 18,
+        "text": "{ re: /\\bchild_process\\b/, name: 'child_process' },"
+      },
+      {
+        "file": "src/organs/organ-guard.js",
+        "line": 20,
+        "text": "{ re: /\\bspawn\\s*\\(/, name: 'spawn()' },"
+      },
+      {
+        "file": "src/voice/tts.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/voice/tts.js",
+        "line": 42,
+        "text": "child = spawn(cmd, args, { windowsHide: true, env: { ...process.env, PYTHONIOENCODING: 'utf-8', PYTHONUTF8: '1', ...(env || {}) } })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "attachments",
+    "llm",
+    "sessions",
+    "systemPrompt",
+    "timer",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

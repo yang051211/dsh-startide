@@ -1,0 +1,84 @@
+{
+  "name": "dsh-session-wake",
+  "version": "1.0.3",
+  "scannedAt": "2026-11-18T21:46:00.433Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 22,
+        "text": "fetch(B + p, { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 26,
+        "text": "fetch(B + p, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 21,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 121,
+        "text": "const 文 = readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 224,
+        "text": "return 归一({ ...DEFAULTS, ...JSON.parse(readFileSync(file, 'utf8')) })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 237,
+        "text": "const 盘 = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 257,
+        "text": "mkdirSync(path.dirname(file), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 27,
+        "text": "export const inject = ['agents', 'webServer', 'tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 594,
+        "text": "tools.register(def)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

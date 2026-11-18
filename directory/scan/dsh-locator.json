@@ -1,20 +1,35 @@
 {
   "name": "dsh-locator",
-  "version": "0.18.0",
-  "scannedAt": "2026-11-17T22:16:36.669Z",
+  "version": "0.19.2",
+  "scannedAt": "2026-11-18T21:45:47.374Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 181,
+        "line": 205,
         "text": "const response = await fetch(path, {"
       },
       {
+        "file": "lib/refs.js",
+        "line": 457,
+        "text": "const response = await fetch(parsedUrl, { method: 'GET', headers, redirect: 'follow', signal: controller.signal });"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 435,
+        "text": "// by the kept count would re-fetch (and duplicate) later kept hits."
+      },
+      {
         "file": "src/http.ts",
-        "line": 26,
+        "line": 32,
         "text": "import type { IncomingHttpHeaders, IncomingMessage, ServerResponse } from 'node:http'"
+      },
+      {
+        "file": "src/refs.ts",
+        "line": 574,
+        "text": "const response = await fetch(parsedUrl, { method: 'GET', headers, redirect: 'follow', signal: controller.signal })"
       }
     ]
   },
@@ -22,9 +37,14 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/combined.js",
+        "line": 12,
+        "text": "import { statSync } from 'node:fs';"
+      },
+      {
         "file": "lib/content.js",
         "line": 18,
-        "text": "import { chmodSync, closeSync, existsSync, mkdirSync, openSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs';"
+        "text": "import { chmodSync, closeSync, existsSync, mkdirSync, openSync, readFileSync, realpathSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs';"
       },
       {
         "file": "lib/content.js",
@@ -33,18 +53,13 @@
       },
       {
         "file": "lib/content.js",
-        "line": 162,
+        "line": 172,
         "text": "mkdirSync(this.options.stateDir, { recursive: true, mode: 0o700 });"
       },
       {
         "file": "lib/content.js",
-        "line": 167,
+        "line": 177,
         "text": "writeFileSync(fd, JSON.stringify({ pid: process.pid, startedAt: Date.now(), token: this.lockToken, procStart: PROCESS_START }));"
-      },
-      {
-        "file": "lib/content.js",
-        "line": 175,
-        "text": "holder = JSON.parse(readFileSync(path, 'utf8'));"
       }
     ]
   },
@@ -53,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 21,
+        "line": 23,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "lib/index.js",
-        "line": 158,
-        "text": "ctx.tools.register(makeSearchTool(rt));"
+        "line": 187,
+        "text": "ctx.tools.register(makeSearchTool(rt, {"
       },
       {
         "file": "lib/index.js",
-        "line": 159,
-        "text": "ctx.tools.register(makeStatusTool(rt, content));"
+        "line": 193,
+        "text": "ctx.tools.register(makeStatusTool(rt, content, scope));"
       },
       {
         "file": "lib/index.js",
-        "line": 160,
+        "line": 194,
         "text": "ctx.tools.register(makeRebuildTool(rt));"
       },
       {
         "file": "lib/index.js",
-        "line": 161,
+        "line": 195,
         "text": "ctx.tools.register(makeExportTool(rt));"
       }
     ]
@@ -98,12 +113,12 @@
       },
       {
         "file": "lib/runtime.js",
-        "line": 53,
+        "line": 85,
         "text": "this.spawn();"
       },
       {
         "file": "lib/runtime.js",
-        "line": 55,
+        "line": 87,
         "text": "spawn() {"
       }
     ]
@@ -112,7 +127,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 3,
   "minifiedFiles": [],
   "binaryFiles": [
     "bin/darwin-arm64/indexd",

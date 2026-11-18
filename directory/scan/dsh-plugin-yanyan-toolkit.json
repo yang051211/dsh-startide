@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-yanyan-toolkit",
-  "version": "1.4.2",
-  "scannedAt": "2026-11-17T09:25:39.539Z",
+  "version": "1.4.12",
+  "scannedAt": "2026-11-18T21:46:02.769Z",
   "icon": "dsh-plugin-yanyan-toolkit.svg",
   "network": {
     "hit": true,
@@ -17,19 +17,19 @@
         "text": "return fetch(pathname, {"
       },
       {
+        "file": "packages/dsh-plugin-yanyan-session-hub/lib/client.js",
+        "line": 406,
+        "text": "return fetch(path, {"
+      },
+      {
         "file": "packages/dsh-plugin-yanyan-subagent/lib/index.js",
-        "line": 535,
+        "line": 561,
         "text": "const resp = await fetch(origin.replace(/\\/$/, '') + DELETE_API, {"
       },
       {
         "file": "packages/dsh-plugin-yanyan-trash/lib/client.js",
         "line": 265,
         "text": "return fetch(path, {"
-      },
-      {
-        "file": "packages/dsh-plugin-yanyan-update/lib/client.js",
-        "line": 243,
-        "text": "return fetch(pathname, {"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/export-markdown.js",
+        "line": 12,
+        "text": "import * as NODE_FS from 'node:fs';"
+      },
+      {
+        "file": "lib/export-markdown.js",
+        "line": 240,
+        "text": "const buf = fs.readFileSync(entry.logPath);"
+      },
+      {
         "file": "lib/index.js",
         "line": 14,
         "text": "import { readFileSync } from 'node:fs';"
       },
       {
         "file": "lib/index.js",
-        "line": 39,
+        "line": 40,
         "text": "return JSON.parse(readFileSync(file, 'utf8'));"
       },
       {
-        "file": "lib/session-purge.js",
-        "line": 37,
-        "text": "import { rmSync } from 'node:fs';"
-      },
-      {
-        "file": "lib/session-purge.js",
-        "line": 73,
-        "text": "return { ...baseFs, rm: (p, opts) => rmSync(p, opts) };"
-      },
-      {
-        "file": "lib/session-purge.js",
-        "line": 93,
-        "text": "fs.rm(realPath, { recursive: true, force: false });"
+        "file": "lib/native-session-source.js",
+        "line": 20,
+        "text": "const raw = fs.readFileSync(p, 'utf8');"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "packages/dsh-plugin-yanyan-subagent/lib/index.js",
-        "line": 922,
+        "line": 948,
         "text": "for (const def of definitions) tools.register(def);"
       }
     ]
@@ -87,8 +87,9 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 5,
+  "dependencies": 6,
   "minifiedFiles": [
+    "packages/dsh-plugin-yanyan-session-hub/lib/client.js",
     "packages/dsh-plugin-yanyan-trash/lib/client.js"
   ],
   "binaryFiles": [],

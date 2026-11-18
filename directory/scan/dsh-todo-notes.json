@@ -1,0 +1,108 @@
+{
+  "name": "dsh-todo-notes",
+  "version": "1.0.4",
+  "scannedAt": "2026-11-18T21:45:59.457Z",
+  "icon": "dsh-todo-notes.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 1185,
+        "text": "fetch(ROUTE + '?what=windows&ts=' + Date.now(), { cache: 'no-store', headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client/client.js",
+        "line": 1202,
+        "text": "fetch(ROUTE, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 1233,
+        "text": "fetch(ROUTE, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 1247,
+        "text": "          fetch(ROUTE + '?what=todo&id=' + encodeURIComponent(item.todoId) + '&cwd=' + encodeURIComponent(cwd) + '&session=' + encodeURIComponent(sessionId) + '"
+      },
+      {
+        "file": "client/client.js",
+        "line": 1426,
+        "text": "fetch(ROUTE + '?' + query + '&ts=' + Date.now(), { cache: 'no-store', headers: { accept: 'application/json' } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/groups.js",
+        "line": 4,
+        "text": "import { promises as fsp } from 'node:fs'"
+      },
+      {
+        "file": "lib/core/paths.js",
+        "line": 4,
+        "text": "import { promises as fsp } from 'node:fs'"
+      },
+      {
+        "file": "lib/core/paths.js",
+        "line": 37,
+        "text": "const text = (await fsp.readFile(file, 'utf8')).replace(/^\\uFEFF/, '')"
+      },
+      {
+        "file": "lib/core/paths.js",
+        "line": 51,
+        "text": "return await fsp.readFile(file, 'utf8')"
+      },
+      {
+        "file": "lib/core/ui-settings.js",
+        "line": 6,
+        "text": "import fsp from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "export const inject = ['tools', 'webServer']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 40,
+        "text": "toolsCtx.effect(() => tools.register(listTool), 'dsh-todo-notes: tool todo_notes_list')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 41,
+        "text": "toolsCtx.effect(() => tools.register(readTool), 'dsh-todo-notes: tool todo_notes_read')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 43,
+        "text": "toolsCtx.effect(() => tools.register(tool), 'dsh-todo-notes: tool ' + tool.name)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

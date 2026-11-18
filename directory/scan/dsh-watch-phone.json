@@ -1,0 +1,85 @@
+{
+  "name": "dsh-watch-phone",
+  "version": "0.1.8",
+  "scannedAt": "2026-11-18T21:46:13.158Z",
+  "icon": "dsh-watch-phone.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "index.js",
+        "line": 589,
+        "text": "const upstream = http.request("
+      },
+      {
+        "file": "index.js",
+        "line": 678,
+        "text": "const upstream = await fetch(endpoint, {"
+      },
+      {
+        "file": "index.js",
+        "line": 1104,
+        "text": "// `curl -O` it and `adb install -r` without hunting for a download page."
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 641,
+        "text": "const parsed = JSON.parse(fs.readFileSync(tts.settingsPath ?? VOICE_SETTINGS_PATH, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 664,
+        "text": "const cached = fs.readFileSync(cachePath)"
+      },
+      {
+        "file": "index.js",
+        "line": 712,
+        "text": "fs.mkdirSync(TTS_CACHE_DIR, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 713,
+        "text": "fs.writeFileSync(cachePath, buf)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "import { exec as execCb } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

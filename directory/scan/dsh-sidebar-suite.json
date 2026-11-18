@@ -1,15 +1,15 @@
 {
   "name": "dsh-sidebar-suite",
-  "version": "0.7.2",
-  "scannedAt": "2026-11-17T22:16:40.493Z",
+  "version": "0.7.4",
+  "scannedAt": "2026-11-18T21:45:50.123Z",
   "icon": "dsh-sidebar-suite.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 930,
-        "text": "return fetch(tempUrl(path), init)"
+        "line": 1007,
+        "text": "var request = fetch(tempUrl(path), init)"
       }
     ]
   },
@@ -24,12 +24,12 @@
       {
         "file": "lib/temp-session-host.mjs",
         "line": 26,
-        "text": "import { existsSync, lstatSync, mkdirSync, readdirSync, readFileSync, realpathSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+        "text": "import { existsSync, lstatSync, mkdirSync, readdirSync, readFileSync, realpathSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "lib/temp-session-host.mjs",
         "line": 27,
-        "text": "import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises'"
+        "text": "import { mkdir, readdir, readFile, rename, rm, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "lib/temp-session-host.mjs",
@@ -38,8 +38,8 @@
       },
       {
         "file": "lib/temp-session-host.mjs",
-        "line": 281,
-        "text": "seed = readFileSync(legacyConfigPath(), 'utf8')"
+        "line": 168,
+        "text": "// carrying a colon would let resolve()/rm() act on a stream rather than the"
       }
     ]
   },

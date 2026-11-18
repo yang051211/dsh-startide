@@ -1,7 +1,7 @@
 {
   "name": "dsh-context",
-  "version": "0.85.1",
-  "scannedAt": "2026-11-15T20:14:25.771Z",
+  "version": "0.86.0",
+  "scannedAt": "2026-11-18T21:45:43.194Z",
   "icon": "dsh-context.svg",
   "network": {
     "hit": true,
@@ -9,27 +9,27 @@
       {
         "file": "lib/client.js",
         "line": 62,
-        "text": "tion gr(e,t,n){let r=n.label??e,i=await fetch(e,{method:`POST`,headers:{\"content-type\":`application/json`},body:JSON.stringify(t),...n.signal===void 0?{}:{signa"
+        "text": "tion _r(e,t,n){let r=n.label??e,i=await fetch(e,{method:`POST`,headers:{\"content-type\":`application/json`},body:JSON.stringify(t),...n.signal===void 0?{}:{signa"
       },
       {
         "file": "lib/client.js",
-        "line": 64,
-        "text": "5e3);a.current+=1;let n=setTimeout(()=>{fetch(`api/dsh-context/backfill`,{method:`POST`}).catch(()=>{})},e);return()=>{clearTimeout(n)}},[t,o,i]),{...n,coverage"
+        "line": 82,
+        "text": "is.inflight.delete(e)}).catch(()=>{}),r}fetch(e,t,n=!1){return this.track(`${n?`full`:`preview`}:${e}:${t}`,Yf(e,n)).catch(()=>null)}fetchHistory(e,t){return th"
       },
       {
         "file": "lib/client.js",
-        "line": 81,
-        "text": "is.inflight.delete(e)}).catch(()=>{}),r}fetch(e,t,n=!1){return this.track(`${n?`full`:`preview`}:${e}:${t}`,Hf(e,n)).catch(()=>null)}fetchHistory(e,t){return th"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 83,
-        "text": "!1}}async function _h(){try{let e=await fetch(`api/dsh-context/recom`,{method:`POST`,headers:{\"content-type\":`application/json`},body:`{}`});if(!e.ok)return nul"
+        "line": 84,
+        "text": "!1}}async function wh(){try{let e=await fetch(`api/dsh-context/recom`,{method:`POST`,headers:{\"content-type\":`application/json`},body:`{}`});if(!e.ok)return nul"
       },
       {
         "file": "lib/index.js",
         "line": 25,
-        "text": "unction ya(e={}){let t=e.fetch??((e,t)=>fetch(e,t)),n=e.now??(()=>Date.now()),r=e.ttlMs??36e5,i=e.currentVersion??ba(),a=_a(),o=_a(),s={book:null,failed:!1,vers"
+        "text": "unction va(e={}){let t=e.fetch??((e,t)=>fetch(e,t)),n=e.now??(()=>Date.now()),r=e.ttlMs??36e5,i=e.currentVersion??ya(),a=ga(),o=ga(),s={book:null,failed:!1,vers"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "total>0),balances:a}:null}let So=(e,t)=>fetch(e,t);const Co=new Map;async function wo(e){let t=e.baseUrl+`\\0`+e.apiKey,n=Co.get(t);if(n!==void 0)return n;let r="
       }
     ]
   },
@@ -38,13 +38,8 @@
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 81,
-        "text": "tm(e,t);return n===e.name?``:n}function rm(e,t){return{\"--lc-ch-a\":e,\"--lc-ch-b\":t}}function im(e){let t=e.size??`sm`,n=ip(e.agent.initials??rp(e.agent.name)),r"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 83,
-        "text": "y?` lc-pulse-event-hover`:``),style:{...rm(a.hue,s.hue),left:r.x,top:r.y-n.top},\"data-event-key\":i.key,\"data-record\":i.kind,\"data-time\":i.time,\"data-from\":i.fro"
+        "line": 82,
+        "text": "dAt===r&&a.needsHistory&&(h.current.has(rm(n,r))||F(`history`,n)>e||t.push({id:n,stamp:r,rank:+!_.current.has(n)}))}return t.sort((e,t)=>e.rank-t.rank||t.stamp-"
       },
       {
         "file": "lib/index.js",
@@ -54,7 +49,7 @@
       {
         "file": "lib/index.js",
         "line": 32,
-        "text": "),sessions:e}),a=`${t}.tmp`;try{await n.mkdir(_(t)),await n.writeFile(a,i),await n.rename(a,t)}catch{try{await n.rm?.(a)}catch{}}};return{load:async(e,r)=>{let "
+        "text": "=new Map;try{let i=P(JSON.parse(await n.readFile(Ts(t,e))));if(i===null||i.format!==3||!Array.isArray(i.sessions))return r;for(let e of i.sessions){let t=Cs(e);"
       }
     ]
   },

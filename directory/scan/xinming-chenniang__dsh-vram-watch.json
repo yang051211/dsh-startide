@@ -1,0 +1,92 @@
+{
+  "name": "@xinming-chenniang/dsh-vram-watch",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-18T21:46:13.560Z",
+  "icon": "xinming-chenniang__dsh-vram-watch.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 87,
+        "text": "const text = fs.readFileSync(path.resolve(csv), 'utf8');"
+      },
+      {
+        "file": "lib/sampler.js",
+        "line": 11,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/sampler.js",
+        "line": 158,
+        "text": "fs.mkdirSync(path.dirname(path.resolve(file)), { recursive: true });"
+      },
+      {
+        "file": "lib/sampler.js",
+        "line": 159,
+        "text": "fs.writeFileSync(file, toCsv(samples), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 65,
+        "text": "const tools = typeof ctx.get === 'function' ? ctx.get('tools') : ctx.tools;"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 98,
+        "text": "const disposeWatch = tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 133,
+        "text": "const disposeReport = tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/sampler.js",
+        "line": 8,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/sampler.js",
+        "line": 68,
+        "text": "child = spawn(this.powershell, ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

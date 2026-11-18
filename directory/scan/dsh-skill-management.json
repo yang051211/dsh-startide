@@ -1,15 +1,20 @@
 {
   "name": "dsh-skill-management",
-  "version": "0.2.3",
-  "scannedAt": "2026-11-13T08:14:57.650Z",
+  "version": "0.2.4",
+  "scannedAt": "2026-11-18T21:46:02.400Z",
   "icon": "dsh-skill-management.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 465,
+        "line": 494,
         "text": "const response = await fetch(url, init);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 103,
+        "text": "const response = await fetch(`${REPOSITORY_API_URL}/releases/latest`, {"
       }
     ]
   },
@@ -48,8 +53,19 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 8,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 143,
+        "text": "child = spawn(command, args, { detached: true, stdio: \"ignore\" });"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

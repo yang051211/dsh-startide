@@ -1,0 +1,58 @@
+{
+  "name": "dsh-plugin-wechat-session",
+  "version": "1.9.0",
+  "scannedAt": "2026-11-18T21:46:01.889Z",
+  "icon": "dsh-plugin-wechat-session.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 721,
+        "text": "return fetch('/__dsh-plugin-wechat-session/wechat', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "smoke/smoke-test.mjs",
+        "line": 10,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "smoke/smoke-test.mjs",
+        "line": 15,
+        "text": "const readText = (p) => readFile(new URL(p, root), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 334,
+      "text": "`npm install -g npm@latest`（保证 npm ≥ 11.5.1），末步 `npm publish --provenance"
+    }
+  ],
+  "skippedEntries": []
+}

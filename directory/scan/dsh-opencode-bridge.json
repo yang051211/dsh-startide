@@ -1,7 +1,7 @@
 {
   "name": "dsh-opencode-bridge",
-  "version": "1.0.8",
-  "scannedAt": "2026-11-15T20:14:33.600Z",
+  "version": "1.2.0",
+  "scannedAt": "2026-11-18T21:45:51.398Z",
   "icon": "dsh-opencode-bridge.webp",
   "network": {
     "hit": true,
@@ -13,17 +13,17 @@
       },
       {
         "file": "lib/proxy-pool.js",
-        "line": 314,
+        "line": 327,
         "text": "const doFetch = input.fetchImpl ?? ((url, init) => fetch(url, init));"
       },
       {
         "file": "lib/proxy-pool.js",
-        "line": 420,
+        "line": 433,
         "text": "const { ProxyAgent } = await import('undici');"
       },
       {
         "file": "lib/proxy-service.js",
-        "line": 110,
+        "line": 111,
         "text": "response = await fetch(`${this.options.baseUrl.replace(/\\/$/, '')}/models`, {"
       },
       {
@@ -43,7 +43,7 @@
       },
       {
         "file": "lib/adapter.js",
-        "line": 527,
+        "line": 565,
         "text": "appendFileSync(dumpTo, JSON.stringify(record) + '\\n');"
       },
       {
@@ -53,12 +53,12 @@
       },
       {
         "file": "lib/logger.js",
-        "line": 142,
+        "line": 143,
         "text": "fs.unlinkSync(full);"
       },
       {
         "file": "lib/logger.js",
-        "line": 195,
+        "line": 196,
         "text": "fs.mkdirSync(this.dir, { recursive: true });"
       }
     ]
@@ -67,13 +67,28 @@
     "hit": true,
     "evidence": [
       {
+        "file": "docs/evidence/tool-gate-codemode-2026-11-17.json",
+        "line": 30,
+        "text": "renders each tool's real output schema (ctx.tools.get(name).output.schema), so the SDK shows precise return types (read -> {lines,totalLines}, glob -> {root,pat"
+      },
+      {
+        "file": "lib/code-mode.js",
+        "line": 101,
+        "text": "const dispose = ctx.tools.register(transport, {"
+      },
+      {
+        "file": "lib/code-mode.js",
+        "line": 110,
+        "text": ".map(tool => ({ ...tool, output: ctx.tools.get(tool.name)?.output.schema ?? { type: 'json' } }));"
+      },
+      {
         "file": "lib/context-service.js",
         "line": 126,
         "text": "disposers.push(tools.register(createContextPreferenceTool(service)));"
       },
       {
         "file": "lib/log-service.js",
-        "line": 141,
+        "line": 142,
         "text": "disposers.push(tools.register({"
       }
     ]

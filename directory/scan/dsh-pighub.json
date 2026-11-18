@@ -1,19 +1,19 @@
 {
   "name": "dsh-pighub",
-  "version": "1.0.6",
-  "scannedAt": "2026-11-16T23:37:16.569Z",
+  "version": "1.0.11",
+  "scannedAt": "2026-11-18T21:45:49.214Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 543,
+        "line": 545,
         "text": "const response = await fetch(ROUTE, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1845,
+        "line": 1883,
         "text": "return fetch(ROUTE, {"
       }
     ]
@@ -33,17 +33,17 @@
       },
       {
         "file": "lib/auto-update.js",
-        "line": 13,
-        "text": "import { appendFileSync, mkdirSync } from 'node:fs';"
+        "line": 23,
+        "text": "import { appendFileSync, mkdirSync, readFileSync, existsSync } from 'node:fs';"
       },
       {
         "file": "lib/auto-update.js",
-        "line": 50,
+        "line": 60,
         "text": "mkdirSync(dir, { recursive: true });"
       },
       {
         "file": "lib/auto-update.js",
-        "line": 51,
+        "line": 61,
         "text": "appendFileSync(file, new Date().toISOString() + ' ' + line + '\\n', 'utf8');"
       }
     ]
@@ -58,12 +58,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 912,
+        "line": 999,
         "text": "ctx.tools.register({"
       },
       {
         "file": "lib/index.js",
-        "line": 966,
+        "line": 1053,
         "text": "ctx.tools.register({"
       }
     ]
@@ -73,7 +73,7 @@
     "evidence": [
       {
         "file": "lib/auto-update.js",
-        "line": 15,
+        "line": 25,
         "text": "import { execFile as execFileCallback } from 'node:child_process';"
       },
       {
@@ -88,12 +88,12 @@
       },
       {
         "file": "lib/desktop-pet.js",
-        "line": 201,
+        "line": 209,
         "text": "const killer = spawn('taskkill', ['/PID', String(pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' });"
       },
       {
         "file": "lib/desktop-pet.js",
-        "line": 216,
+        "line": 224,
         "text": "const child = spawn('tasklist', ['/FI', 'IMAGENAME eq pighub-pet.exe', '/FO', 'CSV', '/NH'], { windowsHide: true, stdio: ['ignore', 'pipe', 'ignore'] });"
       }
     ]
@@ -106,7 +106,8 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
-    "tools"
+    "tools",
+    "webServer"
   ],
   "setupHints": [],
   "skippedEntries": []

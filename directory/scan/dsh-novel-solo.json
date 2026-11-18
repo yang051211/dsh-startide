@@ -1,7 +1,7 @@
 {
   "name": "dsh-novel-solo",
-  "version": "0.2.4",
-  "scannedAt": "2026-11-02T23:01:17.144Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-18T21:46:05.983Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -12,28 +12,28 @@
     "evidence": [
       {
         "file": "cordis.patch.yml",
-        "line": 28,
-        "text": "const m = JSON.parse(process.getBuiltinModule('node:fs').readFileSync(ctx.profileContext.installAnchor, 'utf8')).version.match(/^(\\d+)\\.(\\d+)\\.(\\d+)/)"
-      },
-      {
-        "file": "cordis.patch.yml",
-        "line": 57,
+        "line": 42,
         "text": "const fs = process.getBuiltinModule('node:fs'), path = process.getBuiltinModule('node:path')"
       },
       {
         "file": "cordis.patch.yml",
-        "line": 67,
+        "line": 52,
         "text": "try { text = fs.readFileSync(path.join(root, rel), 'utf8') } catch {}"
       },
       {
         "file": "cordis.patch.yml",
-        "line": 79,
+        "line": 64,
         "text": "const n = +JSON.parse(fs.readFileSync(path.join(home, '.dsh-novel-solo-data', 'agent-count.json'), 'utf8')).count"
       },
       {
         "file": "lib/index.js",
-        "line": 14,
-        "text": "import { cp } from 'node:fs/promises'"
+        "line": 11,
+        "text": "import { mkdirSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 48,
+        "text": "mkdirSync(storeDir(home), { recursive: true })"
       }
     ]
   },

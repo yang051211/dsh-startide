@@ -1,0 +1,82 @@
+{
+  "name": "dsh-poster",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-18T21:46:07.302Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 54,
+        "text": "const r = await fetch(`${wallet.baseUrl}/v1/images/generations`, {"
+      },
+      {
+        "file": "index.js",
+        "line": 66,
+        "text": "const rr = await fetch(it.url, { signal: AbortSignal.timeout(120000) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 3,
+        "text": "import { mkdirSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 61,
+        "text": "mkdirSync(outDir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 64,
+        "text": "if (it.b64_json) writeFileSync(out, Buffer.from(it.b64_json, 'base64'))"
+      },
+      {
+        "file": "index.js",
+        "line": 68,
+        "text": "writeFileSync(out, Buffer.from(await rr.arrayBuffer()))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 95,
+        "text": "for (const d of createDefinitions(ctx, config)) ctx.tools.register(d)"
+      },
+      {
+        "file": "index.js",
+        "line": 96,
+        "text": "ctx.tools.register(walletTool())"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

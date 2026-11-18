@@ -1,0 +1,110 @@
+{
+  "name": "dsh-chat-history-sync",
+  "version": "0.10.8",
+  "scannedAt": "2026-11-18T21:46:13.572Z",
+  "icon": "dsh-chat-history-sync.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/browser/login-save.mjs",
+        "line": 82,
+        "text": "const r = await fetch('/api/v0/users/current', { headers: h, credentials: 'include' });"
+      },
+      {
+        "file": "lib/engine/sync-all.cjs",
+        "line": 7,
+        "text": "const https = require('https');"
+      },
+      {
+        "file": "lib/engine/sync-all.cjs",
+        "line": 18,
+        "text": "const req = https.get(url, {"
+      },
+      {
+        "file": "lib/engine/sync-all.cjs",
+        "line": 44,
+        "text": "const req = https.get(url, { headers: { 'user-agent': 'Mozilla/5.0' }, timeout: 180000 }, (r) => {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import https from 'node:https';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/browser/login-save.mjs",
+        "line": 6,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/browser/login-save.mjs",
+        "line": 12,
+        "text": "const write = (o) => { try { fs.writeFileSync(outPath, JSON.stringify({ ...o, at: Date.now() })); } catch (e) {} };"
+      },
+      {
+        "file": "lib/browser/login-save.mjs",
+        "line": 17,
+        "text": "try { known = JSON.parse(fs.readFileSync(knownPath, 'utf8')); } catch (e) { known = []; }"
+      },
+      {
+        "file": "lib/engine/catalog.cjs",
+        "line": 3,
+        "text": "const fs = require('fs');"
+      },
+      {
+        "file": "lib/engine/catalog.cjs",
+        "line": 11,
+        "text": "const MAPPING = (() => { try { return JSON.parse(fs.readFileSync(path.join(rawDir, '分类映射.json'), 'utf8')); } catch (e) { return {}; } })();"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine/install.cjs",
+        "line": 35,
+        "text": "const { execSync } = require('child_process');"
+      },
+      {
+        "file": "lib/engine/install.cjs",
+        "line": 108,
+        "text": "const out = execSync('tasklist /FI \"IMAGENAME eq DeepSeek Harness.exe\" /NH', {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "import { spawn, execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 206,
+        "text": "        const c = spawn(schtasks, ['/Create', '/TN', 'DshSyncInstall2', '/SC', 'ONCE', '/ST', st, '/SD', sd, '/TR', tr, '/F', '/IT', '/RL', 'LIMITED'], { window"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 209,
+        "text": "const r = spawn(schtasks, ['/Run', '/TN', 'DshSyncInstall2'], { windowsHide: true, stdio: 'ignore' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

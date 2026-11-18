@@ -1,0 +1,71 @@
+{
+  "name": "dsh-guard-labs-evidence-check",
+  "version": "0.2.0-beta.1",
+  "scannedAt": "2026-11-18T21:46:10.059Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "baseline/engine/analyze.mjs",
+        "line": 4,
+        "text": "} from 'node:fs';"
+      },
+      {
+        "file": "baseline/engine/analyze.mjs",
+        "line": 860,
+        "text": "return {id, location, real, bytes: readFileSync(fd)};"
+      },
+      {
+        "file": "baseline/engine/analyze.mjs",
+        "line": 950,
+        "text": "mkdirSync(outputs, {recursive: true});"
+      },
+      {
+        "file": "baseline/engine/analyze.mjs",
+        "line": 952,
+        "text": "writeFileSync(resolve(outputs, 'CLAIM_EVIDENCE_REPORT.json'), json, 'utf8');"
+      },
+      {
+        "file": "baseline/engine/analyze.mjs",
+        "line": 953,
+        "text": "writeFileSync(resolve(outputs, 'CLAIM_EVIDENCE_REPORT.md'), renderMarkdown(aggregate), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/plugin.mjs",
+        "line": 7,
+        "text": "export const inject=['tools'];"
+      },
+      {
+        "file": "src/plugin.mjs",
+        "line": 10,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

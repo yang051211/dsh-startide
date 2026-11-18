@@ -1,0 +1,84 @@
+{
+  "name": "@roninxr/dsh-nexus",
+  "version": "1.4.4",
+  "scannedAt": "2026-11-18T21:46:12.732Z",
+  "icon": "roninxr__dsh-nexus.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 35,
+        "text": "fetch(ROUTE + '/config')"
+      },
+      {
+        "file": "client.js",
+        "line": 66,
+        "text": "fetch(ROUTE + '/anim?pet=' + encodeURIComponent(petId) + '&surface=any', {"
+      },
+      {
+        "file": "index.js",
+        "line": 480,
+        "text": "const res = await fetch(`${base}/config`, { cache: 'no-store' });"
+      },
+      {
+        "file": "index.js",
+        "line": 514,
+        "text": "const started = await fetch(`${base}/anim?pet=${encodeURIComponent(petId)}&surface=any`, {"
+      },
+      {
+        "file": "index.js",
+        "line": 530,
+        "text": "const done = await fetch("
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, unlinkSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 32,
+        "text": "return String(JSON.parse(readFileSync(join(PACKAGE_DIR, 'package.json'), 'utf8')).version ?? '0.0.0');"
+      },
+      {
+        "file": "index.js",
+        "line": 52,
+        "text": "mkdirSync(destDir, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 61,
+        "text": "const bytes = readFileSync(src);"
+      },
+      {
+        "file": "index.js",
+        "line": 62,
+        "text": "if (existsSync(dest) && statSync(dest).isFile() && sha256(readFileSync(dest)) === sha256(bytes)) {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

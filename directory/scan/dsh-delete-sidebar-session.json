@@ -1,0 +1,79 @@
+{
+  "name": "dsh-delete-sidebar-session",
+  "version": "1.0.4",
+  "scannedAt": "2026-11-18T21:46:13.566Z",
+  "icon": "dsh-delete-sidebar-session.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 158,
+        "text": "const res = await fetch(`${API}/${action}`, {"
+      },
+      {
+        "file": "e2e.mjs",
+        "line": 13,
+        "text": "import { createServer } from 'node:http'"
+      },
+      {
+        "file": "e2e.mjs",
+        "line": 90,
+        "text": "const res = await fetch(`${base}/${action}`, {"
+      },
+      {
+        "file": "e2e.mjs",
+        "line": 109,
+        "text": "const getOnly = await fetch(`${base}/purge`, { method: 'GET' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "e2e.mjs",
+        "line": 10,
+        "text": "import { mkdtemp, mkdir, readFile, rm, writeFile, access } from 'node:fs/promises'"
+      },
+      {
+        "file": "e2e.mjs",
+        "line": 57,
+        "text": "await mkdir(join(projectDir, TARGET), { recursive: true })"
+      },
+      {
+        "file": "e2e.mjs",
+        "line": 58,
+        "text": "await mkdir(join(projectDir, KEEP), { recursive: true })"
+      },
+      {
+        "file": "e2e.mjs",
+        "line": 59,
+        "text": "await writeFile(join(projectDir, TARGET, 'session.v4.jsonl.zstd'), 'x')"
+      },
+      {
+        "file": "e2e.mjs",
+        "line": 60,
+        "text": "await writeFile(join(projectDir, KEEP, 'session.v4.jsonl.zstd'), 'y')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

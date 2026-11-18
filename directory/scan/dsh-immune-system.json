@@ -1,19 +1,19 @@
 {
   "name": "dsh-immune-system",
-  "version": "1.2.0",
-  "scannedAt": "2026-11-14T19:29:20.741Z",
+  "version": "2.3.0",
+  "scannedAt": "2026-11-18T21:45:52.048Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "dsh-immune-system/client/client.js",
-        "line": 142,
+        "line": 153,
         "text": "return fetch(API + path, Object.assign({ credentials: 'same-origin' }, init)).then("
       },
       {
         "file": "dsh-immune-system/dist/core/llm.js",
-        "line": 205,
+        "line": 210,
         "text": "const response = await fetch(url, { method: 'POST', headers, body, signal: combined });"
       },
       {
@@ -22,14 +22,14 @@
         "text": "// HTTP secret headers (curl -H, raw request headers)."
       },
       {
-        "file": "dsh-immune-system/dist/core/ui/page.js",
-        "line": 751,
-        "text": "fetch(api(path), { headers: { 'accept': 'application/json' } })"
+        "file": "dsh-immune-system/dist/core/ui/client-script.js",
+        "line": 343,
+        "text": "fetch(api('/api/explain?q=' + encodeURIComponent(trimmed)), { headers: { 'accept': 'application/json' } })"
       },
       {
-        "file": "dsh-immune-system/dist/core/ui/page.js",
-        "line": 772,
-        "text": "fetch(api('/api/action'), {"
+        "file": "dsh-immune-system/dist/core/ui/client-script.js",
+        "line": 545,
+        "text": "fetch(api('/api/explain?q=' + encodeURIComponent(trimmed)), { headers: { 'accept': 'application/json' } })"
       }
     ]
   },
@@ -38,28 +38,28 @@
     "evidence": [
       {
         "file": "dsh-immune-system/dist/core/audit.js",
-        "line": 17,
-        "text": "import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';"
+        "line": 6,
+        "text": "import { existsSync } from 'node:fs';"
       },
       {
-        "file": "dsh-immune-system/dist/core/audit.js",
-        "line": 243,
-        "text": "lines = readFileSync(path, 'utf8').split('\\n');"
+        "file": "dsh-immune-system/dist/core/audit/logs.js",
+        "line": 8,
+        "text": "import { closeSync, existsSync, openSync, readdirSync, readFileSync, readSync, statSync } from 'node:fs';"
       },
       {
-        "file": "dsh-immune-system/dist/core/audit.js",
-        "line": 353,
-        "text": "lines = readFileSync(path, 'utf8').split('\\n');"
+        "file": "dsh-immune-system/dist/core/audit/logs.js",
+        "line": 28,
+        "text": "text = readFileSync(path, 'utf8');"
       },
       {
-        "file": "dsh-immune-system/dist/core/audit.js",
-        "line": 548,
-        "text": "lines = readFileSync(path, 'utf8').split('\\n');"
+        "file": "dsh-immune-system/dist/core/audit/magpie.js",
+        "line": 8,
+        "text": "import { existsSync, readdirSync, readFileSync } from 'node:fs';"
       },
       {
-        "file": "dsh-immune-system/dist/core/baseline.js",
-        "line": 1,
-        "text": "import { existsSync, readFileSync } from 'node:fs';"
+        "file": "dsh-immune-system/dist/core/audit/magpie.js",
+        "line": 107,
+        "text": "const raw = readFileSync(usageFile, 'utf8');"
       }
     ]
   },
@@ -74,8 +74,14 @@
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh-immune-system/dist/zcode/src/commands/library.js",
+        "line": 1,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
@@ -85,6 +91,17 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [],
-  "setupHints": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 77,
+      "text": "> **Global `immune` alias**: `npm install -g dsh-immune-system` exposes both `immune` and `dsh-immune-system` on your `PATH`."
+    },
+    {
+      "file": "README.zh-CN.md",
+      "line": 77,
+      "text": "> **全局短命令别名**：执行 `npm install -g dsh-immune-system` 后可直接使用 `immune <命令>`。"
+    }
+  ],
   "skippedEntries": []
 }

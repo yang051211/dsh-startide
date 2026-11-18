@@ -1,0 +1,102 @@
+{
+  "name": "@xiaofanzhao/dsh-plugin-knowledge-base",
+  "version": "0.2.5",
+  "scannedAt": "2026-11-18T21:46:12.873Z",
+  "icon": "xiaofanzhao__dsh-plugin-knowledge-base.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 77,
+        "text": "const response = await fetch(API + path, {"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 137,
+        "text": "const response = await fetch(`${now.baseUrl}/embeddings`, {"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 169,
+        "text": "const response = await fetch(`${now.baseUrl}/embeddings`, {"
+      },
+      {
+        "file": "lib/vision.mjs",
+        "line": 116,
+        "text": "const response = await fetch(`${now.baseUrl}/chat/completions`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/pipeline.mjs",
+        "line": 7,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/pipeline.mjs",
+        "line": 69,
+        "text": "const buffer = await fs.promises.readFile(filePath);"
+      },
+      {
+        "file": "lib/preview.mjs",
+        "line": 8,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/preview.mjs",
+        "line": 90,
+        "text": "read: async () => ({ bytes: new Uint8Array(await fs.promises.readFile(sourcePath)), version }),"
+      },
+      {
+        "file": "lib/preview.mjs",
+        "line": 111,
+        "text": "await fs.promises.writeFile(out, Buffer.from(pdf));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 95,
+        "text": "toolCtx.effect(() => toolCtx.tools.register(definition), `knowledge-base: tool ${definition.name}`);"
+      },
+      {
+        "file": "index.js",
+        "line": 99,
+        "text": "} else if (ctx.tools?.register) {"
+      },
+      {
+        "file": "index.js",
+        "line": 100,
+        "text": "for (const definition of tools) ctx.effect(() => ctx.tools.register(definition), `knowledge-base: tool ${definition.name}`);"
+      },
+      {
+        "file": "lib/tools.mjs",
+        "line": 4,
+        "text": "// 只依赖 ctx.tools.register 约定，不 import 任何 @deepseek-ai 包："
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

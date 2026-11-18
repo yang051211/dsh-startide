@@ -1,0 +1,100 @@
+{
+  "name": "dsh-connect-meoo",
+  "version": "0.0.6",
+  "scannedAt": "2026-11-18T21:45:56.048Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 554,
+        "text": "inflight = fetch(STATUS_PATH, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 577,
+        "text": "return fetch(ACTION_PATH + '?action=' + encodeURIComponent(action), {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "import { createServer } from \"node:http\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 707,
+        "text": "const res = await fetch(`${apiBaseUrl}/oauth/token`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 944,
+        "text": "const res = await fetch(`${apiBaseUrl}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "import { chmod, mkdir, readFile, rename, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 473,
+        "text": "text = await readFile(statePath(env), \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 501,
+        "text": "await mkdir(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 503,
+        "text": "await writeFile(temporary, `${JSON.stringify(next, null, 2)}\\n`, { mode: 384 });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 556,
+        "text": "const parsed = JSON.parse(await readFile(file, \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2568,
+        "text": "spawn(command, [url], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2580,
+        "text": "const child = spawn(file, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

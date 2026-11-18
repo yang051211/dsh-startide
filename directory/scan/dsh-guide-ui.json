@@ -1,0 +1,73 @@
+{
+  "name": "dsh-guide-ui",
+  "version": "0.3.7",
+  "scannedAt": "2026-11-18T21:46:12.028Z",
+  "icon": "dsh-guide-ui.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 40,
+        "text": "const response = await fetch('/dsh-guide/state?session=' + encodeURIComponent(String(sessionId)), {"
+      },
+      {
+        "file": "client.js",
+        "line": 91,
+        "text": "const response = await fetch('/dsh-guide/toggle', {"
+      },
+      {
+        "file": "client.js",
+        "line": 276,
+        "text": "const response = await fetch('/dsh-guide/state', { cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 113,
+        "text": "const raw = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 123,
+        "text": "mkdirSync(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 124,
+        "text": "writeFileSync(file, JSON.stringify({ enabled }, null, 2))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "systemPrompt",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
