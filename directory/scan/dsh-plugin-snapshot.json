@@ -1,0 +1,113 @@
+{
+  "name": "dsh-plugin-snapshot",
+  "version": "0.3.6",
+  "scannedAt": "2026-11-19T08:55:15.090Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 57,
+        "text": "return fetch(url, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 65,
+        "text": "return fetch(url, { headers: { accept: 'application/json' } }).then(function (r) { return r.json(); });"
+      },
+      {
+        "file": "lib/updates.js",
+        "line": 21,
+        "text": "const res = await fetch(base + '/' + name + '/latest', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/auto-update.js",
+        "line": 13,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/auto-update.js",
+        "line": 35,
+        "text": "try { return JSON.parse(readFileSync(statePath(cfg), 'utf8')); }"
+      },
+      {
+        "file": "lib/auto-update.js",
+        "line": 72,
+        "text": "const v = JSON.parse(readFileSync(p, 'utf8')).version;"
+      },
+      {
+        "file": "lib/doctor.js",
+        "line": 5,
+        "text": "import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/doctor.js",
+        "line": 125,
+        "text": "else pkg = JSON.parse(readFileSync(pkgFile, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 36,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 80,
+        "text": "sctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 146,
+        "text": "sctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 220,
+        "text": "sctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/exec.js",
+        "line": 7,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/exec.js",
+        "line": 88,
+        "text": "execFile(process.execPath, [pnpmCjs].concat(finalArgs), {"
+      },
+      {
+        "file": "lib/routes.js",
+        "line": 10,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "@wjj865-code/dsh-orchestrator",
-  "version": "0.20.1",
-  "scannedAt": "2026-11-17T22:16:39.376Z",
+  "version": "0.22.0",
+  "scannedAt": "2026-11-19T08:55:04.203Z",
   "icon": "wjj865-code__dsh-orchestrator.svg",
   "network": {
     "hit": true,
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "scripts/mirror-sync.mjs",
-        "line": 20,
+        "file": "scripts/check-docs.mjs",
+        "line": 14,
+        "text": "import { existsSync, readdirSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "scripts/check-docs.mjs",
+        "line": 110,
+        "text": "const read = file => readFileSync(join(root, file), 'utf8')"
+      },
+      {
+        "file": "scripts/check-docs.mjs",
+        "line": 168,
+        "text": "const anchors = anchorsOf(readFileSync(targetFile, 'utf8'))"
+      },
+      {
+        "file": "scripts/check-version.mjs",
+        "line": 8,
         "text": "import { readFile } from 'node:fs/promises'"
       },
       {
-        "file": "scripts/mirror-sync.mjs",
-        "line": 103,
-        "text": "const text = await readFile(join(here, '..', 'package.json'), 'utf8')"
-      },
-      {
-        "file": "scripts/verify-access-full.mjs",
-        "line": 11,
-        "text": "import { mkdtempSync } from 'node:fs'"
-      },
-      {
-        "file": "src/artifact-collect.js",
-        "line": 6,
-        "text": "import { statSync } from 'node:fs'"
-      },
-      {
-        "file": "src/artifact-location.js",
-        "line": 22,
-        "text": "import { lstatSync, realpathSync } from 'node:fs'"
+        "file": "scripts/check-version.mjs",
+        "line": 66,
+        "text": "const read = name => readFile(join(ROOT, name), 'utf8')"
       }
     ]
   },
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "cordis.patch.yml",
-        "line": 81,
+        "line": 76,
         "text": "# （index.js 的 createTools(...).map(tool => ctx.tools.register(tool))），不是独立预设包，所以这里没有"
       },
       {
         "file": "index.js",
-        "line": 35,
+        "line": 39,
         "text": "export const inject = ['tools', 'agents', 'systemPrompt', 'subagents']"
       },
       {
         "file": "index.js",
-        "line": 187,
+        "line": 208,
         "text": "if (ctx.tools === undefined) warnings('dsh-orchestrator: 缺少 tools 服务，工具注册/白名单/guard 不可用')"
       },
       {
         "file": "index.js",
-        "line": 188,
+        "line": 209,
         "text": "else if (typeof ctx.tools.guard !== 'function') warnings('dsh-orchestrator: tools.guard 缺失，wait_agent 执行期拦截不可用')"
       },
       {
         "file": "index.js",
-        "line": 220,
+        "line": 241,
         "text": "const tools = agent.ctx?.tools ?? ctx.tools"
       }
     ]
@@ -98,18 +98,8 @@
     "evidence": [
       {
         "file": "src/dispatch.js",
-        "line": 77,
-        "text": "async spawn({ name, description, prompt, signal, readOnly, planFirst, access, taskId, goal }) {"
-      },
-      {
-        "file": "src/dispatch.js",
-        "line": 516,
+        "line": 423,
         "text": "async spawn({ name, label, prompt, signal, taskId, cwd, readOnly, planFirst, access, goal }) {"
-      },
-      {
-        "file": "src/dispatch.js",
-        "line": 751,
-        "text": "async spawn() { fail() },"
       },
       {
         "file": "src/queue.js",
@@ -120,6 +110,11 @@
         "file": "src/worktree.js",
         "line": 9,
         "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "src/worktree.js",
+        "line": 60,
+        "text": "execFile('git', args, { cwd, signal, timeout, windowsHide: true, maxBuffer: 8 * 1024 * 1024 }, (error, stdout, stderr) => {"
       }
     ]
   },

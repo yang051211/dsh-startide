@@ -1,0 +1,94 @@
+{
+  "name": "@awoodwhale/dsh-skill-mcp-manager",
+  "version": "0.1.8",
+  "scannedAt": "2026-11-19T08:55:15.643Z",
+  "icon": "awoodwhale__dsh-skill-mcp-manager.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 41,
+        "text": "import { closeSync, existsSync, fsyncSync, mkdirSync, openSync, readFileSync, readdirSync, renameSync, statSync, writeFileSync, } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 157,
+        "text": "const manifest = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 175,
+        "text": "text = readFileSync(storePath, 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 192,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 196,
+        "text": "writeFileSync(fd, text);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 32,
+        "text": "* `@deepseek-ai/dsh-mcp-client` row mounted at the scope's own context, which owns one"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 112,
+        "text": "export const inject = ['skills', 'tools', 'agents'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 649,
+        "text": "const fiber = targetCtx.plugin(hostModule('@deepseek-ai/dsh-mcp-client'), mcpConfigOf(server));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 839,
+        "text": "const schemas = ctx.tools?.schemas?.(scopeKey) ?? [];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1368,
+        "text": "ctx.effect(() => ctx.tools.guard((execution) => {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "skills",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,122 @@
+{
+  "name": "@ftshare-lab/dsh-kline",
+  "version": "0.6.12",
+  "scannedAt": "2026-11-19T08:55:11.251Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/chart-service-status.js",
+        "line": 46,
+        "text": "response = await fetch(new URL('/healthz', locator.service_url), { signal: AbortSignal.timeout(timeoutMs) });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1230,
+        "text": "const response = await (await fetch(\"/dsh-kline/context\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1516,
+        "text": "if (typeof input === \"string\" && input.startsWith(\"/api/tools/\")) return globalThis.fetch(\"/dsh-kline/api/tools/\" + input.slice(11), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1520,
+        "text": "return globalThis.fetch(input, init);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1556,
+        "text": "const response = await fetch(`/dsh-kline/api/tools/${encodeURIComponent(name)}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/chart-applications.js",
+        "line": 3,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/chart-applications.js",
+        "line": 18,
+        "text": "const content = await readFile(path, 'utf8');"
+      },
+      {
+        "file": "lib/chart-applications.js",
+        "line": 24,
+        "text": "await mkdir(join(path, '..'), { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "lib/chart-applications.js",
+        "line": 26,
+        "text": "await writeFile(temporary, JSON.stringify(value), { mode: 0o600, flag: 'wx' });"
+      },
+      {
+        "file": "lib/chart-context.js",
+        "line": 3,
+        "text": "import { mkdir, rename, writeFile } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/dsh-mcp-plugin.mjs",
+        "line": 25,
+        "text": "const client = await ctx.loader.import('@deepseek-ai/dsh-mcp-client')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/dsh-bootstrap.mjs",
+        "line": 3,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/dsh-bootstrap.mjs",
+        "line": 65,
+        "text": "const killer = spawn('taskkill', ['/pid', String(generation.pid), '/T', '/F'], {stdio:'ignore', windowsHide:true})"
+      },
+      {
+        "file": "scripts/dsh-bootstrap.mjs",
+        "line": 68,
+        "text": "// spawn(detached) below gives this generation its own process group."
+      },
+      {
+        "file": "scripts/run-dsh-kline.mjs",
+        "line": 4,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/run-dsh-kline.mjs",
+        "line": 216,
+        "text": "const result = spawnSync(command, [...args, '-c', code], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js",
+    "lib/client/generated-view.js",
+    "view/vendor/klinecharts.min.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

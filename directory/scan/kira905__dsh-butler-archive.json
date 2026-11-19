@@ -1,7 +1,7 @@
 {
   "name": "@kira905/dsh-butler-archive",
-  "version": "0.5.1",
-  "scannedAt": "2026-11-06T20:48:51.086Z",
+  "version": "0.5.2",
+  "scannedAt": "2026-11-19T08:55:18.015Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -25,6 +25,11 @@
         "file": "lib/host-rpc.mjs",
         "line": 86,
         "text": "return fetch(`${baseUrl}${pathname}`, {"
+      },
+      {
+        "file": "scripts/test-e2e.mjs",
+        "line": 144,
+        "text": "const res = await fetch(base + path, { headers: { accept: 'application/json' } })"
       }
     ]
   },
@@ -63,8 +68,19 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/test-e2e.mjs",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/test-e2e.mjs",
+        "line": 116,
+        "text": "const child = spawn(process.execPath, [join(ROOT, 'scripts', 'test-host.mjs'), '0'], {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

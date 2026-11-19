@@ -1,7 +1,7 @@
 {
   "name": "dsh-argp",
-  "version": "2.0.2",
-  "scannedAt": "2026-11-16T23:37:26.200Z",
+  "version": "2.1.0",
+  "scannedAt": "2026-11-19T08:55:09.652Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -11,12 +11,12 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/peratom/llm-adapter.js",
+        "file": "lib/llm/llm-adapter.js",
         "line": 18,
         "text": "import { writeFileSync } from 'node:fs';"
       },
       {
-        "file": "lib/peratom/llm-adapter.js",
+        "file": "lib/llm/llm-adapter.js",
         "line": 219,
         "text": "writeFileSync(file, JSON.stringify(payload, null, 2));"
       }
@@ -26,19 +26,24 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/argp-graph-engine.js",
-        "line": 91,
+        "file": "lib/argp-engine.js",
+        "line": 93,
         "text": "static inject = ['tools'];"
       },
       {
         "file": "lib/factor/recall-labels.js",
-        "line": 298,
+        "line": 322,
         "text": "ctx.tools.register(recallHistoryTool);"
       },
       {
         "file": "lib/factor/recall-labels.js",
-        "line": 363,
+        "line": 388,
         "text": "ctx.tools.register(listLabelsTool);"
+      },
+      {
+        "file": "lib/factor/search-history.js",
+        "line": 334,
+        "text": "ctx.tools.register(tool);"
       }
     ]
   },

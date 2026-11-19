@@ -1,0 +1,75 @@
+{
+  "name": "dsh-context-graph",
+  "version": "0.10.0",
+  "scannedAt": "2026-11-19T08:55:18.325Z",
+  "icon": "dsh-context-graph.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/client/client.js",
+        "line": 210,
+        "text": "const response = await fetch(`api/context-graph.${name}${query ? `?${new URLSearchParams(query)}` : ''}`)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/builder.js",
+        "line": 7,
+        "text": "import { mkdir, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/host/builder.js",
+        "line": 174,
+        "text": "await mkdir(chat, { recursive: true })"
+      },
+      {
+        "file": "src/host/builder.js",
+        "line": 175,
+        "text": "await writeFile(saved, `finish: ${end?.kind}\\n\\n--- answer ---\\n${answer}\\n\\n--- reasoning ---\\n${reasoning}\\n`, 'utf8')"
+      },
+      {
+        "file": "src/host/config.js",
+        "line": 6,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/host/config.js",
+        "line": 10,
+        "text": "export const { version } = JSON.parse(readFileSync(new URL('../../package.json', import.meta.url), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/plugin.js",
+        "line": 31,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "src/host/recall.js",
+        "line": 224,
+        "text": "ctx.tools.register(definition)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

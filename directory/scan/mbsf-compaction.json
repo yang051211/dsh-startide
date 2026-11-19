@@ -1,0 +1,116 @@
+{
+  "name": "mbsf-compaction",
+  "version": "0.0.22",
+  "scannedAt": "2026-11-19T08:55:20.894Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bin/session-reset.js",
+        "line": 5,
+        "text": "import { createServer } from \"node:http\";"
+      },
+      {
+        "file": "lib/bin/session-reset.js",
+        "line": 14464,
+        "text": "if ((await fetch(`http://127.0.0.1:${port}/`, { signal: AbortSignal.timeout(2e3) })).status > 0) return true;"
+      },
+      {
+        "file": "lib/bin/session-reset.js",
+        "line": 14504,
+        "text": "const res = await fetch('http://127.0.0.1:' + port + '/', { signal: AbortSignal.timeout(2000) })"
+      },
+      {
+        "file": "lib/bin/session-reset.js",
+        "line": 14669,
+        "text": "fetch('/state', { cache: 'no-store' }).then(function(r){ return r.json(); }).then(function(j){"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2497,
+        "text": "fetch(progressUrl, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bin/enable.js",
+        "line": 2,
+        "text": "import { chmod, readFile, readdir, rename, stat, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/bin/enable.js",
+        "line": 108,
+        "text": "text = await readFile(file, \"utf8\");"
+      },
+      {
+        "file": "lib/bin/enable.js",
+        "line": 155,
+        "text": "await writeFile(backupPath, text, \"utf8\");"
+      },
+      {
+        "file": "lib/bin/enable.js",
+        "line": 158,
+        "text": "await writeFile(tmp, next, \"utf8\");"
+      },
+      {
+        "file": "lib/bin/session-reset.js",
+        "line": 4,
+        "text": "import { closeSync, existsSync, fsyncSync, mkdirSync, openSync, readFileSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bin/dsh-web.js",
+        "line": 2,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/bin/dsh-web.js",
+        "line": 55,
+        "text": "const child = spawn(bin, args, {"
+      },
+      {
+        "file": "lib/bin/session-reset.js",
+        "line": 3,
+        "text": "import { execFileSync, spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/bin/session-reset.js",
+        "line": 14489,
+        "text": "        const child = spawn('open', ['-a', ${JSON.stringify(desktop.bundle)}], { detached: true, stdio: 'ignore', env: cleanEnv })` : `const child = spawn(${JSO"
+      },
+      {
+        "file": "lib/bin/session-reset.js",
+        "line": 14493,
+        "text": "const { spawn } = require('node:child_process')"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionProjections",
+    "settings",
+    "typert"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

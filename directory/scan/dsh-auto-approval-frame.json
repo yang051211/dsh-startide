@@ -1,7 +1,7 @@
 {
   "name": "dsh-auto-approval-frame",
-  "version": "0.6.15",
-  "scannedAt": "2026-11-17T09:25:39.158Z",
+  "version": "0.6.16",
+  "scannedAt": "2026-11-19T08:55:13.629Z",
   "icon": "dsh-auto-approval-frame.svg",
   "network": {
     "hit": true,
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 53,
+        "line": 55,
         "text": "export const inject = ['approval', 'permissionPresets', 'sessions', 'tools', 'llm', 'agents', 'settings', 'userQuestions'];"
       }
     ]
@@ -83,13 +83,23 @@
       },
       {
         "file": "lib/frame/facts.js",
-        "line": 727,
+        "line": 652,
         "text": "spawn: (command, args, timeoutMs) => spawnSync(command, args, { encoding: 'utf8', windowsHide: true, timeout: timeoutMs ?? 5_000 }),"
       },
       {
         "file": "lib/frame/facts.js",
-        "line": 1791,
+        "line": 1721,
         "text": "return probe.spawn(command, args, Math.min(left, GIT_SPAWN_MAX_MS));"
+      },
+      {
+        "file": "lib/frame/secret-tool.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/frame/secret-tool.js",
+        "line": 72,
+        "text": "const child = spawn('bash', ['-c', command], { env, windowsHide: true, ...(signal === undefined ? {} : { signal }) });"
       }
     ]
   },

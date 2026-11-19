@@ -1,0 +1,123 @@
+{
+  "name": "dsh-video-insight",
+  "version": "0.10.2",
+  "scannedAt": "2026-11-19T08:55:12.832Z",
+  "icon": "dsh-video-insight.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 116,
+        "text": "return fetch(url.toString(), init).then(async (response) => {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 140,
+        "text": "response = await fetch(url, {"
+      },
+      {
+        "file": "lib/media.js",
+        "line": 377,
+        "text": "const response = await fetch(audioUrl, { headers, signal });"
+      },
+      {
+        "file": "lib/media.js",
+        "line": 446,
+        "text": "const response = await fetch(url, { headers, signal });"
+      },
+      {
+        "file": "lib/util.js",
+        "line": 61,
+        "text": "response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/analysis.js",
+        "line": 11,
+        "text": "import { mkdir, readFile, rename, unlink, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/analysis.js",
+        "line": 144,
+        "text": "const raw = await readFile(file, 'utf8');"
+      },
+      {
+        "file": "lib/analysis.js",
+        "line": 156,
+        "text": "await mkdir(ANALYSIS_DIR, { recursive: true });"
+      },
+      {
+        "file": "lib/analysis.js",
+        "line": 159,
+        "text": "await writeFile(tmp, `${JSON.stringify(payload, null, 2)}\\n`, { mode: 0o600 });"
+      },
+      {
+        "file": "lib/analysis.js",
+        "line": 184,
+        "text": "current = sanitize(JSON.parse(await readFile(file, 'utf8')));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/define-tool.js",
+        "line": 9,
+        "text": "* it is pure schema work. `ctx.tools.register()` still comes from the loaded"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1701,
+        "text": "() => toolCtx.tools.register(createTool(ai, config, toolResolvers)),"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1705,
+        "text": "() => toolCtx.tools.register(createDigestTool(ai, config, toolResolvers)),"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cuts.js",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/cuts.js",
+        "line": 131,
+        "text": "const child = spawn(ffmpeg, args, { stdio: ['ignore', 'pipe', 'pipe'] });"
+      },
+      {
+        "file": "lib/media.js",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/media.js",
+        "line": 187,
+        "text": "child = spawn(command, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/zh.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

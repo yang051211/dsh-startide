@@ -1,0 +1,61 @@
+{
+  "name": "dsh-liang-backdrop",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-19T08:55:18.494Z",
+  "icon": "dsh-liang-backdrop.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 57,
+        "text": "const response = await fetch(`${FRAME_SOURCE}/${name}`);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 44,
+        "text": "return await readFile(path.join(directory, name));"
+      },
+      {
+        "file": "index.js",
+        "line": 63,
+        "text": "await mkdir(CACHE_DIR, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 64,
+        "text": "await writeFile(path.join(CACHE_DIR, name), bytes);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

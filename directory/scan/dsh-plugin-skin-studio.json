@@ -1,0 +1,110 @@
+{
+  "name": "dsh-plugin-skin-studio",
+  "version": "1.0.36",
+  "scannedAt": "2026-11-19T08:55:13.680Z",
+  "icon": "dsh-plugin-skin-studio.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1383,
+        "text": "const response = await fetch(text);"
+      },
+      {
+        "file": "client.js",
+        "line": 1465,
+        "text": "fetch(dataUrl).then((response) => response.blob()).then(resolve, reject);"
+      },
+      {
+        "file": "client.js",
+        "line": 2535,
+        "text": "fetch('/api/skin-studio/media/ping', { headers: { accept: 'application/json' }, cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 3308,
+        "text": "const response = await fetch(endpoint, { method: 'GET', cache: 'no-store' });"
+      },
+      {
+        "file": "client.js",
+        "line": 3342,
+        "text": "const response = await fetch('/api/skin-studio/media/proxy?path=' + encodeURIComponent(item.sourcePath), { cache: 'no-store' });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { createReadStream } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { readdir } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { mkdir, readFile, stat, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 96,
+        "text": "await mkdir(CACHE_DIR, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 139,
+        "text": "await mkdir(PROXY_DIR, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "import { execFile, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 40,
+        "text": "child = spawn(command, args, { stdio: ['ignore', capture ? 'pipe' : 'ignore', capture ? 'pipe' : 'ignore'] });"
+      },
+      {
+        "file": "index.js",
+        "line": 140,
+        "text": "const child = spawn('ffmpeg', ["
+      },
+      {
+        "file": "index.js",
+        "line": 239,
+        "text": "execFile('find', args, { timeout: 9000, maxBuffer: 1 << 20 }, (error, stdout) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 339,
+        "text": "const child = spawn('ffmpeg', ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

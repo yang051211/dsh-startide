@@ -1,0 +1,108 @@
+{
+  "name": "dsh-share-pack",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-19T08:55:20.734Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 49,
+        "text": "const response = await fetch('/dsh-share/pack' + query, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/relay.js",
+        "line": 7,
+        "text": "const response = await fetch('https://api.pastes.dev/post', {"
+      },
+      {
+        "file": "lib/relay.js",
+        "line": 20,
+        "text": "const response = await fetch('https://paste.rs', {"
+      },
+      {
+        "file": "lib/relay.js",
+        "line": 33,
+        "text": "const response = await fetch('https://api.mclo.gs/1/log', {"
+      },
+      {
+        "file": "lib/relay.js",
+        "line": 74,
+        "text": "const response = await fetch(rawUrl(url), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-share.mjs",
+        "line": 3,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/dsh-share.mjs",
+        "line": 19,
+        "text": "const brief = readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "bin/dsh-share.mjs",
+        "line": 24,
+        "text": "const input = rest[0] || readFileSync(0, 'utf8')"
+      },
+      {
+        "file": "install.mjs",
+        "line": 6,
+        "text": "import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync, copyFileSync } from 'node:fs'"
+      },
+      {
+        "file": "install.mjs",
+        "line": 41,
+        "text": "const raw = existsSync(manifest) ? readFileSync(manifest, 'utf8') : '{}'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 9,
+        "text": "export const inject = ['tools', 'webServer']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 288,
+        "text": "bootLog('apply: enter (tools=' + typeof ctx.tools + ', webServer=' + typeof ctx.webServer + ')')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 312,
+        "text": "if (!ctx.tools || typeof ctx.tools.register !== 'function') throw new Error('tools service unavailable')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 313,
+        "text": "for (const definition of toolDefinitions()) ctx.tools.register(definition)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

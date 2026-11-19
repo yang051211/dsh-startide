@@ -1,0 +1,87 @@
+{
+  "name": "dsh-assistant-photographer",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-19T08:55:19.914Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/comfy.js",
+        "line": 33,
+        "text": "res = await fetch(base + path, { method, body, headers, signal: AbortSignal.any(signals) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/comfy.js",
+        "line": 3,
+        "text": "import { mkdir, readFile, stat, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/comfy.js",
+        "line": 100,
+        "text": "graph = JSON.parse(await readFile(file, \"utf8\"));"
+      },
+      {
+        "file": "lib/comfy.js",
+        "line": 126,
+        "text": "form.append(\"image\", new Blob([await readFile(file)]), `ref_${randomUUID().slice(0, 8)}${ext}`);"
+      },
+      {
+        "file": "lib/comfy.js",
+        "line": 165,
+        "text": "await mkdir(outDir, { recursive: true });"
+      },
+      {
+        "file": "lib/comfy.js",
+        "line": 174,
+        "text": "await writeFile(target, buf, { flag: \"wx\" });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "export const inject = [\"tools\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 69,
+        "text": "// <0.3.0）里都校验这一点，缺失时 ctx.tools.register() 直接抛错、插件整体"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 190,
+        "text": "ctx.effect(() => ctx.tools.register(tool), \"assistant-photographer: photographer_shoot tool\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 192,
+        "text": "ctx.tools.register(tool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

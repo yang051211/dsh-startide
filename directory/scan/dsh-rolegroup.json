@@ -1,0 +1,77 @@
+{
+  "name": "dsh-rolegroup",
+  "version": "0.12.1",
+  "scannedAt": "2026-11-19T08:55:13.916Z",
+  "icon": "dsh-rolegroup.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/doctor.js",
+        "line": 5,
+        "text": "import { readFile, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/doctor.js",
+        "line": 151,
+        "text": "text = await readFile(path, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 173,
+        "text": "role.persona = (await readFile(path, 'utf8')).trim()"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 385,
+        "text": "await mkdir(stateDir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/link-deployment-deps.mjs",
+        "line": 14,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 183,
+      "text": "`/rolegroup doctor` reads the `$DSH_HOME/plugins/dsh-rolegroup/last-startup.json` snapshot and compares it"
+    },
+    {
+      "file": "README.md",
+      "line": 167,
+      "text": "`/rolegroup doctor` 会读取 `$DSH_HOME/plugins/dsh-rolegroup/last-startup.json` 快照，再和运行时的 llm"
+    }
+  ],
+  "skippedEntries": []
+}

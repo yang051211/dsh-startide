@@ -1,0 +1,119 @@
+{
+  "name": "dsh-agent-team-ui-testing",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-19T08:55:12.179Z",
+  "icon": "dsh-agent-team-ui-testing.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "browser-safety.js",
+        "line": 238,
+        "text": "const ws = new WebSocket(this.url);"
+      },
+      {
+        "file": "client.js",
+        "line": 160,
+        "text": "const response = await fetch(HOST_BASE + '/' + op, {"
+      },
+      {
+        "file": "client.js",
+        "line": 180,
+        "text": "const response = await fetch(HOST_BASE + path, { credentials: 'same-origin', headers: scopeHeaders(scope), signal, cache: 'no-store' });"
+      },
+      {
+        "file": "client.js",
+        "line": 235,
+        "text": "const response = await fetch(HOST_BASE + path, init);"
+      },
+      {
+        "file": "client.js",
+        "line": 1160,
+        "text": "const response = await fetch(HOST_BASE + '/annotations', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "capture-p0.js",
+        "line": 31,
+        "text": "} from 'node:fs';"
+      },
+      {
+        "file": "capture-p0.js",
+        "line": 775,
+        "text": "mkdirSync(dirname(targetAbsolute), { recursive: true });"
+      },
+      {
+        "file": "capture-p0.js",
+        "line": 870,
+        "text": "try { unlinkSync(tempPath); } catch { /* ignore */ }"
+      },
+      {
+        "file": "capture-p0.js",
+        "line": 882,
+        "text": "try { unlinkSync(tempPath); } catch { /* ignore */ }"
+      },
+      {
+        "file": "capture-p0.js",
+        "line": 900,
+        "text": "try { unlinkSync(tempPath); } catch { tempRemoved = false; }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 212,
+        "text": "export const inject = ['tools', 'webServer'];"
+      },
+      {
+        "file": "index.js",
+        "line": 17446,
+        "text": "toolDisposers.set(name, ctx.tools.register(entry.definition, { when: entry.when }));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 5,
+        "text": "import { execFileSync, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 2176,
+        "text": "this.starting = this.#spawn(signal).finally(() => { this.starting = undefined; });"
+      },
+      {
+        "file": "index.js",
+        "line": 2303,
+        "text": "async #spawn(signal) {"
+      },
+      {
+        "file": "index.js",
+        "line": 2476,
+        "text": "return spawn(chromeBin, args, { stdio: ['ignore', 'ignore', 'pipe'] });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

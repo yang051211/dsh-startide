@@ -1,0 +1,95 @@
+{
+  "name": "@liangjiehappy/dsh-plugin-doctor",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-19T08:55:19.973Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 205,
+        "text": "const res = await fetch(BASE + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/checks.js",
+        "line": 283,
+        "text": "\"fs\", \"llm\", \"web\", \"session\", \"shell\", \"logger\", \"on\", \"emit\","
+      },
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "const fs = await import(\"node:fs/promises\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 47,
+        "text": "return await fs.readFile(p, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 55,
+        "text": "const fs = await import(\"node:fs/promises\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 67,
+        "text": "const fs = await import(\"node:fs/promises\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/checks.js",
+        "line": 114,
+        "text": "// ctx.<prop> 访问（排除 ctx.tools.register 这类已知服务）"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 27,
+        "text": "export const inject = [\"tools\", \"skills\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 231,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 260,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 301,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "config\\",
+    "skills",
+    "tools",
+    "tools\\"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

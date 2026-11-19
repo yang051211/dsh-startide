@@ -1,35 +1,35 @@
 {
   "name": "dsh-qwen-paint",
-  "version": "1.2.1",
-  "scannedAt": "2026-11-18T21:45:50.693Z",
+  "version": "1.2.3",
+  "scannedAt": "2026-11-19T08:55:05.605Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "assets/cpu-accel.js",
-        "line": 216,
+        "line": 241,
         "text": "fetch(SET_PATH, {"
       },
       {
         "file": "assets/cpu-accel.js",
-        "line": 240,
+        "line": 265,
         "text": "fetch(PROFILE_PATH, { headers: { accept: 'application/json' }, cache: 'no-store' })"
       },
       {
         "file": "assets/draft.js",
-        "line": 300,
+        "line": 325,
         "text": "fetch(SAVE_API, {"
       },
       {
         "file": "assets/history.js",
-        "line": 145,
-        "text": "fetch('api/qwen-paint/history/thumb', {"
+        "line": 170,
+        "text": "fetch(qpApiUrl('api/qwen-paint/history/thumb'), {"
       },
       {
         "file": "assets/history.js",
-        "line": 256,
-        "text": "fetch(buildQuery(), { headers: { accept: 'application/json' }, cache: 'no-store' })"
+        "line": 293,
+        "text": "return fetch(LIST_API_URL, { headers: { accept: 'application/json' }, cache: 'no-store' }).then(function (r) {"
       }
     ]
   },
@@ -97,14 +97,14 @@
         "text": "import { spawn } from 'node:child_process'"
       },
       {
-        "file": "lib/comfy-launch.js",
-        "line": 572,
-        "text": "//     · `spawn(detached: true)` + unref()     → ❌ 进程随即消失"
+        "file": "lib/config.js",
+        "line": 5,
+        "text": "import { execFile, spawn } from 'node:child_process'"
       },
       {
-        "file": "lib/comfy-launch.js",
-        "line": 573,
-        "text": "//     · `spawn()`（普通、不 detached）         → ❌ 进程随即消失"
+        "file": "lib/hipfire-img.js",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process'"
       }
     ]
   },
@@ -129,22 +129,22 @@
     },
     {
       "file": "README.md",
-      "line": 21,
+      "line": 22,
       "text": "- **模型自动下载包（可选）**：`node scripts/setup.mjs --video-models` 提供**视频模型自动下载包** —— 默认不装、需你显式执行，官方仓库文件清单运行时动态列举、由你选档位，多源轮询 + 断点续传 + 服务器权威 size + sha256 双校验，不合格删除；核显档位另"
     },
     {
       "file": "README.md",
-      "line": 31,
+      "line": 32,
       "text": "> **不想碰命令行**：双击仓库根目录的 `一键安装.cmd` —— 它会先自报版本与 `setup.mjs` 指纹，检测后问一句再装。"
     },
     {
       "file": "README.md",
-      "line": 86,
+      "line": 87,
       "text": "下载厂商专用加速包（`pip install --upgrade` / `git clone`）。**这会访问外部地址**，"
     },
     {
       "file": "README.md",
-      "line": 626,
+      "line": 681,
       "text": "- 诚实边界：音频权重不自动下载、缺件给清单；插件不 `pip install`、不建 venv / conda / Docker、不拉镜像；第三方节点类名与槽位未核实一律降级。"
     }
   ],

@@ -1,0 +1,87 @@
+{
+  "name": "dsh-turnkeeper",
+  "version": "0.4.5",
+  "scannedAt": "2026-11-19T08:55:17.571Z",
+  "icon": "dsh-turnkeeper.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 189,
+        "text": "const postDecision = (body) => fetch('/turnkeeper/decisions', {"
+      },
+      {
+        "file": "client.js",
+        "line": 200,
+        "text": "fetch(`/turnkeeper/summary?session=${encodeURIComponent(String(sessionId))}`)"
+      },
+      {
+        "file": "client.js",
+        "line": 415,
+        "text": "fetch(`/turnkeeper/history?scope=${scope}&days=${days}&limit=300&session=${encodeURIComponent(sessionId)}`)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import { readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "import { appendFile, mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 98,
+        "text": "configCache = { mtimeMs: stat.mtimeMs, value: normalizeConfig(JSON.parse(readFileSync(configPath, 'utf8'))) }"
+      },
+      {
+        "file": "index.js",
+        "line": 267,
+        "text": "const text = await readFile(ledgerPath, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 303,
+        "text": "const text = readFileSync(policyPath, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 900,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

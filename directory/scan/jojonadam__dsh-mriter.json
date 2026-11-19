@@ -1,0 +1,77 @@
+{
+  "name": "@jojonadam/dsh-mriter",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-19T08:55:12.262Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import { existsSync, mkdtempSync, writeFileSync, readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "index.js",
+        "line": 58,
+        "text": "writeFileSync(lyricPath, lyrics, \"utf8\");"
+      },
+      {
+        "file": "index.js",
+        "line": 66,
+        "text": "const report = existsSync(mdPath) ? readFileSync(mdPath, \"utf8\") : \"\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "const inject = [\"tools\"];"
+      },
+      {
+        "file": "index.js",
+        "line": 173,
+        "text": "ctx.effect(() => tools.register(tool));"
+      },
+      {
+        "file": "index.js",
+        "line": 176,
+        "text": "ctx.effect(() => tools.register(progressionTool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "execFile(cmd, argv, { timeout: 120000, maxBuffer: 8 * 1024 * 1024, ...opts },"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "bin/darwin-arm64/mriter"
+  ],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

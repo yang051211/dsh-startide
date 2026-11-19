@@ -1,7 +1,7 @@
 {
   "name": "dsh-browser-view",
-  "version": "0.12.1",
-  "scannedAt": "2026-11-17T09:25:47.016Z",
+  "version": "0.13.0",
+  "scannedAt": "2026-11-19T08:55:14.011Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,7 +13,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 11358,
+        "line": 11897,
         "text": "const res = await fetch(`http://127.0.0.1:${port}${basePath}/status`, {"
       }
     ]
@@ -23,28 +23,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 3,
+        "line": 5,
         "text": "ndFileSync, constants, existsSync, mkdirSync, readFileSync, readdirSync, readlinkSync, renameSync, rmSync, statSync, unlinkSync, writeFileSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 1452,
+        "line": 1538,
         "text": "rmSync(join(dir, file.name), { force: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 4492,
-        "text": "const data = JSON.parse(readFileSync(join(dir, file), \"utf8\"));"
+        "line": 3664,
+        "text": "raw = readFileSync(lockPath, \"utf8\").trim();"
       },
       {
         "file": "lib/index.js",
-        "line": 4513,
-        "text": "mkdirSync(dir, { recursive: true });"
+        "line": 3668,
+        "text": "raw = readFileSync(lockFile, \"utf8\").trim();"
       },
       {
         "file": "lib/index.js",
-        "line": 4516,
-        "text": "writeFileSync(tmp, JSON.stringify({"
+        "line": 3740,
+        "text": "const stat = readFileSync(`/proc/${pid}/stat`, \"utf8\");"
       }
     ]
   },
@@ -53,34 +53,55 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 326,
+        "line": 332,
         "text": "* Build a plain ToolDefinition for `ctx.tools.register` without depending on"
       },
       {
         "file": "lib/index.js",
-        "line": 10698,
+        "line": 11214,
         "text": "const tools = ctx.get(\"tools\") ?? ctx.tools;"
       },
       {
         "file": "lib/index.js",
-        "line": 10818,
+        "line": 11338,
         "text": "tools.register(def);"
       },
       {
         "file": "lib/index.js",
-        "line": 11332,
+        "line": 11871,
         "text": "if (typeof ctx.inject === \"function\") ctx.inject([\"tools\"], (toolCtx) => {"
       },
       {
         "file": "lib/mcp.js",
-        "line": 274,
+        "line": 280,
         "text": "* Build a plain ToolDefinition for `ctx.tools.register` without depending on"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3718,
+        "text": "execFile(\"ps\", args, (err, stdout) => {"
+      },
+      {
+        "file": "lib/mcp.js",
+        "line": 12,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/mcp.js",
+        "line": 3589,
+        "text": "execFile(\"ps\", args, (err, stdout) => {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

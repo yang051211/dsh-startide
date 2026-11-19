@@ -1,11 +1,16 @@
 {
   "name": "dsh-voice-speak",
-  "version": "3.5.0",
-  "scannedAt": "2026-11-13T21:11:03.797Z",
+  "version": "3.7.0",
+  "scannedAt": "2026-11-19T08:55:17.743Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/duplex-guard.js",
+        "line": 97,
+        "text": "const response = await fetch(`${baseUrl}${VOICE_STATUS_PATH}`, {"
+      },
       {
         "file": "lib/edge.js",
         "line": 130,
@@ -17,29 +22,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/duplex-guard.js",
+        "line": 25,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/duplex-guard.js",
+        "line": 62,
+        "text": "const url = new URL(readFileSync(LAST_URL_FILE, 'utf8').trim())"
+      },
+      {
         "file": "lib/index.js",
         "line": 18,
         "text": "import { existsSync, unlinkSync } from 'node:fs'"
       },
       {
         "file": "lib/index.js",
-        "line": 158,
+        "line": 190,
         "text": "unlinkSync(markerPath)"
       },
       {
         "file": "lib/pet-bridge.js",
         "line": 26,
         "text": "import { appendFileSync, existsSync, openSync, readFileSync } from 'node:fs'"
-      },
-      {
-        "file": "lib/pet-bridge.js",
-        "line": 53,
-        "text": "const parsed = JSON.parse(readFileSync(HOME_CONFIG, 'utf8'))"
-      },
-      {
-        "file": "lib/pet-bridge.js",
-        "line": 344,
-        "text": "appendFileSync(LOG_PATH, `${stamp} ${line}\\n`, 'utf8')"
       }
     ]
   },
@@ -53,12 +58,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 27,
+        "line": 28,
         "text": "export const inject = ['tools', 'systemPrompt']"
       },
       {
         "file": "lib/index.js",
-        "line": 169,
+        "line": 201,
         "text": "ctx.tools.register({"
       }
     ]

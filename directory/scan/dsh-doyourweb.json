@@ -1,19 +1,19 @@
 {
   "name": "dsh-doyourweb",
-  "version": "0.2.3",
-  "scannedAt": "2026-11-11T21:01:10.165Z",
+  "version": "0.2.4",
+  "scannedAt": "2026-11-19T08:55:10.445Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "extension/background.js",
-        "line": 41,
+        "line": 63,
         "text": "const response = await fetch(url, { signal: AbortSignal.timeout(1000) });"
       },
       {
         "file": "extension/background.js",
-        "line": 160,
+        "line": 218,
         "text": "const connection = new WebSocket(`ws://127.0.0.1:${port}/extension`, protocols);"
       },
       {
@@ -23,13 +23,13 @@
       },
       {
         "file": "lib/host.js",
-        "line": 315,
-        "text": "pi(action,data={}){const response=await fetch('/manage/api',{method:'POST',headers:{'Content-Type':'application/json','X-DSH-Key':key},body:JSON.stringify({acti"
+        "line": 350,
+        "text": "location.pathname);const response=await fetch('/auth/session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret,scope:${JSO"
       },
       {
         "file": "lib/host.js",
-        "line": 3357,
-        "text": "  const response = await fetch(url, { signal: AbortSignal.any([AbortSignal.timeout(15e3), ...signal ? [signal] : []]), headers: { \"User-Agent\": \"dsh-doyourweb\" "
+        "line": 360,
+        "text": "wait approvalReady;const response=await fetch('/manage/api',{method:'POST',headers:{'Content-Type':'application/json','X-DSH-Key':key},body:JSON.stringify({acti"
       }
     ]
   },
@@ -39,7 +39,7 @@
       {
         "file": "lib/host.js",
         "line": 4,
-        "text": "import { readFile as readFile5 } from \"node:fs/promises\";"
+        "text": "import { readFile as readFile6 } from \"node:fs/promises\";"
       },
       {
         "file": "lib/host.js",
@@ -48,17 +48,17 @@
       },
       {
         "file": "lib/host.js",
-        "line": 407,
+        "line": 455,
         "text": "await mkdir(this.home, { recursive: true });"
       },
       {
         "file": "lib/host.js",
-        "line": 410,
+        "line": 458,
         "text": "this.settings = JSON.parse(await readFile(settingsPath, \"utf8\"));"
       },
       {
         "file": "lib/host.js",
-        "line": 414,
+        "line": 462,
         "text": "await writeFile(settingsPath, JSON.stringify(this.settings), { mode: 384, flag: \"wx\" });"
       }
     ]
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/host.js",
-        "line": 4233,
+        "line": 4635,
         "text": "var inject = [\"tools\", \"typert\"];"
       },
       {
         "file": "lib/host.js",
-        "line": 4484,
+        "line": 4894,
         "text": "ctx.tools.register(tool("
       },
       {
         "file": "lib/host.js",
-        "line": 4490,
+        "line": 4900,
         "text": "ctx.tools.register(tool("
       },
       {
         "file": "lib/host.js",
-        "line": 4500,
+        "line": 4910,
         "text": "ctx.tools.register(tool("
       },
       {
         "file": "lib/host.js",
-        "line": 4510,
+        "line": 4920,
         "text": "ctx.tools.register(tool("
       }
     ]
@@ -98,17 +98,17 @@
     "evidence": [
       {
         "file": "lib/host.js",
-        "line": 2521,
+        "line": 2757,
         "text": "import { execFile, spawn as spawn2 } from \"node:child_process\";"
       },
       {
         "file": "lib/host.js",
-        "line": 2619,
+        "line": 2895,
         "text": "import { spawn } from \"node:child_process\";"
       },
       {
         "file": "lib/host.js",
-        "line": 2640,
+        "line": 2916,
         "text": "        const child = spawn(\"powershell.exe\", [\"-NoLogo\", \"-NoProfile\", \"-NonInteractive\", \"-EncodedCommand\", Buffer.from(source, \"utf16le\").toString(\"base64\")]"
       }
     ]

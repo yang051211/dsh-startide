@@ -1,7 +1,7 @@
 {
   "name": "@kira905/dsh-session-title-live",
-  "version": "0.3.1",
-  "scannedAt": "2026-11-06T20:48:52.144Z",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-19T08:55:17.564Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -11,29 +11,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/config.js",
-        "line": 21,
+        "file": "_test/test-kill-switch.mjs",
+        "line": 8,
         "text": "import fs from 'node:fs';"
       },
       {
-        "file": "lib/config.js",
-        "line": 179,
-        "text": "text = fs.readFileSync(file, 'utf8');"
+        "file": "_test/test-kill-switch.mjs",
+        "line": 16,
+        "text": "fs.mkdirSync(HOME, { recursive: true });"
       },
       {
-        "file": "lib/index.js",
-        "line": 109,
-        "text": "import fs from 'node:fs';"
+        "file": "_test/test-kill-switch.mjs",
+        "line": 27,
+        "text": "const writeCfg = (o) => fs.writeFileSync(CFG, typeof o === 'string' ? o : JSON.stringify(o, null, 2), 'utf8');"
       },
       {
-        "file": "lib/index.js",
-        "line": 232,
-        "text": "value = { ...parseKillSwitch(fs.readFileSync(file, 'utf8'), opts.moduleId ?? KILL_SWITCH_MODULE_ID), file };"
+        "file": "_test/test-kill-switch.mjs",
+        "line": 57,
+        "text": "fs.rmSync(CFG, { force: true });"
       },
       {
-        "file": "lib/mainline-title.js",
-        "line": 21,
-        "text": "import fs from 'node:fs';"
+        "file": "_test/test-kill-switch.mjs",
+        "line": 165,
+        "text": "fs.rmSync(HOME, { recursive: true, force: true });"
       }
     ]
   },

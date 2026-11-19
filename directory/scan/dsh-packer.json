@@ -1,0 +1,70 @@
+{
+  "name": "dsh-packer",
+  "version": "0.7.2",
+  "scannedAt": "2026-11-19T08:55:17.850Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 459,
+        "text": "response = await fetch(\"/packer/api\" + path, init);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.mjs",
+        "line": 20,
+        "text": "import fsp from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/api.mjs",
+        "line": 491,
+        "text": "await fsp.rm(dir, { recursive: true, force: true }) // 失败也要清理临时解压目录"
+      },
+      {
+        "file": "lib/archive.mjs",
+        "line": 11,
+        "text": "import fsp from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/archive.mjs",
+        "line": 123,
+        "text": "await fsp.mkdir(path.dirname(dest), { recursive: true })"
+      },
+      {
+        "file": "lib/archive.mjs",
+        "line": 129,
+        "text": "await fsp.writeFile(dest, data)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/recycle.mjs",
+        "line": 13,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

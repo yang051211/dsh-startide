@@ -1,0 +1,82 @@
+{
+  "name": "dsh-tool-gpt-image",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-19T08:55:10.542Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 519,
+        "text": "const response = await fetch(`${baseURL.replace(/\\/+$/, '')}${pathName}`, {"
+      },
+      {
+        "file": "index.js",
+        "line": 567,
+        "text": "const response = await fetch(item.url, { signal })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 613,
+        "text": "await mkdir(dirname(target), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 614,
+        "text": "await writeFile(target, data)"
+      },
+      {
+        "file": "index.js",
+        "line": 642,
+        "text": "const data = await readFile(path)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 690,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 735,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

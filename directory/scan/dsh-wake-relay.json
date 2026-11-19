@@ -1,0 +1,77 @@
+{
+  "name": "dsh-wake-relay",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-19T08:55:11.513Z",
+  "icon": "dsh-wake-relay.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.mjs",
+        "line": 32,
+        "text": "const res = await fetch(`http://127.0.0.1:${ep.port}${path}`, {"
+      },
+      {
+        "file": "client.mjs",
+        "line": 67,
+        "text": "const res = await fetch(`http://127.0.0.1:${ep.port}/status`, {"
+      },
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "import { createServer } from \"node:http\";"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.mjs",
+        "line": 9,
+        "text": "import { readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "client.mjs",
+        "line": 18,
+        "text": "const raw = JSON.parse(readFileSync(join(home, \"wake-endpoint.json\"), \"utf8\"));"
+      },
+      {
+        "file": "index.js",
+        "line": 35,
+        "text": "} from \"node:fs\";"
+      },
+      {
+        "file": "index.js",
+        "line": 83,
+        "text": "mkdirSync(DSH_HOME, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 84,
+        "text": "appendFileSync(LOG_PATH, `[${new Date().toISOString()}] ${line}\\n`, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionController",
+    "sessions"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
