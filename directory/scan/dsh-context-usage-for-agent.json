@@ -1,0 +1,83 @@
+{
+  "name": "dsh-context-usage-for-agent",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-19T21:28:29.553Z",
+  "icon": "dsh-context-usage-for-agent.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 177,
+        "text": "const r = await fetch(API + '/state', { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 190,
+        "text": "const r = await fetch(API + '/set', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/settings.js",
+        "line": 10,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "src/settings.js",
+        "line": 57,
+        "text": "const parsed = JSON.parse(fs.readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "src/settings.js",
+        "line": 68,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "src/settings.js",
+        "line": 69,
+        "text": "fs.writeFileSync(file, JSON.stringify(settings, null, 2))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 40,
+        "text": "export const inject = ['tools', 'sessionProjections']"
+      },
+      {
+        "file": "index.js",
+        "line": 183,
+        "text": "const dispose = ctx.tools.register(definition)"
+      },
+      {
+        "file": "src/constants.js",
+        "line": 50,
+        "text": "* 关闭时不调用 ctx.tools.register，工具从清单里彻底消失。"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionProjections",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

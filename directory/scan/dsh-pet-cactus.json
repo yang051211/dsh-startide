@@ -1,0 +1,84 @@
+{
+  "name": "dsh-pet-cactus",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-19T21:28:34.150Z",
+  "icon": "dsh-pet-cactus.webp",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 789,
+        "text": "const response = await win.fetch(`${PREFIX}/api/state`, { cache: 'no-store' });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 803,
+        "text": "const response = await win.fetch(`${PREFIX}/api/config`, { cache: 'no-store' });"
+      },
+      {
+        "file": "src/client/engine.js",
+        "line": 517,
+        "text": "const response = await win.fetch(`${PREFIX}/api/state`, { cache: 'no-store' });"
+      },
+      {
+        "file": "src/client/engine.js",
+        "line": 531,
+        "text": "const response = await win.fetch(`${PREFIX}/api/config`, { cache: 'no-store' });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/config.js",
+        "line": 18,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 243,
+        "text": "raw = JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 271,
+        "text": "mkdirSync(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 274,
+        "text": "writeFileSync(tmp, `${JSON.stringify(merged.config, null, 2)}\\n`, 'utf8');"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 279,
+        "text": "rmSync(tmp, { force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js",
+    "src/client/art.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

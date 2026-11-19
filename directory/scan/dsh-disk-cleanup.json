@@ -1,0 +1,82 @@
+{
+  "name": "dsh-disk-cleanup",
+  "version": "0.4.2",
+  "scannedAt": "2026-11-19T21:28:28.204Z",
+  "icon": "dsh-disk-cleanup.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/acl.js",
+        "line": 10,
+        "text": "import { realpathSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/attachments.js",
+        "line": 8,
+        "text": "import { mkdir, readdir, readFile, rm, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/attachments.js",
+        "line": 127,
+        "text": "scanReferences(decompressSession(await readFile(join(dir, name))), ids)"
+      },
+      {
+        "file": "lib/attachments.js",
+        "line": 170,
+        "text": "await rm(path, { force: true })"
+      },
+      {
+        "file": "lib/attachments.js",
+        "line": 235,
+        "text": "await rm(path, { force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 24,
+        "text": "export const inject = ['tools', 'agents']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 316,
+        "text": "agentCtx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 369,
+        "text": "toolName => !done.has(toolName) && ctx.tools.get(toolName, agent) !== undefined"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 372,
+        "text": "// 真实的 agent 上下文要求先声明依赖才能读 ctx.tools；注册仍落在该 agent 的作用域层。"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

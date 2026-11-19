@@ -1,0 +1,83 @@
+{
+  "name": "dsh-nokv",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-19T21:28:34.101Z",
+  "icon": "dsh-nokv.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/local-dev.sh",
+        "line": 42,
+        "text": "if curl -sf -o /dev/null --max-time 2 \"$ENDPOINT\" 2>/dev/null || \\"
+      },
+      {
+        "file": "scripts/local-dev.sh",
+        "line": 43,
+        "text": "[ \"$(curl -s -o /dev/null -w '%{http_code}' --max-time 2 \"$ENDPOINT\" 2>/dev/null)\" != \"000\" ]; then"
+      },
+      {
+        "file": "scripts/local-dev.sh",
+        "line": 51,
+        "text": "[ \"$(curl -s -o /dev/null -w '%{http_code}' --max-time 2 \"$ENDPOINT\" 2>/dev/null)\" != \"000\" ] && break"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 22,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 78,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 119,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/nokv.js",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/nokv.js",
+        "line": 135,
+        "text": "child = spawn(executable, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 52,
+      "text": "# one-time: python3 -m venv .venv && .venv/bin/pip install \"moto[server]\""
+    }
+  ],
+  "skippedEntries": []
+}

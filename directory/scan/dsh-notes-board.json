@@ -1,0 +1,113 @@
+{
+  "name": "dsh-notes-board",
+  "version": "0.3.3",
+  "scannedAt": "2026-11-19T21:28:21.470Z",
+  "icon": "dsh-notes-board.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1090,
+        "text": "const response = await fetch(url, { cache: 'no-store', signal })"
+      },
+      {
+        "file": "src/panel.js",
+        "line": 131,
+        "text": "const response = await fetch(url, { cache: 'no-store', signal })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 10,
+        "text": "import { readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 15,
+        "text": "const src = readFileSync(resolve(ROOT, 'vendor/board.html'), 'utf8')"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 16,
+        "text": "const shell = readFileSync(resolve(ROOT, 'src/panel.js'), 'utf8')"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 171,
+        "text": "writeFileSync(resolve(ROOT, 'client.js'), out, 'utf8')"
+      },
+      {
+        "file": "scripts/test-board.mjs",
+        "line": 1,
+        "text": "import { readFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/notes.js",
+        "line": 163,
+        "text": "toolsCtx.tools.register("
+      },
+      {
+        "file": "src/host/notes.js",
+        "line": 268,
+        "text": "if (typeof ctx.inject === 'function') ctx.inject(['tools'], mount)"
+      },
+      {
+        "file": "src/host/notes.js",
+        "line": 269,
+        "text": "else if (ctx.tools) mount(ctx)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core/notes.js",
+        "line": 24,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "src/core/notes.js",
+        "line": 481,
+        "text": "execFile("
+      },
+      {
+        "file": "vendor/write-notes-like-deepseek/scripts/import-dsh-notes.ts",
+        "line": 3,
+        "text": "import { execSync } from 'node:child_process';"
+      },
+      {
+        "file": "vendor/write-notes-like-deepseek/scripts/import-dsh-notes.ts",
+        "line": 122,
+        "text": "execSync('npx tsx skills/write-notes-like-deepseek/scripts/verify-archived-agent-notes.ts --write', { stdio: 'ignore' });"
+      },
+      {
+        "file": "vendor/write-notes-like-deepseek/scripts/test-skill-install.mjs",
+        "line": 2,
+        "text": "import { spawnSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "@dsmm/dsmm",
-  "version": "0.3.33",
-  "scannedAt": "2026-11-19T08:55:12.877Z",
+  "version": "0.3.34",
+  "scannedAt": "2026-11-19T21:28:22.753Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -67,13 +67,18 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/lsp-entry.js",
+        "line": 2,
+        "text": "export const inject = [\"dsmmLspEntry\", \"tools\"];"
+      },
+      {
         "file": "lib/lsp.js",
-        "line": 31,
+        "line": 93,
         "text": "const modulePath = createRequire(anchor).resolve(\"@deepseek-ai/dsh-mcp-client\");"
       },
       {
         "file": "lib/lsp.js",
-        "line": 129,
+        "line": 199,
         "text": "\"      name: '@deepseek-ai/dsh-mcp-client'\","
       },
       {
@@ -85,11 +90,6 @@
         "file": "lib/native-admission.js",
         "line": 479,
         "text": "const tools = this.ctx.get(\"agentPresets\")?.serviceFor(pending.parent, \"tools\") ?? pending.parent.ctx.tools;"
-      },
-      {
-        "file": "lib/permission-control.js",
-        "line": 121,
-        "text": "|| this.ctx.tools.get(binding.name, binding.agent) !== registration.registered)"
       }
     ]
   },

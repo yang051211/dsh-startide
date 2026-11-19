@@ -1,0 +1,75 @@
+{
+  "name": "@tests4gptplay/dsh-dots",
+  "version": "1.0.13",
+  "scannedAt": "2026-11-19T21:28:30.531Z",
+  "icon": "tests4gptplay__dsh-dots.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 16,
+        "text": "async fetch(request) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/persistence-after-exit.mjs",
+        "line": 2,
+        "text": "import { readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/persistence-after-exit.mjs",
+        "line": 10,
+        "text": "const data = JSON.parse(await readFile(manifest, 'utf8'))"
+      },
+      {
+        "file": "lib/persistence-after-exit.mjs",
+        "line": 11,
+        "text": "if (data.request === request) await writeFile(manifest, JSON.stringify({ ...data, status: 'failed', error: String(error.message ?? error) }))"
+      },
+      {
+        "file": "lib/persistence-after-exit.mjs",
+        "line": 22,
+        "text": "const data = JSON.parse(await readFile(manifest, 'utf8'))"
+      },
+      {
+        "file": "lib/persistence.mjs",
+        "line": 2,
+        "text": "import { constants } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/persistence.mjs",
+        "line": 19,
+        "text": "import { execFileSync, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/persistence.mjs",
+        "line": 284,
+        "text": "child = spawn(process.execPath, [fileURLToPath(new URL('./persistence-after-exit.mjs', import.meta.url)), pendingPath(path), pending.request], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

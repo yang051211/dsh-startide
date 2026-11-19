@@ -1,0 +1,126 @@
+{
+  "name": "@lornatang/dsh-caveman",
+  "version": "0.1.9",
+  "scannedAt": "2026-11-19T21:28:33.226Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/runtime.js",
+        "line": 2,
+        "text": "import { request as httpRequest } from 'node:http';"
+      },
+      {
+        "file": "scripts/learn-binary.mjs",
+        "line": 47,
+        "text": "const { EnvHttpProxyAgent, fetch: proxyFetch } = await import('undici')"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cavecrew.js",
+        "line": 1,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/cavecrew.js",
+        "line": 12,
+        "text": "const original = await readFile(new URL(`../vendor/caveman/agents/cavecrew-${config.role}.md`, import.meta.url), 'utf8');"
+      },
+      {
+        "file": "lib/compression.js",
+        "line": 2,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/compression.js",
+        "line": 9,
+        "text": "const packageVersion = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version;"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { readFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cavecrew-git.js",
+        "line": 82,
+        "text": "ctx.tools.register(tool);"
+      },
+      {
+        "file": "lib/cavecrew.js",
+        "line": 6,
+        "text": "export const inject = ['tools', 'systemPrompt', 'llm'];"
+      },
+      {
+        "file": "lib/cavecrew.js",
+        "line": 40,
+        "text": "ctx.tools.guard(exec => {"
+      },
+      {
+        "file": "lib/cavecrew.js",
+        "line": 72,
+        "text": "const available = allowed.filter(tool => ctx.tools.get(tool, agent) !== undefined);"
+      },
+      {
+        "file": "lib/cavecrew.js",
+        "line": 73,
+        "text": "agent.ctx.tools.restrict({ allow: available });"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/blocks.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/blocks.js",
+        "line": 8,
+        "text": "const child = spawn(binary, ['hook', '--harness', 'generic', '--phase', 'pre'], {"
+      },
+      {
+        "file": "lib/cavecrew-git.js",
+        "line": 63,
+        "text": "const child = ctx.subprocess.spawn({"
+      },
+      {
+        "file": "lib/memory.js",
+        "line": 20,
+        "text": "const child = ctx.subprocess.spawn({"
+      },
+      {
+        "file": "scripts/caveman-cli.mjs",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 5,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "skills",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,129 @@
+{
+  "name": "dsh-install-radar",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-19T21:28:28.853Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/engine/commands.js",
+        "line": 145,
+        "text": "test: /(?:Invoke-WebRequest|curl|iwr|wget)\\b.*?(?:-OutFile|-o)\\s+(\\S+)/i,"
+      },
+      {
+        "file": "src/engine/commands.js",
+        "line": 156,
+        "text": "test: /\\b(?:irm|iwr|Invoke-RestMethod|Invoke-WebRequest|curl)\\b[^|]*\\|\\s*(?:iex|Invoke-Expression|sh|bash|powershell|pwsh)\\b/i,"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/radar.mjs",
+        "line": 11,
+        "text": "import { mkdir, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "bin/radar.mjs",
+        "line": 117,
+        "text": "await mkdir(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "bin/radar.mjs",
+        "line": 118,
+        "text": "await writeFile(file, markdown, 'utf8')"
+      },
+      {
+        "file": "src/engine/audit.js",
+        "line": 8,
+        "text": "import { readdir, readFile, stat, appendFile, mkdir, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/engine/audit.js",
+        "line": 61,
+        "text": "return JSON.parse(await readFile(file, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 5,
+        "text": "*   1. Agent 工具（ctx.tools）："
+      },
+      {
+        "file": "src/index.js",
+        "line": 49,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "src/index.js",
+        "line": 321,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "src/index.js",
+        "line": 346,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "src/index.js",
+        "line": 373,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/engine/procs.js",
+        "line": 9,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "src/engine/procs.js",
+        "line": 49,
+        "text": "execFile("
+      },
+      {
+        "file": "src/engine/registry.js",
+        "line": 6,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "src/engine/registry.js",
+        "line": 26,
+        "text": "execFile("
+      },
+      {
+        "file": "src/engine/resolve.js",
+        "line": 5,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 70,
+      "text": "+ 因果表**：不只认 CDP，还认临时 `--user-data-dir`、`pip install`、`npm/pnpm install`、模型下载、构建、ffmpeg。Chromium 的 GPU/渲染/crashpad 子进程被排除（否则全是噪音），`node/python` 脚本按进程名收紧。面板输出「发起者"
+    }
+  ],
+  "skippedEntries": []
+}

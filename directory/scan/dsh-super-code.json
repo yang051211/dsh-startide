@@ -1,7 +1,7 @@
 {
   "name": "dsh-super-code",
-  "version": "0.4.2",
-  "scannedAt": "2026-11-16T23:37:21.531Z",
+  "version": "0.4.3",
+  "scannedAt": "2026-11-19T21:28:16.065Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -67,29 +67,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/dsh/deletion-policy.js",
+        "line": 7,
+        "text": "if (ctx.tools.get('super_code_task', agent))"
+      },
+      {
         "file": "lib/dsh/super-code.js",
-        "line": 20,
+        "line": 21,
         "text": "export const inject = ['tools', 'systemPrompt', 'sessions', 'sessionProjections'];"
       },
       {
-        "file": "lib/dsh/super-code.js",
-        "line": 113,
-        "text": "ctx.tools.register(defineTool({"
-      },
-      {
-        "file": "lib/dsh/super-code.js",
-        "line": 125,
-        "text": "ctx.tools.register(defineTool({"
-      },
-      {
-        "file": "lib/dsh/super-code.js",
-        "line": 263,
-        "text": "ctx.tools.register(defineTool({"
+        "file": "lib/dsh/tool-access.js",
+        "line": 42,
+        "text": "return tools.register(definition);"
       },
       {
         "file": "lib/dsh/tool-presentation.js",
-        "line": 4,
+        "line": 6,
         "text": "export const inject = ['tools', 'systemPrompt', 'agents'];"
+      },
+      {
+        "file": "lib/dsh/tool-presentation.js",
+        "line": 27,
+        "text": "if (ctx.tools.get('remote_bash', agent))"
       }
     ]
   },
@@ -134,9 +134,25 @@
     ]
   },
   "dependencies": 4,
-  "minifiedFiles": [],
-  "binaryFiles": [],
-  "requiredServices": [],
+  "minifiedFiles": [
+    "dist/client.js",
+    "dist/git.cjs",
+    "dist/window.js"
+  ],
+  "binaryFiles": [
+    "builtin/workbench/native/darwin/Super Code.app/Contents/MacOS/Super Code",
+    "builtin/workbench/native/linux-arm64/super-code-window",
+    "builtin/workbench/native/linux-x64/super-code-window",
+    "builtin/workbench/native/win32/Microsoft.Web.WebView2.Core.dll",
+    "builtin/workbench/native/win32/Microsoft.Web.WebView2.WinForms.dll",
+    "builtin/workbench/native/win32/runtimes/win-arm64/native/WebView2Loader.dll",
+    "builtin/workbench/native/win32/runtimes/win-x64/native/WebView2Loader.dll",
+    "builtin/workbench/native/win32/runtimes/win-x86/native/WebView2Loader.dll",
+    "builtin/workbench/native/win32/SuperCode.Window.exe"
+  ],
+  "requiredServices": [
+    "settings"
+  ],
   "setupHints": [],
   "skippedEntries": [
     "node_modules/qs/.editorconfig (outside the package)",

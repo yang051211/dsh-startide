@@ -1,0 +1,88 @@
+{
+  "name": "dsh-agy-native",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-19T21:28:33.775Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/mcp-bridge.js",
+        "line": 2,
+        "text": "import http from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/acp-client.js",
+        "line": 2,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "dist/acp-client.js",
+        "line": 252,
+        "text": "fs.rmSync(this.#tempCwd, { recursive: true, force: true });"
+      },
+      {
+        "file": "dist/binary.js",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "dist/catalog.js",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "dist/catalog.js",
+        "line": 259,
+        "text": "const parsed = JSON.parse(fs.readFileSync(this.#cacheFilePath, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/acp-client.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "dist/acp-client.js",
+        "line": 90,
+        "text": "const proc = spawn(this.#agyPath, args, {"
+      },
+      {
+        "file": "dist/binary.js",
+        "line": 4,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

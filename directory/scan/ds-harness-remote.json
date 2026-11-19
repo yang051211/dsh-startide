@@ -1,35 +1,35 @@
 {
   "name": "ds-harness-remote",
-  "version": "0.6.5",
-  "scannedAt": "2026-11-14T19:29:18.679Z",
+  "version": "0.6.6",
+  "scannedAt": "2026-11-19T21:28:08.940Z",
   "icon": "ds-harness-remote.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "dist/acp/gateway.js",
-        "line": 1634,
+        "line": 2123,
         "text": "// Official installer location (curl -fsSL https://opencode.ai/install | bash)."
       },
       {
         "file": "dist/client.github.js",
-        "line": 7246,
+        "line": 7580,
         "text": "let response = await remoteUploadHook.fetch(request.path, {"
       },
       {
         "file": "dist/client.js",
-        "line": 7246,
+        "line": 7580,
         "text": "let response = await remoteUploadHook.fetch(request.path, {"
       },
       {
-        "file": "dist/index.js",
-        "line": 70197,
-        "text": "this.socket = new WebSocket(this.url);"
+        "file": "dist/dsh-web-host.js",
+        "line": 110,
+        "text": "const local = await fetch(runtime.origin, { headers: { cookie }, redirect: 'manual', signal });"
       },
       {
-        "file": "dist/index.js",
-        "line": 70629,
-        "text": "const socket = new WebSocket(this.url);"
+        "file": "dist/hostc/connection.js",
+        "line": 17,
+        "text": "const socket = new WebSocket(options.tunnel.connectUrl, {"
       }
     ]
   },
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "dist/index.js",
-        "line": 104146,
+        "line": 110913,
         "text": "toolContext.effect(() => tools.register(definition));"
       },
       {
         "file": "dist/remote-tools.js",
-        "line": 144,
+        "line": 164,
         "text": "toolContext.effect(() => tools.register(definition));"
       }
     ]
@@ -89,22 +89,22 @@
       {
         "file": "dist/acp.js",
         "line": 38,
-        "text": "this.child = spawn(this.config.command, this.config.args ?? [], { cwd: this.config.cwd, stdio: 'pipe' }); return this.child; }"
+        "text": "this.child = spawn(this.config.command, this.config.args ?? [], { cwd: this.config.cwd, stdio: 'pipe', windowsHide: true }); return this.child; }"
       },
       {
-        "file": "dist/acp/adapters/antigravity-process.js",
-        "line": 4,
-        "text": "import { spawn } from 'node:child_process';"
-      },
-      {
-        "file": "dist/acp/adapters/antigravity-process.js",
-        "line": 62,
-        "text": "constructor(binary = 'agy', logger, spawnAcp = (bin, args, cwd) => spawn(bin, args, {"
+        "file": "dist/acp/adapters/antigravity-acp.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process';"
       },
       {
         "file": "dist/acp/adapters/antigravity/executor.js",
         "line": 1,
         "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "dist/acp/adapters/antigravity/executor.js",
+        "line": 22,
+        "text": "const child = spawn(binary, args, {"
       }
     ]
   },
@@ -114,6 +114,8 @@
   },
   "dependencies": 6,
   "minifiedFiles": [
+    "dist/client.github.js",
+    "dist/client.js",
     "dist/index.js"
   ],
   "binaryFiles": [],

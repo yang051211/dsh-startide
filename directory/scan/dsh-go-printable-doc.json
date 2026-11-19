@@ -1,0 +1,75 @@
+{
+  "name": "dsh-go-printable-doc",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-19T21:28:18.497Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/deploy.js",
+        "line": 4,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/deploy.js",
+        "line": 15,
+        "text": "const v = fs.readFileSync(path.join(dir, 'VERSION'), 'utf8').trim()"
+      },
+      {
+        "file": "lib/deploy.js",
+        "line": 41,
+        "text": "fs.mkdirSync(dst, { recursive: true })"
+      },
+      {
+        "file": "lib/deploy.js",
+        "line": 49,
+        "text": "fs.rmSync(tmpDir, { recursive: true, force: true })"
+      },
+      {
+        "file": "lib/deploy.js",
+        "line": 50,
+        "text": "fs.mkdirSync(tmpDir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "const r = spawnSync(cmd, args, { encoding: 'utf8', timeout: 4000 })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 42,
+      "text": "pip install python-docx weasyprint"
+    }
+  ],
+  "skippedEntries": []
+}

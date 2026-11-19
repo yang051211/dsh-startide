@@ -1,29 +1,29 @@
 {
   "name": "@goodandready/dsh-dsml-artifact-guard",
-  "version": "0.2.18",
-  "scannedAt": "2026-11-17T09:25:39.592Z",
+  "version": "0.2.19",
+  "scannedAt": "2026-11-19T21:28:22.026Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 250,
+        "line": 249,
         "text": "const res = await fetch(resolveApiUrl('/api/dsh-dsml-artifact-guard/stats'));"
       },
       {
         "file": "lib/client.js",
-        "line": 287,
+        "line": 286,
         "text": "const res = await fetch(resolveApiUrl('/api/dsh-dsml-artifact-guard/update'));"
       },
       {
         "file": "lib/client.js",
-        "line": 317,
+        "line": 315,
         "text": "          const res = await fetch(resolveApiUrl('/api/dsh-dsml-artifact-guard/stats'), { method: 'POST', headers: { 'content-type': 'application/json', 'x-dsh-p"
       },
       {
         "file": "lib/client.js",
-        "line": 331,
+        "line": 328,
         "text": "          const res = await fetch(resolveApiUrl('/api/dsh-dsml-artifact-guard/update'), { method: 'POST', headers: { 'content-type': 'application/json', 'x-dsh-"
       }
     ]
@@ -34,7 +34,7 @@
       {
         "file": "lib/updater.js",
         "line": 2,
-        "text": "import { existsSync, readFileSync } from 'node:fs';"
+        "text": "import { existsSync, readFileSync, realpathSync } from 'node:fs';"
       },
       {
         "file": "lib/updater.js",
@@ -43,7 +43,12 @@
       },
       {
         "file": "lib/updater.js",
-        "line": 125,
+        "line": 58,
+        "text": "manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));"
+      },
+      {
+        "file": "lib/updater.js",
+        "line": 175,
         "text": "const raw = await readFile(manifestUrl, 'utf8');"
       }
     ]

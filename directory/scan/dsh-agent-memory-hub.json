@@ -1,0 +1,101 @@
+{
+  "name": "dsh-agent-memory-hub",
+  "version": "0.1.30",
+  "scannedAt": "2026-11-19T21:28:23.457Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 48,
+        "text": "fetch(`${SERVE_BASE}/api/inbox`, { cache: 'no-store', signal: AbortSignal.timeout(2500) })"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 1244,
+        "text": "var import_node_http = require(\"node:http\");"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 1313,
+        "text": "async function j(url, opts) { const r = await fetch(url, opts); return { ok: r.ok, status: r.status, data: await r.json().catch(() => ({})) }; }"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 121,
+        "text": "var import_node_fs2 = require(\"node:fs\");"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 125,
+        "text": "var import_node_fs = require(\"node:fs\");"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 185,
+        "text": "var import_node_fs3 = require(\"node:fs\");"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 216,
+        "text": "var import_node_fs4 = require(\"node:fs\");"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 861,
+        "text": "var import_node_fs5 = require(\"node:fs\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 2201,
+        "text": "var inject = [\"tools\", \"systemPrompt\"];"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 2254,
+        "text": "const existing = ctx.tools.get(toolName);"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 2270,
+        "text": "disposers.push(ctx.tools.register(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 809,
+        "text": "var import_node_child_process = require(\"node:child_process\");"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 1464,
+        "text": "var import_node_child_process2 = require(\"node:child_process\");"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

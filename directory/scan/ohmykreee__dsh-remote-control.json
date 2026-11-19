@@ -1,7 +1,7 @@
 {
   "name": "@ohmykreee/dsh-remote-control",
-  "version": "1.0.9",
-  "scannedAt": "2026-11-18T21:45:56.580Z",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-19T21:28:18.288Z",
   "icon": "ohmykreee__dsh-remote-control.svg",
   "network": {
     "hit": true,
@@ -12,12 +12,12 @@
         "text": "}async function i(e,n={}){const t=await fetch(e,{credentials:\"same-origin\",cache:\"no-store\",...n,headers:{...void 0===n.body?{}:{\"content-type\":\"application/jso"
       },
       {
-        "file": "lib/account.js",
+        "file": "lib/account/index.js",
         "line": 1,
         "text": "ut(()=>v.abort(),9e3);let $;try{$=await fetch(W,{signal:v.signal,headers:{authorization:`Bearer ${w}`,\"x-dsh-auth-token\":w,accept:\"application/json\",\"x-client-p"
       },
       {
-        "file": "lib/probe.js",
+        "file": "lib/probe/index.js",
         "line": 1,
         "text": "t(()=>e.abort(),3500);try{const n=await fetch(t.thumbnailUrl,{signal:e.signal});if(!n.ok)return r;const o=String(n.headers.get(\"content-type\")||\"image/jpeg\").sp"
       },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/app-mapping.js",
+        "file": "lib/apps/index.js",
         "line": 1,
-        "text": "import e from\"node:fs\";import t from\"node:path\";import{isRecord as o}from\"./types.js\";const i={qq:\"QQ\",\"com.bilibili.bilibilipc\":\"哔哩哔哩\",bilbilipc:\"哔哩哔哩\",\"com.sq"
+        "text": "import e from\"node:fs\";import t from\"node:path\";import{isRecord as o}from\"../shared/types.js\";const i={qq:\"QQ\",\"com.bilibili.bilibilipc\":\"哔哩哔哩\",bilbilipc:\"哔哩哔哩\""
       },
       {
-        "file": "lib/cache.js",
+        "file": "lib/cache/index.js",
         "line": 1,
-        "text": "import t from\"node:fs\";import e from\"node:path\";import{isRecord as n}from\"./types.js\";export const NMC_CITY_TTL_MS=2592e6;export function qweatherMonth(t=Date.n"
+        "text": "import t from\"node:fs\";import e from\"node:path\";import{isRecord as n}from\"../shared/types.js\";export const NMC_CITY_TTL_MS=2592e6;export function qweatherMonth("
       },
       {
-        "file": "lib/probe.js",
+        "file": "lib/probe/index.js",
         "line": 1,
-        "text": "c as t,mkdirSync as e,statSync as n}from\"node:fs\";import o from\"node:path\";import{fileURLToPath as i}from\"node:url\";import{serializeError as a}from\"./util.js\";i"
+        "text": "c as t,mkdirSync as e,statSync as n}from\"node:fs\";import o from\"node:path\";import{fileURLToPath as i}from\"node:url\";import{serializeError as a}from\"../shared/ut"
       },
       {
-        "file": "lib/service.js",
+        "file": "lib/server/remote.js",
         "line": 1,
-        "text": "import e from\"node:crypto\";import t from\"node:fs/promises\";import{createServer as n}from\"node:http\";import{createServer as o}from\"node:https\";import{networkInte"
+        "text": "import e from\"node:fs/promises\";import{createServer as t}from\"node:http\";import{createServer as o}from\"node:https\";import{networkInterfaces as r}from\"node:os\";i"
       },
       {
-        "file": "lib/settings.js",
+        "file": "lib/settings/index.js",
         "line": 1,
-        "text": "import e from\"node:crypto\";import t from\"node:fs\";import o from\"node:os\";import n from\"node:path\";import{isRecord as r}from\"./types.js\";const a=[\"home\",\"session"
+        "text": "import e from\"node:crypto\";import t from\"node:fs\";import o from\"node:os\";import n from\"node:path\";import{isRecord as r}from\"../shared/types.js\";const a=[\"home\","
       }
     ]
   },
@@ -71,17 +71,17 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/notifications.js",
+        "file": "lib/notifications/index.js",
         "line": 1,
-        "text": "import{spawn as t}from\"node:child_process\";import*as n from\"node:readline\";import{probeInfo as a,runProbe as i}from\"./probe.js\";import{isRecord as o}from\"./type"
+        "text": "import{spawn as t}from\"node:child_process\";import*as n from\"node:readline\";import{probeInfo as a,runProbe as i}from\"../probe/index.js\";import{isRecord as e}from"
       },
       {
-        "file": "lib/probe-daemon.js",
+        "file": "lib/probe/daemon.js",
         "line": 1,
-        "text": "import{spawn as e}from\"node:child_process\";import{createInterface as t}from\"node:readline\";import{isRecord as r}from\"./types.js\";export const DAEMON_PROTOCOL_VE"
+        "text": "import{spawn as e}from\"node:child_process\";import{createInterface as t}from\"node:readline\";import{isRecord as r}from\"../shared/types.js\";export const DAEMON_PRO"
       },
       {
-        "file": "lib/probe.js",
+        "file": "lib/probe/index.js",
         "line": 1,
         "text": "import{execFile as r}from\"node:child_process\";import{existsSync as t,mkdirSync as e,statSync as n}from\"node:fs\";import o from\"node:path\";import{fileURLToPath as"
       },
@@ -104,15 +104,18 @@
   "dependencies": 1,
   "minifiedFiles": [
     "client.js",
-    "lib/account.js",
-    "lib/app-mapping.js",
-    "lib/service.js",
-    "lib/sessions.js",
-    "lib/settings.js",
-    "lib/weather.js",
+    "lib/account/index.js",
+    "lib/apps/index.js",
+    "lib/quickqa/index.js",
+    "lib/server/remote.js",
+    "lib/server/routes.js",
+    "lib/server/snapshots.js",
+    "lib/sessions/index.js",
+    "lib/settings/index.js",
+    "lib/weather/index.js",
     "lib/weather/nmc.js",
     "lib/weather/qweather.js",
-    "web/assets/index-BgMcyciX.js"
+    "web/assets/index-C3zcp3hK.js"
   ],
   "binaryFiles": [],
   "requiredServices": [

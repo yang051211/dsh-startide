@@ -1,0 +1,152 @@
+{
+  "name": "dsh-newswire",
+  "version": "1.1.36",
+  "scannedAt": "2026-11-19T21:28:28.286Z",
+  "icon": "dsh-newswire.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 376,
+        "text": "      return fetch(url, Object.assign({ credentials: 'include', headers: { accept: 'application/json', 'content-type': 'application/json' } }, init || {})).then"
+      },
+      {
+        "file": "client.js",
+        "line": 2600,
+        "text": "fetch(API.digest, { credentials: 'include' }).then(function (r) { return r.ok ? r.text() : '' }).catch(function () { return '' }),"
+      },
+      {
+        "file": "engine/channels/browse.mjs",
+        "line": 263,
+        "text": "page.evaluate(async () => { const r = await fetch(location.href, { credentials: 'include' }); return r.ok ? await r.text() : ''; }); } catch (e) { raw = ''; }\","
+      },
+      {
+        "file": "engine/channels/browse.mjs",
+        "line": 277,
+        "text": "valuate(async (uu) => { const r = await fetch(uu, { headers: { accept: 'application/json' } }); if (r.status !== 200) return { status: r.status, items: [] }; co"
+      },
+      {
+        "file": "engine/channels/http.mjs",
+        "line": 20,
+        "text": "    const res = await fetch(url, { signal: ctl.signal, redirect: \"follow\", headers: { \"user-agent\": UA, accept: \"text/html,application/xhtml+xml,application/xml"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "engine/bins.mjs",
+        "line": 6,
+        "text": "import { existsSync, realpathSync } from \"node:fs\";"
+      },
+      {
+        "file": "engine/channels/browse.mjs",
+        "line": 3,
+        "text": "import { writeFileSync, unlinkSync, mkdtempSync, readFileSync, existsSync } from \"node:fs\";"
+      },
+      {
+        "file": "engine/channels/browse.mjs",
+        "line": 330,
+        "text": "writeFileSync(f, src);"
+      },
+      {
+        "file": "engine/channels/browse.mjs",
+        "line": 342,
+        "text": "if (existsSync(outPath)) { data = JSON.parse(readFileSync(outPath, \"utf8\")); }"
+      },
+      {
+        "file": "engine/channels/browse.mjs",
+        "line": 352,
+        "text": "try { unlinkSync(f); } catch (e) {}"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 49,
+        "text": "export const inject = [\"connection\", \"tools\", \"subprocess\", \"systemPrompt\"];"
+      },
+      {
+        "file": "index.js",
+        "line": 1343,
+        "text": "const tool = (def) => disposers.push(ctx.tools.register(Object.assign({}, def, { execute: async (...a) => losslessJson(await def.execute(...a)) })));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "engine/bins.mjs",
+        "line": 5,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      },
+      {
+        "file": "engine/channels/agent_reach.mjs",
+        "line": 8,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "engine/channels/browse.mjs",
+        "line": 1,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "engine/channels/exa.mjs",
+        "line": 5,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "host/core.mjs",
+        "line": 257,
+        "text": "handle = ctx.subprocess.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "subprocess",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 130,
+      "text": "curl -fsSL https://raw.githubusercontent.com/heavenJiang/dsh-newswire/main/scripts/setup.sh | bash"
+    },
+    {
+      "file": "README.md",
+      "line": 145,
+      "text": "npm install -g @opencode/browse && browse install        # add the Chrome extension and pair it"
+    },
+    {
+      "file": "README.md",
+      "line": 146,
+      "text": "python3 -m venv ~/.agent-reach-venv && ~/.agent-reach-venv/bin/pip install https://github.com/Panniantong/Agent-Reach/archive/main.zip"
+    },
+    {
+      "file": "README.md",
+      "line": 147,
+      "text": "npm install -g mcporter && mcporter config add exa https://mcp.exa.ai/mcp --scope home"
+    },
+    {
+      "file": "README.md",
+      "line": 150,
+      "text": "ewhere unusual, set their paths in the plugin settings; by default they are detected automatically. Run `bash scripts/setup.sh --check` any time to check again."
+    }
+  ],
+  "skippedEntries": []
+}

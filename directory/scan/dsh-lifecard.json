@@ -1,7 +1,7 @@
 {
   "name": "dsh-lifecard",
-  "version": "0.5.0",
-  "scannedAt": "2026-11-01T19:08:52.416Z",
+  "version": "0.5.3",
+  "scannedAt": "2026-11-19T21:28:30.909Z",
   "icon": "dsh-lifecard.svg",
   "network": {
     "hit": true,
@@ -10,12 +10,37 @@
         "file": "lib/client.js",
         "line": 31,
         "text": "res = await fetch(`${API}/${method}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 75,
+        "text": "res = await fetch(`${API}/${method}`, {"
+      },
+      {
+        "file": "lib/reading.js",
+        "line": 52,
+        "text": "res = await fetch(`${base}${READING_API}/${method}`, {"
+      },
+      {
+        "file": "lib/reading.js",
+        "line": 188,
+        "text": "res = await fetch(url, { signal: controller?.signal })"
       }
     ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/auto-diary.js",
+        "line": 37,
+        "text": "import fs from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/auto-diary.js",
+        "line": 124,
+        "text": "buf = await fs.readFile(abs)"
+      },
       {
         "file": "lib/career.js",
         "line": 19,
@@ -30,16 +55,6 @@
         "file": "lib/career.js",
         "line": 180,
         "text": "await fs.mkdir(path.dirname(abs), { recursive: true })"
-      },
-      {
-        "file": "lib/career.js",
-        "line": 181,
-        "text": "await fs.writeFile(tmp, text, 'utf8')"
-      },
-      {
-        "file": "lib/career.js",
-        "line": 184,
-        "text": "await fs.rm(tmp, { force: true }).catch(() => {})"
       }
     ]
   },
@@ -48,12 +63,12 @@
     "evidence": [
       {
         "file": "lifecard-tools.js",
-        "line": 146,
+        "line": 152,
         "text": "* 把这一组工具挂到 ctx.tools 上。"
       },
       {
         "file": "lifecard-tools.js",
-        "line": 155,
+        "line": 161,
         "text": "ctx.tools.register({"
       }
     ]

@@ -1,34 +1,34 @@
 {
   "name": "dsh-split-workspace",
-  "version": "0.13.2",
-  "scannedAt": "2026-11-19T08:55:14.203Z",
+  "version": "0.14.1",
+  "scannedAt": "2026-11-19T21:28:24.690Z",
   "icon": "dsh-split-workspace.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 10364,
+        "line": 10366,
         "text": "fetch(src, { mode: \"cors\" }).then((res) => (res.ok ? res.blob() : null)).then((blob) => {"
       },
       {
         "file": "lib/client.js",
-        "line": 12547,
+        "line": 12549,
         "text": "fetch(\"/dsv/version\", { cache: \"no-store\" }).then((response) => {"
       },
       {
         "file": "lib/client.js",
-        "line": 13766,
+        "line": 13768,
         "text": "fetch(\"/dsv/restart\", {"
       },
       {
         "file": "lib/client.js",
-        "line": 15106,
+        "line": 15327,
         "text": "return fetch(\"/dsv/system-window\", {"
       },
       {
         "file": "lib/client.js",
-        "line": 15163,
+        "line": 15384,
         "text": "fetch(\"/dsv/system-window\", {"
       }
     ]
@@ -38,22 +38,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 21,
-        "text": "import { appendFileSync, closeSync, openSync, readFileSync } from \"node:fs\";"
+        "line": 22,
+        "text": "import { appendFileSync, existsSync, readFileSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 55,
+        "line": 62,
         "text": "const manifest = JSON.parse(readFileSync(new URL(\"../package.json\", import.meta.url), \"utf8\"));"
       },
       {
         "file": "lib/index.js",
-        "line": 88,
+        "line": 95,
         "text": "appendFileSync(NATIVE_WINDOW_LOG, `[${new Date().toISOString()}] ${level} ${message}\\n`);"
       },
       {
         "file": "lib/index.js",
-        "line": 357,
+        "line": 247,
+        "text": "try { appendFileSync(NATIVE_WINDOW_LOG, text.endsWith(\"\\n\") ? text : text + \"\\n\"); } catch {}"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 477,
         "text": "const data = readFileSync(new URL(HELP_ASSETS[name], HELP_ASSET_DIR));"
       }
     ]
@@ -67,17 +72,22 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 20,
+        "line": 21,
         "text": "import { spawn } from \"node:child_process\";"
       },
       {
         "file": "lib/index.js",
-        "line": 136,
-        "text": "child = spawn(\"/usr/bin/osascript\", [\"-l\", \"JavaScript\", NATIVE_WINDOW_SCRIPT, url + marker], {"
+        "line": 179,
+        "text": "spawn(\"taskkill.exe\", [\"/PID\", String(child.pid), \"/T\", \"/F\"], {"
       },
       {
         "file": "lib/index.js",
-        "line": 275,
+        "line": 232,
+        "text": "child = spawn(command.command, command.args, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 395,
         "text": "spawn(command.command, command.args, {"
       }
     ]
@@ -88,7 +98,12 @@
   },
   "dependencies": 0,
   "minifiedFiles": [],
-  "binaryFiles": [],
+  "binaryFiles": [
+    "native/webview2/arm64/WebView2Loader.dll",
+    "native/webview2/Microsoft.Web.WebView2.Core.dll",
+    "native/webview2/Microsoft.Web.WebView2.WinForms.dll",
+    "native/webview2/x64/WebView2Loader.dll"
+  ],
   "requiredServices": [],
   "setupHints": [],
   "skippedEntries": []

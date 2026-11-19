@@ -1,0 +1,118 @@
+{
+  "name": "dsh-tradingagents",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-19T21:28:19.021Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "build.mjs",
+        "line": 2,
+        "text": "import { cpSync, mkdirSync, rmSync } from \"node:fs\";"
+      },
+      {
+        "file": "build.mjs",
+        "line": 10,
+        "text": "rmSync(path.join(here, d), { recursive: true, force: true });"
+      },
+      {
+        "file": "build.mjs",
+        "line": 14,
+        "text": "mkdirSync(path.join(here, \"data\"), { recursive: true });"
+      },
+      {
+        "file": "build.mjs",
+        "line": 17,
+        "text": "rmSync(path.join(here, \"scripts\", \"__pycache__\"), { recursive: true, force: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "import { existsSync } from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 5,
+        "text": "# verdict_settle) on ctx.tools via @deepseek-ai/dsh-tools."
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "* Registers two agent tools on `ctx.tools` once the profile composes:"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "export const inject = [\"tools\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 43,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 89,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/tradingagents.js",
+        "line": 7,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "bin/tradingagents.js",
+        "line": 44,
+        "text": "const r = spawnSync(\"python3\", [path.join(root, \"scripts\", script), ...pass], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 30,
+        "text": "const r = spawnSync(PY, [path.join(ROOT, \"scripts\", script), ...args],"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 9,
+      "text": "npm i -g dsh-tradingagents"
+    },
+    {
+      "file": "README.md",
+      "line": 17,
+      "text": "Optional: `pip install --user openbb`; without it the CLI falls back to"
+    }
+  ],
+  "skippedEntries": []
+}

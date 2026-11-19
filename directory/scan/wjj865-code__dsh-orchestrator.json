@@ -1,35 +1,35 @@
 {
   "name": "@wjj865-code/dsh-orchestrator",
-  "version": "0.22.0",
-  "scannedAt": "2026-11-19T08:55:04.203Z",
+  "version": "0.24.0",
+  "scannedAt": "2026-11-19T21:28:11.680Z",
   "icon": "wjj865-code__dsh-orchestrator.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "dist/client.js",
-        "line": 294,
-        "text": "const response = await fetch(ROUTE, {"
+        "line": 1,
+        "text": "tice:()=>e}},Wt=async r=>{const e=await fetch(pe,{method:\"POST\",headers:{\"content-type\":\"application/json\"},body:JSON.stringify({endpoint:\"snapshot\"}),signal:r}"
       },
       {
         "file": "dist/client.js",
-        "line": 306,
-        "text": "const response = await fetch(ROUTE, {"
+        "line": 3,
+        "text": "h{}}},fetchRole:async b=>{const k=await fetch(pe,{method:\"POST\",headers:{\"content-type\":\"application/json\"},body:JSON.stringify({endpoint:\"session-role\",session"
       },
       {
-        "file": "dist/client.js",
-        "line": 327,
-        "text": "const response = await fetch(ROUTE, {"
+        "file": "scripts/mirror-sync.mjs",
+        "line": 56,
+        "text": "const response = await fetch(packumentUrl(name, endpoint), {"
       },
       {
-        "file": "dist/client.js",
-        "line": 337,
-        "text": "const response = await fetch(ROUTE, {"
+        "file": "scripts/mirror-sync.mjs",
+        "line": 72,
+        "text": "response = await fetch(url, { method: 'PUT' })"
       },
       {
-        "file": "dist/client.js",
-        "line": 348,
-        "text": "const response = await fetch(ROUTE, {"
+        "file": "src/host-route.js",
+        "line": 144,
+        "text": "return async function fetch(request) {"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "scripts/check-client-size.mjs",
+        "line": 11,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "scripts/check-client-size.mjs",
+        "line": 38,
+        "text": "bytes = (await readFile(file)).byteLength"
+      },
+      {
         "file": "scripts/check-docs.mjs",
-        "line": 14,
+        "line": 15,
         "text": "import { existsSync, readdirSync, readFileSync } from 'node:fs'"
       },
       {
         "file": "scripts/check-docs.mjs",
-        "line": 110,
+        "line": 133,
         "text": "const read = file => readFileSync(join(root, file), 'utf8')"
       },
       {
         "file": "scripts/check-docs.mjs",
-        "line": 168,
+        "line": 233,
         "text": "const anchors = anchorsOf(readFileSync(targetFile, 'utf8'))"
-      },
-      {
-        "file": "scripts/check-version.mjs",
-        "line": 8,
-        "text": "import { readFile } from 'node:fs/promises'"
-      },
-      {
-        "file": "scripts/check-version.mjs",
-        "line": 66,
-        "text": "const read = name => readFile(join(ROOT, name), 'utf8')"
       }
     ]
   },
@@ -73,22 +73,22 @@
       },
       {
         "file": "index.js",
-        "line": 39,
+        "line": 44,
         "text": "export const inject = ['tools', 'agents', 'systemPrompt', 'subagents']"
       },
       {
         "file": "index.js",
-        "line": 208,
+        "line": 229,
         "text": "if (ctx.tools === undefined) warnings('dsh-orchestrator: 缺少 tools 服务，工具注册/白名单/guard 不可用')"
       },
       {
         "file": "index.js",
-        "line": 209,
+        "line": 230,
         "text": "else if (typeof ctx.tools.guard !== 'function') warnings('dsh-orchestrator: tools.guard 缺失，wait_agent 执行期拦截不可用')"
       },
       {
         "file": "index.js",
-        "line": 241,
+        "line": 331,
         "text": "const tools = agent.ctx?.tools ?? ctx.tools"
       }
     ]
@@ -96,6 +96,11 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "src/acceptance.js",
+        "line": 12,
+        "text": "import { spawn as spawnProcess } from 'node:child_process'"
+      },
       {
         "file": "src/dispatch.js",
         "line": 423,
@@ -123,7 +128,9 @@
     "evidence": []
   },
   "dependencies": 0,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "dist/client.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [
     "agents",

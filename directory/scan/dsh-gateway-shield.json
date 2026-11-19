@@ -1,0 +1,110 @@
+{
+  "name": "dsh-gateway-shield",
+  "version": "0.6.2",
+  "scannedAt": "2026-11-19T21:28:33.815Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bootstrap.mjs",
+        "line": 6,
+        "text": "put-type=module -e \"const s=await(await fetch('https://raw.githubusercontent.com/jyuaner/dsh-gateway-shield/main/bootstrap.mjs')).text(); await import('data:tex"
+      },
+      {
+        "file": "bootstrap.mjs",
+        "line": 12,
+        "text": "-with-companions']; const s=await(await fetch('https://raw.githubusercontent.com/jyuaner/dsh-gateway-shield/main/bootstrap.mjs')).text(); await import('data:tex"
+      },
+      {
+        "file": "bootstrap.mjs",
+        "line": 15,
+        "text": "'--no-companions']; const s=await(await fetch('https://raw.githubusercontent.com/jyuaner/dsh-gateway-shield/main/bootstrap.mjs')).text(); await import('data:tex"
+      },
+      {
+        "file": "bootstrap.mjs",
+        "line": 28,
+        "text": "*   curl -fsSL https://raw.githubusercontent.com/jyuaner/dsh-gateway-shield/main/bootstrap.mjs -o bootstrap.mjs"
+      },
+      {
+        "file": "bootstrap.mjs",
+        "line": 123,
+        "text": "const res = await fetch(url, { redirect: \"follow\", headers: { \"User-Agent\": \"dsh-gateway-shield-bootstrap\" } });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "armor/armor-test.mjs",
+        "line": 9,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "armor/armor-test.mjs",
+        "line": 36,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true });"
+      },
+      {
+        "file": "armor/armor-test.mjs",
+        "line": 37,
+        "text": "fs.writeFileSync(file, `${JSON.stringify(value, null, 2)}\\n`, \"utf8\");"
+      },
+      {
+        "file": "armor/armor-test.mjs",
+        "line": 40,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true });"
+      },
+      {
+        "file": "armor/armor-test.mjs",
+        "line": 41,
+        "text": "fs.writeFileSync(file, text, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "armor/armor-test.mjs",
+        "line": 12,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "armor/armor-test.mjs",
+        "line": 184,
+        "text": "return spawnSync(process.execPath, [path.join(HERE, \"armor.mjs\"), ...args], { encoding: \"utf8\", cwd: ROOT });"
+      },
+      {
+        "file": "bootstrap.mjs",
+        "line": 45,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/companions.js",
+        "line": 30,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/companions.js",
+        "line": 232,
+        "text": "const res = spawnSync(cmd, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

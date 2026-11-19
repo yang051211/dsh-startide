@@ -1,0 +1,88 @@
+{
+  "name": "pianochart-dsh",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-19T21:28:34.370Z",
+  "icon": "pianochart-dsh.png",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 54,
+        "text": "const manifest = JSON.parse(await readFile(join(SKILL_DIR, 'manifest.json'), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 67,
+        "text": "content: await readFile(SKILL_BODY, 'utf8'),"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 1,
+        "text": "# Two entries: the Host tool (index.js through ctx.tools) and an MCP client"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 15,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "export const inject = ['tools', 'skills']"
+      },
+      {
+        "file": "index.js",
+        "line": 240,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 151,
+        "text": "const child = spawn(args.python, [BRIDGE, ...args.argv], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

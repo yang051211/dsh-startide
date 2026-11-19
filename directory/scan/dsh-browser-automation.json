@@ -1,0 +1,120 @@
+{
+  "name": "dsh-browser-automation",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-19T21:28:30.647Z",
+  "icon": "dsh-browser-automation.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 62,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "src/cdp-target.js",
+        "line": 105,
+        "text": "const response = await fetch(`${base}/json/version`, { signal: AbortSignal.timeout(timeoutMs) });"
+      },
+      {
+        "file": "src/runtime.js",
+        "line": 256,
+        "text": "`3. Start DSH again, then check: Invoke-WebRequest ${where}/json/version`,"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/cdp-target.js",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "src/cdp-target.js",
+        "line": 83,
+        "text": "return parseActivePort(fs.readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "src/cli.js",
+        "line": 2,
+        "text": "import { existsSync, mkdirSync, readdirSync, readFileSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "src/cli.js",
+        "line": 52,
+        "text": "text = readFileSync(shim, 'utf8');"
+      },
+      {
+        "file": "src/cli.js",
+        "line": 274,
+        "text": "if (!existsSync(directory)) mkdirSync(directory, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 41,
+        "text": "export const inject = ['tools', 'webServer'];"
+      },
+      {
+        "file": "index.js",
+        "line": 214,
+        "text": "ctx.tools.register(tool);"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 9,
+        "text": "* `ctx.tools.register()` (raw JSON Schema, no `defineTool` import) so the bundle"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 120,
+        "text": "* @returns {any[]} tool definitions for ctx.tools.register"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/cli.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/cli.js",
+        "line": 259,
+        "text": "/** @type {Set<import('node:child_process').ChildProcess>} */"
+      },
+      {
+        "file": "src/cli.js",
+        "line": 333,
+        "text": "child = spawn(plan.file, argv, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 68,
+      "text": "npm install -g @playwright/cli@latest"
+    }
+  ],
+  "skippedEntries": []
+}

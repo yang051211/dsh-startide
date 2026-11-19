@@ -1,0 +1,69 @@
+{
+  "name": "dsh-companion-memory-core",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-19T21:28:24.462Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/llm-reviewer.js",
+        "line": 2,
+        "text": "import { readFile, readdir } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/core/llm-reviewer.js",
+        "line": 165,
+        "text": "const text = await readFile(join(this.store.paths.cold, file), 'utf8').catch(() => '');"
+      },
+      {
+        "file": "lib/core/store.js",
+        "line": 1,
+        "text": "import { appendFile, mkdir, readFile, readdir, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/core/store.js",
+        "line": 17,
+        "text": "await mkdir(this.paths.root, { recursive: true });"
+      },
+      {
+        "file": "lib/core/store.js",
+        "line": 19,
+        "text": "await mkdir(join(this.paths.root, dir), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/dsh/plugin.js",
+        "line": 10,
+        "text": "export const inject = ['agents', 'systemPrompt', 'tools', 'llm'];"
+      },
+      {
+        "file": "lib/host/dsh/plugin.js",
+        "line": 244,
+        "text": "* `ctx.systemPrompt` / `ctx.tools` / `ctx.llm` access and the entry never"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

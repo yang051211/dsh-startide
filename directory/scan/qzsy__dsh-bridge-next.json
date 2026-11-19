@@ -1,0 +1,93 @@
+{
+  "name": "@qzsy/dsh-bridge-next",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-19T21:28:31.015Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 1073,
+        "text": "const blob = await (await fetch(dataUrl)).blob();"
+      },
+      {
+        "file": "client/client.js",
+        "line": 1101,
+        "text": "await fetch(`${base()}frame?${query.toString()}`, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 1154,
+        "text": "const res = await fetch(`${base()}poll?since=${seq}&note=${encodeURIComponent(note)}`, { cache: \"no-store\" });"
+      },
+      {
+        "file": "client/client.js",
+        "line": 1463,
+        "text": "const res = await fetch(`http://127.0.0.1:${port}/__qzsy_bridge__/loopback-token`, { cache: \"no-store\" });"
+      },
+      {
+        "file": "client/index.js",
+        "line": 198,
+        "text": "const res = await fetch(`http://127.0.0.1:${port}/__qzsy_bridge__/loopback-token`, { cache: 'no-store' });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/build.mjs",
+        "line": 2,
+        "text": "import { mkdir, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "client/build.mjs",
+        "line": 3,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "client/build.mjs",
+        "line": 11,
+        "text": "const loaderId = JSON.parse(readFileSync(resolve(packageRoot, 'package.json'), 'utf8')).name;"
+      },
+      {
+        "file": "client/build.mjs",
+        "line": 39,
+        "text": "await mkdir(dirname(outputPath), { recursive: true });"
+      },
+      {
+        "file": "client/build.mjs",
+        "line": 40,
+        "text": "await writeFile(outputPath, wrapped, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/git-state.js",
+        "line": 9,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 5,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

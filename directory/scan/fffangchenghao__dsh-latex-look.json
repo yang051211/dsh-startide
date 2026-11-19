@@ -1,7 +1,7 @@
 {
   "name": "@fffangchenghao/dsh-latex-look",
-  "version": "0.4.4",
-  "scannedAt": "2026-11-19T08:55:16.421Z",
+  "version": "0.4.5",
+  "scannedAt": "2026-11-19T21:28:27.878Z",
   "icon": "fffangchenghao__dsh-latex-look.svg",
   "network": {
     "hit": false,
@@ -18,7 +18,7 @@
       {
         "file": "lib/core.mjs",
         "line": 12,
-        "text": "import { createReadStream, existsSync, readFileSync, readdirSync } from 'node:fs'"
+        "text": "import { constants, createReadStream, existsSync, readdirSync } from 'node:fs'"
       },
       {
         "file": "lib/core.mjs",
@@ -27,13 +27,13 @@
       },
       {
         "file": "lib/core.mjs",
-        "line": 46,
-        "text": "await rm(to, { force: true })"
+        "line": 43,
+        "text": "if (IS_WIN) await rm(to, { force: true })"
       },
       {
         "file": "lib/core.mjs",
-        "line": 237,
-        "text": "try { src = await readFile(f, 'utf8') } catch { continue }"
+        "line": 248,
+        "text": "const source = withoutComments(await readFile(file, 'utf8').catch(() => ''))"
       }
     ]
   },
@@ -57,7 +57,7 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 178,
+        "line": 176,
         "text": "// Never hand a caller-supplied name to spawn() as a binary."
       },
       {
@@ -67,17 +67,17 @@
       },
       {
         "file": "lib/core.mjs",
-        "line": 99,
+        "line": 111,
         "text": "child = spawn(cmd, args, { cwd, detached: !IS_WIN, windowsHide: true })"
       },
       {
         "file": "lib/core.mjs",
-        "line": 110,
+        "line": 122,
         "text": "try { spawn('taskkill', ['/pid', String(child.pid), '/T', '/F'], { windowsHide: true }) } catch {}"
       },
       {
         "file": "lib/core.mjs",
-        "line": 1564,
+        "line": 1857,
         "text": "// An `engine` value reached spawn() unvalidated, so a caller could name any"
       }
     ]
@@ -96,7 +96,7 @@
   "setupHints": [
     {
       "file": "README.zh-CN.md",
-      "line": 81,
+      "line": 86,
       "text": "npm i -g @fffangchenghao/dsh-latex-look"
     }
   ],

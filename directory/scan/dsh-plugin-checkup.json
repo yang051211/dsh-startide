@@ -1,0 +1,56 @@
+{
+  "name": "dsh-plugin-checkup",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-19T21:28:34.220Z",
+  "icon": "dsh-plugin-checkup.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 154,
+        "text": "const response = await fetch('/plugin-doctor/report', { headers: { accept: 'application/json' } });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import { existsSync, readdirSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 96,
+        "text": "return JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 104,
+        "text": "return readFileSync(file, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

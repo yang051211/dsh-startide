@@ -1,0 +1,123 @@
+{
+  "name": "dsh-phone-body",
+  "version": "0.1.9",
+  "scannedAt": "2026-11-19T21:28:18.230Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "const r = await fetch(BASE + '/cmd', {"
+      },
+      {
+        "file": "index.js",
+        "line": 38,
+        "text": "const r = await fetch(BASE + '/status?token=' + encodeURIComponent(token))"
+      },
+      {
+        "file": "index.js",
+        "line": 150,
+        "text": "try { const r = await fetch(BASE + '/pair?token=' + encodeURIComponent(token)); info = await r.json() } catch {}"
+      },
+      {
+        "file": "index.js",
+        "line": 175,
+        "text": "const r = await fetch(BASE + '/pair?token=' + encodeURIComponent(token))"
+      },
+      {
+        "file": "index.js",
+        "line": 181,
+        "text": "        const sr = await fetch('http://127.0.0.1:3000/send_private_msg', { method: 'POST', headers: { 'content-type': 'application/json', authorization: 'Bearer"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 4,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync, appendFileSync, openSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "function dbg(m) { try { mkdirSync(HOME, { recursive: true }); appendFileSync(DBG, new Date().toISOString() + ' ' + m + '\\n') } catch {} }"
+      },
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "try { return readFileSync(TOKEN_FILE, 'utf8').trim() } catch { return '' }"
+      },
+      {
+        "file": "index.js",
+        "line": 45,
+        "text": "mkdirSync(join(HOME, 'state'), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 111,
+        "text": "const data = readFileSync(j.file)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 73,
+        "text": "const reg = (t) => { try { ctx.tools.register(t); dbg('registered ' + t.name) } catch (e) { dbg('register failed ' + t.name + ': ' + (e && e.message)) } }"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 3,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 61,
+        "text": "child = spawn(process.execPath, [server], {"
+      },
+      {
+        "file": "src/phone-body-server.mjs",
+        "line": 9,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "src/phone-body-server.mjs",
+        "line": 190,
+        "text": "const list = spawnSync(adbPath, ['devices'], { timeout: 8000, encoding: 'utf8' });"
+      },
+      {
+        "file": "src/phone-body-server.mjs",
+        "line": 195,
+        "text": "spawnSync(adbPath, ['-s', serial, 'reverse', 'tcp:8790', 'tcp:' + PORT], { timeout: 8000 });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

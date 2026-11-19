@@ -1,24 +1,29 @@
 {
   "name": "dsh-gallery",
-  "version": "1.2.0",
-  "scannedAt": "2026-11-18T09:00:11.984Z",
+  "version": "1.4.0",
+  "scannedAt": "2026-11-19T21:28:15.335Z",
   "icon": "dsh-gallery.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 1450,
+        "line": 1789,
         "text": "const response = await fetch(ROUTE, {"
       },
       {
         "file": "client.js",
-        "line": 1500,
+        "line": 1839,
         "text": "const response = await fetch(ROUTE, {"
       },
       {
         "file": "client.js",
-        "line": 8622,
+        "line": 4299,
+        "text": "const res = await fetch(url, { credentials: 'same-origin' })"
+      },
+      {
+        "file": "client.js",
+        "line": 9269,
         "text": "const response = await fetch(mediaUrlOf(relPath, target?.mtime), { credentials: 'same-origin' })"
       }
     ]
@@ -27,29 +32,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "host/changes.js",
-        "line": 18,
-        "text": "import { promises as fsp, watch } from 'node:fs'"
+        "file": "host/atomic.js",
+        "line": 6,
+        "text": "*   「writeFile(tmp) → rename(tmp, file)」，五处都**没有失败清理**。"
       },
       {
-        "file": "host/classify.js",
-        "line": 7,
-        "text": "import { promises as fsp, readFileSync, statSync, createReadStream } from 'node:fs'"
-      },
-      {
-        "file": "host/clipboard.js",
-        "line": 20,
+        "file": "host/atomic.js",
+        "line": 17,
         "text": "import { promises as fsp } from 'node:fs'"
       },
       {
-        "file": "host/clipboard.js",
-        "line": 113,
-        "text": "const text = await fsp.readFile(outFile, 'utf8')"
+        "file": "host/atomic.js",
+        "line": 41,
+        "text": "await fsp.mkdir(path.dirname(file), { recursive: true })"
       },
       {
-        "file": "host/clipboard.js",
-        "line": 119,
-        "text": "try { await fsp.rm(outFile, { force: true }) } catch { /* 忽略 */ }"
+        "file": "host/atomic.js",
+        "line": 42,
+        "text": "await fsp.writeFile(tmp, content, 'utf8')"
+      },
+      {
+        "file": "host/atomic.js",
+        "line": 48,
+        "text": "try { await fsp.rm(tmp, { force: true }) } catch { /* 删不掉也不能盖住原始错误 */ }"
       }
     ]
   },
@@ -68,17 +73,17 @@
       },
       {
         "file": "host/tools.js",
-        "line": 798,
+        "line": 922,
         "text": "if (!ctx?.tools || typeof ctx.tools.register !== 'function') {"
       },
       {
         "file": "host/tools.js",
-        "line": 799,
+        "line": 923,
         "text": "ctx?.logger?.warn?.('dsh-gallery: ctx.tools 不可用，Agent 工具未注册')"
       },
       {
         "file": "host/tools.js",
-        "line": 806,
+        "line": 930,
         "text": "const dispose = ctx.tools.register(def)"
       }
     ]
@@ -103,12 +108,12 @@
       },
       {
         "file": "host/http.js",
-        "line": 1705,
+        "line": 1714,
         "text": "*   旧实现 spawn('cmd.exe', ['/c','start','','explorer.exe', `/select,\"${abs}\"`])"
       },
       {
         "file": "host/http.js",
-        "line": 1731,
+        "line": 1740,
         "text": "const { spawn } = await import('node:child_process')"
       }
     ]

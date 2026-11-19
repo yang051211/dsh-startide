@@ -1,7 +1,7 @@
 {
   "name": "dsh-trellis",
-  "version": "0.1.23",
-  "scannedAt": "2026-11-18T09:00:16.309Z",
+  "version": "0.1.25",
+  "scannedAt": "2026-11-19T21:28:23.319Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -11,14 +11,19 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/doctor.js",
-        "line": 383,
-        "text": "const activeTaskPy = await fs.readFile("
+        "file": "lib/commands.js",
+        "line": 14,
+        "text": "import { statSync } from \"node:fs\";"
       },
       {
         "file": "lib/doctor.js",
-        "line": 404,
-        "text": "const raw = await fs.readFile(fullPath);"
+        "line": 415,
+        "text": "activeTaskPy = await fs.readFile("
+      },
+      {
+        "file": "lib/doctor.js",
+        "line": 448,
+        "text": "raw = await fs.readFile(fullPath);"
       },
       {
         "file": "lib/node-fs.js",
@@ -29,11 +34,6 @@
         "file": "lib/node-fs.js",
         "line": 15,
         "text": "} from \"node:fs/promises\";"
-      },
-      {
-        "file": "lib/node-fs.js",
-        "line": 37,
-        "text": "async readFile(path) {"
       }
     ]
   },
@@ -42,12 +42,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 57,
+        "line": 38,
         "text": "export const inject = [\"commands\", \"shellEnv\", \"subagents\", \"tools\", \"sessionProjections\"];"
       },
       {
         "file": "lib/wait-tool.js",
-        "line": 214,
+        "line": 259,
         "text": "const unregister = ctx.tools.register("
       }
     ]

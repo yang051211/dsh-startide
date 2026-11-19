@@ -1,0 +1,69 @@
+{
+  "name": "dsh-latex-render-fix",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-19T21:28:34.080Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 32,
+        "text": "fs.mkdirSync(LOG_DIR, { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 33,
+        "text": "fs.appendFileSync(LOG, line, 'utf8')"
+      },
+      {
+        "file": "lib/patch-asar.js",
+        "line": 20,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/patch-asar.js",
+        "line": 21,
+        "text": "import fsp from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/patch-asar.js",
+        "line": 24,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/patch-asar.js",
+        "line": 294,
+        "text": "execFile("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

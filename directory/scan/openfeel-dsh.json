@@ -1,0 +1,151 @@
+{
+  "name": "openfeel-dsh",
+  "version": "1.5.24",
+  "scannedAt": "2026-11-19T21:28:34.324Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/guard.js",
+        "line": 1882,
+        "text": "* 下载器的落盘目标（`curl -o x` / `iwr -OutFile x` / `wget -O x`）。"
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 1885,
+        "text": "* curl 的 `-O` 是「文件名来自 URL」（目标不可判定），wget 的 `-O` 是「输出到文件」"
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 1899,
+        "text": "// wget 的 -O <file>：输出到文件"
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 1902,
+        "text": "if (typeof value !== 'string' || value === '') return { targets: [], undecidable: true, detail: 'wget -O 缺少输出路径' };"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/adapters/cli.js",
+        "line": 19,
+        "text": "import { existsSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/adapters/dashboard.js",
+        "line": 14,
+        "text": "import { readFileSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/adapters/dashboard.js",
+        "line": 22,
+        "text": "const raw = JSON.parse(readFileSync(file, 'utf-8'));"
+      },
+      {
+        "file": "lib/adapters/dev-status.js",
+        "line": 7,
+        "text": "import { existsSync, readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/adapters/dev-status.js",
+        "line": 25,
+        "text": "const raw = JSON.parse(readFileSync(file, 'utf-8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 32,
+        "text": "# 写入门禁（ctx.tools.guard）——三层：文件工具 / shell / 受保护路径。"
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 4,
+        "text": "* 用 DSH 的 `ctx.tools.guard()` 在工具执行前做**同步拒绝**。守卫只读"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 49,
+        "text": "export const inject = ['tools', 'commands', 'systemPrompt'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 177,
+        "text": "ctx.tools.register(tool);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 183,
+        "text": "if (typeof ctx.tools.guard !== 'function') {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/adapters/cli.js",
+        "line": 18,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/adapters/cli.js",
+        "line": 144,
+        "text": "* 目录经常**不在**子进程继承的 PATH 里。直接 `spawn('openfeel')` 会"
+      },
+      {
+        "file": "lib/adapters/cli.js",
+        "line": 279,
+        "text": "/** @type {import('node:child_process').ChildProcessWithoutNullStreams} */"
+      },
+      {
+        "file": "lib/adapters/cli.js",
+        "line": 282,
+        "text": "child = spawn(launcher.command, argv, {"
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 40,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 41,
+      "text": "npm i -g openfeel@latest     # 1. 安装/升级（包内已含 dsh/）"
+    },
+    {
+      "file": "README.md",
+      "line": 65,
+      "text": "npm i -g openfeel@latest        # CLI 仍需全局安装（门禁在 CLI 里）"
+    },
+    {
+      "file": "README.md",
+      "line": 92,
+      "text": "**前置条件**：已安装 OpenFeel CLI（`npm install -g openfeel`，`openfeel --version` 可用）。"
+    }
+  ],
+  "skippedEntries": []
+}

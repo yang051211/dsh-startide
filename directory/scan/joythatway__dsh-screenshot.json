@@ -1,0 +1,113 @@
+{
+  "name": "@joythatway/dsh-screenshot",
+  "version": "0.5.4",
+  "scannedAt": "2026-11-19T21:28:23.352Z",
+  "icon": "joythatway__dsh-screenshot.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 546,
+        "text": "const blob = await fetch(current).then((response) => (response.ok ? response.blob() : null)).catch(() => null)"
+      },
+      {
+        "file": "client.js",
+        "line": 2028,
+        "text": "fetch(API + '/settings-screen', {"
+      },
+      {
+        "file": "client.js",
+        "line": 2043,
+        "text": "const response = await fetch(`${API}/save?name=${encodeURIComponent(name)}`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 2057,
+        "text": "fetch(API + '/reveal', {"
+      },
+      {
+        "file": "client.js",
+        "line": 2072,
+        "text": "const payload = await fetch(API + '/settings').then(readJson).catch(() => null)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "capture/macos.js",
+        "line": 7,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "capture/macos.js",
+        "line": 8,
+        "text": "import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "capture/macos.js",
+        "line": 148,
+        "text": "const buffer = await readFile(file).catch(() => undefined)"
+      },
+      {
+        "file": "capture/macos.js",
+        "line": 152,
+        "text": "rm(dir, { recursive: true, force: true }).catch(() => {})"
+      },
+      {
+        "file": "capture/macos.js",
+        "line": 168,
+        "text": "await writeFile(source, buffer)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "capture/macos.js",
+        "line": 6,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "capture/macos.js",
+        "line": 64,
+        "text": "child = spawn(binaryPath, args, { stdio: ['ignore', 'ignore', 'ignore'] })"
+      },
+      {
+        "file": "capture/macos.js",
+        "line": 91,
+        "text": "child = spawn(OSASCRIPT, ['-l', 'JavaScript'], { stdio: ['pipe', 'pipe', 'pipe'] })"
+      },
+      {
+        "file": "capture/macos.js",
+        "line": 224,
+        "text": "child = spawn(binary, args, { stdio: ['ignore', 'ignore', 'pipe'] })"
+      },
+      {
+        "file": "capture/macos.js",
+        "line": 465,
+        "text": "const opener = spawn('open', [url], { stdio: 'ignore', detached: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

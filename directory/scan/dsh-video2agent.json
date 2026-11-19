@@ -1,0 +1,141 @@
+{
+  "name": "dsh-video2agent",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-19T21:28:15.179Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 602,
+        "text": "const response = await fetch(SETTINGS_URL, {"
+      },
+      {
+        "file": "client.js",
+        "line": 651,
+        "text": "fetch(base + '/cloud'), fetch(base + '/models'), fetch(base + '/bili-login/status'),"
+      },
+      {
+        "file": "client.js",
+        "line": 685,
+        "text": "const response = await fetch(SETTINGS_URL)"
+      },
+      {
+        "file": "client.js",
+        "line": 1034,
+        "text": "const response = await fetch('/api/video2agent/job?id=' + encodeURIComponent(entry.jobId) + '&overview=0')"
+      },
+      {
+        "file": "client.js",
+        "line": 1550,
+        "text": "fetch('/api/video2agent/job?id=' + encodeURIComponent(jobId))"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "campaign.js",
+        "line": 2,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "campaign.js",
+        "line": 9,
+        "text": "try { return JSON.parse(fs.readFileSync(file(id), 'utf8')) } catch { return null }"
+      },
+      {
+        "file": "campaign.js",
+        "line": 12,
+        "text": "fs.mkdirSync(dir(), { recursive: true })"
+      },
+      {
+        "file": "campaign.js",
+        "line": 15,
+        "text": "fs.writeFileSync(tmp, JSON.stringify(campaign, null, 2), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 3,
+        "text": "import fs from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "export const inject = ['commands', 'tools', 'systemPrompt']"
+      },
+      {
+        "file": "index.js",
+        "line": 2917,
+        "text": "const tools = (() => { try { return ctx.get?.('tools') || ctx.tools } catch { return ctx.tools } })()"
+      },
+      {
+        "file": "index.js",
+        "line": 3376,
+        "text": "tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 152,
+        "text": "child = spawn(command, args, { windowsHide: true, env })"
+      },
+      {
+        "file": "index.js",
+        "line": 206,
+        "text": "const killer = spawn('taskkill', ['/PID', String(child.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "index.js",
+        "line": 233,
+        "text": "child = spawn(invocation.command, [...invocation.prefix, ...args], { windowsHide: true, env: managedToolEnv() })"
+      },
+      {
+        "file": "index.js",
+        "line": 304,
+        "text": "const child = spawn(workerInvocation.command, [...workerInvocation.prefix, '__worker'], { windowsHide: true, env: managedToolEnv() })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 24,
+      "text": "pip install video2agent          # PyPI; pipx install video2agent also works"
+    },
+    {
+      "file": "README.md",
+      "line": 36,
+      "text": "Local on-screen-text OCR is an optional extra: `pip install \"video2agent[ocr]\"`"
+    }
+  ],
+  "skippedEntries": []
+}

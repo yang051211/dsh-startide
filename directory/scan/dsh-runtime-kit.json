@@ -1,0 +1,95 @@
+{
+  "name": "dsh-runtime-kit",
+  "version": "0.14.2",
+  "scannedAt": "2026-11-19T21:28:11.960Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 24,
+        "text": "const res = await fetch(API + method, {"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 478,
+        "text": "this.network = { fetch: (u, o) => fetch(u, o) };"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 954,
+        "text": "const r = await fetch(a.url, { method: a.method ?? 'GET' });"
+      },
+      {
+        "file": "test/remote-probe.mjs",
+        "line": 15,
+        "text": "import * as http from 'node:http';"
+      },
+      {
+        "file": "test/remote-probe.mjs",
+        "line": 67,
+        "text": "const req = http.request({"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/dashboard/index.js",
+        "line": 12,
+        "text": "import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "dist/dashboard/index.js",
+        "line": 29,
+        "text": "const raw = JSON.parse(await readFile(file, 'utf8'));"
+      },
+      {
+        "file": "dist/dashboard/index.js",
+        "line": 40,
+        "text": "await mkdir(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "dist/dashboard/index.js",
+        "line": 41,
+        "text": "await writeFile(file, `${JSON.stringify(payload, null, 2)}\\n`, 'utf8');"
+      },
+      {
+        "file": "dist/dashboard/index.js",
+        "line": 48,
+        "text": "const raw = JSON.parse(await readFile(file, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 463,
+        "text": "const ch = spawn(command, [...shArgs, `${cmd} ${args.join(' ')}`], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

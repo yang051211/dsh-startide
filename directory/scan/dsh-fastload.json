@@ -1,0 +1,60 @@
+{
+  "name": "dsh-fastload",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-19T21:28:23.814Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/page-cache.js",
+        "line": 22,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "src/page-cache.js",
+        "line": 23,
+        "text": "import fsp from 'node:fs/promises';"
+      },
+      {
+        "file": "src/page-cache.js",
+        "line": 105,
+        "text": "const data = await fsp.readFile(file);"
+      },
+      {
+        "file": "src/page-cache.js",
+        "line": 145,
+        "text": "void fsp.rm(corrupt, { force: true }).catch(() => {});"
+      },
+      {
+        "file": "src/page-cache.js",
+        "line": 151,
+        "text": "if (file !== undefined) void fsp.rm(file, { force: true }).catch(() => {});"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionController"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
