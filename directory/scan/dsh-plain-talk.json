@@ -1,7 +1,7 @@
 {
   "name": "dsh-plain-talk",
-  "version": "0.1.11",
-  "scannedAt": "2026-11-19T21:28:30.171Z",
+  "version": "0.1.12",
+  "scannedAt": "2026-11-20T08:47:18.840Z",
   "icon": "dsh-plain-talk.png",
   "network": {
     "hit": true,
@@ -15,6 +15,21 @@
         "file": "lib/client.js",
         "line": 38,
         "text": "return fetch(ROUTE_STATE, {"
+      },
+      {
+        "file": "test/bench.mjs",
+        "line": 69,
+        "text": "const res = await fetch(ENDPOINT, {"
+      },
+      {
+        "file": "test/determinism.mjs",
+        "line": 7,
+        "text": "const res = await fetch(ENDPOINT, {"
+      },
+      {
+        "file": "test/noise.mjs",
+        "line": 27,
+        "text": "const res = await fetch('http://127.0.0.1:3425/v1/chat/completions', {"
       }
     ]
   },
@@ -69,8 +84,14 @@
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "test/bench.mjs",
+        "line": 11,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

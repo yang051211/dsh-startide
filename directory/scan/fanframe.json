@@ -1,15 +1,52 @@
 {
   "name": "fanframe",
-  "version": "1.11.0-beta.9",
-  "scannedAt": "2026-11-18T21:46:01.273Z",
+  "version": "1.11.0",
+  "scannedAt": "2026-11-20T08:47:16.454Z",
   "icon": "fanframe.svg",
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 28,
+        "text": "{if(Qt(a,document.baseURI)){let t=await fetch(a);if(!t.ok)throw new Error(t.statusText);switch(e){case\"blob\":return t.blob();case\"bytes\":return t.bytes();case\"j"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 29,
+        "text": "ndardFontDataUrl=t,this.wasmUrl=n}async fetch({kind:e,filename:t}){switch(e){case\"cMapUrl\":case\"standardFontDataUrl\":case\"wasmUrl\":break;default:$(`Not implemen"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 72,
+        "text": "Rl(this.isHttp,t)}_request(e){let t=new XMLHttpRequest,n={validateStatus:null,onHeadersReceived:e.onHeadersReceived,onDone:e.onDone,onError:e.onError,onProgress"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 82,
+        "text": "nc(s,this.suppressEncryption):this.xref.fetch(s,this.suppressEncryption):s}get(e,t,a){return this.#n(!1,e,t,a)}async getAsync(e,t,a){return this.#n(!0,e,t,a)}ge"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 154,
+        "text": "ionId,seq:a.seq,index:e.index}),i=await fetch(`./api/dsh-chat-preview.attachment?${s}`,{credentials:\"same-origin\",cache:\"no-store\",redirect:\"error\",signal:n});i"
+      }
+    ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 28,
+        "text": "a){let t=await process.getBuiltinModule(\"fs/promises\").readFile(a);return new Uint8Array(t)}function Au(){return _s.init()}function qu(){return _s.isReady}funct"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 72,
+        "text": "ngSupported=!n,process.getBuiltinModule(\"fs/promises\").lstat(i).then(o=>{let l=Ll(i);this._reader=l.getReader();let{size:c}=o;this._contentLength=c,this._isRang"
+      }
+    ]
   },
   "agentTools": {
     "hit": true,
@@ -30,9 +67,15 @@
     "evidence": []
   },
   "dependencies": 0,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
   "binaryFiles": [],
-  "requiredServices": [],
+  "requiredServices": [
+    "attachments",
+    "connection",
+    "sessionQuery"
+  ],
   "setupHints": [],
   "skippedEntries": []
 }

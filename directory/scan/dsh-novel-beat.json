@@ -1,7 +1,7 @@
 {
   "name": "dsh-novel-beat",
-  "version": "0.8.0",
-  "scannedAt": "2026-11-17T22:16:53.500Z",
+  "version": "0.9.1",
+  "scannedAt": "2026-11-20T08:47:16.242Z",
   "icon": "dsh-novel-beat.svg",
   "network": {
     "hit": false,
@@ -12,12 +12,12 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 24,
+        "line": 26,
         "text": "import { readFileSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 34,
+        "line": 36,
         "text": "VERSION = JSON.parse(readFileSync(pkgPath, 'utf8')).version ?? VERSION"
       },
       {
@@ -28,12 +28,12 @@
       {
         "file": "lib/remote.js",
         "line": 46,
-        "text": "import { readFile } from 'node:fs/promises'"
+        "text": "import { readFile, readdir, stat } from 'node:fs/promises'"
       },
       {
         "file": "lib/remote.js",
-        "line": 264,
-        "text": "const text = await readFile(join(bookDir(dir, active.book), revision.snapshot), 'utf8')"
+        "line": 89,
+        "text": "const raw = JSON.parse(await readFile(join(bookDir(root, book), 'book.json'), 'utf8'))"
       }
     ]
   },
@@ -42,22 +42,22 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 28,
+        "line": 30,
         "text": "export const inject = ['tools', 'commands', 'workingDirectory', 'agents']"
       },
       {
         "file": "index.js",
-        "line": 397,
+        "line": 403,
         "text": "ctx.effect(() => ctx.tools.register(definition, {"
       },
       {
         "file": "index.js",
-        "line": 553,
+        "line": 559,
         "text": "if (typeof ctx.tools?.guard === 'function') {"
       },
       {
         "file": "index.js",
-        "line": 554,
+        "line": 560,
         "text": "ctx.effect(() => ctx.tools.guard((execution) => {"
       }
     ]

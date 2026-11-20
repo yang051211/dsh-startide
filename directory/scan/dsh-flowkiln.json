@@ -1,0 +1,82 @@
+{
+  "name": "dsh-flowkiln",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-20T08:47:20.034Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/selftest.js",
+        "line": 7,
+        "text": "import { mkdtempSync, rmSync, existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/selftest.js",
+        "line": 88,
+        "text": "const content = readFileSync(written, 'utf-8')"
+      },
+      {
+        "file": "bin/selftest.js",
+        "line": 141,
+        "text": "rmSync(td, { recursive: true, force: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import { writeFileSync, mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 62,
+        "text": "mkdirSync(dataDir(), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "export const inject = ['tools', 'llm']"
+      },
+      {
+        "file": "index.js",
+        "line": 116,
+        "text": "// Registration timing matters: some profiles expose ctx.tools only after the"
+      },
+      {
+        "file": "index.js",
+        "line": 124,
+        "text": "const ret = ctx.tools.register(def)"
+      },
+      {
+        "file": "index.js",
+        "line": 127,
+        "text": "try { seen = typeof ctx.tools.get(def.name) } catch (e) { seen = 'get-err:' + String(e) }"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

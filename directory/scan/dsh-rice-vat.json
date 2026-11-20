@@ -1,0 +1,87 @@
+{
+  "name": "dsh-rice-vat",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-20T08:47:18.450Z",
+  "icon": "dsh-rice-vat.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 371,
+        "text": "const response = await fetch(STATE_URL, { headers: AUTH_HEADERS, cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 416,
+        "text": "const response = await fetch(PULSE_URL, { headers: AUTH_HEADERS, cache: 'no-store' })"
+      },
+      {
+        "file": "platform-usage.js",
+        "line": 386,
+        "text": "* @param {typeof fetch} [options.fetchImpl] - injectable fetch (tests)."
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { mkdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 25,
+        "text": "const manifest = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 244,
+        "text": "const parsed = JSON.parse(readFileSync(tokenFile(), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 257,
+        "text": "mkdirSync(tokenDir(), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 40,
+      "text": "npm install -g dsh-rice-vat"
+    },
+    {
+      "file": "README.md",
+      "line": 40,
+      "text": "npm install -g dsh-rice-vat"
+    }
+  ],
+  "skippedEntries": []
+}

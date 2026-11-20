@@ -1,0 +1,93 @@
+{
+  "name": "dsh-wakatime",
+  "version": "1.2.1",
+  "scannedAt": "2026-11-20T08:47:20.154Z",
+  "icon": "dsh-wakatime.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/category.js",
+        "line": 190,
+        "text": "// curl/wget 这类既能读也能写（POST），只按「取数即研究」计。"
+      },
+      {
+        "file": "lib/wakatime.js",
+        "line": 317,
+        "text": "response = await fetch(url, {"
+      },
+      {
+        "file": "lib/wakatime.js",
+        "line": 454,
+        "text": "const connectRequest = http.request(connectOptions);"
+      },
+      {
+        "file": "lib/wakatime.js",
+        "line": 480,
+        "text": "const req = https.request(requestOptions, (response) => {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/build-stamp.js",
+        "line": 7,
+        "text": "import { statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/cache.js",
+        "line": 1,
+        "text": "import { appendFile, readFile, writeFile, mkdir } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/cache.js",
+        "line": 3,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/cache.js",
+        "line": 24,
+        "text": "await mkdir(dirname(this.cachePath), { recursive: true });"
+      },
+      {
+        "file": "lib/cache.js",
+        "line": 26,
+        "text": "await appendFile(this.cachePath, line);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/project.js",
+        "line": 1,
+        "text": "import { exec } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: node build.mjs"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessions"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

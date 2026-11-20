@@ -1,0 +1,72 @@
+{
+  "name": "dsh-stage-handoff",
+  "version": "1.0.0-beta.1",
+  "scannedAt": "2026-11-20T08:47:20.104Z",
+  "icon": "dsh-stage-handoff.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1467,
+        "text": "fetch('/api/stage-handoff/usage', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cleanup.js",
+        "line": 18,
+        "text": "import { lstat, opendir } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 49,
+        "text": "} from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 51,
+        "text": "import { statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2573,
+        "text": "// 路径被普通文件占住时，后面的 `mkdir(root, { recursive: true })` 只会抛一个"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2628,
+        "text": "* mkdir(stageDir) and rename(tempDir, stageDir)."
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4695,
+        "text": "toolCtx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tokenMeter"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

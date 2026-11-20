@@ -1,0 +1,105 @@
+{
+  "name": "@pointylab/dsh",
+  "version": "0.5.1",
+  "scannedAt": "2026-11-20T08:47:17.577Z",
+  "icon": "pointylab__dsh.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "build/src/node.js",
+        "line": 182,
+        "text": "const ws = new WebSocket(`ws://127.0.0.1:${PORT}`);"
+      },
+      {
+        "file": "pet/extension/background.js",
+        "line": 25,
+        "text": "const sock = new WebSocket(await petUrl());"
+      },
+      {
+        "file": "pet/extension/background.js",
+        "line": 153,
+        "text": "const bitmap = await createImageBitmap(await (await fetch(shot)).blob());"
+      },
+      {
+        "file": "pet/extension/background.js",
+        "line": 207,
+        "text": "const sock = new WebSocket(url);"
+      },
+      {
+        "file": "pet/Pointy.app/Contents/Resources/build/extension/background.js",
+        "line": 25,
+        "text": "const sock = new WebSocket(await petUrl());"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "build/src/node.js",
+        "line": 3,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "build/src/node.js",
+        "line": 34,
+        "text": "return JSON.parse(fs.readFileSync(path.join(PLUGIN_ROOT, 'package.json'), 'utf8')).version;"
+      },
+      {
+        "file": "build/src/node.js",
+        "line": 97,
+        "text": "fs.mkdirSync(PET_DIR, { recursive: true });"
+      },
+      {
+        "file": "build/src/node.js",
+        "line": 176,
+        "text": "token = fs.readFileSync(TOKEN_FILE, 'utf8').trim();"
+      },
+      {
+        "file": "build/src/runtime.js",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "build/src/node.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "build/src/node.js",
+        "line": 121,
+        "text": "const child = spawn(launch.exe, launch.args, { cwd: launch.cwd, env, detached: true, stdio: ['ignore', out, out] });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "pet/app/i18n/catalogs.js",
+    "pet/Pointy.app/Contents/Resources/build/app/i18n/catalogs.js"
+  ],
+  "binaryFiles": [
+    "pet/Pointy.app/Contents/MacOS/Pointy",
+    "pet/win32-arm64/Pointy.exe",
+    "pet/win32-x64/Pointy.exe"
+  ],
+  "requiredServices": [
+    "agents",
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

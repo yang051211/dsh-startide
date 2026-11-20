@@ -1,0 +1,51 @@
+{
+  "name": "dsh-smart-model-failover",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-20T08:47:20.080Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/log.js",
+        "line": 1,
+        "text": "import { appendFileSync, mkdirSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/log.js",
+        "line": 19,
+        "text": "mkdirSync(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/log.js",
+        "line": 20,
+        "text": "appendFileSync(file, `${new Date().toISOString()}  ${JSON.stringify(record)}\\n`, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-memory-doctor",
-  "version": "0.6.5",
-  "scannedAt": "2026-11-12T08:43:12.394Z",
+  "version": "0.6.6",
+  "scannedAt": "2026-11-20T08:47:17.009Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -22,29 +22,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/digest.js",
+        "line": 13,
+        "text": "import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/digest.js",
+        "line": 29,
+        "text": "const 原始 = readFileSync(文件);"
+      },
+      {
         "file": "lib/index.js",
         "line": 10,
         "text": "import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, statSync, copyFileSync, renameSync, unlinkSync } from 'node:fs';"
       },
       {
         "file": "lib/index.js",
-        "line": 47,
+        "line": 49,
         "text": "return readFileSync(p, 'utf8');"
       },
       {
         "file": "lib/index.js",
-        "line": 387,
+        "line": 389,
         "text": "mkdirSync(目录, { recursive: true });"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 415,
-        "text": "writeFileSync(路径, 行.join('\\n') + '\\n', 'utf8');"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 433,
-        "text": "mkdirSync(归档目录, { recursive: true });"
       }
     ]
   },
@@ -53,27 +53,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 1748,
+        "line": 1964,
         "text": "export const inject = ['commands', 'webServer', 'tools', 'agents'];"
       },
       {
         "file": "lib/index.js",
-        "line": 1780,
+        "line": 1996,
         "text": "if (ctx.tools && typeof ctx.tools.register === 'function') {"
       },
       {
         "file": "lib/index.js",
-        "line": 1785,
+        "line": 2001,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 1843,
+        "line": 2097,
         "text": "if (ctx.tools && typeof ctx.tools.register === 'function') {"
       },
       {
         "file": "lib/index.js",
-        "line": 1849,
+        "line": 2103,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
@@ -81,6 +81,21 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/digest.js",
+        "line": 16,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/digest.js",
+        "line": 24,
+        "text": "const r = spawnSync('zstd', ['--version'], { encoding: 'utf8' });"
+      },
+      {
+        "file": "lib/digest.js",
+        "line": 34,
+        "text": "const r = spawnSync(zstd, ['-dc', 文件], { maxBuffer: 1024 * 1024 * 1024 });"
+      },
       {
         "file": "lib/index.js",
         "line": 14,

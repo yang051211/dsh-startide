@@ -1,0 +1,112 @@
+{
+  "name": "dsh-remote-control-plugin",
+  "version": "0.7.68",
+  "scannedAt": "2026-11-20T08:47:09.242Z",
+  "icon": "dsh-remote-control-plugin.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 178,
+        "text": "const response = await fetch(path, {"
+      },
+      {
+        "file": "host/fabric.js",
+        "line": 3,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "host/fabric.js",
+        "line": 4,
+        "text": "import https from 'node:https'"
+      },
+      {
+        "file": "host/notify.js",
+        "line": 214,
+        "text": "const response = await fetch(`${settings.apiUrl}/v3/${settings.domain}/messages`, {"
+      },
+      {
+        "file": "host/notify.js",
+        "line": 386,
+        "text": "const response = await fetch(endpoint, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host/fabric.js",
+        "line": 5,
+        "text": "import { mkdir, readFile, realpath, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "host/fabric.js",
+        "line": 694,
+        "text": "await writeFile(stateFile, JSON.stringify({ version: 1, peers: peersObject }, null, 2), { mode: 0o600 })"
+      },
+      {
+        "file": "host/fabric.js",
+        "line": 1102,
+        "text": "const bytes = await readFile(real)"
+      },
+      {
+        "file": "host/fabric.js",
+        "line": 1112,
+        "text": "const data = await readFile(real)"
+      },
+      {
+        "file": "host/fabric.js",
+        "line": 1937,
+        "text": "try { return JSON.parse(await readFile(file, 'utf8')) } catch (error) {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host/service.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "host/tailnet.js",
+        "line": 10,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "host/tailnet.js",
+        "line": 21,
+        "text": "execFile(file, args, { ...options, windowsHide: true }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "host/tunnel-provision.js",
+        "line": 79,
+        "text": "const { spawn } = await import('node:child_process')"
+      },
+      {
+        "file": "host/tunnel-provision.js",
+        "line": 81,
+        "text": "const child = spawn('tar', ['-xzf', archive, '-C', outDir], { stdio: 'ignore', windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionController"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

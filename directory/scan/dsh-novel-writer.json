@@ -1,7 +1,7 @@
 {
   "name": "dsh-novel-writer",
-  "version": "7.4.0",
-  "scannedAt": "2026-11-18T21:45:51.056Z",
+  "version": "7.5.0",
+  "scannedAt": "2026-11-20T08:47:12.156Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -38,12 +38,12 @@
       },
       {
         "file": "lib/bookdelete.js",
-        "line": 571,
+        "line": 561,
         "text": "await mkdir(trashRoot, { recursive: true });"
       },
       {
         "file": "lib/bookdelete.js",
-        "line": 647,
+        "line": 637,
         "text": "await writeFile(join(trashRoot, \"manifest.json\"), JSON.stringify(manifest, null, 2), \"utf8\");"
       }
     ]
@@ -53,28 +53,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 53,
+        "line": 21,
         "text": "const inject = [\"tools\", \"systemPrompt\"];"
       },
       {
         "file": "lib/index.js",
-        "line": 206,
-        "text": "ctx.tools.register({"
+        "line": 54,
+        "text": "* 而 `ctx.tools.register` 是唯一必经之路。这里临时替换它，把每个 def 的 `execute` 包一层，"
       },
       {
         "file": "lib/index.js",
-        "line": 814,
-        "text": "ctx.tools.register({"
+        "line": 183,
+        "text": "const regCtx = !restoreAudit.installed && ctx?.tools && typeof ctx.tools.register === \"function\""
       },
       {
         "file": "lib/index.js",
-        "line": 1191,
-        "text": "ctx.tools.register({"
+        "line": 187,
+        "text": "...ctx.tools,"
       },
       {
         "file": "lib/index.js",
-        "line": 1375,
-        "text": "ctx.tools.register({"
+        "line": 190,
+        "text": "return finalOptions !== void 0 ? ctx.tools.register(def, finalOptions) : ctx.tools.register(def);"
       }
     ]
   },
@@ -82,23 +82,23 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/core.js",
-        "line": 17,
+        "file": "lib/core/http.js",
+        "line": 11,
         "text": "import { execFile } from \"node:child_process\";"
       },
       {
-        "file": "lib/core.js",
-        "line": 1864,
+        "file": "lib/core/http.js",
+        "line": 118,
         "text": "execFile(\"explorer.exe\", [\"/select,\" + dir], function (err) { resolve(!explorerSpawnFailed(err)); });"
       },
       {
-        "file": "lib/core.js",
-        "line": 1872,
+        "file": "lib/core/http.js",
+        "line": 126,
         "text": "execFile(\"open\", [dir], function (err) { resolve(!err); });"
       },
       {
-        "file": "lib/core.js",
-        "line": 1878,
+        "file": "lib/core/http.js",
+        "line": 132,
         "text": "execFile(\"xdg-open\", [dir], function (err) { resolve(!err); });"
       }
     ]

@@ -1,0 +1,71 @@
+{
+  "name": "@saichao2026/dsh-clickhouse",
+  "version": "0.2.3",
+  "scannedAt": "2026-11-20T08:47:17.023Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/clickhouse.js",
+        "line": 205,
+        "text": "const response = await fetch(`${this.config.url}/?${params.toString()}`, {"
+      },
+      {
+        "file": "src/clickhouse.ts",
+        "line": 258,
+        "text": "const response = await fetch(`${this.config.url}/?${params.toString()}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 27,
+        "text": "export const inject = [\"tools\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 72,
+        "text": "ctx.tools.register(tool);"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 247,
+        "text": "* @returns 可直接交给 `ctx.tools.register()` 的工具定义数组。"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 35,
+        "text": "export const inject = [\"tools\"];"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 81,
+        "text": "for (const tool of tools) ctx.tools.register(tool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
