@@ -1,0 +1,97 @@
+{
+  "name": "dsh-huawei-connect",
+  "version": "1.3.4",
+  "scannedAt": "2026-11-20T21:47:37.302Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client/index.js",
+        "line": 225,
+        "text": "const response = await fetch('/api/huawei-connect/status')"
+      },
+      {
+        "file": "lib/client/index.js",
+        "line": 290,
+        "text": "await fetch('/api/huawei-connect/accounts?platform=' + encodeURIComponent(platform) + '&id=' + encodeURIComponent(id), { method: 'DELETE' })"
+      },
+      {
+        "file": "lib/client/index.js",
+        "line": 300,
+        "text": "const response = await fetch(path, {"
+      },
+      {
+        "file": "lib/client/index.js",
+        "line": 642,
+        "text": "void fetch('/api/huawei-connect/client-diag', {"
+      },
+      {
+        "file": "lib/client/index.js",
+        "line": 682,
+        "text": "const response = await fetch('/api/huawei-connect/status')"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 27,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 124,
+        "text": "return JSON.parse(await readFile(path, 'utf8'))"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 131,
+        "text": "await mkdir(dirname(path), { recursive: true })"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 132,
+        "text": "await writeFile(path, JSON.stringify(value, null, 2), { encoding: 'utf8', mode: 0o600 })"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 897,
+        "text": "await mkdir(dirname(path), { recursive: true }).catch(() => {})"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/session.mjs",
+        "line": 23,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/wincred.mjs",
+        "line": 23,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

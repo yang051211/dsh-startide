@@ -1,14 +1,14 @@
 {
   "name": "dsh-conversation-recycle-bin",
-  "version": "0.3.24",
-  "scannedAt": "2026-11-14T19:29:30.453Z",
+  "version": "0.3.27",
+  "scannedAt": "2026-11-20T21:47:27.229Z",
   "icon": "dsh-conversation-recycle-bin.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 672,
+        "line": 699,
         "text": "const response = await fetch(url, {"
       },
       {
@@ -18,18 +18,18 @@
       },
       {
         "file": "scripts/verify-host-contract.mjs",
-        "line": 104,
+        "line": 134,
         "text": "response = await fetch(launchUrl, { redirect: 'manual' })"
       },
       {
         "file": "scripts/verify-host-contract.mjs",
-        "line": 132,
-        "text": "const page = await fetch(pageUrl, { redirect: 'follow', headers: cookieHeader() === '' ? {} : { cookie: cookieHeader() } })"
+        "line": 174,
+        "text": "const response = await fetch(`${base}/conversation-recycle-bin/api/state`, {"
       },
       {
         "file": "scripts/verify-host-contract.mjs",
-        "line": 157,
-        "text": "const control = await fetch(`${base}/dsh-memes-api`, {"
+        "line": 195,
+        "text": "await fetch(`${base}/`, { method: 'GET' })"
       }
     ]
   },
@@ -89,6 +89,11 @@
         "file": "scripts/run-tests.mjs",
         "line": 47,
         "text": "const result = spawnSync(process.execPath, [file], { stdio: 'inherit', env: process.env })"
+      },
+      {
+        "file": "test/crash-recovery.test.mjs",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process'"
       }
     ]
   },

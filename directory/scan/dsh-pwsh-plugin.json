@@ -1,7 +1,7 @@
 {
   "name": "dsh-pwsh-plugin",
-  "version": "0.2.24",
-  "scannedAt": "2026-11-18T09:00:15.636Z",
+  "version": "0.2.25",
+  "scannedAt": "2026-11-20T21:47:26.411Z",
   "icon": "dsh-pwsh-plugin.svg",
   "network": {
     "hit": true,
@@ -23,22 +23,22 @@
     "evidence": [
       {
         "file": "plugin/file-tools.mjs",
-        "line": 1,
+        "line": 2,
         "text": "import { readFileSync } from 'node:fs'"
       },
       {
         "file": "plugin/file-tools.mjs",
-        "line": 9,
+        "line": 10,
         "text": "const recycleSource = readFileSync(new URL('./file-recycle.cs', import.meta.url), 'utf8')"
       },
       {
         "file": "plugin/file-tools.mjs",
-        "line": 10,
+        "line": 11,
         "text": "const WINDOWS_SOURCE = readFileSync(new URL('./file-worker.ps1', import.meta.url), 'utf8').replace('# RECYCLE_HELPER',()=>\"$null = Add-Type -TypeDefinition ([Te"
       },
       {
         "file": "plugin/file-tools.mjs",
-        "line": 12,
+        "line": 13,
         "text": "const POSIX_SOURCE = readFileSync(new URL('./file-worker.cjs', import.meta.url), 'utf8')"
       },
       {
@@ -63,7 +63,7 @@
       },
       {
         "file": "plugin/file-tools.mjs",
-        "line": 134,
+        "line": 156,
         "text": "rties,required,execute)=>ctx.effect(()=>ctx.tools.register({name,description,parameters:{type:'object',properties,required,additionalProperties:false},output,ex"
       },
       {
@@ -83,22 +83,22 @@
     "evidence": [
       {
         "file": "plugin/file-tools.mjs",
-        "line": 71,
+        "line": 86,
         "text": "const subprocess={resolveExecutable:(...args)=>ctx.subprocess.resolveExecutable(...args),spawn(spec){"
       },
       {
         "file": "plugin/file-tools.mjs",
-        "line": 73,
+        "line": 88,
         "text": "const h=ctx.subprocess.spawn({...spec,stdio:{...spec.stdio,stdout:'pipe',stderr:{maxBytes:65536}}});bind(h);return h"
       },
       {
         "file": "plugin/file-tools.mjs",
-        "line": 75,
+        "line": 90,
         "text": "return ctx.subprocess.spawn(spec)"
       },
       {
         "file": "plugin/file-tools.mjs",
-        "line": 94,
+        "line": 109,
         "text": "bind(ctx.subprocess.spawn({argv,cwd:c.cwd,stdio:{stdin:{data:JSON.stringify({...q,limits})},stdout:'pipe',stderr:{maxBytes:65536}},signal,graceMs:3000}))"
       },
       {

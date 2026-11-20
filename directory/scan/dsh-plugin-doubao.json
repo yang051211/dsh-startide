@@ -1,0 +1,112 @@
+{
+  "name": "dsh-plugin-doubao",
+  "version": "0.2.6",
+  "scannedAt": "2026-11-20T21:47:39.271Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge.js",
+        "line": 97,
+        "text": "const res = await fetch('http://127.0.0.1:' + port + '/json/list', {"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 369,
+        "text": "const socket = new WebSocket(target.webSocketDebuggerUrl)"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 461,
+        "text": "const res = await fetch(${JSON.stringify(url)}, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 127,
+        "text": "const response = await fetch(path, {"
+      },
+      {
+        "file": "lib/credits.js",
+        "line": 115,
+        "text": "const response = await fetch(`${QUOTA_URL}?${query}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge.js",
+        "line": 207,
+        "text": "return import('node:fs').then(({ existsSync }) => existsSync(path))"
+      },
+      {
+        "file": "lib/identity.js",
+        "line": 30,
+        "text": "import { readdirSync, readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/identity.js",
+        "line": 92,
+        "text": "raw = readFileSync(path, 'utf8')"
+      },
+      {
+        "file": "lib/identity.js",
+        "line": 215,
+        "text": "buf = readFileSync(join(dir, name))"
+      },
+      {
+        "file": "lib/login.js",
+        "line": 16,
+        "text": "import { mkdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/login.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "bin/login.js",
+        "line": 57,
+        "text": "? spawn('cmd', ['/c', 'start', '\"\"', url], { detached: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "bin/login.js",
+        "line": 59,
+        "text": "? spawn('open', [url], { detached: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "bin/login.js",
+        "line": 60,
+        "text": ": spawn('xdg-open', [url], { detached: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 125,
+        "text": "await execFile(file, args, { timeout: 5000 })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

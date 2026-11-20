@@ -1,0 +1,105 @@
+{
+  "name": "dsh-claude-data",
+  "version": "2.16.0",
+  "scannedAt": "2026-11-20T21:47:20.861Z",
+  "icon": "dsh-claude-data.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "skills/claude-data/scripts/artifact.mjs",
+        "line": 37,
+        "text": "const response = await fetch(new URL(probe, state.url), { signal: AbortSignal.timeout(2e3) });"
+      },
+      {
+        "file": "skills/claude-data/scripts/artifact.mjs",
+        "line": 250,
+        "text": "import http from \"node:http\";"
+      },
+      {
+        "file": "skills/claude-data/scripts/artifact.mjs",
+        "line": 971,
+        "text": "const response = await fetch(`${origin}${HUB_ROUTE}`, { signal: AbortSignal.timeout(1e3) });"
+      },
+      {
+        "file": "skills/claude-data/scripts/artifact.mjs",
+        "line": 987,
+        "text": "const response = await fetch(`${origins[i]}${HUB_ROUTE}`, {"
+      },
+      {
+        "file": "skills/claude-data/scripts/artifact.mjs",
+        "line": 1003,
+        "text": "const response = await fetch(`${new URL(state.url).origin}${HUB_ROUTE}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "import { readFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 17,
+        "text": "import { statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 157,
+        "text": "const raw = await readFile(candidate.path, { encoding: \"utf8\", signal: options?.signal });"
+      },
+      {
+        "file": "skills/claude-data/scripts/artifact.mjs",
+        "line": 5,
+        "text": "import fs10 from \"node:fs\";"
+      },
+      {
+        "file": "skills/claude-data/scripts/artifact.mjs",
+        "line": 11,
+        "text": "import fs from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "skills/claude-data/scripts/artifact.mjs",
+        "line": 246,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "skills/claude-data/scripts/artifact.mjs",
+        "line": 1057,
+        "text": "const child = spawn(process.execPath, [...call.command, \"--background\"], { detached: true, stdio: [\"ignore\", \"ignore\", fd] });"
+      },
+      {
+        "file": "skills/claude-data/scripts/artifact.mjs",
+        "line": 3379,
+        "text": "import { spawn as spawn2 } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "skills/claude-data/scripts/editor/assets/index-B4yHfeTt.js",
+    "skills/claude-data/scripts/editor/assets/working-mark-sheets-dAm26n99.js",
+    "skills/claude-data/scripts/editor/comments.js",
+    "skills/claude-data/scripts/editor/share-ui.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

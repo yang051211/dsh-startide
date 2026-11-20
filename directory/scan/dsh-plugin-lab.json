@@ -1,0 +1,110 @@
+{
+  "name": "dsh-plugin-lab",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-20T21:47:39.563Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "example/rea-compact-gateway/gateway.mjs",
+        "line": 19,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { mkdtempSync, writeFileSync, readFileSync, rmSync, existsSync, appendFileSync, mkdirSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 176,
+        "text": "rmSync(dir, { recursive: true, force: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 192,
+        "text": "if (!existsSync(bootDir)) mkdirSync(bootDir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 193,
+        "text": "appendFileSync(join(bootDir, 'boot.log'), JSON.stringify({ ts: new Date().toISOString(), ...entry }) + '\\n', 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "example/fixture-plugin/lib/index.js",
+        "line": 3,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "example/fixture-plugin/lib/index.js",
+        "line": 5,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "example/fixture-plugin/lib/index.js",
+        "line": 15,
+        "text": "ctx.tools.guard((exec) => {"
+      },
+      {
+        "file": "example/rea-compact-gateway/dsh.patch.yml",
+        "line": 7,
+        "text": "name: \"@deepseek-ai/dsh-mcp-client\""
+      },
+      {
+        "file": "example/rea-compact-gateway/lib/index.js",
+        "line": 3,
+        "text": "* 真正的工具面由 dsh.patch.yml 里的 @deepseek-ai/dsh-mcp-client 条目提供（它连 gateway.mjs）；"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "example/rea-compact-gateway/gateway.mjs",
+        "line": 17,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "example/rea-compact-gateway/gateway.mjs",
+        "line": 153,
+        "text": "? spawn(NODE_BIN, [REA_SCRIPT, 'mcp'], { env: process.env, stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true })"
+      },
+      {
+        "file": "example/rea-compact-gateway/gateway.mjs",
+        "line": 154,
+        "text": ": spawn(REA_BIN, ['mcp'], { env: process.env, stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true, shell: true });"
+      },
+      {
+        "file": "example/rea-compact-gateway/scenarios/contract.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "example/rea-compact-gateway/scenarios/contract.mjs",
+        "line": 13,
+        "text": "const child = spawn(process.execPath, [gateway], { stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

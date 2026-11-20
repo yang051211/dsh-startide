@@ -1,0 +1,103 @@
+{
+  "name": "@kutebai/dsh-keelwatch",
+  "version": "0.4.3",
+  "scannedAt": "2026-11-20T21:47:25.790Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 147,
+        "text": "fetch(ENDPOINT + TOKEN_QUERY, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 162,
+        "text": "fetch('/keelwatch/history?limit=20' + (TOKEN_QUERY ? '&' + TOKEN_QUERY.slice(1) : ''), { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 184,
+        "text": "fetch(ENDPOINT + TOKEN_QUERY, {"
+      },
+      {
+        "file": "lib/dashboard.js",
+        "line": 415,
+        "text": "const response = await fetch('/keelwatch/status' + q, { headers: { accept: 'application/json' } });"
+      },
+      {
+        "file": "lib/registry.js",
+        "line": 45,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/drift-radar.js",
+        "line": 9,
+        "text": "import { readFile, readdir } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/drift-radar.js",
+        "line": 48,
+        "text": "const raw = await readFile(join(directory, 'package.json'), 'utf8');"
+      },
+      {
+        "file": "lib/history.js",
+        "line": 14,
+        "text": "import { appendFile, mkdir, readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/history.js",
+        "line": 16,
+        "text": "import { rm } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/history.js",
+        "line": 42,
+        "text": "await mkdir(dirname(this.path), { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 23,
+        "text": "export const inject = ['timer', 'tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 240,
+        "text": "const registry = ctx.tools;"
+      },
+      {
+        "file": "lib/report-tool.js",
+        "line": 269,
+        "text": "* `ctx.tools` only exists once the `tools` service is injected/mixed in, so a"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "timer",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

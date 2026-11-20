@@ -1,7 +1,7 @@
 {
   "name": "dsh-locator",
-  "version": "0.19.3",
-  "scannedAt": "2026-11-19T08:55:04.347Z",
+  "version": "0.20.2",
+  "scannedAt": "2026-11-20T21:47:20.763Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,12 +18,12 @@
       },
       {
         "file": "lib/tools.js",
-        "line": 435,
+        "line": 480,
         "text": "// by the kept count would re-fetch (and duplicate) later kept hits."
       },
       {
         "file": "src/http.ts",
-        "line": 32,
+        "line": 38,
         "text": "import type { IncomingHttpHeaders, IncomingMessage, ServerResponse } from 'node:http'"
       },
       {
@@ -38,28 +38,28 @@
     "evidence": [
       {
         "file": "lib/combined.js",
-        "line": 12,
-        "text": "import { statSync } from 'node:fs';"
+        "line": 29,
+        "text": "import { stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/combined.js",
+        "line": 30,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/combined.js",
+        "line": 127,
+        "text": "for (const line of readFileSync('/proc/self/mounts', 'utf8').split('\\n')) {"
       },
       {
         "file": "lib/content.js",
         "line": 18,
-        "text": "import { chmodSync, closeSync, existsSync, mkdirSync, openSync, readFileSync, realpathSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs';"
+        "text": " { chmodSync, closeSync, existsSync, mkdirSync, openSync, readdirSync, readFileSync, realpathSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs';"
       },
       {
         "file": "lib/content.js",
         "line": 19,
-        "text": "import { readdir, readFile, stat } from 'node:fs/promises';"
-      },
-      {
-        "file": "lib/content.js",
-        "line": 172,
-        "text": "mkdirSync(this.options.stateDir, { recursive: true, mode: 0o700 });"
-      },
-      {
-        "file": "lib/content.js",
-        "line": 177,
-        "text": "writeFileSync(fd, JSON.stringify({ pid: process.pid, startedAt: Date.now(), token: this.lockToken, procStart: PROCESS_START }));"
+        "text": "import { open, readdir, readFile, stat } from 'node:fs/promises';"
       }
     ]
   },
@@ -73,22 +73,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 187,
+        "line": 208,
         "text": "ctx.tools.register(makeSearchTool(rt, {"
       },
       {
         "file": "lib/index.js",
-        "line": 193,
+        "line": 214,
         "text": "ctx.tools.register(makeStatusTool(rt, content, scope));"
       },
       {
         "file": "lib/index.js",
-        "line": 194,
+        "line": 215,
         "text": "ctx.tools.register(makeRebuildTool(rt));"
       },
       {
         "file": "lib/index.js",
-        "line": 195,
+        "line": 216,
         "text": "ctx.tools.register(makeExportTool(rt));"
       }
     ]
@@ -113,12 +113,12 @@
       },
       {
         "file": "lib/runtime.js",
-        "line": 85,
+        "line": 132,
         "text": "this.spawn();"
       },
       {
         "file": "lib/runtime.js",
-        "line": 87,
+        "line": 134,
         "text": "spawn() {"
       }
     ]

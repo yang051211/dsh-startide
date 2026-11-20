@@ -1,7 +1,7 @@
 {
   "name": "dsh-milieu",
-  "version": "0.1.0",
-  "scannedAt": "2026-10-27T02:44:59.463Z",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-20T21:47:34.604Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -11,29 +11,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 24,
-        "text": "import { readFileSync, statSync, existsSync } from 'node:fs';"
+        "file": "adapter/fs.js",
+        "line": 5,
+        "text": "//   · `core/` 不许 import 'node:fs'（边界检查会看），所以读、写、存在、建目录、列目录、stat 全在这里；"
       },
       {
-        "file": "index.js",
-        "line": 150,
-        "text": "text = readFileSync(file, 'utf8');"
-      },
-      {
-        "file": "index.js",
-        "line": 188,
-        "text": "text = readFileSync(file, 'utf8');"
-      },
-      {
-        "file": "milieu-state.js",
+        "file": "adapter/fs.js",
         "line": 11,
-        "text": "import { readFileSync, writeFileSync, existsSync, statSync, readdirSync, mkdirSync } from 'node:fs';"
+        "text": "//   · `milieuBlockedBy` —— 固定 `'fs'`。"
       },
       {
-        "file": "milieu-state.js",
-        "line": 33,
-        "text": "const raw = JSON.parse(readFileSync(p, 'utf8'));"
+        "file": "adapter/fs.js",
+        "line": 16,
+        "text": "} from 'node:fs';"
+      },
+      {
+        "file": "adapter/fs.js",
+        "line": 28,
+        "text": "if (!err.milieuBlockedBy) err.milieuBlockedBy = 'fs';"
+      },
+      {
+        "file": "adapter/fs.js",
+        "line": 36,
+        "text": "wrapped.milieuBlockedBy = 'fs';"
       }
     ]
   },
@@ -49,13 +49,10 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [
-    "agents",
-    "systemPrompt"
-  ],
+  "requiredServices": [],
   "setupHints": [],
   "skippedEntries": []
 }

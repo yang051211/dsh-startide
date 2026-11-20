@@ -1,34 +1,34 @@
 {
   "name": "dsh-agent-team-ui-testing",
-  "version": "0.1.4",
-  "scannedAt": "2026-11-19T08:55:12.179Z",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-20T21:47:33.739Z",
   "icon": "dsh-agent-team-ui-testing.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "browser-safety.js",
-        "line": 238,
+        "line": 273,
         "text": "const ws = new WebSocket(this.url);"
       },
       {
         "file": "client.js",
-        "line": 160,
+        "line": 476,
         "text": "const response = await fetch(HOST_BASE + '/' + op, {"
       },
       {
         "file": "client.js",
-        "line": 180,
+        "line": 496,
         "text": "const response = await fetch(HOST_BASE + path, { credentials: 'same-origin', headers: scopeHeaders(scope), signal, cache: 'no-store' });"
       },
       {
         "file": "client.js",
-        "line": 235,
+        "line": 551,
         "text": "const response = await fetch(HOST_BASE + path, init);"
       },
       {
         "file": "client.js",
-        "line": 1160,
+        "line": 1476,
         "text": "const response = await fetch(HOST_BASE + '/annotations', {"
       }
     ]
@@ -68,13 +68,23 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 212,
+        "line": 103,
         "text": "export const inject = ['tools', 'webServer'];"
       },
       {
         "file": "index.js",
-        "line": 17446,
+        "line": 661,
+        "text": "const tools = ctx.tools;"
+      },
+      {
+        "file": "index.js",
+        "line": 1220,
         "text": "toolDisposers.set(name, ctx.tools.register(entry.definition, { when: entry.when }));"
+      },
+      {
+        "file": "targets/web/tools.js",
+        "line": 57,
+        "text": "* The Host owns admission, disclosure and the actual `ctx.tools.register`; here a definition is"
       }
     ]
   },
@@ -83,22 +93,27 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 5,
+        "line": 11,
         "text": "import { execFileSync, spawn } from 'node:child_process';"
       },
       {
-        "file": "index.js",
-        "line": 2176,
+        "file": "targets/web/host.js",
+        "line": 16,
+        "text": "import { execFileSync, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "targets/web/host.js",
+        "line": 2487,
         "text": "this.starting = this.#spawn(signal).finally(() => { this.starting = undefined; });"
       },
       {
-        "file": "index.js",
-        "line": 2303,
+        "file": "targets/web/host.js",
+        "line": 2620,
         "text": "async #spawn(signal) {"
       },
       {
-        "file": "index.js",
-        "line": 2476,
+        "file": "targets/web/host.js",
+        "line": 2807,
         "text": "return spawn(chromeBin, args, { stdio: ['ignore', 'ignore', 'pipe'] });"
       }
     ]
@@ -107,7 +122,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

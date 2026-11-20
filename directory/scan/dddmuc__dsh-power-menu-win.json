@@ -1,7 +1,7 @@
 {
   "name": "@dddmuc/dsh-power-menu-win",
-  "version": "0.2.1",
-  "scannedAt": "2026-11-13T21:11:02.440Z",
+  "version": "0.2.3",
+  "scannedAt": "2026-11-20T21:47:37.995Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -23,12 +23,12 @@
       },
       {
         "file": "lib/client.js",
-        "line": 344,
+        "line": 346,
         "text": "fetch('/api/dsh-power-menu/config', { credentials: 'same-origin' })"
       },
       {
         "file": "lib/client.js",
-        "line": 362,
+        "line": 364,
         "text": "fetch('/api/dsh-power-menu/bundles', { credentials: 'same-origin' })"
       }
     ]
@@ -43,23 +43,23 @@
       },
       {
         "file": "lib/helper.cjs",
-        "line": 77,
+        "line": 79,
         "text": "const parsed = JSON.parse(fs.readFileSync(file, 'utf8'))"
       },
       {
         "file": "lib/helper.cjs",
-        "line": 186,
+        "line": 188,
         "text": "try { fs.rmSync(`${file}.1`, { force: true }) } catch { /* ignore */ }"
       },
       {
         "file": "lib/helper.cjs",
-        "line": 198,
+        "line": 200,
         "text": "fs.appendFileSync(LOG_PATH, `[${new Date().toISOString()}] ${line}\\n`, 'utf8')"
       },
       {
         "file": "lib/helper.cjs",
-        "line": 368,
-        "text": "fs.writeFileSync(jsonPath, JSON.stringify(payload), 'utf8')"
+        "line": 215,
+        "text": "fs.writeFileSync(`${handoffPath}.result.json`, `${JSON.stringify(result, null, 2)}\\n`, 'utf8')"
       }
     ]
   },
@@ -77,17 +77,17 @@
       },
       {
         "file": "lib/helper.cjs",
-        "line": 375,
+        "line": 473,
         "text": "const child = spawn(copiedCmd, ['/d', '/c', 'exit', '0'], {"
       },
       {
         "file": "lib/helper.cjs",
-        "line": 433,
+        "line": 531,
         "text": "const child = spawn(shell, ['-NoProfile', '-NonInteractive', '-EncodedCommand', encoded], {"
       },
       {
         "file": "lib/helper.cjs",
-        "line": 628,
+        "line": 727,
         "text": "child = spawn(exe, relaunchArgs, {"
       },
       {
@@ -105,6 +105,7 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
+    "agents",
     "systemPrompt",
     "webServer"
   ],

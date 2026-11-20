@@ -1,0 +1,83 @@
+{
+  "name": "dsh-bilibili_video-study_buddy",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-20T21:47:28.292Z",
+  "icon": "dsh-bilibili_video-study_buddy.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 104,
+        "text": "const res = await fetch(url, { headers, signal: AbortSignal.timeout(25000) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync, copyFileSync, statSync, rmSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 88,
+        "text": "const j = JSON.parse(readFileSync(p, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 158,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 202,
+        "text": "mkdirSync(outDir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 289,
+        "text": "mkdirSync(outDir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 542,
+        "text": "export const inject = ['tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 59,
+        "text": "execFile(cmd, args, { windowsHide: true, maxBuffer: 32 * 1024 * 1024, ...opts }, (err, stdout, stderr) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

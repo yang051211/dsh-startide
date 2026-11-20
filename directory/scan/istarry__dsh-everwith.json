@@ -1,0 +1,126 @@
+{
+  "name": "@istarry/dsh-everwith",
+  "version": "1.4.3",
+  "scannedAt": "2026-11-20T21:47:39.225Z",
+  "icon": "istarry__dsh-everwith.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 155,
+        "text": "const res = await fetch(path, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 173,
+        "text": "const res = await fetch(`${PREFIX}/sample`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 409,
+        "text": "const res = await fetch(`${PREFIX}/speak-stream`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 879,
+        "text": "void fetch(\"/api/everwith/settings\", { headers: { accept: \"application/json\" } }).then((r) => r.json()).then((d) => {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 891,
+        "text": "await fetch(\"/api/everwith/settings\", {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "build.mjs",
+        "line": 15,
+        "text": "import { readFileSync, mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "build.mjs",
+        "line": 19,
+        "text": "mkdirSync(root + 'lib', { recursive: true })"
+      },
+      {
+        "file": "build.mjs",
+        "line": 20,
+        "text": "const pkg = JSON.parse(readFileSync(root + 'package.json', 'utf8'))"
+      },
+      {
+        "file": "lib/asr.js",
+        "line": 15,
+        "text": "import { existsSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/asr.js",
+        "line": 107,
+        "text": "writeFileSync(p, Buffer.concat([head, body]))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin.js",
+        "line": 43,
+        "text": "export const inject = ['tools', 'agents', 'webServer', 'systemPrompt']"
+      },
+      {
+        "file": "plugin.js",
+        "line": 717,
+        "text": "// 官方文档原话:`ctx.tools.restrict()` can only remove tools,而且要在"
+      },
+      {
+        "file": "plugin.js",
+        "line": 1444,
+        "text": "tools.register({"
+      },
+      {
+        "file": "plugin.js",
+        "line": 1476,
+        "text": "tools.register({"
+      },
+      {
+        "file": "plugin.js",
+        "line": 1544,
+        "text": "tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/screen.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/screen.js",
+        "line": 77,
+        "text": "const child = spawn(cmd, args, { windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,15 +1,31 @@
 {
   "name": "dsh-smart-model-failover",
-  "version": "0.1.0",
-  "scannedAt": "2026-11-20T08:47:20.080Z",
+  "version": "0.2.6",
+  "scannedAt": "2026-11-20T21:47:39.631Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 340,
+        "text": "fetch(PLAN_ROUTE, { headers: { accept: \"application/json\" } })"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "import { readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "return JSON.parse(readFileSync(new URL(\"../package.json\", import.meta.url), \"utf8\")).version;"
+      },
       {
         "file": "lib/log.js",
         "line": 1,

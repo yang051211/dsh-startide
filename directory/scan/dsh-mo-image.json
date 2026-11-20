@@ -1,35 +1,35 @@
 {
   "name": "dsh-mo-image",
-  "version": "0.7.0",
-  "scannedAt": "2026-11-15T20:14:32.164Z",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-20T21:47:27.106Z",
   "icon": "dsh-mo-image.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 868,
-        "text": "const response = await fetch('/api/mo-image/config', { cache: 'no-store', signal: AbortSignal.timeout(15000) });"
+        "line": 1707,
+        "text": "const response = await fetch(url, { ...options, signal });"
       },
       {
         "file": "lib/client.js",
-        "line": 909,
-        "text": "const response = await fetch('/api/mo-image/config', {"
+        "line": 11092,
+        "text": "return fetch('/api/mo-image/update', {"
       },
       {
-        "file": "lib/client.js",
-        "line": 1194,
-        "text": "const response = await fetch('/api/mo-image/models', {"
+        "file": "lib/net.js",
+        "line": 151,
+        "text": "if (fetchInit.dispatcher) return fetch(url, fetchInit);"
       },
       {
-        "file": "lib/client.js",
-        "line": 1427,
-        "text": "const response = await fetch('/api/mo-image/comfy/analyze', {"
+        "file": "lib/net.js",
+        "line": 156,
+        "text": "return await fetch(url, fetchInit);"
       },
       {
-        "file": "lib/client.js",
-        "line": 5439,
-        "text": "const response = await fetch('/api/mo-image/update', { cache: 'no-store', signal: AbortSignal.timeout(5000) });"
+        "file": "lib/net.js",
+        "line": 180,
+        "text": "return await fetch(url, Object.assign({}, fetchInit, { dispatcher: dispatcher }));"
       }
     ]
   },
@@ -39,26 +39,26 @@
       {
         "file": "lib/config-store.js",
         "line": 7,
-        "text": "import { existsSync, readFileSync, statSync } from 'node:fs';"
+        "text": "import { readFileSync, statSync } from 'node:fs';"
       },
       {
         "file": "lib/config-store.js",
         "line": 8,
-        "text": "import { readFile, writeFile, rename, unlink } from 'node:fs/promises';"
+        "text": "import { readFile, stat, writeFile, rename, unlink } from 'node:fs/promises';"
       },
       {
         "file": "lib/config-store.js",
-        "line": 398,
+        "line": 1089,
         "text": "store.cache = normalizeConfig(JSON.parse(readFileSync(store.configFile, 'utf8')));"
       },
       {
         "file": "lib/config-store.js",
-        "line": 585,
-        "text": "let config = normalizeConfig(JSON.parse(await readFile(store.configFile, 'utf8')));"
+        "line": 1426,
+        "text": "raw = JSON.parse(await readFile(store.configFile, 'utf8'));"
       },
       {
         "file": "lib/config-store.js",
-        "line": 599,
+        "line": 1458,
         "text": "await writeFile(tempFile, JSON.stringify(next, null, 2), { encoding: 'utf8', mode: 0o600 });"
       }
     ]
@@ -73,22 +73,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 687,
+        "line": 808,
         "text": "export const inject = ['webServer', 'tools'];"
       },
       {
         "file": "lib/index.js",
-        "line": 770,
+        "line": 1070,
         "text": "if (ctx.tools && typeof ctx.tools.guard === 'function') {"
       },
       {
         "file": "lib/index.js",
-        "line": 771,
+        "line": 1071,
         "text": "ctx.effect(() => ctx.tools.guard((execution) => configWriteReason(execution && execution.arguments, execution && execution.name)), 'mo-image: config guard');"
       },
       {
         "file": "lib/index.js",
-        "line": 1172,
+        "line": 1707,
         "text": "ctx.tools.register({"
       }
     ]
@@ -108,7 +108,7 @@
       },
       {
         "file": "scripts/release.mjs",
-        "line": 142,
+        "line": 147,
         "text": "const result = spawnSync(command, args, {"
       }
     ]

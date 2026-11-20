@@ -1,15 +1,25 @@
 {
   "name": "@ypingcn/dsh-web-search-insights",
-  "version": "0.1.1",
-  "scannedAt": "2026-11-07T07:29:36.820Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-20T21:47:38.384Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1665,
+        "line": 2355,
         "text": "const response = await fetch(QUICK_SEARCH_PATH, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2750,
+        "text": "fetch(`${LOG_BROWSER_PATH}?${params.toString()}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3020,
+        "text": "fetch(`${STATS_PATH}?${params.toString()}`, {"
       }
     ]
   },
@@ -17,24 +27,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "src/log-browser.js",
+        "line": 11,
+        "text": "import { createReadStream } from 'node:fs'"
+      },
+      {
+        "file": "src/log-browser.js",
+        "line": 13,
+        "text": "import { stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/stats.js",
+        "line": 18,
+        "text": "import { createReadStream } from 'node:fs'"
+      },
+      {
+        "file": "src/stats.js",
+        "line": 19,
+        "text": "import { readdir, stat } from 'node:fs/promises'"
+      },
+      {
         "file": "src/writer.js",
         "line": 16,
         "text": "import { appendFile, mkdir, readdir, rename, stat, unlink } from 'node:fs/promises'"
-      },
-      {
-        "file": "src/writer.js",
-        "line": 123,
-        "text": "await appendFile(this.#file, line, { encoding: 'utf8', mode: 0o600 })"
-      },
-      {
-        "file": "src/writer.js",
-        "line": 139,
-        "text": "this.#directoryReady = mkdir(dirname(this.#file), { recursive: true, mode: 0o700 }).catch((error) => {"
-      },
-      {
-        "file": "src/writer.js",
-        "line": 245,
-        "text": "await unlink(item.path)"
       }
     ]
   },

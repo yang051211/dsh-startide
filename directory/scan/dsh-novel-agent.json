@@ -1,0 +1,127 @@
+{
+  "name": "dsh-novel-agent",
+  "version": "0.2.9",
+  "scannedAt": "2026-11-20T21:47:25.622Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge.js",
+        "line": 23,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 87,
+        "text": "res = await fetch(routeUrl(`${API}/${tail}`), {"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 619,
+        "text": "const response = await fetch(`http://127.0.0.1:${port}/api/health`, { signal: controller.signal });"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 668,
+        "text": "const response = await fetch(`http://127.0.0.1:${port}/api/llm/settings`, {"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 724,
+        "text": "const response = await fetch(`http://127.0.0.1:${this.port}/api/llm/settings`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 22,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 135,
+        "text": "await fs.mkdir(dataDir(), { recursive: true });"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 171,
+        "text": "await fs.mkdir(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 173,
+        "text": "await fs.appendFile(file, text, 'utf8');"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 177,
+        "text": "const raw = await fs.readFile(file, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tools.js",
+        "line": 6,
+        "text": "* `tools.register()` 接受普通对象，只要带 `{ name, description, parameters,"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 477,
+        "text": "disposers.push(tools.register(definition));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 20,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 522,
+        "text": "const child = spawn(argv[0], argv.slice(1), {"
+      },
+      {
+        "file": "lib/python.js",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/python.js",
+        "line": 44,
+        "text": "child = spawn(argv[0], argv.slice(1), {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentDefaultModel",
+    "connection",
+    "llm",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 57,
+      "text": "第一次打开面板，如果本机没有写作引擎，插件会**自动装**（`pip install novel-deconstruct`），"
+    }
+  ],
+  "skippedEntries": []
+}

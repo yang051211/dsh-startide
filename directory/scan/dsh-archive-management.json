@@ -1,7 +1,7 @@
 {
   "name": "dsh-archive-management",
-  "version": "1.2.1",
-  "scannedAt": "2026-11-20T08:47:20.016Z",
+  "version": "1.2.3",
+  "scannedAt": "2026-11-20T21:47:39.492Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,12 +13,12 @@
       },
       {
         "file": "src/client.js",
-        "line": 277,
+        "line": 285,
         "text": "fetch(`${PREFIX}/debug`, {"
       },
       {
         "file": "src/client.js",
-        "line": 825,
+        "line": 833,
         "text": "const resp = await fetch(`${PREFIX}/list-stream`)"
       }
     ]
@@ -28,27 +28,27 @@
     "evidence": [
       {
         "file": "src/index.js",
-        "line": 58,
-        "text": "import { appendFile, mkdir, readFile, readdir, rename, rm, stat, writeFile } from 'node:fs/promises'"
+        "line": 47,
+        "text": "import { appendFile, lstat, mkdir, readFile, readdir, rename, rm, stat, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "src/index.js",
-        "line": 221,
+        "line": 229,
         "text": "await mkdir(root, { recursive: true })"
       },
       {
         "file": "src/index.js",
-        "line": 222,
+        "line": 230,
         "text": "await appendFile(join(root, AUDIT_LOG), line + '\\n')"
       },
       {
         "file": "src/index.js",
-        "line": 616,
+        "line": 661,
         "text": "await mkdir(entryDir, { recursive: true })"
       },
       {
         "file": "src/index.js",
-        "line": 620,
+        "line": 665,
         "text": "await rm(entryDir, { recursive: true, force: true }).catch(() => {})"
       }
     ]
@@ -58,8 +58,34 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tools/analysis-probes/evid_T1_junction_probe.mjs",
+        "line": 15,
+        "text": "import { execSync } from 'node:child_process'"
+      },
+      {
+        "file": "tools/analysis-probes/evid_T1_junction_probe.mjs",
+        "line": 49,
+        "text": "execSync(`cmd /c mklink /J \"${link}\" \"${target}\"`, { stdio: 'pipe' })"
+      },
+      {
+        "file": "tools/analysis-probes/evid_T1_regression.mjs",
+        "line": 13,
+        "text": "import { execSync } from 'node:child_process'"
+      },
+      {
+        "file": "tools/analysis-probes/evid_T1_regression.mjs",
+        "line": 69,
+        "text": "execSync(`cmd /c mklink /J \"${sessJ}\" \"${victim}\"`, { stdio: 'pipe' })"
+      },
+      {
+        "file": "tools/analysis-probes/evid_T1_regression.mjs",
+        "line": 78,
+        "text": "execSync(`cmd /c mklink /J \"${join(sessN, 'extra')}\" \"${victim}\"`, { stdio: 'pipe' })"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

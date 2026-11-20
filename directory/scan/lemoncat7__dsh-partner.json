@@ -1,7 +1,7 @@
 {
   "name": "@lemoncat7/dsh-partner",
-  "version": "2.27.14",
-  "scannedAt": "2026-11-20T08:47:12.742Z",
+  "version": "2.28.0",
+  "scannedAt": "2026-11-20T21:47:23.722Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -22,14 +22,14 @@
         "text": "import { request as httpsRequest } from 'node:https';"
       },
       {
-        "file": "lib/channels/bilibili/media.js",
-        "line": 56,
-        "text": "        const response = await fetch(url + (images ? '/stage-images/' : '/stage/') + encodeURIComponent(channel), { method: 'POST', headers: { authorization: 'B"
+        "file": "lib/channels/bilibili/client.js",
+        "line": 127,
+        "text": "const response = await fetch(address, { method: body === undefined ? 'GET' : 'POST', redirect: 'error',"
       },
       {
-        "file": "lib/channels/bilibili/service.js",
-        "line": 9,
-        "text": "        const response = await fetch((process.env.PARTNER_BILIBILI_URL ?? 'http://dsh-bilibili:8091') + '/call', { method: 'POST', headers: { authorization: 'Be"
+        "file": "lib/channels/bilibili/client.js",
+        "line": 134,
+        "text": "const response = await fetch(creator + '/preupload?' + params, {"
       }
     ]
   },
@@ -97,6 +97,16 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/channels/qq/managed-attention.js",
+        "line": 1,
+        "text": "import { execFile, fork } from 'node:child_process';"
+      },
+      {
+        "file": "lib/channels/qq/managed-attention.js",
+        "line": 392,
+        "text": "this.track(execFile(windows ? process.execPath : 'npm', ["
+      },
+      {
         "file": "lib/heartbeat-command.js",
         "line": 1,
         "text": "import { execFile } from 'node:child_process';"
@@ -108,11 +118,6 @@
       },
       {
         "file": "resources/skills/story-creation/upstream/skills/story-long-scan/scripts/cdp-utils.js",
-        "line": 11,
-        "text": "const { execFileSync } = require(\"child_process\");"
-      },
-      {
-        "file": "resources/skills/story-creation/upstream/skills/story-short-scan/scripts/cdp-utils.js",
         "line": 11,
         "text": "const { execFileSync } = require(\"child_process\");"
       }

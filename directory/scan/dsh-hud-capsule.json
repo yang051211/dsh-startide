@@ -1,15 +1,20 @@
 {
   "name": "dsh-hud-capsule",
-  "version": "0.5.5",
-  "scannedAt": "2026-11-18T21:46:08.900Z",
+  "version": "0.5.8",
+  "scannedAt": "2026-11-20T21:47:29.273Z",
   "icon": "dsh-hud-capsule.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "plugin/index.js",
-        "line": 233,
+        "line": 272,
         "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 600,
+        "text": "const res = await fetch(NPM_LATEST_URL, { signal: AbortSignal.timeout(PLUGIN_UPDATE_TIMEOUT_MS) });"
       }
     ]
   },
@@ -19,7 +24,7 @@
       {
         "file": "plugin/index.js",
         "line": 44,
-        "text": "import { mkdir, writeFile, rename, rm, readdir, stat } from 'node:fs/promises';"
+        "text": "import { mkdir, writeFile, rename, rm, readdir, readFile, stat } from 'node:fs/promises';"
       },
       {
         "file": "plugin/index.js",
@@ -28,18 +33,18 @@
       },
       {
         "file": "plugin/index.js",
-        "line": 138,
+        "line": 131,
+        "text": "const pkg = JSON.parse(readFileSync(path.join(REPO_ROOT, 'package.json'), 'utf8'));"
+      },
+      {
+        "file": "plugin/index.js",
+        "line": 177,
         "text": "const obj = JSON.parse(readFileSync(file, 'utf8'));"
       },
       {
         "file": "plugin/index.js",
-        "line": 257,
+        "line": 296,
         "text": "await rm(dest, { force: true }).catch(() => {});"
-      },
-      {
-        "file": "plugin/index.js",
-        "line": 286,
-        "text": "await rm(zip, { force: true });"
       }
     ]
   },
@@ -62,17 +67,17 @@
       },
       {
         "file": "plugin/index.js",
-        "line": 304,
+        "line": 343,
         "text": "const child = spawn('powershell.exe', ['-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-Command', ps], {"
       },
       {
         "file": "plugin/index.js",
-        "line": 690,
+        "line": 774,
         "text": "const p = spawn("
       },
       {
         "file": "plugin/index.js",
-        "line": 715,
+        "line": 799,
         "text": "const p = spawn('explorer.exe', [file], { windowsHide: true, stdio: 'ignore' });"
       }
     ]

@@ -1,0 +1,104 @@
+{
+  "name": "dsh-screensaver",
+  "version": "0.4.5",
+  "scannedAt": "2026-11-20T21:47:29.875Z",
+  "icon": "dsh-screensaver.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "app/paths.js",
+        "line": 58,
+        "text": "return net.fetch(pathToFileURL(path).href, { headers: req.headers, bypassCustomProtocolHandlers: true })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "app/agents.js",
+        "line": 19,
+        "text": "import { closeSync, existsSync, fstatSync, openSync, readdirSync, readFileSync, readSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "app/agents.js",
+        "line": 551,
+        "text": "meta = JSON.parse(readFileSync(join(dir, f), 'utf8'))"
+      },
+      {
+        "file": "app/agents.js",
+        "line": 656,
+        "text": "buf = readFileSync(path)"
+      },
+      {
+        "file": "app/helper.js",
+        "line": 9,
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, unlinkSync } from 'node:fs'"
+      },
+      {
+        "file": "app/helper.js",
+        "line": 27,
+        "text": "for (const f of sources) h.update(`${basename(f)}\\0`).update(readFileSync(f)).update('\\0')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tool.js",
+        "line": 6,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/tool.js",
+        "line": 19,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "app/agents.js",
+        "line": 18,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "app/agents.js",
+        "line": 411,
+        "text": "execFile('/usr/sbin/lsof', ['-Fn', '--', ...paths], { timeout: 10_000, maxBuffer: 4 * 1024 * 1024 }, (_err, stdout) => {"
+      },
+      {
+        "file": "app/agents.js",
+        "line": 444,
+        "text": "execFile('pgrep', ['-x', 'codex'], (err) => {"
+      },
+      {
+        "file": "app/helper.js",
+        "line": 7,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "app/helper.js",
+        "line": 51,
+        "text": "execFile('/usr/bin/xcrun', ['swiftc', '-O', '-o', tmp, ...sources], { timeout: 300_000 }, (err, _stdout, stderr) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
