@@ -1,0 +1,118 @@
+{
+  "name": "dsh-botgroup",
+  "version": "0.7.2",
+  "scannedAt": "2026-11-21T20:46:17.143Z",
+  "icon": "dsh-botgroup.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/proactive/executors/loopback.js",
+        "line": 49,
+        "text": "const response = await fetch(`${endpoint}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/capabilities/service.js",
+        "line": 3,
+        "text": "import { readdir, writeFile, unlink, rename } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/host/capabilities/service.js",
+        "line": 113,
+        "text": "await unlink(file);"
+      },
+      {
+        "file": "lib/host/capabilities/service.js",
+        "line": 131,
+        "text": "await writeFile(temporary, r.content, { flag: 'wx', mode: 0o600 });"
+      },
+      {
+        "file": "lib/host/capabilities/service.js",
+        "line": 137,
+        "text": "await unlink(temporary).catch(() => { });"
+      },
+      {
+        "file": "lib/host/composer.js",
+        "line": 1,
+        "text": "import { mkdir } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/bot-context.js",
+        "line": 38,
+        "text": "export const inject = ['dshBots', 'tools', 'llm', 'systemPrompt', 'agents'];"
+      },
+      {
+        "file": "lib/host/bot-context.js",
+        "line": 188,
+        "text": "releases.push(agent.ctx.tools.restrict({ deny }));"
+      },
+      {
+        "file": "lib/host/bot-context.js",
+        "line": 192,
+        "text": "releases.push(agent.ctx.tools.restrict({ allow: [] }));"
+      },
+      {
+        "file": "lib/host/bot-context.js",
+        "line": 215,
+        "text": "releases.push(agent.ctx.tools.register(tool));"
+      },
+      {
+        "file": "lib/host/capabilities/service.js",
+        "line": 98,
+        "text": "ownSkills, tools: online && agent ? agent.ctx.tools.schemas(agent).map(tool => tool.name) : [], extraDirs: bot.skills.extraDirs });"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/proactive/coordinator-client.js",
+        "line": 47,
+        "text": "const handle = runtime.spawn({"
+      },
+      {
+        "file": "lib/host/proactive/executors/json-command-bridge.js",
+        "line": 1,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/host/proactive/executors/json-command-bridge.js",
+        "line": 70,
+        "text": "const child = spawn(executable, args, {"
+      },
+      {
+        "file": "lib/host/proactive/repair.js",
+        "line": 90,
+        "text": "const handle = runtime.spawn({"
+      },
+      {
+        "file": "lib/host/proactive/workspace-process.js",
+        "line": 25,
+        "text": "const handle = runtime.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 6,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

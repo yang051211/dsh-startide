@@ -1,0 +1,138 @@
+{
+  "name": "dsh-qqbot-plus",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-21T20:46:31.591Z",
+  "icon": "dsh-qqbot-plus.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 237,
+        "text": "const res = await fetch(BIND_STATE_PATH, { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 289,
+        "text": "const res = await fetch(BIND_MANUAL_PATH, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 396,
+        "text": "fetch(BIND_UNBIND_PATH, { method: \"POST\" }).then(async (res) => {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 446,
+        "text": "fetch(BIND_REFRESH_PATH, { method: \"POST\" }).catch(() => {});"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 930,
+        "text": "fetch(BIND_PERSONA_PATH, { cache: \"no-store\" }).then(async (res) => {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/alarms.js",
+        "line": 10,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/alarms.js",
+        "line": 29,
+        "text": "if (!existsSync(STATE_DIR)) mkdirSync(STATE_DIR, { recursive: true })"
+      },
+      {
+        "file": "lib/alarms.js",
+        "line": 33,
+        "text": "writeFileSync(LOG_FILE, `${new Date().toISOString()} 唤醒器 ${line}\\n`, { flag: 'a' })"
+      },
+      {
+        "file": "lib/alarms.js",
+        "line": 173,
+        "text": "const raw = JSON.parse(readFileSync(this.file, 'utf8'))"
+      },
+      {
+        "file": "lib/alarms.js",
+        "line": 189,
+        "text": "if (!existsSync(STATE_DIR)) mkdirSync(STATE_DIR, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/alarms.js",
+        "line": 283,
+        "text": "const tools = ctx.get?.('tools') ?? ctx.tools"
+      },
+      {
+        "file": "lib/alarms.js",
+        "line": 290,
+        "text": "tools.register({"
+      },
+      {
+        "file": "lib/fishmeme/plugin.js",
+        "line": 420,
+        "text": "registry = ctx.get?.('tools') ?? ctx.tools"
+      },
+      {
+        "file": "lib/fishmeme/plugin.js",
+        "line": 422,
+        "text": "registry = ctx.tools"
+      },
+      {
+        "file": "lib/fishmemory/plugin.js",
+        "line": 985,
+        "text": "registry = ctx.get?.('tools') ?? ctx.tools"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/fishmemory/plugin.js",
+        "line": 22,
+        "text": "import child from 'node:child_process'"
+      },
+      {
+        "file": "lib/fishmemory/plugin.js",
+        "line": 120,
+        "text": "return child.spawnSync('git', args, {"
+      },
+      {
+        "file": "lib/humanlike/real.js",
+        "line": 19,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/humanlike/real.js",
+        "line": 90,
+        "text": "proc = spawn('powershell', ['-NoProfile', '-NonInteractive', '-Command', FOREGROUND_SCRIPT], {"
+      },
+      {
+        "file": "lib/identity/persona.js",
+        "line": 11,
+        "text": "import { spawnSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 5,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

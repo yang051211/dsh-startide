@@ -1,0 +1,90 @@
+{
+  "name": "dsh-modelscope-pool",
+  "version": "0.11.1",
+  "scannedAt": "2026-11-21T20:46:09.155Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/catalog.js",
+        "line": 29,
+        "text": "const res = await fetch(`${base}/models`, { headers: { accept: 'application/json' }, signal: AbortSignal.timeout(timeoutMs) })"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 4,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 268,
+        "text": "upstreamRes = await fetch(target, {"
+      },
+      {
+        "file": "lib/quota.js",
+        "line": 37,
+        "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "lib/web.js",
+        "line": 168,
+        "text": "' return fetch(\"' + PAGE_PATH + '/api/action\",{method:\"POST\",headers:{\"content-type\":\"application/json\"},body:JSON.stringify(body)})',"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "import { readFile, writeFile, mkdir, chmod } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 66,
+        "text": "const raw = JSON.parse(await readFile(file, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 69,
+        "text": "await mkdir(dir, { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 70,
+        "text": "await writeFile(file, JSON.stringify(DEFAULTS, null, 2) + '\\n', { mode: 0o600 }).catch(() => {})"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 96,
+        "text": "await writeFile(join(dir, 'config.json'), body + '\\n', { mode: 0o600 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 154,
+      "text": "dsh plugin --profile web add \"$DSH_HOME/dsh-go/plugins/dsh-modelscope-pool\""
+    }
+  ],
+  "skippedEntries": []
+}

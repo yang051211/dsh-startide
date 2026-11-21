@@ -1,30 +1,35 @@
 {
   "name": "@liangjiehappy/dsh-ops",
-  "version": "0.5.3",
-  "scannedAt": "2026-11-19T21:28:14.707Z",
+  "version": "0.5.8",
+  "scannedAt": "2026-11-21T20:46:08.946Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 97,
-        "text": "const r = await fetch(url, {"
+        "file": "lib/client.js",
+        "line": 26,
+        "text": "      try{const r=await fetch(API+\"/me\",{headers:{Authorization:\"Bearer \"+tk}}); if(r.ok)setMe(await r.json()); else {localStorage.removeItem(TOKEN_KEY);setMe(n"
       },
       {
-        "file": "lib/index.js",
-        "line": 199,
-        "text": "const res = await fetch(base + path, {"
+        "file": "lib/client.js",
+        "line": 31,
+        "text": "try{const r=await fetch(API+\"/device/code\",{method:\"POST\"});const d=await r.json();setCode(d);"
       },
       {
-        "file": "lib/migrate.js",
-        "line": 9,
-        "text": "import http from \"node:http\";"
+        "file": "lib/client.js",
+        "line": 32,
+        "text": "const poll=async()=>{try{const tr=await fetch(API+\"/device/token\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({device_code:d."
       },
       {
-        "file": "lib/migrate.js",
-        "line": 10,
-        "text": "import https from \"node:https\";"
+        "file": "lib/client.js",
+        "line": 60,
+        "text": "=async()=>{setB(true);try{const r=await fetch(\"https://deepseekbase.com/api/feedback\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.strin"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 73,
+        "text": "      const r=await fetch(\"https://deepseekbase.com/work/api/public/summary?t=\"+Date.now(),{cache:\"no-store\",signal:c.signal});clearTimeout(t);setD(await r.json"
       }
     ]
   },

@@ -1,21 +1,52 @@
 {
   "name": "dsh-clawrouter",
-  "version": "0.12.0",
-  "scannedAt": "2026-10-26T10:07:21.808Z",
+  "version": "0.13.1",
+  "scannedAt": "2026-11-21T20:46:29.314Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 234,
+        "line": 116,
+        "text": "const response = await fetch(`${apiUrl.replace(/\\/$/, \"\")}/v1/${path}`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 371,
         "text": "response = await fetch(url, {"
       }
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 17,
+        "text": "import { chmod, mkdir, readFile, rename, rm, writeFile } from \"fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 33,
+        "text": "content = (await readFile(resolved, \"utf8\")).trim();"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 60,
+        "text": "await mkdir(dirname(resolved), { recursive: true, mode: 448 });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 63,
+        "text": "await writeFile(staging, `${trimmed}"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 68,
+        "text": "await rm(staging, { force: true });"
+      }
+    ]
   },
   "agentTools": {
     "hit": true,

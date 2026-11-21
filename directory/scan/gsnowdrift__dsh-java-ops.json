@@ -1,0 +1,111 @@
+{
+  "name": "@gsnowdrift/dsh-java-ops",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-21T20:46:16.997Z",
+  "icon": "gsnowdrift__dsh-java-ops.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 6456,
+        "text": "const res = await fetch(API + \"/action\", {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 6465,
+        "text": "const res = await fetch(API + \"/state?session=\" + encodeURIComponent(sessionId || \"\"));"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 6485,
+        "text": "const res = await fetch(API + \"/action\", {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 84,
+        "text": "const undici = await import('undici')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 485,
+        "text": "const response = await fetch(url, init)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import { mkdirSync, readFileSync, writeFileSync, readdirSync, statSync, existsSync, createWriteStream, renameSync, rmSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 51,
+        "text": "const raw = JSON.parse(readFileSync(STATE_FILE, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 583,
+        "text": "const raw = JSON.parse(readFileSync(path, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 601,
+        "text": "mkdirSync(join(LINT_ROOT, tool), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 602,
+        "text": "writeFileSync(join(LINT_ROOT, tool, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 22,
+        "text": "export const inject = ['connection', 'tools', 'sessions', 'subprocess']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3038,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1739,
+        "text": "live = ctx.subprocess.spawn({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2175,
+        "text": "live = ctx.subprocess.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 5,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "sessions",
+    "subprocess",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

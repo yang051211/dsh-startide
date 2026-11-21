@@ -1,0 +1,164 @@
+{
+  "name": "dsh-ssh-workbench",
+  "version": "1.7.10",
+  "scannedAt": "2026-11-21T20:46:19.650Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 599,
+        "text": "const response = await fetch(apiPath(BASE + path), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 5256,
+        "text": "// cleanup fetch (S4). No terminal is auto-opened on mount (U2): the empty"
+      },
+      {
+        "file": "lib/routes.js",
+        "line": 718,
+        "text": "async fetch(request) {"
+      },
+      {
+        "file": "vendor/ssh2/lib/http-agents.js",
+        "line": 3,
+        "text": "const { Agent: HttpAgent } = require('http');"
+      },
+      {
+        "file": "vendor/ssh2/lib/http-agents.js",
+        "line": 4,
+        "text": "const { Agent: HttpsAgent } = require('https');"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/broker.js",
+        "line": 18,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/core/broker.js",
+        "line": 161,
+        "text": "privateKey = fs.readFileSync(keyPath)"
+      },
+      {
+        "file": "lib/core/local-file-api.js",
+        "line": 11,
+        "text": "import fsp from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/core/local-file-api.js",
+        "line": 141,
+        "text": "return await localfs.mkdir(remotePath)"
+      },
+      {
+        "file": "lib/core/localfs.js",
+        "line": 20,
+        "text": "import fsp from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/guard.js",
+        "line": 4,
+        "text": "* Registered through `ctx.tools.guard()`: synchronous, monotonic, and checked"
+      },
+      {
+        "file": "lib/core/guard.js",
+        "line": 60,
+        "text": "* @returns {(exec: object) => string|undefined} a `ctx.tools.guard()` handler"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 9,
+        "text": "* machine. A synchronous `ctx.tools.guard()` blacklist is the fallback safety"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 37,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 256,
+        "text": "if (typeof ctx.tools?.register === 'function') {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "vendor/ssh2/lib/agent.js",
+        "line": 7,
+        "text": "const { execFile, spawn } = require('child_process');"
+      },
+      {
+        "file": "vendor/ssh2/lib/agent.js",
+        "line": 218,
+        "text": "const proc = this.proc = spawn(EXEPATH, [ data.length ]);"
+      },
+      {
+        "file": "vendor/ssh2/lib/agent.js",
+        "line": 284,
+        "text": "execFile('cygpath', ['-w', socketPath], (err, stdout, stderr) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js",
+    "vendor/ssh2/lib/protocol/crypto/poly1305.js",
+    "vendor/xterm.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 103,
+      "text": "- **stdout/stderr 顺序**：两者是独立管道，收集后分开返回（与原生 bash 的值契约一致），交错顺序会丢失；看 `make`/`pip install` 这类日志时需要留意。"
+    }
+  ],
+  "skippedEntries": [
+    "vendor/node_modules/asn1/LICENSE (outside the package)",
+    "vendor/node_modules/bcrypt-pbkdf/LICENSE (outside the package)",
+    "vendor/node_modules/safer-buffer/LICENSE (outside the package)",
+    "vendor/node_modules/tweetnacl/LICENSE (outside the package)",
+    "vendor/node_modules/safer-buffer/dangerous.js (outside the package)",
+    "vendor/node_modules/asn1/lib/ber/errors.js (outside the package)",
+    "vendor/node_modules/asn1/lib/ber/index.js (outside the package)",
+    "vendor/node_modules/asn1/lib/index.js (outside the package)",
+    "vendor/node_modules/bcrypt-pbkdf/index.js (outside the package)",
+    "vendor/node_modules/tweetnacl/nacl-fast.js (outside the package)",
+    "vendor/node_modules/tweetnacl/nacl.js (outside the package)",
+    "vendor/node_modules/asn1/lib/ber/reader.js (outside the package)",
+    "vendor/node_modules/safer-buffer/safer.js (outside the package)",
+    "vendor/node_modules/asn1/lib/ber/types.js (outside the package)",
+    "vendor/node_modules/asn1/lib/ber/writer.js (outside the package)",
+    "vendor/node_modules/asn1/package.json (outside the package)",
+    "vendor/node_modules/bcrypt-pbkdf/package.json (outside the package)",
+    "vendor/node_modules/safer-buffer/package.json (outside the package)",
+    "vendor/node_modules/tweetnacl/package.json (outside the package)",
+    "vendor/node_modules/tweetnacl/AUTHORS.md (outside the package)",
+    "vendor/node_modules/bcrypt-pbkdf/CONTRIBUTING.md (outside the package)",
+    "vendor/node_modules/asn1/README.md (outside the package)",
+    "vendor/node_modules/bcrypt-pbkdf/README.md (outside the package)",
+    "vendor/node_modules/safer-buffer/Readme.md (outside the package)",
+    "vendor/node_modules/tweetnacl/README.md (outside the package)"
+  ]
+}

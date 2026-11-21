@@ -1,7 +1,7 @@
 {
   "name": "@sputnikzaychik/dsh-qq-bot",
-  "version": "0.14.1",
-  "scannedAt": "2026-11-16T08:06:31.138Z",
+  "version": "0.14.2",
+  "scannedAt": "2026-11-21T20:46:15.874Z",
   "icon": "sputnikzaychik__dsh-qq-bot.webp",
   "network": {
     "hit": true,
@@ -13,22 +13,22 @@
       },
       {
         "file": "lib/client/settings.js",
-        "line": 1720,
+        "line": 2359,
         "text": "try { request = fetch(STICKER_STATE_PATH, { credentials: 'same-origin' }); }"
       },
       {
         "file": "lib/client/settings.js",
-        "line": 1752,
+        "line": 2391,
         "text": "request = fetch(STICKER_REBUILD_PATH, {"
       },
       {
         "file": "lib/client/settings.js",
-        "line": 1913,
+        "line": 2500,
         "text": "return fetch(QQ_BIND_STATE, { credentials: 'same-origin' })"
       },
       {
         "file": "lib/client/settings.js",
-        "line": 1927,
+        "line": 2514,
         "text": "fetch(QQ_BIND_REFRESH, { method: 'POST', credentials: 'same-origin' })"
       }
     ]
@@ -48,17 +48,17 @@
       },
       {
         "file": "lib/config.js",
-        "line": 6,
+        "line": 7,
         "text": "import { readFileSync, readdirSync } from 'node:fs';"
       },
       {
         "file": "lib/config.js",
-        "line": 52,
+        "line": 53,
         "text": "parsed = JSON.parse(readFileSync(fullPath, 'utf8'));"
       },
       {
         "file": "lib/config.js",
-        "line": 150,
+        "line": 335,
         "text": "parsed = JSON.parse(readFileSync(fullPath, 'utf8'));"
       }
     ]
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/gateway/plugin.js",
-        "line": 76,
+        "line": 68,
         "text": "export const inject = ['subprocess', 'sessionController', 'timer', 'attachments', 'llm', 'tools'];"
       },
       {
         "file": "lib/session/manager.js",
-        "line": 306,
+        "line": 393,
         "text": "// 0.2 起 Guard 也管着 agent 上下文里的 tools：直接 ctx.tools 会抛，get() 才安全；"
       },
       {
         "file": "lib/session/manager.js",
-        "line": 313,
+        "line": 400,
         "text": "try { agentTools = entry.agent.ctx.tools; } catch (error) { agentTools = undefined; }"
       },
       {
         "file": "lib/session/manager.js",
-        "line": 395,
+        "line": 482,
         "text": "toolsService = (typeof entry.agent.ctx.get === 'function') ? entry.agent.ctx.get('tools') : entry.agent.ctx.tools;"
       },
       {
         "file": "lib/tools/index.js",
-        "line": 37,
+        "line": 38,
         "text": "* DSH 0.2 起 Cordis 的 Guard 规定：读写 ctx.tools 必须先声明 inject: ['tools']，"
       }
     ]
@@ -112,14 +112,14 @@
         "text": "child = spawn(command, args, {"
       },
       {
-        "file": "lib/gateway/plugin.js",
-        "line": 26,
-        "text": "import { spawn } from 'node:child_process';"
-      },
-      {
         "file": "lib/session/workspace.js",
         "line": 7,
         "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/tools/moli.js",
+        "line": 9,
+        "text": "import { execFile } from 'node:child_process';"
       }
     ]
   },

@@ -1,0 +1,103 @@
+{
+  "name": "dsh-open-design-preset",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-21T20:46:20.408Z",
+  "icon": "dsh-open-design-preset.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 89,
+        "text": "return fetch(API + path, {"
+      },
+      {
+        "file": "skills/web-clone/scripts/asset-harvest.mjs",
+        "line": 172,
+        "text": ": await fetch(entry.url, {"
+      },
+      {
+        "file": "skills/web-clone/scripts/lib/system-browser.mjs",
+        "line": 26,
+        "text": "this.socket = new WebSocket(url);"
+      },
+      {
+        "file": "skills/web-clone/scripts/lib/system-browser.mjs",
+        "line": 427,
+        "text": "await fetch(`${this.browser.httpBase}/json/close/${this.target.id}`).catch(() => undefined);"
+      },
+      {
+        "file": "skills/web-clone/scripts/lib/system-browser.mjs",
+        "line": 443,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import fs from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 126,
+        "text": "raw = await fs.readFile(path.join(directory, fileName), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 174,
+        "text": "const raw = await fs.readFile(path.join(root, entry.name, fileName), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 187,
+        "text": "const raw = await fs.readFile(path.join(root, entry.name), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 229,
+        "text": "version: JSON.parse(await fs.readFile(path.join(PACKAGE_ROOT, 'package.json'), 'utf8')).version,"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 229,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "skills/web-clone/scripts/lib/system-browser.mjs",
+        "line": 1,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "skills/web-clone/scripts/lib/system-browser.mjs",
+        "line": 532,
+        "text": "const child = spawn(executablePath, ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

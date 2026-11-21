@@ -1,0 +1,82 @@
+{
+  "name": "@nilzx/dsh-mcp-connector",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-21T20:46:30.528Z",
+  "icon": "nilzx__dsh-mcp-connector.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 470,
+        "text": "const response = await fetch(url, { credentials: 'same-origin', cache: 'no-store', ...init })"
+      },
+      {
+        "file": "src/oauth/loopback.js",
+        "line": 14,
+        "text": "import { createServer } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 34,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 297,
+        "text": "scopeRestrictions.set(agent.id, agent.ctx.tools.restrict({ deny: denied }))"
+      },
+      {
+        "file": "index.js",
+        "line": 331,
+        "text": "ctx.effect(() => ctx.tools.register(definition), `mcp-connector: ${definition.name}`)"
+      },
+      {
+        "file": "src/connection.js",
+        "line": 405,
+        "text": "const dispose = this.ctx.tools.register(definition)"
+      },
+      {
+        "file": "src/lifecycle.js",
+        "line": 27,
+        "text": "if (typeof ctx.tools?.guard !== 'function' || !ctx.get('llm')) fail('monotonic tool guards and model stream middleware are required')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/oauth/flow.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/oauth/flow.js",
+        "line": 32,
+        "text": "const child = spawn(command, args, { stdio: 'ignore', detached: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,92 @@
+{
+  "name": "dsh-repo-watch",
+  "version": "0.5.4",
+  "scannedAt": "2026-11-21T20:46:30.472Z",
+  "icon": "dsh-repo-watch.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/github.mjs",
+        "line": 44,
+        "text": "const response = await fetch(`${API}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/github.mjs",
+        "line": 8,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/github.mjs",
+        "line": 27,
+        "text": "const text = readFileSync(join(dshHome(), '.credentials.yaml'), 'utf8')"
+      },
+      {
+        "file": "lib/log.mjs",
+        "line": 11,
+        "text": "import { appendFileSync, renameSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/log.mjs",
+        "line": 33,
+        "text": "appendFileSync(path, `${JSON.stringify({ time: Date.now(), ...record })}\\n`)"
+      },
+      {
+        "file": "lib/state.mjs",
+        "line": 9,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 31,
+        "text": "* reaching for `ctx.tools` without declaring it fails activation with"
+      },
+      {
+        "file": "index.mjs",
+        "line": 34,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.mjs",
+        "line": 438,
+        "text": "ctx.tools.register(statusTool(config))"
+      },
+      {
+        "file": "index.mjs",
+        "line": 439,
+        "text": "ctx.tools.register(digestTool(config))"
+      },
+      {
+        "file": "index.mjs",
+        "line": 440,
+        "text": "ctx.tools.register(ackTool(config))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

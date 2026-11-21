@@ -1,0 +1,79 @@
+{
+  "name": "dsh-attune",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-21T20:46:24.445Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 55,
+        "text": "const response = await fetch(base + path, body === undefined"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/appearance.js",
+        "line": 1,
+        "text": "import { mkdir, readFile, rename, rm, rmdir, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/appearance.js",
+        "line": 98,
+        "text": "return normalizeAppearance(JSON.parse(await readFile(filePath, 'utf8')))"
+      },
+      {
+        "file": "lib/appearance.js",
+        "line": 106,
+        "text": "await mkdir(dirname(filePath), { recursive: true })"
+      },
+      {
+        "file": "lib/appearance.js",
+        "line": 109,
+        "text": "try { await mkdir(lockPath); break } catch (error) { if (error?.code !== 'EEXIST') throw error }"
+      },
+      {
+        "file": "lib/appearance.js",
+        "line": 117,
+        "text": "await writeFile(temp, JSON.stringify(next), { encoding: 'utf8', mode: 0o600, flag: 'wx' })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/desktop-pet.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/desktop-pet.js",
+        "line": 65,
+        "text": "return spawn(helper, [String(process.ppid), dataDir, intent], { env, windowsHide: true, stdio: ['pipe', 'pipe', 'ignore'] })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [
+    "lib/native/AttuneDesktop.exe"
+  ],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

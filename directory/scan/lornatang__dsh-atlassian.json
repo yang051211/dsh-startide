@@ -1,24 +1,24 @@
 {
   "name": "@lornatang/dsh-atlassian",
-  "version": "0.1.15",
-  "scannedAt": "2026-11-19T08:55:12.085Z",
+  "version": "0.1.16",
+  "scannedAt": "2026-11-21T20:46:11.910Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/bridge.js",
-        "line": 78,
+        "line": 81,
         "text": "return network.fetch(value, init);"
       },
       {
         "file": "lib/bridge.js",
-        "line": 95,
+        "line": 98,
         "text": "return network.fetch(value, { ...init, signal });"
       },
       {
         "file": "lib/bridge.js",
-        "line": 152,
+        "line": 155,
         "text": "const response = await network.fetch(value, { ...init, signal: AbortSignal.timeout(Math.min(120000, Math.max(30000, this.#options.toolCallTimeoutMs))) });"
       },
       {
@@ -90,6 +90,16 @@
         "file": "lib/open-url.js",
         "line": 18,
         "text": "const child = spawn(command, args, { detached: true, stdio: 'ignore', windowsHide: true });"
+      },
+      {
+        "file": "lib/output-validator.js",
+        "line": 43,
+        "text": "function spawn() {"
+      },
+      {
+        "file": "lib/output-validator.js",
+        "line": 112,
+        "text": "entry = idle.pop() ?? spawn();"
       }
     ]
   },

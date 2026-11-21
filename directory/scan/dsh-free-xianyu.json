@@ -1,0 +1,143 @@
+{
+  "name": "dsh-free-xianyu",
+  "version": "1.1.2",
+  "scannedAt": "2026-11-21T20:46:22.291Z",
+  "icon": "dsh-free-xianyu.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 126,
+        "text": "const res = await fetch(API + path, init)"
+      },
+      {
+        "file": "lib/backend.js",
+        "line": 76,
+        "text": "const response = await fetch(healthURL(), { signal: AbortSignal.timeout(timeoutMs) })"
+      },
+      {
+        "file": "lib/gateway.selftest.mjs",
+        "line": 16,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "upstream/chrome-extension/background.js",
+        "line": 230,
+        "text": "fetch(`${window.location.origin}/__codex_probe?ts=${Date.now()}`, {"
+      },
+      {
+        "file": "upstream/dist/assets/index-DPLr1ds5.js",
+        "line": 2,
+        "text": "(r){if(r.ep)return;r.ep=!0;const o=n(r);fetch(r.href,o)}})();function ui(e){const t=Object.create(null);for(const n of e.split(\",\"))t[n]=1;return n=>n in t}cons"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/backend.js",
+        "line": 12,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/backend.js",
+        "line": 127,
+        "text": "fs.mkdirSync(dataDir, { recursive: true })"
+      },
+      {
+        "file": "lib/frontend.js",
+        "line": 19,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/frontend.js",
+        "line": 129,
+        "text": "const raw = fs.readFileSync(buildErrorFile(distDir), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 669,
+        "text": "const disposers = createToolDefinitions(toolDeps).map((definition) => scoped.tools.register(definition))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/backend.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/backend.js",
+        "line": 55,
+        "text": "/** @type {import('node:child_process').ChildProcess | null} */"
+      },
+      {
+        "file": "lib/backend.js",
+        "line": 159,
+        "text": "child = spawn(target.python, [...pythonArgs, '-m', 'src.app'], {"
+      },
+      {
+        "file": "lib/backend.js",
+        "line": 282,
+        "text": "const killer = spawn('taskkill', ['/pid', String(pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "lib/backend.js",
+        "line": 329,
+        "text": "spawn('taskkill', ['/pid', String(child.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "upstream/dist/assets/AccountsView-6bE2cQfA.js",
+    "upstream/dist/assets/DashboardView-Bzuav3Ek.js",
+    "upstream/dist/assets/DialogTitle.vue_vue_type_script_setup_true_lang-DcF_YnXv.js",
+    "upstream/dist/assets/index-DPLr1ds5.js",
+    "upstream/dist/assets/ResultsView-CcbPbt9I.js",
+    "upstream/dist/assets/SelectValue.vue_vue_type_script_setup_true_lang-BVYE1_L2.js",
+    "upstream/dist/assets/SettingsView-1TW7cswB.js",
+    "upstream/dist/assets/TabsTrigger.vue_vue_type_script_setup_true_lang-DlGtUzal.js",
+    "upstream/dist/assets/TasksView-ClNcheh3.js",
+    "upstream/dist/assets/Teleport-BbE6WHJq.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 51,
+      "text": "│  │  ├─ venv/    ← python -m venv + pip install（首次约 40 秒）"
+    },
+    {
+      "file": "README.md",
+      "line": 145,
+      "text": "2. `pip install` 装内置的依赖清单 → 18 条声明、52 个包，含 fastapi / playwright / openai"
+    },
+    {
+      "file": "README.md",
+      "line": 262,
+      "text": "> 转发。没装 Bun 会返回 502 并提示「需要本机 Bun」：`npm i -g --allow-scripts=bun bun`。"
+    }
+  ],
+  "skippedEntries": []
+}

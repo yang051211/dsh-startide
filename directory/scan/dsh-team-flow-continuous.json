@@ -1,7 +1,7 @@
 {
   "name": "dsh-team-flow-continuous",
-  "version": "0.2.1",
-  "scannedAt": "2026-11-09T23:07:04.636Z",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-21T20:46:28.536Z",
   "icon": "dsh-team-flow-continuous.svg",
   "network": {
     "hit": false,
@@ -16,13 +16,8 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 5,
-        "text": "export const inject = ['agents', 'agentTeams', 'tools', 'systemPrompt'];"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 10,
-        "text": "if (ctx.agents.list().some(agent => ctx.agentTeams.tryMembership(agent) && ctx.tools.get('wait_agent', agent)))"
+        "line": 34,
+        "text": "if (ctx.agents.list().some(agent => teams.tryMembership(agent) && ctx.tools.get('wait_agent', agent))) {"
       },
       {
         "file": "lib/register.js",
@@ -31,13 +26,13 @@
       },
       {
         "file": "lib/wake-core.js",
-        "line": 7,
-        "text": "export const inject = ['agents', 'agentTeams', 'tools', 'systemPrompt'];"
+        "line": 28,
+        "text": "const tools = ctx.tools;"
       },
       {
         "file": "lib/wake-core.js",
-        "line": 99,
-        "text": "const tools = ctx.tools;"
+        "line": 155,
+        "text": "const definition = ctx.tools.get('wait_agent', agent);"
       }
     ]
   },
@@ -52,12 +47,7 @@
   "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [
-    "agentTeams",
-    "agents",
-    "systemPrompt",
-    "tools"
-  ],
+  "requiredServices": [],
   "setupHints": [],
   "skippedEntries": []
 }

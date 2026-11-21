@@ -1,19 +1,19 @@
 {
   "name": "dsh-computer-use-win",
-  "version": "0.6.1",
-  "scannedAt": "2026-11-18T21:45:45.265Z",
+  "version": "0.6.2",
+  "scannedAt": "2026-11-21T20:45:55.276Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "mcp/browser.mjs",
-        "line": 1071,
+        "line": 1049,
         "text": "const response = await fetch(new URL('/json/version', url), { signal: AbortSignal.timeout(3000) });"
       },
       {
         "file": "mcp/client.js",
-        "line": 1230,
+        "line": 1273,
         "text": "        const response=await fetch(url,{method,cache:'no-store',credentials:'same-origin',headers:{...(body===undefined?{}:{'content-type':'application/json'}),"
       }
     ]
@@ -43,8 +43,8 @@
       },
       {
         "file": "mcp/browser-bidi.mjs",
-        "line": 164,
-        "text": "try { writeFileSync(lock, String(process.pid), { flag: 'wx' }); break; }"
+        "line": 168,
+        "text": "    writeFileSync(path.join(profile, 'user.js'), Object.entries(FIREFOX_PREFS).map(([k, v]) => `user_pref(${JSON.stringify(k)}, ${JSON.stringify(v)});`).join('\\"
       }
     ]
   },
@@ -58,29 +58,39 @@
       },
       {
         "file": "mcp/diagnostics.mjs",
-        "line": 268,
+        "line": 273,
         "text": ".join(' / ')}` : ''}${facts.mcpClient ? `, dsh-mcp-client ${facts.mcpClient}` : ''}${facts.electron ? `, Electron ${facts.electron}` : ''}, Node ${facts.node}`,"
       },
       {
         "file": "mcp/dsh-plugin.mjs",
-        "line": 19,
+        "line": 21,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "mcp/dsh-plugin.mjs",
-        "line": 148,
+        "line": 158,
         "text": "const bridge = await import('@deepseek-ai/dsh-mcp-client');"
       },
       {
-        "file": "mcp/host-compat.mjs",
-        "line": 9,
-        "text": "let version='unknown';try{version=require('@deepseek-ai/dsh-mcp-client/package.json').version;}catch{}"
+        "file": "mcp/dsh-plugin.mjs",
+        "line": 180,
+        "text": "mcpClient: support.version, bridge: { ...bridgeDiagnostics(bridge, connection, ctx.tools, enabledToolsForSettings(desired).length, support.peerMismatches),"
       }
     ]
   },
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "mcp/background-desktop.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "mcp/background-desktop.mjs",
+        "line": 15,
+        "text": "const child = spawn(DEFAULT_POWERSHELL, [...backgroundDesktopArgs(name), '-Own'], { windowsHide: true });"
+      },
       {
         "file": "mcp/browser-bidi.mjs",
         "line": 5,
@@ -93,18 +103,8 @@
       },
       {
         "file": "mcp/browser.mjs",
-        "line": 11,
+        "line": 12,
         "text": "import { execFile, spawn } from 'node:child_process';"
-      },
-      {
-        "file": "mcp/browser.mjs",
-        "line": 158,
-        "text": "const child = spawn(executablePath, args, {"
-      },
-      {
-        "file": "mcp/browser.mjs",
-        "line": 436,
-        "text": "nst output = await new Promise(resolve => execFile(registry, ['query', 'HKCU\\\\Software\\\\Microsoft\\\\Windows\\\\Shell\\\\Associations\\\\UrlAssociations\\\\https', '/s'],"
       }
     ]
   },

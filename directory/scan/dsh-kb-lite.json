@@ -1,7 +1,7 @@
 {
   "name": "dsh-kb-lite",
-  "version": "0.4.11",
-  "scannedAt": "2026-11-05T21:22:51.059Z",
+  "version": "0.4.13",
+  "scannedAt": "2026-11-21T20:46:25.933Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -17,22 +17,22 @@
       },
       {
         "file": "lib/plugin.js",
-        "line": 398,
+        "line": 415,
         "text": "fs.readFileSync(path.join(kbRoot, 'sync-roots.json'), 'utf8').replace(/^\\uFEFF/, ''),"
       },
       {
         "file": "lib/plugin.js",
-        "line": 413,
+        "line": 430,
         "text": "const parsed = JSON.parse(fs.readFileSync(path.join(kbRoot, 'sync-state.json'), 'utf8'))"
       },
       {
         "file": "lib/plugin.js",
-        "line": 422,
+        "line": 439,
         "text": "fs.mkdirSync(kbRoot, { recursive: true })"
       },
       {
         "file": "lib/plugin.js",
-        "line": 423,
+        "line": 440,
         "text": "fs.writeFileSync(path.join(kbRoot, 'sync-state.json'), JSON.stringify(next, null, 2))"
       }
     ]
@@ -42,27 +42,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 6,
+        "line": 7,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "lib/plugin.js",
-        "line": 110,
+        "line": 127,
         "text": "* @param {object} ctx              DSH context (uses ctx.tools.register, ctx.effect)"
       },
       {
         "file": "lib/plugin.js",
-        "line": 128,
+        "line": 145,
         "text": "if (!ctx || !ctx.tools || typeof ctx.tools.register !== 'function') {"
       },
       {
         "file": "lib/plugin.js",
-        "line": 129,
+        "line": 146,
         "text": "throw new TypeError('applyPlugin requires ctx.tools.register')"
       },
       {
         "file": "lib/plugin.js",
-        "line": 824,
+        "line": 826,
         "text": "ctx.tools.register(defineTool(definition))"
       }
     ]
@@ -77,12 +77,12 @@
       },
       {
         "file": "lib/rpc.js",
-        "line": 121,
+        "line": 122,
         "text": "* @param {Function} [options.spawnFn] Injectable spawn (tests)."
       },
       {
         "file": "lib/rpc.js",
-        "line": 295,
+        "line": 296,
         "text": "const result = spawnSync("
       }
     ]
@@ -100,27 +100,27 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 181,
+      "line": 185,
       "text": "- Optional, for PDF: `pymupdf` (`pip install pymupdf`)."
     },
     {
       "file": "README.md",
-      "line": 182,
+      "line": 186,
       "text": "dense retrieval: `numpy` and `sentence-transformers` (`pip install numpy sentence-transformers`), in the interpreter the plugin launches (see `KB_LITE_PYTHON`)."
     },
     {
       "file": "README.md",
-      "line": 250,
+      "line": 254,
       "text": "python -m pip install numpy sentence-transformers"
     },
     {
       "file": "README.zh.md",
-      "line": 177,
+      "line": 181,
       "text": "- 可选项，PDF 需要：`pymupdf`（`pip install pymupdf`）。"
     },
     {
       "file": "README.zh.md",
-      "line": 178,
+      "line": 182,
       "text": "- 可选项，稠密检索需要：`numpy` 和 `sentence-transformers`（`pip install numpy sentence-transformers`），装进插件实际启动的那个解释器（见 `KB_LITE_PYTHON`）。"
     }
   ],

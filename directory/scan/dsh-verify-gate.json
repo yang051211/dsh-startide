@@ -1,0 +1,77 @@
+{
+  "name": "dsh-verify-gate",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-21T20:46:31.658Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "test/ledger.test.mjs",
+        "line": 85,
+        "text": "assert.equal(isVerification('run_code', { code: \"curl -s http://x | grep -v pytest\" }), true);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/evidence.mjs",
+        "line": 9,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "scripts/evidence.mjs",
+        "line": 19,
+        "text": "const raw = fs.readFileSync(file);"
+      },
+      {
+        "file": "scripts/repair-session.mjs",
+        "line": 33,
+        "text": "import { readFileSync, writeFileSync, readdirSync, statSync, existsSync, mkdirSync, copyFileSync, renameSync, rmSync } from 'node:fs';"
+      },
+      {
+        "file": "scripts/repair-session.mjs",
+        "line": 210,
+        "text": "try { buffer = readFileSync(path); } catch (error) {"
+      },
+      {
+        "file": "scripts/repair-session.mjs",
+        "line": 248,
+        "text": "writeFileSync(staged, candidate);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 25,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 142,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

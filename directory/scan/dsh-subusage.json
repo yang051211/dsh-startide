@@ -1,20 +1,15 @@
 {
   "name": "dsh-subusage",
-  "version": "1.0.0",
-  "scannedAt": "2026-11-14T19:29:26.421Z",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-21T20:46:11.109Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1258,
+        "line": 1313,
         "text": "const response = await fetch(step.missing.url, { headers: { accept: \"application/json\" }, credentials: \"same-origin\" });"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 2639,
-        "text": "try { response = await this.eacHandler.fetch(request, this.eacPeer); }"
       },
       {
         "file": "lib/mimo-qr.js",
@@ -30,6 +25,11 @@
         "file": "lib/mimo-qr.js",
         "line": 283,
         "text": "const first = await this.fetch(`${this.accountBase()}/pass/serviceLogin?sid=${MIMO_QR_SID}&_json=true`, { headers, signal: job.controller.signal });"
+      },
+      {
+        "file": "lib/mimo-qr.js",
+        "line": 291,
+        "text": "\t\t\tconst second = await this.fetch(`${this.accountBase()}/longPolling/loginUrl?${query}`, { headers: { ...headers, Cookie: baseCookies, Referer: `${this.account"
       }
     ]
   },
@@ -48,17 +48,17 @@
       },
       {
         "file": "lib/index.js",
-        "line": 388,
+        "line": 402,
         "text": "const parsed = JSON.parse(io.readFileSync(COMMAND_CODE_AUTH_FILE, \"utf8\"));"
       },
       {
         "file": "lib/index.js",
-        "line": 455,
+        "line": 469,
         "text": "const parsed = JSON.parse(io.readFileSync(path, \"utf8\"));"
       },
       {
         "file": "lib/index.js",
-        "line": 506,
+        "line": 520,
         "text": "const parsed = JSON.parse(io.readFileSync(join(home, \"auth.json\"), \"utf8\"));"
       }
     ]
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 3469,
+        "line": 3963,
         "text": "toolCtx.tools.register(defineTool({"
       }
     ]

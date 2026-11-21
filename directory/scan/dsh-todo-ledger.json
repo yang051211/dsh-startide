@@ -1,7 +1,7 @@
 {
   "name": "dsh-todo-ledger",
-  "version": "0.4.2",
-  "scannedAt": "2026-11-12T21:20:44.393Z",
+  "version": "0.4.3",
+  "scannedAt": "2026-11-21T20:46:26.700Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -22,6 +22,11 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/bridge.js",
+        "line": 1,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
         "file": "lib/context-contract.js",
         "line": 1,
         "text": "import { statSync } from 'node:fs'"
@@ -33,18 +38,13 @@
       },
       {
         "file": "lib/context-reader.js",
-        "line": 93,
+        "line": 94,
         "text": "const text = readFileSync(path, 'utf8')"
       },
       {
         "file": "lib/index.js",
         "line": 1,
         "text": "import { existsSync, readFileSync, readdirSync } from 'node:fs';"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 221,
-        "text": "text = readFileSync(file, 'utf8');"
       }
     ]
   },
@@ -54,11 +54,11 @@
       {
         "file": "lib/index.js",
         "line": 29,
-        "text": "export const inject = ['tools', 'systemPrompt', 'webServer', 'sessions'];"
+        "text": "export const inject = ['tools', 'systemPrompt', 'webServer', 'sessions', 'workingDirectory'];"
       },
       {
         "file": "lib/index.js",
-        "line": 165,
+        "line": 182,
         "text": "ctx.tools.register(definition);"
       }
     ]

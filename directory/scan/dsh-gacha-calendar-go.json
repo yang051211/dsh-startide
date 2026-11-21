@@ -1,0 +1,80 @@
+{
+  "name": "dsh-gacha-calendar-go",
+  "version": "0.13.1",
+  "scannedAt": "2026-11-21T20:46:06.979Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core.mjs",
+        "line": 13155,
+        "text": "//   所以 POST 的最小形态是 `fetch(proxyUrl, { method:\"POST\", body: JSON.stringify(payload) })`。"
+      },
+      {
+        "file": "lib/core.mjs",
+        "line": 13536,
+        "text": "*    相对 URL 只有浏览器同源能解析 —— Node / 原生宿主里 `fetch(\"/api/…\")` 直接抛"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/runtime.mjs",
+        "line": 1,
+        "text": "import { mkdir, readFile, writeFile, rename } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/runtime.mjs",
+        "line": 10,
+        "text": "try { values = JSON.parse(await readFile(path, 'utf8')); if (!values || Array.isArray(values) || typeof values !== 'object') throw new Error('invalid-store') }"
+      },
+      {
+        "file": "lib/runtime.mjs",
+        "line": 18,
+        "text": "await mkdir(dirname(path), { recursive: true })"
+      },
+      {
+        "file": "lib/runtime.mjs",
+        "line": 19,
+        "text": "await writeFile(path + '.tmp', JSON.stringify(next), { mode: 0o600 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 43,
+      "text": "\"${DSH_HOME:-$HOME/.dsh}/dsh-go/plugins/local-gacha-calendar-go\""
+    },
+    {
+      "file": "README.md",
+      "line": 46,
+      "text": "\"${DSH_HOME:-$HOME/.dsh}/dsh-go/plugins/local-gacha-calendar-go\""
+    },
+    {
+      "file": "README.md",
+      "line": 69,
+      "text": "\"${DSH_HOME:-$HOME/.dsh}/dsh-go/plugins/local-gacha-calendar-go\""
+    }
+  ],
+  "skippedEntries": []
+}

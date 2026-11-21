@@ -1,19 +1,19 @@
 {
   "name": "dsh-mcp-scopes",
-  "version": "0.3.2",
-  "scannedAt": "2026-11-18T21:46:05.697Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-21T20:46:23.185Z",
   "icon": "dsh-mcp-scopes.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/host.js",
-        "line": 1263,
+        "line": 1573,
         "text": "import { createServer } from \"node:http\";"
       },
       {
         "file": "lib/host.js",
-        "line": 1966,
+        "line": 2276,
         "text": "async fetch(request) {"
       }
     ]
@@ -28,17 +28,17 @@
       },
       {
         "file": "lib/host.js",
-        "line": 511,
+        "line": 525,
         "text": "await mkdir(dirname(path), { recursive: true });"
       },
       {
         "file": "lib/host.js",
-        "line": 513,
+        "line": 527,
         "text": "await writeFile(temporary, text, { mode });"
       },
       {
         "file": "lib/host.js",
-        "line": 542,
+        "line": 556,
         "text": "text = await readFile(path, \"utf8\");"
       }
     ]
@@ -48,17 +48,22 @@
     "evidence": [
       {
         "file": "lib/host.js",
-        "line": 1155,
+        "line": 1233,
+        "text": "for (const definition of buildBridgeTools(scope)) disposers.push(ctx.tools.register(definition));"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 1444,
         "text": "for (const definition of entry.definitions) disposers.push(owner.ctx.tools.register(definition));"
       },
       {
         "file": "lib/host.js",
-        "line": 1594,
+        "line": 1904,
         "text": "return isRecord(ctx) && isRecord(ctx.tools) && typeof ctx.tools.register === \"function\";"
       },
       {
         "file": "lib/host.js",
-        "line": 2006,
+        "line": 2316,
         "text": "var inject = [\"tools\", \"credentials\", \"workspaceRegistry\"];"
       }
     ]
@@ -85,7 +90,7 @@
     },
     {
       "file": "README.md",
-      "line": 66,
+      "line": 67,
       "text": "Profile file: `$DSH_HOME/plugins/mcp-manager/<profile>.json`. It is created with mode 0600 on the first save."
     }
   ],

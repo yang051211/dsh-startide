@@ -1,7 +1,7 @@
 {
   "name": "@wjj865-code/dsh-orchestrator",
-  "version": "0.27.0",
-  "scannedAt": "2026-11-21T08:41:44.750Z",
+  "version": "0.32.0",
+  "scannedAt": "2026-11-21T20:45:57.348Z",
   "icon": "wjj865-code__dsh-orchestrator.svg",
   "network": {
     "hit": true,
@@ -9,12 +9,12 @@
       {
         "file": "dist/client.js",
         "line": 1,
-        "text": ")}`:\"等待宿主触发\",Xa=async t=>{const e=await fetch(ze,{method:\"POST\",headers:{\"content-type\":\"application/json\"},body:JSON.stringify({endpoint:\"snapshot\"}),signal:t}"
+        "text": ")}`:\"等待宿主触发\",or=async t=>{const e=await fetch(De,{method:\"POST\",headers:{\"content-type\":\"application/json\"},body:JSON.stringify({endpoint:\"snapshot\"}),signal:t}"
       },
       {
         "file": "dist/client.js",
         "line": 4,
-        "text": "h{}}},fetchRole:async p=>{const g=await fetch(ze,{method:\"POST\",headers:{\"content-type\":\"application/json\"},body:JSON.stringify({endpoint:\"session-role\",session"
+        "text": "d()}catch{}}},F=async c=>{const x=await fetch(De,{method:\"POST\",headers:{\"content-type\":\"application/json\"},body:JSON.stringify({endpoint:\"session-role\",session"
       },
       {
         "file": "scripts/mirror-sync.mjs",
@@ -28,7 +28,7 @@
       },
       {
         "file": "src/host-route.js",
-        "line": 177,
+        "line": 196,
         "text": "return async function fetch(request) {"
       }
     ]
@@ -38,12 +38,12 @@
     "evidence": [
       {
         "file": "scripts/check-client-size.mjs",
-        "line": 36,
+        "line": 28,
         "text": "import { readFile } from 'node:fs/promises'"
       },
       {
         "file": "scripts/check-client-size.mjs",
-        "line": 63,
+        "line": 55,
         "text": "bytes = (await readFile(file)).byteLength"
       },
       {
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "cordis.patch.yml",
-        "line": 127,
+        "line": 129,
         "text": "# （index.js 的 createTools(...).map(tool => ctx.tools.register(tool))），不是独立预设包，所以这里没有"
       },
       {
         "file": "index.js",
-        "line": 47,
+        "line": 58,
         "text": "export const inject = ['tools', 'agents', 'systemPrompt', 'subagents']"
       },
       {
         "file": "index.js",
-        "line": 297,
+        "line": 360,
         "text": "if (ctx.tools === undefined) warnings('dsh-orchestrator: 缺少 tools 服务，工具注册/白名单/guard 不可用')"
       },
       {
         "file": "index.js",
-        "line": 298,
+        "line": 361,
         "text": "else if (typeof ctx.tools.guard !== 'function') warnings('dsh-orchestrator: tools.guard 缺失，wait_agent 执行期拦截不可用')"
       },
       {
         "file": "index.js",
-        "line": 399,
+        "line": 462,
         "text": "const tools = agent.ctx?.tools ?? ctx.tools"
       }
     ]
@@ -107,19 +107,19 @@
         "text": "async spawn({ name, label, prompt, signal, taskId, cwd, readOnly, planFirst, access, goal }) {"
       },
       {
-        "file": "src/queue.js",
-        "line": 118,
-        "text": "member = await dispatcher.spawn({"
+        "file": "src/pack/env.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process'"
       },
       {
-        "file": "src/worktree.js",
-        "line": 9,
-        "text": "import { execFile } from 'node:child_process'"
+        "file": "src/pack/install.js",
+        "line": 18,
+        "text": "import { spawn } from 'node:child_process'"
       },
       {
-        "file": "src/worktree.js",
-        "line": 60,
-        "text": "execFile('git', args, { cwd, signal, timeout, windowsHide: true, maxBuffer: 8 * 1024 * 1024 }, (error, stdout, stderr) => {"
+        "file": "src/pack/install.js",
+        "line": 201,
+        "text": "child = spawn(command, args, { cwd, env, shell: false, windowsHide: true, stdio: ['ignore', outFd, errFd] })"
       }
     ]
   },

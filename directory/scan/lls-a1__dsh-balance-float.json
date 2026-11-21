@@ -1,30 +1,35 @@
 {
   "name": "@lls-a1/dsh-balance-float",
-  "version": "1.2.2",
-  "scannedAt": "2026-11-17T09:25:34.441Z",
+  "version": "1.3.2",
+  "scannedAt": "2026-11-21T20:46:26.298Z",
   "icon": "lls-a1__dsh-balance-float.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 810,
-        "text": "const response = await fetch(ROUTE_UPDATE, { headers: { accept: 'application/json' }, cache: 'no-store' });"
+        "line": 673,
+        "text": "const response = await fetch('/ark-quota/summary');"
       },
       {
         "file": "client.js",
-        "line": 853,
-        "text": "const response = await fetch(url, { headers: { accept: 'application/json' }, cache: 'no-store' });"
+        "line": 967,
+        "text": "const response = await fetch('/ark-quota/credentials');"
       },
       {
-        "file": "index.js",
-        "line": 79,
-        "text": "const response = await fetch('https://registry.npmjs.org/@lls-a1/dsh-balance-float/latest', {"
+        "file": "client.js",
+        "line": 992,
+        "text": "const response = await fetch('/ark-quota/credentials', {"
       },
       {
-        "file": "index.js",
-        "line": 173,
-        "text": "const response = await fetch(BALANCE_URL, {"
+        "file": "client.js",
+        "line": 1015,
+        "text": "const response = await fetch('/ark-quota/credentials', { method: 'DELETE' });"
+      },
+      {
+        "file": "client.js",
+        "line": 1361,
+        "text": "const response = await fetch(ROUTE_UPDATE, { headers: { accept: 'application/json' }, cache: 'no-store' });"
       }
     ]
   },
@@ -38,7 +43,7 @@
       },
       {
         "file": "index.js",
-        "line": 35,
+        "line": 36,
         "text": "const pkg = JSON.parse(readFileSync(file, 'utf8'))"
       },
       {
@@ -74,6 +79,7 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
+    "credentials",
     "timer",
     "webServer"
   ],

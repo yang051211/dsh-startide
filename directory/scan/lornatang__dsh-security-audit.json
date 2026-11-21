@@ -1,0 +1,50 @@
+{
+  "name": "@lornatang/dsh-security-audit",
+  "version": "0.1.9",
+  "scannedAt": "2026-11-21T20:46:12.373Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/skills.js",
+        "line": 1,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/skills.js",
+        "line": 9,
+        "text": "const text = await readFile(path, { encoding: 'utf8', signal });"
+      },
+      {
+        "file": "skills/security-audit/bounded-input.cjs",
+        "line": 3,
+        "text": "const fs = require(\"node:fs\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

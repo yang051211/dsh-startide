@@ -1,0 +1,106 @@
+{
+  "name": "@mcviseron/dsh-qq-bridge",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-21T20:46:30.964Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 149,
+        "text": "const response = await fetch(PANEL + path, Object.assign({ headers: { \"content-type\": \"application/json\" } }, options || {}))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 169,
+        "text": "const response = await fetch(`http://127.0.0.1:${port}/api/dsh-edit-file-workspace/move`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 186,
+        "text": "const response = await fetch(`http://127.0.0.1:${port}/api/question`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 733,
+        "text": "const response = await fetch(`http://127.0.0.1:${config.panelPort ?? 39062}/health`, { signal: AbortSignal.timeout(1500) })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 969,
+        "text": "const response = await fetch(`http://127.0.0.1:${port}/api/admin`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "import { appendFile, mkdir } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 92,
+        "text": "void appendFile(logPath, `${new Date().toISOString()} ${message}\\n`, 'utf8').catch(() => {})"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 117,
+        "text": "const ready = Promise.all([store.load(), mkdir(config.cwd, { recursive: true }), mkdir(dirname(logPath), { recursive: true })]).catch(error => {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 149,
+        "text": "await mkdir(dir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 960,
+        "text": "tools.register(definition)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1108,
+        "text": "tools.register({ ...tool, output: { schema: { type: \"object\" }, render: (_a, value) => [{ type: \"text\", text: JSON.stringify(value) }] } })"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 739,
+        "text": "const { spawn } = await import('node:child_process')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 740,
+        "text": "const child = spawn(config.pythonPath, ['-u', 'main.py', '--supervise'], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

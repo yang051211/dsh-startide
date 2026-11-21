@@ -1,7 +1,7 @@
 {
   "name": "dsh-browser-hub",
-  "version": "0.2.8",
-  "scannedAt": "2026-11-13T08:14:53.401Z",
+  "version": "0.2.11",
+  "scannedAt": "2026-11-21T20:46:25.282Z",
   "icon": "dsh-browser-hub.svg",
   "network": {
     "hit": true,
@@ -15,6 +15,11 @@
         "file": "lib/client.js",
         "line": 86,
         "text": "const r = await fetch(url, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 189,
+        "text": "const r = await fetch(\"https://registry.npmjs.org/\" + NPM_NAME + \"/latest\", {"
       }
     ]
   },
@@ -23,22 +28,22 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 14,
+        "line": 17,
         "text": "import fs from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 38,
+        "line": 44,
         "text": "fs.mkdirSync(DATA_DIR, { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 46,
+        "line": 52,
         "text": "return JSON.parse(fs.readFileSync(file, \"utf8\"));"
       },
       {
         "file": "lib/index.js",
-        "line": 55,
+        "line": 61,
         "text": "fs.writeFileSync(tmp, JSON.stringify(obj, null, 2), \"utf8\");"
       }
     ]

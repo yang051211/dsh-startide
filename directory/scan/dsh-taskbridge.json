@@ -1,7 +1,7 @@
 {
   "name": "dsh-taskbridge",
-  "version": "1.6.0",
-  "scannedAt": "2026-11-20T08:47:13.520Z",
+  "version": "1.7.0",
+  "scannedAt": "2026-11-21T20:46:08.472Z",
   "icon": "dsh-taskbridge.svg",
   "network": {
     "hit": true,
@@ -9,16 +9,16 @@
       {
         "file": "lib/client.js",
         "line": 8,
-        "text": "){let e=t.fetchImpl??((r,d)=>globalThis.fetch(r,d)),s=typeof t.base==\"string\"?t.base:\"\";async function a(r,d,f){let g=`${s}${d.replace(/^\\//,\"\")}`,u;try{u=await"
+        "text": "){let t=e.fetchImpl??((o,a)=>globalThis.fetch(o,a)),n=typeof e.base==\"string\"?e.base:\"\";async function s(o,a,l){let d=`${n}${a.replace(/^\\//,\"\")}`,u;try{u=await"
       },
       {
         "file": "src/client/api.js",
-        "line": 97,
+        "line": 142,
         "text": "const fetchImpl = options.fetchImpl ?? ((url, init) => globalThis.fetch(url, init));"
       },
       {
         "file": "src/http/user-plane.js",
-        "line": 1481,
+        "line": 1676,
         "text": "return await route.fetch(request);"
       },
       {
@@ -37,6 +37,21 @@
     "hit": true,
     "evidence": [
       {
+        "file": "src/codex/agent-ownership.js",
+        "line": 34,
+        "text": "import { lstat, readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "src/codex/agent-ownership.js",
+        "line": 150,
+        "text": "parsed = JSON.parse(await readFile(path, 'utf8'));"
+      },
+      {
+        "file": "src/codex/agent-ownership.js",
+        "line": 231,
+        "text": "* @param {Function} makeDirectory - `mkdir(path, { mode })`."
+      },
+      {
         "file": "src/codex/installer.js",
         "line": 83,
         "text": "import { lstatSync } from 'node:fs';"
@@ -45,21 +60,6 @@
         "file": "src/codex/installer.js",
         "line": 84,
         "text": "import { link, lstat, mkdir, open, readFile, readlink, realpath, stat, unlink } from 'node:fs/promises';"
-      },
-      {
-        "file": "src/codex/installer.js",
-        "line": 789,
-        "text": "return await readFile(TEMPLATE_PATH, 'utf8');"
-      },
-      {
-        "file": "src/codex/installer.js",
-        "line": 798,
-        "text": "const manifest = JSON.parse(await readFile(PACKAGE_MANIFEST_PATH, 'utf8'));"
-      },
-      {
-        "file": "src/codex/installer.js",
-        "line": 1030,
-        "text": "return { kind: 'file', contents: await readFile(path, 'utf8') };"
       }
     ]
   },
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "src/index.js",
-        "line": 84,
+        "line": 83,
         "text": "export const inject = ['agents', 'sessions', 'llm', 'tools', 'webServer', 'connection'];"
       },
       {
         "file": "src/index.js",
-        "line": 235,
+        "line": 245,
         "text": "tools: ctx.tools,"
       }
     ]
@@ -88,7 +88,7 @@
       },
       {
         "file": "src/codex/installer.js",
-        "line": 1210,
+        "line": 1263,
         "text": "execFile("
       },
       {

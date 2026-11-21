@@ -1,8 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
-  <!-- 试验台：两根立柱 + 顶梁，罩住一块待测芯片 -->
-  <path d="M7 8h22" stroke="#247bbf" stroke-width="2.6" stroke-linecap="round"/>
-  <path d="M9.5 8v9M26.5 8v9" stroke="#247bbf" stroke-width="2.6" stroke-linecap="round"/>
-  <rect x="12" y="17" width="12" height="11" rx="2.4" stroke="#7fb2d9" stroke-width="2.2"/>
-  <path d="M15.5 17v-2.2M20.5 17v-2.2M18 28v2.2" stroke="#7fb2d9" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="18" cy="22.5" r="2.1" fill="#247bbf"/>
+  <defs>
+    <!-- 用遮罩把「前面的窗口」后面的线挖掉：不靠填充色，深浅主题都成立 -->
+    <mask id="occlude">
+      <rect x="0" y="0" width="36" height="36" fill="#fff"/>
+      <rect x="11.2" y="13.2" width="21.6" height="17.6" rx="5" fill="#000"/>
+    </mask>
+  </defs>
+  <!-- 后面的窗口：宿主面板 -->
+  <rect x="5" y="5.5" width="19" height="14.5" rx="4" stroke="#7fb2d9" stroke-width="2" mask="url(#occlude)"/>
+  <!-- 前面的窗口：实验室（活的：左上角一颗状态点） -->
+  <rect x="13" y="15" width="18" height="14" rx="4" stroke="#247bbf" stroke-width="2"/>
+  <circle cx="17.4" cy="19.2" r="1.7" fill="#37b26d"/>
 </svg>

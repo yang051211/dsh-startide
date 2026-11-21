@@ -1,0 +1,67 @@
+{
+  "name": "dsh-usage-analytics",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-21T20:46:14.186Z",
+  "icon": "dsh-usage-analytics.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 256,
+        "text": "const response = await fetch(path, Object.assign({ cache: 'no-store' }, options || {}))"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/store.js",
+        "line": 13,
+        "text": "import fs from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 61,
+        "text": "await fs.mkdir(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 64,
+        "text": "await fs.writeFile(tmp, body, 'utf8')"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 119,
+        "text": "const text = await fs.readFile(recordsFile, 'utf8')"
+      },
+      {
+        "file": "lib/util.js",
+        "line": 8,
+        "text": "import fs from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionPersistence",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,93 @@
+{
+  "name": "@lornatang/dsh-github",
+  "version": "0.1.10",
+  "scannedAt": "2026-11-21T20:46:09.477Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 64,
+        "text": "const response = await fetch(prefix + path, body === undefined ? { method: 'GET', cache: 'no-store', signal } : {"
+      },
+      {
+        "file": "lib/oauth.js",
+        "line": 19,
+        "text": "const response = await globalThis.fetch(url, {"
+      },
+      {
+        "file": "lib/transport.js",
+        "line": 32,
+        "text": "const response = await globalThis.fetch(target, { ...init, headers, redirect: 'manual' });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge.js",
+        "line": 3,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 17,
+        "text": "return JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version ?? '0.0.0';"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 2,
+        "text": "import { constants } from 'node:fs';"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 3,
+        "text": "import { lstat, mkdir, open, realpath, rename, rm } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 41,
+        "text": "await mkdir(current, { mode: 0o700 });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 21,
+        "text": "const bridge = new GithubBridge({ register: (definition) => ctx.tools.register(definition), logger: ctx.logger }, { ...config, store, approvalHook });"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge.js",
+        "line": 2,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

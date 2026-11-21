@@ -1,35 +1,35 @@
 {
   "name": "dsh-vscode-workbench",
-  "version": "0.2.17",
-  "scannedAt": "2026-11-19T21:28:13.839Z",
+  "version": "0.2.18",
+  "scannedAt": "2026-11-21T20:46:05.768Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 8192,
-        "text": "response = await fetch(`/dsh-vscode/api/${method}`, {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 19644,
+        "line": 8602,
         "text": "const socket = this.socket = new WebSocket(url);"
       },
       {
         "file": "lib/client.js",
-        "line": 20085,
+        "line": 8972,
+        "text": "response = await fetch(`/dsh-vscode/api/${method}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 21096,
+        "text": "const socket = this.socket = new WebSocket(url);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 22074,
         "text": "const response = await fetch(src, { signal: controller.signal });"
       },
       {
         "file": "lib/client.js",
-        "line": 20152,
+        "line": 22141,
         "text": "const response = await fetch(src, { signal: controller.signal });"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 22184,
-        "text": "await readApiResponse(await fetch(`/dsh-vscode/upload?${query}`, {"
       }
     ]
   },
@@ -37,14 +37,19 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/client.js",
+        "line": 8542,
+        "text": "\"fs\","
+      },
+      {
         "file": "lib/index.js",
         "line": 2,
-        "text": "import { access, lstat, mkdir, open, readFile, readdir, realpath, rename, rm, stat, writeFile } from \"node:fs/promises\";"
+        "text": "import { access, lstat, mkdir, mkdtemp, open, readFile, readdir, realpath, rename, rm, stat, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
         "line": 7,
-        "text": "import { constants, createReadStream } from \"node:fs\";"
+        "text": "import { appendFileSync, constants, createReadStream, existsSync, lstatSync, realpathSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
@@ -55,11 +60,6 @@
         "file": "lib/index.js",
         "line": 628,
         "text": "await handle.writeFile(content, { encoding: \"utf8\" });"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 638,
-        "text": "if (temp !== void 0) await rm(temp, { force: true });"
       }
     ]
   },
@@ -87,13 +87,13 @@
       },
       {
         "file": "lib/index.js",
-        "line": 2852,
-        "text": "const child = spawn(\"npm\", ["
+        "line": 2734,
+        "text": "execFile(rustup, [\"which\", \"rust-analyzer\"], {"
       },
       {
         "file": "lib/index.js",
-        "line": 2968,
-        "text": "const child = spawn(process.platform === \"win32\" ? \"where\" : \"which\", [command], { windowsHide: true });"
+        "line": 2817,
+        "text": "const child = spawn(\"npm\", ["
       }
     ]
   },

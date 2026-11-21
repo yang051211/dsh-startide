@@ -1,0 +1,78 @@
+{
+  "name": "dsh-prompt-wall",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-21T20:46:40.106Z",
+  "icon": "dsh-prompt-wall.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 253,
+        "text": "const response = await fetch(`/api/prompt-wall/${op}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "import { mkdir, readFile, rename, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "index.js",
+        "line": 23,
+        "text": "import { existsSync } from \"node:fs\";"
+      },
+      {
+        "file": "index.js",
+        "line": 153,
+        "text": "const parsed = JSON.parse(await readFile(file, \"utf8\"));"
+      },
+      {
+        "file": "index.js",
+        "line": 162,
+        "text": "await mkdir(path.dirname(file), { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 164,
+        "text": "await writeFile(tmp, JSON.stringify({ version: 1, ...s }, null, 1) + \"\\n\", \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 276,
+        "text": "export const inject = [\"tools\", \"systemPrompt\"];"
+      },
+      {
+        "file": "index.js",
+        "line": 425,
+        "text": "ctx.effect(() => ctx.tools.register(def), `dsh-prompt-wall: tool ${def.name}`);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

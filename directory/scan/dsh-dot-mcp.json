@@ -1,0 +1,104 @@
+{
+  "name": "dsh-dot-mcp",
+  "version": "1.0.4",
+  "scannedAt": "2026-11-21T20:46:17.480Z",
+  "icon": "dsh-dot-mcp.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 61,
+        "text": "async fetch(request) {"
+      },
+      {
+        "file": "lib/mcp-control.mjs",
+        "line": 176,
+        "text": "const response = await fetch(target.localUrl, { method: 'POST', signal: requestSignal,"
+      },
+      {
+        "file": "lib/mcp-control.mjs",
+        "line": 206,
+        "text": "async fetch(request) {"
+      },
+      {
+        "file": "lib/mcp-server.mjs",
+        "line": 94,
+        "text": "signal,maxRequestBodySize:r});i=await e.fetch(y,{...o.auth!==void 0&&{authInfo:o.auth},...s!==void 0&&{parsedBody:s}})}catch(y){if(y instanceof Wd)i=Response.js"
+      },
+      {
+        "file": "lib/notify-control.mjs",
+        "line": 5,
+        "text": "import { request as httpsRequest } from 'node:https'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/mcp-control.mjs",
+        "line": 2,
+        "text": "import { readFile, mkdir, writeFile, rename, rm } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/mcp-control.mjs",
+        "line": 61,
+        "text": "const data = JSON.parse(await readFile(configPath, 'utf8'))"
+      },
+      {
+        "file": "lib/mcp-control.mjs",
+        "line": 68,
+        "text": "await mkdir(dirname(configPath), { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/mcp-control.mjs",
+        "line": 71,
+        "text": "await writeFile(temporary, JSON.stringify(value, null, 2) + '\\n', { mode: 0o600, flag: 'wx' })"
+      },
+      {
+        "file": "lib/mcp-control.mjs",
+        "line": 73,
+        "text": "} finally { await rm(temporary, { force: true }) }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/persistence.mjs",
+        "line": 19,
+        "text": "import { execFileSync, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/persistence.mjs",
+        "line": 284,
+        "text": "child = spawn(process.execPath, [fileURLToPath(new URL('./persistence-after-exit.mjs', import.meta.url)), pendingPath(path), pending.request], {"
+      },
+      {
+        "file": "lib/tunnel-control.mjs",
+        "line": 1,
+        "text": "rom\"node:crypto\";import{spawn as fe}from\"node:child_process\";import{access as Tt,chmod as St,mkdir as ft,mkdtemp as ce,readdir as he,readFile as Nt,rename as Pt"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js",
+    "lib/mcp-server.mjs",
+    "lib/tunnel-control.mjs"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}
