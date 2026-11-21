@@ -1,35 +1,35 @@
 {
   "name": "@joythatway/dsh-screenshot",
-  "version": "0.5.4",
-  "scannedAt": "2026-11-19T21:28:23.352Z",
+  "version": "0.5.5",
+  "scannedAt": "2026-11-21T08:41:47.979Z",
   "icon": "joythatway__dsh-screenshot.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 546,
+        "line": 548,
         "text": "const blob = await fetch(current).then((response) => (response.ok ? response.blob() : null)).catch(() => null)"
       },
       {
         "file": "client.js",
-        "line": 2028,
+        "line": 1914,
+        "text": "fetch(API + '/warm', { method: 'POST' }).catch(() => {})"
+      },
+      {
+        "file": "client.js",
+        "line": 2089,
         "text": "fetch(API + '/settings-screen', {"
       },
       {
         "file": "client.js",
-        "line": 2043,
+        "line": 2104,
         "text": "const response = await fetch(`${API}/save?name=${encodeURIComponent(name)}`, {"
       },
       {
         "file": "client.js",
-        "line": 2057,
+        "line": 2118,
         "text": "fetch(API + '/reveal', {"
-      },
-      {
-        "file": "client.js",
-        "line": 2072,
-        "text": "const payload = await fetch(API + '/settings').then(readJson).catch(() => null)"
       }
     ]
   },
@@ -38,27 +38,27 @@
     "evidence": [
       {
         "file": "capture/macos.js",
-        "line": 7,
+        "line": 8,
         "text": "import { existsSync } from 'node:fs'"
       },
       {
         "file": "capture/macos.js",
-        "line": 8,
+        "line": 9,
         "text": "import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "capture/macos.js",
-        "line": 148,
+        "line": 196,
         "text": "const buffer = await readFile(file).catch(() => undefined)"
       },
       {
         "file": "capture/macos.js",
-        "line": 152,
+        "line": 200,
         "text": "rm(dir, { recursive: true, force: true }).catch(() => {})"
       },
       {
         "file": "capture/macos.js",
-        "line": 168,
+        "line": 216,
         "text": "await writeFile(source, buffer)"
       }
     ]
@@ -72,28 +72,28 @@
     "evidence": [
       {
         "file": "capture/macos.js",
-        "line": 6,
+        "line": 7,
         "text": "import { spawn } from 'node:child_process'"
       },
       {
         "file": "capture/macos.js",
-        "line": 64,
+        "line": 65,
         "text": "child = spawn(binaryPath, args, { stdio: ['ignore', 'ignore', 'ignore'] })"
       },
       {
         "file": "capture/macos.js",
-        "line": 91,
+        "line": 111,
+        "text": "child = spawn(OSASCRIPT, ['-l', 'JavaScript'], { stdio: ['pipe', 'pipe', 'ignore'] })"
+      },
+      {
+        "file": "capture/macos.js",
+        "line": 139,
         "text": "child = spawn(OSASCRIPT, ['-l', 'JavaScript'], { stdio: ['pipe', 'pipe', 'pipe'] })"
       },
       {
         "file": "capture/macos.js",
-        "line": 224,
+        "line": 276,
         "text": "child = spawn(binary, args, { stdio: ['ignore', 'ignore', 'pipe'] })"
-      },
-      {
-        "file": "capture/macos.js",
-        "line": 465,
-        "text": "const opener = spawn('open', [url], { stdio: 'ignore', detached: true })"
       }
     ]
   },

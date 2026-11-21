@@ -1,34 +1,34 @@
 {
   "name": "dsh-injection-manager",
-  "version": "2.3.0",
-  "scannedAt": "2026-11-20T21:47:26.030Z",
+  "version": "2.3.1",
+  "scannedAt": "2026-11-21T08:41:47.878Z",
   "icon": "dsh-injection-manager.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 267,
+        "line": 274,
         "text": "const response = await fetch(url, { credentials: 'same-origin', cache: 'no-store' })"
       },
       {
         "file": "client.js",
-        "line": 273,
+        "line": 308,
         "text": "const response = await fetch(url, {"
       },
       {
         "file": "client.js",
-        "line": 294,
+        "line": 329,
         "text": "const response = await fetch(url, { credentials: 'same-origin', cache: 'no-store', signal })"
       },
       {
         "file": "client.js",
-        "line": 1030,
+        "line": 1067,
         "text": "void fetch(ROUTES.boot, {"
       },
       {
         "file": "client.js",
-        "line": 4012,
+        "line": 4100,
         "text": "const response = await fetch(`${ROUTES.export}?${query}`, { credentials: 'same-origin' })"
       }
     ]
@@ -42,6 +42,16 @@
         "text": "import { open } from 'node:fs/promises'"
       },
       {
+        "file": "lib/diagnostics.js",
+        "line": 7,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/diagnostics.js",
+        "line": 11,
+        "text": "const manifest = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'))"
+      },
+      {
         "file": "lib/events.js",
         "line": 13,
         "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
@@ -50,16 +60,6 @@
         "file": "lib/events.js",
         "line": 59,
         "text": "const parsed = JSON.parse(await readFile(eventsFilePath(), 'utf8'))"
-      },
-      {
-        "file": "lib/events.js",
-        "line": 82,
-        "text": "await mkdir(dirname(target), { recursive: true })"
-      },
-      {
-        "file": "lib/events.js",
-        "line": 84,
-        "text": "await writeFile(temporary, body, 'utf8')"
       }
     ]
   },
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 82,
-        "text": "export const inject = ['tools', 'systemPrompt', 'skills', 'workingDirectory', 'agents', 'webServer', 'commands']"
+        "line": 84,
+        "text": "export const inject = ['tools', 'systemPrompt', 'skills', 'agents', 'webServer', 'commands']"
       },
       {
         "file": "index.js",
-        "line": 236,
+        "line": 238,
         "text": "ctx.tools.register(createTool(ctx))"
       },
       {
@@ -83,12 +83,12 @@
       },
       {
         "file": "lib/routes.js",
-        "line": 635,
+        "line": 636,
         "text": "const sample = ctx.tools.schemas()[0]"
       },
       {
         "file": "lib/routes.js",
-        "line": 686,
+        "line": 693,
         "text": "const tools = ctx.tools.schemas(agent).map((schema) => String(schema.name ?? ''))"
       }
     ]
@@ -96,6 +96,11 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "scripts/release.mjs",
+        "line": 14,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
       {
         "file": "scripts/self-audit.mjs",
         "line": 20,
@@ -121,8 +126,7 @@
     "skills",
     "systemPrompt",
     "tools",
-    "webServer",
-    "workingDirectory"
+    "webServer"
   ],
   "setupHints": [],
   "skippedEntries": []

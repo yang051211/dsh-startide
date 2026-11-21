@@ -1,7 +1,7 @@
 {
   "name": "dsh-fish-soul",
-  "version": "0.18.15",
-  "scannedAt": "2026-11-20T08:47:09.190Z",
+  "version": "0.18.19",
+  "scannedAt": "2026-11-21T08:41:44.145Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -67,11 +67,6 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/gateway.js",
-        "line": 658,
-        "text": "const tools = this.ctx.tools;"
-      },
-      {
         "file": "lib/hostdeps.mjs",
         "line": 152,
         "text": "// \"unsupported JSON schema: parameters.type must be a value schema object\"。ctx.tools.register 本身收"
@@ -83,13 +78,18 @@
       },
       {
         "file": "lib/index.js",
-        "line": 435,
+        "line": 442,
         "text": "// #26：DSH 的联网工具（dsh-tool-web）是按会话 / agent 挂的，插件自己的 ctx.tools 里经常查不到，"
       },
       {
         "file": "lib/index.js",
-        "line": 446,
+        "line": 453,
         "text": "try { if (typeof ctx.tools?.get === 'function' && ctx.tools.get('web_search') !== undefined) return 'found'; } catch { /* 当查不到 */ }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1265,
+        "text": "if (typeof ctx.tools.guard === 'function') {"
       }
     ]
   },

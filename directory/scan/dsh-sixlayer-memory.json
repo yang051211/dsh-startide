@@ -1,0 +1,139 @@
+{
+  "name": "dsh-sixlayer-memory",
+  "version": "2.0.3",
+  "scannedAt": "2026-11-21T08:41:53.192Z",
+  "icon": "dsh-sixlayer-memory.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "catalog/.index.json",
+        "line": 615,
+        "text": "\"install\": \"curl -F f=@\\\"file.png\\\" \\\"http://127.0.0.1:3923/?pw=wark\\\"\","
+      },
+      {
+        "file": "catalog/.index.json",
+        "line": 7899,
+        "text": "\"install\": \"curl -fsSL https://reasonmachines.com/install.sh | bash\","
+      },
+      {
+        "file": "catalog/.index.json",
+        "line": 17319,
+        "text": "\"install\": \"curl -fsSL https://browser.aginx.net/install.sh | bash\","
+      },
+      {
+        "file": "catalog/.index.json",
+        "line": 17535,
+        "text": "\"install\": \"curl -fsSL 仓库 install.sh | sh，装完重启 dsh web\","
+      },
+      {
+        "file": "catalog/.index.json",
+        "line": 20439,
+        "text": "\"install\": \"curl -fsSL https://raw.githubusercontent.com/STARKTANG108/dsh-free-models/main/install.sh | sh\","
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "fs.appendFileSync(DIAG_FILE, `${new Date().toISOString()} ${message}\\n`, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 91,
+        "text": "const json = JSON.parse(fs.readFileSync(file, 'utf8').replace(/^\\uFEFF/, ''))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 248,
+        "text": "fs.mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 249,
+        "text": "fs.appendFileSync(path.join(dir, 'health.log'), line + '\\n', 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "catalog/.index.json",
+        "line": 48397,
+        "text": "\"summary\": \"通过内置的 @deepseek-ai/dsh-mcp-client…\","
+      },
+      {
+        "file": "catalog/.index.json",
+        "line": 66049,
+        "text": "\"summary\": \"最小可运行 DSH 插件脚手架，用 ctx.tools 提供一个模型工具。\","
+      },
+      {
+        "file": "catalog/.index.json",
+        "line": 92265,
+        "text": "\"name\": \"dsh-mcp-client-plus\","
+      },
+      {
+        "file": "catalog/.index.json",
+        "line": 92268,
+        "text": "\"repo\": \"https://github.com/anthonyyu-verkada/dsh-mcp-client-plus\","
+      },
+      {
+        "file": "catalog/.index.json",
+        "line": 92271,
+        "text": "\"install\": \"dsh plugin --profile web add github:anthonyyu-verkada/dsh-mcp-client-plus\","
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/parts/installer.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/parts/installer.js",
+        "line": 90,
+        "text": "child = spawn('cmd.exe', ['/c', CLI, ...args], {"
+      },
+      {
+        "file": "tools/preflight.mjs",
+        "line": 150,
+        "text": "const { execFileSync } = process.getBuiltinModule('node:child_process')"
+      },
+      {
+        "file": "tools/preflight.mjs",
+        "line": 225,
+        "text": "const { execFileSync } = process.getBuiltinModule('node:child_process')"
+      },
+      {
+        "file": "tools/preflight.mjs",
+        "line": 270,
+        "text": "const { execFileSync } = process.getBuiltinModule('node:child_process')"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

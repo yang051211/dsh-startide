@@ -1,15 +1,20 @@
 {
   "name": "dsh-rescue-guard",
-  "version": "0.6.2",
-  "scannedAt": "2026-11-16T23:37:24.432Z",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-21T08:41:48.458Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 484,
+        "line": 536,
         "text": "const response = await fetch(url, init);"
+      },
+      {
+        "file": "test/regression.mjs",
+        "line": 1971,
+        "text": "assert(!source.includes('fetch('), '生成报告不得联网')"
       }
     ]
   },
@@ -57,22 +62,22 @@
       },
       {
         "file": "bin/dsh-rescue.mjs",
-        "line": 705,
+        "line": 715,
         "text": "const { spawnSync } = await import('node:child_process')"
       },
       {
         "file": "bin/dsh-rescue.mjs",
-        "line": 706,
+        "line": 716,
         "text": "const result = spawnSync(process.execPath, [self, ...argv], { stdio: 'inherit', windowsHide: false })"
       },
       {
         "file": "bin/dsh-rescue.mjs",
-        "line": 713,
+        "line": 723,
         "text": "const { spawnSync } = await import('node:child_process')"
       },
       {
         "file": "bin/dsh-rescue.mjs",
-        "line": 715,
+        "line": 725,
         "text": "const result = spawnSync(process.execPath, [script, ...rest], { stdio: 'inherit' })"
       }
     ]

@@ -1,7 +1,7 @@
 {
   "name": "dsh-context",
-  "version": "0.86.0",
-  "scannedAt": "2026-11-18T21:45:43.194Z",
+  "version": "0.87.0",
+  "scannedAt": "2026-11-21T08:41:44.010Z",
   "icon": "dsh-context.svg",
   "network": {
     "hit": true,
@@ -9,27 +9,27 @@
       {
         "file": "lib/client.js",
         "line": 62,
-        "text": "tion _r(e,t,n){let r=n.label??e,i=await fetch(e,{method:`POST`,headers:{\"content-type\":`application/json`},body:JSON.stringify(t),...n.signal===void 0?{}:{signa"
+        "text": "teError`}};function _r(e,t,n={}){return fetch(e,{method:`POST`,headers:{\"content-type\":`application/json`},body:JSON.stringify(t),...n.signal===void 0?{}:{signa"
       },
       {
         "file": "lib/client.js",
         "line": 82,
-        "text": "is.inflight.delete(e)}).catch(()=>{}),r}fetch(e,t,n=!1){return this.track(`${n?`full`:`preview`}:${e}:${t}`,Yf(e,n)).catch(()=>null)}fetchHistory(e,t){return th"
+        "text": "is.inflight.delete(e)}).catch(()=>{}),r}fetch(e,t,n=!1){return this.track(`${n?`full`:`preview`}:${e}:${t}`,gp(e,n)).catch(()=>null)}fetchHistory(e,t){return th"
       },
       {
         "file": "lib/client.js",
         "line": 84,
-        "text": "!1}}async function wh(){try{let e=await fetch(`api/dsh-context/recom`,{method:`POST`,headers:{\"content-type\":`application/json`},body:`{}`});if(!e.ok)return nul"
+        "text": "!1}}async function Zh(){try{let e=await fetch(`api/dsh-context/recom`,{method:`POST`,headers:{\"content-type\":`application/json`},body:`{}`});if(!e.ok)return nul"
       },
       {
         "file": "lib/index.js",
         "line": 25,
-        "text": "unction va(e={}){let t=e.fetch??((e,t)=>fetch(e,t)),n=e.now??(()=>Date.now()),r=e.ttlMs??36e5,i=e.currentVersion??ya(),a=ga(),o=ga(),s={book:null,failed:!1,vers"
+        "text": "unction Qa(e={}){let t=e.fetch??((e,t)=>fetch(e,t)),n=e.now??(()=>Date.now()),r=e.ttlMs??36e5,i=e.currentVersion??$a(),a=e.cachePath===void 0?Ya():e.cachePath,o"
       },
       {
         "file": "lib/index.js",
         "line": 26,
-        "text": "total>0),balances:a}:null}let So=(e,t)=>fetch(e,t);const Co=new Map;async function wo(e){let t=e.baseUrl+`\\0`+e.apiKey,n=Co.get(t);if(n!==void 0)return n;let r="
+        "text": "total>0),balances:a}:null}let rs=(e,t)=>fetch(e,t);const is=new Map;async function as(e){let t=e.baseUrl+`\\0`+e.apiKey,n=is.get(t);if(n!==void 0)return n;let r="
       }
     ]
   },
@@ -37,19 +37,19 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/client.js",
-        "line": 82,
-        "text": "dAt===r&&a.needsHistory&&(h.current.has(rm(n,r))||F(`history`,n)>e||t.push({id:n,stamp:r,rank:+!_.current.has(n)}))}return t.sort((e,t)=>e.rank-t.rank||t.stamp-"
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "t{existsSync as i,readFileSync as a}from\"node:fs\";import{homedir as o}from\"node:os\";import{fileURLToPath as s}from\"node:url\";import{copyFile as c,link as l,mkdi"
       },
       {
         "file": "lib/index.js",
-        "line": 12,
-        "text": "t{existsSync as i,readFileSync as a}from\"node:fs\";import{fileURLToPath as o}from\"node:url\";import{copyFile as s,link as c,mkdir as l,readFile as u,readdir as d,"
+        "line": 25,
+        "text": "tion Ka(e,t,n){let r=`${t}.tmp`;await e.mkdir(v(t)),await e.writeFile(r,n),await e.rename(r,t)}const qa={read:e=>d(e,`utf8`),write:(e,t)=>Ka(Ga,e,t)},Ja=[`https"
       },
       {
         "file": "lib/index.js",
         "line": 32,
-        "text": "=new Map;try{let i=P(JSON.parse(await n.readFile(Ts(t,e))));if(i===null||i.format!==3||!Array.isArray(i.sessions))return r;for(let e of i.sessions){let t=Cs(e);"
+        "text": "File:e=>d(e,`utf8`),writeFile:(e,t)=>Ga.writeFile(e,t),rename:(e,t)=>Ga.rename(e,t),mkdir:e=>Ga.mkdir(e),rm:async e=>{await m(e,{force:!0})}};function ec(e=proc"
       }
     ]
   },

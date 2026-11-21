@@ -1,14 +1,14 @@
 {
   "name": "dsh-immune-system",
-  "version": "2.4.0",
-  "scannedAt": "2026-11-20T08:47:14.181Z",
+  "version": "4.0.0",
+  "scannedAt": "2026-11-21T08:41:48.510Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "dsh-immune-system/client/client.js",
-        "line": 153,
+        "line": 168,
         "text": "return fetch(API + path, Object.assign({ credentials: 'same-origin' }, init)).then("
       },
       {
@@ -17,19 +17,19 @@
         "text": "const response = await fetch(url, { method: 'POST', headers, body, signal: combined });"
       },
       {
-        "file": "dsh-immune-system/dist/core/redact.js",
-        "line": 47,
-        "text": "// HTTP secret headers (curl -H, raw request headers)."
+        "file": "dsh-immune-system/dist/core/packs.js",
+        "line": 501,
+        "text": "trigger_pattern: 'Windows PowerShell curl 别名 Invoke-WebRequest 参数报错 curl.exe',"
       },
       {
-        "file": "dsh-immune-system/dist/core/ui/client-script.js",
-        "line": 343,
-        "text": "fetch(api('/api/explain?q=' + encodeURIComponent(trimmed)), { headers: { 'accept': 'application/json' } })"
+        "file": "dsh-immune-system/dist/core/packs.js",
+        "line": 502,
+        "text": "symptom: 'PowerShell 里 curl 默认是 Invoke-WebRequest 别名，传 -H / -d / -fsSL 等 GNU 参数直接报错',"
       },
       {
-        "file": "dsh-immune-system/dist/core/ui/client-script.js",
-        "line": 545,
-        "text": "fetch(api('/api/explain?q=' + encodeURIComponent(trimmed)), { headers: { 'accept': 'application/json' } })"
+        "file": "dsh-immune-system/dist/core/packs.js",
+        "line": 503,
+        "text": "prescription: '在 PowerShell 调用真实 curl 显式写 curl.exe，或改用标准 Invoke-RestMethod 参数',"
       }
     ]
   },
@@ -98,9 +98,19 @@
       "text": "> **Global `immune` alias**: `npm install -g dsh-immune-system` exposes both `immune` and `dsh-immune-system` on your `PATH`."
     },
     {
+      "file": "README.md",
+      "line": 137,
+      "text": "-force-with-lease`, `prisma migrate dev` → `--create-only`, `npm install` in `pnpm`/`yarn`/`bun` repos → `add`, `pip install` in `uv` repos → `uv pip install`)."
+    },
+    {
       "file": "README.zh-CN.md",
       "line": 100,
       "text": "> **全局短命令别名**：执行 `npm install -g dsh-immune-system` 后可直接使用 `immune <命令>`。"
+    },
+    {
+      "file": "README.zh-CN.md",
+      "line": 135,
+      "text": " 与明文凭证（且所有输出自动脱敏），并安全改写高频坑点（`git push --force` → `--force-with-lease`、`prisma migrate dev` → `--create-only`、锁文件漂移自动改写为 `pnpm/yarn/bun add` 或 `uv pip install`）。"
     }
   ],
   "skippedEntries": []

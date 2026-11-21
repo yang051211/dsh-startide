@@ -1,0 +1,84 @@
+{
+  "name": "dsh-voice-realtime",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-21T08:41:52.368Z",
+  "icon": "dsh-voice-realtime.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 144,
+        "text": "return fetch(\"/dsh-voice/\" + path, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 160,
+        "text": "return fetch(\"/dsh-voice/status\", { headers: { accept: \"application/json\" } }).then(function (res) { return res.json(); });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 262,
+        "text": "return fetch(\"/dsh-voice/audio?id=\" + encodeURIComponent(active.id) + \"&sr=\" + (active.sampleRate || 16000), {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 286,
+        "text": "return fetch(\"/dsh-voice/debug/dump?sr=\" + (active.sampleRate || 16000) + \"&name=mic\", {"
+      },
+      {
+        "file": "lib/models.js",
+        "line": 104,
+        "text": "const res = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine.js",
+        "line": 12,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 224,
+        "text": "const fsp = await import('node:fs/promises')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 226,
+        "text": "await fsp.mkdir(outDir, { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 235,
+        "text": "await fsp.writeFile(file, Buffer.concat([header, data]))"
+      },
+      {
+        "file": "lib/models.js",
+        "line": 7,
+        "text": "import { createReadStream, createWriteStream } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

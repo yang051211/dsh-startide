@@ -1,0 +1,121 @@
+{
+  "name": "dsh-rig",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-21T08:41:53.164Z",
+  "icon": "dsh-rig.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 142,
+        "text": "const res = await fetch(API + path, { ...init, headers: { ...HEADERS, ...((init && init.headers) || {}) } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 157,
+        "text": "const res = await fetch(`${API}/events`, { headers: { ...HEADERS, accept: 'text/event-stream' }, signal })"
+      },
+      {
+        "file": "lib/lab/browser.js",
+        "line": 17,
+        "text": "import { request as httpRequest } from 'node:http'"
+      },
+      {
+        "file": "lib/lab/browser.js",
+        "line": 86,
+        "text": "conn.#ws = new WebSocket(wsUrl)"
+      },
+      {
+        "file": "lib/lab/probe.js",
+        "line": 6,
+        "text": "* 2026-11-21 实测：同一个 URL，PowerShell 的 `Invoke-WebRequest` 回 200，宿主进程内 `fetch`"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/lab/browser.js",
+        "line": 16,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/lab/core-bin.js",
+        "line": 8,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/lab/core-bin.js",
+        "line": 20,
+        "text": "await readFile(bin, { encoding: 'utf8', flag: 'r' })"
+      },
+      {
+        "file": "lib/lab/report.js",
+        "line": 18,
+        "text": "import { readdir, readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/lab/report.js",
+        "line": 27,
+        "text": "return { value: JSON.parse(await readFile(file, 'utf8')), error: null }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tools/mount.js",
+        "line": 24,
+        "text": "disposeUi = tools.register(createLabUiTool(supervisor))"
+      },
+      {
+        "file": "lib/tools/mount.js",
+        "line": 42,
+        "text": "tools.register(createLabTool(supervisor, versions))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/lab/browser.js",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/lab/browser.js",
+        "line": 162,
+        "text": "* @returns {Promise<{conn: CdpConnection, child: import('node:child_process').ChildProcess, kill: () => void}>}"
+      },
+      {
+        "file": "lib/lab/browser.js",
+        "line": 177,
+        "text": "const child = spawn(browserPath, args, { stdio: ['ignore', 'ignore', 'pipe'], windowsHide: true })"
+      },
+      {
+        "file": "lib/lab/process.js",
+        "line": 9,
+        "text": "import { spawn, execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/lab/process.js",
+        "line": 17,
+        "text": "return spawn(plan.command, plan.args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

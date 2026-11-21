@@ -1,0 +1,88 @@
+{
+  "name": "dsh-office-magic-box",
+  "version": "1.5.1",
+  "scannedAt": "2026-11-21T08:41:53.143Z",
+  "icon": "dsh-office-magic-box.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 511,
+        "text": "const response = await fetch(apiUrl(suffix), Object.assign({"
+      },
+      {
+        "file": "client.js",
+        "line": 2301,
+        "text": "const response = await fetch(apiUrl('/invoices'), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "import fsp from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 251,
+        "text": "infoPromise = fsp.readFile(manifest, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 322,
+        "text": "raw = JSON.parse(await fsp.readFile(path.join(dataDir(), 'settings.json'), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 339,
+        "text": "await fsp.mkdir(path.dirname(file), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 643,
+        "text": "handle = subprocess.spawn({"
+      },
+      {
+        "file": "index.js",
+        "line": 1329,
+        "text": "const child = spawn(plan.command, plan.args, { detached: true, stdio: 'ignore', windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "subprocess"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

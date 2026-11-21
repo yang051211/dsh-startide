@@ -1,0 +1,99 @@
+{
+  "name": "dsh-workbench-host",
+  "version": "0.8.4",
+  "scannedAt": "2026-11-21T08:41:48.684Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 1980,
+        "text": "fetch(url).then(function(r) {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 2030,
+        "text": "          fetch(\"/workbench/api/backup/import\", { method: \"POST\", headers: { \"content-type\": \"application/zip\", \"x-wb-backup-policy\": JSON.stringify(policyMap) "
+      },
+      {
+        "file": "client/client.js",
+        "line": 2233,
+        "text": "fetch(\"/workbench/api/audit?\" + query(p || page, size, selected || currentFilters.current)).then(function(r) {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 2640,
+        "text": "return fetch(\"/workbench/api/domains/\" + encodeURIComponent(targetId) + \"/actions/\" + encodeURIComponent(action), {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 2654,
+        "text": "return fetch(\"/workbench/api/schema\" + q).then(function(r) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/db.js",
+        "line": 2,
+        "text": "import { mkdirSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/core/db.js",
+        "line": 44,
+        "text": "mkdirSync(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 32,
+        "text": "return JSON.parse(readFileSync(join(WB_HOME, \"cloud-creds.json\"), \"utf8\"));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 39,
+        "text": "mkdirSync(WB_HOME, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/actions/actions.js",
+        "line": 458,
+        "text": "ctx.tools?.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 22,
+        "text": "export const inject = [\"webServer\", \"tools\", \"connection\"];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

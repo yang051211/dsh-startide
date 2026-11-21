@@ -1,7 +1,7 @@
 {
   "name": "specrune-dsh-host",
-  "version": "0.10.1",
-  "scannedAt": "2026-11-17T22:16:47.998Z",
+  "version": "0.11.2",
+  "scannedAt": "2026-11-21T08:41:52.318Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -32,29 +32,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "locate.js",
-        "line": 20,
-        "text": "import { existsSync } from \"node:fs\";"
+        "file": "lib/installer-core.mjs",
+        "line": 57,
+        "text": "} from \"node:fs\";"
       },
       {
-        "file": "panel_follow.js",
-        "line": 8,
-        "text": "import { mkdirSync, writeFileSync } from \"node:fs\";"
+        "file": "lib/installer-core.mjs",
+        "line": 97,
+        "text": "return readFileSync(path, \"utf8\");"
       },
       {
-        "file": "panel_follow.js",
-        "line": 17,
-        "text": "mkdirSync(dirname(file), { recursive: true });"
+        "file": "lib/installer-core.mjs",
+        "line": 106,
+        "text": "return binary ? readFileSync(path) : readFileSync(path, \"utf8\");"
       },
       {
-        "file": "panel_follow.js",
-        "line": 18,
-        "text": "writeFileSync(file, repoRoot + \"\\n\", \"utf8\");"
+        "file": "lib/installer-core.mjs",
+        "line": 130,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
       },
       {
-        "file": "panel/lib/index.js",
-        "line": 204,
-        "text": "try { text = readFileSync(file, \"utf8\"); } catch { return []; }"
+        "file": "lib/installer-core.mjs",
+        "line": 161,
+        "text": "unlinkSync(tmp);"
       }
     ]
   },
@@ -66,29 +66,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "panel/lib/index.js",
-        "line": 407,
-        "text": "subSvc.subprocess.spawn({"
+        "file": "lib/installer-core.mjs",
+        "line": 43,
+        "text": "import { spawnSync } from \"node:child_process\";"
       },
       {
-        "file": "panel/lib/index.js",
-        "line": 438,
-        "text": ".then((bin) => subprocess.spawn({"
+        "file": "lib/installer-core.mjs",
+        "line": 350,
+        "text": "return spawn(env.ComSpec || \"cmd.exe\", [\"/d\", \"/s\", \"/c\", `\"${line}\"`], {"
       },
       {
-        "file": "panel/lib/index.js",
-        "line": 469,
-        "text": "const handle = subprocess.spawn({"
+        "file": "lib/installer-core.mjs",
+        "line": 355,
+        "text": "return spawn(command, args, spawnOptions);"
       },
       {
-        "file": "panel/lib/index.js",
-        "line": 1496,
-        "text": "const handle = subprocess.spawn({"
+        "file": "lib/installer-core.mjs",
+        "line": 842,
+        "text": "result = spawnSync(\"git\", [\"rev-parse\", \"--show-toplevel\"], {"
       },
       {
-        "file": "panel/test/clone-route.test.mjs",
-        "line": 5,
-        "text": "import { execFile, execFileSync } from \"node:child_process\";"
+        "file": "lib/installer-core.mjs",
+        "line": 1020,
+        "text": "return spawnSync(ctx.env.ComSpec || \"cmd.exe\", [\"/d\", \"/s\", \"/c\", `\"${line}\"`], {"
       }
     ]
   },
@@ -96,7 +96,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
+  "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

@@ -1,7 +1,7 @@
 {
   "name": "@ybbmm/dsh-session-delete",
-  "version": "0.4.1",
-  "scannedAt": "2026-11-18T21:46:11.604Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-21T08:41:51.871Z",
   "icon": "ybbmm__dsh-session-delete.svg",
   "network": {
     "hit": false,
@@ -13,27 +13,27 @@
       {
         "file": "index.js",
         "line": 28,
-        "text": "import { appendFile, cp, mkdir, readFile, readdir, realpath, rename, rm, stat, writeFile } from 'node:fs/promises'"
+        "text": "import { appendFile, cp, lstat, mkdir, readFile, readlink, readdir, realpath, rename, rm, stat, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "index.js",
-        "line": 932,
-        "text": "// particular, rm() removes a final symlink itself instead of following"
+        "line": 395,
+        "text": "const owner = JSON.parse(await readFile(join(lockPath, PROCESS_LOCK_OWNER_FILE), 'utf8'))"
       },
       {
         "file": "index.js",
-        "line": 1065,
+        "line": 421,
         "text": "await mkdir(root, { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 1097,
-        "text": "await writeFile(join(entryPath, MANIFEST_FILE_NAME), `${JSON.stringify(manifest, null, 2)}\\n`, 'utf8')"
+        "line": 425,
+        "text": "await mkdir(lockPath)"
       },
       {
         "file": "index.js",
-        "line": 1160,
-        "text": "await mkdir(entryPath)"
+        "line": 428,
+        "text": "await writeFile(join(lockPath, PROCESS_LOCK_OWNER_FILE), `${JSON.stringify(owner)}\\n`, { flag: 'wx' })"
       }
     ]
   },

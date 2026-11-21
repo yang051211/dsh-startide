@@ -1,0 +1,136 @@
+{
+  "name": "dsh-aiterm",
+  "version": "0.5.14",
+  "scannedAt": "2026-11-21T08:41:48.955Z",
+  "icon": "dsh-aiterm.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/api.js",
+        "line": 102,
+        "text": "response = await fetch(ROUTE + '/rpc', {"
+      },
+      {
+        "file": "client/QuickScripts.jsx",
+        "line": 11,
+        "text": "* The bar owns its own `scripts.list` fetch (the panel's list is local to the"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 11,
+        "text": "c function ge(e,t={}){let i;try{i=await fetch(os+\"/rpc\",{method:\"POST\",credentials:\"same-origin\",headers:{\"content-type\":\"application/json\"},body:JSON.stringify"
+      },
+      {
+        "file": "vendor/ssh2.cjs",
+        "line": 4803,
+        "text": "var c = new XMLHttpRequest();"
+      },
+      {
+        "file": "vendor/ssh2.cjs",
+        "line": 4821,
+        "text": "var c = new XMLHttpRequest();"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/autolog.js",
+        "line": 18,
+        "text": "import { constants } from 'node:fs'"
+      },
+      {
+        "file": "lib/host/autolog.js",
+        "line": 19,
+        "text": "import { access, appendFile, readdir, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/host/autolog.js",
+        "line": 243,
+        "text": "this.enqueue(() => appendFile(this.fileFor(id), text, { mode: 0o600 }))"
+      },
+      {
+        "file": "lib/host/autolog.js",
+        "line": 363,
+        "text": "this.enqueue(() => appendFile(this.fileFor(id), content, { mode: 0o600 }))"
+      },
+      {
+        "file": "lib/host/exporter.js",
+        "line": 24,
+        "text": "import { open, rename, rm, stat } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/tools.js",
+        "line": 5,
+        "text": "* `ctx.tools.register`; this half imports no `@deepseek-ai/*` module. Every tool"
+      },
+      {
+        "file": "lib/host/tools.js",
+        "line": 346,
+        "text": "const disclosure = progressive ? createDisclosure({ mode: 'progressive', tools: ctx.tools }) : undefined"
+      },
+      {
+        "file": "lib/host/tools.js",
+        "line": 396,
+        "text": "ctx.effect(() => ctx.tools.register(guarded, { when }), `aiterm: tool ${definition.name}`)"
+      },
+      {
+        "file": "lib/host/tools.js",
+        "line": 399,
+        "text": "ctx.effect(() => ctx.tools.register(guarded), `aiterm: tool ${definition.name}`)"
+      },
+      {
+        "file": "lib/host/tools.js",
+        "line": 1528,
+        "text": "ctx.effect(() => ctx.tools.register(guardedDiscovery), `aiterm: tool ${DISCOVER_TOOL_NAME}`)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/build-vendor.mjs",
+        "line": 12,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "vendor/ssh2.cjs",
+        "line": 7760,
+        "text": "var { execFile, spawn } = require(\"child_process\");"
+      },
+      {
+        "file": "vendor/ssh2.cjs",
+        "line": 7937,
+        "text": "const proc = this.proc = spawn(EXEPATH, [data.length]);"
+      },
+      {
+        "file": "vendor/ssh2.cjs",
+        "line": 7981,
+        "text": "execFile(\"cygpath\", [\"-w\", socketPath], (err2, stdout, stderr) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [
+    "lib/client.js",
+    "vendor/ssh2.cjs"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

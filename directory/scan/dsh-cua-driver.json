@@ -1,0 +1,78 @@
+{
+  "name": "dsh-cua-driver",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-21T08:41:52.214Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "import { existsSync, readdirSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 388,
+        "text": "raw = readFileSync(skillFile, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 461,
+        "text": "for (const def of toolDefs) disposers.push(ctx.tools.register(def))"
+      },
+      {
+        "file": "index.js",
+        "line": 484,
+        "text": "disposers.push(ctx.tools.register(activateDef))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 81,
+        "text": "this.child = spawn(exe, args, { stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "vendor/cua-driver-rs-0.55.0-windows-x86_64/cua_driver_node_runtime.node",
+    "vendor/cua-driver-rs-0.55.0-windows-x86_64/cua_driver_sdk.dll",
+    "vendor/cua-driver-rs-0.55.0-windows-x86_64/cua-cursor-theme.exe",
+    "vendor/cua-driver-rs-0.55.0-windows-x86_64/cua-driver-uia.exe",
+    "vendor/cua-driver-rs-0.55.0-windows-x86_64/cua-driver.exe"
+  ],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

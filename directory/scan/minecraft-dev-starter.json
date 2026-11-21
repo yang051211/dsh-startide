@@ -1,7 +1,7 @@
 {
   "name": "minecraft-dev-starter",
-  "version": "0.2.1",
-  "scannedAt": "2026-11-14T19:29:37.667Z",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-21T08:41:49.307Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -43,7 +43,7 @@
       },
       {
         "file": "src/index.js",
-        "line": 40,
+        "line": 39,
         "text": "return String(JSON.parse(readFileSync(url, 'utf8')).version)"
       },
       {
@@ -68,23 +68,18 @@
     "evidence": [
       {
         "file": "src/index.js",
-        "line": 26,
+        "line": 25,
         "text": "export const inject = ['sessions', 'tools']"
       },
       {
-        "file": "src/tools.js",
-        "line": 211,
-        "text": "const registerGated = (definition) => ctx.tools.register(definition, projectGate)"
+        "file": "src/tools/index.js",
+        "line": 52,
+        "text": "if (tool.gated === true) ctx.tools.register(definition, projectGate)"
       },
       {
-        "file": "src/tools.js",
-        "line": 213,
-        "text": "ctx.tools.register("
-      },
-      {
-        "file": "src/tools.js",
-        "line": 791,
-        "text": "ctx.tools.register("
+        "file": "src/tools/index.js",
+        "line": 53,
+        "text": "else ctx.tools.register(definition)"
       }
     ]
   },
@@ -103,12 +98,12 @@
       },
       {
         "file": "src/lib/launch/launches.js",
-        "line": 123,
+        "line": 125,
         "text": "* @property {import('node:child_process').ChildProcess | undefined} child"
       },
       {
         "file": "src/lib/launch/launches.js",
-        "line": 489,
+        "line": 496,
         "text": "const child = spawn('taskkill.exe', ['/PID', String(pid), '/T', '/F'], { windowsHide: true })"
       }
     ]

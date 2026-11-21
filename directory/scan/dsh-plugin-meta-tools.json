@@ -1,0 +1,81 @@
+{
+  "name": "dsh-plugin-meta-tools",
+  "version": "0.1.7",
+  "scannedAt": "2026-11-21T08:41:48.672Z",
+  "icon": "dsh-plugin-meta-tools.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.mjs",
+        "line": 3,
+        "text": "import { mkdir, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 296,
+        "text": "await mkdir(directory, {"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 302,
+        "text": "if (entry.role === \"subagent\") await mkdir(join(directory, \"subagents\", safeSegment(entry.sessionId)), {"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 306,
+        "text": "await writeFile(target, serializeSessionLog(entry.header, entry.events), {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.mjs",
+        "line": 1071,
+        "text": "const inject = [\"tools\"];"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 1097,
+        "text": "disposers.push(scoped.tools.register(buildWorkspaceTool(tool, {"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 1102,
+        "text": "if (current.session_pin) disposers.push(scoped.tools.register(buildSessionPinTool({ registry })));"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 1103,
+        "text": "if (current.session_archive) disposers.push(scoped.tools.register(buildSessionArchiveTool({ registry })));"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 1120,
+        "text": "if (current.session_list) disposers.push(scoped.tools.register(buildSessionTool(\"session_list\", {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "dist/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

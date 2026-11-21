@@ -1,0 +1,82 @@
+{
+  "name": "@philomelcc/dsh-status-monitor",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-21T08:41:51.595Z",
+  "icon": "philomelcc__dsh-status-monitor.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 252,
+        "text": "const res = await fetch(url, { cache: 'no-store', signal: controller.signal });"
+      },
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "index.js",
+        "line": 603,
+        "text": "const req = http.get("
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { promises as fsp } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 1014,
+        "text": "const raw = await fsp.readFile(USAGE_CACHE_FILE, 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 1031,
+        "text": "await fsp.mkdir(USAGE_CACHE_DIR, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 1032,
+        "text": "await fsp.writeFile("
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

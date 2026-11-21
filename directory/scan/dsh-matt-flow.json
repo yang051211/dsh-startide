@@ -1,0 +1,100 @@
+{
+  "name": "dsh-matt-flow",
+  "version": "0.7.5",
+  "scannedAt": "2026-11-21T08:41:51.191Z",
+  "icon": "dsh-matt-flow.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "import { appendFileSync, closeSync, existsSync, mkdirSync, openSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import { mkdir, readFile, readdir, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 56,
+        "text": "appendFileSync(file, `${new Date().toISOString()} pid=${process.pid} ${note}\\n`)"
+      },
+      {
+        "file": "index.js",
+        "line": 159,
+        "text": "const parsed = JSON.parse(await readFile(file, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 216,
+        "text": "const text = await readFile(file, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 876,
+        "text": "ctx.effect(() => tools.register(buildTool(ctx)))"
+      },
+      {
+        "file": "index.js",
+        "line": 877,
+        "text": "ctx.effect(() => tools.register(buildAskTool()))"
+      },
+      {
+        "file": "index.js",
+        "line": 878,
+        "text": "ctx.effect(() => tools.register(buildSkillsTool()))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 575,
+        "text": "* @returns {import('node:child_process').ChildProcess} the spawned install"
+      },
+      {
+        "file": "index.js",
+        "line": 591,
+        "text": "child = spawn(shell, ['/d', '/s', '/c', command], { stdio: ['ignore', fd, fd], windowsHide: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 593,
+        "text": "child = spawn(process.env.SHELL || '/bin/zsh', ['-lc', command], { stdio: ['ignore', fd, fd] })"
+      },
+      {
+        "file": "index.js",
+        "line": 596,
+        "text": "child = spawn(command, args, { stdio: ['ignore', fd, fd], windowsHide: true, shell: false })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

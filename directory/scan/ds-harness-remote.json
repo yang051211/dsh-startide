@@ -1,35 +1,35 @@
 {
   "name": "ds-harness-remote",
-  "version": "0.6.6",
-  "scannedAt": "2026-11-19T21:28:08.940Z",
+  "version": "0.6.7",
+  "scannedAt": "2026-11-21T08:41:44.207Z",
   "icon": "ds-harness-remote.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "dist/acp/gateway.js",
-        "line": 2123,
+        "line": 2129,
         "text": "// Official installer location (curl -fsSL https://opencode.ai/install | bash)."
       },
       {
         "file": "dist/client.github.js",
-        "line": 7580,
+        "line": 7787,
         "text": "let response = await remoteUploadHook.fetch(request.path, {"
       },
       {
         "file": "dist/client.js",
-        "line": 7580,
+        "line": 7787,
         "text": "let response = await remoteUploadHook.fetch(request.path, {"
       },
       {
-        "file": "dist/dsh-web-host.js",
-        "line": 110,
-        "text": "const local = await fetch(runtime.origin, { headers: { cookie }, redirect: 'manual', signal });"
+        "file": "dist/dsh-web-lan.js",
+        "line": 2,
+        "text": "import { createServer, request } from 'node:http';"
       },
       {
-        "file": "dist/hostc/connection.js",
-        "line": 17,
-        "text": "const socket = new WebSocket(options.tunnel.connectUrl, {"
+        "file": "dist/dsh-web-lan.js",
+        "line": 3,
+        "text": "import { request as secureRequest } from 'node:https';"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "dist/index.js",
-        "line": 110913,
+        "line": 111994,
         "text": "toolContext.effect(() => tools.register(definition));"
       },
       {
@@ -92,11 +92,6 @@
         "text": "this.child = spawn(this.config.command, this.config.args ?? [], { cwd: this.config.cwd, stdio: 'pipe', windowsHide: true }); return this.child; }"
       },
       {
-        "file": "dist/acp/adapters/antigravity-acp.js",
-        "line": 1,
-        "text": "import { execFile } from 'node:child_process';"
-      },
-      {
         "file": "dist/acp/adapters/antigravity/executor.js",
         "line": 1,
         "text": "import { spawn } from 'node:child_process';"
@@ -105,6 +100,11 @@
         "file": "dist/acp/adapters/antigravity/executor.js",
         "line": 22,
         "text": "const child = spawn(binary, args, {"
+      },
+      {
+        "file": "dist/acp/adapters/antigravity/executor.js",
+        "line": 87,
+        "text": "return spawn(binary, args, {"
       }
     ]
   },

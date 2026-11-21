@@ -1,0 +1,62 @@
+{
+  "name": "dsh-session-guild",
+  "version": "0.0.2",
+  "scannedAt": "2026-11-21T08:41:53.169Z",
+  "icon": "dsh-session-guild.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/paths.js",
+        "line": 6,
+        "text": "import { realpath } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 62,
+        "text": "export const inject = ['tools', 'permissionPresets']"
+      },
+      {
+        "file": "index.js",
+        "line": 153,
+        "text": "const dispose = ctx.tools.register(createListWorkspacesTool(runtime))"
+      },
+      {
+        "file": "lib/register.js",
+        "line": 68,
+        "text": "? ctx.tools.register(definition, { when })"
+      },
+      {
+        "file": "lib/register.js",
+        "line": 69,
+        "text": ": ctx.tools.register(definition))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "permissionPresets",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

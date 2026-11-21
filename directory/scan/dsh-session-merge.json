@@ -1,0 +1,97 @@
+{
+  "name": "dsh-session-merge",
+  "version": "0.6.1",
+  "scannedAt": "2026-11-21T08:41:52.447Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/validate.mjs",
+        "line": 6,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "deep-validate.mjs",
+        "line": 8,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "deep-validate.mjs",
+        "line": 57,
+        "text": "const buf = fs.readFileSync(file);"
+      },
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 36,
+        "text": "try { fs.appendFileSync(LOG, `[${t}] ${line}\\n`, 'utf8'); } catch { /* 忽略 */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 25,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 269,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 1458,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 73,
+        "text": "const { spawn } = await import('node:child_process');"
+      },
+      {
+        "file": "index.js",
+        "line": 75,
+        "text": "const p = spawn(process.execPath, [script, targetId], { cwd: path.dirname(script), windowsHide: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 866,
+        "text": "const { spawn } = await import('node:child_process');"
+      },
+      {
+        "file": "index.js",
+        "line": 868,
+        "text": "const p = spawn(process.execPath, [script, cid], { cwd: path.dirname(script), windowsHide: true });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

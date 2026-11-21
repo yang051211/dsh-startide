@@ -1,0 +1,60 @@
+{
+  "name": "dsh-market-radar",
+  "version": "0.1.6",
+  "scannedAt": "2026-11-21T08:41:48.060Z",
+  "icon": "dsh-market-radar.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 841,
+        "text": "import { mkdir, readFile, rename, writeFile, copyFile, unlink } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 852,
+        "text": "return { config: validateConfig(JSON.parse(await readFile(this.path, \"utf8\"))) };"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 861,
+        "text": "await mkdir(dirname(this.path), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 864,
+        "text": "await writeFile(temp, JSON.stringify(config, null, 2), { flag: \"wx\", mode: 384 });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 875,
+        "text": "await unlink(temp).catch(() => {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}
