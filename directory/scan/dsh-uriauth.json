@@ -1,0 +1,82 @@
+{
+  "name": "dsh-uriauth",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-22T08:23:37.590Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 56,
+        "text": "const response = await fetch(CONFIG_ROUTE, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 63,
+        "text": "const response = await fetch(CONFIG_ROUTE, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { request as httpRequest } from 'node:http'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "import { request as httpsRequest } from 'node:https'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/settings.js",
+        "line": 1,
+        "text": "import { chmodSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/settings.js",
+        "line": 119,
+        "text": "readFileSync(settingsFile(env), 'utf8')"
+      },
+      {
+        "file": "lib/settings.js",
+        "line": 130,
+        "text": "text = readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "lib/settings.js",
+        "line": 146,
+        "text": "mkdirSync(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/settings.js",
+        "line": 148,
+        "text": "writeFileSync(temporary, `${JSON.stringify(state, null, 2)}\\n`, { encoding: 'utf8', mode: 0o600 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

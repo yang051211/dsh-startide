@@ -1,15 +1,41 @@
 {
   "name": "@dpharness/dsh-deepseek-web",
-  "version": "0.3.0",
-  "scannedAt": "2026-10-26T10:11:55.611Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-22T08:23:38.695Z",
   "icon": "dpharness__dsh-deepseek-web.svg",
   "network": {
     "hit": false,
     "evidence": []
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host-patch/patch-asar.mjs",
+        "line": 28,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "host-patch/patch-asar.mjs",
+        "line": 142,
+        "text": "const orig = fs.readFileSync(BACKUP_PATH);"
+      },
+      {
+        "file": "host-patch/patch-asar.mjs",
+        "line": 143,
+        "text": "const cur = fs.readFileSync(asarPath);"
+      },
+      {
+        "file": "host-patch/patch-asar.mjs",
+        "line": 155,
+        "text": "fs.writeFileSync(tmp, orig);"
+      },
+      {
+        "file": "host-patch/patch-asar.mjs",
+        "line": 162,
+        "text": "const buf = fs.readFileSync(asarPath);"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,

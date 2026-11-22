@@ -1,24 +1,24 @@
 {
   "name": "dsh-workplan",
-  "version": "3.1.4",
-  "scannedAt": "2026-11-20T21:47:25.410Z",
+  "version": "3.1.7",
+  "scannedAt": "2026-11-22T08:23:29.472Z",
   "icon": "dsh-workplan.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 1533,
+        "line": 1537,
         "text": "const response = await fetch(`/dsh-workplan/plans${query}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1533,
+        "line": 1537,
         "text": "const response = await fetch(`/dsh-workplan/plans${query}`, {"
       },
       {
         "file": "src/client.ts",
-        "line": 1584,
+        "line": 1588,
         "text": "const response = await fetch(`/dsh-workplan/plans${query}`, {"
       }
     ]
@@ -58,28 +58,28 @@
     "evidence": [
       {
         "file": "lib/host.js",
-        "line": 85,
+        "line": 188,
         "text": "export const inject = ['tools', 'systemPrompt', 'llm', 'subagents', 'sessions'];"
       },
       {
         "file": "lib/host.js",
-        "line": 1241,
+        "line": 1348,
         "text": "* [3.0.1-激活热修] DSH tools.register() 的强制契约：每个工具必须声明"
       },
       {
         "file": "lib/host.js",
-        "line": 1337,
+        "line": 1444,
         "text": "* 为 tools.register() 强制项。schema 覆盖 runtime.releaseTool 的全部返回形"
       },
       {
         "file": "lib/host.js",
-        "line": 1859,
-        "text": "ctx.effect(() => ctx.tools.register(createUpdateTool(runtime)));"
+        "line": 1971,
+        "text": "ctx.effect(() => ctx.tools.register(createUpdateTool(runtime), { when: toolWhen('dsh_workplan_update') }));"
       },
       {
         "file": "lib/host.js",
-        "line": 1860,
-        "text": "ctx.effect(() => ctx.tools.register(createCancelTool(runtime)));"
+        "line": 1972,
+        "text": "ctx.effect(() => ctx.tools.register(createCancelTool(runtime), { when: toolWhen('dsh_workplan_cancel') }));"
       }
     ]
   },

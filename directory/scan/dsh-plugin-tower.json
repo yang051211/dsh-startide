@@ -1,0 +1,97 @@
+{
+  "name": "dsh-plugin-tower",
+  "version": "0.10.0",
+  "scannedAt": "2026-11-22T08:23:38.822Z",
+  "icon": "dsh-plugin-tower.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 623,
+        "text": "const response = await fetch(API + (full ? '' : '?counts=1'), {"
+      },
+      {
+        "file": "client.js",
+        "line": 1134,
+        "text": "const response = await fetch(API, {"
+      },
+      {
+        "file": "client.js",
+        "line": 1514,
+        "text": "const response = await fetch(url, { cache: 'no-store', headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 1628,
+        "text": "const response = await fetch(API + '?report=1&hours=24', { cache: 'no-store', headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 1695,
+        "text": "const response = await fetch(API + suffix, { cache: 'no-store', headers: { accept: 'application/json' } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { mkdirSync, appendFileSync, readFileSync, writeFileSync, statSync, readdirSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 337,
+        "text": "parsed = JSON.parse(readFileSync(path, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 541,
+        "text": "const value = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 630,
+        "text": "const parsed = JSON.parse(readFileSync(AUDIT_STATE_FILE, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 639,
+        "text": "mkdirSync(AUDIT_DIR, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/run-tests.mjs",
+        "line": 15,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/verify-artifact.mjs",
+        "line": 19,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

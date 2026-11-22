@@ -1,20 +1,30 @@
 {
   "name": "dsh-review-hub",
-  "version": "1.3.2",
-  "scannedAt": "2026-11-20T08:47:15.998Z",
+  "version": "1.4.0",
+  "scannedAt": "2026-11-22T08:23:33.007Z",
   "icon": "dsh-review-hub.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "src/client.js",
-        "line": 877,
+        "line": 825,
         "text": "const response = await fetch(API_BASE + path, Object.assign({ cache: 'no-store' }, options || {}));"
       },
       {
         "file": "src/client.js",
-        "line": 2531,
+        "line": 2539,
         "text": "const response = await fetch(url, { cache: 'no-store' });"
+      },
+      {
+        "file": "src/evidence.js",
+        "line": 178,
+        "text": "['downloads', /\\b(curl|wget|iwr|irm|Invoke-WebRequest|Invoke-RestMethod|bitsadmin|ncat|nc)\\b/i],"
+      },
+      {
+        "file": "src/routes.js",
+        "line": 78,
+        "text": "// `curl -H 'Origin: http://127.0.0.1:<port>' -d '{}' /config` while the same call"
       }
     ]
   },
@@ -33,17 +43,17 @@
       },
       {
         "file": "src/index.js",
-        "line": 706,
+        "line": 729,
         "text": "return String(JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version || '0');"
       },
       {
         "file": "src/index.js",
-        "line": 782,
+        "line": 811,
         "text": "void appendFile(join(store.root, 'review-probe.log'), JSON.stringify({ at: Date.now(), kind: 'answer', ...info }) + '\\n').catch(() => undefined);"
       },
       {
         "file": "src/index.js",
-        "line": 786,
+        "line": 815,
         "text": "void appendFile(join(store.root, 'review-probe.log'), JSON.stringify({ at: Date.now(), kind, keys }) + '\\n').catch(() => undefined);"
       }
     ]

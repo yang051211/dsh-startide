@@ -1,11 +1,16 @@
 {
   "name": "@philomelcc/dsh-interaction",
-  "version": "0.2.0",
-  "scannedAt": "2026-11-17T22:17:06.386Z",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-22T08:23:35.550Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
+      {
+        "file": "bin/relay.mjs",
+        "line": 52,
+        "text": "const response = await fetch(BASE + API + path, {"
+      },
       {
         "file": "client.js",
         "line": 2829,
@@ -18,8 +23,13 @@
       },
       {
         "file": "client.js",
-        "line": 3053,
-        "text": "fetch(API + \"/settings\", { cache: \"no-store\" })"
+        "line": 3140,
+        "text": "fetch(API + (action === \"reveal\" ? \"/reveal\" : \"/open\"), {"
+      },
+      {
+        "file": "client.js",
+        "line": 3171,
+        "text": "fetch(API + \"/open-relative\", {"
       }
     ]
   },
@@ -29,21 +39,21 @@
       {
         "file": "index.js",
         "line": 13,
-        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+        "text": "import { access, mkdir, readFile, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "index.js",
-        "line": 79,
+        "line": 83,
         "text": "const raw = await readFile(SETTINGS_FILE, 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 87,
+        "line": 91,
         "text": "await mkdir(dirname(SETTINGS_FILE), { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 88,
+        "line": 92,
         "text": "await writeFile(SETTINGS_FILE, `${JSON.stringify(settings, null, 2)}\\n`, 'utf8')"
       }
     ]
@@ -58,7 +68,7 @@
       },
       {
         "file": "index.js",
-        "line": 385,
+        "line": 389,
         "text": "for (const tool of next) toolDisposers.push(ctx.tools.register(tool))"
       }
     ]

@@ -1,0 +1,60 @@
+{
+  "name": "local-recall",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-22T08:23:31.210Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { readdir, readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 64,
+        "text": "const raw = await readFile(path, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 276,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 49,
+      "text": "cp -r local-recall \"${DSH_HOME:-$HOME/.dsh}/dsh-go/plugins/local-recall\""
+    },
+    {
+      "file": "README.md",
+      "line": 50,
+      "text": "dsh plugin --profile web add \"${DSH_HOME:-$HOME/.dsh}/dsh-go/plugins/local-recall\""
+    }
+  ],
+  "skippedEntries": []
+}

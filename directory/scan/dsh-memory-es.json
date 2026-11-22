@@ -1,0 +1,145 @@
+{
+  "name": "dsh-memory-es",
+  "version": "0.7.6",
+  "scannedAt": "2026-11-22T08:23:34.017Z",
+  "icon": "dsh-memory-es.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 8,
+        "text": "import { Agent, request } from \"node:http\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 9,
+        "text": "import { Agent as Agent$1, request as request$1 } from \"node:https\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2541,
+        "text": "response = await fetch(endpoint, {"
+      },
+      {
+        "file": "panel/client.js",
+        "line": 1189,
+        "text": "const res = await fetch(`${API}${path}${query}`, {"
+      },
+      {
+        "file": "panel/client.js",
+        "line": 1208,
+        "text": "const res = await fetch(`${API}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 479,
+        "text": "caPem = readFileSync(caCertPath);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2229,
+        "text": "return readFileSync(new URL(`../persona/presets/${DEFAULT_PERSONA_PRESET}.md`, import.meta.url), \"utf8\").trim();"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4064,
+        "text": "return readFileSync(file, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 5159,
+        "text": "return zstdDecompressSync(readFileSync(file)).toString(\"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 9210,
+        "text": "const inject = [\"tools\", \"systemPrompt\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 9293,
+        "text": "ctx.effect(() => ctx.tools.register(defineSaveTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 9392,
+        "text": "ctx.effect(() => ctx.tools.register(defineSearchTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 9414,
+        "text": "ctx.effect(() => ctx.tools.register(defineGetTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 9420,
+        "text": "ctx.effect(() => ctx.tools.register(defineDocSearchTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/update-CNw2psWv.js",
+        "line": 4,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/update-CNw2psWv.js",
+        "line": 340,
+        "text": "const result = spawn(\"tar\", ["
+      },
+      {
+        "file": "lib/update-CNw2psWv.js",
+        "line": 580,
+        "text": "const install = spawn(\"bash\", ["
+      },
+      {
+        "file": "panel/cliRunner.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "configEditor",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 97,
+      "text": "./es/setup.sh                       # 起 ES → 建索引 → 建角色/账号 → 生成配置片段"
+    }
+  ],
+  "skippedEntries": []
+}

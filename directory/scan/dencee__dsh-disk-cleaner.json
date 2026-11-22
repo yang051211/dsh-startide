@@ -1,0 +1,72 @@
+{
+  "name": "@dencee/dsh-disk-cleaner",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-22T08:23:32.531Z",
+  "icon": "dencee__dsh-disk-cleaner.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 43,
+        "text": "const response = await fetch(apiUrl(path), { ...init, signal: controller.signal })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { promises as fsp } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 1691,
+        "text": "await fsp.rm(safe, { recursive: true, force: true, maxRetries: 2, retryDelay: 120 })"
+      },
+      {
+        "file": "index.js",
+        "line": 1727,
+        "text": "await fsp.unlink(child.full)"
+      },
+      {
+        "file": "index.js",
+        "line": 1745,
+        "text": "await fsp.rm(child.full, { recursive: true, force: true, maxRetries: 2, retryDelay: 120 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "import { execFile, execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

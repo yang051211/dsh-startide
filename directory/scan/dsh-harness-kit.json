@@ -1,0 +1,109 @@
+{
+  "name": "dsh-harness-kit",
+  "version": "0.1.6",
+  "scannedAt": "2026-11-22T08:23:32.887Z",
+  "icon": "dsh-harness-kit.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 151,
+        "text": "fetch('/harness-kit/state').then((r) => r.json()).then((json) => {"
+      },
+      {
+        "file": "client.js",
+        "line": 215,
+        "text": "const res = await fetch('/harness-kit/state');"
+      },
+      {
+        "file": "client.js",
+        "line": 238,
+        "text": "const res = await fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });"
+      },
+      {
+        "file": "client.js",
+        "line": 321,
+        "text": "fetch('/harness-kit/state', { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 358,
+        "text": "fetch('/harness-kit/command', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 6,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "kernel/advance.js",
+        "line": 12,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "kernel/advance.js",
+        "line": 29,
+        "text": "const data = JSON.parse(fs.readFileSync(marksPath(ws), 'utf8'));"
+      },
+      {
+        "file": "kernel/advance.js",
+        "line": 38,
+        "text": "fs.mkdirSync(path.dirname(marksPath(ws)), { recursive: true });"
+      },
+      {
+        "file": "kernel/advance.js",
+        "line": 39,
+        "text": "fs.writeFileSync(marksPath(ws), `${JSON.stringify({ fired }, null, 2)}\\n`, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "export const inject = ['commands', 'tools'];"
+      },
+      {
+        "file": "kernel/guards.js",
+        "line": 36,
+        "text": "const dispose = ctx.tools.guard((execution) => {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "kernel/exec.js",
+        "line": 4,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "kernel/exec.js",
+        "line": 8,
+        "text": "const child = spawn(cmd, args, { cwd, stdio: ['ignore', 'pipe', 'pipe'] });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

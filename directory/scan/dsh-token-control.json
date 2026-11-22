@@ -1,0 +1,89 @@
+{
+  "name": "dsh-token-control",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-22T08:23:36.554Z",
+  "icon": "dsh-token-control.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/client/client.js",
+        "line": 239,
+        "text": "const response = await fetch(`${ROUTES.stream}${query}`, {"
+      },
+      {
+        "file": "src/client/client.js",
+        "line": 258,
+        "text": "const response = await fetch(`${ROUTES.snapshot}${query}`, {"
+      },
+      {
+        "file": "src/client/client.js",
+        "line": 810,
+        "text": "const response = await fetch(url, { cache: 'no-store', ...init });"
+      },
+      {
+        "file": "src/client/core.js",
+        "line": 235,
+        "text": "const response = await fetch(`${ROUTES.stream}${query}`, {"
+      },
+      {
+        "file": "src/client/core.js",
+        "line": 254,
+        "text": "const response = await fetch(`${ROUTES.snapshot}${query}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/paths.js",
+        "line": 9,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "src/host/paths.js",
+        "line": 38,
+        "text": "const text = await readFile(file, 'utf8');"
+      },
+      {
+        "file": "src/host/paths.js",
+        "line": 52,
+        "text": "await mkdir(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "src/host/paths.js",
+        "line": 54,
+        "text": "await writeFile(temporary, `${JSON.stringify(value, null, 2)}\\n`, 'utf8');"
+      },
+      {
+        "file": "src/host/routes.js",
+        "line": 13,
+        "text": "import { readFile } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "credentials",
+    "sessions",
+    "timer",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

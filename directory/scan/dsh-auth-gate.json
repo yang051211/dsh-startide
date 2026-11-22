@@ -1,34 +1,34 @@
 {
   "name": "dsh-auth-gate",
-  "version": "0.23.1",
-  "scannedAt": "2026-11-19T21:28:15.291Z",
+  "version": "0.23.2",
+  "scannedAt": "2026-11-22T08:23:29.597Z",
   "icon": "dsh-auth-gate.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1294,
+        "line": 1388,
         "text": "return fetch(PASSWORD_TARGET, {"
       },
       {
         "file": "lib/client.js",
-        "line": 2129,
+        "line": 2383,
         "text": "return fetch(REGISTER_OPTIONS_TARGET, {"
       },
       {
         "file": "lib/client.js",
-        "line": 2153,
+        "line": 2407,
         "text": "return fetch(REGISTER_TARGET, {"
       },
       {
         "file": "lib/client.js",
-        "line": 2225,
+        "line": 2482,
         "text": "const res = await fetch(REMOVE_TARGET, {"
       },
       {
         "file": "lib/client.js",
-        "line": 2578,
+        "line": 2844,
         "text": "const res = await fetch(LIST_TARGET, {"
       }
     ]
@@ -43,23 +43,23 @@
       },
       {
         "file": "lib/host/entities/user/model/atomic-write.js",
-        "line": 1,
-        "text": "import { promises as fs } from \"node:fs\";"
-      },
-      {
-        "file": "lib/host/entities/user/model/users-file.js",
         "line": 2,
         "text": "import { promises as fs } from \"node:fs\";"
       },
       {
-        "file": "lib/host/entities/user/model/users-file.js",
-        "line": 51,
-        "text": "text = await fs.readFile(filePath, \"utf8\");"
+        "file": "lib/host/entities/user/model/atomic-write.js",
+        "line": 62,
+        "text": "await handle.writeFile(text);"
       },
       {
-        "file": "lib/host/entities/user/model/users-file.js",
-        "line": 113,
-        "text": "await fs.mkdir(path.dirname(filePath), { recursive: true });"
+        "file": "lib/host/entities/user/model/atomic-write.js",
+        "line": 72,
+        "text": "await fileSystem.rm(tmpPath, { force: true }).catch(() => undefined);"
+      },
+      {
+        "file": "lib/host/entities/user/model/atomic-write.js",
+        "line": 96,
+        "text": "writeFile: (data) => handle.writeFile(data),"
       }
     ]
   },
@@ -90,12 +90,12 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 515,
+      "line": 563,
       "text": "npm install -g dsh-auth-gate"
     },
     {
       "file": "README.zh.md",
-      "line": 420,
+      "line": 456,
       "text": "npm install -g dsh-auth-gate"
     }
   ],

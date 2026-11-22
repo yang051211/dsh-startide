@@ -1,41 +1,56 @@
 {
   "name": "@eddyskywalker/dsh-chatgpt-subscription",
-  "version": "0.80.5",
-  "scannedAt": "2026-11-20T21:47:19.225Z",
+  "version": "0.81.3",
+  "scannedAt": "2026-11-22T08:23:26.905Z",
   "icon": "eddyskywalker__dsh-chatgpt-subscription.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/client.js",
-        "line": 1094,
-        "text": "const response = await fetch(url, {"
+        "file": "lib/aws-quick-mcp.js",
+        "line": 27,
+        "text": "const response = await fetch(execution.url, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1858,
+        "line": 1197,
         "text": "const response = await fetch(`${base}/proxy`, { credentials: \"same-origin\" });"
       },
       {
         "file": "lib/client.js",
-        "line": 1870,
+        "line": 1209,
         "text": "const response = await fetch(`${base}/preferences/update`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 3905,
-        "text": "const response = await fetch(`${prefix}${path}`, {"
+        "line": 1894,
+        "text": "const response = await fetch(url, {"
       },
       {
         "file": "lib/client.js",
-        "line": 11637,
-        "text": "const response = await fetch(url, {"
+        "line": 3935,
+        "text": "const response = await fetch(`${prefix}${path}`, {"
       }
     ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/aws-quick-mcp.js",
+        "line": 1,
+        "text": "import fs from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/aws-quick-mcp.js",
+        "line": 13,
+        "text": "const raw = await fs.readFile(statePath, \"utf8\");"
+      },
+      {
+        "file": "lib/aws-quick-mcp.js",
+        "line": 25,
+        "text": "const execution = JSON.parse(await fs.readFile(statePath, \"utf8\")).execution;"
+      },
       {
         "file": "lib/codemode.js",
         "line": 660,
@@ -45,21 +60,6 @@
         "file": "lib/codemode.js",
         "line": 3115,
         "text": "const fsService = serviceOf(\"fs\");"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 12,
-        "text": "import fs, { chmod, lstat, mkdir, open, readFile, realpath, rename, stat, unlink, writeFile } from \"node:fs/promises\";"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 18,
-        "text": "yFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, realpathSync, rmSync, rmdirSync, statSync, utimesSync, writeFileSync } from \"node:fs\";"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 1379,
-        "text": "const content = await fs.readFile(catalogSnapshotPath(name), \"utf8\");"
       }
     ]
   },
@@ -103,22 +103,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 2262,
+        "line": 2281,
         "text": "const child = spawn(\"security\", args, {"
       },
       {
         "file": "lib/index.js",
-        "line": 2547,
+        "line": 2566,
         "text": "const child = spawn(\"secret-tool\", args, {"
       },
       {
         "file": "lib/index.js",
-        "line": 2701,
+        "line": 2720,
         "text": "const child = spawn(\"powershell.exe\", ["
       },
       {
         "file": "lib/index.js",
-        "line": 21165,
+        "line": 21292,
         "text": "if (process.platform === \"darwin\") spawn(\"open\", [url], {"
       }
     ]
@@ -127,7 +127,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 4,
+  "dependencies": 6,
   "minifiedFiles": [
     "lib/client.js",
     "lib/index.js"

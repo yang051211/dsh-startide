@@ -1,0 +1,68 @@
+{
+  "name": "@dreanzy/dsh-skill-pack",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-22T08:23:38.055Z",
+  "icon": "dreanzy__dsh-skill-pack.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 114,
+        "text": "response = await fetch(path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/hooks.js",
+        "line": 1,
+        "text": "import { appendFileSync, mkdirSync, statSync, truncateSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/hooks.js",
+        "line": 23,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/hooks.js",
+        "line": 34,
+        "text": "appendFileSync(file, `${new Date().toISOString()} ${message}\\n`);"
+      },
+      {
+        "file": "lib/snapshot.js",
+        "line": 1,
+        "text": "import { stat } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: tsc -p tsconfig.json"
+      }
+    ]
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "skills"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

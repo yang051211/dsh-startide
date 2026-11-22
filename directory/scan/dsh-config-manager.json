@@ -1,7 +1,7 @@
 {
   "name": "dsh-config-manager",
-  "version": "0.11.0",
-  "scannedAt": "2026-11-21T20:45:57.703Z",
+  "version": "0.12.0",
+  "scannedAt": "2026-11-22T08:23:27.294Z",
   "icon": "dsh-config-manager.svg",
   "network": {
     "hit": true,
@@ -13,22 +13,22 @@
       },
       {
         "file": "lib/client.js",
-        "line": 2212,
+        "line": 2231,
         "text": "return await readJson(await fetch(path, {"
       },
       {
         "file": "lib/client.js",
-        "line": 2270,
+        "line": 2289,
         "text": "response: await fetch(path, { signal: controller.signal }),"
       },
       {
         "file": "lib/client.js",
-        "line": 35925,
+        "line": 36596,
         "text": "* （issue #30 的插件私有代理），于是 client.js 里出现 `require(\"node:https\")`，"
       },
       {
         "file": "lib/client.js",
-        "line": 35927,
+        "line": 36598,
         "text": "*   「client-modules: require(\"node:https\") missed the module table」。"
       }
     ]
@@ -42,24 +42,24 @@
         "text": "await ctx.fs.readFile(rel);"
       },
       {
+        "file": "lib/adapters/attachment-index-cache.js",
+        "line": 59,
+        "text": "raw = await ctx.fs.readFile(ATTACHMENT_CACHE_REL);"
+      },
+      {
+        "file": "lib/adapters/attachment-index-cache.js",
+        "line": 108,
+        "text": "await ctx.fs.writeFile(ATTACHMENT_CACHE_REL, payload);"
+      },
+      {
+        "file": "lib/adapters/attachments.js",
+        "line": 138,
+        "text": "bytes = await ctx.fs.readFile(homeRel);"
+      },
+      {
         "file": "lib/adapters/file-collection.js",
         "line": 297,
         "text": "const data = await ctx.fs.readFile(rel);"
-      },
-      {
-        "file": "lib/adapters/file-collection.js",
-        "line": 346,
-        "text": "current = await ctx.target.fs.readFile(path.join(this.baseDir, file.relativePath));"
-      },
-      {
-        "file": "lib/adapters/file-collection.js",
-        "line": 391,
-        "text": "await ctx.target.fs.writeFile(path.join(this.baseDir, ref), file.data);"
-      },
-      {
-        "file": "lib/adapters/mcp.js",
-        "line": 511,
-        "text": "await ctx.target.fs.writeFile(MCP_CONNECTOR_STORE_REL, new TextEncoder().encode(text));"
       }
     ]
   },

@@ -1,7 +1,7 @@
 {
   "name": "dsh-fishpai",
-  "version": "1.2.1",
-  "scannedAt": "2026-11-01T19:08:59.433Z",
+  "version": "2.0.1",
+  "scannedAt": "2026-11-22T08:23:35.744Z",
   "icon": "dsh-fishpai.svg",
   "network": {
     "hit": true,
@@ -13,7 +13,7 @@
       },
       {
         "file": "lib/client.js",
-        "line": 290,
+        "line": 303,
         "text": "const res = await fetch(api.assetUrl(state.sessionId, docKey, img.src));"
       }
     ]
@@ -23,27 +23,27 @@
     "evidence": [
       {
         "file": "plugin/core/render.mjs",
-        "line": 974,
+        "line": 967,
         "text": "return import('node:fs').then((fs) => {"
       },
       {
         "file": "plugin/core/render.mjs",
-        "line": 975,
+        "line": 968,
         "text": "const text = input === '-' ? fs.readFileSync(0, 'utf8') : fs.readFileSync(input, 'utf8')"
       },
       {
         "file": "plugin/core/render.mjs",
-        "line": 978,
+        "line": 971,
         "text": "fs.writeFileSync(out, html, 'utf8')"
       },
       {
         "file": "plugin/core/runtime.mjs",
-        "line": 10,
+        "line": 9,
         "text": "import fs from 'node:fs'"
       },
       {
         "file": "plugin/core/runtime.mjs",
-        "line": 26,
+        "line": 25,
         "text": "const load = (f) => vm.runInContext(fs.readFileSync(path.join(VENDOR, f), 'utf8'), box, { filename: f })"
       }
     ]
@@ -58,23 +58,23 @@
       },
       {
         "file": "plugin/host/tools.mjs",
-        "line": 147,
+        "line": 150,
         "text": "* @param {object} ctx 宿主 cordis 上下文（需要 ctx.tools）"
       },
       {
         "file": "plugin/host/tools.mjs",
-        "line": 156,
+        "line": 159,
         "text": "const dispose = ctx.tools.register(tool)"
       },
       {
         "file": "plugin/host/tools.mjs",
-        "line": 527,
+        "line": 549,
         "text": "// 走 `register()` 而不是直接 `ctx.tools.register()`：它把卸载函数收进 disposers，"
       },
       {
         "file": "plugin/index.mjs",
-        "line": 22,
-        "text": "export const inject = ['webServer', 'sessions', 'tools', 'skills']"
+        "line": 24,
+        "text": "export const inject = ['webServer', 'connection', 'sessions', 'tools', 'skills']"
       }
     ]
   },
@@ -86,13 +86,14 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [
     "plugin/vendor/highlight.min.js",
     "plugin/vendor/markdown-it.min.js"
   ],
   "binaryFiles": [],
   "requiredServices": [
+    "connection",
     "sessions",
     "skills",
     "tools",

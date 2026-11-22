@@ -1,0 +1,112 @@
+{
+  "name": "@dynastxu/dsh-github-agents-proxy",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-22T08:23:38.091Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 379,
+        "text": "const response = await fetch(TOKEN_STATUS_ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "import { mkdir, open, readFile, rename, rm, stat } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 626,
+        "text": "await mkdir(directory, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 634,
+        "text": "await handle.writeFile(`${JSON.stringify(token)}\\n`, \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 641,
+        "text": "await rm(temporary, { force: true }).catch(() => void 0);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 675,
+        "text": "text = await readFile(this.tokenPath, \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2079,
+        "text": "const inject = [\"tools\", \"systemPrompt\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2159,
+        "text": "ctx.effect(() => tools.register(createRefreshTool(source)));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2160,
+        "text": "ctx.effect(() => tools.register(createStatusTool(source)));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2169,
+        "text": "ctx.effect(() => tools.register(createCommitTool(commitRuntime)));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2175,
+        "text": "ctx.effect(() => tools.register(createPullRequestTool(pullRequestRuntime)));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 351,
+        "text": "const child = spawn(\"gh\", args, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1310,
+        "text": "const handle = subprocess.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: npm run build"
+      }
+    ]
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

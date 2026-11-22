@@ -1,0 +1,104 @@
+{
+  "name": "dsh-plugin-lark-bridge",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-22T08:23:33.029Z",
+  "icon": "dsh-plugin-lark-bridge.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.js",
+        "line": 47,
+        "text": "const text = await (await fetch(endpoint(path), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.mjs",
+        "line": 8,
+        "text": "import { mkdir, readFile, rename, rm, stat, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 1445,
+        "text": "const text = await readFile(this.file, \"utf8\");"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 1533,
+        "text": "await mkdir(dirname(this.file), { recursive: true });"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 1535,
+        "text": "await writeFile(tmp, `${JSON.stringify(state, null, 2)}\\n`, \"utf8\");"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 1536,
+        "text": "await rm(this.file, { force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.mjs",
+        "line": 1861,
+        "text": "const unregisterTool = ctx.tools.register(notifyTool, { when: ({ agent }) => isBridgeAgent(agent) });"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.mjs",
+        "line": 1,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 142,
+        "text": "spawn(\"taskkill\", ["
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 265,
+        "text": "spawn(args) {"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 601,
+        "text": "this.spawn();"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 625,
+        "text": "spawn() {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "dist/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 14,
+      "text": "npm install -g @larksuite/cli@latest"
+    }
+  ],
+  "skippedEntries": []
+}

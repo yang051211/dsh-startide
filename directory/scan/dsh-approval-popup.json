@@ -1,0 +1,102 @@
+{
+  "name": "dsh-approval-popup",
+  "version": "1.3.3",
+  "scannedAt": "2026-11-22T08:23:34.225Z",
+  "icon": "dsh-approval-popup.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 349,
+        "text": "const response = await fetch(\"/dsh-approval-popup/answer\", {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 640,
+        "text": "const response = await fetch(\"/dsh-approval-popup/poll\", {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 870,
+        "text": "fetch(\"/dsh-approval-popup/settings/get\", {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 895,
+        "text": "const response = await fetch(\"/dsh-approval-popup/settings/set\", {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "} from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 75,
+        "text": "const stored = JSON.parse(readFileSync(SETTINGS_FILE, 'utf8'));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 103,
+        "text": "mkdirSync(SETTINGS_DIR, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 104,
+        "text": "writeFileSync(SETTINGS_FILE, `${JSON.stringify(settings, null, 2)}\\n`, 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 110,
+        "text": "mkdirSync(SETTINGS_DIR, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 9,
+        "text": "import { execFileSync, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 496,
+        "text": "const child = spawn("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 569,
+        "text": "const child = spawn("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 649,
+        "text": "const child = spawn("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-mobile-plugin",
-  "version": "0.5.94",
-  "scannedAt": "2026-11-21T20:45:53.864Z",
+  "version": "0.5.95",
+  "scannedAt": "2026-11-22T08:23:25.627Z",
   "icon": "dsh-mobile-plugin.png",
   "network": {
     "hit": true,
@@ -92,6 +92,16 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/cloudflared/provision.cjs",
+        "line": 209,
+        "text": "require('node:child_process').execFileSync('xattr', ['-d', 'com.apple.quarantine', target], { stdio: 'ignore' });"
+      },
+      {
+        "file": "lib/cloudflared/runner.cjs",
+        "line": 7,
+        "text": "const { spawn } = require('node:child_process');"
+      },
+      {
         "file": "lib/frpc/runner.cjs",
         "line": 7,
         "text": "const { spawn } = require('node:child_process');"
@@ -105,16 +115,6 @@
         "file": "lib/git/exec.js",
         "line": 68,
         "text": "execFile('git', args, {"
-      },
-      {
-        "file": "lib/mobile/extension-catalog.js",
-        "line": 364,
-        "text": "require('node:child_process').execFileSync('zip', ['-r', '-q', '-X', outFile, '.'], {"
-      },
-      {
-        "file": "lib/mobile/extension-dev.js",
-        "line": 277,
-        "text": "require('node:child_process').execFileSync('zip', ['-r', '-q', '-X', outFile, '.'], {"
       }
     ]
   },

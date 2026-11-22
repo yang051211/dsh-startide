@@ -1,0 +1,144 @@
+{
+  "name": "dsh-craft-anything",
+  "version": "0.6.1",
+  "scannedAt": "2026-11-22T08:23:33.151Z",
+  "icon": "dsh-craft-anything.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 34,
+        "text": "tokenPromise = fetch(TOKEN_ROUTE, { headers: { accept: 'application/json' }, credentials: 'same-origin' })"
+      },
+      {
+        "file": "client.js",
+        "line": 45,
+        "text": "const request = (token) => fetch(path, {"
+      },
+      {
+        "file": "host/update.mjs",
+        "line": 122,
+        "text": "const response = await fetch(url, { headers, signal: AbortSignal.timeout(timeoutMs) })"
+      },
+      {
+        "file": "scripts/install-cli.mjs",
+        "line": 131,
+        "text": "const response = await fetch(url)"
+      },
+      {
+        "file": "scripts/install-cli.ps1",
+        "line": 13,
+        "text": "# curl.exe is preferred (Invoke-WebRequest is the fallback: it broke on a reporter's machine with"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 79,
+        "text": "const{spawn,spawnSync}=require('node:child_process'),fs=require('node:fs'),os=require('node:os'),path=require('node:path');"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 90,
+        "text": "try{const e=JSON.parse(fs.readFileSync(envFile,'utf8'));if(e&&typeof e==='object'&&!Array.isArray(e))extraEnv=e}catch{}"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 91,
+        "text": "const readMode=()=>{try{const m=JSON.parse(fs.readFileSync(modeFile,'utf8'));return m&&m.mode==='deep'?'deep':'clean'}catch{return 'clean'}};"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 94,
+        "text": "let previous=null;try{previous=JSON.parse(fs.readFileSync(stateFile,'utf8'))}catch{}"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 109,
+        "text": "              try{fs.mkdirSync(root,{recursive:true});fs.writeFileSync(stateFile,JSON.stringify(Object.assign({mode,args:argv,pid:child.pid,startedAt:new Date()"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 7,
+        "text": "#   2. craft-anything-mcp  — the shipped @deepseek-ai/dsh-mcp-client, launched on the local"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 18,
+        "text": "# lets dsh-mcp-client reconnect; it only runs if the bridge module cannot be loaded.)"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 32,
+        "text": "#     exits: dsh-mcp-client's unload/reconnect then waits too, and DSH looks frozen."
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 69,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "host/index.js",
+        "line": 4,
+        "text": "// (@deepseek-ai/dsh-mcp-client -> `mcp__craft__*`):"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 79,
+        "text": "const{spawn,spawnSync}=require('node:child_process'),fs=require('node:fs'),os=require('node:os'),path=require('node:path');"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 97,
+        "text": "            else{try{const v=spawnSync(cli,['--version'],{encoding:'utf8',timeout:4000});const m=/(\\d+)\\.(\\d+)\\.(\\d+)/.exec((v.stdout||'')+' '+(v.stderr||''));i"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 108,
+        "text": "const child=spawn(cli,argv,{stdio:'inherit',windowsHide:true,env:Object.assign({},process.env,extraEnv)});"
+      },
+      {
+        "file": "host/index.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "host/index.js",
+        "line": 208,
+        "text": "child = spawn(command, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 200,
+      "text": "- **Claude Code**：走 `npm install -g @anthropic-ai/claude-code`（Windows 用 npm 的 JS 入口，避免 `npm.CMD` 的 EINVAL）；装完还要执行一次 `claude` 登录或用 API Key，`rebuild` 才能用。"
+    }
+  ],
+  "skippedEntries": []
+}

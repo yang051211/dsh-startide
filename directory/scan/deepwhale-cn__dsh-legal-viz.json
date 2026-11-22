@@ -1,11 +1,17 @@
 {
   "name": "@deepwhale-cn/dsh-legal-viz",
-  "version": "0.3.2",
-  "scannedAt": "2026-11-06T08:17:11.725Z",
+  "version": "0.5.2",
+  "scannedAt": "2026-11-22T08:23:38.441Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 588,
+        "text": "            const r = await fetch('/dsh-legal-viz/api/attach', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ files: "
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
@@ -33,7 +39,7 @@
       {
         "file": "lib/api.js",
         "line": 4,
-        "text": "import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';"
+        "text": "import { readFileSync, writeFileSync, mkdirSync, mkdtempSync, statSync } from 'node:fs';"
       }
     ]
   },
@@ -42,14 +48,35 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/readtext.mjs",
+        "line": 4,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/readtext.mjs",
+        "line": 14,
+        "text": "const p = spawn('tesseract', [file, 'stdout', '-l', 'chi_sim+eng', '--psm', '6'], { stdio: ['ignore', 'pipe', 'ignore'] });"
+      },
+      {
+        "file": "lib/readtext.mjs",
+        "line": 27,
+        "text": "const p = spawn('pdftoppm', ['-r', '300', '-png', '-f', '1', '-l', String(maxPages), path, prefix], { stdio: 'ignore' });"
+      },
+      {
+        "file": "lib/readtext.mjs",
+        "line": 44,
+        "text": "const p = spawn('tesseract', [file, 'stdout', '-l', 'chi_sim+eng', '--psm', '6'], { stdio: ['ignore', 'pipe', 'ignore'] });"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
+  "dependencies": 3,
   "minifiedFiles": [
     "lib/client.js"
   ],

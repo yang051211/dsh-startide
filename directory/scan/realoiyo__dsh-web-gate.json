@@ -1,0 +1,82 @@
+{
+  "name": "@realoiyo/dsh-web-gate",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-22T08:23:37.759Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 92,
+        "text": "const res = await fetch(`${API}/status`, { headers: { accept: 'application/json' } });"
+      },
+      {
+        "file": "client/client.js",
+        "line": 117,
+        "text": "const res = await fetch(`${API}/rotate`, {"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 35,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 252,
+        "text": "const req = http.request("
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 385,
+        "text": "const upstreamReq = http.request("
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/settings.js",
+        "line": 16,
+        "text": "} from 'node:fs';"
+      },
+      {
+        "file": "lib/settings.js",
+        "line": 88,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "lib/settings.js",
+        "line": 102,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/settings.js",
+        "line": 104,
+        "text": "writeFileSync(file, `${JSON.stringify(data, null, 2)}\\n`, { encoding: 'utf8', mode: 0o600 });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

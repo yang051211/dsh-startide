@@ -1,19 +1,19 @@
 {
   "name": "dsh-cmdk",
-  "version": "0.3.3",
-  "scannedAt": "2026-11-17T09:25:44.593Z",
+  "version": "0.11.0",
+  "scannedAt": "2026-11-22T08:23:38.476Z",
   "icon": "dsh-cmdk.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 327,
+        "line": 927,
         "text": "return fetch(path, init).then((response) =>"
       },
       {
         "file": "client.js",
-        "line": 554,
+        "line": 1532,
         "text": "fetch('/api/session.markdown?sessionId=' + encodeURIComponent(id), {"
       }
     ]
@@ -23,12 +23,17 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 18,
+        "line": 19,
         "text": "import fs from 'node:fs';"
       },
       {
         "file": "index.js",
-        "line": 233,
+        "line": 40,
+        "text": "const raw = fs.readFileSync(new URL('./package.json', import.meta.url), 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 330,
         "text": "raw = JSON.parse(fs.readFileSync(workspaceStorePath(), 'utf8'));"
       }
     ]
@@ -42,12 +47,12 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 17,
+        "line": 18,
         "text": "import { execFile } from 'node:child_process';"
       },
       {
         "file": "index.js",
-        "line": 99,
+        "line": 114,
         "text": "execFile(command, args, (error) => (error ? reject(error) : resolve()));"
       }
     ]
