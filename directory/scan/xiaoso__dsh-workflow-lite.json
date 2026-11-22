@@ -1,15 +1,35 @@
 {
   "name": "@xiaoso/dsh-workflow-lite",
-  "version": "0.10.0",
-  "scannedAt": "2026-11-12T08:43:13.491Z",
+  "version": "0.11.0",
+  "scannedAt": "2026-11-22T21:06:37.351Z",
   "icon": "xiaoso__dsh-workflow-lite.webp",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 16761,
+        "line": 20164,
         "text": "const value = await spec.fetch(arg);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 151225,
+        "text": "\t\t\t\tcase \"curl\": return lines(`curl -X POST \"${url}\" \\\\`, auth && `  -H \"Authorization: Bearer ${token}\" \\\\`, `  -H \"Content-Type: application/json\" \\\\`, `  -d "
+      },
+      {
+        "file": "lib/client.js",
+        "line": 151226,
+        "text": "\t\t\t\tcase \"powershell\": return lines(`Invoke-RestMethod -Method Post -Uri \"${url}\" \\``, auth && `  -Headers @{ Authorization = \"Bearer ${token}\" } \\``, `  -Conte"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 151227,
+        "text": "\tcase \"javascript\": return lines(`await fetch(\"${url}\", {`, `  method: \"POST\",`, `  headers: {`, auth && `    Authorization: \"Bearer ${token}\",`, `    \"Content-"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 151810,
+        "text": "command: \"node -e \\\"fetch('http://127.0.0.1:3000/health').then((r) => process.exit(r.ok ? 0 : 1), () => process.exit(1))\\\"\","
       }
     ]
   },
@@ -18,28 +38,28 @@
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 70917,
+        "line": 74414,
         "text": "case 105: return a.rm();"
       },
       {
         "file": "lib/client.js",
-        "line": 80017,
+        "line": 83514,
         "text": "_.Ib = function rm() {"
       },
       {
-        "file": "lib/index.mjs",
-        "line": 1,
-        "text": "import { existsSync, readFileSync } from \"node:fs\";"
+        "file": "lib/client.js",
+        "line": 151817,
+        "text": "command: \"node -e \\\"console.log(require('fs').readdirSync('{workspace}/inbox').sort().join('\\\\n'))\\\"\","
       },
       {
-        "file": "lib/index.mjs",
-        "line": 8,
-        "text": "import { access, appendFile, copyFile, lstat, mkdir, open, readFile, readdir, realpath, rename, rm, rmdir, stat, unlink, writeFile } from \"node:fs/promises\";"
+        "file": "lib/client.js",
+        "line": 151833,
+        "text": "command: \"node -e \\\"require('fs').watch('{workspace}/inbox', (event, name) => name && console.log('::trigger:: ' + event + ' ' + name))\\\"\""
       },
       {
-        "file": "lib/index.mjs",
-        "line": 4148,
-        "text": "const bytes = new Uint8Array(await readFile(file.full));"
+        "file": "lib/client.js",
+        "line": 151839,
+        "text": "\tcommand: \"node -e \\\"const fs = require('fs'); const f = '{workspace}/app.log'; let at = fs.statSync(f).size; fs.watchFile(f, { interval: 1000 }, (s) => { if (s"
       }
     ]
   },
@@ -48,19 +68,40 @@
     "evidence": [
       {
         "file": "lib/index.mjs",
-        "line": 17701,
+        "line": 21838,
         "text": "return ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.mjs",
-        "line": 17818,
+        "line": 26792,
         "text": "const inject = [\"tools\"];"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 17,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 23154,
+        "text": "const killer = spawn(\"taskkill\", ["
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 23176,
+        "text": "const query = spawn(windowsPowerShell(process.env), ["
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 23256,
+        "text": "return spawn(file, args, {"
+      }
+    ]
   },
   "installScripts": {
     "hit": true,

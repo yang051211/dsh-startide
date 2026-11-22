@@ -1,7 +1,7 @@
 {
   "name": "dsh-structured",
-  "version": "1.1.7",
-  "scannedAt": "2026-11-20T08:47:11.923Z",
+  "version": "1.1.9",
+  "scannedAt": "2026-11-22T21:06:29.499Z",
   "icon": "dsh-structured.svg",
   "network": {
     "hit": false,
@@ -17,22 +17,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 332,
+        "line": 335,
         "text": "const raw = readFileSync(styleFile(), 'utf8').trim()"
       },
       {
         "file": "lib/index.js",
-        "line": 431,
+        "line": 434,
         "text": "const raw = JSON.parse(readFileSync(stateFile(), 'utf8'))"
       },
       {
         "file": "lib/index.js",
-        "line": 475,
+        "line": 478,
         "text": "mkdirSync(dirname(file), { recursive: true })"
       },
       {
         "file": "lib/index.js",
-        "line": 476,
+        "line": 479,
         "text": "writeFileSync(tmp, JSON.stringify({ version: 1, sessions: pruned }, null, 2) + '\\n', 'utf8')"
       }
     ]
@@ -44,6 +44,11 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "scripts/desktop-check.mjs",
+        "line": 17,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
       {
         "file": "scripts/style-gate.mjs",
         "line": 1,
@@ -63,11 +68,6 @@
         "file": "scripts/uninstall.mjs",
         "line": 15,
         "text": "import { spawnSync } from 'node:child_process'"
-      },
-      {
-        "file": "scripts/uninstall.mjs",
-        "line": 30,
-        "text": "const result = spawnSync(command, {"
       }
     ]
   },

@@ -1,0 +1,101 @@
+{
+  "name": "dsh-release-depot",
+  "version": "1.1.4",
+  "scannedAt": "2026-11-22T21:06:46.106Z",
+  "icon": "dsh-release-depot.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 121,
+        "text": "response = await fetch(RPC, {"
+      },
+      {
+        "file": "client.js",
+        "line": 142,
+        "text": "const response = await fetch('/dsh-release-depot/status', { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 2009,
+        "text": "diag(t('undici', 'undici'), diagnostics.network.undici ? t('可用', 'available') : t('不可用（直连 fetch）', 'missing (plain fetch)')),"
+      },
+      {
+        "file": "lib/github.js",
+        "line": 129,
+        "text": "res = await this.network.fetch(url, { method, headers, body }, options.timeoutMs ?? 45000)"
+      },
+      {
+        "file": "lib/github.js",
+        "line": 563,
+        "text": "res = await network.fetch(DEVICE_CODE_URL, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/github.js",
+        "line": 459,
+        "text": "const { readFile } = await import('node:fs/promises')"
+      },
+      {
+        "file": "lib/github.js",
+        "line": 469,
+        "text": "const data = await readFile(file.absolutePath)"
+      },
+      {
+        "file": "lib/net.js",
+        "line": 21,
+        "text": "import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/net.js",
+        "line": 148,
+        "text": "if (existsSync(path)) return readFileSync(path, 'utf8')"
+      },
+      {
+        "file": "lib/net.js",
+        "line": 230,
+        "text": "const cached = readFileSync(cacheFile, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 201,
+        "text": "const disposers = tools.map((tool) => agentCtx.tools.register(tool))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/net.js",
+        "line": 20,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/pack.js",
+        "line": 17,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

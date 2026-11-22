@@ -1,0 +1,104 @@
+{
+  "name": "dsh-video-coursemap",
+  "version": "2.0.0",
+  "scannedAt": "2026-11-22T21:06:33.105Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 237,
+        "text": "const r = await fetch('https://api.bilibili.com/x/frontend/finger/spi', { headers: { 'User-Agent': BILI_UA } })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 251,
+        "text": "const res = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync, renameSync, appendFileSync, readdirSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 122,
+        "text": "function ensureDir(p) { if (!existsSync(p)) mkdirSync(p, { recursive: true }) }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 127,
+        "text": "writeFileSync(tmp, content, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 133,
+        "text": "const j = JSON.parse(readFileSync(p, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 490,
+        "text": "writeFileSync(ps1Path, POLL_PS1, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 29,
+        "text": "export const inject = ['llm', 'tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 698,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 731,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "import { execFile, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 472,
+        "text": "const r = spawnSync(c, ['--version'], { timeout: 8000, windowsHide: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 568,
+        "text": "const r = spawnSync(pythonPath, [MD2DOCX_PATH, mdPath, docxPath], { timeout: 60000, windowsHide: true, encoding: 'utf8' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

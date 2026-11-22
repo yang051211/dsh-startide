@@ -1,35 +1,35 @@
 {
   "name": "dsh-builtin-browser",
-  "version": "0.5.8",
-  "scannedAt": "2026-11-07T14:33:09.059Z",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-22T21:06:26.876Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "client.js",
-        "line": 324,
-        "text": "const response = await fetch(ROUTE, patch === undefined"
+        "file": "desktop-bridge/native-guests.mjs",
+        "line": 20,
+        "text": "session: { fetch: (url, options) => capability().fetch(entry.scope, lease, url, options.signal) },"
       },
       {
-        "file": "client.js",
-        "line": 781,
-        "text": "const response = await fetch(\"/dsh-builtin-browser/runtime-status\", { headers: { accept: \"application/json\" } })"
+        "file": "desktop-bridge/plugin-browser-bridge.js",
+        "line": 334,
+        "text": "const response = await guest.session.fetch(url, { credentials: 'include', signal: controller.signal })"
       },
       {
-        "file": "client.js",
-        "line": 809,
-        "text": "const response = await fetch(\"/dsh-builtin-browser/bridge-maintenance\", { headers: { accept: \"application/json\" } })"
+        "file": "dist/client.cjs",
+        "line": 22949,
+        "text": "var next = parser.fetch().text;"
       },
       {
-        "file": "client.js",
-        "line": 848,
-        "text": "const response = await fetch(\"/dsh-builtin-browser/runtime-provision\", {"
+        "file": "dist/client.cjs",
+        "line": 23252,
+        "text": "var token = parser.fetch();"
       },
       {
-        "file": "client.js",
-        "line": 878,
-        "text": "const response = await fetch(\"/dsh-builtin-browser/bridge-maintenance\", {"
+        "file": "dist/client.cjs",
+        "line": 24529,
+        "text": "var nxt = parser.fetch().text;"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "desktop-bridge/desktop-processes.mjs",
+        "line": 1,
+        "text": "import { realpathSync } from 'node:fs'"
+      },
+      {
         "file": "desktop-bridge/install.mjs",
         "line": 67,
         "text": "import * as nodeFs from 'node:fs'"
       },
       {
         "file": "desktop-bridge/install.mjs",
-        "line": 107,
+        "line": 113,
         "text": "|| readFileSync(marker, 'utf8') !== 'dsh-browser-installer-test-root-v1\\n') {"
       },
       {
         "file": "desktop-bridge/install.mjs",
-        "line": 398,
-        "text": "writeFileSync(temporary, JSON.stringify(result))"
+        "line": 414,
+        "text": "const current = readFileSync(bridgeTarget)"
       },
       {
         "file": "desktop-bridge/install.mjs",
-        "line": 440,
-        "text": "const { watch } = await import(\"node:fs\");"
-      },
-      {
-        "file": "desktop-bridge/install.mjs",
-        "line": 495,
-        "text": "mkdirSync(target, { recursive: true })"
+        "line": 415,
+        "text": "if (current.equals(readFileSync(bridgeSource))) return"
       }
     ]
   },
@@ -68,28 +68,28 @@
     "evidence": [
       {
         "file": "lib/tool-browser/index.js",
-        "line": 47,
+        "line": 140,
         "text": "export const inject = ['tools', 'browser', 'systemPrompt'];"
       },
       {
         "file": "lib/tool-browser/index.js",
-        "line": 280,
+        "line": 465,
         "text": "/** Register all browser tools with `ctx.tools`. */"
       },
       {
         "file": "lib/tool-browser/index.js",
-        "line": 333,
+        "line": 582,
         "text": "ctx.tools.register(definition);"
       },
       {
-        "file": "scripts/verify-host-compat.mjs",
-        "line": 98,
-        "text": "// taken from the real ones: `ctx.tools.register(definition)`, `ctx.systemPrompt.section(spec)`."
+        "file": "lib/tool-browser/index.js",
+        "line": 3702,
+        "text": "ctx.tools.register(code.tool, surface === 'core' ? { when: () => !ptcMode() } : undefined);"
       },
       {
-        "file": "src/tool-browser/index.ts",
-        "line": 55,
-        "text": "export const inject = ['tools', 'browser', 'systemPrompt']"
+        "file": "lib/tool-browser/index.js",
+        "line": 3740,
+        "text": "ctx.tools.register(definition);"
       }
     ]
   },
@@ -97,29 +97,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "desktop-bridge/desktop-discovery.mjs",
+        "line": 1,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
         "file": "desktop-bridge/install.mjs",
-        "line": 68,
+        "line": 73,
         "text": "import { execFileSync, spawn } from 'node:child_process'"
       },
       {
         "file": "desktop-bridge/install.mjs",
-        "line": 307,
+        "line": 364,
         "text": "const child = spawn(exe, [], { detached: true, stdio: 'ignore', cwd: root, env })"
       },
       {
         "file": "lib/browser-electron/automatic-maintenance.js",
-        "line": 2,
+        "line": 20,
         "text": "import { execFile, spawn } from 'node:child_process';"
       },
       {
         "file": "lib/browser-electron/automatic-maintenance.js",
-        "line": 38,
+        "line": 259,
         "text": "execFile(command, [...args], { windowsHide: true, shell: false, encoding: 'utf8', timeout, maxBuffer: 1_048_576,"
-      },
-      {
-        "file": "lib/browser-electron/automatic-maintenance.js",
-        "line": 399,
-        "text": "const child = spawn(join(plan.root, 'DeepSeek Harness.exe'), [], { cwd: plan.root, env: environment, stdio: 'ignore', windowsHide: true, detached: true });"
       }
     ]
   },
@@ -128,7 +128,9 @@
     "evidence": []
   },
   "dependencies": 1,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "dist/client.cjs"
+  ],
   "binaryFiles": [],
   "requiredServices": [
     "browser",

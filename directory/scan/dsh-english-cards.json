@@ -1,0 +1,88 @@
+{
+  "name": "dsh-english-cards",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-22T21:06:42.397Z",
+  "icon": "dsh-english-cards.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 986,
+        "text": "const response = await fetch('/api/dsh-english-cards/sync', {"
+      },
+      {
+        "file": "client.js",
+        "line": 1026,
+        "text": "const response = await fetch('/api/dsh-english-cards/sync', {"
+      },
+      {
+        "file": "sync.js",
+        "line": 23,
+        "text": "import { createServer } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "sync.js",
+        "line": 20,
+        "text": "} from 'node:fs'"
+      },
+      {
+        "file": "sync.js",
+        "line": 248,
+        "text": "this.state = normalizeState(JSON.parse(readFileSync(stateFile(), 'utf8')))"
+      },
+      {
+        "file": "sync.js",
+        "line": 1010,
+        "text": "mkdirSync(stateDir(), { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "sync.js",
+        "line": 1013,
+        "text": "writeFileSync(temp, JSON.stringify(this.state, null, 2), { mode: 0o600 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1268,
+        "text": "toolCtx.tools.register(definition)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "sync.js",
+        "line": 21,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "sync.js",
+        "line": 680,
+        "text": "execFile(command, args, { windowsHide: true }, (error) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionProjections"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

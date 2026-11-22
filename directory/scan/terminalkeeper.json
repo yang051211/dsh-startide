@@ -1,35 +1,35 @@
 {
   "name": "terminalkeeper",
-  "version": "0.2.0",
-  "scannedAt": "2026-11-07T23:17:12.721Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-22T21:06:44.548Z",
   "icon": "terminalkeeper.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 4696,
+        "line": 4812,
         "text": "const response = await fetch(BASE + path, opts)"
       },
       {
         "file": "lib/client.js",
-        "line": 10078,
+        "line": 6977,
+        "text": "void fetch(BASE + '/busy', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 10680,
         "text": "const response = await fetch(BASE + '/settings')"
       },
       {
         "file": "lib/client.js",
-        "line": 10155,
+        "line": 10759,
         "text": "const response = await fetch(BASE + '/settings', {"
       },
       {
         "file": "lib/client.js",
-        "line": 10616,
+        "line": 11228,
         "text": "const vault = await fetch('/plugins/shell/vault-list', { headers: { accept: 'application/json' }, signal }).then((r) => r.json())"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 10629,
-        "text": "const list = await fetch('/plugins/shell/list?lite=1', { headers: { accept: 'application/json' }, signal }).then((r) => r.json())"
       }
     ]
   },
@@ -39,7 +39,7 @@
       {
         "file": "bin/terminalkeeper.mjs",
         "line": 22,
-        "text": "import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync, renameSync } from 'node:fs'"
+        "text": "ync, writeFileSync, existsSync, readdirSync, mkdirSync, renameSync, lstatSync, statSync, chmodSync, openSync, closeSync, fchmodSync, unlinkSync } from 'node:fs'"
       },
       {
         "file": "bin/terminalkeeper.mjs",
@@ -48,17 +48,17 @@
       },
       {
         "file": "bin/terminalkeeper.mjs",
-        "line": 66,
+        "line": 100,
         "text": "return JSON.parse(readFileSync(p, 'utf8'))"
       },
       {
         "file": "bin/terminalkeeper.mjs",
-        "line": 119,
+        "line": 153,
         "text": "if (before !== after) writeFileSync(join(root, 'package.json'), after + '\\n')"
       },
       {
         "file": "bin/terminalkeeper.mjs",
-        "line": 159,
+        "line": 194,
         "text": "writeFileSync(join(root, 'package.json'), JSON.stringify(json, null, 2) + '\\n')"
       }
     ]
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 319,
+        "line": 324,
         "text": "export const inject = ['tools', 'subprocess']"
       },
       {
         "file": "lib/index.js",
-        "line": 5358,
+        "line": 5664,
         "text": "ctx.tools.register(guardedTool(spec))"
       }
     ]
@@ -88,17 +88,17 @@
       },
       {
         "file": "bin/terminalkeeper.mjs",
-        "line": 77,
+        "line": 111,
         "text": "const r = spawnSync('sh', ['-c', 'command -v tmux >/dev/null 2>&1 && tmux -V || echo MISSING'], { encoding: 'utf8' })"
       },
       {
         "file": "bin/terminalkeeper.mjs",
-        "line": 102,
+        "line": 136,
         "text": "const probe = spawnSync('npm', ['view', `${PKG}@${semver}`, 'version'], { encoding: 'utf8', timeout: 20000 })"
       },
       {
         "file": "bin/terminalkeeper.mjs",
-        "line": 123,
+        "line": 157,
         "text": "const r = spawnSync(pm, ['install'], { cwd: root, stdio: 'inherit', shell: false })"
       },
       {

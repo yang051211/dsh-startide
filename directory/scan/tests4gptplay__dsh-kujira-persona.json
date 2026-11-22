@@ -1,0 +1,110 @@
+{
+  "name": "@tests4gptplay/dsh-kujira-persona",
+  "version": "2.4.4",
+  "scannedAt": "2026-11-22T21:06:42.328Z",
+  "icon": "tests4gptplay__dsh-kujira-persona.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "pet/client.js",
+        "line": 619,
+        "text": "        void Promise.all([module,fetch('/api/kujira-pet/art?id='+encodeURIComponent(state.route.art),{signal:abort.signal}).then(r=>{if(!r.ok)throw new Error('A"
+      },
+      {
+        "file": "pet/usage.js",
+        "line": 103,
+        "text": "const response=await connection.createSharedFetchHandler('/api').fetch(request,connection.browserPeer)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "backup-cleanup.js",
+        "line": 2,
+        "text": "import {readFile,readdir,lstat,rm,realpath} from 'node:fs/promises'"
+      },
+      {
+        "file": "backup-cleanup.js",
+        "line": 14,
+        "text": "(path,producer){if(!await regular(path))return;const text=await readFile(path,'utf8');files.push({path,hash:hash(text),bytes:Buffer.byteLength(text),producer})}"
+      },
+      {
+        "file": "backup-cleanup.js",
+        "line": 17,
+        "text": "ait regular(p))continue;const raw=await readFile(p,'utf8');if(hash(raw).startsWith(m[2])){await add(p,'dossier hash backup');pairs.add(m[1])}else unresolved.pus"
+      },
+      {
+        "file": "backup-cleanup.js",
+        "line": 18,
+        "text": "me)&&await regular(p)){const body=await readFile(p,'utf8');if(files.some(f=>dirname(f.path)===dir&&f.path.startsWith(join(dir,name)+'.')&&f.hash===hash(body))){"
+      },
+      {
+        "file": "backup-cleanup.js",
+        "line": 23,
+        "text": " regular(path))continue;const raw=await readFile(path,'utf8');if(match[2].length!==36&&hash(raw).startsWith(match[2]))await add(path,'content-verified recovered"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "diary-integration.js",
+        "line": 60,
+        "text": "const unregister = scope.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 191,
+        "text": "scope.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 239,
+        "text": "scope.tools.register({"
+      },
+      {
+        "file": "migration-agent.js",
+        "line": 63,
+        "text": "     tools.register({name:'kujira_migrate',description:'执行本次 world 与当前角色迁移。先 list/inspect，必要时 edit，重新 inspect 回读，再 record 决策。所有文件记录后 finish。cleanup_inventory 列出"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "diary.js",
+        "line": 7,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "pet/folders.js",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "pet/native.js",
+        "line": 4,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "pet/native/win-x64/KujiraPet.exe"
+  ],
+  "requiredServices": [
+    "systemPrompt"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

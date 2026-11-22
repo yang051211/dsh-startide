@@ -1,0 +1,86 @@
+{
+  "name": "dsh-lit-watch",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-22T21:06:42.498Z",
+  "icon": "dsh-lit-watch.png",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/runtime.js",
+        "line": 10,
+        "text": "import { appendFile, mkdir, readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 67,
+        "text": "const parsed = JSON.parse(await readFile(this.paths.watches, 'utf8'));"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 83,
+        "text": "const parsed = JSON.parse(await readFile(this.paths.seen, 'utf8'));"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 133,
+        "text": "await mkdir(this.config.root, { recursive: true });"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 134,
+        "text": "await writeFile(this.paths.watches, `${JSON.stringify(next, null, 2)}\\n`, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 42,
+        "text": "ctx.effect(() => ctx.tools.register(makeLitAddTool(runtime)), 'lit-watch: lit_watch_add tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 43,
+        "text": "ctx.effect(() => ctx.tools.register(makeLitRunTool(runtime)), 'lit-watch: lit_watch_run tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 44,
+        "text": "ctx.effect(() => ctx.tools.register(makeLitReportTool(runtime)), 'lit-watch: lit_watch_report tool');"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 23,
+        "text": "export const inject = ['tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

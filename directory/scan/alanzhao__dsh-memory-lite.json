@@ -1,7 +1,7 @@
 {
   "name": "@alanzhao/dsh-memory-lite",
-  "version": "0.5.2",
-  "scannedAt": "2026-11-21T08:41:51.412Z",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-22T21:06:40.727Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -11,9 +11,19 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/affinity.js",
+        "line": 10,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/affinity.js",
+        "line": 27,
+        "text": "const raw = await readFile(this.filePath, 'utf8');"
+      },
+      {
         "file": "lib/extract/index.js",
-        "line": 423,
-        "text": "const file = await store.readFile(peer, path);"
+        "line": 408,
+        "text": "const file = await store.readFile(path, trust);"
       },
       {
         "file": "lib/memory-store.js",
@@ -22,18 +32,8 @@
       },
       {
         "file": "lib/memory-store.js",
-        "line": 324,
-        "text": "async readFile(peer, relPath) {"
-      },
-      {
-        "file": "lib/memory-store.js",
-        "line": 351,
-        "text": "const existing = await this.readFile(peer, relPath);"
-      },
-      {
-        "file": "lib/memory-store.js",
-        "line": 376,
-        "text": "const existing = await this.readFile(peer, relPath);"
+        "line": 244,
+        "text": "async readFile(relPath, trust = UNRESTRICTED_TRUST) {"
       }
     ]
   },
@@ -42,12 +42,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 36,
+        "line": 27,
         "text": "export const inject = ['tools', 'agents', 'llm', 'timer'];"
       },
       {
         "file": "lib/inject.js",
-        "line": 84,
+        "line": 196,
         "text": "if (ctx.tools.get(readTool.name, agent) !== readTool)"
       },
       {
@@ -57,7 +57,7 @@
       },
       {
         "file": "lib/tools/read-memory.js",
-        "line": 38,
+        "line": 60,
         "text": "ctx.tools.register(tool);"
       },
       {

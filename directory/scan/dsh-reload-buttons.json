@@ -1,7 +1,7 @@
 {
   "name": "dsh-reload-buttons",
-  "version": "0.1.7",
-  "scannedAt": "2026-11-12T21:20:29.051Z",
+  "version": "0.1.8",
+  "scannedAt": "2026-11-22T21:06:41.541Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -43,12 +43,12 @@
       },
       {
         "file": "assets/restart-app.mjs",
-        "line": 24,
+        "line": 26,
         "text": "appendFileSync(logPath, `${new Date().toISOString()} ${line}\\n`)"
       },
       {
         "file": "assets/restart-app.mjs",
-        "line": 90,
+        "line": 92,
         "text": "const { existsSync, copyFileSync } = await import('node:fs')"
       },
       {
@@ -58,14 +58,30 @@
       },
       {
         "file": "index.js",
-        "line": 41,
+        "line": 49,
         "text": "mkdirSync(dir, { recursive: true })"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 33,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 114,
+        "text": "if (!ctx.tools || typeof ctx.tools.register !== 'function') return"
+      },
+      {
+        "file": "index.js",
+        "line": 116,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
   },
   "childProcess": {
     "hit": true,
@@ -77,7 +93,7 @@
       },
       {
         "file": "assets/restart-app.mjs",
-        "line": 134,
+        "line": 136,
         "text": "const child = spawn(exePath, [], { detached: true, stdio: 'ignore', windowsHide: false, env })"
       },
       {
@@ -87,7 +103,7 @@
       },
       {
         "file": "index.js",
-        "line": 72,
+        "line": 80,
         "text": "const child = spawn(process.execPath, ["
       }
     ]
@@ -99,7 +115,9 @@
   "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [],
+  "requiredServices": [
+    "tools"
+  ],
   "setupHints": [],
   "skippedEntries": []
 }

@@ -1,0 +1,92 @@
+{
+  "name": "dsh-plugin-airlock",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-22T21:06:35.781Z",
+  "icon": "dsh-plugin-airlock.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "import { createServer } from \"node:http\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 14114,
+        "text": "const fetched = await request.fetch(fetchDir, request.signal);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "import { access, copyFile, lstat, mkdir, mkdtemp, readFile, readdir, realpath, rename, rm, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "loseSync, constants as constants$1, createReadStream, createWriteStream, existsSync, openSync, readFileSync, readSync, statSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3522,
+        "text": "contents: () => [bufferToUint8Array(readFileSync(targetFdNumber))],"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3860,
+        "text": "fileUrl: ({ value }) => ({ contents: () => [bufferToUint8Array(readFileSync(value))] }),"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3861,
+        "text": "filePath: ({ value: { file } }) => ({ contents: () => [bufferToUint8Array(readFileSync(file))] }),"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { ChildProcess, execFile, spawn, spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4361,
+        "text": "...spawnSync(...concatenateShell(file, commandArguments, normalizedOptions))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 5031,
+        "text": "execFile(taskkillFile, ["
+      },
+      {
+        "file": "lib/index.js",
+        "line": 6453,
+        "text": "subprocess = spawn(...concatenateShell(file, commandArguments, getSpawnOptions(options)));"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

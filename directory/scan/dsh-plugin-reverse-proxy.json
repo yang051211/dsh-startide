@@ -1,0 +1,86 @@
+{
+  "name": "dsh-plugin-reverse-proxy",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-22T21:06:33.317Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "index.js",
+        "line": 807,
+        "text": "const upstream = http.request({"
+      },
+      {
+        "file": "vendor/skip/bridge.js",
+        "line": 90,
+        "text": "const response = await apiHandler.fetch(request, peer);"
+      },
+      {
+        "file": "vendor/skip/client.js",
+        "line": 153,
+        "text": "const readState = () => fetch('/reproxy-lan/status', { headers: { accept: 'application/json' }, cache: 'no-store' }).then((r) => r.json());"
+      },
+      {
+        "file": "vendor/skip/client.js",
+        "line": 154,
+        "text": "const writeState = (enabled) => fetch('/reproxy-lan/set', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 15,
+        "text": " fsModule = processRef.getBuiltinModule('node:fs'); const urlModule = processRef.getBuiltinModule('node:url'); if (!fsModule || typeof fsModule.readFileSync !=="
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 29,
+        "text": " fsModule = processRef.getBuiltinModule('node:fs'); const urlModule = processRef.getBuiltinModule('node:url'); if (!fsModule || typeof fsModule.readFileSync !=="
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 36,
+        "text": " fsModule = processRef.getBuiltinModule('node:fs'); const urlModule = processRef.getBuiltinModule('node:url'); if (!fsModule || typeof fsModule.readFileSync !=="
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 37,
+        "text": "l; const manifest = JSON.parse(fsModule.readFileSync(urlModule.fileURLToPath(url), 'utf8')); return manifest !== null && typeof manifest === 'object' && typeof "
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 49,
+        "text": " fsModule = processRef.getBuiltinModule('node:fs'); const urlModule = processRef.getBuiltinModule('node:url'); if (!fsModule || typeof fsModule.readFileSync !=="
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

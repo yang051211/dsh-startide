@@ -1,35 +1,35 @@
 {
   "name": "@tzyc/dsh-model-visibility",
-  "version": "1.15.0",
-  "scannedAt": "2026-11-20T21:47:32.933Z",
+  "version": "1.16.0",
+  "scannedAt": "2026-11-22T21:06:38.016Z",
   "icon": "tzyc__dsh-model-visibility.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "client-src/catalog-store.mjs",
-        "line": 43,
-        "text": "const response = await fetch(API + '/models' + query, {"
+        "file": "client-src/diagnostic-events.mjs",
+        "line": 39,
+        "text": "const res = await fetch(API + '/diagnostics', { method: 'POST', credentials: 'same-origin', cache: 'no-store', redirect: 'error',"
       },
       {
-        "file": "client-src/catalog-store.mjs",
-        "line": 215,
-        "text": "const response = await fetch(API + '/overrides', {"
+        "file": "client-src/usage-view.mjs",
+        "line": 30,
+        "text": "const response = await fetch(API + '/export?type=' + type, {"
       },
       {
-        "file": "client-src/catalog-store.mjs",
-        "line": 248,
-        "text": "const response = await fetch(API + '/overrides', {"
+        "file": "client.js",
+        "line": 1588,
+        "text": "const res = await fetch(API + '/diagnostics', { method: 'POST', credentials: 'same-origin', cache: 'no-store', redirect: 'error',"
       },
       {
-        "file": "client-src/catalog-store.mjs",
-        "line": 327,
-        "text": "const response = await fetch(API + '/usage', {"
+        "file": "client.js",
+        "line": 4016,
+        "text": "const response = await fetch(API + '/export?type=' + type, {"
       },
       {
-        "file": "client-src/catalog-store.mjs",
-        "line": 441,
-        "text": "const response = await fetch(API + '/verify', {"
+        "file": "lib/checker-call.js",
+        "line": 442,
+        "text": "return web.fetch({ url: args.url }, s)"
       }
     ]
   },
@@ -38,28 +38,28 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 24,
+        "line": 25,
         "text": "import fs from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 65,
+        "line": 66,
         "text": "const parsed = JSON.parse(fs.readFileSync(storeFile(), 'utf8'))"
       },
       {
         "file": "index.js",
-        "line": 75,
-        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+        "line": 79,
+        "text": "const parsed = JSON.parse(fs.readFileSync(file, 'utf8'))"
       },
       {
         "file": "index.js",
-        "line": 77,
-        "text": "fs.writeFileSync(temp, `${JSON.stringify({ [FIELD]: list }, null, 2)}\\n`)"
+        "line": 84,
+        "text": "fs.writeFileSync(temp, `${JSON.stringify({ [FIELD]: list }, null, 2)}\\n`, { mode: 0o600 })"
       },
       {
-        "file": "lib/learned-catalog.js",
-        "line": 23,
-        "text": "import fs from 'node:fs'"
+        "file": "index.js",
+        "line": 86,
+        "text": "} finally { try { fs.unlinkSync(temp) } catch (e) { if (e.code !== 'ENOENT') throw e } }"
       }
     ]
   },

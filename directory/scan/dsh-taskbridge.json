@@ -1,7 +1,7 @@
 {
   "name": "dsh-taskbridge",
-  "version": "1.7.1",
-  "scannedAt": "2026-11-22T08:23:31.346Z",
+  "version": "1.8.1",
+  "scannedAt": "2026-11-22T21:06:31.960Z",
   "icon": "dsh-taskbridge.svg",
   "network": {
     "hit": true,
@@ -9,16 +9,16 @@
       {
         "file": "lib/client.js",
         "line": 8,
-        "text": "){let t=e.fetchImpl??((o,a)=>globalThis.fetch(o,a)),n=typeof e.base==\"string\"?e.base:\"\";async function s(o,a,l){let d=`${n}${a.replace(/^\\//,\"\")}`,u;try{u=await"
+        "text": "){let t=e.fetchImpl??((o,a)=>globalThis.fetch(o,a)),n=typeof e.base==\"string\"?e.base:\"\";async function s(o,a,l){let u=`${n}${a.replace(/^\\//,\"\")}`,d;try{d=await"
       },
       {
         "file": "src/client/api.js",
-        "line": 142,
+        "line": 148,
         "text": "const fetchImpl = options.fetchImpl ?? ((url, init) => globalThis.fetch(url, init));"
       },
       {
         "file": "src/http/user-plane.js",
-        "line": 1676,
+        "line": 1758,
         "text": "return await route.fetch(request);"
       },
       {
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/codex/agent-ownership.js",
-        "line": 34,
-        "text": "import { lstat, readFile } from 'node:fs/promises';"
+        "file": "src/antigravity/installer.js",
+        "line": 29,
+        "text": "import { lstat, mkdir, readdir, readFile, realpath, rmdir, unlink } from 'node:fs/promises';"
       },
       {
-        "file": "src/codex/agent-ownership.js",
-        "line": 150,
-        "text": "parsed = JSON.parse(await readFile(path, 'utf8'));"
+        "file": "src/antigravity/installer.js",
+        "line": 144,
+        "text": "const manifest = JSON.parse(await readFile(PACKAGE_MANIFEST_PATH, 'utf8'));"
       },
       {
-        "file": "src/codex/agent-ownership.js",
-        "line": 231,
-        "text": "* @param {Function} makeDirectory - `mkdir(path, { mode })`."
+        "file": "src/antigravity/installer.js",
+        "line": 172,
+        "text": "readFile(SKILL_TEMPLATE_PATH, 'utf8'),"
       },
       {
-        "file": "src/codex/installer.js",
-        "line": 83,
-        "text": "import { lstatSync } from 'node:fs';"
+        "file": "src/antigravity/installer.js",
+        "line": 173,
+        "text": "readFile(AGENT_TEMPLATE_PATH, 'utf8'),"
       },
       {
-        "file": "src/codex/installer.js",
-        "line": 84,
-        "text": "import { link, lstat, mkdir, open, readFile, readlink, realpath, stat, unlink } from 'node:fs/promises';"
+        "file": "src/antigravity/installer.js",
+        "line": 174,
+        "text": "readFile(LOGO_TEMPLATE_PATH, 'utf8'),"
       }
     ]
   },
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "src/index.js",
-        "line": 83,
+        "line": 84,
         "text": "export const inject = ['agents', 'sessions', 'llm', 'tools', 'webServer', 'connection'];"
       },
       {
         "file": "src/index.js",
-        "line": 245,
+        "line": 246,
         "text": "tools: ctx.tools,"
       }
     ]
@@ -88,7 +88,7 @@
       },
       {
         "file": "src/codex/installer.js",
-        "line": 1266,
+        "line": 1272,
         "text": "execFile("
       },
       {

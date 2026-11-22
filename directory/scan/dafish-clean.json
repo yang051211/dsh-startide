@@ -1,0 +1,99 @@
+{
+  "name": "dafish-clean",
+  "version": "1.0.3",
+  "scannedAt": "2026-11-22T21:06:41.646Z",
+  "icon": "dafish-clean.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 37,
+        "text": "response = await fetch(api(path), {"
+      },
+      {
+        "file": "index.js",
+        "line": 692,
+        "text": "script: 'curl -fsSL https://raw.githubusercontent.com/tw93/Mole/main/install.sh | bash',"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "import { chmodSync, existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 720,
+        "text": "const text = readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 729,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 744,
+        "text": "writeFileSync(file, script, { mode: 0o755 })"
+      },
+      {
+        "file": "index.js",
+        "line": 1039,
+        "text": "bytes = readFileSync(join(ASSETS_DIR, name))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 178,
+        "text": "child = spawn(binary, args, {"
+      },
+      {
+        "file": "index.js",
+        "line": 284,
+        "text": "child = spawn(binary, args, { cwd: HOME, env: childEnvironment(), stdio: ['ignore', 'pipe', 'pipe'] })"
+      },
+      {
+        "file": "index.js",
+        "line": 752,
+        "text": "const child = spawn('open', ['-a', 'Terminal', file], { stdio: 'ignore', detached: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 763,
+        "text": "const child = spawn('open', ['-R', target], { stdio: 'ignore', detached: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-agent-cleaner",
-  "version": "0.2.3",
-  "scannedAt": "2026-11-20T21:47:36.957Z",
+  "version": "0.2.4",
+  "scannedAt": "2026-11-22T21:06:35.703Z",
   "icon": "dsh-agent-cleaner.svg",
   "network": {
     "hit": true,
@@ -13,7 +13,7 @@
       },
       {
         "file": "dist/index.js",
-        "line": 154,
+        "line": 203,
         "text": "const res = await fetch(url, {"
       }
     ]
@@ -24,27 +24,27 @@
       {
         "file": "dist/index.js",
         "line": 6,
-        "text": "import { chmodSync, existsSync, mkdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync, } from 'node:fs';"
+        "text": "import { chmodSync, existsSync, mkdirSync, readFileSync, realpathSync, renameSync, rmSync, statSync, writeFileSync, } from 'node:fs';"
       },
       {
         "file": "dist/index.js",
-        "line": 17,
+        "line": 18,
         "text": "const raw = readFileSync(new URL('../package.json', import.meta.url), 'utf8');"
       },
       {
         "file": "dist/index.js",
-        "line": 75,
+        "line": 92,
+        "text": "const snippet = readFileSync(resolved, 'utf8');"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 124,
         "text": "return readFileSync(managedBinaryVersionPath(platform), 'utf8').trim() || null;"
       },
       {
         "file": "dist/index.js",
-        "line": 149,
+        "line": 198,
         "text": "mkdirSync(destDir, { recursive: true });"
-      },
-      {
-        "file": "dist/index.js",
-        "line": 177,
-        "text": "writeFileSync(tmpZip, archiveBuffer);"
       }
     ]
   },
@@ -53,27 +53,27 @@
     "evidence": [
       {
         "file": "dist/index.js",
-        "line": 30,
+        "line": 31,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "dist/index.js",
-        "line": 472,
+        "line": 521,
         "text": "tools.register({"
       },
       {
         "file": "dist/index.js",
-        "line": 496,
+        "line": 545,
         "text": "tools.register({"
       },
       {
         "file": "dist/index.js",
-        "line": 533,
+        "line": 582,
         "text": "tools.register({"
       },
       {
         "file": "dist/index.js",
-        "line": 553,
+        "line": 602,
         "text": "tools.register({"
       }
     ]
@@ -81,6 +81,16 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "dist/cli.js",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "dist/cli.js",
+        "line": 16,
+        "text": "const child = spawn(binaryPath, process.argv.slice(2), {"
+      },
       {
         "file": "dist/index.js",
         "line": 5,

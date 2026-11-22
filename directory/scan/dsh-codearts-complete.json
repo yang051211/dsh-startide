@@ -1,0 +1,82 @@
+{
+  "name": "dsh-codearts-complete",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-22T21:06:45.946Z",
+  "icon": "dsh-codearts-complete.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine.js",
+        "line": 94,
+        "text": "return fetch(HOST + CHAT_PATH, { method: 'POST', headers: signed.headers, body, signal })"
+      },
+      {
+        "file": "lib/sign.js",
+        "line": 67,
+        "text": "const response = await fetch(url, { method, headers: signed.headers, body, signal })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 186,
+        "text": "const source = fs.readFileSync(target, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 219,
+        "text": "fs.writeFileSync(target, prefixFull + text + suffixFull, 'utf8')"
+      },
+      {
+        "file": "lib/creds.js",
+        "line": 1,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/creds.js",
+        "line": 8,
+        "text": "try { return JSON.parse(fs.readFileSync(file, 'utf8')) } catch { return undefined }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 32,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 248,
+        "text": "ctx.tools.register(bound)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

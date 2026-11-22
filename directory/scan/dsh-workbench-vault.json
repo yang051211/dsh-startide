@@ -1,7 +1,7 @@
 {
   "name": "dsh-workbench-vault",
-  "version": "0.4.3",
-  "scannedAt": "2026-11-22T08:23:35.312Z",
+  "version": "0.7.3",
+  "scannedAt": "2026-11-22T21:06:39.108Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -12,28 +12,13 @@
     "evidence": [
       {
         "file": "lib/infra/crypto.js",
-        "line": 11,
-        "text": "import { chmodSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from \"node:fs\";"
+        "line": 12,
+        "text": "import { existsSync, rmSync } from \"node:fs\";"
       },
       {
         "file": "lib/infra/crypto.js",
-        "line": 65,
-        "text": "const buf = readFileSync(path);"
-      },
-      {
-        "file": "lib/infra/crypto.js",
-        "line": 71,
-        "text": "mkdirSync(dirname(path), { recursive: true });"
-      },
-      {
-        "file": "lib/infra/crypto.js",
-        "line": 72,
-        "text": "writeFileSync(path, key, { mode: 0o600 });"
-      },
-      {
-        "file": "lib/infra/crypto.js",
-        "line": 78,
-        "text": "if (existsSync(path)) rmSync(path);"
+        "line": 108,
+        "text": "rmSync(path, { force: true });"
       }
     ]
   },

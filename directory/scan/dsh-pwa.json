@@ -1,0 +1,97 @@
+{
+  "name": "dsh-pwa",
+  "version": "1.21.1",
+  "scannedAt": "2026-11-22T21:06:40.937Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/voice.js",
+        "line": 100,
+        "text": "const r = await fetch(DEEPSEEK_BASE + '/asr', {"
+      },
+      {
+        "file": "lib/voice.js",
+        "line": 310,
+        "text": "const r = await fetch(DEEPSEEK_BASE + '/tts', {"
+      },
+      {
+        "file": "web/app.js",
+        "line": 256,
+        "text": "const r = await fetch('/api/' + endpoint, {"
+      },
+      {
+        "file": "web/app.js",
+        "line": 1735,
+        "text": "fetch(src)"
+      },
+      {
+        "file": "web/app.js",
+        "line": 1755,
+        "text": "const blob = await (await fetch(src)).blob()"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 54,
+        "text": "ctx.inject(['connection', 'fs'], (mediaCtx) => {"
+      },
+      {
+        "file": "lib/routes.js",
+        "line": 5,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/routes.js",
+        "line": 32,
+        "text": "const body = await readFile(path.join(WEB_DIR, file))"
+      },
+      {
+        "file": "lib/search.js",
+        "line": 22,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/search.js",
+        "line": 194,
+        "text": "const parsed = JSON.parse(await readFile(indexPath, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/voice.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/voice.js",
+        "line": 122,
+        "text": "const p = spawn('afconvert', ['-f', 'WAVE', '-d', 'LEI16@16000', '-c', '1', inPath, outPath])"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "web/app.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

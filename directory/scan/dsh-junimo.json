@@ -1,0 +1,141 @@
+{
+  "name": "dsh-junimo",
+  "version": "0.4.4",
+  "scannedAt": "2026-11-22T21:06:46.234Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/index.js",
+        "line": 1451,
+        "text": "const res = await fetch('junimo/panel', { signal, cache: 'no-store', headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "scripts/sync-binary.mjs",
+        "line": 25,
+        "text": "const res = await fetch(`https://api.github.com/repos/${repo}/releases/latest`, {"
+      },
+      {
+        "file": "scripts/sync-binary.mjs",
+        "line": 38,
+        "text": "fetch(`${base}/junimo-mcp.exe`),"
+      },
+      {
+        "file": "scripts/sync-binary.mjs",
+        "line": 39,
+        "text": "fetch(`${base}/junimo-mcp.exe.sha256`),"
+      },
+      {
+        "file": "src/api.js",
+        "line": 21,
+        "text": "const res = await fetch(new URL(path, base), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/prepublish.mjs",
+        "line": 18,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "scripts/prepublish.mjs",
+        "line": 24,
+        "text": "const pkg = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "scripts/prepublish.mjs",
+        "line": 40,
+        "text": "const actual = createHash('sha256').update(readFileSync(exePath)).digest('hex')"
+      },
+      {
+        "file": "scripts/prepublish.mjs",
+        "line": 41,
+        "text": "const expected = readFileSync(shaPath, 'utf8').trim().split(/\\s+/)[0].toLowerCase()"
+      },
+      {
+        "file": "scripts/prepublish.mjs",
+        "line": 51,
+        "text": "const bundled = readFileSync(bundledPath, 'utf8').trim()"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 14,
+        "text": "#         name: '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 19,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "src/index.js",
+        "line": 5,
+        "text": "* `@deepseek-ai/dsh-mcp-client` 桥接成 `mcp__junimo__*`。本插件负责三件"
+      },
+      {
+        "file": "src/index.js",
+        "line": 25,
+        "text": "export const inject = ['tools', 'systemPrompt']"
+      },
+      {
+        "file": "src/index.js",
+        "line": 111,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/prepublish.mjs",
+        "line": 19,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/prepublish.mjs",
+        "line": 95,
+        "text": "const res = spawnSync(process.execPath, ['test/smoke.mjs'], { cwd: root, encoding: 'utf8' })"
+      },
+      {
+        "file": "src/game.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/game.js",
+        "line": 43,
+        "text": "const child = spawn(powershellPath(), ['-NoProfile', '-NonInteractive', '-Command', script], {"
+      },
+      {
+        "file": "src/game.js",
+        "line": 178,
+        "text": "*   spawn(exe, { detached, stdio: ignore, windowsHide: false })          → 死"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "bin/junimo-mcp.exe"
+  ],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

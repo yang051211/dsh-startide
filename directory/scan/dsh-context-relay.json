@@ -1,34 +1,34 @@
 {
   "name": "dsh-context-relay",
-  "version": "0.11.1",
-  "scannedAt": "2026-11-18T21:46:08.969Z",
+  "version": "0.15.1",
+  "scannedAt": "2026-11-22T21:06:39.386Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 66,
+        "line": 153,
         "text": "fetch(PANEL_API + \"?sessionId=\" + encodeURIComponent(sessionId), { headers: { accept: \"application/json\" }, cache: \"no-store\" })"
       },
       {
         "file": "lib/client.js",
-        "line": 76,
+        "line": 163,
         "text": "fetch(WORK_ITEMS_API + \"?sessionId=\" + encodeURIComponent(sessionId), { headers: { accept: \"application/json\" }, cache: \"no-store\" })"
       },
       {
         "file": "lib/client.js",
-        "line": 204,
+        "line": 291,
         "text": "fetch(SETTINGS_API, { headers: { accept: \"application/json\" }, cache: \"no-store\" })"
       },
       {
         "file": "lib/client.js",
-        "line": 214,
+        "line": 301,
         "text": "fetch(SETTINGS_API, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1257,
+        "line": 1353,
         "text": "fetch(PANEL_API, {"
       }
     ]
@@ -36,6 +36,21 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/agent.js",
+        "line": 28,
+        "text": "import { appendFileSync, mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/agent.js",
+        "line": 54,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/agent.js",
+        "line": 55,
+        "text": "appendFileSync(join(dir, 'tool-args-warnings.jsonl'), JSON.stringify({"
+      },
       {
         "file": "lib/agent/chain.js",
         "line": 14,
@@ -45,21 +60,6 @@
         "file": "lib/agent/chain.js",
         "line": 117,
         "text": "try { previous = readFileSync(path, 'utf8'); } catch (error) { if (error.code !== 'ENOENT') throw error; }"
-      },
-      {
-        "file": "lib/agent/chain.js",
-        "line": 127,
-        "text": "try { raw = readFileSync(path, 'utf8'); } catch { return []; }"
-      },
-      {
-        "file": "lib/agent/chain.js",
-        "line": 140,
-        "text": "try { entries.push(...parseLines(readFileSync(join(rootOf(cwd), name), 'utf8'))); } catch { /* 坏文件跳过：归档可降级，不阻断召回 */ }"
-      },
-      {
-        "file": "lib/agent/chain.js",
-        "line": 161,
-        "text": "const raw = readFileSync(path, 'utf8');"
       }
     ]
   },
@@ -68,19 +68,24 @@
     "evidence": [
       {
         "file": "lib/agent.js",
-        "line": 33,
+        "line": 89,
         "text": "export const inject = ['tools', 'systemPrompt'];"
       },
       {
         "file": "lib/agent.js",
-        "line": 323,
-        "text": "ctx.effect(() => ctx.tools.register(definition), 'dsh-context-relay: ' + definition.name);"
+        "line": 376,
+        "text": "ctx.effect(() => ctx.tools.register(guarded), 'dsh-context-relay: ' + definition.name);"
       }
     ]
   },
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/agent/tools.js",
+        "line": 9,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
       {
         "file": "lib/lint.js",
         "line": 19,

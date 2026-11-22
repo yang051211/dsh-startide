@@ -1,20 +1,35 @@
 {
   "name": "@liangjiehappy/dsh-plugin-workbench",
-  "version": "0.2.4",
-  "scannedAt": "2026-11-13T21:10:41.601Z",
+  "version": "0.2.7",
+  "scannedAt": "2026-11-22T21:06:43.653Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 311,
-        "text": "const r = await fetch(url, {"
+        "file": "lib/client.js",
+        "line": 33,
+        "text": "const r = await fetch(API + \"/me\", { headers: { Authorization: \"Bearer \" + tk } });"
       },
       {
-        "file": "lib/index.js",
-        "line": 427,
-        "text": "const res = await fetch(DSB + path, {"
+        "file": "lib/client.js",
+        "line": 41,
+        "text": "const r = await fetch(API + \"/device/code\", { method: \"POST\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 46,
+        "text": "            const tr = await fetch(API + \"/device/token\", { method: \"POST\", headers: { \"Content-Type\": \"application/json\" }, body: JSON.stringify({ device_code:"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 72,
+        "text": "const r = await fetch(PUB + \"?t=\" + Date.now(), { cache: \"no-store\", signal: ctl.signal });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 82,
+        "text": "const r = await fetch(API + \"/panel/dev/submissions\", { headers: { Authorization: \"Bearer \" + tk } });"
       }
     ]
   },

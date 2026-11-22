@@ -1,7 +1,7 @@
 {
   "name": "dsh-chatgpt-sub",
-  "version": "0.8.0",
-  "scannedAt": "2026-11-13T08:14:48.741Z",
+  "version": "0.9.1",
+  "scannedAt": "2026-11-22T21:06:28.390Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,18 +18,18 @@
       },
       {
         "file": "lib/index.js",
-        "line": 30,
+        "line": 36,
         "text": "return fetch(UPDATE_REGISTRY_URL, {"
       },
       {
         "file": "lib/index.js",
-        "line": 278,
-        "text": "const res = await fetch('https://auth.openai.com/oauth/token', {"
+        "line": 504,
+        "text": "const response = await fetch(API_ORIGIN + '/models', {"
       },
       {
-        "file": "lib/index.js",
-        "line": 498,
-        "text": "const res = await fetch('https://auth.openai.com/oauth/token', {"
+        "file": "lib/proxy.js",
+        "line": 16,
+        "text": "import { createServer } from 'node:http'"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/codex-quota.js",
+        "line": 10,
+        "text": "import { chmodSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/codex-quota.js",
+        "line": 31,
+        "text": "try { raw = readFileSync(file, 'utf8') } catch (err) {"
+      },
+      {
+        "file": "lib/codex-quota.js",
+        "line": 87,
+        "text": "mkdirSync(dirname(file), { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/codex-quota.js",
+        "line": 88,
+        "text": "writeFileSync(tmp, JSON.stringify(updated, null, 2) + '\\n', { mode: 0o600 })"
+      },
+      {
         "file": "lib/index.js",
         "line": 5,
         "text": "import { chmodSync, existsSync, mkdirSync, readFileSync, realpathSync, renameSync, unlinkSync, writeFileSync } from 'node:fs'"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 142,
-        "text": "raw = readFileSync(filePath, 'utf8')"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 167,
-        "text": "mkdirSync(dirname(filePath), { recursive: true, mode: 0o700 })"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 168,
-        "text": "writeFileSync(tmp, JSON.stringify(payload, null, 2) + '\\n', { mode: 0o600 })"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 179,
-        "text": "unlinkSync(filePath)"
       }
     ]
   },

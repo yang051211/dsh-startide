@@ -1,0 +1,60 @@
+{
+  "name": "@magic6/dsh-llm-resilience",
+  "version": "0.5.5",
+  "scannedAt": "2026-11-22T21:06:40.287Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/state-file.js",
+        "line": 14,
+        "text": "import { mkdir, open, readFile, rename, stat, unlink, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/state-file.js",
+        "line": 15,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/state-file.js",
+        "line": 23,
+        "text": "return JSON.parse(readFileSync(path, 'utf8'));"
+      },
+      {
+        "file": "lib/state-file.js",
+        "line": 38,
+        "text": "return JSON.parse(await readFile(path, 'utf8'));"
+      },
+      {
+        "file": "lib/state-file.js",
+        "line": 59,
+        "text": "await handle.writeFile(`${process.pid}\\n${now()}\\n`, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

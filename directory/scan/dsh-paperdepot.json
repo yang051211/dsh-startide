@@ -1,0 +1,122 @@
+{
+  "name": "dsh-paperdepot",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-22T21:06:39.125Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 151,
+        "text": "const api = (p) => fetch('/paperdepot/api' + p, { credentials: 'same-origin' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 638,
+        "text": "fetch('/paperdepot/api/providers', { credentials: 'same-origin' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 657,
+        "text": "fetch('/paperdepot/api/models?provider=' + encodeURIComponent(llmProvider), { credentials: 'same-origin' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 690,
+        "text": "const r = await fetch('/paperdepot/api' + p, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1270,
+        "text": "const r = await fetch('/paperdepot/api/open-obsidian', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 6,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/impl.js",
+        "line": 5,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/impl.js",
+        "line": 29,
+        "text": "PLUGIN_VERSION = JSON.parse(fs.readFileSync(path.join(PACKAGE_ROOT, 'package.json'), 'utf8')).version || ''"
+      },
+      {
+        "file": "lib/impl.js",
+        "line": 66,
+        "text": "const txt = fs.readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "lib/impl.js",
+        "line": 156,
+        "text": "const txt = fs.readFileSync(file, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/impl.js",
+        "line": 8,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/impl.js",
+        "line": 315,
+        "text": "child = spawn(cmd, args, { cwd: cfg.workspaceRoot, env: buildChildEnv(cfg) })"
+      },
+      {
+        "file": "lib/impl.js",
+        "line": 404,
+        "text": "const r = spawnSync(cfg.python, ['--version'], { encoding: 'utf8', timeout: 10000 })"
+      },
+      {
+        "file": "lib/impl.js",
+        "line": 426,
+        "text": "const r = spawnSync(cfg.python, [script, '--selftest-key'], {"
+      },
+      {
+        "file": "lib/impl.js",
+        "line": 755,
+        "text": "const child = spawn(cmd, args, { windowsHide: true, windowsVerbatimArguments: false, detached: true, stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: node scripts/pack-pipeline.mjs"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 135,
+      "text": "python -m pip install -r requirements.txt"
+    }
+  ],
+  "skippedEntries": []
+}

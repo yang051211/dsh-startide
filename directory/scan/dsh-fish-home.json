@@ -1,0 +1,122 @@
+{
+  "name": "dsh-fish-home",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-22T21:06:36.156Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 19,
+        "text": "const get = (p) => fetch(B + p, { cache: 'no-store' }).then((r) => r.json()).catch(() => null)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 21,
+        "text": "fetch(B + p, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body || {}) })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 28,
+        "text": "const 房取 = (p) => fetch(房 + p, { cache: 'no-store' }).then((r) => r.json()).catch(() => null)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 30,
+        "text": "fetch(房 + p, { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{}' })"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 218,
+        "text": "const response = await fetch(房间地址 + '/api/health', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 15,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 33,
+        "text": "const 桥版本 = JSON.parse(fs.readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 109,
+        "text": "try { 存 = JSON.parse(fs.readFileSync(配置路, 'utf8')) } catch (e) { 存 = {} }"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 130,
+        "text": "try { fs.mkdirSync(家, { recursive: true }); fs.writeFileSync(配置路, JSON.stringify(合, null, 2), 'utf8') } catch {}"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 160,
+        "text": "fs.mkdirSync(家, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 1922,
+        "text": "if (typeof agent.ctx.tools?.register==='function') {"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 1925,
+        "text": "register(tool.name,()=>agent.ctx.tools.register(tool));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 19,
+        "text": "import { spawn, execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 534,
+        "text": "子 = spawn(找node(), [入口, '--production', '--port', String(房间端口)], {"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 655,
+        "text": "子 = spawn(浏览器, ["
+      },
+      {
+        "file": "lib/host.js",
+        "line": 666,
+        "text": "子 = spawn('cmd.exe', ['/c', 'start', '', 房间地址], { windowsHide: true, detached: true, stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "sessionTitle",
+    "sessions",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

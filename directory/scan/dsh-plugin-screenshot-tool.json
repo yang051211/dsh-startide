@@ -1,0 +1,80 @@
+{
+  "name": "dsh-plugin-screenshot-tool",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-22T21:06:40.481Z",
+  "icon": "dsh-plugin-screenshot-tool.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 179,
+        "text": "const response = await fetch(API_CAPTURE + (keepWindow ? '?hide=0' : ''), {"
+      },
+      {
+        "file": "client.js",
+        "line": 211,
+        "text": "fetch(API_PERMISSION_SETTINGS, { method: 'POST' }).catch(() => {});"
+      },
+      {
+        "file": "client.js",
+        "line": 580,
+        "text": "fetch(API_HELLO, { method: 'POST', signal: controller === null ? undefined : controller.signal })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { mkdir, readFile, stat, unlink } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 171,
+        "text": "await mkdir(directory, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 195,
+        "text": "const bytes = await readFile(file).catch(() => null);"
+      },
+      {
+        "file": "index.js",
+        "line": 360,
+        "text": "await unlink(file);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 368,
+        "text": "execFile(command, args, options, (error, stdout, stderr) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,142 @@
+{
+  "name": "dsh-computer-browser",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-22T21:06:34.952Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/desk/chrome-cdp.js",
+        "line": 19,
+        "text": "const res = await fetch(`http://127.0.0.1:${port}/json`, { signal: ctl })"
+      },
+      {
+        "file": "lib/desk/chrome-cdp.js",
+        "line": 32,
+        "text": "const ws = new WebSocket(url)"
+      },
+      {
+        "file": "lib/desk/chrome-cdp.js",
+        "line": 251,
+        "text": "const v = await (await fetch(`http://127.0.0.1:${port}/json/version`, { signal: AbortSignal.timeout(3000) })).json()"
+      },
+      {
+        "file": "lib/desk/register.js",
+        "line": 572,
+        "text": "const list = await (await fetch('http://127.0.0.1:' + p + '/json/list')).json()"
+      },
+      {
+        "file": "lib/desk/register.js",
+        "line": 578,
+        "text": "const list = await (await fetch('http://127.0.0.1:' + p + '/json/list')).json()"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/desk/cua.js",
+        "line": 10,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/desk/win-focus.js",
+        "line": 10,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/web/index.js",
+        "line": 6,
+        "text": "import { chmod, mkdir, readFile, readdir, rename, rm, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/web/index.js",
+        "line": 73,
+        "text": "await rm(target, {"
+      },
+      {
+        "file": "lib/web/index.js",
+        "line": 130,
+        "text": "return (await readFile(file, \"utf8\")).trim();"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 30,
+        "text": "export const inject = ['tools', 'agents', 'webServer', 'typertGateway', 'connection']"
+      },
+      {
+        "file": "lib/desk/register.js",
+        "line": 64,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/desk/register.js",
+        "line": 1098,
+        "text": "ctx.tools.register(def)"
+      },
+      {
+        "file": "lib/desk/surface.js",
+        "line": 99,
+        "text": "disposers.push(tools.register(def))"
+      },
+      {
+        "file": "lib/web/index.js",
+        "line": 813,
+        "text": "* Register the browser tools on `ctx.tools`. Disposers are returned for the"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/desk/chrome-cdp.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/desk/chrome-cdp.js",
+        "line": 166,
+        "text": "const ps = spawn('powershell.exe', ['-NoProfile', '-WindowStyle', 'Hidden', '-Command', script],"
+      },
+      {
+        "file": "lib/desk/cua.js",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/desk/cua.js",
+        "line": 84,
+        "text": "const child = spawn(CUA_BIN, ['call', tool, JSON.stringify(args)], {"
+      },
+      {
+        "file": "lib/desk/passwordScan.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "connection",
+    "tools",
+    "typertGateway",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
