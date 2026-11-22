@@ -1,11 +1,11 @@
 {
   "name": "dsh-live-compact-x",
-  "latest": "1.3.7-x.1",
-  "published": 1795271414,
+  "latest": "1.3.17",
+  "published": 1795377087,
   "created": 1795255357,
-  "modified": "2026-11-21T14:35:05.717Z",
+  "modified": "2026-11-22T19:51:27.320Z",
   "displayName": null,
-  "description": "DSH 压缩后端 fork：净收益门槛 + 零副本存储（索引 + 日志回读）+ 大刀/小刀两级压缩。取代官方 compaction-basic，可随时卸载。",
+  "description": "DSH 压缩增强：抢在官方 compaction-basic 的阈值之前先切尾巴（净收益门槛 + 零副本存储 + 中刀/大刀），把官方大压缩尽量往后推；官方摘要逻辑原样继承（super 兜底），可随时卸载。",
   "author": "Raysnows",
   "keywords": [
     "dsh",
@@ -20,7 +20,10 @@
     "token",
     "cost",
     "memory",
-    "agent"
+    "agent",
+    "harness",
+    "web-ui",
+    "ui"
   ],
   "repository": {
     "url": "https://github.com/Raysnows/dsh-live-compact-x"
@@ -30,6 +33,11 @@
   "isBundle": true,
   "deprecated": false,
   "versions": [
+    {
+      "version": "1.3.17",
+      "publishTimestamp": 1795377087,
+      "enginesDsh": ">=0.2.0-rc.2 <0.3.0"
+    },
     {
       "version": "1.3.7-x.1",
       "publishTimestamp": 1795271414,
