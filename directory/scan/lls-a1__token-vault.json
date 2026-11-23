@@ -1,0 +1,103 @@
+{
+  "name": "@lls-a1/token-vault",
+  "version": "2.0.9",
+  "scannedAt": "2026-11-23T09:10:26.256Z",
+  "icon": "lls-a1__token-vault.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 628,
+        "text": "const response = await fetch(route, init)"
+      },
+      {
+        "file": "index.js",
+        "line": 1265,
+        "text": "(for example: vault_sh({ description: \"check GitHub identity\", command: \\'curl -sS -H \"Authorization: Bearer $GITHUB_TOKEN\" https://api.github.com/user\\' })).',"
+      },
+      {
+        "file": "index.js",
+        "line": 2010,
+        "text": "const command = `curl -sS -o /dev/null -m 10 -w '%{http_code}' -H \"${header}\" \"${url}\"`"
+      },
+      {
+        "file": "index.js",
+        "line": 2582,
+        "text": "`  ${SHELL_TOOL_NAME}({ description: \"check GitHub identity\", command: 'curl -sS -H \"Authorization: Bearer $GITHUB_TOKEN\" https://api.github.com/user' })`,"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 39,
+        "text": "import { copyFile, mkdir, readFile, rename, stat, unlink, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 606,
+        "text": "text = await readFile(this.file, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 757,
+        "text": "const text = await readFile(this.file, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 1007,
+        "text": "await mkdir(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 1009,
+        "text": "await writeFile(temporary, payload, { encoding: 'utf8', mode: 0o600 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 48,
+        "text": "export const inject = ['webServer', 'connection', 'tools', 'systemPrompt', 'shell', 'workingDirectory', 'shellEnv']"
+      },
+      {
+        "file": "index.js",
+        "line": 2084,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 2212,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "shell",
+    "shellEnv",
+    "systemPrompt",
+    "tools",
+    "webServer",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

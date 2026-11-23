@@ -1,0 +1,92 @@
+{
+  "name": "dsh-flower-garden",
+  "version": "2.15.0",
+  "scannedAt": "2026-11-23T09:10:23.092Z",
+  "icon": "dsh-flower-garden.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 8113,
+        "text": "const response = await globalThis.fetch(path, options)"
+      },
+      {
+        "file": "index.js",
+        "line": 140,
+        "text": "async fetch(request) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "runtime/main.cjs",
+        "line": 3,
+        "text": "const { mkdirSync } = require('node:fs')"
+      },
+      {
+        "file": "runtime/main.cjs",
+        "line": 6,
+        "text": "mkdirSync(directory, { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "runtime/setup.js",
+        "line": 2,
+        "text": "import { accessSync, constants, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "runtime/setup.js",
+        "line": 25,
+        "text": "installed = readFileSync(join(packageDir, 'path.txt'), 'utf8').trim() === binary &&"
+      },
+      {
+        "file": "runtime/setup.js",
+        "line": 26,
+        "text": "readFileSync(join(packageDir, 'dist', 'version'), 'utf8').trim().replace(/^v/, '') === version"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "return spawn(executable, [fileURLToPath(new URL('./runtime/main.cjs', import.meta.url))], {"
+      },
+      {
+        "file": "runtime/setup.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "runtime/setup.js",
+        "line": 39,
+        "text": "return spawn(process.execPath, [join(packageDir, 'install.js')], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

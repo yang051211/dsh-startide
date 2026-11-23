@@ -1,14 +1,24 @@
 {
   "name": "dsh-plugin-jira",
-  "version": "0.1.5",
-  "scannedAt": "2026-11-19T21:28:34.224Z",
+  "version": "0.1.8",
+  "scannedAt": "2026-11-23T09:10:28.838Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/attachments.js",
-        "line": 28,
+        "line": 54,
+        "text": "const response = await fetch(`${config.site}/rest/api/3/issue/${encodeURIComponent(key)}/attachments`, {"
+      },
+      {
+        "file": "lib/attachments.js",
+        "line": 74,
+        "text": "const response = await fetch(`${config.site}/rest/api/3/attachment/content/${encodeURIComponent(attachmentId)}`, {"
+      },
+      {
+        "file": "lib/attachments.js",
+        "line": 106,
         "text": "const response = await fetch(url, { headers: { authorization: config.authorization } })"
       },
       {
@@ -18,18 +28,8 @@
       },
       {
         "file": "lib/jira.js",
-        "line": 22,
+        "line": 23,
         "text": "const response = await fetch(`${base}?startAt=${comments.length}&maxResults=100`, { headers })"
-      },
-      {
-        "file": "lib/jira.js",
-        "line": 40,
-        "text": "const response = await fetch(url, { headers: { authorization: config.authorization, accept: 'application/json' } })"
-      },
-      {
-        "file": "lib/jira.js",
-        "line": 55,
-        "text": "const response = await fetch(url, {"
       }
     ]
   },
@@ -39,27 +39,27 @@
       {
         "file": "lib/attachments.js",
         "line": 2,
-        "text": "import { mkdirSync, writeFileSync } from 'node:fs'"
+        "text": "import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "lib/attachments.js",
-        "line": 16,
+        "line": 30,
+        "text": "const bytes = readFileSync(path)"
+      },
+      {
+        "file": "lib/attachments.js",
+        "line": 94,
         "text": "mkdirSync(dir, { recursive: true })"
       },
       {
         "file": "lib/attachments.js",
-        "line": 34,
+        "line": 112,
         "text": "writeFileSync(path, Buffer.from(await response.arrayBuffer()))"
       },
       {
         "file": "lib/git.js",
         "line": 3,
         "text": "import { appendFileSync, existsSync, readFileSync } from 'node:fs'"
-      },
-      {
-        "file": "lib/git.js",
-        "line": 122,
-        "text": "const text = existsSync(file) ? readFileSync(file, 'utf8') : ''"
       }
     ]
   },
@@ -73,22 +73,22 @@
       },
       {
         "file": "lib/tools.js",
-        "line": 7,
+        "line": 8,
         "text": "ctx.tools.register({"
       },
       {
         "file": "lib/tools.js",
-        "line": 38,
+        "line": 39,
         "text": "ctx.tools.register({"
       },
       {
         "file": "lib/tools.js",
-        "line": 70,
+        "line": 71,
         "text": "ctx.tools.register({"
       },
       {
         "file": "lib/tools.js",
-        "line": 107,
+        "line": 108,
         "text": "ctx.tools.register({"
       }
     ]
@@ -98,6 +98,11 @@
     "evidence": [
       {
         "file": "lib/git.js",
+        "line": 2,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/requests.js",
         "line": 2,
         "text": "import { execFileSync } from 'node:child_process'"
       }

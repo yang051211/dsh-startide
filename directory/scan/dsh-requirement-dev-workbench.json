@@ -1,0 +1,82 @@
+{
+  "name": "dsh-requirement-dev-workbench",
+  "version": "4.5.13",
+  "scannedAt": "2026-11-23T09:10:24.595Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 282,
+        "text": "const response = await fetch(`${API}${path}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 326,
+        "text": "void fetch(`${API}/ui/metrics`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/index.js",
+        "line": 14,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 16,
+        "text": "import { readFile, mkdir, readdir, rm, stat, writeFile, appendFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 72,
+        "text": "const text = readFileSync(command, 'utf8')"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 169,
+        "text": "const raw = await readFile(settingsFile(config), 'utf8')"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 186,
+        "text": "await mkdir(dirname(settingsFile(config)), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/index.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 40,
+        "text": "child = spawn(command, args, { windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

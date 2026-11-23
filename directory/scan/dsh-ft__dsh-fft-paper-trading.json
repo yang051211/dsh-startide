@@ -1,14 +1,14 @@
 {
   "name": "@dsh-ft/dsh-fft-paper-trading",
-  "version": "0.7.3",
-  "scannedAt": "2026-11-16T23:37:26.914Z",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-23T09:10:26.871Z",
   "icon": "dsh-ft__dsh-fft-paper-trading.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 424,
+        "line": 526,
         "text": "const response = await fetch(ROUTE, {"
       },
       {
@@ -27,8 +27,8 @@
         "text": "async fetch(request) {"
       },
       {
-        "file": "src/client/index.js",
-        "line": 424,
+        "file": "src/client/parts/10-core.js",
+        "line": 516,
         "text": "const response = await fetch(ROUTE, {"
       }
     ]
@@ -39,27 +39,27 @@
       {
         "file": "lib/data/futures-market-data.js",
         "line": 1,
-        "text": "import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+        "text": "import { readFile } from 'node:fs/promises';"
       },
       {
         "file": "lib/data/futures-market-data.js",
-        "line": 819,
-        "text": "const parsed = JSON.parse(readFileSync(this.cachePath(), 'utf8'));"
+        "line": 820,
+        "text": "const parsed = JSON.parse(await readFile(this.cachePath(), 'utf8'));"
       },
       {
-        "file": "lib/data/futures-market-data.js",
-        "line": 841,
-        "text": "mkdirSync(join(resolveDshHome(), 'paper-trading', 'futures'), { recursive: true });"
+        "file": "lib/store/accounts.js",
+        "line": 17,
+        "text": "import { mkdir, readdir, readFile, stat } from 'node:fs/promises';"
       },
       {
-        "file": "lib/data/futures-market-data.js",
-        "line": 842,
-        "text": "writeFileSync(path, JSON.stringify(file), 'utf8');"
+        "file": "lib/store/accounts.js",
+        "line": 68,
+        "text": "parsed = JSON.parse(await readFile(this.file, 'utf8'));"
       },
       {
-        "file": "lib/store/event-store.js",
-        "line": 1,
-        "text": "import { access, copyFile, mkdir, open, readFile, rename, unlink } from 'node:fs/promises';"
+        "file": "lib/store/accounts.js",
+        "line": 260,
+        "text": "await mkdir(join(this.root, created.id), { recursive: true });"
       }
     ]
   },
@@ -67,28 +67,28 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/agent/futures-tools.js",
-        "line": 193,
+        "file": "lib/agent/account-tools.js",
+        "line": 60,
         "text": "tools.register(defineTool({"
       },
       {
         "file": "lib/agent/futures-tools.js",
-        "line": 217,
+        "line": 188,
         "text": "tools.register(defineTool({"
       },
       {
         "file": "lib/agent/futures-tools.js",
-        "line": 243,
+        "line": 212,
         "text": "tools.register(defineTool({"
       },
       {
         "file": "lib/agent/futures-tools.js",
-        "line": 262,
+        "line": 238,
         "text": "tools.register(defineTool({"
       },
       {
         "file": "lib/agent/futures-tools.js",
-        "line": 277,
+        "line": 257,
         "text": "tools.register(defineTool({"
       }
     ]

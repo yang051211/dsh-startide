@@ -1,35 +1,35 @@
 {
   "name": "dsh-connect-doubao",
-  "version": "0.8.0",
-  "scannedAt": "2026-11-21T20:46:04.404Z",
+  "version": "0.8.1",
+  "scannedAt": "2026-11-23T09:10:17.673Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/cli-doctor.js",
-        "line": 88,
+        "line": 119,
         "text": "const health = await fetch(`${base}/healthz`, { headers: authed });"
       },
       {
         "file": "lib/cli-doctor.js",
-        "line": 89,
+        "line": 120,
         "text": "const unauthorized = await fetch(`${base}/healthz`, { headers: { Authorization: \"Bearer wrong-secret\" } });"
       },
       {
         "file": "lib/client.js",
-        "line": 529,
+        "line": 537,
         "text": "const response = await fetch(DOUBAO_CATALOG_PATH);"
       },
       {
         "file": "lib/client.js",
-        "line": 675,
-        "text": "const response = await fetch(DOUBAO_QUOTA_PATH, {"
+        "line": 690,
+        "text": "return readQuotaResponse(await fetch(DOUBAO_QUOTA_PATH, {"
       },
       {
         "file": "lib/client.js",
-        "line": 686,
-        "text": "const response = await fetch(DOUBAO_QUOTA_PATH, {"
+        "line": 699,
+        "text": "return readQuotaResponse(await fetch(DOUBAO_QUOTA_PATH, {"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/doubao-quota-COHmsDLp.js",
+        "file": "lib/cli-doctor.js",
+        "line": 4,
+        "text": "import { mkdirSync, readFileSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/cli-doctor.js",
+        "line": 235,
+        "text": "existing = JSON.parse(readFileSync(path, \"utf8\"));"
+      },
+      {
+        "file": "lib/cli-doctor.js",
+        "line": 237,
+        "text": "mkdirSync(dirname(path), { recursive: true });"
+      },
+      {
+        "file": "lib/cli-doctor.js",
+        "line": 238,
+        "text": "writeFileSync(path, JSON.stringify({"
+      },
+      {
+        "file": "lib/doubao-quota-D6mzmhW5.js",
         "line": 1,
         "text": "import { appendFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, unlinkSync, writeFileSync } from \"node:fs\";"
-      },
-      {
-        "file": "lib/doubao-quota-COHmsDLp.js",
-        "line": 6,
-        "text": "import { appendFile, mkdir, writeFile } from \"node:fs/promises\";"
-      },
-      {
-        "file": "lib/doubao-quota-COHmsDLp.js",
-        "line": 240,
-        "text": "const parsed = JSON.parse(readFileSync(url, \"utf8\"));"
-      },
-      {
-        "file": "lib/doubao-quota-COHmsDLp.js",
-        "line": 825,
-        "text": "writeFileSync(scriptPath, script, \"utf8\");"
-      },
-      {
-        "file": "lib/doubao-quota-COHmsDLp.js",
-        "line": 855,
-        "text": "rmSync(scratch, {"
       }
     ]
   },
@@ -71,29 +71,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/doubao-quota-COHmsDLp.js",
+        "file": "lib/doubao-quota-D6mzmhW5.js",
         "line": 5,
-        "text": "import { spawnSync } from \"node:child_process\";"
-      },
-      {
-        "file": "lib/doubao-quota-COHmsDLp.js",
-        "line": 549,
-        "text": "const result = spawnSync(\"powershell.exe\", ["
-      },
-      {
-        "file": "lib/doubao-quota-COHmsDLp.js",
-        "line": 826,
-        "text": "const result = spawnSync(powershellPath(), ["
-      },
-      {
-        "file": "lib/doubao-status-BYNO_dd4.js",
-        "line": 11,
         "text": "import { spawn, spawnSync } from \"node:child_process\";"
       },
       {
-        "file": "lib/doubao-status-BYNO_dd4.js",
-        "line": 2256,
-        "text": "spawnSync(\"taskkill\", ["
+        "file": "lib/doubao-quota-D6mzmhW5.js",
+        "line": 575,
+        "text": "const result = spawnSync(\"powershell.exe\", ["
+      },
+      {
+        "file": "lib/doubao-quota-D6mzmhW5.js",
+        "line": 882,
+        "text": "return parseDpapiStdout(spawnSync(powershellPath(), ["
+      },
+      {
+        "file": "lib/doubao-quota-D6mzmhW5.js",
+        "line": 930,
+        "text": "return parseDpapiStdout(spawnSync(powershellPath(), ["
+      },
+      {
+        "file": "lib/doubao-quota-D6mzmhW5.js",
+        "line": 1197,
+        "text": "const res = spawnSync(\"reg\", ["
       }
     ]
   },
@@ -102,7 +102,9 @@
     "evidence": []
   },
   "dependencies": 0,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [],
   "setupHints": [
@@ -113,7 +115,7 @@
     },
     {
       "file": "README.md",
-      "line": 249,
+      "line": 254,
       "text": "npm install -g dsh-connect-doubao"
     }
   ],

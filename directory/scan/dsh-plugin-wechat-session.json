@@ -1,15 +1,25 @@
 {
   "name": "dsh-plugin-wechat-session",
-  "version": "1.9.0",
-  "scannedAt": "2026-11-18T21:46:01.889Z",
+  "version": "2.1.0",
+  "scannedAt": "2026-11-23T09:10:28.597Z",
   "icon": "dsh-plugin-wechat-session.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
+        "file": "lib/channel/ilink.mjs",
+        "line": 60,
+        "text": "fetchImpl: opts.fetchImpl ?? ((...args) => globalThis.fetch(...args)),"
+      },
+      {
         "file": "lib/client.js",
-        "line": 721,
+        "line": 826,
         "text": "return fetch('/__dsh-plugin-wechat-session/wechat', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1661,
+        "text": "return fetch(base + path, Object.assign({ credentials: 'same-origin' }, opts || {}))"
       }
     ]
   },
@@ -17,14 +27,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "smoke/smoke-test.mjs",
-        "line": 10,
-        "text": "import { readFile } from 'node:fs/promises';"
+        "file": "lib/channel/transport.js",
+        "line": 13,
+        "text": "import fs from 'node:fs';"
       },
       {
-        "file": "smoke/smoke-test.mjs",
-        "line": 15,
-        "text": "const readText = (p) => readFile(new URL(p, root), 'utf8');"
+        "file": "lib/channel/transport.js",
+        "line": 22,
+        "text": "if (file && fs.existsSync(file)) return JSON.parse(fs.readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "lib/channel/transport.js",
+        "line": 30,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/channel/transport.js",
+        "line": 31,
+        "text": "fs.writeFileSync(file, JSON.stringify(state, null, 2), { mode: 0o600 });"
+      },
+      {
+        "file": "lib/host/binding-store.js",
+        "line": 12,
+        "text": "import fs from 'node:fs';"
       }
     ]
   },
@@ -40,19 +65,13 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
+  "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
     "connection",
     "webServer"
   ],
-  "setupHints": [
-    {
-      "file": "README.md",
-      "line": 334,
-      "text": "`npm install -g npm@latest`（保证 npm ≥ 11.5.1），末步 `npm publish --provenance"
-    }
-  ],
+  "setupHints": [],
   "skippedEntries": []
 }

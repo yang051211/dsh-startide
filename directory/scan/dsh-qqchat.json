@@ -1,24 +1,24 @@
 {
   "name": "dsh-qqchat",
-  "version": "0.2.11",
-  "scannedAt": "2026-11-17T09:25:42.150Z",
+  "version": "0.2.13",
+  "scannedAt": "2026-11-23T09:10:29.539Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/gateway/api.js",
-        "line": 20,
+        "line": 24,
         "text": "const response = await fetch(TOKEN_URL, {"
       },
       {
         "file": "lib/gateway/api.js",
-        "line": 35,
+        "line": 39,
         "text": "const response = await fetch(`${base}/gateway`, {"
       },
       {
         "file": "lib/gateway/api.js",
-        "line": 65,
+        "line": 69,
         "text": "const response = await fetch(`${base}${path}`, {"
       },
       {
@@ -87,9 +87,9 @@
         "text": "const disposeInfo = ctx.tools.register(mediaInfoTool);"
       },
       {
-        "file": "src/index.ts",
-        "line": 25,
-        "text": "export const inject = ['connection', 'agents', 'agentDefaultModel', 'commands', 'llm', 'tools', 'webServer', 'workspaceRegistry', 'sessionPersistence'] as const"
+        "file": "lib/session/agent-bridge.js",
+        "line": 89,
+        "text": "const registerSendTool = (voice) => ctx.tools.register(defineTool({"
       }
     ]
   },
@@ -107,14 +107,19 @@
         "text": "                   const result = await execFile('ffprobe', ['-v', 'quiet', '-print_format', 'json', '-show_format', '-show_streams', attachment.localPath], { t"
       },
       {
-        "file": "src/media/media-tools.ts",
-        "line": 2,
-        "text": "import { execFile as execFileCallback } from 'node:child_process'"
+        "file": "lib/media/voice.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/media/voice.js",
+        "line": 12,
+        "text": "const child = execFile('ffmpeg', ["
       },
       {
         "file": "src/media/media-tools.ts",
-        "line": 55,
-        "text": "            const result = await execFile('ffprobe', ['-v', 'quiet', '-print_format', 'json', '-show_format', '-show_streams', attachment.localPath], { timeout:"
+        "line": 2,
+        "text": "import { execFile as execFileCallback } from 'node:child_process'"
       }
     ]
   },
@@ -122,7 +127,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
+  "dependencies": 2,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
@@ -139,7 +144,7 @@
   "setupHints": [
     {
       "file": "README.en.md",
-      "line": 229,
+      "line": 237,
       "text": "$DSH_HOME/plugins/dsh-qqchat/qqchat.sqlite"
     }
   ],

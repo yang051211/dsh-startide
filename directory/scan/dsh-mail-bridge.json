@@ -1,0 +1,77 @@
+{
+  "name": "dsh-mail-bridge",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-23T09:10:27.474Z",
+  "icon": "dsh-mail-bridge.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 2,
+        "text": "import { promises as fs } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "await fs.writeFile(inputFile, JSON.stringify({ ...settings, ...payload }), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 54,
+        "text": "const raw = await fs.readFile(outputFile, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 59,
+        "text": "await fs.rm(dir, { recursive: true, force: true }).catch(() => {})"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 7,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 408,
+        "text": "ctx.effect(() => ctx.tools.register(tool))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 30,
+        "text": "const child = spawn(python, [WORKER, command, inputFile, outputFile], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

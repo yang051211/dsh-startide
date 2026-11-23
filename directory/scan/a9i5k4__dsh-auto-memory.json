@@ -1,34 +1,34 @@
 {
   "name": "@a9i5k4/dsh-auto-memory",
-  "version": "3.3.17",
-  "scannedAt": "2026-10-26T10:10:46.479Z",
+  "version": "3.4.1",
+  "scannedAt": "2026-11-23T09:10:15.163Z",
   "icon": "a9i5k4__dsh-auto-memory.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 3764,
+        "line": 4104,
         "text": "var res = await fetch(path + query(params), signal ? { signal: signal } : undefined)"
       },
       {
         "file": "lib/client.js",
-        "line": 3781,
+        "line": 4121,
         "text": "var res = await fetch(path, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(payload), signal: signal })"
       },
       {
         "file": "lib/client.js",
-        "line": 3874,
+        "line": 4214,
         "text": "          var response = await fetch(API.migrateUpload + '?name=' + encodeURIComponent(file.name), { method: 'POST', headers: { 'content-type': 'application/oct"
       },
       {
         "file": "lib/client.js",
-        "line": 7079,
+        "line": 12523,
         "text": "fetch(API.shadowRecent).then(function (r) { return r.json() }).then(function (j) {"
       },
       {
         "file": "lib/client.js",
-        "line": 7082,
+        "line": 12526,
         "text": "fetch(API.reviewFeedback).then(function (r) { return r.json() }).then(function (j) {"
       }
     ]
@@ -38,28 +38,28 @@
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 12668,
+        "line": 10338,
+        "text": "              return h('button', { key: 'fs' + pair[0], 'data-dam-slot': 'actions', 'data-dam-btn': '', 'data-dam-fs-btn': String(pair[0]), 'data-dam-fs-active'"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 18845,
         "text": "Object.keys(FONT_SCALES).map(function (k) { return h('option', { key: k, value: k }, t('fs' + k.charAt(0).toUpperCase() + k.slice(1))) })), t('fFontSizeHint')),"
       },
       {
         "file": "lib/client.js",
-        "line": 16003,
+        "line": 23810,
         "text": "Object.keys(FONT_SCALES).map(function (k) { return h('option', { key: k, value: k }, t('fs' + k.charAt(0).toUpperCase() + k.slice(1))) })), t('fFontSizeHint')),"
       },
       {
         "file": "lib/client.js",
-        "line": 19132,
+        "line": 27103,
         "text": "Object.keys(FONT_SCALES).map(function (k) { return h('option', { key: k, value: k }, t('fs' + k.charAt(0).toUpperCase() + k.slice(1))) })), t('fFontSizeHint')),"
       },
       {
         "file": "lib/config-io.js",
         "line": 29,
         "text": "import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs'"
-      },
-      {
-        "file": "lib/config-io.js",
-        "line": 30,
-        "text": "import { rename, writeFile } from 'node:fs/promises'"
       }
     ]
   },
@@ -68,22 +68,22 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 335,
+        "line": 483,
         "text": "export const inject = ['webServer', 'tools', 'systemPrompt', 'subagents', 'llm']"
       },
       {
         "file": "lib/index.js",
-        "line": 15683,
+        "line": 21867,
         "text": "//   与路由、工具注册**都在 `ctx.tools.register` 之后**才进 disposer 链 ⇒ 注册抛错时"
       },
       {
         "file": "lib/index.js",
-        "line": 21195,
+        "line": 30581,
         "text": "//   这样即使 ctx.tools.register / ctx.webServer.register 抛错，disposeSurfaces 也已经"
       },
       {
         "file": "lib/index.js",
-        "line": 21207,
+        "line": 30613,
         "text": "disposers.push(ctx.tools.register(tool))"
       }
     ]
@@ -93,17 +93,17 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 35,
+        "line": 105,
         "text": "import { exec as cpExec, spawn as cpSpawn } from 'node:child_process'"
       },
       {
         "file": "lib/index.js",
-        "line": 12642,
+        "line": 18610,
         "text": "// 配置性错误熔断(问题③):UNKNOWN_MODEL 等错误不会自愈,熔断期内直接返回空,不再反复 spawn(卡顿根因)"
       },
       {
         "file": "lib/index.js",
-        "line": 12649,
+        "line": 18617,
         "text": "// 并发闸门(问题②):同时在飞的子代理 ≥3 时拒绝新 spawn(启动瞬间多路叠加导致卡顿)"
       },
       {
@@ -124,7 +124,9 @@
   },
   "dependencies": 0,
   "minifiedFiles": [
-    "lib/client.js"
+    "lib/client.js",
+    "lib/ev4-prototype-blocks.js",
+    "lib/migration-prompt.js"
   ],
   "binaryFiles": [],
   "requiredServices": [

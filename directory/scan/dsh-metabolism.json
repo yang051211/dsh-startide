@@ -1,0 +1,88 @@
+{
+  "name": "dsh-metabolism",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-23T09:10:24.571Z",
+  "icon": "dsh-metabolism.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "engine.js",
+        "line": 16,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "engine.js",
+        "line": 30,
+        "text": "const parsed = JSON.parse(readFileSync(new URL('./本地配置.json', import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "engine.js",
+        "line": 110,
+        "text": "const parsed = JSON.parse(readFileSync(summaryStateFile(options), 'utf8'))"
+      },
+      {
+        "file": "engine.js",
+        "line": 119,
+        "text": "mkdirSync(summaryDir(options), { recursive: true })"
+      },
+      {
+        "file": "engine.js",
+        "line": 120,
+        "text": "writeFileSync(summaryStateFile(options), JSON.stringify(state, null, 2), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "engine.js",
+        "line": 73,
+        "text": "export const inject = ['tokenMeter', 'llm', 'tools']"
+      },
+      {
+        "file": "engine.js",
+        "line": 618,
+        "text": "if (typeof ctx.tools?.register === 'function') {"
+      },
+      {
+        "file": "engine.js",
+        "line": 620,
+        "text": "ctx.tools.register(compactTool(ctx, options, log))"
+      },
+      {
+        "file": "engine.js",
+        "line": 625,
+        "text": "ctx.tools.register(summarizeTool(ctx, options, log))"
+      },
+      {
+        "file": "engine.js",
+        "line": 630,
+        "text": "ctx.tools.register(timelineTool(ctx, options, log))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "tokenMeter",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

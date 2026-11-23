@@ -1,7 +1,7 @@
 {
   "name": "dsh-video-forge",
-  "version": "0.2.0",
-  "scannedAt": "2026-11-19T21:28:23.620Z",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-23T09:10:26.231Z",
   "icon": "dsh-video-forge.svg",
   "network": {
     "hit": true,
@@ -13,22 +13,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 3586,
+        "line": 3649,
         "text": "const response = await context.fetch(url, {"
       },
       {
         "file": "lib/index.js",
-        "line": 3622,
+        "line": 3685,
         "text": "const response = await context.fetch(url, {"
       },
       {
         "file": "lib/index.js",
-        "line": 4331,
+        "line": 4394,
         "text": "const response = await options.fetch(options.url, {"
       },
       {
         "file": "lib/index.js",
-        "line": 4372,
+        "line": 4435,
         "text": "const response = await options.fetch(url, {"
       }
     ]
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
+        "file": "lib/ffmpeg-CEYa3x2K.js",
+        "line": 3,
+        "text": "import { constants } from \"node:fs\";"
+      },
+      {
+        "file": "lib/ffmpeg-CEYa3x2K.js",
         "line": 4,
-        "text": "import { constants, readFileSync } from \"node:fs\";"
+        "text": "import { access as access$1, mkdir, symlink } from \"node:fs/promises\";"
       },
       {
-        "file": "lib/index.js",
-        "line": 5,
-        "text": "import { access, chmod, copyFile, link, lstat, mkdir, open, readFile, readdir, realpath, rename, rm, rmdir, stat, unlink, writeFile } from \"node:fs/promises\";"
+        "file": "lib/ffmpeg-CEYa3x2K.js",
+        "line": 88,
+        "text": "await mkdir(shim, { recursive: true });"
       },
       {
-        "file": "lib/index.js",
-        "line": 668,
-        "text": "raw = readFileSync(this.#options.path, \"utf8\");"
+        "file": "lib/ffmpeg-CEYa3x2K.js",
+        "line": 285,
+        "text": "const { mkdir, writeFile } = await import(\"node:fs/promises\");"
       },
       {
-        "file": "lib/index.js",
-        "line": 935,
-        "text": "await mkdir(dirname(path), { recursive: true });"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 937,
-        "text": "await writeFile(temporary, payload, { mode: 384 });"
+        "file": "lib/ffmpeg-CEYa3x2K.js",
+        "line": 287,
+        "text": "await mkdir(dirname(output), { recursive: true });"
       }
     ]
   },
@@ -68,29 +68,60 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 7774,
+        "line": 9501,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 7961,
+        "line": 9721,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 8166,
+        "line": 9844,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 8254,
-        "text": "const inject = [\"tools\", \"webServer\"];"
+        "line": 10032,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 10668,
+        "text": "ctx.tools.register(defineTool({"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/ffmpeg-CEYa3x2K.js",
+        "line": 5,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/ffmpeg-CEYa3x2K.js",
+        "line": 143,
+        "text": "const child = spawn(command, args, { stdio: ["
+      },
+      {
+        "file": "lib/ffmpeg-CEYa3x2K.js",
+        "line": 216,
+        "text": "const child = spawn(command, args, { stdio: ["
+      },
+      {
+        "file": "lib/ffmpeg-CEYa3x2K.js",
+        "line": 448,
+        "text": "const child = spawn(command, args, { stdio: ["
+      },
+      {
+        "file": "lib/index.js",
+        "line": 9,
+        "text": "import { spawn } from \"node:child_process\";"
+      }
+    ]
   },
   "installScripts": {
     "hit": true,
@@ -102,8 +133,10 @@
       }
     ]
   },
-  "dependencies": 2,
-  "minifiedFiles": [],
+  "dependencies": 3,
+  "minifiedFiles": [
+    "assets/teach/deck/reveal.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [],
   "setupHints": [],

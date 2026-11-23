@@ -1,35 +1,35 @@
 {
   "name": "dsh-workbench-host",
-  "version": "0.13.0",
-  "scannedAt": "2026-11-22T21:06:34.736Z",
+  "version": "0.17.0",
+  "scannedAt": "2026-11-23T09:10:18.125Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client/client.js",
-        "line": 4637,
+        "line": 5272,
+        "text": "const response = patch ? await fetch(endpoint, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 5276,
+        "text": "}) : await fetch(endpoint + \"?sessionId=\" + encodeURIComponent(sid));"
+      },
+      {
+        "file": "client/client.js",
+        "line": 5594,
         "text": "fetch(\"/workbench/api/data/clear\", {"
       },
       {
         "file": "client/client.js",
-        "line": 4688,
+        "line": 5645,
         "text": "fetch(url).then(function(r) {"
       },
       {
         "file": "client/client.js",
-        "line": 4736,
+        "line": 5693,
         "text": "          fetch(\"/workbench/api/backup/import\", { method: \"POST\", headers: { \"content-type\": \"application/zip\", \"x-wb-backup-policy\": JSON.stringify(policyMap) "
-      },
-      {
-        "file": "client/client.js",
-        "line": 5248,
-        "text": "fetch(\"/workbench/api/audit?\" + query(p || page, size, selected || currentFilters.current)).then(function(r) {"
-      },
-      {
-        "file": "client/client.js",
-        "line": 5657,
-        "text": "return fetch(\"/workbench/api/domains/\" + encodeURIComponent(targetId) + \"/actions/\" + encodeURIComponent(action), {"
       }
     ]
   },
@@ -43,7 +43,7 @@
       },
       {
         "file": "lib/core/db.js",
-        "line": 44,
+        "line": 50,
         "text": "mkdirSync(dirname(file), { recursive: true });"
       },
       {
@@ -53,12 +53,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 36,
-        "text": "return JSON.parse(readFileSync(join(WB_HOME, \"cloud-creds.json\"), \"utf8\"));"
+        "line": 38,
+        "text": "const creds = JSON.parse(readFileSync(join(WB_HOME, \"cloud-creds.json\"), \"utf8\"));"
       },
       {
         "file": "lib/index.js",
-        "line": 43,
+        "line": 48,
         "text": "mkdirSync(WB_HOME, { recursive: true });"
       }
     ]
@@ -67,14 +67,14 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/actions/actions.js",
-        "line": 484,
-        "text": "ctx.tools?.register({"
+        "file": "lib/index.js",
+        "line": 28,
+        "text": "export const inject = [\"webServer\", \"tools\", \"connection\"];"
       },
       {
-        "file": "lib/index.js",
-        "line": 26,
-        "text": "export const inject = [\"webServer\", \"tools\", \"connection\"];"
+        "file": "lib/session/tool.js",
+        "line": 5,
+        "text": "ctx.tools?.register({"
       }
     ]
   },

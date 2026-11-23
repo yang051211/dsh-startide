@@ -1,0 +1,78 @@
+{
+  "name": "@laivikto/dsh-ssh-servers",
+  "version": "1.5.2",
+  "scannedAt": "2026-11-23T09:10:23.256Z",
+  "icon": "laivikto__dsh-ssh-servers.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 416,
+        "text": "const response = await fetch(apiUrl(name), {"
+      },
+      {
+        "file": "client.js",
+        "line": 886,
+        "text": "const response = await fetch(apiUrl('fs-download-raw'), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "import { existsSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "import { readdir as readdirAsync, stat as statAsync } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 2034,
+        "text": "toolDisposers.push(tools.register(definition, {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 992,
+        "text": "* 直接 spawn('ssh') 时，Windows 的 CreateProcess 会在 cwd 中优先查找，"
+      },
+      {
+        "file": "index.js",
+        "line": 1056,
+        "text": "child = spawn(SSH_BIN, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

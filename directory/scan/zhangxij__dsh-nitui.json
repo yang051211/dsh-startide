@@ -1,35 +1,20 @@
 {
   "name": "@zhangxij/dsh-nitui",
-  "version": "0.1.0",
-  "scannedAt": "2026-11-21T20:46:31.372Z",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-23T09:10:31.535Z",
   "icon": "zhangxij__dsh-nitui.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 82,
-        "text": "const response = await fetch(API + pathname, init)"
+        "line": 89,
+        "text": "return transport.fetch(API + pathname, init)"
       },
       {
         "file": "client.js",
-        "line": 452,
-        "text": "fetch(`${API}/choices`).then((response) => response.json()).then(setData).catch(() => {})"
-      },
-      {
-        "file": "client.js",
-        "line": 751,
-        "text": "fetch(`${API}/recall?session=${encodeURIComponent(String(sessionId))}`)"
-      },
-      {
-        "file": "client.js",
-        "line": 1050,
-        "text": "fetch(`${API}/choices`)"
-      },
-      {
-        "file": "client.js",
-        "line": 1507,
-        "text": "fetch(`${API}/choices`)"
+        "line": 91,
+        "text": "return fetch(API + pathname, { credentials: 'same-origin', ...init })"
       }
     ]
   },
@@ -38,27 +23,27 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 18,
+        "line": 24,
         "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 99,
+        "line": 105,
         "text": "mkdirSync(root, { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 111,
+        "line": 117,
         "text": "raw = readFileSync(sessionsFile, 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 131,
+        "line": 137,
         "text": "appendFileSync(sessionsFile, `${JSON.stringify({ ...event, at })}\\n`, 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 213,
+        "line": 219,
         "text": "raw = readFileSync(file, 'utf8')"
       }
     ]
@@ -68,17 +53,17 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 91,
-        "text": "export const inject = ['webServer', 'tools']"
+        "line": 97,
+        "text": "export const inject = ['webServer', 'tools', 'connection']"
       },
       {
         "file": "index.js",
-        "line": 999,
+        "line": 1017,
         "text": "ctx.tools.register({"
       },
       {
         "file": "index.js",
-        "line": 1030,
+        "line": 1048,
         "text": "ctx.tools.register({"
       }
     ]
@@ -95,6 +80,7 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
+    "connection",
     "tools",
     "webServer"
   ],

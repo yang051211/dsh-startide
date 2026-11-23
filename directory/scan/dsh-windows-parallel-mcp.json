@@ -1,7 +1,7 @@
 {
   "name": "dsh-windows-parallel-mcp",
-  "version": "0.1.6",
-  "scannedAt": "2026-11-22T08:23:32.770Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-23T09:10:17.918Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -14,6 +14,26 @@
         "file": "lib/engine.js",
         "line": 23,
         "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 26,
+        "text": "import { mkdirSync, rmSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 189,
+        "text": "mkdirSync(dirname(latch), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 190,
+        "text": "writeFileSync(latch, 'abort', 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 345,
+        "text": "for (const latch of activeLatches) { try { rmSync(latch, { force: true }); } catch { } }"
       }
     ]
   },
@@ -22,12 +42,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 34,
+        "line": 37,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "lib/index.js",
-        "line": 264,
+        "line": 340,
         "text": "ctx.tools.register(tool);"
       }
     ]

@@ -1,0 +1,128 @@
+{
+  "name": "dsh-plugin-updater",
+  "version": "1.1.2",
+  "scannedAt": "2026-11-23T09:10:29.115Z",
+  "icon": "dsh-plugin-updater.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 456,
+        "text": "return fetch(ROUTE, {"
+      },
+      {
+        "file": "client.js",
+        "line": 592,
+        "text": "return fetch(ROUTE, {"
+      },
+      {
+        "file": "client.js",
+        "line": 734,
+        "text": "fetch(ROUTE, {"
+      },
+      {
+        "file": "client.js",
+        "line": 1027,
+        "text": "fetch(ROUTE, {"
+      },
+      {
+        "file": "client.js",
+        "line": 1063,
+        "text": "fetch(ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/history.js",
+        "line": 1,
+        "text": "import { existsSync, readFileSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/history.js",
+        "line": 26,
+        "text": "const raw = readFileSync(file, \"utf8\");"
+      },
+      {
+        "file": "lib/history.js",
+        "line": 57,
+        "text": "writeFileSync(file, JSON.stringify(history, null, 2), \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 42,
+        "text": "import { existsSync, readFileSync, realpathSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 834,
+        "text": "writeFileSync(scriptPath, content, { mode: 0o755 });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 64,
+        "text": "export const inject = [\"tools\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 169,
+        "text": "* @param ctx - Cordis context; `ctx.tools` is injected."
+      },
+      {
+        "file": "lib/index.js",
+        "line": 450,
+        "text": "ctx.effect(() => ctx.tools.register(tool), \"plugin-updater.tool\");"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "import { execFile, spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 836,
+        "text": "const child = spawn(\"/bin/sh\", [scriptPath], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 866,
+        "text": "const child = spawn(\"cmd.exe\", [\"/c\", \"start\", '\"\"', batPath], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 889,
+        "text": "const child = spawn(\"/bin/sh\", [scriptPath], {"
+      },
+      {
+        "file": "lib/registry.js",
+        "line": 14,
+        "text": "import { spawn } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

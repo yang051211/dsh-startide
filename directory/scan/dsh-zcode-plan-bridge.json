@@ -1,29 +1,19 @@
 {
   "name": "dsh-zcode-plan-bridge",
-  "version": "0.6.8",
-  "scannedAt": "2026-11-20T21:47:25.092Z",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-23T09:10:19.006Z",
   "icon": "dsh-zcode-plan-bridge.webp",
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "community/runtime/native-attach.mjs",
-        "line": 83,
-        "text": "try { return await (await fetch(endpoint, { signal: AbortSignal.timeout(400) })).json() } catch { return null }"
-      },
-      {
-        "file": "community/runtime/native-runtime.mjs",
-        "line": 163,
-        "text": "return fetch(input, { ...init, signal: caller ? AbortSignal.any([caller, pending.signal]) : pending.signal }).then(markCommittedResponse)"
-      },
-      {
         "file": "lib/client.js",
-        "line": 172,
+        "line": 176,
         "text": "const response = await fetch(route, { method: 'POST', credentials: 'same-origin', signal: controller.signal,"
       },
       {
         "file": "lib/client.js",
-        "line": 179,
+        "line": 183,
         "text": "const response = await fetch(route, { credentials: 'same-origin', signal: controller.signal })"
       }
     ]
@@ -47,14 +37,14 @@
         "text": "raw = JSON.parse(fs.readFileSync(process.env.ZCODE_COMMUNITY_RETRY_CONFIG_FILE, 'utf8'))"
       },
       {
-        "file": "community/bin/tools.mjs",
-        "line": 5,
+        "file": "community/runtime/state.mjs",
+        "line": 1,
         "text": "import fs from 'node:fs'"
       },
       {
-        "file": "community/bin/tools.mjs",
-        "line": 28,
-        "text": "    try { fs.writeFileSync(path.join(dir, `integration-${process.pid}.json`), JSON.stringify({ ...native, pluginPid: process.pid, parentPid: process.ppid })) } "
+        "file": "community/runtime/state.mjs",
+        "line": 11,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
       }
     ]
   },
@@ -66,28 +56,28 @@
     "hit": true,
     "evidence": [
       {
-        "file": "community/bin/ready.mjs",
-        "line": 2,
-        "text": "import { execFileSync } from 'node:child_process'"
-      },
-      {
-        "file": "community/runtime/native-attach.mjs",
-        "line": 4,
-        "text": "import { execFileSync } from 'node:child_process'"
-      },
-      {
-        "file": "keeper/runtime/keeper.mjs",
-        "line": 3,
-        "text": "import { execFileSync, spawnSync } from 'node:child_process'"
-      },
-      {
-        "file": "keeper/runtime/keeper.mjs",
-        "line": 115,
-        "text": "const result = spawnSync(command, args, { ...options, stdio: 'ignore', timeout: 15000 })"
+        "file": "lib/app-server.js",
+        "line": 39,
+        "text": "import { spawn } from 'node:child_process'"
       },
       {
         "file": "lib/app-server.js",
-        "line": 55,
+        "line": 197,
+        "text": "/** @type {import('node:child_process').ChildProcessWithoutNullStreams | undefined} */"
+      },
+      {
+        "file": "lib/app-server.js",
+        "line": 264,
+        "text": "const child = spawn(options.zcodeCliNode, [...launch.args, 'app-server', '--surface', 'terminal', '--no-color'], {"
+      },
+      {
+        "file": "lib/app-server.js",
+        "line": 294,
+        "text": "// A failed spawn (wrong node path, EPERM from a sandbox, ...) is an 'error' event:"
+      },
+      {
+        "file": "lib/diagnostics.js",
+        "line": 25,
         "text": "import { spawn } from 'node:child_process'"
       }
     ]

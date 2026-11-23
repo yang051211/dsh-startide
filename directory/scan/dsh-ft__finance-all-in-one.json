@@ -1,0 +1,71 @@
+{
+  "name": "@dsh-ft/finance-all-in-one",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-23T09:10:28.585Z",
+  "icon": "dsh-ft__finance-all-in-one.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 67,
+        "text": "const response = await fetch(ROUTE, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 37,
+        "text": "async fetch(request) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 163,
+        "text": "disabled: !!js process.getBuiltinModule('node:fs').readFileSync(process.getBuiltinModule('node:path').join(process.resourcesPath, 'app.asar', 'dsh', 'node_modul"
+      },
+      {
+        "file": "scripts/kline-mcp.mjs",
+        "line": 28,
+        "text": "import { existsSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 206,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/kline-mcp.mjs",
+        "line": 27,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/kline-mcp.mjs",
+        "line": 76,
+        "text": "const child = spawn(process.execPath, [launcher], { cwd: directory, stdio: 'inherit', env: process.env })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 6,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}
