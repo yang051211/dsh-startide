@@ -1,14 +1,14 @@
 {
   "name": "dsh-bat-runner",
-  "version": "0.3.0",
-  "scannedAt": "2026-11-24T01:02:45.317Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-24T11:24:38.616Z",
   "icon": "dsh-bat-runner.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1260,
+        "line": 1425,
         "text": "fetch('/dsh-batrunner-logs/' + method, {"
       }
     ]
@@ -23,22 +23,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 384,
+        "line": 430,
         "text": "const buf = fs.readFileSync(srcPath);"
       },
       {
         "file": "lib/index.js",
-        "line": 405,
+        "line": 451,
         "text": "fs.writeFileSync(tmp, text, { encoding: 'utf8' });"
       },
       {
         "file": "lib/index.js",
-        "line": 414,
+        "line": 460,
         "text": "try { fs.unlinkSync(tmp); } catch {}"
       },
       {
         "file": "lib/index.js",
-        "line": 426,
+        "line": 472,
         "text": "try { fs.mkdirSync(RUN_LOG_DIR, { recursive: true }); } catch { /* 已经在 */ }"
       }
     ]
@@ -57,23 +57,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 339,
+        "line": 385,
         "text": "const result = spawnSync('powershell.exe', [...PS_ARGS, encoded], {"
       },
       {
         "file": "lib/index.js",
-        "line": 352,
+        "line": 398,
         "text": "const child = spawn('powershell.exe', [...PS_ARGS, encoded], { windowsHide: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 579,
-        "text": "const child = spawn('powershell.exe', [...PS_ARGS, encoded], {"
+        "line": 632,
+        "text": "const child = spawn(file, args, Object.assign({ stdio: 'ignore' }, opts || {}));"
       },
       {
         "file": "lib/index.js",
-        "line": 688,
-        "text": "const killer = spawn('taskkill', ['/F', '/T', '/PID', String(pid)], { windowsHide: true });"
+        "line": 656,
+        "text": "*  ② 去掉它也没用——在 DSH 的宿主进程里 `spawn('explorer.exe', [dir])` 依然不弹窗："
       }
     ]
   },

@@ -1,7 +1,7 @@
 {
   "name": "@dfy-plugins/dsh-codex-bridge",
-  "version": "0.1.3",
-  "scannedAt": "2026-10-26T10:11:51.827Z",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-24T11:24:44.830Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -43,12 +43,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 50,
+        "line": 51,
         "text": "await mkdir(dirname(DISCOVERY_PATH), { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 52,
+        "line": 53,
         "text": "await writeFile(temporary, discoveryDocument(origin, token), { encoding: 'utf8', mode: 0o600 });"
       }
     ]
@@ -58,23 +58,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 15,
-        "text": "export const inject = ['agents', 'agentPresets', 'tools', 'skills', 'settings', 'webServer', 'workspaceRegistry'];"
+        "line": 16,
+        "text": "export const inject = ['agents', 'agentPresets', 'tools', 'systemPrompt', 'skills', 'settings', 'webServer', 'workspaceRegistry'];"
       },
       {
-        "file": "lib/index.js",
-        "line": 346,
-        "text": "const schemas = ctx.tools.schemas(agent);"
+        "file": "lib/tool-execution.js",
+        "line": 10,
+        "text": "const tools = ctx.tools;"
       },
       {
-        "file": "lib/index.js",
-        "line": 360,
-        "text": "return ctx.agents.withInitiator(agent, () => ctx.tools.execute({"
+        "file": "lib/tool-execution.js",
+        "line": 17,
+        "text": "return publicToolSchemas(ctx.tools.schemas(agent));"
       },
       {
-        "file": "lib/index.js",
-        "line": 373,
-        "text": "const outer = await ctx.agents.withInitiator(agent, () => ctx.tools.execute({"
+        "file": "lib/tool-execution.js",
+        "line": 32,
+        "text": "const schemas = tools ? tools.schemas(agent, toolSet) : ctx.tools.schemas(agent);"
+      },
+      {
+        "file": "lib/tool-execution.js",
+        "line": 65,
+        "text": "const result = await ctx.agents.withInitiator(agent, () => ctx.tools.execute({"
       }
     ]
   },
@@ -94,6 +99,7 @@
     "agents",
     "settings",
     "skills",
+    "systemPrompt",
     "tools",
     "webServer",
     "workspaceRegistry"

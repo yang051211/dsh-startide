@@ -1,15 +1,20 @@
 {
   "name": "dsh-workspace-migrate",
-  "version": "0.9.1",
-  "scannedAt": "2026-11-22T21:06:30.140Z",
+  "version": "0.10.1",
+  "scannedAt": "2026-11-24T11:24:29.402Z",
   "icon": "dsh-workspace-migrate.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 468,
+        "line": 528,
         "text": "const response = await fetch(API + path, options)"
+      },
+      {
+        "file": "client.js",
+        "line": 553,
+        "text": "const response = await fetch(API_PATHS + path, options)"
       }
     ]
   },
@@ -23,22 +28,22 @@
       },
       {
         "file": "index.js",
-        "line": 281,
+        "line": 282,
         "text": "const text = await fsp.readFile(join(home, 'storages', 'workspace.json'), 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 301,
+        "line": 302,
         "text": "const record = JSON.parse(await fsp.readFile(lastImportPath(dshHome()), 'utf8'))"
       },
       {
         "file": "index.js",
-        "line": 311,
+        "line": 312,
         "text": "await fsp.mkdir(join(dshHome(), 'migrations'), { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 312,
+        "line": 313,
         "text": "await fsp.writeFile(lastImportPath(dshHome()), JSON.stringify(record, null, 2))"
       }
     ]

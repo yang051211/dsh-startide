@@ -1,0 +1,75 @@
+{
+  "name": "dsh-go-aliyun-quota",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-24T11:24:33.606Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/aliyun.js",
+        "line": 81,
+        "text": "const res = await fetch(url, { signal: ac.signal, headers: { accept: 'application/json' } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/store.js",
+        "line": 7,
+        "text": "import { chmodSync, existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 25,
+        "text": "if (existsSync(f)) file = JSON.parse(readFileSync(f, 'utf8'))"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 37,
+        "text": "mkdirSync(configDir(), { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 39,
+        "text": "writeFileSync(f, JSON.stringify({ accessKeyId, accessKeySecret }, null, 2), { encoding: 'utf8', mode: 0o600 })"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 50,
+        "text": "if (existsSync(f)) unlinkSync(f)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 373,
+        "text": "const tools = ctx.tools ?? ctx.get?.('tools', false)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 378,
+        "text": "const dispose = tools.register(def)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

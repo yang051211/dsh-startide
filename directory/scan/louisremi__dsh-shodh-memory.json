@@ -1,28 +1,64 @@
 {
   "name": "@louisremi/dsh-shodh-memory",
-  "version": "0.2.5",
-  "scannedAt": "2026-10-26T10:13:28.784Z",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-24T11:24:43.659Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "dist/client.js",
-        "line": 99,
+        "line": 101,
         "text": "const response = await fetch(`${this.baseUrl}${path}`, {"
+      },
+      {
+        "file": "dist/tui-install.js",
+        "line": 203,
+        "text": "const response = await fetch(`${apiBase}/releases/tags/${encodeURIComponent(tag)}`, {"
+      },
+      {
+        "file": "dist/tui-install.js",
+        "line": 253,
+        "text": "const response = await fetch(url, { headers: { 'User-Agent': 'dsh-shodh-memory' }, signal });"
       }
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/tui-install.js",
+        "line": 20,
+        "text": "import { createReadStream } from 'node:fs';"
+      },
+      {
+        "file": "dist/tui-install.js",
+        "line": 21,
+        "text": "import { chmod, mkdir, open, readdir, rename, rm, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "dist/tui-install.js",
+        "line": 94,
+        "text": "await rm(join(root, tag), { recursive: true, force: true });"
+      },
+      {
+        "file": "dist/tui-install.js",
+        "line": 169,
+        "text": "await mkdir(dir, { recursive: true });"
+      },
+      {
+        "file": "dist/tui-install.js",
+        "line": 190,
+        "text": "await rm(archivePath, { force: true }).catch(() => { });"
+      }
+    ]
   },
   "agentTools": {
     "hit": true,
     "evidence": [
       {
         "file": "dist/index.js",
-        "line": 66,
+        "line": 73,
         "text": "export const inject = ['tools', 'commands', 'systemPrompt', 'sessions', 'agents'];"
       },
       {
@@ -50,6 +86,17 @@
     "systemPrompt",
     "tools"
   ],
-  "setupHints": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 221,
+      "text": "`$DSH_HOME/plugins/shodh-memory/tui/<tag>/` (about 3 MB). `/shodh tui clean`"
+    },
+    {
+      "file": "README.md",
+      "line": 521,
+      "text": "from it (`shodh-tui`) under `$DSH_HOME/plugins/shodh-memory/tui/`. It sends"
+    }
+  ],
   "skippedEntries": []
 }

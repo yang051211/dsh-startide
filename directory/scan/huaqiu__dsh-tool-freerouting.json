@@ -1,35 +1,35 @@
 {
   "name": "@huaqiu/dsh-tool-freerouting",
-  "version": "0.6.16",
-  "scannedAt": "2026-11-19T21:28:32.125Z",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-24T11:24:43.817Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 5742,
+        "line": 5701,
         "text": "const response = await fetch(`${RUN_CARD_LOOKUP_PATH}?${query}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 5757,
+        "line": 5714,
         "text": "const response = await fetch(endpoint(capability, \"cancel\"), {"
       },
       {
         "file": "lib/client.js",
-        "line": 5767,
-        "text": "if (!(await fetch(endpoint(capability, \"preview-cleanup\"), {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 5783,
+        "line": 5722,
         "text": "const response = await fetch(endpoint(capability, \"status\"), {"
       },
       {
         "file": "lib/client.js",
-        "line": 5799,
+        "line": 5736,
         "text": "const response = await fetch(endpoint(capability, \"output\"), {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3813,
+        "text": "response = await fetch(`${this.options.baseUrl}/v1${path}`, {"
       }
     ]
   },
@@ -38,27 +38,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 6,
-        "text": "import { access, copyFile, link, mkdir, mkdtemp, open, readFile, rename, rm, stat, unlink, writeFile } from \"node:fs/promises\";"
+        "line": 4,
+        "text": "import { access, copyFile, mkdir, mkdtemp, open, readFile, rm, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 10,
-        "text": "import { closeSync, createWriteStream, existsSync, mkdtempSync, openSync } from \"node:fs\";"
+        "line": 8,
+        "text": "import { closeSync, createReadStream, createWriteStream, existsSync, mkdtempSync, openSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 863,
+        "line": 870,
         "text": "await mkdir(directory, { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 866,
+        "line": 873,
         "text": "await writeFile(path, artifact.content, {"
       },
       {
         "file": "lib/index.js",
-        "line": 876,
+        "line": 883,
         "text": "await rm(path, { force: true });"
       }
     ]
@@ -73,23 +73,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 4599,
-        "text": "ctx.tools.register(createConfirmBoardTool(runService)),"
+        "line": 6704,
+        "text": "ctx.tools.register(createRepairRouteTool(routePrefix)),"
       },
       {
         "file": "lib/index.js",
-        "line": 4600,
-        "text": "ctx.tools.register(createRepairRouteTool(runs, runService, routePrefix)),"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 4601,
+        "line": 6705,
         "text": "ctx.tools.register(createCancelRouteTool(runs, runService)),"
       },
       {
         "file": "lib/index.js",
-        "line": 4602,
-        "text": "ctx.tools.register(createRouteTool(runService, routePrefix, settings))"
+        "line": 6706,
+        "text": "ctx.tools.register(createRouteTool(runService, routePrefix, settings, prepared))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 6905,
+        "text": "\t\ttext: ({ scope }) => ctx.tools.get(\"skill\", scope) && [\"pcb_route\", \"pcb_cancel_route\"].some((name) => ctx.tools.get(name, scope)) ? FREEROUTING_SKILL_ENTRY :"
       }
     ]
   },
@@ -98,12 +98,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 21,
+        "line": 17,
         "text": "import { spawn } from \"node:child_process\";"
       },
       {
         "file": "lib/index.js",
-        "line": 2288,
+        "line": 4409,
         "text": "const child = spawn(options.pythonPath, ["
       }
     ]
@@ -112,7 +112,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 7,
+  "dependencies": 8,
   "minifiedFiles": [
     "lib/client.js"
   ],
@@ -191,12 +191,12 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 126,
+      "line": 125,
       "text": "& ./.build-cache/python-types/Scripts/python.exe -m pip install -r requirements-dev.txt"
     },
     {
       "file": "README.zh-CN.md",
-      "line": 130,
+      "line": 129,
       "text": "& ./.build-cache/python-types/Scripts/python.exe -m pip install -r requirements-dev.txt"
     }
   ],

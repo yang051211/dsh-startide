@@ -1,30 +1,35 @@
 {
   "name": "dsh-process-kit",
-  "version": "0.11.0",
-  "scannedAt": "2026-11-20T21:47:36.848Z",
+  "version": "0.12.0",
+  "scannedAt": "2026-11-24T11:24:42.991Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 237,
+        "line": 362,
         "text": "const response = await fetch(`/process-kit/status?cwd=${encodeURIComponent(cwd)}`, {"
       },
       {
         "file": "client.js",
-        "line": 263,
+        "line": 394,
+        "text": "fetch(`/process-kit/hub?cwd=${encodeURIComponent(cwd)}`, { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 411,
         "text": "const response = await fetch(`/process-kit/doc?cwd=${encodeURIComponent(cwd)}&path=${encodeURIComponent(path)}`, { cache: 'no-store' });"
+      },
+      {
+        "file": "lib/hub.mjs",
+        "line": 120,
+        "text": "response = await fetch(this.url(path), { method, headers: finalHeaders, body, signal });"
       },
       {
         "file": "scripts/check-uat-readiness.mjs",
         "line": 236,
         "text": "const res = await fetch(url, {"
-      },
-      {
-        "file": "scripts/check-uat-readiness.mjs",
-        "line": 258,
-        "text": "const res = await fetch(`${core}${loginPath}`, {"
       }
     ]
   },
@@ -32,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 25,
-        "text": "import { copyFile, cp, mkdir, readdir, readFile, rename, rmdir, rm, stat, unlink, writeFile } from 'node:fs/promises';"
+        "file": "lib/hub.mjs",
+        "line": 9,
+        "text": "import { chmod, mkdir, readFile, writeFile } from 'node:fs/promises';"
       },
       {
-        "file": "lib/index.js",
-        "line": 167,
-        "text": "text = await readFile(path, 'utf8');"
+        "file": "lib/hub.mjs",
+        "line": 22,
+        "text": "file = JSON.parse(await readFile(configPath(), 'utf8'));"
       },
       {
-        "file": "lib/index.js",
-        "line": 723,
-        "text": "const text = await readFile(journalPath, 'utf8');"
+        "file": "lib/hub.mjs",
+        "line": 36,
+        "text": "await mkdir(dirname(path), { recursive: true });"
       },
       {
-        "file": "lib/index.js",
-        "line": 1018,
-        "text": "const text = await readFile(file, 'utf8');"
+        "file": "lib/hub.mjs",
+        "line": 39,
+        "text": "current = JSON.parse(await readFile(path, 'utf8'));"
       },
       {
-        "file": "lib/index.js",
-        "line": 1043,
-        "text": "meta = JSON.parse(await readFile(metaFile, 'utf8'));"
+        "file": "lib/hub.mjs",
+        "line": 44,
+        "text": "await writeFile(path, `${JSON.stringify(next, null, 2)}\\n`, { mode: 0o600 });"
       }
     ]
   },
@@ -63,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 38,
+        "line": 39,
         "text": "const inject = ['tools', 'systemPrompt'];"
       },
       {
         "file": "lib/index.js",
-        "line": 2812,
+        "line": 3467,
         "text": "ctx.effect(() => ctx.tools.register(statusTool()), 'process-kit: process_status');"
       },
       {
         "file": "lib/index.js",
-        "line": 2813,
+        "line": 3468,
         "text": "ctx.effect(() => ctx.tools.register(summaryTool()), 'process-kit: gate_summary');"
       },
       {
         "file": "lib/index.js",
-        "line": 2814,
+        "line": 3469,
         "text": "ctx.effect(() => ctx.tools.register(journalTool()), 'process-kit: process_journal');"
       },
       {
         "file": "lib/index.js",
-        "line": 2815,
+        "line": 3470,
         "text": "ctx.effect(() => ctx.tools.register(initTool()), 'process-kit: process_init');"
       }
     ]

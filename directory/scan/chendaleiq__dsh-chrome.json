@@ -1,0 +1,149 @@
+{
+  "name": "@chendaleiq/dsh-chrome",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-24T11:24:38.127Z",
+  "icon": "chendaleiq__dsh-chrome.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "extension/popup.js",
+        "line": 33,
+        "text": "const res = await fetch(`${BRIDGE}/status`, { cache: \"no-store\" });"
+      },
+      {
+        "file": "extension/service_worker.js",
+        "line": 20,
+        "text": "const res = await fetch(`${BRIDGE}/next?name=${encodeURIComponent(\"DSH Chrome Connector\")}`, { cache: \"no-store\" });"
+      },
+      {
+        "file": "extension/service_worker.js",
+        "line": 68,
+        "text": "const res = await fetch(`${BRIDGE}/result`, {"
+      },
+      {
+        "file": "scripts/setup.mjs",
+        "line": 46,
+        "text": "const st = await (await fetch(\"http://127.0.0.1:17319/status\")).json();"
+      },
+      {
+        "file": "src/bridge-client.js",
+        "line": 24,
+        "text": "const res = await fetch(`${baseUrl}/status`, { signal: ctrl.signal });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/setup.mjs",
+        "line": 15,
+        "text": "import { existsSync, mkdirSync, writeFileSync, rmSync } from \"node:fs\";"
+      },
+      {
+        "file": "scripts/setup.mjs",
+        "line": 59,
+        "text": "mkdirSync(dirname(PLIST), { recursive: true });"
+      },
+      {
+        "file": "scripts/setup.mjs",
+        "line": 72,
+        "text": "writeFileSync(PLIST, plist);"
+      },
+      {
+        "file": "scripts/setup.mjs",
+        "line": 82,
+        "text": "if (existsSync(PLIST)) rmSync(PLIST);"
+      },
+      {
+        "file": "src/onboard.js",
+        "line": 8,
+        "text": "import { existsSync, mkdirSync, writeFileSync } from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 23,
+        "text": "export const inject = [\"tools\"];"
+      },
+      {
+        "file": "src/index.js",
+        "line": 94,
+        "text": "if (!ctx?.tools?.register) throw new Error(\"dsh-chrome requires ctx.tools.register\");"
+      },
+      {
+        "file": "src/index.js",
+        "line": 97,
+        "text": "const dispose = ctx.tools.register(compileToolDefinition(def));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/setup.mjs",
+        "line": 14,
+        "text": "import { execFileSync, spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "scripts/setup.mjs",
+        "line": 37,
+        "text": "const t = spawnSync(process.execPath, [\"--test\", \"test/*.test.mjs\"], { cwd: root, encoding: \"utf8\" });"
+      },
+      {
+        "file": "src/onboard.js",
+        "line": 7,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "src/onboard.js",
+        "line": 16,
+        "text": "execFile(cmd, args, (error) => resolve(!error));"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 13,
+      "text": "node scripts/setup.mjs          # env checks + tests + prints the paths below"
+    },
+    {
+      "file": "README.en.md",
+      "line": 22,
+      "text": "- Hands-free: `node scripts/setup.mjs --install-launchd` — starts on login;"
+    },
+    {
+      "file": "README.en.md",
+      "line": 42,
+      "text": "scripts/setup.mjs     # one-command setup check (incl. --install-launchd)"
+    },
+    {
+      "file": "README.md",
+      "line": 11,
+      "text": "node scripts/setup.mjs          # 检查环境 + 单测 + 打印下面两步要填的路径"
+    },
+    {
+      "file": "README.md",
+      "line": 17,
+      "text": "- 省事：`node scripts/setup.mjs --install-launchd` —— 开机自启，常驻后台；"
+    }
+  ],
+  "skippedEntries": []
+}

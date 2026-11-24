@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-reverse-proxy",
-  "version": "0.7.0",
-  "scannedAt": "2026-11-24T01:02:38.508Z",
+  "version": "0.8.2",
+  "scannedAt": "2026-11-24T11:24:33.587Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,23 +13,23 @@
       },
       {
         "file": "index.js",
-        "line": 872,
+        "line": 21,
+        "text": "import https from 'node:https'"
+      },
+      {
+        "file": "index.js",
+        "line": 224,
+        "text": "const req = https.get('https://api.ipify.org?format=text', (res) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 1005,
         "text": "const upstream = http.request({"
       },
       {
         "file": "vendor/skip/bridge.js",
         "line": 90,
         "text": "const response = await apiHandler.fetch(request, peer);"
-      },
-      {
-        "file": "vendor/skip/client.js",
-        "line": 179,
-        "text": "const readState = () => fetch('/reproxy-lan/status', { headers: { accept: 'application/json' }, cache: 'no-store' }).then((r) => r.json());"
-      },
-      {
-        "file": "vendor/skip/client.js",
-        "line": 180,
-        "text": "const writeState = (enabled) => fetch('/reproxy-lan/set', {"
       }
     ]
   },
@@ -68,8 +68,14 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

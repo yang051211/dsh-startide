@@ -1,0 +1,86 @@
+{
+  "name": "dsh-boss-job",
+  "version": "0.5.1",
+  "scannedAt": "2026-11-24T11:24:34.313Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core/city.mjs",
+        "line": 87,
+        "text": "`(async()=>{const r=await fetch(${JSON.stringify(CITY_URL)},{credentials:'include'});return await r.json();})()`,"
+      },
+      {
+        "file": "src/core/search.mjs",
+        "line": 28,
+        "text": "`fetch(${JSON.stringify(url)},{credentials:'include',headers:{'x-requested-with':'XMLHttpRequest'}})`"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/cli.mjs",
+        "line": 2,
+        "text": "import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "src/cli.mjs",
+        "line": 21,
+        "text": "const pkg = JSON.parse(readFileSync(join(here, '..', 'package.json'), 'utf8'));"
+      },
+      {
+        "file": "src/cli.mjs",
+        "line": 76,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "src/cli.mjs",
+        "line": 198,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "src/cli.mjs",
+        "line": 201,
+        "text": "writeFileSync(file, JSON.stringify(jobs, null, 2) + '\\n', 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 15,
+        "text": "name: \"@deepseek-ai/dsh-mcp-client\""
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core/chrome.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/core/chrome.mjs",
+        "line": 83,
+        "text": "const child = spawn(chromePath, buildLaunchArgs({ profileDir, port, url }), {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

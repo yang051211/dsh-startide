@@ -1,7 +1,7 @@
 {
   "name": "gongwen-skill",
-  "version": "2.15.0",
-  "scannedAt": "2026-10-26T10:05:18.706Z",
+  "version": "2.16.0",
+  "scannedAt": "2026-11-24T11:24:37.055Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -12,28 +12,28 @@
     "evidence": [
       {
         "file": "dsh/index.js",
-        "line": 25,
-        "text": "import { existsSync, readFileSync, writeFileSync, mkdirSync, copyFileSync } from \"node:fs\";"
+        "line": 20,
+        "text": "import { existsSync, readFileSync, writeFileSync, mkdirSync, copyFileSync, renameSync } from \"node:fs\";"
       },
       {
         "file": "dsh/index.js",
-        "line": 122,
+        "line": 166,
         "text": "const raw = readFileSync(CONFIG_FILE, \"utf-8\");"
       },
       {
         "file": "dsh/index.js",
-        "line": 133,
+        "line": 177,
         "text": "return JSON.parse(readFileSync(DEFAULTS_FILE, \"utf-8\"));"
       },
       {
         "file": "dsh/index.js",
-        "line": 141,
+        "line": 185,
         "text": "mkdirSync(APP_DATA_DIR, { recursive: true });"
       },
       {
         "file": "dsh/index.js",
-        "line": 142,
-        "text": "writeFileSync(CONFIG_FILE, JSON.stringify(config, null, 2), \"utf-8\");"
+        "line": 189,
+        "text": "writeFileSync(tmp, body, \"utf-8\");"
       }
     ]
   },
@@ -42,27 +42,17 @@
     "evidence": [
       {
         "file": "dsh/index.js",
-        "line": 9,
-        "text": "//   * inject: ['tools'] — 官方 ctx.tools.register(defineTool(...)) 注册模型工具，"
+        "line": 36,
+        "text": "// 宿主未提供：原生定义对象同样可被 ctx.tools.register 接受"
       },
       {
         "file": "dsh/index.js",
-        "line": 21,
-        "text": "//   - Registering Tools：defineTool + ctx.tools.register"
-      },
-      {
-        "file": "dsh/index.js",
-        "line": 439,
-        "text": "// 注册官方模型工具（defineTool + ctx.tools.register，schema 自动流入系统提示词）"
-      },
-      {
-        "file": "dsh/index.js",
-        "line": 441,
+        "line": 879,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "dsh/index.js",
-        "line": 493,
+        "line": 935,
         "text": "export const inject = [\"tools\"];"
       }
     ]
@@ -72,13 +62,23 @@
     "evidence": [
       {
         "file": "dsh/index.js",
-        "line": 24,
-        "text": "import { spawn } from \"node:child_process\";"
+        "line": 18,
+        "text": "import { spawn, spawnSync } from \"node:child_process\";"
       },
       {
         "file": "dsh/index.js",
-        "line": 329,
-        "text": "const child = spawn(\"python\", cliArgs, {"
+        "line": 501,
+        "text": "const r = spawnSync(c.cmd, [...c.args, \"-c\", \"import sys;print(sys.version_info[0])\"], {"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 521,
+        "text": "spawnSync(\"taskkill\", [\"/pid\", String(child.pid), \"/T\", \"/F\"], { windowsHide: true });"
+      },
+      {
+        "file": "dsh/index.js",
+        "line": 617,
+        "text": "const child = spawn(py.cmd, [...py.args, ...cliArgs], {"
       }
     ]
   },

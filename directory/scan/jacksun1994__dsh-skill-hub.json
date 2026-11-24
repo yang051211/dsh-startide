@@ -1,0 +1,96 @@
+{
+  "name": "@jacksun1994/dsh-skill-hub",
+  "version": "1.7.1",
+  "scannedAt": "2026-11-24T11:24:46.401Z",
+  "icon": "jacksun1994__dsh-skill-hub.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/github.js",
+        "line": 48,
+        "text": "const response = await fetch(`https://api.github.com/repos/${repo.owner}/${repo.repo}/pulls`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import { existsSync, watch } from 'node:fs'"
+      },
+      {
+        "file": "lib/hub.js",
+        "line": 10,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/hub.js",
+        "line": 11,
+        "text": "import { cp, mkdir, readFile, readdir, rm, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/hub.js",
+        "line": 88,
+        "text": "const data = JSON.parse(await readFile(STATE_FILE, 'utf8'))"
+      },
+      {
+        "file": "lib/hub.js",
+        "line": 102,
+        "text": "await mkdir(STATE_DIR, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 867,
+        "text": "toolsCtx.effect(() => toolsCtx.tools.register({"
+      },
+      {
+        "file": "lib/switcher/host.js",
+        "line": 562,
+        "text": "toolsCtx.effect(() => toolsCtx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/git.js",
+        "line": 14,
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/git.js",
+        "line": 56,
+        "text": "const child = spawn(command, args, { env, windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'] })"
+      },
+      {
+        "file": "lib/hub.js",
+        "line": 8,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/hub.js",
+        "line": 399,
+        "text": "const child = spawn(command, [dir], { detached: true, stdio: 'ignore' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

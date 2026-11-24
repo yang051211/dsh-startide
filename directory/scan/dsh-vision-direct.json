@@ -1,0 +1,97 @@
+{
+  "name": "dsh-vision-direct",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-24T11:24:38.418Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 48,
+        "text": "const response = await fetch(`${API}${path}`, { ...rest, redirect: 'error', signal: ctrl.signal })"
+      },
+      {
+        "file": "client.js",
+        "line": 213,
+        "text": "const response = await fetch(`${API}/paste?model=${encodeURIComponent(label)}`, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 295,
+        "text": "const response = await fetch(`${API}/paste`, {"
+      },
+      {
+        "file": "index.js",
+        "line": 533,
+        "text": "const response = await fetch(url, { method: 'GET', headers })"
+      },
+      {
+        "file": "lib/gateway.js",
+        "line": 10,
+        "text": "import { createServer } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 707,
+        "text": "mkdirSync(configDir(), { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 7,
+        "text": "import { chmodSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 53,
+        "text": "raw = readFileSync(configPath(), 'utf8')"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 156,
+        "text": "mkdirSync(dir, { recursive: true, mode: 0o700 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 45,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 699,
+        "text": "ctx.tools.register(readImageTool(desiredName))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

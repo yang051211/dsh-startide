@@ -1,0 +1,142 @@
+{
+  "name": "dsh-feiyu-memgate",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-24T11:24:37.215Z",
+  "icon": "dsh-feiyu-memgate.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 1263,
+        "text": "return sendFeedback(fetchImpl || ((...args) => fetch(...args)), endpoint, report).then("
+      },
+      {
+        "file": "client/client.js",
+        "line": 3996,
+        "text": "const fetchImpl = props.fetch || ((...args) => fetch(...args))"
+      },
+      {
+        "file": "client/src/hooks.cjs",
+        "line": 161,
+        "text": "return sendFeedback(fetchImpl || ((...args) => fetch(...args)), endpoint, report).then("
+      },
+      {
+        "file": "client/src/view/page.cjs",
+        "line": 81,
+        "text": "const fetchImpl = props.fetch || ((...args) => fetch(...args))"
+      },
+      {
+        "file": "src/gateway.js",
+        "line": 657,
+        "text": "const response = await fetch(url + '/healthz', { signal: AbortSignal.timeout(1000) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/gateway.js",
+        "line": 21,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "src/gateway.js",
+        "line": 283,
+        "text": "const read = () => fs.readFileSync(file, 'utf8').trim()"
+      },
+      {
+        "file": "src/gateway.js",
+        "line": 296,
+        "text": "fs.writeFileSync(file, key, { encoding: 'utf8', mode: 0o600, flag: 'wx' })"
+      },
+      {
+        "file": "src/gateway.js",
+        "line": 315,
+        "text": "fs.writeFileSync(temp, key, { encoding: 'utf8', mode: 0o600 })"
+      },
+      {
+        "file": "src/gateway.js",
+        "line": 319,
+        "text": "fs.rmSync(temp, { force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "export const inject = ['tools', 'systemPrompt']"
+      },
+      {
+        "file": "src/plugin.js",
+        "line": 55,
+        "text": "//   ctx.tools.register(definition)          packages/core/tools/src/index.ts:128-153, contracts.ts:27-70"
+      },
+      {
+        "file": "src/plugin.js",
+        "line": 1072,
+        "text": "return ctx.tools.register(rememberDefinition())"
+      },
+      {
+        "file": "src/plugin.js",
+        "line": 1074,
+        "text": "searchTool: () => ctx.tools.register(searchDefinition()),"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/gateway.js",
+        "line": 19,
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/gateway.js",
+        "line": 114,
+        "text": "execFile(argv[0], [...argv.slice(1), '-I', '-c', PROBE], {"
+      },
+      {
+        "file": "src/gateway.js",
+        "line": 350,
+        "text": "execFile(python.argv[0], [...python.argv.slice(1), '-I', '-B', '-c', COUNT, file], {"
+      },
+      {
+        "file": "src/migrate.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "client/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 52,
+      "text": "andard builds include. The gateway uses only the Python standard library, so there is nothing to `pip install`. You do not need Python in external gateway mode."
+    },
+    {
+      "file": "README.zh.md",
+      "line": 52,
+      "text": "- 内置网关需要 Python 3.11 或更新，并且要有 `sqlite3` 和 `tomllib` 两个模块，标准安装都带。网关只用 Python 标准库，不用 `pip install` 任何东西。外部网关模式下不需要 Python。"
+    }
+  ],
+  "skippedEntries": []
+}

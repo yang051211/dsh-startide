@@ -1,0 +1,79 @@
+{
+  "name": "dsh-agentdiary-plugin",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-24T11:24:37.910Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/diary.js",
+        "line": 4,
+        "text": "import { appendFileSync, mkdirSync, writeFileSync, existsSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/diary.js",
+        "line": 29,
+        "text": "mkdirSync(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/diary.js",
+        "line": 31,
+        "text": "writeFileSync(file, `# ${e.at.toISOString().slice(0, 10)} · ${p.node}\\n`);"
+      },
+      {
+        "file": "lib/diary.js",
+        "line": 33,
+        "text": "appendFileSync(file, renderEntry(p.node, e));"
+      },
+      {
+        "file": "lib/trajectory.js",
+        "line": 6,
+        "text": "import { mkdirSync, appendFileSync } from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/diary.js",
+        "line": 5,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/diary.js",
+        "line": 37,
+        "text": "return spawnSync(\"git\", [\"-C\", root, ...args], { encoding: \"utf8\" }).stdout ?? \"\";"
+      },
+      {
+        "file": "src/diary.ts",
+        "line": 6,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "src/diary.ts",
+        "line": 60,
+        "text": "return spawnSync(\"git\", [\"-C\", root, ...args], { encoding: \"utf8\" }).stdout ?? \"\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

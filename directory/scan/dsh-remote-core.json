@@ -1,0 +1,112 @@
+{
+  "name": "dsh-remote-core",
+  "version": "0.0.6",
+  "scannedAt": "2026-11-24T11:24:37.018Z",
+  "icon": "dsh-remote-core.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 162,
+        "text": "const response = await fetch(url, { credentials: 'same-origin', signal })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 482,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 526,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 818,
+        "text": "const response = await fetch(url, { credentials: 'same-origin', signal })"
+      },
+      {
+        "file": "scripts/logo-check.mjs",
+        "line": 42,
+        "text": "const response = await fetch(`http://127.0.0.1:${String(port)}/local/status`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/directory.js",
+        "line": 21,
+        "text": "import { mkdir, opendir, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/directory.js",
+        "line": 144,
+        "text": "await mkdir(created, { recursive: false })"
+      },
+      {
+        "file": "src/server.js",
+        "line": 17,
+        "text": "import { readFile, realpath, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/server.js",
+        "line": 30,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/server.js",
+        "line": 39,
+        "text": "return JSON.parse(readFileSync(join(here, '../package.json'), 'utf8')).version ?? '0.0.0'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/logo-check.mjs",
+        "line": 78,
+        "text": "const { execFileSync } = await import('node:child_process')"
+      },
+      {
+        "file": "src/host.js",
+        "line": 8,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "src/open.js",
+        "line": 17,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/open.js",
+        "line": 62,
+        "text": "child = spawn(command, args, { stdio: 'ignore', detached: true })"
+      },
+      {
+        "file": "src/power.js",
+        "line": 24,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "src/logo.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,60 @@
+{
+  "name": "@nathan-adk/dsh-rea-lazy",
+  "version": "1.1.2",
+  "scannedAt": "2026-11-24T11:24:47.196Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 10,
+        "text": "const fs = require('fs');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 226,
+        "text": "for (const line of fs.readFileSync(f, 'utf8').split(/\\r?\\n/)) {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "const { spawnSync } = require('child_process');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 209,
+        "text": "const r = spawnSync(cmd, [name], { encoding: 'utf8', timeout: 3000 });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 10,
+      "text": "2. PATH 上的 `rea` 命令（标准 `npm install -g rea-agents` 安装）"
+    }
+  ],
+  "skippedEntries": []
+}

@@ -1,0 +1,75 @@
+{
+  "name": "dsh-pure-feishu",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-24T11:24:46.683Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.mjs",
+        "line": 370,
+        "text": "response = await fetch(this.url(pathname, options.search), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.mjs",
+        "line": 3,
+        "text": "import { mkdir, readFile, rename, rm, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 818,
+        "text": "const content = (await readFile(file, \"utf8\")).trim();"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 829,
+        "text": "await mkdir(path.dirname(file), { recursive: true });"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 831,
+        "text": "await writeFile(tmp, `${trimmed}"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 837,
+        "text": "await rm(deps.promptPath, { force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.mjs",
+        "line": 2066,
+        "text": "ctx.effect(() => ctx.tools.register(taskTool(deps)), \"dsh-pure-feishu: feishu_task \\u5DE5\\u5177\");"
+      },
+      {
+        "file": "dist/index.mjs",
+        "line": 2067,
+        "text": "ctx.effect(() => ctx.tools.register(reportTool(deps)), \"dsh-pure-feishu: feishu_task_report \\u5DE5\\u5177\");"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

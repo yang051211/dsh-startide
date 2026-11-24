@@ -1,7 +1,7 @@
 {
   "name": "dsh-pocket-ios",
-  "version": "0.7.1",
-  "scannedAt": "2026-11-21T20:46:15.678Z",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-24T11:24:41.564Z",
   "icon": "dsh-pocket-ios.png",
   "network": {
     "hit": true,
@@ -64,8 +64,29 @@
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 34,
+        "text": "// tools：注册跨机器工具要用 ctx.tools。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 37,
+        "text": "export const inject = ['connection', 'webServer', 'tools']"
+      },
+      {
+        "file": "lib/remote-tools.js",
+        "line": 110,
+        "text": "* 依据官方 @deepseek-ai/dsh-tools 文档：`ctx.tools.register(defineTool({...}))`"
+      },
+      {
+        "file": "lib/remote-tools.js",
+        "line": 137,
+        "text": "register.call(ctx.tools, built)"
+      }
+    ]
   },
   "childProcess": {
     "hit": true,
@@ -106,6 +127,7 @@
   "binaryFiles": [],
   "requiredServices": [
     "connection",
+    "tools",
     "webServer"
   ],
   "setupHints": [],

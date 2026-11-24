@@ -1,0 +1,95 @@
+{
+  "name": "dsh-memory-anchor",
+  "version": "1.0.3",
+  "scannedAt": "2026-11-24T11:24:46.280Z",
+  "icon": "dsh-memory-anchor.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 233,
+        "text": "const res = await fetch(path, {"
+      },
+      {
+        "file": "lib/embedding.mjs",
+        "line": 183,
+        "text": "const res = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 939,
+        "text": "const fs = await import('node:fs')"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 943,
+        "text": "fs.appendFileSync(file, line)"
+      },
+      {
+        "file": "scripts/check-publish.mjs",
+        "line": 7,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "scripts/check-publish.mjs",
+        "line": 16,
+        "text": "const text = fs.readFileSync(path.join(ROOT, file), 'utf8')"
+      },
+      {
+        "file": "scripts/check-publish.mjs",
+        "line": 60,
+        "text": "const text = fs.readFileSync(path.join(tplDir, f), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.mjs",
+        "line": 38,
+        "text": "export const inject = ['tools', 'systemPrompt', 'storageDomain']"
+      },
+      {
+        "file": "lib/index.mjs",
+        "line": 213,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/test-all.mjs",
+        "line": 11,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/test-all.mjs",
+        "line": 72,
+        "text": "const r = spawnSync(cmd, cmdArgs, { cwd: ROOT, env, encoding: 'utf8' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "storageDomain",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

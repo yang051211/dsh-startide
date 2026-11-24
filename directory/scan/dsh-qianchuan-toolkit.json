@@ -1,0 +1,97 @@
+{
+  "name": "dsh-qianchuan-toolkit",
+  "version": "1.0.10",
+  "scannedAt": "2026-11-24T11:24:31.477Z",
+  "icon": "dsh-qianchuan-toolkit.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/live-control/scripts/cdp-lib.mjs",
+        "line": 21,
+        "text": "const r = await fetch(BASE + p)"
+      },
+      {
+        "file": "assets/live-control/scripts/cdp-lib.mjs",
+        "line": 43,
+        "text": "const ws = new WebSocket(wsUrl)"
+      },
+      {
+        "file": "assets/live-control/scripts/cdp-lib.mjs",
+        "line": 85,
+        "text": "const ws = new WebSocket(page.webSocketDebuggerUrl)"
+      },
+      {
+        "file": "assets/live-control/scripts/expr/hourly-data.js",
+        "line": 29,
+        "text": "const r = await fetch('/ad/api/data/v1/common/statQuery?aavid={{ADV}}', {"
+      },
+      {
+        "file": "assets/live-control/scripts/notify.mjs",
+        "line": 40,
+        "text": "const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', ...(headers || {}) }, body: JSON.stringify(body) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/live-control/scripts/cdp-lib.mjs",
+        "line": 10,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "assets/live-control/scripts/cdp-lib.mjs",
+        "line": 155,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "assets/live-control/scripts/cdp-lib.mjs",
+        "line": 156,
+        "text": "fs.writeFileSync(file, Buffer.from(r.data, 'base64'))"
+      },
+      {
+        "file": "assets/live-control/scripts/control-lib.mjs",
+        "line": 8,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "assets/live-control/scripts/control-lib.mjs",
+        "line": 21,
+        "text": "try { fs.mkdirSync(dir, { recursive: true }); return await page.shot(path.join(dir, name)) } catch (e) { return null }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/live-control/scripts/daily-supervisor.mjs",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "assets/live-control/scripts/daily-supervisor.mjs",
+        "line": 67,
+        "text": "const child = spawn(process.execPath, [HOURLY, ...args], { stdio: ['ignore', out, out], env: { ...process.env, QC_HOME: HOME } })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

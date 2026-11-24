@@ -1,35 +1,35 @@
 {
   "name": "dsh-aupdate",
-  "version": "0.4.2",
-  "scannedAt": "2026-11-23T09:10:32.124Z",
+  "version": "0.6.7",
+  "scannedAt": "2026-11-24T11:24:44.980Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 245,
-        "text": "const response = await fetch(endpoint('state'), {"
+        "line": 368,
+        "text": "const response = await fetch(endpoint('state') + '?lang=' + wanted, {"
       },
       {
         "file": "client.js",
-        "line": 254,
-        "text": "const response = await fetch(endpoint('logs') + '?lines=' + encodeURIComponent(String(lines)), {"
+        "line": 379,
+        "text": "const response = await fetch(endpoint('logs') + '?lines=' + encodeURIComponent(String(lines)) + '&lang=' + wanted, {"
       },
       {
         "file": "client.js",
-        "line": 263,
-        "text": "const response = await fetch(endpoint('state'), {"
+        "line": 388,
+        "text": "const response = await fetch(endpoint('state') + langQuery(), {"
       },
       {
         "file": "client.js",
-        "line": 273,
-        "text": "const response = await fetch(endpoint('rollback'), {"
+        "line": 399,
+        "text": "const response = await fetch(endpoint('cleanup') + langQuery(), {"
       },
       {
         "file": "client.js",
-        "line": 283,
-        "text": "const response = await fetch(endpoint('run'), {"
+        "line": 409,
+        "text": "const response = await fetch(endpoint('rollback') + langQuery(), {"
       }
     ]
   },
@@ -43,22 +43,22 @@
       },
       {
         "file": "index.js",
-        "line": 76,
+        "line": 79,
         "text": "mkdirSync(dirname(file), { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 85,
+        "line": 88,
         "text": "appendFileSync(file, payload, 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 132,
+        "line": 369,
         "text": "raw = readFileSync(file, 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 309,
+        "line": 599,
         "text": "mkdirSync(dirname(file), { recursive: true })"
       }
     ]
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 1457,
+        "line": 1932,
         "text": "effect.call(ctx, () => tools.register({"
       }
     ]
@@ -83,7 +83,7 @@
       },
       {
         "file": "index.js",
-        "line": 835,
+        "line": 1205,
         "text": "child = spawn(options.shell === true ? line : command, options.shell === true ? [] : args, {"
       }
     ]

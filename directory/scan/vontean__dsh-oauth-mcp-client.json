@@ -1,0 +1,97 @@
+{
+  "name": "@vontean/dsh-oauth-mcp-client",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-24T11:24:40.795Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/oauth.js",
+        "line": 4,
+        "text": "import { createServer } from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/profile-config.js",
+        "line": 3,
+        "text": "import { readFile, rename, rm, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/profile-config.js",
+        "line": 11,
+        "text": "await writeFile(temporaryPath, document.toString(), { encoding: 'utf8', flag: 'wx', mode: 0o600 });"
+      },
+      {
+        "file": "lib/profile-config.js",
+        "line": 15,
+        "text": "await rm(temporaryPath, { force: true });"
+      },
+      {
+        "file": "lib/profile-config.js",
+        "line": 20,
+        "text": "const source = await readFile(patchPath, 'utf8');"
+      },
+      {
+        "file": "lib/profile-config.js",
+        "line": 57,
+        "text": "const source = await readFile(patchPath, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 5,
+        "text": "* behavior of `@deepseek-ai/dsh-mcp-client`, while adding an interactive"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "export const inject = ['tools', 'credentials'];"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 113,
+        "text": "disposers.set(publicName, ctx.tools.register(definition));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/oauth.js",
+        "line": 2,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/oauth.js",
+        "line": 300,
+        "text": "const child = spawn(command.file, command.args, { stdio: 'ignore' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: pnpm run build"
+      }
+    ]
+  },
+  "dependencies": 4,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

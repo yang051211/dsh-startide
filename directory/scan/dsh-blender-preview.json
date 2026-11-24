@@ -1,0 +1,84 @@
+{
+  "name": "dsh-blender-preview",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-24T11:24:42.443Z",
+  "icon": "dsh-blender-preview.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 12,
+        "text": "l}),a=this.mimeType,l=this.responseType;fetch(o).then(c=>{if(c.status===200||c.status===0){if(c.status===0&&Te(\"FileLoader: HTTP Status 0 received.\"),typeof Rea"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 4236,
+        "text": ":\"loading\"}),(async()=>{try{let r=await fetch(s,{method:\"HEAD\"});if(i)return;if(!r.ok){n({phase:\"error\",message:r.status===404?\"The streaming route is not mount"
+      },
+      {
+        "file": "src/client/media.js",
+        "line": 37,
+        "text": "const response = await fetch(src, { method: 'HEAD' });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "build.mjs",
+        "line": 9,
+        "text": "import { mkdirSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "build.mjs",
+        "line": 46,
+        "text": "mkdirSync(join(here, 'lib'), { recursive: true });"
+      },
+      {
+        "file": "build.mjs",
+        "line": 47,
+        "text": "writeFileSync(join(here, 'lib/client.js'), wrapped);"
+      },
+      {
+        "file": "scripts/test-harness.mjs",
+        "line": 12,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "scripts/test-harness.mjs",
+        "line": 17,
+        "text": "const pkg = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/convert.js",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

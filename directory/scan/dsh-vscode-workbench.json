@@ -1,35 +1,35 @@
 {
   "name": "dsh-vscode-workbench",
-  "version": "0.3.0",
-  "scannedAt": "2026-11-22T08:23:29.686Z",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-24T11:24:30.262Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 8602,
+        "line": 8295,
+        "text": "const ws = new WebSocket(url);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 8823,
         "text": "const socket = this.socket = new WebSocket(url);"
       },
       {
         "file": "lib/client.js",
-        "line": 8972,
+        "line": 9213,
         "text": "response = await fetch(`/dsh-vscode/api/${method}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 21245,
+        "line": 13561,
+        "text": "const entry = await readApiResponse(await fetch(`/dsh-vscode/upload?${query}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 24001,
         "text": "const socket = this.socket = new WebSocket(url);"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 22223,
-        "text": "const response = await fetch(src, { signal: controller.signal });"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 22290,
-        "text": "const response = await fetch(src, { signal: controller.signal });"
       }
     ]
   },
@@ -38,7 +38,7 @@
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 8542,
+        "line": 8763,
         "text": "\"fs\","
       },
       {
@@ -49,23 +49,34 @@
       {
         "file": "lib/index.js",
         "line": 7,
-        "text": "import { appendFileSync, constants, createReadStream, existsSync, lstatSync, realpathSync } from \"node:fs\";"
+        "text": "port { appendFileSync, constants, createReadStream, createWriteStream, existsSync, lstatSync, mkdtempSync, realpathSync, rmSync, writeFileSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
-        "line": 537,
+        "line": 539,
         "text": "const content = await readFile(full, \"utf8\").catch(() => void 0);"
       },
       {
         "file": "lib/index.js",
-        "line": 628,
+        "line": 630,
         "text": "await handle.writeFile(content, { encoding: \"utf8\" });"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6730,
+        "text": "const removeTool = services.tools.register({"
+      },
+      {
+        "file": "src/ssh-chat.ts",
+        "line": 75,
+        "text": "const removeTool = services.tools.register({"
+      }
+    ]
   },
   "childProcess": {
     "hit": true,
@@ -73,26 +84,26 @@
       {
         "file": "lib/index.js",
         "line": 6,
-        "text": "import { execFile, spawn } from \"node:child_process\";"
+        "text": "import { execFile, execFileSync, spawn } from \"node:child_process\";"
       },
       {
         "file": "lib/index.js",
-        "line": 736,
+        "line": 738,
         "text": "const child = spawn(command, args, {"
       },
       {
         "file": "lib/index.js",
-        "line": 789,
+        "line": 791,
         "text": "const child = spawn(command, args, {"
       },
       {
         "file": "lib/index.js",
-        "line": 2734,
+        "line": 2736,
         "text": "execFile(rustup, [\"which\", \"rust-analyzer\"], {"
       },
       {
         "file": "lib/index.js",
-        "line": 2817,
+        "line": 2819,
         "text": "const child = spawn(\"npm\", ["
       }
     ]

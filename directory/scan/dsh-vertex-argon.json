@@ -1,7 +1,7 @@
 {
   "name": "dsh-vertex-argon",
-  "version": "2.3.2",
-  "scannedAt": "2026-11-24T01:02:31.398Z",
+  "version": "2.4.0",
+  "scannedAt": "2026-11-24T11:24:28.894Z",
   "icon": "dsh-vertex-argon.svg",
   "network": {
     "hit": false,
@@ -17,8 +17,23 @@
       },
       {
         "file": "adapter.js",
-        "line": 1359,
+        "line": 1496,
         "text": "resolveImageAccess: (attachments, ref) => resolveImageAttachmentAccess(attachments, path => ctx.get('fs')?.processPathFromHostPath(path), ref),"
+      },
+      {
+        "file": "file-slicing-tool.js",
+        "line": 2,
+        "text": "import { open, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "file-slicing-tool.js",
+        "line": 69,
+        "text": "const fsSvc = ctx?.get?.('fs')"
+      },
+      {
+        "file": "files-transport.js",
+        "line": 2,
+        "text": "import { open } from 'node:fs/promises'"
       }
     ]
   },
@@ -27,8 +42,13 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 120,
+        "line": 127,
         "text": "toolCtx.effect(() => toolCtx.tools.register(createInspectorTool(toolCtx.vertexArgonDiagnostics)), 'vertex-argon: read-only inspection tool')"
+      },
+      {
+        "file": "index.js",
+        "line": 162,
+        "text": "disposeTool = toolCtx.tools.register(createFileSlicingTool({"
       }
     ]
   },

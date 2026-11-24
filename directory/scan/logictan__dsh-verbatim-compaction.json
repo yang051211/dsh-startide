@@ -1,15 +1,41 @@
 {
   "name": "@logictan/dsh-verbatim-compaction",
-  "version": "0.13.2",
-  "scannedAt": "2026-11-05T21:22:45.736Z",
+  "version": "0.13.3",
+  "scannedAt": "2026-11-24T11:24:46.088Z",
   "icon": null,
   "network": {
     "hit": false,
     "evidence": []
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 34,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1859,
+        "text": "const raw = readFileSync(cacheFilePath(dir, sessionId), 'utf8');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1889,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1893,
+        "text": "const existing = JSON.parse(readFileSync(target, 'utf8'));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1928,
+        "text": "writeFileSync(tmp, JSON.stringify(payload), 'utf8');"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,

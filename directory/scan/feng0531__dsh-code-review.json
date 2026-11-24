@@ -1,7 +1,7 @@
 {
   "name": "@feng0531/dsh-code-review",
-  "version": "0.92.3",
-  "scannedAt": "2026-11-09T23:06:40.646Z",
+  "version": "0.95.1",
+  "scannedAt": "2026-11-24T11:24:30.348Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -12,28 +12,28 @@
     "evidence": [
       {
         "file": "scripts/review-bench-adapter.mjs",
-        "line": 6,
-        "text": "import { writeFile } from 'node:fs/promises';"
+        "line": 7,
+        "text": "import { link, lstat, mkdir, readFile, unlink, writeFile } from 'node:fs/promises';"
       },
       {
         "file": "scripts/review-bench-adapter.mjs",
-        "line": 109,
-        "text": "  await writeFile(config.out + '.report.json', JSON.stringify({ mock: config.mock, profile: 'single-pass-direct', mergeBase: bases[0], report }, null, 2) + '\\n'"
+        "line": 35,
+        "text": "await writeFile(staged, json(value), { flag: 'wx', mode: 0o600 });"
       },
       {
         "file": "scripts/review-bench-adapter.mjs",
-        "line": 116,
-        "text": "await writeFile(config.mock ? config.out + '.smoke.json' : config.out, JSON.stringify(output, null, 2) + '\\n', { flag: 'wx' });"
+        "line": 37,
+        "text": "finally { await unlink(staged); }"
       },
       {
-        "file": "src/content.mjs",
-        "line": 3,
-        "text": "import { lstat, realpath, open } from 'node:fs/promises';"
+        "file": "scripts/review-bench-adapter.mjs",
+        "line": 154,
+        "text": "await mkdir(claim, { mode: 0o700 }); // The atomic same-output admission gate for both profiles and modes."
       },
       {
-        "file": "src/content.mjs",
-        "line": 4,
-        "text": "import { constants } from 'node:fs';"
+        "file": "scripts/review-bench-adapter.mjs",
+        "line": 161,
+        "text": "const { version } = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'));"
       }
     ]
   },
@@ -42,27 +42,27 @@
     "evidence": [
       {
         "file": "index.mjs",
-        "line": 10,
-        "text": "export const inject = ['tools', 'llm'];"
+        "line": 21,
+        "text": "export const inject = ['tools', 'llm', 'workingDirectory'];"
       },
       {
         "file": "index.mjs",
-        "line": 25,
+        "line": 48,
         "text": "ctx.tools.register({"
       },
       {
         "file": "index.mjs",
-        "line": 29,
+        "line": 52,
         "text": "ctx.tools.register({"
       },
       {
         "file": "src/background-review.mjs",
-        "line": 107,
+        "line": 125,
         "text": "ctx.tools.register({"
       },
       {
         "file": "src/background-review.mjs",
-        "line": 111,
+        "line": 129,
         "text": "ctx.tools.register({"
       }
     ]
@@ -86,14 +86,16 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
+  "dependencies": 2,
   "minifiedFiles": [
+    "dist/client.js",
     "index.mjs"
   ],
   "binaryFiles": [],
   "requiredServices": [
     "llm",
-    "tools"
+    "tools",
+    "workingDirectory"
   ],
   "setupHints": [],
   "skippedEntries": []

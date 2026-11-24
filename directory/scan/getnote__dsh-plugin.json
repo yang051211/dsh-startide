@@ -1,7 +1,7 @@
 {
   "name": "@getnote/dsh-plugin",
-  "version": "0.1.1",
-  "scannedAt": "2026-10-26T10:12:27.052Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-24T11:24:42.814Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -12,8 +12,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 7,
-        "text": "import { accessSync, constants } from \"node:fs\";"
+        "line": 5,
+        "text": "import { chmod, mkdir, readFile, rename, rm, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 48,
+        "text": "const data = JSON.parse(await readFile(this.path, \"utf8\"));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 60,
+        "text": "await mkdir(dirname(this.path), {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 65,
+        "text": "await writeFile(tmp, JSON.stringify(credential, null, 2), { mode: 384 });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 70,
+        "text": "await rm(this.path, { force: true });"
       }
     ]
   },
@@ -22,45 +42,19 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 141,
+        "line": 313,
         "text": "const inject = [\"tools\", \"skills\"];"
       },
       {
         "file": "lib/index.js",
-        "line": 181,
-        "text": "ctx.tools.register(defineTool({"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 191,
-        "text": "ctx.tools.register(defineTool({"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 223,
-        "text": "ctx.tools.register(defineTool({"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 250,
+        "line": 477,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
   },
   "childProcess": {
-    "hit": true,
-    "evidence": [
-      {
-        "file": "lib/index.js",
-        "line": 6,
-        "text": "import { spawn } from \"node:child_process\";"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 75,
-        "text": "const child = spawn(invocation.command, commandArgs, {"
-      }
-    ]
+    "hit": false,
+    "evidence": []
   },
   "installScripts": {
     "hit": true,
