@@ -1,7 +1,7 @@
 {
   "name": "dsh-boot-suite",
-  "version": "2.16.15",
-  "scannedAt": "2026-11-24T11:24:26.593Z",
+  "version": "2.16.16",
+  "scannedAt": "2026-11-24T23:54:17.605Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -43,22 +43,22 @@
       },
       {
         "file": "lib/host-startup.js",
-        "line": 29,
+        "line": 30,
         "text": "const list = JSON.parse(fs.readFileSync(path.join(VOICE_ROOT, 'manifest.json'), 'utf8'))"
       },
       {
         "file": "lib/host-startup.js",
-        "line": 49,
+        "line": 50,
         "text": "try { fs.appendFileSync(DIAG_FILE, new Date().toISOString() + '  ' + line + '\\n', 'utf8') } catch (err) { /* 忽略 */ }"
       },
       {
         "file": "lib/host-startup.js",
-        "line": 57,
+        "line": 58,
         "text": "try { fs.writeFileSync(path.join(DSH_HOME, 'boot-suite-diag-html-' + (dumpBudget + 1) + '.html'), html, 'utf8') } catch (err) { /* 忽略 */ }"
       },
       {
         "file": "lib/host-startup.js",
-        "line": 64,
+        "line": 65,
         "text": "const pkg = JSON.parse(fs.readFileSync(path.join(PACKAGE_ROOT, 'package.json'), 'utf8'))"
       }
     ]
@@ -77,23 +77,23 @@
       },
       {
         "file": "lib/host-startup.js",
-        "line": 1834,
-        "text": "if (process.platform === 'win32') spawn('explorer.exe', [dir], { detached: true, stdio: 'ignore' }).unref()"
+        "line": 1998,
+        "text": "const c = spawn('powershell.exe', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', psScript, '-Url', zipUrl, '-Out', tmp], { windowsHide: true })"
       },
       {
         "file": "lib/host-startup.js",
-        "line": 1835,
-        "text": "else if (process.platform === 'darwin') spawn('open', [dir], { detached: true, stdio: 'ignore' }).unref()"
+        "line": 2104,
+        "text": "const child = spawn('cmd.exe', ['/c', cmdFile], { detached: true, stdio: 'ignore', windowsHide: false })"
       },
       {
-        "file": "lib/host-startup.js",
-        "line": 1836,
-        "text": "else spawn('xdg-open', [dir], { detached: true, stdio: 'ignore' }).unref()"
+        "file": "lib/open-path.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process'"
       },
       {
-        "file": "lib/host-startup.js",
-        "line": 1860,
-        "text": "spawn(chrome, [url], { detached: true, stdio: 'ignore', windowsHide: false }).unref()"
+        "file": "test/smoke-open-path.mjs",
+        "line": 6,
+        "text": "* `spawn('explorer.exe', ...)`，命令不存在时 Node 把 ENOENT 以子进程 'error'"
       }
     ]
   },

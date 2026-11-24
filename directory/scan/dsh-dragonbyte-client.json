@@ -1,0 +1,97 @@
+{
+  "name": "dsh-dragonbyte-client",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-24T23:54:35.998Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 95,
+        "text": "const response = await fetch(`${base}status`, { cache: 'no-store', signal, headers: { accept: 'application/json' } });"
+      },
+      {
+        "file": "client.js",
+        "line": 113,
+        "text": "const response = await fetch(`${base}${path}`, { cache: 'no-store', ...init });"
+      },
+      {
+        "file": "src/desktop.mjs",
+        "line": 214,
+        "text": "const response = await fetch(url, { cache: 'no-store' });"
+      },
+      {
+        "file": "src/desktop.mjs",
+        "line": 249,
+        "text": "connect: (url, { headers }) => new WebSocket(url, { headers }),"
+      },
+      {
+        "file": "src/host-main.mjs",
+        "line": 250,
+        "text": "const connect = (url, { headers }) => new WebSocket(url, { headers });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host-main.mjs",
+        "line": 13,
+        "text": "//       \"fs\":   { \"command\": \"npx\", \"args\": [\"-y\", \"@modelcontextprotocol/server-filesystem\", \"/home/me\"] },"
+      },
+      {
+        "file": "src/host-main.mjs",
+        "line": 16,
+        "text": "import { readFileSync, realpathSync } from 'node:fs';"
+      },
+      {
+        "file": "src/host-main.mjs",
+        "line": 17,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "src/host-main.mjs",
+        "line": 62,
+        "text": "await mkdir(dirname(file), { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "src/host-main.mjs",
+        "line": 94,
+        "text": "return specList(JSON.parse(readFileSync(file, 'utf8'))?.mcpServers, 'config');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/pair.mjs",
+        "line": 22,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/pair.mjs",
+        "line": 80,
+        "text": "const child = spawn(command, args, { detached: true, stdio: 'ignore' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

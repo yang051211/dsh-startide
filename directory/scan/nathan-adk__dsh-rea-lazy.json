@@ -1,42 +1,89 @@
 {
   "name": "@nathan-adk/dsh-rea-lazy",
-  "version": "1.1.2",
-  "scannedAt": "2026-11-24T11:24:47.196Z",
+  "version": "2.0.1",
+  "scannedAt": "2026-11-24T23:54:36.478Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/updater.js",
+        "line": 10,
+        "text": "const https = require('https');"
+      },
+      {
+        "file": "lib/core/updater.js",
+        "line": 14,
+        "text": "const req = https.get({ host: 'registry.npmjs.org', path: '/' + encodeURIComponent(pkg), headers: { 'User-Agent': 'dsh-rea-lazy' }, timeout: 8000 }, (res) => {"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/index.js",
-        "line": 10,
+        "file": "lib/core/mcp-source.js",
+        "line": 8,
         "text": "const fs = require('fs');"
       },
       {
-        "file": "lib/index.js",
-        "line": 226,
-        "text": "for (const line of fs.readFileSync(f, 'utf8').split(/\\r?\\n/)) {"
+        "file": "lib/core/mcp-source.js",
+        "line": 39,
+        "text": "const c = JSON.parse(fs.readFileSync(this.cachePath, 'utf8'));"
+      },
+      {
+        "file": "lib/core/mcp-source.js",
+        "line": 97,
+        "text": "fs.mkdirSync(path.dirname(this.cachePath), { recursive: true });"
+      },
+      {
+        "file": "lib/core/mcp-source.js",
+        "line": 99,
+        "text": "fs.writeFileSync(tmp, JSON.stringify(this.catalog), { mode: 0o600 });"
+      },
+      {
+        "file": "lib/core/updater.js",
+        "line": 8,
+        "text": "const fs = require('fs');"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/tools.js",
+        "line": 2,
+        "text": "/** Register the three lazy catalog meta-tools (plain tool objects for ctx.tools.register). */"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 83,
+        "text": "if (ctx.tools && ctx.tools.register) {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 85,
+        "text": "try { ctx.tools.register(t); } catch (_) {}"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 116,
+        "text": "module.exports = { name: 'dsh-rea-lazy', inject: ['tools', 'systemPrompt'], apply, findRea, cacheKey };"
+      }
+    ]
   },
   "childProcess": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 12,
+        "line": 10,
         "text": "const { spawnSync } = require('child_process');"
       },
       {
         "file": "lib/index.js",
-        "line": 209,
+        "line": 19,
         "text": "const r = spawnSync(cmd, [name], { encoding: 'utf8', timeout: 3000 });"
       }
     ]
@@ -45,16 +92,10 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [],
-  "setupHints": [
-    {
-      "file": "README.md",
-      "line": 10,
-      "text": "2. PATH 上的 `rea` 命令（标准 `npm install -g rea-agents` 安装）"
-    }
-  ],
+  "setupHints": [],
   "skippedEntries": []
 }

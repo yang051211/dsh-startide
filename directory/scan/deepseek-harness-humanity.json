@@ -1,7 +1,7 @@
 {
   "name": "deepseek-harness-humanity",
-  "version": "0.1.17",
-  "scannedAt": "2026-10-26T10:08:23.569Z",
+  "version": "0.1.18",
+  "scannedAt": "2026-11-24T23:54:33.545Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -10,16 +10,6 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
-      {
-        "file": "lib/evolution/skill-runtime.js",
-        "line": 12,
-        "text": "ctx.inject(['fs'], (sctx) => {"
-      },
-      {
-        "file": "lib/evolution/tools-skill-persist.js",
-        "line": 55,
-        "text": "const fs = ctx.get('fs');"
-      },
       {
         "file": "lib/migrate.js",
         "line": 26,
@@ -41,23 +31,23 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/evolution/tools-skill-persist.js",
-        "line": 154,
-        "text": "const dispose = api.tools.register(defineSkillPersistTool(api.defineTool, deps));"
-      },
-      {
         "file": "lib/memory/tools.js",
         "line": 14,
         "text": "const definitions = [defineRememberTool, defineRecallTool].map((define) => api.tools.register(define(api.defineTool, deps)));"
       },
       {
         "file": "lib/persona/tools.js",
-        "line": 22,
+        "line": 23,
         "text": "...(includeInit ? [tools.register(defineInitTool(defineTool, persona))] : []),"
       },
       {
         "file": "lib/persona/tools.js",
-        "line": 23,
+        "line": 28,
+        "text": "tools.register(defineIdentityTool(defineTool, {"
+      },
+      {
+        "file": "lib/persona/tools.js",
+        "line": 33,
         "text": "tools.register(defineUpdateTool(defineTool, {"
       }
     ]

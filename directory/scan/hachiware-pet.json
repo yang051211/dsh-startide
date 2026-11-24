@@ -1,0 +1,108 @@
+{
+  "name": "hachiware-pet",
+  "version": "0.2.13",
+  "scannedAt": "2026-11-24T23:54:36.174Z",
+  "icon": "hachiware-pet.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 266,
+        "text": "const response = await fetch(PETDEX_CATALOG);"
+      },
+      {
+        "file": "index.js",
+        "line": 290,
+        "text": "const response = await fetch(url);"
+      },
+      {
+        "file": "scripts/verify.mjs",
+        "line": 37,
+        "text": "const meta = await (await fetch(`${registry}/hachiware-pet/${wanted === 'latest' ? 'latest' : wanted}`)).json();"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "mport { closeSync, cpSync, existsSync, mkdirSync, openSync, readFileSync, readdirSync, renameSync, rmSync, statSync, unlinkSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 65,
+        "text": "mkdirSync(dataDir, { recursive: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 68,
+        "text": "writeFileSync(logFile, readFileSync(logFile, 'utf8') + line);"
+      },
+      {
+        "file": "index.js",
+        "line": 70,
+        "text": "writeFileSync(logFile, line);"
+      },
+      {
+        "file": "index.js",
+        "line": 120,
+        "text": "mkdirSync(dataDir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "import { execFile, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 449,
+        "text": "child = spawn(shell.command, shell.args, {"
+      },
+      {
+        "file": "index.js",
+        "line": 683,
+        "text": "execFile('powershell.exe', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', windowsBuild], { timeout: 300000 }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 715,
+        "text": "execFile('/bin/sh', [buildScript], { timeout: 240000 }, (error) => {"
+      },
+      {
+        "file": "index.js",
+        "line": 742,
+        "text": "child = spawn(helperBinary, [], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "helper/bin/HachiwarePet.app/Contents/MacOS/HachiwarePet",
+    "helper/bin/win/HachiwarePet.exe",
+    "helper/bin/win/runtimes/win-x64/native/WebView2Loader.dll",
+    "helper/bin/win/WebView2Loader.dll"
+  ],
+  "requiredServices": [
+    "agents",
+    "sessions"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

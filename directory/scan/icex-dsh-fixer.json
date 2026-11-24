@@ -1,7 +1,7 @@
 {
   "name": "icex-dsh-fixer",
-  "version": "0.3.8",
-  "scannedAt": "2026-11-24T11:24:32.730Z",
+  "version": "0.3.9",
+  "scannedAt": "2026-11-24T23:54:23.542Z",
   "icon": "icex-dsh-fixer.svg",
   "network": {
     "hit": true,
@@ -18,8 +18,18 @@
       },
       {
         "file": "client.js",
-        "line": 1190,
+        "line": 1235,
         "text": "fetch('/api/icex-fixer/delete-session', {"
+      },
+      {
+        "file": "client.js",
+        "line": 1438,
+        "text": "const response = await fetch('/api/icex-fixer/branch?sessionId=' + encodeURIComponent(sessionId) + '&turn=' + String(turn), {"
+      },
+      {
+        "file": "client.js",
+        "line": 1539,
+        "text": "const response = await fetch('/api/icex-fixer/branch', {"
       }
     ]
   },
@@ -28,27 +38,27 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 10,
+        "line": 11,
         "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, unlinkSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 141,
+        "line": 143,
         "text": "mkdirSync(TRASH_ROOT, { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 208,
-        "text": "raw = readFileSync(file, 'utf8')"
+        "line": 186,
+        "text": "raw = readFileSync(BRANCH_STATE_FILE, 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 223,
-        "text": "mkdirSync(dirname(BARE_STATE_FILE), { recursive: true })"
+        "line": 203,
+        "text": "mkdirSync(dirname(BRANCH_STATE_FILE), { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 225,
+        "line": 205,
         "text": "writeFileSync(temp, JSON.stringify(state, null, 2) + '\\n')"
       }
     ]
@@ -67,7 +77,7 @@
       },
       {
         "file": "index.js",
-        "line": 36,
+        "line": 38,
         "text": "child = spawn(helper, [], { stdio: ['ignore', 'ignore', 'pipe'] })"
       }
     ]

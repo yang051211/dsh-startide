@@ -1,35 +1,35 @@
 {
   "name": "dsh-redline",
-  "version": "1.7.0",
-  "scannedAt": "2026-11-21T20:46:06.382Z",
+  "version": "1.9.0",
+  "scannedAt": "2026-11-24T23:54:25.575Z",
   "icon": "dsh-redline.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/bridge.js",
-        "line": 65,
+        "line": 68,
         "text": "const response = await fetch(target, {"
       },
       {
         "file": "lib/client.js",
-        "line": 40,
+        "line": 38,
         "text": "const response = await fetch(`${API_BASE}/.lr/client-ping`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 113,
-        "text": "const r = await fetch(route, { cache: \"no-store\", signal: AbortSignal.timeout(SECRET_TIMEOUT_MS) });"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 141,
-        "text": "const r = await fetch(`http://127.0.0.1:${port}/.lr/health`, { cache: \"no-store\", signal: AbortSignal.timeout(HEALTH_TIMEOUT_MS) });"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 189,
+        "line": 102,
         "text": "const r = await fetch(API_BASE + \"/.lr/settings\", { cache: \"no-store\", headers: authHeaders() });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 111,
+        "text": "      const r = await fetch(API_BASE + \"/.lr/settings\", { method: \"POST\", headers: authHeaders({ \"content-type\": \"application/json\" }), body: JSON.stringify({ s"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 230,
+        "text": "const response = await fetch(updateRoute(), { cache: \"no-store\" });"
       }
     ]
   },
@@ -58,8 +58,8 @@
       },
       {
         "file": "lib/index.js",
-        "line": 132,
-        "text": "const data = JSON.parse(readFileSync(DRAWINGS_FILE, \"utf8\"));"
+        "line": 46,
+        "text": "return JSON.parse(readFileSync(path.join(PLUGIN_DIR, \"package.json\"), \"utf8\"));"
       }
     ]
   },

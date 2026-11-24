@@ -1,0 +1,86 @@
+{
+  "name": "dsh-source-cnki",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-24T23:54:30.739Z",
+  "icon": "dsh-source-cnki.png",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/runtime.js",
+        "line": 7,
+        "text": "import { mkdir, readFile, realpath, stat, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 136,
+        "text": "text = await readFile(file.absolute, 'utf8');"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 190,
+        "text": "await mkdir(directory, { recursive: true });"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 192,
+        "text": "await writeFile(file, `${JSON.stringify(record, null, 2)}\\n`, 'utf8');"
+      },
+      {
+        "file": "src/runtime.ts",
+        "line": 8,
+        "text": "import { mkdir, readFile, realpath, stat, writeFile } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 47,
+        "text": "ctx.effect(() => ctx.tools.register(makeCnkiImportTool(runtime)), 'source-cnki: cnki_import tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 48,
+        "text": "ctx.effect(() => ctx.tools.register(makeCnkiCiteTool(runtime)), 'source-cnki: cnki_cite tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 49,
+        "text": "ctx.effect(() => ctx.tools.register(makeCnkiCheckTool(runtime)), 'source-cnki: cnki_check tool');"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 24,
+        "text": "export const inject = ['tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

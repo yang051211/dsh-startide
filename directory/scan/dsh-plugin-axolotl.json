@@ -1,0 +1,87 @@
+{
+  "name": "dsh-plugin-axolotl",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-24T23:54:34.141Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 125,
+        "text": "const response = await fetch(`${API}/${method}`, { ...init, credentials: 'same-origin' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 12,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/index.js",
+        "line": 41,
+        "text": "return String(JSON.parse(readFileSync(url, 'utf8')).version)"
+      },
+      {
+        "file": "src/store.js",
+        "line": 16,
+        "text": "import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/store.js",
+        "line": 53,
+        "text": "const text = readFileSync(configPath(), 'utf8')"
+      },
+      {
+        "file": "src/store.js",
+        "line": 78,
+        "text": "mkdirSync(dirname(file), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 35,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 274,
+        "text": "ctx.tools.register(statusTool(context))"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 278,
+        "text": "ctx.tools.register(rawTool(context))"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 297,
+        "text": "ctx.tools.register(domainTool(domain, context))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

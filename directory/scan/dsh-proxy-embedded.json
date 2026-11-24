@@ -1,7 +1,7 @@
 {
   "name": "dsh-proxy-embedded",
-  "version": "0.2.2",
-  "scannedAt": "2026-11-24T01:02:46.438Z",
+  "version": "0.2.4",
+  "scannedAt": "2026-11-24T23:54:30.918Z",
   "icon": "dsh-proxy-embedded.png",
   "network": {
     "hit": true,
@@ -13,8 +13,18 @@
       },
       {
         "file": "lib/index.js",
-        "line": 369,
+        "line": 388,
         "text": "\"    const r = await fetch(path, { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify(body||{}) });\","
+      },
+      {
+        "file": "lib/kernel-download.js",
+        "line": 60,
+        "text": "const response = await fetch(RELEASE_API, {"
+      },
+      {
+        "file": "lib/kernel-download.js",
+        "line": 100,
+        "text": "const response = await fetch(checked, { redirect: \"manual\", signal: AbortSignal.timeout(DOWNLOAD_TIMEOUT_MS) });"
       },
       {
         "file": "lib/subscription.js",
@@ -28,28 +38,28 @@
     "evidence": [
       {
         "file": "lib/core.js",
-        "line": 12,
-        "text": "import { existsSync, unlinkSync } from \"node:fs\";"
+        "line": 13,
+        "text": "import { copyFileSync, existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from \"node:fs\";"
       },
       {
         "file": "lib/core.js",
-        "line": 13,
+        "line": 14,
         "text": "import { mkdir, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/core.js",
-        "line": 157,
-        "text": "await mkdir(dir, { recursive: true });"
+        "line": 95,
+        "text": "return createHash(\"sha256\").update(readFileSync(file)).digest(\"hex\");"
       },
       {
         "file": "lib/core.js",
-        "line": 159,
-        "text": "await writeFile(file, yaml, \"utf8\");"
+        "line": 123,
+        "text": "mkdirSync(dir, { recursive: true });"
       },
       {
         "file": "lib/core.js",
-        "line": 214,
-        "text": "unlinkSync(target);"
+        "line": 140,
+        "text": "try { unlinkSync(tmp); } catch { /* temp already gone */ }"
       }
     ]
   },
@@ -63,12 +73,27 @@
       {
         "file": "lib/core.js",
         "line": 11,
-        "text": "import { spawn } from \"node:child_process\";"
+        "text": "import { spawn, spawnSync } from \"node:child_process\";"
       },
       {
         "file": "lib/core.js",
-        "line": 275,
+        "line": 78,
+        "text": "spawnSync(\"icacls\", [dir, \"/inheritance:r\", \"/grant:r\", (process.env.USERNAME || \"\") + \":(OI)(CI)F\"], {"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 380,
         "text": "const proc = spawn(kernel, [\"-d\", dir, \"-f\", configPath], {"
+      },
+      {
+        "file": "lib/kernel-download.js",
+        "line": 9,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/kernel-download.js",
+        "line": 137,
+        "text": "const result = spawnSync(\"powershell.exe\", ["
       }
     ]
   },

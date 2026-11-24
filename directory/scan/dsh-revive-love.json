@@ -1,34 +1,34 @@
 {
   "name": "dsh-revive-love",
-  "version": "1.5.1",
-  "scannedAt": "2026-11-23T09:10:24.027Z",
+  "version": "1.5.4",
+  "scannedAt": "2026-11-24T23:54:24.156Z",
   "icon": "dsh-revive-love.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 415,
+        "line": 431,
         "text": "response = await fetch(url.href, {"
       },
       {
         "file": "client.js",
-        "line": 664,
+        "line": 680,
         "text": "const response = await fetch(routeUrl(PREVIEW_ROUTE), {"
       },
       {
         "file": "client.js",
-        "line": 698,
+        "line": 714,
         "text": "const response = await fetch(routeUrl(SCAN_ROUTE), {"
       },
       {
         "file": "client.js",
-        "line": 724,
+        "line": 740,
         "text": "const response = await fetch(routeUrl(OPEN_ROUTE), {"
       },
       {
         "file": "client.js",
-        "line": 769,
+        "line": 785,
         "text": "const response = await fetch(routeUrl(AMPLIFY_PLAN_ROUTE), {"
       }
     ]
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "force-recall.js",
-        "line": 23,
-        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
-      },
-      {
-        "file": "force-recall.js",
-        "line": 213,
-        "text": "if (!existsSync(dir)) mkdirSync(dir, { recursive: true })"
-      },
-      {
-        "file": "force-recall.js",
-        "line": 216,
-        "text": "writeFileSync(join(dir, MODE_FILE), `${JSON.stringify({ sessions: store.sessions, updatedAt: new Date().toISOString() }, null, 2)}\\n`, 'utf8')"
-      },
-      {
-        "file": "force-recall.js",
-        "line": 231,
-        "text": "const parsed = JSON.parse(readFileSync(join(workspacePath, HISTORY_DIR, MODE_FILE), 'utf8'))"
-      },
-      {
-        "file": "history-tool.js",
+        "file": "compaction-archive.js",
         "line": 18,
-        "text": "import { readFileSync, readdirSync } from 'node:fs'"
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "compaction-archive.js",
+        "line": 84,
+        "text": "text = readFileSync(join(dirAbsolute, `part-${String(number).padStart(2, '0')}.md`), 'utf8')"
+      },
+      {
+        "file": "compaction-archive.js",
+        "line": 249,
+        "text": "writeFileSync(join(dirAbsolute, fileName), body, 'utf8')"
+      },
+      {
+        "file": "compaction-archive.js",
+        "line": 262,
+        "text": "text = readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "compaction-archive.js",
+        "line": 271,
+        "text": "writeFileSync(file, `${text.replace(/\\n*$/u, '\\n')}${addition}`, 'utf8')"
       }
     ]
   },

@@ -1,34 +1,34 @@
 {
   "name": "dsh-magpie-connect",
-  "version": "0.8.1",
-  "scannedAt": "2026-11-22T08:23:31.158Z",
+  "version": "0.9.0",
+  "scannedAt": "2026-11-24T23:54:22.372Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 911,
+        "line": 962,
         "text": "response = await fetch(path, {"
       },
       {
         "file": "lib/client.js",
-        "line": 2376,
+        "line": 2579,
         "text": "const response = await fetch(url, { cache: \"no-store\", signal: controller.signal });"
       },
       {
         "file": "lib/client.js",
-        "line": 2591,
+        "line": 2794,
         "text": "const response = await fetch(\"/api/magpie-settings\", { cache: \"no-store\" });"
       },
       {
         "file": "lib/index.js",
-        "line": 1766,
+        "line": 1777,
         "text": "const response = await fetch(`${base.replace(/\\/+$/, \"\")}/?k=${encodeURIComponent(webKey)}`, {"
       },
       {
         "file": "lib/index.js",
-        "line": 1781,
+        "line": 1792,
         "text": "return fetch(`${base}${path}`, {"
       }
     ]
@@ -64,8 +64,24 @@
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3175,
+        "text": "this.#disposers.push(this.#tools.register(definition));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3663,
+        "text": "logger.warn(\"dsh-magpie-connect: ctx.tools.register unavailable; Magpie MCP tools disabled\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3753,
+        "text": "logger.warn(`dsh-magpie-connect: ctx.tools unavailable: ${error instanceof Error ? error.message : String(error)}`);"
+      }
+    ]
   },
   "childProcess": {
     "hit": false,

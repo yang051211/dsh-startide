@@ -1,14 +1,14 @@
 {
   "name": "dsh-lpipe-memory",
-  "version": "0.1.5",
-  "scannedAt": "2026-11-11T08:04:54.384Z",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-24T23:54:34.534Z",
   "icon": "dsh-lpipe-memory.png",
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "src/rpc.mjs",
-        "line": 51,
+        "file": "src/service.mjs",
+        "line": 99,
         "text": "async fetch(request) {"
       }
     ]
@@ -17,35 +17,41 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/compact.mjs",
-        "line": 3,
-        "text": "import { cpSync, existsSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs'"
-      },
-      {
-        "file": "src/compact.mjs",
-        "line": 23,
-        "text": "return JSON.parse(readFileSync(file, 'utf8'))"
-      },
-      {
-        "file": "src/compact.mjs",
-        "line": 30,
-        "text": "writeFileSync(file, JSON.stringify(value, null, 2) + '\\n', 'utf8')"
-      },
-      {
-        "file": "src/compact.mjs",
-        "line": 74,
-        "text": "rmSync(next, { recursive: true, force: true })"
-      },
-      {
-        "file": "src/config.mjs",
+        "file": "scripts/build-client.mjs",
         "line": 1,
-        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 23,
+        "text": ".map(path => readFile(resolve(root, path), 'utf8')));"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 31,
+        "text": "await mkdir(dirname(output), { recursive: true });"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 32,
+        "text": "await writeFile(staging, source, 'utf8');"
+      },
+      {
+        "file": "src/store.mjs",
+        "line": 2,
+        "text": "import { lstat, mkdir, open, readdir, realpath, rename, rmdir, unlink } from 'node:fs/promises';"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 52,
+        "text": "toolsCtx.effect(() => toolsCtx.tools.register(createMemoryTool(kind, service), {"
+      }
+    ]
   },
   "childProcess": {
     "hit": false,

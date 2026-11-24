@@ -1,0 +1,86 @@
+{
+  "name": "dsh-error-museum",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-24T23:54:36.751Z",
+  "icon": "dsh-error-museum.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1928,
+        "text": "const response = await fetch(`${API}/analyze`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 2030,
+        "text": "const readSession = fetch(`${API}/session?id=${encodeURIComponent(sessionId)}&locale=${locale}`, { signal: controller.signal })"
+      },
+      {
+        "file": "client.js",
+        "line": 2036,
+        "text": "const readAudit = fetch(`${API}/audit?id=${encodeURIComponent(sessionId)}`, { signal: controller.signal })"
+      },
+      {
+        "file": "client.js",
+        "line": 2206,
+        "text": "fetch(`${API}/report?days=${days}&locale=${locale}${tick > 0 ? '&refresh=1' : ''}`, { signal: controller.signal })"
+      },
+      {
+        "file": "client.js",
+        "line": 2222,
+        "text": "fetch(`${API}/model`, { signal: controller.signal })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/audit-store.js",
+        "line": 15,
+        "text": "import { promises as fs } from 'node:fs'"
+      },
+      {
+        "file": "src/host/audit-store.js",
+        "line": 33,
+        "text": "const parsed = JSON.parse(await fs.readFile(file, 'utf8'))"
+      },
+      {
+        "file": "src/host/audit-store.js",
+        "line": 48,
+        "text": "await fs.writeFile(temporary, JSON.stringify({ version: 1, entries: data.entries }), 'utf8')"
+      },
+      {
+        "file": "src/host/digest-store.js",
+        "line": 18,
+        "text": "import { promises as fs } from 'node:fs'"
+      },
+      {
+        "file": "src/host/digest-store.js",
+        "line": 36,
+        "text": "const parsed = JSON.parse(await fs.readFile(file, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

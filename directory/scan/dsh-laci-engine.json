@@ -1,0 +1,112 @@
+{
+  "name": "dsh-laci-engine",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-24T23:54:33.609Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "laci/control/api.mjs",
+        "line": 16,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "laci/control/api.mjs",
+        "line": 264,
+        "text": "const res = await fetch(`http://127.0.0.1:${port}/v1/models`, { signal: ac.signal })"
+      },
+      {
+        "file": "laci/control/api.mjs",
+        "line": 1433,
+        "text": "const req = http.get(url, { timeout: timeoutMs }, (res) => {"
+      },
+      {
+        "file": "laci/control/import.mjs",
+        "line": 3222,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "laci/control/import.mjs",
+        "line": 3318,
+        "text": "const response = await fetch(`http://127.0.0.1:${port}/v1/chat/completions`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "laci/control/api.mjs",
+        "line": 18,
+        "text": "import fs, { existsSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "laci/control/api.mjs",
+        "line": 898,
+        "text": "if (method === 'GET' && seg[0] === 'fs' && seg.length === 1) {"
+      },
+      {
+        "file": "laci/control/api.mjs",
+        "line": 1246,
+        "text": "fs.writeFileSync(tmp, `\\ufeff${script}`, 'utf8')"
+      },
+      {
+        "file": "laci/control/api.mjs",
+        "line": 1256,
+        "text": "try { fs.unlinkSync(tmp) } catch { /* 忽略 */ }"
+      },
+      {
+        "file": "laci/control/api.mjs",
+        "line": 1379,
+        "text": "fs.writeFileSync(tmpFile, `\\ufeff${script}`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "laci/control/api.mjs",
+        "line": 17,
+        "text": "import { execFile, execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "laci/control/api.mjs",
+        "line": 1251,
+        "text": "execFile("
+      },
+      {
+        "file": "laci/control/api.mjs",
+        "line": 1385,
+        "text": "const child = execFile("
+      },
+      {
+        "file": "laci/control/api.mjs",
+        "line": 1413,
+        "text": "execFile('explorer.exe', [arg], { windowsHide: false }, () => {})"
+      },
+      {
+        "file": "laci/control/import.mjs",
+        "line": 40,
+        "text": "import { spawn, execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

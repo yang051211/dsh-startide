@@ -1,0 +1,106 @@
+{
+  "name": "dsh-source-inbox",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-24T23:54:27.852Z",
+  "icon": "dsh-source-inbox.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 279,
+        "text": "const res = await fetch(api(path), { credentials: 'same-origin' });"
+      },
+      {
+        "file": "client.js",
+        "line": 652,
+        "text": "const res = await fetch(api(`${API}/import`), {"
+      },
+      {
+        "file": "client.js",
+        "line": 676,
+        "text": "const res = await fetch(api(path), {"
+      },
+      {
+        "file": "lib/browser.js",
+        "line": 160,
+        "text": "const ws = new WebSocket(wsUrl);"
+      },
+      {
+        "file": "lib/browser.js",
+        "line": 198,
+        "text": "const res = await fetch(`http://127.0.0.1:${port}/json/version`, { signal: ctl.signal });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 193,
+        "text": "const text = await readFile(join(rt.secrets.dir, file), 'utf8');"
+      },
+      {
+        "file": "lib/adapters.js",
+        "line": 17,
+        "text": "import { promises as fs } from 'node:fs';"
+      },
+      {
+        "file": "lib/adapters.js",
+        "line": 276,
+        "text": "try { saved = JSON.parse(await fs.readFile(this.configPath, 'utf8')); } catch { /* new install */ }"
+      },
+      {
+        "file": "lib/adapters.js",
+        "line": 281,
+        "text": "if (dir) { try { await fs.mkdir(dir, { recursive: true }); } catch { /* non-fatal */ } }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 591,
+        "text": "const tools = ctx.tools;"
+      },
+      {
+        "file": "index.js",
+        "line": 595,
+        "text": "try { disposers.push(tools.register(def)); } catch (e) { console.warn('[dsh-source-inbox] tool register failed:', e?.message); }"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/browser.js",
+        "line": 33,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/browser.js",
+        "line": 297,
+        "text": "child = spawn(this.browserPath, this.launchArgs({ headless }), {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

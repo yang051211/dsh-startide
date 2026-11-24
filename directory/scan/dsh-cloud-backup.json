@@ -1,0 +1,112 @@
+{
+  "name": "dsh-cloud-backup",
+  "version": "0.1.144",
+  "scannedAt": "2026-11-24T23:54:26.489Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 938,
+        "text": "const res = await fetch(API + pathname, init);"
+      },
+      {
+        "file": "lib/auth/aliyun.js",
+        "line": 29,
+        "text": "const res = await fetch(url, { method, headers, body, signal: ac.signal, redirect: \"follow\" });"
+      },
+      {
+        "file": "lib/auth/drive-login-state.js",
+        "line": 125,
+        "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "lib/auth/qr-page.js",
+        "line": 95,
+        "text": "fetch(api + \"/auth/qr/poll\", {"
+      },
+      {
+        "file": "lib/engine/restart.js",
+        "line": 13,
+        "text": "'import http from \"node:http\";',"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/auth/drive-login-state.js",
+        "line": 3,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/auth/drive-login-state.js",
+        "line": 75,
+        "text": "try { buf = fs.readFileSync(f); } catch { continue; }"
+      },
+      {
+        "file": "lib/engine/backups.js",
+        "line": 3,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/engine/backups.js",
+        "line": 237,
+        "text": "try { fs.rmSync(snapshotDir(storeDir, stamp), { recursive: true, force: true }); cacheDeleted = true; logger(\"removed local cache \" + stamp); }"
+      },
+      {
+        "file": "lib/engine/backups.js",
+        "line": 285,
+        "text": "fs.rmSync(snapshotDir(storeDir, s.stamp), { recursive: true, force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine/restart.js",
+        "line": 4,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/engine/restart.js",
+        "line": 14,
+        "text": "'import { spawn } from \"node:child_process\";',"
+      },
+      {
+        "file": "lib/engine/restart.js",
+        "line": 42,
+        "text": "  \"  const child = spawn(cfg.spawn.file, cfg.spawn.args, { cwd: cfg.cwd || undefined, env: process.env, detached: !!cfg.spawn.detached, windowsHide: true, stdio"
+      },
+      {
+        "file": "lib/engine/restart.js",
+        "line": 164,
+        "text": "child = spawn(nodeExecutable(), [helper, configPath], { detached: true, stdio: \"ignore\", env: helperEnv(), windowsHide: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 291,
+        "text": "const cp = await import(\"node:child_process\");"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

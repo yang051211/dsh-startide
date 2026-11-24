@@ -1,0 +1,105 @@
+{
+  "name": "dsh-r-runner",
+  "version": "0.1.6",
+  "scannedAt": "2026-11-24T23:54:29.252Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/check.mjs",
+        "line": 20,
+        "text": "const response = await fetch(`${base}/r/api/${route}`, init)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 391,
+        "text": "const response = await fetch(withWorkspace('/r/api/' + route), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/install-local.sh",
+        "line": 34,
+        "text": "const fs = require('node:fs')"
+      },
+      {
+        "file": "bin/install-local.sh",
+        "line": 36,
+        "text": "const manifest = JSON.parse(fs.readFileSync(path, 'utf8'))"
+      },
+      {
+        "file": "bin/install-local.sh",
+        "line": 43,
+        "text": "fs.writeFileSync(path, JSON.stringify(manifest, null, 2) + '\\n')"
+      },
+      {
+        "file": "bin/preview-ui.mjs",
+        "line": 15,
+        "text": "import { readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/preview-ui.mjs",
+        "line": 19,
+        "text": "const source = readFileSync(`${root}/lib/client.js`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 275,
+        "text": "toolCtx.effect(() => toolCtx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/runner.js",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/runner.js",
+        "line": 186,
+        "text": "const child = spawn(binary, args, { cwd, env: env ?? process.env })"
+      },
+      {
+        "file": "lib/runner.js",
+        "line": 207,
+        "text": "const child = spawn(binary || 'Rscript', args, {"
+      },
+      {
+        "file": "lib/runner.js",
+        "line": 321,
+        "text": "const child = spawn(binary || 'Rscript', ['--vanilla', '-e', script], {"
+      },
+      {
+        "file": "lib/runner.js",
+        "line": 415,
+        "text": "child = spawn(resolveRBinary(config), ['--version'], { env: { ...process.env, ...config.env } })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "subprocess",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

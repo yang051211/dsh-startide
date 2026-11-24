@@ -1,15 +1,20 @@
 {
   "name": "skillhub-plugin",
-  "version": "0.2.16",
-  "scannedAt": "2026-10-26T10:06:46.816Z",
+  "version": "0.2.18",
+  "scannedAt": "2026-11-24T23:54:34.374Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 703,
-        "text": "const res = await fetch(pluginUrl(\"\"), {"
+        "line": 730,
+        "text": "? await transport.fetch(\"skillhub\", init)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 731,
+        "text": ": await fetch(pluginUrl(\"\"), init);"
       },
       {
         "file": "lib/http.js",
@@ -38,8 +43,8 @@
       },
       {
         "file": "lib/config-store.js",
-        "line": 40,
-        "text": "writeFileSync(path, `${JSON.stringify(publicConfig(cfg), null, 2)}\\n`);"
+        "line": 41,
+        "text": "writeFileSync(path, `${JSON.stringify(stored, null, 2)}\\n`);"
       },
       {
         "file": "lib/dsh-cli.js",
@@ -53,27 +58,27 @@
     "evidence": [
       {
         "file": "lib/host.js",
-        "line": 12,
+        "line": 13,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "lib/host.js",
-        "line": 26,
+        "line": 29,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/host.js",
-        "line": 81,
+        "line": 84,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/host.js",
-        "line": 104,
+        "line": 107,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/host.js",
-        "line": 144,
+        "line": 147,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
@@ -88,13 +93,13 @@
       },
       {
         "file": "lib/dsh-cli.js",
-        "line": 255,
+        "line": 299,
         "text": "return spawn(file, [...args], { ...spawnOptions, shell: false });"
       },
       {
         "file": "lib/dsh-cli.js",
-        "line": 258,
-        "text": "return spawn(comspec, ['/d', '/s', '/c', `\"${cmdCommandLine([file, ...args])}\"`], {"
+        "line": 304,
+        "text": "return spawn(comspec, ['/d', '/v:off', '/s', '/c', `\"chcp 65001>nul && ${cmdCommandLine([file, ...args])}\"`], {"
       },
       {
         "file": "lib/restart.js",
@@ -103,7 +108,7 @@
       },
       {
         "file": "lib/restart.js",
-        "line": 142,
+        "line": 143,
         "text": "\"const { spawn } = require('node:child_process')\","
       }
     ]

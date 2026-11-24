@@ -1,0 +1,80 @@
+{
+  "name": "dsh-transcript-import",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-24T23:54:21.723Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/plugin.js",
+        "line": 12,
+        "text": "import { readFile, readdir, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/plugin.js",
+        "line": 458,
+        "text": "const bytes = await readFile(image.path)"
+      },
+      {
+        "file": "lib/plugin.js",
+        "line": 560,
+        "text": "file.ref = await store.saveFile({ data: await readFile(file.path), name: file.name })"
+      },
+      {
+        "file": "lib/plugin.js",
+        "line": 826,
+        "text": "markdown = await readFile(recordFile, 'utf8')"
+      },
+      {
+        "file": "lib/plugin.js",
+        "line": 834,
+        "text": "document = JSON.parse(await readFile(recordFile, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/plugin.js",
+        "line": 991,
+        "text": "export const inject = ['tools', 'sessions', 'agents', 'attachments']"
+      },
+      {
+        "file": "lib/plugin.js",
+        "line": 994,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: node scripts/build.mjs"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "attachments",
+    "sessions",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

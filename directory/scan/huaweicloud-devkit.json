@@ -1,35 +1,35 @@
 {
   "name": "huaweicloud-devkit",
-  "version": "1.1.15",
-  "scannedAt": "2026-11-20T21:47:21.777Z",
+  "version": "2.0.0",
+  "scannedAt": "2026-11-24T23:54:20.693Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "plugins/huaweicloud-core/safety/rules/cloud-risk-rules.json",
-        "line": 145,
-        "text": "irect egress IP instead (detect it with Invoke-RestMethod -Uri https://api.ipify.org -NoProxy on Windows / curl --noproxy '*' on Linux — a proxy egress is NOT t"
+        "file": "plugins/huaweicloud-core/dist/dep/installers/hcloud.js",
+        "line": 39,
+        "text": "log(`  curl -LO \"${url}\"`);"
       },
       {
-        "file": "plugins/huaweicloud-core/skills/huawei-cloud-smn-dms-message/scripts/ensure_cli.sh",
-        "line": 157,
-        "text": "if ! curl -fsSL --max-time 30 --connect-timeout 5 -o \"${TMPDIR}/sqc.tar.gz\" \"$PKG_URL\"; then"
+        "file": "plugins/huaweicloud-core/dist/dep/installers/hcloud.js",
+        "line": 44,
+        "text": "log(`  curl -sSL ${latestUrl}/hcloud_install.sh -o ./hcloud_install.sh && bash ./hcloud_install.sh -y`);"
       },
       {
-        "file": "plugins/huaweicloud-core/skills/huawei-cloud-smn-dms-message/scripts/install_cli.sh",
-        "line": 73,
-        "text": "if ! curl -fsSL --max-time 30 --connect-timeout 5 -o \"${TMPDIR}/sqc.tar.gz\" \"$PKG_URL\"; then"
+        "file": "plugins/huaweicloud-core/dist/dep/installers/hcloud.js",
+        "line": 125,
+        "text": "psCmd = `[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12; Invoke-WebRequest -Uri '${url}' -OutFile '${zipPath}' -UseBasicParsing`;"
       },
       {
-        "file": "plugins/huaweicloud-core/src/auth/credential-validator.mjs",
-        "line": 126,
-        "text": "const { fetch: undiciFetch } = await import('undici');"
+        "file": "plugins/huaweicloud-core/dist/doctor-payload.js",
+        "line": 35,
+        "text": "undici: existsSync(join(dir, 'node_modules', 'undici')),"
       },
       {
-        "file": "plugins/huaweicloud-core/src/auth/credential-validator.mjs",
-        "line": 129,
-        "text": "resp = await fetch(url, fetchOpts);"
+        "file": "plugins/huaweicloud-core/dist/mcp-server.js",
+        "line": 46797,
+        "text": "return await import(\"undici\");"
       }
     ]
   },
@@ -43,23 +43,23 @@
       },
       {
         "file": "bin/dsh-postinstall.cjs",
-        "line": 31,
+        "line": 41,
         "text": "const patch = fs.readFileSync(bundledPatch, 'utf8');"
       },
       {
         "file": "bin/dsh-postinstall.cjs",
-        "line": 34,
+        "line": 44,
         "text": "fs.writeFileSync(bundledPatch, updated);"
       },
       {
         "file": "bin/dsh-postinstall.cjs",
-        "line": 47,
-        "text": "fs.mkdirSync(skillsDest, { recursive: true });"
+        "line": 97,
+        "text": "coreNames = shared.roster.parseCoreSkillNames(fs.readFileSync(manifestPath, 'utf8'));"
       },
       {
         "file": "bin/dsh-postinstall.cjs",
-        "line": 51,
-        "text": "fs.mkdirSync(dest, { recursive: true });"
+        "line": 156,
+        "text": "fs.mkdirSync(skillsDest, { recursive: true });"
       }
     ]
   },
@@ -77,18 +77,18 @@
         "text": "export const inject = ['tools'];"
       },
       {
-        "file": "plugins/huaweicloud-core/src/auth/agent-registration.mjs",
-        "line": 105,
-        "text": "patch.includes('@deepseek-ai/dsh-mcp-client') &&"
+        "file": "plugins/huaweicloud-core/dist/agents/dsh-patch.js",
+        "line": 5,
+        "text": "// The dsh-mcp-client package detection/install and the"
       },
       {
-        "file": "plugins/huaweicloud-core/src/setup-cli.mjs",
-        "line": 2209,
+        "file": "plugins/huaweicloud-core/dist/agents/dsh-patch.js",
+        "line": 33,
         "text": "\"      name: '@deepseek-ai/dsh-mcp-client'\","
       },
       {
-        "file": "plugins/huaweicloud-core/src/setup-cli.mjs",
-        "line": 2262,
+        "file": "plugins/huaweicloud-core/dist/agents/dsh-patch.js",
+        "line": 93,
         "text": "if (cleaned.includes('@deepseek-ai/dsh-mcp-client') && cleaned.includes('serverName: huaweicloud')) {"
       }
     ]
@@ -97,29 +97,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "plugins/huaweicloud-core/src/auth/agent-registration.mjs",
-        "line": 4,
+        "file": "plugins/huaweicloud-core/dist/agents/codex.js",
+        "line": 10,
         "text": "import { spawnSync } from 'node:child_process';"
       },
       {
-        "file": "plugins/huaweicloud-core/src/auth/agent-registration.mjs",
-        "line": 59,
-        "text": "const r = spawnSync('codex', ['plugin', 'list'], {"
+        "file": "plugins/huaweicloud-core/dist/agents/codex.js",
+        "line": 17,
+        "text": "const r = spawnSync('codex --version', [], { shell: true, windowsHide: true, stdio: 'pipe', timeout: 5000 });"
       },
       {
-        "file": "plugins/huaweicloud-core/src/auth/agent-registration.mjs",
-        "line": 116,
-        "text": "const r = spawnSync('reg', ['query', 'HKCU\\\\SOFTWARE\\\\OfficeAce\\\\OfficeAce', '/v', 'InstallDir'], {"
+        "file": "plugins/huaweicloud-core/dist/agents/codex.js",
+        "line": 23,
+        "text": "const w = spawnSync('where.exe', ['codex'], { windowsHide: true, stdio: 'pipe', timeout: 5000 });"
       },
       {
-        "file": "plugins/huaweicloud-core/src/auth/project-id.mjs",
-        "line": 2,
-        "text": "import { spawnSync } from 'node:child_process';"
+        "file": "plugins/huaweicloud-core/dist/agents/codex.js",
+        "line": 77,
+        "text": "const r = spawnSync(command, [], { shell: true, windowsHide: true, stdio: 'pipe', encoding: 'utf8' });"
       },
       {
-        "file": "plugins/huaweicloud-core/src/auth/project-id.mjs",
-        "line": 16,
-        "text": "return spawnSync(file, spawnArgs, {"
+        "file": "plugins/huaweicloud-core/dist/agents/codex.js",
+        "line": 144,
+        "text": "const r = spawnSync(`codex plugin remove \"${name}@${marketplaceName}\"`, [], {"
       }
     ]
   },
@@ -140,12 +140,12 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 206,
+      "line": 209,
       "text": "alls the `mcp` Python package required by Hermes for MCP tool discovery. If you see `[FAIL] Hermes MCP Python SDK` in `doctor`, run `pip3 install mcp` manually."
     },
     {
       "file": "README.zh-CN.md",
-      "line": 202,
+      "line": 203,
       "text": "> **MCP Python SDK**：安装器会自动安装 Hermes 所需的 `mcp` Python 包。如果 doctor 显示 `[FAIL] Hermes MCP Python SDK`，手动执行 `pip3 install mcp`。"
     }
   ],

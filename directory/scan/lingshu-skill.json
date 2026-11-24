@@ -1,0 +1,92 @@
+{
+  "name": "lingshu-skill",
+  "version": "5.11.0",
+  "scannedAt": "2026-11-24T23:54:28.473Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis-plugin/lingshu-cron/plugin.js",
+        "line": 27,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, statSync, writeFileSync, rmSync } from 'node:fs'"
+      },
+      {
+        "file": "cordis-plugin/lingshu-cron/plugin.js",
+        "line": 170,
+        "text": "writeFileSync(join(base, 'lingshu-diag.json'), JSON.stringify(payload, null, 2), 'utf8')"
+      },
+      {
+        "file": "cordis-plugin/lingshu-cron/plugin.js",
+        "line": 183,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "cordis-plugin/lingshu-cron/plugin.js",
+        "line": 190,
+        "text": "appendFileSync(join(dir, 'lingshu.log'), JSON.stringify(row) + '\\n', 'utf8')"
+      },
+      {
+        "file": "cordis-plugin/lingshu-cron/plugin.js",
+        "line": 211,
+        "text": "const raw = readFileSync(path, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis-plugin/lingshu-guard/plugin.js",
+        "line": 18,
+        "text": "// 所以：优先 ctx.tools.guard(fn)，在 agent/created 时注册到该 agent 的 ctx 上"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis-plugin/lingshu-cron/plugin.js",
+        "line": 26,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "cordis-plugin/lingshu-cron/plugin.js",
+        "line": 440,
+        "text": "child = spawn(pythonExe, args, {"
+      },
+      {
+        "file": "cordis-plugin/lingshu-cron/plugin.js",
+        "line": 452,
+        "text": "child = spawn(comspec, ['/d', '/s', '/c', cmdline], {"
+      },
+      {
+        "file": "cordis-plugin/lingshu-cron/plugin.js",
+        "line": 470,
+        "text": "const tk = spawn('taskkill', ['/pid', String(child.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "cordis-plugin/lingshu-im/plugin.js",
+        "line": 28,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

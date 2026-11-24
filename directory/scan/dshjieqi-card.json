@@ -1,14 +1,14 @@
 {
   "name": "dshjieqi-card",
-  "version": "0.12.1",
-  "scannedAt": "2026-11-02T23:01:09.193Z",
+  "version": "0.13.0",
+  "scannedAt": "2026-11-24T23:54:33.909Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1739,
+        "line": 1901,
         "text": "fetch(API, Object.assign({ headers: { accept: 'application/json' } }, stop ? { signal: stop.signal } : null))"
       }
     ]
@@ -16,6 +16,16 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "assets/jieqi/scripts/jieqi.mjs",
+        "line": 4,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "assets/jieqi/scripts/jieqi.mjs",
+        "line": 17,
+        "text": "const raw = readFileSync(join(HERE, '..', 'references', '节气养生速查.md'), 'utf8')"
+      },
       {
         "file": "lib/index.js",
         "line": 12,
@@ -30,11 +40,6 @@
         "file": "lib/index.js",
         "line": 66,
         "text": "content: renderBody(await readFile(SKILL_FILE, 'utf8')),"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 79,
-        "text": "for (const line of readFileSync(TIP_FILE, 'utf8').split('\\n')) {"
       }
     ]
   },
@@ -51,7 +56,9 @@
     "evidence": []
   },
   "dependencies": 0,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [
     "skills",

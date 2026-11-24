@@ -1,15 +1,20 @@
 {
   "name": "dsh-plugin-lark-bridge",
-  "version": "0.3.0",
-  "scannedAt": "2026-11-24T01:02:38.291Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-24T23:54:24.107Z",
   "icon": "dsh-plugin-lark-bridge.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "dist/client.js",
-        "line": 47,
+        "line": 70,
         "text": "const text = await (await fetch(endpoint(path), {"
+      },
+      {
+        "file": "dist/lark-super-agent.mjs",
+        "line": 143,
+        "text": "const response = await fetch(url, { signal: AbortSignal.timeout(timeoutMs) });"
       }
     ]
   },
@@ -18,27 +23,27 @@
     "evidence": [
       {
         "file": "dist/index.mjs",
-        "line": 9,
+        "line": 7,
         "text": "import { mkdir, readFile, rename, rm, stat, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "dist/index.mjs",
-        "line": 1410,
+        "line": 1089,
         "text": "const text = await readFile(this.file, \"utf8\");"
       },
       {
         "file": "dist/index.mjs",
-        "line": 1498,
+        "line": 1177,
         "text": "await mkdir(dirname(this.file), { recursive: true });"
       },
       {
         "file": "dist/index.mjs",
-        "line": 1500,
+        "line": 1179,
         "text": "await writeFile(tmp, `${JSON.stringify(state, null, 2)}\\n`, \"utf8\");"
       },
       {
         "file": "dist/index.mjs",
-        "line": 1501,
+        "line": 1180,
         "text": "await rm(this.file, { force: true });"
       }
     ]
@@ -48,27 +53,27 @@
     "evidence": [
       {
         "file": "dist/index.mjs",
-        "line": 1826,
+        "line": 1505,
         "text": "const unregisterTool = ctx.tools.register(notifyTool, { when: ({ agent }) => isBridgeAgent(agent) });"
       },
       {
         "file": "dist/sa-dispatch.mjs",
-        "line": 132,
+        "line": 275,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "dist/sa-dispatch.mjs",
-        "line": 184,
+        "line": 327,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "dist/sa-dispatch.mjs",
-        "line": 270,
+        "line": 413,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "dist/sa-dispatch.mjs",
-        "line": 319,
+        "line": 462,
         "text": "ctx.tools.register(defineTool({"
       }
     ]
@@ -83,22 +88,22 @@
       },
       {
         "file": "dist/index.mjs",
-        "line": 143,
+        "line": 73,
         "text": "spawn(\"taskkill\", ["
       },
       {
         "file": "dist/index.mjs",
-        "line": 266,
+        "line": 196,
         "text": "spawn(args) {"
       },
       {
         "file": "dist/index.mjs",
-        "line": 602,
+        "line": 512,
         "text": "this.spawn();"
       },
       {
         "file": "dist/index.mjs",
-        "line": 626,
+        "line": 536,
         "text": "spawn() {"
       }
     ]
@@ -116,7 +121,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 14,
+      "line": 12,
       "text": "npm install -g @larksuite/cli@latest"
     }
   ],

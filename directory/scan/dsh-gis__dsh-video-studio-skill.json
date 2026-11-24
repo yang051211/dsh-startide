@@ -1,7 +1,7 @@
 {
   "name": "@dsh-gis/dsh-video-studio-skill",
-  "version": "2.7.3",
-  "scannedAt": "2026-11-22T21:06:30.325Z",
+  "version": "2.7.4",
+  "scannedAt": "2026-11-24T23:54:21.504Z",
   "icon": "dsh-gis__dsh-video-studio-skill.svg",
   "network": {
     "hit": false,
@@ -12,28 +12,28 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 32,
-        "text": "import { readFile, readdir } from \"node:fs/promises\";"
+        "line": 49,
+        "text": "import { access, readFile, readdir } from \"node:fs/promises\";"
       },
       {
         "file": "index.js",
-        "line": 106,
+        "line": 230,
         "text": "parsed = parseSkillFile(await readFile(file, \"utf8\"));"
       },
       {
         "file": "index.js",
-        "line": 146,
+        "line": 270,
         "text": "raw = await readFile(file, \"utf8\");"
       },
       {
-        "file": "tools/plugin_entry_check.mjs",
-        "line": 18,
-        "text": "import { readFile } from \"node:fs/promises\";"
+        "file": "index.js",
+        "line": 606,
+        "text": "parsed = parseSkillFile(await readFile(file, \"utf8\"));"
       },
       {
-        "file": "tools/plugin_entry_check.mjs",
-        "line": 113,
-        "text": "const raw = await readFile(ROOT + \"skills/\" + SKILL_NAME + \"/SKILL.md\", \"utf8\");"
+        "file": "index.js",
+        "line": 661,
+        "text": "const meta = JSON.parse(await readFile(new URL(\"./package.json\", import.meta.url), \"utf8\"));"
       }
     ]
   },
@@ -42,8 +42,34 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tools/compat_report.mjs",
+        "line": 18,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "tools/compat_report.mjs",
+        "line": 42,
+        "text": "result = spawnSync(command, args, { cwd: ROOT, encoding: \"utf8\", timeout: timeoutMs, shell: process.platform === \"win32\" });"
+      },
+      {
+        "file": "tools/diagnose_selftest.mjs",
+        "line": 18,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "tools/diagnose_selftest.mjs",
+        "line": 256,
+        "text": "const bad = spawnSync(process.execPath, [join(root, \"tools\", \"diagnose.mjs\")], { encoding: \"utf8\" });"
+      },
+      {
+        "file": "tools/diagnose_selftest.mjs",
+        "line": 267,
+        "text": "const good = spawnSync(process.execPath, [join(root, \"tools\", \"diagnose.mjs\")], { encoding: \"utf8\" });"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
@@ -58,7 +84,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 257,
+      "line": 261,
       "text": "pip install -r skills/video-studio/requirements.txt   # 必需 + 强烈建议；可选项目已注释，按需打开"
     }
   ],

@@ -1,0 +1,136 @@
+{
+  "name": "@pkkkkh/dsh-bilibili",
+  "version": "0.9.1",
+  "scannedAt": "2026-11-24T23:54:36.822Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/envcheck.js",
+        "line": 95,
+        "text": "const resp = await fetch(url, {"
+      },
+      {
+        "file": "lib/envcheck.js",
+        "line": 309,
+        "text": "const resp = await fetch(API_BASE + \"/x/web-interface/nav\", {"
+      },
+      {
+        "file": "lib/extractor.js",
+        "line": 81,
+        "text": "resp = await fetch(target, {"
+      },
+      {
+        "file": "lib/extractor.js",
+        "line": 104,
+        "text": "const resp = await fetch(url, {"
+      },
+      {
+        "file": "lib/extractor.js",
+        "line": 767,
+        "text": "const resp = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/envcheck.js",
+        "line": 17,
+        "text": "import { mkdir, readFile, rm, stat, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/envcheck.js",
+        "line": 228,
+        "text": "await mkdir(baseDir, { recursive: true });"
+      },
+      {
+        "file": "lib/envcheck.js",
+        "line": 230,
+        "text": "await writeFile(probePath, \"ok\", \"utf8\");"
+      },
+      {
+        "file": "lib/envcheck.js",
+        "line": 231,
+        "text": "await rm(probePath, { force: true });"
+      },
+      {
+        "file": "lib/envcheck.js",
+        "line": 344,
+        "text": "const data = JSON.parse(await readFile(CACHE_FILE, \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4,
+        "text": "* Registers the model-facing `bilibili_extract` tool on ctx.tools:"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 37,
+        "text": "const inject = [\"tools\", \"systemPrompt\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 248,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 337,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 380,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/envcheck.js",
+        "line": 16,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/envcheck.js",
+        "line": 58,
+        "text": "spawn(\"taskkill\", [\"/pid\", String(child.pid), \"/T\", \"/F\"], {"
+      },
+      {
+        "file": "lib/envcheck.js",
+        "line": 66,
+        "text": "child = spawn(bin, args, { stdio: \"ignore\", windowsHide: true });"
+      },
+      {
+        "file": "lib/extractor.js",
+        "line": 10,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/extractor.js",
+        "line": 1144,
+        "text": "const child = spawn(\"ffmpeg\", args, { stdio: \"ignore\", windowsHide: true, signal });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

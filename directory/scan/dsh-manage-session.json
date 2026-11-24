@@ -1,7 +1,7 @@
 {
   "name": "dsh-manage-session",
-  "version": "2.0.12",
-  "scannedAt": "2026-11-19T21:28:11.265Z",
+  "version": "2.0.14",
+  "scannedAt": "2026-11-24T23:54:16.289Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -10,6 +10,11 @@
         "file": "lib/client.js",
         "line": 1095,
         "text": "return fetch(`/manage-session/api/${method}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1185,
+        "text": "const res = await fetch(\"/manage-session/api/session-catalog-stream\", {"
       },
       {
         "file": "src/client/host-api.ts",
@@ -22,9 +27,9 @@
         "text": "return fetch(`/manage-session/api/${method}`, {"
       },
       {
-        "file": "src/index.ts",
-        "line": 21,
-        "text": "import type { IncomingMessage, ServerResponse } from 'node:http'"
+        "file": "src/client/host-api.ts",
+        "line": 289,
+        "text": "const res = await fetch('/manage-session/api/session-catalog-stream', {"
       }
     ]
   },
@@ -38,23 +43,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 159,
+        "line": 6,
+        "text": "import { open } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 161,
         "text": "const ids = JSON.parse(readFileSync(path, \"utf8\")).global?.archivedSessionIds;"
       },
       {
         "file": "lib/index.js",
-        "line": 226,
+        "line": 228,
         "text": "document = JSON.parse(readFileSync(path, \"utf8\"));"
       },
       {
         "file": "lib/index.js",
-        "line": 250,
+        "line": 252,
         "text": "writeFileSync(tmp, `${JSON.stringify(document, null, 2)}"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 607,
-        "text": "return decodeSessionLogBytes(file, readFileSync(file), decoders);"
       }
     ]
   },

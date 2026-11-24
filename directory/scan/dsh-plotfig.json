@@ -1,0 +1,115 @@
+{
+  "name": "dsh-plotfig",
+  "version": "0.6.2",
+  "scannedAt": "2026-11-24T23:54:27.601Z",
+  "icon": "dsh-plotfig.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/ai4scholar.js",
+        "line": 82,
+        "text": "get fetch() { return this.options.fetch ?? fetch; }"
+      },
+      {
+        "file": "lib/ai4scholar.js",
+        "line": 90,
+        "text": "const response = await this.fetch(origin + path, {"
+      },
+      {
+        "file": "lib/ai4scholar.js",
+        "line": 128,
+        "text": "const response = await this.fetch(url, { redirect: 'error', signal });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 726,
+        "text": "const response = await fetch(new URL(path.replace(/^\\//, \"\"), document.baseURI), {"
+      },
+      {
+        "file": "lib/update.js",
+        "line": 29,
+        "text": "const response = await fetch(REGISTRY_URL, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/preferences.js",
+        "line": 1,
+        "text": "import { mkdir, readFile, writeFile, rename, rm } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/preferences.js",
+        "line": 15,
+        "text": "const raw = JSON.parse(await readFile(this.path, 'utf8'));"
+      },
+      {
+        "file": "lib/preferences.js",
+        "line": 31,
+        "text": "await mkdir(dirname(this.path), { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "lib/preferences.js",
+        "line": 33,
+        "text": "await writeFile(temp, JSON.stringify(next, null, 2) + '\\n', { mode: 0o600, flag: 'wx' });"
+      },
+      {
+        "file": "lib/preferences.js",
+        "line": 37,
+        "text": "await rm(temp, { force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "export const inject = ['tools', 'systemPrompt'];"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 41,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 57,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 81,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 102,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 4,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-layers-hippocampus",
-  "version": "1.6.9",
-  "scannedAt": "2026-11-22T21:06:35.379Z",
+  "version": "1.7.1",
+  "scannedAt": "2026-11-24T23:54:29.325Z",
   "icon": "dsh-layers-hippocampus.svg",
   "network": {
     "hit": true,
@@ -18,28 +18,28 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 1209,
+        "line": 30,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 504,
+        "text": "const head = String(fs.readFileSync(headPath, 'utf8')).trim();"
+      },
+      {
+        "file": "index.js",
+        "line": 508,
+        "text": "const sha = fs.existsSync(refPath) ? String(fs.readFileSync(refPath, 'utf8')).trim().slice(0, 7) : null;"
+      },
+      {
+        "file": "index.js",
+        "line": 1391,
         "text": "const { existsSync } = await import('node:fs');"
       },
       {
         "file": "src/deletePipeline.js",
         "line": 21,
         "text": "import fs from 'node:fs';"
-      },
-      {
-        "file": "src/deletePipeline.js",
-        "line": 269,
-        "text": "if (job.archiveFile) fs.rmSync(job.archiveFile, { force: true });"
-      },
-      {
-        "file": "src/index/indexStore.js",
-        "line": 15,
-        "text": "import fs from 'node:fs';"
-      },
-      {
-        "file": "src/index/indexStore.js",
-        "line": 171,
-        "text": "fs.rmSync(path.join(this.root, gen), { recursive: true, force: true });"
       }
     ]
   },
@@ -48,13 +48,13 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 49,
+        "line": 54,
         "text": "export const inject = ['tools', 'systemPrompt'];"
       },
       {
         "file": "index.js",
-        "line": 2199,
-        "text": "disposers.push(ctx.tools.register(definition));"
+        "line": 2451,
+        "text": "disposers.push(ctx.tools.register(counted));"
       }
     ]
   },

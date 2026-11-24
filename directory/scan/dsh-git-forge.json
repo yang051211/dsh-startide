@@ -1,7 +1,7 @@
 {
   "name": "dsh-git-forge",
-  "version": "1.2.4",
-  "scannedAt": "2026-11-24T01:02:45.386Z",
+  "version": "1.3.0",
+  "scannedAt": "2026-11-24T23:54:30.560Z",
   "icon": "dsh-git-forge.svg",
   "network": {
     "hit": true,
@@ -13,13 +13,8 @@
       },
       {
         "file": "lib/index.js",
-        "line": 337,
-        "text": "const res = await fetch(url, { headers, redirect: 'follow', signal: ac.signal })"
-      },
-      {
-        "file": "scripts/smoke-test.mjs",
-        "line": 96,
-        "text": "classifyGitWriteCommand('node -e \"fetch(\\'http://127.0.0.1:3080/dsh-git-forge/api/health\\')\"').kind,"
+        "line": 332,
+        "text": "const res = await fetch(url, { headers, redirect: 'error', signal: ac.signal })"
       }
     ]
   },
@@ -38,18 +33,18 @@
       },
       {
         "file": "lib/index.js",
-        "line": 71,
-        "text": "return JSON.parse(readFileSync(path, 'utf8'))"
+        "line": 70,
+        "text": "try { text = readFileSync(path, 'utf8') } catch (error) {"
       },
       {
         "file": "lib/index.js",
-        "line": 89,
-        "text": "writeFileSync(path, JSON.stringify(data, null, 2) + '\\n', { mode })"
+        "line": 88,
+        "text": "writeFileSync(temp, JSON.stringify(data, null, 2) + '\\n', { flag: 'wx', mode })"
       },
       {
         "file": "lib/index.js",
-        "line": 821,
-        "text": "prev = readFileSync(GITCONFIG_PATH, 'utf8')"
+        "line": 90,
+        "text": "} finally { rmSync(temp, { force: true }) }"
       }
     ]
   },
@@ -68,17 +63,17 @@
       },
       {
         "file": "lib/index.js",
-        "line": 578,
+        "line": 554,
         "text": "if (!ctx.tools || typeof ctx.tools.guard !== 'function') return () => {}"
       },
       {
         "file": "lib/index.js",
-        "line": 579,
+        "line": 555,
         "text": "return ctx.tools.guard((exec) => {"
       },
       {
         "file": "lib/index.js",
-        "line": 636,
+        "line": 616,
         "text": "if (!ctx.tools || typeof ctx.tools.register !== 'function') {"
       }
     ]
@@ -95,11 +90,6 @@
         "file": "lib/shared/remote-resolve.js",
         "line": 13,
         "text": "const r = spawnSync('git', args, {"
-      },
-      {
-        "file": "scripts/smoke-test.mjs",
-        "line": 7,
-        "text": "import { execFileSync } from 'node:child_process'"
       }
     ]
   },

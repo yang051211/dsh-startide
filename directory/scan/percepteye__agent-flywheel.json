@@ -1,39 +1,45 @@
 {
   "name": "@percepteye/agent-flywheel",
-  "version": "0.4.0",
-  "scannedAt": "2026-11-10T08:49:03.949Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-24T23:54:34.231Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/flywheel.js",
+        "line": 561,
+        "text": "const wrapped = async function fetch(input, init) {"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
       {
         "file": "src/capture.js",
-        "line": 65,
+        "line": 66,
         "text": "} from \"node:fs\";"
       },
       {
         "file": "src/capture.js",
-        "line": 182,
-        "text": "rmSync(e.path, { recursive: true, force: true });"
+        "line": 69,
+        "text": "} from \"node:fs/promises\";"
       },
       {
         "file": "src/capture.js",
-        "line": 203,
-        "text": "const kept = readFileSync(index, \"utf8\").split(\"\\n\")"
+        "line": 116,
+        "text": "writeFileSync(tmp, data, \"utf8\");"
       },
       {
         "file": "src/capture.js",
-        "line": 205,
-        "text": "writeFileSync(index, kept.map((id) => `${id}\\n`).join(\"\"), \"utf8\");"
+        "line": 119,
+        "text": "try { unlinkSync(tmp); } catch { /* never written */ }"
       },
       {
         "file": "src/capture.js",
-        "line": 598,
-        "text": "readFileSync(join(root, UPLOADED_INDEX), \"utf8\")"
+        "line": 128,
+        "text": "await writeFile(tmp, data, \"utf8\");"
       }
     ]
   },
@@ -46,13 +52,8 @@
     "evidence": [
       {
         "file": "src/login.js",
-        "line": 21,
+        "line": 22,
         "text": "import { spawn } from \"node:child_process\";"
-      },
-      {
-        "file": "src/login.js",
-        "line": 80,
-        "text": "const child = spawn(cmd, args, { stdio: \"ignore\", detached: true });"
       }
     ]
   },

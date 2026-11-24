@@ -1,0 +1,97 @@
+{
+  "name": "dsh-go-imagegen",
+  "version": "0.4.13",
+  "scannedAt": "2026-11-24T23:54:25.826Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 802,
+        "text": "const r = await fetch(path, body ? { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) } : { method: 'GET' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 896,
+        "text": "m4_VS.btn, onClick: async () => { await fetch('/imagegen/vendors', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ ven"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 107,
+        "text": "try { r = await fetch(url, { ...init, signal }) }"
+      },
+      {
+        "file": "lib/picker.mjs",
+        "line": 355,
+        "text": "const res = await fetch(ep.url, {"
+      },
+      {
+        "file": "lib/picker.mjs",
+        "line": 854,
+        "text": "const res = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import { readFileSync, existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 340,
+        "text": "const text = readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 719,
+        "text": "const { readFile } = await import('node:fs/promises')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 722,
+        "text": "const buf = await readFile(text)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 25,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 969,
+        "text": "const register = (def) => imageCtx.tools.register(defineTool(def))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

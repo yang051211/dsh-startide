@@ -1,0 +1,93 @@
+{
+  "name": "dsh-swarm-console",
+  "version": "0.6.1",
+  "scannedAt": "2026-11-24T23:54:20.337Z",
+  "icon": "dsh-swarm-console.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/adapter.js",
+        "line": 109,
+        "text": "res = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/checks.js",
+        "line": 12,
+        "text": "import { existsSync as fsExistsSync, realpathSync as fsRealpathSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/core/contract.js",
+        "line": 11,
+        "text": "import { existsSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/core/gate.js",
+        "line": 89,
+        "text": "return `node -e \"process.exit(require('node:fs').existsSync(process.argv[1])?0:1)\" ${dq(target)}`"
+      },
+      {
+        "file": "lib/core/policy.js",
+        "line": 8,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/core/policy.js",
+        "line": 17,
+        "text": "const data = JSON.parse(readFileSync(join(baseDir, `${id}.json`), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 261,
+        "text": "for (const def of defs) ctx.effect(() => ctx.tools.register(def))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/adapter.js",
+        "line": 273,
+        "text": "* 上层 spawn() 里这些代码全部不用改："
+      },
+      {
+        "file": "lib/core/checks.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/core/checks.js",
+        "line": 149,
+        "text": "child = spawn(cmd, { shell: opts.shell ?? true, cwd: opts.cwd, stdio: ['ignore', 'pipe', 'pipe'] })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

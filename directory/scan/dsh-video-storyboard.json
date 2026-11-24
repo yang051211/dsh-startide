@@ -1,15 +1,20 @@
 {
   "name": "dsh-video-storyboard",
-  "version": "0.7.6",
-  "scannedAt": "2026-11-16T23:37:12.311Z",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-24T23:54:17.683Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "bin/doctor.mjs",
-        "line": 91,
+        "line": 92,
         "text": "const reachable = await fetch(probeUrl, { signal: AbortSignal.timeout(3000) })"
+      },
+      {
+        "file": "bin/doctor.mjs",
+        "line": 104,
+        "text": "const again = await fetch(probeUrl, { signal: AbortSignal.timeout(5000) })"
       },
       {
         "file": "lib/client.js",
@@ -25,11 +30,6 @@
         "file": "src/storyboard/asr.js",
         "line": 275,
         "text": "const res = await fetch(`${baseUrl.replace(/\\/$/, '')}/audio/transcriptions`, {"
-      },
-      {
-        "file": "src/storyboard/browser-time.js",
-        "line": 102,
-        "text": "const res = await fetch(`http://127.0.0.1:${port}/json/list`, { signal: ac.signal });"
       }
     ]
   },
@@ -48,17 +48,17 @@
       },
       {
         "file": "bin/doctor.mjs",
-        "line": 115,
+        "line": 129,
         "text": "await mkdir(dir, { recursive: true });"
       },
       {
         "file": "bin/doctor.mjs",
-        "line": 117,
+        "line": 131,
         "text": "await writeFile(probeFile, 'ok');"
       },
       {
         "file": "bin/doctor.mjs",
-        "line": 118,
+        "line": 132,
         "text": "await rm(probeFile, { force: true });"
       }
     ]
@@ -98,13 +98,18 @@
     "evidence": [
       {
         "file": "bin/doctor.mjs",
-        "line": 21,
+        "line": 22,
         "text": "import { execFile } from 'node:child_process';"
       },
       {
         "file": "bin/doctor.mjs",
-        "line": 30,
+        "line": 31,
         "text": "execFile(bin, args, { timeout: timeoutMs }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "bin/shadow-report.mjs",
+        "line": 13,
+        "text": "import { execFile } from 'node:child_process';"
       },
       {
         "file": "scripts/blind.mjs",
@@ -115,11 +120,6 @@
         "file": "scripts/blind.mjs",
         "line": 29,
         "text": "const r = spawnSync(FF, ['-hide_banner', '-v', 'error', '-nostdin', '-i', file, '-an', '-sn',"
-      },
-      {
-        "file": "scripts/blind.mjs",
-        "line": 38,
-        "text": "const r = spawnSync(FF, ['-hide_banner', '-v', 'error', '-y',"
       }
     ]
   },
@@ -136,12 +136,12 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 166,
+      "line": 172,
       "text": "pip install --user -U yt-dlp                  # 只有贴 B 站/YouTube 链接才需要"
     },
     {
       "file": "README.md",
-      "line": 503,
+      "line": 509,
       "text": "D:/ocr-local/.venv/Scripts/python.exe -m pip install rapidocr onnxruntime"
     }
   ],

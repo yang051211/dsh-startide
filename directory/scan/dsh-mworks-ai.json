@@ -1,0 +1,93 @@
+{
+  "name": "dsh-mworks-ai",
+  "version": "1.1.4",
+  "scannedAt": "2026-11-24T23:54:26.356Z",
+  "icon": "dsh-mworks-ai.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 326,
+        "text": "fetch(ROUTE, { cache: 'no-store', credentials: 'same-origin' })"
+      },
+      {
+        "file": "client.js",
+        "line": 343,
+        "text": "fetch(RESTART_ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 28,
+        "text": "import { existsSync, mkdirSync, readFileSync, readdirSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 290,
+        "text": "return readFileSync(path, { encoding: 'utf8', flag: 'r' }).slice(0, 64 * 1024)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 427,
+        "text": "text = readFileSync(file, { encoding: 'utf8', flag: 'r' })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1200,
+        "text": "mkdirSync(workspace, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 5,
+        "text": "# why there are no bare @deepseek-ai/dsh-mcp-client rows here."
+      },
+      {
+        "file": "lib/index.js",
+        "line": 36,
+        "text": "export const inject = ['tools', 'systemPrompt']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 786,
+        "text": "* This is the piece the bare `dsh-mcp-client` rows could not provide: a server"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1231,
+        "text": "if (typeof ctx.tools?.register === 'function') {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1232,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

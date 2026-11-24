@@ -1,0 +1,94 @@
+{
+  "name": "dsh-alk-pet",
+  "version": "0.5.1",
+  "scannedAt": "2026-11-24T23:54:35.407Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 179,
+        "text": "      fetch('/plugins/dsh-alk-pet/hover', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ source: hoverSource.current,"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 197,
+        "text": "      fetch('/plugins/dsh-alk-pet/title', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ sessionId: selectedId, title"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 201,
+        "text": "      fetch(configEndpoint, { cache: 'no-store' }).then((response) => response.ok ? response.json() : null).then((value) => { if (alive && value) applySnapshotC"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 275,
+        "text": "        fetch('/plugins/dsh-alk-pet/viewed', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ sessionId: completed.sess"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 294,
+        "text": "fetch('/plugins/dsh-alk-pet/select', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ sessionId }) }).catch(() => {})"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/assets.js",
+        "line": 1,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/assets.js",
+        "line": 22,
+        "text": "const value = JSON.parse(readFileSync(path, 'utf8'))"
+      },
+      {
+        "file": "src/helper-log.js",
+        "line": 1,
+        "text": "import { appendFileSync, mkdirSync, renameSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "src/helper-log.js",
+        "line": 36,
+        "text": "mkdirSync(dirname(path), { recursive: true })"
+      },
+      {
+        "file": "src/helper-log.js",
+        "line": 42,
+        "text": "appendFileSync(path, line)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/native.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "runtime/bin/darwin/dsh-alk-pet-helper"
+  ],
+  "requiredServices": [
+    "sessions"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
