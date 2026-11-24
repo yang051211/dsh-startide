@@ -1,0 +1,112 @@
+{
+  "name": "rcs-context",
+  "version": "0.1.40",
+  "scannedAt": "2026-11-24T01:02:50.672Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "contextinjector-webui/lib/client.js",
+        "line": 398,
+        "text": "return fetch(\"/api/context-inject/status\" + q, { headers: { \"Content-Type\": \"application/json\" } })"
+      },
+      {
+        "file": "contextinjector-webui/lib/client.js",
+        "line": 479,
+        "text": "fetch(\"/api/context-inject/config\", { method: \"POST\", headers: { \"Content-Type\": \"application/json\" }, body: JSON.stringify({ condenseMaxTokens: v }) })"
+      },
+      {
+        "file": "contextinjector-webui/lib/client.js",
+        "line": 488,
+        "text": "fetch(\"/api/context-inject/config\", { method: \"POST\", headers: { \"Content-Type\": \"application/json\" }, body: JSON.stringify({ condenseMinBytes: v }) })"
+      },
+      {
+        "file": "contextinjector-webui/lib/client.js",
+        "line": 499,
+        "text": "fetch(\"/api/context-inject/config\", { method: \"POST\", headers: { \"Content-Type\": \"application/json\" }, body: JSON.stringify({ prompts: patch || null }) })"
+      },
+      {
+        "file": "contextinjector-webui/lib/client.js",
+        "line": 521,
+        "text": "return fetch(\"/api/context-inject/config\", {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "condense/ivr.mjs",
+        "line": 8,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "condense/ivr.mjs",
+        "line": 28,
+        "text": "return JSON.parse(readFileSync(fp, 'utf8'))"
+      },
+      {
+        "file": "condense/ivr.mjs",
+        "line": 33,
+        "text": "mkdirSync(join(stateDir, 'ivr'), { recursive: true })"
+      },
+      {
+        "file": "condense/ivr.mjs",
+        "line": 36,
+        "text": "try { st = existsSync(fp) ? JSON.parse(readFileSync(fp, 'utf8')) : null } catch { st = null }"
+      },
+      {
+        "file": "condense/ivr.mjs",
+        "line": 43,
+        "text": "try { writeFileSync(fp + '.bak-' + (st.roundSemantics || 'io') + '-' + Date.now(), JSON.stringify(st, null, 2)) } catch { /* ignore */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "web/contextinjector.mjs",
+        "line": 56,
+        "text": "alse，generator 写法 registered=true。插件内三处（ctx.tools 直挂 / ctx.inject 延迟挂 / 补挂器）统一改走 holdToolRegistration 的 generator 持有形。v1.10.69 的 inject:[\"tools\"]、v1.10.70 的补挂与落"
+      },
+      {
+        "file": "web/contextinjector.mjs",
+        "line": 2131,
+        "text": "// 【根因 · v1.10.69】必须声明 inject: ['tools']，让插件在 tools 服务就绪后才 apply。"
+      },
+      {
+        "file": "web/contextinjector.mjs",
+        "line": 2136,
+        "text": "//   差别就在它写了 inject: ['tools'] 并在 apply 里同步 ctx.tools.register()。"
+      },
+      {
+        "file": "web/contextinjector.mjs",
+        "line": 2137,
+        "text": "inject: ['tools'],"
+      },
+      {
+        "file": "web/contextinjector.mjs",
+        "line": 2168,
+        "text": "const dispose = tools.register(makeTranscriptExpandTool())"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "web/contextinjector.mjs"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,114 @@
+{
+  "name": "life-innovation",
+  "version": "0.6.3",
+  "scannedAt": "2026-11-24T01:02:48.347Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "install/entry.mjs",
+        "line": 15,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/hands.js",
+        "line": 20,
+        "text": "import https from 'node:https'"
+      },
+      {
+        "file": "lib/hands.js",
+        "line": 198,
+        "text": "const req = https.request({"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 91,
+        "text": "fs.mkdirSync(path.dirname(homeDbHintFile(home)), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 92,
+        "text": "fs.writeFileSync(homeDbHintFile(home), dbPath, 'utf8')"
+      },
+      {
+        "file": "install/entry.mjs",
+        "line": 14,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "install/entry.mjs",
+        "line": 43,
+        "text": "const text = fs.readFileSync(urlFile, 'utf8').replace(/[\\r\\n]+/g, '').trim()"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 30,
+        "text": "export const inject = ['systemPrompt', 'tools']"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 1269,
+        "text": "disposers.push(ctx.tools.register(def))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/notify.js",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/notify.js",
+        "line": 43,
+        "text": "const child = spawn('powershell.exe', ["
+      },
+      {
+        "file": "tools/backup.mjs",
+        "line": 11,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "tools/backup.mjs",
+        "line": 48,
+        "text": "const result = spawnSync(process.execPath, ["
+      },
+      {
+        "file": "tools/package-smoke.mjs",
+        "line": 2,
+        "text": "import { execFileSync, spawnSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

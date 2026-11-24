@@ -1,0 +1,60 @@
+{
+  "name": "dsh-seesion-copy-enhance",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-24T01:02:49.743Z",
+  "icon": "dsh-seesion-copy-enhance.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 573,
+        "text": "const response = await fetch(`${ROUTE}${path}`, {"
+      },
+      {
+        "file": "verify.ps1",
+        "line": 36,
+        "text": "$probe = Invoke-WebRequest -Uri \"http://127.0.0.1:$candidate$Base/health\" -UseBasicParsing -TimeoutSec 3"
+      },
+      {
+        "file": "verify.ps1",
+        "line": 49,
+        "text": "$health = Invoke-RestMethod -Uri \"$root/health\" -TimeoutSec 15"
+      },
+      {
+        "file": "verify.ps1",
+        "line": 53,
+        "text": "$inspect = Invoke-RestMethod -Uri \"$root/inspect\" -TimeoutSec 30"
+      },
+      {
+        "file": "verify.ps1",
+        "line": 83,
+        "text": "$captureResult = Invoke-RestMethod -Uri \"$root/capture\" -Method Post -ContentType 'application/json' -Body $body -TimeoutSec 180"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessions"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

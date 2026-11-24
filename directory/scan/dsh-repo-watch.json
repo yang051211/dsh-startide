@@ -1,7 +1,7 @@
 {
   "name": "dsh-repo-watch",
-  "version": "0.5.5",
-  "scannedAt": "2026-11-23T09:10:16.934Z",
+  "version": "0.5.6",
+  "scannedAt": "2026-11-24T01:02:31.071Z",
   "icon": "dsh-repo-watch.svg",
   "network": {
     "hit": true,
@@ -17,6 +17,16 @@
     "hit": true,
     "evidence": [
       {
+        "file": "index.mjs",
+        "line": 17,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.mjs",
+        "line": 109,
+        "text": "const raw = readFileSync(new URL('./package.json', import.meta.url), 'utf8')"
+      },
+      {
         "file": "lib/github.mjs",
         "line": 8,
         "text": "import { readFileSync } from 'node:fs'"
@@ -30,16 +40,6 @@
         "file": "lib/log.mjs",
         "line": 11,
         "text": "import { appendFileSync, renameSync, statSync } from 'node:fs'"
-      },
-      {
-        "file": "lib/log.mjs",
-        "line": 33,
-        "text": "appendFileSync(path, `${JSON.stringify({ time: Date.now(), ...record })}\\n`)"
-      },
-      {
-        "file": "lib/state.mjs",
-        "line": 9,
-        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
       }
     ]
   },
@@ -48,27 +48,27 @@
     "evidence": [
       {
         "file": "index.mjs",
-        "line": 31,
+        "line": 33,
         "text": "* reaching for `ctx.tools` without declaring it fails activation with"
       },
       {
         "file": "index.mjs",
-        "line": 34,
+        "line": 36,
         "text": "export const inject = ['tools']"
       },
       {
         "file": "index.mjs",
-        "line": 444,
+        "line": 457,
         "text": "ctx.tools.register(statusTool(config))"
       },
       {
         "file": "index.mjs",
-        "line": 445,
+        "line": 458,
         "text": "ctx.tools.register(digestTool(config))"
       },
       {
         "file": "index.mjs",
-        "line": 446,
+        "line": 459,
         "text": "ctx.tools.register(ackTool(config))"
       }
     ]

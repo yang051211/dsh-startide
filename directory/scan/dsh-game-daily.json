@@ -1,7 +1,7 @@
 {
   "name": "dsh-game-daily",
-  "version": "0.3.12",
-  "scannedAt": "2026-11-15T20:14:31.832Z",
+  "version": "0.3.13",
+  "scannedAt": "2026-11-24T01:02:46.118Z",
   "icon": "dsh-game-daily.svg",
   "network": {
     "hit": true,
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/mcp-register.mjs",
-        "line": 58,
+        "line": 164,
         "text": "\"      name: '@deepseek-ai/dsh-mcp-client'\","
       },
       {
         "file": "lib/runner.mjs",
-        "line": 139,
+        "line": 140,
         "text": "\"      name: '@deepseek-ai/dsh-mcp-client'\","
       },
       {
         "file": "lib/runner.mjs",
-        "line": 158,
+        "line": 159,
         "text": "\"      name: '@deepseek-ai/dsh-mcp-client'\","
       },
       {
         "file": "lib/runner.mjs",
-        "line": 181,
+        "line": 182,
         "text": "\"      name: '@deepseek-ai/dsh-mcp-client'\","
       },
       {
         "file": "lib/runner.mjs",
-        "line": 204,
+        "line": 205,
         "text": "\"      name: '@deepseek-ai/dsh-mcp-client'\","
       }
     ]
@@ -96,6 +96,16 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/deps.mjs",
+        "line": 5,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/deps.mjs",
+        "line": 158,
+        "text": "// 带空格的路径必须先加引号：spawn(shell:true) 是拼字符串交给 cmd.exe，不引号会在第一个空格处截断"
+      },
       {
         "file": "lib/gameproc.mjs",
         "line": 9,
@@ -110,16 +120,6 @@
         "file": "lib/m7a.mjs",
         "line": 246,
         "text": "const result = spawnSync(exe, args, {"
-      },
-      {
-        "file": "lib/maa.mjs",
-        "line": 12,
-        "text": "import { spawn, spawnSync, execFileSync } from 'node:child_process';"
-      },
-      {
-        "file": "lib/maa.mjs",
-        "line": 94,
-        "text": "const r = spawnSync('where', ['adb'], { encoding: 'utf8', windowsHide: true, timeout: 5000 });"
       }
     ]
   },

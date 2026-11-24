@@ -1,0 +1,106 @@
+{
+  "name": "dsh-router-worker",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-24T01:02:52.013Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 644,
+        "text": "const res = await fetch(ticketRouteUrl(), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/store.js",
+        "line": 45,
+        "text": "import { mkdirSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 158,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "presets/router-worker/approval-gate.mjs",
+        "line": 128,
+        "text": "*   1. PTC 程序体内**直连 Node 的效果**（`require('fs').writeFileSync`、"
+      },
+      {
+        "file": "presets/router-worker/file-info.mjs",
+        "line": 90,
+        "text": "* `[\"tools\",\"fs\",\"systemPrompt\"]`）：没有 fs 服务时，本工具**无法**取得任何元数据，"
+      },
+      {
+        "file": "presets/router-worker/file-info.mjs",
+        "line": 97,
+        "text": "export const inject = ['tools', 'fs']"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "presets/router-worker/coordinator-guard.mjs",
+        "line": 106,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "presets/router-worker/file-info.mjs",
+        "line": 38,
+        "text": "* `ctx.tools.register()` 的校验只有四件事（`dsh-tools/lib/index.js:2878-2887`）："
+      },
+      {
+        "file": "presets/router-worker/file-info.mjs",
+        "line": 97,
+        "text": "export const inject = ['tools', 'fs']"
+      },
+      {
+        "file": "presets/router-worker/file-info.mjs",
+        "line": 254,
+        "text": "* ⚠️ 为什么必须自己校验：`ctx.tools.register()` **不代验参数**（只校验 output 与名字），"
+      },
+      {
+        "file": "presets/router-worker/file-info.mjs",
+        "line": 493,
+        "text": "* @param ctx - preset scope 的插件上下文（`ctx.fs` 与 `ctx.tools` 都在它上面）。"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "presets/router-worker/workspace-acl.mjs",
+        "line": 137,
+        "text": "* 「零 import」是本仓预设模块的约定，所以这里用**动态** `import('node:child_process')`："
+      },
+      {
+        "file": "presets/router-worker/workspace-acl.mjs",
+        "line": 618,
+        "text": "const { spawn } = await import('node:child_process')"
+      },
+      {
+        "file": "presets/router-worker/workspace-acl.mjs",
+        "line": 640,
+        "text": "child = spawn(exe, ['-NoProfile', '-NonInteractive', '-EncodedCommand', encoded], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

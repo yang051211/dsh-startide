@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-lark-bridge",
-  "version": "0.2.0",
-  "scannedAt": "2026-11-22T08:23:33.029Z",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-24T01:02:38.291Z",
   "icon": "dsh-plugin-lark-bridge.svg",
   "network": {
     "hit": true,
@@ -18,27 +18,27 @@
     "evidence": [
       {
         "file": "dist/index.mjs",
-        "line": 8,
+        "line": 9,
         "text": "import { mkdir, readFile, rename, rm, stat, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "dist/index.mjs",
-        "line": 1445,
+        "line": 1410,
         "text": "const text = await readFile(this.file, \"utf8\");"
       },
       {
         "file": "dist/index.mjs",
-        "line": 1533,
+        "line": 1498,
         "text": "await mkdir(dirname(this.file), { recursive: true });"
       },
       {
         "file": "dist/index.mjs",
-        "line": 1535,
+        "line": 1500,
         "text": "await writeFile(tmp, `${JSON.stringify(state, null, 2)}\\n`, \"utf8\");"
       },
       {
         "file": "dist/index.mjs",
-        "line": 1536,
+        "line": 1501,
         "text": "await rm(this.file, { force: true });"
       }
     ]
@@ -48,8 +48,28 @@
     "evidence": [
       {
         "file": "dist/index.mjs",
-        "line": 1861,
+        "line": 1826,
         "text": "const unregisterTool = ctx.tools.register(notifyTool, { when: ({ agent }) => isBridgeAgent(agent) });"
+      },
+      {
+        "file": "dist/sa-dispatch.mjs",
+        "line": 132,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "dist/sa-dispatch.mjs",
+        "line": 184,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "dist/sa-dispatch.mjs",
+        "line": 270,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "dist/sa-dispatch.mjs",
+        "line": 319,
+        "text": "ctx.tools.register(defineTool({"
       }
     ]
   },
@@ -58,27 +78,27 @@
     "evidence": [
       {
         "file": "dist/index.mjs",
-        "line": 1,
+        "line": 2,
         "text": "import { spawn } from \"node:child_process\";"
       },
       {
         "file": "dist/index.mjs",
-        "line": 142,
+        "line": 143,
         "text": "spawn(\"taskkill\", ["
       },
       {
         "file": "dist/index.mjs",
-        "line": 265,
+        "line": 266,
         "text": "spawn(args) {"
       },
       {
         "file": "dist/index.mjs",
-        "line": 601,
+        "line": 602,
         "text": "this.spawn();"
       },
       {
         "file": "dist/index.mjs",
-        "line": 625,
+        "line": 626,
         "text": "spawn() {"
       }
     ]
@@ -87,7 +107,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [
     "dist/client.js"
   ],

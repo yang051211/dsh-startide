@@ -1,0 +1,102 @@
+{
+  "name": "@hfshfg/dsh-aigc",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-24T01:02:53.848Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/image.mjs",
+        "line": 48,
+        "text": "const r = await fetch(`${baseUrl}/v1/images/generations`, {"
+      },
+      {
+        "file": "lib/image.mjs",
+        "line": 89,
+        "text": "const r = await fetch(url, { signal: AbortSignal.timeout(timeoutMs ?? 180000) })"
+      },
+      {
+        "file": "lib/music.mjs",
+        "line": 50,
+        "text": "const submit = await fetch(`${baseUrl}/suno/submit/music`, {"
+      },
+      {
+        "file": "lib/music.mjs",
+        "line": 68,
+        "text": "const r = await fetch(`${baseUrl}/suno/fetch/${encodeURIComponent(taskId)}`, {"
+      },
+      {
+        "file": "lib/music.mjs",
+        "line": 91,
+        "text": "const rr = await fetch(`${baseUrl}/suno/fetch/${encodeURIComponent(taskId)}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/image.mjs",
+        "line": 3,
+        "text": "import { mkdirSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/image.mjs",
+        "line": 64,
+        "text": "mkdirSync(outputDir, { recursive: true })"
+      },
+      {
+        "file": "lib/image.mjs",
+        "line": 80,
+        "text": "writeFileSync(path, buf)"
+      },
+      {
+        "file": "lib/music.mjs",
+        "line": 4,
+        "text": "import { mkdirSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/music.mjs",
+        "line": 103,
+        "text": "mkdirSync(outputDir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 2,
+        "text": "// 插件形态：命名插件（name / inject / apply），无默认导出；工具注册在 ctx.tools 上"
+      },
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 198,
+        "text": "for (const definition of createDefinitions(ctx, config)) ctx.tools.register(definition)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

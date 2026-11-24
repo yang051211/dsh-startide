@@ -1,7 +1,7 @@
 {
   "name": "dsh-release-depot",
-  "version": "1.1.6",
-  "scannedAt": "2026-11-23T09:10:32.220Z",
+  "version": "1.1.11",
+  "scannedAt": "2026-11-24T01:02:41.126Z",
   "icon": "dsh-release-depot.svg",
   "network": {
     "hit": true,
@@ -18,7 +18,7 @@
       },
       {
         "file": "client.js",
-        "line": 1949,
+        "line": 2013,
         "text": "diag(t('undici', 'undici'), diagnostics.network.undici ? t('可用', 'available') : t('不可用（直连 fetch）', 'missing (plain fetch)')),"
       },
       {
@@ -28,7 +28,7 @@
       },
       {
         "file": "lib/github.js",
-        "line": 563,
+        "line": 760,
         "text": "res = await network.fetch(DEVICE_CODE_URL, {"
       }
     ]
@@ -38,28 +38,28 @@
     "evidence": [
       {
         "file": "lib/github.js",
-        "line": 459,
+        "line": 441,
         "text": "const { readFile } = await import('node:fs/promises')"
       },
       {
         "file": "lib/github.js",
-        "line": 469,
-        "text": "const data = await readFile(file.absolutePath)"
+        "line": 442,
+        "text": "const raw = await readFile(file.absolutePath)"
+      },
+      {
+        "file": "lib/github.js",
+        "line": 593,
+        "text": "const { readFile } = await import('node:fs/promises')"
+      },
+      {
+        "file": "lib/github.js",
+        "line": 608,
+        "text": "const raw = await readFile(file.absolutePath)"
       },
       {
         "file": "lib/net.js",
         "line": 21,
         "text": "import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'"
-      },
-      {
-        "file": "lib/net.js",
-        "line": 148,
-        "text": "if (existsSync(path)) return readFileSync(path, 'utf8')"
-      },
-      {
-        "file": "lib/net.js",
-        "line": 230,
-        "text": "const cached = readFileSync(cacheFile, 'utf8')"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 201,
+        "line": 204,
         "text": "const disposers = tools.map((tool) => agentCtx.tools.register(tool))"
       }
     ]

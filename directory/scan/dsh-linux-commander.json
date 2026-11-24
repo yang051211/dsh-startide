@@ -1,0 +1,86 @@
+{
+  "name": "dsh-linux-commander",
+  "version": "1.3.0",
+  "scannedAt": "2026-11-24T01:02:52.689Z",
+  "icon": "dsh-linux-commander.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 396,
+        "text": "fetch('/linux-commander/query', {"
+      },
+      {
+        "file": "src/ai.js",
+        "line": 136,
+        "text": "res = await fetch(endpoint, {"
+      },
+      {
+        "file": "src/client/widget.js",
+        "line": 389,
+        "text": "fetch('/linux-commander/query', {"
+      },
+      {
+        "file": "src/nl.js",
+        "line": 222,
+        "text": "\\s*(?:一个)?post\\s*(?:请求)?\\s*(https?:\\/\\/\\S+)?/i, cmd: m => `curl -X POST -H 'Content-Type: application/json' -d '<数据>' ${m[1] || '<URL>'}`, note: '发送 POST 请求' },"
+      },
+      {
+        "file": "src/nl.js",
+        "line": 223,
+        "text": "{ re: /(?:查看|获取)?\\s*(?:http|https)?\\s*(?:响应头|头部|headers?)\\s*(https?:\\/\\/\\S+)?/i, cmd: m => `curl -I ${m[1] || '<URL>'}`, note: '查看 HTTP 响应头' },"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "build-client.mjs",
+        "line": 6,
+        "text": "import { readFileSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "build-client.mjs",
+        "line": 16,
+        "text": "const pkgName = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8')).name;"
+      },
+      {
+        "file": "build-client.mjs",
+        "line": 17,
+        "text": "const zh = JSON.parse(readFileSync(join(root, 'locale', 'zh.json'), 'utf8'));"
+      },
+      {
+        "file": "build-client.mjs",
+        "line": 18,
+        "text": "const en = JSON.parse(readFileSync(join(root, 'locale', 'en.json'), 'utf8'));"
+      },
+      {
+        "file": "build-client.mjs",
+        "line": 19,
+        "text": "const widget = readFileSync(join(root, 'src', 'client', 'widget.js'), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

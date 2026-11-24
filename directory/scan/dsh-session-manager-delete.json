@@ -1,0 +1,85 @@
+{
+  "name": "dsh-session-manager-delete",
+  "version": "0.6.2",
+  "scannedAt": "2026-11-24T01:02:48.146Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.bundle.js",
+        "line": 716,
+        "text": "response = await fetch(url, controller ? { ...options, signal: controller.signal } : options)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 711,
+        "text": "response = await fetch(url, controller ? { ...options, signal: controller.signal } : options)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 49,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 50,
+        "text": "import fsp from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1915,
+        "text": "await fsp.rm(target, { recursive, force: true })"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 8,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "scripts/build-client.mjs",
+        "line": 14,
+        "text": "const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/verify-host.mjs",
+        "line": 12,
+        "text": "import childProcess from 'node:child_process'"
+      },
+      {
+        "file": "scripts/verify-host.mjs",
+        "line": 847,
+        "text": "const holder = childProcess.spawn(process.execPath, ['-e', 'setTimeout(() => {}, 15000)'], {"
+      },
+      {
+        "file": "scripts/verify-host.mjs",
+        "line": 1186,
+        "text": "const spillHolder = childProcess.spawn(process.execPath, ['-e', 'setTimeout(() => {}, 8000)'], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

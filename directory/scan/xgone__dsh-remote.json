@@ -1,19 +1,19 @@
 {
   "name": "@xgone/dsh-remote",
-  "version": "0.3.7-next.2",
-  "scannedAt": "2026-11-05T21:22:52.968Z",
+  "version": "0.3.8",
+  "scannedAt": "2026-11-24T01:02:47.421Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 644,
+        "line": 664,
         "text": "const response = await fetch(\"/auth/file?path=\" + encodeURIComponent(path) + (isDocx ? \"&format=text\" : \"&format=json\"), { credentials: \"same-origin\" });"
       },
       {
         "file": "lib/client.js",
-        "line": 984,
+        "line": 1004,
         "text": "res = await fetch(path, {"
       },
       {
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/files-store.js",
-        "line": 20,
+        "file": "lib/anonymous-paths-store.js",
+        "line": 9,
         "text": "import { chmodSync, mkdirSync, readFileSync, renameSync, writeFileSync } from \"node:fs\";"
       },
       {
-        "file": "lib/files-store.js",
-        "line": 44,
+        "file": "lib/anonymous-paths-store.js",
+        "line": 69,
         "text": "raw = readFileSync(this.path, \"utf8\");"
       },
       {
-        "file": "lib/files-store.js",
-        "line": 68,
+        "file": "lib/anonymous-paths-store.js",
+        "line": 86,
         "text": "mkdirSync(dirname(this.path), { recursive: true });"
       },
       {
-        "file": "lib/files-store.js",
-        "line": 70,
-        "text": "writeFileSync(tmp, `${JSON.stringify({ version: 1, roots: this.roots }, null, 2)}\\n`, { mode: 0o600 });"
+        "file": "lib/anonymous-paths-store.js",
+        "line": 88,
+        "text": "writeFileSync(tmp, `${JSON.stringify({ version: 1, paths: this.paths }, null, 2)}\\n`, { mode: 0o600 });"
       },
       {
-        "file": "lib/index.js",
-        "line": 32,
-        "text": "import { createReadStream, readdirSync, readFileSync, realpathSync, statSync } from \"node:fs\";"
+        "file": "lib/files-store.js",
+        "line": 20,
+        "text": "import { chmodSync, mkdirSync, readFileSync, renameSync, writeFileSync } from \"node:fs\";"
       }
     ]
   },

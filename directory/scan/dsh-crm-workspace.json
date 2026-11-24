@@ -1,0 +1,123 @@
+{
+  "name": "dsh-crm-workspace",
+  "version": "0.5.6",
+  "scannedAt": "2026-11-24T01:02:39.012Z",
+  "icon": "dsh-crm-workspace.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "examples/meeting-provider-tencent/cli.js",
+        "line": 5,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "src/audit/store.js",
+        "line": 2,
+        "text": "import { appendFile, chmod, mkdir, readFile, rename, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "src/audit/store.js",
+        "line": 57,
+        "text": "await mkdir(path.dirname(this.filePath), { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "src/audit/store.js",
+        "line": 58,
+        "text": "await appendFile(this.filePath, `${JSON.stringify(entry)}\\n`, { mode: 0o600 });"
+      },
+      {
+        "file": "src/audit/store.js",
+        "line": 66,
+        "text": "const text = await readFile(this.filePath, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/chat/service.js",
+        "line": 282,
+        "text": "agentCtx.tools.register(createCustomerContextTool({"
+      },
+      {
+        "file": "src/chat/service.js",
+        "line": 287,
+        "text": "agentCtx.tools.register(createCrmCliProposeTool({"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 363,
+        "text": ".map((definition) => toolsCtx.tools.register(definition));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "examples/meeting-provider-tencent/cli.js",
+        "line": 4,
+        "text": "import { execFile, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "examples/meeting-provider-tencent/cli.js",
+        "line": 175,
+        "text": "const child = spawn(CLI, ['auth', 'login', '--no-browser'], { stdio: 'inherit' });"
+      },
+      {
+        "file": "src/binding/service.js",
+        "line": 3,
+        "text": "import { spawn as defaultSpawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/binding/service.js",
+        "line": 490,
+        "text": "return this.spawn(target.command, target.args, { windowsHide: true, ...options });"
+      },
+      {
+        "file": "src/crm/neocrm-cli.js",
+        "line": 113,
+        "text": "const child = spawn(this.cliPath, ['auth:login', '-c', clientId, '--host', host], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 24,
+      "text": "npm install -g neocrm-cli-client        # 销售易"
+    },
+    {
+      "file": "README.md",
+      "line": 25,
+      "text": "npm install -g @salesforce/cli          # Salesforce"
+    },
+    {
+      "file": "README.md",
+      "line": 29,
+      "text": "npm install -g @tencentcloud/tmeet      # 腾讯会议"
+    },
+    {
+      "file": "README.md",
+      "line": 31,
+      "text": "npm install -g dingtalk-workspace-cli   # 钉钉会议"
+    }
+  ],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-agent-memory-hub",
-  "version": "0.1.41",
-  "scannedAt": "2026-11-22T21:06:27.410Z",
+  "version": "0.1.42",
+  "scannedAt": "2026-11-24T01:02:28.604Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,8 +18,8 @@
       },
       {
         "file": "dist/index.js",
-        "line": 1415,
-        "text": "async function j(url, opts) { const r = await fetch(url, opts); return { ok: r.ok, status: r.status, data: await r.json().catch(() => ({})) }; }"
+        "line": 1422,
+        "text": "const r = await fetch(url, { ...(opts ?? {}), signal: ctrl.signal });"
       }
     ]
   },
@@ -58,17 +58,17 @@
     "evidence": [
       {
         "file": "dist/index.js",
-        "line": 2325,
+        "line": 2367,
         "text": "var inject = [\"tools\", \"systemPrompt\"];"
       },
       {
         "file": "dist/index.js",
-        "line": 2378,
+        "line": 2420,
         "text": "const existing = ctx.tools.get(toolName);"
       },
       {
         "file": "dist/index.js",
-        "line": 2394,
+        "line": 2436,
         "text": "disposers.push(ctx.tools.register(tool));"
       }
     ]
@@ -88,7 +88,7 @@
       },
       {
         "file": "dist/index.js",
-        "line": 1566,
+        "line": 1595,
         "text": "var import_node_child_process2 = require(\"node:child_process\");"
       }
     ]

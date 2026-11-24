@@ -1,19 +1,29 @@
 {
   "name": "dsh-tiaforge",
-  "version": "0.3.3",
-  "scannedAt": "2026-11-19T08:55:15.589Z",
+  "version": "0.9.6",
+  "scannedAt": "2026-11-24T01:02:41.329Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
+        "file": "bin/setup.mjs",
+        "line": 17,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/probe.mjs",
+        "line": 36,
+        "text": "response = await fetch(target, {"
+      },
+      {
         "file": "skills/tialink-tia-portal/scripts/tialink-check.sh",
-        "line": 31,
+        "line": 32,
         "text": "code=$(curl -sS -o /tmp/tialink-init.out -w '%{http_code}' -m 30 \\"
       },
       {
         "file": "skills/tialink-tia-portal/scripts/tialink-check.sh",
-        "line": 48,
+        "line": 49,
         "text": "code2=$(curl -sS -o /tmp/tialink-tools.out -w '%{http_code}' -m 60 \\"
       }
     ]
@@ -22,14 +32,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 8,
-        "text": "import { readFileSync, readdirSync, existsSync } from 'node:fs'"
+        "file": "bin/setup.mjs",
+        "line": 18,
+        "text": "import fs from 'node:fs'"
       },
       {
-        "file": "index.js",
-        "line": 48,
-        "text": "const raw = readFileSync(file, 'utf8')"
+        "file": "bin/setup.mjs",
+        "line": 30,
+        "text": "const pkg = JSON.parse(fs.readFileSync(path.join(here, '..', 'package.json'), 'utf8'))"
+      },
+      {
+        "file": "bin/setup.mjs",
+        "line": 31,
+        "text": "const PAGE = fs.readFileSync(path.join(here, '..', 'assets', 'setup.html'), 'utf8')"
+      },
+      {
+        "file": "bin/setup.mjs",
+        "line": 55,
+        "text": "const existing = fs.existsSync(credentialsPath) ? parseRefs(fs.readFileSync(credentialsPath, 'utf8')) : new Map()"
+      },
+      {
+        "file": "bin/setup.mjs",
+        "line": 159,
+        "text": "const refs = fs.existsSync(credentialsPath) ? parseRefs(fs.readFileSync(credentialsPath, 'utf8')) : new Map()"
       }
     ]
   },
@@ -38,17 +63,7 @@
     "evidence": [
       {
         "file": "cordis.patch.yml",
-        "line": 16,
-        "text": "name: '@deepseek-ai/dsh-mcp-client'"
-      },
-      {
-        "file": "cordis.patch.yml",
-        "line": 28,
-        "text": "name: '@deepseek-ai/dsh-mcp-client'"
-      },
-      {
-        "file": "cordis.patch.yml",
-        "line": 39,
+        "line": 37,
         "text": "name: '@deepseek-ai/dsh-mcp-client'"
       },
       {
@@ -58,23 +73,62 @@
       },
       {
         "file": "cordis.patch.yml",
-        "line": 63,
+        "line": 64,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 78,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 94,
         "text": "name: '@deepseek-ai/dsh-mcp-client'"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/setup.mjs",
+        "line": 21,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "bin/setup.mjs",
+        "line": 336,
+        "text": "spawn(command, commandArgs, { detached: true, stdio: 'ignore' }).unref()"
+      },
+      {
+        "file": "lib/clipboard.mjs",
+        "line": 7,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [],
-  "setupHints": [],
+  "requiredServices": [
+    "skills"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 88,
+      "text": "> `node ~/.dsh/profiles/web/node_modules/dsh-tiaforge/bin/setup.mjs`（Windows 把 `~` 换成 `C:\\Users\\<你>`）。"
+    },
+    {
+      "file": "README.md",
+      "line": 216,
+      "text": "├── bin/setup.mjs          # 本地回环配置页 + 测试连接"
+    }
+  ],
   "skippedEntries": []
 }

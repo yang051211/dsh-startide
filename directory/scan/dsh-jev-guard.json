@@ -1,19 +1,19 @@
 {
   "name": "dsh-jev-guard",
-  "version": "0.5.9",
-  "scannedAt": "2026-11-07T14:33:17.819Z",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-24T01:02:49.082Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/gate.js",
-        "line": 512,
+        "line": 558,
         "text": "const res = await fetch(cfg.endpoint, {"
       },
       {
         "file": "lib/rules.js",
-        "line": 273,
+        "line": 300,
         "text": ", where: 'command', re: /(curl|wget|iwr|Invoke-WebRequest|Invoke-RestMethod)[^\\n]*\\|\\s*(bash|sh|zsh|iex|Invoke-Expression)/i, why: { 'zh-CN': '把远端脚本直接喂给 shell 执"
       },
       {
@@ -34,26 +34,26 @@
       {
         "file": "adapters/dsh/index.js",
         "line": 18,
-        "text": "import { readFileSync } from 'node:fs'"
+        "text": "import { readFileSync, realpathSync } from 'node:fs'"
       },
       {
         "file": "adapters/dsh/index.js",
-        "line": 70,
+        "line": 71,
         "text": "return JSON.parse(readFileSync(configFilePath(ROOT), 'utf8'))"
       },
       {
         "file": "adapters/dsh/index.js",
-        "line": 132,
+        "line": 133,
         "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
       },
       {
         "file": "bin/guard.mjs",
-        "line": 24,
+        "line": 25,
         "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "bin/guard.mjs",
-        "line": 106,
+        "line": 108,
         "text": "file = JSON.parse(await readFile(configFilePath(ROOT), 'utf8'))"
       }
     ]
@@ -63,7 +63,7 @@
     "evidence": [
       {
         "file": "adapters/dsh/index.js",
-        "line": 80,
+        "line": 81,
         "text": "export const inject = ['tools', 'credentials']"
       },
       {

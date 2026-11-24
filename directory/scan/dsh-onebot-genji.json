@@ -1,0 +1,120 @@
+{
+  "name": "dsh-onebot-genji",
+  "version": "0.17.1",
+  "scannedAt": "2026-11-24T01:02:38.979Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/connection.js",
+        "line": 411,
+        "text": "socket = new WebSocket(url, { headers, handshakeTimeout: 10_000, maxPayload: MAX_FRAME_BYTES });"
+      },
+      {
+        "file": "lib/media.js",
+        "line": 226,
+        "text": "const response = await fetch(current, { redirect: 'manual', signal: AbortSignal.timeout(Math.max(0, deadline - Date.now())) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge.js",
+        "line": 11,
+        "text": "import { realpath } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 14,
+        "text": "import { appendFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 646,
+        "text": "appendFileSync(homedir() + '\\\\.dsh\\\\onebot-title-sync.log', '[' + new Date().toISOString() + '] ' + message + '\\n');"
+      },
+      {
+        "file": "lib/chat-tails.js",
+        "line": 16,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/chat-tails.js",
+        "line": 82,
+        "text": "parsed = JSON.parse(await readFile(this.path, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/ask-tool.js",
+        "line": 181,
+        "text": "const disposer = ctx.tools.register(tool);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 67,
+        "text": "export const inject = ['tools', 'systemPrompt', 'agents', 'sessions', 'agentDefaultModel', 'agentPresets', 'sessionPersistence', 'workspaceRegistry', 'commands'"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 152,
+        "text": "disposers.push(ctx.tools.register(gated));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/commands.js",
+        "line": 2,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/stt.js",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/stt.js",
+        "line": 91,
+        "text": "const child = spawn(program, args, { stdio: ['ignore', 'pipe', 'pipe'] });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 5,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentDefaultModel",
+    "agentPresets",
+    "agents",
+    "commands",
+    "configEditor",
+    "llm",
+    "profileContext",
+    "sessionPersistence",
+    "sessions",
+    "systemPrompt",
+    "tools",
+    "workspaceRegistry"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 59,
+      "text": "pip install faster-whisper      # 首次运行会自动下载模型（small 约 480 MB）"
+    }
+  ],
+  "skippedEntries": []
+}

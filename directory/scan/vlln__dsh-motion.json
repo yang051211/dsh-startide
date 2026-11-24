@@ -1,0 +1,116 @@
+{
+  "name": "@vlln/dsh-motion",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-24T01:02:52.349Z",
+  "icon": "vlln__dsh-motion.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/app.js",
+        "line": 438,
+        "text": "const res = await fetch(new URL(src, document.baseURI));"
+      },
+      {
+        "file": "lib/app.js",
+        "line": 472,
+        "text": "const res = await fetch(new URL(`out/media/${name}.json`, document.baseURI));"
+      },
+      {
+        "file": "lib/app.js",
+        "line": 1174,
+        "text": "const res = await fetch(src, { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/app.js",
+        "line": 1181,
+        "text": "const res2 = await fetch(new URL(\"out/beats.json\", filmBase), { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/app.js",
+        "line": 2746,
+        "text": "const res = await fetch(\"./api/comments\", {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-motion.mjs",
+        "line": 10,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "bin/dsh-motion.mjs",
+        "line": 46,
+        "text": "fs.mkdirSync(tmp, { recursive: true });"
+      },
+      {
+        "file": "bin/dsh-motion.mjs",
+        "line": 128,
+        "text": "const timeline = JSON.parse(fs.readFileSync(path.join(FILM, 'timeline.json'), 'utf8'));"
+      },
+      {
+        "file": "bin/dsh-motion.mjs",
+        "line": 165,
+        "text": "const timeline = JSON.parse(fs.readFileSync(path.join(FILM, 'timeline.json'), 'utf8'));"
+      },
+      {
+        "file": "bin/dsh-motion.mjs",
+        "line": 178,
+        "text": "sheetFor(JSON.parse(fs.readFileSync(sheetFile, 'utf8')), timeline.duration);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-motion.mjs",
+        "line": 9,
+        "text": "import { spawn, spawnSync, execFile, execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "bin/dsh-motion.mjs",
+        "line": 52,
+        "text": "const child = spawn(process.execPath, [path.join(PKG, 'scripts', script), ...args], {"
+      },
+      {
+        "file": "bin/dsh-motion.mjs",
+        "line": 64,
+        "text": "execFile('ffmpeg', args, { env: withFilm() }, (err) => (err ? reject(new Error(err.message)) : resolve()));"
+      },
+      {
+        "file": "bin/dsh-motion.mjs",
+        "line": 314,
+        "text": "const scan = spawnSync("
+      },
+      {
+        "file": "scripts/assets.mjs",
+        "line": 13,
+        "text": "import { execFileSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 108,
+      "text": "npm install -g @vlln/dsh-motion"
+    }
+  ],
+  "skippedEntries": []
+}

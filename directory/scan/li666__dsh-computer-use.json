@@ -1,0 +1,124 @@
+{
+  "name": "@li666/dsh-computer-use",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-24T01:02:54.064Z",
+  "icon": "li666__dsh-computer-use.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 138,
+        "text": "fetch(base + '/status', { cache: 'no-store' })"
+      },
+      {
+        "file": "index.js",
+        "line": 149,
+        "text": "fetch(base + (wasStopped ? '/resume' : '/stop'), { method: 'POST' })"
+      },
+      {
+        "file": "lib/browser.mjs",
+        "line": 41,
+        "text": "await fetch(`${session.httpBase}/json/version`, { signal: AbortSignal.timeout(2500) });"
+      },
+      {
+        "file": "lib/cdp.mjs",
+        "line": 40,
+        "text": "ws = new WebSocket(this.wsUrl);"
+      },
+      {
+        "file": "lib/cdp.mjs",
+        "line": 214,
+        "text": "const res = await fetch(`${httpBase}/json/version`, { signal: AbortSignal.timeout(5000) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/audit.mjs",
+        "line": 3,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/audit.mjs",
+        "line": 31,
+        "text": "rmSync(full, { recursive: true, force: true });"
+      },
+      {
+        "file": "lib/audit.mjs",
+        "line": 58,
+        "text": "mkdirSync(logsDir(), { recursive: true });"
+      },
+      {
+        "file": "lib/audit.mjs",
+        "line": 75,
+        "text": "appendFileSync(auditFile(), `${JSON.stringify(record)}\\n`, 'utf8');"
+      },
+      {
+        "file": "lib/audit.mjs",
+        "line": 91,
+        "text": "try { text = readFileSync(join(dir, file), 'utf8'); } catch { continue; }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 33,
+        "text": "export const inject = ['tools', 'systemPrompt'];"
+      },
+      {
+        "file": "index.js",
+        "line": 531,
+        "text": "disposers.push(ctx.tools.register(definition));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/cdp.mjs",
+        "line": 4,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/cdp.mjs",
+        "line": 180,
+        "text": "const child = spawn(exe, args, { detached: true, stdio: 'ignore', windowsHide: false });"
+      },
+      {
+        "file": "lib/desk.mjs",
+        "line": 4,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/desk.mjs",
+        "line": 75,
+        "text": "child = spawn(powershellPath(), args, { windowsHide: true, stdio: ['ignore', 'ignore', 'pipe'] });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

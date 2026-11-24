@@ -1,0 +1,90 @@
+{
+  "name": "dsh-ide-codeintel",
+  "version": "0.1.0-alpha",
+  "scannedAt": "2026-11-24T01:02:51.450Z",
+  "icon": "dsh-ide-codeintel.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.js",
+        "line": 7007,
+        "text": "response = await fetch(httpUrl(`${API_PREFIX}${method}`).href, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.js",
+        "line": 7725,
+        "text": "const content2 = await store.readFile(absolute);"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 9378,
+        "text": "async readFile(absolutePath) {"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 9382,
+        "text": "const result = await host.readFile(absolutePath);"
+      },
+      {
+        "file": "src/host/java-runtime.js",
+        "line": 38,
+        "text": "import { mkdirSync, readdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/host/java-runtime.js",
+        "line": 131,
+        "text": "return readFileSync(path, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/lsp.js",
+        "line": 3907,
+        "text": "await this.#spawn(entry, session, resolution)"
+      },
+      {
+        "file": "src/host/lsp.js",
+        "line": 4023,
+        "text": "async #spawn(entry, session, resolution) {"
+      },
+      {
+        "file": "src/host/lsp.js",
+        "line": 4109,
+        "text": ": this.#ctx?.subprocess?.spawn(spec)"
+      },
+      {
+        "file": "src/host/lsp.js",
+        "line": 5636,
+        "text": "await this.#spawn(entry, session, session.resolution)"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 5,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "subprocess",
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

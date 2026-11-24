@@ -1,0 +1,121 @@
+{
+  "name": "dsh-qqterm",
+  "version": "0.0.1",
+  "scannedAt": "2026-11-24T01:02:54.177Z",
+  "icon": "dsh-qqterm.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 190,
+        "text": "const res = await fetch(BIND_STATE_PATH, { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 242,
+        "text": "const res = await fetch(BIND_MANUAL_PATH, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 361,
+        "text": "fetch(BIND_UNBIND_PATH, { method: \"POST\" }).then(async (res) => {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 411,
+        "text": "fetch(BIND_REFRESH_PATH, { method: \"POST\" }).catch(() => {});"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 646,
+        "text": "fetch(BIND_CONFIG_PATH, { cache: \"no-store\" }).then(async (res) => {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/commands/get.js",
+        "line": 1,
+        "text": "import { statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/commands/ls.js",
+        "line": 5,
+        "text": "import { readdirSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/media/media-cleaner.js",
+        "line": 7,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/media/media-cleaner.js",
+        "line": 8,
+        "text": "import { readdir, rm, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/media/media-cleaner.js",
+        "line": 37,
+        "text": "await rm(filePath, { force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/gateway/bootstrap.js",
+        "line": 124,
+        "text": "const toolsRegistry = ctx.tools;"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/adapter.js",
+        "line": 12,
+        "text": "const child = subprocess.spawn({"
+      },
+      {
+        "file": "lib/setup/presenters.js",
+        "line": 8,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/setup/presenters.js",
+        "line": 75,
+        "text": "const child = spawn(command, args, { detached: true, stdio: 'ignore', windowsHide: true });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 5,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentDefaultModel",
+    "agents",
+    "attachments",
+    "commands",
+    "llm",
+    "permissionPresets",
+    "pluginManager",
+    "sessionPersistence",
+    "sessionProjections",
+    "sessionQuery",
+    "sessionTitle",
+    "settings",
+    "tools",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

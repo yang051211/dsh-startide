@@ -1,19 +1,19 @@
 {
   "name": "pocketagents",
-  "version": "0.9.9",
-  "scannedAt": "2026-11-23T09:10:21.559Z",
+  "version": "0.9.13",
+  "scannedAt": "2026-11-24T01:02:35.635Z",
   "icon": "pocketagents.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "connect-host.sh",
-        "line": 121,
+        "line": 151,
         "text": "JOIN_RESP=\"$(curl -sS -X POST \"${HUB_URL}/api/hosts/join\" \\"
       },
       {
         "file": "connect-host.sh",
-        "line": 208,
+        "line": 242,
         "text": "# 支持通过 curl -fsSL <HUB_URL>/install.sh | bash 一键安装：若当前已在仓库目录则直接复用，否则克隆到 ~/.dsh/remotecontrol"
       },
       {
@@ -23,12 +23,12 @@
       },
       {
         "file": "dsh-feishu/lib/harnesses/workbuddy-adapter.js",
-        "line": 591,
+        "line": 636,
         "text": "const req = http.request("
       },
       {
         "file": "dsh-feishu/lib/hub-agent.js",
-        "line": 748,
+        "line": 805,
         "text": "await this.fetch(targetUrl, {"
       }
     ]
@@ -58,7 +58,7 @@
       },
       {
         "file": "dsh-feishu/lib/antigravity-ide.js",
-        "line": 1550,
+        "line": 1889,
         "text": "const pbBuf = await readFile(join(agyRoot, 'agyhub_summaries_proto.pb'))"
       }
     ]
@@ -73,7 +73,12 @@
       {
         "file": "dsh-feishu/lib/antigravity-ide.js",
         "line": 1,
-        "text": "import { execFile } from 'node:child_process'"
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "dsh-feishu/lib/antigravity-ide.js",
+        "line": 55,
+        "text": "const child = spawn('pbcopy', [], { stdio: ['pipe', 'ignore', 'ignore'] })"
       },
       {
         "file": "dsh-feishu/lib/harnesses/claude-adapter.js",
@@ -89,11 +94,6 @@
         "file": "dsh-feishu/lib/harnesses/dsh-headless-adapter.js",
         "line": 1,
         "text": "import { spawn } from 'node:child_process'"
-      },
-      {
-        "file": "dsh-feishu/lib/harnesses/dsh-headless-adapter.js",
-        "line": 503,
-        "text": "const proc = spawn("
       }
     ]
   },

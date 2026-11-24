@@ -1,0 +1,80 @@
+{
+  "name": "parallax-dsh",
+  "version": "2.0.3",
+  "scannedAt": "2026-11-24T01:02:45.658Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/handoff.js",
+        "line": 3,
+        "text": "import { realpath, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "import { readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 66,
+        "text": "const parsed = parseFrontmatter(readFileSync(path.join(dir, \"SKILL.md\"), \"utf8\"));"
+      },
+      {
+        "file": "skills/qgo/scripts/context.mjs",
+        "line": 31,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "skills/qgo/scripts/context.mjs",
+        "line": 274,
+        "text": "const result = decodeZstdDetailed(fs.readFileSync(filePath), filePath);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/handoff.js",
+        "line": 118,
+        "text": "const dispose = ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 89,
+        "text": "const inject = [\"skills\", \"tools\", \"sessions\", \"workingDirectory\"];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "skills/qgo/scripts/session.mjs",
+        "line": 30,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "skills/qgo/scripts/session.mjs",
+        "line": 150,
+        "text": "child = spawn(command, args, { stdio: [\"ignore\", \"pipe\", \"pipe\"] });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

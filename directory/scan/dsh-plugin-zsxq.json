@@ -1,0 +1,103 @@
+{
+  "name": "dsh-plugin-zsxq",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-24T01:02:51.763Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/api.mjs",
+        "line": 103,
+        "text": "response = await fetch(url, {"
+      },
+      {
+        "file": "src/api.mjs",
+        "line": 184,
+        "text": "response = await fetch(downloadUrl, { signal: withTimeout(this.signal, 120000) })"
+      },
+      {
+        "file": "src/api.mjs",
+        "line": 200,
+        "text": "const response = await fetch(url, { headers: HEADERS, signal: withTimeout(this.signal, 20000) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/api.mjs",
+        "line": 7,
+        "text": "import { mkdir, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/api.mjs",
+        "line": 190,
+        "text": "await mkdir(dirname(savePath), { recursive: true })"
+      },
+      {
+        "file": "src/api.mjs",
+        "line": 191,
+        "text": "await writeFile(savePath, buffer)"
+      },
+      {
+        "file": "src/docx.mjs",
+        "line": 13,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/docx.mjs",
+        "line": 83,
+        "text": "const buffer = await readFile(filePath)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.mjs",
+        "line": 36,
+        "text": "export const inject = ['tools', 'workingDirectory']"
+      },
+      {
+        "file": "src/index.mjs",
+        "line": 175,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "src/index.mjs",
+        "line": 212,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "src/index.mjs",
+        "line": 233,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "src/index.mjs",
+        "line": 296,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 6,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

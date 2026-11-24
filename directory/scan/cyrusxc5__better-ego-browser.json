@@ -1,0 +1,105 @@
+{
+  "name": "@cyrusxc5/better-ego-browser",
+  "version": "0.3.6",
+  "scannedAt": "2026-11-24T01:02:48.728Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/loopback/server.mjs",
+        "line": 1,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "dsh/loopback/server.mjs",
+        "line": 104,
+        "text": "  const response = await fetch(bridge.endpoint, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization:'Bearer '+bridge.token }, body:JSON."
+      },
+      {
+        "file": "skills/ego-browser/scripts/install.sh",
+        "line": 161,
+        "text": "curl -fL --retry 3 --output \"$dmg_path\" \"$dmg_url\" ||"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/loopback/server.mjs",
+        "line": 2,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "dsh/loopback/server.mjs",
+        "line": 5,
+        "text": "import { mkdtemp, writeFile, rm, mkdir, readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "dsh/loopback/server.mjs",
+        "line": 11,
+        "text": "const pluginVersion = JSON.parse(readFileSync(new URL('../../package.json', import.meta.url), 'utf8')).version;"
+      },
+      {
+        "file": "dsh/loopback/server.mjs",
+        "line": 43,
+        "text": "await mkdir(artifactDir, { recursive: true });"
+      },
+      {
+        "file": "dsh/loopback/server.mjs",
+        "line": 49,
+        "text": "    await writeFile(script, 'const fs=await import(\"node:fs/promises\");\\nlet reply;try{const {dispatch}=await import('+JSON.stringify(moduleUrl)+');reply={ok:tr"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/plugin.mjs",
+        "line": 4,
+        "text": "export const inject = ['tools', 'skills', 'agents'];"
+      },
+      {
+        "file": "dsh/plugin.mjs",
+        "line": 6,
+        "text": "const { createMcpToolDefinition } = await import('@deepseek-ai/dsh-mcp-client');"
+      },
+      {
+        "file": "dsh/plugin.mjs",
+        "line": 9,
+        "text": "ctx.effect(() => ctx.tools.register(createMcpToolDefinition(ctx, {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh/loopback/server.mjs",
+        "line": 4,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "dsh/loopback/server.mjs",
+        "line": 51,
+        "text": " await new Promise((resolve, reject) => execFile(cli, ['nodejs','-e', \"await import('\"+pathToFileURL(script).href+\"')\"], { windowsHide: true, encoding: 'utf8', "
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "skills",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

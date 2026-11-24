@@ -1,7 +1,7 @@
 {
   "name": "dsh-awesome-optimizer",
-  "version": "4.0.0",
-  "scannedAt": "2026-11-23T09:10:26.584Z",
+  "version": "4.3.0",
+  "scannedAt": "2026-11-24T01:02:44.838Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -42,28 +42,28 @@
     "evidence": [
       {
         "file": "src/composite-tools.js",
-        "line": 315,
-        "text": "if (capability?.version !== 1 || !ctx.tools.executable('read', exec.agent, exec.toolSet) ||"
-      },
-      {
-        "file": "src/composite-tools.js",
-        "line": 316,
-        "text": "!ctx.tools.executable('optimizer_read_ranges', exec.agent, exec.toolSet)) {"
-      },
-      {
-        "file": "src/composite-tools.js",
-        "line": 352,
+        "line": 231,
         "text": "ctx.tools.register({"
       },
       {
         "file": "src/composite-tools.js",
-        "line": 509,
-        "text": "const canRead = contextLines > 0 && ctx.tools.get('read', exec.agent) !== undefined;"
+        "line": 387,
+        "text": "const canRead = contextLines > 0 && ctx.tools.get('read', exec.agent, exec.toolSet) !== undefined;"
       },
       {
         "file": "src/composite-tools.js",
-        "line": 552,
+        "line": 430,
         "text": "}, { when: ({ agent }) => ctx.tools.get('grep', agent) !== undefined });"
+      },
+      {
+        "file": "src/composite-tools.js",
+        "line": 446,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "src/convergence.js",
+        "line": 5,
+        "text": "export const inject = ['systemPrompt', 'tools'];"
       }
     ]
   },

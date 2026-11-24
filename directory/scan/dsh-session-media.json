@@ -1,0 +1,77 @@
+{
+  "name": "dsh-session-media",
+  "version": "0.3.9",
+  "scannedAt": "2026-11-24T01:02:48.569Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cismoke.mjs",
+        "line": 9,
+        "text": "import { mkdtempSync, writeFileSync, rmSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "cismoke.mjs",
+        "line": 21,
+        "text": "writeFileSync(path.join(dir, '环境笔记.md'), '# CI fixture\\n\\nhello from CI\\n')"
+      },
+      {
+        "file": "cismoke.mjs",
+        "line": 36,
+        "text": "const src = readFileSync(new URL('./index.js', import.meta.url), 'utf8')"
+      },
+      {
+        "file": "cismoke.mjs",
+        "line": 77,
+        "text": "// DSH reads a plugin manifest with JSON.parse(readFileSync(path, \"utf8\")), and"
+      },
+      {
+        "file": "cismoke.mjs",
+        "line": 84,
+        "text": "const buf = readFileSync(new URL('./' + f, import.meta.url))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "*   - `ctx.tools.register(definition)` registers a tool."
+      },
+      {
+        "file": "index.js",
+        "line": 43,
+        "text": "export const inject = ['systemPrompt', 'tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 935,
+        "text": "try { disposers.push(ctx.tools.register(defineTool(def))) } catch { /* dup/unsupported */ }"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

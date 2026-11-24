@@ -1,0 +1,115 @@
+{
+  "name": "dsh-hippocampus-memory",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-24T01:02:53.353Z",
+  "icon": "dsh-hippocampus-memory.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 124,
+        "text": "response = await fetch(`${base}${path}`, {"
+      },
+      {
+        "file": "lib/auto-capture.js",
+        "line": 228,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "lib/http.js",
+        "line": 14,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/metrics.js",
+        "line": 42,
+        "text": "this.http.set(key, (this.http.get(key) ?? 0) + 1)"
+      },
+      {
+        "file": "lib/webui.js",
+        "line": 15,
+        "text": "const health = await fetch(`${base}/health`, { signal: timeout })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/hippocampus.mjs",
+        "line": 9,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "bin/hippocampus.mjs",
+        "line": 360,
+        "text": "fs.writeFileSync(target, `${JSON.stringify(snapshot, null, 2)}\\n`, { mode: 0o600 })"
+      },
+      {
+        "file": "bin/hippocampus.mjs",
+        "line": 374,
+        "text": "const snapshot = JSON.parse(fs.readFileSync(rest[0], 'utf8'))"
+      },
+      {
+        "file": "lib/backup.js",
+        "line": 10,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/backup.js",
+        "line": 59,
+        "text": "fs.rmSync(entry.file, { force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 92,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 173,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 218,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/hippocampus.mjs",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "bin/hippocampus.mjs",
+        "line": 220,
+        "text": "const child = spawn(nodeExecutable(), childArgs, { stdio: 'inherit' })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "web/assets/index-BFgrZV6y.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

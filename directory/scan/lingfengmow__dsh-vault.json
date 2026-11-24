@@ -1,0 +1,139 @@
+{
+  "name": "@lingfengmow/dsh-vault",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-24T01:02:51.575Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 152,
+        "text": "const r = await fetch(API + path, Object.assign({"
+      },
+      {
+        "file": "lib/vault/targets.js",
+        "line": 14,
+        "text": "import { request as httpRequest } from 'node:http'"
+      },
+      {
+        "file": "lib/vault/targets.js",
+        "line": 15,
+        "text": "import { request as httpsRequest } from 'node:https'"
+      },
+      {
+        "file": "scripts/health-check.mjs",
+        "line": 30,
+        "text": "const r = await fetch(url, { signal: ctrl.signal })"
+      },
+      {
+        "file": "scripts/probe-client-in-graph.mjs",
+        "line": 64,
+        "text": "const r = await fetch(url)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import { appendFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "try { appendFileSync(logPath, `[${isoNow()}] ${msg}\\n`) } catch { /* 日志失败静默 */ }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 195,
+        "text": "mkdirSync(kd, { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 196,
+        "text": "writeFileSync(join(kd, `${res.baseName}.key.txt`), ["
+      },
+      {
+        "file": "lib/server.js",
+        "line": 27,
+        "text": "import { existsSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 30,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 72,
+        "text": "ctx.tools.register(tool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 107,
+        "text": "ctx.tools.register(tool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 224,
+        "text": "ctx.tools.register(tool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 246,
+        "text": "ctx.tools.register(tool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 60,
+        "text": "const child = spawn(process.execPath, [RESTORE_CLI, ...args], { windowsHide: true, env: { ...process.env, ...extraEnv } })"
+      },
+      {
+        "file": "lib/server.js",
+        "line": 26,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/server.js",
+        "line": 59,
+        "text": "const child = spawn(process.execPath, [RESTORE_CLI, ...args], { windowsHide: true, env: { ...process.env, ...extraEnv } })"
+      },
+      {
+        "file": "lib/vault/kdf.js",
+        "line": 20,
+        "text": "import { spawnSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "slots",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

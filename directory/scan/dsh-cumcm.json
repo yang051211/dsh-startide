@@ -1,0 +1,87 @@
+{
+  "name": "dsh-cumcm",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-24T01:02:51.619Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 108,
+        "text": "return fetch(API + path, options).then(function (res) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "import { copyFileSync, createReadStream, existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 126,
+        "text": "return JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 134,
+        "text": "const buf = readFileSync(file)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 288,
+        "text": "const text = readFileSync(full, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 410,
+        "text": "const proc = spawnSync(tool, ['-png', '-r', '110', '-f', String(page), '-l', String(page), '-singlefile', file, out], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 507,
+        "text": "const child = spawn(config.pythonPath, [path.join('scripts', spec.script), ...spec.args(dir)], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 648,
+        "text": "const child = spawn(process.platform === 'win32' ? 'explorer.exe' : 'xdg-open', [file], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

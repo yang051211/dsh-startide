@@ -1,30 +1,35 @@
 {
   "name": "dsh-composer-ease",
-  "version": "0.9.73",
-  "scannedAt": "2026-11-21T20:46:30.105Z",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-24T01:02:51.921Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1202,
+        "line": 1221,
         "text": "fetch(ROUTE_WORDS + '?prefix=' + encodeURIComponent(prefix || '') + '&lang=' + encodeURIComponent(lang) +"
       },
       {
         "file": "lib/client.js",
-        "line": 1750,
+        "line": 1223,
+        "text": "fetch(ROUTE_SYMBOLS + '?prefix=' + encodeURIComponent(prefix || '')).then(function (r) { return r.json() }).catch(function () { return null })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1983,
         "text": "return fetch(url).then(function (r) { return r.json() }).then(function (d) {"
       },
       {
         "file": "lib/client/40-language.js",
-        "line": 129,
+        "line": 135,
         "text": "fetch(ROUTE_WORDS + '?prefix=' + encodeURIComponent(prefix || '') + '&lang=' + encodeURIComponent(lang) +"
       },
       {
-        "file": "lib/client/45-settings.js",
-        "line": 263,
-        "text": "return fetch(url).then(function (r) { return r.json() }).then(function (d) {"
+        "file": "lib/client/40-language.js",
+        "line": 137,
+        "text": "fetch(ROUTE_SYMBOLS + '?prefix=' + encodeURIComponent(prefix || '')).then(function (r) { return r.json() }).catch(function () { return null })"
       }
     ]
   },
@@ -38,13 +43,18 @@
       },
       {
         "file": "lib/index.js",
-        "line": 55,
+        "line": 56,
         "text": "try { return JSON.parse(fs.readFileSync(p, 'utf8')) } catch { return null }"
       },
       {
         "file": "lib/index.js",
-        "line": 154,
+        "line": 155,
         "text": "try { for (const id of parseModelIds(fs.readFileSync(p, 'utf8'))) if (ids.indexOf(id) < 0) ids.push(id) } catch {}"
+      },
+      {
+        "file": "lib/symbols.js",
+        "line": 55,
+        "text": "try { text = fs.readFileSync(full, 'utf8') } catch (e) { continue }"
       }
     ]
   },

@@ -1,0 +1,153 @@
+{
+  "name": "dsh-ldvh",
+  "version": "1.1.5",
+  "scannedAt": "2026-11-24T01:02:39.095Z",
+  "icon": "dsh-ldvh.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 462,
+        "text": "fetch(ldvhWebOrigin + path, { method: \"GET\", mode: \"no-cors\", cache: \"no-store\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 476,
+        "text": "fetch(ldvhWebOrigin + \"/ldvh/api/health\", { method: \"GET\", cache: \"no-store\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 493,
+        "text": "return fetch(\"/ldvh/api/health\", { method: \"GET\", cache: \"no-store\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 548,
+        "text": "return fetch(\"/ldvh/api\" + path, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1288,
+        "text": "return fetch(\"/ldvh/state/governance?\" + query, { method: \"GET\", cache: \"no-store\" })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/carrier-scan.js",
+        "line": 2,
+        "text": "import { readdir } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/carrier-scan.js",
+        "line": 33,
+        "text": "const readFileImpl = read ?? (await import(\"node:fs/promises\")).readFile;"
+      },
+      {
+        "file": "lib/experience-arming.js",
+        "line": 2,
+        "text": "import { readFile, mkdir } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/experience-arming.js",
+        "line": 46,
+        "text": "const text = await readFile(path(), \"utf8\");"
+      },
+      {
+        "file": "lib/experience-arming.js",
+        "line": 72,
+        "text": "const parsed = JSON.parse(await readFile(target, \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/friction-tools.js",
+        "line": 600,
+        "text": "disposers.push(ctx.tools.register(toolDescriptorFor(operationKey, operation, handlers[operationKey])));"
+      },
+      {
+        "file": "lib/friction-tools.js",
+        "line": 789,
+        "text": "const dispose = ctx.tools.register(descriptor);"
+      },
+      {
+        "file": "lib/goal-tools.js",
+        "line": 317,
+        "text": "disposers.push(ctx.tools.register(toolDescriptorFor(operationKey, operation, handlers[operationKey])));"
+      },
+      {
+        "file": "lib/host-consumption.json",
+        "line": 13,
+        "text": "\"note\": \"ctx.tools.register / ctx.tools.guard（specs/10 §5.2）\""
+      },
+      {
+        "file": "lib/host-seams.js",
+        "line": 132,
+        "text": "return { consumed: false, detail: \"ctx.tools.guard is unavailable in this composition\" };"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/friction-tools.js",
+        "line": 22,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/friction-tools.js",
+        "line": 303,
+        "text": "execFile(\"git\", [\"cat-file\", \"-e\", `${hash}^{commit}`], { cwd: factSourceRoot }, (err) => {"
+      },
+      {
+        "file": "lib/friction-tools.js",
+        "line": 378,
+        "text": "execFile(\"git\", [\"cat-file\", \"-e\", `${hash}^{commit}`], { cwd: factSourceRoot }, (err) => {"
+      },
+      {
+        "file": "lib/git-gate-runner.js",
+        "line": 6,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/governed-projects.js",
+        "line": 4,
+        "text": "import { execFile } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 8,
+  "minifiedFiles": [
+    "lib/client.js",
+    "web/dist/assets/index-p1lWt14K.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 65,
+      "text": "npm install -g dsh-ldvh"
+    },
+    {
+      "file": "README.md",
+      "line": 65,
+      "text": "npm install -g dsh-ldvh"
+    }
+  ],
+  "skippedEntries": []
+}

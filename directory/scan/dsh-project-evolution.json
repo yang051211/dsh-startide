@@ -1,0 +1,119 @@
+{
+  "name": "dsh-project-evolution",
+  "version": "1.1.3",
+  "scannedAt": "2026-11-24T01:02:50.360Z",
+  "icon": "dsh-project-evolution.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 542,
+        "text": "const response = await fetch(url, { credentials: 'same-origin', headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 547,
+        "text": "const response = await fetch(API + '/action', {"
+      },
+      {
+        "file": "scripts/acceptance.mjs",
+        "line": 203,
+        "text": "const response = await overviewRoute.fetch(new Request('http://127.0.0.1/api/project-evolution/overview?sessionId=s2'))"
+      },
+      {
+        "file": "scripts/acceptance.mjs",
+        "line": 211,
+        "text": "const projectsResponse = await projectsRoute.fetch(new Request('http://127.0.0.1/api/project-evolution/projects'))"
+      },
+      {
+        "file": "scripts/smoke.mjs",
+        "line": 33,
+        "text": "const res = await route.fetch(new Request('http://x/api/project-evolution/overview?sessionId=s1'))"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/acceptance.mjs",
+        "line": 10,
+        "text": "import { mkdir, mkdtemp, readFile, readdir, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "scripts/acceptance.mjs",
+        "line": 33,
+        "text": "await mkdir(projectA, { recursive: true })"
+      },
+      {
+        "file": "scripts/acceptance.mjs",
+        "line": 34,
+        "text": "await mkdir(projectB, { recursive: true })"
+      },
+      {
+        "file": "scripts/acceptance.mjs",
+        "line": 35,
+        "text": "await mkdir(home, { recursive: true })"
+      },
+      {
+        "file": "scripts/acceptance.mjs",
+        "line": 41,
+        "text": "await mkdir(join(projectA, 'src'), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 60,
+        "text": "cleanups.push(tools.register(definition))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/acceptance.mjs",
+        "line": 9,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/smoke.mjs",
+        "line": 4,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "src/core/project.js",
+        "line": 9,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "test/helpers.js",
+        "line": 1,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "test/unit.test.js",
+        "line": 3,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessions",
+    "skills"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,93 @@
+{
+  "name": "dsh-medical-pipeline",
+  "version": "0.1.3",
+  "scannedAt": "2026-11-24T01:02:53.183Z",
+  "icon": "dsh-medical-pipeline.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 241,
+        "text": "const response = await fetch(`${base}/health`, { signal: AbortSignal.timeout(1000) })"
+      },
+      {
+        "file": "index.js",
+        "line": 260,
+        "text": "response = await fetch(base + path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "import { mkdir, readFile, rm, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 149,
+        "text": "const digest = createHash('sha256').update(await readFile(REQUIREMENTS)).digest('hex')"
+      },
+      {
+        "file": "index.js",
+        "line": 150,
+        "text": "if (existsSync(python) && existsSync(marker) && (await readFile(marker, 'utf8')).trim() === digest) return python"
+      },
+      {
+        "file": "index.js",
+        "line": 161,
+        "text": "await rm(venvDir, { recursive: true, force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 68,
+        "text": "child = spawn(command, args, { cwd, env: env ?? process.env, stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 206,
+        "text": "const child = spawn(python, [join(BACKEND_DIR, 'app.py'), '--port', String(port)], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 97,
+      "text": " backend && python3 -m venv .venv && .venv/bin/pip install -r requirements.txt && .venv/bin/python app.py --port 8765`，然后访问 `http://127.0.0.1:8765/docs` 查看接口文档。"
+    }
+  ],
+  "skippedEntries": []
+}

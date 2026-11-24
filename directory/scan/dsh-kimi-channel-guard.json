@@ -1,0 +1,58 @@
+{
+  "name": "dsh-kimi-channel-guard",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-24T01:02:52.314Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/patcher.js",
+        "line": 1,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/patcher.js",
+        "line": 8,
+        "text": "const definitions = JSON.parse(fs.readFileSync(new URL('./patches.json', import.meta.url), 'utf8'));"
+      },
+      {
+        "file": "lib/patcher.js",
+        "line": 34,
+        "text": "const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));"
+      },
+      {
+        "file": "lib/patcher.js",
+        "line": 38,
+        "text": "const original = fs.readFileSync(file, 'utf8');"
+      },
+      {
+        "file": "lib/patcher.js",
+        "line": 52,
+        "text": "try { fs.writeFileSync(temp, bytes, {mode, flag:'wx'}); fs.renameSync(temp, file); }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

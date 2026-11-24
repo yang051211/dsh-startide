@@ -1,0 +1,84 @@
+{
+  "name": "dsh-preset-conductor",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-24T01:02:51.039Z",
+  "icon": "dsh-preset-conductor.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/check-package.mjs",
+        "line": 2,
+        "text": "import { lstatSync, readFileSync, readdirSync, realpathSync } from 'node:fs';"
+      },
+      {
+        "file": "scripts/check-package.mjs",
+        "line": 58,
+        "text": "assert(readFileSync(patchPath, 'utf8').replace(/\\r\\n/g, '\\n') === patchText, 'declared bundle patch is stale');"
+      },
+      {
+        "file": "scripts/check-package.mjs",
+        "line": 65,
+        "text": "const resource = JSON.parse(readFileSync(resolve(root, 'locale', `${language}.json`), 'utf8'));"
+      },
+      {
+        "file": "scripts/check-package.mjs",
+        "line": 69,
+        "text": "const icon = readFileSync(resolve(root, 'icon.svg'));"
+      },
+      {
+        "file": "scripts/check-package.mjs",
+        "line": 75,
+        "text": "const lock = JSON.parse(readFileSync(resolve(root, 'package-lock.json'), 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/check-package.mjs",
+        "line": 4,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/check-package.mjs",
+        "line": 36,
+        "text": "const result = spawnSync('tar', [...args, `./${basename(tarball)}`], {"
+      },
+      {
+        "file": "scripts/check-package.mjs",
+        "line": 45,
+        "text": "const result = spawnSync('tar', ['-xOf', `./${basename(tarball)}`, member], {"
+      },
+      {
+        "file": "scripts/check.mjs",
+        "line": 5,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/check.mjs",
+        "line": 9,
+        "text": "const result = spawnSync(process.execPath, args, { cwd: root, stdio: 'inherit', env: process.env });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

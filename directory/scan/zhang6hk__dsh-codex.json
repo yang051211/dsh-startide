@@ -1,0 +1,110 @@
+{
+  "name": "@zhang6hk/dsh-codex",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-24T01:02:47.097Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/codex-path.js",
+        "line": 1,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/codex-path.js",
+        "line": 19,
+        "text": "fs.mkdirSync(binDir, { recursive: true })"
+      },
+      {
+        "file": "lib/codex-path.js",
+        "line": 25,
+        "text": "fs.unlinkSync(link)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 51,
+        "text": "fs.mkdirSync(dir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 12,
+        "text": "export const inject = ['commands', 'tools', 'workingDirectory']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 93,
+        "text": "disposers.push(ctx.tools.register(createCodexTaskTool({ run, resolveCwd, settings })))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/companion.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/companion.js",
+        "line": 92,
+        "text": "const child = spawn(nodePath, [companionPath, ...argv], {"
+      },
+      {
+        "file": "vendor/codex/scripts/codex-companion.mjs",
+        "line": 3,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "vendor/codex/scripts/codex-companion.mjs",
+        "line": 673,
+        "text": "const child = spawn(process.execPath, [scriptPath, \"task-worker\", \"--cwd\", cwd, \"--job-id\", jobId], {"
+      },
+      {
+        "file": "vendor/codex/scripts/lib/app-server.mjs",
+        "line": 13,
+        "text": "import { spawn } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "tools",
+    "workingDirectory"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 19,
+      "text": "- [Codex CLI](https://github.com/openai/codex): `npm install -g @openai/codex`"
+    },
+    {
+      "file": "README.zh.md",
+      "line": 21,
+      "text": "- [Codex CLI](https://github.com/openai/codex)：`npm install -g @openai/codex`"
+    }
+  ],
+  "skippedEntries": []
+}

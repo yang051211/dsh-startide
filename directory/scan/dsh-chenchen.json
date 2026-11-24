@@ -1,0 +1,86 @@
+{
+  "name": "dsh-chenchen",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-24T01:02:52.852Z",
+  "icon": "dsh-chenchen.png",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import { appendFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 24,
+        "text": "appendFileSync(join(dshHome(), 'chenchen.log'), `${new Date().toISOString()} ${message}\\n`, 'utf8')"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 23,
+        "text": "} from 'node:fs'"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 43,
+        "text": "return JSON.parse(readFileSync(file, 'utf8').replace(/^\\uFEFF/u, ''))"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 99,
+        "text": "return readFileSync(file, 'utf8').replace(/^\\uFEFF/u, '')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 42,
+        "text": "* dsh 0.2.1-rc.x 冷启动时，apply 同步路径里 ctx.tools 可能还没对 agent 平面生效："
+      },
+      {
+        "file": "lib/index.js",
+        "line": 133,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tools.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 119,
+        "text": "child = spawn(conf.python || 'python', [file, ...args], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 45,
+      "text": "- `look_screen` 需要 Pillow：`pip install Pillow`"
+    }
+  ],
+  "skippedEntries": []
+}

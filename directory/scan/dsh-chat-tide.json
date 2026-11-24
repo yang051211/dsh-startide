@@ -1,24 +1,24 @@
 {
   "name": "dsh-chat-tide",
-  "version": "0.5.3",
-  "scannedAt": "2026-11-23T09:10:18.621Z",
+  "version": "0.6.3",
+  "scannedAt": "2026-11-24T01:02:39.970Z",
   "icon": "dsh-chat-tide.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 69,
+        "line": 96,
         "text": "const r = await fetch(BASE + path, { headers: { accept: 'application/json' } });"
       },
       {
         "file": "lib/client.js",
-        "line": 74,
+        "line": 101,
         "text": "const r = await fetch(BASE + path, {"
       },
       {
         "file": "lib/client.js",
-        "line": 714,
+        "line": 915,
         "text": "void fetch(BASE + '/client-loaded', {"
       }
     ]
@@ -28,28 +28,28 @@
     "evidence": [
       {
         "file": "lib/api.js",
-        "line": 10,
-        "text": "import { openSync, readSync, closeSync, statSync } from 'node:fs';"
+        "line": 11,
+        "text": "import { createReadStream, openSync, readSync, closeSync, rmSync, statSync } from 'node:fs';"
       },
       {
         "file": "lib/api.js",
-        "line": 101,
+        "line": 103,
         "text": "const { appendFileSync, mkdirSync } = await import('node:fs');"
       },
       {
         "file": "lib/api.js",
-        "line": 104,
+        "line": 106,
         "text": "mkdirSync(dir, { recursive: true });"
       },
       {
         "file": "lib/api.js",
-        "line": 105,
+        "line": 107,
         "text": "appendFileSync("
       },
       {
-        "file": "lib/const.js",
-        "line": 4,
-        "text": "import { mkdirSync } from 'node:fs';"
+        "file": "lib/api.js",
+        "line": 295,
+        "text": "rmSync(out.dir ?? out.path, { recursive: true, force: true });"
       }
     ]
   },
@@ -63,7 +63,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 1278,
+        "line": 1306,
         "text": "ctx.tools.register({ ...def, execute: guardTool(def.execute), isConcurrencySafe: () => true, when });"
       }
     ]

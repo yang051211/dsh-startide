@@ -1,0 +1,103 @@
+{
+  "name": "dsh-agent-todo",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-24T01:02:50.021Z",
+  "icon": "dsh-agent-todo.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1558,
+        "text": "var res = await fetch('/agent-todo/api' + path, init)"
+      },
+      {
+        "file": "client.js",
+        "line": 1569,
+        "text": "var res = await fetch('/agent-todo/api/files', { method: 'POST', body: form })"
+      },
+      {
+        "file": "client.js",
+        "line": 1580,
+        "text": "var res = await fetch('/agent-todo/api/asr', { method: 'POST', body: form })"
+      },
+      {
+        "file": "client.js",
+        "line": 1613,
+        "text": "var res = await fetch('/agent-todo/state', { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 1632,
+        "text": "var res = await fetch(isCode ? '/agent-todo/pair' : '/agent-todo/token', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { createReadStream, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 32,
+        "text": "const raw = readFileSync(AUTH_FILE, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 43,
+        "text": "mkdirSync(AUTH_DIR, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 44,
+        "text": "writeFileSync(AUTH_FILE, JSON.stringify(value, null, 2), { encoding: 'utf8', mode: 0o600 })"
+      },
+      {
+        "file": "scripts/build-client.cjs",
+        "line": 16,
+        "text": "const fs = require('node:fs')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 22,
+        "text": "export const inject = ['webServer', 'tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 178,
+        "text": "return ctx.tools.register({"
+      },
+      {
+        "file": "scripts/verify-package.cjs",
+        "line": 261,
+        "text": "assert.ok(host.includes(\"export const inject = ['webServer', 'tools']\"))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

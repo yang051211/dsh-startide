@@ -1,0 +1,88 @@
+{
+  "name": "dsh-quiet-windows",
+  "version": "0.3.6",
+  "scannedAt": "2026-11-24T01:02:39.197Z",
+  "icon": "dsh-quiet-windows.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import { mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 555,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "tests/tools.test.mjs",
+        "line": 234,
+        "text": "const { writeFileSync, mkdtempSync } = await import('node:fs');"
+      },
+      {
+        "file": "tests/tools.test.mjs",
+        "line": 240,
+        "text": "writeFileSync(page, '<!doctype html><meta charset=\"utf-8\"><title>quiet preview</title>'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "export const inject = ['subprocess', 'tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 719,
+        "text": "disposers.push(ctx.tools.register(definition));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 113,
+        "text": "const handle = ctx.subprocess.spawn({"
+      },
+      {
+        "file": "index.js",
+        "line": 204,
+        "text": "handle = ctx.subprocess.spawn({"
+      },
+      {
+        "file": "tests/tools.test.mjs",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "tests/tools.test.mjs",
+        "line": 50,
+        "text": "const child = spawn(cmd, args, { cwd: spec.cwd, windowsHide: true });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "subprocess",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

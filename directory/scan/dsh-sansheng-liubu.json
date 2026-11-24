@@ -1,0 +1,120 @@
+{
+  "name": "dsh-sansheng-liubu",
+  "version": "1.2.1",
+  "scannedAt": "2026-11-24T01:02:50.064Z",
+  "icon": "dsh-sansheng-liubu.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 33,
+        "text": "const res = await fetch(API + path, {"
+      },
+      {
+        "file": "lib/catalog.mjs",
+        "line": 44,
+        "text": "install: scriptPlan('irm https://claude.ai/install.ps1 | iex', 'curl -fsSL https://claude.ai/install.sh | bash'),"
+      },
+      {
+        "file": "lib/setup.mjs",
+        "line": 220,
+        "text": ": { file: 'bash', args: ['-c', 'curl -fsSL https://claude.ai/install.sh | bash'] };"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 7,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "index.mjs",
+        "line": 73,
+        "text": "fs.mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "index.mjs",
+        "line": 76,
+        "text": "fs.writeFileSync(target, bytes);"
+      },
+      {
+        "file": "index.mjs",
+        "line": 86,
+        "text": "const data = JSON.parse(fs.readFileSync(path.join(home, 'storages', 'workspace.json'), 'utf8'));"
+      },
+      {
+        "file": "index.mjs",
+        "line": 107,
+        "text": "fs.mkdirSync(dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 39,
+        "text": "export const inject = ['tools', 'webServer', 'connection'];"
+      },
+      {
+        "file": "index.mjs",
+        "line": 2260,
+        "text": "const tools = ctx.tools;"
+      },
+      {
+        "file": "index.mjs",
+        "line": 2284,
+        "text": "tools.register(defineTool({ output: textOutput, ...definition, execute: run(definition.execute) }));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.mjs",
+        "line": 163,
+        "text": "const child = spawn(command, args, { detached: true, stdio: 'ignore', windowsVerbatimArguments: verbatim });"
+      },
+      {
+        "file": "index.mjs",
+        "line": 196,
+        "text": "child = spawn(command, args, { env, windowsHide: false, stdio: ['ignore', 'pipe', 'ignore'] });"
+      },
+      {
+        "file": "lib/adapters.mjs",
+        "line": 11,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/adapters.mjs",
+        "line": 27,
+        "text": "const search = spawnSync('reg', ['query', key, '/s', '/f', 'DeepSeek Harness', '/d'], { encoding: 'utf8', windowsHide: true, timeout: 5000 });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

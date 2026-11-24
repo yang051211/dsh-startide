@@ -1,0 +1,98 @@
+{
+  "name": "@luosuqwq/dsh-ui-appearance",
+  "version": "0.1.12",
+  "scannedAt": "2026-11-24T01:02:39.740Z",
+  "icon": "luosuqwq__dsh-ui-appearance.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client/index.js",
+        "line": 55,
+        "text": "fetch('/bg/config').then((response) => response.ok ? response.json() : null).then((config) => {"
+      },
+      {
+        "file": "lib/client/index.js",
+        "line": 64,
+        "text": "const persistRemote = (s) => fetch('/bg/config', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(s) }).catch(() => {})"
+      },
+      {
+        "file": "lib/client/index.js",
+        "line": 75,
+        "text": "const response = await fetch('/bg/config')"
+      },
+      {
+        "file": "lib/client/index.js",
+        "line": 79,
+        "text": "const response = await fetch('/bg/list')"
+      },
+      {
+        "file": "lib/client/index.js",
+        "line": 613,
+        "text": "const refreshFiles = () => fetch('/bg/list')"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/index.js",
+        "line": 1,
+        "text": "import fs from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/host/index.js",
+        "line": 2,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/host/index.js",
+        "line": 80,
+        "text": "await fs.mkdir(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/host/index.js",
+        "line": 92,
+        "text": "await fs.unlink(source)"
+      },
+      {
+        "file": "lib/host/index.js",
+        "line": 96,
+        "text": "await fs.rm(legacyDir, { recursive: false, force: true }).catch(() => {})"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/index.js",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/host/index.js",
+        "line": 131,
+        "text": "const child = spawn(command, args, { detached: true, stdio: 'ignore', windowsHide: false })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

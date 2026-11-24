@@ -1,0 +1,83 @@
+{
+  "name": "@beatapi/dsh-geo",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-24T01:02:51.528Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bridge.mjs",
+        "line": 17,
+        "text": "return fetch(input,{...init,headers,redirect:'error'});"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "connection.mjs",
+        "line": 3,
+        "text": "import { readFile, lstat } from 'node:fs/promises';"
+      },
+      {
+        "file": "connection.mjs",
+        "line": 14,
+        "text": "&0o077))throw new Error();content=await readFile(file,'utf8');}catch{throw new Error('MCP credential file is unavailable or not private. Use an ordinary file wi"
+      },
+      {
+        "file": "index.mjs",
+        "line": 7,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.mjs",
+        "line": 28,
+        "text": "const content=readFileSync(skillUrl,'utf8').replace(/^---\\r?\\n[\\s\\S]*?\\r?\\n---\\r?\\n/,'');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 3,
+        "text": "import * as mcp from '@deepseek-ai/dsh-mcp-client';"
+      },
+      {
+        "file": "index.mjs",
+        "line": 13,
+        "text": "export const inject=['credentials','tools'];"
+      },
+      {
+        "file": "index.mjs",
+        "line": 23,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "index.mjs",
+        "line": 25,
+        "text": "d:configured,workspace_tools_registered:ctx.tools.schemas().some(t=>t.name.startsWith('mcp__beatgeo__')),workspace_url:url.origin,setup:'Start BeatGEO locally, "
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "credentials",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

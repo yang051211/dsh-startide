@@ -1,7 +1,7 @@
 {
   "name": "dsh-windows-parallel-mcp",
-  "version": "0.2.0",
-  "scannedAt": "2026-11-23T09:10:17.918Z",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-24T01:02:31.422Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -11,29 +11,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/engine.js",
-        "line": 23,
-        "text": "import { existsSync } from 'node:fs';"
+        "file": "lib/audit.js",
+        "line": 20,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';"
       },
       {
-        "file": "lib/index.js",
-        "line": 26,
-        "text": "import { mkdirSync, rmSync, writeFileSync } from 'node:fs';"
+        "file": "lib/audit.js",
+        "line": 86,
+        "text": "if (!existsSync(dirname(path))) mkdirSync(dirname(path), { recursive: true });"
       },
       {
-        "file": "lib/index.js",
-        "line": 189,
-        "text": "mkdirSync(dirname(latch), { recursive: true });"
+        "file": "lib/audit.js",
+        "line": 87,
+        "text": "appendFileSync(path, line + '\\n', 'utf8');"
       },
       {
-        "file": "lib/index.js",
-        "line": 190,
-        "text": "writeFileSync(latch, 'abort', 'utf8');"
+        "file": "lib/audit.js",
+        "line": 92,
+        "text": "const buf = readFileSync(path, 'utf8');"
       },
       {
-        "file": "lib/index.js",
-        "line": 345,
-        "text": "for (const latch of activeLatches) { try { rmSync(latch, { force: true }); } catch { } }"
+        "file": "lib/audit.js",
+        "line": 96,
+        "text": "const tail = readFileSync(path, 'utf8').split('\\n').filter((l) => l !== '').slice(-keep);"
       }
     ]
   },
@@ -42,12 +42,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 37,
+        "line": 128,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "lib/index.js",
-        "line": 340,
+        "line": 714,
         "text": "ctx.tools.register(tool);"
       }
     ]
@@ -62,13 +62,18 @@
       },
       {
         "file": "lib/engine.js",
-        "line": 74,
+        "line": 77,
         "text": "/** @type {import('node:child_process').ChildProcess | null} */"
       },
       {
         "file": "lib/engine.js",
-        "line": 105,
+        "line": 109,
         "text": "const child = spawn(this.powershellPath, args, {"
+      },
+      {
+        "file": "lib/engine.js",
+        "line": 208,
+        "text": "const child = /** @type {import('node:child_process').ChildProcess} */ (this.child);"
       }
     ]
   },

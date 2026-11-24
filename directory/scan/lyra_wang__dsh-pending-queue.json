@@ -1,29 +1,29 @@
 {
   "name": "@lyra_wang/dsh-pending-queue",
-  "version": "0.6.1",
-  "scannedAt": "2026-11-22T08:23:35.174Z",
+  "version": "0.9.0",
+  "scannedAt": "2026-11-24T01:02:35.011Z",
   "icon": "lyra_wang__dsh-pending-queue.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 260,
+        "line": 280,
         "text": "const response = await fetch(STATE_URL + '?sessionId=' + encodeURIComponent(sessionId), {"
       },
       {
         "file": "client.js",
-        "line": 271,
+        "line": 291,
         "text": "const response = await fetch(ACTION_URL, {"
       },
       {
         "file": "client.js",
-        "line": 547,
+        "line": 575,
         "text": "const response = await fetch(UPLOAD_URL, {"
       },
       {
         "file": "client.js",
-        "line": 779,
+        "line": 810,
         "text": "const response = await fetch('/plugins/feishu-ref/search', {"
       }
     ]
@@ -33,28 +33,28 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 22,
-        "text": "import { mkdir, readFile, rename, unlink, writeFile } from 'node:fs/promises'"
+        "line": 24,
+        "text": "import { mkdir, readdir, readFile, rename, unlink, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "index.js",
-        "line": 170,
-        "text": "const raw = await readFile(fileFor(sessionId), 'utf8')"
+        "line": 172,
+        "text": "const raw = await readFile(path, 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 213,
+        "line": 188,
+        "text": "await unlink(fileFor(sessionId)).catch(() => {})"
+      },
+      {
+        "file": "index.js",
+        "line": 206,
+        "text": "await mkdir(ASSET_DIR, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 274,
         "text": "await mkdir(STORE_DIR, { recursive: true })"
-      },
-      {
-        "file": "index.js",
-        "line": 216,
-        "text": "await writeFile(temporary, JSON.stringify(doc, null, 2) + '\\n', 'utf8')"
-      },
-      {
-        "file": "index.js",
-        "line": 243,
-        "text": "const { readdir } = await import('node:fs/promises')"
       }
     ]
   },

@@ -1,0 +1,108 @@
+{
+  "name": "dsh-bili-video",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-24T01:02:52.557Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core.js",
+        "line": 40,
+        "text": "const res = await fetch(\"https://bots.qq.com/app/getAppAccessToken\", {"
+      },
+      {
+        "file": "src/core.js",
+        "line": 76,
+        "text": "const res = await fetch(url, { headers: { \"user-agent\": UA, referer: BILI_REF }, redirect: \"follow\" });"
+      },
+      {
+        "file": "src/core.js",
+        "line": 83,
+        "text": "const res = await fetch(\"https://api.bilibili.com/x/web-interface/view?bvid=\" + bvid, {"
+      },
+      {
+        "file": "src/core.js",
+        "line": 92,
+        "text": "const res = await fetch("
+      },
+      {
+        "file": "src/core.js",
+        "line": 108,
+        "text": "const res = await fetch(url, { headers: { \"user-agent\": UA, referer: BILI_REF, ...(cookie ? { cookie } : {}) }, signal: AbortSignal.timeout(180000) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core.js",
+        "line": 1,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "src/core.js",
+        "line": 11,
+        "text": "for (const line of fs.readFileSync(path.join(root, \".env\"), \"utf8\").split(/\\r?\\n/)) {"
+      },
+      {
+        "file": "src/core.js",
+        "line": 22,
+        "text": "const t = fs.readFileSync(p, \"utf8\");"
+      },
+      {
+        "file": "src/core.js",
+        "line": 52,
+        "text": "const raw = JSON.parse(fs.readFileSync(p, \"utf8\"));"
+      },
+      {
+        "file": "src/core.js",
+        "line": 68,
+        "text": "const raw = fs.readFileSync(cfg.cookieFile || path.join(root, \"secrets\", \"bilibili-cookie.txt\"), \"utf8\").trim();"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 6,
+        "text": "export const inject = [\"tools\"];"
+      },
+      {
+        "file": "src/index.js",
+        "line": 84,
+        "text": "const tools = ctx.tools || ctx.get(\"tools\");"
+      },
+      {
+        "file": "src/index.js",
+        "line": 86,
+        "text": "tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core.js",
+        "line": 3,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

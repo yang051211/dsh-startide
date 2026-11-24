@@ -1,0 +1,104 @@
+{
+  "name": "@luosuqwq/dsh-diagram",
+  "version": "0.1.9",
+  "scannedAt": "2026-11-24T01:02:39.800Z",
+  "icon": "luosuqwq__dsh-diagram.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "import { existsSync, mkdirSync, readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 75,
+        "text": "mkdirSync(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 79,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 164,
+        "text": "const bytes = readFileSync(file)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "export const inject = ['tools', 'webServer', 'systemPrompt']"
+      },
+      {
+        "file": "index.js",
+        "line": 372,
+        "text": "ctx.effect(() => ctx.tools.register(diagramRenderTool(ctx)), 'dsh-diagram: diagram_render')"
+      },
+      {
+        "file": "index.js",
+        "line": 373,
+        "text": "ctx.effect(() => ctx.tools.register(pageScreenshotTool(ctx)), 'dsh-diagram: page_screenshot')"
+      },
+      {
+        "file": "index.js",
+        "line": 374,
+        "text": "ctx.effect(() => ctx.tools.register(imageAnnotateTool(ctx)), 'dsh-diagram: image_annotate')"
+      },
+      {
+        "file": "index.js",
+        "line": 375,
+        "text": "ctx.effect(() => ctx.tools.register(guideTool()), 'dsh-diagram: diagram_guide')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/browser.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/browser.js",
+        "line": 61,
+        "text": "const killer = spawn('taskkill', ['/pid', String(child.pid), '/T', '/F'], {"
+      },
+      {
+        "file": "lib/browser.js",
+        "line": 102,
+        "text": "const child = spawn(browser, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

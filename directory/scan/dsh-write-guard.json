@@ -1,0 +1,136 @@
+{
+  "name": "dsh-write-guard",
+  "version": "0.6.9",
+  "scannedAt": "2026-11-24T01:02:54.345Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 57,
+        "text": "download: true      # curl -o, iwr/irm -OutFile, certutil, bitsadmin"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 55,
+        "text": "['download', '下载', 'curl -o、iwr/irm -OutFile、certutil、bitsadmin'],"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 222,
+        "text": "return fetch(API, { headers: { Accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 284,
+        "text": "fetch(API, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 311,
+        "text": "fetch(API, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "import { mkdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 354,
+        "text": "const parsed = JSON.parse(readFileSync(runtimeConfigFile, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 416,
+        "text": "mkdirSync(dirname(runtimeConfigFile), { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "index.js",
+        "line": 417,
+        "text": "writeFileSync(temp, JSON.stringify(next, null, 2), { encoding: 'utf8', mode: 0o600 })"
+      },
+      {
+        "file": "index.js",
+        "line": 422,
+        "text": "rmSync(temp, { force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 49,
+        "text": "export const inject = ['tools', 'webServer', 'connection']"
+      },
+      {
+        "file": "index.js",
+        "line": 900,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "index.js",
+        "line": 981,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "index.js",
+        "line": 1029,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "index.js",
+        "line": 1071,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/notify.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/notify.js",
+        "line": 42,
+        "text": "const child = spawn(command, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 3,
+      "text": "**DeepSeek Harness 的文件写入防护插件。** 路径规则可以允许 Agent 写 `setup.ps1`，却无法区分普通安装步骤和下载后立即执行的代码。dsh-write-guard 在写入前检查内容，在写入后读回可定位的文件，核对实际落盘结果。"
+    },
+    {
+      "file": "README.md",
+      "line": 17,
+      "text": "Agent: （从 README 里抄一段带 IEX DownloadString 的 PowerShell，写进 setup.ps1）"
+    }
+  ],
+  "skippedEntries": []
+}

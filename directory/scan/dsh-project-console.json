@@ -1,0 +1,125 @@
+{
+  "name": "dsh-project-console",
+  "version": "0.2.10",
+  "scannedAt": "2026-11-24T01:02:52.438Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1313,
+        "text": "res = await fetch(`${PC_API_BASE}${path}`, {"
+      },
+      {
+        "file": "src/client/api.js",
+        "line": 20,
+        "text": "res = await fetch(`${PC_API_BASE}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine.mjs",
+        "line": 6,
+        "text": "rt { mkdirSync, existsSync, readFileSync, writeFileSync, renameSync, realpathSync, cpSync, statSync, lstatSync, readdirSync, rmSync, rmdirSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/engine.mjs",
+        "line": 11,
+        "text": "import { readdir, readFile, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/engine.mjs",
+        "line": 44,
+        "text": "mkdirSync(stateDir, { recursive: true });"
+      },
+      {
+        "file": "lib/engine.mjs",
+        "line": 45,
+        "text": "mkdirSync(join(stateDir, \"logs\"), { recursive: true });"
+      },
+      {
+        "file": "lib/engine.mjs",
+        "line": 63,
+        "text": "writeFileSync(core.logFile, line + \"\\n\", { flag: \"a\" });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine.mjs",
+        "line": 7043,
+        "text": "if (!ctx.tools || typeof ctx.tools.register !== \"function\") {"
+      },
+      {
+        "file": "lib/engine.mjs",
+        "line": 7060,
+        "text": "disposers.push(ctx.tools.register(capped));"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 519,
+        "text": "if (!ctx.tools || typeof ctx.tools.register !== \"function\") {"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 536,
+        "text": "disposers.push(ctx.tools.register(capped));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine.mjs",
+        "line": 10,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/engine.mjs",
+        "line": 422,
+        "text": "child = spawn(\"/bin/bash\", [\"-lc\", command], {"
+      },
+      {
+        "file": "lib/engine.mjs",
+        "line": 468,
+        "text": "child = spawn(command, args, { cwd, env: { ...process.env, ...env }, stdio: [\"ignore\", \"pipe\", \"pipe\"] });"
+      },
+      {
+        "file": "src/core.js",
+        "line": 16,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "src/core.js",
+        "line": 409,
+        "text": "child = spawn(\"/bin/bash\", [\"-lc\", command], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: node build.mjs && node build-host.mjs"
+      }
+    ]
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js",
+    "src/client/i18n.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

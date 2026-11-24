@@ -1,0 +1,81 @@
+{
+  "name": "dsh-error-book",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-24T01:02:53.989Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "data/book.json",
+        "line": 1459,
+        "text": "面 **没有 require**\\n         我加的 `require('node:fs').appendFileSync(...)` 每次都抛 ReferenceError\\n         外面又包着 try { } catch { }，异常被静默吞掉\\n         → \\\"没日志\\\"不代表\\\"没被"
+      },
+      {
+        "file": "data/book.json",
+        "line": 1497,
+        "text": "\"fs\","
+      },
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import { appendFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "const dbg = (m) => { try { appendFileSync(DBG, `[${new Date().toISOString()}] ${m}\\n`) } catch {} }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 85,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 112,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 150,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,109 @@
+{
+  "name": "@dhr2333/dsh-ledger",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-24T01:02:40.165Z",
+  "icon": "dhr2333__dsh-ledger.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1129,
+        "text": "const response = await fetch(path, {"
+      },
+      {
+        "file": "src/host/engine.js",
+        "line": 486,
+        "text": "const response = await fetch(`${pypiBase(options)}/${CORE_PACKAGE}/json`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/check-bundle.mjs",
+        "line": 5,
+        "text": "import { existsSync, mkdirSync, mkdtempSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "scripts/check-bundle.mjs",
+        "line": 6,
+        "text": "import { readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "scripts/check-bundle.mjs",
+        "line": 12,
+        "text": "const readJson = async (relative) => JSON.parse(await readFile(path.join(root, relative), 'utf8'));"
+      },
+      {
+        "file": "scripts/check-bundle.mjs",
+        "line": 66,
+        "text": "mkdirSync(bin, { recursive: true });"
+      },
+      {
+        "file": "scripts/check-bundle.mjs",
+        "line": 67,
+        "text": "writeFileSync(path.join(bin, 'python3.13'), '');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/vendor.mjs",
+        "line": 27,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "src/host/engine.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/host/engine.js",
+        "line": 211,
+        "text": "child = spawn(command, args, {"
+      },
+      {
+        "file": "src/host/routes.js",
+        "line": 10,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/host/routes.js",
+        "line": 420,
+        "text": "child = spawn(runtime.pythonPath, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 51,
+      "text": "- **外部引擎（开发机）**：配置 `pythonPath` 指向已有 venv；该 venv 里 `pip install beancount-guard` 即可，`corePath` 只在需要直接跑核心源码时设置。"
+    },
+    {
+      "file": "README.md",
+      "line": 60,
+      "text": "- 有新版本时面板显示「升级核心」，点击后在引擎 venv 里 `pip install --upgrade beancount-guard`；安装后校验 `health` 的 `protocol`，超出面板支持窗口会自动回滚到随包基线并提示更新插件。"
+    }
+  ],
+  "skippedEntries": []
+}

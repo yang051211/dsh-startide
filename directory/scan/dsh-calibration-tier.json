@@ -1,0 +1,123 @@
+{
+  "name": "dsh-calibration-tier",
+  "version": "3.10.1",
+  "scannedAt": "2026-11-24T01:02:50.253Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bridge.js",
+        "line": 7,
+        "text": "import { createServer } from \"node:http\";"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 135,
+        "text": "return fetch(portUrl(port, \"probe\", \"/state\"), { method: \"GET\", credentials: \"omit\", cache: \"no-store\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 176,
+        "text": "return fetch(portUrl(port, sessionId, \"/state\"), { method: \"GET\", credentials: \"omit\", cache: \"no-store\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 577,
+        "text": "return fetch(portUrl(port, sessionId, \"/state\"), { method: \"GET\", credentials: \"omit\", cache: \"no-store\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 607,
+        "text": "return fetch(portUrl(port, sessionId, \"/state\"), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "docs/tools/build-demo-svg.mjs",
+        "line": 2,
+        "text": "import { writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "docs/tools/build-demo-svg.mjs",
+        "line": 136,
+        "text": "writeFileSync(process.argv[2] || \"docs/demo.svg\", svg, \"utf8\");"
+      },
+      {
+        "file": "lib/agents.js",
+        "line": 14,
+        "text": "import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/agents.js",
+        "line": 45,
+        "text": "const raw = JSON.parse(readFileSync(MODELS_FILE, \"utf8\"));"
+      },
+      {
+        "file": "lib/agents.js",
+        "line": 109,
+        "text": "const raw = JSON.parse(readFileSync(MODELS_FILE, \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/delegate.js",
+        "line": 161,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 50,
+        "text": "// 访问 ctx.tools 前必须声明注入，否则工具注册不上。"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 51,
+        "text": "export const inject = [\"tools\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 92,
+        "text": "if (ctx && ctx.tools && typeof ctx.tools.register === \"function\") {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 95,
+        "text": "log(\"ctx.tools 不可用，工具未注册（档位仍可通过桥接读写）\");"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/check.mjs",
+        "line": 4,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "scripts/check.mjs",
+        "line": 18,
+        "text": "const res = spawnSync(process.execPath, [\"--check\", join(root, rel)], { encoding: \"utf8\" });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

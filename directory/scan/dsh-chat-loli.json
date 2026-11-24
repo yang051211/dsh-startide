@@ -1,15 +1,42 @@
 {
   "name": "dsh-chat-loli",
-  "version": "1.2.0",
-  "scannedAt": "2026-11-06T20:48:50.604Z",
+  "version": "1.5.7",
+  "scannedAt": "2026-11-24T01:02:53.673Z",
   "icon": "dsh-chat-loli.webp",
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/rag-memory.js",
+        "line": 147,
+        "text": "const res = await fetch(endpoint, {"
+      }
+    ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/rag-memory.js",
+        "line": 12,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/rag-memory.js",
+        "line": 65,
+        "text": "const raw = JSON.parse(readFileSync(storePath, 'utf8'));"
+      },
+      {
+        "file": "lib/rag-memory.js",
+        "line": 107,
+        "text": "if (!existsSync(dir)) mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/rag-memory.js",
+        "line": 108,
+        "text": "writeFileSync(storePath, JSON.stringify(store), 'utf8');"
+      }
+    ]
   },
   "agentTools": {
     "hit": true,

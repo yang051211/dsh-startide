@@ -1,24 +1,29 @@
 {
   "name": "dsh-ppt-maker",
-  "version": "1.0.1",
-  "scannedAt": "2026-11-01T19:08:52.875Z",
+  "version": "2.0.4",
+  "scannedAt": "2026-11-24T01:02:40.195Z",
   "icon": "dsh-ppt-maker.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 68,
+        "line": 77,
         "text": "res = await fetch(`${PREFIX}${path}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 136,
-        "text": "const res = await fetch(`${PREFIX}/export`, {"
+        "line": 151,
+        "text": "res = await fetch(`${PREFIX}/export`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2173,
+        "text": "void fetch(src, { signal: controller.signal }).then((res) => {"
       },
       {
         "file": "lib/index.js",
-        "line": 19644,
+        "line": 22026,
         "text": "const res = await fetch(src, { signal: AbortSignal.timeout(MEDIA_FETCH_TIMEOUT_MS) });"
       }
     ]
@@ -29,12 +34,12 @@
       {
         "file": "lib/index.js",
         "line": 13850,
-        "text": "import { existsSync as existsSync2, readFileSync } from \"fs\";"
+        "text": "import { existsSync as existsSync3, readFileSync } from \"fs\";"
       },
       {
         "file": "lib/index.js",
         "line": 13860,
-        "text": "import { mkdtemp, readFile as readFile6, rm as rm3, writeFile as writeFile2 } from \"fs/promises\";"
+        "text": "import { mkdir as mkdir4, mkdtemp, readFile as readFile8, rm as rm3, writeFile as writeFile3 } from \"fs/promises\";"
       },
       {
         "file": "lib/index.js",
@@ -43,12 +48,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 14878,
+        "line": 15502,
         "text": "import { mkdir, readFile, readdir, rename, rm, writeFile } from \"fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 14923,
+        "line": 15547,
         "text": "const raw = JSON.parse(await readFile(metaPath(dir), \"utf8\"));"
       }
     ]
@@ -58,27 +63,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 20010,
+        "line": 22613,
         "text": "const off = ctx.tools.register({"
       },
       {
         "file": "lib/index.js",
-        "line": 20099,
+        "line": 22765,
         "text": "const off = ctx.tools.register({"
       },
       {
         "file": "lib/index.js",
-        "line": 20149,
+        "line": 22819,
         "text": "const off = ctx.tools.register({"
       },
       {
         "file": "lib/index.js",
-        "line": 20209,
+        "line": 22877,
         "text": "const off = ctx.tools.register({"
       },
       {
         "file": "lib/index.js",
-        "line": 21577,
+        "line": 25430,
         "text": "const off = ctx.tools.register({"
       }
     ]
@@ -88,8 +93,23 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 17425,
+        "line": 17755,
         "text": "import { execFile } from \"child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 20454,
+        "text": "import { execFile as execFile2 } from \"child_process\";"
+      },
+      {
+        "file": "scripts/prepare-vendor-env.mjs",
+        "line": 18,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/prepare-vendor-env.mjs",
+        "line": 38,
+        "text": "const res = spawnSync(cmd, args, { stdio: 'inherit', cwd: VENDOR_DIR })"
       }
     ]
   },
@@ -97,7 +117,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 9,
+  "dependencies": 8,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [],

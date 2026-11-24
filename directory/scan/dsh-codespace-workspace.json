@@ -1,11 +1,21 @@
 {
   "name": "dsh-codespace-workspace",
-  "version": "0.1.5",
-  "scannedAt": "2026-11-16T23:37:34.278Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-24T01:02:52.659Z",
   "icon": "dsh-codespace-workspace.svg",
   "network": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/host/doctor.js",
+        "line": 347,
+        "text": "    '  ver=$(curl -fsSL --max-time 25 https://api.github.com/repos/cli/cli/releases/latest 2>/dev/null | sed -n \"s/.*\\\\\"tag_name\\\\\": *\\\\\"v\\\\([^\\\\\"]*\\\\)\\\\\".*/\\\\1"
+      },
+      {
+        "file": "lib/host/doctor.js",
+        "line": 350,
+        "text": "'    if curl -fsSL --max-time 180 -o \"$tmp/gh.tgz\" \"https://github.com/cli/cli/releases/download/v$ver/gh_${ver}_linux_amd64.tar.gz\" 2>/dev/null; then',"
+      },
       {
         "file": "lib/host/github.js",
         "line": 17,
@@ -28,22 +38,22 @@
       },
       {
         "file": "lib/host/codespaces.js",
-        "line": 292,
+        "line": 293,
         "text": "mkdirSync(this.root, { recursive: true })"
       },
       {
         "file": "lib/host/codespaces.js",
-        "line": 300,
+        "line": 301,
         "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
       },
       {
         "file": "lib/host/codespaces.js",
-        "line": 323,
+        "line": 324,
         "text": "mkdirSync(this.root, { recursive: true })"
       },
       {
         "file": "lib/host/codespaces.js",
-        "line": 326,
+        "line": 327,
         "text": "writeFileSync(temporary, JSON.stringify({ version: 1, workspaces: [...this.records.values()] }, null, 2))"
       }
     ]
@@ -52,13 +62,18 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/host/doctor.js",
+        "line": 108,
+        "text": "// Host-side fact: only the caller knows what `tools.register()` accepted."
+      },
+      {
         "file": "lib/host/remote-tools.js",
-        "line": 507,
+        "line": 711,
         "text": "* `agent.ctx.tools` at `agent/created` time is `undefined`, and it fails"
       },
       {
         "file": "lib/host/remote-tools.js",
-        "line": 582,
+        "line": 821,
         "text": "disposers.push(tools.register(registryDefinition(definition)))"
       },
       {
@@ -70,17 +85,27 @@
         "file": "lib/host/schema.js",
         "line": 107,
         "text": "* Normalize one tool definition for `tools.register()`."
-      },
-      {
-        "file": "lib/host/schema.js",
-        "line": 113,
-        "text": "* @returns {object} a copy safe to hand to `tools.register()`."
       }
     ]
   },
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/host/channel.js",
+        "line": 42,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/host/channel.js",
+        "line": 240,
+        "text": "#spawn() {"
+      },
+      {
+        "file": "lib/host/channel.js",
+        "line": 343,
+        "text": "this.#spawn()"
+      },
       {
         "file": "lib/host/gh.js",
         "line": 15,
@@ -90,16 +115,6 @@
         "file": "lib/host/gh.js",
         "line": 44,
         "text": "child = spawn(command, args, {"
-      },
-      {
-        "file": "lib/host/transport.js",
-        "line": 18,
-        "text": "import { spawn } from 'node:child_process'"
-      },
-      {
-        "file": "lib/host/transport.js",
-        "line": 159,
-        "text": "child = spawn(command, args, { stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true })"
       }
     ]
   },

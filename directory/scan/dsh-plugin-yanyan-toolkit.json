@@ -1,19 +1,24 @@
 {
   "name": "dsh-plugin-yanyan-toolkit",
-  "version": "1.4.13",
-  "scannedAt": "2026-11-20T21:47:28.028Z",
+  "version": "1.5.0",
+  "scannedAt": "2026-11-24T01:02:43.822Z",
   "icon": "dsh-plugin-yanyan-toolkit.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 66,
+        "line": 64,
         "text": "fetch(BASE, { credentials: 'same-origin' })"
       },
       {
+        "file": "packages/dsh-find-right-plugin/lib/cache.js",
+        "line": 46,
+        "text": "const res = await fetch(url, {"
+      },
+      {
         "file": "packages/dsh-plugin-yanyan-icon/lib/client.js",
-        "line": 232,
+        "line": 250,
         "text": "return fetch(pathname, {"
       },
       {
@@ -22,13 +27,8 @@
         "text": "return fetch(path, {"
       },
       {
-        "file": "packages/dsh-plugin-yanyan-subagent/lib/index.js",
-        "line": 561,
-        "text": "const resp = await fetch(origin.replace(/\\/$/, '') + DELETE_API, {"
-      },
-      {
         "file": "packages/dsh-plugin-yanyan-update/lib/client.js",
-        "line": 243,
+        "line": 273,
         "text": "return fetch(pathname, {"
       }
     ]
@@ -53,7 +53,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 39,
+        "line": 38,
         "text": "return JSON.parse(readFileSync(file, 'utf8'));"
       },
       {
@@ -67,8 +67,18 @@
     "hit": true,
     "evidence": [
       {
+        "file": "packages/dsh-find-right-plugin/lib/index.js",
+        "line": 28,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "packages/dsh-find-right-plugin/lib/index.js",
+        "line": 64,
+        "text": "ctx.tools.register(tool)"
+      },
+      {
         "file": "packages/dsh-plugin-yanyan-subagent/lib/index.js",
-        "line": 948,
+        "line": 922,
         "text": "for (const def of definitions) tools.register(def);"
       }
     ]

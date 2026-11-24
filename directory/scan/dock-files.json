@@ -1,35 +1,35 @@
 {
   "name": "dock-files",
-  "version": "0.4.2",
-  "scannedAt": "2026-11-12T21:20:42.600Z",
-  "icon": null,
+  "version": "0.5.0",
+  "scannedAt": "2026-11-24T01:02:47.789Z",
+  "icon": "dock-files.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 1066,
+        "line": 927,
         "text": "const json = await (await fetch(`/wb-files/${method}`, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1121,
+        "line": 1450,
+        "text": "const json = await (await fetch(`/wb-files/${method}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1525,
         "text": "const json = await (await fetch(\"/wb-files/list\", {"
       },
       {
         "file": "lib/client.js",
-        "line": 1159,
+        "line": 1563,
         "text": "const json = await (await fetch(\"/wb-files/list\", {"
       },
       {
         "file": "lib/client.js",
-        "line": 1462,
+        "line": 1986,
         "text": "\t\t\t\t\t\t\t\tconst response = await fetch(`/wb-files/uploadChunk?sessionId=${encodeURIComponent(sessionId ?? \"\")}&uploadId=${encodeURIComponent(currentUploadId)}&off"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 1570,
-        "text": "const response = await fetch(downloadUrl, { signal: abort.signal });"
       }
     ]
   },
@@ -44,22 +44,22 @@
       {
         "file": "lib/index.js",
         "line": 2,
-        "text": "import { cp, link, lstat, mkdir, open, opendir, readFile, realpath, rename, rm, stat, truncate, unlink, writeFile } from \"node:fs/promises\";"
+        "text": "import { cp, link, lstat, mkdir, mkdtemp, open, opendir, readFile, realpath, rename, rm, stat, truncate, unlink, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 221,
-        "text": "await writeFile(join(dir, name), \"\", { flag: \"wx\" });"
+        "line": 131,
+        "text": "await writeFile(path, SCRIPT, \"utf8\");"
       },
       {
         "file": "lib/index.js",
-        "line": 228,
-        "text": "await mkdir(join(dir, name));"
+        "line": 238,
+        "text": "await writeFile(payload, `${lines.join(\"\\n\")}\\n`, \"utf8\");"
       },
       {
         "file": "lib/index.js",
-        "line": 294,
-        "text": "await rm(target, {"
+        "line": 247,
+        "text": "await rm(dir, {"
       }
     ]
   },
@@ -68,8 +68,19 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 139,
+        "text": "const child = spawn(powershellPath(), ["
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

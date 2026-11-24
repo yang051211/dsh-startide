@@ -1,0 +1,103 @@
+{
+  "name": "dsh-opendesign-limit",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-24T01:02:50.468Z",
+  "icon": "dsh-opendesign-limit.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 945,
+        "text": "const response = await fetch(`${SNAPSHOT_PATH}${suffix}`, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 973,
+        "text": "response = await fetch(path, {"
+      },
+      {
+        "file": "plugin/browser-session.mjs",
+        "line": 233,
+        "text": "const socket = new WebSocket(wsUrl)"
+      },
+      {
+        "file": "plugin/browser-session.mjs",
+        "line": 318,
+        "text": "const response = await fetch(listUrl, { signal: AbortSignal.timeout(2000) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/browser-session.mjs",
+        "line": 26,
+        "text": "import { existsSync, mkdirSync, rmSync } from 'node:fs'"
+      },
+      {
+        "file": "plugin/browser-session.mjs",
+        "line": 447,
+        "text": "rmSync(dir, { recursive: true, force: true })"
+      },
+      {
+        "file": "plugin/browser-session.mjs",
+        "line": 496,
+        "text": "mkdirSync(profileDir, { recursive: true })"
+      },
+      {
+        "file": "plugin/opendesign.mjs",
+        "line": 40,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "plugin/opendesign.mjs",
+        "line": 166,
+        "text": "const reader = typeof io.readFile === 'function' ? io.readFile : (target) => readFileSync(target, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/index.mjs",
+        "line": 37,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "plugin/index.mjs",
+        "line": 161,
+        "text": "const tools = ctx.tools"
+      },
+      {
+        "file": "plugin/index.mjs",
+        "line": 413,
+        "text": "ctx.effect(() => tools.register(quotaTool), 'opendesign-limit: opendesign_limit')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/browser-session.mjs",
+        "line": 25,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

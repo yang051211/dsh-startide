@@ -1,14 +1,14 @@
 {
   "name": "dsh-chime-alerts",
-  "version": "0.5.10",
-  "scannedAt": "2026-10-26T10:09:35.611Z",
+  "version": "0.6.1",
+  "scannedAt": "2026-11-24T01:02:52.401Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.web.js",
-        "line": 331,
+        "line": 451,
         "text": "var p = fetch(HOST_API_BASE + path, init)"
       }
     ]
@@ -17,29 +17,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/host.js",
-        "line": 54,
+        "file": "dynamic/host.body.js",
+        "line": 29,
         "text": "const f = ctx.get('fs')"
       },
       {
-        "file": "lib/index.js",
-        "line": 19,
-        "text": "import { readFileSync, writeFileSync, mkdirSync, readFileSync as rf, existsSync, renameSync, rmSync } from 'node:fs'"
+        "file": "dynamic/host.body.js",
+        "line": 712,
+        "text": "if (staticNodeIo !== null && typeof staticNodeIo.rm === 'function') staticNodeIo.rm(absPath)"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 59,
+        "text": "const f = ctx.get('fs')"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 742,
+        "text": "if (staticNodeIo !== null && typeof staticNodeIo.rm === 'function') staticNodeIo.rm(absPath)"
       },
       {
         "file": "lib/index.js",
-        "line": 23,
-        "text": "const body = readFileSync(fileURLToPath(new URL('./host.js', import.meta.url)), 'utf8')"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 38,
-        "text": "mkdirSync(dirname(absPath), { recursive: true })"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 40,
-        "text": "writeFileSync(tmp, content, 'utf8')"
+        "line": 13,
+        "text": "import { readFileSync, writeFileSync, mkdirSync, existsSync, renameSync, rmSync } from 'node:fs'"
       }
     ]
   },
@@ -51,29 +51,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/host.js",
-        "line": 162,
+        "file": "dynamic/host.body.js",
+        "line": 137,
         "text": "const handle = sub.spawn({"
       },
       {
-        "file": "lib/host.js",
-        "line": 293,
+        "file": "dynamic/host.body.js",
+        "line": 283,
         "text": "const h = subprocessSvc().spawn({"
       },
       {
-        "file": "lib/host.js",
-        "line": 524,
+        "file": "dynamic/host.body.js",
+        "line": 670,
         "text": "const h = subprocessSvc().spawn({"
       },
       {
-        "file": "lib/host.js",
-        "line": 547,
-        "text": "subprocessSvc().spawn({"
+        "file": "dynamic/host.body.js",
+        "line": 703,
+        "text": "const h = svc.spawn(spec)"
       },
       {
-        "file": "lib/host.js",
-        "line": 554,
-        "text": "subprocessSvc().spawn({"
+        "file": "dynamic/host.body.js",
+        "line": 879,
+        "text": "const h = subprocessSvc().spawn({"
       }
     ]
   },

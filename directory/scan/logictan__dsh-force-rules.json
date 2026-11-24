@@ -1,49 +1,61 @@
 {
   "name": "@logictan/dsh-force-rules",
-  "version": "0.4.7",
-  "scannedAt": "2026-11-06T20:48:50.675Z",
+  "version": "0.4.8",
+  "scannedAt": "2026-11-24T01:02:53.212Z",
   "icon": null,
   "network": {
     "hit": false,
     "evidence": []
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 56,
+        "text": "import { stat } from 'node:fs/promises';"
+      }
+    ]
   },
   "agentTools": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 71,
+        "line": 310,
         "text": "export const inject = ['tools', 'agents'];"
       },
       {
         "file": "lib/index.js",
-        "line": 178,
+        "line": 417,
         "text": "return ctx.tools.get(exec.name, exec.agent)?.parameters?.properties?.run_in_background !== undefined;"
       },
       {
         "file": "lib/index.js",
-        "line": 198,
+        "line": 437,
         "text": "const tool = ctx.tools.get(exec.name, scope);"
       },
       {
         "file": "lib/index.js",
-        "line": 590,
+        "line": 829,
         "text": "const properties = ctx.tools.get(exec.name, exec.agent)?.parameters?.properties;"
       },
       {
         "file": "lib/index.js",
-        "line": 904,
+        "line": 1184,
         "text": "scoped.tools.register("
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 55,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
   },
   "installScripts": {
     "hit": true,

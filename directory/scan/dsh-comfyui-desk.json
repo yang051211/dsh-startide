@@ -1,0 +1,119 @@
+{
+  "name": "dsh-comfyui-desk",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-24T01:02:53.816Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.body.js",
+        "line": 120,
+        "text": "response = await fetch(candidate, {"
+      },
+      {
+        "file": "client.body.js",
+        "line": 1032,
+        "text": "const response = await fetch(withBase('/api/dsh-comfyui-desk/upload', settings.base), { method: 'POST', body: form })"
+      },
+      {
+        "file": "client.js",
+        "line": 129,
+        "text": "response = await fetch(candidate, {"
+      },
+      {
+        "file": "client.js",
+        "line": 1041,
+        "text": "const response = await fetch(withBase('/api/dsh-comfyui-desk/upload', settings.base), { method: 'POST', body: form })"
+      },
+      {
+        "file": "lib/bridge.js",
+        "line": 9,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/store.js",
+        "line": 4,
+        "text": "import { mkdir, readdir, readFile, stat, unlink, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 21,
+        "text": "await mkdir(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 29,
+        "text": "await mkdir(target, { recursive: true })"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 88,
+        "text": "await writeFile(full, bytes)"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 102,
+        "text": "return { bytes: await readFile(full), name, full }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "export const inject = ['webServer', 'tools']"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 116,
+        "text": "const result = ctx.tools.register(definition)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/comfy.js",
+        "line": 7,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/comfy.js",
+        "line": 248,
+        "text": "execFile('nvidia-smi', ['--query-gpu=utilization.gpu', '--format=csv,noheader,nounits'],"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 3,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 43,
+        "text": "const child = spawn(command, args, { detached: true, stdio: 'ignore', windowsHide: false })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

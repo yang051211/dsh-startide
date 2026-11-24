@@ -1,0 +1,75 @@
+{
+  "name": "dsh-multi-window-context-management",
+  "version": "0.7.1",
+  "scannedAt": "2026-11-24T01:02:50.535Z",
+  "icon": "dsh-multi-window-context-management.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/note-repository.js",
+        "line": 1,
+        "text": "import { readFileSync, renameSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/note-repository.js",
+        "line": 2,
+        "text": "import { mkdir } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/note-repository.js",
+        "line": 35,
+        "text": "data = JSON.parse(readFileSync(file, 'utf8'));"
+      },
+      {
+        "file": "lib/note-repository.js",
+        "line": 70,
+        "text": "await mkdir(dirname(file), { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "lib/note-repository.js",
+        "line": 75,
+        "text": "const result = operation === 'append' ? store.appendToFile('self', path, text) : store.writeFile('self', path, text);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "export const inject = ['tools', 'sessions', 'commands', 'systemPrompt', 'settings'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 82,
+        "text": "for (const { definition, gate: when } of tools) unregisterTools.push(ctx.tools.register(definition, when));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "sessions",
+    "settings",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
