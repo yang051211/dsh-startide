@@ -1,11 +1,11 @@
 {
   "name": "dsh-turn-cleanup",
-  "latest": "0.7.2",
-  "published": 1795272042,
+  "latest": "0.7.3",
+  "published": 1795543258,
   "created": 1794645873,
-  "modified": "2026-11-21T14:40:42.306Z",
+  "modified": "2026-11-24T18:00:58.549Z",
   "displayName": null,
-  "description": "turn 结束时拦住本轮留下的临时文件（约定目录 + 本 turn 写入追踪，含 edit/delete）与超量备份（同一原件的 .bak 只留最近 N 份），非空则注入一条清场提示；模型也可用 report_temp_cleanup 主动上报删掉的路径与体积。附带 Web 面板统计拦截次数、已清文件数、释放空间与依从率。",
+  "description": "DeepSeek Harness 的收尾清场闸门：每轮 turn 结束时检查本轮写入的临时文件和超量 .bak 备份，非空就把清单推回给模型，由它删掉或说明理由。模型可用 report_temp_cleanup 上报自己删掉的路径与体积，另有 Web 面板统计拦截次数、已清文件数、释放空间与依从率。",
   "author": "Leonlee114514",
   "keywords": [
     "dsh",
@@ -23,6 +23,11 @@
   "isBundle": true,
   "deprecated": false,
   "versions": [
+    {
+      "version": "0.7.3",
+      "publishTimestamp": 1795543258,
+      "enginesDsh": ">=0.2.1-rc.5"
+    },
     {
       "version": "0.7.2",
       "publishTimestamp": 1795272042,
