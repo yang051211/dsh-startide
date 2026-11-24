@@ -1,11 +1,11 @@
 {
   "name": "ygc-dsh-sync",
-  "latest": "2.2.5",
-  "published": 1795476950,
+  "latest": "2.2.6",
+  "published": 1795512446,
   "created": 1794521020,
-  "modified": "2026-11-23T23:35:50.415Z",
+  "modified": "2026-11-24T09:27:27.010Z",
   "displayName": null,
-  "description": "DSH 同步插件 2.2.5：侧边栏全图形化面板（工作区 / 插件 / 技能 / 设置，卡片 + 数字 + 进度环，无解释小字）。同步根下建本机特征文件夹（工作区 / 插件 / 技能三个子文件夹）。会话同步的判定分三层：先按项目键找目录，再用 DSH 工作区账本（workspace.json 的 sessionIds）收窄到本工作区登记过的会话，最后看首帧 delegationDepth —— 只有 depth 0 的主对话才算「本机对话」，Mnemon 之类的子代理运行记录不备份也不显示。本机「插件设计",
+  "description": "DSH 同步插件 2.2.6：侧边栏全图形化面板（工作区 / 插件 / 技能 / 设置，卡片 + 数字 + 进度环，无解释小字）。巡检只读：备份本机未归档对话，并**扫描**别机特征文件夹里的对话备份记录列成清单（带标题），不再自动把别机会话复制进本机。复制只发生在人工勾选之后（POST /workspaces/pull-selected），拉进来时改写首帧 cwd 并补登记归属。巡检三段严格串行：会话同步（扫描工作区 → 备份本机 → 扫描别机清单）→ 插件同步 → 技能同步，进度按权重推进（会话 60",
   "author": "YG",
   "keywords": [
     "dsh",
@@ -24,6 +24,11 @@
   "isBundle": true,
   "deprecated": false,
   "versions": [
+    {
+      "version": "2.2.6",
+      "publishTimestamp": 1795512446,
+      "enginesDsh": null
+    },
     {
       "version": "2.2.5",
       "publishTimestamp": 1795476950,

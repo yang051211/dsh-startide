@@ -1,11 +1,11 @@
 {
   "name": "@leiyi-works/dsh-auto-restart",
-  "latest": "0.3.36",
-  "published": 1795437492,
+  "latest": "0.3.37",
+  "published": 1795499092,
   "created": 1795164197,
-  "modified": "2026-11-23T12:38:12.240Z",
+  "modified": "2026-11-24T05:44:53.078Z",
   "displayName": null,
-  "description": "装/更插件后自动重启 DSH 并回到原会话：检测 profile 插件文件变化，一直等所有会话空闲且最近活动安静，由常驻后台看门狗（登录自启、不碰 WMI）或 WMI 守护先杀主进程再拉起（可最大化窗口），带冷却、试运行、日志和右侧原生侧边栏面板。",
+  "description": "自动重启 0.3.37：修「同一次插件变化连发两份重启请求，看门狗把应用连杀连拉两次」——tick 加防重入 + 派发前二次校验（草稿检查最长等 2.5s，之前期间另一轮 tick 会重复派发），看门狗重启完成后丢弃「早于本次启动」的过期请求。装/更插件后自动重启 DSH 并回到原会话：检测 profile 插件文件变化，一直等所有会话空闲且最近活动安静，由常驻后台看门狗（登录自启、不碰 WMI）或 WMI 守护先杀主进程再拉起（可最大化窗口），带冷却、试运行、日志和右侧原生侧边栏面板。",
   "author": "leiyi-works",
   "keywords": [
     "deepseek-harness",
@@ -21,6 +21,11 @@
   "isBundle": true,
   "deprecated": false,
   "versions": [
+    {
+      "version": "0.3.37",
+      "publishTimestamp": 1795499092,
+      "enginesDsh": null
+    },
     {
       "version": "0.3.36",
       "publishTimestamp": 1795437492,
@@ -164,11 +169,6 @@
     {
       "version": "0.3.1",
       "publishTimestamp": 1795183767,
-      "enginesDsh": null
-    },
-    {
-      "version": "0.3.9",
-      "publishTimestamp": 1795183714,
       "enginesDsh": null
     }
   ]
