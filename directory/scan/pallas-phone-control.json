@@ -1,0 +1,103 @@
+{
+  "name": "pallas-phone-control",
+  "version": "0.8.1",
+  "scannedAt": "2026-11-25T10:09:39.685Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.cjs",
+        "line": 4,
+        "text": "const http = require('node:http');"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.cjs",
+        "line": 2,
+        "text": "const fs = require('node:fs');"
+      },
+      {
+        "file": "index.cjs",
+        "line": 147,
+        "text": "return fs.readFileSync(path.join(__dirname, 'SKILL.md'), 'utf8').replaceAll('{{DIR}}', renewal.DIR);"
+      },
+      {
+        "file": "index.cjs",
+        "line": 157,
+        "text": "fs.writeFileSync(temporary, value, {flag:'wx', mode:0o600});"
+      },
+      {
+        "file": "index.cjs",
+        "line": 158,
+        "text": "try { fs.renameSync(temporary, file); } finally { fs.rmSync(temporary, {force:true}); }"
+      },
+      {
+        "file": "index.cjs",
+        "line": 196,
+        "text": "const trust = pending => { try { pending ? writeResult(trustFile, '') : fs.rmSync(trustFile, {force:true}); } catch {} };"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.cjs",
+        "line": 415,
+        "text": "exports.inject = ['tools', 'skills'];"
+      },
+      {
+        "file": "index.cjs",
+        "line": 429,
+        "text": "let tool = ctx.tools.get('lan_services') || nativeLan;"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "pallasboot-runner-aarch64"
+  ],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 37,
+      "text": "Tell the agent; it runs `setup.sh reveal`. You will be asked to open a link in Safari, install a small \"identify this device\" profile (it only reports the devic"
+    },
+    {
+      "file": "README.md",
+      "line": 54,
+      "text": "sh /root/workspace/pallasboot-runner-0.8.0/setup.sh status        # current state and next step"
+    },
+    {
+      "file": "README.md",
+      "line": 55,
+      "text": "sh /root/workspace/pallasboot-runner-0.8.0/setup.sh start [--new-login]   # start signing; --new-login switches Apple ID"
+    },
+    {
+      "file": "README.md",
+      "line": 56,
+      "text": "sh /root/workspace/pallasboot-runner-0.8.0/setup.sh wait [seconds]"
+    },
+    {
+      "file": "README.md",
+      "line": 57,
+      "text": "sh /root/workspace/pallasboot-runner-0.8.0/setup.sh reveal        # make Developer Mode appear"
+    }
+  ],
+  "skippedEntries": []
+}

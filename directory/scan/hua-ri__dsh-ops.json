@@ -1,0 +1,102 @@
+{
+  "name": "@hua-ri/dsh-ops",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-25T10:09:25.245Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 21,
+        "text": "const jget = async (p) => asJson(await fetch(API + p, { credentials: 'same-origin' }))"
+      },
+      {
+        "file": "client.js",
+        "line": 22,
+        "text": "const jpost = async (p, body) => asJson(await fetch(API + p, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 5,
+        "text": "r.signal;\\n      const response = await fetch(url, { credentials: 'same-origin', ...options, signal });\\n      const text = await response.text();\\n      let va"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 25,
+        "text": "fetch(d.url, { method: d.method || 'GET', body: (d.body == null ? undefined : d.body), headers: d.headers || {}, credentials: 'same-origin' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 8,
+        "text": "import { mkdirSync, readdirSync, statSync, existsSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 33,
+        "text": "mkdirSync(join(dataDir(), 'ssh'), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 766,
+        "text": "if (existsSync(tokenFile)) args.push('--kube-token', readFileSync(tokenFile, 'utf8').trim())"
+      },
+      {
+        "file": "lib/cli.mjs",
+        "line": 2,
+        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/cli.mjs",
+        "line": 9,
+        "text": "mkdirSync(DATA_DIR, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cli.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/cli.mjs",
+        "line": 46,
+        "text": "child = spawn(bin, args, {"
+      },
+      {
+        "file": "lib/ssh/tunnels.mjs",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/ssh/tunnels.mjs",
+        "line": 48,
+        "text": "const proc = spawn('ssh', sshArgs, { stdio: 'pipe', detached: false })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,55 @@
+{
+  "name": "dsh-bus",
+  "version": "1.5.0",
+  "scannedAt": "2026-11-25T10:09:27.055Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 3,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dshbus-launcher.js",
+        "line": 6,
+        "text": "const { spawn } = require('child_process');"
+      },
+      {
+        "file": "dshbus-launcher.js",
+        "line": 26,
+        "text": "const child = spawn(bin, pre.concat(['-X', 'utf8', serverPy]), {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 23,
+      "text": "pip install git+https://github.com/taojun566/dsh-bus.git  # optional: installs dshbus / dshbus-mcp commands"
+    }
+  ],
+  "skippedEntries": []
+}

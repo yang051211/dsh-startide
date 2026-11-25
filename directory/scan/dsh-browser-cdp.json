@@ -1,7 +1,7 @@
 {
   "name": "dsh-browser-cdp",
-  "version": "1.13.2",
-  "scannedAt": "2026-11-18T09:00:06.437Z",
+  "version": "1.14.12",
+  "scannedAt": "2026-11-25T10:09:15.599Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,23 +13,23 @@
       },
       {
         "file": "bin/cdp-cast-worker.mjs",
-        "line": 6759,
+        "line": 6938,
         "text": "const response = await fetch(`http://127.0.0.1:${state.port}/json/version`, { signal: AbortSignal.timeout(1500) });"
       },
       {
         "file": "bin/cdp-cast-worker.mjs",
-        "line": 6848,
+        "line": 7034,
         "text": "const response = await fetch(`${target.base}/json/list`, { signal: AbortSignal.timeout(1500) });"
       },
       {
         "file": "bin/cdp-render-worker.mjs",
-        "line": 124,
+        "line": 126,
         "text": "const ws = new WebSocket(wsUrl)"
       },
       {
         "file": "lib/client.js",
-        "line": 702,
-        "text": "return fetch(path, {"
+        "line": 920,
+        "text": "return fetch(bcdpRoute(path), init);"
       }
     ]
   },
@@ -48,17 +48,17 @@
       },
       {
         "file": "bin/cdp-cast-worker.mjs",
-        "line": 6746,
+        "line": 6925,
         "text": "return JSON.parse(await import(\"node:fs/promises\").then((fs) => fs.readFile(BROWSER_STATE_FILE, \"utf8\")));"
       },
       {
         "file": "bin/cdp-cast-worker.mjs",
-        "line": 7031,
+        "line": 7258,
         "text": "rmSync(CAST_STATE_FILE, { force: true });"
       },
       {
         "file": "bin/cdp-cast-worker.mjs",
-        "line": 7498,
+        "line": 7748,
         "text": "mkdirSync(STATE_DIR, { recursive: true });"
       }
     ]
@@ -68,17 +68,17 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 12827,
+        "line": 12969,
         "text": "tHasCtx=${scopeProbe.agentHasCtx} agent.ctx.tools=${scopeProbe.agentCtxTools} agent.ctx.tools.restrict=${scopeProbe.agentCtxRestrict}` + (scopeProbe.error !== \""
       },
       {
         "file": "lib/index.js",
-        "line": 13049,
+        "line": 13194,
         "text": "const dispose = ctx.tools.register(registered);"
       },
       {
         "file": "lib/index.js",
-        "line": 13095,
+        "line": 13240,
         "text": "const restrictFn = ctx.tools.restrict;"
       },
       {
@@ -103,12 +103,12 @@
       },
       {
         "file": "bin/cdp-cast-worker.mjs",
-        "line": 4959,
+        "line": 5112,
         "text": "const child = this.spawn(path, argv, {"
       },
       {
         "file": "lib/index.js",
-        "line": 9,
+        "line": 8,
         "text": "import { execFile, spawn } from \"node:child_process\";"
       },
       {
@@ -118,7 +118,7 @@
       },
       {
         "file": "lib/index.js",
-        "line": 1300,
+        "line": 1301,
         "text": "const handle = subprocess.spawn(spec);"
       }
     ]

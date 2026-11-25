@@ -1,0 +1,97 @@
+{
+  "name": "dsh-qqbot-expands",
+  "version": "0.4.2",
+  "scannedAt": "2026-11-25T10:09:35.071Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 113,
+        "text": "fetch(API)"
+      },
+      {
+        "file": "client.js",
+        "line": 166,
+        "text": "const res = await fetch(API, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(payload) })"
+      },
+      {
+        "file": "index.js",
+        "line": 1650,
+        "text": "const response = await fetch(cfg.ttsBaseUrl + '/tts', {"
+      },
+      {
+        "file": "index.js",
+        "line": 1674,
+        "text": "const response = await fetch(cfg.ttsBaseUrl + '/audio/speech', {"
+      },
+      {
+        "file": "index.js",
+        "line": 1737,
+        "text": "const response = await fetch(cfg.asrBaseUrl + '/audio/transcriptions', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "import { appendFileSync, mkdirSync, readdirSync, readFileSync, renameSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 321,
+        "text": "const parsed = JSON.parse(readFileSync(STATE_FILE, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 338,
+        "text": "mkdirSync(QQ_HOME, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 339,
+        "text": "writeFileSync(STATE_FILE, JSON.stringify(rt.state, null, 2), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 363,
+        "text": "appendFileSync(LOG_FILE, line + '\\n', 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 30,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 2358,
+        "text": "disposers.push(ctx.tools.register(definition))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

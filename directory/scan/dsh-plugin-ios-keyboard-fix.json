@@ -1,0 +1,56 @@
+{
+  "name": "dsh-plugin-ios-keyboard-fix",
+  "version": "2.0.2",
+  "scannedAt": "2026-11-25T10:09:39.316Z",
+  "icon": "dsh-plugin-ios-keyboard-fix.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 258,
+        "text": "fetch(DIAG_PATH, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { appendFileSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 42,
+        "text": "if (statSync(DIAG_PATH).size > DIAG_MAX_BYTES) writeFileSync(DIAG_PATH, '');"
+      },
+      {
+        "file": "index.js",
+        "line": 55,
+        "text": "appendFileSync(DIAG_PATH, lines + '\\n');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

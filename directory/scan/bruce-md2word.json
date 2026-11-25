@@ -1,7 +1,7 @@
 {
   "name": "bruce-md2word",
-  "version": "0.7.1",
-  "scannedAt": "2026-11-05T08:17:20.710Z",
+  "version": "0.7.2",
+  "scannedAt": "2026-11-25T10:09:33.345Z",
   "icon": "bruce-md2word.svg",
   "network": {
     "hit": false,
@@ -53,8 +53,19 @@
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/runtime/cli-client.js",
+        "line": 4,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/runtime/cli-client.js",
+        "line": 87,
+        "text": "const result = spawnSync(executable, ['--version'], { encoding: 'utf8', timeout: 5000, windowsHide: true });"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
@@ -72,12 +83,12 @@
     {
       "file": "README.md",
       "line": 131,
-      "text": "npm install -g bruce-md2word@0.7.1"
+      "text": "npm install -g bruce-md2word@0.7.2"
     },
     {
       "file": "README.md",
       "line": 149,
-      "text": "npm install -g bruce-md2word@0.7.1"
+      "text": "npm install -g bruce-md2word@0.7.2"
     }
   ],
   "skippedEntries": []

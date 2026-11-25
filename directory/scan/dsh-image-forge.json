@@ -1,35 +1,35 @@
 {
   "name": "dsh-image-forge",
-  "version": "0.3.0",
-  "scannedAt": "2026-11-15T20:14:40.666Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-25T10:09:36.275Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 864,
+        "line": 3319,
+        "text": "const response = await fetch(studioImageUrl(meta.imagePath), { credentials: \"same-origin\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 5366,
+        "text": "const response = await fetch(`${STUDIO_BOARD_ROUTE}?board=${encodeURIComponent(boardId)}`, { credentials: \"same-origin\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 5373,
         "text": "const response = await fetch(STUDIO_BOARD_ROUTE, {"
       },
       {
         "file": "lib/client.js",
-        "line": 943,
-        "text": "const response = await fetch(`${STUDIO_BOARD_ROUTE}?board=${encodeURIComponent(id)}`, {"
+        "line": 8894,
+        "text": "const response = await fetch(STUDIO_BOARD_ROUTE, {"
       },
       {
         "file": "lib/client.js",
-        "line": 977,
-        "text": "const response = await fetch(STUDIO_CONFIG_ROUTE, {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 1063,
+        "line": 8917,
         "text": "const response = await fetch(STUDIO_CONFIG_ROUTE, { credentials: \"same-origin\" });"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 1102,
-        "text": "const response = await fetch(`${STUDIO_ASSETS_ROUTE}?${params.toString()}`, {"
       }
     ]
   },
@@ -39,27 +39,27 @@
       {
         "file": "lib/index.js",
         "line": 2,
-        "text": "import { constants, createReadStream, existsSync, readFileSync, statSync } from \"node:fs\";"
+        "text": "oseSync, constants, createReadStream, existsSync, mkdirSync, mkdtempSync, openSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from \"node:fs\";"
       },
       {
         "file": "lib/index.js",
         "line": 6,
-        "text": "import { access, mkdir, readFile, readdir, rename, stat, unlink, writeFile } from \"node:fs/promises\";"
+        "text": "import { access, mkdir, open, readFile, readdir, rename, stat, unlink, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 172,
-        "text": "return `${readFileSync(new URL(\"../skill.md\", import.meta.url), \"utf8\")}\\n> 下面两处路径由插件在注册时填入，可直接用 read 工具打开：\\n${REFERENCE_FILES.map((relative) => {"
+        "line": 347,
+        "text": "const bytes = new Uint8Array(readFileSync(path));"
       },
       {
         "file": "lib/index.js",
-        "line": 428,
-        "text": "raw = await readFile(boardFile(outputDir, id), \"utf8\");"
+        "line": 444,
+        "text": "mkdirSync(scratchRoot, { recursive: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 523,
-        "text": "const parsed = JSON.parse(await readFile(stateFile(outputDir), \"utf8\"));"
+        "line": 450,
+        "text": "writeFileSync(workflowPath, JSON.stringify(request.graph), \"utf8\");"
       }
     ]
   },
@@ -68,28 +68,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 4265,
+        "line": 5036,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 4363,
+        "line": 11094,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 4494,
+        "line": 11229,
         "text": "ctx.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 4554,
+        "line": 11392,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 11460,
         "text": "const inject = [\"tools\", \"skills\"];"
-      },
-      {
-        "file": "src/index.ts",
-        "line": 19,
-        "text": "export const inject = ['tools', 'skills']"
       }
     ]
   },
@@ -97,19 +97,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "scripts/start-comfyui.mjs",
-        "line": 33,
+        "file": "lib/index.js",
+        "line": 10,
+        "text": "import { spawn, spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 249,
+        "text": "spawnSync(\"taskkill\", ["
+      },
+      {
+        "file": "lib/index.js",
+        "line": 587,
+        "text": "const child = spawn(args[0] ?? \"\", args.slice(1), {"
+      },
+      {
+        "file": "scripts/comfyui-discovery.mjs",
+        "line": 23,
         "text": "import { spawn, spawnSync } from 'node:child_process'"
       },
       {
-        "file": "scripts/start-comfyui.mjs",
-        "line": 401,
-        "text": "if (IS_WIN) spawnSync('taskkill', ['/PID', String(record.pid), '/T', '/F'], { stdio: 'inherit' })"
-      },
-      {
-        "file": "scripts/start-comfyui.mjs",
-        "line": 441,
-        "text": "const child = spawn(plan.python, plan.argv, {"
+        "file": "src/cli-backend.ts",
+        "line": 19,
+        "text": "import { spawn } from 'node:child_process'"
       }
     ]
   },
@@ -118,7 +128,9 @@
     "evidence": []
   },
   "dependencies": 0,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [],
   "setupHints": [],

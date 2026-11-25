@@ -1,34 +1,34 @@
 {
   "name": "dsh-pixel-dashboard",
-  "version": "2.13.0",
-  "scannedAt": "2026-11-17T22:17:04.361Z",
-  "icon": null,
+  "version": "3.1.0",
+  "scannedAt": "2026-11-25T10:09:37.011Z",
+  "icon": "dsh-pixel-dashboard.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 755,
+        "line": 864,
         "text": "const response = await fetch(RATES_URL, { signal: controller.signal, headers: { accept: 'application/json' } })"
       },
       {
         "file": "lib/client.js",
-        "line": 778,
+        "line": 891,
         "text": "const response = await fetch(RATES_URL, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1020,
+        "line": 1338,
         "text": "const response = await fetch(url, { signal: controller.signal, headers: { accept: 'application/json' } })"
       },
       {
         "file": "lib/client.js",
-        "line": 1046,
+        "line": 1364,
         "text": "const response = await fetch(TOGGLE_URL, {"
       },
       {
         "file": "lib/client.js",
-        "line": 1336,
+        "line": 1813,
         "text": "const response = await fetch(url, { signal: controller.signal, headers: { accept: 'application/json' } })"
       }
     ]
@@ -38,51 +38,62 @@
     "evidence": [
       {
         "file": "lib/custom-rates.js",
-        "line": 49,
+        "line": 61,
         "text": "import { existsSync } from 'node:fs'"
       },
       {
         "file": "lib/custom-rates.js",
-        "line": 50,
+        "line": 62,
         "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "lib/custom-rates.js",
-        "line": 114,
+        "line": 232,
         "text": "const { stat } = await import('node:fs/promises')"
       },
       {
         "file": "lib/custom-rates.js",
-        "line": 122,
+        "line": 240,
         "text": "text = await readFile(this.path, 'utf8')"
       },
       {
         "file": "lib/custom-rates.js",
-        "line": 168,
+        "line": 294,
         "text": "await mkdir(dirname(this.path), { recursive: true })"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host.js",
+        "line": 2648,
+        "text": "if (tools) context.effect(() => tools.register(subscriptionValueConfigTool(subscriptionValues)), 'pixel-dashboard: 套餐价值配置工具')"
+      },
+      {
+        "file": "lib/host.js",
+        "line": 2650,
+        "text": "if (typeof ctx.inject === 'function') ctx.inject(['tools'], registerValueTool)"
+      }
+    ]
   },
   "childProcess": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/host.js",
-        "line": 73,
+        "line": 79,
         "text": "const { spawn } = await import('node:child_process')"
       },
       {
         "file": "lib/host.js",
-        "line": 77,
+        "line": 83,
         "text": "const child = spawn('cmd', ['/c', 'start', '', 'dsh://open'], {"
       },
       {
         "file": "lib/host.js",
-        "line": 86,
+        "line": 92,
         "text": "const child = spawn(opener, ['dsh://open'], { detached: true, stdio: 'ignore' })"
       }
     ]
@@ -98,8 +109,8 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 187,
-      "text": "用量账本默认在 `$DSH_HOME/plugins/dsh-pixel-dashboard/usage-ledger.jsonl`，按 `sessionId:seq` 去重，"
+      "line": 202,
+      "text": "用量账本默认在 `$DSH_HOME/plugins/dsh-pixel-dashboard/usage-ledger.jsonl`，按 `sessionId:seq`"
     }
   ],
   "skippedEntries": []

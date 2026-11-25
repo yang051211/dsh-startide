@@ -1,7 +1,7 @@
 {
   "name": "dsh-chat-preset",
-  "version": "1.2.0",
-  "scannedAt": "2026-10-31T07:05:30.991Z",
+  "version": "1.3.0",
+  "scannedAt": "2026-11-25T10:09:37.933Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -12,34 +12,60 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 90,
+        "line": 115,
         "text": "import fs from 'node:fs';"
       },
       {
         "file": "index.js",
-        "line": 99,
+        "line": 124,
         "text": "fs.appendFileSync(DBG_PATH, `${JSON.stringify({ t: new Date().toISOString(), ...obj })}\\n`);"
       },
       {
         "file": "index.js",
-        "line": 224,
+        "line": 297,
         "text": "raw = fs.readFileSync(file, 'utf8').trim().toLowerCase();"
       },
       {
         "file": "index.js",
-        "line": 262,
+        "line": 335,
         "text": "fs.rmSync(file, { force: true });"
       },
       {
         "file": "index.js",
-        "line": 274,
+        "line": 347,
         "text": "fs.mkdirSync(path.dirname(file), { recursive: true });"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 9,
+        "text": "#     (`ctx.tools.restrict({ allow: [] })` in the agent scope), so nothing is"
+      },
+      {
+        "file": "index.js",
+        "line": 80,
+        "text": "* `ctx.tools.restrict({ allow: [] })` (`:453`) records one restriction in the"
+      },
+      {
+        "file": "index.js",
+        "line": 88,
+        "text": "* a bare `agent.ctx.tools` throws \"without inject\". The plugin is mounted ONCE"
+      },
+      {
+        "file": "index.js",
+        "line": 223,
+        "text": "* dependency, so a bare `agent.ctx.tools` throws \"without inject\" (the same"
+      },
+      {
+        "file": "index.js",
+        "line": 237,
+        "text": "inject: ['tools'],"
+      }
+    ]
   },
   "childProcess": {
     "hit": false,

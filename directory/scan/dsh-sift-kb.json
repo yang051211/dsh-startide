@@ -1,0 +1,107 @@
+{
+  "name": "dsh-sift-kb",
+  "version": "1.3.7",
+  "scannedAt": "2026-11-25T10:09:30.533Z",
+  "icon": "dsh-sift-kb.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 22,
+        "text": "const response = await fetch(api(path), {"
+      },
+      {
+        "file": "client.js",
+        "line": 475,
+        "text": "const response = await fetch(url.pathname + url.search, {"
+      },
+      {
+        "file": "lib/mcp.js",
+        "line": 89,
+        "text": "const response = await fetch(this.url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/diag.js",
+        "line": 9,
+        "text": "import { appendFileSync, existsSync, mkdirSync, renameSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/diag.js",
+        "line": 22,
+        "text": "mkdirSync(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/diag.js",
+        "line": 26,
+        "text": "appendFileSync(file, `${new Date().toISOString()} ${message}\\n`, 'utf8');"
+      },
+      {
+        "file": "lib/imports.js",
+        "line": 11,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/imports.js",
+        "line": 116,
+        "text": "await fs.mkdir(this.#config.importsPath, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 67,
+        "text": "const dispose = scoped.tools.register(createLifecycleTool({ service }));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/probe.js",
+        "line": 10,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/probe.js",
+        "line": 30,
+        "text": "execFile(file, args, { windowsHide: true, timeout: timeoutMs, windowsVerbatimArguments: false }, (error, stdout) => {"
+      },
+      {
+        "file": "lib/service.js",
+        "line": 11,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/service.js",
+        "line": 194,
+        "text": "const child = spawn(this.#config.exePath, this.#config.args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 69,
+      "text": "D:\\sift-venv\\Scripts\\python.exe -m pip install --upgrade pip"
+    }
+  ],
+  "skippedEntries": []
+}

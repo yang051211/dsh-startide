@@ -1,35 +1,35 @@
 {
   "name": "dsh-pdf-jump",
-  "version": "0.1.12",
-  "scannedAt": "2026-11-22T21:06:37.182Z",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-25T10:09:27.446Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/server.mjs",
-        "line": 23,
+        "line": 24,
         "text": "import { createServer as createHttpServer, get as httpGet } from 'node:http'"
       },
       {
         "file": "lib/server.mjs",
-        "line": 251,
+        "line": 299,
         "text": ": fetch('/x/' + ID + '/' + page + '?q=' + encodeURIComponent(q), { cache: 'no-store' })"
       },
       {
         "file": "lib/server.mjs",
-        "line": 334,
+        "line": 382,
         "text": "fetch('/search/' + ID + '?q=' + encodeURIComponent(q), { signal: ctl.signal, cache: 'no-store' })"
       },
       {
         "file": "lib/server.mjs",
-        "line": 511,
-        "text": "return fetch('/l/' + id + '/' + page, { cache: 'no-store', signal: controller ? controller.signal : undefined })"
+        "line": 561,
+        "text": "fetch(options.url)"
       },
       {
         "file": "lib/server.mjs",
-        "line": 950,
-        "text": "fetch(img.src).then(function (r) { return r.text(); }).then(function (t) { showToast('这一页没渲染出来：' + t); })"
+        "line": 694,
+        "text": "return fetch('/l/' + id + '/' + page, { cache: 'no-store', signal: controller ? controller.signal : undefined })"
       }
     ]
   },
@@ -43,22 +43,22 @@
       },
       {
         "file": "lib/pdf.mjs",
-        "line": 50,
+        "line": 52,
         "text": "if (!existsSync(CACHE_DIR)) mkdirSync(CACHE_DIR, { recursive: true })"
       },
       {
         "file": "lib/pdf.mjs",
-        "line": 65,
+        "line": 67,
         "text": "if (statSync(target).mtimeMs < cutoff) rmSync(target, { force: true })"
       },
       {
         "file": "lib/pdf.mjs",
-        "line": 113,
+        "line": 135,
         "text": "return existsSync(cachePath) ? readFileSync(cachePath) : null"
       },
       {
         "file": "lib/pdf.mjs",
-        "line": 131,
+        "line": 153,
         "text": "if (existsSync(cachePath)) return readFileSync(cachePath)"
       }
     ]
@@ -103,7 +103,7 @@
       },
       {
         "file": "lib/pdf.mjs",
-        "line": 255,
+        "line": 277,
         "text": "const child = spawn(process.execPath, [TEXT_CHILD, '--file', file], {"
       },
       {

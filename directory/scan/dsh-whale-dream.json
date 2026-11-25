@@ -1,0 +1,115 @@
+{
+  "name": "dsh-whale-dream",
+  "version": "1.2.4",
+  "scannedAt": "2026-11-25T10:09:27.809Z",
+  "icon": "dsh-whale-dream.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "docs/qa/fixes-0.8.47.mjs",
+        "line": 8,
+        "text": "import {createServer} from 'node:http';"
+      },
+      {
+        "file": "docs/qa/fixes-0.8.47.mjs",
+        "line": 40,
+        "text": " const post=async body=>{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});assert.equal(r.ok,true);"
+      },
+      {
+        "file": "docs/qa/removal-0.8.71.mjs",
+        "line": 8,
+        "text": "import {createServer} from 'node:http';"
+      },
+      {
+        "file": "docs/qa/removal-0.8.71.mjs",
+        "line": 78,
+        "text": "const response=await fetch(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(payload)});"
+      },
+      {
+        "file": "docs/qa/smoke-0.8.45.mjs",
+        "line": 8,
+        "text": "import {createServer} from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "docs/qa/desktop-usage.mjs",
+        "line": 4,
+        "text": "import { mkdtempSync, rmSync } from 'node:fs';"
+      },
+      {
+        "file": "docs/qa/desktop-usage.mjs",
+        "line": 122,
+        "text": "rmSync(directory, { recursive: true, force: true });"
+      },
+      {
+        "file": "docs/qa/fixes-0.8.47.mjs",
+        "line": 4,
+        "text": "import {readFileSync,existsSync,rmSync,mkdtempSync} from 'node:fs';"
+      },
+      {
+        "file": "docs/qa/fixes-0.8.47.mjs",
+        "line": 14,
+        "text": "const src=(p)=>readFileSync(join(root,p),'utf8');"
+      },
+      {
+        "file": "docs/qa/fixes-0.8.47.mjs",
+        "line": 46,
+        "text": "const out=JSON.parse(readFileSync(companionPaths().state,'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/desktop-companion.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/desktop-companion.js",
+        "line": 847,
+        "text": "const proc = spawn(executable, ['--whale-live-window', initialTheme], {"
+      },
+      {
+        "file": "lib/file-history-browser.js",
+        "line": 1,
+        "text": "import { execFile, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/file-history-browser.js",
+        "line": 64,
+        "text": "const child = spawn(mac ? '/usr/bin/open' : browser, mac ? ['-a', browser, url] : [url], {"
+      },
+      {
+        "file": "lib/info/ledger-client.js",
+        "line": 118,
+        "text": "function spawn() {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [
+    "native/macos-arm64/whale-live-window",
+    "native/windows-x64/daozai.exe"
+  ],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

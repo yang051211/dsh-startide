@@ -1,7 +1,7 @@
 {
   "name": "dsh-write-guard",
-  "version": "0.6.9",
-  "scannedAt": "2026-11-24T01:02:54.345Z",
+  "version": "0.6.11",
+  "scannedAt": "2026-11-25T10:09:38.521Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -124,11 +124,21 @@
     {
       "file": "README.md",
       "line": 3,
-      "text": "**DeepSeek Harness 的文件写入防护插件。** 路径规则可以允许 Agent 写 `setup.ps1`，却无法区分普通安装步骤和下载后立即执行的代码。dsh-write-guard 在写入前检查内容，在写入后读回可定位的文件，核对实际落盘结果。"
+      "text": "> ### 你允许 Agent 写 `setup.ps1`，不等于你允许它写进去的每一行。"
     },
     {
       "file": "README.md",
-      "line": 17,
+      "line": 5,
+      "text": "> 路径规则只回答\"这个工具能不能写这里\"。它看不见这次准备写进去的内容——同一份 `setup.ps1`，可以是正常的解压安装步骤，也可以是下载一段远程脚本直接执行。dsh-write-guard 在写入前检查内容，写入后读回文件核对实际落盘结果。"
+    },
+    {
+      "file": "README.md",
+      "line": 7,
+      "text": "![同一个 setup.ps1，两次写入：第一次只需确认（40 分，仅因文件类型），第二次直接拒绝（100 分，命中下载执行规则）](docs/dryrun-compare.png)"
+    },
+    {
+      "file": "README.md",
+      "line": 25,
       "text": "Agent: （从 README 里抄一段带 IEX DownloadString 的 PowerShell，写进 setup.ps1）"
     }
   ],

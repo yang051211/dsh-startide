@@ -1,0 +1,79 @@
+{
+  "name": "dsh-plugin-taskflow",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-25T10:09:38.074Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 332,
+        "text": "void fetch('/taskflow/client-report', {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 353,
+        "text": "void fetch('/taskflow/client-ready', {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 541,
+        "text": "const response = await fetch(`/taskflow/state?session=${encodeURIComponent(sessionId)}`, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 566,
+        "text": "const response = await fetch('/taskflow/summarize', {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 958,
+        "text": "            const response = await fetch(`/taskflow/task?session=${encodeURIComponent(detail.sessionId || store.activeSession || '')}&content=${encodeURICompone"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 21,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 347,
+        "text": "loaded = JSON.parse(readFileSync(stateFile(sessionId), 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 378,
+        "text": "mkdirSync(stateRoot(), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 381,
+        "text": "writeFileSync(temp, JSON.stringify(state))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

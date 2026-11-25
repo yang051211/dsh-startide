@@ -1,15 +1,15 @@
 {
   "name": "@qzsy/dsh-git-badge",
-  "version": "1.3.0",
-  "scannedAt": "2026-11-10T20:53:54.373Z",
+  "version": "1.4.0",
+  "scannedAt": "2026-11-25T10:09:38.104Z",
   "icon": "qzsy__dsh-git-badge.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "dist/client.js",
-        "line": 200,
-        "text": "const response = await fetch(endpointUrl(), {"
+        "line": 231,
+        "text": "const response = await fetch(endpointUrl(), init);"
       }
     ]
   },
@@ -19,7 +19,12 @@
       {
         "file": "dist/index.js",
         "line": 3,
-        "text": "import { access, stat } from \"node:fs/promises\";"
+        "text": "import { watch as watchTree } from \"node:fs\";"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 4,
+        "text": "import { stat } from \"node:fs/promises\";"
       }
     ]
   },
@@ -37,8 +42,8 @@
       },
       {
         "file": "dist/index.js",
-        "line": 38,
-        "text": "execFile(\"git\", [\"-C\", cwd, ...args], {"
+        "line": 67,
+        "text": "execFile(command, args, { timeout, maxBuffer: MAX_BUFFER, windowsHide: true, env: readEnv(), signal }, (error, stdout) => {"
       }
     ]
   },

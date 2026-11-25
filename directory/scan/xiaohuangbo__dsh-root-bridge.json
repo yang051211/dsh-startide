@@ -1,0 +1,90 @@
+{
+  "name": "@xiaohuangbo/dsh-root-bridge",
+  "version": "1.0.3",
+  "scannedAt": "2026-11-25T10:09:35.038Z",
+  "icon": "xiaohuangbo__dsh-root-bridge.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "svc15.js",
+        "line": 27,
+        "text": "import { mkdtempSync, writeFileSync, rmSync, existsSync, readFileSync, appendFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "svc15.js",
+        "line": 215,
+        "text": "if (grant.dir) rmSync(grant.dir, { recursive: true, force: true });"
+      },
+      {
+        "file": "svc15.js",
+        "line": 301,
+        "text": "appendFileSync(new URL(\"./update-error.log\", import.meta.url), `${line}\\n`);"
+      },
+      {
+        "file": "svc15.js",
+        "line": 456,
+        "text": "if (grant.dir) rmSync(grant.dir, { recursive: true, force: true });"
+      },
+      {
+        "file": "svc15.js",
+        "line": 600,
+        "text": "writeFileSync(pwFile, answer.password, { mode: 0o600 });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "svc15.js",
+        "line": 205,
+        "text": "ctx.inject([\"tools\"], (scope) => scope.tools.register(this.requestRootTool()));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "svc15.js",
+        "line": 26,
+        "text": "import { spawn, spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "svc15.js",
+        "line": 474,
+        "text": "const r = spawnSync(\"sudo\", [\"-n\", \"-v\"], { encoding: \"utf8\", timeout: PROBE_TIMEOUT_MS });"
+      },
+      {
+        "file": "svc15.js",
+        "line": 479,
+        "text": "const r = spawnSync(\"run0\", [\"--empower\", \"true\"], {"
+      },
+      {
+        "file": "svc15.js",
+        "line": 494,
+        "text": "const r = spawnSync(\"faillock\", [\"--user\", username], { encoding: \"utf8\", timeout: PROBE_TIMEOUT_MS });"
+      },
+      {
+        "file": "svc15.js",
+        "line": 509,
+        "text": "const r = spawnSync(\"sudo\", [\"-A\", \"-k\", \"-v\"], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 4,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

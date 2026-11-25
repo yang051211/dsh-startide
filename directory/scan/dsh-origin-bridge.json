@@ -1,7 +1,7 @@
 {
   "name": "dsh-origin-bridge",
-  "version": "0.4.19",
-  "scannedAt": "2026-11-15T20:14:31.773Z",
+  "version": "0.4.21",
+  "scannedAt": "2026-11-25T10:09:28.994Z",
   "icon": "dsh-origin-bridge.svg",
   "network": {
     "hit": false,
@@ -12,8 +12,8 @@
     "evidence": [
       {
         "file": "bin/origin-bridge.mjs",
-        "line": 10,
-        "text": "import { existsSync } from 'node:fs';"
+        "line": 20,
+        "text": "import { existsSync, lstatSync, readdirSync, statSync, readlinkSync } from 'node:fs';"
       }
     ]
   },
@@ -52,13 +52,23 @@
     "evidence": [
       {
         "file": "bin/origin-bridge.mjs",
-        "line": 9,
-        "text": "import { spawn } from 'node:child_process';"
+        "line": 19,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
       },
       {
         "file": "bin/origin-bridge.mjs",
-        "line": 31,
-        "text": "const child = spawn("
+        "line": 122,
+        "text": "const r = spawnSync(cand, PROBE_ARGS, {"
+      },
+      {
+        "file": "bin/origin-bridge.mjs",
+        "line": 267,
+        "text": "const r = spawnSync(cand, ['-X', 'utf8', '-c', code, ...args], {"
+      },
+      {
+        "file": "bin/origin-bridge.mjs",
+        "line": 347,
+        "text": "const child = spawn(chosen.path, ['-u', '-X', 'utf8', server], {"
       }
     ]
   },
@@ -73,22 +83,22 @@
   "setupHints": [
     {
       "file": "README.en.md",
-      "line": 95,
+      "line": 97,
       "text": "pip install originpro numpy"
     },
     {
       "file": "README.en.md",
-      "line": 124,
+      "line": 132,
       "text": "pip install -r requirements.txt"
     },
     {
       "file": "README.md",
-      "line": 107,
+      "line": 109,
       "text": "pip install originpro numpy        # 国内网络慢就加 -i https://pypi.tuna.tsinghua.edu.cn/simple"
     },
     {
       "file": "README.md",
-      "line": 143,
+      "line": 151,
       "text": "pip install -r requirements.txt      # 国内网络慢就加 -i https://pypi.tuna.tsinghua.edu.cn/simple"
     }
   ],

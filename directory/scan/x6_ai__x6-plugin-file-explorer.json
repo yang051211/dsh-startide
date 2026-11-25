@@ -1,0 +1,81 @@
+{
+  "name": "@x6_ai/x6-plugin-file-explorer",
+  "version": "2.0.0",
+  "scannedAt": "2026-11-25T10:09:37.587Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 146,
+        "text": "mkdir: (path) => unwrap(remote().mkdir(path)),"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 148,
+        "text": "unlink: (path) => unwrap(remote().unlink(path)),"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1040,
+        "text": "const result = await api.mkdir(path);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1054,
+        "text": "const result = await api.unlink(entry.path);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1349,
+        "text": "const result = await api.mkdir(path);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 2,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 591,
+        "text": "if (platform$1 === \"darwin\") child = spawn(\"open\", [absolute], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 595,
+        "text": "else if (platform$1 === \"win32\") child = spawn(\"explorer\", [absolute], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 599,
+        "text": "else child = spawn(\"xdg-open\", [absolute], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

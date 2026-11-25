@@ -1,7 +1,7 @@
 {
   "name": "dsh-appearance-studio",
-  "version": "1.0.1",
-  "scannedAt": "2026-10-26T10:09:06.233Z",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-25T10:09:38.069Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -53,12 +53,17 @@
       {
         "file": "lib/index.js",
         "line": 34,
-        "text": "import { execFile } from 'node:child_process'"
+        "text": "import { execFile, spawn } from 'node:child_process'"
       },
       {
         "file": "lib/index.js",
-        "line": 500,
-        "text": "execFile('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', ps],"
+        "line": 518,
+        "text": "execFile('powershell.exe', ['-NoProfile', '-NonInteractive', '-EncodedCommand', Buffer.from(ps, 'utf16le').toString('base64')],"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 554,
+        "text": "const worker = spawn('powershell.exe', ['-NoProfile', '-NonInteractive', '-EncodedCommand', encoded], {"
       }
     ]
   },

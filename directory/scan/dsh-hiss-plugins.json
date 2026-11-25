@@ -1,20 +1,15 @@
 {
   "name": "dsh-hiss-plugins",
-  "version": "1.4.0",
-  "scannedAt": "2026-11-16T08:06:34.660Z",
+  "version": "2.0.0",
+  "scannedAt": "2026-11-25T10:09:38.165Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 645,
-        "text": "const response = await fetch(url, { method: \"HEAD\", cache: \"no-store\" });"
-      },
-      {
-        "file": "lib/lan-access/gateway.js",
-        "line": 21,
-        "text": "import { createServer, request as httpRequest } from \"node:http\";"
+        "line": 764,
+        "text": "const response = await fetch(\"/hiss-mcp/action\", {"
       }
     ]
   },
@@ -32,19 +27,19 @@
         "text": "import { existsSync } from \"node:fs\";"
       },
       {
-        "file": "lib/lan-access/index.js",
-        "line": 14,
-        "text": "import { appendFileSync, mkdirSync, statSync } from \"node:fs\";"
+        "file": "lib/ponytail/mode.js",
+        "line": 11,
+        "text": "import { readFileSync } from \"node:fs\";"
       },
       {
-        "file": "lib/lan-access/index.js",
-        "line": 256,
-        "text": "mkdirSync(join(homedir(), \".dsh\"), { recursive: true });"
+        "file": "lib/ponytail/mode.js",
+        "line": 104,
+        "text": "const parsed = JSON.parse(readFileSync(configPath, \"utf8\"));"
       },
       {
-        "file": "lib/lan-access/index.js",
-        "line": 264,
-        "text": "appendFileSync(LOG_PATH, `${stamp} ${JSON.stringify(entry)}\\n`, { flag: size > LOG_LIMIT_BYTES ? \"w\" : \"a\" });"
+        "file": "lib/project-mcp/config.js",
+        "line": 2,
+        "text": "import { access, chmod, mkdir, readFile, rename, stat, unlink, writeFile } from \"node:fs/promises\";"
       }
     ]
   },
@@ -73,7 +68,7 @@
       },
       {
         "file": "lib/project-mcp/config.js",
-        "line": 89,
+        "line": 90,
         "text": "* @returns {Record<string, unknown>} an unvalidated `dsh-mcp-client` config."
       }
     ]
@@ -102,7 +97,7 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 138,
+      "line": 137,
       "text": "npm i -g @colbymchenry/codegraph"
     }
   ],

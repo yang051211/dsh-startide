@@ -1,0 +1,91 @@
+{
+  "name": "@shamojun/workmemory",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-25T10:09:39.214Z",
+  "icon": "shamojun__workmemory.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/backfill.js",
+        "line": 13,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/backfill.js",
+        "line": 33,
+        "text": "const raw = JSON.parse(fs.readFileSync(this.file, 'utf8'))"
+      },
+      {
+        "file": "lib/backfill.js",
+        "line": 47,
+        "text": "fs.mkdirSync(path.dirname(this.file), { recursive: true })"
+      },
+      {
+        "file": "lib/entities.js",
+        "line": 10,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/entities.js",
+        "line": 44,
+        "text": "try { raw = fs.readFileSync(this.file, 'utf8') } catch { return }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 27,
+        "text": "export const inject = ['agents', 'sessions', 'systemPrompt', 'commands', 'tools', 'fs']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 647,
+        "text": "ctx.tools.register(makeRecallTool(resolveStore, pickTaskForEntry)),"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 648,
+        "text": "ctx.tools.register(makeStatusTool(resolveStore)),"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 649,
+        "text": "ctx.tools.register(makeTimelineTool(resolveStore)),"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 650,
+        "text": "ctx.tools.register(makeTaskTool(resolveStore, pickTaskForEntry)),"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "commands",
+    "fs",
+    "sessions",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

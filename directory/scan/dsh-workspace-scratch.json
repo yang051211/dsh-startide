@@ -1,0 +1,84 @@
+{
+  "name": "dsh-workspace-scratch",
+  "version": "0.2.4",
+  "scannedAt": "2026-11-25T10:09:39.507Z",
+  "icon": "dsh-workspace-scratch.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 74,
+        "text": "const resp = await fetch(`/workspace-scratch/api/${path}`, init)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import { appendFile, mkdir, readdir, readFile, rm, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 118,
+        "text": "await writeFile(path, content, { encoding: 'utf8', mode: 0o644 })"
+      },
+      {
+        "file": "index.js",
+        "line": 133,
+        "text": "existing = await readFile(excludeFile, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 135,
+        "text": "await mkdir(dirname(excludeFile), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 139,
+        "text": "await appendFile(excludeFile, `${prefix}# DeepSeek Harness session scratch and memory (workspace-scratch plugin)\\n${marker}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 39,
+        "text": "export const inject = ['agents', 'systemPrompt', 'tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 604,
+        "text": "ctx.tools.register(scratchTool(ctx, cfg), { when: () => toolsEnabled() && cfg.scratchTool === true })"
+      },
+      {
+        "file": "index.js",
+        "line": 605,
+        "text": "ctx.tools.register(memoryTool(ctx, cfg), { when: () => toolsEnabled() && cfg.memoryTool === true })"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

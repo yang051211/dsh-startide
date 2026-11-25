@@ -1,0 +1,114 @@
+{
+  "name": "dsh-drydock",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-25T10:09:39.232Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/open-boot.mjs",
+        "line": 60,
+        "text": "import { createServer } from \"node:http\";"
+      },
+      {
+        "file": "bin/open-boot.mjs",
+        "line": 443,
+        "text": "const res = await fetch(url, { redirect: \"manual\", signal: AbortSignal.timeout(2500) });"
+      },
+      {
+        "file": "bin/open-boot.mjs",
+        "line": 1546,
+        "text": "const r = await fetch(\"/api/boot\", { method: \"POST\", headers: { \"X-DSH-PM-Token\": TOKEN } }).then((x) => x.json());"
+      },
+      {
+        "file": "bin/open-boot.mjs",
+        "line": 2146,
+        "text": "rrorActionPreference='Stop'; try { $r = Invoke-WebRequest -UseBasicParsing -TimeoutSec 3 ('http://127.0.0.1:' + '%PORT%' + '/api/status'); if ($r.Content -match"
+      },
+      {
+        "file": "bin/open-boot.mjs",
+        "line": 2407,
+        "text": "var x = await fetch(path, opt);"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-boot.mjs",
+        "line": 27,
+        "text": "import { realpathSync } from \"node:fs\";"
+      },
+      {
+        "file": "bin/open-boot.mjs",
+        "line": 59,
+        "text": "closeSync, existsSync, mkdirSync, openSync, readFileSync, readSync, readdirSync, realpathSync, renameSync, statSync, unlinkSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "bin/open-boot.mjs",
+        "line": 105,
+        "text": "try { return JSON.parse(readFileSync(join(dirname(SELF), \"..\", \"package.json\"), \"utf8\")).version || null; }"
+      },
+      {
+        "file": "bin/open-boot.mjs",
+        "line": 402,
+        "text": "try { appendFileSync(join(args.profile, SUP_LOG), line + \"\\n\", \"utf8\"); } catch { /* 日志失败不影响主流程 */ }"
+      },
+      {
+        "file": "bin/open-boot.mjs",
+        "line": 406,
+        "text": "try { appendFileSync(join(args.profile, SUP_LOG), `${line}\\n`, \"utf8\"); } catch { /* ignore */ }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/open-boot.mjs",
+        "line": 57,
+        "text": "import { spawn, spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "bin/open-boot.mjs",
+        "line": 788,
+        "text": "const child = spawn(process.execPath, [SELF, \"--profile\", args.profile, \"--port\", String(args.port), \"--dsh\", args.dsh], {"
+      },
+      {
+        "file": "bin/open-boot.mjs",
+        "line": 1003,
+        "text": "const out = spawnSync(\"reg\", [\"query\", RUN_KEY, \"/v\", name], { windowsHide: true, encoding: \"utf8\" });"
+      },
+      {
+        "file": "bin/open-boot.mjs",
+        "line": 1012,
+        "text": "const out = spawnSync(\"reg\", [\"query\", RUN_KEY], { windowsHide: true, encoding: \"utf8\", timeout: 10000 });"
+      },
+      {
+        "file": "bin/open-boot.mjs",
+        "line": 1087,
+        "text": "const out = spawnSync(\"reg\", [\"export\", RUN_KEY, file, \"/y\"], { windowsHide: true, encoding: \"utf8\", timeout: timeoutMs });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "loader"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

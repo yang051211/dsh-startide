@@ -1,0 +1,84 @@
+{
+  "name": "dsh-server-monitor",
+  "version": "0.2.9",
+  "scannedAt": "2026-11-25T10:09:24.249Z",
+  "icon": "dsh-server-monitor.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/collect-local.js",
+        "line": 10,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/collect-local.js",
+        "line": 102,
+        "text": "table = fs.readFileSync('/proc/mounts', 'utf8')"
+      },
+      {
+        "file": "lib/collect-local.js",
+        "line": 150,
+        "text": "const text = fs.readFileSync('/proc/meminfo', 'utf8')"
+      },
+      {
+        "file": "lib/collect-local.js",
+        "line": 169,
+        "text": "const pretty = fs.readFileSync('/etc/os-release', 'utf8').match(/^PRETTY_NAME=\"?([^\"\\n]+)\"?/m)"
+      },
+      {
+        "file": "lib/collect-local.js",
+        "line": 220,
+        "text": "const raw = fs.readFileSync('/proc/net/dev', 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/docker.js",
+        "line": 7,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/gpu.js",
+        "line": 8,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/gpu.js",
+        "line": 610,
+        "text": "execFile(cmd, args, {"
+      },
+      {
+        "file": "lib/processes.js",
+        "line": 4,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/processes.js",
+        "line": 47,
+        "text": "execFile(cmd, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

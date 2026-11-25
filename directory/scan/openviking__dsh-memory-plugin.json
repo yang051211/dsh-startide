@@ -1,11 +1,31 @@
 {
   "name": "@openviking/dsh-memory-plugin",
-  "version": "0.5.40",
-  "scannedAt": "2026-11-24T01:02:27.524Z",
+  "version": "0.5.41",
+  "scannedAt": "2026-11-25T10:09:17.715Z",
   "icon": "openviking__dsh-memory-plugin.svg",
   "network": {
     "hit": true,
     "evidence": [
+      {
+        "file": "scripts/ov-memory-doctor.mjs",
+        "line": 49,
+        "text": "const REINSTALL = \"curl -fsSL https://openviking.ai/install | bash -s -- --harness dsh   (Desktop: --harness dsh-desktop)\";"
+      },
+      {
+        "file": "shared/doctor-core.mjs",
+        "line": 233,
+        "text": " \"fail\", message: \"base URL has no http:// or https:// scheme — fetch() rejects it as 'Failed to parse URL'\", fix: \"prefix the url with http:// or https://\" });"
+      },
+      {
+        "file": "shared/doctor-core.mjs",
+        "line": 462,
+        "text": "const res = await fetch(url, { method, headers, body, signal: controller.signal, redirect: \"manual\" });"
+      },
+      {
+        "file": "shared/doctor-core.mjs",
+        "line": 568,
+        "text": "\"check that the server is running and the url/port are right; compare with `curl -sS <url>/health`\");"
+      },
       {
         "file": "shared/ov-http.mjs",
         "line": 87,
@@ -16,6 +36,16 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "scripts/ov-memory-doctor.mjs",
+        "line": 20,
+        "text": "import { readFileSync, readdirSync, realpathSync } from \"node:fs\";"
+      },
+      {
+        "file": "scripts/ov-memory-doctor.mjs",
+        "line": 60,
+        "text": "patch = readFileSync(join(dir, \"cordis.patch.yml\"), \"utf8\");"
+      },
       {
         "file": "servers/mcp-proxy.mjs",
         "line": 13,
@@ -30,16 +60,6 @@
         "file": "shared/credentials.mjs",
         "line": 27,
         "text": "return JSON.parse(readFileSync(path, \"utf-8\"));"
-      },
-      {
-        "file": "shared/credentials.mjs",
-        "line": 48,
-        "text": "return str(JSON.parse(readFileSync(manifest, \"utf-8\")).version, \"\");"
-      },
-      {
-        "file": "shared/debug-log.mjs",
-        "line": 9,
-        "text": "import { appendFileSync, mkdirSync } from \"node:fs\";"
       }
     ]
   },
@@ -64,8 +84,14 @@
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "shared/doctor-core.mjs",
+        "line": 18,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

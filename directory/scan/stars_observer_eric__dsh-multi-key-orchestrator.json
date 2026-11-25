@@ -1,21 +1,41 @@
 {
   "name": "@stars_observer_eric/dsh-multi-key-orchestrator",
-  "version": "0.4.4",
-  "scannedAt": "2026-11-22T08:23:34.580Z",
+  "version": "0.5.1",
+  "scannedAt": "2026-11-25T10:09:31.059Z",
   "icon": "stars_observer_eric__dsh-multi-key-orchestrator.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 599,
+        "line": 637,
         "text": "const response = await fetch(API + path, options)"
+      },
+      {
+        "file": "host.js",
+        "line": 2435,
+        "text": "const response = await fetch(base + '/chat/completions', {"
       }
     ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "host.js",
+        "line": 23,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "host.js",
+        "line": 533,
+        "text": "fs.writeFileSync(path.join(path.dirname(store.path), 'live.json'), JSON.stringify(payload, null, 2), {"
+      },
+      {
+        "file": "host.js",
+        "line": 2068,
+        "text": "return String(JSON.parse(fs.readFileSync(path.join(PACKAGE_DIR, 'package.json'), 'utf8')).version ?? '0.0.0')"
+      },
       {
         "file": "state.js",
         "line": 16,
@@ -25,21 +45,6 @@
         "file": "state.js",
         "line": 28,
         "text": "fs.mkdirSync(dir, { recursive: true })"
-      },
-      {
-        "file": "state.js",
-        "line": 45,
-        "text": "const text = fs.readFileSync(file, 'utf8')"
-      },
-      {
-        "file": "state.js",
-        "line": 67,
-        "text": "fs.writeFileSync(temporary, payload, { encoding: 'utf8', mode: 0o600 })"
-      },
-      {
-        "file": "state.js",
-        "line": 74,
-        "text": "fs.unlinkSync(`${file}.${process.pid}.tmp`)"
       }
     ]
   },

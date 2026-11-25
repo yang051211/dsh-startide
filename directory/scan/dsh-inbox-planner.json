@@ -1,0 +1,104 @@
+{
+  "name": "dsh-inbox-planner",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-25T10:09:32.320Z",
+  "icon": "dsh-inbox-planner.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 568,
+        "text": "const res = await fetch(new URL(`inbox-planner/api/${method}`, document.baseURI).href, {"
+      },
+      {
+        "file": "client.js",
+        "line": 807,
+        "text": "          const res = await fetch(new URL(path, document.baseURI).href, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify("
+      },
+      {
+        "file": "client.js",
+        "line": 989,
+        "text": "const res = await fetch(apiUrl(method), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/planner.js",
+        "line": 3,
+        "text": "import { readFile, writeFile, rename, mkdir, unlink, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/planner.js",
+        "line": 46,
+        "text": "return migrateState({ ...emptyState(), ...JSON.parse(await readFile(file, 'utf8')) })"
+      },
+      {
+        "file": "lib/planner.js",
+        "line": 52,
+        "text": "await mkdir(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/planner.js",
+        "line": 54,
+        "text": "await writeFile(tmp, JSON.stringify(state, null, 2), 'utf8')"
+      },
+      {
+        "file": "lib/planner.js",
+        "line": 217,
+        "text": "const text = await readFile(path, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 23,
+        "text": "// Same pattern as dsh-sidebar-todo: tools is a core service, so ctx.tools is ready in apply()."
+      },
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "export const inject = ['tools', 'webServer', 'connection']"
+      },
+      {
+        "file": "index.js",
+        "line": 32,
+        "text": "* Since DSH 0.2.1-rc.2, `ctx.tools.execute()` takes a complete raw batch"
+      },
+      {
+        "file": "index.js",
+        "line": 64,
+        "text": "const conflict = () => ctx.tools.get?.('personal_todo') !== undefined"
+      },
+      {
+        "file": "index.js",
+        "line": 101,
+        "text": "ctx.effect(() => ctx.tools.register(createTodoTool(api, ready)), 'dsh-inbox-planner: personal_todo')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

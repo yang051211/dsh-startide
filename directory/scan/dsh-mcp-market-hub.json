@@ -1,0 +1,93 @@
+{
+  "name": "dsh-mcp-market-hub",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-25T10:09:28.982Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/market.js",
+        "line": 20,
+        "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "ui/app.js",
+        "line": 64,
+        "text": "return fetch(API + '?' + paramString({ op: op }, extra), { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "ui/app.js",
+        "line": 69,
+        "text": "return fetch(API, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/install.js",
+        "line": 17,
+        "text": "import fsp from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/install.js",
+        "line": 217,
+        "text": "const parsed = JSON.parse(await fsp.readFile(file, 'utf8'))"
+      },
+      {
+        "file": "lib/install.js",
+        "line": 226,
+        "text": "await fsp.mkdir(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/install.js",
+        "line": 228,
+        "text": "await fsp.writeFile(temporary, text, 'utf8')"
+      },
+      {
+        "file": "lib/ui.js",
+        "line": 8,
+        "text": "import { readFile } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 30,
+        "text": "export const inject = ['webServer', 'tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 331,
+        "text": "const tool = (definition) => ctx.effect(() => ctx.tools.register(definition))"
+      },
+      {
+        "file": "lib/install.js",
+        "line": 30,
+        "text": "/** DSH's own server-name rule (dsh-mcp-client SERVER_NAME_PATTERN). */"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

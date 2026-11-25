@@ -1,34 +1,34 @@
 {
   "name": "dsh-context-compression-improved",
-  "version": "0.11.3",
-  "scannedAt": "2026-11-18T09:00:06.768Z",
+  "version": "0.15.6",
+  "scannedAt": "2026-11-25T10:09:16.437Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "assets/deepseek-v4-vision-exp/tokenizer.json",
+        "file": "packages/selector/assets/deepseek-v4-vision-exp/tokenizer.json",
         "line": 107382,
         "text": "\"axios\": 95768,"
       },
       {
-        "file": "assets/deepseek-v4/tokenizer.json",
+        "file": "packages/selector/assets/deepseek-v4/tokenizer.json",
         "line": 107382,
         "text": "\"axios\": 95768,"
       },
       {
-        "file": "lib/client.js",
-        "line": 1067,
+        "file": "packages/selector/lib/client.js",
+        "line": 1095,
         "text": "const response = await fetch(ESTIMATOR_CATALOG_ROUTE, { headers: { \"cache-control\": \"no-cache\" } });"
       },
       {
-        "file": "lib/client.js",
-        "line": 1311,
+        "file": "packages/selector/lib/client.js",
+        "line": 1343,
         "text": "const response = await fetch(SAVINGS_ROUTE, { headers: { \"cache-control\": \"no-cache\" } });"
       },
       {
-        "file": "lib/client.js",
-        "line": 1318,
+        "file": "packages/selector/lib/client.js",
+        "line": 1350,
         "text": "const response = await fetch(`${SESSIONS_ROUTE}?offset=${String(offsetRef.current)}&limit=${String(PAGE_SIZE)}`, { headers: { \"cache-control\": \"no-cache\" } });"
       }
     ]
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "assets/deepseek-v4-vision-exp/tokenizer.json",
+        "file": "packages/selector/assets/deepseek-v4-vision-exp/tokenizer.json",
         "line": 20005,
         "text": "\"fs\": 8391,"
       },
       {
-        "file": "assets/deepseek-v4/tokenizer.json",
+        "file": "packages/selector/assets/deepseek-v4/tokenizer.json",
         "line": 20005,
         "text": "\"fs\": 8391,"
       },
       {
-        "file": "lib/index.js",
+        "file": "packages/selector/lib/cut-index.js",
         "line": 5,
-        "text": "import { existsSync, readFileSync } from \"node:fs\";"
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync } from \"node:fs\";"
       },
       {
-        "file": "lib/index.js",
-        "line": 9,
-        "text": "import { chmod, mkdtemp, readFile, rename, rm, stat, utimes, writeFile } from \"node:fs/promises\";"
+        "file": "packages/selector/lib/cut-index.js",
+        "line": 11,
+        "text": "import { mkdir } from \"node:fs/promises\";"
       },
       {
-        "file": "lib/index.js",
-        "line": 261,
-        "text": "return decodeSessionLogBytes(readFileSync(found.artifact.path)).events;"
+        "file": "packages/selector/lib/cut-index.js",
+        "line": 1164,
+        "text": "const bytes = readFileSync(new URL(name, assetRoot));"
       }
     ]
   },
@@ -67,38 +67,69 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/pruner.js",
+        "file": "packages/selector/lib/pruner.js",
         "line": 44,
         "text": "ctx.tools.register(defineTool({"
       },
       {
-        "file": "lib/pruner.js",
+        "file": "packages/selector/lib/pruner.js",
         "line": 2346,
         "text": "ctx.tools.register(defineTool({"
       },
       {
-        "file": "lib/pruner.js",
+        "file": "packages/selector/lib/pruner.js",
         "line": 2369,
         "text": "ctx.tools.register(defineTool({"
       },
       {
-        "file": "lib/pruner.js",
+        "file": "packages/selector/lib/pruner.js",
         "line": 2405,
         "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "packages/selector/src/runtime/retrieve.ts",
+        "line": 28,
+        "text": "export const inject = ['tools', 'systemPrompt']"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "packages/selector/src/runtime/update-checker.ts",
+        "line": 72,
+        "text": "import { execSync } from 'node:child_process'"
+      },
+      {
+        "file": "packages/selector/src/runtime/update-checker.ts",
+        "line": 83,
+        "text": "try { execSync('tasklist /FI \"IMAGENAME eq DeepSeek Harness.exe\"', { stdio: 'pipe' }); console.warn('WARNING: DSH may still be running') } catch {}"
+      },
+      {
+        "file": "packages/selector/src/runtime/update-checker.ts",
+        "line": 86,
+        "text": "execSync(\\`pnpm add \"file:\\${TARBALL}\" --dir \"\\${PROFILE}\" --registry https://registry.npmjs.org\\`, { stdio: 'inherit' })"
+      },
+      {
+        "file": "packages/selector/src/runtime/watchlist.ts",
+        "line": 54,
+        "text": "'import { execSync } from \"node:child_process\"',"
+      },
+      {
+        "file": "packages/selector/src/runtime/watchlist.ts",
+        "line": 76,
+        "text": "'    execSync(`pnpm add \"file:${\"\\\\$\"}{tgz}\" --dir \"${\"\\\\$\"}{PROFILE}\" --registry https://registry.npmjs.org`, { stdio: \"inherit\" })',"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
     "evidence": []
   },
-  "dependencies": 4,
+  "dependencies": 3,
   "minifiedFiles": [
-    "lib/client.js"
+    "packages/selector/lib/client.js"
   ],
   "binaryFiles": [],
   "requiredServices": [],

@@ -1,0 +1,75 @@
+{
+  "name": "@younland/dsh-gloss",
+  "version": "2.0.2",
+  "scannedAt": "2026-11-25T10:09:39.691Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 117,
+        "text": "const response = await fetch(endpoint, { method: 'GET', cache: 'no-store' });"
+      },
+      {
+        "file": "client.js",
+        "line": 168,
+        "text": "const response = await fetch(endpoint, {"
+      },
+      {
+        "file": "index.js",
+        "line": 42,
+        "text": "'本轮不要调用 web_search、web_fetch，也不要通过终端、脚本或任何间接方式访问网络（curl、wget、Invoke-WebRequest、fetch 等）。',"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 30,
+        "text": "import { readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 112,
+        "text": "await writeFile(STATE_FILE, `${JSON.stringify({ webEnabled: rt.enabled }, null, 2)}\\n`, 'utf8');"
+      },
+      {
+        "file": "index.js",
+        "line": 191,
+        "text": "readFile(STATE_FILE, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "* - 使用 `ctx.tools.guard()` 做同步拒绝，不注销工具，不影响其他插件。"
+      },
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "* 1. `ctx.tools.guard()` —— 拒绝 `web_search` / `web_fetch` 的调用（只拒绝，"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,105 @@
+{
+  "name": "dsh-polymarket-proxy",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-25T10:09:28.300Z",
+  "icon": "dsh-polymarket-proxy.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 108,
+        "text": "return fetch(API + pathname, {"
+      },
+      {
+        "file": "index.js",
+        "line": 420,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "index.js",
+        "line": 472,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "index.js",
+        "line": 537,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "index.js",
+        "line": 651,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 31,
+        "text": "import { mkdir, readFile, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 946,
+        "text": "await mkdir(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 949,
+        "text": "text = await readFile(path.join(PLUGIN_DIR, KEYWORDS_SEED_FILE), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 953,
+        "text": "await writeFile(file, text.endsWith('\\n') ? text : `${text}\\n`, { mode: 0o600 })"
+      },
+      {
+        "file": "index.js",
+        "line": 1000,
+        "text": "const text = await readFile(file, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 38,
+        "text": "export const inject = ['tools', 'webServer', 'credentials', 'connection']"
+      },
+      {
+        "file": "index.js",
+        "line": 2834,
+        "text": "ctx.effect(() => ctx.tools.register(marketsTool), 'polymarket-agent markets tool')"
+      },
+      {
+        "file": "index.js",
+        "line": 2835,
+        "text": "ctx.effect(() => ctx.tools.register(portfolioTool), 'polymarket-agent portfolio tool')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "credentials",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

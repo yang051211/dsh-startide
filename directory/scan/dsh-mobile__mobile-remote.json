@@ -1,7 +1,7 @@
 {
   "name": "@dsh-mobile/mobile-remote",
-  "version": "3.3.1",
-  "scannedAt": "2026-11-24T01:02:34.413Z",
+  "version": "3.4.1",
+  "scannedAt": "2026-11-25T10:09:20.962Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -43,18 +43,18 @@
       },
       {
         "file": "lib/assistant-prefs.js",
-        "line": 53,
+        "line": 65,
         "text": "raw = JSON.parse(readFileSync(file, \"utf8\"));"
       },
       {
         "file": "lib/assistant-prefs.js",
-        "line": 89,
+        "line": 108,
         "text": "mkdirSync(dir, { recursive: true });"
       },
       {
         "file": "lib/assistant-prefs.js",
-        "line": 92,
-        "text": "writeFileSync(tmp, JSON.stringify({ v: 2, ...next }, null, 2), \"utf8\");"
+        "line": 111,
+        "text": "writeFileSync(tmp, JSON.stringify({ v: 3, ...next }, null, 2), \"utf8\");"
       },
       {
         "file": "lib/auto-config.js",
@@ -64,8 +64,19 @@
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/phone-actions.js",
+        "line": 130,
+        "text": "if (typeof tools?.register !== \"function\") { try { tools = ctx.tools; } catch { tools = undefined; } }"
+      },
+      {
+        "file": "lib/phone-actions.js",
+        "line": 137,
+        "text": "for (const action of ACTIONS) disposers.push(tools.register(toolFor(action), options));"
+      }
+    ]
   },
   "childProcess": {
     "hit": true,
@@ -81,7 +92,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
+  "dependencies": 3,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

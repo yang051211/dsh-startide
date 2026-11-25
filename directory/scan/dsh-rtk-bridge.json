@@ -1,0 +1,50 @@
+{
+  "name": "dsh-rtk-bridge",
+  "version": "1.0.0",
+  "scannedAt": "2026-11-25T10:09:39.450Z",
+  "icon": "dsh-rtk-bridge.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": false,
+    "evidence": []
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 21,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 70,
+        "text": "return spawnSync(exe, ['--version'], { timeout: PROBE_TIMEOUT_MS, stdio: 'ignore' }).status === 0"
+      },
+      {
+        "file": "index.js",
+        "line": 109,
+        "text": "const result = spawnSync(exe, ['rewrite', command], { timeout: timeoutMs, encoding: 'utf8', windowsHide: true })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "shell"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

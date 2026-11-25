@@ -1,20 +1,25 @@
 {
   "name": "dsh-shell-switch",
-  "version": "0.4.1",
-  "scannedAt": "2026-11-24T11:24:37.703Z",
+  "version": "0.4.2",
+  "scannedAt": "2026-11-25T10:09:28.130Z",
   "icon": "dsh-shell-switch.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 231,
+        "line": 261,
         "text": "const response = await fetch(`${apiBase()}${tail}`, init);"
       },
       {
         "file": "embedded.js",
-        "line": 122,
-        "text": "const response = await fetch(url, { signal, redirect: 'follow' });"
+        "line": 232,
+        "text": "const response = await fetch(url, { signal: controller.signal, redirect: 'follow', headers });"
+      },
+      {
+        "file": "embedded.js",
+        "line": 476,
+        "text": "const response = await fetch(`${apiBase}/latest`, {"
       }
     ]
   },
@@ -28,23 +33,23 @@
       },
       {
         "file": "background.js",
-        "line": 129,
+        "line": 193,
+        "text": "fs.writeFileSync(opts.scriptPath, body, 'utf8');"
+      },
+      {
+        "file": "background.js",
+        "line": 242,
+        "text": "fs.writeFileSync(ps1, `${prelude}\\n${pidLine}\\n${opts.command}\\n`, 'utf8');"
+      },
+      {
+        "file": "background.js",
+        "line": 251,
+        "text": "fs.writeFileSync(bat, lines.join('\\r\\n') + '\\r\\n', 'utf8');"
+      },
+      {
+        "file": "background.js",
+        "line": 319,
         "text": "fs.mkdirSync(jobsDir(), { recursive: true });"
-      },
-      {
-        "file": "background.js",
-        "line": 144,
-        "text": "parsed = JSON.parse(fs.readFileSync(indexFile(), 'utf8'));"
-      },
-      {
-        "file": "background.js",
-        "line": 187,
-        "text": "fs.writeFileSync(tmp, JSON.stringify(payload, null, 2), 'utf8');"
-      },
-      {
-        "file": "background.js",
-        "line": 202,
-        "text": "fs.unlinkSync(victim.logPath);"
       }
     ]
   },
@@ -53,12 +58,12 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 1791,
+        "line": 1949,
         "text": "inject: ['subprocess', 'sandbox', 'sandboxPolicy', 'tools', 'workingDirectory'],"
       },
       {
         "file": "index.js",
-        "line": 1844,
+        "line": 2002,
         "text": "const reg = inner.tools.register(def);"
       }
     ]
@@ -78,18 +83,18 @@
       },
       {
         "file": "background.js",
-        "line": 294,
-        "text": "child = spawn(input.argv[0], input.argv.slice(1), {"
+        "line": 217,
+        "text": "* On Windows `spawn(pwsh, ..., {detached:true})` exits immediately without"
       },
       {
-        "file": "embedded.js",
-        "line": 19,
-        "text": "import { execFileSync } from 'node:child_process';"
+        "file": "background.js",
+        "line": 229,
+        "text": "* @returns {import('node:child_process').ChildProcess} the launcher process."
       },
       {
-        "file": "index.js",
-        "line": 22,
-        "text": "import { execFileSync } from 'node:child_process';"
+        "file": "background.js",
+        "line": 253,
+        "text": "const launcher = spawn('cmd.exe', ['/c', 'start', '', '/b', bat], {"
       }
     ]
   },

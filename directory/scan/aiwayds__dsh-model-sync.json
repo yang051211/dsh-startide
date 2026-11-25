@@ -1,19 +1,19 @@
 {
   "name": "@aiwayds/dsh-model-sync",
-  "version": "0.10.0",
-  "scannedAt": "2026-11-24T01:02:49.499Z",
+  "version": "0.11.0",
+  "scannedAt": "2026-11-25T10:09:29.615Z",
   "icon": "aiwayds__dsh-model-sync.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 861,
+        "line": 871,
         "text": "// available; deriving ids from them keeps `migrate plan` zero-fetch (V16)."
       },
       {
         "file": "lib/index.js",
-        "line": 879,
+        "line": 889,
         "text": "// fetch (D4: no identity ⇒ zero outbound requests, zero writes)."
       },
       {
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/legacy-import.js",
-        "line": 33,
-        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+        "file": "lib/index.js",
+        "line": 41,
+        "text": "import { mkdir, open, readFile, readdir, rename, stat as statFd, unlink, writeFile } from 'node:fs/promises';"
       },
       {
-        "file": "lib/legacy-import.js",
-        "line": 191,
-        "text": "const section = parseFlatSection(readFileSync(source, 'utf8'), LEGACY_SECTION);"
+        "file": "lib/index.js",
+        "line": 42,
+        "text": "import { readFileSync, statSync, writeFileSync } from 'node:fs';"
       },
       {
-        "file": "lib/legacy-import.js",
-        "line": 252,
-        "text": "mkdirSync(join(path, '..'), { recursive: true });"
+        "file": "lib/index.js",
+        "line": 1002,
+        "text": "readFile: (path) => readFile(path, 'utf8'),"
       },
       {
-        "file": "lib/legacy-import.js",
-        "line": 253,
-        "text": "writeFileSync(path, `${JSON.stringify(marker, null, 2)}\\n`);"
+        "file": "lib/index.js",
+        "line": 1003,
+        "text": "writeFile: (path, data, mode) => (mode === undefined ? writeFile(path, data) : writeFile(path, data, { mode })),"
       },
       {
-        "file": "lib/live-catalog.js",
-        "line": 29,
-        "text": "import { existsSync, readFileSync, realpathSync } from 'node:fs';"
+        "file": "lib/index.js",
+        "line": 1005,
+        "text": "unlink: async (path) => { await unlink(path); },"
       }
     ]
   },

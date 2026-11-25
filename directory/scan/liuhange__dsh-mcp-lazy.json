@@ -1,0 +1,72 @@
+{
+  "name": "@liuhange/dsh-mcp-lazy",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-25T10:09:36.368Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host/dist/config.js",
+        "line": 11,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "host/dist/config.js",
+        "line": 88,
+        "text": "return { raw: JSON.parse(readFileSync(path, 'utf8')), warnings: [] };"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "host/dist/index.js",
+        "line": 14,
+        "text": "*                                 └─ agent.ctx.tools.restrict({ deny })  ← 真正生效的地方"
+      },
+      {
+        "file": "host/dist/index.js",
+        "line": 35,
+        "text": "export const inject = ['tools', 'systemPrompt'];"
+      },
+      {
+        "file": "host/dist/index.js",
+        "line": 50,
+        "text": "const tools = ctx.tools;"
+      },
+      {
+        "file": "host/dist/index.js",
+        "line": 82,
+        "text": "tools.register(createLazyLoadTool({ tools, sessions, visibility, coreTools, log }));"
+      },
+      {
+        "file": "host/dist/mcpTools.js",
+        "line": 5,
+        "text": "* 宿主约定（见 @deepseek-ai/dsh-mcp-client）。本插件只处理这种名字的工具，"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
