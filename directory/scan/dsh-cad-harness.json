@@ -1,0 +1,155 @@
+{
+  "name": "dsh-cad-harness",
+  "version": "0.1.2-preview.1",
+  "scannedAt": "2026-11-25T23:07:22.875Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1676,
+        "text": "let response = await fetch(url);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1684,
+        "text": "response = await fetch(retry.toString());"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 21711,
+        "text": "fetch(req).then((response) => {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 24990,
+        "text": "const res = await fetch(withProject(`/api/cad/run/trajectory?id=${encodeURIComponent(props.runId)}`));"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 25023,
+        "text": "const res = await fetch(withProject(`/api/cad/run/stl?id=${encodeURIComponent(props.runId)}&part=${encodeURIComponent(part.name)}`));"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/contract-cli.js",
+        "line": 2,
+        "text": "import { readFile as readFile7 } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/contract-cli.js",
+        "line": 12,
+        "text": "import { mkdir, open, readFile, rename, stat, unlink, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/contract-cli.js",
+        "line": 19,
+        "text": "await mkdir(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/contract-cli.js",
+        "line": 25,
+        "text": "await handle.writeFile(`${process.pid} ${(/* @__PURE__ */ new Date()).toISOString()}"
+      },
+      {
+        "file": "lib/contract-cli.js",
+        "line": 33,
+        "text": "await unlink(lock).catch(() => {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 24,
+        "text": "# catalog (`ctx.tools.restrict`), while the routes, the telemetry and"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 29449,
+        "text": "function registerCadTools(ctx, scope, register = (definition) => ctx.tools.register(definition)) {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 36110,
+        "text": "const result = await ctx.tools.execute({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 38518,
+        "text": "if (!hidden.has(name2)) ctx.tools.register(definition);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 38533,
+        "text": "ctx.tools.register(withOutputContract(surface));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 599,
+        "text": "const { execFile } = await import(\"node:child_process\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 602,
+        "text": "execFile(bin, [\"--version\"], { timeout: 8e3 }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1628,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1636,
+        "text": "const child = spawn(command, args, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2444,
+        "text": "import { spawn as spawn2 } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 6,
+  "minifiedFiles": [
+    "lib/client.js",
+    "lib/index.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.en.md",
+      "line": 18,
+      "text": "node scripts/setup.mjs          # writes this machine's skill path into the preset"
+    },
+    {
+      "file": "README.en.md",
+      "line": 32,
+      "text": "`node scripts/setup.mjs --check` reports whether the preset is stale. The package"
+    },
+    {
+      "file": "README.en.md",
+      "line": 36,
+      "text": "**After a dsh upgrade, run `node scripts/setup.mjs` again and restart.** The preset is"
+    }
+  ],
+  "skippedEntries": []
+}

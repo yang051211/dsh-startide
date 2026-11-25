@@ -1,0 +1,92 @@
+{
+  "name": "@wwwfz/dsh-agent-bridge",
+  "version": "0.10.0",
+  "scannedAt": "2026-11-25T23:07:28.620Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/client.js",
+        "line": 421,
+        "text": "const request = fetch(archiveUrl('conversation-process', sessionId))"
+      },
+      {
+        "file": "src/client.js",
+        "line": 493,
+        "text": "fetch(archiveUrl('conversation-process', sessionId, values), { signal: controller.signal })"
+      },
+      {
+        "file": "src/client.js",
+        "line": 691,
+        "text": "fetch(url, { signal: request.signal, headers: { Accept: 'application/json' } })"
+      },
+      {
+        "file": "src/client.js",
+        "line": 857,
+        "text": "fetch(url, { signal: controller.signal, headers: { Accept: 'application/json' } })"
+      },
+      {
+        "file": "src/client.js",
+        "line": 1078,
+        "text": "const response = await fetch(new URL('api', url), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/assets.js",
+        "line": 1,
+        "text": "import { constants } from 'node:fs';"
+      },
+      {
+        "file": "src/assets.js",
+        "line": 2,
+        "text": "import { lstat, open, readdir, realpath } from 'node:fs/promises';"
+      },
+      {
+        "file": "src/catalog.js",
+        "line": 3,
+        "text": "import { open, realpath, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/config.js",
+        "line": 1,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/config.js",
+        "line": 62,
+        "text": "raw = JSON.parse((await readFile(file, 'utf8')).replace(/^\\uFEFF/, ''))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/catalog.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "web/vendor/markdown-it.mjs"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,138 @@
+{
+  "name": "dsh-superagent-multi-channel",
+  "version": "2.5.3",
+  "scannedAt": "2026-11-25T23:07:28.168Z",
+  "icon": "dsh-superagent-multi-channel.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 555,
+        "text": "response = await fetch(`/orchestrator/api/${path}`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4822,
+        "text": "const items = fetch(offset, size + 1);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4840,
+        "text": "const body = offset === 0 ? JSON.stringify(await fetch()) : host.pages.get(`${sessionId}:${resource}`);"
+      },
+      {
+        "file": "lib/kind-DWb70U1K.js",
+        "line": 10,
+        "text": "import { createServer } from \"node:http\";"
+      },
+      {
+        "file": "sidecar/weixin-ilink-bridge/selftest.mjs",
+        "line": 17,
+        "text": "import http from \"node:http\";"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/deployment-Bm3os1Wp.js",
+        "line": 3,
+        "text": "import { accessSync, constants, existsSync, realpathSync, statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/deployment-Bm3os1Wp.js",
+        "line": 6,
+        "text": "import { lstat, mkdir, readFile, readdir, rename, unlink, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/deployment-Bm3os1Wp.js",
+        "line": 160,
+        "text": "const head = (await readFile(file, \"utf8\")).split(\"\\n\", 2);"
+      },
+      {
+        "file": "lib/deployment-Bm3os1Wp.js",
+        "line": 170,
+        "text": "await writeFile(temporary, text, { mode });"
+      },
+      {
+        "file": "lib/deployment-Bm3os1Wp.js",
+        "line": 180,
+        "text": "await mkdir(dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 9962,
+        "text": "binding.disposers.push(agent.ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 10047,
+        "text": "if (master) binding.disposers.push(agent.ctx.tools.restrict({ allow: ["
+      },
+      {
+        "file": "lib/index.js",
+        "line": 10055,
+        "text": "] }), agent.ctx.tools.guard((execution) => noWait(execution, () => this.routed(agent))));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 10080,
+        "text": "const allow = WORK_TOOLS.filter((name) => agent.ctx.tools.get(name, parent));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 10081,
+        "text": "return [agent.ctx.tools.restrict({ allow }), agent.ctx.tools.guard(() => {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/commands-C_QA5sKQ.js",
+        "line": 3,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/deployment-Bm3os1Wp.js",
+        "line": 246,
+        "text": "const handle = subprocess.spawn({"
+      },
+      {
+        "file": "lib/feishu-BT6EBxQD.js",
+        "line": 9,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/feishu-BT6EBxQD.js",
+        "line": 635,
+        "text": "const child = spawn(bot(ctx).cli, ["
+      },
+      {
+        "file": "lib/kind-C4M6kIgf.js",
+        "line": 8,
+        "text": "import { spawn } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

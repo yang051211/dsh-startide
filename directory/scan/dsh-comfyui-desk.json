@@ -1,8 +1,8 @@
 {
   "name": "dsh-comfyui-desk",
-  "version": "0.1.2",
-  "scannedAt": "2026-11-24T01:02:53.816Z",
-  "icon": null,
+  "version": "0.5.1",
+  "scannedAt": "2026-11-25T23:07:28.348Z",
+  "icon": "dsh-comfyui-desk.svg",
   "network": {
     "hit": true,
     "evidence": [
@@ -37,6 +37,21 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/routes.js",
+        "line": 4,
+        "text": "import { existsSync, readdirSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/routes.js",
+        "line": 5,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/routes.js",
+        "line": 440,
+        "text": "const bytes = await readFile(path.join(dir, candidate))"
+      },
+      {
         "file": "lib/store.js",
         "line": 4,
         "text": "import { mkdir, readdir, readFile, stat, unlink, writeFile } from 'node:fs/promises'"
@@ -45,21 +60,6 @@
         "file": "lib/store.js",
         "line": 21,
         "text": "await mkdir(dir, { recursive: true })"
-      },
-      {
-        "file": "lib/store.js",
-        "line": 29,
-        "text": "await mkdir(target, { recursive: true })"
-      },
-      {
-        "file": "lib/store.js",
-        "line": 88,
-        "text": "await writeFile(full, bytes)"
-      },
-      {
-        "file": "lib/store.js",
-        "line": 102,
-        "text": "return { bytes: await readFile(full), name, full }"
       }
     ]
   },
@@ -73,7 +73,7 @@
       },
       {
         "file": "lib/tools.js",
-        "line": 116,
+        "line": 134,
         "text": "const result = ctx.tools.register(definition)"
       }
     ]

@@ -1,0 +1,70 @@
+{
+  "name": "dsh-restart-menu",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-25T23:07:35.569Z",
+  "icon": "dsh-restart-menu.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 87,
+        "text": "const response = await fetch(ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 30,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 68,
+        "text": "fs.appendFileSync(LOG_FILE, `[${new Date().toISOString()}] ${line}\\r\\n`)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 225,
+        "text": "fs.writeFileSync(HELPER_FILE, helperScript(exe, delayMs), 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 226,
+        "text": "fs.writeFileSync(LEGACY_HELPER_FILE, fallbackScript(exe, delayMs), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 29,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 246,
+        "text": "const child = spawn(runtime.file, runtime.args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

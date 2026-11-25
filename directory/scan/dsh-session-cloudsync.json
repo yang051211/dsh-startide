@@ -1,25 +1,35 @@
 {
   "name": "dsh-session-cloudsync",
-  "version": "0.1.5",
-  "scannedAt": "2026-11-11T21:01:15.689Z",
+  "version": "0.1.6",
+  "scannedAt": "2026-11-25T23:07:34.406Z",
   "icon": "dsh-session-cloudsync.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client/index.js",
-        "line": 452,
+        "line": 567,
         "text": "return fetch(API + path, init).then(function (response) {"
       },
       {
         "file": "client/index.js",
-        "line": 607,
+        "line": 722,
         "text": "fetch(API + '/events', {"
       },
       {
         "file": "lib/index.js",
-        "line": 289,
+        "line": 442,
         "text": "const response = await fetch(`${base}/v2/sessions?${query}`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 866,
+        "text": "const response = await fetch(`${base}/${encodeURIComponent(name)}/latest`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 909,
+        "text": "const response = await fetch(`${base}/${encodeURIComponent(name)}/${encodeURIComponent(version)}`, {"
       }
     ]
   },
@@ -54,8 +64,24 @@
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/env-tool.js",
+        "line": 148,
+        "text": "const dispose = tools.register(definitionOf(candidate, collect, policyOf));"
+      },
+      {
+        "file": "lib/notes-tool.js",
+        "line": 171,
+        "text": "disposers.push(tools.register({"
+      },
+      {
+        "file": "lib/toolchain-tool.js",
+        "line": 112,
+        "text": "const dispose = tools.register({"
+      }
+    ]
   },
   "childProcess": {
     "hit": false,

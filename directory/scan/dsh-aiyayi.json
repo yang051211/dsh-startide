@@ -1,11 +1,16 @@
 {
   "name": "dsh-aiyayi",
-  "version": "1.16.0",
-  "scannedAt": "2026-11-22T21:06:28.485Z",
+  "version": "1.18.0",
+  "scannedAt": "2026-11-25T23:07:15.064Z",
   "icon": "dsh-aiyayi.svg",
   "network": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 118,
+        "text": "const response = await fetch(\"/api/aiyayi/auth-url\", { method: \"GET\", cache: \"no-store\" });"
+      },
       {
         "file": "lib/feishu-logic.js",
         "line": 229,
@@ -25,11 +30,6 @@
         "file": "lib/feishu-logic.js",
         "line": 1146,
         "text": "const res = await fetch(url, {"
-      },
-      {
-        "file": "lib/net.js",
-        "line": 82,
-        "text": "ws = new WebSocket(wsUrl)"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "cordis.patch.yml",
-        "line": 372,
+        "line": 389,
         "text": "# dsh-mcp-client（serverName: phone）把 mcp__phone__* 一族工具挂进"
       },
       {
@@ -130,7 +130,10 @@
   "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
   "setupHints": [],
   "skippedEntries": []
 }

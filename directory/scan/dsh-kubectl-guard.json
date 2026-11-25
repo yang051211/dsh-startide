@@ -1,7 +1,7 @@
 {
   "name": "dsh-kubectl-guard",
-  "version": "0.2.1",
-  "scannedAt": "2026-10-26T10:08:04.615Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-25T23:07:27.934Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -10,6 +10,16 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 1,
+        "text": "import { appendFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/index.js",
+        "line": 58,
+        "text": "appendFileSync(config.decisionLog, `${JSON.stringify({ at: new Date().toISOString(), ...entry })}\\n`)"
+      },
       {
         "file": "src/resolver.js",
         "line": 6,
@@ -27,12 +37,12 @@
     "evidence": [
       {
         "file": "src/index.js",
-        "line": 6,
+        "line": 7,
         "text": "const inject = ['tools']"
       },
       {
         "file": "src/index.js",
-        "line": 31,
+        "line": 68,
         "text": "ctx.tools.guard((exec) => {"
       },
       {

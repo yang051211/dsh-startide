@@ -1,7 +1,7 @@
 {
   "name": "dsh-totonai",
-  "version": "0.1.16",
-  "scannedAt": "2026-11-24T01:02:46.583Z",
+  "version": "0.1.21",
+  "scannedAt": "2026-11-25T23:07:27.877Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,7 +18,7 @@
       },
       {
         "file": "lib/api.js",
-        "line": 33,
+        "line": 152,
         "text": "const res = await fetch(url, {"
       },
       {
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/api.js",
+        "line": 2,
+        "text": "import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 101,
+        "text": "const raw = readFileSync(new URL('../package.json', import.meta.url), 'utf8');"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 112,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 114,
+        "text": "writeFileSync(join(dir, 'diagnose.txt'), lines.join('\\n'), 'utf8');"
+      },
+      {
         "file": "lib/creds.js",
         "line": 1,
         "text": "import { chmodSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
-      },
-      {
-        "file": "lib/creds.js",
-        "line": 10,
-        "text": "const raw = readFileSync(CRED_FILE, 'utf8');"
-      },
-      {
-        "file": "lib/creds.js",
-        "line": 23,
-        "text": "mkdirSync(CRED_DIR, { recursive: true });"
-      },
-      {
-        "file": "lib/creds.js",
-        "line": 24,
-        "text": "writeFileSync(CRED_FILE, JSON.stringify(creds, null, 2), { encoding: 'utf8', mode: 0o600 });"
-      },
-      {
-        "file": "lib/creds.js",
-        "line": 35,
-        "text": "writeFileSync(CRED_FILE, JSON.stringify({ username: '', password: '' }, null, 2), { encoding: 'utf8' });"
       }
     ]
   },
@@ -78,30 +78,51 @@
       },
       {
         "file": "lib/index.bundle.js",
-        "line": 10220,
+        "line": 10270,
         "text": "disposers.push(tools.register(tool));"
       },
       {
         "file": "lib/index.js",
-        "line": 8578,
+        "line": 8872,
         "text": "* `inject`: an inject entry would hold `ctx.tools` — and every tool plugin"
       },
       {
         "file": "lib/index.js",
-        "line": 8612,
+        "line": 8906,
         "text": "return this.layers.effect(this.ctx, (layer) => layer.tools.insert(name2, definition), { label: \"tools.register()\" });"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4963,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 5011,
+        "text": "execFile("
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/proxy.js",
+        "line": 64,
+        "text": "execFile(cmd, args, { windowsHide: true, timeout: 5000, maxBuffer: 4 * 1024 * 1024 }, (err, stdout) => resolve(err ? '' : String(stdout ?? '')));"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

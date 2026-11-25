@@ -1,0 +1,76 @@
+{
+  "name": "dsh-quotaline",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-25T23:07:30.133Z",
+  "icon": "dsh-quotaline.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 195,
+        "text": "const response = await fetch(API + path, {"
+      },
+      {
+        "file": "index.js",
+        "line": 849,
+        "text": "const response = await fetch(parsed, init)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "import { mkdir, readFile, rename, unlink, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 669,
+        "text": "const text = await readFile(configPath(), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 681,
+        "text": "await mkdir(join(path, '..'), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 683,
+        "text": "await writeFile(tmp, `${JSON.stringify(settings, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 688,
+        "text": "await unlink(path).catch(() => {})"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentDefaultModel",
+    "credentials",
+    "deepseekAccount",
+    "llm",
+    "settings",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

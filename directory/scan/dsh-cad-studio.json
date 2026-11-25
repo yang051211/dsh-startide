@@ -1,0 +1,121 @@
+{
+  "name": "dsh-cad-studio",
+  "version": "0.29.1",
+  "scannedAt": "2026-11-25T23:07:34.855Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "assets/three.min.js",
+        "line": 6,
+        "text": "\"}),a=this.mimeType,o=this.responseType;fetch(s).then((e=>{if(200===e.status||0===e.status){if(0===e.status&&console.warn(\"THREE.FileLoader: HTTP Status 0 recei"
+      },
+      {
+        "file": "client.js",
+        "line": 1274,
+        "text": "const res = await fetch(`${ROUTE}/open`, {"
+      },
+      {
+        "file": "client.js",
+        "line": 1286,
+        "text": "const sceneRes = await fetch(`${ROUTE}/scene/${encodeURIComponent(data.sceneId)}`, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 1375,
+        "text": "const res = await fetch(`${ROUTE}/scene/${encodeURIComponent(id)}`, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 1584,
+        "text": "const res = await fetch(`${ROUTE}/state`, { headers: { accept: 'application/json' } })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { existsSync, mkdirSync, readdirSync, rmSync, statSync, statfsSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "import { mkdtemp, mkdir, readdir, readFile, rm, stat, unlink, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 136,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 138,
+        "text": "writeFileSync(probe, '1')"
+      },
+      {
+        "file": "index.js",
+        "line": 139,
+        "text": "rmSync(probe, { force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 29,
+        "text": "export const inject = ['tools', 'webServer']"
+      },
+      {
+        "file": "index.js",
+        "line": 2250,
+        "text": "const tool = (definition) => ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { spawn, spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 75,
+        "text": "const res = spawnSync(bin, ['-c', \"import FreeCAD; print('.'.join(str(v) for v in FreeCAD.Version()[:3]))\"], { encoding: 'utf8', timeout: 30000 })"
+      },
+      {
+        "file": "index.js",
+        "line": 216,
+        "text": "const res = spawnSync(packager.cmd, args, { encoding: 'utf8', timeout: timeoutMs })"
+      },
+      {
+        "file": "index.js",
+        "line": 1399,
+        "text": "const child = spawn(bin, [script], { stdio: ['ignore', 'pipe', 'pipe'], env: { ...process.env, PYTHONUNBUFFERED: '1' } })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "assets/three.min.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

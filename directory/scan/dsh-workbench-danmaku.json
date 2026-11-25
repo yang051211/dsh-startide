@@ -1,0 +1,77 @@
+{
+  "name": "dsh-workbench-danmaku",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-25T23:07:18.593Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1584,
+        "text": "return fetch(\"/workbench/api/domains/\" + DOMAIN + \"/actions/\" + encodeURIComponent(ACTION_PREFIX + action), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/desktop/runtime.js",
+        "line": 5,
+        "text": "import { existsSync, readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/desktop/runtime.js",
+        "line": 40,
+        "text": "version = readFileSync(join(candidate, \"..\", \"..\", \"..\", \"version\"), \"utf8\").trim();"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1406,
+        "text": "function spawn(payload) {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1456,
+        "text": "spawn(payload);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1463,
+        "text": "spawn(payload);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1468,
+        "text": "spawn(payload);"
+      },
+      {
+        "file": "lib/desktop/supervisor.js",
+        "line": 4,
+        "text": "import { spawn } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "workbench"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

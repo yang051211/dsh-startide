@@ -1,0 +1,174 @@
+{
+  "name": "@capyclaw/capyclaw",
+  "version": "0.14.17",
+  "scannedAt": "2026-11-25T23:07:33.932Z",
+  "icon": "capyclaw__capyclaw.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 132,
+        "text": "const res = await fetch(location.origin + API + route, opts)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "try { return JSON.parse(fs.readFileSync(new URL('./package.json', import.meta.url), 'utf8')).version || null } catch { return null }"
+      },
+      {
+        "file": "index.js",
+        "line": 38,
+        "text": "try { return JSON.parse(fs.readFileSync(file, 'utf8')) } catch { return undefined }"
+      },
+      {
+        "file": "index.js",
+        "line": 117,
+        "text": "return { absolute, manifest: normalizeEnvironmentManifest(JSON.parse(fs.readFileSync(absolute, 'utf8'))) }"
+      },
+      {
+        "file": "index.js",
+        "line": 396,
+        "text": "fs.rmSync(dir.path, { recursive: true, force: true, maxRetries: 3, retryDelay: 120 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 32,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 1707,
+        "text": "const off = ctx.tools.register({ output: { schema: outputSchema, render }, ...definition })"
+      },
+      {
+        "file": "test/stability.test.mjs",
+        "line": 398,
+        "text": "ctx.tools.register = (tool) => { tools.set(tool.name, tool); return () => tools.delete(tool.name) }"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 3,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 408,
+        "text": "execFile(file, args, { timeout, windowsHide: true, maxBuffer: 8 << 20 }, (error, stdout) => resolve(error ? '' : String(stdout || '')))"
+      },
+      {
+        "file": "lib/quarantine.mjs",
+        "line": 29,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/quarantine.mjs",
+        "line": 185,
+        "text": "execFile('taskkill', ['/PID', String(pid), '/T', '/F'], { timeout: 8000, windowsHide: true }, (err) => (err ? reject(err) : resolve()))"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": [
+    "node_modules/@capyclaw/plugin-kit/src/editor/heartbeat-worker.js (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/editor/transport.js (outside the package)",
+    "node_modules/@capyclaw/foundation/package.json (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/package.json (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/INTEGRATION.md (outside the package)",
+    "node_modules/@capyclaw/foundation/README.md (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/README.md (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/service/api.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/abi/assets.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/store/blob-store.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/abi/bridge.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/host/caps.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/cli.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/adapters/client-panel.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/config.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/store/content-store.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/runtime/context.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/host/contract.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/ctx-service.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/host/dsh.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/abi/errors.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/subsystems/events.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/util/fs-lock.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/editor/heartbeat.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/adapters/host-event.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/host.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/adapters/http-router.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/service/http.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/util/http.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/abi/index.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/kit/index.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/runtime/index.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/index.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/store/journal-store.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/kernel.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/abi/kinds.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/editor/lease.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/ledger.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/adapters/lifecycle-hook.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/abi/loader.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/subsystems/log.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/workspace/manager.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/service/mcp-http.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/host/memory.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/subsystems/net.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/adapters/own-server.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/pack.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/skills/provider.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/adapters/raw.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/tools/result.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/adapters/runtime-driver.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/skill/scan.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/abi/schema.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/self-contained.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/service/server.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/adapters/service-provider.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/editor/shadow.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/adapters/skill-provider.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/abi/spec.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/service/static.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/bin/sync.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/adapters/tool-provider.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/tuning.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/lib/adapters/ui-panel.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/abi/validate.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/tools/validate.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/abi/version.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/abi/visibility.mjs (outside the package)",
+    "node_modules/@capyclaw/plugin-kit/src/zip.mjs (outside the package)",
+    "node_modules/@capyclaw/foundation/cordis.patch.yml (outside the package)"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "name": "dsh-clean-chat",
+  "version": "1.1.0",
+  "scannedAt": "2026-11-25T23:07:30.031Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 289,
+        "text": "return fetch(API + '/settings', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 311,
+        "text": "fetch(API + '/settings', { headers: CLIENT_HEADER })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 426,
+        "text": "response = await fetch(API + '/chat', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 946,
+        "text": "fetch(API + '/models', { headers: CLIENT_HEADER })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/host/settings.js",
+        "line": 10,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/host/settings.js",
+        "line": 39,
+        "text": "const text = await readFile(file, 'utf8');"
+      },
+      {
+        "file": "lib/host/settings.js",
+        "line": 50,
+        "text": "await mkdir(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/host/settings.js",
+        "line": 52,
+        "text": "await writeFile(tmp, `${JSON.stringify(next, null, 2)}\\n`, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

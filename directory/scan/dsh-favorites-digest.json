@@ -1,0 +1,75 @@
+{
+  "name": "dsh-favorites-digest",
+  "version": "0.2.1",
+  "scannedAt": "2026-11-25T23:07:34.149Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 896,
+        "text": "const response = await fetch(`${llm.baseUrl}/chat/completions`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { mkdir, readFile, readdir, writeFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 700,
+        "text": "await mkdir(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 704,
+        "text": "await writeFile(jsonPath, renderJson(results, now, projects), \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 705,
+        "text": "await writeFile(mdPath, renderMarkdown(results, digest, now, projects), \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1138,
+        "text": "payload = JSON.parse(await readFile(path, \"utf8\"));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1302,
+        "text": "const tools = ctx.tools;"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1304,
+        "text": "yield tools.register(createFavoritesTool(config));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

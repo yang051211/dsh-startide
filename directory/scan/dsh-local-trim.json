@@ -1,14 +1,14 @@
 {
   "name": "dsh-local-trim",
-  "version": "0.5.6",
-  "scannedAt": "2026-11-17T09:25:36.951Z",
+  "version": "0.5.7",
+  "scannedAt": "2026-11-25T23:07:29.176Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 48,
+        "line": 74,
         "text": "const response = await fetch(BRIDGE + '/' + name, {"
       }
     ]
@@ -19,27 +19,27 @@
       {
         "file": "lib/index.js",
         "line": 18,
-        "text": "import { appendFileSync, readFileSync, statSync } from 'node:fs'"
+        "text": "import { appendFileSync, closeSync, mkdirSync, openSync, readFileSync, readSync, renameSync, statSync } from 'node:fs'"
       },
       {
         "file": "lib/index.js",
-        "line": 348,
+        "line": 457,
+        "text": "mkdirSync(dirname(LOG_PATH), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 465,
         "text": "appendFileSync(LOG_PATH, `${new Date().toISOString()} ${text}\\n`)"
       },
       {
         "file": "lib/index.js",
-        "line": 431,
+        "line": 562,
         "text": "const text = readFileSync(LIGHT_INJECT_PATH, 'utf8').trim()"
       },
       {
         "file": "lib/index.js",
-        "line": 1293,
-        "text": "const text = readFileSync(LOG_PATH, 'utf8')"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 2555,
-        "text": "const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'))"
+        "line": 1679,
+        "text": "* [log-tail] 原来是一次 `readFileSync(LOG_PATH)` 全量读进来再 slice："
       }
     ]
   },
@@ -48,7 +48,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 85,
+        "line": 89,
         "text": "export const inject = ['tools', 'systemPrompt']"
       }
     ]
@@ -59,7 +59,7 @@
       {
         "file": "lib/launcher.js",
         "line": 27,
-        "text": "import { execFileSync as nodeExecFileSync, spawn as nodeSpawn } from 'node:child_process'"
+        "text": "import { execFile, execFileSync as nodeExecFileSync, spawn as nodeSpawn } from 'node:child_process'"
       }
     ]
   },

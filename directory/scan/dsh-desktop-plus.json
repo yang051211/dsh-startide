@@ -1,0 +1,64 @@
+{
+  "name": "dsh-desktop-plus",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-25T23:07:35.417Z",
+  "icon": "dsh-desktop-plus.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 299,
+        "text": "fetch(CLIENT_REPORT_ROUTE, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 395,
+        "text": "const response = await fetch(url, init)"
+      },
+      {
+        "file": "lib/client.sessions.js",
+        "line": 348,
+        "text": "const response = await fetch(DELETE_ROUTE, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/session-admin.js",
+        "line": 33,
+        "text": "import { readdir, rm, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/session-admin.js",
+        "line": 276,
+        "text": "await rm(plan.logDirectory, { recursive: true, force: true })"
+      },
+      {
+        "file": "lib/session-admin.js",
+        "line": 322,
+        "text": "await rm(projectionCachePathFor(sessionId, dshHomeFromLogDirectory(plan.logDirectory)), { force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

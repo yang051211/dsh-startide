@@ -1,0 +1,133 @@
+{
+  "name": "dsh-ai-for-memory",
+  "version": "0.5.12",
+  "scannedAt": "2026-11-25T23:07:28.965Z",
+  "icon": "dsh-ai-for-memory.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 1282,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "lib/local-engine.js",
+        "line": 689,
+        "text": "const health = await fetch(`${base}/health`, { signal: AbortSignal.timeout(2000) });"
+      },
+      {
+        "file": "lib/local-engine.js",
+        "line": 696,
+        "text": "const props = await fetch(`${base}/props`, { signal: AbortSignal.timeout(2000) });"
+      },
+      {
+        "file": "lib/local-engine.js",
+        "line": 702,
+        "text": "const listed = await fetch(`${base}/v1/models`, { signal: AbortSignal.timeout(2000) });"
+      },
+      {
+        "file": "lib/local-engine.js",
+        "line": 1149,
+        "text": "const response = await fetch(`http://127.0.0.1:${port}/health`, { signal: AbortSignal.timeout(1500) });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 18,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 1489,
+        "text": "fs.mkdirSync(target, { recursive: true });"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 1543,
+        "text": "const data = fs.readFileSync(file);"
+      },
+      {
+        "file": "lib/audit.js",
+        "line": 9,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/audit.js",
+        "line": 29,
+        "text": "fs.mkdirSync(registryDir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "* its own modules, then registers plain tool definition objects on `ctx.tools`."
+      },
+      {
+        "file": "index.js",
+        "line": 84,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 4245,
+        "text": "ctx.effect(() => ctx.tools.register(tool));"
+      },
+      {
+        "file": "index.js",
+        "line": 4247,
+        "text": "ctx.tools.register(tool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 16,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/git-sync.js",
+        "line": 13,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/git-sync.js",
+        "line": 47,
+        "text": "child = spawn('git', args, {"
+      },
+      {
+        "file": "lib/local-engine.js",
+        "line": 25,
+        "text": "import { execFile, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/local-engine.js",
+        "line": 1354,
+        "text": "state.child = spawn(model.binary, buildServerArgs(model, port), {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

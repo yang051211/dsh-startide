@@ -1,20 +1,35 @@
 {
   "name": "dsh-multithread-downloader",
-  "version": "1.3.0",
-  "scannedAt": "2026-11-24T01:02:52.697Z",
+  "version": "1.4.1",
+  "scannedAt": "2026-11-25T23:07:32.609Z",
   "icon": "dsh-multithread-downloader.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 496,
+        "line": 571,
         "text": "response = await fetch(path, {"
       },
       {
         "file": "index.js",
-        "line": 16,
+        "line": 1854,
+        "text": "域名，不依赖本机 DNS：本机解析被污染或劫持时，先用它拿到真实 IP，再配合 curl --resolve / 请求头直连。name 必填（批量用 names，最多 20 个）；type 默认 A，both = A+AAAA，也支持 CNAME/TXT/MX/NS/SOA/PTR/SRV/CAA/HTTPS；prov"
+      },
+      {
+        "file": "index.js",
+        "line": 2245,
+        "text": "- 用 DNS over HTTPS 解析域名，不依赖本机 DNS；本机解析被污染时先拿到真实 IP，再用 \\`curl --resolve\\` 或请求头直连。"
+      },
+      {
+        "file": "lib/doh.js",
+        "line": 13,
         "text": "import { Agent, fetch as undiciFetch } from 'undici'"
+      },
+      {
+        "file": "lib/net.js",
+        "line": 8,
+        "text": "import { fetch as undiciFetch } from 'undici'"
       }
     ]
   },
@@ -28,23 +43,23 @@
       },
       {
         "file": "index.js",
-        "line": 9,
-        "text": "import { mkdir, open, readFile, readdir, rename, statfs, unlink, writeFile } from 'node:fs/promises'"
+        "line": 8,
+        "text": "import { mkdir, open, readFile, rename, unlink, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "index.js",
-        "line": 95,
-        "text": "const text = readFileSync(join(home, '.config', 'user-dirs.dirs'), 'utf8')"
-      },
-      {
-        "file": "index.js",
-        "line": 242,
-        "text": "const data = JSON.parse(readFileSync(path, 'utf8'))"
-      },
-      {
-        "file": "index.js",
-        "line": 915,
+        "line": 349,
         "text": "await writeFile(path, payload, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 359,
+        "text": "return JSON.parse(await readFile(path, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 368,
+        "text": "await unlink(path).catch(() => {})"
       }
     ]
   },
@@ -53,17 +68,27 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 2172,
+        "line": 2178,
         "text": "export const inject = ['tools', 'webServer']"
       },
       {
         "file": "index.js",
-        "line": 2306,
+        "line": 2350,
         "text": "ctx.effect(() => ctx.tools.register(makeTool(manager)), 'multithread-downloader: tool')"
       },
       {
         "file": "index.js",
-        "line": 2317,
+        "line": 2351,
+        "text": "ctx.effect(() => ctx.tools.register(makeDohTool(manager)), 'multithread-downloader: doh tool')"
+      },
+      {
+        "file": "index.js",
+        "line": 2352,
+        "text": "ctx.effect(() => ctx.tools.register(makeProbeTool(manager)), 'multithread-downloader: probe tool')"
+      },
+      {
+        "file": "index.js",
+        "line": 2363,
         "text": "return ctx.tools.get('downloader', context.scope) === undefined ? '' : TOOL_GUIDANCE"
       }
     ]
@@ -72,23 +97,23 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
+        "file": "lib/files.js",
         "line": 8,
         "text": "import { spawn, spawnSync } from 'node:child_process'"
       },
       {
-        "file": "index.js",
-        "line": 72,
+        "file": "lib/files.js",
+        "line": 60,
         "text": "const result = spawnSync("
       },
       {
-        "file": "index.js",
-        "line": 122,
+        "file": "lib/files.js",
+        "line": 112,
         "text": "const child = spawn(NATIVE_PICKER, args, { windowsHide: true })"
       },
       {
-        "file": "index.js",
-        "line": 145,
+        "file": "lib/files.js",
+        "line": 134,
         "text": "const child = spawn(command, args, { windowsHide: true })"
       }
     ]

@@ -1,0 +1,76 @@
+{
+  "name": "dsh-desktop-embed",
+  "version": "1.3.0",
+  "scannedAt": "2026-11-25T23:07:34.205Z",
+  "icon": "dsh-desktop-embed.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 46,
+        "text": "import { Agent as HttpAgent, createServer, request as httpRequest } from 'node:http'"
+      },
+      {
+        "file": "index.js",
+        "line": 47,
+        "text": "import { Agent as HttpsAgent, request as httpsRequest } from 'node:https'"
+      },
+      {
+        "file": "index.js",
+        "line": 251,
+        "text": "const linkRes = await fetch(`${cfg.bridgeUrl}/link`, {"
+      },
+      {
+        "file": "index.js",
+        "line": 259,
+        "text": "const accept = await fetch(pairUrl, { redirect: 'manual' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 45,
+        "text": "import { existsSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 136,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 147,
+        "text": "writeFileSync(tmp, payload, { mode: 0o600 })"
+      },
+      {
+        "file": "index.js",
+        "line": 151,
+        "text": "writeFileSync(file, payload, { mode: 0o600 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

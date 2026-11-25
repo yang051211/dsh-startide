@@ -1,0 +1,81 @@
+{
+  "name": "qvasp-skill",
+  "version": "1.5.0",
+  "scannedAt": "2026-11-25T23:07:35.095Z",
+  "icon": "qvasp-skill.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 75,
+        "text": "else h.update(name).update(readFileSync(p))"
+      },
+      {
+        "file": "index.js",
+        "line": 103,
+        "text": "const srcText = readFileSync(srcFile, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 106,
+        "text": "|| skillVersion(srcText) > skillVersion(readFileSync(destFile, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 111,
+        "text": "const recorded = existsSync(marker) ? readFileSync(marker, 'utf8').trim() : null"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 157,
+        "text": "name: '@deepseek-ai/dsh-mcp-client',"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 26,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 150,
+        "text": "const r = spawnSync(cmd, ['--version'], { encoding: 'utf8', timeout: 8000 })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 56,
+      "text": "npm install -g qvasp-skill"
+    }
+  ],
+  "skippedEntries": []
+}

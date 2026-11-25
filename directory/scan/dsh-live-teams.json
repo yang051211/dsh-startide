@@ -1,0 +1,101 @@
+{
+  "name": "dsh-live-teams",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-25T23:07:28.576Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1046,
+        "text": "const response = await fetch(path, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 3832,
+        "text": "const response = await fetch(`/api/live-teams/journal?${query.toString()}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/binding.js",
+        "line": 2,
+        "text": "import { realpathSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/context-provider.js",
+        "line": 7,
+        "text": "import { readFileSync, statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/context-provider.js",
+        "line": 42,
+        "text": "const value = readFileSync(file, \"utf8\").trim();"
+      },
+      {
+        "file": "lib/git-artifacts.js",
+        "line": 2,
+        "text": "import * as fsp from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/git-artifacts.js",
+        "line": 104,
+        "text": "content = await fsp.readFile(absolute);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/compatibility.js",
+        "line": 7,
+        "text": "* compatibility check that pokes at `ctx.tools` does not report a missing service — it crashes the"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/changed-paths.js",
+        "line": 1,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/changed-paths.js",
+        "line": 43,
+        "text": "execFile(\"git\", ["
+      },
+      {
+        "file": "lib/changed-paths.js",
+        "line": 65,
+        "text": "execFile(\"git\", ["
+      },
+      {
+        "file": "lib/changed-paths.js",
+        "line": 85,
+        "text": "execFile(\"git\", ["
+      },
+      {
+        "file": "lib/git-artifacts.js",
+        "line": 3,
+        "text": "import { execFile } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

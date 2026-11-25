@@ -1,35 +1,35 @@
 {
   "name": "dsh-update-guard",
-  "version": "0.4.5",
-  "scannedAt": "2026-11-22T21:06:34.186Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-25T23:07:26.683Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 73,
+        "line": 122,
+        "text": "fetch(API + '/lock.json', { method: 'POST' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 205,
+        "text": "fetch(API + '/panel.json' + (refresh ? '?refresh=1' : ''), { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 217,
+        "text": "fetch(API + '/panel.json', { cache: 'no-store' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 264,
         "text": "fetch(API + '/config.json', { cache: 'no-store' })"
       },
       {
         "file": "lib/client.js",
-        "line": 89,
+        "line": 280,
         "text": "return fetch(API + '/config.json', {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 148,
-        "text": "fetch(API + '/report.json', { cache: 'no-store' })"
-      },
-      {
-        "file": "lib/feed.mjs",
-        "line": 16,
-        "text": "import https from 'node:https'"
-      },
-      {
-        "file": "lib/feed.mjs",
-        "line": 85,
-        "text": "req = https.get(feedUrl, { headers: { 'user-agent': 'dsh-update-guard' }, timeout }, (res) => {"
       }
     ]
   },
@@ -39,27 +39,27 @@
       {
         "file": "bin/guard.mjs",
         "line": 15,
-        "text": "import { readFileSync } from 'node:fs'"
+        "text": "import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'node:fs'"
       },
       {
         "file": "bin/guard.mjs",
-        "line": 367,
+        "line": 374,
         "text": "const pkg = JSON.parse(readFileSync(join(profileDir, 'package.json'), 'utf8'))"
       },
       {
         "file": "bin/guard.mjs",
-        "line": 378,
+        "line": 385,
         "text": "version = JSON.parse(readFileSync(join(p.dir, 'package.json'), 'utf8')).version ?? '?'"
       },
       {
-        "file": "lib/asar.mjs",
-        "line": 8,
-        "text": "import { readFileSync } from 'node:fs'"
+        "file": "bin/guard.mjs",
+        "line": 529,
+        "text": "try { guardVersion = JSON.parse(readFileSync(join(PKG_DIR, 'package.json'), 'utf8')).version } catch { guardVersion = null }"
       },
       {
-        "file": "lib/asar.mjs",
-        "line": 12,
-        "text": "const buf = readFileSync(path)"
+        "file": "bin/guard.mjs",
+        "line": 559,
+        "text": "try { guardVersion = JSON.parse(readFileSync(join(PKG_DIR, 'package.json'), 'utf8')).version } catch { guardVersion = null }"
       }
     ]
   },

@@ -1,35 +1,35 @@
 {
   "name": "@yunmiao/studymate",
-  "version": "2.0.4",
-  "scannedAt": "2026-11-06T20:48:43.900Z",
-  "icon": null,
+  "version": "2.1.0",
+  "scannedAt": "2026-11-25T23:07:20.271Z",
+  "icon": "yunmiao__studymate.png",
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/client.js",
-        "line": 2176,
+        "file": "dist/client.js",
+        "line": 3106,
         "text": "fetch(LIBRARY_ENDPOINT, { headers: { accept: 'application/json' } })"
       },
       {
-        "file": "lib/client.js",
-        "line": 2402,
+        "file": "dist/client.js",
+        "line": 3343,
         "text": "const response = await fetch(REFERENCE_ENDPOINT + '?subject=' + encodeURIComponent(subject.slug) + '&path=' + encodeURIComponent(entry.path));"
       },
       {
-        "file": "lib/client.js",
-        "line": 2445,
+        "file": "dist/client.js",
+        "line": 3386,
         "text": "const response = await fetch(REFERENCE_ENDPOINT, {"
       },
       {
-        "file": "lib/client.js",
-        "line": 4029,
-        "text": "const response = await fetch(QA_SESSION_ENDPOINT, {"
+        "file": "dist/client.js",
+        "line": 4945,
+        "text": "return fetch(ANNOTATION_ENDPOINT, {"
       },
       {
-        "file": "lib/client.js",
-        "line": 4304,
-        "text": "fetch(LAB_ENDPOINT, {"
+        "file": "dist/client.js",
+        "line": 6001,
+        "text": "const response = await fetch(QA_SESSION_ENDPOINT, {"
       }
     ]
   },
@@ -53,12 +53,12 @@
       },
       {
         "file": "bin/antigravity-plugin.mjs",
-        "line": 20,
+        "line": 22,
         "text": "fs.mkdirSync(to, { recursive: true });"
       },
       {
         "file": "bin/antigravity-plugin.mjs",
-        "line": 26,
+        "line": 28,
         "text": "fs.mkdirSync(path.dirname(to), { recursive: true });"
       }
     ]
@@ -103,7 +103,7 @@
       },
       {
         "file": "bin/studymate.mjs",
-        "line": 51,
+        "line": 56,
         "text": "return spawnSync(command, args, { encoding: 'utf8', timeout: 15000, windowsHide: true, ...extra });"
       },
       {
@@ -113,7 +113,7 @@
       },
       {
         "file": "lib/export/react.ts",
-        "line": 102,
+        "line": 120,
         "text": "const probe = spawnSync('npm', ['root', '-g'], { encoding: 'utf8', windowsHide: true, env, timeout: 15_000 });"
       },
       {
@@ -129,6 +129,8 @@
   },
   "dependencies": 0,
   "minifiedFiles": [
+    "dist/client.js",
+    "dist/client.notes.js",
     "lib/katex/katex.min.js"
   ],
   "binaryFiles": [],
@@ -136,12 +138,12 @@
   "setupHints": [
     {
       "file": "README.en.md",
-      "line": 143,
+      "line": 145,
       "text": "hon. Only one thing needs extra Node setup: exporting static pages requires a copy of React (`npm i -g react react-dom`, or point `STUDYMATE_REACT_DIR` at one)."
     },
     {
       "file": "README.md",
-      "line": 158,
+      "line": 160,
       "text": "eScript 插件（[ADR-0002](docs/adr/0002-引擎改用TypeScript.md)），安装器也不再探测 Python。只有一件事另外要 Node：导出静态页面时要一份 React（`npm i -g react react-dom`，或用 `STUDYMATE_REACT_DIR` 指过去）。"
     }
   ],

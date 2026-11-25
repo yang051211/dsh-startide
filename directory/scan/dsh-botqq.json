@@ -1,0 +1,138 @@
+{
+  "name": "dsh-botqq",
+  "version": "1.13.25",
+  "scannedAt": "2026-11-25T23:07:35.219Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/qqbot-settings.js",
+        "line": 715,
+        "text": "return fetch(u)"
+      },
+      {
+        "file": "client/qqbot-settings.js",
+        "line": 771,
+        "text": "return fetch(u)"
+      },
+      {
+        "file": "client/qqbot-settings.js",
+        "line": 780,
+        "text": "return fetch('api/qqbot-settings/ext-config', {"
+      },
+      {
+        "file": "client/qqbot-settings.js",
+        "line": 794,
+        "text": "return fetch(u, Object.assign({ headers: { 'Content-Type': 'application/json' } }, opts || {}))"
+      },
+      {
+        "file": "client/qqbot-settings.js",
+        "line": 867,
+        "text": "return fetch(u, { method: 'POST' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/api/group-admin.js",
+        "line": 15,
+        "text": "import { appendFileSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/api/group-admin.js",
+        "line": 147,
+        "text": "appendFileSync(DIAG, `${new Date().toISOString()} ${line}\\n`);"
+      },
+      {
+        "file": "dist/channel-tools.js",
+        "line": 14,
+        "text": "import { appendFileSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/channel-tools.js",
+        "line": 95,
+        "text": "appendFileSync(DIAG_FILE, `${new Date().toISOString()} ${line}\\n`);"
+      },
+      {
+        "file": "dist/channel-tools.js",
+        "line": 235,
+        "text": "const reg = JSON.parse(readFileSync(groupRegistryPath(root), 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/channel-tools.js",
+        "line": 113,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "dist/channel-tools.js",
+        "line": 124,
+        "text": "* **插件 apply 时的 ctx** —— 普通扩展工具（apply 里的 `ctx.tools.register`）就注册在它上面，"
+      },
+      {
+        "file": "dist/channel-tools.js",
+        "line": 621,
+        "text": "//   才能和普通扩展工具（下面的 `ctx.tools.register`）处在同一个作用域。"
+      },
+      {
+        "file": "dist/channel-tools.js",
+        "line": 623,
+        "text": "const toolsAny = ctx.tools;"
+      },
+      {
+        "file": "dist/channel-tools.js",
+        "line": 3032,
+        "text": "ctx.tools.register(t.tool);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/commands/exit.js",
+        "line": 25,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "dist/commands/exit.js",
+        "line": 85,
+        "text": "\"const { spawn } = require('child_process');\","
+      },
+      {
+        "file": "dist/commands/exit.js",
+        "line": 94,
+        "text": "'      const c = spawn(exe, args, { detached: true, stdio: \\'ignore\\', cwd });',"
+      },
+      {
+        "file": "dist/commands/exit.js",
+        "line": 104,
+        "text": "const child = spawn(exe, [tmpFile], { detached: true, stdio: 'ignore', windowsHide: true });"
+      },
+      {
+        "file": "dist/features/qun-login.js",
+        "line": 19,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 8,
+  "minifiedFiles": [
+    "client/qqbot-settings.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

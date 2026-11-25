@@ -1,0 +1,101 @@
+{
+  "name": "dsh-copilotkit",
+  "version": "0.2.6",
+  "scannedAt": "2026-11-25T23:07:32.329Z",
+  "icon": "dsh-copilotkit.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 153,
+        "text": "const response = await fetch(ENDPOINT, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/repair.js",
+        "line": 14,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/selfcheck.js",
+        "line": 16,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/selfcheck.js",
+        "line": 41,
+        "text": "const shippedVersion = JSON.parse(readFileSync(shippedPath, 'utf8')).version"
+      },
+      {
+        "file": "lib/selfcheck.js",
+        "line": 44,
+        "text": "const profileVersion = JSON.parse(readFileSync(profilePackage, 'utf8')).version"
+      },
+      {
+        "file": "lib/skills.js",
+        "line": 10,
+        "text": "import { existsSync, readdirSync, readFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 4,
+        "text": "#   dsh-copilotkit-docs - @deepseek-ai/dsh-mcp-client bridging https://mcp.copilotkit.ai/mcp"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 10,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "* The MCP connection itself is a separate patch row (`@deepseek-ai/dsh-mcp-client`)"
+      },
+      {
+        "file": "index.js",
+        "line": 49,
+        "text": "ctx.effect(() => tools.register(createSelfcheckTool(ctx, config)), 'copilotkit selfcheck tool')"
+      },
+      {
+        "file": "index.js",
+        "line": 51,
+        "text": "log('ctx.tools is unavailable; the copilotkit_selfcheck tool was not registered')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/repair.js",
+        "line": 13,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/repair.js",
+        "line": 33,
+        "text": "const child = execFile(file, args, { timeout: timeoutMs, maxBuffer: 1024 * 1024, signal: options.signal }, (error, stdout, stderr) => {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,86 @@
+{
+  "name": "dsh-stock-bar",
+  "version": "1.12.0",
+  "scannedAt": "2026-11-25T23:07:21.007Z",
+  "icon": "dsh-stock-bar.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 743,
+        "text": "res = await fetch(`${API}${path}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 4143,
+        "text": "const res = await fetch(`${API}/ai/models`, { redirect: 'error' });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 4383,
+        "text": "const res = await fetch(`${API}/ai/history?limit=20${q}`, { redirect: 'error' });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 4400,
+        "text": "const res = await fetch(`${API}${path}`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 4682,
+        "text": "const res = await fetch(`${API}/ai/history/get?id=${encodeURIComponent(id)}`, { redirect: 'error' });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/store.js",
+        "line": 25,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 26,
+        "text": "import fsp from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 124,
+        "text": "const raw = await fsp.readFile(this.file, 'utf8');"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 158,
+        "text": "await fsp.mkdir(path.dirname(this.file), { recursive: true });"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 160,
+        "text": "await fsp.writeFile(tmp, JSON.stringify(this.data, null, 2), 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

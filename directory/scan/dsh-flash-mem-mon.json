@@ -1,35 +1,35 @@
 {
   "name": "dsh-flash-mem-mon",
-  "version": "0.2.0",
-  "scannedAt": "2026-11-11T08:05:00.185Z",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-25T23:07:32.290Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 736,
+        "line": 732,
         "text": "return fetch('/plugins/dsh-flash-mem-mon/dump-heap', { method: 'POST' })"
       },
       {
         "file": "lib/client.js",
-        "line": 771,
+        "line": 793,
+        "text": "return fetch('/plugins/dsh-flash-mem-mon/session-footprint/cleanup', { method: 'POST' })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 817,
         "text": "fetch('/plugins/dsh-flash-mem-mon/memory-trend?mode=summary')"
       },
       {
         "file": "lib/client.js",
-        "line": 1498,
+        "line": 1597,
         "text": "fetch('/plugins/dsh-flash/health').then(function (r) { return r.json() }).then(function (d) {"
       },
       {
         "file": "lib/client.js",
-        "line": 1519,
+        "line": 1618,
         "text": "fetch('/plugins/dsh-flash-mem-mon/memory-trend?mode=summary')"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 1530,
-        "text": "fetch('/plugins/dsh-flash-mem-mon/memory-trend?mode=full')"
       }
     ]
   },
@@ -44,7 +44,12 @@
       {
         "file": "dist/index.js",
         "line": 3,
-        "text": "import { readdir, stat } from 'node:fs/promises';"
+        "text": "import { readdir, rm, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 703,
+        "text": "await rm(dir, { recursive: true, force: true });"
       }
     ]
   },

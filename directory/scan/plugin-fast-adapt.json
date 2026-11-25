@@ -1,0 +1,133 @@
+{
+  "name": "plugin-fast-adapt",
+  "version": "0.5.5",
+  "scannedAt": "2026-11-25T23:07:18.369Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/guide-sync.mjs",
+        "line": 83,
+        "text": "const doFetch = fetcher || ((url, init) => fetch(url, init))"
+      },
+      {
+        "file": "scripts/lib/pr-gate.mjs",
+        "line": 101,
+        "text": "const doFetch = fetcher || ((url, init) => fetch(url, init))"
+      },
+      {
+        "file": "scripts/lib/types-diff.mjs",
+        "line": 481,
+        "text": "const doFetch = fetcher || ((url, init) => fetch(url, init))"
+      },
+      {
+        "file": "scripts/scaffold.mjs",
+        "line": 323,
+        "text": "res = await fetch(baseUrl + '/chat/completions', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/code-scan.mjs",
+        "line": 12,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "scripts/code-scan.mjs",
+        "line": 233,
+        "text": "const source = fs.readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "scripts/codemod.mjs",
+        "line": 20,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "scripts/codemod.mjs",
+        "line": 83,
+        "text": "pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))"
+      },
+      {
+        "file": "scripts/env-doctor.mjs",
+        "line": 16,
+        "text": "import fs from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 27,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 76,
+        "text": "if (ctx.tools?.register) {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 77,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 114,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 151,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/cli.mjs",
+        "line": 7,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/cli.mjs",
+        "line": 77,
+        "text": "const result = spawnSync(process.execPath, [path.join(here, resolved.script), ...resolved.args], {"
+      },
+      {
+        "file": "scripts/env-doctor.mjs",
+        "line": 19,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/fix-peer-deps.mjs",
+        "line": 17,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/guide-sync.mjs",
+        "line": 15,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

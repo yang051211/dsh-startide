@@ -1,0 +1,57 @@
+{
+  "name": "dsh-easyrestart",
+  "version": "0.2.2",
+  "scannedAt": "2026-11-25T23:07:31.020Z",
+  "icon": "dsh-easyrestart.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/menu-patch.js",
+        "line": 23,
+        "text": "import fs from \"node:fs\";"
+      },
+      {
+        "file": "lib/menu-patch.js",
+        "line": 186,
+        "text": "const buffer = fs.readFileSync(asar);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "export const inject = [\"tools\", \"commands\"];"
+      },
+      {
+        "file": "index.js",
+        "line": 60,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

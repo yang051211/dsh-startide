@@ -1,7 +1,7 @@
 {
   "name": "dsh-qwenwork-connect",
-  "version": "0.3.3",
-  "scannedAt": "2026-11-18T09:00:12.352Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-25T23:07:27.104Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,23 +13,23 @@
       },
       {
         "file": "lib/chat-shim.js",
-        "line": 94,
+        "line": 96,
         "text": "* 为什么需要它：`fetch()` 会等到**响应头**到达才 resolve。若上游接受了连接"
       },
       {
         "file": "lib/client.js",
-        "line": 692,
-        "text": "const response = await fetch(QWENWORK_STATUS_PATH, {"
+        "line": 833,
+        "text": "const response = await fetch(pathForSite(QWENWORK_STATUS_PATH, activeSite), {"
       },
       {
         "file": "lib/client.js",
-        "line": 736,
-        "text": "const response = await fetch(LOGIN_STATUS_PATH, {"
+        "line": 877,
+        "text": "const response = await fetch(pathForSite(LOGIN_STATUS_PATH, activeSite), {"
       },
       {
         "file": "lib/client.js",
-        "line": 768,
-        "text": "const response = await fetch(LOGIN_START_PATH, {"
+        "line": 909,
+        "text": "const response = await fetch(pathForSite(LOGIN_START_PATH, activeSite), {"
       }
     ]
   },
@@ -38,12 +38,12 @@
     "evidence": [
       {
         "file": "bin/login.mjs",
-        "line": 11,
+        "line": 17,
         "text": "import fs from 'node:fs';"
       },
       {
         "file": "bin/login.mjs",
-        "line": 34,
+        "line": 71,
         "text": "fs.unlinkSync(credentialPath);"
       },
       {
@@ -53,12 +53,12 @@
       },
       {
         "file": "lib/auth.js",
-        "line": 165,
+        "line": 186,
         "text": "const raw = JSON.parse(fs.readFileSync(file, 'utf8'));"
       },
       {
         "file": "lib/auth.js",
-        "line": 171,
+        "line": 192,
         "text": "fs.writeFileSync(tmpFile, JSON.stringify(raw, null, 2), { mode: 0o600 });"
       }
     ]

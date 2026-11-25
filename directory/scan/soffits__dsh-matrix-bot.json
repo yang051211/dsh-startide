@@ -1,0 +1,77 @@
+{
+  "name": "@soffits/dsh-matrix-bot",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-25T23:07:27.676Z",
+  "icon": "soffits__dsh-matrix-bot.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/matrix.js",
+        "line": 93,
+        "text": "const response = await fetch(new URL('/_matrix/client/v3/login', homeserver), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-matrix.js",
+        "line": 10,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/dsh-matrix.js",
+        "line": 71,
+        "text": "return readFileSync(0, 'utf8')"
+      },
+      {
+        "file": "bin/dsh-matrix.js",
+        "line": 120,
+        "text": "const status = JSON.parse(readFileSync(join(dataDir(), 'status.json'), 'utf8'))"
+      },
+      {
+        "file": "src/app.js",
+        "line": 2,
+        "text": "import { mkdir, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/app.js",
+        "line": 80,
+        "text": "await mkdir(dataDir(), { recursive: true, mode: 0o700 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tools.js",
+        "line": 10,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "tools.js",
+        "line": 59,
+        "text": "ctx.tools.register(createSendTool(() => ctx.get(SERVICE_NAME)))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 4,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

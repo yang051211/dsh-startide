@@ -1,0 +1,85 @@
+{
+  "name": "@dr-co/dsh-voice",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-25T23:07:26.756Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 62,
+        "text": "const response = await fetch(`${BASE}/state`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "loop.mjs",
+        "line": 10,
+        "text": "import { copyFileSync, lstatSync, mkdirSync, readFileSync, readdirSync, realpathSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "loop.mjs",
+        "line": 374,
+        "text": "rmSync(path, { recursive: true, force: true })"
+      },
+      {
+        "file": "loop.mjs",
+        "line": 457,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "loop.mjs",
+        "line": 476,
+        "text": "mkdirSync(cacheDir, { recursive: true })"
+      },
+      {
+        "file": "loop.mjs",
+        "line": 477,
+        "text": "writeFileSync(join(cacheDir, BINDINGS_FILE), JSON.stringify(Object.fromEntries(bindings), null, 2))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "audio.mjs",
+        "line": 6,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "audio.mjs",
+        "line": 11,
+        "text": "const child = spawn(command, args, { stdio: ['ignore', 'ignore', 'pipe'] })"
+      },
+      {
+        "file": "loop.mjs",
+        "line": 38,
+        "text": "const { execFile } = await import('node:child_process')"
+      },
+      {
+        "file": "loop.mjs",
+        "line": 40,
+        "text": "execFile('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', path],"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

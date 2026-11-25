@@ -1,0 +1,121 @@
+{
+  "name": "@goodjin2/dsh-superpowers",
+  "version": "0.3.1",
+  "scannedAt": "2026-11-25T23:07:32.051Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "preset/skills/brainstorming/scripts/helper.js",
+        "line": 80,
+        "text": "ws = new WebSocket(websocketUrl());"
+      },
+      {
+        "file": "preset/skills/brainstorming/scripts/server.cjs",
+        "line": 2,
+        "text": "const http = require('http');"
+      },
+      {
+        "file": "scripts/check.mjs",
+        "line": 62,
+        "text": "const response = await fetch(`http://127.0.0.1:${port}/?token=${TOKEN}`, { redirect: 'manual' })"
+      },
+      {
+        "file": "scripts/check.mjs",
+        "line": 87,
+        "text": "const response = await fetch(`http://127.0.0.1:${port}/api/superpowers`, {"
+      },
+      {
+        "file": "scripts/check.mjs",
+        "line": 112,
+        "text": "const response = await fetch(`http://127.0.0.1:${port}/api/superpowers`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 308,
+        "text": "const { existsSync, readFileSync } = require('node:fs')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 313,
+        "text": "const doc = parseYaml(readFileSync(path, 'utf8'))"
+      },
+      {
+        "file": "preset/skills/brainstorming/scripts/server.cjs",
+        "line": 3,
+        "text": "const fs = require('fs');"
+      },
+      {
+        "file": "preset/skills/brainstorming/scripts/server.cjs",
+        "line": 93,
+        "text": "const p = Number(fs.readFileSync(PORT_FILE, 'utf-8').trim());"
+      },
+      {
+        "file": "preset/skills/brainstorming/scripts/server.cjs",
+        "line": 138,
+        "text": "const t = fs.readFileSync(TOKEN_FILE, 'utf-8').trim();"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/skill-delegation.js",
+        "line": 24,
+        "text": "export const inject = ['tools', 'subagents', 'configEditor']"
+      },
+      {
+        "file": "lib/skill-delegation.js",
+        "line": 99,
+        "text": "ctx.effect(() => ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/skill-delegation.js",
+        "line": 219,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "preset/skills/brainstorming/scripts/server.cjs",
+        "line": 537,
+        "text": "const cp = require('child_process');"
+      },
+      {
+        "file": "preset/skills/brainstorming/scripts/server.cjs",
+        "line": 543,
+        "text": "// Platform launchers: pass the URL as an argv element via execFile (no shell),"
+      },
+      {
+        "file": "preset/skills/brainstorming/scripts/server.cjs",
+        "line": 547,
+        "text": "try { cp.execFile(launcher.bin, launcher.args, () => {}); } catch (e) { /* best effort */ }"
+      },
+      {
+        "file": "preset/skills/writing-skills/render-graphs.js",
+        "line": 18,
+        "text": "import { execFileSync } from 'child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

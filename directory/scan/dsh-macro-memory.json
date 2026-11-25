@@ -1,0 +1,112 @@
+{
+  "name": "dsh-macro-memory",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-25T23:07:23.341Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 1223,
+        "text": "fetch(\"/meow-memory/dreamed-sessions\", { cache: \"no-store\" }),"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1224,
+        "text": "fetch(\"/meow-memory/skip-dreams\", { cache: \"no-store\" })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1475,
+        "text": "const response = await fetch(\"/meow-memory/dreamed-sessions\", { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1614,
+        "text": "const response = await fetch(\"/meow-memory/skip-dreams\", { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1633,
+        "text": "const response = await fetch(\"/meow-memory/dreamed-sessions\", { cache: \"no-store\" });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/macro/chain.js",
+        "line": 29,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/macro/injectledger.js",
+        "line": 33,
+        "text": "import { existsSync, readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/macro/injectledger.js",
+        "line": 839,
+        "text": "return readFileSync(path, 'utf8')"
+      },
+      {
+        "file": "lib/macro/links.js",
+        "line": 14,
+        "text": "import { mkdirSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/macro/links.js",
+        "line": 123,
+        "text": "mkdirSync(macroHome(), { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 38,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 444,
+        "text": "const dispose = ctx.tools.register(withCost(def.name, def))"
+      },
+      {
+        "file": "lib/macro/bridge.js",
+        "line": 5,
+        "text": "*  - 子插件调 ctx.tools.register(...)  → 被 bridge 收下，不直接进宿主"
+      },
+      {
+        "file": "vendor/dsh-memory-nebula/lib/host/sources.js",
+        "line": 238,
+        "text": "// 3) MCP：profile patch + 家目录 patch 里 dsh-mcp-client 的条目"
+      },
+      {
+        "file": "vendor/dsh-memory-nebula/lib/index.js",
+        "line": 33,
+        "text": "export const inject = ['tools', 'systemPrompt', 'webServer', 'connection']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

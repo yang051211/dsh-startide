@@ -1,7 +1,7 @@
 {
   "name": "deepseek-harness-humanity",
-  "version": "0.1.18",
-  "scannedAt": "2026-11-24T23:54:33.545Z",
+  "version": "0.9.7",
+  "scannedAt": "2026-11-25T23:07:32.069Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -11,19 +11,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/migrate.js",
-        "line": 26,
-        "text": "* （只有 DSH 自己的类型面），静态 `import 'node:fs'` 会让 `tsc` 直接报\"找不到模块\"。"
+        "file": "lib/evolution/room.js",
+        "line": 86,
+        "text": "const specifier = 'node:fs/promises';"
       },
       {
-        "file": "lib/migrate.js",
-        "line": 31,
-        "text": "const specifier = 'node:fs';"
+        "file": "lib/evolution/room.js",
+        "line": 88,
+        "text": "const bytes = await fs.readFile(`${dir}/${name}`);"
       },
       {
-        "file": "lib/migrate.js",
-        "line": 61,
-        "text": "parsed = parseYaml(fs.readFileSync(source, 'utf8'));"
+        "file": "lib/evolution/room.js",
+        "line": 117,
+        "text": "const specifier = 'node:fs/promises';"
+      },
+      {
+        "file": "lib/evolution/room.js",
+        "line": 119,
+        "text": "await fs.mkdir(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/evolution/room.js",
+        "line": 120,
+        "text": "await fs.writeFile(`${dir}/${name}`, text, 'utf8');"
       }
     ]
   },
@@ -31,9 +41,14 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/memory/tools.js",
-        "line": 14,
-        "text": "const definitions = [defineRememberTool, defineRecallTool].map((define) => api.tools.register(define(api.defineTool, deps)));"
+        "file": "lib/evolution/index.js",
+        "line": 232,
+        "text": "unregister = tools.register(defineTellTool(module.defineTool, {"
+      },
+      {
+        "file": "lib/memory/index.js",
+        "line": 71,
+        "text": "disposers = defined.map((tool) => tools.register(tool));"
       },
       {
         "file": "lib/persona/tools.js",

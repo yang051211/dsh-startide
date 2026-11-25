@@ -1,7 +1,7 @@
 {
   "name": "dsh-roost",
-  "version": "1.4.4",
-  "scannedAt": "2026-11-24T23:54:19.302Z",
+  "version": "1.4.5",
+  "scannedAt": "2026-11-25T23:07:12.455Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,22 +13,22 @@
       },
       {
         "file": "client/client.js",
-        "line": 6585,
+        "line": 6753,
         "text": "const res = await fetch(API + '/backup/export')"
       },
       {
         "file": "client/client.js",
-        "line": 8008,
+        "line": 8176,
         "text": "const res = await fetch(API + path, init)"
       },
       {
         "file": "client/client.js",
-        "line": 16590,
+        "line": 17912,
         "text": "const res = await fetch(API + '/stickers/thumb?name=' + encodeURIComponent(it.name))"
       },
       {
         "file": "client/client.js",
-        "line": 18723,
+        "line": 20096,
         "text": "let res = await fetch(API + '/gallery/file?seq=' + encodeURIComponent(it.seq))"
       }
     ]
@@ -79,7 +79,7 @@
       {
         "file": "src/ext-panel.js",
         "line": 784,
-        "text": "`mountToolGuard() 的 ctx.tools.guard 执行期兜底（fail-closed）`,"
+        "text": "`mountToolGuard() 的 ctx.tools.guard 执行期兜底（只对 Roost 会话生效，无窗口时 fail-closed）`,"
       },
       {
         "file": "src/ext-patch.js",
@@ -88,7 +88,7 @@
       },
       {
         "file": "src/host.js",
-        "line": 1229,
+        "line": 1265,
         "text": "* 优先问活着的 agent（`agent.ctx.tools.schemas()`），问不到才退回 `seen` 快照。"
       }
     ]
@@ -97,29 +97,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "src/autotelic-python.js",
+        "line": 23,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/autotelic-python.js",
+        "line": 34,
+        "text": "try { child = spawn(bin, ['--version'], { windowsHide: true }) } catch (error) { return resolve({ code: -1, out: String(error?.message || error) }) }"
+      },
+      {
+        "file": "src/autotelic-python.js",
+        "line": 39,
+        "text": "if (process.platform === 'win32' && child.pid) spawn('taskkill', ['/pid', String(child.pid), '/T', '/F'], { windowsHide: true }).on?.('error', () => {});"
+      },
+      {
+        "file": "src/autotelic-python.js",
+        "line": 155,
+        "text": "spawn('taskkill', ['/pid', String(child.pid), '/T', '/F'], { windowsHide: true }).on?.('error', () => {});"
+      },
+      {
         "file": "src/config.js",
-        "line": 1570,
+        "line": 1690,
         "text": "* 用 `Atomics.wait` 而不是 `execSync('sleep')`：不建子进程、不会被沙箱拦。"
-      },
-      {
-        "file": "src/ext-launcher.mjs",
-        "line": 22,
-        "text": "import { spawn } from 'node:child_process';"
-      },
-      {
-        "file": "src/ext-launcher.mjs",
-        "line": 118,
-        "text": "const child = spawn(plan.command, plan.args, {"
-      },
-      {
-        "file": "src/gpt-sovits.js",
-        "line": 20,
-        "text": "import { spawn, spawnSync } from 'node:child_process';"
-      },
-      {
-        "file": "src/gpt-sovits.js",
-        "line": 483,
-        "text": "spawnSync('taskkill', ['/PID', String(pid), '/T', '/F'], { windowsHide: true, timeout: 10_000 });"
       }
     ]
   },

@@ -1,15 +1,25 @@
 {
   "name": "dsh-system-monitor-plugin",
-  "version": "0.3.4",
-  "scannedAt": "2026-11-14T19:29:39.533Z",
+  "version": "0.3.5",
+  "scannedAt": "2026-11-25T23:07:31.298Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "dist/client.js",
-        "line": 1670,
+        "line": 1677,
         "text": "const response = await fetch(MONITOR_DATA_PATH, {"
+      },
+      {
+        "file": "scripts/check-official-docs.mjs",
+        "line": 84,
+        "text": "const response = await fetch(url, { headers: headers('application/vnd.github+json') })"
+      },
+      {
+        "file": "scripts/check-official-docs.mjs",
+        "line": 104,
+        "text": "const response = await fetch(url, token.length === 0 ? {} : { headers: headers('application/vnd.github.raw') })"
       }
     ]
   },
@@ -19,26 +29,26 @@
       {
         "file": "dist/index.mjs",
         "line": 3,
-        "text": "import { mkdirSync, readFileSync, readdirSync, writeFileSync } from \"node:fs\";"
+        "text": "import { mkdirSync, readFileSync, readdirSync, renameSync, writeFileSync } from \"node:fs\";"
       },
       {
         "file": "dist/index.mjs",
-        "line": 326,
+        "line": 333,
         "text": "environ: readFileSync(`/proc/${pid}/environ`, \"utf8\")"
       },
       {
         "file": "dist/index.mjs",
-        "line": 374,
+        "line": 381,
         "text": "return readFileSync(file, \"utf8\");"
       },
       {
         "file": "dist/index.mjs",
-        "line": 432,
+        "line": 439,
         "text": "const parsed = JSON.parse(readFileSync(clockTicksCacheFile(), \"utf8\"));"
       },
       {
         "file": "dist/index.mjs",
-        "line": 447,
+        "line": 454,
         "text": "mkdirSync(join(file, \"..\"), { recursive: true });"
       }
     ]
@@ -48,12 +58,12 @@
     "evidence": [
       {
         "file": "dist/index.mjs",
-        "line": 1453,
+        "line": 1501,
         "text": "ctx.effect(() => ctx.tools.register(defineTool({"
       },
       {
         "file": "dist/index.mjs",
-        "line": 2058,
+        "line": 2141,
         "text": "const inject = [\"tools\"];"
       }
     ]
@@ -68,12 +78,12 @@
       },
       {
         "file": "dist/index.mjs",
-        "line": 533,
+        "line": 545,
         "text": "const child = execFile(\"powershell.exe\", ["
       },
       {
         "file": "dist/index.mjs",
-        "line": 801,
+        "line": 815,
         "text": "const child = execFile(\"ps\", [...args], {"
       }
     ]

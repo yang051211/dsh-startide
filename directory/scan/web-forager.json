@@ -1,0 +1,122 @@
+{
+  "name": "web-forager",
+  "version": "1.3.2",
+  "scannedAt": "2026-11-25T23:07:28.609Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "browser/lib/bili-api.js",
+        "line": 33,
+        "text": "const response = await fetch(HOME, { headers: { \"user-agent\": UA }, redirect: \"follow\" });"
+      },
+      {
+        "file": "browser/lib/bili-api.js",
+        "line": 64,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "browser/lib/robots.js",
+        "line": 12,
+        "text": "const http = require(\"node:http\");"
+      },
+      {
+        "file": "browser/lib/robots.js",
+        "line": 13,
+        "text": "const https = require(\"node:https\");"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "browser/bridges/playwright-bridge.js",
+        "line": 17,
+        "text": "const fs = require(\"node:fs\");"
+      },
+      {
+        "file": "browser/bridges/playwright-bridge.js",
+        "line": 144,
+        "text": "fs.mkdirSync(profile, { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "browser/bridges/playwright-bridge.js",
+        "line": 228,
+        "text": "fs.mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "browser/lib/bridge.js",
+        "line": 15,
+        "text": "const fs = require(\"node:fs\");"
+      },
+      {
+        "file": "browser/lib/doctor.js",
+        "line": 10,
+        "text": "const fs = require(\"node:fs\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 3,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "cordis.patch.yml",
+        "line": 12,
+        "text": "name: '@deepseek-ai/dsh-mcp-client'"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "browser/lib/backend.js",
+        "line": 3,
+        "text": "const { spawn } = require(\"node:child_process\");"
+      },
+      {
+        "file": "browser/lib/backend.js",
+        "line": 161,
+        "text": "const child = spawn(file, args, { shell: false, stdio: [\"pipe\", \"pipe\", \"pipe\"] });"
+      },
+      {
+        "file": "browser/mcp_server.js",
+        "line": 5,
+        "text": "const { spawn } = require(\"node:child_process\");"
+      },
+      {
+        "file": "browser/mcp_server.js",
+        "line": 108,
+        "text": "const child = spawn(process.execPath, argv, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 145,
+      "text": "pip install -r requirements.txt"
+    },
+    {
+      "file": "README.md",
+      "line": 390,
+      "text": "pip install playwright && playwright install chromium"
+    }
+  ],
+  "skippedEntries": []
+}
