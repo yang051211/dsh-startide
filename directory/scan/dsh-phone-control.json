@@ -1,15 +1,20 @@
 {
   "name": "dsh-phone-control",
-  "version": "0.1.18",
-  "scannedAt": "2026-11-17T22:16:48.438Z",
+  "version": "0.1.29",
+  "scannedAt": "2026-11-26T09:55:03.075Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 102,
+        "line": 124,
         "text": "const response = await fetch(BASE + path, init);"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1011,
+        "text": "const response = await fetch(`${BASE}/share/raw?id=${encodeURIComponent(item.id)}`, {"
       },
       {
         "file": "lib/service.js",
@@ -28,23 +33,23 @@
       },
       {
         "file": "index.js",
-        "line": 69,
+        "line": 76,
         "text": "const raw = await readFile(entryPath, 'utf8')"
+      },
+      {
+        "file": "lib/act.js",
+        "line": 17,
+        "text": "import { appendFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/act.js",
+        "line": 81,
+        "text": "appendFileSync(file, `${JSON.stringify(record)}\\n`, 'utf8')"
       },
       {
         "file": "lib/eventlog.js",
         "line": 1,
         "text": "import { existsSync, readFileSync, renameSync, statSync, writeFileSync } from 'node:fs'"
-      },
-      {
-        "file": "lib/eventlog.js",
-        "line": 46,
-        "text": "const text = readFileSync(file, 'utf8')"
-      },
-      {
-        "file": "lib/eventlog.js",
-        "line": 95,
-        "text": "writeFileSync(temp, payload, 'utf8')"
       }
     ]
   },
@@ -53,19 +58,30 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 11,
+        "line": 18,
         "text": "export const inject = ['tools', 'skills']"
       },
       {
         "file": "index.js",
-        "line": 692,
+        "line": 864,
         "text": "ctx.effect(() => ctx.tools.register(definition), `dsh-phone-control: ${definition.name}`)"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 175,
+        "text": "spawnSession: (input) => wakes.spawn(input),"
+      },
+      {
+        "file": "lib/wakesession.js",
+        "line": 206,
+        "text": "async function spawn({ text, cwdHint, title = '' } = {}) {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

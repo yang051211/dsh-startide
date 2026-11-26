@@ -1,0 +1,76 @@
+{
+  "name": "dsh-xmind-excel",
+  "version": "1.0.6",
+  "scannedAt": "2026-11-26T09:54:56.170Z",
+  "icon": "dsh-xmind-excel.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 127,
+        "text": "const source = await readFile(SKILL_URL, { encoding: 'utf8', ...(signal ? { signal } : {}) })"
+      },
+      {
+        "file": "lib/convert.js",
+        "line": 4,
+        "text": "import { readFile, writeFile, access, mkdir, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/convert.js",
+        "line": 5,
+        "text": "import { constants } from 'node:fs'"
+      },
+      {
+        "file": "lib/convert.js",
+        "line": 138,
+        "text": "buffer = await readFile(absolute)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 23,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 164,
+        "text": "yield ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 231,
+        "text": "yield ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

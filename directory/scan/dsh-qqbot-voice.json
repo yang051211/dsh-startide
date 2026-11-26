@@ -1,0 +1,126 @@
+{
+  "name": "dsh-qqbot-voice",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-26T09:55:03.692Z",
+  "icon": "dsh-qqbot-voice.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/audio.js",
+        "line": 26,
+        "text": "const res = await fetch(parsed, { signal: AbortSignal.timeout(timeoutMs) })"
+      },
+      {
+        "file": "lib/stt.js",
+        "line": 61,
+        "text": "const res = await fetch(cfg.baseURL, {"
+      },
+      {
+        "file": "lib/stt.js",
+        "line": 87,
+        "text": "const res = await fetch(cfg.baseURL, {"
+      },
+      {
+        "file": "lib/tts.js",
+        "line": 77,
+        "text": "const res = await fetch(cfg.baseURL, {"
+      },
+      {
+        "file": "lib/tts.js",
+        "line": 87,
+        "text": "const audioRes = await fetch(url, { signal: AbortSignal.timeout(tts.timeoutMs) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "import { mkdirSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 83,
+        "text": "mkdirSync(stateDir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 84,
+        "text": "writeFileSync(diagFile, `${JSON.stringify({ ...diagnostics, updatedAt: new Date().toISOString() }, null, 2)}\\n`)"
+      },
+      {
+        "file": "lib/audio.js",
+        "line": 7,
+        "text": "import { mkdirSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/audio.js",
+        "line": 96,
+        "text": "mkdirSync(dir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 282,
+        "text": "disposes.push(tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 308,
+        "text": "disposes.push(tools.register({"
+      },
+      {
+        "file": "tools/fake-host.mjs",
+        "line": 110,
+        "text": "  inject: (deps, callback) => callback(scopeFor(Object.fromEntries(deps.map((d) => [d, d === 'qqbot-bots' ? registry : d === 'tools' ? fakeTools : d === 'system"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/stt.js",
+        "line": 106,
+        "text": "const { execFile } = await import('node:child_process')"
+      },
+      {
+        "file": "lib/tts.js",
+        "line": 111,
+        "text": "const { execFile } = await import('node:child_process')"
+      },
+      {
+        "file": "tools/install.mjs",
+        "line": 12,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "tools/install.mjs",
+        "line": 44,
+        "text": "const result = spawnSync('pnpm', ['add', wanted], { cwd: PROFILE_DIR, encoding: 'utf8', shell: true })"
+      },
+      {
+        "file": "tools/install.mjs",
+        "line": 72,
+        "text": "const result = spawnSync(process.execPath, [script, '--profile-dir', PROFILE_DIR, ...(CHECK_ONLY ? ['--check'] : [])], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,124 @@
+{
+  "name": "dsh-bili-learn",
+  "version": "0.3.3",
+  "scannedAt": "2026-11-26T09:54:56.506Z",
+  "icon": "dsh-bili-learn.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 223,
+        "text": "const r = await fetch(path, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 229,
+        "text": "const r = await fetch(path, {"
+      },
+      {
+        "file": "index.js",
+        "line": 133,
+        "text": "const res = await fetch(url, { headers: headers(cookie, referer), signal: ctl.signal })"
+      },
+      {
+        "file": "index.js",
+        "line": 417,
+        "text": "const r = await fetch(`${endpoint.replace(/\\/$/, '')}/health`, { signal: ctl.signal })"
+      },
+      {
+        "file": "index.js",
+        "line": 873,
+        "text": "const res = await fetch(src.url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { mkdir, readFile, rm, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 83,
+        "text": "return { ...DEFAULT_SETTINGS, ...JSON.parse(await readFile(SETTINGS_FILE, 'utf8')) }"
+      },
+      {
+        "file": "index.js",
+        "line": 91,
+        "text": "await mkdir(path.dirname(SETTINGS_FILE), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 92,
+        "text": "await writeFile(SETTINGS_FILE, JSON.stringify(next, null, 2), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 525,
+        "text": "await mkdir(dir, { recursive: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1434,
+        "text": "export const inject = ['tools', 'commands']"
+      },
+      {
+        "file": "lib/tools/config.js",
+        "line": 18,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/tools/frames.js",
+        "line": 18,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/tools/learn.js",
+        "line": 18,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/tools/search.js",
+        "line": 50,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/ffmpeg.js",
+        "line": 13,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/media.js",
+        "line": 11,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

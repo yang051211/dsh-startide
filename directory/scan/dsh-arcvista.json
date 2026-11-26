@@ -1,30 +1,15 @@
 {
   "name": "dsh-arcvista",
-  "version": "0.3.1",
-  "scannedAt": "2026-11-02T23:01:12.504Z",
-  "icon": null,
+  "version": "1.0.0",
+  "scannedAt": "2026-11-26T09:55:04.038Z",
+  "icon": "dsh-arcvista.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "client.js",
-        "line": 123,
-        "text": "const response = await fetch(`${ARCVISTA_URL}/api/health`, { cache: 'no-store' });"
-      },
-      {
         "file": "lib/http.js",
-        "line": 3,
-        "text": "import http from 'node:http';"
-      },
-      {
-        "file": "lib/llm.js",
-        "line": 58,
-        "text": "response = await fetch(endpoint, {"
-      },
-      {
-        "file": "public/js/api.js",
-        "line": 6,
-        "text": "const response = await fetch(`${API_BASE}${path}`, {"
+        "line": 76,
+        "text": "const response = await fetch(`${base}/api/sync/ingest`, {"
       }
     ]
   },
@@ -32,29 +17,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/analyze/coverage.js",
-        "line": 13,
-        "text": "import fs from 'node:fs';"
-      },
-      {
-        "file": "lib/analyze/coverage.js",
-        "line": 73,
-        "text": "return fs.readFileSync(abs, 'utf8');"
-      },
-      {
-        "file": "lib/analyze/index.js",
+        "file": "lib/artifacts.js",
         "line": 1,
-        "text": "import fs from 'node:fs';"
+        "text": "import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';"
       },
       {
-        "file": "lib/analyze/security.js",
-        "line": 10,
-        "text": "import fs from 'node:fs';"
+        "file": "lib/artifacts.js",
+        "line": 28,
+        "text": "const parsed = JSON.parse(await readFile(path.join(dir, name), 'utf8'));"
       },
       {
-        "file": "lib/analyze/security.js",
-        "line": 138,
-        "text": "const buffer = fs.readFileSync(abs);"
+        "file": "lib/artifacts.js",
+        "line": 41,
+        "text": "return JSON.parse(await readFile(file, 'utf8'));"
+      },
+      {
+        "file": "lib/artifacts.js",
+        "line": 56,
+        "text": "await mkdir(snapshotsDir, { recursive: true });"
+      },
+      {
+        "file": "lib/artifacts.js",
+        "line": 124,
+        "text": "await writeFile(path.join(root, relativeFile), `${JSON.stringify(snapshot, null, 2)}\\n`, 'utf8');"
       }
     ]
   },
@@ -66,24 +51,14 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/local-git.js",
-        "line": 2,
+        "file": "lib/codegraph.js",
+        "line": 1,
         "text": "import { execFile } from 'node:child_process';"
       },
       {
-        "file": "lib/local-git.js",
-        "line": 133,
-        "text": "/** Clone one remote into a workspace. Uses spawn (no shell) and reports progress. */"
-      },
-      {
-        "file": "lib/local-git.js",
-        "line": 138,
-        "text": "const { spawn } = await import('node:child_process');"
-      },
-      {
-        "file": "lib/local-git.js",
-        "line": 156,
-        "text": "const child = spawn('git', ['clone', '--progress', '--origin', 'origin', '--', repoUrl, destination], {"
+        "file": "lib/util.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process';"
       }
     ]
   },
@@ -95,8 +70,6 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
-    "agentDefaultModel",
-    "llm",
     "webServer"
   ],
   "setupHints": [],

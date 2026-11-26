@@ -1,0 +1,97 @@
+{
+  "name": "dsh-notebook-capture",
+  "version": "0.1.4",
+  "scannedAt": "2026-11-26T09:54:58.579Z",
+  "icon": "dsh-notebook-capture.png",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/capture.js",
+        "line": 6,
+        "text": "import { readdir, readFile, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/capture.js",
+        "line": 38,
+        "text": "const notebookBytes = await readFile(notebookPath);"
+      },
+      {
+        "file": "lib/capture.js",
+        "line": 61,
+        "text": "environment.push({ path: name, bytes: info.size, sha256: sha256Of(await readFile(absolute)) });"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 5,
+        "text": "import { mkdir, readFile, realpath, stat, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/runtime.js",
+        "line": 96,
+        "text": "text = await readFile(file.absolute, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 19,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "ctx.effect(() => ctx.tools.register(makeNbAnalyzeTool(runtime)), 'notebook-capture: nb_analyze tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 47,
+        "text": "ctx.effect(() => ctx.tools.register(makeNbCaptureTool(runtime)), 'notebook-capture: nb_capture tool');"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 48,
+        "text": "ctx.effect(() => ctx.tools.register(makeNbCardTool()), 'notebook-capture: nb_card tool');"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 23,
+        "text": "export const inject = ['tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 5,
+      "text": "t_of_order, cell 5 never run, a runtime pip install and the /home/user/data.csv absolute path all warning — with the issue list, notebook sha256 and environment"
+    },
+    {
+      "file": "README.md",
+      "line": 27,
+      "text": " imports (Python and R), runtime installs (`!pip install`, `%conda install`, `install.packages`), seed literals, absolute paths, and whether outputs were saved."
+    }
+  ],
+  "skippedEntries": []
+}

@@ -1,25 +1,35 @@
 {
   "name": "dsh-company",
-  "version": "0.6.0",
-  "scannedAt": "2026-11-18T21:46:05.681Z",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-26T09:54:58.353Z",
   "icon": "dsh-company.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 367,
+        "line": 543,
         "text": "const response = await fetch(`${API}/${op}`, {"
       },
       {
         "file": "index.js",
-        "line": 2069,
+        "line": 2423,
         "text": "async fetch(request) {"
       },
       {
         "file": "index.js",
-        "line": 2108,
+        "line": 2479,
         "text": "async fetch() {"
+      },
+      {
+        "file": "index.js",
+        "line": 2497,
+        "text": "async fetch() {"
+      },
+      {
+        "file": "office/three.core.min.js",
+        "line": 6,
+        "text": "l}),a=this.mimeType,o=this.responseType;fetch(n).then(e=>{if(200===e.status||0===e.status){if(0===e.status&&as(\"FileLoader: HTTP Status 0 received.\"),\"undefined"
       }
     ]
   },
@@ -28,27 +38,27 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 30,
+        "line": 33,
         "text": "import { appendFile, mkdir, readFile, writeFile } from 'node:fs/promises';"
       },
       {
         "file": "index.js",
-        "line": 632,
+        "line": 665,
         "text": "await mkdir(resolve(dir, 'memory'), { recursive: true });"
       },
       {
         "file": "index.js",
-        "line": 633,
+        "line": 666,
         "text": "await writeFile(resolve(dir, 'memory', `${entry.id}.json`), `${JSON.stringify(entry, null, 2)}\\n`, 'utf8');"
       },
       {
         "file": "index.js",
-        "line": 634,
+        "line": 667,
         "text": "await appendFile(memoryFileFor(employeeId), memoryMarkdown(entry), 'utf8');"
       },
       {
         "file": "index.js",
-        "line": 887,
+        "line": 920,
         "text": "return { type, bytes: await readFile(target) };"
       }
     ]
@@ -58,17 +68,17 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 37,
-        "text": "export const inject = ['connection', 'agents', 'tools', 'systemPrompt', 'sessions', 'commands'];"
+        "line": 42,
+        "text": "export const inject = ['connection', 'agents', 'tools', 'systemPrompt', 'sessions', 'commands', 'storage', 'storage.backend.json'];"
       },
       {
         "file": "index.js",
-        "line": 872,
+        "line": 905,
         "text": "const schemas = ctx.tools.schemas ? ctx.tools.schemas() : [];"
       },
       {
         "file": "index.js",
-        "line": 2123,
+        "line": 2509,
         "text": "const off = ctx.tools.register({"
       }
     ]
@@ -78,7 +88,7 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 400,
+        "line": 409,
         "text": "const runtime = await spawn(employee);"
       }
     ]
@@ -88,13 +98,17 @@
     "evidence": []
   },
   "dependencies": 0,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "office/three.core.min.js",
+    "office/three.module.min.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [
     "agents",
     "commands",
     "connection",
     "sessions",
+    "storage",
     "systemPrompt",
     "tools"
   ],

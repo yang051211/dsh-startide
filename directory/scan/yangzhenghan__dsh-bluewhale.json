@@ -1,0 +1,107 @@
+{
+  "name": "@yangzhenghan/dsh-bluewhale",
+  "version": "0.4.2",
+  "scannedAt": "2026-11-26T09:54:55.480Z",
+  "icon": "yangzhenghan__dsh-bluewhale.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/helpers.js",
+        "line": 27,
+        "text": "const res = await fetch(`${cfg.deepseekUrl.replace(/\\/+$/, '')}/chat/completions`, {"
+      },
+      {
+        "file": "src/pet-download.js",
+        "line": 127,
+        "text": "const res = await fetch(url, { signal: ctrl.signal, redirect: 'follow', headers: { 'user-agent': 'dsh-bluewhale' } })"
+      },
+      {
+        "file": "src/server.js",
+        "line": 7,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "src/vad-mirror.js",
+        "line": 13,
+        "text": "import http from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "src/cookie-cleaner.js",
+        "line": 5,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "src/dsh.js",
+        "line": 5,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "src/dsh.js",
+        "line": 21,
+        "text": "fs.mkdirSync(cfg.workDir, { recursive: true })"
+      },
+      {
+        "file": "src/pet-download.js",
+        "line": 4,
+        "text": "import fs from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/cookie-cleaner.js",
+        "line": 7,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/cookie-cleaner.js",
+        "line": 63,
+        "text": "const child = spawn(process.execPath, ['--no-warnings', fileURLToPath(import.meta.url), String(process.ppid), file], {"
+      },
+      {
+        "file": "src/pet-download.js",
+        "line": 8,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "src/pet-download.js",
+        "line": 151,
+        "text": "execFile(exe, args, { windowsHide: true, maxBuffer: 1 << 24 }, (err, _out, stderr) => (err ? reject(new Error(stderr || err.message)) : resolve()))"
+      },
+      {
+        "file": "src/pet-download.js",
+        "line": 167,
+        "text": "execFile('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', script], { windowsHide: true, timeout: 15000 }, () => {})"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionController"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

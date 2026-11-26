@@ -1,0 +1,120 @@
+{
+  "name": "@lucagiftzek/dsh-orchestrator",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-26T09:55:03.211Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 109,
+        "text": "return fetch(url, { credentials: \"same-origin\", headers: { accept: \"application/json\" } }).then((r) => {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 115,
+        "text": "return fetch(url, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1003,
+        "text": "\"curl -sS -X POST \" + origin + API + \"/remote/prompt \" + BS,"
+      },
+      {
+        "file": "lib/providers.js",
+        "line": 91,
+        "text": "const res = await fetch(url, { headers, signal: controller.signal })"
+      },
+      {
+        "file": "lib/runners.js",
+        "line": 138,
+        "text": "const res = await fetch(h.url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/dual-settings.js",
+        "line": 30,
+        "text": "import { existsSync, realpathSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/dual-settings.js",
+        "line": 31,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/dual-settings.js",
+        "line": 138,
+        "text": "try { text = await readFile(join(home, file), 'utf8') } catch { continue }"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 32,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 195,
+        "text": "fallbackSettings = JSON.parse(fs.readFileSync(fallbackSettingsFile, 'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 320,
+        "text": "warn('the ctx.tools registry is unavailable in this composition, so NO tools were registered. The route and the sidebar still work.')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/agents.js",
+        "line": 258,
+        "text": "async function spawn({ title, prompt, preset, cwd, count = 1 }) {"
+      },
+      {
+        "file": "lib/agents.js",
+        "line": 333,
+        "text": "* Named promptSession: spawn()'s `prompt` parameter would shadow a plain"
+      },
+      {
+        "file": "lib/agents.js",
+        "line": 334,
+        "text": "* `prompt` name inside spawn(). */"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 240,
+        "text": "const r = await agents.spawn({"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 424,
+        "text": "const r = await agents.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "settings",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

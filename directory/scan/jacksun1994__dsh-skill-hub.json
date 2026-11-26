@@ -1,7 +1,7 @@
 {
   "name": "@jacksun1994/dsh-skill-hub",
-  "version": "1.7.6",
-  "scannedAt": "2026-11-25T23:07:11.686Z",
+  "version": "1.8.3",
+  "scannedAt": "2026-11-26T09:54:50.103Z",
   "icon": "jacksun1994__dsh-skill-hub.svg",
   "network": {
     "hit": true,
@@ -22,24 +22,24 @@
         "text": "import { existsSync, watch } from 'node:fs'"
       },
       {
-        "file": "lib/hub.js",
-        "line": 10,
-        "text": "import { existsSync } from 'node:fs'"
+        "file": "lib/git.js",
+        "line": 15,
+        "text": "import { readFileSync } from 'node:fs'"
       },
       {
-        "file": "lib/hub.js",
-        "line": 11,
-        "text": "import { cp, mkdir, readFile, readdir, rm, stat, writeFile } from 'node:fs/promises'"
+        "file": "lib/git.js",
+        "line": 16,
+        "text": "import { mkdir, writeFile } from 'node:fs/promises'"
       },
       {
-        "file": "lib/hub.js",
-        "line": 88,
-        "text": "const data = JSON.parse(await readFile(STATE_FILE, 'utf8'))"
+        "file": "lib/git.js",
+        "line": 95,
+        "text": "const data = JSON.parse(readFileSync(CRED_FILE, 'utf8'))"
       },
       {
-        "file": "lib/hub.js",
-        "line": 102,
-        "text": "await mkdir(STATE_DIR, { recursive: true })"
+        "file": "lib/git.js",
+        "line": 122,
+        "text": "await mkdir(dirname(CRED_FILE), { recursive: true })"
       }
     ]
   },
@@ -48,12 +48,12 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 929,
+        "line": 943,
         "text": "toolsCtx.effect(() => toolsCtx.tools.register({"
       },
       {
         "file": "lib/switcher/host.js",
-        "line": 562,
+        "line": 577,
         "text": "toolsCtx.effect(() => toolsCtx.tools.register({"
       }
     ]
@@ -68,7 +68,7 @@
       },
       {
         "file": "lib/git.js",
-        "line": 56,
+        "line": 69,
         "text": "const child = spawn(command, args, { env, windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'] })"
       },
       {
@@ -78,7 +78,7 @@
       },
       {
         "file": "lib/hub.js",
-        "line": 399,
+        "line": 464,
         "text": "const child = spawn(command, [dir], { detached: true, stdio: 'ignore' })"
       }
     ]

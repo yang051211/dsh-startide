@@ -1,0 +1,116 @@
+{
+  "name": "@matrixfu/skill-set-manager",
+  "version": "1.3.3",
+  "scannedAt": "2026-11-26T09:54:56.470Z",
+  "icon": "matrixfu__skill-set-manager.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 406,
+        "text": "const res = await fetch('/api/skill-set-manager', {"
+      },
+      {
+        "file": "lib/core/updates.js",
+        "line": 113,
+        "text": "const { commit, skillsDir } = await fetch(manifest.source);"
+      },
+      {
+        "file": "lib/core/updates.js",
+        "line": 125,
+        "text": "const { commit, skillsDir } = await fetch(manifest.source); // 全程只拉一次上游（review n7）"
+      },
+      {
+        "file": "lib/core/updates.js",
+        "line": 180,
+        "text": "try { got = await fetch(source); }"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 6,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 294,
+        "text": "for (const t of tmps) { try { fs.rmSync(t, { recursive: true, force: true }); } catch {} }"
+      },
+      {
+        "file": "index.js",
+        "line": 444,
+        "text": "if (req.url) { try { fs.rmSync(dir, { recursive: true, force: true }); } catch {} }"
+      },
+      {
+        "file": "index.js",
+        "line": 454,
+        "text": "finally { for (const t of tmps) { try { fs.rmSync(t, { recursive: true, force: true }); } catch {} } }"
+      },
+      {
+        "file": "index.js",
+        "line": 474,
+        "text": "} finally { for (const t of tmps) { try { fs.rmSync(t, { recursive: true, force: true }); } catch {} } }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 920,
+        "text": "off = tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/github.js",
+        "line": 9,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/core/github.js",
+        "line": 29,
+        "text": "try { child = spawn('git', args, { cwd, windowsHide: true }); }"
+      },
+      {
+        "file": "lib/core/github.js",
+        "line": 107,
+        "text": "const r = spawnSync(shell, ['-NoProfile', '-NonInteractive', '-Command', cmd], { timeout: 8000, windowsHide: true, encoding: 'utf8' });"
+      },
+      {
+        "file": "lib/core/gitnet.js",
+        "line": 14,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/core/gitnet.js",
+        "line": 48,
+        "text": "const defaultGit = (args, cwd) => spawnSync('git', args, { cwd, encoding: 'utf8', timeout: 1500, windowsHide: true }); // 终审 St6：git config 卡住不得无界吊死 host 事件循环"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "sessionQuery",
+    "sessions",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

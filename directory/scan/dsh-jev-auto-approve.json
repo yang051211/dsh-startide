@@ -1,0 +1,64 @@
+{
+  "name": "dsh-jev-auto-approve",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-26T09:54:59.810Z",
+  "icon": "dsh-jev-auto-approve.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 333,
+        "text": "const response = await fetch('/jev-auto/test', {"
+      },
+      {
+        "file": "client.js",
+        "line": 341,
+        "text": "const response = await fetch('/jev-auto/stats', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { appendFile, mkdir, readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 201,
+        "text": "const key = keyFromText(await readFile(file, 'utf8'));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 212,
+        "text": "await mkdir(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 213,
+        "text": "await appendFile(file, `${JSON.stringify({ ts: new Date().toISOString(), ...entry })}\\n`, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

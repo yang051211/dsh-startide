@@ -1,35 +1,35 @@
 {
   "name": "agent-aimail",
-  "version": "0.5.2",
-  "scannedAt": "2026-11-24T01:02:35.232Z",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-26T09:54:57.877Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "dist/core/gateway.js",
-        "line": 137,
-        "text": "const resp = await fetch(url, init);"
+        "line": 120,
+        "text": "((url, init) => fetch(url, {"
       },
       {
         "file": "dist/core/gateway.js",
-        "line": 166,
+        "line": 200,
         "text": "const resp = await fetch(`${this.baseUrl}${path}`, {"
       },
       {
         "file": "dist/core/gateway.js",
-        "line": 206,
+        "line": 240,
         "text": "resp = await fetch(`${this.baseUrl}${path}`, {"
       },
       {
         "file": "dist/core/gateway.js",
-        "line": 324,
+        "line": 362,
         "text": "const resp = await fetch(url, {"
       },
       {
-        "file": "dist/dsh/inbound.js",
-        "line": 25,
-        "text": "import { createServer } from 'node:http';"
+        "file": "dist/openclaw/inbound.js",
+        "line": 91,
+        "text": "const r = await fetch(`http://127.0.0.1:${gatewayPort()}${hooksPath()}/agent`, {"
       }
     ]
   },
@@ -43,22 +43,22 @@
       },
       {
         "file": "dist/core/address-code.js",
-        "line": 180,
+        "line": 208,
         "text": "await fs.mkdir(path.dirname(gwPath), { recursive: true });"
       },
       {
         "file": "dist/core/address-code.js",
-        "line": 181,
+        "line": 209,
         "text": "await fs.writeFile(gwPath, JSON.stringify({"
       },
       {
         "file": "dist/core/address-code.js",
-        "line": 197,
+        "line": 225,
         "text": "await fs.mkdir(path.dirname(ptrPath), { recursive: true, mode: 0o700 });"
       },
       {
         "file": "dist/core/address-code.js",
-        "line": 199,
+        "line": 227,
         "text": "await fs.writeFile(tmp, JSON.stringify({ system_id: sid, email }, null, 2) + '\\n', { mode: 0o600 });"
       }
     ]
@@ -84,29 +84,8 @@
     ]
   },
   "childProcess": {
-    "hit": true,
-    "evidence": [
-      {
-        "file": "dist/core/ensure-system.js",
-        "line": 26,
-        "text": "import { execFile } from 'node:child_process';"
-      },
-      {
-        "file": "dist/core/ensure-system.js",
-        "line": 34,
-        "text": "execFile(cmd, args, { timeout: timeoutMs }, (err, stdout) => {"
-      },
-      {
-        "file": "dist/core/inbound-notify.js",
-        "line": 34,
-        "text": "import { spawn } from 'node:child_process';"
-      },
-      {
-        "file": "dist/core/inbound-notify.js",
-        "line": 85,
-        "text": "const child = spawn(bin, args, { stdio: 'ignore', shell: false });"
-      }
-    ]
+    "hit": false,
+    "evidence": []
   },
   "installScripts": {
     "hit": false,
@@ -116,7 +95,6 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
-    "agents",
     "mail",
     "tools"
   ],

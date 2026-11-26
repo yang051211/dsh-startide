@@ -1,7 +1,7 @@
 {
   "name": "dsh-share-chat",
-  "version": "0.37.2",
-  "scannedAt": "2026-11-24T01:02:39.483Z",
+  "version": "0.40.0",
+  "scannedAt": "2026-11-26T09:54:54.358Z",
   "icon": "dsh-share-chat.svg",
   "network": {
     "hit": true,
@@ -13,37 +13,59 @@
       },
       {
         "file": "client.js",
-        "line": 1188,
+        "line": 1030,
+        "text": "const r = await fetch('/api/share-chat/version').then((x) => x.json())"
+      },
+      {
+        "file": "client.js",
+        "line": 1258,
         "text": "const res = await fetch('/api/share-chat/ask', {"
       },
       {
         "file": "client.js",
-        "line": 1234,
+        "line": 1304,
         "text": "const res = await fetch(auth.server + '/api/upload', {"
       },
       {
         "file": "client.js",
-        "line": 1360,
+        "line": 1430,
         "text": "fetch(auth.server + '/api/upload', {"
-      },
-      {
-        "file": "client.js",
-        "line": 1421,
-        "text": "const res = await fetch(auth.server + '/api/upload', {"
       }
     ]
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 16,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 31,
+        "text": "OWN_VERSION = JSON.parse(readFileSync(pkgUrl, 'utf8')).version || ''"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 139,
+        "text": "const child = spawn(process.execPath, [KILLER_UPDATER, '--deploy'], {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

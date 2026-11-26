@@ -1,7 +1,7 @@
 {
   "name": "@landasika/dshell",
-  "version": "0.7.2",
-  "scannedAt": "2026-11-11T21:01:13.022Z",
+  "version": "0.7.3",
+  "scannedAt": "2026-11-26T09:55:04.549Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -49,8 +49,34 @@
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/codex/apply-patch.js",
+        "line": 5,
+        "text": "export const inject = ['tools', 'fs', 'workingDirectory'];"
+      },
+      {
+        "file": "dist/codex/apply-patch.js",
+        "line": 13,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "dist/codex/apply-patch.js",
+        "line": 28,
+        "text": "const result = await ctx.tools.execute({ name: tool, arguments: arguments_, callId: `${exec.callId}:patch:${nextCall++}:${tool}`,"
+      },
+      {
+        "file": "dist/codex/clock-tool.js",
+        "line": 3,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "dist/codex/context-status.js",
+        "line": 2,
+        "text": "export const inject = ['tools', 'tokenMeter'];"
+      }
+    ]
   },
   "childProcess": {
     "hit": true,
@@ -87,7 +113,9 @@
     "evidence": []
   },
   "dependencies": 1,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "dist/codex/index.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [
     "agentDefaultModel",
@@ -100,13 +128,13 @@
   "setupHints": [
     {
       "file": "README.md",
-      "line": 138,
-      "text": "npm install -g @landasika/dshell@0.7.1"
+      "line": 163,
+      "text": "npm install -g @landasika/dshell@0.7.3"
     },
     {
       "file": "README.md",
-      "line": 229,
-      "text": "npm install -g @landasika/dshell@0.7.1"
+      "line": 254,
+      "text": "npm install -g @landasika/dshell@0.7.3"
     }
   ],
   "skippedEntries": []

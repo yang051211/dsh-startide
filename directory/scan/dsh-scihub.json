@@ -1,7 +1,7 @@
 {
   "name": "dsh-scihub",
-  "version": "0.5.3",
-  "scannedAt": "2026-11-21T08:41:49.788Z",
+  "version": "0.6.1",
+  "scannedAt": "2026-11-26T09:54:59.112Z",
   "icon": "dsh-scihub.svg",
   "network": {
     "hit": true,
@@ -22,13 +22,13 @@
         "text": "import https from 'node:https';"
       },
       {
-        "file": "test-integration.mjs",
-        "line": 12,
+        "file": "test-http-methods.mjs",
+        "line": 8,
         "text": "import http from 'node:http';"
       },
       {
-        "file": "test-libgen.mjs",
-        "line": 14,
+        "file": "test-integration.mjs",
+        "line": 12,
         "text": "import http from 'node:http';"
       }
     ]
@@ -37,28 +37,28 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/host.mjs",
-        "line": 44,
-        "text": "import { link, mkdir, open, unlink } from 'node:fs/promises';"
+        "file": "lib/ebookmeta.mjs",
+        "line": 11,
+        "text": "import { open, readFile, rename, unlink, writeFile } from 'node:fs/promises';"
       },
       {
-        "file": "lib/host.mjs",
-        "line": 782,
-        "text": "await mkdir(dir, { recursive: true });"
+        "file": "lib/ebookmeta.mjs",
+        "line": 151,
+        "text": "const buf = await readFile(path);"
       },
       {
-        "file": "lib/host.mjs",
-        "line": 789,
-        "text": "await mkdir(dir, { recursive: true });"
+        "file": "lib/ebookmeta.mjs",
+        "line": 282,
+        "text": "const text = await readFile(path, 'latin1');"
       },
       {
-        "file": "lib/host.mjs",
-        "line": 816,
-        "text": "await th.writeFile(body);"
+        "file": "lib/ebookmeta.mjs",
+        "line": 364,
+        "text": "await writeFile(tmp, bytes, { flag: 'wx' });"
       },
       {
-        "file": "lib/host.mjs",
-        "line": 840,
+        "file": "lib/ebookmeta.mjs",
+        "line": 367,
         "text": "await unlink(tmp).catch(() => {});"
       }
     ]
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "lib/host.mjs",
-        "line": 67,
+        "line": 78,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "lib/host.mjs",
-        "line": 314,
+        "line": 398,
         "text": "ctx.tools.register({"
       },
       {
         "file": "lib/host.mjs",
-        "line": 378,
+        "line": 462,
         "text": "ctx.tools.register({"
       },
       {
         "file": "lib/host.mjs",
-        "line": 495,
+        "line": 581,
         "text": "ctx.tools.register({"
       },
       {
         "file": "lib/host.mjs",
-        "line": 553,
+        "line": 636,
         "text": "ctx.tools.register({"
       }
     ]

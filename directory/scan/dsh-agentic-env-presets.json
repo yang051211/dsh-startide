@@ -1,0 +1,100 @@
+{
+  "name": "dsh-agentic-env-presets",
+  "version": "1.2.1",
+  "scannedAt": "2026-11-26T09:55:04.607Z",
+  "icon": "dsh-agentic-env-presets.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "gen-presets.mjs",
+        "line": 9,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "gen-presets.mjs",
+        "line": 42,
+        "text": "let text = fs.readFileSync(path.join(presetsDir, s.src), 'utf8');"
+      },
+      {
+        "file": "gen-presets.mjs",
+        "line": 62,
+        "text": "fs.writeFileSync(path.resolve(import.meta.dirname ?? '.', s.out), text);"
+      },
+      {
+        "file": "probe-restrict.mjs",
+        "line": 12,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "probe-robust.mjs",
+        "line": 13,
+        "text": "import fs from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 732,
+        "text": "// `ctx.get()` rather than `ctx.tools`: the plugin declares only"
+      },
+      {
+        "file": "index.js",
+        "line": 794,
+        "text": "ctx.effect(() => tools.register({"
+      },
+      {
+        "file": "probe-restrict.mjs",
+        "line": 55,
+        "text": "inject: ['tools'],"
+      },
+      {
+        "file": "probe-restrict.mjs",
+        "line": 57,
+        "text": "ctx.tools.register(tool('plugin_manager', 'Manage DSH plugins; unmet DSH version requirements block it.'));"
+      },
+      {
+        "file": "probe-restrict.mjs",
+        "line": 58,
+        "text": "ctx.tools.register(tool('read', 'Read a file.'));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "probe-restrict.mjs",
+        "line": 24,
+        "text": "const bin = require('child_process').execFileSync('which', ['dsh'], { encoding: 'utf8' }).trim();"
+      },
+      {
+        "file": "probe-robust.mjs",
+        "line": 25,
+        "text": "const bin = require('child_process').execFileSync('which', ['dsh'], { encoding: 'utf8' }).trim();"
+      },
+      {
+        "file": "verify.mjs",
+        "line": 46,
+        "text": "const bin = require('child_process').execFileSync('which', ['dsh'], { encoding: 'utf8' }).trim();"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

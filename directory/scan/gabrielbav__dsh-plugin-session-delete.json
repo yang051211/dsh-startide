@@ -1,0 +1,49 @@
+{
+  "name": "@gabrielbav/dsh-plugin-session-delete",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-26T09:54:54.717Z",
+  "icon": "gabrielbav__dsh-plugin-session-delete.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 332,
+        "text": "async function hasUnpushedWork(sessionId, ask = (...args) => fetch(...args)) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { lstat, readdir, realpath, rm } from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 138,
+        "text": "for (const dir of folders.values()) if (dir !== void 0) await rm(dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,109 @@
+{
+  "name": "dsh-darksouls-guide",
+  "version": "0.11.4",
+  "scannedAt": "2026-11-26T09:55:02.741Z",
+  "icon": "dsh-darksouls-guide.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 251,
+        "text": "fetch('/darksouls-guide/progress')"
+      },
+      {
+        "file": "client.js",
+        "line": 280,
+        "text": "fetch('/darksouls-guide/progress?fresh=1')"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/state/endings.js",
+        "line": 28,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/state/endings.js",
+        "line": 39,
+        "text": "cached = JSON.parse(await readFile(FILE, 'utf8'))"
+      },
+      {
+        "file": "src/state/overview.js",
+        "line": 28,
+        "text": "const { readFile } = await import('node:fs/promises')"
+      },
+      {
+        "file": "src/state/overview.js",
+        "line": 30,
+        "text": "readFile(path.join(REF, 'items.json'), 'utf8').then(JSON.parse),"
+      },
+      {
+        "file": "src/state/overview.js",
+        "line": 31,
+        "text": "readFile(path.join(REF, 'bonfires.json'), 'utf8').then(JSON.parse),"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 33,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "src/tools/ds3.js",
+        "line": 152,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "src/tools/ds3.js",
+        "line": 191,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "src/tools/ds3.js",
+        "line": 223,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "src/tools/ds3.js",
+        "line": 278,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/parsers/ds3/run.js",
+        "line": 7,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 142,
+      "text": "pip install cryptography"
+    }
+  ],
+  "skippedEntries": []
+}

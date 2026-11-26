@@ -1,0 +1,159 @@
+{
+  "name": "dsh-whale-glance",
+  "version": "1.0.8",
+  "scannedAt": "2026-11-26T09:54:56.709Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 164,
+        "text": "const response = await fetch(`${ROUTE}${path}`, {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2380,
+        "text": "const res = await fetch(target, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' } });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2655,
+        "text": "const r = await fetch(BILI_SPI, { headers: { 'User-Agent': BILI_UA } });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2664,
+        "text": "const r = await fetch(BILI_GEN, { headers: { 'User-Agent': BILI_UA } });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 2675,
+        "text": "const res = await fetch(BILI_POLL_URL(key), { headers: { 'User-Agent': BILI_UA }, redirect: 'manual' });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 34,
+        "text": "fs.mkdirSync(STORAGE, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 47,
+        "text": "fs.mkdirSync(STORAGE, { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 59,
+        "text": "const d = JSON.parse(fs.readFileSync(showsPath(), 'utf8'));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 226,
+        "text": "fs.writeFileSync(HUD, text, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 542,
+        "text": "export const inject = ['tools', 'webServer', 'connection', 'agents', 'sessions', 'sessionTitle', 'subagents', 'attachments', 'llm'];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3525,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3549,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3590,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3632,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 13,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 407,
+        "text": "const r = spawnSync(exe, ['-c', 'import encodings, sys; sys.stdout.write(\"ok\")'], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 471,
+        "text": "const r = spawnSync(findPython(), ['-c', 'import rapidocr_onnxruntime'], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 498,
+        "text": "const probe = spawnSync(py, ['-c', 'import edge_tts'], { windowsHide: true, timeout: 8000 });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 631,
+        "text": "      const r = spawnSync('powershell.exe', ['-NoProfile', '-Command', 'Add-Type -AssemblyName System.Speech; \"ok\"'], { windowsHide: true, timeout: 15000, encod"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "attachments",
+    "connection",
+    "llm",
+    "sessionTitle",
+    "sessions",
+    "subagents",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 37,
+      "text": "2. **RapidOCR**（读屏上字用）。面板「文字识别（OCR）」那行点「安装」，或 `python -m pip install rapidocr_onnxruntime`（约 200MB）。"
+    },
+    {
+      "file": "README.md",
+      "line": 51,
+      "text": "2. 装 OCR：`python -m pip install rapidocr_onnxruntime`。"
+    }
+  ],
+  "skippedEntries": []
+}

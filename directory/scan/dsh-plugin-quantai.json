@@ -1,0 +1,79 @@
+{
+  "name": "dsh-plugin-quantai",
+  "version": "1.0.3",
+  "scannedAt": "2026-11-26T09:54:59.475Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/auth.js",
+        "line": 23,
+        "text": "const res = await fetch(`${API_BASE}${path}`, {"
+      },
+      {
+        "file": "src/auth.js",
+        "line": 36,
+        "text": "const res = await fetch(`${API_BASE}${path}`)"
+      },
+      {
+        "file": "src/embed.js",
+        "line": 30,
+        "text": "const res = await fetch(`${API_BASE}/api/dsh/embed-token`, {"
+      },
+      {
+        "file": "src/token.js",
+        "line": 41,
+        "text": "const res = await fetch(`${API_BASE}/oauth/token`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 14,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 41,
+        "text": "const raw = fs.readFileSync(path.join(here, 'skills', 'quantai', 'SKILL.md'), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 27,
+        "text": "export const inject = ['tools', 'authorization', 'credentials']"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 154,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "authorization",
+    "credentials",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,96 @@
+{
+  "name": "@ascrm88/dsh-memory",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-26T09:55:04.064Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 138,
+        "text": "const response = await fetch(url, Object.assign({ credentials: 'same-origin', headers: { accept: 'application/json' } }, init))"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cli.js",
+        "line": 4,
+        "text": "import { promises, realpathSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 25,
+        "text": "const text = await promises.readFile(file, \"utf8\");"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 33,
+        "text": "const text = await promises.readFile(file, \"utf8\");"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 210,
+        "text": "if (bodyFile !== void 0) return promises.readFile(resolve(cwd, bodyFile), \"utf8\");"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 247,
+        "text": "const raw = await promises.readFile(new URL(\"../package.json\", import.meta.url), \"utf8\");"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 177,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 272,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 427,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 550,
+        "text": "ctx.tools.register(defineTool({"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 591,
+        "text": "ctx.tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: tsdown && node scripts/build-client.mjs"
+      }
+    ]
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

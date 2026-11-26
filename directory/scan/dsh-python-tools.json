@@ -1,0 +1,93 @@
+{
+  "name": "dsh-python-tools",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-26T09:55:05.160Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 2,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 3,
+        "text": "import { mkdtemp, open, realpath, rm, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 296,
+        "text": "await rm(directory, { recursive: true, force: true }).catch(() => {});"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "index.js",
+        "line": 491,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "index.js",
+        "line": 185,
+        "text": "spawn('taskkill', ['/PID', String(child.pid), '/T', '/F'], {"
+      },
+      {
+        "file": "index.js",
+        "line": 200,
+        "text": "const child = spawn(command, args, options);"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 38,
+      "text": "python -m pip install pypdf"
+    },
+    {
+      "file": "README.md",
+      "line": 41,
+      "text": " out of the interpreter: run `python -m pip install --target .pylibs pypdf` in the session workspace. The plugin appends an existing `<workspace>/.pylibs` to `P"
+    },
+    {
+      "file": "README.md",
+      "line": 95,
+      "text": "\"message\": \"Install pypdf with the configured interpreter. For the default interpreter run: python -m pip install pypdf.\","
+    }
+  ],
+  "skippedEntries": []
+}

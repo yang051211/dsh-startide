@@ -1,0 +1,94 @@
+{
+  "name": "dsh-cronops",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-26T09:54:56.074Z",
+  "icon": "dsh-cronops.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 623,
+        "text": "response = await fetch(path + query(options.query), init)"
+      },
+      {
+        "file": "lib/panels/driver.js",
+        "line": 21,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "lib/panels/driver.js",
+        "line": 22,
+        "text": "import https from 'node:https'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/store.js",
+        "line": 12,
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 399,
+        "text": "const parsed = JSON.parse(readFileSync(this.path, 'utf8'))"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 429,
+        "text": "if (!existsSync(dir)) mkdirSync(dir, { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 436,
+        "text": "writeFileSync(tmp, JSON.stringify(payload, null, 2) + '\\n', { encoding: 'utf8', mode: 0o600 })"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 21,
+        "text": "import { readFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 28,
+        "text": "export const inject = ['webServer', 'tools', 'systemPrompt']"
+      },
+      {
+        "file": "index.js",
+        "line": 132,
+        "text": "text: visibleToolText(ctx.tools, TOOL_NAMES, renderGuidance()),"
+      },
+      {
+        "file": "index.js",
+        "line": 140,
+        "text": "const disposers = tools.map(tool => ctx.tools.register(tool))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

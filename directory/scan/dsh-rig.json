@@ -1,19 +1,19 @@
 {
   "name": "dsh-rig",
-  "version": "0.4.1",
-  "scannedAt": "2026-11-24T23:54:24.949Z",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-26T09:54:52.939Z",
   "icon": "dsh-rig.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 97,
+        "line": 98,
         "text": "const res = await fetch(API + path, { ...init, headers: { ...HEADERS, ...((init && init.headers) || {}) } })"
       },
       {
         "file": "lib/client.js",
-        "line": 112,
+        "line": 113,
         "text": "const res = await fetch(`${API}/events`, { headers: { ...HEADERS, accept: 'text/event-stream' }, signal })"
       },
       {
@@ -52,14 +52,14 @@
         "text": "await readFile(bin, { encoding: 'utf8', flag: 'r' })"
       },
       {
-        "file": "lib/lab/provision.js",
-        "line": 15,
-        "text": "import { mkdir, stat } from 'node:fs/promises'"
+        "file": "lib/lab/plugins.js",
+        "line": 10,
+        "text": "import { readFile } from 'node:fs/promises'"
       },
       {
-        "file": "lib/lab/provision.js",
-        "line": 76,
-        "text": "await mkdir(join(home, 'profiles'), { recursive: true })"
+        "file": "lib/lab/plugins.js",
+        "line": 27,
+        "text": "const raw = JSON.parse(await readFile(file, 'utf8'))"
       }
     ]
   },

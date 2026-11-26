@@ -1,0 +1,85 @@
+{
+  "name": "dsh-novel-voice",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-26T09:54:57.428Z",
+  "icon": "dsh-novel-voice.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/contract.js",
+        "line": 4,
+        "text": "import fs from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/feedback.js",
+        "line": 4,
+        "text": "import fs from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/feedback.js",
+        "line": 42,
+        "text": "text = await fs.readFile(file, 'utf8')"
+      },
+      {
+        "file": "lib/import.js",
+        "line": 3,
+        "text": "import fs from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/import.js",
+        "line": 110,
+        "text": "await fs.writeFile(path.join(workDir, 'source.txt'), text, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "export const inject = ['tools', 'commands']"
+      },
+      {
+        "file": "index.js",
+        "line": 256,
+        "text": "ctx.effect(() => ctx.tools.register(definition, {"
+      },
+      {
+        "file": "lib/tool-schema.mjs",
+        "line": 4,
+        "text": "// `ctx.tools.register()`。这版 DSH 的 register() 收的是**编译好的 JSON Schema**"
+      },
+      {
+        "file": "lib/tool-schema.mjs",
+        "line": 40,
+        "text": "* @param {unknown} parameters 注册给 ctx.tools.register() 的 parameters。"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "commands",
+    "tools",
+    "typert",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

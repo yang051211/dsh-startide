@@ -1,35 +1,35 @@
 {
   "name": "@zhangfeiyue/dsh-long-term-memory",
-  "version": "1.4.0",
-  "scannedAt": "2026-11-25T23:07:35.342Z",
+  "version": "1.10.2",
+  "scannedAt": "2026-11-26T09:55:05.130Z",
   "icon": "zhangfeiyue__dsh-long-term-memory.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 241,
+        "line": 441,
         "text": "const response = await fetch(MUTATE_ENDPOINT, {"
       },
       {
         "file": "client.js",
-        "line": 287,
+        "line": 487,
         "text": "const response = await fetch(SNAPSHOT_ENDPOINT, { headers: { accept: 'application/json' }, cache: 'no-store' })"
       },
       {
         "file": "client.js",
-        "line": 389,
+        "line": 637,
         "text": "const response = await fetch(ANALYSIS_ENDPOINT, { headers: { accept: 'application/json' }, cache: 'no-store' })"
       },
       {
         "file": "client.js",
-        "line": 404,
+        "line": 653,
         "text": "const response = await fetch(ANALYZE_ENDPOINT, {"
       },
       {
         "file": "client.js",
-        "line": 553,
-        "text": "const response = await fetch(`${RECORD_ENDPOINT}?id=${encodeURIComponent(id)}`, {"
+        "line": 812,
+        "text": "const response = await fetch(`/long-term-memory/activity?workspace=${encodeURIComponent(workspace)}`, { cache: 'no-store' })"
       }
     ]
   },
@@ -37,28 +37,28 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/analyze.js",
-        "line": 20,
+        "file": "lib/activity.js",
+        "line": 6,
         "text": "import fs from 'node:fs'"
       },
       {
-        "file": "lib/analyze.js",
-        "line": 327,
-        "text": "const parsed = JSON.parse(fs.readFileSync(cachePath(store), 'utf8'))"
+        "file": "lib/activity.js",
+        "line": 38,
+        "text": "const data = JSON.parse(fs.readFileSync(this.filePath, 'utf8'))"
+      },
+      {
+        "file": "lib/activity.js",
+        "line": 64,
+        "text": "fs.mkdirSync(path.dirname(this.filePath), { recursive: true })"
+      },
+      {
+        "file": "lib/activity.js",
+        "line": 67,
+        "text": "fs.writeFileSync(temporary, json, { mode: 0o600 })"
       },
       {
         "file": "lib/analyze.js",
-        "line": 340,
-        "text": "fs.mkdirSync(store.dir, { recursive: true })"
-      },
-      {
-        "file": "lib/analyze.js",
-        "line": 343,
-        "text": "fs.writeFileSync(temporary, `${JSON.stringify(payload, null, 2)}\\n`, 'utf8')"
-      },
-      {
-        "file": "lib/config.js",
-        "line": 11,
+        "line": 20,
         "text": "import fs from 'node:fs'"
       }
     ]
@@ -73,17 +73,17 @@
       },
       {
         "file": "index.js",
-        "line": 45,
+        "line": 49,
         "text": "export const inject = ['tools', 'systemPrompt']"
       },
       {
         "file": "index.js",
-        "line": 154,
+        "line": 175,
         "text": "ctx.tools.register(tool)"
       },
       {
         "file": "lib/tools.js",
-        "line": 80,
+        "line": 81,
         "text": "* @returns {object[]} tool definitions ready for `ctx.tools.register`."
       }
     ]

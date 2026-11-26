@@ -1,0 +1,74 @@
+{
+  "name": "@amyaxy/dsh-prompt-boost-model",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-26T09:55:03.703Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 267,
+        "text": "return readJson(await fetch(`${ROUTE}/state`, { headers: { accept: \"application/json\" } }));"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 272,
+        "text": "return readJson(await fetch(`${ROUTE}/models`, { headers: { accept: \"application/json\" } }));"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 277,
+        "text": "return readJson(await fetch(`${ROUTE}/save`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 286,
+        "text": "return readJson(await fetch(`${ROUTE}/enhance`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 51,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 212,
+        "text": "const text = await readFile(storePath(), 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 246,
+        "text": "await mkdir(dirname(target), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 247,
+        "text": "await writeFile(temporary, `${JSON.stringify(next, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

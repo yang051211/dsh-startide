@@ -1,0 +1,106 @@
+{
+  "name": "dsh-miloco",
+  "version": "0.1.5",
+  "scannedAt": "2026-11-26T09:54:56.009Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 31,
+        "text": "const response = await fetch(BACKEND_URL.replace(/\\/$/, '') + '/health', { signal: AbortSignal.timeout(2000) })"
+      },
+      {
+        "file": "lib/cli.js",
+        "line": 37,
+        "text": "'curl -LsSf https://github.com/XiaoMi/xiaomi-miloco/releases/latest/download/install.sh | bash -s -- --skip-openclaw --agent-platform openclaw --agent-prepare'"
+      },
+      {
+        "file": "ui/server.js",
+        "line": 2,
+        "text": "import { createServer } from 'node:http'"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/events.js",
+        "line": 4,
+        "text": "import { appendFile, mkdir, readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/events.js",
+        "line": 55,
+        "text": "const text = await readFile(file, 'utf8')"
+      },
+      {
+        "file": "lib/events.js",
+        "line": 80,
+        "text": "await mkdir(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/events.js",
+        "line": 81,
+        "text": "await appendFile(file, JSON.stringify(makeEvent(prev, p.value, d)) + '\\n', 'utf8')"
+      },
+      {
+        "file": "ui/server.js",
+        "line": 3,
+        "text": "import { readFile } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 67,
+        "text": "const tools = ctx.get?.('tools') ?? ctx.tools"
+      },
+      {
+        "file": "index.js",
+        "line": 77,
+        "text": "tools.register(defineTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 99,
+        "text": "tools.register(defineTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 110,
+        "text": "tools.register(defineTool({"
+      },
+      {
+        "file": "index.js",
+        "line": 121,
+        "text": "tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/cli.js",
+        "line": 2,
+        "text": "import { execFile } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

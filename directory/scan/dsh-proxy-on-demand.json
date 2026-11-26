@@ -1,0 +1,105 @@
+{
+  "name": "dsh-proxy-on-demand",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-26T09:55:03.272Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 55,
+        "text": "const res = await fetch(BASE + path, {"
+      },
+      {
+        "file": "lib/downloader.js",
+        "line": 24,
+        "text": "import { get as httpsGetRaw, request as httpsRequest } from 'node:https';"
+      },
+      {
+        "file": "lib/downloader.js",
+        "line": 25,
+        "text": "import { get as httpGetRaw } from 'node:http';"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 925,
+        "text": "* 这不是限流（对照组：同一个 URL、同一个代理端口，用 Invoke-WebRequest 走一遍"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 951,
+        "text": "const req = http.request("
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-proxy.mjs",
+        "line": 26,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "bin/dsh-proxy.mjs",
+        "line": 27,
+        "text": "import { promises as fsp } from 'node:fs';"
+      },
+      {
+        "file": "bin/dsh-proxy.mjs",
+        "line": 96,
+        "text": "await fsp.mkdir(RUNTIME, { recursive: true });"
+      },
+      {
+        "file": "bin/dsh-proxy.mjs",
+        "line": 119,
+        "text": "await fsp.writeFile(cfgPath, exampleConfig(port), 'utf8');"
+      },
+      {
+        "file": "bin/dsh-proxy.mjs",
+        "line": 127,
+        "text": "let text = await fsp.readFile(cfgPath, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "bin/dsh-proxy.mjs",
+        "line": 25,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "bin/dsh-proxy.mjs",
+        "line": 293,
+        "text": "const child = spawn(args[0], args.slice(1), {"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 33,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 303,
+        "text": "const child = spawn(this.exePath, ['-f', this.configPath, '-d', this.dir], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

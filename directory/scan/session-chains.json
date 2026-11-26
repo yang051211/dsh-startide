@@ -1,0 +1,95 @@
+{
+  "name": "session-chains",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-26T09:55:03.383Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/client.js",
+        "line": 117,
+        "text": "const response = await fetch(kind === \"pin\" ? resolvePinEndpoint() : resolveArchiveEndpoint(), {"
+      },
+      {
+        "file": "plugin/client.js",
+        "line": 130,
+        "text": "const response = await fetch(resolveRenameEndpoint(), {"
+      },
+      {
+        "file": "plugin/client.js",
+        "line": 246,
+        "text": "const response = await fetch(resolveVoiceEndpoint(), {"
+      },
+      {
+        "file": "plugin/client.js",
+        "line": 343,
+        "text": "const response = await fetch(resolveEndpoint(), { headers: { accept: \"application/json\" } });"
+      },
+      {
+        "file": "plugin/client.js",
+        "line": 594,
+        "text": "const response = await fetch(resolveUsageEndpoint(), { headers: { accept: \"application/json\" } });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/aliases.mjs",
+        "line": 12,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "plugin/aliases.mjs",
+        "line": 164,
+        "text": "const parsed = JSON.parse(readFileSync(file, \"utf8\"));"
+      },
+      {
+        "file": "plugin/aliases.mjs",
+        "line": 195,
+        "text": "mkdirSync(dirname(file), { recursive: true });"
+      },
+      {
+        "file": "plugin/aliases.mjs",
+        "line": 206,
+        "text": "writeFileSync(temporary, `${JSON.stringify(payload, null, 2)}\\n`, \"utf8\");"
+      },
+      {
+        "file": "plugin/chains.mjs",
+        "line": 16,
+        "text": "import { readdirSync, readFileSync, statSync } from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/index.mjs",
+        "line": 12,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "plugin/index.mjs",
+        "line": 738,
+        "text": "const child = spawn(script, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

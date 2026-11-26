@@ -1,7 +1,7 @@
 {
   "name": "dsh-handoff-session",
-  "version": "0.9.0",
-  "scannedAt": "2026-11-12T08:43:15.276Z",
+  "version": "0.9.2",
+  "scannedAt": "2026-11-26T09:55:00.129Z",
   "icon": "dsh-handoff-session.svg",
   "network": {
     "hit": false,
@@ -17,22 +17,22 @@
       },
       {
         "file": "index.js",
-        "line": 806,
+        "line": 827,
         "text": "const text = await readFile(path, 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 1064,
+        "line": 1100,
         "text": "await mkdir(directory, { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 1074,
+        "line": 1110,
         "text": "await writeFile(transcriptPath, transcript, 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 1086,
+        "line": 1122,
         "text": "await writeFile(handoffPath, markdown, 'utf8')"
       }
     ]
@@ -42,13 +42,13 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 1295,
-        "text": "export const inject = ['tools', 'systemPrompt', 'sessionProjections', 'sessionController', 'agents', 'workspaceRegistry', 'agentPresets']"
+        "line": 1374,
+        "text": "export const inject = ['tools', 'systemPrompt']"
       },
       {
         "file": "index.js",
-        "line": 1340,
-        "text": "ctx.tools.register(createTool(ctx, config, completed, inFlight)),"
+        "line": 1438,
+        "text": "install('the session_handoff tool', () => ctx.tools.register(createTool(ctx, config, completed, inFlight)))"
       }
     ]
   },
@@ -64,13 +64,8 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
-    "agentPresets",
-    "agents",
-    "sessionController",
-    "sessionProjections",
     "systemPrompt",
-    "tools",
-    "workspaceRegistry"
+    "tools"
   ],
   "setupHints": [],
   "skippedEntries": []

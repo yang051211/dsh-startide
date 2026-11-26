@@ -1,7 +1,7 @@
 {
   "name": "dsh-cad-studio",
-  "version": "0.29.1",
-  "scannedAt": "2026-11-25T23:07:34.855Z",
+  "version": "0.35.1",
+  "scannedAt": "2026-11-26T09:54:54.335Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -13,23 +13,23 @@
       },
       {
         "file": "client.js",
-        "line": 1274,
+        "line": 1298,
         "text": "const res = await fetch(`${ROUTE}/open`, {"
       },
       {
         "file": "client.js",
-        "line": 1286,
+        "line": 1310,
         "text": "const sceneRes = await fetch(`${ROUTE}/scene/${encodeURIComponent(data.sceneId)}`, { headers: { accept: 'application/json' } })"
       },
       {
         "file": "client.js",
-        "line": 1375,
-        "text": "const res = await fetch(`${ROUTE}/scene/${encodeURIComponent(id)}`, { headers: { accept: 'application/json' } })"
+        "line": 1414,
+        "text": "const res = await fetch(`${ROUTE}/scene/${encodeURIComponent(bin.file)}`, { headers: { accept: 'application/octet-stream' } })"
       },
       {
         "file": "client.js",
-        "line": 1584,
-        "text": "const res = await fetch(`${ROUTE}/state`, { headers: { accept: 'application/json' } })"
+        "line": 1443,
+        "text": "const res = await fetch(`${ROUTE}/scene/${encodeURIComponent(id)}`, { headers: { accept: 'application/json' } })"
       }
     ]
   },
@@ -39,7 +39,7 @@
       {
         "file": "index.js",
         "line": 17,
-        "text": "import { existsSync, mkdirSync, readdirSync, rmSync, statSync, statfsSync, writeFileSync } from 'node:fs'"
+        "text": "import { existsSync, mkdirSync, readdirSync, rmSync, statSync, statfsSync, unwatchFile, watchFile, writeFileSync } from 'node:fs'"
       },
       {
         "file": "index.js",
@@ -48,17 +48,17 @@
       },
       {
         "file": "index.js",
-        "line": 136,
+        "line": 137,
         "text": "mkdirSync(dir, { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 138,
+        "line": 139,
         "text": "writeFileSync(probe, '1')"
       },
       {
         "file": "index.js",
-        "line": 139,
+        "line": 140,
         "text": "rmSync(probe, { force: true })"
       }
     ]
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 29,
+        "line": 30,
         "text": "export const inject = ['tools', 'webServer']"
       },
       {
         "file": "index.js",
-        "line": 2250,
+        "line": 2553,
         "text": "const tool = (definition) => ctx.effect(() => ctx.tools.register({"
       }
     ]
@@ -88,17 +88,17 @@
       },
       {
         "file": "index.js",
-        "line": 75,
+        "line": 76,
         "text": "const res = spawnSync(bin, ['-c', \"import FreeCAD; print('.'.join(str(v) for v in FreeCAD.Version()[:3]))\"], { encoding: 'utf8', timeout: 30000 })"
       },
       {
         "file": "index.js",
-        "line": 216,
+        "line": 217,
         "text": "const res = spawnSync(packager.cmd, args, { encoding: 'utf8', timeout: timeoutMs })"
       },
       {
         "file": "index.js",
-        "line": 1399,
+        "line": 1702,
         "text": "const child = spawn(bin, [script], { stdio: ['ignore', 'pipe', 'pipe'], env: { ...process.env, PYTHONUNBUFFERED: '1' } })"
       }
     ]

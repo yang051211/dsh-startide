@@ -1,0 +1,100 @@
+{
+  "name": "dsh-desktop-pet-naiwa",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-26T09:55:02.714Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 58,
+        "text": "void fetch(`${apiBase()}/client-log`, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 79,
+        "text": "const response = await fetch(`${apiBase()}${path}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/config.js",
+        "line": 9,
+        "text": "import { existsSync, mkdirSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 229,
+        "text": "mkdirSync(dataDir, { recursive: true })"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 400,
+        "text": "writeFileSync(temp, payload, { encoding: 'utf8', mode: 0o600 })"
+      },
+      {
+        "file": "lib/config.js",
+        "line": 406,
+        "text": "writeFileSync(config.petConfigPath, payload, { encoding: 'utf8', mode: 0o600 })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 16,
+        "text": "import { appendFileSync, existsSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 18,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 421,
+        "text": "const child = spawn('notepad.exe', [path], { detached: true, stdio: 'ignore', windowsHide: true })"
+      },
+      {
+        "file": "lib/pet-process.js",
+        "line": 9,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/pet-process.js",
+        "line": 100,
+        "text": "child = spawn(shell, args, {"
+      },
+      {
+        "file": "lib/pet-process.js",
+        "line": 353,
+        "text": "const killer = spawn('taskkill.exe', ['/pid', String(pid), '/t', '/f'], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "deepseekAccount",
+    "sessionPersistence",
+    "sessions",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

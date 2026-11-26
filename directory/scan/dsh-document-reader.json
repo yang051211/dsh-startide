@@ -1,0 +1,125 @@
+{
+  "name": "dsh-document-reader",
+  "version": "1.0.3",
+  "scannedAt": "2026-11-26T09:55:00.068Z",
+  "icon": "dsh-document-reader.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 120,
+        "text": "const res = await fetch(FILE_URL(path), { signal });"
+      },
+      {
+        "file": "client.js",
+        "line": 2273,
+        "text": "fetch(LIST_URL(dir ?? ''), { signal: controller.signal })"
+      },
+      {
+        "file": "client.js",
+        "line": 2330,
+        "text": "try { const r = await fetch(FILE_URL(e.path), { method: 'HEAD' }); return r.ok; }"
+      },
+      {
+        "file": "client.js",
+        "line": 2355,
+        "text": "const res = await fetch(REVEAL_URL(path));"
+      },
+      {
+        "file": "client.js",
+        "line": 2522,
+        "text": "const res = await fetch(`${ROUTE}/save`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.pdfjs.js",
+        "line": 6395,
+        "text": "const fs = process.getBuiltinModule(\"fs\");"
+      },
+      {
+        "file": "client.pdfjs.js",
+        "line": 6396,
+        "text": "const data = await fs.promises.readFile(url);"
+      },
+      {
+        "file": "client.pdfjs.js",
+        "line": 10552,
+        "text": "const fs = process.getBuiltinModule(\"fs\");"
+      },
+      {
+        "file": "client.pdfjs.js",
+        "line": 10650,
+        "text": "const fs = process.getBuiltinModule(\"fs\");"
+      },
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { createReadStream } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 487,
+        "text": "export const inject = ['webServer', 'connection', 'tools', 'systemPrompt', 'commands'];"
+      },
+      {
+        "file": "index.js",
+        "line": 733,
+        "text": "ctx.effect(() => ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1088,
+        "text": "const { spawn } = await import('node:child_process');"
+      },
+      {
+        "file": "index.js",
+        "line": 1095,
+        "text": "? spawn('explorer', [`/select,${target}`], { stdio: 'ignore' })"
+      },
+      {
+        "file": "index.js",
+        "line": 1097,
+        "text": "? spawn('open', ['-R', target], { stdio: 'ignore' })"
+      },
+      {
+        "file": "index.js",
+        "line": 1098,
+        "text": ": spawn('xdg-open', [dirname(target)], { stdio: 'ignore' });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "client.pdfjs.js",
+    "client.vendor.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "connection",
+    "systemPrompt",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
