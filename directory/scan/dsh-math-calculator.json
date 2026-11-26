@@ -1,7 +1,7 @@
 {
   "name": "dsh-math-calculator",
-  "version": "3.1.0",
-  "scannedAt": "2026-11-16T23:37:21.768Z",
+  "version": "3.2.1",
+  "scannedAt": "2026-11-26T23:01:24.553Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -22,18 +22,18 @@
       },
       {
         "file": "lib/core/engine.js",
-        "line": 655,
-        "text": "* 用户表达式里的 `import(\"fs\")` 就不可用了。"
+        "line": 28,
+        "text": "import { readFileSync } from 'node:fs';"
       },
       {
-        "file": "lib/core/run-log.js",
-        "line": 18,
-        "text": "import { existsSync, mkdirSync, readFileSync } from 'node:fs';"
+        "file": "lib/core/engine.js",
+        "line": 294,
+        "text": "const data = JSON.parse(readFileSync(path, 'utf8'));"
       },
       {
-        "file": "lib/core/run-log.js",
-        "line": 45,
-        "text": "mkdirSync(dir, { recursive: true });"
+        "file": "lib/core/engine.js",
+        "line": 405,
+        "text": "const data = JSON.parse(readFileSync(path, 'utf8'));"
       }
     ]
   },
@@ -42,27 +42,27 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 45,
-        "text": "if (!ctx || typeof ctx.tools?.register !== \"function\") {"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 50,
-        "text": "ctx.tools.register(mathExecuteTool);"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 160,
-        "text": "export const inject = [\"tools\"];"
-      },
-      {
-        "file": "src/index.ts",
         "line": 46,
         "text": "if (!ctx || typeof ctx.tools?.register !== \"function\") {"
       },
       {
+        "file": "lib/index.js",
+        "line": 51,
+        "text": "ctx.tools.register(mathExecuteTool);"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 172,
+        "text": "export const inject = [\"tools\"];"
+      },
+      {
         "file": "src/index.ts",
-        "line": 52,
+        "line": 47,
+        "text": "if (!ctx || typeof ctx.tools?.register !== \"function\") {"
+      },
+      {
+        "file": "src/index.ts",
+        "line": 53,
         "text": "ctx.tools.register(mathExecuteTool)"
       }
     ]

@@ -1,0 +1,85 @@
+{
+  "name": "dsh-novel-conductor",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-26T23:01:15.986Z",
+  "icon": "dsh-novel-conductor.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "const VERSION = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')).version"
+      },
+      {
+        "file": "lib/gateway.js",
+        "line": 7,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/gateway.js",
+        "line": 56,
+        "text": "const raw = JSON.parse(await readFile(file, 'utf8'))"
+      },
+      {
+        "file": "lib/locks.js",
+        "line": 5,
+        "text": "import { open, readFile, unlink, mkdir, stat, rename, writeFile } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 30,
+        "text": "export const inject = ['tools', 'commands', 'workingDirectory', 'agents']"
+      },
+      {
+        "file": "index.js",
+        "line": 300,
+        "text": "ctx.effect(() => ctx.tools.register(guarded, {"
+      },
+      {
+        "file": "lib/tool-schema.mjs",
+        "line": 4,
+        "text": "// `ctx.tools.register()`。这版 DSH 的 register() 收的是**编译好的 JSON Schema**"
+      },
+      {
+        "file": "lib/tool-schema.mjs",
+        "line": 40,
+        "text": "* @param {unknown} parameters 注册给 ctx.tools.register() 的 parameters。"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "commands",
+    "tools",
+    "typert",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

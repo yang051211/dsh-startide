@@ -1,28 +1,49 @@
 {
   "name": "dsh-team-janitor",
-  "version": "1.1.5",
-  "scannedAt": "2026-11-25T23:07:35.003Z",
+  "version": "2.1.0",
+  "scannedAt": "2026-11-26T23:01:19.420Z",
   "icon": "dsh-team-janitor.svg",
   "network": {
     "hit": false,
     "evidence": []
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 31,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 329,
+        "text": "raw = readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 372,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 373,
+        "text": "writeFileSync(temp, payload(map), 'utf8')"
+      }
+    ]
   },
   "agentTools": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 31,
+        "line": 42,
         "text": "export const inject = ['tools', 'subagents']"
       },
       {
         "file": "lib/index.js",
-        "line": 682,
-        "text": "ctx.effect(() => tools.register(definition))"
+        "line": 858,
+        "text": "ctx.effect(() => tools.register(definition, {"
       }
     ]
   },

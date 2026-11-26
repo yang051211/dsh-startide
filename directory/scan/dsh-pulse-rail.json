@@ -1,24 +1,24 @@
 {
   "name": "dsh-pulse-rail",
-  "version": "0.4.1",
-  "scannedAt": "2026-10-26T10:08:07.285Z",
+  "version": "0.5.0",
+  "scannedAt": "2026-11-26T23:01:24.121Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 586,
+        "line": 773,
         "text": "window.fetch(BASE + '/diag', {"
       },
       {
         "file": "lib/client.js",
-        "line": 746,
+        "line": 942,
         "text": "window.fetch(BASE + '/config', {"
       },
       {
         "file": "lib/client.js",
-        "line": 1110,
+        "line": 1548,
         "text": "window.fetch(BASE + '/state', { cache: 'no-store' })"
       }
     ]
@@ -29,27 +29,27 @@
       {
         "file": "lib/config.js",
         "line": 8,
-        "text": "import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';"
+        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'node:fs';"
       },
       {
         "file": "lib/config.js",
-        "line": 51,
+        "line": 114,
         "text": "const raw = JSON.parse(readFileSync(p, 'utf8'));"
       },
       {
         "file": "lib/config.js",
-        "line": 63,
+        "line": 135,
         "text": "mkdirSync(dataDir(), { recursive: true });"
       },
       {
         "file": "lib/config.js",
-        "line": 64,
-        "text": "writeFileSync(configPath(), JSON.stringify(merged, null, 2) + '\\n', 'utf8');"
+        "line": 137,
+        "text": "writeFileSync(tmp, JSON.stringify(merged, null, 2) + '\\n', 'utf8');"
       },
       {
-        "file": "lib/index.js",
-        "line": 18,
-        "text": "import { appendFileSync, mkdirSync, statSync, writeFileSync } from 'node:fs';"
+        "file": "lib/config.js",
+        "line": 140,
+        "text": "try { unlinkSync(tmp); } catch { /* 临时文件可能压根没建起来 */ }"
       }
     ]
   },
@@ -62,13 +62,8 @@
     "evidence": [
       {
         "file": "lib/tap.js",
-        "line": 12,
+        "line": 14,
         "text": "import { spawn } from 'node:child_process';"
-      },
-      {
-        "file": "lib/tap.js",
-        "line": 115,
-        "text": "child = spawn(this.exePath, args, { stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true });"
       }
     ]
   },

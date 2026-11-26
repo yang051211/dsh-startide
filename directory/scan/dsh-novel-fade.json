@@ -1,0 +1,85 @@
+{
+  "name": "dsh-novel-fade",
+  "version": "0.8.2",
+  "scannedAt": "2026-11-26T23:01:16.963Z",
+  "icon": "dsh-novel-fade.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/archive.js",
+        "line": 14,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/archive.js",
+        "line": 40,
+        "text": "await mkdir(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/archive.js",
+        "line": 42,
+        "text": "await writeFile(tmp, body, 'utf8')"
+      },
+      {
+        "file": "lib/archive.js",
+        "line": 80,
+        "text": "raw = await readFile(archivePath(dir, book, archiveId), 'utf8')"
+      },
+      {
+        "file": "lib/artifact.js",
+        "line": 8,
+        "text": "import { readFile } from 'node:fs/promises'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "export const inject = ['tools', 'commands', 'workingDirectory', 'agents']"
+      },
+      {
+        "file": "index.js",
+        "line": 183,
+        "text": "ctx.effect(() => ctx.tools.register(definition, {"
+      },
+      {
+        "file": "lib/tool-schema.mjs",
+        "line": 4,
+        "text": "// `ctx.tools.register()`。这版 DSH 的 register() 收的是**编译好的 JSON Schema**"
+      },
+      {
+        "file": "lib/tool-schema.mjs",
+        "line": 40,
+        "text": "* @param {unknown} parameters 注册给 ctx.tools.register() 的 parameters。"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "commands",
+    "tools",
+    "typert",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

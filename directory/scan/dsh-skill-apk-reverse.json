@@ -1,0 +1,71 @@
+{
+  "name": "dsh-skill-apk-reverse",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-26T23:01:13.415Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/install_ddc.sh",
+        "line": 29,
+        "text": "  curl -sSL --max-time 180 -H 'Accept: application/octet-stream' \"$API\" -o \"$TMP/ddc\" || { echo \"下载失败：api.github.com 不可达，可手动到项目 Releases 下载 aarch64-unknown-linu"
+      },
+      {
+        "file": "scripts/install_ddc.sh",
+        "line": 31,
+        "text": "wget -q --timeout=180 --header='Accept: application/octet-stream' \"$API\" -O \"$TMP/ddc\" || { echo \"下载失败（无 curl/wget）\"; exit 1; }"
+      },
+      {
+        "file": "scripts/install_tools.sh",
+        "line": 335,
+        "text": "if curl -fL --max-time 1800 -o \"$dest.part\" \"$u\" && [ -s \"$dest.part\" ]; then"
+      },
+      {
+        "file": "scripts/install_tools.sh",
+        "line": 571,
+        "text": "curl -fL --max-time 1800 -o \"$xz\" \\"
+      },
+      {
+        "file": "scripts/install_tools.sh",
+        "line": 573,
+        "text": "|| curl -fL --max-time 1800 -o \"$xz\" \\"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 1,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 28,
+        "text": "return { ...CANDIDATE, content: await readFile(SKILL_BODY_URL, 'utf8') }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

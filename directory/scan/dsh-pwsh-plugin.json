@@ -1,7 +1,7 @@
 {
   "name": "dsh-pwsh-plugin",
-  "version": "0.2.32",
-  "scannedAt": "2026-11-26T09:54:54.461Z",
+  "version": "0.2.33",
+  "scannedAt": "2026-11-26T23:01:14.045Z",
   "icon": "dsh-pwsh-plugin.svg",
   "network": {
     "hit": true,
@@ -24,7 +24,7 @@
       {
         "file": "plugin/file-tools.mjs",
         "line": 2,
-        "text": "import { readFileSync } from 'node:fs'"
+        "text": "import { readFileSync, lstatSync } from 'node:fs'"
       },
       {
         "file": "plugin/file-tools.mjs",
@@ -63,7 +63,7 @@
       },
       {
         "file": "plugin/file-tools.mjs",
-        "line": 156,
+        "line": 172,
         "text": "rties,required,execute)=>ctx.effect(()=>ctx.tools.register({name,description,parameters:{type:'object',properties,required,additionalProperties:false},output,ex"
       },
       {
@@ -73,7 +73,7 @@
       },
       {
         "file": "plugin/index.mjs",
-        "line": 346,
+        "line": 362,
         "text": "// 旧注册不撤的话 ctx.tools.register 会抛 \"already registered\"。"
       }
     ]
@@ -83,22 +83,22 @@
     "evidence": [
       {
         "file": "plugin/file-tools.mjs",
-        "line": 86,
+        "line": 102,
         "text": "const subprocess={resolveExecutable:(...args)=>ctx.subprocess.resolveExecutable(...args),spawn(spec){"
       },
       {
         "file": "plugin/file-tools.mjs",
-        "line": 88,
+        "line": 104,
         "text": "const h=ctx.subprocess.spawn({...spec,stdio:{...spec.stdio,stdout:'pipe',stderr:{maxBytes:65536}}});bind(h);return h"
       },
       {
         "file": "plugin/file-tools.mjs",
-        "line": 90,
+        "line": 106,
         "text": "return ctx.subprocess.spawn(spec)"
       },
       {
         "file": "plugin/file-tools.mjs",
-        "line": 109,
+        "line": 125,
         "text": "bind(ctx.subprocess.spawn({argv,cwd:c.cwd,stdio:{stdin:{data:JSON.stringify({...q,limits})},stdout:'pipe',stderr:{maxBytes:65536}},signal,graceMs:3000}))"
       },
       {

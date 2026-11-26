@@ -1,34 +1,34 @@
 {
   "name": "dsh-kaogong",
-  "version": "1.31.0",
-  "scannedAt": "2026-11-20T08:47:13.784Z",
+  "version": "1.34.4",
+  "scannedAt": "2026-11-26T23:01:18.975Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "dist/client/client.js",
-        "line": 5619,
+        "line": 5948,
         "text": "const r = await fetch('/kaogong/api' + rel + qs + wsSuffix);"
       },
       {
         "file": "dist/client/client.js",
-        "line": 5890,
+        "line": 6370,
         "text": "const r = await fetch(MOUNT_PATH + '/api/graph/path' + qs + (ws ? '&ws=' + encodeURIComponent(String(ws)) : ''));"
       },
       {
         "file": "dist/client/client.js",
-        "line": 8399,
+        "line": 9386,
         "text": "const r = await fetch(`${MOUNT_PATH}/api/status`, { signal: AbortSignal.timeout(1200) });"
       },
       {
         "file": "dist/client/client.js",
-        "line": 8410,
+        "line": 9397,
         "text": "const r = await fetch(`http://127.0.0.1:${port}/api/status`, { signal: AbortSignal.timeout(900) });"
       },
       {
         "file": "dist/client/client.js",
-        "line": 8449,
+        "line": 9436,
         "text": "const r = await fetch(`${channel.base}/api${p}${sep}ws=${encodeURIComponent(wsKey)}`, opts);"
       }
     ]
@@ -44,21 +44,21 @@
       {
         "file": "dist/adapters/huasheng13.js",
         "line": 171,
-        "text": "const text = normalizeNewlines(readFileSync(absPath, 'utf-8'));"
+        "text": "return parseDocText(readFileSync(absPath, 'utf-8'), absPath);"
       },
       {
         "file": "dist/adapters/huasheng13.js",
-        "line": 388,
+        "line": 402,
         "text": "mkdirSync(join(file, '..'), { recursive: true });"
       },
       {
         "file": "dist/adapters/huasheng13.js",
-        "line": 389,
+        "line": 403,
         "text": "writeFileSync(tmp, payload, 'utf-8');"
       },
       {
         "file": "dist/adapters/huasheng13.js",
-        "line": 396,
+        "line": 410,
         "text": "unlinkSync(tmp);"
       }
     ]
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "dist/host/index.js",
-        "line": 85,
+        "line": 99,
         "text": "export const inject = ['tools'];"
       },
       {
         "file": "dist/host/index.js",
-        "line": 129,
+        "line": 144,
         "text": "ctx.tools.register({"
       },
       {
         "file": "dist/host/index.js",
-        "line": 182,
+        "line": 197,
         "text": "ctx.tools.register({"
       },
       {
         "file": "dist/host/index.js",
-        "line": 218,
+        "line": 233,
         "text": "ctx.tools.register({"
       },
       {
         "file": "dist/host/index.js",
-        "line": 247,
+        "line": 262,
         "text": "ctx.tools.register({"
       }
     ]
@@ -118,7 +118,7 @@
       },
       {
         "file": "scripts/assert-combo.mjs",
-        "line": 58,
+        "line": 67,
         "text": "const r = spawnSync(process.execPath, ['scripts/bundle-client.mjs'], { cwd: root, stdio: 'inherit' })"
       }
     ]
@@ -129,7 +129,7 @@
       {
         "file": "package.json",
         "line": 0,
-        "text": "scripts.prepare: tsc && node scripts/bundle-client.mjs && node scripts/assert-combo.mjs --fix"
+        "text": "scripts.prepare: tsc && node scripts/bundle-client.mjs && node scripts/assert-combo.mjs --fix && (node scripts/git-hooks/install.mjs || true)"
       }
     ]
   },

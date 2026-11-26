@@ -1,0 +1,110 @@
+{
+  "name": "deepseekharness-remotecontrol",
+  "version": "0.8.21",
+  "scannedAt": "2026-11-26T23:01:17.311Z",
+  "icon": "deepseekharness-remotecontrol.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "connect-host.sh",
+        "line": 121,
+        "text": "JOIN_RESP=\"$(curl -sS -X POST \"${HUB_URL}/api/hosts/join\" \\"
+      },
+      {
+        "file": "connect-host.sh",
+        "line": 208,
+        "text": "# 支持通过 curl -fsSL <HUB_URL>/install.sh | bash 一键安装：若当前已在仓库目录则直接复用，否则克隆到 ~/.dsh/remotecontrol"
+      },
+      {
+        "file": "dsh-feishu/lib/harnesses/workbuddy-adapter.js",
+        "line": 4,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "dsh-feishu/lib/harnesses/workbuddy-adapter.js",
+        "line": 591,
+        "text": "const req = http.request("
+      },
+      {
+        "file": "dsh-feishu/lib/hub-agent.js",
+        "line": 663,
+        "text": "await this.fetch(targetUrl, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh-feishu/index.js",
+        "line": 1,
+        "text": "import { readFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "dsh-feishu/index.js",
+        "line": 21,
+        "text": "return JSON.parse(await readFile(path, 'utf8'))"
+      },
+      {
+        "file": "dsh-feishu/index.js",
+        "line": 30,
+        "text": "return (await readFile(path, 'utf8')).trim()"
+      },
+      {
+        "file": "dsh-feishu/lib/antigravity-ide.js",
+        "line": 3,
+        "text": "import { access, mkdir, open, readdir, readFile, rename, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "dsh-feishu/lib/antigravity-ide.js",
+        "line": 1489,
+        "text": "const pbBuf = await readFile(join(agyRoot, 'agyhub_summaries_proto.pb'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dsh-feishu/lib/antigravity-ide.js",
+        "line": 1,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "dsh-feishu/lib/harnesses/claude-adapter.js",
+        "line": 1,
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "dsh-feishu/lib/harnesses/codex-adapter.js",
+        "line": 1,
+        "text": "import { execFile, execFileSync, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "dsh-feishu/lib/harnesses/dsh-headless-adapter.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "dsh-feishu/lib/harnesses/dsh-headless-adapter.js",
+        "line": 503,
+        "text": "const proc = spawn("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

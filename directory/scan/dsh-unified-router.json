@@ -1,0 +1,144 @@
+{
+  "name": "dsh-unified-router",
+  "version": "0.8.1",
+  "scannedAt": "2026-11-26T23:01:17.895Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/apikey-llm.js",
+        "line": 162,
+        "text": "const upstream = options?.fetch ?? ((input, init) => globalThis.fetch(input, init))"
+      },
+      {
+        "file": "lib/apikey-providers.js",
+        "line": 459,
+        "text": "'x-requested-with': 'XMLHttpRequest',"
+      },
+      {
+        "file": "lib/apikey-providers.js",
+        "line": 898,
+        "text": "async fetch(session, fetchJson, signal) {"
+      },
+      {
+        "file": "lib/apikey-providers.js",
+        "line": 1095,
+        "text": "async fetch(session, fetchJson, signal) {"
+      },
+      {
+        "file": "lib/apikey-quota.js",
+        "line": 44,
+        "text": "const outcome = await recipe.fetch(session, fetchJson, signal)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/apikey-channel.js",
+        "line": 9,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/apikey-channel.js",
+        "line": 10,
+        "text": "import { mkdir, rename, unlink, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/apikey-channel.js",
+        "line": 134,
+        "text": "const saved = JSON.parse(readFileSync(stateFile, 'utf8'))"
+      },
+      {
+        "file": "lib/apikey-channel.js",
+        "line": 147,
+        "text": "await mkdir(dirname(stateFile), { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/apikey-channel.js",
+        "line": 148,
+        "text": "await writeFile(temporary, JSON.stringify({ enabled, toolsEnabled }), { mode: 0o600 })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/image-tools.js",
+        "line": 302,
+        "text": "const unregister = tools.register(defineTool({"
+      },
+      {
+        "file": "lib/image-tools.js",
+        "line": 350,
+        "text": "const unregister = tools.register(defineTool({"
+      },
+      {
+        "file": "lib/unisound-tools.js",
+        "line": 12,
+        "text": "// 注册契约：ctx.tools.register(defineTool(...))（@deepseek-ai/dsh-tools，动态 import，"
+      },
+      {
+        "file": "lib/unisound-tools.js",
+        "line": 406,
+        "text": "disposers.push(tools.register(definition))"
+      },
+      {
+        "file": "vendor/sensenova-token-plan/index.js",
+        "line": 5916,
+        "text": "* the `@deepseek-ai/dsh-tools` import and the `ctx.tools` registration are"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/backend.js",
+        "line": 18,
+        "text": "import { spawn as spawn3 } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/backend.js",
+        "line": 3950,
+        "text": "import { execFileSync, spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/backend.js",
+        "line": 4070,
+        "text": "child = spawn(exe, [...runtimeInfoArgs()], { windowsHide: true });"
+      },
+      {
+        "file": "lib/backend.js",
+        "line": 5853,
+        "text": "import { spawn as spawn2 } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/browser-login.js",
+        "line": 3,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "lib/qoder-auth-wasm.wasm"
+  ],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 78,
+      "text": "**目录直装**（把目录长期保留在 `$DSH_HOME/dsh-go/plugins/` 下）："
+    }
+  ],
+  "skippedEntries": []
+}

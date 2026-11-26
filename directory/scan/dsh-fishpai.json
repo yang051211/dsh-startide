@@ -1,7 +1,7 @@
 {
   "name": "dsh-fishpai",
-  "version": "2.1.0",
-  "scannedAt": "2026-11-24T23:54:29.298Z",
+  "version": "2.2.1",
+  "scannedAt": "2026-11-26T23:01:14.330Z",
   "icon": "dsh-fishpai.svg",
   "network": {
     "hit": true,
@@ -13,7 +13,7 @@
       },
       {
         "file": "lib/client.js",
-        "line": 303,
+        "line": 305,
         "text": "const res = await fetch(api.assetUrl(state.sessionId, docKey, img.src));"
       }
     ]
@@ -52,29 +52,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "plugin/host/lazy-tools.mjs",
+        "line": 3,
+        "text": "* `fishpai` 技能后，才经 ctx.tools.register 注册全部 fishpai_* 工具，此后新组装的"
+      },
+      {
         "file": "plugin/host/tools.mjs",
         "line": 4,
         "text": "* 用 **raw JSON-Schema 注册**（`ctx.tools.register({name, description, parameters, output, execute})`），"
       },
       {
         "file": "plugin/host/tools.mjs",
-        "line": 153,
+        "line": 167,
         "text": "* @param {object} ctx 宿主 cordis 上下文（需要 ctx.tools）"
       },
       {
         "file": "plugin/host/tools.mjs",
-        "line": 164,
+        "line": 178,
         "text": "const dispose = ctx.tools.register(tool)"
       },
       {
         "file": "plugin/host/tools.mjs",
-        "line": 570,
+        "line": 609,
         "text": "// 走 `register()` 而不是直接 `ctx.tools.register()`：它把卸载函数收进 disposers，"
-      },
-      {
-        "file": "plugin/index.mjs",
-        "line": 24,
-        "text": "export const inject = ['webServer', 'connection', 'sessions', 'tools', 'skills']"
       }
     ]
   },
@@ -86,7 +86,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 1,
+  "dependencies": 2,
   "minifiedFiles": [
     "plugin/vendor/highlight.min.js",
     "plugin/vendor/markdown-it.min.js"

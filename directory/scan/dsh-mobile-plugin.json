@@ -1,7 +1,7 @@
 {
   "name": "dsh-mobile-plugin",
-  "version": "0.5.121",
-  "scannedAt": "2026-11-26T09:54:49.015Z",
+  "version": "0.5.126",
+  "scannedAt": "2026-11-26T23:01:04.534Z",
   "icon": "dsh-mobile-plugin.png",
   "network": {
     "hit": true,
@@ -23,13 +23,13 @@
       },
       {
         "file": "lib/mobile/channel-proxy.js",
-        "line": 137,
+        "line": 333,
         "text": "upstream = await fetch(url, {"
       },
       {
-        "file": "lib/mobile/extension-data.js",
-        "line": 24,
-        "text": "const http = require('node:http');"
+        "file": "lib/mobile/device-profile.js",
+        "line": 257,
+        "text": "const response = await fetch(chatCompletionUrlOf(found.channel.baseUrl), {"
       }
     ]
   },
@@ -73,18 +73,23 @@
       },
       {
         "file": "lib/mobile/feedback.js",
-        "line": 276,
-        "text": "ctx.tools.register(defineTool({"
+        "line": 4,
+        "text": "// 注册走调用方的注入作用域（`ctx.tools`），记在那一代 fiber 名下，热重载换代时随旧代卸掉。"
       },
       {
-        "file": "lib/mobile/workspace-tools.js",
-        "line": 319,
-        "text": "ctx.tools.register(defineTool({"
+        "file": "lib/mobile/feedback.js",
+        "line": 295,
+        "text": "// 但优先用 `ctx.tools`：它把注册记在当前 fiber 名下，换代时随旧代一起卸；直接拿服务对象"
       },
       {
-        "file": "lib/session-cleanup.cjs",
-        "line": 489,
-        "text": "ctx.tools.register(defineTool({"
+        "file": "lib/mobile/feedback.js",
+        "line": 299,
+        "text": "tools = ctx.tools ?? null;"
+      },
+      {
+        "file": "lib/mobile/feedback.js",
+        "line": 305,
+        "text": "return tools.register(defineTool({"
       }
     ]
   },

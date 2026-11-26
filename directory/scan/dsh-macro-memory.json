@@ -1,7 +1,7 @@
 {
   "name": "dsh-macro-memory",
-  "version": "0.7.0",
-  "scannedAt": "2026-11-25T23:07:23.341Z",
+  "version": "0.8.1",
+  "scannedAt": "2026-11-26T23:01:09.922Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -37,35 +37,40 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/macro/chain.js",
-        "line": 29,
-        "text": "import { existsSync } from 'node:fs'"
+        "file": "bin/macro-memory.mjs",
+        "line": 20,
+        "text": "import fs from 'node:fs'"
       },
       {
-        "file": "lib/macro/injectledger.js",
-        "line": 33,
-        "text": "import { existsSync, readFileSync, statSync } from 'node:fs'"
+        "file": "bin/macro-memory.mjs",
+        "line": 31,
+        "text": "const pkg = JSON.parse(fs.readFileSync(path.join(PKG_ROOT, 'package.json'), 'utf8'))"
       },
       {
-        "file": "lib/macro/injectledger.js",
-        "line": 839,
-        "text": "return readFileSync(path, 'utf8')"
+        "file": "lib/core/config.js",
+        "line": 16,
+        "text": "import fs from 'node:fs'"
       },
       {
-        "file": "lib/macro/links.js",
-        "line": 14,
-        "text": "import { mkdirSync, renameSync, writeFileSync } from 'node:fs'"
+        "file": "lib/core/config.js",
+        "line": 56,
+        "text": "const raw = fs.readFileSync(file, 'utf8')"
       },
       {
-        "file": "lib/macro/links.js",
-        "line": 123,
-        "text": "mkdirSync(macroHome(), { recursive: true })"
+        "file": "lib/core/config.js",
+        "line": 95,
+        "text": "fs.mkdirSync(dataDir, { recursive: true })"
       }
     ]
   },
   "agentTools": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/core/mini-host.js",
+        "line": 230,
+        "text": "// cordis 里服务名就是 ctx 上的属性（`ctx.settings`、`ctx.tools`）。"
+      },
       {
         "file": "lib/index.js",
         "line": 38,
@@ -85,11 +90,6 @@
         "file": "vendor/dsh-memory-nebula/lib/host/sources.js",
         "line": 238,
         "text": "// 3) MCP：profile patch + 家目录 patch 里 dsh-mcp-client 的条目"
-      },
-      {
-        "file": "vendor/dsh-memory-nebula/lib/index.js",
-        "line": 33,
-        "text": "export const inject = ['tools', 'systemPrompt', 'webServer', 'connection']"
       }
     ]
   },

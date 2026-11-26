@@ -1,0 +1,106 @@
+{
+  "name": "dsh-native-uia",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-26T23:01:26.039Z",
+  "icon": "dsh-native-uia.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/verify-live.mjs",
+        "line": 7,
+        "text": "import { get, request } from 'node:http';"
+      },
+      {
+        "file": "src/dashboard.js",
+        "line": 1,
+        "text": "import { createServer } from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/install.mjs",
+        "line": 8,
+        "text": "import { readFileSync, writeFileSync, copyFileSync, existsSync, mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "scripts/install.mjs",
+        "line": 28,
+        "text": "import { readdirSync } from 'node:fs';"
+      },
+      {
+        "file": "scripts/install.mjs",
+        "line": 62,
+        "text": "json = JSON.parse(readFileSync(MANIFEST, 'utf8'));"
+      },
+      {
+        "file": "scripts/install.mjs",
+        "line": 78,
+        "text": "writeFileSync(tmp, text, 'utf8');"
+      },
+      {
+        "file": "scripts/install.mjs",
+        "line": 79,
+        "text": "JSON.parse(readFileSync(tmp, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 12,
+        "text": "export const inject = ['tools', 'systemPrompt'];"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 509,
+        "text": "return ctx.tools.register(definition);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/verify-live-clipboard.mjs",
+        "line": 16,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/verify.mjs",
+        "line": 10,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "src/worker-client.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/worker-client.js",
+        "line": 100,
+        "text": "const proc = spawn(POWERSHELL, ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', this.scriptPath], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "worker/bin/ocr.exe"
+  ],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,35 +1,35 @@
 {
   "name": "@zhucy123/dsh-update",
-  "version": "1.8.0",
-  "scannedAt": "2026-11-05T21:23:03.943Z",
-  "icon": null,
+  "version": "2.0.0",
+  "scannedAt": "2026-11-26T23:01:23.057Z",
+  "icon": "zhucy123__dsh-update.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 121,
-        "text": "const res = await fetch(\"/api/dsh-update/status\");"
+        "line": 380,
+        "text": "const res = await fetch(url);"
       },
       {
         "file": "lib/client.js",
-        "line": 132,
+        "line": 391,
         "text": "const res = await fetch(\"/api/dsh-update/release-notes?tag=\" + encodeURIComponent(tag));"
       },
       {
         "file": "lib/client.js",
-        "line": 155,
+        "line": 420,
         "text": "const res = await fetch(\"/api/dsh-update/run\", {"
       },
       {
         "file": "lib/client.js",
-        "line": 778,
-        "text": "const res = await fetch(\"/api/dsh-update/restart\", { method: \"POST\" });"
+        "line": 577,
+        "text": "const res = await fetch(\"/api/dsh-update/ping\", { cache: \"no-store\" });"
       },
       {
-        "file": "lib/index.js",
-        "line": 976,
-        "text": "const response = await fetch(url, {"
+        "file": "lib/client.js",
+        "line": 590,
+        "text": "fetch(\"/api/dsh-update/ping\", { cache: \"no-store\" })"
       }
     ]
   },
@@ -39,26 +39,26 @@
       {
         "file": "lib/index.js",
         "line": 28,
-        "text": "import { existsSync, readdirSync, statSync, readFileSync } from 'node:fs'"
+        "text": "import { appendFileSync, existsSync, readdirSync, statSync, readFileSync } from 'node:fs'"
       },
       {
         "file": "lib/index.js",
-        "line": 262,
+        "line": 323,
         "text": "\"const fs = require('node:fs')\","
       },
       {
         "file": "lib/index.js",
-        "line": 274,
+        "line": 335,
         "text": "'const note = (line) => { try { fs.appendFileSync(logErr, `[dsh-update] ${line}\\n`) } catch {} }',"
       },
       {
         "file": "lib/index.js",
-        "line": 368,
+        "line": 429,
         "text": "'  try { text += fs.readFileSync(logOut, \"utf8\") } catch (e) {}',"
       },
       {
         "file": "lib/index.js",
-        "line": 369,
+        "line": 430,
         "text": "'  try { text += \"\\\\n\" + fs.readFileSync(logErr, \"utf8\") } catch (e) {}',"
       }
     ]
@@ -73,26 +73,26 @@
       {
         "file": "lib/index.js",
         "line": 27,
-        "text": "import { execFileSync, spawn } from 'node:child_process'"
+        "text": "import { execFile, execFileSync, spawn } from 'node:child_process'"
       },
       {
         "file": "lib/index.js",
-        "line": 261,
+        "line": 322,
         "text": "\"const { spawn } = require('node:child_process')\","
       },
       {
         "file": "lib/index.js",
-        "line": 295,
+        "line": 356,
         "text": "'    child = spawn(file, args, { cwd, detached, windowsHide, stdio: [\"ignore\", out, err], env: process.env, shell: viaShell })',"
       },
       {
         "file": "lib/index.js",
-        "line": 344,
-        "text": "'      spawn(\"taskkill\", [\"/PID\", String(pid), \"/T\", \"/F\"], { stdio: \"ignore\" })',"
+        "line": 405,
+        "text": "'      spawn(\"taskkill\", [\"/PID\", String(pid), \"/T\", \"/F\"], { stdio: \"ignore\", windowsHide: true })',"
       },
       {
         "file": "lib/index.js",
-        "line": 355,
+        "line": 416,
         "text": "'    const child = spawn(file, args, { cwd, detached, windowsHide, stdio: [\"ignore\", out, err], env: process.env, shell: viaShell })',"
       }
     ]
@@ -105,6 +105,7 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
+    "agents",
     "webServer"
   ],
   "setupHints": [],

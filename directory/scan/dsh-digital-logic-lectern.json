@@ -1,0 +1,88 @@
+{
+  "name": "dsh-digital-logic-lectern",
+  "version": "0.15.0",
+  "scannedAt": "2026-11-26T23:01:15.490Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "_selftest.mjs",
+        "line": 10,
+        "text": "import { readFileSync, existsSync } from \"node:fs\";"
+      },
+      {
+        "file": "_selftest.mjs",
+        "line": 85,
+        "text": "const clientCode = readFileSync(new URL(\"./lib/client.js\", import.meta.url), \"utf8\");"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "import { readFileSync, readdirSync, statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 80,
+        "text": "body = readFileSync(join(UI_ROOT, fileName));"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 118,
+        "text": "body = readFileSync(join(FIGURE_ROOT, fileName));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "skills/digital-logic-lectern/scripts/dlquiz.js",
+        "line": 11,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "skills/digital-logic-lectern/scripts/dlquiz.js",
+        "line": 1328,
+        "text": "const run = spawnSync(process.execPath, [DLTOOL, ...question.verify.args, \"--json\"], { encoding: \"utf8\" });"
+      },
+      {
+        "file": "skills/digital-logic-lectern/scripts/dlverify.js",
+        "line": 8,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "skills/digital-logic-lectern/scripts/dlverify.js",
+        "line": 50,
+        "text": "const probe = spawnSync(\"iverilog\", [\"-V\"], { encoding: \"utf8\" });"
+      },
+      {
+        "file": "skills/digital-logic-lectern/scripts/dlverify.js",
+        "line": 73,
+        "text": "const compile = spawnSync(\"iverilog\", compileArgs, { encoding: \"utf8\" });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "skills/digital-logic-lectern/ui/book.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

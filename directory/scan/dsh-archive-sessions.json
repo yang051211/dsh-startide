@@ -1,0 +1,69 @@
+{
+  "name": "dsh-archive-sessions",
+  "version": "1.2.3",
+  "scannedAt": "2026-11-26T23:01:25.887Z",
+  "icon": "dsh-archive-sessions.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 153,
+        "text": "const response = await fetch(apiUrl(routePath), { cache: 'no-store' });"
+      },
+      {
+        "file": "client.js",
+        "line": 160,
+        "text": "const response = await fetch(apiUrl(routePath), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 24,
+        "text": "import { promises as fs } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 275,
+        "text": "const parsed = JSON.parse(await fs.readFile(path.join(workspaceStorageRoot(ctx, config), 'workspace.json'), 'utf8'));"
+      },
+      {
+        "file": "index.js",
+        "line": 336,
+        "text": "await bestEffort(id, 'projection-cache', warnings, () => fs.rm(path.join(projectionDir, `${id}.json`), { force: true }));"
+      },
+      {
+        "file": "index.js",
+        "line": 440,
+        "text": "await fs.rm(directory, { recursive: true, force: true });"
+      },
+      {
+        "file": "index.js",
+        "line": 461,
+        "text": "const parsed = JSON.parse(await fs.readFile(file, 'utf8'));"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

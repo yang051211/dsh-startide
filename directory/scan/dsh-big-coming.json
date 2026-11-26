@@ -1,0 +1,81 @@
+{
+  "name": "dsh-big-coming",
+  "version": "0.1.1",
+  "scannedAt": "2026-11-26T23:01:23.921Z",
+  "icon": "dsh-big-coming.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 239,
+        "text": "blastLoading = fetch(API + '?action=sound', { cache: 'force-cache', credentials: 'same-origin' })"
+      },
+      {
+        "file": "client.js",
+        "line": 602,
+        "text": "return fetch(API + '?' + query, { cache: 'no-store', credentials: 'same-origin' }).then(async (response) => {"
+      },
+      {
+        "file": "client.js",
+        "line": 610,
+        "text": "return fetch(API, {"
+      },
+      {
+        "file": "lib/probe.js",
+        "line": 106,
+        "text": "const response = await fetch(url, { ...init, signal: controller.signal })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 13,
+        "text": "import { mkdir, readFile, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 126,
+        "text": "const text = (await readFile(KEY_FILE, 'utf8')).trim()"
+      },
+      {
+        "file": "index.js",
+        "line": 139,
+        "text": "await mkdir(STATE_DIR, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 140,
+        "text": "await writeFile(KEY_FILE, trimmed, { encoding: 'utf8', mode: 0o600 })"
+      },
+      {
+        "file": "index.js",
+        "line": 152,
+        "text": "await writeFile(KEY_FILE, '', 'utf8').catch(() => undefined)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

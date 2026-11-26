@@ -1,0 +1,100 @@
+{
+  "name": "@slz233/dsh-enhance-mode",
+  "version": "0.6.2",
+  "scannedAt": "2026-11-26T23:01:25.708Z",
+  "icon": "slz233__dsh-enhance-mode.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/index.js",
+        "line": 216,
+        "text": "response = await fetch(API_PATH, {"
+      },
+      {
+        "file": "client/index.js",
+        "line": 747,
+        "text": "const response = await fetch('open-in-app/apps', { credentials: 'same-origin' })"
+      },
+      {
+        "file": "client/index.js",
+        "line": 753,
+        "text": "const opened = await fetch('open-in-app/open', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/order.mjs",
+        "line": 22,
+        "text": "import { mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/order.mjs",
+        "line": 54,
+        "text": "raw = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "lib/order.mjs",
+        "line": 97,
+        "text": "mkdirSync(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/order.mjs",
+        "line": 98,
+        "text": "writeFileSync(tmp, `${JSON.stringify(payload, null, 2)}\\n`, 'utf8')"
+      },
+      {
+        "file": "lib/order.mjs",
+        "line": 103,
+        "text": "unlinkSync(tmp)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tool.mjs",
+        "line": 85,
+        "text": "* 宿主 `tools.register()` 只认 `ToolDefinition`（参数是纯 JSON Schema），"
+      },
+      {
+        "file": "lib/tool.mjs",
+        "line": 125,
+        "text": "* ⚠️ 这一块是 0.2.0 里\"工具根本不存在\"的真正原因：`tools.register()` 第一件事就是"
+      },
+      {
+        "file": "lib/tool.mjs",
+        "line": 230,
+        "text": "return tools.register(definition) ?? null"
+      },
+      {
+        "file": "prompt/index.js",
+        "line": 41,
+        "text": "* `inject = ['tools', 'sessionProjections']`），同一个预设里已经有一行靠它注册成功，"
+      },
+      {
+        "file": "prompt/index.js",
+        "line": 46,
+        "text": "export const inject = ['systemPrompt', 'tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

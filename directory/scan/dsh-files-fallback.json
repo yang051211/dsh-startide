@@ -1,0 +1,105 @@
+{
+  "name": "dsh-files-fallback",
+  "version": "0.9.16",
+  "scannedAt": "2026-11-26T23:01:20.491Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 167,
+        "text": "const r = await fetch('/dsh-file-attachment/config')"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 185,
+        "text": "const r = await fetch('/dsh-file-attachment/model-capability')"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 216,
+        "text": "response = await fetch('/dsh-file-attachment/save' + q, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 245,
+        "text": "const response = await fetch('/dsh-file-attachment/precheck', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 1592,
+        "text": "fetch('/dsh-file-attachment/models').then((r) => r.json()).then((env) => {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 10,
+        "text": "import { link, mkdir, open, readFile, rename, stat, unlink, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 166,
+        "text": "const text = await readFile(CONFIG_PATH, 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 185,
+        "text": "const raw = JSON.parse(await readFile(CONFIG_PATH, 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 188,
+        "text": "await writeFile(CONFIG_PATH, JSON.stringify(next, null, 2) + '\\n', 'utf8')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 222,
+        "text": "const text = await readFile(idxPath, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 23,
+        "text": "export const inject = ['webServer', 'tools', 'agentDefaultModel', 'llm']"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1090,
+        "text": "const tools = (agent.ctx && typeof agent.ctx === 'object') ? agent.ctx.tools : undefined"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1126,
+        "text": "tools.register(defineTool({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agentDefaultModel",
+    "llm",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

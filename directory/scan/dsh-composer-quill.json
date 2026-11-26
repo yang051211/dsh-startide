@@ -1,24 +1,24 @@
 {
   "name": "dsh-composer-quill",
-  "version": "0.31.59",
-  "scannedAt": "2026-11-26T09:54:49.803Z",
+  "version": "0.31.65",
+  "scannedAt": "2026-11-26T23:01:08.084Z",
   "icon": "dsh-composer-quill.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 193,
+        "line": 200,
         "text": "fetch(BEACON, {"
       },
       {
         "file": "client.js",
-        "line": 217,
+        "line": 224,
         "text": "const response = await fetch(url, {"
       },
       {
         "file": "client.js",
-        "line": 323,
+        "line": 330,
         "text": "const response = await fetch(path, {"
       }
     ]
@@ -29,22 +29,27 @@
       {
         "file": "index.js",
         "line": 18,
-        "text": "import { existsSync, readFileSync, renameSync, statSync } from 'node:fs'"
+        "text": "import { existsSync, readdirSync, readFileSync, renameSync, rmSync, statSync } from 'node:fs'"
       },
       {
         "file": "index.js",
         "line": 19,
-        "text": "import { appendFile, readFile as readFileAsync, rename as renameAsync, writeFile as writeFileAsync } from 'node:fs/promises'"
+        "text": "import { appendFile, open as openAsync, readFile as readFileAsync, rename as renameAsync } from 'node:fs/promises'"
       },
       {
         "file": "index.js",
-        "line": 196,
+        "line": 198,
+        "text": "if (now - statSync(full).mtimeMs > 10 * 60_000) rmSync(full, { force: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 211,
+        "text": "await handle.writeFile(data)"
+      },
+      {
+        "file": "index.js",
+        "line": 235,
         "text": "appendFile(file, line).catch(() => {})"
-      },
-      {
-        "file": "index.js",
-        "line": 1058,
-        "text": "const raw = JSON.parse(readFileSync(cacheFile(), 'utf8'))"
       }
     ]
   },

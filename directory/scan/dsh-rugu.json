@@ -1,0 +1,124 @@
+{
+  "name": "dsh-rugu",
+  "version": "0.1.2",
+  "scannedAt": "2026-11-26T23:01:17.948Z",
+  "icon": "dsh-rugu.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/admin/ui/base.js",
+        "line": 296,
+        "text": "r = await fetch(url, { credentials: 'same-origin', cache: 'no-store', ...init, headers: { 'x-pm-admin': TOKEN, ...(init.headers ?? {}) } });"
+      },
+      {
+        "file": "src/admin/ui/settings.js",
+        "line": 1012,
+        "text": "const r = await fetch(`admin.export?name=${encodeURIComponent(name)}`, { credentials: 'same-origin', headers: { 'x-pm-admin': token } });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/preset-config.mjs",
+        "line": 10,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "scripts/preset-config.mjs",
+        "line": 18,
+        "text": "const read = (f) => fs.readFileSync(f, 'utf8').replace(/^﻿/, '');"
+      },
+      {
+        "file": "scripts/preset-config.mjs",
+        "line": 62,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true });"
+      },
+      {
+        "file": "scripts/preset-config.mjs",
+        "line": 64,
+        "text": "fs.writeFileSync(tmp, `${JSON.stringify(plan.config, null, 2)}\\n`);"
+      },
+      {
+        "file": "src/adapters/qq-bridge.js",
+        "line": 208,
+        "text": "try { text = io.readFile(FILES.social); } catch (e) {"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/index.js",
+        "line": 294,
+        "text": "if (typeof ctx.tools?.guard === 'function') {"
+      },
+      {
+        "file": "src/host/index.js",
+        "line": 295,
+        "text": "const d = ctx.tools.guard((exec) => { try { return egress.guardCheck(exec); } catch { return undefined; } });"
+      },
+      {
+        "file": "src/host/tools.js",
+        "line": 2,
+        "text": "// 注册：agent/created 时对认得出的会话（配置里的 preset、或者符合某个适配器绑定声明的会话特征）用 agent.ctx.tools.register 只给它注册"
+      },
+      {
+        "file": "src/host/tools.js",
+        "line": 457,
+        "text": "try { for (const d of defs) disposers.push(agent.ctx.tools.register(d)); } catch (e) {"
+      },
+      {
+        "file": "src/index.js",
+        "line": 11,
+        "text": "export const inject = ['tools', 'connection'];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/host/embedding-setup.js",
+        "line": 10,
+        "text": "import { execFile as execFileCb } from 'node:child_process';"
+      },
+      {
+        "file": "src/host/embedding-setup.js",
+        "line": 91,
+        "text": "        execFile('nvidia-smi', ['--query-gpu=memory.used,memory.total,memory.free,utilization.gpu', '--format=csv,noheader,nounits'], { timeout: 3000, windowsHi"
+      },
+      {
+        "file": "src/host/gpu/sampler.js",
+        "line": 6,
+        "text": "import { execFile as execFileCb } from 'node:child_process';"
+      },
+      {
+        "file": "src/host/gpu/sampler.js",
+        "line": 42,
+        "text": "execFile('nvidia-smi', ['--query-gpu=memory.used,memory.total,memory.free,utilization.gpu', '--format=csv,noheader,nounits'],"
+      },
+      {
+        "file": "src/ports/rerank.js",
+        "line": 5,
+        "text": "import { spawn as spawnCb } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

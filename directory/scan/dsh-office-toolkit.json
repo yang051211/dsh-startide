@@ -1,7 +1,7 @@
 {
   "name": "dsh-office-toolkit",
-  "version": "0.3.33",
-  "scannedAt": "2026-10-26T10:06:16.020Z",
+  "version": "0.3.34",
+  "scannedAt": "2026-11-26T23:01:21.982Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -58,12 +58,12 @@
       },
       {
         "file": "lib/index.js",
-        "line": 708,
+        "line": 710,
         "text": "const tools = ctx.tools || ctx.get('tools');"
       },
       {
         "file": "lib/index.js",
-        "line": 717,
+        "line": 719,
         "text": "const dispose = tools.register(tool);"
       }
     ]
@@ -85,6 +85,16 @@
         "file": "lib/core/pdf.js",
         "line": 27,
         "text": "const child = spawn(exe, args, { stdio: ['pipe', 'pipe', 'pipe'] });"
+      },
+      {
+        "file": "lib/core/xlsx-py.js",
+        "line": 9,
+        "text": "import { execFile, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/core/xlsx-py.js",
+        "line": 42,
+        "text": "execFile(exe, ['-c', PROBE_SRC], { timeout: PROBE_TIMEOUT_MS }, (err, stdout) => {"
       }
     ]
   },
@@ -101,6 +111,12 @@
   "requiredServices": [
     "tools"
   ],
-  "setupHints": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 160,
+      "text": "yxl 兜底需要本机 Python ≥ 3.8 且装好 `openpyxl`（`pip3 install openpyxl`，或用 `DSH_OFFICE_PYTHON` 指定解释器）；缺了会报 `PY_XLSX_UNAVAILABLE` 并给出安装命令，不会写出半截文件。回退到 openpyxl 时该文件原有的图表会"
+    }
+  ],
   "skippedEntries": []
 }

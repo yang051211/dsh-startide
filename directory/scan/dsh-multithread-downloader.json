@@ -1,7 +1,7 @@
 {
   "name": "dsh-multithread-downloader",
-  "version": "1.4.1",
-  "scannedAt": "2026-11-25T23:07:32.609Z",
+  "version": "1.5.0",
+  "scannedAt": "2026-11-26T23:01:23.538Z",
   "icon": "dsh-multithread-downloader.svg",
   "network": {
     "hit": true,
@@ -13,12 +13,12 @@
       },
       {
         "file": "index.js",
-        "line": 1854,
+        "line": 2328,
         "text": "域名，不依赖本机 DNS：本机解析被污染或劫持时，先用它拿到真实 IP，再配合 curl --resolve / 请求头直连。name 必填（批量用 names，最多 20 个）；type 默认 A，both = A+AAAA，也支持 CNAME/TXT/MX/NS/SOA/PTR/SRV/CAA/HTTPS；prov"
       },
       {
         "file": "index.js",
-        "line": 2245,
+        "line": 2730,
         "text": "- 用 DNS over HTTPS 解析域名，不依赖本机 DNS；本机解析被污染时先拿到真实 IP，再用 \\`curl --resolve\\` 或请求头直连。"
       },
       {
@@ -48,17 +48,17 @@
       },
       {
         "file": "index.js",
-        "line": 349,
+        "line": 437,
         "text": "await writeFile(path, payload, 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 359,
+        "line": 447,
         "text": "return JSON.parse(await readFile(path, 'utf8'))"
       },
       {
         "file": "index.js",
-        "line": 368,
+        "line": 456,
         "text": "await unlink(path).catch(() => {})"
       }
     ]
@@ -68,27 +68,27 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 2178,
+        "line": 2662,
         "text": "export const inject = ['tools', 'webServer']"
       },
       {
         "file": "index.js",
-        "line": 2350,
+        "line": 2835,
         "text": "ctx.effect(() => ctx.tools.register(makeTool(manager)), 'multithread-downloader: tool')"
       },
       {
         "file": "index.js",
-        "line": 2351,
+        "line": 2836,
         "text": "ctx.effect(() => ctx.tools.register(makeDohTool(manager)), 'multithread-downloader: doh tool')"
       },
       {
         "file": "index.js",
-        "line": 2352,
+        "line": 2837,
         "text": "ctx.effect(() => ctx.tools.register(makeProbeTool(manager)), 'multithread-downloader: probe tool')"
       },
       {
         "file": "index.js",
-        "line": 2363,
+        "line": 2848,
         "text": "return ctx.tools.get('downloader', context.scope) === undefined ? '' : TOOL_GUIDANCE"
       }
     ]
@@ -96,6 +96,11 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "index.js",
+        "line": 1311,
+        "text": "for (const chunk of this.chunks) spawn(chunk)"
+      },
       {
         "file": "lib/files.js",
         "line": 8,

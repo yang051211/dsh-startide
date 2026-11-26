@@ -1,0 +1,135 @@
+{
+  "name": "dsh-rea-restore",
+  "version": "1.11.1",
+  "scannedAt": "2026-11-26T23:01:26.340Z",
+  "icon": "dsh-rea-restore.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 39,
+        "text": " function getStatus() { const r = await fetch(api('/rea/environment'), { cache: 'no-store' }); const j = await r.json(); if (!r.ok) throw new Error(j.error || `"
+      },
+      {
+        "file": "client.js",
+        "line": 40,
+        "text": "ction installGhidra() { const r = await fetch(api('/rea/ghidra/install'), { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{}' }); cons"
+      },
+      {
+        "file": "client.js",
+        "line": 41,
+        "text": "ion saveConfig(paths) { const r = await fetch(api('/rea/engine/config'), { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify"
+      },
+      {
+        "file": "client.js",
+        "line": 49,
+        "text": "const r = await fetch(url, init);"
+      },
+      {
+        "file": "client.js",
+        "line": 65,
+        "text": "ion savePolicy(patch) { const r = await fetch(api('/rea/policy'), { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(patch)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 37,
+        "text": "import { readFileSync } from 'node:fs';"
+      },
+      {
+        "file": "index.js",
+        "line": 38,
+        "text": "import { mkdir } from 'node:fs/promises';"
+      },
+      {
+        "file": "index.js",
+        "line": 95,
+        "text": "return JSON.parse(readFileSync(join(PLUGIN_ROOT, 'package.json'), 'utf8')).version ?? '0.0.0';"
+      },
+      {
+        "file": "index.js",
+        "line": 149,
+        "text": "return JSON.parse(readFileSync(join(reaPackage, 'package.json'), 'utf8')).version ?? 'unknown';"
+      },
+      {
+        "file": "index.js",
+        "line": 455,
+        "text": "await mkdir(WORKSPACE_DIR, { recursive: true }).catch(() => {});"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 73,
+        "text": "export const inject = ['tools', 'webServer'];"
+      },
+      {
+        "file": "index.js",
+        "line": 299,
+        "text": "const dispose = ctx.tools?.register(guarded);"
+      },
+      {
+        "file": "index.js",
+        "line": 466,
+        "text": "const registry = createToolRegistry((definition) => ctx.tools.register(definition), {"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/dynamic/dynamic.js",
+        "line": 27,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/dynamic/dynamic.js",
+        "line": 40,
+        "text": "spawn('taskkill', ['/pid', String(pid), '/t', '/f'], { windowsHide: true, stdio: 'ignore' });"
+      },
+      {
+        "file": "lib/dynamic/dynamic.js",
+        "line": 65,
+        "text": "const child = spawn(candidate.command, [...candidate.args, '-c', 'import frida;print(frida.__version__)'], { windowsHide: true });"
+      },
+      {
+        "file": "lib/dynamic/dynamic.js",
+        "line": 125,
+        "text": "const child = spawn(python, ["
+      },
+      {
+        "file": "lib/dynamic/memdump.js",
+        "line": 24,
+        "text": "import { spawn } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 107,
+      "text": "` 且每次调用 `confirm: true`；运行前需 `python -m pip install frida`（本机实测 17.26.3）。若 `python` 与 `py -3` 不是同一个解释器，插件依次探测 `python` / `py -3` / `python3`，并使用真正装了 Frida 的那个——"
+    }
+  ],
+  "skippedEntries": []
+}

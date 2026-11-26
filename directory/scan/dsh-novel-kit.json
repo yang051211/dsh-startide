@@ -1,0 +1,109 @@
+{
+  "name": "dsh-novel-kit",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-26T23:01:14.649Z",
+  "icon": "dsh-novel-kit.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/native/hongguo/vendor/openhongguo/index.js",
+        "line": 8,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "lib/native/hongguo/vendor/openhongguo/index.js",
+        "line": 9,
+        "text": "import https from 'node:https';"
+      },
+      {
+        "file": "lib/native/hongguo/vendor/openhongguo/index.js",
+        "line": 301,
+        "text": "const page = await fetch(cursor ?? '');"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/engine/chapter.js",
+        "line": 5,
+        "text": "import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/engine/chapter.js",
+        "line": 280,
+        "text": "await mkdir(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/engine/chapter.js",
+        "line": 284,
+        "text": "await writeFile(file, body, 'utf8')"
+      },
+      {
+        "file": "lib/engine/chapter.js",
+        "line": 304,
+        "text": "const text = await readFile(path.resolve(session.draft.path), 'utf8')"
+      },
+      {
+        "file": "lib/engine/chapter.js",
+        "line": 392,
+        "text": "const draft = await readFile(path.resolve(session.draft.path), 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 10,
+        "text": "export const inject = ['tools', 'commands', 'workingDirectory']"
+      },
+      {
+        "file": "index.js",
+        "line": 28,
+        "text": "ctx.effect(() => ctx.tools.register(guarded, { when: (context) => gate.isOn(context) }))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/native/comic/image-crop.mjs",
+        "line": 2,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/native/comic/image-gray.mjs",
+        "line": 3,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/native/comic/windows-ocr.mjs",
+        "line": 3,
+        "text": "import { execFile } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "lib/native/hongguo/vendor/openhongguo/dist/openhongguo.wasm"
+  ],
+  "requiredServices": [
+    "agents",
+    "commands",
+    "tools",
+    "typert",
+    "workingDirectory"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

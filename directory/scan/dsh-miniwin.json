@@ -1,0 +1,121 @@
+{
+  "name": "dsh-miniwin",
+  "version": "0.4.9",
+  "scannedAt": "2026-11-26T23:01:21.062Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 253,
+        "text": "fetch(API + '/state', { headers: { Accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 287,
+        "text": "fetch(API + '/auto', { headers: { Accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 326,
+        "text": "fetch(API + '/launch', {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 358,
+        "text": "fetch(API + '/devices', { headers: { Accept: 'application/json' } })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 452,
+        "text": "* 后者的情况下 fetch('/dsh-miniwin/wifi-state') 会因为缺"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 35,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 115,
+        "text": "const raw = JSON.parse(fs.readFileSync(configPath(), 'utf8'))"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 125,
+        "text": "try { cfg = JSON.parse(fs.readFileSync(p, 'utf8')) } catch {}"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 127,
+        "text": "fs.mkdirSync(pathMod.dirname(p), { recursive: true })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 128,
+        "text": "fs.writeFileSync(p, JSON.stringify(cfg, null, 2))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/discover.js",
+        "line": 24,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/discover.js",
+        "line": 29,
+        "text": "execFile(adbPath, args, { timeout, windowsHide: true, maxBuffer: 4 << 20 }, (err, stdout, stderr) => {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1298,
+        "text": "const { spawn } = await import('node:child_process')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1319,
+        "text": "*    DSH 插件宿主本身跑在 Electron 里，spawn(process.execPath) 会把"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 1341,
+        "text": "const child = spawn(nodeBin, ["
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "runtime/tools/scrcpy/scrcpy-win64-v5.0.1/adb.exe",
+    "runtime/tools/scrcpy/scrcpy-win64-v5.0.1/AdbWinApi.dll",
+    "runtime/tools/scrcpy/scrcpy-win64-v5.0.1/AdbWinUsbApi.dll",
+    "runtime/tools/scrcpy/scrcpy-win64-v5.0.1/avcodec-63.dll",
+    "runtime/tools/scrcpy/scrcpy-win64-v5.0.1/avformat-63.dll",
+    "runtime/tools/scrcpy/scrcpy-win64-v5.0.1/avutil-61.dll",
+    "runtime/tools/scrcpy/scrcpy-win64-v5.0.1/libusb-1.0.dll",
+    "runtime/tools/scrcpy/scrcpy-win64-v5.0.1/scrcpy.exe",
+    "runtime/tools/scrcpy/scrcpy-win64-v5.0.1/SDL3.dll",
+    "runtime/tools/scrcpy/scrcpy-win64-v5.0.1/swresample-7.dll"
+  ],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

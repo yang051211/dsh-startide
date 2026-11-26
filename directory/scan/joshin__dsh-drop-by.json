@@ -1,7 +1,7 @@
 {
   "name": "@joshin/dsh-drop-by",
-  "version": "0.1.5",
-  "scannedAt": "2026-11-24T01:02:44.860Z",
+  "version": "0.1.6",
+  "scannedAt": "2026-11-26T23:01:14.933Z",
   "icon": "joshin__dsh-drop-by.svg",
   "network": {
     "hit": true,
@@ -12,6 +12,16 @@
         "text": "const response = await fetch(origin + route, {"
       },
       {
+        "file": "src/chat/qq-command.js",
+        "line": 334,
+        "text": "const fetched = typeof media.fetch === 'function' ? await media.fetch(safeUrl) : await media.collect('web', safeUrl);"
+      },
+      {
+        "file": "src/chat/send.js",
+        "line": 60,
+        "text": "const res = await fetch(url, {"
+      },
+      {
         "file": "src/client.js",
         "line": 58,
         "text": "return fetch(API + path, { cache: 'no-store' }).then(readJson);"
@@ -20,16 +30,6 @@
         "file": "src/client.js",
         "line": 62,
         "text": "return fetch(API + path, {"
-      },
-      {
-        "file": "src/client.js",
-        "line": 70,
-        "text": "return fetch(BRIDGE_API + path, { cache: 'no-store' }).then(readJson);"
-      },
-      {
-        "file": "src/client.js",
-        "line": 74,
-        "text": "return fetch(BRIDGE_API + path, {"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/action-proposal.js",
+        "file": "src/channels/douyin-im.js",
         "line": 1,
         "text": "import fs from 'node:fs';"
       },
       {
-        "file": "src/action-proposal.js",
-        "line": 28,
-        "text": "const conn = JSON.parse(fs.readFileSync(path.join(dshHome(), 'qq-bridge', 'connection.json'), 'utf8'));"
+        "file": "src/channels/douyin-im.js",
+        "line": 14,
+        "text": "try { return JSON.parse(fs.readFileSync(channelFile(name), 'utf8')); } catch (error) {"
       },
       {
-        "file": "src/action-proposal.js",
-        "line": 78,
-        "text": "try { return JSON.parse(fs.readFileSync(FILE, 'utf8')); } catch { return {}; }"
+        "file": "src/channels/douyin-im.js",
+        "line": 23,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true });"
       },
       {
-        "file": "src/action-proposal.js",
-        "line": 82,
-        "text": "fs.mkdirSync(path.dirname(FILE), { recursive: true });"
+        "file": "src/channels/douyin-im.js",
+        "line": 24,
+        "text": "fs.writeFileSync(temp, JSON.stringify(data, null, 2) + '\\n');"
       },
       {
-        "file": "src/action-proposal.js",
-        "line": 84,
-        "text": "fs.writeFileSync(tmp, JSON.stringify(state) + '\\n', 'utf8');"
+        "file": "src/channels/douyin-im.js",
+        "line": 108,
+        "text": "return (fs.existsSync(config) && JSON.parse(fs.readFileSync(config, 'utf8')).pythonPath) || 'python';"
       }
     ]
   },
@@ -67,28 +67,28 @@
     "hit": true,
     "evidence": [
       {
-        "file": "src/plugin.js",
-        "line": 1450,
+        "file": "src/chat/plugin-session.js",
+        "line": 92,
         "text": "const dispose = tools.register(tool);"
       },
       {
-        "file": "src/plugin.js",
-        "line": 1452,
+        "file": "src/chat/plugin-session.js",
+        "line": 94,
         "text": "const disposeWatch = tools.register(spec({"
       },
       {
-        "file": "src/plugin.js",
-        "line": 1483,
+        "file": "src/chat/plugin-session.js",
+        "line": 125,
         "text": "const disposeCalendar = tools.register(spec({"
       },
       {
-        "file": "src/plugin.js",
-        "line": 1511,
+        "file": "src/chat/plugin-session.js",
+        "line": 153,
         "text": "const disposeEmotionRepair = tools.register(spec({"
       },
       {
-        "file": "src/plugin.js",
-        "line": 1528,
+        "file": "src/chat/plugin-session.js",
+        "line": 170,
         "text": "const disposeMemoryMerge = tools.register(spec({"
       }
     ]
@@ -102,23 +102,23 @@
         "text": "import { execFile } from 'node:child_process';"
       },
       {
-        "file": "src/explore-browser.js",
-        "line": 3,
+        "file": "src/chat/qq-command.js",
+        "line": 1,
         "text": "import { execFile } from 'node:child_process';"
       },
       {
-        "file": "src/llm.js",
+        "file": "src/decision/llm.js",
         "line": 10,
         "text": "import { spawn } from 'node:child_process';"
       },
       {
-        "file": "src/llm.js",
+        "file": "src/decision/llm.js",
         "line": 109,
         "text": "child = spawn(avail.electron, args, {"
       },
       {
-        "file": "src/perception.js",
-        "line": 13,
+        "file": "src/explore/explore-browser.js",
+        "line": 3,
         "text": "import { execFile } from 'node:child_process';"
       }
     ]
@@ -130,6 +130,7 @@
   "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [
+    "tools/winprobe-v2.dll",
     "tools/winprobe.dll"
   ],
   "requiredServices": [],

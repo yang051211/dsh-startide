@@ -1,7 +1,7 @@
 {
   "name": "dsh-bash-terminal-ts",
-  "version": "0.9.2",
-  "scannedAt": "2026-11-24T23:54:13.223Z",
+  "version": "0.9.5",
+  "scannedAt": "2026-11-26T23:01:07.663Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -107,19 +107,19 @@
         "text": "const running = subprocess.spawn(spawnSpec(resolved, argv, env, signal));"
       },
       {
-        "file": "lib/payload.js",
-        "line": 126,
-        "text": "const r = spawnSync(\"wsl.exe\", [\"-l\", \"-q\"], { timeout: 5000, windowsHide: true });"
-      },
-      {
-        "file": "lib/payload.js",
-        "line": 142,
-        "text": "return createRequire(import.meta.url)(\"node:child_process\");"
-      },
-      {
         "file": "lib/terminal.js",
         "line": 134,
         "text": "const term = nodePty.spawn(argv[0], argv.slice(1), {"
+      },
+      {
+        "file": "lib/webterminals/catalog.js",
+        "line": 15,
+        "text": "import { execFile } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/webterminals/catalog.js",
+        "line": 39,
+        "text": "const child = execFile(wslPath, [\"-l\", \"-q\"], { windowsHide: true, timeout: timeoutMs, encoding: \"utf8\" }, (error, stdout) => {"
       }
     ]
   },

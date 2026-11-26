@@ -1,0 +1,102 @@
+{
+  "name": "dsh-galley",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-26T23:01:26.062Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 2290,
+        "text": "const res = await fetch(url, { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2320,
+        "text": "const res = await fetch(HEALTH_ROUTE, { cache: \"no-store\" });"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 2383,
+        "text": "const res = await fetch(withCwdQuery(path, sessionCwd), {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/galley-core.mjs",
+        "line": 3,
+        "text": "import { mkdirSync as mkdirSync2, writeFileSync as writeFileSync2 } from \"node:fs\";"
+      },
+      {
+        "file": "lib/galley-core.mjs",
+        "line": 107,
+        "text": "} from \"node:fs\";"
+      },
+      {
+        "file": "lib/galley-core.mjs",
+        "line": 245,
+        "text": "mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "lib/galley-core.mjs",
+        "line": 258,
+        "text": "const packet = JSON.parse(readFileSync(p, \"utf8\"));"
+      },
+      {
+        "file": "lib/galley-core.mjs",
+        "line": 284,
+        "text": "rmSync(dir, { recursive: true, force: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 4473,
+        "text": "var inject = [\"tools\"];"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4569,
+        "text": "const tools = ctx.tools;"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 4573,
+        "text": "disposers.push(tools.register(def));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 765,
+        "text": "import { execFileSync } from \"node:child_process\";"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: node build.mjs"
+      }
+    ]
+  },
+  "dependencies": 4,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

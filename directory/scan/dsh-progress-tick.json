@@ -1,0 +1,74 @@
+{
+  "name": "dsh-progress-tick",
+  "version": "0.6.5",
+  "scannedAt": "2026-11-26T23:01:23.679Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 616,
+        "text": "const response = await fetch(`api/progress-tick/${action}`, {"
+      },
+      {
+        "file": "client/client.js",
+        "line": 636,
+        "text": "* 多开几个标签页 / 视图后连接池被占满，`fetch(status)` 就会一直排队，"
+      },
+      {
+        "file": "client/client.js",
+        "line": 673,
+        "text": "const response = await fetch('api/progress-tick/status', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 19,
+        "text": "import { promises as fsp } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 577,
+        "text": "await fsp.mkdir(dir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 578,
+        "text": "await fsp.writeFile(join(dir, '_boot.json'), `${JSON.stringify({"
+      },
+      {
+        "file": "index.js",
+        "line": 611,
+        "text": "await fsp.mkdir(dir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 612,
+        "text": "await fsp.writeFile(file, `${JSON.stringify(payload, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}
