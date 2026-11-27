@@ -1,39 +1,45 @@
 {
   "name": "@kangyishuai/dsh-projects",
-  "version": "0.9.1",
-  "scannedAt": "2026-11-22T21:06:39.958Z",
+  "version": "0.10.1",
+  "scannedAt": "2026-11-27T10:06:08.613Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 4750,
+        "text": "fetch(`/artifacts/${encodeURIComponent(id)}`, { credentials: \"same-origin\" })"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/project-files.js",
-        "line": 6,
-        "text": "import { existsSync, readFileSync } from \"node:fs\";"
+        "file": "lib/host-instructions.js",
+        "line": 11,
+        "text": "import { existsSync, readFileSync, statSync } from \"node:fs\";"
       },
       {
-        "file": "lib/project-files.js",
-        "line": 18,
+        "file": "lib/host-instructions.js",
+        "line": 34,
         "text": "const text = readFileSync(file, \"utf8\");"
       },
       {
-        "file": "lib/service.js",
+        "file": "lib/memory-store.js",
         "line": 16,
         "text": "} from \"node:fs\";"
       },
       {
-        "file": "lib/service.js",
-        "line": 478,
-        "text": "mkdirSync(dirname(file), { recursive: true });"
+        "file": "lib/memory-store.js",
+        "line": 92,
+        "text": "const indexText = existsSync(indexFile) ? readFileSync(indexFile, \"utf8\") : \"\";"
       },
       {
-        "file": "lib/service.js",
-        "line": 481,
-        "text": "if (existsSync(file)) rmSync(file, { force: true });"
+        "file": "lib/memory-store.js",
+        "line": 101,
+        "text": "const text = existsSync(full) ? readFileSync(full, \"utf8\") : \"\";"
       }
     ]
   },
@@ -41,8 +47,18 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/service.js",
-        "line": 399,
+        "file": "lib/coordinator-tools.js",
+        "line": 10,
+        "text": "//   2. 可以在单测里用假 `agent.ctx.tools.register` 把「6 个工具都注册了」钉死。"
+      },
+      {
+        "file": "lib/coordinator-tools.js",
+        "line": 25,
+        "text": "* @param {any} input.agent 协调器 agent（取 `agent.ctx.tools`）"
+      },
+      {
+        "file": "lib/coordinator-tools.js",
+        "line": 50,
         "text": "const dispose = tools.register(definition);"
       }
     ]
@@ -57,7 +73,7 @@
       },
       {
         "file": "lib/exec.js",
-        "line": 23,
+        "line": 36,
         "text": "const { stdout, stderr } = await execFile(command, args ?? [], {"
       }
     ]

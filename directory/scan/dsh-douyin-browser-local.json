@@ -1,11 +1,16 @@
 {
   "name": "dsh-douyin-browser-local",
-  "version": "1.4.7",
-  "scannedAt": "2026-11-12T21:20:13.170Z",
+  "version": "1.5.0",
+  "scannedAt": "2026-11-27T10:06:09.382Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
+      {
+        "file": "browser-host.mjs",
+        "line": 89,
+        "text": "const response = await fetch(endpoint, { signal: AbortSignal.any([signal, AbortSignal.timeout(750)]), redirect: 'error' }).catch(() => null);"
+      },
       {
         "file": "chat-browser.mjs",
         "line": 5,
@@ -13,8 +18,8 @@
       },
       {
         "file": "core.mjs",
-        "line": 223,
-        "text": "const response = await fetch(`http://127.0.0.1:${PORT}/json/version`, { signal: AbortSignal.timeout(1200) });"
+        "line": 252,
+        "text": "const response = await fetch(`http://127.0.0.1:${port}/json/version`, { signal: AbortSignal.timeout(1200), redirect: 'error' });"
       },
       {
         "file": "media/index.mjs",
@@ -25,11 +30,6 @@
         "file": "media/index.mjs",
         "line": 10,
         "text": "import { request as httpRequest } from 'node:http';"
-      },
-      {
-        "file": "media/index.mjs",
-        "line": 273,
-        "text": "tchLocal=async(...request)=>{const response=await this.fetch(...request);if(response.ok){try{rawOutput=await response.clone().json();}catch{}}return response;};"
       }
     ]
   },
@@ -43,23 +43,23 @@
       },
       {
         "file": "api-agent.mjs",
-        "line": 31,
+        "line": 32,
         "text": "const parsed = parseEnv(fs.readFileSync(envFile, 'utf8'));"
       },
       {
-        "file": "autonomous-comments.mjs",
+        "file": "atomic-file.mjs",
         "line": 1,
-        "text": "import fs from 'node:fs';"
+        "text": "import fs from 'node:fs';import {randomUUID} from 'node:crypto';"
       },
       {
-        "file": "autonomous-comments.mjs",
-        "line": 14,
-        "text": "t = fs.lstatSync(file); if (!stat.isFile() || stat.isSymbolicLink() || stat.size > 4_194_304) throw Error(); return JSON.parse(fs.readFileSync(file, 'utf8')); }"
+        "file": "atomic-file.mjs",
+        "line": 18,
+        "text": "fs.writeFileSync(temporary,JSON.stringify(value,null,2)+(newline?'\\n':''),{mode:0o600,flag:'wx'});"
       },
       {
-        "file": "autonomous-comments.mjs",
-        "line": 19,
-        "text": "nSync(temporary, 'wx', 0o600); try { fs.writeFileSync(descriptor, JSON.stringify(value, null, 2) + '\\n'); fs.fsyncSync(descriptor); } finally { fs.closeSync(des"
+        "file": "atomic-file.mjs",
+        "line": 21,
+        "text": "if (fs.existsSync(temporary)) retryFileAccess(() => fs.unlinkSync(temporary));"
       }
     ]
   },
@@ -73,7 +73,7 @@
       },
       {
         "file": "dsh-plugin.mjs",
-        "line": 251,
+        "line": 276,
         "text": "for (const tool of definitions) disposers.push(ctx.tools.register(tool));"
       },
       {
@@ -99,7 +99,17 @@
       {
         "file": "browser-host.mjs",
         "line": 5,
+        "text": "import { execFile, spawn } from 'node:child_process';"
+      },
+      {
+        "file": "browser-mode.mjs",
+        "line": 4,
         "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "browser-mode.mjs",
+        "line": 101,
+        "text": "execFile(shell, ['-NoLogo', '-NoProfile', '-NonInteractive', '-Command', command], {"
       },
       {
         "file": "core.mjs",
@@ -108,18 +118,8 @@
       },
       {
         "file": "core.mjs",
-        "line": 239,
+        "line": 270,
         "text": " await new Promise((resolve, reject) => execFile(executable, args, { env: { ...process.env, DOUYIN_PROBE_PID: String(pid) }, windowsHide: true, timeout: 8000, m"
-      },
-      {
-        "file": "core.mjs",
-        "line": 275,
-        "text": "const child = spawn(resolveNodeExecutable(), [path.join(ROOT, 'browser-host.mjs'), PROFILE, CONTROL, String(PORT)], {"
-      },
-      {
-        "file": "diagnostics.mjs",
-        "line": 4,
-        "text": "import { execFile } from 'node:child_process';"
       }
     ]
   },
@@ -128,7 +128,9 @@
     "evidence": []
   },
   "dependencies": 2,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "media/vendor/pdf/pdfjs.mjs"
+  ],
   "binaryFiles": [],
   "requiredServices": [],
   "setupHints": [],

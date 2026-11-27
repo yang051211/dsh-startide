@@ -1,0 +1,92 @@
+{
+  "name": "dsh-magpie-hub",
+  "version": "0.2.10",
+  "scannedAt": "2026-11-27T10:06:19.950Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 1935,
+        "text": "const hello = await fetch(`${origin}/?token=${encodeURIComponent(useToken)}`, { redirect: 'manual' });"
+      },
+      {
+        "file": "src/index.js",
+        "line": 1941,
+        "text": "const res = await fetch(`${origin}/magpie-hub/api/backup/snapshot`, {"
+      },
+      {
+        "file": "src/market.js",
+        "line": 388,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "src/market.js",
+        "line": 444,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "src/rpc.js",
+        "line": 539,
+        "text": "async fetch(request) {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/backup.js",
+        "line": 20,
+        "text": "import { readFile, rename, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "src/backup.js",
+        "line": 183,
+        "text": "return JSON.parse(await readFile(file, 'utf8'));"
+      },
+      {
+        "file": "src/backup.js",
+        "line": 195,
+        "text": "await writeFile(tmp, `${JSON.stringify(value, null, 2)}\\n`, 'utf8');"
+      },
+      {
+        "file": "src/backup.js",
+        "line": 366,
+        "text": "return open(await readFile(file), pass);"
+      },
+      {
+        "file": "src/hotreload.js",
+        "line": 30,
+        "text": "import { watch } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 72,
+      "text": "全都没有时建在 `<DSH_HOME>/magpie`。插件装在 `<数据根>/plugins/node_modules/`。"
+    }
+  ],
+  "skippedEntries": []
+}

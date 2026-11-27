@@ -1,7 +1,7 @@
 {
   "name": "gemworks",
-  "version": "0.3.19",
-  "scannedAt": "2026-11-12T21:20:33.944Z",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-27T10:06:25.276Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "dist/antigravity.js",
-        "line": 24,
-        "text": "import { mkdirSync, readFileSync, writeFileSync } from \"node:fs\";"
+        "file": "dist/bridge.js",
+        "line": 17,
+        "text": "import { cpSync, mkdirSync, readdirSync } from \"node:fs\";"
       },
       {
-        "file": "dist/antigravity.js",
-        "line": 39,
-        "text": "return { ...fallback, ...JSON.parse(readFileSync(file, \"utf8\")) };"
+        "file": "dist/bridge.js",
+        "line": 26,
+        "text": "import { readFileSync } from \"node:fs\";"
       },
       {
-        "file": "dist/antigravity.js",
-        "line": 46,
-        "text": "mkdirSync(resolve(file, \"..\"), { recursive: true });"
+        "file": "dist/bridge.js",
+        "line": 53,
+        "text": "import { statSync } from \"node:fs\";"
       },
       {
-        "file": "dist/antigravity.js",
-        "line": 47,
-        "text": "writeFileSync(file, JSON.stringify(value), \"utf8\");"
+        "file": "dist/bridge.js",
+        "line": 93,
+        "text": "read = JSON.parse(readFileSync(new URL(\"../package.json\", import.meta.url), \"utf8\")).version ?? \"\";"
       },
       {
-        "file": "dist/antigravity.js",
-        "line": 58,
-        "text": "text = readFileSync(path, \"utf8\");"
+        "file": "dist/bridge.js",
+        "line": 227,
+        "text": "mkdirSync(dirname(target), { recursive: true });"
       }
     ]
   },
@@ -78,17 +78,17 @@
       },
       {
         "file": "dist/hosts/dsh/plugin.js",
-        "line": 141,
+        "line": 146,
         "text": "agent.ctx.tools.register(defineTool({"
       },
       {
         "file": "dist/hosts/dsh/plugin.js",
-        "line": 171,
+        "line": 175,
         "text": "agent.ctx.tools.register(defineTool({"
       },
       {
         "file": "dist/hosts/dsh/plugin.js",
-        "line": 435,
+        "line": 439,
         "text": "return agent.ctx.tools.register(defineTool({"
       }
     ]
@@ -97,29 +97,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "dist/board-file.js",
-        "line": 7,
-        "text": "import { spawn, spawnSync } from \"node:child_process\";"
-      },
-      {
-        "file": "dist/board-file.js",
-        "line": 100,
-        "text": "const id = progIdOf(spawnSync(BROWSER_PROGID_ARGV[0], BROWSER_PROGID_ARGV.slice(1), { encoding: \"utf8\", timeout: 3000, windowsHide: true }).stdout ?? \"\");"
-      },
-      {
-        "file": "dist/board-file.js",
-        "line": 104,
-        "text": "return browserExeOf(spawnSync(argv[0], argv.slice(1), { encoding: \"utf8\", timeout: 3000, windowsHide: true }).stdout ?? \"\");"
-      },
-      {
-        "file": "dist/board-file.js",
-        "line": 153,
-        "text": "const child = spawn(first.argv[0], first.argv.slice(1), { detached: true, stdio: \"ignore\", windowsHide: true, env: { ...process.env, ...(first.env ?? {}) } });"
-      },
-      {
-        "file": "dist/gemworks-chunk-4A7KYSFU.mjs",
-        "line": 2,
+        "file": "dist/gemworks-chunk-4XZ34NQ3.mjs",
+        "line": 103,
         "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "dist/gemworks-chunk-4XZ34NQ3.mjs",
+        "line": 147,
+        "text": "const add = spawn("
+      },
+      {
+        "file": "dist/gemworks-chunk-4XZ34NQ3.mjs",
+        "line": 160,
+        "text": "const ran = spawn("
+      },
+      {
+        "file": "dist/gemworks-chunk-4XZ34NQ3.mjs",
+        "line": 1554,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "dist/gemworks-chunk-4XZ34NQ3.mjs",
+        "line": 1567,
+        "text": "try { child = spawn(NODE, [BUNDLE, \"opencode\"], { cwd: root, stdio: [\"pipe\", \"pipe\", \"ignore\"], windowsHide: true }); } catch { finish(undefined); return; }"
       }
     ]
   },

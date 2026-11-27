@@ -1,7 +1,7 @@
 {
   "name": "@ybbmm/dsh-session-delete",
-  "version": "0.6.0",
-  "scannedAt": "2026-11-22T21:06:41.205Z",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-27T10:06:19.059Z",
   "icon": "ybbmm__dsh-session-delete.svg",
   "network": {
     "hit": false,
@@ -12,28 +12,28 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 28,
-        "text": "import { appendFile, cp, lstat, mkdir, readFile, readlink, readdir, realpath, rename, rm, stat, writeFile } from 'node:fs/promises'"
+        "line": 29,
+        "text": "import { constants as fsConstants } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 397,
-        "text": "const owner = JSON.parse(await readFile(join(lockPath, PROCESS_LOCK_OWNER_FILE), 'utf8'))"
+        "line": 30,
+        "text": "import { appendFile, cp, lstat, mkdir, open, opendir, readFile, readlink, realpath, rename, rm, stat, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "index.js",
-        "line": 423,
-        "text": "await mkdir(root, { recursive: true })"
+        "line": 376,
+        "text": "await mkdir(requestedParent, { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 427,
-        "text": "await mkdir(lockPath)"
+        "line": 382,
+        "text": "await mkdir(canonicalRoot)"
       },
       {
         "file": "index.js",
-        "line": 430,
-        "text": "await writeFile(join(lockPath, PROCESS_LOCK_OWNER_FILE), `${JSON.stringify(owner)}\\n`, { flag: 'wx' })"
+        "line": 421,
+        "text": "await writeFile(temporary, text, { encoding: 'utf8', flag: 'wx', mode: 0o600 })"
       }
     ]
   },

@@ -1,25 +1,35 @@
 {
   "name": "dsh-composer-quill",
-  "version": "0.31.65",
-  "scannedAt": "2026-11-26T23:01:08.084Z",
+  "version": "0.32.1",
+  "scannedAt": "2026-11-27T10:06:07.551Z",
   "icon": "dsh-composer-quill.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 200,
+        "line": 201,
         "text": "fetch(BEACON, {"
       },
       {
         "file": "client.js",
-        "line": 224,
+        "line": 225,
         "text": "const response = await fetch(url, {"
       },
       {
         "file": "client.js",
-        "line": 330,
+        "line": 331,
         "text": "const response = await fetch(path, {"
+      },
+      {
+        "file": "client/prelude.js",
+        "line": 177,
+        "text": "fetch(BEACON, {"
+      },
+      {
+        "file": "client/prelude.js",
+        "line": 201,
+        "text": "const response = await fetch(url, {"
       }
     ]
   },
@@ -27,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 18,
-        "text": "import { existsSync, readdirSync, readFileSync, renameSync, rmSync, statSync } from 'node:fs'"
+        "file": "dev/tools/build-client.mjs",
+        "line": 23,
+        "text": "import { readFileSync, writeFileSync } from 'node:fs'"
       },
       {
-        "file": "index.js",
-        "line": 19,
-        "text": "import { appendFile, open as openAsync, readFile as readFileAsync, rename as renameAsync } from 'node:fs/promises'"
+        "file": "dev/tools/build-client.mjs",
+        "line": 46,
+        "text": "const wrapper = readFileSync(join(root, 'client/wrapper.js'), 'utf8')"
       },
       {
-        "file": "index.js",
-        "line": 198,
-        "text": "if (now - statSync(full).mtimeMs > 10 * 60_000) rmSync(full, { force: true })"
+        "file": "dev/tools/build-client.mjs",
+        "line": 54,
+        "text": ".map((relative) => readFileSync(join(root, relative), 'utf8').replace(/\\n$/, ''))"
       },
       {
-        "file": "index.js",
-        "line": 211,
-        "text": "await handle.writeFile(data)"
+        "file": "dev/tools/build-client.mjs",
+        "line": 72,
+        "text": "return readFileSync(target, 'utf8')"
       },
       {
-        "file": "index.js",
-        "line": 235,
-        "text": "appendFile(file, line).catch(() => {})"
+        "file": "dev/tools/build-client.mjs",
+        "line": 86,
+        "text": "writeFileSync(target, next)"
       }
     ]
   },

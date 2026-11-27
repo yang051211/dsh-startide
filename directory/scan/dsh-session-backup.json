@@ -1,14 +1,14 @@
 {
   "name": "dsh-session-backup",
-  "version": "0.1.1",
-  "scannedAt": "2026-10-26T10:05:50.027Z",
+  "version": "0.4.4",
+  "scannedAt": "2026-11-27T10:06:21.712Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 219,
+        "line": 282,
         "text": "const response = await fetch(`${ROUTE}.${action}`, init)"
       }
     ]
@@ -18,28 +18,28 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 14,
-        "text": "import { copyFile, cp, mkdir, readdir, readFile, realpath, rm, stat, writeFile } from 'node:fs/promises'"
+        "line": 26,
+        "text": "import { copyFile, cp, mkdir, mkdtemp, readdir, readFile, realpath, rename, rm, rmdir, stat, writeFile } from 'node:fs/promises'"
       },
       {
         "file": "index.js",
-        "line": 293,
+        "line": 307,
         "text": "parsed = JSON.parse(await readFile(join(dir, MANIFEST_FILE), 'utf8'))"
       },
       {
         "file": "index.js",
-        "line": 326,
-        "text": "await mkdir(group, { recursive: true })"
+        "line": 333,
+        "text": "const digest = createHash('sha256').update(await readFile(file.path)).digest('hex')"
       },
       {
         "file": "index.js",
-        "line": 340,
-        "text": "await writeFile(join(destination, MANIFEST_FILE), `${JSON.stringify(manifest, null, 2)}\\n`, 'utf8')"
+        "line": 423,
+        "text": "await mkdir(pendingRoot, { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 445,
-        "text": "await mkdir(dirname(destination), { recursive: true })"
+        "line": 449,
+        "text": "await writeFile(join(prepared, MANIFEST_FILE), `${JSON.stringify(manifest, null, 2)}\\n`, 'utf8')"
       }
     ]
   },

@@ -1,7 +1,7 @@
 {
   "name": "dsh-perch",
-  "version": "0.2.8",
-  "scannedAt": "2026-11-25T23:07:22.618Z",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-27T10:06:17.292Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -23,7 +23,7 @@
       },
       {
         "file": "lib/client.js",
-        "line": 3561,
+        "line": 3616,
         "text": "fetch(API + '/state', { headers: { accept: 'application/json' } })"
       },
       {
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/avatar.js",
-        "line": 13,
-        "text": "import fs from 'node:fs'"
+        "file": "lib/audio.js",
+        "line": 21,
+        "text": "import { promises as fs } from 'node:fs'"
       },
       {
-        "file": "lib/avatar.js",
-        "line": 105,
-        "text": "fs.mkdirSync(dir, { recursive: true })"
+        "file": "lib/audio.js",
+        "line": 158,
+        "text": "const wav = await fs.readFile(out)"
       },
       {
-        "file": "lib/avatar.js",
-        "line": 106,
-        "text": "fs.writeFileSync(tmp, buf)"
+        "file": "lib/audio.js",
+        "line": 165,
+        "text": "await fs.unlink(out).catch(() => {})"
       },
       {
-        "file": "lib/avatar.js",
-        "line": 111,
-        "text": "try { fs.unlinkSync(path.join(dir, `avatar.${other}`)) } catch { /* 没有就算了 */ }"
+        "file": "lib/audio.js",
+        "line": 238,
+        "text": "await fs.writeFile(path, bytes, { mode: 0o600 })"
       },
       {
-        "file": "lib/avatar.js",
-        "line": 115,
-        "text": "try { fs.unlinkSync(tmp) } catch { /* 清临时文件失败不影响结论 */ }"
+        "file": "lib/audio.js",
+        "line": 246,
+        "text": "cleanup: async () => { await fs.unlink(path).catch(() => {}) },"
       }
     ]
   },
@@ -97,6 +97,16 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/audio.js",
+        "line": 20,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/audio.js",
+        "line": 108,
+        "text": "child = spawn(bin, args, { windowsHide: true, stdio: ['ignore', 'ignore', 'pipe'] })"
+      },
+      {
         "file": "lib/bridge.js",
         "line": 16,
         "text": "import { spawn } from 'node:child_process'"
@@ -110,16 +120,6 @@
         "file": "lib/media.js",
         "line": 17,
         "text": "import { spawn, spawnSync } from 'node:child_process'"
-      },
-      {
-        "file": "lib/media.js",
-        "line": 64,
-        "text": "// 环境变量被设成空串时要退回默认值：spawn('') 会直接抛"
-      },
-      {
-        "file": "lib/media.js",
-        "line": 83,
-        "text": "const r = spawnSync(bin, ['-version'], { encoding: 'utf8', windowsHide: true, timeout: 8000 })"
       }
     ]
   },

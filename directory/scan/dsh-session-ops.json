@@ -1,7 +1,7 @@
 {
   "name": "dsh-session-ops",
-  "version": "0.2.5",
-  "scannedAt": "2026-11-24T11:24:44.958Z",
+  "version": "0.2.6",
+  "scannedAt": "2026-11-27T10:06:19.436Z",
   "icon": "dsh-session-ops.svg",
   "network": {
     "hit": true,
@@ -13,7 +13,7 @@
       },
       {
         "file": "lib/client.js",
-        "line": 1630,
+        "line": 1689,
         "text": "const response = await fetch(`${API}/${method}`, {"
       }
     ]
@@ -23,27 +23,27 @@
     "evidence": [
       {
         "file": "lib/admin.js",
-        "line": 33,
+        "line": 34,
         "text": "import { existsSync, readFileSync, readdirSync, rmSync, statSync } from 'node:fs';"
       },
       {
         "file": "lib/admin.js",
-        "line": 77,
+        "line": 78,
         "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
       },
       {
         "file": "lib/admin.js",
-        "line": 233,
+        "line": 234,
         "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'));"
       },
       {
         "file": "lib/admin.js",
-        "line": 388,
+        "line": 389,
         "text": "rmSync(record.dir, { recursive: true, force: true });"
       },
       {
         "file": "lib/admin.js",
-        "line": 396,
+        "line": 397,
         "text": "rmSync(cacheFile, { force: true });"
       }
     ]
@@ -53,17 +53,17 @@
     "evidence": [
       {
         "file": "lib/admin.js",
-        "line": 743,
+        "line": 813,
         "text": "* 必须是**真正的 JSON Schema**：`ctx.tools.register()` 收的是「已编译」的"
       },
       {
         "file": "lib/admin.js",
-        "line": 866,
+        "line": 936,
         "text": "* @returns `ctx.tools.register` 接受的普通对象定义。"
       },
       {
         "file": "lib/admin.js",
-        "line": 1052,
+        "line": 1122,
         "text": "ctx.effect(() => ctx.tools.register(buildTool(admin, config, log, holds, health)), 'dsh-session-admin: session_admin tool');"
       },
       {
@@ -79,8 +79,19 @@
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/admin.js",
+        "line": 33,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/admin.js",
+        "line": 651,
+        "text": "child = spawn(command, [dir], { detached: true, stdio: 'ignore' });"
+      }
+    ]
   },
   "installScripts": {
     "hit": true,

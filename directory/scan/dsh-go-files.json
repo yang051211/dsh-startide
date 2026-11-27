@@ -1,0 +1,74 @@
+{
+  "name": "dsh-go-files",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-27T10:06:13.165Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 6,
+        "text": "import { readFileSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 24,
+        "text": "const PKG = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'))"
+      },
+      {
+        "file": "lib/media.js",
+        "line": 8,
+        "text": "import { closeSync, copyFileSync, existsSync, lstatSync, mkdirSync, openSync, readSync, readdirSync, renameSync, statSync, unlinkSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/media.js",
+        "line": 155,
+        "text": "mkdirSync(cacheDir, { recursive: true })"
+      },
+      {
+        "file": "lib/media.js",
+        "line": 170,
+        "text": "unlinkSync(target)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/media.js",
+        "line": 6,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/workspace.js",
+        "line": 22,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/workspace.js",
+        "line": 165,
+        "text": "const result = spawnSync('python3', ['-c', script, src, dest], { stdio: 'ignore', timeout: 5000 })"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

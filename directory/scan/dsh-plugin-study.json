@@ -1,0 +1,75 @@
+{
+  "name": "dsh-plugin-study",
+  "version": "0.2.10",
+  "scannedAt": "2026-11-27T10:06:14.657Z",
+  "icon": "dsh-plugin-study.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 2141,
+        "text": "const res = await fetch(`${API_PREFIX}${pathWithQuery}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/blueprint-store.js",
+        "line": 1,
+        "text": "import * as fsSync from 'node:fs';"
+      },
+      {
+        "file": "lib/blueprint-store.js",
+        "line": 2,
+        "text": "import * as fs from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/blueprint-store.js",
+        "line": 560,
+        "text": "fs.readFile(bpFile, 'utf-8'),"
+      },
+      {
+        "file": "lib/blueprint-store.js",
+        "line": 642,
+        "text": "const md = await fs.readFile(cardPath, 'utf-8');"
+      },
+      {
+        "file": "lib/blueprint-store.js",
+        "line": 651,
+        "text": "inlineSvgs[svgName] = await fs.readFile(path.join(topicDir, 'assets', svgName), 'utf-8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/tools.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/tools.js",
+        "line": 52,
+        "text": "const child = spawn(cmd, [...args], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

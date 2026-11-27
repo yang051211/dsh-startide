@@ -1,7 +1,7 @@
 {
   "name": "dsh-mcviseron-plugin",
-  "version": "0.7.8",
-  "scannedAt": "2026-11-22T08:23:36.932Z",
+  "version": "0.8.1",
+  "scannedAt": "2026-11-27T10:06:23.508Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,18 +18,18 @@
       },
       {
         "file": "lib/client.js",
-        "line": 600,
+        "line": 409,
+        "text": "const response = await fetch(EXECUTE, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 631,
         "text": "const response = await fetch(SESSION_END_API.global, {"
       },
       {
         "file": "lib/client.js",
-        "line": 718,
+        "line": 749,
         "text": "const response = await fetch(SESSION_END_API.state, {"
-      },
-      {
-        "file": "lib/client.js",
-        "line": 752,
-        "text": "void fetch(SESSION_END_API.set, {"
       }
     ]
   },
@@ -68,7 +68,7 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 13718,
+        "line": 13796,
         "text": "const dispose = tools.register(definition);"
       },
       {
@@ -84,27 +84,27 @@
       {
         "file": "lib/index.js",
         "line": 10469,
-        "text": "var spawn = __require(\"child_process\").spawn;"
+        "text": "var spawn2 = __require(\"child_process\").spawn;"
       },
       {
         "file": "lib/index.js",
-        "line": 12946,
-        "text": "import { execFileSync } from \"node:child_process\";"
+        "line": 12948,
+        "text": "import { execFileSync, spawn } from \"node:child_process\";"
       },
       {
         "file": "lib/index.js",
-        "line": 13136,
-        "text": "import { execFileSync as execFileSync2 } from \"node:child_process\";"
+        "line": 13028,
+        "text": "\"const { spawn } = require('node:child_process')\","
       },
       {
-        "file": "lib/restart.js",
-        "line": 5,
-        "text": "import { execFileSync } from \"node:child_process\";"
+        "file": "lib/index.js",
+        "line": 13034,
+        "text": "'    const child = spawn(exe, args, { cwd, detached: true, stdio: \"ignore\", env: process.env })',"
       },
       {
-        "file": "src/restart/index.ts",
-        "line": 1,
-        "text": "import { execFileSync } from 'node:child_process'"
+        "file": "lib/index.js",
+        "line": 13059,
+        "text": "const child = spawn(process.execPath, args, { detached: true, stdio: \"ignore\", env: { ...process.env, DSH_MCVISERON_RESTARTED: \"1\" } });"
       }
     ]
   },

@@ -1,0 +1,112 @@
+{
+  "name": "make-your-agent-live",
+  "version": "0.2.5",
+  "scannedAt": "2026-11-27T10:06:12.912Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/http.js",
+        "line": 14,
+        "text": "return await fetch(url, { ...init, signal: controller.signal });"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "adapters/dsh/index.js",
+        "line": 11,
+        "text": "import { mkdir, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "adapters/dsh/index.js",
+        "line": 12,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "adapters/dsh/index.js",
+        "line": 97,
+        "text": "await mkdir(dir, { recursive: true });"
+      },
+      {
+        "file": "adapters/dsh/index.js",
+        "line": 99,
+        "text": "await writeFile(path, result.data);"
+      },
+      {
+        "file": "cli/index.js",
+        "line": 16,
+        "text": "import { existsSync, statSync, writeFileSync } from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "adapters/dsh/index.js",
+        "line": 21,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "adapters/dsh/index.js",
+        "line": 156,
+        "text": "ctx.tools.register(buildTtsTool());"
+      },
+      {
+        "file": "adapters/dsh/index.js",
+        "line": 157,
+        "text": "ctx.tools.register(buildAsrTool());"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cli/index.js",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/ffmpeg.js",
+        "line": 7,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/ffmpeg.js",
+        "line": 17,
+        "text": "const child = spawn('ffmpeg', ['-version'], { windowsHide: true });"
+      },
+      {
+        "file": "src/ffmpeg.js",
+        "line": 26,
+        "text": "const child = spawn(cmd, args, { windowsHide: true });"
+      },
+      {
+        "file": "src/tts/system.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 176,
+      "text": "npm i -g make-your-agent-live"
+    }
+  ],
+  "skippedEntries": []
+}

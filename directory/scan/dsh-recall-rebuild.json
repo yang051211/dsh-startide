@@ -1,11 +1,32 @@
 {
   "name": "dsh-recall-rebuild",
-  "version": "0.1.15",
-  "scannedAt": "2026-11-26T23:01:23.531Z",
+  "version": "0.1.20",
+  "scannedAt": "2026-11-27T10:06:14.677Z",
   "icon": null,
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/web.js",
+        "line": 7,
+        "text": "*    `{ nodes, links }` 给渲染器(sea-app.js 用 `fetch('./data')` 取,相对路径正好落到这里);"
+      },
+      {
+        "file": "dist/web.js",
+        "line": 284,
+        "text": "// 数据端点:/recall-rebuild/sea/data(sea-app.js 的 fetch('./data?source=raw'))"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 34,
+        "text": "// allow-same-origin 让面板里的 fetch('./data') 走同源;"
+      },
+      {
+        "file": "ui/sea-app.js",
+        "line": 119,
+        "text": "const res = await fetch(url, { headers: { accept: 'application/json' } });"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
@@ -53,7 +74,6 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
-    "commands?",
     "llm"
   ],
   "setupHints": [],

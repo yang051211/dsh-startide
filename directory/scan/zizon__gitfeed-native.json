@@ -1,7 +1,7 @@
 {
   "name": "@zizon/gitfeed-native",
-  "version": "3.9.25",
-  "scannedAt": "2026-11-24T11:24:35.903Z",
+  "version": "3.9.28",
+  "scannedAt": "2026-11-27T10:06:15.076Z",
   "icon": "zizon__gitfeed-native.svg",
   "network": {
     "hit": true,
@@ -12,24 +12,24 @@
         "text": "return fetch(PREFIX + route, init).then(async function(res) {"
       },
       {
+        "file": "lib/client.js",
+        "line": 682,
+        "text": "const answer = await fetch(`${PREFIX}/export-opml`, { cache: \"no-store\", credentials: \"same-origin\" });"
+      },
+      {
         "file": "lib/host/custom.js",
         "line": 204,
         "text": "const answer = await input.fetch(input.url, {"
       },
       {
         "file": "lib/host/feeds.js",
-        "line": 110,
+        "line": 132,
         "text": "const res = await fetch(url, {"
       },
       {
         "file": "lib/host/fetch.js",
         "line": 171,
         "text": "const res = await fetch(feed.url, { headers: headers, redirect: 'follow', signal: signal });"
-      },
-      {
-        "file": "lib/host/jobs.js",
-        "line": 96,
-        "text": "const result = await options.fetch(scope.only ? { only: scope.only } : { feeds: wanted });"
       }
     ]
   },
@@ -85,6 +85,26 @@
         "file": "lib/host/git.js",
         "line": 2,
         "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "lib/host/scaffold.js",
+        "line": 11,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/host/scaffold.js",
+        "line": 91,
+        "text": "const created = spawnSync('git', ['init', '-b', 'main', root], { encoding: 'utf8' });"
+      },
+      {
+        "file": "lib/host/scaffold.js",
+        "line": 99,
+        "text": "const legacy = spawnSync('git', ['init', root], { encoding: 'utf8' });"
+      },
+      {
+        "file": "lib/host/scaffold.js",
+        "line": 102,
+        "text": "spawnSync('git', ['symbolic-ref', 'HEAD', 'refs/heads/main'], { cwd: root, encoding: 'utf8' });"
       }
     ]
   },

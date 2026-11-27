@@ -1,0 +1,70 @@
+{
+  "name": "@killmemory8/dsh-agents-md-presets",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-27T10:06:24.154Z",
+  "icon": "killmemory8__dsh-agents-md-presets.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 281,
+        "text": "const response = await fetch(`${API}/${name}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/editor.js",
+        "line": 2,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 2,
+        "text": "import fs from \"node:fs/promises\";"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 67,
+        "text": "await fs.writeFile(tmp, data);"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 71,
+        "text": "await fs.rm(tmp, { force: true }).catch(() => {});"
+      },
+      {
+        "file": "lib/store.js",
+        "line": 94,
+        "text": "await fs.mkdir(dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/editor.js",
+        "line": 1,
+        "text": "import childProcess from 'node:child_process';"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

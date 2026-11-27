@@ -1,35 +1,35 @@
 {
   "name": "dsh-qwenwork-connect",
-  "version": "0.4.0",
-  "scannedAt": "2026-11-25T23:07:27.104Z",
-  "icon": null,
+  "version": "1.0.1",
+  "scannedAt": "2026-11-27T10:06:19.165Z",
+  "icon": "dsh-qwenwork-connect.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "lib/chat-shim.js",
-        "line": 24,
-        "text": "import http from 'node:http';"
+        "file": "dist/cli/login.mjs",
+        "line": 941,
+        "text": "import http from \"node:http\";"
       },
       {
-        "file": "lib/chat-shim.js",
-        "line": 96,
-        "text": "* 为什么需要它：`fetch()` 会等到**响应头**到达才 resolve。若上游接受了连接"
+        "file": "dist/cli/login.mjs",
+        "line": 942,
+        "text": "import https from \"node:https\";"
       },
       {
-        "file": "lib/client.js",
-        "line": 833,
-        "text": "const response = await fetch(pathForSite(QWENWORK_STATUS_PATH, activeSite), {"
+        "file": "dist/cli/login.mjs",
+        "line": 1415,
+        "text": "return await this.transportCache.transport.fetch(url, init);"
       },
       {
-        "file": "lib/client.js",
-        "line": 877,
-        "text": "const response = await fetch(pathForSite(LOGIN_STATUS_PATH, activeSite), {"
+        "file": "dist/client/index.js",
+        "line": 299,
+        "text": "const response = await fetch(url, {"
       },
       {
-        "file": "lib/client.js",
-        "line": 909,
-        "text": "const response = await fetch(pathForSite(LOGIN_START_PATH, activeSite), {"
+        "file": "dist/client/index.js",
+        "line": 817,
+        "text": "const res = await fetch(pathForSite(LOGIN_STATUS_PATH, activeSite), {"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "bin/login.mjs",
-        "line": 17,
-        "text": "import fs from 'node:fs';"
+        "file": "dist/cli/login.mjs",
+        "line": 5,
+        "text": "import fs from \"node:fs/promises\";"
       },
       {
-        "file": "bin/login.mjs",
-        "line": 71,
-        "text": "fs.unlinkSync(credentialPath);"
+        "file": "dist/cli/login.mjs",
+        "line": 286,
+        "text": "const existing = (await fs.readFile(filePath, \"utf8\")).trim();"
       },
       {
-        "file": "lib/auth.js",
-        "line": 21,
-        "text": "import fs from 'node:fs';"
+        "file": "dist/cli/login.mjs",
+        "line": 292,
+        "text": "await fs.mkdir(path.dirname(filePath), { recursive: true });"
       },
       {
-        "file": "lib/auth.js",
-        "line": 186,
-        "text": "const raw = JSON.parse(fs.readFileSync(file, 'utf8'));"
+        "file": "dist/cli/login.mjs",
+        "line": 293,
+        "text": "await fs.writeFile(filePath, id, { mode: 384 });"
       },
       {
-        "file": "lib/auth.js",
-        "line": 192,
-        "text": "fs.writeFileSync(tmpFile, JSON.stringify(raw, null, 2), { mode: 0o600 });"
+        "file": "dist/cli/login.mjs",
+        "line": 363,
+        "text": "text = await fs.readFile(file, \"utf8\");"
       }
     ]
   },
@@ -68,19 +68,8 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": true,
-    "evidence": [
-      {
-        "file": "lib/dpapi.js",
-        "line": 15,
-        "text": "import { spawnSync } from 'node:child_process';"
-      },
-      {
-        "file": "lib/dpapi.js",
-        "line": 224,
-        "text": "res = spawnSync("
-      }
-    ]
+    "hit": false,
+    "evidence": []
   },
   "installScripts": {
     "hit": false,
@@ -89,9 +78,7 @@
   "dependencies": 0,
   "minifiedFiles": [],
   "binaryFiles": [],
-  "requiredServices": [
-    "llm"
-  ],
+  "requiredServices": [],
   "setupHints": [],
   "skippedEntries": []
 }

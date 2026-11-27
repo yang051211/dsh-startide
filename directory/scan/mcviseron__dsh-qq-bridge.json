@@ -1,35 +1,35 @@
 {
   "name": "@mcviseron/dsh-qq-bridge",
-  "version": "0.2.1",
-  "scannedAt": "2026-11-22T08:23:39.008Z",
+  "version": "0.3.5",
+  "scannedAt": "2026-11-27T10:06:20.620Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "lib/client.js",
-        "line": 149,
+        "line": 222,
         "text": "const response = await fetch(PANEL + path, Object.assign({ headers: { \"content-type\": \"application/json\" } }, options || {}))"
       },
       {
+        "file": "lib/client.js",
+        "line": 234,
+        "text": "const response = await fetch(BRIDGE + \"/install\", {"
+      },
+      {
         "file": "lib/index.js",
-        "line": 169,
+        "line": 194,
         "text": "const response = await fetch(`http://127.0.0.1:${port}/api/dsh-edit-file-workspace/move`, {"
       },
       {
         "file": "lib/index.js",
-        "line": 186,
+        "line": 211,
         "text": "const response = await fetch(`http://127.0.0.1:${port}/api/question`, {"
       },
       {
         "file": "lib/index.js",
-        "line": 733,
+        "line": 808,
         "text": "const response = await fetch(`http://127.0.0.1:${config.panelPort ?? 39062}/health`, { signal: AbortSignal.timeout(1500) })"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 969,
-        "text": "const response = await fetch(`http://127.0.0.1:${port}/api/admin`, {"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "bot/usage.mjs",
+        "line": 13,
+        "text": "import { readFileSync, readdirSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "bot/usage.mjs",
+        "line": 154,
+        "text": "const totals = sumUsage(decodeFrames(readFileSync(entry.path)))"
+      },
+      {
+        "file": "bot/usage.mjs",
+        "line": 170,
+        "text": "emit({ ok: true, sessionId: argument, file, ...sumUsage(decodeFrames(readFileSync(file))) })"
+      },
+      {
         "file": "lib/index.js",
         "line": 11,
-        "text": "import { readFileSync } from 'node:fs'"
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
       },
       {
         "file": "lib/index.js",
         "line": 12,
         "text": "import { appendFile, mkdir } from 'node:fs/promises'"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 92,
-        "text": "void appendFile(logPath, `${new Date().toISOString()} ${message}\\n`, 'utf8').catch(() => {})"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 117,
-        "text": "const ready = Promise.all([store.load(), mkdir(config.cwd, { recursive: true }), mkdir(dirname(logPath), { recursive: true })]).catch(error => {"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 149,
-        "text": "await mkdir(dir, { recursive: true })"
       }
     ]
   },
@@ -68,13 +68,13 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 960,
+        "line": 1053,
         "text": "tools.register(definition)"
       },
       {
         "file": "lib/index.js",
-        "line": 1108,
-        "text": "tools.register({ ...tool, output: { schema: { type: \"object\" }, render: (_a, value) => [{ type: \"text\", text: JSON.stringify(value) }] } })"
+        "line": 1304,
+        "text": "tools.register({"
       }
     ]
   },
@@ -83,13 +83,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 739,
+        "line": 131,
         "text": "const { spawn } = await import('node:child_process')"
       },
       {
         "file": "lib/index.js",
-        "line": 740,
-        "text": "const child = spawn(config.pythonPath, ['-u', 'main.py', '--supervise'], {"
+        "line": 132,
+        "text": "const child = spawn(pythonPath, ['-u', 'main.py', '--supervise'], {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 831,
+        "text": "const { spawn } = await import('node:child_process')"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 832,
+        "text": "const child = spawn(pythonPath, ['-u', 'main.py', '--supervise'], {"
+      },
+      {
+        "file": "lib/install.js",
+        "line": 6,
+        "text": "import { spawn } from 'node:child_process'"
       }
     ]
   },

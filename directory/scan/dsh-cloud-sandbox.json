@@ -1,0 +1,113 @@
+{
+  "name": "dsh-cloud-sandbox",
+  "version": "0.2.3",
+  "scannedAt": "2026-11-27T10:06:26.341Z",
+  "icon": "dsh-cloud-sandbox.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/docker/socket-client.js",
+        "line": 7,
+        "text": "import http from 'node:http';"
+      },
+      {
+        "file": "dist/docker/socket-client.js",
+        "line": 251,
+        "text": "const req = http.request({"
+      },
+      {
+        "file": "dist/docker/socket-client.js",
+        "line": 382,
+        "text": "const req = http.request({ ...this.httpConnectionOptions(), method, path, headers }, (res) => {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/docker/stream-collector.js",
+        "line": 9,
+        "text": "import { closeSync, mkdirSync, openSync, unlinkSync, writeSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/docker/stream-collector.js",
+        "line": 99,
+        "text": "mkdirSync(this.spillDir, { recursive: true, mode: 0o700 });"
+      },
+      {
+        "file": "dist/docker/stream-collector.js",
+        "line": 139,
+        "text": "unlinkSync(this.spillPath);"
+      },
+      {
+        "file": "dist/fs/workspace-fenced-fs.js",
+        "line": 12,
+        "text": "import { readdirSync } from 'node:fs';"
+      },
+      {
+        "file": "dist/fs/workspace-fenced-fs.js",
+        "line": 215,
+        "text": "serviceName: 'fs',"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/intake/sandbox-file-intake.js",
+        "line": 14,
+        "text": "*   Registers the `sandbox_import_file` tool on `ctx.tools`. Before copying any host file into"
+      },
+      {
+        "file": "dist/intake/sandbox-file-intake.js",
+        "line": 166,
+        "text": "const unregister = tools.register(this.buildImportToolDefinition());"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/docker/runtime-pool.js",
+        "line": 203,
+        "text": "spawn(spec, options = {}) {"
+      },
+      {
+        "file": "dist/docker/wsl-bridge.js",
+        "line": 14,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "dist/docker/wsl-bridge.js",
+        "line": 97,
+        "text": "this.child = spawn(spec.command, [...spec.args], {"
+      },
+      {
+        "file": "dist/subprocess/docker-subprocess.js",
+        "line": 224,
+        "text": "spawn(spec) {"
+      },
+      {
+        "file": "dist/subprocess/docker-subprocess.js",
+        "line": 226,
+        "text": "const handle = this.pool.spawn(spec, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "subprocess"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

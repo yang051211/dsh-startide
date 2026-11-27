@@ -1,0 +1,112 @@
+{
+  "name": "@lihongxu0221/dsh-workspace-ui",
+  "version": "0.8.5",
+  "scannedAt": "2026-11-27T10:06:20.169Z",
+  "icon": "lihongxu0221__dsh-workspace-ui.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 4,
+        "text": "`)return false;try{const response=await fetch(`${DIRECTORY_ROUTE}?path=${encodeURIComponent(path)}`,{credentials:`same-origin`,cache:`no-store`});if(!response.o"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 182,
+        "text": "th,normalizedBase).href;const res=await fetch(url);if(!res.ok)return false;return(await res.json())?.enabled===true}catch{return false}}function tolerantRegistr"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 412,
+        "text": "edProviders);return}let cancelled=false;fetch(WORKSPACE_UI_API_ENDPOINTS.composerModels).then(res=>res.ok?res.json():null).then(data=>{if(cancelled||!data?.ok||"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 496,
+        "text": "ate(`loading`);try{const response=await fetch(endpoint,{cache:`no-store`,signal});if(!response.ok)throw new BusinessRequestError(response.status);const payload="
+      },
+      {
+        "file": "lib/client.js",
+        "line": 557,
+        "text": "oute=selectedRoute;const response=await fetch(ENDPOINT,{method:`POST`,headers:{\"content-type\":`application/json`,accept:`text/event-stream`},body:JSON.stringify"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/composer.js",
+        "line": 17,
+        "text": "import { existsSync, readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/composer.js",
+        "line": 75,
+        "text": "const content = readFileSync(patchPath, \"utf8\");"
+      },
+      {
+        "file": "lib/desktop-menu.js",
+        "line": 18,
+        "text": "import { existsSync, readFileSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/desktop-menu.js",
+        "line": 76,
+        "text": "const content = readFileSync(patchPath, \"utf8\");"
+      },
+      {
+        "file": "lib/desktop-menu.js",
+        "line": 97,
+        "text": "import { mkdirSync, readFileSync as readFileSync2 } from \"node:fs\";"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/desktop-menu.js",
+        "line": 102,
+        "text": "import { spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/desktop-menu.js",
+        "line": 178,
+        "text": "const { spawn, spawnSync } = require('node:child_process')"
+      },
+      {
+        "file": "lib/desktop-menu.js",
+        "line": 217,
+        "text": "return spawnSync(command, args, { encoding: 'utf8', timeout: 20000, windowsHide: true, env: childEnv })"
+      },
+      {
+        "file": "lib/desktop-menu.js",
+        "line": 320,
+        "text": "const child = spawn(plan.appPath, [], {"
+      },
+      {
+        "file": "lib/desktop-menu.js",
+        "line": 392,
+        "text": "const child = spawn(nodeProcess2.execPath, [scriptPath], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

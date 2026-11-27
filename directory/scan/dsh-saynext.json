@@ -1,0 +1,63 @@
+{
+  "name": "dsh-saynext",
+  "version": "0.1.11",
+  "scannedAt": "2026-11-27T10:06:19.284Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 342,
+        "text": "const reply = await fetch(feedbackTarget.url, {method:'POST', mode:'cors', credentials:'omit',"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 11,
+        "text": "import { appendFileSync, readFileSync, realpathSync, chmodSync, mkdirSync, renameSync, statSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 28,
+        "text": "mkdirSync(join(homedir(), '.dsh', 'saynext'), { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 46,
+        "text": "appendFileSync(TRACE, `${new Date().toISOString()} ${line}\\n`, { mode: 0o600 })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 101,
+        "text": "receipt = JSON.parse(readFileSync(join(desktop,'.saynext-desktop-choice.json'),'utf8'))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "sessions",
+    "settings"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

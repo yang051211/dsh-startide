@@ -1,7 +1,7 @@
 {
   "name": "pocketagents",
-  "version": "0.9.18",
-  "scannedAt": "2026-11-24T23:54:22.906Z",
+  "version": "0.9.47",
+  "scannedAt": "2026-11-27T10:06:09.273Z",
   "icon": "pocketagents.svg",
   "network": {
     "hit": true,
@@ -17,6 +17,11 @@
         "text": "# 支持通过 curl -fsSL <HUB_URL>/install.sh | bash 一键安装：若当前已在仓库目录则直接复用，否则克隆到 ~/.dsh/remotecontrol"
       },
       {
+        "file": "dsh-feishu/lib/antigravity-acp.js",
+        "line": 1078,
+        "text": "['-lc', `curl -fsSL ${AGY_INSTALL_URL_UNIX} | bash`],"
+      },
+      {
         "file": "dsh-feishu/lib/harnesses/workbuddy-adapter.js",
         "line": 4,
         "text": "import http from 'node:http'"
@@ -25,11 +30,6 @@
         "file": "dsh-feishu/lib/harnesses/workbuddy-adapter.js",
         "line": 636,
         "text": "const req = http.request("
-      },
-      {
-        "file": "dsh-feishu/lib/hub-agent.js",
-        "line": 805,
-        "text": "await this.fetch(targetUrl, {"
       }
     ]
   },
@@ -52,14 +52,14 @@
         "text": "return (await readFile(path, 'utf8')).trim()"
       },
       {
-        "file": "dsh-feishu/lib/antigravity-ide.js",
+        "file": "dsh-feishu/lib/antigravity-acp.js",
         "line": 3,
-        "text": "import { access, mkdir, open, readdir, readFile, rename, stat, writeFile } from 'node:fs/promises'"
+        "text": "import { access, readFile, stat } from 'node:fs/promises'"
       },
       {
-        "file": "dsh-feishu/lib/antigravity-ide.js",
-        "line": 1889,
-        "text": "const pbBuf = await readFile(join(agyRoot, 'agyhub_summaries_proto.pb'))"
+        "file": "dsh-feishu/lib/antigravity-acp.js",
+        "line": 600,
+        "text": "const data = (await readFile(imgPath)).toString('base64')"
       }
     ]
   },
@@ -71,14 +71,19 @@
     "hit": true,
     "evidence": [
       {
+        "file": "dsh-feishu/lib/antigravity-acp.js",
+        "line": 1,
+        "text": "import { execFile, spawn } from 'node:child_process'"
+      },
+      {
         "file": "dsh-feishu/lib/antigravity-ide.js",
         "line": 1,
         "text": "import { execFile, spawn } from 'node:child_process'"
       },
       {
         "file": "dsh-feishu/lib/antigravity-ide.js",
-        "line": 55,
-        "text": "const child = spawn('pbcopy', [], { stdio: ['pipe', 'ignore', 'ignore'] })"
+        "line": 77,
+        "text": "const child = spawn('pbcopy', [], { stdio: ['pipe', 'ignore', 'ignore'], env })"
       },
       {
         "file": "dsh-feishu/lib/harnesses/claude-adapter.js",
@@ -89,11 +94,6 @@
         "file": "dsh-feishu/lib/harnesses/codex-adapter.js",
         "line": 1,
         "text": "import { execFile, execFileSync, spawn } from 'node:child_process'"
-      },
-      {
-        "file": "dsh-feishu/lib/harnesses/dsh-headless-adapter.js",
-        "line": 1,
-        "text": "import { spawn } from 'node:child_process'"
       }
     ]
   },

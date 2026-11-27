@@ -1,7 +1,7 @@
 {
   "name": "dsh-voice-engine",
-  "version": "0.8.0",
-  "scannedAt": "2026-11-26T23:01:24.980Z",
+  "version": "0.8.1",
+  "scannedAt": "2026-11-27T10:06:25.913Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -23,13 +23,13 @@
       },
       {
         "file": "lib/client.js",
-        "line": 62,
+        "line": 90,
         "text": "res = await fetch(path, {"
       },
       {
-        "file": "lib/engine/providers/http.js",
-        "line": 5,
-        "text": "import http from 'node:http'"
+        "file": "lib/client.js",
+        "line": 1790,
+        "text": "    const res = await fetch(API, { method: \"POST\", credentials: \"same-origin\", headers: { \"content-type\": \"application/octet-stream\", \"x-voice-upload-name\": enc"
       }
     ]
   },
@@ -88,7 +88,7 @@
       },
       {
         "file": "lib/tools.js",
-        "line": 596,
+        "line": 743,
         "text": "return defs.map((def) => ctx.tools.register(def))"
       }
     ]
@@ -96,6 +96,16 @@
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/checks.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/checks.js",
+        "line": 29,
+        "text": "const child = spawn(bin, ['-loglevel', 'error', '-i', file, '-f', 'wav', '-ac', '1', '-ar', '16000', '-'], { stdio: ['ignore', 'pipe', 'ignore'] })"
+      },
       {
         "file": "lib/clone.js",
         "line": 15,
@@ -110,16 +120,6 @@
         "file": "lib/engine/edge.js",
         "line": 7,
         "text": "import { execFile } from 'node:child_process'"
-      },
-      {
-        "file": "lib/engine/edge.js",
-        "line": 73,
-        "text": "execFile(cmd, args, { timeout, maxBuffer: 8 << 20 }, (error, stdout, stderr) => {"
-      },
-      {
-        "file": "lib/engine/index.js",
-        "line": 144,
-        "text": "const { spawnSync } = await import('node:child_process')"
       }
     ]
   },
@@ -133,12 +133,6 @@
   "requiredServices": [
     "tools"
   ],
-  "setupHints": [
-    {
-      "file": "README.md",
-      "line": 210,
-      "text": "pip3 install --user pypinyin"
-    }
-  ],
+  "setupHints": [],
   "skippedEntries": []
 }

@@ -1,19 +1,19 @@
 {
   "name": "dsh-bundle-antigravity-acp",
-  "version": "0.5.7",
-  "scannedAt": "2026-11-26T23:01:09.340Z",
+  "version": "1.0.1",
+  "scannedAt": "2026-11-27T10:06:09.461Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
-        "file": "dist/accounts/oauth.js",
-        "line": 15,
+        "file": "dist/auth/oauth-client.js",
+        "line": 11,
         "text": "import { createServer } from 'node:http';"
       },
       {
         "file": "dist/bridge/mcp-bridge.js",
-        "line": 27,
+        "line": 11,
         "text": "import { createServer } from 'node:http';"
       },
       {
@@ -22,13 +22,13 @@
         "text": "* `curl -fsSL https://antigravity.google/cli/install.sh | bash`："
       },
       {
-        "file": "dist/runtime/proxied-fetch.js",
-        "line": 5,
-        "text": "const module = (await import('undici'));"
+        "file": "dist/runtime/proxy.js",
+        "line": 114,
+        "text": "const mod = (await import('undici'));"
       },
       {
-        "file": "dist/runtime/proxied-fetch.js",
-        "line": 79,
+        "file": "dist/runtime/proxy.js",
+        "line": 180,
         "text": "const fallback = deps.fallback ?? ((input, init) => globalThis.fetch(input, init));"
       }
     ]
@@ -38,28 +38,28 @@
     "evidence": [
       {
         "file": "dist/accounts/manager.js",
-        "line": 8,
+        "line": 7,
         "text": "import { existsSync, readdirSync, rmSync } from 'node:fs';"
       },
       {
         "file": "dist/accounts/manager.js",
-        "line": 9,
+        "line": 8,
         "text": "import { mkdir, rename, rm } from 'node:fs/promises';"
       },
       {
         "file": "dist/accounts/manager.js",
-        "line": 60,
-        "text": "rmSync(join(this.baseDir, entry), { recursive: true, force: true });"
+        "line": 250,
+        "text": "void rm(active.target.staging, { recursive: true, force: true }).catch(() => undefined);"
       },
       {
         "file": "dist/accounts/manager.js",
-        "line": 126,
-        "text": "void rm(pending.staging, { recursive: true, force: true }).catch(() => undefined);"
+        "line": 281,
+        "text": "await rm(removed.dir, { recursive: true, force: true }).catch(() => undefined);"
       },
       {
         "file": "dist/accounts/manager.js",
-        "line": 222,
-        "text": "await rm(record.dir, { recursive: true, force: true }).catch((error) => {"
+        "line": 298,
+        "text": "await rm(active.target.staging, { recursive: true, force: true }).catch(() => undefined);"
       }
     ]
   },
@@ -71,23 +71,28 @@
     "hit": true,
     "evidence": [
       {
-        "file": "dist/index.js",
-        "line": 363,
+        "file": "dist/auth/token-store.js",
+        "line": 136,
         "text": "const handle = subprocess.spawn({"
       },
       {
         "file": "dist/index.js",
-        "line": 411,
+        "line": 40,
         "text": "const handle = subprocess.spawn({"
       },
       {
         "file": "dist/protocol/agent-link.js",
-        "line": 643,
+        "line": 654,
         "text": "return subprocess.spawn({"
       },
       {
+        "file": "dist/runtime/acp-runtime.js",
+        "line": 289,
+        "text": "const handle = this.#options.subprocess.spawn({"
+      },
+      {
         "file": "dist/runtime/agy-cli.js",
-        "line": 271,
+        "line": 273,
         "text": "handle = subprocess.spawn({"
       }
     ]

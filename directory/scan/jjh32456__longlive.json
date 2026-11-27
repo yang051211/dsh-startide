@@ -1,0 +1,121 @@
+{
+  "name": "@jjh32456/longlive",
+  "version": "1.8.12",
+  "scannedAt": "2026-11-27T10:06:26.497Z",
+  "icon": "jjh32456__longlive.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 48,
+        "text": "response = await fetch(ENDPOINT, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/archive-digest-build.mjs",
+        "line": 20,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "scripts/archive-digest-build.mjs",
+        "line": 279,
+        "text": "fs.mkdirSync(path.dirname(indexPath), { recursive: true });"
+      },
+      {
+        "file": "scripts/archive-digest-build.mjs",
+        "line": 297,
+        "text": "fs.unlinkSync(tmp);"
+      },
+      {
+        "file": "scripts/archive-digest-build.mjs",
+        "line": 309,
+        "text": "fs.mkdirSync(path.dirname(filePath), { recursive: true });"
+      },
+      {
+        "file": "scripts/archive-digest-build.mjs",
+        "line": 312,
+        "text": "fs.writeFileSync(tmp, text);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/d6/runtime.js",
+        "line": 13,
+        "text": "*   3. 0.2.2 filters through `agent.ctx.tools.restrict({deny})`; 0.2.1 does too"
+      },
+      {
+        "file": "src/index.js",
+        "line": 80,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "src/router/background/host-sim.mjs",
+        "line": 9,
+        "text": "//   tools.register(def) 需要 output: { schema, render }"
+      },
+      {
+        "file": "src/router/background/host-sim.mjs",
+        "line": 240,
+        "text": "/** per-agent 门面：真宿主的 agent.ctx.tools 自动绑定到该 agent 的 scope。 */"
+      },
+      {
+        "file": "src/router/background/host-sim.mjs",
+        "line": 356,
+        "text": "await this.behavior({ agent, ctx: agent.ctx, input, callTool: (exec) => agent.ctx.tools.execute(exec) });"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/longlive-doctor.mjs",
+        "line": 18,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/longlive-doctor.mjs",
+        "line": 220,
+        "text": "const child = spawnSync(command, {"
+      },
+      {
+        "file": "scripts/session-watch-drill.mjs",
+        "line": 33,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/session-watch-drill.mjs",
+        "line": 179,
+        "text": "const result = spawnSync(NODE, [WATCHER, '--config', env.configPath, ...args], {"
+      },
+      {
+        "file": "scripts/session-watch-drill.mjs",
+        "line": 394,
+        "text": "const child = spawn(NODE, [WATCHER, '--config', env.configPath, '--loop'], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "sessions",
+    "tokenMeter",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}
