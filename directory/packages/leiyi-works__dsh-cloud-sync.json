@@ -1,11 +1,11 @@
 {
   "name": "@leiyi-works/dsh-cloud-sync",
-  "latest": "0.12.6",
-  "published": 1795518582,
+  "latest": "0.14.1",
+  "published": 1795793042,
   "created": 1794651866,
-  "modified": "2026-11-24T11:09:42.562Z",
+  "modified": "2026-11-27T15:24:02.673Z",
   "displayName": null,
-  "description": "云端同步 0.12.6：修「用户删掉默认工作区后，同步又把它重建出来」——布局 key 是小写路径、本机默认工作区路径是大写，`path.resolve` 不统一大小写导致跳过判断失效；改为 Windows 下不区分大小写比较（samePathLoose），默认工作区不再由同步创建/恢复。0.12.5：兜底挂载/空孤儿清理不再要求「本轮必须合并到新会话」，普通一轮同步就会执行（删掉工作区后点同步即可看到清理结果）。0.12.4：孤儿判定新增「悬空工作区记录」——布局里的工作区被标记删除、或它的 id 已不",
+  "description": "云端同步 0.14.1：插件变更检测改为事件触发（监听 package.json，有变化才检测/记录，不再每 10 秒轮询；启动后补查一次，监听不可用才 60 秒兜底）；0.14.0：插件同步改为「意图日志」——每次增删插件立刻记录（add/remove + 时间戳），全机队按每个插件最新一条记录收敛：装/删都扩散、不误删（卸载只认 remove 记录 + 清单损坏保护）、不拦真实卸载；增删后约 30 秒自动触发一轮同步；0.13.2：修「推送失败后下一轮把新装插件当多余卸掉」：只有上次推送成功写下的机队",
   "author": "leiyi-works",
   "keywords": [
     "dsh-plugin",
@@ -21,6 +21,31 @@
   "isBundle": true,
   "deprecated": false,
   "versions": [
+    {
+      "version": "0.14.1",
+      "publishTimestamp": 1795793042,
+      "enginesDsh": null
+    },
+    {
+      "version": "0.14.0",
+      "publishTimestamp": 1795792499,
+      "enginesDsh": null
+    },
+    {
+      "version": "0.13.2",
+      "publishTimestamp": 1795777369,
+      "enginesDsh": null
+    },
+    {
+      "version": "0.13.0",
+      "publishTimestamp": 1795774031,
+      "enginesDsh": null
+    },
+    {
+      "version": "0.13.1",
+      "publishTimestamp": 1795773926,
+      "enginesDsh": null
+    },
     {
       "version": "0.12.6",
       "publishTimestamp": 1795518582,
@@ -144,31 +169,6 @@
     {
       "version": "0.11.82",
       "publishTimestamp": 1795267466,
-      "enginesDsh": null
-    },
-    {
-      "version": "0.11.81",
-      "publishTimestamp": 1795264083,
-      "enginesDsh": null
-    },
-    {
-      "version": "0.11.80",
-      "publishTimestamp": 1795261868,
-      "enginesDsh": null
-    },
-    {
-      "version": "0.11.79",
-      "publishTimestamp": 1795261087,
-      "enginesDsh": null
-    },
-    {
-      "version": "0.11.78",
-      "publishTimestamp": 1795260952,
-      "enginesDsh": null
-    },
-    {
-      "version": "0.11.77",
-      "publishTimestamp": 1795260745,
       "enginesDsh": null
     }
   ]
