@@ -1,7 +1,7 @@
 {
   "name": "dsh-douyin-watch",
-  "version": "0.6.2",
-  "scannedAt": "2026-11-18T09:00:13.344Z",
+  "version": "0.6.3",
+  "scannedAt": "2026-11-27T22:44:59.209Z",
   "icon": "dsh-douyin-watch.svg",
   "network": {
     "hit": true,
@@ -38,27 +38,27 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 59,
+        "line": 60,
         "text": "import { appendFileSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync, existsSync, mkdirSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 389,
+        "line": 396,
         "text": "const raw = readFileSync(cfgPath, 'utf8')"
       },
       {
         "file": "index.js",
-        "line": 410,
+        "line": 419,
         "text": "try { appendFileSync(cfg.logFile, `[${new Date().toISOString()}] ${m}\\n`) } catch { /* 日志写不进去不影响主流程 */ }"
       },
       {
         "file": "index.js",
-        "line": 420,
+        "line": 429,
         "text": "const o = JSON.parse(readFileSync(join(cfg.home || HOME, 'owner.json'), 'utf8'))"
       },
       {
         "file": "index.js",
-        "line": 426,
+        "line": 435,
         "text": "try { disk = JSON.parse(readFileSync(cfgPath, 'utf8')) || {} } catch { disk = {} }"
       }
     ]
@@ -68,22 +68,22 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 106,
+        "line": 108,
         "text": "export const inject = ['agents', 'tools', 'webServer']"
       },
       {
         "file": "index.js",
-        "line": 2181,
+        "line": 2213,
         "text": "const d = targetCtx.tools.register(spec)"
       },
       {
         "file": "index.js",
-        "line": 2997,
+        "line": 3033,
         "text": "if (agent.ctx && agent.ctx.tools && typeof agent.ctx.tools.register === 'function') {"
       },
       {
         "file": "index.js",
-        "line": 3001,
+        "line": 3037,
         "text": "log('agent.ctx.tools 不可用，跳过工具注册')"
       }
     ]
@@ -93,28 +93,28 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 61,
+        "line": 62,
         "text": "import { execFile } from 'node:child_process'"
       },
       {
         "file": "index.js",
-        "line": 436,
+        "line": 465,
         "text": "execFile(cfg.nodeBin || process.execPath, [script, ...args], {"
       },
       {
         "file": "index.js",
-        "line": 1795,
+        "line": 1855,
         "text": "execFile(bin, [script, '--limit', String(limit)], {"
       },
       {
         "file": "index.js",
-        "line": 1826,
-        "text": "execFile(node, [script, '--to', peer, '--text', text], {"
+        "line": 1912,
+        "text": "execFile(node, [script, '--to', String(String(peer || '').trim() || ownerName()), '--read'], {"
       },
       {
         "file": "index.js",
-        "line": 1853,
-        "text": "execFile(node, [script, String(awemeId), String(peer || cfg.owner || '')], {"
+        "line": 2894,
+        "text": "execFile(node, [script, aweme, peer], {"
       }
     ]
   },

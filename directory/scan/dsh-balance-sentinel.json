@@ -1,0 +1,95 @@
+{
+  "name": "dsh-balance-sentinel",
+  "version": "0.1.6",
+  "scannedAt": "2026-11-27T22:44:59.747Z",
+  "icon": "dsh-balance-sentinel.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 399,
+        "text": "const res = await fetch(LOCAL_API + '/status', { headers: { Accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 484,
+        "text": "const res = await fetch(LOCAL_API + path, body === undefined"
+      },
+      {
+        "file": "lib/localapi.js",
+        "line": 8,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "scripts/selftest.mjs",
+        "line": 7,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "scripts/selftest.mjs",
+        "line": 554,
+        "text": "const st = await (await fetch('http://127.0.0.1:17431/status')).json()"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/balance.js",
+        "line": 10,
+        "text": "import { mkdirSync, readFileSync, writeFileSync, unlinkSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/balance.js",
+        "line": 278,
+        "text": "mkdirSync(dataDir(), { recursive: true, mode: 0o700 })"
+      },
+      {
+        "file": "lib/balance.js",
+        "line": 279,
+        "text": "writeFileSync(receiptPath(), JSON.stringify(body), 'utf8')"
+      },
+      {
+        "file": "lib/balance.js",
+        "line": 286,
+        "text": "const r = JSON.parse(readFileSync(receiptPath(), 'utf8'))"
+      },
+      {
+        "file": "lib/balance.js",
+        "line": 294,
+        "text": "function clearReceipt() { try { unlinkSync(receiptPath()) } catch { /* absent */ } }"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/verify-dedup.mjs",
+        "line": 6,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "scripts/verify-dedup.mjs",
+        "line": 40,
+        "text": "const child = spawn(process.execPath, ['--input-type=module', '-e', workerCode], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

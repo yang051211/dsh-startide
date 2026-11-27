@@ -1,0 +1,108 @@
+{
+  "name": "dsh-remote-peers",
+  "version": "0.3.63",
+  "scannedAt": "2026-11-27T22:45:07.274Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 7,
+        "text": "import { createServer } from 'node:http'"
+      },
+      {
+        "file": "index.mjs",
+        "line": 342,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "index.mjs",
+        "line": 365,
+        "text": "const response = await fetch(url, {"
+      },
+      {
+        "file": "index.mjs",
+        "line": 485,
+        "text": "const stat = await fetch(statUrl, {"
+      },
+      {
+        "file": "index.mjs",
+        "line": 504,
+        "text": "const response = await fetch(upstream, { headers: peerHeaders(peerEntry), redirect: 'manual', signal })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 6,
+        "text": "import { appendFileSync, createWriteStream, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.mjs",
+        "line": 50,
+        "text": "mkdirSync(settings.stateDir, { recursive: true })"
+      },
+      {
+        "file": "index.mjs",
+        "line": 51,
+        "text": "writeFileSync(join(settings.stateDir, 'apply.log'), `${new Date().toISOString()} ${text}\\n`, { flag: 'a' })"
+      },
+      {
+        "file": "index.mjs",
+        "line": 148,
+        "text": "mkdirSync(settings.stateDir, { recursive: true })"
+      },
+      {
+        "file": "index.mjs",
+        "line": 149,
+        "text": "appendFileSync(join(settings.stateDir, 'diag.log'), `${new Date().toISOString()} ${text}\\n`)"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.mjs",
+        "line": 4,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.mjs",
+        "line": 566,
+        "text": "const child = spawn(program, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js",
+    "vendor/pdfjs/pdf.worker.min.mjs",
+    "vendor/pdfjs/wasm/jbig2_nowasm_fallback.js",
+    "vendor/pdfjs/wasm/openjpeg_nowasm_fallback.js"
+  ],
+  "binaryFiles": [
+    "vendor/pdfjs/wasm/jbig2.wasm",
+    "vendor/pdfjs/wasm/openjpeg.wasm",
+    "vendor/pdfjs/wasm/qcms_bg.wasm",
+    "vendor/pdfjs/wasm/quickjs-eval.wasm"
+  ],
+  "requiredServices": [
+    "connection",
+    "typertGateway"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

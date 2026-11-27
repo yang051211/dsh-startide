@@ -1,19 +1,24 @@
 {
   "name": "@laivikto/dsh-ssh-servers",
-  "version": "1.7.0",
-  "scannedAt": "2026-11-25T23:07:24.596Z",
+  "version": "1.8.0",
+  "scannedAt": "2026-11-27T22:45:00.583Z",
   "icon": "laivikto__dsh-ssh-servers.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 441,
+        "line": 499,
         "text": "const response = await fetch(apiUrl(name), {"
       },
       {
         "file": "client.js",
-        "line": 911,
+        "line": 517,
+        "text": "const request = new XMLHttpRequest()"
+      },
+      {
+        "file": "client.js",
+        "line": 1151,
         "text": "const response = await fetch(apiUrl('fs-download-raw'), {"
       }
     ]
@@ -29,7 +34,17 @@
       {
         "file": "index.js",
         "line": 12,
-        "text": "import { readdir as readdirAsync, stat as statAsync } from 'node:fs/promises'"
+        "text": "import { mkdtemp, open, readdir as readdirAsync, rm, rmdir, stat as statAsync } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 1860,
+        "text": "await file.writeFile(chunk)"
+      },
+      {
+        "file": "index.js",
+        "line": 1985,
+        "text": "await rm(join(directory, 'payload'), { force: true }).catch(() => {})"
       }
     ]
   },
@@ -38,7 +53,7 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 2043,
+        "line": 2357,
         "text": "toolDisposers.push(tools.register(definition, {"
       }
     ]
@@ -49,17 +64,22 @@
       {
         "file": "index.js",
         "line": 11,
-        "text": "import { spawn } from 'node:child_process'"
+        "text": "import { execFile, spawn } from 'node:child_process'"
       },
       {
         "file": "index.js",
-        "line": 992,
+        "line": 1061,
         "text": "* 直接 spawn('ssh') 时，Windows 的 CreateProcess 会在 cwd 中优先查找，"
       },
       {
         "file": "index.js",
-        "line": 1056,
+        "line": 1128,
         "text": "child = spawn(SSH_BIN, args, {"
+      },
+      {
+        "file": "index.js",
+        "line": 1806,
+        "text": "const child = execFile(binary, args, { cwd: directory, windowsHide: true, timeout: 120_000, maxBuffer: 64 * 1024 }, (error) => {"
       }
     ]
   },

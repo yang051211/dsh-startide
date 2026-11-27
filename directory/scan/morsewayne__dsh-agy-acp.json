@@ -1,0 +1,116 @@
+{
+  "name": "@morsewayne/dsh-agy-acp",
+  "version": "0.10.0",
+  "scannedAt": "2026-11-27T22:44:58.571Z",
+  "icon": "morsewayne__dsh-agy-acp.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/bridge.mjs",
+        "line": 7,
+        "text": "* Uses `node:http` / `node:https` directly instead of `fetch()` so loopback"
+      },
+      {
+        "file": "dist/bridge.mjs",
+        "line": 11,
+        "text": "import http from 'node:http'"
+      },
+      {
+        "file": "dist/bridge.mjs",
+        "line": 12,
+        "text": "import https from 'node:https'"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 37,
+        "text": "return \"curl -fsSL https://antigravity.google/cli/install.sh | bash\";"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 2027,
+        "text": "const res = await fetch(\"/plugins/agy-acp/status\");"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 2,
+        "text": ", readFileSync, readSync, readdirSync, realpathSync, renameSync, rmSync, rmdirSync, statSync, statfsSync, unlinkSync, writeFileSync, writeSync } from \"node:fs\";"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 1882,
+        "text": "return linuxLeaderIdentity(readFileSync(`/proc/${pid}/stat`, \"utf8\"), pid);"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 1896,
+        "text": "const path = /^0::(\\/[^\\n]*)$/m.exec(readFileSync(\"/proc/self/cgroup\", \"utf8\"))?.[1];"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 1900,
+        "text": "return readFileSync(join(p, \"cgroup.procs\"), \"utf8\").split(\"\\n\").includes(String(process.pid));"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 3078,
+        "text": "return /^mnt_id:\\s*(\\d+)$/m.exec(readFileSync(`/proc/self/fdinfo/${fd}`, \"utf8\"))?.[1];"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 14852,
+        "text": "const disposeTool = cfg.enabled ? tools.register(defineAgyAcpMirrorTool(runs)) : void 0;"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/index.js",
+        "line": 8,
+        "text": "import { execFile, spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 1959,
+        "text": "child = group ? spawn(\"/bin/sh\", ["
+      },
+      {
+        "file": "dist/index.js",
+        "line": 1973,
+        "text": "}) : spawn(bin, args, {"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 11427,
+        "text": "}) : spawn(params.bin, [\"acp\", \"--login\"], {"
+      },
+      {
+        "file": "dist/index.js",
+        "line": 13223,
+        "text": "child = spawn(command, args, {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

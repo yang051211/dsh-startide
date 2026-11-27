@@ -1,15 +1,26 @@
 {
   "name": "dsh-niuma-timer",
-  "version": "1.6.0",
-  "scannedAt": "2026-11-25T10:09:28.674Z",
+  "version": "1.7.0",
+  "scannedAt": "2026-11-27T22:44:56.954Z",
   "icon": "dsh-niuma-timer.svg",
   "network": {
     "hit": false,
     "evidence": []
   },
   "fileSystem": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/check-version.js",
+        "line": 1,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "scripts/check-version.js",
+        "line": 4,
+        "text": "return readFileSync(new URL('../' + path, import.meta.url), 'utf8')"
+      }
+    ]
   },
   "agentTools": {
     "hit": false,

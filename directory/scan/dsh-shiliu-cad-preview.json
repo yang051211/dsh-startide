@@ -1,20 +1,35 @@
 {
   "name": "dsh-shiliu-cad-preview",
-  "version": "0.1.6",
-  "scannedAt": "2026-11-27T10:06:26.334Z",
-  "icon": "dsh-shiliu-cad-preview.svg",
+  "version": "0.1.9",
+  "scannedAt": "2026-11-27T22:45:07.175Z",
+  "icon": "dsh-shiliu-cad-preview.png",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 74,
-        "text": "fetch(API).then((r) => r.json()).then((d) => alive && setData(d)).catch(() => alive && setData({ ok: false, files: [] }))"
+        "line": 258,
+        "text": "fetch(FILES, { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 266,
+        "text": "fetch(HISTORY, { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 295,
+        "text": "fetch(OPEN, {"
+      },
+      {
+        "file": "client.js",
+        "line": 314,
+        "text": "const res = await fetch(`${UPLOAD}?name=${encodeURIComponent(file.name)}`, {"
       },
       {
         "file": "index.js",
-        "line": 176,
-        "text": "const config = await (await fetch(new URL(\"nsgo.json\", base), { cache: \"no-cache\" })).json();"
+        "line": 403,
+        "text": "const res = await fetch(\"/shiliu-cad/file?src=\" + encodeURIComponent(src), { cache: \"no-store\" });"
       }
     ]
   },
@@ -23,18 +38,28 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 13,
-        "text": "import { existsSync, mkdirSync, readdirSync, readFileSync, statSync } from 'node:fs'"
+        "line": 17,
+        "text": "import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'"
       },
       {
         "file": "index.js",
-        "line": 28,
+        "line": 37,
         "text": "mkdirSync(dir, { recursive: true })"
       },
       {
         "file": "index.js",
-        "line": 126,
-        "text": "const body = readFileSync(file)"
+        "line": 154,
+        "text": "const raw = JSON.parse(readFileSync(historyPath(ctx), 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 163,
+        "text": "mkdirSync(dirname(historyPath(ctx)), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 164,
+        "text": "writeFileSync(historyPath(ctx), JSON.stringify(items.slice(0, HISTORY_LIMIT), null, 2))"
       }
     ]
   },

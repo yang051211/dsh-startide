@@ -1,0 +1,67 @@
+{
+  "name": "dsh-plugin-fluentcart",
+  "version": "3.0.2",
+  "scannedAt": "2026-11-27T22:44:53.638Z",
+  "icon": "dsh-plugin-fluentcart.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 20,
+        "text": "import { existsSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 129,
+        "text": "const source = readFileSync(skillFile, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "cordis.patch.yml",
+        "line": 4,
+        "text": "# the host's own @deepseek-ai/dsh-mcp-client and registers the skill, so this"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "*      `@deepseek-ai/dsh-mcp-client`, and"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 25,
+        "text": "import * as McpClient from '@deepseek-ai/dsh-mcp-client'"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 42,
+        "text": "export const inject = ['tools', 'skills']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "skills",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

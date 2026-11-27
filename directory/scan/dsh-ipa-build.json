@@ -1,0 +1,87 @@
+{
+  "name": "dsh-ipa-build",
+  "version": "1.4.4",
+  "scannedAt": "2026-11-27T22:45:06.651Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/bootstrap.sh",
+        "line": 86,
+        "text": "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\" || { echo \"Homebrew 没装上（网络问题）\"; return 1; }"
+      },
+      {
+        "file": "scripts/ipa.ps1",
+        "line": 637,
+        "text": "try { $meta = Invoke-RestMethod -Uri 'https://registry.npmjs.org/dsh-ipa-build/latest' -TimeoutSec 20 }"
+      },
+      {
+        "file": "vendor/ldid-master/.github/workflows/build.yml",
+        "line": 73,
+        "text": "wget -nc -P ${DOWNLOAD_PATH} https://cameronkatri.com/toolchains/${TOOLCHAIN}.tgz"
+      },
+      {
+        "file": "vendor/ldid-master/.github/workflows/build.yml",
+        "line": 74,
+        "text": "          wget -nc -P ${DOWNLOAD_PATH} https://github.com/mozilla/sccache/releases/download/v${SCCACHE_VERSION}/sccache-v${SCCACHE_VERSION}-x86_64-unknown-linux"
+      },
+      {
+        "file": "vendor/ldid-master/.github/workflows/build.yml",
+        "line": 98,
+        "text": "wget -nc -P ${DOWNLOAD_PATH} https://github.com/libimobiledevice/libplist/releases/download/${LIBPLIST_VERSION}/libplist-${LIBPLIST_VERSION}.tar.bz2"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 1,
+        "text": "import { readFile } from \"node:fs/promises\";"
+      },
+      {
+        "file": "index.js",
+        "line": 9,
+        "text": "versionPromise ??= readFile(MANIFEST_URL, \"utf8\")"
+      },
+      {
+        "file": "index.js",
+        "line": 60,
+        "text": "await readFile(SKILL_BODY_URL, \"utf8\"),"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [
+    "vendor/zsign/zsign.exe"
+  ],
+  "requiredServices": [],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 20,
+      "text": "bash scripts/bootstrap.sh"
+    },
+    {
+      "file": "README.md",
+      "line": 24,
+      "text": "powershell -ExecutionPolicy Bypass -File scripts\\bootstrap.ps1"
+    }
+  ],
+  "skippedEntries": []
+}

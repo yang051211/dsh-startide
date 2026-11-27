@@ -1,7 +1,7 @@
 {
   "name": "dsh-delete-guard",
-  "version": "2.2.3",
-  "scannedAt": "2026-10-30T23:38:37.703Z",
+  "version": "2.4.4",
+  "scannedAt": "2026-11-27T22:44:58.049Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -12,12 +12,12 @@
     "evidence": [
       {
         "file": "lib/guard.js",
-        "line": 214,
+        "line": 451,
         "text": "* `require('fs').rmSync(...)` never contains the text `fs.rmSync`, so a"
       },
       {
         "file": "lib/guard.js",
-        "line": 896,
+        "line": 1427,
         "text": "//    `node -e \"fs.rmSync(...)\"`, `python -c \"shutil.rmtree(...)\"`."
       },
       {
@@ -29,6 +29,11 @@
         "file": "lib/recycle.js",
         "line": 20,
         "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/staging.js",
+        "line": 48,
+        "text": "import { cp, lstat, mkdir, readdir, rm, statfs } from 'node:fs/promises';"
       }
     ]
   },
@@ -42,23 +47,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 40,
+        "line": 42,
         "text": "export const inject = ['tools', 'systemPrompt'];"
       },
       {
         "file": "lib/index.js",
-        "line": 174,
+        "line": 218,
+        "text": "* because that is what the model should send; the host does not validate it (`ctx.tools."
+      },
+      {
+        "file": "lib/index.js",
+        "line": 461,
         "text": "ctx.tools.register({"
       },
       {
         "file": "lib/index.js",
-        "line": 180,
+        "line": 467,
         "text": "// `ctx.tools.register` passes parameters through verbatim (only `defineTool`"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 293,
-        "text": "ctx.tools.register({"
       }
     ]
   },
@@ -66,14 +71,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/recycle.js",
-        "line": 19,
-        "text": "import { spawn } from 'node:child_process';"
+        "file": "lib/guard.js",
+        "line": 177,
+        "text": "* `const { execSync } = require('child_process')`. Measured 2026-11-24: this shape"
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 178,
+        "text": "* then calls a bare `execSync(...)`, which {@link SPAWN_CALL} did not catch (every"
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 179,
+        "text": "* branch required a leading dot), so `execSync('shred -u x')` was allowed."
+      },
+      {
+        "file": "lib/guard.js",
+        "line": 1006,
+        "text": "// A destructured child_process import makes the call site a bare `execSync(...)`,"
       },
       {
         "file": "lib/recycle.js",
-        "line": 61,
-        "text": "const child = spawn("
+        "line": 19,
+        "text": "import { spawn } from 'node:child_process';"
       }
     ]
   },
@@ -81,7 +101,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 0,
+  "dependencies": 1,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

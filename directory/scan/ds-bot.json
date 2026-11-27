@@ -1,35 +1,35 @@
 {
   "name": "ds-bot",
-  "version": "0.3.10",
-  "scannedAt": "2026-11-22T21:06:25.295Z",
+  "version": "0.4.1",
+  "scannedAt": "2026-11-27T22:44:45.647Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
+        "file": "bin/ds-bot-cli.mjs",
+        "line": 140,
+        "text": "const res = await fetch(url, {"
+      },
+      {
+        "file": "bin/ds-bot-cli.mjs",
+        "line": 211,
+        "text": "response = await fetch(url, {"
+      },
+      {
+        "file": "bin/ds-bot-cli.mjs",
+        "line": 357,
+        "text": "const res = await fetch(`${endpoint.baseUrl}${path}`, {"
+      },
+      {
         "file": "client.js",
-        "line": 16050,
+        "line": 21685,
         "text": "response = await fetch(ROUTE, {"
       },
       {
-        "file": "link.js",
-        "line": 7632,
-        "text": "const socket = this.options.createSocket?.(this.options.url) ?? new WebSocket(this.options.url);"
-      },
-      {
-        "file": "link.js",
-        "line": 7900,
-        "text": "this.socket = this.options.createSocket?.(this.url) ?? new WebSocket(this.url);"
-      },
-      {
-        "file": "src/host/connectors/gateway.js",
-        "line": 7,
-        "text": "import { createServer } from 'node:http'"
-      },
-      {
-        "file": "src/host/connectors/gateway.js",
-        "line": 13,
-        "text": "const loadUndici = () => undici ??= import('undici')"
+        "file": "client.js",
+        "line": 24456,
+        "text": "const blob = await (await fetch(picture.image)).blob();"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "bin/ds-bot-cli.mjs",
+        "line": 11,
+        "text": "import { existsSync, readFileSync, realpathSync } from 'node:fs'"
+      },
+      {
+        "file": "bin/ds-bot-cli.mjs",
+        "line": 30,
+        "text": "const parsed = JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "bin/ds-bot-cli.mjs",
+        "line": 68,
+        "text": "try { parsed = JSON.parse(readFileSync(file, 'utf8')) } catch { continue }"
+      },
+      {
+        "file": "bin/ds-bot-cli.mjs",
+        "line": 79,
+        "text": "const text = readFileSync(tokenFile, 'utf8').trim()"
+      },
+      {
         "file": "bin/ds-bot-doctor.mjs",
         "line": 23,
         "text": "import { existsSync, readdirSync, readFileSync, realpathSync, writeFileSync } from 'node:fs'"
-      },
-      {
-        "file": "bin/ds-bot-doctor.mjs",
-        "line": 82,
-        "text": "manifest = JSON.parse(readFileSync(join(dir, 'package.json'), 'utf8'))"
-      },
-      {
-        "file": "bin/ds-bot-doctor.mjs",
-        "line": 101,
-        "text": "writeFileSync(join(entry.dir, 'package.json'), `${JSON.stringify(entry.manifest, null, 2)}\\n`)"
-      },
-      {
-        "file": "office.js",
-        "line": 6513,
-        "text": "2, mkdirSync as mkdirSync2, readFileSync as readFileSync2, readdirSync as readdirSync2, statSync as statSync2, writeFileSync as writeFileSync2 } from \"node:fs\";"
-      },
-      {
-        "file": "office.js",
-        "line": 6518,
-        "text": "import { existsSync, lstatSync, mkdirSync, readFileSync, readdirSync, realpathSync, rmdirSync, statSync, unlinkSync, writeFileSync } from \"node:fs\";"
       }
     ]
   },
@@ -67,35 +67,45 @@
     "hit": true,
     "evidence": [
       {
+        "file": "src/host/bot-code-mode.js",
+        "line": 37,
+        "text": "inject: ['tools'],"
+      },
+      {
         "file": "src/host/browser/mount.js",
-        "line": 127,
+        "line": 248,
         "text": "const registerTool = register ?? (tool => ctx.tools.register(tool))"
       },
       {
         "file": "src/host/capabilities.js",
-        "line": 5,
+        "line": 7,
         "text": "const MCP_CLIENT = '@deepseek-ai/dsh-mcp-client'"
       },
       {
         "file": "src/host/capabilities.js",
-        "line": 378,
+        "line": 550,
         "text": "const tools = agent.ctx.tools"
       },
       {
         "file": "src/host/capabilities.js",
-        "line": 380,
+        "line": 552,
         "text": "scopedTools.register = (...args) => register(() => tools.register(...args))"
-      },
-      {
-        "file": "src/host/capabilities.js",
-        "line": 389,
-        "text": "const schemas = agent.ctx.tools?.schemas?.(agent)"
       }
     ]
   },
   "childProcess": {
     "hit": true,
     "evidence": [
+      {
+        "file": "bin/ds-bot-cli.mjs",
+        "line": 10,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "bin/ds-bot-cli.mjs",
+        "line": 270,
+        "text": "const result = spawnSync(process.execPath, [DOCTOR_BIN, 'doctor', ...rest], { stdio: 'inherit' })"
+      },
       {
         "file": "bin/ds-bot-doctor.mjs",
         "line": 22,
@@ -110,16 +120,6 @@
         "file": "src/host/browser/script-runner.js",
         "line": 5,
         "text": "import { fork } from 'node:child_process'"
-      },
-      {
-        "file": "src/host/computer/mac-helper.js",
-        "line": 5,
-        "text": "import { execFile } from 'node:child_process'"
-      },
-      {
-        "file": "src/host/dsh-update.js",
-        "line": 9,
-        "text": "import { spawn } from 'node:child_process'"
       }
     ]
   },
@@ -127,9 +127,10 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 11,
+  "dependencies": 12,
   "minifiedFiles": [
-    "client.js"
+    "client.js",
+    "src/client/agent-logos.js"
   ],
   "binaryFiles": [],
   "requiredServices": [

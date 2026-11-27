@@ -1,7 +1,7 @@
 {
   "name": "dsh-tower",
-  "version": "2.9.8",
-  "scannedAt": "2026-11-23T09:10:19.329Z",
+  "version": "2.9.9",
+  "scannedAt": "2026-11-27T22:44:54.044Z",
   "icon": "dsh-tower.svg",
   "network": {
     "hit": false,
@@ -26,14 +26,14 @@
         "text": "await fs.unlink(probePath)"
       },
       {
-        "file": "adapters/git.js",
-        "line": 406,
-        "text": "const text = fs.readFileSync(dotGit, 'utf8')"
+        "file": "adapters/commitLock.js",
+        "line": 61,
+        "text": "const current = await fsp.readFile(lockPath, 'utf8').catch(() => null)"
       },
       {
-        "file": "adapters/git.js",
-        "line": 417,
-        "text": "const common = fs.readFileSync(commonPointer, 'utf8').trim()"
+        "file": "adapters/commitLock.js",
+        "line": 72,
+        "text": "await fsp.unlink(lockPath).catch(() => {})"
       }
     ]
   },

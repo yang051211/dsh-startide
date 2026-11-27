@@ -1,7 +1,7 @@
 {
   "name": "dsh-rig",
-  "version": "0.6.1",
-  "scannedAt": "2026-11-27T10:06:11.545Z",
+  "version": "0.9.0",
+  "scannedAt": "2026-11-27T22:44:50.485Z",
   "icon": "dsh-rig.svg",
   "network": {
     "hit": true,
@@ -17,19 +17,19 @@
         "text": "const res = await fetch(`${API}/events`, { headers: { ...HEADERS, accept: 'text/event-stream' }, signal })"
       },
       {
+        "file": "lib/lab/bridge.js",
+        "line": 83,
+        "text": "const res = await fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' }, body, signal: AbortSignal.timeout(timeoutMs + 60_000) })"
+      },
+      {
+        "file": "lib/lab/bridge.js",
+        "line": 106,
+        "text": "const res = await fetch(url, { signal: AbortSignal.timeout(30_000) })"
+      },
+      {
         "file": "lib/lab/browser.js",
         "line": 17,
         "text": "import { request as httpRequest } from 'node:http'"
-      },
-      {
-        "file": "lib/lab/browser.js",
-        "line": 86,
-        "text": "conn.#ws = new WebSocket(wsUrl)"
-      },
-      {
-        "file": "lib/lab/probe.js",
-        "line": 6,
-        "text": "* 2026-11-21 实测：同一个 URL，PowerShell 的 `Invoke-WebRequest` 回 200，宿主进程内 `fetch`"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/lab/browser.js",
-        "line": 16,
-        "text": "import { existsSync } from 'node:fs'"
+        "file": "lib/lab/bridge.js",
+        "line": 13,
+        "text": "import { readFile, writeFile } from 'node:fs/promises'"
       },
       {
-        "file": "lib/lab/core-bin.js",
-        "line": 8,
-        "text": "import { readFile } from 'node:fs/promises'"
+        "file": "lib/lab/bridge.js",
+        "line": 46,
+        "text": "const pkg = JSON.parse(await readFile(join(profileDir, 'package.json'), 'utf8'))"
       },
       {
-        "file": "lib/lab/core-bin.js",
-        "line": 20,
-        "text": "await readFile(bin, { encoding: 'utf8', flag: 'r' })"
+        "file": "lib/lab/bridge.js",
+        "line": 59,
+        "text": "const text = await readFile(patchFile, 'utf8')"
       },
       {
-        "file": "lib/lab/plugins.js",
-        "line": 10,
-        "text": "import { readFile } from 'node:fs/promises'"
+        "file": "lib/lab/bridge.js",
+        "line": 63,
+        "text": "await writeFile(patchFile, next, 'utf8')"
       },
       {
-        "file": "lib/lab/plugins.js",
-        "line": 27,
-        "text": "const raw = JSON.parse(await readFile(file, 'utf8'))"
+        "file": "lib/lab/bridge.js",
+        "line": 67,
+        "text": "await writeFile(patchFile, INSERT_BLOCK, 'utf8')"
       }
     ]
   },

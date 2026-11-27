@@ -1,0 +1,103 @@
+{
+  "name": "@schoolforbots/schoolforbots-plugin-dsh",
+  "version": "0.7.0",
+  "scannedAt": "2026-11-27T22:44:57.783Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/class-link.js",
+        "line": 29,
+        "text": "this.ws = new WebSocket(opts.url, { headers: { Authorization: `Bearer ${opts.key}` }, handshakeTimeout: 15_000 });"
+      },
+      {
+        "file": "lib/core/club-link.js",
+        "line": 32,
+        "text": "this.ws = new WebSocket(opts.url, { headers: { Authorization: `Bearer ${opts.key}` }, handshakeTimeout: 15_000 });"
+      },
+      {
+        "file": "lib/dsh/replay-viewer.js",
+        "line": 8,
+        "text": "import { createServer } from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/dsh/app.js",
+        "line": 3,
+        "text": "import { writeFileSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/dsh/app.js",
+        "line": 41,
+        "text": "writeFileSync(file, `${key}\\n`, { encoding: 'utf8', mode: 0o600 });"
+      },
+      {
+        "file": "lib/dsh/brain.js",
+        "line": 18,
+        "text": "import { mkdirSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/dsh/brain.js",
+        "line": 88,
+        "text": "mkdirSync(o.roomDir, { recursive: true });"
+      },
+      {
+        "file": "lib/dsh/club-log.js",
+        "line": 6,
+        "text": "import { appendFile, readFile, rename, stat } from 'node:fs/promises';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/dsh/index.js",
+        "line": 188,
+        "text": "memoryToolOff = tools.register(school.memoryTool);"
+      },
+      {
+        "file": "lib/dsh/index.js",
+        "line": 198,
+        "text": "ctx.effect(() => tools.register(def, OWNER_ONLY.has(def.name) ? ownerOnly : {}));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/dsh/replay-viewer.js",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/dsh/replay-viewer.js",
+        "line": 23,
+        "text": "const child = spawn(cmd, args, { detached: true, stdio: 'ignore', windowsHide: true, windowsVerbatimArguments: true });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [
+    "lib/dsh/avatar-art.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "sessionController",
+    "systemPrompt",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

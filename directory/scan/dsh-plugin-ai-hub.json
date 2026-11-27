@@ -1,0 +1,130 @@
+{
+  "name": "dsh-plugin-ai-hub",
+  "version": "2.9.8",
+  "scannedAt": "2026-11-27T22:45:06.703Z",
+  "icon": "dsh-plugin-ai-hub.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 900,
+        "text": "const response = await fetch(url, Object.assign({ cache: 'no-store' }, init || {}))"
+      },
+      {
+        "file": "client.js",
+        "line": 1310,
+        "text": "fetch('/dsh-console/api/progress').then((r) => r.json()).catch(() => ({})),"
+      },
+      {
+        "file": "client.js",
+        "line": 1311,
+        "text": "fetch('/dsh-console/api/sessions').then((r) => r.json()).catch(() => ({ sessions: [] })),"
+      },
+      {
+        "file": "client.js",
+        "line": 1350,
+        "text": "const response = await fetch('/dsh-console/api/inject', {"
+      },
+      {
+        "file": "client.js",
+        "line": 1370,
+        "text": "const response = await fetch('/dsh-console/api/session/interrupt', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "c, closeSync, existsSync, mkdirSync, openSync, readFileSync, readSync, readdirSync, renameSync, statSync, unlinkSync, utimesSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "index.js",
+        "line": 83,
+        "text": "return JSON.parse(readFileSync(file, 'utf8'))"
+      },
+      {
+        "file": "index.js",
+        "line": 91,
+        "text": "mkdirSync(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 92,
+        "text": "writeFileSync(file, JSON.stringify(value, null, 2), 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 101,
+        "text": "return readFileSync(file, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 20,
+        "text": "export const inject = ['webServer', 'tools', 'agents']"
+      },
+      {
+        "file": "index.js",
+        "line": 5075,
+        "text": "registerTools(ctx.tools)"
+      },
+      {
+        "file": "index.js",
+        "line": 5145,
+        "text": "return ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 12,
+        "text": "import { execFile, execFileSync, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "index.js",
+        "line": 918,
+        "text": "const child = spawn(settings.python || 'python', ['-X', 'utf8', join(root, 'tools', 'notify.py'), '--send', message, '--subject', 'DS 守护台'], {"
+      },
+      {
+        "file": "index.js",
+        "line": 941,
+        "text": "const child = spawn(settings.python || 'python', ['-X', 'utf8', pipelineScript], {"
+      },
+      {
+        "file": "index.js",
+        "line": 1035,
+        "text": "const killer = spawn('taskkill', ['/PID', String(pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "index.js",
+        "line": 1068,
+        "text": "child = spawn('powershell.exe', ['-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-Command', script], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,11 +1,21 @@
 {
   "name": "dsh-bundle-antigravity-host",
-  "version": "0.1.53",
-  "scannedAt": "2026-11-26T23:01:11.247Z",
+  "version": "0.1.54",
+  "scannedAt": "2026-11-27T22:44:50.215Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
+      {
+        "file": "dist/aistudio/adapter.js",
+        "line": 230,
+        "text": "response = await this.options.fetch(aistudioModelsUrl(pageToken), init);"
+      },
+      {
+        "file": "dist/aistudio/adapter.js",
+        "line": 285,
+        "text": "response = await this.options.fetch(url, init);"
+      },
       {
         "file": "dist/bridge/mcp-bridge.js",
         "line": 25,
@@ -20,16 +30,6 @@
         "file": "dist/runtime/binary.js",
         "line": 129,
         "text": "const doFetch = options.fetchImpl ?? ((url2, init) => fetch(url2, init));"
-      },
-      {
-        "file": "dist/runtime/proxied-fetch.js",
-        "line": 5,
-        "text": "const module = (await import('undici'));"
-      },
-      {
-        "file": "dist/runtime/proxied-fetch.js",
-        "line": 79,
-        "text": "const fallback = deps.fallback ?? ((input, init) => globalThis.fetch(input, init));"
       }
     ]
   },
@@ -37,42 +37,63 @@
     "hit": true,
     "evidence": [
       {
-        "file": "dist/index.js",
-        "line": 10,
-        "text": "import { createReadStream, existsSync } from 'node:fs';"
+        "file": "dist/colab/execute.js",
+        "line": 2,
+        "text": "import { writeFile } from 'node:fs/promises';"
       },
       {
-        "file": "dist/protocol/agent-link.js",
-        "line": 13,
-        "text": "import { readFileSync } from 'node:fs';"
+        "file": "dist/colab/execute.js",
+        "line": 36,
+        "text": "await writeFile(join(dir, NOTEBOOK_INPUT), data, { flag: 'wx', mode: 0o600, signal });"
       },
       {
-        "file": "dist/protocol/agent-link.js",
-        "line": 83,
-        "text": "const version = JSON.parse(readFileSync(file, 'utf8')).version;"
+        "file": "dist/colab/index.js",
+        "line": 1,
+        "text": "import { mkdtemp, realpath, rm } from 'node:fs/promises';"
       },
       {
-        "file": "dist/proxy/account-store.js",
-        "line": 14,
-        "text": "import { chmod, mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises';"
+        "file": "dist/colab/index.js",
+        "line": 64,
+        "text": "await rm(dir, { recursive: true, force: true, maxRetries: 2, retryDelay: 100 });"
       },
       {
-        "file": "dist/proxy/account-store.js",
-        "line": 96,
-        "text": "const read = this.deps.readFileImpl ?? ((path) => readFile(path, 'utf8'));"
+        "file": "dist/colab/notebook.js",
+        "line": 1,
+        "text": "import { constants } from 'node:fs';"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/colab/index.js",
+        "line": 10,
+        "text": "export const inject = ['tools', 'subprocess'];"
+      },
+      {
+        "file": "dist/colab/index.js",
+        "line": 163,
+        "text": "yield ctx.tools.register(tools.usage);"
+      },
+      {
+        "file": "dist/colab/index.js",
+        "line": 164,
+        "text": "yield ctx.tools.register(tools.execute);"
+      }
+    ]
   },
   "childProcess": {
     "hit": true,
     "evidence": [
       {
+        "file": "dist/colab/runner.js",
+        "line": 50,
+        "text": "handle = subprocess.spawn({"
+      },
+      {
         "file": "dist/index.js",
-        "line": 355,
+        "line": 357,
         "text": "const handle = subprocess.spawn({"
       },
       {
@@ -96,7 +117,7 @@
     "hit": false,
     "evidence": []
   },
-  "dependencies": 6,
+  "dependencies": 8,
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [

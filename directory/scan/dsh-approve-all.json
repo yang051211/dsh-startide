@@ -1,0 +1,61 @@
+{
+  "name": "dsh-approve-all",
+  "version": "0.6.0",
+  "scannedAt": "2026-11-27T22:45:06.740Z",
+  "icon": "dsh-approve-all.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 350,
+        "text": "const response = await fetch(CHANNEL, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "disk.js",
+        "line": 15,
+        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "disk.js",
+        "line": 57,
+        "text": "text = await readFile(file, 'utf8')"
+      },
+      {
+        "file": "disk.js",
+        "line": 79,
+        "text": "await mkdir(dataDir(), { recursive: true })"
+      },
+      {
+        "file": "disk.js",
+        "line": 81,
+        "text": "await writeFile(temporary, `${JSON.stringify(data, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "approval"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

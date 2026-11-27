@@ -1,0 +1,68 @@
+{
+  "name": "dsh-pack-and-go",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-27T22:45:00.885Z",
+  "icon": "dsh-pack-and-go.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/client/client.js",
+        "line": 750,
+        "text": "const response = await fetch('/api/mover/exec', {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/cli/index.js",
+        "line": 14,
+        "text": "import { existsSync } from 'node:fs'"
+      },
+      {
+        "file": "src/cli/index.js",
+        "line": 15,
+        "text": "import { access, copyFile, mkdir, readFile, readdir, realpath, stat, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "src/cli/index.js",
+        "line": 76,
+        "text": "const buffer = await readFile(file)"
+      },
+      {
+        "file": "src/cli/index.js",
+        "line": 211,
+        "text": "data = JSON.parse(await readFile(file, 'utf8'))"
+      },
+      {
+        "file": "src/cli/index.js",
+        "line": 257,
+        "text": "await writeFile(file, JSON.stringify(data, null, 2))"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "commands",
+    "sessionPersistence",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,109 @@
+{
+  "name": "dsh-plugin-steward",
+  "version": "0.2.9",
+  "scannedAt": "2026-11-27T22:45:04.703Z",
+  "icon": "dsh-plugin-steward.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 233,
+        "text": "fetch('/steward/ledger.json', { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 298,
+        "text": "fetch('/steward/timeline.json', { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 392,
+        "text": "fetch('/steward/projects.json', { cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "import { existsSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/change.js",
+        "line": 10,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/change.js",
+        "line": 62,
+        "text": "fs.mkdirSync(DSH, { recursive: true });"
+      },
+      {
+        "file": "lib/change.js",
+        "line": 63,
+        "text": "fs.writeFileSync(CHANGES_FILE, [TITLE, '', ...NOTE].join('\\n') + '\\n', 'utf8');"
+      },
+      {
+        "file": "lib/change.js",
+        "line": 117,
+        "text": "fs.writeFileSync(CHANGES_FILE, readText(CHANGES_FILE).replace(/\\s*$/, '\\n') + line + '\\n', 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 62,
+        "text": "export const inject = ['tools', 'systemPrompt'];"
+      },
+      {
+        "file": "index.js",
+        "line": 1072,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "index.js",
+        "line": 1098,
+        "text": "ctx.tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 18,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 14,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 563,
+        "text": "const r = spawnSync(process.execPath, [lint, '--quiet'], { encoding: 'utf8', timeout: 120000, windowsHide: true });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

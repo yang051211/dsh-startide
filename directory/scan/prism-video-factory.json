@@ -1,0 +1,134 @@
+{
+  "name": "prism-video-factory",
+  "version": "1.1.9",
+  "scannedAt": "2026-11-27T22:44:55.392Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/assets/index-CrEvMrdA.js",
+        "line": 1,
+        "text": "(p){if(p.ep)return;p.ep=!0;const m=o(p);fetch(p.href,m)}})();function sp(a){return a&&a.__esModule&&Object.prototype.hasOwnProperty.call(a,\"default\")?a.default:"
+      },
+      {
+        "file": "dist/assets/index-CrEvMrdA.js",
+        "line": 397,
+        "text": "}){var v;const{signal:o,...d}=c,p=await fetch(`/api${a}`,{...d,signal:o||AbortSignal.timeout(2e4),headers:{\"Content-Type\":\"application/json\",...d.headers},...d."
+      },
+      {
+        "file": "dist/assets/index-CrEvMrdA.js",
+        "line": 427,
+        "text": "($e!=null&&$e.tokensCss){const Ke=await fetch(`/${$e.tokensCss}`);if(!Ke.ok)throw new Error(\"设计体系配色文件读取失败\");const qe=await Ke.text(),We=ke.title.replace(/[<>&\"'"
+      },
+      {
+        "file": "dist/assets/index-CrEvMrdA.js",
+        "line": 428,
+        "text": ",12),mode:pe},location.origin),Te=await fetch(J,{method:\"HEAD\",signal:B.signal});if(!Te.ok||!/text\\/html/i.test(Te.headers.get(\"content-type\")||\"\"))throw new Er"
+      },
+      {
+        "file": "dist/assets/index-CrEvMrdA.js",
+        "line": 429,
+        "text": "j(Re)}for(const Ge of k){const je=await fetch(`/api/projects/${encodeURIComponent(Re)}/upload?name=${encodeURIComponent(Ge.name)}`,{method:\"POST\",body:Ge});if(!"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/build-lock-runtime.mjs",
+        "line": 3,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "scripts/build-lock-runtime.mjs",
+        "line": 13,
+        "text": "await mkdir(directory, { recursive: true });"
+      },
+      {
+        "file": "scripts/build-lock-runtime.mjs",
+        "line": 16,
+        "text": "const manifest = JSON.parse(await readFile(path, 'utf8'));"
+      },
+      {
+        "file": "scripts/build-lock-runtime.mjs",
+        "line": 20,
+        "text": "license = await readFile(join(home, filename), 'utf8').catch(() => null);"
+      },
+      {
+        "file": "scripts/build-lock-runtime.mjs",
+        "line": 24,
+        "text": "await writeFile(join(directory, `${name}.LICENSE`), license);"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "plugin/host.mjs",
+        "line": 14,
+        "text": "export const inject = ['tools', 'systemPrompt'];"
+      },
+      {
+        "file": "plugin/host.mjs",
+        "line": 188,
+        "text": "registrations.push(ctx.tools.register(definition));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/doctor.mjs",
+        "line": 3,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/doctor.mjs",
+        "line": 14,
+        "text": "const command = (name, args) => spawnSync(name, args, { encoding: 'utf8', windowsHide: true, timeout: 8000 });"
+      },
+      {
+        "file": "scripts/doctor.mjs",
+        "line": 30,
+        "text": "const result = spawnSync(name, [index === 2 ? '--version' : '-version'], { encoding: 'utf8', windowsHide: true, timeout: 5000 });"
+      },
+      {
+        "file": "scripts/import-motion-libraries.mjs",
+        "line": 5,
+        "text": "import { spawnSync } from 'node:child_process';"
+      },
+      {
+        "file": "scripts/import-motion-libraries.mjs",
+        "line": 55,
+        "text": "const git = spawnSync('git', ['-C', source, 'rev-parse', 'HEAD'], { encoding: 'utf8', windowsHide: true, timeout: 5000 });"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 13,
+  "minifiedFiles": [
+    "dist/assets/index-CrEvMrdA.js",
+    "vendor/mg-styles-15/site/data.js",
+    "vendor/mg-styles-15/site/vendor/highlight.min.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [
+    {
+      "file": "README.md",
+      "line": 128,
+      "text": " `metadata_errors` 参数，`scripts/transcribe.py` 已同时兼容新旧签名；若自行安装依赖遇到解码报错，可用 `pip install \"av<19\"`。真实 ASR 集成测试需显式设置 `EAC_WHISPER_MODEL_PATH`，其余输入校验、取消和输出协议测试无需下载模型。"
+    }
+  ],
+  "skippedEntries": []
+}

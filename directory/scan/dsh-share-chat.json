@@ -1,7 +1,7 @@
 {
   "name": "dsh-share-chat",
-  "version": "0.40.2",
-  "scannedAt": "2026-11-27T10:06:13.209Z",
+  "version": "0.50.1",
+  "scannedAt": "2026-11-27T22:44:52.922Z",
   "icon": "dsh-share-chat.svg",
   "network": {
     "hit": true,
@@ -13,22 +13,22 @@
       },
       {
         "file": "client.js",
-        "line": 1030,
+        "line": 1044,
         "text": "const r = await fetch('/api/share-chat/version').then((x) => x.json())"
       },
       {
         "file": "client.js",
-        "line": 1258,
+        "line": 1272,
         "text": "const res = await fetch('/api/share-chat/ask', {"
       },
       {
         "file": "client.js",
-        "line": 1304,
+        "line": 1318,
         "text": "const res = await fetch(auth.server + '/api/upload', {"
       },
       {
         "file": "client.js",
-        "line": 1430,
+        "line": 1444,
         "text": "fetch(auth.server + '/api/upload', {"
       }
     ]
@@ -43,8 +43,18 @@
       },
       {
         "file": "index.js",
-        "line": 31,
+        "line": 33,
         "text": "OWN_VERSION = JSON.parse(readFileSync(pkgUrl, 'utf8')).version || ''"
+      },
+      {
+        "file": "index.js",
+        "line": 98,
+        "text": "const buf = readFileSync(new URL(name, VENDOR_DIR))"
+      },
+      {
+        "file": "vendor/mgba.js",
+        "line": 1,
+        "text": "odule.saveName).exists;return exists?FS.readFile(Module.saveName):null};Module.listRoms=()=>FS.readdir(\"/data/games/\");Module.listSaves=()=>FS.readdir(\"/data/sa"
       }
     ]
   },
@@ -62,7 +72,7 @@
       },
       {
         "file": "index.js",
-        "line": 139,
+        "line": 194,
         "text": "const child = spawn(process.execPath, [KILLER_UPDATER, '--deploy'], {"
       }
     ]
@@ -72,8 +82,13 @@
     "evidence": []
   },
   "dependencies": 0,
-  "minifiedFiles": [],
-  "binaryFiles": [],
+  "minifiedFiles": [
+    "vendor/jsnes.min.js",
+    "vendor/mgba.js"
+  ],
+  "binaryFiles": [
+    "vendor/mgba.wasm"
+  ],
   "requiredServices": [],
   "setupHints": [],
   "skippedEntries": []

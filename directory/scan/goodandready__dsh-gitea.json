@@ -1,7 +1,7 @@
 {
   "name": "@goodandready/dsh-gitea",
-  "version": "0.7.50",
-  "scannedAt": "2026-11-21T20:46:13.418Z",
+  "version": "0.7.51",
+  "scannedAt": "2026-11-27T22:44:51.446Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -37,28 +37,28 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/audit-store.js",
+        "line": 1,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "lib/audit-store.js",
+        "line": 28,
+        "text": "const lines = fs.readFileSync(file, 'utf8').split('\\n').filter(Boolean)"
+      },
+      {
+        "file": "lib/audit-store.js",
+        "line": 61,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/audit-store.js",
+        "line": 62,
+        "text": "fs.writeFileSync(file, entries.map((e) => JSON.stringify(e)).join('\\n') + '\\n', 'utf8')"
+      },
+      {
         "file": "lib/conflict-assistant.js",
         "line": 2,
-        "text": "import fs from 'node:fs/promises'"
-      },
-      {
-        "file": "lib/conflict-assistant.js",
-        "line": 555,
-        "text": "fileContent = await fs.readFile(path.join(cwd, filePath), 'utf8')"
-      },
-      {
-        "file": "lib/conflict-assistant.js",
-        "line": 633,
-        "text": "rawConflictedText = await fs.readFile(path.join(cwd, filePath), 'utf8')"
-      },
-      {
-        "file": "lib/conflict-assistant.js",
-        "line": 696,
-        "text": "await fs.writeFile(fullPath, preview.resolvedText, 'utf8')"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 17,
         "text": "import fs from 'node:fs/promises'"
       }
     ]

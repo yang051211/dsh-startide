@@ -1,7 +1,7 @@
 {
   "name": "dsh-chat-export",
-  "version": "0.3.1",
-  "scannedAt": "2026-11-21T20:46:26.483Z",
+  "version": "0.3.3",
+  "scannedAt": "2026-11-27T22:45:01.894Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -17,8 +17,18 @@
     "hit": true,
     "evidence": [
       {
+        "file": "src/import.js",
+        "line": 18,
+        "text": "import { statSync } from 'node:fs'"
+      },
+      {
+        "file": "src/import.js",
+        "line": 652,
+        "text": "const fsService = ctx.get('fs')"
+      },
+      {
         "file": "src/index.js",
-        "line": 318,
+        "line": 327,
         "text": "const fs = ctx.get('fs')"
       },
       {
@@ -30,11 +40,6 @@
         "file": "src/sources.js",
         "line": 46,
         "text": "fs: ctx.get('fs'),"
-      },
-      {
-        "file": "src/sources.js",
-        "line": 213,
-        "text": "const rows = decodeSessionArtifact(readFileSync(newest))"
       }
     ]
   },
@@ -56,6 +61,8 @@
   "requiredServices": [
     "commands",
     "connection",
+    "sandboxPolicy",
+    "sessions",
     "workspaceRegistry"
   ],
   "setupHints": [],

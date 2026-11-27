@@ -1,0 +1,66 @@
+{
+  "name": "dsh-bridge-connector",
+  "version": "0.7.4",
+  "scannedAt": "2026-11-27T22:44:58.380Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core/server.mjs",
+        "line": 4,
+        "text": "import http from 'node:http';"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/core/injection-ledger.mjs",
+        "line": 8,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "src/core/injection-ledger.mjs",
+        "line": 34,
+        "text": "fs.mkdirSync(path.dirname(file), { recursive: true });"
+      },
+      {
+        "file": "src/core/injection-ledger.mjs",
+        "line": 35,
+        "text": "fs.appendFileSync(file, JSON.stringify(row) + '\\n', 'utf8');"
+      },
+      {
+        "file": "src/core/injection-ledger.mjs",
+        "line": 46,
+        "text": "raw = fs.readFileSync(file, 'utf8');"
+      },
+      {
+        "file": "src/core/injection.mjs",
+        "line": 19,
+        "text": "import fs from 'node:fs';"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "sessionController"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

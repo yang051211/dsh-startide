@@ -1,0 +1,138 @@
+{
+  "name": "dsh-onebot-channel-cloudya",
+  "version": "0.15.2-cloudya.6",
+  "scannedAt": "2026-11-27T22:45:06.997Z",
+  "icon": "dsh-onebot-channel-cloudya.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 29,
+        "text": "return fetch(API + path, { cache: 'no-store' }).then(readJson)"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 33,
+        "text": "return fetch(API + path, {"
+      },
+      {
+        "file": "lib/image-shim.js",
+        "line": 20,
+        "text": "import { createServer } from 'node:http'"
+      },
+      {
+        "file": "lib/image-shim.js",
+        "line": 21,
+        "text": "import { request as httpsRequest } from 'node:https'"
+      },
+      {
+        "file": "lib/images.js",
+        "line": 162,
+        "text": "const response = await fetch(seg.url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/api.js",
+        "line": 15,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/api.js",
+        "line": 37,
+        "text": "readFileSync(join(dirname(fileURLToPath(import.meta.url)), '..', 'package.json'), 'utf8')"
+      },
+      {
+        "file": "lib/archive.js",
+        "line": 24,
+        "text": "import { readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/archive.js",
+        "line": 48,
+        "text": "const data = JSON.parse(readFileSync(WORKSPACE_FILE, 'utf8'))"
+      },
+      {
+        "file": "lib/closure.js",
+        "line": 17,
+        "text": "import { readFileSync, writeFileSync, existsSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 66,
+        "text": "// 必须声明 inject：cordis 里没 inject 的服务，读 ctx.agents / ctx.tools 会直接抛"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 70,
+        "text": "export const inject = ['agents', 'tools', 'webServer', 'llm', 'sessions', 'attachments']"
+      },
+      {
+        "file": "lib/tool.js",
+        "line": 39,
+        "text": "const disposeTool = tools.register("
+      },
+      {
+        "file": "lib/tool.js",
+        "line": 188,
+        "text": "const disposeTool = tools.register({"
+      },
+      {
+        "file": "lib/tool.js",
+        "line": 278,
+        "text": "const disposeTool = tools.register({"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/revive.js",
+        "line": 23,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/revive.js",
+        "line": 69,
+        "text": "execFile('tasklist', ['/FI', `IMAGENAME eq ${NAPCAT_IMAGE}`, '/FO', 'CSV', '/NH'],"
+      },
+      {
+        "file": "lib/revive.js",
+        "line": 77,
+        "text": "execFile('schtasks', ['/run', '/tn', TASK_NAME],"
+      },
+      {
+        "file": "lib/snowluma.js",
+        "line": 22,
+        "text": "import { execFileSync } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "attachments",
+    "llm",
+    "sessions",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-notify-say",
-  "version": "0.5.11",
-  "scannedAt": "2026-11-27T10:06:16.533Z",
+  "version": "0.6.1",
+  "scannedAt": "2026-11-27T22:44:57.976Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,17 +18,17 @@
       },
       {
         "file": "lib/client.js",
-        "line": 98,
+        "line": 122,
         "text": "return fetch(cfgUrl('pending-jump'), {"
       },
       {
         "file": "lib/client.js",
-        "line": 117,
+        "line": 141,
         "text": "return fetch(apiUrl('consume'), {"
       },
       {
         "file": "lib/client.js",
-        "line": 156,
+        "line": 180,
         "text": "return fetch(apiUrl('voicepacks/index'), { cache: 'no-store', credentials: 'same-origin' })"
       }
     ]
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/config-route.js",
-        "line": 27,
-        "text": "import { existsSync, unlinkSync } from 'node:fs';"
+        "file": "lib/audio-channel.js",
+        "line": 41,
+        "text": "import { readFileSync, unlinkSync } from 'node:fs';"
       },
       {
-        "file": "lib/config-route.js",
-        "line": 140,
-        "text": "if (existsSync(p)) unlinkSync(p);"
+        "file": "lib/audio-channel.js",
+        "line": 115,
+        "text": "const readFile = typeof opts.readFile === 'function' ? opts.readFile : (p) => readFileSync(p);"
       },
       {
-        "file": "lib/config-schema.js",
-        "line": 43,
-        "text": "import { existsSync } from 'node:fs';"
+        "file": "lib/audio-channel.js",
+        "line": 116,
+        "text": "const unlink = typeof opts.unlink === 'function' ? opts.unlink : (p) => unlinkSync(p);"
       },
       {
-        "file": "lib/config-store.js",
-        "line": 32,
-        "text": "import { readFileSync, writeFileSync, mkdirSync, renameSync, existsSync, unlinkSync } from 'node:fs';"
+        "file": "lib/audio-channel.js",
+        "line": 136,
+        "text": "try { unlink(p); } catch { /* 文件可能已被删 */ }"
       },
       {
-        "file": "lib/config-store.js",
-        "line": 359,
-        "text": "text = readFileSync(p, 'utf8');"
+        "file": "lib/audio-channel.js",
+        "line": 354,
+        "text": "bytes = readFile(file);"
       }
     ]
   },
@@ -77,23 +77,23 @@
       },
       {
         "file": "lib/index.js",
-        "line": 1228,
+        "line": 1259,
         "text": "child = spawn(POWERSHELL_EXE, args, { stdio: ['ignore', 'ignore', 'pipe'], windowsHide: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 1277,
+        "line": 1308,
         "text": "spawn('taskkill', ['/PID', String(child.pid), '/T', '/F'], { stdio: 'ignore', windowsHide: true });"
       },
       {
         "file": "lib/index.js",
-        "line": 1324,
+        "line": 1355,
         "text": "const c = spawn(POWERSHELL_EXE, ["
       },
       {
-        "file": "test/audio-wiring.test.mjs",
-        "line": 35,
-        "text": "* 插件用 `spawn(POWERSHELL_EXE, args, ...)`；这里没法替换已 import 的 spawn，"
+        "file": "lib/index.js",
+        "line": 1425,
+        "text": "child = spawn(POWERSHELL_EXE, args, { stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true });"
       }
     ]
   },

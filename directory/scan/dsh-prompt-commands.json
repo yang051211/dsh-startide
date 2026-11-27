@@ -1,8 +1,8 @@
 {
   "name": "dsh-prompt-commands",
-  "version": "0.3.0",
-  "scannedAt": "2026-11-19T21:28:31.436Z",
-  "icon": null,
+  "version": "0.4.0",
+  "scannedAt": "2026-11-27T22:45:06.116Z",
+  "icon": "dsh-prompt-commands.svg",
   "network": {
     "hit": false,
     "evidence": []
@@ -22,7 +22,7 @@
       },
       {
         "file": "lib/template.js",
-        "line": 185,
+        "line": 216,
         "text": "rawContent = await readFile(filePath, 'utf-8')"
       }
     ]
@@ -32,8 +32,19 @@
     "evidence": []
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/command.js",
+        "line": 15,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/command.js",
+        "line": 51,
+        "text": "const child = spawn(argv[0], argv.slice(1), {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

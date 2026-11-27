@@ -1,24 +1,24 @@
 {
   "name": "@slz233/dsh-enhance-mode",
-  "version": "0.6.3",
-  "scannedAt": "2026-11-27T10:06:26.286Z",
+  "version": "0.9.0",
+  "scannedAt": "2026-11-27T22:45:06.570Z",
   "icon": "slz233__dsh-enhance-mode.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client/index.js",
-        "line": 216,
+        "line": 252,
         "text": "response = await fetch(API_PATH, {"
       },
       {
         "file": "client/index.js",
-        "line": 758,
+        "line": 856,
         "text": "const response = await fetch('open-in-app/apps', { credentials: 'same-origin' })"
       },
       {
         "file": "client/index.js",
-        "line": 764,
+        "line": 862,
         "text": "const opened = await fetch('open-in-app/open', {"
       }
     ]
@@ -26,6 +26,21 @@
   "fileSystem": {
     "hit": true,
     "evidence": [
+      {
+        "file": "lib/heal.mjs",
+        "line": 22,
+        "text": "import { mkdirSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/heal.mjs",
+        "line": 418,
+        "text": "mkdirSync(dir, { recursive: true })"
+      },
+      {
+        "file": "lib/heal.mjs",
+        "line": 420,
+        "text": "writeFileSync(file, `${dump}\\n`, 'utf8')"
+      },
       {
         "file": "lib/order.mjs",
         "line": 22,
@@ -35,21 +50,6 @@
         "file": "lib/order.mjs",
         "line": 54,
         "text": "raw = JSON.parse(readFileSync(file, 'utf8'))"
-      },
-      {
-        "file": "lib/order.mjs",
-        "line": 97,
-        "text": "mkdirSync(dirname(file), { recursive: true })"
-      },
-      {
-        "file": "lib/order.mjs",
-        "line": 98,
-        "text": "writeFileSync(tmp, `${JSON.stringify(payload, null, 2)}\\n`, 'utf8')"
-      },
-      {
-        "file": "lib/order.mjs",
-        "line": 103,
-        "text": "unlinkSync(tmp)"
       }
     ]
   },

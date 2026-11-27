@@ -1,0 +1,116 @@
+{
+  "name": "dsh-work-fish",
+  "version": "0.2.3",
+  "scannedAt": "2026-11-27T22:45:02.012Z",
+  "icon": "dsh-work-fish.png",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/board/client.js",
+        "line": 172,
+        "text": "void fetch(`${ROUTE}/client-report`, {"
+      },
+      {
+        "file": "lib/board/client.js",
+        "line": 574,
+        "text": "const response = await fetch(`${ROUTE}/tasks`, { headers: { accept: 'application/json' }, cache: 'no-store' })"
+      },
+      {
+        "file": "lib/board/client.js",
+        "line": 620,
+        "text": "const response = await fetch(`${ROUTE}/events${query}`, {"
+      },
+      {
+        "file": "lib/board/client.js",
+        "line": 665,
+        "text": "const response = await fetch(`${ROUTE}/tasks/${action}`, {"
+      },
+      {
+        "file": "lib/board/client.js",
+        "line": 802,
+        "text": "const response = await fetch(`${ROUTE}/tasks`, { headers: { accept: 'application/json' }, cache: 'no-store' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/approve.mjs",
+        "line": 35,
+        "text": "import { appendFileSync, mkdirSync, readFileSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/core/approve.mjs",
+        "line": 74,
+        "text": "const parsed = JSON.parse(readFileSync(join(home, 'projects.json'), 'utf8'))"
+      },
+      {
+        "file": "lib/core/approve.mjs",
+        "line": 93,
+        "text": "mkdirSync(dirname(file), { recursive: true })"
+      },
+      {
+        "file": "lib/core/approve.mjs",
+        "line": 94,
+        "text": "appendFileSync(file, JSON.stringify({ at: new Date().toISOString(), ...record }) + '\\n', 'utf8')"
+      },
+      {
+        "file": "lib/core/bootstrap.mjs",
+        "line": 20,
+        "text": "import fs from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/guard.mjs",
+        "line": 26,
+        "text": "export const inject = ['tools']"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core/index.mjs",
+        "line": 24,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/core/index.mjs",
+        "line": 60,
+        "text": "execFile(process.execPath, [WF_TASK, ...args], { encoding: 'utf8', maxBuffer: 4 * 1024 * 1024 }, (error, stdout) => {"
+      },
+      {
+        "file": "lib/core/index.mjs",
+        "line": 83,
+        "text": "execFile("
+      },
+      {
+        "file": "lib/tools/wf-mem.mjs",
+        "line": 24,
+        "text": "import { spawnSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/tools/wf-mem.mjs",
+        "line": 306,
+        "text": "spawnSync(process.execPath, [self, ...args], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,85 @@
+{
+  "name": "dsh-astryx",
+  "version": "0.2.0",
+  "scannedAt": "2026-11-27T22:45:06.820Z",
+  "icon": "dsh-astryx.svg",
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/cache.js",
+        "line": 1,
+        "text": "import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'"
+      },
+      {
+        "file": "src/cache.js",
+        "line": 14,
+        "text": "const payload = JSON.parse(readFileSync(this.path, 'utf8'))"
+      },
+      {
+        "file": "src/cache.js",
+        "line": 27,
+        "text": "mkdirSync(this.dir, { recursive: true })"
+      },
+      {
+        "file": "src/cache.js",
+        "line": 29,
+        "text": "writeFileSync(temporary, `${JSON.stringify(payload, null, 2)}\\n`)"
+      },
+      {
+        "file": "src/contract.js",
+        "line": 1,
+        "text": "import { readFileSync } from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 31,
+        "text": "ctx.effect(() => tools.register(statusTool(status, settings)), 'astryx status tool')"
+      },
+      {
+        "file": "index.js",
+        "line": 32,
+        "text": "ctx.effect(() => tools.register(selfCheckTool(selfCheck, settings)), 'astryx self-check tool')"
+      },
+      {
+        "file": "src/patchScan.js",
+        "line": 30,
+        "text": "return this.rows().filter((row) => row.name === '@deepseek-ai/dsh-mcp-client')"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/mcpProbe.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "src/project.js",
+        "line": 1,
+        "text": "import { spawn } from 'node:child_process'"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-pwa",
-  "version": "1.21.1",
-  "scannedAt": "2026-11-22T21:06:40.937Z",
+  "version": "1.22.3",
+  "scannedAt": "2026-11-27T22:45:04.660Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,18 +18,18 @@
       },
       {
         "file": "web/app.js",
-        "line": 256,
+        "line": 334,
+        "text": "const r = await fetch(DIAG_PATH, opts)"
+      },
+      {
+        "file": "web/app.js",
+        "line": 386,
         "text": "const r = await fetch('/api/' + endpoint, {"
       },
       {
         "file": "web/app.js",
-        "line": 1735,
+        "line": 1894,
         "text": "fetch(src)"
-      },
-      {
-        "file": "web/app.js",
-        "line": 1755,
-        "text": "const blob = await (await fetch(src)).blob()"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "lib/diag.js",
+        "line": 15,
+        "text": "import { appendFile, mkdir, rename, stat } from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/diag.js",
+        "line": 62,
+        "text": "await mkdir(path.dirname(logPath), { recursive: true })"
+      },
+      {
+        "file": "lib/diag.js",
+        "line": 76,
+        "text": "await appendFile(logPath, text, 'utf8')"
+      },
+      {
         "file": "lib/index.js",
-        "line": 54,
+        "line": 80,
         "text": "ctx.inject(['connection', 'fs'], (mediaCtx) => {"
       },
       {
         "file": "lib/routes.js",
         "line": 5,
         "text": "import { readFile } from 'node:fs/promises'"
-      },
-      {
-        "file": "lib/routes.js",
-        "line": 32,
-        "text": "const body = await readFile(path.join(WEB_DIR, file))"
-      },
-      {
-        "file": "lib/search.js",
-        "line": 22,
-        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'"
-      },
-      {
-        "file": "lib/search.js",
-        "line": 194,
-        "text": "const parsed = JSON.parse(await readFile(indexPath, 'utf8'))"
       }
     ]
   },

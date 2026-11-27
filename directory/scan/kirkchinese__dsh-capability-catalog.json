@@ -1,7 +1,7 @@
 {
   "name": "@kirkchinese/dsh-capability-catalog",
-  "version": "0.2.3",
-  "scannedAt": "2026-11-22T08:23:34.053Z",
+  "version": "0.2.4",
+  "scannedAt": "2026-11-27T22:45:00.692Z",
   "icon": null,
   "network": {
     "hit": false,
@@ -11,29 +11,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "lib/sources/mcp.js",
+        "file": "lib/discovery.js",
         "line": 10,
-        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';"
+        "text": "import { readFile, stat } from 'node:fs/promises';"
       },
       {
-        "file": "lib/sources/mcp.js",
-        "line": 101,
-        "text": "const cached = JSON.parse(await readFile(this.cachePath, 'utf8'));"
+        "file": "lib/discovery.js",
+        "line": 145,
+        "text": "body = await readFile(path, 'utf8');"
       },
       {
-        "file": "lib/sources/mcp.js",
-        "line": 160,
-        "text": "await mkdir(dirname(this.cachePath), { recursive: true });"
-      },
-      {
-        "file": "lib/sources/mcp.js",
-        "line": 162,
-        "text": "await writeFile(temp, JSON.stringify(cache), { mode: 0o600 });"
-      },
-      {
-        "file": "lib/toggles.js",
+        "file": "lib/skill-dirs.js",
         "line": 10,
-        "text": "import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';"
+        "text": "import { readFile, readdir, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/skill-dirs.js",
+        "line": 73,
+        "text": "text = await readFile(file, 'utf8');"
+      },
+      {
+        "file": "lib/skill-dirs.js",
+        "line": 102,
+        "text": "const { body } = parseSkillFile(await readFile(skill.file, 'utf8'));"
       }
     ]
   },
@@ -47,22 +47,22 @@
       },
       {
         "file": "lib/index.js",
-        "line": 24,
+        "line": 25,
         "text": "export const inject = ['tools', 'systemPrompt'];"
       },
       {
         "file": "lib/index.js",
-        "line": 265,
+        "line": 327,
         "text": "ctx.tools.register(tools.search);"
       },
       {
         "file": "lib/index.js",
-        "line": 266,
+        "line": 328,
         "text": "ctx.tools.register(tools.describe);"
       },
       {
         "file": "lib/index.js",
-        "line": 267,
+        "line": 329,
         "text": "ctx.tools.register(tools.call);"
       }
     ]
