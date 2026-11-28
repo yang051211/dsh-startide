@@ -1,11 +1,11 @@
 {
   "name": "@leiyi-works/dsh-cloud-sync",
-  "latest": "0.14.1",
-  "published": 1795793042,
+  "latest": "0.15.2",
+  "published": 1795839020,
   "created": 1794651866,
-  "modified": "2026-11-27T15:24:02.673Z",
+  "modified": "2026-11-28T04:10:20.676Z",
   "displayName": null,
-  "description": "云端同步 0.14.1：插件变更检测改为事件触发（监听 package.json，有变化才检测/记录，不再每 10 秒轮询；启动后补查一次，监听不可用才 60 秒兜底）；0.14.0：插件同步改为「意图日志」——每次增删插件立刻记录（add/remove + 时间戳），全机队按每个插件最新一条记录收敛：装/删都扩散、不误删（卸载只认 remove 记录 + 清单损坏保护）、不拦真实卸载；增删后约 30 秒自动触发一轮同步；0.13.2：修「推送失败后下一轮把新装插件当多余卸掉」：只有上次推送成功写下的机队",
+  "description": "云端同步 0.15.2：机队文件的 plugins 字段只保留\"同步插件一行\"（兼容旧版机器识别版本并自动升级），其它插件不再广播；0.15.1：精简插件相关文件——记录并入 fleet/<机器>.json（不再单独建记录文件）、机队文件不再广播完整插件清单（只留同步插件版本）、退役手动作废清单；同时加固 fleet 状态文件（大小上限/必须是 JSON 对象/原子写），防坏文件污染机队；0.15.0：插件清单改为「每台机器一份记录」——记录名称/版本/增删/时间，同步时按每个插件最新记录裁决（add→装",
   "author": "leiyi-works",
   "keywords": [
     "dsh-plugin",
@@ -21,6 +21,21 @@
   "isBundle": true,
   "deprecated": false,
   "versions": [
+    {
+      "version": "0.15.2",
+      "publishTimestamp": 1795839020,
+      "enginesDsh": null
+    },
+    {
+      "version": "0.15.1",
+      "publishTimestamp": 1795838242,
+      "enginesDsh": null
+    },
+    {
+      "version": "0.15.0",
+      "publishTimestamp": 1795833326,
+      "enginesDsh": null
+    },
     {
       "version": "0.14.1",
       "publishTimestamp": 1795793042,
@@ -154,21 +169,6 @@
     {
       "version": "0.11.85",
       "publishTimestamp": 1795270080,
-      "enginesDsh": null
-    },
-    {
-      "version": "0.11.84",
-      "publishTimestamp": 1795269122,
-      "enginesDsh": null
-    },
-    {
-      "version": "0.11.83",
-      "publishTimestamp": 1795268679,
-      "enginesDsh": null
-    },
-    {
-      "version": "0.11.82",
-      "publishTimestamp": 1795267466,
       "enginesDsh": null
     }
   ]
