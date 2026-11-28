@@ -1,8 +1,8 @@
 {
   "name": "@kangyishuai/dsh-btw",
-  "version": "0.6.3",
-  "scannedAt": "2026-11-20T21:47:27.060Z",
-  "icon": null,
+  "version": "0.6.5",
+  "scannedAt": "2026-11-28T09:22:01.368Z",
+  "icon": "kangyishuai__dsh-btw.svg",
   "network": {
     "hit": false,
     "evidence": []
@@ -12,22 +12,22 @@
     "evidence": [
       {
         "file": "lib/history.js",
-        "line": 5,
+        "line": 6,
         "text": "import { mkdir, readFile, rename, writeFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/history.js",
-        "line": 18,
+        "line": 52,
         "text": "raw = await readFile(file, \"utf8\");"
       },
       {
         "file": "lib/history.js",
-        "line": 50,
+        "line": 86,
         "text": "await mkdir(dirname(file), { recursive: true });"
       },
       {
         "file": "lib/history.js",
-        "line": 53,
+        "line": 90,
         "text": "await writeFile(temp, body, \"utf8\");"
       },
       {
@@ -38,8 +38,19 @@
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/subagent.js",
+        "line": 102,
+        "text": "* 只读 guard 的**唯一**挂载点：子代理自己的 `ctx.tools`。"
+      },
+      {
+        "file": "lib/subagent.js",
+        "line": 107,
+        "text": "*   traceable proxy 取**调用点**的 ctx，所以 `child.ctx.tools.guard(...)` 落在子代理的 scope 层。"
+      }
+    ]
   },
   "childProcess": {
     "hit": false,

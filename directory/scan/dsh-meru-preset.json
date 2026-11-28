@@ -1,39 +1,50 @@
 {
   "name": "dsh-meru-preset",
-  "version": "1.0.35",
-  "scannedAt": "2026-11-27T22:44:50.138Z",
+  "version": "1.1.5",
+  "scannedAt": "2026-11-28T09:21:58.735Z",
   "icon": "dsh-meru-preset.png",
   "network": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 100,
+        "text": "void fetch('/meru-graph/diag?' + q.toString(), { cache: 'no-store' })"
+      },
+      {
+        "file": "client.js",
+        "line": 421,
+        "text": "res = await fetch('/meru-graph/sessions', { cache: 'no-store' })"
+      }
+    ]
   },
   "fileSystem": {
     "hit": true,
     "evidence": [
       {
+        "file": "graph-host.js",
+        "line": 1,
+        "text": "import { readFile, appendFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "graph-host.js",
+        "line": 41,
+        "text": "const raw = await readFile(file, 'utf8')"
+      },
+      {
+        "file": "graph-host.js",
+        "line": 208,
+        "text": "try { await appendFile(fileURLToPath(new URL('./diag.jsonl', import.meta.url)), line) } catch {}"
+      },
+      {
+        "file": "graph-host.js",
+        "line": 239,
+        "text": "send(res, type, await readFile(new URL(file, import.meta.url), 'utf8'))"
+      },
+      {
         "file": "lib/chief/core.js",
         "line": 23,
         "text": "import { readFileSync } from 'node:fs';"
-      },
-      {
-        "file": "lib/chief/core.js",
-        "line": 24,
-        "text": "import { appendFile, mkdir, rename, writeFile } from 'node:fs/promises';"
-      },
-      {
-        "file": "lib/chief/core.js",
-        "line": 3597,
-        "text": "await mkdir(dir, { recursive: true });"
-      },
-      {
-        "file": "lib/chief/core.js",
-        "line": 3599,
-        "text": "await writeFile(path, body, 'utf8');"
-      },
-      {
-        "file": "lib/chief/core.js",
-        "line": 3615,
-        "text": "const data = JSON.parse(readFileSync(file, 'utf8'));"
       }
     ]
   },
@@ -72,12 +83,12 @@
     "evidence": [
       {
         "file": "lib/chief/core.js",
-        "line": 741,
+        "line": 745,
         "text": "const receipt = await this.spawn({"
       },
       {
         "file": "lib/chief/core.js",
-        "line": 798,
+        "line": 802,
         "text": "async spawn(input) {"
       },
       {
@@ -92,10 +103,15 @@
     "evidence": []
   },
   "dependencies": 0,
-  "minifiedFiles": [],
+  "minifiedFiles": [
+    "view/d3-force.min.js",
+    "view/d3-quadtree.min.js"
+  ],
   "binaryFiles": [],
   "requiredServices": [
-    "sessionController"
+    "sessionController",
+    "webServer",
+    "workspaceRegistry"
   ],
   "setupHints": [],
   "skippedEntries": []

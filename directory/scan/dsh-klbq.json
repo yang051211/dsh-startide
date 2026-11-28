@@ -1,7 +1,7 @@
 {
   "name": "dsh-klbq",
-  "version": "0.2.1",
-  "scannedAt": "2026-11-15T20:14:33.186Z",
+  "version": "0.3.2",
+  "scannedAt": "2026-11-28T09:22:03.754Z",
   "icon": "dsh-klbq.png",
   "network": {
     "hit": true,
@@ -38,13 +38,13 @@
       },
       {
         "file": "lib/index.js",
-        "line": 163,
-        "text": "try { fs.appendFileSync(marker, `[${new Date().toISOString()}] ${msg}\\n`); } catch { /* 自检写不进去不影响主流程 */ }"
+        "line": 206,
+        "text": "fs.writeFileSync(file, buffer);"
       },
       {
-        "file": "lib/qqbot.js",
-        "line": 13,
-        "text": "import fs from 'node:fs';"
+        "file": "lib/index.js",
+        "line": 264,
+        "text": "fs.writeFileSync(file, buffer);"
       }
     ]
   },
@@ -58,8 +58,8 @@
       },
       {
         "file": "lib/index.js",
-        "line": 168,
-        "text": "const dispose = ctx.tools.register(DEFINITION);"
+        "line": 422,
+        "text": "const dispose = ctx.tools.register(def);"
       }
     ]
   },
@@ -73,7 +73,7 @@
       },
       {
         "file": "lib/render.js",
-        "line": 215,
+        "line": 490,
         "text": "execFile(bin, args, { timeout: timeoutMs, windowsHide: true, maxBuffer: 8 * 1024 * 1024 }, (error, stdout, stderr) => {"
       }
     ]

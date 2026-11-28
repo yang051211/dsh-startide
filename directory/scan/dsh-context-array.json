@@ -1,0 +1,115 @@
+{
+  "name": "dsh-context-array",
+  "version": "1.1.1",
+  "scannedAt": "2026-11-28T09:22:04.587Z",
+  "icon": "dsh-context-array.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 211,
+        "text": "const response = await fetch(API + path, init);"
+      },
+      {
+        "file": "tools/fetch-model.mjs",
+        "line": 139,
+        "text": "const response = await fetch(url, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "tools/fetch-model.mjs",
+        "line": 188,
+        "text": "const response = await fetch(url, { headers, redirect: 'follow' })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "docs/analyze-usage.mjs",
+        "line": 7,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "docs/analyze-usage.mjs",
+        "line": 22,
+        "text": "text = fs.readFileSync(file, 'utf8')"
+      },
+      {
+        "file": "docs/savings-estimate.mjs",
+        "line": 12,
+        "text": "import fs from 'node:fs'"
+      },
+      {
+        "file": "docs/savings-estimate.mjs",
+        "line": 23,
+        "text": ".readFileSync(logPath, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 15,
+        "text": "import fs from 'node:fs'"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 59,
+        "text": "export const inject = ['systemPrompt', 'llm', 'tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 108,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "index.js",
+        "line": 129,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "index.js",
+        "line": 154,
+        "text": "ctx.tools.register(tool)"
+      },
+      {
+        "file": "index.js",
+        "line": 162,
+        "text": "ctx.tools.register(createPersonaWriteTool({ db: store.db, warn: warn('persona-write') }))"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/embedding/client.js",
+        "line": 164,
+        "text": "function spawn() {"
+      },
+      {
+        "file": "src/embedding/client.js",
+        "line": 180,
+        "text": "if (!worker) worker = spawn()"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "llm",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

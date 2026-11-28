@@ -1,8 +1,8 @@
 {
   "name": "dsh-plugin-session-fleet",
-  "version": "0.8.0",
-  "scannedAt": "2026-11-20T21:47:29.456Z",
-  "icon": "dsh-plugin-session-fleet.svg",
+  "version": "0.9.1",
+  "scannedAt": "2026-11-28T09:22:03.128Z",
+  "icon": "dsh-plugin-session-fleet.png",
   "network": {
     "hit": false,
     "evidence": []
@@ -12,28 +12,28 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 1,
+        "line": 2,
+        "text": "import { existsSync, mkdirSync, readdirSync, statSync } from \"node:fs\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 6,
         "text": "import { mkdtemp, open, rename, rm } from \"node:fs/promises\";"
       },
       {
         "file": "lib/index.js",
-        "line": 76,
+        "line": 135,
+        "text": "mkdirSync(dirname(this.path), { recursive: true });"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 318,
         "text": "if (this.directory !== void 0) await rm(this.directory, {"
       },
       {
         "file": "lib/index.js",
-        "line": 97,
+        "line": 339,
         "text": "await rm(path, { force: true });"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 107,
-        "text": "await rm(oldest, { force: true });"
-      },
-      {
-        "file": "lib/index.js",
-        "line": 147,
-        "text": "await file.writeFile(line, \"utf8\");"
       }
     ]
   },
@@ -42,34 +42,45 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 1934,
+        "line": 2248,
         "text": "register(scoped.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 2015,
+        "line": 2329,
         "text": "register(scoped.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 2024,
+        "line": 2352,
         "text": "register(scoped.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 2033,
+        "line": 2361,
         "text": "register(scoped.tools.register(defineTool({"
       },
       {
         "file": "lib/index.js",
-        "line": 2073,
+        "line": 2370,
         "text": "register(scoped.tools.register(defineTool({"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/index.js",
+        "line": 3,
+        "text": "import { spawnSync } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 85,
+        "text": "const decoded = spawnSync(\"zstd\", [\"-dc\", path], { maxBuffer: 1073741824 });"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

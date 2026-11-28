@@ -1,0 +1,141 @@
+{
+  "name": "dsh-department",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-28T09:22:00.341Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 776,
+        "text": "const response = await fetch(path, { headers: { accept: 'application/json' } })"
+      },
+      {
+        "file": "client.js",
+        "line": 1376,
+        "text": "const response = await fetch(ROUTES.budget, {"
+      },
+      {
+        "file": "client.js",
+        "line": 1405,
+        "text": "          const response = await fetch(ROUTES.taskStart, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ root: detail."
+      },
+      {
+        "file": "client.js",
+        "line": 1417,
+        "text": "          const response = await fetch(`${ROUTES.taskDelete}?root=${encodeURIComponent(detail.root)}&taskId=${encodeURIComponent(detail.taskId)}&by=${encodeURIC"
+      },
+      {
+        "file": "client.js",
+        "line": 1430,
+        "text": "const response = await fetch(path, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ ...body, by: name }) })"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/approval.js",
+        "line": 4,
+        "text": "import { access, readdir, readFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "src/approval.js",
+        "line": 34,
+        "text": "const text = await readFile(path, 'utf8');"
+      },
+      {
+        "file": "src/approval.js",
+        "line": 49,
+        "text": "const text = await readFile(path, 'utf8');"
+      },
+      {
+        "file": "src/attempts.js",
+        "line": 8,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises';"
+      },
+      {
+        "file": "src/attempts.js",
+        "line": 56,
+        "text": "const current = await readFile(path, 'utf8').catch(() => '');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 17,
+        "text": "export const inject = ['tools', 'commands', 'workspaceRegistry', 'agents'];"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 144,
+        "text": "if (!ctx.tools || typeof ctx.tools.register !== 'function') return [];"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 146,
+        "text": "disposers.push(ctx.tools.register(startTool()));"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 147,
+        "text": "disposers.push(ctx.tools.register(statusTool()));"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 148,
+        "text": "disposers.push(ctx.tools.register(approveTool()));"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/gates.js",
+        "line": 4,
+        "text": "import { exec } from 'node:child_process';"
+      },
+      {
+        "file": "src/git.js",
+        "line": 5,
+        "text": "import { execFile } from 'node:child_process';"
+      },
+      {
+        "file": "src/git.js",
+        "line": 16,
+        "text": "execFile('git', args, { cwd: root, maxBuffer: 4 * 1024 * 1024 }, (error, stdout, stderr) => {"
+      },
+      {
+        "file": "src/gui.js",
+        "line": 5,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "src/gui.js",
+        "line": 17,
+        "text": "const child = spawn(input.command, input.args ?? [], {"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 2,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "commands",
+    "tools",
+    "workspaceRegistry"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

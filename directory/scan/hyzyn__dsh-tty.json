@@ -1,7 +1,7 @@
 {
   "name": "@hyzyn/dsh-tty",
-  "version": "0.39.3",
-  "scannedAt": "2026-11-24T23:54:29.633Z",
+  "version": "0.40.0",
+  "scannedAt": "2026-11-28T09:22:00.667Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -9,12 +9,12 @@
       {
         "file": "client.js",
         "line": 4672,
-        "text": "ync function Xg(){try{let t=await(await fetch(\"/api/dsh-tty/credential-refs\",{cache:\"no-store\"})).json();if(t.ok&&Array.isArray(t.names))return t.names.filter(r"
+        "text": "ync function hv(){try{let t=await(await fetch(\"/api/dsh-tty/credential-refs\",{cache:\"no-store\"})).json();if(t.ok&&Array.isArray(t.names))return t.names.filter(r"
       },
       {
         "file": "client.js",
         "line": 4673,
-        "text": "sync()=>{let h=[];try{let _=await(await fetch(\"/api/dsh-tty/tunnels\",{cache:\"no-store\"})).json();_.ok&&Array.isArray(_.tunnels)&&(h=_.tunnels)}catch{}if(is!==r)"
+        "text": "sync()=>{let h=[];try{let _=await(await fetch(\"/api/dsh-tty/tunnels\",{cache:\"no-store\"})).json();_.ok&&Array.isArray(_.tunnels)&&(h=_.tunnels)}catch{}if(ns!==r)"
       },
       {
         "file": "scripts/integration.mjs",
@@ -37,11 +37,6 @@
     "hit": true,
     "evidence": [
       {
-        "file": "client.js",
-        "line": 35,
-        "text": "s._terminal=e,this._lineCache.value=new rm(e),this._engine=new im(e,this._lineCache.value),this._decorationManager=new nm(e),this._register(this._terminal.onWri"
-      },
-      {
         "file": "lib/index.js",
         "line": 3,
         "text": "import { accessSync, constants as fsConstants, existsSync, readFileSync } from 'node:fs';"
@@ -53,13 +48,18 @@
       },
       {
         "file": "lib/index.js",
-        "line": 3769,
+        "line": 3790,
         "text": "const lines = readFileSync(file, 'utf8').split('\\n');"
       },
       {
         "file": "lib/index.js",
-        "line": 3832,
+        "line": 3853,
         "text": "for (const line of readFileSync(file, 'utf8').split('\\n')) {"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 3901,
+        "text": "for (const line of readFileSync('/etc/shells', 'utf8').split('\\n')) {"
       }
     ]
   },
@@ -68,12 +68,12 @@
     "evidence": [
       {
         "file": "lib/index.js",
-        "line": 4247,
+        "line": 4268,
         "text": "inject: ['tools'],"
       },
       {
         "file": "lib/index.js",
-        "line": 5589,
+        "line": 5633,
         "text": "return tools.register(definition);"
       }
     ]

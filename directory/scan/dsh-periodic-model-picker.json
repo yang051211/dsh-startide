@@ -1,0 +1,61 @@
+{
+  "name": "dsh-periodic-model-picker",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-28T09:22:04.670Z",
+  "icon": "dsh-periodic-model-picker.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 336,
+        "text": "const response = typeof carrier === 'function' ? await carrier(url.href, init) : await fetch(url.href, init)"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 11,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 80,
+        "text": "text = await readFile(storePath, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 103,
+        "text": "await mkdir(dirname(storePath), { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 104,
+        "text": "await writeFile(storePath, `${JSON.stringify(book, null, 2)}\\n`, 'utf8')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

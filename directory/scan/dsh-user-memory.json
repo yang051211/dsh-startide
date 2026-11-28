@@ -1,0 +1,114 @@
+{
+  "name": "dsh-user-memory",
+  "version": "0.9.0",
+  "scannedAt": "2026-11-28T09:22:01.862Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client.js",
+        "line": 400,
+        "text": "const response = await fetch(ROUTE, {"
+      },
+      {
+        "file": "test/modes-test.mjs",
+        "line": 85,
+        "text": "const call = async (payload) => await (await route.fetch(request(payload))).json()"
+      },
+      {
+        "file": "test/selftest.mjs",
+        "line": 105,
+        "text": "await b.box.route.fetch("
+      },
+      {
+        "file": "test/selftest.mjs",
+        "line": 114,
+        "text": "const droppedSave = await (await b.box.route.fetch(request({ action: 'save', file: 'rules-should.md', content: '# 可选遵守\\n\\n- 这一条更进不去。\\n' }))).json()"
+      },
+      {
+        "file": "test/selftest.mjs",
+        "line": 193,
+        "text": "const loaded = await (await route.fetch(request({ action: 'load' }))).json()"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 43,
+        "text": "import { mkdir, readFile, writeFile } from 'node:fs/promises'"
+      },
+      {
+        "file": "index.js",
+        "line": 846,
+        "text": "await mkdir(dir, { recursive: true })"
+      },
+      {
+        "file": "index.js",
+        "line": 849,
+        "text": "const existing = await readFile(target, 'utf8').then("
+      },
+      {
+        "file": "index.js",
+        "line": 854,
+        "text": "await writeFile(target, content, 'utf8')"
+      },
+      {
+        "file": "index.js",
+        "line": 990,
+        "text": "const raw = await readFile(switchPath, 'utf8').catch(() => '')"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 51,
+        "text": "export const inject = ['systemPrompt', 'tools', 'agents']"
+      },
+      {
+        "file": "index.js",
+        "line": 1328,
+        "text": "* `ctx.tools.register()` takes a finished JSON Schema, not the `defineTool`"
+      },
+      {
+        "file": "index.js",
+        "line": 1902,
+        "text": "// `ctx.tools.register` is the same seat `@nanmicoder/dsh-agent-teams` uses"
+      },
+      {
+        "file": "index.js",
+        "line": 1913,
+        "text": "ctx.effect(() => ctx.tools.register(definition))"
+      },
+      {
+        "file": "test/suggest-test.mjs",
+        "line": 53,
+        "text": "// Declared hard dependency: `ctx.tools.register` is where the two tools go."
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "agents",
+    "systemPrompt",
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

@@ -1,0 +1,104 @@
+{
+  "name": "dsh-teacher",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-28T09:22:04.799Z",
+  "icon": "dsh-teacher.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.js",
+        "line": 312,
+        "text": "const r = await fetch(`/teacher/${encodeURIComponent(this.sessionId)}/api/index`, { signal, headers: this.etag ? { \"If-None-Match\": this.etag } : {} });"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 2106,
+        "text": "void fetch(url, { signal: controller.signal }).then(async (response) => {"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 2282,
+        "text": "const response = await fetch(`/teacher/${encodeURIComponent(id)}/api/teach/install`, {"
+      },
+      {
+        "file": "src/client/review.jsx",
+        "line": 56,
+        "text": "void fetch(url, { signal: controller.signal }).then(async response => {"
+      },
+      {
+        "file": "src/client/setup.jsx",
+        "line": 29,
+        "text": "const response = await fetch(`/teacher/${encodeURIComponent(id)}/api/teach/install`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "scripts/adapt-teach.mjs",
+        "line": 1,
+        "text": "import { readFile, writeFile, access } from 'node:fs/promises';"
+      },
+      {
+        "file": "scripts/adapt-teach.mjs",
+        "line": 34,
+        "text": "const current = await readFile(path, 'utf8');"
+      },
+      {
+        "file": "scripts/adapt-teach.mjs",
+        "line": 36,
+        "text": "const original = await readFile(backup, 'utf8');"
+      },
+      {
+        "file": "scripts/adapt-teach.mjs",
+        "line": 38,
+        "text": "await writeFile(path, original);"
+      },
+      {
+        "file": "scripts/adapt-teach.mjs",
+        "line": 46,
+        "text": "const original = await readFile(backup, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/answer-policy.js",
+        "line": 16,
+        "text": "ctx.effect(() => ctx.tools.guard(execution => protectedCall(execution) ? denial : undefined), 'dsh-teacher: read-only discussion guard');"
+      },
+      {
+        "file": "src/index.js",
+        "line": 7,
+        "text": "export const inject = ['webServer', 'connection', 'sessions', 'sessionPersistence', 'sessionProjections', 'tools'];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 3,
+  "minifiedFiles": [
+    "dist/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [
+    "connection",
+    "sessionPersistence",
+    "sessionProjections",
+    "sessions",
+    "tools",
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

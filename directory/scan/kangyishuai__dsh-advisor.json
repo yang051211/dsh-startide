@@ -1,8 +1,8 @@
 {
   "name": "@kangyishuai/dsh-advisor",
-  "version": "0.6.2",
-  "scannedAt": "2026-11-14T07:59:06.690Z",
-  "icon": null,
+  "version": "0.6.4",
+  "scannedAt": "2026-11-28T09:22:04.051Z",
+  "icon": "kangyishuai__dsh-advisor.svg",
   "network": {
     "hit": false,
     "evidence": []
@@ -12,28 +12,28 @@
     "evidence": [
       {
         "file": "lib/budget.js",
-        "line": 6,
-        "text": "import { mkdir, readFile, rename, writeFile } from \"node:fs/promises\";"
+        "line": 9,
+        "text": "import { readFile } from \"node:fs/promises\";"
       },
       {
         "file": "lib/budget.js",
-        "line": 77,
+        "line": 82,
         "text": "const text = await readFile(path, \"utf8\");"
       },
       {
-        "file": "lib/budget.js",
-        "line": 95,
-        "text": "await mkdir(dir, { recursive: true });"
+        "file": "lib/fs-atomic.js",
+        "line": 17,
+        "text": "import { appendFile, mkdir, readFile, rename, rm, stat, writeFile } from \"node:fs/promises\";"
       },
       {
-        "file": "lib/budget.js",
-        "line": 97,
-        "text": "await writeFile(temp, `${JSON.stringify(next, null, 2)}\\n`, \"utf8\");"
+        "file": "lib/fs-atomic.js",
+        "line": 54,
+        "text": "await mkdir(dirname(path), { recursive: true });"
       },
       {
-        "file": "lib/decisions.js",
-        "line": 9,
-        "text": "import { mkdir, readFile, rename, stat, writeFile } from \"node:fs/promises\";"
+        "file": "lib/fs-atomic.js",
+        "line": 57,
+        "text": "await writeFile(temp, text, \"utf8\");"
       }
     ]
   },
@@ -42,7 +42,7 @@
     "evidence": [
       {
         "file": "lib/service.js",
-        "line": 914,
+        "line": 972,
         "text": "const dispose = scope.tools.register(definition);"
       }
     ]

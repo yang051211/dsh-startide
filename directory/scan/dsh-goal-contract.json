@@ -1,0 +1,131 @@
+{
+  "name": "dsh-goal-contract",
+  "version": "0.2.5",
+  "scannedAt": "2026-11-28T09:22:04.720Z",
+  "icon": "dsh-goal-contract.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "dist/client.js",
+        "line": 55,
+        "text": "*   官方插件（dsh-context）用的写法就是 `fetch(\\`api/dsh-context/detail\\`)` ——"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 62,
+        "text": "*   `fetch('api/dsh-context/detail', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ sessionId }) })`"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 2475,
+        "text": "const response = await fetch("
+      },
+      {
+        "file": "dist/client.js",
+        "line": 4181,
+        "text": "fetch(STATE_ROUTE_PATH, buildStateRequestInit(sessionId))"
+      },
+      {
+        "file": "dist/client.js",
+        "line": 4242,
+        "text": "fetch(STATE_ROUTE_PATH, buildStateRequestInit(sessionId))"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/changelog-store.js",
+        "line": 44,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "src/changelog-store.js",
+        "line": 176,
+        "text": "fs.writeFileSync(tmp, text, 'utf8');"
+      },
+      {
+        "file": "src/changelog-store.js",
+        "line": 191,
+        "text": "fs.rmSync(tmp, { force: true });"
+      },
+      {
+        "file": "src/changelog-store.js",
+        "line": 224,
+        "text": "fs.mkdirSync(dir, { recursive: true });"
+      },
+      {
+        "file": "src/changelog-store.js",
+        "line": 256,
+        "text": "fs.mkdirSync(dir, { recursive: true });"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/index.js",
+        "line": 4149,
+        "text": "//   · 拦截由漂移守卫（ctx.tools.guard）读——见下面 guard 注册里的 failInterruptDenial。"
+      },
+      {
+        "file": "src/index.js",
+        "line": 6704,
+        "text": "logger.warn?.(`[${name}] 目标工具一个都没注册上（宿主没有 ctx.tools.register）`);"
+      },
+      {
+        "file": "src/index.js",
+        "line": 6716,
+        "text": "// 用 **`ctx.tools.guard`** 而不是 `tools/pre-execute`："
+      },
+      {
+        "file": "src/index.js",
+        "line": 6746,
+        "text": "writeApplyDiagnostic(diagnosticDir, { stage: 'guard', error: new Error('宿主没有提供 ctx.tools.guard') });"
+      },
+      {
+        "file": "src/index.js",
+        "line": 6747,
+        "text": "logger.warn?.(`[${name}] 宿主没有提供 ctx.tools.guard，漂移守卫未挂上（工具照常可用）`);"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "src/debts.js",
+        "line": 65,
+        "text": "import { execFileSync } from 'node:child_process';"
+      },
+      {
+        "file": "src/rules.js",
+        "line": 3098,
+        "text": "'spawnSync', 'execSync', 'child_process', 'fs\\\\.rm', 'os\\\\.remove', 'os\\\\.rename',"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 28,
+        "text": "import { exec } from 'node:child_process';"
+      },
+      {
+        "file": "src/tools.js",
+        "line": 2785,
+        "text": "//   ⚠ 将来若重构成 `execFile(prog, args, { shell: true })`，扫描器会"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

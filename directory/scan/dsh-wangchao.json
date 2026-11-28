@@ -1,35 +1,35 @@
 {
   "name": "dsh-wangchao",
-  "version": "0.5.0-alpha.5.1",
-  "scannedAt": "2026-11-27T22:45:05.081Z",
+  "version": "0.3.3",
+  "scannedAt": "2026-11-28T09:22:02.502Z",
   "icon": null,
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 1104,
+        "line": 850,
         "text": "const r = await fetch('/api/dsh-wangchao/work', { signal: ctrl.signal, cache: 'no-store' });"
       },
       {
         "file": "client.js",
-        "line": 1140,
+        "line": 879,
         "text": "const r = await fetch('/api/dsh-wangchao/work', {"
       },
       {
         "file": "client.js",
-        "line": 1176,
+        "line": 902,
         "text": "const r = await fetch('/api/dsh-wangchao/work', {"
       },
       {
         "file": "client.js",
-        "line": 1423,
-        "text": "fetch('/api/dsh-wangchao/hanlin/digest', {"
+        "line": 1117,
+        "text": "const r = await fetch('/api/dsh-wangchao/summaries', {"
       },
       {
         "file": "client.js",
-        "line": 1521,
-        "text": "return fetch('/api/dsh-wangchao/projects', { headers: { accept: 'application/json' } })"
+        "line": 1168,
+        "text": "r = await fetch('/api/dsh-wangchao/refs', {"
       }
     ]
   },
@@ -37,29 +37,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "boundary.mjs",
-        "line": 18,
+        "file": "bin/check-host-compat.mjs",
+        "line": 24,
         "text": "import fs from 'node:fs';"
       },
       {
-        "file": "boundary.mjs",
-        "line": 69,
-        "text": "? crypto.createHash('sha256').update(fs.readFileSync(full)).digest('hex').slice(0, 16)"
+        "file": "bin/check-host-compat.mjs",
+        "line": 33,
+        "text": "const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));"
       },
       {
-        "file": "exec-budget.mjs",
-        "line": 30,
-        "text": "import fs from 'node:fs';"
+        "file": "bin/check-host-compat.mjs",
+        "line": 172,
+        "text": "try { info = JSON.parse(fs.readFileSync(pkgFile, 'utf8')); } catch { return null; }"
       },
       {
-        "file": "exec-budget.mjs",
-        "line": 119,
-        "text": "raw = fs.readFileSync(f, 'utf8');"
+        "file": "bin/check-host-compat.mjs",
+        "line": 271,
+        "text": "fs.mkdirSync(modules, { recursive: true });"
       },
       {
-        "file": "exec-budget.mjs",
-        "line": 147,
-        "text": "fs.mkdirSync(dir, { recursive: true });"
+        "file": "bin/check-host-compat.mjs",
+        "line": 272,
+        "text": "fs.mkdirSync(work, { recursive: true });"
       }
     ]
   },
@@ -67,29 +67,29 @@
     "hit": true,
     "evidence": [
       {
+        "file": "bin/host-compat-probe/index.mjs",
+        "line": 6,
+        "text": "//   2) ctx.tools.guard           —— 守卫注册与 checkGuards 的真实执行点"
+      },
+      {
+        "file": "bin/host-compat-probe/index.mjs",
+        "line": 252,
+        "text": "// 2) tools.guard：插件作用域（ctx.tools）与 Agent 作用域（agent.ctx.tools）各验证一次。"
+      },
+      {
+        "file": "bin/host-compat-probe/index.mjs",
+        "line": 270,
+        "text": "agentScoped = { registered: false, reason: 'agent.ctx.tools.guard unavailable' };"
+      },
+      {
+        "file": "bin/host-compat-probe/index.mjs",
+        "line": 271,
+        "text": "result.notCovered.push('agent-scoped tools.guard (agent.ctx.tools)');"
+      },
+      {
         "file": "index.mjs",
-        "line": 77,
+        "line": 24,
         "text": "//   ctx.tools 与 ctx.get('tools') 返回的是**绑定调用者 ctx 的视图**，guard 的 effect 归属调用插件，"
-      },
-      {
-        "file": "index.mjs",
-        "line": 86,
-        "text": "export const inject = ['sessionQuery', 'tools', 'timer', 'connection', 'agentLoop'];"
-      },
-      {
-        "file": "index.mjs",
-        "line": 1042,
-        "text": "if (typeof ctx.tools?.guard !== 'function') throw new Error('tools.guard 不可用');"
-      },
-      {
-        "file": "index.mjs",
-        "line": 1043,
-        "text": "if (typeof ctx.tools?.checkGuards !== 'function') throw new Error('tools.checkGuards 不可用，无法验证守卫');"
-      },
-      {
-        "file": "index.mjs",
-        "line": 1047,
-        "text": "const guardHost = guardScope === 'root' ? rootTools : ctx.tools;"
       }
     ]
   },
@@ -97,14 +97,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.mjs",
-        "line": 9,
-        "text": "import { spawn } from 'node:child_process';"
+        "file": "bin/check-host-compat.mjs",
+        "line": 28,
+        "text": "import { spawn, spawnSync } from 'node:child_process';"
       },
       {
-        "file": "index.mjs",
-        "line": 2485,
-        "text": "const child = spawn(browser, ['--app=' + url, '--user-data-dir=' + profileDir, '--no-first-run', '--no-default-browser-check'], {"
+        "file": "bin/check-host-compat.mjs",
+        "line": 312,
+        "text": "const res = spawnSync(NETSTAT, ['-ano'], { encoding: 'utf8', windowsHide: true, timeout: 5000 });"
+      },
+      {
+        "file": "bin/check-host-compat.mjs",
+        "line": 333,
+        "text": "const res = spawnSync(POWERSHELL, ['-NoProfile', '-NonInteractive', '-Command', script], {"
+      },
+      {
+        "file": "bin/check-host-compat.mjs",
+        "line": 395,
+        "text": "spawnSync(TASKKILL, ['/PID', String(child.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' });"
+      },
+      {
+        "file": "bin/check-host-compat.mjs",
+        "line": 491,
+        "text": "child = spawn(host.nodeCmd, [...host.nodeArgsPrefix, host.cliPath, ...cliArgs], {"
       }
     ]
   },

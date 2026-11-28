@@ -1,0 +1,138 @@
+{
+  "name": "@58fly/dsh-aoci-panel",
+  "version": "0.8.3",
+  "scannedAt": "2026-11-28T09:22:04.403Z",
+  "icon": "58fly__dsh-aoci-panel.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 195,
+        "text": "return fetch(url.toString(), { headers: { accept: \"application/json\" } })"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 205,
+        "text": "return fetch(path, {"
+      },
+      {
+        "file": "lib/client.js",
+        "line": 224,
+        "text": "return fetch(url.toString(), { headers: { accept: \"application/json\" } })"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 116,
+        "text": "const result = await web.fetch({ url }, signal)"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 126,
+        "text": "const response = await fetch(url, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bind/aoci.js",
+        "line": 13,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/bind/binary.js",
+        "line": 21,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/bind/config.js",
+        "line": 17,
+        "text": "import fs from 'node:fs';"
+      },
+      {
+        "file": "lib/bind/discovery.js",
+        "line": 15,
+        "text": "import fs from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/bind/discovery.js",
+        "line": 90,
+        "text": "const text = await fs.readFile(file, 'utf8');"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bind/binding.js",
+        "line": 4,
+        "text": "* A *binding* is one `@deepseek-ai/dsh-mcp-client` row in a Cordis patch file"
+      },
+      {
+        "file": "lib/bind/binding.js",
+        "line": 380,
+        "text": "`${deep}name: '@deepseek-ai/dsh-mcp-client'`,"
+      },
+      {
+        "file": "lib/bind/index.js",
+        "line": 25,
+        "text": "export const inject = ['tools'];"
+      },
+      {
+        "file": "lib/bind/tools.js",
+        "line": 109,
+        "text": "ctx.tools.register("
+      },
+      {
+        "file": "lib/bind/tools.js",
+        "line": 225,
+        "text": "ctx.tools.register("
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/bind/aoci.js",
+        "line": 12,
+        "text": "import { spawn } from 'node:child_process';"
+      },
+      {
+        "file": "lib/bind/aoci.js",
+        "line": 26,
+        "text": "child = spawn(binary, args, { cwd, windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] });"
+      },
+      {
+        "file": "lib/cognition.js",
+        "line": 19,
+        "text": "import { execFile } from 'node:child_process'"
+      },
+      {
+        "file": "lib/cognition.js",
+        "line": 230,
+        "text": "execFile("
+      },
+      {
+        "file": "lib/index.js",
+        "line": 416,
+        "text": "handle = subprocess.spawn({"
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 1,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "webServer"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

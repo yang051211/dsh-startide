@@ -1,19 +1,19 @@
 {
   "name": "dsh-plugin-opencode-go-usage",
-  "version": "1.0.1",
-  "scannedAt": "2026-11-10T08:48:51.759Z",
+  "version": "1.0.2",
+  "scannedAt": "2026-11-28T09:22:03.247Z",
   "icon": "dsh-plugin-opencode-go-usage.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 453,
-        "text": "const response = await fetch(url, { cache: 'no-store', headers: { accept: 'application/json' } });"
+        "line": 506,
+        "text": "const response = await fetch(url, { cache: 'no-store', headers: { accept: 'application/json' }, signal: controller.signal });"
       },
       {
         "file": "index.js",
-        "line": 180,
+        "line": 162,
         "text": "const response = await fetch(API_URL, {"
       }
     ]
@@ -23,13 +23,13 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 15,
+        "line": 13,
         "text": "import { readFile } from 'node:fs/promises';"
       },
       {
         "file": "index.js",
-        "line": 85,
-        "text": "text = await readFile(file, 'utf8');"
+        "line": 81,
+        "text": "const parsed = JSON.parse(await readFile(file, { encoding: 'utf8', signal }));"
       }
     ]
   },

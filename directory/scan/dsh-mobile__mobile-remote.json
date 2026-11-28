@@ -1,7 +1,7 @@
 {
   "name": "@dsh-mobile/mobile-remote",
-  "version": "3.4.1",
-  "scannedAt": "2026-11-25T10:09:20.962Z",
+  "version": "3.5.0",
+  "scannedAt": "2026-11-28T09:21:57.735Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -18,17 +18,17 @@
       },
       {
         "file": "lib/client.js",
-        "line": 220,
+        "line": 199,
         "text": "return fetch(RELAY_API + path, {"
       },
       {
         "file": "lib/client.js",
-        "line": 629,
+        "line": 749,
         "text": "fetch(QR_CONFIG, { headers: { accept: \"application/json\" } })"
       },
       {
         "file": "lib/index.js",
-        "line": 16,
+        "line": 15,
         "text": "import { createServer as createHttpServer, request as httpRequest } from \"node:http\";"
       }
     ]
@@ -68,13 +68,18 @@
     "evidence": [
       {
         "file": "lib/phone-actions.js",
-        "line": 130,
+        "line": 138,
         "text": "if (typeof tools?.register !== \"function\") { try { tools = ctx.tools; } catch { tools = undefined; } }"
       },
       {
         "file": "lib/phone-actions.js",
-        "line": 137,
+        "line": 145,
         "text": "for (const action of ACTIONS) disposers.push(tools.register(toolFor(action), options));"
+      },
+      {
+        "file": "lib/toolbox.js",
+        "line": 258,
+        "text": "disposer = tools.register(toolDef(), native ? { when: () => capable.active() } : undefined) ?? (() => {});"
       }
     ]
   },

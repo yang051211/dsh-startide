@@ -1,0 +1,71 @@
+{
+  "name": "dsh-allow",
+  "version": "0.4.0",
+  "scannedAt": "2026-11-28T09:21:58.893Z",
+  "icon": null,
+  "network": {
+    "hit": false,
+    "evidence": []
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/core.js",
+        "line": 7,
+        "text": "import { closeSync, fsyncSync, mkdirSync, openSync, readFileSync, renameSync, unlinkSync, writeSync } from 'node:fs'"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 240,
+        "text": "raw = JSON.parse(readFileSync(this.stateFile, 'utf8'))"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 294,
+        "text": "mkdirSync(dirname(this.stateFile), { recursive: true })"
+      },
+      {
+        "file": "lib/core.js",
+        "line": 303,
+        "text": "try { unlinkSync(temp) } catch {}"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "index.js",
+        "line": 38,
+        "text": "export const inject = ['tools']"
+      },
+      {
+        "file": "index.js",
+        "line": 400,
+        "text": "if (ctx.tools && typeof ctx.tools.register === 'function') {"
+      },
+      {
+        "file": "index.js",
+        "line": 402,
+        "text": "ctx.tools.register(tool)"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

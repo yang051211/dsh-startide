@@ -1,7 +1,7 @@
 {
   "name": "dsh-cookie-cleaner",
-  "version": "0.7.4",
-  "scannedAt": "2026-11-26T23:01:08.442Z",
+  "version": "0.8.0",
+  "scannedAt": "2026-11-28T09:21:56.815Z",
   "icon": null,
   "network": {
     "hit": true,
@@ -12,9 +12,19 @@
         "text": "const response = await fetch(path, {"
       },
       {
+        "file": "src/api-routes.ts",
+        "line": 19,
+        "text": "import type { IncomingMessage, ServerResponse } from 'node:http'"
+      },
+      {
         "file": "src/client/routes.ts",
         "line": 128,
         "text": "const response = await fetch(path, {"
+      },
+      {
+        "file": "src/runtime-guard.ts",
+        "line": 24,
+        "text": "import type { IncomingMessage, Server, ServerResponse } from 'node:http'"
       }
     ]
   },
@@ -22,29 +32,29 @@
     "hit": true,
     "evidence": [
       {
-        "file": "scripts/gen-locales.mjs",
-        "line": 7,
-        "text": "import fs from 'node:fs'"
+        "file": "lib/cli.js",
+        "line": 15,
+        "text": "import { readFileSync } from 'node:fs';"
       },
       {
-        "file": "scripts/gen-locales.mjs",
-        "line": 59,
-        "text": "fs.mkdirSync(OUT, { recursive: true })"
+        "file": "lib/cli.js",
+        "line": 198,
+        "text": "const pkg = JSON.parse(readFileSync(path.join(HERE, '..', 'package.json'), 'utf8'));"
       },
       {
-        "file": "scripts/gen-locales.mjs",
-        "line": 65,
-        "text": "const actual = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : null"
+        "file": "lib/core.js",
+        "line": 22,
+        "text": "import fs from 'node:fs';"
       },
       {
-        "file": "scripts/gen-locales.mjs",
-        "line": 69,
-        "text": "fs.writeFileSync(file, expected, 'utf8')"
+        "file": "lib/core.js",
+        "line": 239,
+        "text": "// asar 是打包容器：`readFileSync('app.asar/lib/main.js')` 只有 Electron 打过补丁的 fs"
       },
       {
-        "file": "scripts/sync-hosts.mjs",
-        "line": 7,
-        "text": "import fs from 'node:fs'"
+        "file": "lib/core.js",
+        "line": 245,
+        "text": "return fs.readFileSync(file, 'utf8');"
       }
     ]
   },

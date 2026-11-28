@@ -1,0 +1,92 @@
+{
+  "name": "dsh-web-aichat",
+  "version": "0.1.19",
+  "scannedAt": "2026-11-28T09:22:03.859Z",
+  "icon": null,
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/client.js",
+        "line": 630,
+        "text": "const response = await fetch(`/api/web-aichat/persistence/${action}`, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/desktop-persistence.mjs",
+        "line": 2,
+        "text": "import * as nodeFiles from 'node:fs/promises'"
+      },
+      {
+        "file": "lib/desktop-persistence.mjs",
+        "line": 79,
+        "text": "const bytes = await readFile(file)"
+      },
+      {
+        "file": "lib/desktop-persistence.mjs",
+        "line": 85,
+        "text": "const executable = await readFile(join(directory, 'DeepSeek Harness.exe'))"
+      },
+      {
+        "file": "lib/desktop-persistence.mjs",
+        "line": 118,
+        "text": "if (sha256(await readFile(path)) !== expected || await fileRevision(path) !== revision) {"
+      },
+      {
+        "file": "lib/desktop-persistence.mjs",
+        "line": 127,
+        "text": "await nativeFileSystem.rm(temporary, { force: true })"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": false,
+    "evidence": []
+  },
+  "childProcess": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/desktop-persistence.mjs",
+        "line": 7,
+        "text": "import { execFileSync, spawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/desktop-persistence.mjs",
+        "line": 166,
+        "text": "const child = spawn('powershell.exe', ['-NoLogo', '-NoProfile', '-NonInteractive', '-Command',"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 7,
+        "text": "import { spawn as spawn2 } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 15,
+        "text": "import { execFileSync, spawn } from \"node:child_process\";"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 174,
+        "text": "const child = spawn("
+      }
+    ]
+  },
+  "installScripts": {
+    "hit": false,
+    "evidence": []
+  },
+  "dependencies": 0,
+  "minifiedFiles": [
+    "lib/client.js"
+  ],
+  "binaryFiles": [],
+  "requiredServices": [],
+  "setupHints": [],
+  "skippedEntries": []
+}

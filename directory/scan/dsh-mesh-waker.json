@@ -1,35 +1,35 @@
 {
   "name": "dsh-mesh-waker",
-  "version": "0.8.0",
-  "scannedAt": "2026-11-02T07:38:00.781Z",
+  "version": "0.9.0",
+  "scannedAt": "2026-11-28T09:22:03.551Z",
   "icon": "dsh-mesh-waker.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "bin/dispatch.mjs",
-        "line": 163,
+        "line": 431,
         "text": "const res = await fetch(url, {"
       },
       {
         "file": "client.js",
-        "line": 188,
+        "line": 202,
         "text": "const res = await fetch(url, { cache: 'no-store', ...init })"
       },
       {
         "file": "client.js",
-        "line": 480,
+        "line": 544,
         "text": "const res = await fetch(BASE + '/mesh/config', {"
       },
       {
         "file": "client.js",
-        "line": 491,
+        "line": 555,
         "text": "const res = await fetch(BASE + '/mesh/status', { cache: 'no-store' })"
       },
       {
-        "file": "index.js",
-        "line": 19,
-        "text": "import { createServer } from 'node:http'"
+        "file": "client.js",
+        "line": 1290,
+        "text": "/** Shared task fetch (T-335): the full task page and the narrow sidebar tab use one call. */"
       }
     ]
   },
@@ -43,7 +43,12 @@
       },
       {
         "file": "bin/dispatch.mjs",
-        "line": 182,
+        "line": 562,
+        "text": "const text = options.file !== undefined ? await readFile(String(options.file), 'utf8') : String(options.text ?? '')"
+      },
+      {
+        "file": "bin/dispatch.mjs",
+        "line": 586,
         "text": "const text = options.file !== undefined ? await readFile(String(options.file), 'utf8') : String(options.text ?? '')"
       },
       {
@@ -53,13 +58,8 @@
       },
       {
         "file": "index.js",
-        "line": 48,
-        "text": "SELF_PACKAGE = JSON.parse(readFileSync(join(SELF_DIR, 'package.json'), 'utf8'))"
-      },
-      {
-        "file": "index.js",
         "line": 66,
-        "text": "return String(JSON.parse(readFileSync(join(dir, 'package.json'), 'utf8')).version ?? '0.0.0')"
+        "text": "SELF_PACKAGE = JSON.parse(readFileSync(join(SELF_DIR, 'package.json'), 'utf8'))"
       }
     ]
   },
@@ -68,29 +68,45 @@
     "evidence": [
       {
         "file": "index.js",
-        "line": 5405,
+        "line": 7193,
         "text": "// 共享闭包：ctx.tools, toolState, bootedCodeHash, diskCodeCache"
       },
       {
         "file": "index.js",
-        "line": 5411,
+        "line": 7199,
         "text": "return viaGet ?? ctx.tools"
       },
       {
         "file": "index.js",
-        "line": 5423,
+        "line": 7211,
         "text": "ctx.effect(() => tools.register(definition))"
       },
       {
         "file": "index.js",
-        "line": 5432,
+        "line": 7220,
         "text": "toolState[label].error = `${label}: host exposes no tools service (ctx.get('tools') and ctx.tools are empty)`"
       }
     ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/git-context.mjs",
+        "line": 1,
+        "text": "import { execFileSync } from 'node:child_process'"
+      },
+      {
+        "file": "lib/settle-hook.mjs",
+        "line": 14,
+        "text": "import { spawn as defaultSpawn } from 'node:child_process'"
+      },
+      {
+        "file": "lib/settle-hook.mjs",
+        "line": 73,
+        "text": "child = spawn(cmd, argv, {"
+      }
+    ]
   },
   "installScripts": {
     "hit": false,

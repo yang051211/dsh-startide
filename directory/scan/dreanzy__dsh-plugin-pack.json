@@ -1,0 +1,93 @@
+{
+  "name": "@dreanzy/dsh-plugin-pack",
+  "version": "0.3.0",
+  "scannedAt": "2026-11-28T09:22:02.663Z",
+  "icon": "dreanzy__dsh-plugin-pack.svg",
+  "network": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "client/client.js",
+        "line": 138,
+        "text": "response = await fetch(path, {"
+      }
+    ]
+  },
+  "fileSystem": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/catalog.js",
+        "line": 2,
+        "text": "import { readFileSync, statSync } from 'node:fs';"
+      },
+      {
+        "file": "lib/catalog.js",
+        "line": 3,
+        "text": "import { mkdir, open, readdir, readFile, stat } from 'node:fs/promises';"
+      },
+      {
+        "file": "lib/catalog.js",
+        "line": 92,
+        "text": "return await readFile(path, 'utf8');"
+      },
+      {
+        "file": "lib/catalog.js",
+        "line": 208,
+        "text": "text = readFileSync(path, 'utf8');"
+      },
+      {
+        "file": "lib/catalog.js",
+        "line": 328,
+        "text": "read: async () => await readFile(path, 'utf8'),"
+      }
+    ]
+  },
+  "agentTools": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "lib/catalog.js",
+        "line": 30,
+        "text": "*   `dsh-mcp-client`，`tool:` 记给 `dsh-tool-bash`，但不记给 `dsh-subagent`。"
+      },
+      {
+        "file": "lib/catalog.js",
+        "line": 76,
+        "text": "* 有的插件用 `ctx.tools.register(vTool({ name }))`，有的把 name 放进工厂函数的返回"
+      },
+      {
+        "file": "lib/catalog.js",
+        "line": 992,
+        "text": "// 混用这两者会让任何带模板段名的包（dsh-tool-fs、dsh-mcp-client…）把缓存永久顶掉，"
+      },
+      {
+        "file": "lib/index.js",
+        "line": 14,
+        "text": "export const inject = ['tools'];"
+      }
+    ]
+  },
+  "childProcess": {
+    "hit": false,
+    "evidence": []
+  },
+  "installScripts": {
+    "hit": true,
+    "evidence": [
+      {
+        "file": "package.json",
+        "line": 0,
+        "text": "scripts.prepare: tsc -p tsconfig.json"
+      }
+    ]
+  },
+  "dependencies": 3,
+  "minifiedFiles": [],
+  "binaryFiles": [],
+  "requiredServices": [
+    "tools"
+  ],
+  "setupHints": [],
+  "skippedEntries": []
+}

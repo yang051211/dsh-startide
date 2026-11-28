@@ -1,35 +1,35 @@
 {
   "name": "@leiyi-works/dsh-feature-tweaks",
-  "version": "0.7.20",
-  "scannedAt": "2026-11-22T08:23:31.933Z",
+  "version": "0.9.0",
+  "scannedAt": "2026-11-28T09:21:57.705Z",
   "icon": "leiyi-works__dsh-feature-tweaks.svg",
   "network": {
     "hit": true,
     "evidence": [
       {
         "file": "client.js",
-        "line": 510,
+        "line": 524,
         "text": "void fetch(apiUrl('diag'), {"
       },
       {
         "file": "client.js",
-        "line": 826,
+        "line": 703,
+        "text": "const response = await fetch(apiUrl('feature'), {"
+      },
+      {
+        "file": "client.js",
+        "line": 903,
         "text": "const response = await fetch(apiUrl('reload-safe'), { cache: 'no-store' })"
       },
       {
         "file": "client.js",
-        "line": 927,
+        "line": 1007,
         "text": "const response = await fetch(apiUrl('config'), { headers: { accept: 'application/json' } })"
       },
       {
         "file": "client.js",
-        "line": 1251,
+        "line": 1331,
         "text": "const response = await fetch(apiUrl('privacy/state'), { headers: { accept: 'application/json' } })"
-      },
-      {
-        "file": "client.js",
-        "line": 1260,
-        "text": "const response = await fetch(apiUrl('privacy/set'), {"
       }
     ]
   },
@@ -37,39 +37,86 @@
     "hit": true,
     "evidence": [
       {
-        "file": "index.js",
-        "line": 32,
-        "text": "import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs'"
+        "file": "autorestart.js",
+        "line": 39,
+        "text": "} from 'node:fs'"
       },
       {
-        "file": "index.js",
-        "line": 33,
-        "text": "import fsp from 'node:fs/promises'"
+        "file": "autorestart.js",
+        "line": 53,
+        "text": "return JSON.parse(readFileSync(join(PKG_DIR, 'package.json'), 'utf8')).version ?? '0.0.0'"
       },
       {
-        "file": "index.js",
-        "line": 152,
-        "text": "await fsp.mkdir(path.dirname(diagFile()), { recursive: true })"
+        "file": "autorestart.js",
+        "line": 277,
+        "text": "try { rmSync(file, { force: true }) } catch {}"
       },
       {
-        "file": "index.js",
-        "line": 153,
-        "text": "await fsp.appendFile(diagFile(), line, 'utf8')"
+        "file": "autorestart.js",
+        "line": 309,
+        "text": "try { rmSync(file, { force: true }) } catch {}"
       },
       {
-        "file": "index.js",
-        "line": 273,
-        "text": "const current = await fsp.readFile(file, 'utf8')"
+        "file": "autorestart.js",
+        "line": 315,
+        "text": "try { rmSync(file, { force: true }) } catch {}"
       }
     ]
   },
   "agentTools": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "tmpdir.js",
+        "line": 238,
+        "text": "export const inject = ['sessions', 'sessionTitle', 'workingDirectory', 'systemPrompt', 'tools']"
+      },
+      {
+        "file": "tmpdir.js",
+        "line": 3326,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "tmpdir.js",
+        "line": 3360,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "tmpdir.js",
+        "line": 3469,
+        "text": "ctx.tools.register({"
+      },
+      {
+        "file": "tmpdir.js",
+        "line": 3539,
+        "text": "ctx.tools.guard((execution) => {"
+      }
+    ]
   },
   "childProcess": {
-    "hit": false,
-    "evidence": []
+    "hit": true,
+    "evidence": [
+      {
+        "file": "autorestart.js",
+        "line": 26,
+        "text": "import { spawn } from 'node:child_process'"
+      },
+      {
+        "file": "autorestart.js",
+        "line": 700,
+        "text": "const child = spawn('explorer.exe', [vbs], { windowsHide: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "autorestart.js",
+        "line": 800,
+        "text": "const child = spawn('explorer.exe', [installer], { windowsHide: true, stdio: 'ignore' })"
+      },
+      {
+        "file": "autorestart.js",
+        "line": 1169,
+        "text": "const child = spawn("
+      }
+    ]
   },
   "installScripts": {
     "hit": false,
@@ -79,7 +126,12 @@
   "minifiedFiles": [],
   "binaryFiles": [],
   "requiredServices": [
-    "webServer"
+    "sessionTitle",
+    "sessions",
+    "systemPrompt",
+    "tools",
+    "webServer",
+    "workingDirectory"
   ],
   "setupHints": [],
   "skippedEntries": []
